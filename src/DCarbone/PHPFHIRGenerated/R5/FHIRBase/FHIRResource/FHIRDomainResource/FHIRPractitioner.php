@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -281,7 +281,7 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRPractitioner Constructor
@@ -586,16 +586,16 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $active && !($active instanceof FHIRBoolean)) {
             $active = new FHIRBoolean($active);
         }
         $this->_trackValueSet($this->active, $active);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ACTIVE])) {
-            $this->_primitiveXmlLocations[self::FIELD_ACTIVE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ACTIVE])) {
+            $this->_xmlLocations[self::FIELD_ACTIVE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ACTIVE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ACTIVE][0] = $xmlLocation;
         $this->active = $active;
         return $this;
     }
@@ -789,16 +789,16 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setBirthDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $birthDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setBirthDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $birthDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $birthDate && !($birthDate instanceof FHIRDate)) {
             $birthDate = new FHIRDate($birthDate);
         }
         $this->_trackValueSet($this->birthDate, $birthDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_BIRTH_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_BIRTH_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_BIRTH_DATE])) {
+            $this->_xmlLocations[self::FIELD_BIRTH_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_BIRTH_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_BIRTH_DATE][0] = $xmlLocation;
         $this->birthDate = $birthDate;
         return $this;
     }
@@ -826,16 +826,16 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDeceasedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $deceasedBoolean = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDeceasedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $deceasedBoolean = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $deceasedBoolean && !($deceasedBoolean instanceof FHIRBoolean)) {
             $deceasedBoolean = new FHIRBoolean($deceasedBoolean);
         }
         $this->_trackValueSet($this->deceasedBoolean, $deceasedBoolean);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DECEASED_BOOLEAN])) {
-            $this->_primitiveXmlLocations[self::FIELD_DECEASED_BOOLEAN] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DECEASED_BOOLEAN])) {
+            $this->_xmlLocations[self::FIELD_DECEASED_BOOLEAN] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DECEASED_BOOLEAN][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DECEASED_BOOLEAN][0] = $xmlLocation;
         $this->deceasedBoolean = $deceasedBoolean;
         return $this;
     }
@@ -873,16 +873,16 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDeceasedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $deceasedDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDeceasedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $deceasedDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $deceasedDateTime && !($deceasedDateTime instanceof FHIRDateTime)) {
             $deceasedDateTime = new FHIRDateTime($deceasedDateTime);
         }
         $this->_trackValueSet($this->deceasedDateTime, $deceasedDateTime);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DECEASED_DATE_TIME])) {
-            $this->_primitiveXmlLocations[self::FIELD_DECEASED_DATE_TIME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DECEASED_DATE_TIME])) {
+            $this->_xmlLocations[self::FIELD_DECEASED_DATE_TIME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DECEASED_DATE_TIME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DECEASED_DATE_TIME][0] = $xmlLocation;
         $this->deceasedDateTime = $deceasedDateTime;
         return $this;
     }
@@ -1661,19 +1661,19 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
             $openedRoot = true;
             $xw->openRootNode($config, 'Practitioner', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTIVE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACTIVE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getActive())) {
             $xw->writeAttribute(self::FIELD_ACTIVE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_BIRTH_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_BIRTH_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getBirthDate())) {
             $xw->writeAttribute(self::FIELD_BIRTH_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DECEASED_BOOLEAN] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DECEASED_BOOLEAN] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDeceasedBoolean())) {
             $xw->writeAttribute(self::FIELD_DECEASED_BOOLEAN, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DECEASED_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DECEASED_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDeceasedDateTime())) {
             $xw->writeAttribute(self::FIELD_DECEASED_DATE_TIME, $v->getValue()?->getFormattedValue());
         }
@@ -1683,7 +1683,7 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTIVE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACTIVE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getActive())) {
             $xw->startElement(self::FIELD_ACTIVE);
             $v->xmlSerialize($xw, $config);
@@ -1704,19 +1704,19 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_BIRTH_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_BIRTH_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getBirthDate())) {
             $xw->startElement(self::FIELD_BIRTH_DATE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DECEASED_BOOLEAN] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DECEASED_BOOLEAN] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDeceasedBoolean())) {
             $xw->startElement(self::FIELD_DECEASED_BOOLEAN);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DECEASED_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DECEASED_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDeceasedDateTime())) {
             $xw->startElement(self::FIELD_DECEASED_DATE_TIME);
             $v->xmlSerialize($xw, $config);

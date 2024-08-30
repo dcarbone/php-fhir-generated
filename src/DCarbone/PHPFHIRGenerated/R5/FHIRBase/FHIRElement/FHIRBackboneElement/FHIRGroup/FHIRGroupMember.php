@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -155,7 +155,7 @@ class FHIRGroupMember extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRGroupMember Constructor
@@ -303,16 +303,16 @@ class FHIRGroupMember extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInactive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $inactive = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setInactive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $inactive = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $inactive && !($inactive instanceof FHIRBoolean)) {
             $inactive = new FHIRBoolean($inactive);
         }
         $this->_trackValueSet($this->inactive, $inactive);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_INACTIVE])) {
-            $this->_primitiveXmlLocations[self::FIELD_INACTIVE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_INACTIVE])) {
+            $this->_xmlLocations[self::FIELD_INACTIVE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_INACTIVE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_INACTIVE][0] = $xmlLocation;
         $this->inactive = $inactive;
         return $this;
     }
@@ -522,7 +522,7 @@ class FHIRGroupMember extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'GroupMember', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INACTIVE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INACTIVE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInactive())) {
             $xw->writeAttribute(self::FIELD_INACTIVE, $v->getValue()?->getFormattedValue());
         }
@@ -537,7 +537,7 @@ class FHIRGroupMember extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INACTIVE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INACTIVE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInactive())) {
             $xw->startElement(self::FIELD_INACTIVE);
             $v->xmlSerialize($xw, $config);

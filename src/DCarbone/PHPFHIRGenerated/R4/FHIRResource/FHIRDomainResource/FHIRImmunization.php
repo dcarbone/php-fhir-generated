@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -462,7 +462,7 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRImmunization Constructor
@@ -1122,16 +1122,16 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $occurrenceDateTime && !($occurrenceDateTime instanceof FHIRDateTime)) {
             $occurrenceDateTime = new FHIRDateTime($occurrenceDateTime);
         }
         $this->_trackValueSet($this->occurrenceDateTime, $occurrenceDateTime);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE_TIME])) {
-            $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_OCCURRENCE_DATE_TIME])) {
+            $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE_TIME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE_TIME][0] = $xmlLocation;
         $this->occurrenceDateTime = $occurrenceDateTime;
         return $this;
     }
@@ -1161,16 +1161,16 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setOccurrenceString(null|string|FHIRStringPrimitive|FHIRString $occurrenceString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setOccurrenceString(null|string|FHIRStringPrimitive|FHIRString $occurrenceString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $occurrenceString && !($occurrenceString instanceof FHIRString)) {
             $occurrenceString = new FHIRString($occurrenceString);
         }
         $this->_trackValueSet($this->occurrenceString, $occurrenceString);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_STRING])) {
-            $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_STRING] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_OCCURRENCE_STRING])) {
+            $this->_xmlLocations[self::FIELD_OCCURRENCE_STRING] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_STRING][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_OCCURRENCE_STRING][0] = $xmlLocation;
         $this->occurrenceString = $occurrenceString;
         return $this;
     }
@@ -1208,16 +1208,16 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setRecorded(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recorded = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setRecorded(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recorded = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $recorded && !($recorded instanceof FHIRDateTime)) {
             $recorded = new FHIRDateTime($recorded);
         }
         $this->_trackValueSet($this->recorded, $recorded);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_RECORDED])) {
-            $this->_primitiveXmlLocations[self::FIELD_RECORDED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_RECORDED])) {
+            $this->_xmlLocations[self::FIELD_RECORDED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_RECORDED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_RECORDED][0] = $xmlLocation;
         $this->recorded = $recorded;
         return $this;
     }
@@ -1249,16 +1249,16 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPrimarySource(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $primarySource = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPrimarySource(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $primarySource = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $primarySource && !($primarySource instanceof FHIRBoolean)) {
             $primarySource = new FHIRBoolean($primarySource);
         }
         $this->_trackValueSet($this->primarySource, $primarySource);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PRIMARY_SOURCE])) {
-            $this->_primitiveXmlLocations[self::FIELD_PRIMARY_SOURCE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PRIMARY_SOURCE])) {
+            $this->_xmlLocations[self::FIELD_PRIMARY_SOURCE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PRIMARY_SOURCE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PRIMARY_SOURCE][0] = $xmlLocation;
         $this->primarySource = $primarySource;
         return $this;
     }
@@ -1394,16 +1394,16 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setLotNumber(null|string|FHIRStringPrimitive|FHIRString $lotNumber = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setLotNumber(null|string|FHIRStringPrimitive|FHIRString $lotNumber = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $lotNumber && !($lotNumber instanceof FHIRString)) {
             $lotNumber = new FHIRString($lotNumber);
         }
         $this->_trackValueSet($this->lotNumber, $lotNumber);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_LOT_NUMBER])) {
-            $this->_primitiveXmlLocations[self::FIELD_LOT_NUMBER] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_LOT_NUMBER])) {
+            $this->_xmlLocations[self::FIELD_LOT_NUMBER] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_LOT_NUMBER][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_LOT_NUMBER][0] = $xmlLocation;
         $this->lotNumber = $lotNumber;
         return $this;
     }
@@ -1435,16 +1435,16 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setExpirationDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $expirationDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setExpirationDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $expirationDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $expirationDate && !($expirationDate instanceof FHIRDate)) {
             $expirationDate = new FHIRDate($expirationDate);
         }
         $this->_trackValueSet($this->expirationDate, $expirationDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EXPIRATION_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_EXPIRATION_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EXPIRATION_DATE])) {
+            $this->_xmlLocations[self::FIELD_EXPIRATION_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EXPIRATION_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_EXPIRATION_DATE][0] = $xmlLocation;
         $this->expirationDate = $expirationDate;
         return $this;
     }
@@ -1829,16 +1829,16 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setIsSubpotent(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isSubpotent = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setIsSubpotent(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isSubpotent = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $isSubpotent && !($isSubpotent instanceof FHIRBoolean)) {
             $isSubpotent = new FHIRBoolean($isSubpotent);
         }
         $this->_trackValueSet($this->isSubpotent, $isSubpotent);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_IS_SUBPOTENT])) {
-            $this->_primitiveXmlLocations[self::FIELD_IS_SUBPOTENT] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_IS_SUBPOTENT])) {
+            $this->_xmlLocations[self::FIELD_IS_SUBPOTENT] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_IS_SUBPOTENT][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_IS_SUBPOTENT][0] = $xmlLocation;
         $this->isSubpotent = $isSubpotent;
         return $this;
     }
@@ -3041,31 +3041,31 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
             $openedRoot = true;
             $xw->openRootNode($config, 'Immunization', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getOccurrenceDateTime())) {
             $xw->writeAttribute(self::FIELD_OCCURRENCE_DATE_TIME, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OCCURRENCE_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getOccurrenceString())) {
             $xw->writeAttribute(self::FIELD_OCCURRENCE_STRING, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RECORDED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RECORDED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getRecorded())) {
             $xw->writeAttribute(self::FIELD_RECORDED, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PRIMARY_SOURCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PRIMARY_SOURCE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPrimarySource())) {
             $xw->writeAttribute(self::FIELD_PRIMARY_SOURCE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LOT_NUMBER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LOT_NUMBER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getLotNumber())) {
             $xw->writeAttribute(self::FIELD_LOT_NUMBER, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXPIRATION_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXPIRATION_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getExpirationDate())) {
             $xw->writeAttribute(self::FIELD_EXPIRATION_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_IS_SUBPOTENT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_IS_SUBPOTENT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getIsSubpotent())) {
             $xw->writeAttribute(self::FIELD_IS_SUBPOTENT, $v->getValue()?->getFormattedValue());
         }
@@ -3100,25 +3100,25 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getOccurrenceDateTime())) {
             $xw->startElement(self::FIELD_OCCURRENCE_DATE_TIME);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OCCURRENCE_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getOccurrenceString())) {
             $xw->startElement(self::FIELD_OCCURRENCE_STRING);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RECORDED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RECORDED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getRecorded())) {
             $xw->startElement(self::FIELD_RECORDED);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PRIMARY_SOURCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PRIMARY_SOURCE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPrimarySource())) {
             $xw->startElement(self::FIELD_PRIMARY_SOURCE);
             $v->xmlSerialize($xw, $config);
@@ -3139,13 +3139,13 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LOT_NUMBER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LOT_NUMBER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getLotNumber())) {
             $xw->startElement(self::FIELD_LOT_NUMBER);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXPIRATION_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXPIRATION_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getExpirationDate())) {
             $xw->startElement(self::FIELD_EXPIRATION_DATE);
             $v->xmlSerialize($xw, $config);
@@ -3186,7 +3186,7 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_IS_SUBPOTENT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_IS_SUBPOTENT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getIsSubpotent())) {
             $xw->startElement(self::FIELD_IS_SUBPOTENT);
             $v->xmlSerialize($xw, $config);

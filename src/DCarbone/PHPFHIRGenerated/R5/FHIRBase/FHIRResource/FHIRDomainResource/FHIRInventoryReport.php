@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -249,7 +249,7 @@ class FHIRInventoryReport extends FHIRDomainResource implements PHPFHIRContained
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRInventoryReport Constructor
@@ -634,16 +634,16 @@ class FHIRInventoryReport extends FHIRDomainResource implements PHPFHIRContained
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setReportedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $reportedDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setReportedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $reportedDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $reportedDateTime && !($reportedDateTime instanceof FHIRDateTime)) {
             $reportedDateTime = new FHIRDateTime($reportedDateTime);
         }
         $this->_trackValueSet($this->reportedDateTime, $reportedDateTime);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_REPORTED_DATE_TIME])) {
-            $this->_primitiveXmlLocations[self::FIELD_REPORTED_DATE_TIME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_REPORTED_DATE_TIME])) {
+            $this->_xmlLocations[self::FIELD_REPORTED_DATE_TIME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_REPORTED_DATE_TIME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_REPORTED_DATE_TIME][0] = $xmlLocation;
         $this->reportedDateTime = $reportedDateTime;
         return $this;
     }
@@ -1263,7 +1263,7 @@ class FHIRInventoryReport extends FHIRDomainResource implements PHPFHIRContained
             $openedRoot = true;
             $xw->openRootNode($config, 'InventoryReport', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_REPORTED_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_REPORTED_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getReportedDateTime())) {
             $xw->writeAttribute(self::FIELD_REPORTED_DATE_TIME, $v->getValue()?->getFormattedValue());
         }
@@ -1293,7 +1293,7 @@ class FHIRInventoryReport extends FHIRDomainResource implements PHPFHIRContained
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_REPORTED_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_REPORTED_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getReportedDateTime())) {
             $xw->startElement(self::FIELD_REPORTED_DATE_TIME);
             $v->xmlSerialize($xw, $config);

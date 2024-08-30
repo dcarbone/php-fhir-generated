@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -309,7 +309,7 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRGenomicStudy Constructor
@@ -808,16 +808,16 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setStartDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $startDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setStartDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $startDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $startDate && !($startDate instanceof FHIRDateTime)) {
             $startDate = new FHIRDateTime($startDate);
         }
         $this->_trackValueSet($this->startDate, $startDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_START_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_START_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_START_DATE])) {
+            $this->_xmlLocations[self::FIELD_START_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_START_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_START_DATE][0] = $xmlLocation;
         $this->startDate = $startDate;
         return $this;
     }
@@ -1063,16 +1063,16 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInstantiatesCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setInstantiatesCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $instantiatesCanonical = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $instantiatesCanonical && !($instantiatesCanonical instanceof FHIRCanonical)) {
             $instantiatesCanonical = new FHIRCanonical($instantiatesCanonical);
         }
         $this->_trackValueSet($this->instantiatesCanonical, $instantiatesCanonical);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_INSTANTIATES_CANONICAL])) {
-            $this->_primitiveXmlLocations[self::FIELD_INSTANTIATES_CANONICAL] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_INSTANTIATES_CANONICAL])) {
+            $this->_xmlLocations[self::FIELD_INSTANTIATES_CANONICAL] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_INSTANTIATES_CANONICAL][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_INSTANTIATES_CANONICAL][0] = $xmlLocation;
         $this->instantiatesCanonical = $instantiatesCanonical;
         return $this;
     }
@@ -1102,16 +1102,16 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInstantiatesUri(null|string|FHIRUriPrimitive|FHIRUri $instantiatesUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setInstantiatesUri(null|string|FHIRUriPrimitive|FHIRUri $instantiatesUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $instantiatesUri && !($instantiatesUri instanceof FHIRUri)) {
             $instantiatesUri = new FHIRUri($instantiatesUri);
         }
         $this->_trackValueSet($this->instantiatesUri, $instantiatesUri);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_INSTANTIATES_URI])) {
-            $this->_primitiveXmlLocations[self::FIELD_INSTANTIATES_URI] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_INSTANTIATES_URI])) {
+            $this->_xmlLocations[self::FIELD_INSTANTIATES_URI] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_INSTANTIATES_URI][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_INSTANTIATES_URI][0] = $xmlLocation;
         $this->instantiatesUri = $instantiatesUri;
         return $this;
     }
@@ -1211,16 +1211,16 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $description && !($description instanceof FHIRMarkdown)) {
             $description = new FHIRMarkdown($description);
         }
         $this->_trackValueSet($this->description, $description);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DESCRIPTION])) {
-            $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DESCRIPTION])) {
+            $this->_xmlLocations[self::FIELD_DESCRIPTION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
         $this->description = $description;
         return $this;
     }
@@ -1840,19 +1840,19 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
             $openedRoot = true;
             $xw->openRootNode($config, 'GenomicStudy', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_START_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_START_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getStartDate())) {
             $xw->writeAttribute(self::FIELD_START_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INSTANTIATES_CANONICAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INSTANTIATES_CANONICAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInstantiatesCanonical())) {
             $xw->writeAttribute(self::FIELD_INSTANTIATES_CANONICAL, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INSTANTIATES_URI] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INSTANTIATES_URI] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInstantiatesUri())) {
             $xw->writeAttribute(self::FIELD_INSTANTIATES_URI, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDescription())) {
             $xw->writeAttribute(self::FIELD_DESCRIPTION, $v->getValue()?->getFormattedValue());
         }
@@ -1882,7 +1882,7 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_START_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_START_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getStartDate())) {
             $xw->startElement(self::FIELD_START_DATE);
             $v->xmlSerialize($xw, $config);
@@ -1908,13 +1908,13 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INSTANTIATES_CANONICAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INSTANTIATES_CANONICAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInstantiatesCanonical())) {
             $xw->startElement(self::FIELD_INSTANTIATES_CANONICAL);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INSTANTIATES_URI] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INSTANTIATES_URI] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInstantiatesUri())) {
             $xw->startElement(self::FIELD_INSTANTIATES_URI);
             $v->xmlSerialize($xw, $config);
@@ -1925,7 +1925,7 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDescription())) {
             $xw->startElement(self::FIELD_DESCRIPTION);
             $v->xmlSerialize($xw, $config);

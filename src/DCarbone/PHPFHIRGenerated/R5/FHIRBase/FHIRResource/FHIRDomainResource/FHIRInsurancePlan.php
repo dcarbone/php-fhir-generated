@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -281,7 +281,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRInsurancePlan Constructor
@@ -700,16 +700,16 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $name && !($name instanceof FHIRString)) {
             $name = new FHIRString($name);
         }
         $this->_trackValueSet($this->name, $name);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NAME])) {
-            $this->_primitiveXmlLocations[self::FIELD_NAME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NAME])) {
+            $this->_xmlLocations[self::FIELD_NAME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NAME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NAME][0] = $xmlLocation;
         $this->name = $name;
         return $this;
     }
@@ -741,16 +741,20 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addAlias(null|string|FHIRStringPrimitive|FHIRString $alias = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addAlias(null|string|FHIRStringPrimitive|FHIRString $alias = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $alias && !($alias instanceof FHIRString)) {
             $alias = new FHIRString($alias);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ALIAS])) {
-            $this->_primitiveXmlLocations[self::FIELD_ALIAS] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ALIAS])) {
+            $this->_xmlLocations[self::FIELD_ALIAS] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ALIAS][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_ALIAS]) {
+            $this->_xmlLocations[self::FIELD_ALIAS][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_ALIAS][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->alias[] = $alias;
         return $this;
     }
@@ -767,9 +771,9 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAlias(array $alias = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAlias(array $alias = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_ALIAS]);
+        unset($this->_xmlLocations[self::FIELD_ALIAS]);
         if ([] !== $this->alias) {
             $this->_trackValuesRemoved(count($this->alias));
             $this->alias = [];
@@ -1774,11 +1778,11 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
             $openedRoot = true;
             $xw->openRootNode($config, 'InsurancePlan', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getName())) {
             $xw->writeAttribute(self::FIELD_NAME, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ALIAS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ALIAS] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getAlias())) {
             $xw->writeAttribute(self::FIELD_ALIAS, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getAlias()) && isset($vs[$idx])) {
@@ -1800,13 +1804,13 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getName())) {
             $xw->startElement(self::FIELD_NAME);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ALIAS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ALIAS] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getAlias())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

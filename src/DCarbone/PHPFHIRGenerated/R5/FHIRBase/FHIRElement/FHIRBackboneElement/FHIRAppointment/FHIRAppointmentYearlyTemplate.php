@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -131,7 +131,7 @@ class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRAppointmentYearlyTemplate Constructor
@@ -195,16 +195,16 @@ class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setYearInterval(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $yearInterval = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setYearInterval(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $yearInterval = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $yearInterval && !($yearInterval instanceof FHIRPositiveInt)) {
             $yearInterval = new FHIRPositiveInt($yearInterval);
         }
         $this->_trackValueSet($this->yearInterval, $yearInterval);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_YEAR_INTERVAL])) {
-            $this->_primitiveXmlLocations[self::FIELD_YEAR_INTERVAL] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_YEAR_INTERVAL])) {
+            $this->_xmlLocations[self::FIELD_YEAR_INTERVAL] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_YEAR_INTERVAL][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_YEAR_INTERVAL][0] = $xmlLocation;
         $this->yearInterval = $yearInterval;
         return $this;
     }
@@ -376,12 +376,12 @@ class FHIRAppointmentYearlyTemplate extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'AppointmentYearlyTemplate', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_YEAR_INTERVAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_YEAR_INTERVAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getYearInterval())) {
             $xw->writeAttribute(self::FIELD_YEAR_INTERVAL, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_YEAR_INTERVAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_YEAR_INTERVAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getYearInterval())) {
             $xw->startElement(self::FIELD_YEAR_INTERVAL);
             $v->xmlSerialize($xw, $config);

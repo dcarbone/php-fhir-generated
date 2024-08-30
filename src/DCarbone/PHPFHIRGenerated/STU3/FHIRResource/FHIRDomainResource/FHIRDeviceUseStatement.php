@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -272,7 +272,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRDeviceUseStatement Constructor
@@ -717,16 +717,16 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $timingDateTime && !($timingDateTime instanceof FHIRDateTime)) {
             $timingDateTime = new FHIRDateTime($timingDateTime);
         }
         $this->_trackValueSet($this->timingDateTime, $timingDateTime);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TIMING_DATE_TIME])) {
-            $this->_primitiveXmlLocations[self::FIELD_TIMING_DATE_TIME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TIMING_DATE_TIME])) {
+            $this->_xmlLocations[self::FIELD_TIMING_DATE_TIME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TIMING_DATE_TIME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TIMING_DATE_TIME][0] = $xmlLocation;
         $this->timingDateTime = $timingDateTime;
         return $this;
     }
@@ -762,16 +762,16 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setRecordedOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recordedOn = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setRecordedOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recordedOn = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $recordedOn && !($recordedOn instanceof FHIRDateTime)) {
             $recordedOn = new FHIRDateTime($recordedOn);
         }
         $this->_trackValueSet($this->recordedOn, $recordedOn);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_RECORDED_ON])) {
-            $this->_primitiveXmlLocations[self::FIELD_RECORDED_ON] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_RECORDED_ON])) {
+            $this->_xmlLocations[self::FIELD_RECORDED_ON] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_RECORDED_ON][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_RECORDED_ON][0] = $xmlLocation;
         $this->recordedOn = $recordedOn;
         return $this;
     }
@@ -1509,11 +1509,11 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
             $openedRoot = true;
             $xw->openRootNode($config, 'DeviceUseStatement', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TIMING_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TIMING_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTimingDateTime())) {
             $xw->writeAttribute(self::FIELD_TIMING_DATE_TIME, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RECORDED_ON] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RECORDED_ON] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getRecordedOn())) {
             $xw->writeAttribute(self::FIELD_RECORDED_ON, $v->getValue()?->getFormattedValue());
         }
@@ -1548,13 +1548,13 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TIMING_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TIMING_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTimingDateTime())) {
             $xw->startElement(self::FIELD_TIMING_DATE_TIME);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RECORDED_ON] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RECORDED_ON] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getRecordedOn())) {
             $xw->startElement(self::FIELD_RECORDED_ON);
             $v->xmlSerialize($xw, $config);

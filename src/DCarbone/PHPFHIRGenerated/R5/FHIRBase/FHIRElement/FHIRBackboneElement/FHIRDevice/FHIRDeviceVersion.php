@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -171,7 +171,7 @@ class FHIRDeviceVersion extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRDeviceVersion Constructor
@@ -346,16 +346,16 @@ class FHIRDeviceVersion extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInstallDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $installDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setInstallDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $installDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $installDate && !($installDate instanceof FHIRDateTime)) {
             $installDate = new FHIRDateTime($installDate);
         }
         $this->_trackValueSet($this->installDate, $installDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_INSTALL_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_INSTALL_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_INSTALL_DATE])) {
+            $this->_xmlLocations[self::FIELD_INSTALL_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_INSTALL_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_INSTALL_DATE][0] = $xmlLocation;
         $this->installDate = $installDate;
         return $this;
     }
@@ -385,16 +385,16 @@ class FHIRDeviceVersion extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setValue(null|string|FHIRStringPrimitive|FHIRString $value = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setValue(null|string|FHIRStringPrimitive|FHIRString $value = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $value && !($value instanceof FHIRString)) {
             $value = new FHIRString($value);
         }
         $this->_trackValueSet($this->value, $value);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALUE])) {
-            $this->_primitiveXmlLocations[self::FIELD_VALUE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_VALUE])) {
+            $this->_xmlLocations[self::FIELD_VALUE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_VALUE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_VALUE][0] = $xmlLocation;
         $this->value = $value;
         return $this;
     }
@@ -631,11 +631,11 @@ class FHIRDeviceVersion extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'DeviceVersion', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INSTALL_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INSTALL_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInstallDate())) {
             $xw->writeAttribute(self::FIELD_INSTALL_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALUE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValue())) {
             $xw->writeAttribute(self::FIELD_VALUE, $v->getValue()?->getFormattedValue());
         }
@@ -650,13 +650,13 @@ class FHIRDeviceVersion extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INSTALL_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INSTALL_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInstallDate())) {
             $xw->startElement(self::FIELD_INSTALL_DATE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALUE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValue())) {
             $xw->startElement(self::FIELD_VALUE);
             $v->xmlSerialize($xw, $config);

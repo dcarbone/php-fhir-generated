@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -156,7 +156,7 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRSubstanceSpecificationCode Constructor
@@ -346,16 +346,16 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $statusDate && !($statusDate instanceof FHIRDateTime)) {
             $statusDate = new FHIRDateTime($statusDate);
         }
         $this->_trackValueSet($this->statusDate, $statusDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_STATUS_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_STATUS_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_STATUS_DATE])) {
+            $this->_xmlLocations[self::FIELD_STATUS_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_STATUS_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_STATUS_DATE][0] = $xmlLocation;
         $this->statusDate = $statusDate;
         return $this;
     }
@@ -385,16 +385,16 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $comment && !($comment instanceof FHIRString)) {
             $comment = new FHIRString($comment);
         }
         $this->_trackValueSet($this->comment, $comment);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_COMMENT])) {
-            $this->_primitiveXmlLocations[self::FIELD_COMMENT] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_COMMENT])) {
+            $this->_xmlLocations[self::FIELD_COMMENT] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_COMMENT][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_COMMENT][0] = $xmlLocation;
         $this->comment = $comment;
         return $this;
     }
@@ -711,11 +711,11 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'SubstanceSpecificationCode', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_STATUS_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_STATUS_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getStatusDate())) {
             $xw->writeAttribute(self::FIELD_STATUS_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_COMMENT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_COMMENT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getComment())) {
             $xw->writeAttribute(self::FIELD_COMMENT, $v->getValue()?->getFormattedValue());
         }
@@ -730,13 +730,13 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_STATUS_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_STATUS_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getStatusDate())) {
             $xw->startElement(self::FIELD_STATUS_DATE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_COMMENT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_COMMENT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getComment())) {
             $xw->startElement(self::FIELD_COMMENT);
             $v->xmlSerialize($xw, $config);

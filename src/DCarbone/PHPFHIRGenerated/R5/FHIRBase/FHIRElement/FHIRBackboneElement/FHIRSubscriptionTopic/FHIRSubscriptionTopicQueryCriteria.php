@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -176,7 +176,7 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRSubscriptionTopicQueryCriteria Constructor
@@ -310,16 +310,16 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPrevious(null|string|FHIRStringPrimitive|FHIRString $previous = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPrevious(null|string|FHIRStringPrimitive|FHIRString $previous = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $previous && !($previous instanceof FHIRString)) {
             $previous = new FHIRString($previous);
         }
         $this->_trackValueSet($this->previous, $previous);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PREVIOUS])) {
-            $this->_primitiveXmlLocations[self::FIELD_PREVIOUS] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PREVIOUS])) {
+            $this->_xmlLocations[self::FIELD_PREVIOUS] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PREVIOUS][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PREVIOUS][0] = $xmlLocation;
         $this->previous = $previous;
         return $this;
     }
@@ -385,16 +385,16 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCurrent(null|string|FHIRStringPrimitive|FHIRString $current = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setCurrent(null|string|FHIRStringPrimitive|FHIRString $current = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $current && !($current instanceof FHIRString)) {
             $current = new FHIRString($current);
         }
         $this->_trackValueSet($this->current, $current);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CURRENT])) {
-            $this->_primitiveXmlLocations[self::FIELD_CURRENT] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CURRENT])) {
+            $this->_xmlLocations[self::FIELD_CURRENT] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CURRENT][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_CURRENT][0] = $xmlLocation;
         $this->current = $current;
         return $this;
     }
@@ -462,16 +462,16 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setRequireBoth(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $requireBoth = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setRequireBoth(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $requireBoth = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $requireBoth && !($requireBoth instanceof FHIRBoolean)) {
             $requireBoth = new FHIRBoolean($requireBoth);
         }
         $this->_trackValueSet($this->requireBoth, $requireBoth);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_REQUIRE_BOTH])) {
-            $this->_primitiveXmlLocations[self::FIELD_REQUIRE_BOTH] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_REQUIRE_BOTH])) {
+            $this->_xmlLocations[self::FIELD_REQUIRE_BOTH] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_REQUIRE_BOTH][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_REQUIRE_BOTH][0] = $xmlLocation;
         $this->requireBoth = $requireBoth;
         return $this;
     }
@@ -735,20 +735,20 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'SubscriptionTopicQueryCriteria', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PREVIOUS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PREVIOUS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPrevious())) {
             $xw->writeAttribute(self::FIELD_PREVIOUS, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CURRENT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CURRENT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCurrent())) {
             $xw->writeAttribute(self::FIELD_CURRENT, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_REQUIRE_BOTH] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_REQUIRE_BOTH] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getRequireBoth())) {
             $xw->writeAttribute(self::FIELD_REQUIRE_BOTH, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PREVIOUS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PREVIOUS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPrevious())) {
             $xw->startElement(self::FIELD_PREVIOUS);
             $v->xmlSerialize($xw, $config);
@@ -759,7 +759,7 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CURRENT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CURRENT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCurrent())) {
             $xw->startElement(self::FIELD_CURRENT);
             $v->xmlSerialize($xw, $config);
@@ -770,7 +770,7 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_REQUIRE_BOTH] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_REQUIRE_BOTH] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getRequireBoth())) {
             $xw->startElement(self::FIELD_REQUIRE_BOTH);
             $v->xmlSerialize($xw, $config);

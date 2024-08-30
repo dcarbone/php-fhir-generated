@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -289,7 +289,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMolecularSequence Constructor
@@ -645,16 +645,16 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCoordinateSystem(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $coordinateSystem = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setCoordinateSystem(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $coordinateSystem = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $coordinateSystem && !($coordinateSystem instanceof FHIRInteger)) {
             $coordinateSystem = new FHIRInteger($coordinateSystem);
         }
         $this->_trackValueSet($this->coordinateSystem, $coordinateSystem);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_COORDINATE_SYSTEM])) {
-            $this->_primitiveXmlLocations[self::FIELD_COORDINATE_SYSTEM] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_COORDINATE_SYSTEM])) {
+            $this->_xmlLocations[self::FIELD_COORDINATE_SYSTEM] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_COORDINATE_SYSTEM][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_COORDINATE_SYSTEM][0] = $xmlLocation;
         $this->coordinateSystem = $coordinateSystem;
         return $this;
     }
@@ -959,16 +959,16 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setObservedSeq(null|string|FHIRStringPrimitive|FHIRString $observedSeq = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setObservedSeq(null|string|FHIRStringPrimitive|FHIRString $observedSeq = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $observedSeq && !($observedSeq instanceof FHIRString)) {
             $observedSeq = new FHIRString($observedSeq);
         }
         $this->_trackValueSet($this->observedSeq, $observedSeq);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_OBSERVED_SEQ])) {
-            $this->_primitiveXmlLocations[self::FIELD_OBSERVED_SEQ] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_OBSERVED_SEQ])) {
+            $this->_xmlLocations[self::FIELD_OBSERVED_SEQ] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_OBSERVED_SEQ][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_OBSERVED_SEQ][0] = $xmlLocation;
         $this->observedSeq = $observedSeq;
         return $this;
     }
@@ -1059,16 +1059,16 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setReadCoverage(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $readCoverage = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setReadCoverage(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $readCoverage = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $readCoverage && !($readCoverage instanceof FHIRInteger)) {
             $readCoverage = new FHIRInteger($readCoverage);
         }
         $this->_trackValueSet($this->readCoverage, $readCoverage);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_READ_COVERAGE])) {
-            $this->_primitiveXmlLocations[self::FIELD_READ_COVERAGE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_READ_COVERAGE])) {
+            $this->_xmlLocations[self::FIELD_READ_COVERAGE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_READ_COVERAGE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_READ_COVERAGE][0] = $xmlLocation;
         $this->readCoverage = $readCoverage;
         return $this;
     }
@@ -1809,15 +1809,15 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
             $openedRoot = true;
             $xw->openRootNode($config, 'MolecularSequence', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_COORDINATE_SYSTEM] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_COORDINATE_SYSTEM] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCoordinateSystem())) {
             $xw->writeAttribute(self::FIELD_COORDINATE_SYSTEM, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OBSERVED_SEQ] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OBSERVED_SEQ] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getObservedSeq())) {
             $xw->writeAttribute(self::FIELD_OBSERVED_SEQ, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_READ_COVERAGE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_READ_COVERAGE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getReadCoverage())) {
             $xw->writeAttribute(self::FIELD_READ_COVERAGE, $v->getValue()?->getFormattedValue());
         }
@@ -1832,7 +1832,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_COORDINATE_SYSTEM] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_COORDINATE_SYSTEM] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCoordinateSystem())) {
             $xw->startElement(self::FIELD_COORDINATE_SYSTEM);
             $v->xmlSerialize($xw, $config);
@@ -1873,7 +1873,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OBSERVED_SEQ] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OBSERVED_SEQ] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getObservedSeq())) {
             $xw->startElement(self::FIELD_OBSERVED_SEQ);
             $v->xmlSerialize($xw, $config);
@@ -1884,7 +1884,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_READ_COVERAGE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_READ_COVERAGE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getReadCoverage())) {
             $xw->startElement(self::FIELD_READ_COVERAGE);
             $v->xmlSerialize($xw, $config);

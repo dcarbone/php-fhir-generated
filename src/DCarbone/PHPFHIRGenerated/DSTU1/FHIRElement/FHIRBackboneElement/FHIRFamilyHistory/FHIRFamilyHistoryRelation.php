@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -249,7 +249,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRFamilyHistoryRelation Constructor
@@ -458,16 +458,16 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $name && !($name instanceof FHIRString)) {
             $name = new FHIRString($name);
         }
         $this->_trackValueSet($this->name, $name);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NAME])) {
-            $this->_primitiveXmlLocations[self::FIELD_NAME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NAME])) {
+            $this->_xmlLocations[self::FIELD_NAME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NAME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NAME][0] = $xmlLocation;
         $this->name = $name;
         return $this;
     }
@@ -571,16 +571,16 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setBornDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $bornDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setBornDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $bornDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $bornDate && !($bornDate instanceof FHIRDate)) {
             $bornDate = new FHIRDate($bornDate);
         }
         $this->_trackValueSet($this->bornDate, $bornDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_BORN_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_BORN_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_BORN_DATE])) {
+            $this->_xmlLocations[self::FIELD_BORN_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_BORN_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_BORN_DATE][0] = $xmlLocation;
         $this->bornDate = $bornDate;
         return $this;
     }
@@ -608,16 +608,16 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setBornString(null|string|FHIRStringPrimitive|FHIRString $bornString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setBornString(null|string|FHIRStringPrimitive|FHIRString $bornString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $bornString && !($bornString instanceof FHIRString)) {
             $bornString = new FHIRString($bornString);
         }
         $this->_trackValueSet($this->bornString, $bornString);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_BORN_STRING])) {
-            $this->_primitiveXmlLocations[self::FIELD_BORN_STRING] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_BORN_STRING])) {
+            $this->_xmlLocations[self::FIELD_BORN_STRING] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_BORN_STRING][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_BORN_STRING][0] = $xmlLocation;
         $this->bornString = $bornString;
         return $this;
     }
@@ -653,16 +653,16 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDeceasedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $deceasedBoolean = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDeceasedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $deceasedBoolean = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $deceasedBoolean && !($deceasedBoolean instanceof FHIRBoolean)) {
             $deceasedBoolean = new FHIRBoolean($deceasedBoolean);
         }
         $this->_trackValueSet($this->deceasedBoolean, $deceasedBoolean);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DECEASED_BOOLEAN])) {
-            $this->_primitiveXmlLocations[self::FIELD_DECEASED_BOOLEAN] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DECEASED_BOOLEAN])) {
+            $this->_xmlLocations[self::FIELD_DECEASED_BOOLEAN] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DECEASED_BOOLEAN][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DECEASED_BOOLEAN][0] = $xmlLocation;
         $this->deceasedBoolean = $deceasedBoolean;
         return $this;
     }
@@ -778,16 +778,16 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDeceasedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $deceasedDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDeceasedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $deceasedDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $deceasedDate && !($deceasedDate instanceof FHIRDate)) {
             $deceasedDate = new FHIRDate($deceasedDate);
         }
         $this->_trackValueSet($this->deceasedDate, $deceasedDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DECEASED_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_DECEASED_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DECEASED_DATE])) {
+            $this->_xmlLocations[self::FIELD_DECEASED_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DECEASED_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DECEASED_DATE][0] = $xmlLocation;
         $this->deceasedDate = $deceasedDate;
         return $this;
     }
@@ -823,16 +823,16 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDeceasedString(null|string|FHIRStringPrimitive|FHIRString $deceasedString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDeceasedString(null|string|FHIRStringPrimitive|FHIRString $deceasedString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $deceasedString && !($deceasedString instanceof FHIRString)) {
             $deceasedString = new FHIRString($deceasedString);
         }
         $this->_trackValueSet($this->deceasedString, $deceasedString);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DECEASED_STRING])) {
-            $this->_primitiveXmlLocations[self::FIELD_DECEASED_STRING] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DECEASED_STRING])) {
+            $this->_xmlLocations[self::FIELD_DECEASED_STRING] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DECEASED_STRING][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DECEASED_STRING][0] = $xmlLocation;
         $this->deceasedString = $deceasedString;
         return $this;
     }
@@ -864,16 +864,16 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setNote(null|string|FHIRStringPrimitive|FHIRString $note = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setNote(null|string|FHIRStringPrimitive|FHIRString $note = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $note && !($note instanceof FHIRString)) {
             $note = new FHIRString($note);
         }
         $this->_trackValueSet($this->note, $note);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NOTE])) {
-            $this->_primitiveXmlLocations[self::FIELD_NOTE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NOTE])) {
+            $this->_xmlLocations[self::FIELD_NOTE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NOTE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NOTE][0] = $xmlLocation;
         $this->note = $note;
         return $this;
     }
@@ -1369,36 +1369,36 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'FamilyHistoryRelation', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getName())) {
             $xw->writeAttribute(self::FIELD_NAME, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_BORN_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_BORN_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getBornDate())) {
             $xw->writeAttribute(self::FIELD_BORN_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_BORN_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_BORN_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getBornString())) {
             $xw->writeAttribute(self::FIELD_BORN_STRING, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DECEASED_BOOLEAN] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DECEASED_BOOLEAN] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDeceasedBoolean())) {
             $xw->writeAttribute(self::FIELD_DECEASED_BOOLEAN, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DECEASED_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DECEASED_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDeceasedDate())) {
             $xw->writeAttribute(self::FIELD_DECEASED_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DECEASED_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DECEASED_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDeceasedString())) {
             $xw->writeAttribute(self::FIELD_DECEASED_STRING, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NOTE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NOTE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getNote())) {
             $xw->writeAttribute(self::FIELD_NOTE, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getName())) {
             $xw->startElement(self::FIELD_NAME);
             $v->xmlSerialize($xw, $config);
@@ -1414,19 +1414,19 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_BORN_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_BORN_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getBornDate())) {
             $xw->startElement(self::FIELD_BORN_DATE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_BORN_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_BORN_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getBornString())) {
             $xw->startElement(self::FIELD_BORN_STRING);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DECEASED_BOOLEAN] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DECEASED_BOOLEAN] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDeceasedBoolean())) {
             $xw->startElement(self::FIELD_DECEASED_BOOLEAN);
             $v->xmlSerialize($xw, $config);
@@ -1442,19 +1442,19 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DECEASED_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DECEASED_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDeceasedDate())) {
             $xw->startElement(self::FIELD_DECEASED_DATE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DECEASED_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DECEASED_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDeceasedString())) {
             $xw->startElement(self::FIELD_DECEASED_STRING);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NOTE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NOTE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getNote())) {
             $xw->startElement(self::FIELD_NOTE);
             $v->xmlSerialize($xw, $config);

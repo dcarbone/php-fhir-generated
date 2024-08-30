@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -335,7 +335,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRGuidanceResponse Constructor
@@ -701,16 +701,16 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setModuleUri(null|string|FHIRUriPrimitive|FHIRUri $moduleUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setModuleUri(null|string|FHIRUriPrimitive|FHIRUri $moduleUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $moduleUri && !($moduleUri instanceof FHIRUri)) {
             $moduleUri = new FHIRUri($moduleUri);
         }
         $this->_trackValueSet($this->moduleUri, $moduleUri);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_MODULE_URI])) {
-            $this->_primitiveXmlLocations[self::FIELD_MODULE_URI] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_MODULE_URI])) {
+            $this->_xmlLocations[self::FIELD_MODULE_URI] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_MODULE_URI][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_MODULE_URI][0] = $xmlLocation;
         $this->moduleUri = $moduleUri;
         return $this;
     }
@@ -744,16 +744,16 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setModuleCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $moduleCanonical = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setModuleCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $moduleCanonical = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $moduleCanonical && !($moduleCanonical instanceof FHIRCanonical)) {
             $moduleCanonical = new FHIRCanonical($moduleCanonical);
         }
         $this->_trackValueSet($this->moduleCanonical, $moduleCanonical);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_MODULE_CANONICAL])) {
-            $this->_primitiveXmlLocations[self::FIELD_MODULE_CANONICAL] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_MODULE_CANONICAL])) {
+            $this->_xmlLocations[self::FIELD_MODULE_CANONICAL] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_MODULE_CANONICAL][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_MODULE_CANONICAL][0] = $xmlLocation;
         $this->moduleCanonical = $moduleCanonical;
         return $this;
     }
@@ -943,16 +943,16 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $occurrenceDateTime && !($occurrenceDateTime instanceof FHIRDateTime)) {
             $occurrenceDateTime = new FHIRDateTime($occurrenceDateTime);
         }
         $this->_trackValueSet($this->occurrenceDateTime, $occurrenceDateTime);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE_TIME])) {
-            $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_OCCURRENCE_DATE_TIME])) {
+            $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE_TIME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE_TIME][0] = $xmlLocation;
         $this->occurrenceDateTime = $occurrenceDateTime;
         return $this;
     }
@@ -1982,15 +1982,15 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
             $openedRoot = true;
             $xw->openRootNode($config, 'GuidanceResponse', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_MODULE_URI] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_MODULE_URI] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getModuleUri())) {
             $xw->writeAttribute(self::FIELD_MODULE_URI, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_MODULE_CANONICAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_MODULE_CANONICAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getModuleCanonical())) {
             $xw->writeAttribute(self::FIELD_MODULE_CANONICAL, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getOccurrenceDateTime())) {
             $xw->writeAttribute(self::FIELD_OCCURRENCE_DATE_TIME, $v->getValue()?->getFormattedValue());
         }
@@ -2005,13 +2005,13 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_MODULE_URI] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_MODULE_URI] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getModuleUri())) {
             $xw->startElement(self::FIELD_MODULE_URI);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_MODULE_CANONICAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_MODULE_CANONICAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getModuleCanonical())) {
             $xw->startElement(self::FIELD_MODULE_CANONICAL);
             $v->xmlSerialize($xw, $config);
@@ -2037,7 +2037,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getOccurrenceDateTime())) {
             $xw->startElement(self::FIELD_OCCURRENCE_DATE_TIME);
             $v->xmlSerialize($xw, $config);

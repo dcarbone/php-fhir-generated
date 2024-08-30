@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -255,7 +255,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRObservationDefinitionQualifiedValue Constructor
@@ -660,16 +660,16 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCondition(null|string|FHIRStringPrimitive|FHIRString $condition = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setCondition(null|string|FHIRStringPrimitive|FHIRString $condition = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $condition && !($condition instanceof FHIRString)) {
             $condition = new FHIRString($condition);
         }
         $this->_trackValueSet($this->condition, $condition);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CONDITION])) {
-            $this->_primitiveXmlLocations[self::FIELD_CONDITION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CONDITION])) {
+            $this->_xmlLocations[self::FIELD_CONDITION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CONDITION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_CONDITION][0] = $xmlLocation;
         $this->condition = $condition;
         return $this;
     }
@@ -771,16 +771,16 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setValidCodedValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $validCodedValueSet = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setValidCodedValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $validCodedValueSet = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $validCodedValueSet && !($validCodedValueSet instanceof FHIRCanonical)) {
             $validCodedValueSet = new FHIRCanonical($validCodedValueSet);
         }
         $this->_trackValueSet($this->validCodedValueSet, $validCodedValueSet);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALID_CODED_VALUE_SET])) {
-            $this->_primitiveXmlLocations[self::FIELD_VALID_CODED_VALUE_SET] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_VALID_CODED_VALUE_SET])) {
+            $this->_xmlLocations[self::FIELD_VALID_CODED_VALUE_SET] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_VALID_CODED_VALUE_SET][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_VALID_CODED_VALUE_SET][0] = $xmlLocation;
         $this->validCodedValueSet = $validCodedValueSet;
         return $this;
     }
@@ -814,16 +814,16 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setNormalCodedValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $normalCodedValueSet = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setNormalCodedValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $normalCodedValueSet = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $normalCodedValueSet && !($normalCodedValueSet instanceof FHIRCanonical)) {
             $normalCodedValueSet = new FHIRCanonical($normalCodedValueSet);
         }
         $this->_trackValueSet($this->normalCodedValueSet, $normalCodedValueSet);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NORMAL_CODED_VALUE_SET])) {
-            $this->_primitiveXmlLocations[self::FIELD_NORMAL_CODED_VALUE_SET] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NORMAL_CODED_VALUE_SET])) {
+            $this->_xmlLocations[self::FIELD_NORMAL_CODED_VALUE_SET] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NORMAL_CODED_VALUE_SET][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NORMAL_CODED_VALUE_SET][0] = $xmlLocation;
         $this->normalCodedValueSet = $normalCodedValueSet;
         return $this;
     }
@@ -857,16 +857,16 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAbnormalCodedValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $abnormalCodedValueSet = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAbnormalCodedValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $abnormalCodedValueSet = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $abnormalCodedValueSet && !($abnormalCodedValueSet instanceof FHIRCanonical)) {
             $abnormalCodedValueSet = new FHIRCanonical($abnormalCodedValueSet);
         }
         $this->_trackValueSet($this->abnormalCodedValueSet, $abnormalCodedValueSet);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ABNORMAL_CODED_VALUE_SET])) {
-            $this->_primitiveXmlLocations[self::FIELD_ABNORMAL_CODED_VALUE_SET] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ABNORMAL_CODED_VALUE_SET])) {
+            $this->_xmlLocations[self::FIELD_ABNORMAL_CODED_VALUE_SET] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ABNORMAL_CODED_VALUE_SET][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ABNORMAL_CODED_VALUE_SET][0] = $xmlLocation;
         $this->abnormalCodedValueSet = $abnormalCodedValueSet;
         return $this;
     }
@@ -900,16 +900,16 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCriticalCodedValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $criticalCodedValueSet = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setCriticalCodedValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $criticalCodedValueSet = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $criticalCodedValueSet && !($criticalCodedValueSet instanceof FHIRCanonical)) {
             $criticalCodedValueSet = new FHIRCanonical($criticalCodedValueSet);
         }
         $this->_trackValueSet($this->criticalCodedValueSet, $criticalCodedValueSet);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CRITICAL_CODED_VALUE_SET])) {
-            $this->_primitiveXmlLocations[self::FIELD_CRITICAL_CODED_VALUE_SET] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CRITICAL_CODED_VALUE_SET])) {
+            $this->_xmlLocations[self::FIELD_CRITICAL_CODED_VALUE_SET] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CRITICAL_CODED_VALUE_SET][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_CRITICAL_CODED_VALUE_SET][0] = $xmlLocation;
         $this->criticalCodedValueSet = $criticalCodedValueSet;
         return $this;
     }
@@ -1324,23 +1324,23 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ObservationDefinitionQualifiedValue', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CONDITION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CONDITION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCondition())) {
             $xw->writeAttribute(self::FIELD_CONDITION, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALID_CODED_VALUE_SET] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALID_CODED_VALUE_SET] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValidCodedValueSet())) {
             $xw->writeAttribute(self::FIELD_VALID_CODED_VALUE_SET, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NORMAL_CODED_VALUE_SET] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NORMAL_CODED_VALUE_SET] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getNormalCodedValueSet())) {
             $xw->writeAttribute(self::FIELD_NORMAL_CODED_VALUE_SET, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ABNORMAL_CODED_VALUE_SET] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ABNORMAL_CODED_VALUE_SET] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAbnormalCodedValueSet())) {
             $xw->writeAttribute(self::FIELD_ABNORMAL_CODED_VALUE_SET, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CRITICAL_CODED_VALUE_SET] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CRITICAL_CODED_VALUE_SET] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCriticalCodedValueSet())) {
             $xw->writeAttribute(self::FIELD_CRITICAL_CODED_VALUE_SET, $v->getValue()?->getFormattedValue());
         }
@@ -1370,7 +1370,7 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CONDITION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CONDITION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCondition())) {
             $xw->startElement(self::FIELD_CONDITION);
             $v->xmlSerialize($xw, $config);
@@ -1386,25 +1386,25 @@ class FHIRObservationDefinitionQualifiedValue extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALID_CODED_VALUE_SET] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALID_CODED_VALUE_SET] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValidCodedValueSet())) {
             $xw->startElement(self::FIELD_VALID_CODED_VALUE_SET);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NORMAL_CODED_VALUE_SET] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NORMAL_CODED_VALUE_SET] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getNormalCodedValueSet())) {
             $xw->startElement(self::FIELD_NORMAL_CODED_VALUE_SET);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ABNORMAL_CODED_VALUE_SET] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ABNORMAL_CODED_VALUE_SET] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAbnormalCodedValueSet())) {
             $xw->startElement(self::FIELD_ABNORMAL_CODED_VALUE_SET);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CRITICAL_CODED_VALUE_SET] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CRITICAL_CODED_VALUE_SET] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCriticalCodedValueSet())) {
             $xw->startElement(self::FIELD_CRITICAL_CODED_VALUE_SET);
             $v->xmlSerialize($xw, $config);

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -145,7 +145,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMolecularSequenceStructureVariant Constructor
@@ -281,16 +281,16 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setExact(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exact = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setExact(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exact = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $exact && !($exact instanceof FHIRBoolean)) {
             $exact = new FHIRBoolean($exact);
         }
         $this->_trackValueSet($this->exact, $exact);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EXACT])) {
-            $this->_primitiveXmlLocations[self::FIELD_EXACT] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EXACT])) {
+            $this->_xmlLocations[self::FIELD_EXACT] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EXACT][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_EXACT][0] = $xmlLocation;
         $this->exact = $exact;
         return $this;
     }
@@ -320,16 +320,16 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setLength(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $length = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setLength(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $length = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $length && !($length instanceof FHIRInteger)) {
             $length = new FHIRInteger($length);
         }
         $this->_trackValueSet($this->length, $length);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_LENGTH])) {
-            $this->_primitiveXmlLocations[self::FIELD_LENGTH] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_LENGTH])) {
+            $this->_xmlLocations[self::FIELD_LENGTH] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_LENGTH][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_LENGTH][0] = $xmlLocation;
         $this->length = $length;
         return $this;
     }
@@ -645,11 +645,11 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'MolecularSequenceStructureVariant', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXACT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXACT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getExact())) {
             $xw->writeAttribute(self::FIELD_EXACT, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LENGTH] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LENGTH] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getLength())) {
             $xw->writeAttribute(self::FIELD_LENGTH, $v->getValue()?->getFormattedValue());
         }
@@ -659,13 +659,13 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXACT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXACT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getExact())) {
             $xw->startElement(self::FIELD_EXACT);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LENGTH] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LENGTH] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getLength())) {
             $xw->startElement(self::FIELD_LENGTH);
             $v->xmlSerialize($xw, $config);

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -163,7 +163,7 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRSubscriptionTopicNotificationShape Constructor
@@ -299,16 +299,16 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setResource(null|string|FHIRUriPrimitive|FHIRUri $resource = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setResource(null|string|FHIRUriPrimitive|FHIRUri $resource = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $resource && !($resource instanceof FHIRUri)) {
             $resource = new FHIRUri($resource);
         }
         $this->_trackValueSet($this->resource, $resource);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_RESOURCE])) {
-            $this->_primitiveXmlLocations[self::FIELD_RESOURCE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_RESOURCE])) {
+            $this->_xmlLocations[self::FIELD_RESOURCE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_RESOURCE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_RESOURCE][0] = $xmlLocation;
         $this->resource = $resource;
         return $this;
     }
@@ -344,16 +344,20 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addInclude(null|string|FHIRStringPrimitive|FHIRString $include = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addInclude(null|string|FHIRStringPrimitive|FHIRString $include = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $include && !($include instanceof FHIRString)) {
             $include = new FHIRString($include);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_INCLUDE])) {
-            $this->_primitiveXmlLocations[self::FIELD_INCLUDE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_INCLUDE])) {
+            $this->_xmlLocations[self::FIELD_INCLUDE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_INCLUDE][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_INCLUDE]) {
+            $this->_xmlLocations[self::FIELD_INCLUDE][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_INCLUDE][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->include[] = $include;
         return $this;
     }
@@ -372,9 +376,9 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInclude(array $include = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setInclude(array $include = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_INCLUDE]);
+        unset($this->_xmlLocations[self::FIELD_INCLUDE]);
         if ([] !== $this->include) {
             $this->_trackValuesRemoved(count($this->include));
             $this->include = [];
@@ -423,16 +427,20 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addRevInclude(null|string|FHIRStringPrimitive|FHIRString $revInclude = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addRevInclude(null|string|FHIRStringPrimitive|FHIRString $revInclude = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $revInclude && !($revInclude instanceof FHIRString)) {
             $revInclude = new FHIRString($revInclude);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_REV_INCLUDE])) {
-            $this->_primitiveXmlLocations[self::FIELD_REV_INCLUDE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_REV_INCLUDE])) {
+            $this->_xmlLocations[self::FIELD_REV_INCLUDE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_REV_INCLUDE][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_REV_INCLUDE]) {
+            $this->_xmlLocations[self::FIELD_REV_INCLUDE][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_REV_INCLUDE][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->revInclude[] = $revInclude;
         return $this;
     }
@@ -451,9 +459,9 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setRevInclude(array $revInclude = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setRevInclude(array $revInclude = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_REV_INCLUDE]);
+        unset($this->_xmlLocations[self::FIELD_REV_INCLUDE]);
         if ([] !== $this->revInclude) {
             $this->_trackValuesRemoved(count($this->revInclude));
             $this->revInclude = [];
@@ -686,30 +694,30 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'SubscriptionTopicNotificationShape', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RESOURCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RESOURCE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getResource())) {
             $xw->writeAttribute(self::FIELD_RESOURCE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INCLUDE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INCLUDE] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getInclude())) {
             $xw->writeAttribute(self::FIELD_INCLUDE, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getInclude()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_INCLUDE, $vs[$idx]->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_REV_INCLUDE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_REV_INCLUDE] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getRevInclude())) {
             $xw->writeAttribute(self::FIELD_REV_INCLUDE, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getRevInclude()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_REV_INCLUDE, $vs[$idx]->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RESOURCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RESOURCE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getResource())) {
             $xw->startElement(self::FIELD_RESOURCE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INCLUDE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INCLUDE] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getInclude())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
@@ -719,7 +727,7 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
                 }
             }
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_REV_INCLUDE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_REV_INCLUDE] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getRevInclude())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

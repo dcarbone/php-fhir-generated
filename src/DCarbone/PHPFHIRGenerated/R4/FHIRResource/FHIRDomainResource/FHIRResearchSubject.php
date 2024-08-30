@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -204,7 +204,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRResearchSubject Constructor
@@ -551,16 +551,16 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAssignedArm(null|string|FHIRStringPrimitive|FHIRString $assignedArm = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAssignedArm(null|string|FHIRStringPrimitive|FHIRString $assignedArm = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $assignedArm && !($assignedArm instanceof FHIRString)) {
             $assignedArm = new FHIRString($assignedArm);
         }
         $this->_trackValueSet($this->assignedArm, $assignedArm);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ASSIGNED_ARM])) {
-            $this->_primitiveXmlLocations[self::FIELD_ASSIGNED_ARM] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ASSIGNED_ARM])) {
+            $this->_xmlLocations[self::FIELD_ASSIGNED_ARM] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ASSIGNED_ARM][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ASSIGNED_ARM][0] = $xmlLocation;
         $this->assignedArm = $assignedArm;
         return $this;
     }
@@ -592,16 +592,16 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setActualArm(null|string|FHIRStringPrimitive|FHIRString $actualArm = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setActualArm(null|string|FHIRStringPrimitive|FHIRString $actualArm = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $actualArm && !($actualArm instanceof FHIRString)) {
             $actualArm = new FHIRString($actualArm);
         }
         $this->_trackValueSet($this->actualArm, $actualArm);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ACTUAL_ARM])) {
-            $this->_primitiveXmlLocations[self::FIELD_ACTUAL_ARM] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ACTUAL_ARM])) {
+            $this->_xmlLocations[self::FIELD_ACTUAL_ARM] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ACTUAL_ARM][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ACTUAL_ARM][0] = $xmlLocation;
         $this->actualArm = $actualArm;
         return $this;
     }
@@ -1038,11 +1038,11 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
             $openedRoot = true;
             $xw->openRootNode($config, 'ResearchSubject', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ASSIGNED_ARM] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ASSIGNED_ARM] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAssignedArm())) {
             $xw->writeAttribute(self::FIELD_ASSIGNED_ARM, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTUAL_ARM] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACTUAL_ARM] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getActualArm())) {
             $xw->writeAttribute(self::FIELD_ACTUAL_ARM, $v->getValue()?->getFormattedValue());
         }
@@ -1072,13 +1072,13 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ASSIGNED_ARM] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ASSIGNED_ARM] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAssignedArm())) {
             $xw->startElement(self::FIELD_ASSIGNED_ARM);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTUAL_ARM] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACTUAL_ARM] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getActualArm())) {
             $xw->startElement(self::FIELD_ACTUAL_ARM);
             $v->xmlSerialize($xw, $config);

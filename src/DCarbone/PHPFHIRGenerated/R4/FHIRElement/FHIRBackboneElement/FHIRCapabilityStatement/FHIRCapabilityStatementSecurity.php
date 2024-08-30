@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapab
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRCapabilityStatementSecurity Constructor
@@ -233,16 +233,16 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCors(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $cors = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setCors(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $cors = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $cors && !($cors instanceof FHIRBoolean)) {
             $cors = new FHIRBoolean($cors);
         }
         $this->_trackValueSet($this->cors, $cors);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CORS])) {
-            $this->_primitiveXmlLocations[self::FIELD_CORS] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CORS])) {
+            $this->_xmlLocations[self::FIELD_CORS] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CORS][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_CORS][0] = $xmlLocation;
         $this->cors = $cors;
         return $this;
     }
@@ -342,16 +342,16 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $description && !($description instanceof FHIRMarkdown)) {
             $description = new FHIRMarkdown($description);
         }
         $this->_trackValueSet($this->description, $description);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DESCRIPTION])) {
-            $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DESCRIPTION])) {
+            $this->_xmlLocations[self::FIELD_DESCRIPTION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
         $this->description = $description;
         return $this;
     }
@@ -571,16 +571,16 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'CapabilityStatementSecurity', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CORS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CORS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCors())) {
             $xw->writeAttribute(self::FIELD_CORS, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDescription())) {
             $xw->writeAttribute(self::FIELD_DESCRIPTION, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CORS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CORS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCors())) {
             $xw->startElement(self::FIELD_CORS);
             $v->xmlSerialize($xw, $config);
@@ -591,7 +591,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDescription())) {
             $xw->startElement(self::FIELD_DESCRIPTION);
             $v->xmlSerialize($xw, $config);

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -237,7 +237,7 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRArtifactAssessmentContent Constructor
@@ -471,16 +471,16 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSummary(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $summary = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSummary(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $summary = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $summary && !($summary instanceof FHIRMarkdown)) {
             $summary = new FHIRMarkdown($summary);
         }
         $this->_trackValueSet($this->summary, $summary);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SUMMARY])) {
-            $this->_primitiveXmlLocations[self::FIELD_SUMMARY] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SUMMARY])) {
+            $this->_xmlLocations[self::FIELD_SUMMARY] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SUMMARY][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SUMMARY][0] = $xmlLocation;
         $this->summary = $summary;
         return $this;
     }
@@ -682,16 +682,20 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addPath(null|string|FHIRUriPrimitive|FHIRUri $path = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addPath(null|string|FHIRUriPrimitive|FHIRUri $path = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $path && !($path instanceof FHIRUri)) {
             $path = new FHIRUri($path);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PATH])) {
-            $this->_primitiveXmlLocations[self::FIELD_PATH] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PATH])) {
+            $this->_xmlLocations[self::FIELD_PATH] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PATH][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_PATH]) {
+            $this->_xmlLocations[self::FIELD_PATH][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_PATH][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->path[] = $path;
         return $this;
     }
@@ -708,9 +712,9 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPath(array $path = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPath(array $path = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_PATH]);
+        unset($this->_xmlLocations[self::FIELD_PATH]);
         if ([] !== $this->path) {
             $this->_trackValuesRemoved(count($this->path));
             $this->path = [];
@@ -816,16 +820,16 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setFreeToShare(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $freeToShare = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setFreeToShare(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $freeToShare = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $freeToShare && !($freeToShare instanceof FHIRBoolean)) {
             $freeToShare = new FHIRBoolean($freeToShare);
         }
         $this->_trackValueSet($this->freeToShare, $freeToShare);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_FREE_TO_SHARE])) {
-            $this->_primitiveXmlLocations[self::FIELD_FREE_TO_SHARE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_FREE_TO_SHARE])) {
+            $this->_xmlLocations[self::FIELD_FREE_TO_SHARE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_FREE_TO_SHARE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_FREE_TO_SHARE][0] = $xmlLocation;
         $this->freeToShare = $freeToShare;
         return $this;
     }
@@ -1246,17 +1250,17 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ArtifactAssessmentContent', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SUMMARY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SUMMARY] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSummary())) {
             $xw->writeAttribute(self::FIELD_SUMMARY, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PATH] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PATH] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getPath())) {
             $xw->writeAttribute(self::FIELD_PATH, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getPath()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_PATH, $vs[$idx]->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_FREE_TO_SHARE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_FREE_TO_SHARE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getFreeToShare())) {
             $xw->writeAttribute(self::FIELD_FREE_TO_SHARE, $v->getValue()?->getFormattedValue());
         }
@@ -1266,7 +1270,7 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SUMMARY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SUMMARY] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSummary())) {
             $xw->startElement(self::FIELD_SUMMARY);
             $v->xmlSerialize($xw, $config);
@@ -1292,7 +1296,7 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PATH] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PATH] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getPath())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
@@ -1307,7 +1311,7 @@ class FHIRArtifactAssessmentContent extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_FREE_TO_SHARE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_FREE_TO_SHARE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getFreeToShare())) {
             $xw->startElement(self::FIELD_FREE_TO_SHARE);
             $v->xmlSerialize($xw, $config);

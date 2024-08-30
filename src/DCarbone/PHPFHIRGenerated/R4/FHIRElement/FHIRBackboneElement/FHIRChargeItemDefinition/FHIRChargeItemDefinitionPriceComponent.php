@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCharg
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -149,7 +149,7 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRChargeItemDefinitionPriceComponent Constructor
@@ -318,16 +318,16 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setFactor(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setFactor(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $factor && !($factor instanceof FHIRDecimal)) {
             $factor = new FHIRDecimal($factor);
         }
         $this->_trackValueSet($this->factor, $factor);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_FACTOR])) {
-            $this->_primitiveXmlLocations[self::FIELD_FACTOR] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_FACTOR])) {
+            $this->_xmlLocations[self::FIELD_FACTOR] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_FACTOR][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_FACTOR][0] = $xmlLocation;
         $this->factor = $factor;
         return $this;
     }
@@ -590,7 +590,7 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ChargeItemDefinitionPriceComponent', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_FACTOR] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_FACTOR] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getFactor())) {
             $xw->writeAttribute(self::FIELD_FACTOR, $v->getValue()?->getFormattedValue());
         }
@@ -605,7 +605,7 @@ class FHIRChargeItemDefinitionPriceComponent extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_FACTOR] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_FACTOR] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getFactor())) {
             $xw->startElement(self::FIELD_FACTOR);
             $v->xmlSerialize($xw, $config);

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -179,7 +179,7 @@ class FHIRResource extends FHIRBase
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRResource Constructor
@@ -292,16 +292,16 @@ class FHIRResource extends FHIRBase
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setId(null|string|FHIRIdPrimitive|FHIRId $id = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setId(null|string|FHIRIdPrimitive|FHIRId $id = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $id && !($id instanceof FHIRId)) {
             $id = new FHIRId($id);
         }
         $this->_trackValueSet($this->id, $id);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ID])) {
-            $this->_primitiveXmlLocations[self::FIELD_ID] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ID])) {
+            $this->_xmlLocations[self::FIELD_ID] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ID][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ID][0] = $xmlLocation;
         $this->id = $id;
         return $this;
     }
@@ -379,16 +379,16 @@ class FHIRResource extends FHIRBase
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setImplicitRules(null|string|FHIRUriPrimitive|FHIRUri $implicitRules = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setImplicitRules(null|string|FHIRUriPrimitive|FHIRUri $implicitRules = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $implicitRules && !($implicitRules instanceof FHIRUri)) {
             $implicitRules = new FHIRUri($implicitRules);
         }
         $this->_trackValueSet($this->implicitRules, $implicitRules);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_IMPLICIT_RULES])) {
-            $this->_primitiveXmlLocations[self::FIELD_IMPLICIT_RULES] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_IMPLICIT_RULES])) {
+            $this->_xmlLocations[self::FIELD_IMPLICIT_RULES] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_IMPLICIT_RULES][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_IMPLICIT_RULES][0] = $xmlLocation;
         $this->implicitRules = $implicitRules;
         return $this;
     }
@@ -420,16 +420,16 @@ class FHIRResource extends FHIRBase
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $language && !($language instanceof FHIRCode)) {
             $language = new FHIRCode($language);
         }
         $this->_trackValueSet($this->language, $language);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_LANGUAGE])) {
-            $this->_primitiveXmlLocations[self::FIELD_LANGUAGE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_LANGUAGE])) {
+            $this->_xmlLocations[self::FIELD_LANGUAGE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_LANGUAGE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_LANGUAGE][0] = $xmlLocation;
         $this->language = $language;
         return $this;
     }
@@ -624,19 +624,19 @@ class FHIRResource extends FHIRBase
             $openedRoot = true;
             $xw->openRootNode($config, 'Resource', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ID] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getId())) {
             $xw->writeAttribute(self::FIELD_ID, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_IMPLICIT_RULES] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_IMPLICIT_RULES] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getImplicitRules())) {
             $xw->writeAttribute(self::FIELD_IMPLICIT_RULES, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LANGUAGE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LANGUAGE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getLanguage())) {
             $xw->writeAttribute(self::FIELD_LANGUAGE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ID] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getId())) {
             $xw->startElement(self::FIELD_ID);
             $v->xmlSerialize($xw, $config);
@@ -647,13 +647,13 @@ class FHIRResource extends FHIRBase
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_IMPLICIT_RULES] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_IMPLICIT_RULES] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getImplicitRules())) {
             $xw->startElement(self::FIELD_IMPLICIT_RULES);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LANGUAGE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LANGUAGE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getLanguage())) {
             $xw->startElement(self::FIELD_LANGUAGE);
             $v->xmlSerialize($xw, $config);

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -204,7 +204,7 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRDeviceDefinitionGuideline Constructor
@@ -436,16 +436,16 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setUsageInstruction(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $usageInstruction = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setUsageInstruction(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $usageInstruction = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $usageInstruction && !($usageInstruction instanceof FHIRMarkdown)) {
             $usageInstruction = new FHIRMarkdown($usageInstruction);
         }
         $this->_trackValueSet($this->usageInstruction, $usageInstruction);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_USAGE_INSTRUCTION])) {
-            $this->_primitiveXmlLocations[self::FIELD_USAGE_INSTRUCTION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_USAGE_INSTRUCTION])) {
+            $this->_xmlLocations[self::FIELD_USAGE_INSTRUCTION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_USAGE_INSTRUCTION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_USAGE_INSTRUCTION][0] = $xmlLocation;
         $this->usageInstruction = $usageInstruction;
         return $this;
     }
@@ -728,16 +728,16 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setIntendedUse(null|string|FHIRStringPrimitive|FHIRString $intendedUse = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setIntendedUse(null|string|FHIRStringPrimitive|FHIRString $intendedUse = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $intendedUse && !($intendedUse instanceof FHIRString)) {
             $intendedUse = new FHIRString($intendedUse);
         }
         $this->_trackValueSet($this->intendedUse, $intendedUse);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_INTENDED_USE])) {
-            $this->_primitiveXmlLocations[self::FIELD_INTENDED_USE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_INTENDED_USE])) {
+            $this->_xmlLocations[self::FIELD_INTENDED_USE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_INTENDED_USE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_INTENDED_USE][0] = $xmlLocation;
         $this->intendedUse = $intendedUse;
         return $this;
     }
@@ -1041,11 +1041,11 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'DeviceDefinitionGuideline', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_USAGE_INSTRUCTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_USAGE_INSTRUCTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getUsageInstruction())) {
             $xw->writeAttribute(self::FIELD_USAGE_INSTRUCTION, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INTENDED_USE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INTENDED_USE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getIntendedUse())) {
             $xw->writeAttribute(self::FIELD_INTENDED_USE, $v->getValue()?->getFormattedValue());
         }
@@ -1055,7 +1055,7 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_USAGE_INSTRUCTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_USAGE_INSTRUCTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getUsageInstruction())) {
             $xw->startElement(self::FIELD_USAGE_INSTRUCTION);
             $v->xmlSerialize($xw, $config);
@@ -1081,7 +1081,7 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INTENDED_USE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INTENDED_USE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getIntendedUse())) {
             $xw->startElement(self::FIELD_INTENDED_USE);
             $v->xmlSerialize($xw, $config);

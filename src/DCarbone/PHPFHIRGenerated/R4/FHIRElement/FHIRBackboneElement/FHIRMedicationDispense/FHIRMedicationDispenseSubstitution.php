@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -148,7 +148,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMedicationDispenseSubstitution Constructor
@@ -249,16 +249,16 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setWasSubstituted(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $wasSubstituted = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setWasSubstituted(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $wasSubstituted = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $wasSubstituted && !($wasSubstituted instanceof FHIRBoolean)) {
             $wasSubstituted = new FHIRBoolean($wasSubstituted);
         }
         $this->_trackValueSet($this->wasSubstituted, $wasSubstituted);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_WAS_SUBSTITUTED])) {
-            $this->_primitiveXmlLocations[self::FIELD_WAS_SUBSTITUTED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_WAS_SUBSTITUTED])) {
+            $this->_xmlLocations[self::FIELD_WAS_SUBSTITUTED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_WAS_SUBSTITUTED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_WAS_SUBSTITUTED][0] = $xmlLocation;
         $this->wasSubstituted = $wasSubstituted;
         return $this;
     }
@@ -653,12 +653,12 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'MedicationDispenseSubstitution', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_WAS_SUBSTITUTED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_WAS_SUBSTITUTED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getWasSubstituted())) {
             $xw->writeAttribute(self::FIELD_WAS_SUBSTITUTED, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_WAS_SUBSTITUTED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_WAS_SUBSTITUTED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getWasSubstituted())) {
             $xw->startElement(self::FIELD_WAS_SUBSTITUTED);
             $v->xmlSerialize($xw, $config);

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -167,7 +167,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRSubstancePolymer Constructor
@@ -447,16 +447,20 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addModification(null|string|FHIRStringPrimitive|FHIRString $modification = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addModification(null|string|FHIRStringPrimitive|FHIRString $modification = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $modification && !($modification instanceof FHIRString)) {
             $modification = new FHIRString($modification);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_MODIFICATION])) {
-            $this->_primitiveXmlLocations[self::FIELD_MODIFICATION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_MODIFICATION])) {
+            $this->_xmlLocations[self::FIELD_MODIFICATION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_MODIFICATION][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_MODIFICATION]) {
+            $this->_xmlLocations[self::FIELD_MODIFICATION][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_MODIFICATION][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->modification[] = $modification;
         return $this;
     }
@@ -472,9 +476,9 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setModification(array $modification = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setModification(array $modification = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_MODIFICATION]);
+        unset($this->_xmlLocations[self::FIELD_MODIFICATION]);
         if ([] !== $this->modification) {
             $this->_trackValuesRemoved(count($this->modification));
             $this->modification = [];
@@ -951,7 +955,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
             $openedRoot = true;
             $xw->openRootNode($config, 'SubstancePolymer', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_MODIFICATION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_MODIFICATION] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getModification())) {
             $xw->writeAttribute(self::FIELD_MODIFICATION, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getModification()) && isset($vs[$idx])) {
@@ -973,7 +977,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_MODIFICATION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_MODIFICATION] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getModification())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

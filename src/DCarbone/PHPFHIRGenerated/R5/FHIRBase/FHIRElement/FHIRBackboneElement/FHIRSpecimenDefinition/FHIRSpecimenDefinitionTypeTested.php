@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -230,7 +230,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRSpecimenDefinitionTypeTested Constructor
@@ -409,16 +409,16 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setIsDerived(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isDerived = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setIsDerived(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isDerived = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $isDerived && !($isDerived instanceof FHIRBoolean)) {
             $isDerived = new FHIRBoolean($isDerived);
         }
         $this->_trackValueSet($this->isDerived, $isDerived);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_IS_DERIVED])) {
-            $this->_primitiveXmlLocations[self::FIELD_IS_DERIVED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_IS_DERIVED])) {
+            $this->_xmlLocations[self::FIELD_IS_DERIVED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_IS_DERIVED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_IS_DERIVED][0] = $xmlLocation;
         $this->isDerived = $isDerived;
         return $this;
     }
@@ -554,16 +554,16 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setRequirement(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $requirement = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setRequirement(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $requirement = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $requirement && !($requirement instanceof FHIRMarkdown)) {
             $requirement = new FHIRMarkdown($requirement);
         }
         $this->_trackValueSet($this->requirement, $requirement);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_REQUIREMENT])) {
-            $this->_primitiveXmlLocations[self::FIELD_REQUIREMENT] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_REQUIREMENT])) {
+            $this->_xmlLocations[self::FIELD_REQUIREMENT] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_REQUIREMENT][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_REQUIREMENT][0] = $xmlLocation;
         $this->requirement = $requirement;
         return $this;
     }
@@ -627,16 +627,16 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSingleUse(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $singleUse = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSingleUse(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $singleUse = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $singleUse && !($singleUse instanceof FHIRBoolean)) {
             $singleUse = new FHIRBoolean($singleUse);
         }
         $this->_trackValueSet($this->singleUse, $singleUse);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SINGLE_USE])) {
-            $this->_primitiveXmlLocations[self::FIELD_SINGLE_USE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SINGLE_USE])) {
+            $this->_xmlLocations[self::FIELD_SINGLE_USE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SINGLE_USE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SINGLE_USE][0] = $xmlLocation;
         $this->singleUse = $singleUse;
         return $this;
     }
@@ -1184,20 +1184,20 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'SpecimenDefinitionTypeTested', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_IS_DERIVED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_IS_DERIVED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getIsDerived())) {
             $xw->writeAttribute(self::FIELD_IS_DERIVED, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_REQUIREMENT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_REQUIREMENT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getRequirement())) {
             $xw->writeAttribute(self::FIELD_REQUIREMENT, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SINGLE_USE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SINGLE_USE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSingleUse())) {
             $xw->writeAttribute(self::FIELD_SINGLE_USE, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_IS_DERIVED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_IS_DERIVED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getIsDerived())) {
             $xw->startElement(self::FIELD_IS_DERIVED);
             $v->xmlSerialize($xw, $config);
@@ -1218,7 +1218,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_REQUIREMENT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_REQUIREMENT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getRequirement())) {
             $xw->startElement(self::FIELD_REQUIREMENT);
             $v->xmlSerialize($xw, $config);
@@ -1229,7 +1229,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SINGLE_USE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SINGLE_USE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSingleUse())) {
             $xw->startElement(self::FIELD_SINGLE_USE);
             $v->xmlSerialize($xw, $config);

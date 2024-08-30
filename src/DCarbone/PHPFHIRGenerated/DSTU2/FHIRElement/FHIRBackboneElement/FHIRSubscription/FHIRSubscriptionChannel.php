@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -153,7 +153,7 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRSubscriptionChannel Constructor
@@ -300,16 +300,16 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setEndpoint(null|string|FHIRUriPrimitive|FHIRUri $endpoint = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setEndpoint(null|string|FHIRUriPrimitive|FHIRUri $endpoint = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $endpoint && !($endpoint instanceof FHIRUri)) {
             $endpoint = new FHIRUri($endpoint);
         }
         $this->_trackValueSet($this->endpoint, $endpoint);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ENDPOINT])) {
-            $this->_primitiveXmlLocations[self::FIELD_ENDPOINT] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ENDPOINT])) {
+            $this->_xmlLocations[self::FIELD_ENDPOINT] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ENDPOINT][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ENDPOINT][0] = $xmlLocation;
         $this->endpoint = $endpoint;
         return $this;
     }
@@ -343,16 +343,16 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPayload(null|string|FHIRStringPrimitive|FHIRString $payload = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPayload(null|string|FHIRStringPrimitive|FHIRString $payload = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $payload && !($payload instanceof FHIRString)) {
             $payload = new FHIRString($payload);
         }
         $this->_trackValueSet($this->payload, $payload);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PAYLOAD])) {
-            $this->_primitiveXmlLocations[self::FIELD_PAYLOAD] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PAYLOAD])) {
+            $this->_xmlLocations[self::FIELD_PAYLOAD] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PAYLOAD][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PAYLOAD][0] = $xmlLocation;
         $this->payload = $payload;
         return $this;
     }
@@ -382,16 +382,16 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setHeader(null|string|FHIRStringPrimitive|FHIRString $header = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setHeader(null|string|FHIRStringPrimitive|FHIRString $header = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $header && !($header instanceof FHIRString)) {
             $header = new FHIRString($header);
         }
         $this->_trackValueSet($this->header, $header);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_HEADER])) {
-            $this->_primitiveXmlLocations[self::FIELD_HEADER] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_HEADER])) {
+            $this->_xmlLocations[self::FIELD_HEADER] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_HEADER][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_HEADER][0] = $xmlLocation;
         $this->header = $header;
         return $this;
     }
@@ -636,15 +636,15 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'SubscriptionChannel', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ENDPOINT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ENDPOINT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getEndpoint())) {
             $xw->writeAttribute(self::FIELD_ENDPOINT, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PAYLOAD] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PAYLOAD] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPayload())) {
             $xw->writeAttribute(self::FIELD_PAYLOAD, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_HEADER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_HEADER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getHeader())) {
             $xw->writeAttribute(self::FIELD_HEADER, $v->getValue()?->getFormattedValue());
         }
@@ -654,19 +654,19 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ENDPOINT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ENDPOINT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getEndpoint())) {
             $xw->startElement(self::FIELD_ENDPOINT);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PAYLOAD] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PAYLOAD] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPayload())) {
             $xw->startElement(self::FIELD_PAYLOAD);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_HEADER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_HEADER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getHeader())) {
             $xw->startElement(self::FIELD_HEADER);
             $v->xmlSerialize($xw, $config);

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -201,7 +201,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRSubstancePolymer Constructor
@@ -513,16 +513,16 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setModification(null|string|FHIRStringPrimitive|FHIRString $modification = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setModification(null|string|FHIRStringPrimitive|FHIRString $modification = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $modification && !($modification instanceof FHIRString)) {
             $modification = new FHIRString($modification);
         }
         $this->_trackValueSet($this->modification, $modification);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_MODIFICATION])) {
-            $this->_primitiveXmlLocations[self::FIELD_MODIFICATION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_MODIFICATION])) {
+            $this->_xmlLocations[self::FIELD_MODIFICATION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_MODIFICATION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_MODIFICATION][0] = $xmlLocation;
         $this->modification = $modification;
         return $this;
     }
@@ -1008,7 +1008,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
             $openedRoot = true;
             $xw->openRootNode($config, 'SubstancePolymer', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_MODIFICATION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_MODIFICATION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getModification())) {
             $xw->writeAttribute(self::FIELD_MODIFICATION, $v->getValue()?->getFormattedValue());
         }
@@ -1033,7 +1033,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_MODIFICATION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_MODIFICATION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getModification())) {
             $xw->startElement(self::FIELD_MODIFICATION);
             $v->xmlSerialize($xw, $config);

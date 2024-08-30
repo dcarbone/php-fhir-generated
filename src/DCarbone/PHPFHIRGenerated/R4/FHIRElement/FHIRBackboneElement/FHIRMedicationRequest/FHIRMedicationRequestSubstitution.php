@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -141,7 +141,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMedicationRequestSubstitution Constructor
@@ -219,16 +219,16 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAllowedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allowedBoolean = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAllowedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allowedBoolean = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $allowedBoolean && !($allowedBoolean instanceof FHIRBoolean)) {
             $allowedBoolean = new FHIRBoolean($allowedBoolean);
         }
         $this->_trackValueSet($this->allowedBoolean, $allowedBoolean);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ALLOWED_BOOLEAN])) {
-            $this->_primitiveXmlLocations[self::FIELD_ALLOWED_BOOLEAN] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ALLOWED_BOOLEAN])) {
+            $this->_xmlLocations[self::FIELD_ALLOWED_BOOLEAN] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ALLOWED_BOOLEAN][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ALLOWED_BOOLEAN][0] = $xmlLocation;
         $this->allowedBoolean = $allowedBoolean;
         return $this;
     }
@@ -514,12 +514,12 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'MedicationRequestSubstitution', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ALLOWED_BOOLEAN] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ALLOWED_BOOLEAN] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAllowedBoolean())) {
             $xw->writeAttribute(self::FIELD_ALLOWED_BOOLEAN, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ALLOWED_BOOLEAN] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ALLOWED_BOOLEAN] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAllowedBoolean())) {
             $xw->startElement(self::FIELD_ALLOWED_BOOLEAN);
             $v->xmlSerialize($xw, $config);

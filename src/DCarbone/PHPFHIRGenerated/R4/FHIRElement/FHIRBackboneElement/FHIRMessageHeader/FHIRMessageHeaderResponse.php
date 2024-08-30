@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMessa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -141,7 +141,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMessageHeaderResponse Constructor
@@ -235,16 +235,16 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setIdentifier(null|string|FHIRIdPrimitive|FHIRId $identifier = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setIdentifier(null|string|FHIRIdPrimitive|FHIRId $identifier = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $identifier && !($identifier instanceof FHIRId)) {
             $identifier = new FHIRId($identifier);
         }
         $this->_trackValueSet($this->identifier, $identifier);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_IDENTIFIER])) {
-            $this->_primitiveXmlLocations[self::FIELD_IDENTIFIER] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_IDENTIFIER])) {
+            $this->_xmlLocations[self::FIELD_IDENTIFIER] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_IDENTIFIER][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_IDENTIFIER][0] = $xmlLocation;
         $this->identifier = $identifier;
         return $this;
     }
@@ -522,12 +522,12 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'MessageHeaderResponse', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_IDENTIFIER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_IDENTIFIER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getIdentifier())) {
             $xw->writeAttribute(self::FIELD_IDENTIFIER, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_IDENTIFIER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_IDENTIFIER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getIdentifier())) {
             $xw->startElement(self::FIELD_IDENTIFIER);
             $v->xmlSerialize($xw, $config);

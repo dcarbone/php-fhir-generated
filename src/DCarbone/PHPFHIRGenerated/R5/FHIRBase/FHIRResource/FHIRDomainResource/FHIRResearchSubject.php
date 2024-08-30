@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -238,7 +238,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRResearchSubject Constructor
@@ -671,16 +671,16 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAssignedComparisonGroup(null|string|FHIRIdPrimitive|FHIRId $assignedComparisonGroup = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAssignedComparisonGroup(null|string|FHIRIdPrimitive|FHIRId $assignedComparisonGroup = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $assignedComparisonGroup && !($assignedComparisonGroup instanceof FHIRId)) {
             $assignedComparisonGroup = new FHIRId($assignedComparisonGroup);
         }
         $this->_trackValueSet($this->assignedComparisonGroup, $assignedComparisonGroup);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ASSIGNED_COMPARISON_GROUP])) {
-            $this->_primitiveXmlLocations[self::FIELD_ASSIGNED_COMPARISON_GROUP] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ASSIGNED_COMPARISON_GROUP])) {
+            $this->_xmlLocations[self::FIELD_ASSIGNED_COMPARISON_GROUP] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ASSIGNED_COMPARISON_GROUP][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ASSIGNED_COMPARISON_GROUP][0] = $xmlLocation;
         $this->assignedComparisonGroup = $assignedComparisonGroup;
         return $this;
     }
@@ -718,16 +718,16 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setActualComparisonGroup(null|string|FHIRIdPrimitive|FHIRId $actualComparisonGroup = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setActualComparisonGroup(null|string|FHIRIdPrimitive|FHIRId $actualComparisonGroup = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $actualComparisonGroup && !($actualComparisonGroup instanceof FHIRId)) {
             $actualComparisonGroup = new FHIRId($actualComparisonGroup);
         }
         $this->_trackValueSet($this->actualComparisonGroup, $actualComparisonGroup);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ACTUAL_COMPARISON_GROUP])) {
-            $this->_primitiveXmlLocations[self::FIELD_ACTUAL_COMPARISON_GROUP] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ACTUAL_COMPARISON_GROUP])) {
+            $this->_xmlLocations[self::FIELD_ACTUAL_COMPARISON_GROUP] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ACTUAL_COMPARISON_GROUP][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ACTUAL_COMPARISON_GROUP][0] = $xmlLocation;
         $this->actualComparisonGroup = $actualComparisonGroup;
         return $this;
     }
@@ -1212,11 +1212,11 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
             $openedRoot = true;
             $xw->openRootNode($config, 'ResearchSubject', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ASSIGNED_COMPARISON_GROUP] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ASSIGNED_COMPARISON_GROUP] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAssignedComparisonGroup())) {
             $xw->writeAttribute(self::FIELD_ASSIGNED_COMPARISON_GROUP, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTUAL_COMPARISON_GROUP] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACTUAL_COMPARISON_GROUP] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getActualComparisonGroup())) {
             $xw->writeAttribute(self::FIELD_ACTUAL_COMPARISON_GROUP, $v->getValue()?->getFormattedValue());
         }
@@ -1251,13 +1251,13 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ASSIGNED_COMPARISON_GROUP] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ASSIGNED_COMPARISON_GROUP] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAssignedComparisonGroup())) {
             $xw->startElement(self::FIELD_ASSIGNED_COMPARISON_GROUP);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTUAL_COMPARISON_GROUP] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACTUAL_COMPARISON_GROUP] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getActualComparisonGroup())) {
             $xw->startElement(self::FIELD_ACTUAL_COMPARISON_GROUP);
             $v->xmlSerialize($xw, $config);

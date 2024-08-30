@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -472,7 +472,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRPaymentReconciliation Constructor
@@ -1074,16 +1074,16 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $created && !($created instanceof FHIRDateTime)) {
             $created = new FHIRDateTime($created);
         }
         $this->_trackValueSet($this->created, $created);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CREATED])) {
-            $this->_primitiveXmlLocations[self::FIELD_CREATED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CREATED])) {
+            $this->_xmlLocations[self::FIELD_CREATED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CREATED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_CREATED][0] = $xmlLocation;
         $this->created = $created;
         return $this;
     }
@@ -1317,16 +1317,16 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDisposition(null|string|FHIRStringPrimitive|FHIRString $disposition = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDisposition(null|string|FHIRStringPrimitive|FHIRString $disposition = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $disposition && !($disposition instanceof FHIRString)) {
             $disposition = new FHIRString($disposition);
         }
         $this->_trackValueSet($this->disposition, $disposition);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DISPOSITION])) {
-            $this->_primitiveXmlLocations[self::FIELD_DISPOSITION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DISPOSITION])) {
+            $this->_xmlLocations[self::FIELD_DISPOSITION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DISPOSITION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DISPOSITION][0] = $xmlLocation;
         $this->disposition = $disposition;
         return $this;
     }
@@ -1358,16 +1358,16 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $date && !($date instanceof FHIRDate)) {
             $date = new FHIRDate($date);
         }
         $this->_trackValueSet($this->date, $date);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DATE])) {
+            $this->_xmlLocations[self::FIELD_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DATE][0] = $xmlLocation;
         $this->date = $date;
         return $this;
     }
@@ -1471,16 +1471,16 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCardBrand(null|string|FHIRStringPrimitive|FHIRString $cardBrand = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setCardBrand(null|string|FHIRStringPrimitive|FHIRString $cardBrand = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $cardBrand && !($cardBrand instanceof FHIRString)) {
             $cardBrand = new FHIRString($cardBrand);
         }
         $this->_trackValueSet($this->cardBrand, $cardBrand);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CARD_BRAND])) {
-            $this->_primitiveXmlLocations[self::FIELD_CARD_BRAND] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CARD_BRAND])) {
+            $this->_xmlLocations[self::FIELD_CARD_BRAND] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CARD_BRAND][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_CARD_BRAND][0] = $xmlLocation;
         $this->cardBrand = $cardBrand;
         return $this;
     }
@@ -1512,16 +1512,16 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAccountNumber(null|string|FHIRStringPrimitive|FHIRString $accountNumber = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAccountNumber(null|string|FHIRStringPrimitive|FHIRString $accountNumber = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $accountNumber && !($accountNumber instanceof FHIRString)) {
             $accountNumber = new FHIRString($accountNumber);
         }
         $this->_trackValueSet($this->accountNumber, $accountNumber);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ACCOUNT_NUMBER])) {
-            $this->_primitiveXmlLocations[self::FIELD_ACCOUNT_NUMBER] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ACCOUNT_NUMBER])) {
+            $this->_xmlLocations[self::FIELD_ACCOUNT_NUMBER] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ACCOUNT_NUMBER][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ACCOUNT_NUMBER][0] = $xmlLocation;
         $this->accountNumber = $accountNumber;
         return $this;
     }
@@ -1553,16 +1553,16 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setExpirationDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $expirationDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setExpirationDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $expirationDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $expirationDate && !($expirationDate instanceof FHIRDate)) {
             $expirationDate = new FHIRDate($expirationDate);
         }
         $this->_trackValueSet($this->expirationDate, $expirationDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EXPIRATION_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_EXPIRATION_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EXPIRATION_DATE])) {
+            $this->_xmlLocations[self::FIELD_EXPIRATION_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EXPIRATION_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_EXPIRATION_DATE][0] = $xmlLocation;
         $this->expirationDate = $expirationDate;
         return $this;
     }
@@ -1592,16 +1592,16 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setProcessor(null|string|FHIRStringPrimitive|FHIRString $processor = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setProcessor(null|string|FHIRStringPrimitive|FHIRString $processor = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $processor && !($processor instanceof FHIRString)) {
             $processor = new FHIRString($processor);
         }
         $this->_trackValueSet($this->processor, $processor);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PROCESSOR])) {
-            $this->_primitiveXmlLocations[self::FIELD_PROCESSOR] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PROCESSOR])) {
+            $this->_xmlLocations[self::FIELD_PROCESSOR] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PROCESSOR][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PROCESSOR][0] = $xmlLocation;
         $this->processor = $processor;
         return $this;
     }
@@ -1631,16 +1631,16 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setReferenceNumber(null|string|FHIRStringPrimitive|FHIRString $referenceNumber = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setReferenceNumber(null|string|FHIRStringPrimitive|FHIRString $referenceNumber = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $referenceNumber && !($referenceNumber instanceof FHIRString)) {
             $referenceNumber = new FHIRString($referenceNumber);
         }
         $this->_trackValueSet($this->referenceNumber, $referenceNumber);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_REFERENCE_NUMBER])) {
-            $this->_primitiveXmlLocations[self::FIELD_REFERENCE_NUMBER] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_REFERENCE_NUMBER])) {
+            $this->_xmlLocations[self::FIELD_REFERENCE_NUMBER] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_REFERENCE_NUMBER][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_REFERENCE_NUMBER][0] = $xmlLocation;
         $this->referenceNumber = $referenceNumber;
         return $this;
     }
@@ -1672,16 +1672,16 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAuthorization(null|string|FHIRStringPrimitive|FHIRString $authorization = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAuthorization(null|string|FHIRStringPrimitive|FHIRString $authorization = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $authorization && !($authorization instanceof FHIRString)) {
             $authorization = new FHIRString($authorization);
         }
         $this->_trackValueSet($this->authorization, $authorization);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_AUTHORIZATION])) {
-            $this->_primitiveXmlLocations[self::FIELD_AUTHORIZATION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_AUTHORIZATION])) {
+            $this->_xmlLocations[self::FIELD_AUTHORIZATION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_AUTHORIZATION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_AUTHORIZATION][0] = $xmlLocation;
         $this->authorization = $authorization;
         return $this;
     }
@@ -2835,39 +2835,39 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
             $openedRoot = true;
             $xw->openRootNode($config, 'PaymentReconciliation', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CREATED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CREATED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCreated())) {
             $xw->writeAttribute(self::FIELD_CREATED, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DISPOSITION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DISPOSITION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDisposition())) {
             $xw->writeAttribute(self::FIELD_DISPOSITION, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDate())) {
             $xw->writeAttribute(self::FIELD_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CARD_BRAND] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CARD_BRAND] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCardBrand())) {
             $xw->writeAttribute(self::FIELD_CARD_BRAND, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACCOUNT_NUMBER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACCOUNT_NUMBER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAccountNumber())) {
             $xw->writeAttribute(self::FIELD_ACCOUNT_NUMBER, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXPIRATION_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXPIRATION_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getExpirationDate())) {
             $xw->writeAttribute(self::FIELD_EXPIRATION_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PROCESSOR] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PROCESSOR] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getProcessor())) {
             $xw->writeAttribute(self::FIELD_PROCESSOR, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_REFERENCE_NUMBER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_REFERENCE_NUMBER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getReferenceNumber())) {
             $xw->writeAttribute(self::FIELD_REFERENCE_NUMBER, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_AUTHORIZATION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_AUTHORIZATION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAuthorization())) {
             $xw->writeAttribute(self::FIELD_AUTHORIZATION, $v->getValue()?->getFormattedValue());
         }
@@ -2897,7 +2897,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CREATED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CREATED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCreated())) {
             $xw->startElement(self::FIELD_CREATED);
             $v->xmlSerialize($xw, $config);
@@ -2933,13 +2933,13 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DISPOSITION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DISPOSITION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDisposition())) {
             $xw->startElement(self::FIELD_DISPOSITION);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDate())) {
             $xw->startElement(self::FIELD_DATE);
             $v->xmlSerialize($xw, $config);
@@ -2955,37 +2955,37 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CARD_BRAND] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CARD_BRAND] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCardBrand())) {
             $xw->startElement(self::FIELD_CARD_BRAND);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACCOUNT_NUMBER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACCOUNT_NUMBER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAccountNumber())) {
             $xw->startElement(self::FIELD_ACCOUNT_NUMBER);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXPIRATION_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXPIRATION_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getExpirationDate())) {
             $xw->startElement(self::FIELD_EXPIRATION_DATE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PROCESSOR] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PROCESSOR] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getProcessor())) {
             $xw->startElement(self::FIELD_PROCESSOR);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_REFERENCE_NUMBER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_REFERENCE_NUMBER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getReferenceNumber())) {
             $xw->startElement(self::FIELD_REFERENCE_NUMBER);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_AUTHORIZATION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_AUTHORIZATION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAuthorization())) {
             $xw->startElement(self::FIELD_AUTHORIZATION);
             $v->xmlSerialize($xw, $config);

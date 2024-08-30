@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -185,7 +185,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRObservationDefinitionQualifiedInterval Constructor
@@ -598,16 +598,16 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCondition(null|string|FHIRStringPrimitive|FHIRString $condition = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setCondition(null|string|FHIRStringPrimitive|FHIRString $condition = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $condition && !($condition instanceof FHIRString)) {
             $condition = new FHIRString($condition);
         }
         $this->_trackValueSet($this->condition, $condition);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CONDITION])) {
-            $this->_primitiveXmlLocations[self::FIELD_CONDITION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CONDITION])) {
+            $this->_xmlLocations[self::FIELD_CONDITION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CONDITION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_CONDITION][0] = $xmlLocation;
         $this->condition = $condition;
         return $this;
     }
@@ -914,7 +914,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ObservationDefinitionQualifiedInterval', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CONDITION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CONDITION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCondition())) {
             $xw->writeAttribute(self::FIELD_CONDITION, $v->getValue()?->getFormattedValue());
         }
@@ -954,7 +954,7 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CONDITION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CONDITION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCondition())) {
             $xw->startElement(self::FIELD_CONDITION);
             $v->xmlSerialize($xw, $config);

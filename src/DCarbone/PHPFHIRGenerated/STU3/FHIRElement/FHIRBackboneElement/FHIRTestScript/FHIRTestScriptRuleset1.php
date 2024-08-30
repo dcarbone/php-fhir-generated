@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -122,7 +122,7 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRTestScriptRuleset1 Constructor
@@ -207,16 +207,16 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setRulesetId(null|string|FHIRIdPrimitive|FHIRId $rulesetId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setRulesetId(null|string|FHIRIdPrimitive|FHIRId $rulesetId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $rulesetId && !($rulesetId instanceof FHIRId)) {
             $rulesetId = new FHIRId($rulesetId);
         }
         $this->_trackValueSet($this->rulesetId, $rulesetId);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_RULESET_ID])) {
-            $this->_primitiveXmlLocations[self::FIELD_RULESET_ID] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_RULESET_ID])) {
+            $this->_xmlLocations[self::FIELD_RULESET_ID] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_RULESET_ID][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_RULESET_ID][0] = $xmlLocation;
         $this->rulesetId = $rulesetId;
         return $this;
     }
@@ -465,12 +465,12 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'TestScriptRuleset1', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RULESET_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RULESET_ID] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getRulesetId())) {
             $xw->writeAttribute(self::FIELD_RULESET_ID, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RULESET_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RULESET_ID] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getRulesetId())) {
             $xw->startElement(self::FIELD_RULESET_ID);
             $v->xmlSerialize($xw, $config);

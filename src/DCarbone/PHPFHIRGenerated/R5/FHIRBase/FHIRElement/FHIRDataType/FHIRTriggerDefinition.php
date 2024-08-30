@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -258,7 +258,7 @@ class FHIRTriggerDefinition extends FHIRDataType
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRTriggerDefinition Constructor
@@ -469,16 +469,16 @@ class FHIRTriggerDefinition extends FHIRDataType
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $name && !($name instanceof FHIRString)) {
             $name = new FHIRString($name);
         }
         $this->_trackValueSet($this->name, $name);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NAME])) {
-            $this->_primitiveXmlLocations[self::FIELD_NAME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NAME])) {
+            $this->_xmlLocations[self::FIELD_NAME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NAME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NAME][0] = $xmlLocation;
         $this->name = $name;
         return $this;
     }
@@ -550,16 +550,16 @@ class FHIRTriggerDefinition extends FHIRDataType
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSubscriptionTopic(null|string|FHIRCanonicalPrimitive|FHIRCanonical $subscriptionTopic = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSubscriptionTopic(null|string|FHIRCanonicalPrimitive|FHIRCanonical $subscriptionTopic = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $subscriptionTopic && !($subscriptionTopic instanceof FHIRCanonical)) {
             $subscriptionTopic = new FHIRCanonical($subscriptionTopic);
         }
         $this->_trackValueSet($this->subscriptionTopic, $subscriptionTopic);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SUBSCRIPTION_TOPIC])) {
-            $this->_primitiveXmlLocations[self::FIELD_SUBSCRIPTION_TOPIC] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SUBSCRIPTION_TOPIC])) {
+            $this->_xmlLocations[self::FIELD_SUBSCRIPTION_TOPIC] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SUBSCRIPTION_TOPIC][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SUBSCRIPTION_TOPIC][0] = $xmlLocation;
         $this->subscriptionTopic = $subscriptionTopic;
         return $this;
     }
@@ -667,16 +667,16 @@ class FHIRTriggerDefinition extends FHIRDataType
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTimingDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $timingDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTimingDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $timingDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $timingDate && !($timingDate instanceof FHIRDate)) {
             $timingDate = new FHIRDate($timingDate);
         }
         $this->_trackValueSet($this->timingDate, $timingDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TIMING_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_TIMING_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TIMING_DATE])) {
+            $this->_xmlLocations[self::FIELD_TIMING_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TIMING_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TIMING_DATE][0] = $xmlLocation;
         $this->timingDate = $timingDate;
         return $this;
     }
@@ -714,16 +714,16 @@ class FHIRTriggerDefinition extends FHIRDataType
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $timingDateTime && !($timingDateTime instanceof FHIRDateTime)) {
             $timingDateTime = new FHIRDateTime($timingDateTime);
         }
         $this->_trackValueSet($this->timingDateTime, $timingDateTime);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TIMING_DATE_TIME])) {
-            $this->_primitiveXmlLocations[self::FIELD_TIMING_DATE_TIME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TIMING_DATE_TIME])) {
+            $this->_xmlLocations[self::FIELD_TIMING_DATE_TIME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TIMING_DATE_TIME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TIMING_DATE_TIME][0] = $xmlLocation;
         $this->timingDateTime = $timingDateTime;
         return $this;
     }
@@ -1183,19 +1183,19 @@ class FHIRTriggerDefinition extends FHIRDataType
             $openedRoot = true;
             $xw->openRootNode($config, 'TriggerDefinition', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getName())) {
             $xw->writeAttribute(self::FIELD_NAME, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SUBSCRIPTION_TOPIC] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SUBSCRIPTION_TOPIC] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSubscriptionTopic())) {
             $xw->writeAttribute(self::FIELD_SUBSCRIPTION_TOPIC, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TIMING_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TIMING_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTimingDate())) {
             $xw->writeAttribute(self::FIELD_TIMING_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TIMING_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TIMING_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTimingDateTime())) {
             $xw->writeAttribute(self::FIELD_TIMING_DATE_TIME, $v->getValue()?->getFormattedValue());
         }
@@ -1205,7 +1205,7 @@ class FHIRTriggerDefinition extends FHIRDataType
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getName())) {
             $xw->startElement(self::FIELD_NAME);
             $v->xmlSerialize($xw, $config);
@@ -1216,7 +1216,7 @@ class FHIRTriggerDefinition extends FHIRDataType
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SUBSCRIPTION_TOPIC] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SUBSCRIPTION_TOPIC] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSubscriptionTopic())) {
             $xw->startElement(self::FIELD_SUBSCRIPTION_TOPIC);
             $v->xmlSerialize($xw, $config);
@@ -1232,13 +1232,13 @@ class FHIRTriggerDefinition extends FHIRDataType
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TIMING_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TIMING_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTimingDate())) {
             $xw->startElement(self::FIELD_TIMING_DATE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TIMING_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TIMING_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTimingDateTime())) {
             $xw->startElement(self::FIELD_TIMING_DATE_TIME);
             $v->xmlSerialize($xw, $config);

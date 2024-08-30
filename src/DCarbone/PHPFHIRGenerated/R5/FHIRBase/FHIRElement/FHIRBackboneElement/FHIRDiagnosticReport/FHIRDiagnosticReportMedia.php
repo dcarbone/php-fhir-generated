@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -147,7 +147,7 @@ class FHIRDiagnosticReportMedia extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRDiagnosticReportMedia Constructor
@@ -222,16 +222,16 @@ class FHIRDiagnosticReportMedia extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $comment && !($comment instanceof FHIRString)) {
             $comment = new FHIRString($comment);
         }
         $this->_trackValueSet($this->comment, $comment);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_COMMENT])) {
-            $this->_primitiveXmlLocations[self::FIELD_COMMENT] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_COMMENT])) {
+            $this->_xmlLocations[self::FIELD_COMMENT] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_COMMENT][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_COMMENT][0] = $xmlLocation;
         $this->comment = $comment;
         return $this;
     }
@@ -456,12 +456,12 @@ class FHIRDiagnosticReportMedia extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'DiagnosticReportMedia', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_COMMENT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_COMMENT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getComment())) {
             $xw->writeAttribute(self::FIELD_COMMENT, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_COMMENT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_COMMENT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getComment())) {
             $xw->startElement(self::FIELD_COMMENT);
             $v->xmlSerialize($xw, $config);

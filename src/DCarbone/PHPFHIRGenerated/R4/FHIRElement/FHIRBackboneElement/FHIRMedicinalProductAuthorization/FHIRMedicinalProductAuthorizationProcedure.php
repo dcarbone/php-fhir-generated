@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -155,7 +155,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMedicinalProductAuthorizationProcedure Constructor
@@ -367,16 +367,16 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDateDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDateDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $dateDateTime && !($dateDateTime instanceof FHIRDateTime)) {
             $dateDateTime = new FHIRDateTime($dateDateTime);
         }
         $this->_trackValueSet($this->dateDateTime, $dateDateTime);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DATE_DATE_TIME])) {
-            $this->_primitiveXmlLocations[self::FIELD_DATE_DATE_TIME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DATE_DATE_TIME])) {
+            $this->_xmlLocations[self::FIELD_DATE_DATE_TIME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DATE_DATE_TIME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DATE_DATE_TIME][0] = $xmlLocation;
         $this->dateDateTime = $dateDateTime;
         return $this;
     }
@@ -679,7 +679,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'MedicinalProductAuthorizationProcedure', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DATE_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DATE_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDateDateTime())) {
             $xw->writeAttribute(self::FIELD_DATE_DATE_TIME, $v->getValue()?->getFormattedValue());
         }
@@ -699,7 +699,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DATE_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DATE_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDateDateTime())) {
             $xw->startElement(self::FIELD_DATE_DATE_TIME);
             $v->xmlSerialize($xw, $config);

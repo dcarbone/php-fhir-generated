@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -281,7 +281,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRBiologicallyDerivedProduct Constructor
@@ -848,16 +848,16 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDivision(null|string|FHIRStringPrimitive|FHIRString $division = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDivision(null|string|FHIRStringPrimitive|FHIRString $division = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $division && !($division instanceof FHIRString)) {
             $division = new FHIRString($division);
         }
         $this->_trackValueSet($this->division, $division);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DIVISION])) {
-            $this->_primitiveXmlLocations[self::FIELD_DIVISION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DIVISION])) {
+            $this->_xmlLocations[self::FIELD_DIVISION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DIVISION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DIVISION][0] = $xmlLocation;
         $this->division = $division;
         return $this;
     }
@@ -929,16 +929,16 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setExpirationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $expirationDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setExpirationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $expirationDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $expirationDate && !($expirationDate instanceof FHIRDateTime)) {
             $expirationDate = new FHIRDateTime($expirationDate);
         }
         $this->_trackValueSet($this->expirationDate, $expirationDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EXPIRATION_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_EXPIRATION_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EXPIRATION_DATE])) {
+            $this->_xmlLocations[self::FIELD_EXPIRATION_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EXPIRATION_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_EXPIRATION_DATE][0] = $xmlLocation;
         $this->expirationDate = $expirationDate;
         return $this;
     }
@@ -1571,11 +1571,11 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
             $openedRoot = true;
             $xw->openRootNode($config, 'BiologicallyDerivedProduct', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DIVISION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DIVISION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDivision())) {
             $xw->writeAttribute(self::FIELD_DIVISION, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXPIRATION_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXPIRATION_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getExpirationDate())) {
             $xw->writeAttribute(self::FIELD_EXPIRATION_DATE, $v->getValue()?->getFormattedValue());
         }
@@ -1615,7 +1615,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DIVISION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DIVISION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDivision())) {
             $xw->startElement(self::FIELD_DIVISION);
             $v->xmlSerialize($xw, $config);
@@ -1626,7 +1626,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXPIRATION_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXPIRATION_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getExpirationDate())) {
             $xw->startElement(self::FIELD_EXPIRATION_DATE);
             $v->xmlSerialize($xw, $config);

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -269,7 +269,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRQuestionnaireResponse Constructor
@@ -665,16 +665,16 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setQuestionnaire(null|string|FHIRCanonicalPrimitive|FHIRCanonical $questionnaire = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setQuestionnaire(null|string|FHIRCanonicalPrimitive|FHIRCanonical $questionnaire = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $questionnaire && !($questionnaire instanceof FHIRCanonical)) {
             $questionnaire = new FHIRCanonical($questionnaire);
         }
         $this->_trackValueSet($this->questionnaire, $questionnaire);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_QUESTIONNAIRE])) {
-            $this->_primitiveXmlLocations[self::FIELD_QUESTIONNAIRE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_QUESTIONNAIRE])) {
+            $this->_xmlLocations[self::FIELD_QUESTIONNAIRE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_QUESTIONNAIRE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_QUESTIONNAIRE][0] = $xmlLocation;
         $this->questionnaire = $questionnaire;
         return $this;
     }
@@ -818,16 +818,16 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAuthored(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authored = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAuthored(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $authored = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $authored && !($authored instanceof FHIRDateTime)) {
             $authored = new FHIRDateTime($authored);
         }
         $this->_trackValueSet($this->authored, $authored);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_AUTHORED])) {
-            $this->_primitiveXmlLocations[self::FIELD_AUTHORED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_AUTHORED])) {
+            $this->_xmlLocations[self::FIELD_AUTHORED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_AUTHORED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_AUTHORED][0] = $xmlLocation;
         $this->authored = $authored;
         return $this;
     }
@@ -1425,11 +1425,11 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
             $openedRoot = true;
             $xw->openRootNode($config, 'QuestionnaireResponse', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_QUESTIONNAIRE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_QUESTIONNAIRE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getQuestionnaire())) {
             $xw->writeAttribute(self::FIELD_QUESTIONNAIRE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_AUTHORED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_AUTHORED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAuthored())) {
             $xw->writeAttribute(self::FIELD_AUTHORED, $v->getValue()?->getFormattedValue());
         }
@@ -1449,7 +1449,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_QUESTIONNAIRE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_QUESTIONNAIRE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getQuestionnaire())) {
             $xw->startElement(self::FIELD_QUESTIONNAIRE);
             $v->xmlSerialize($xw, $config);
@@ -1470,7 +1470,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_AUTHORED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_AUTHORED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAuthored())) {
             $xw->startElement(self::FIELD_AUTHORED);
             $v->xmlSerialize($xw, $config);

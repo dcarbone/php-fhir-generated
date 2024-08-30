@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -174,7 +174,7 @@ class FHIRMonetaryComponent extends FHIRDataType
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMonetaryComponent Constructor
@@ -271,16 +271,16 @@ class FHIRMonetaryComponent extends FHIRDataType
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setType(null|string|FHIRCodePrimitive|FHIRCode $type = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setType(null|string|FHIRCodePrimitive|FHIRCode $type = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $type && !($type instanceof FHIRCode)) {
             $type = new FHIRCode($type);
         }
         $this->_trackValueSet($this->type, $type);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TYPE])) {
-            $this->_primitiveXmlLocations[self::FIELD_TYPE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TYPE])) {
+            $this->_xmlLocations[self::FIELD_TYPE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TYPE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TYPE][0] = $xmlLocation;
         $this->type = $type;
         return $this;
     }
@@ -350,16 +350,16 @@ class FHIRMonetaryComponent extends FHIRDataType
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setFactor(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setFactor(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $factor && !($factor instanceof FHIRDecimal)) {
             $factor = new FHIRDecimal($factor);
         }
         $this->_trackValueSet($this->factor, $factor);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_FACTOR])) {
-            $this->_primitiveXmlLocations[self::FIELD_FACTOR] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_FACTOR])) {
+            $this->_xmlLocations[self::FIELD_FACTOR] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_FACTOR][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_FACTOR][0] = $xmlLocation;
         $this->factor = $factor;
         return $this;
     }
@@ -616,16 +616,16 @@ class FHIRMonetaryComponent extends FHIRDataType
             $openedRoot = true;
             $xw->openRootNode($config, 'MonetaryComponent', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TYPE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TYPE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getType())) {
             $xw->writeAttribute(self::FIELD_TYPE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_FACTOR] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_FACTOR] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getFactor())) {
             $xw->writeAttribute(self::FIELD_FACTOR, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TYPE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TYPE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getType())) {
             $xw->startElement(self::FIELD_TYPE);
             $v->xmlSerialize($xw, $config);
@@ -636,7 +636,7 @@ class FHIRMonetaryComponent extends FHIRDataType
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_FACTOR] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_FACTOR] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getFactor())) {
             $xw->startElement(self::FIELD_FACTOR);
             $v->xmlSerialize($xw, $config);

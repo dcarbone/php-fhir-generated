@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGoa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -184,7 +184,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRGoalTarget Constructor
@@ -463,16 +463,16 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $dueDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $dueDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $dueDate && !($dueDate instanceof FHIRDate)) {
             $dueDate = new FHIRDate($dueDate);
         }
         $this->_trackValueSet($this->dueDate, $dueDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DUE_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_DUE_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DUE_DATE])) {
+            $this->_xmlLocations[self::FIELD_DUE_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DUE_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DUE_DATE][0] = $xmlLocation;
         $this->dueDate = $dueDate;
         return $this;
     }
@@ -775,7 +775,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'GoalTarget', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DUE_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DUE_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDueDate())) {
             $xw->writeAttribute(self::FIELD_DUE_DATE, $v->getValue()?->getFormattedValue());
         }
@@ -800,7 +800,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DUE_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DUE_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDueDate())) {
             $xw->startElement(self::FIELD_DUE_DATE);
             $v->xmlSerialize($xw, $config);

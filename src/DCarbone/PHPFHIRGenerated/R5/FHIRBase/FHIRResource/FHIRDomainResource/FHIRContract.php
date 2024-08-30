@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -555,7 +555,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRContract Constructor
@@ -1129,16 +1129,16 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $url && !($url instanceof FHIRUri)) {
             $url = new FHIRUri($url);
         }
         $this->_trackValueSet($this->url, $url);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_URL])) {
-            $this->_primitiveXmlLocations[self::FIELD_URL] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_URL])) {
+            $this->_xmlLocations[self::FIELD_URL] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_URL][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_URL][0] = $xmlLocation;
         $this->url = $url;
         return $this;
     }
@@ -1170,16 +1170,16 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $version && !($version instanceof FHIRString)) {
             $version = new FHIRString($version);
         }
         $this->_trackValueSet($this->version, $version);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_VERSION])) {
-            $this->_primitiveXmlLocations[self::FIELD_VERSION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_VERSION])) {
+            $this->_xmlLocations[self::FIELD_VERSION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_VERSION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_VERSION][0] = $xmlLocation;
         $this->version = $version;
         return $this;
     }
@@ -1319,16 +1319,16 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInstantiatesUri(null|string|FHIRUriPrimitive|FHIRUri $instantiatesUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setInstantiatesUri(null|string|FHIRUriPrimitive|FHIRUri $instantiatesUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $instantiatesUri && !($instantiatesUri instanceof FHIRUri)) {
             $instantiatesUri = new FHIRUri($instantiatesUri);
         }
         $this->_trackValueSet($this->instantiatesUri, $instantiatesUri);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_INSTANTIATES_URI])) {
-            $this->_primitiveXmlLocations[self::FIELD_INSTANTIATES_URI] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_INSTANTIATES_URI])) {
+            $this->_xmlLocations[self::FIELD_INSTANTIATES_URI] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_INSTANTIATES_URI][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_INSTANTIATES_URI][0] = $xmlLocation;
         $this->instantiatesUri = $instantiatesUri;
         return $this;
     }
@@ -1404,16 +1404,16 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setIssued(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $issued = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setIssued(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $issued = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $issued && !($issued instanceof FHIRDateTime)) {
             $issued = new FHIRDateTime($issued);
         }
         $this->_trackValueSet($this->issued, $issued);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ISSUED])) {
-            $this->_primitiveXmlLocations[self::FIELD_ISSUED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ISSUED])) {
+            $this->_xmlLocations[self::FIELD_ISSUED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ISSUED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ISSUED][0] = $xmlLocation;
         $this->issued = $issued;
         return $this;
     }
@@ -1775,16 +1775,16 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $name && !($name instanceof FHIRString)) {
             $name = new FHIRString($name);
         }
         $this->_trackValueSet($this->name, $name);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NAME])) {
-            $this->_primitiveXmlLocations[self::FIELD_NAME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NAME])) {
+            $this->_xmlLocations[self::FIELD_NAME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NAME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NAME][0] = $xmlLocation;
         $this->name = $name;
         return $this;
     }
@@ -1816,16 +1816,16 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $title && !($title instanceof FHIRString)) {
             $title = new FHIRString($title);
         }
         $this->_trackValueSet($this->title, $title);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TITLE])) {
-            $this->_primitiveXmlLocations[self::FIELD_TITLE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TITLE])) {
+            $this->_xmlLocations[self::FIELD_TITLE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TITLE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TITLE][0] = $xmlLocation;
         $this->title = $title;
         return $this;
     }
@@ -1857,16 +1857,16 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSubtitle(null|string|FHIRStringPrimitive|FHIRString $subtitle = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSubtitle(null|string|FHIRStringPrimitive|FHIRString $subtitle = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $subtitle && !($subtitle instanceof FHIRString)) {
             $subtitle = new FHIRString($subtitle);
         }
         $this->_trackValueSet($this->subtitle, $subtitle);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SUBTITLE])) {
-            $this->_primitiveXmlLocations[self::FIELD_SUBTITLE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SUBTITLE])) {
+            $this->_xmlLocations[self::FIELD_SUBTITLE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SUBTITLE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SUBTITLE][0] = $xmlLocation;
         $this->subtitle = $subtitle;
         return $this;
     }
@@ -1900,16 +1900,20 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addAlias(null|string|FHIRStringPrimitive|FHIRString $alias = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addAlias(null|string|FHIRStringPrimitive|FHIRString $alias = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $alias && !($alias instanceof FHIRString)) {
             $alias = new FHIRString($alias);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ALIAS])) {
-            $this->_primitiveXmlLocations[self::FIELD_ALIAS] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ALIAS])) {
+            $this->_xmlLocations[self::FIELD_ALIAS] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ALIAS][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_ALIAS]) {
+            $this->_xmlLocations[self::FIELD_ALIAS][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_ALIAS][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->alias[] = $alias;
         return $this;
     }
@@ -1927,9 +1931,9 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAlias(array $alias = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAlias(array $alias = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_ALIAS]);
+        unset($this->_xmlLocations[self::FIELD_ALIAS]);
         if ([] !== $this->alias) {
             $this->_trackValuesRemoved(count($this->alias));
             $this->alias = [];
@@ -3740,35 +3744,35 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $openedRoot = true;
             $xw->openRootNode($config, 'Contract', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_URL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_URL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getUrl())) {
             $xw->writeAttribute(self::FIELD_URL, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VERSION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VERSION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getVersion())) {
             $xw->writeAttribute(self::FIELD_VERSION, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INSTANTIATES_URI] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INSTANTIATES_URI] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInstantiatesUri())) {
             $xw->writeAttribute(self::FIELD_INSTANTIATES_URI, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ISSUED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ISSUED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getIssued())) {
             $xw->writeAttribute(self::FIELD_ISSUED, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getName())) {
             $xw->writeAttribute(self::FIELD_NAME, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TITLE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TITLE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTitle())) {
             $xw->writeAttribute(self::FIELD_TITLE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SUBTITLE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SUBTITLE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSubtitle())) {
             $xw->writeAttribute(self::FIELD_SUBTITLE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ALIAS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ALIAS] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getAlias())) {
             $xw->writeAttribute(self::FIELD_ALIAS, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getAlias()) && isset($vs[$idx])) {
@@ -3780,13 +3784,13 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_URL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_URL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getUrl())) {
             $xw->startElement(self::FIELD_URL);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VERSION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VERSION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getVersion())) {
             $xw->startElement(self::FIELD_VERSION);
             $v->xmlSerialize($xw, $config);
@@ -3807,7 +3811,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INSTANTIATES_URI] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INSTANTIATES_URI] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInstantiatesUri())) {
             $xw->startElement(self::FIELD_INSTANTIATES_URI);
             $v->xmlSerialize($xw, $config);
@@ -3818,7 +3822,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ISSUED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ISSUED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getIssued())) {
             $xw->startElement(self::FIELD_ISSUED);
             $v->xmlSerialize($xw, $config);
@@ -3854,25 +3858,25 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getName())) {
             $xw->startElement(self::FIELD_NAME);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TITLE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TITLE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTitle())) {
             $xw->startElement(self::FIELD_TITLE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SUBTITLE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SUBTITLE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSubtitle())) {
             $xw->startElement(self::FIELD_SUBTITLE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ALIAS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ALIAS] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getAlias())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

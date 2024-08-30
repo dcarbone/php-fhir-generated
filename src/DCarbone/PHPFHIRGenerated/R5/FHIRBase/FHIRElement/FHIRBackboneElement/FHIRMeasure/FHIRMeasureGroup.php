@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -296,7 +296,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMeasureGroup Constructor
@@ -532,16 +532,16 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $linkId && !($linkId instanceof FHIRString)) {
             $linkId = new FHIRString($linkId);
         }
         $this->_trackValueSet($this->linkId, $linkId);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_LINK_ID])) {
-            $this->_primitiveXmlLocations[self::FIELD_LINK_ID] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_LINK_ID])) {
+            $this->_xmlLocations[self::FIELD_LINK_ID] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_LINK_ID][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_LINK_ID][0] = $xmlLocation;
         $this->linkId = $linkId;
         return $this;
     }
@@ -619,16 +619,16 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $description && !($description instanceof FHIRMarkdown)) {
             $description = new FHIRMarkdown($description);
         }
         $this->_trackValueSet($this->description, $description);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DESCRIPTION])) {
-            $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DESCRIPTION])) {
+            $this->_xmlLocations[self::FIELD_DESCRIPTION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
         $this->description = $description;
         return $this;
     }
@@ -929,16 +929,16 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setRateAggregation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $rateAggregation = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setRateAggregation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $rateAggregation = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $rateAggregation && !($rateAggregation instanceof FHIRMarkdown)) {
             $rateAggregation = new FHIRMarkdown($rateAggregation);
         }
         $this->_trackValueSet($this->rateAggregation, $rateAggregation);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_RATE_AGGREGATION])) {
-            $this->_primitiveXmlLocations[self::FIELD_RATE_AGGREGATION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_RATE_AGGREGATION])) {
+            $this->_xmlLocations[self::FIELD_RATE_AGGREGATION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_RATE_AGGREGATION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_RATE_AGGREGATION][0] = $xmlLocation;
         $this->rateAggregation = $rateAggregation;
         return $this;
     }
@@ -1012,16 +1012,20 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addLibrary(null|string|FHIRCanonicalPrimitive|FHIRCanonical $library = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addLibrary(null|string|FHIRCanonicalPrimitive|FHIRCanonical $library = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $library && !($library instanceof FHIRCanonical)) {
             $library = new FHIRCanonical($library);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_LIBRARY])) {
-            $this->_primitiveXmlLocations[self::FIELD_LIBRARY] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_LIBRARY])) {
+            $this->_xmlLocations[self::FIELD_LIBRARY] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_LIBRARY][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_LIBRARY]) {
+            $this->_xmlLocations[self::FIELD_LIBRARY][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_LIBRARY][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->library[] = $library;
         return $this;
     }
@@ -1039,9 +1043,9 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setLibrary(array $library = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setLibrary(array $library = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_LIBRARY]);
+        unset($this->_xmlLocations[self::FIELD_LIBRARY]);
         if ([] !== $this->library) {
             $this->_trackValuesRemoved(count($this->library));
             $this->library = [];
@@ -1612,26 +1616,26 @@ class FHIRMeasureGroup extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'MeasureGroup', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LINK_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LINK_ID] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getLinkId())) {
             $xw->writeAttribute(self::FIELD_LINK_ID, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDescription())) {
             $xw->writeAttribute(self::FIELD_DESCRIPTION, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RATE_AGGREGATION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RATE_AGGREGATION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getRateAggregation())) {
             $xw->writeAttribute(self::FIELD_RATE_AGGREGATION, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LIBRARY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LIBRARY] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getLibrary())) {
             $xw->writeAttribute(self::FIELD_LIBRARY, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getLibrary()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_LIBRARY, $vs[$idx]->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LINK_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LINK_ID] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getLinkId())) {
             $xw->startElement(self::FIELD_LINK_ID);
             $v->xmlSerialize($xw, $config);
@@ -1642,7 +1646,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDescription())) {
             $xw->startElement(self::FIELD_DESCRIPTION);
             $v->xmlSerialize($xw, $config);
@@ -1678,7 +1682,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RATE_AGGREGATION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RATE_AGGREGATION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getRateAggregation())) {
             $xw->startElement(self::FIELD_RATE_AGGREGATION);
             $v->xmlSerialize($xw, $config);
@@ -1689,7 +1693,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LIBRARY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LIBRARY] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getLibrary())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

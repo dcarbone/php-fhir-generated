@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -145,7 +145,7 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRDeviceDefinitionMarketDistribution Constructor
@@ -252,16 +252,16 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSubJurisdiction(null|string|FHIRUriPrimitive|FHIRUri $subJurisdiction = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSubJurisdiction(null|string|FHIRUriPrimitive|FHIRUri $subJurisdiction = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $subJurisdiction && !($subJurisdiction instanceof FHIRUri)) {
             $subJurisdiction = new FHIRUri($subJurisdiction);
         }
         $this->_trackValueSet($this->subJurisdiction, $subJurisdiction);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SUB_JURISDICTION])) {
-            $this->_primitiveXmlLocations[self::FIELD_SUB_JURISDICTION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SUB_JURISDICTION])) {
+            $this->_xmlLocations[self::FIELD_SUB_JURISDICTION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SUB_JURISDICTION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SUB_JURISDICTION][0] = $xmlLocation;
         $this->subJurisdiction = $subJurisdiction;
         return $this;
     }
@@ -452,7 +452,7 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'DeviceDefinitionMarketDistribution', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SUB_JURISDICTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SUB_JURISDICTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSubJurisdiction())) {
             $xw->writeAttribute(self::FIELD_SUB_JURISDICTION, $v->getValue()?->getFormattedValue());
         }
@@ -462,7 +462,7 @@ class FHIRDeviceDefinitionMarketDistribution extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SUB_JURISDICTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SUB_JURISDICTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSubJurisdiction())) {
             $xw->startElement(self::FIELD_SUB_JURISDICTION);
             $v->xmlSerialize($xw, $config);

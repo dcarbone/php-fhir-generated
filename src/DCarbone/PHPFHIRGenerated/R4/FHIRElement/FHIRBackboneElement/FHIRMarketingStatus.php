@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -181,7 +181,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMarketingStatus Constructor
@@ -451,16 +451,16 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setRestoreDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $restoreDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setRestoreDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $restoreDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $restoreDate && !($restoreDate instanceof FHIRDateTime)) {
             $restoreDate = new FHIRDateTime($restoreDate);
         }
         $this->_trackValueSet($this->restoreDate, $restoreDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_RESTORE_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_RESTORE_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_RESTORE_DATE])) {
+            $this->_xmlLocations[self::FIELD_RESTORE_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_RESTORE_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_RESTORE_DATE][0] = $xmlLocation;
         $this->restoreDate = $restoreDate;
         return $this;
     }
@@ -708,7 +708,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'MarketingStatus', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RESTORE_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RESTORE_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getRestoreDate())) {
             $xw->writeAttribute(self::FIELD_RESTORE_DATE, $v->getValue()?->getFormattedValue());
         }
@@ -733,7 +733,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RESTORE_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RESTORE_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getRestoreDate())) {
             $xw->startElement(self::FIELD_RESTORE_DATE);
             $v->xmlSerialize($xw, $config);

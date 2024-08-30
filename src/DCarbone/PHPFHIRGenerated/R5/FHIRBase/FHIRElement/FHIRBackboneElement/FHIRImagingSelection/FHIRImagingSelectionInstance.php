@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -203,7 +203,7 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRImagingSelectionInstance Constructor
@@ -359,16 +359,16 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setUid(null|string|FHIRIdPrimitive|FHIRId $uid = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setUid(null|string|FHIRIdPrimitive|FHIRId $uid = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $uid && !($uid instanceof FHIRId)) {
             $uid = new FHIRId($uid);
         }
         $this->_trackValueSet($this->uid, $uid);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_UID])) {
-            $this->_primitiveXmlLocations[self::FIELD_UID] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_UID])) {
+            $this->_xmlLocations[self::FIELD_UID] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_UID][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_UID][0] = $xmlLocation;
         $this->uid = $uid;
         return $this;
     }
@@ -398,16 +398,16 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $number = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $number = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $number && !($number instanceof FHIRUnsignedInt)) {
             $number = new FHIRUnsignedInt($number);
         }
         $this->_trackValueSet($this->number, $number);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NUMBER])) {
-            $this->_primitiveXmlLocations[self::FIELD_NUMBER] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NUMBER])) {
+            $this->_xmlLocations[self::FIELD_NUMBER] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NUMBER][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NUMBER][0] = $xmlLocation;
         $this->number = $number;
         return $this;
     }
@@ -483,16 +483,20 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addSubset(null|string|FHIRStringPrimitive|FHIRString $subset = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addSubset(null|string|FHIRStringPrimitive|FHIRString $subset = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $subset && !($subset instanceof FHIRString)) {
             $subset = new FHIRString($subset);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SUBSET])) {
-            $this->_primitiveXmlLocations[self::FIELD_SUBSET] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SUBSET])) {
+            $this->_xmlLocations[self::FIELD_SUBSET] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SUBSET][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_SUBSET]) {
+            $this->_xmlLocations[self::FIELD_SUBSET][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_SUBSET][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->subset[] = $subset;
         return $this;
     }
@@ -514,9 +518,9 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSubset(array $subset = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSubset(array $subset = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_SUBSET]);
+        unset($this->_xmlLocations[self::FIELD_SUBSET]);
         if ([] !== $this->subset) {
             $this->_trackValuesRemoved(count($this->subset));
             $this->subset = [];
@@ -949,28 +953,28 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ImagingSelectionInstance', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_UID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_UID] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getUid())) {
             $xw->writeAttribute(self::FIELD_UID, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NUMBER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NUMBER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getNumber())) {
             $xw->writeAttribute(self::FIELD_NUMBER, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SUBSET] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SUBSET] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getSubset())) {
             $xw->writeAttribute(self::FIELD_SUBSET, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getSubset()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_SUBSET, $vs[$idx]->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_UID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_UID] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getUid())) {
             $xw->startElement(self::FIELD_UID);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NUMBER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NUMBER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getNumber())) {
             $xw->startElement(self::FIELD_NUMBER);
             $v->xmlSerialize($xw, $config);
@@ -981,7 +985,7 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SUBSET] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SUBSET] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getSubset())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

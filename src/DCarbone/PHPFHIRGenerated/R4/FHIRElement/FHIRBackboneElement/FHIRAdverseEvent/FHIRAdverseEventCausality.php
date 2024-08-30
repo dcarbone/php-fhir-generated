@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAdver
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -141,7 +141,7 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRAdverseEventCausality Constructor
@@ -262,16 +262,16 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setProductRelatedness(null|string|FHIRStringPrimitive|FHIRString $productRelatedness = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setProductRelatedness(null|string|FHIRStringPrimitive|FHIRString $productRelatedness = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $productRelatedness && !($productRelatedness instanceof FHIRString)) {
             $productRelatedness = new FHIRString($productRelatedness);
         }
         $this->_trackValueSet($this->productRelatedness, $productRelatedness);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PRODUCT_RELATEDNESS])) {
-            $this->_primitiveXmlLocations[self::FIELD_PRODUCT_RELATEDNESS] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PRODUCT_RELATEDNESS])) {
+            $this->_xmlLocations[self::FIELD_PRODUCT_RELATEDNESS] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PRODUCT_RELATEDNESS][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PRODUCT_RELATEDNESS][0] = $xmlLocation;
         $this->productRelatedness = $productRelatedness;
         return $this;
     }
@@ -570,7 +570,7 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'AdverseEventCausality', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PRODUCT_RELATEDNESS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PRODUCT_RELATEDNESS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getProductRelatedness())) {
             $xw->writeAttribute(self::FIELD_PRODUCT_RELATEDNESS, $v->getValue()?->getFormattedValue());
         }
@@ -580,7 +580,7 @@ class FHIRAdverseEventCausality extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PRODUCT_RELATEDNESS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PRODUCT_RELATEDNESS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getProductRelatedness())) {
             $xw->startElement(self::FIELD_PRODUCT_RELATEDNESS);
             $v->xmlSerialize($xw, $config);

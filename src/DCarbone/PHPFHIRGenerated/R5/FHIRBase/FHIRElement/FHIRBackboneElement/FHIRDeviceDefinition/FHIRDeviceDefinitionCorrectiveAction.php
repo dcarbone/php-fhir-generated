@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -155,7 +155,7 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRDeviceDefinitionCorrectiveAction Constructor
@@ -241,16 +241,16 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setRecall(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $recall = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setRecall(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $recall = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $recall && !($recall instanceof FHIRBoolean)) {
             $recall = new FHIRBoolean($recall);
         }
         $this->_trackValueSet($this->recall, $recall);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_RECALL])) {
-            $this->_primitiveXmlLocations[self::FIELD_RECALL] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_RECALL])) {
+            $this->_xmlLocations[self::FIELD_RECALL] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_RECALL][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_RECALL][0] = $xmlLocation;
         $this->recall = $recall;
         return $this;
     }
@@ -528,12 +528,12 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'DeviceDefinitionCorrectiveAction', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RECALL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RECALL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getRecall())) {
             $xw->writeAttribute(self::FIELD_RECALL, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RECALL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RECALL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getRecall())) {
             $xw->startElement(self::FIELD_RECALL);
             $v->xmlSerialize($xw, $config);

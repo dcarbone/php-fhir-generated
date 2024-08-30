@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -154,7 +154,7 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMedicinalProductIngredientReferenceStrength Constructor
@@ -362,16 +362,16 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setMeasurementPoint(null|string|FHIRStringPrimitive|FHIRString $measurementPoint = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setMeasurementPoint(null|string|FHIRStringPrimitive|FHIRString $measurementPoint = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $measurementPoint && !($measurementPoint instanceof FHIRString)) {
             $measurementPoint = new FHIRString($measurementPoint);
         }
         $this->_trackValueSet($this->measurementPoint, $measurementPoint);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_MEASUREMENT_POINT])) {
-            $this->_primitiveXmlLocations[self::FIELD_MEASUREMENT_POINT] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_MEASUREMENT_POINT])) {
+            $this->_xmlLocations[self::FIELD_MEASUREMENT_POINT] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_MEASUREMENT_POINT][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_MEASUREMENT_POINT][0] = $xmlLocation;
         $this->measurementPoint = $measurementPoint;
         return $this;
     }
@@ -683,7 +683,7 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
             $openedRoot = true;
             $xw->openRootNode($config, 'MedicinalProductIngredientReferenceStrength', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_MEASUREMENT_POINT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_MEASUREMENT_POINT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getMeasurementPoint())) {
             $xw->writeAttribute(self::FIELD_MEASUREMENT_POINT, $v->getValue()?->getFormattedValue());
         }
@@ -703,7 +703,7 @@ class FHIRMedicinalProductIngredientReferenceStrength extends FHIRBackboneElemen
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_MEASUREMENT_POINT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_MEASUREMENT_POINT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getMeasurementPoint())) {
             $xw->startElement(self::FIELD_MEASUREMENT_POINT);
             $v->xmlSerialize($xw, $config);

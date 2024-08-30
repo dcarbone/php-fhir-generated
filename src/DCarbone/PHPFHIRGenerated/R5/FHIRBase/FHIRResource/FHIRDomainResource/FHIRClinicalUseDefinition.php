@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -264,7 +264,7 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRClinicalUseDefinition Constructor
@@ -885,16 +885,20 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addLibrary(null|string|FHIRCanonicalPrimitive|FHIRCanonical $library = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addLibrary(null|string|FHIRCanonicalPrimitive|FHIRCanonical $library = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $library && !($library instanceof FHIRCanonical)) {
             $library = new FHIRCanonical($library);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_LIBRARY])) {
-            $this->_primitiveXmlLocations[self::FIELD_LIBRARY] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_LIBRARY])) {
+            $this->_xmlLocations[self::FIELD_LIBRARY] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_LIBRARY][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_LIBRARY]) {
+            $this->_xmlLocations[self::FIELD_LIBRARY][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_LIBRARY][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->library[] = $library;
         return $this;
     }
@@ -911,9 +915,9 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setLibrary(array $library = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setLibrary(array $library = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_LIBRARY]);
+        unset($this->_xmlLocations[self::FIELD_LIBRARY]);
         if ([] !== $this->library) {
             $this->_trackValuesRemoved(count($this->library));
             $this->library = [];
@@ -1472,7 +1476,7 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
             $openedRoot = true;
             $xw->openRootNode($config, 'ClinicalUseDefinition', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LIBRARY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LIBRARY] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getLibrary())) {
             $xw->writeAttribute(self::FIELD_LIBRARY, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getLibrary()) && isset($vs[$idx])) {
@@ -1524,7 +1528,7 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LIBRARY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LIBRARY] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getLibrary())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

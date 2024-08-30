@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -165,7 +165,7 @@ class FHIRCoverageEligibilityResponseEvent extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRCoverageEligibilityResponseEvent Constructor
@@ -289,16 +289,16 @@ class FHIRCoverageEligibilityResponseEvent extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setWhenDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setWhenDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $whenDateTime && !($whenDateTime instanceof FHIRDateTime)) {
             $whenDateTime = new FHIRDateTime($whenDateTime);
         }
         $this->_trackValueSet($this->whenDateTime, $whenDateTime);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_WHEN_DATE_TIME])) {
-            $this->_primitiveXmlLocations[self::FIELD_WHEN_DATE_TIME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_WHEN_DATE_TIME])) {
+            $this->_xmlLocations[self::FIELD_WHEN_DATE_TIME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_WHEN_DATE_TIME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_WHEN_DATE_TIME][0] = $xmlLocation;
         $this->whenDateTime = $whenDateTime;
         return $this;
     }
@@ -544,7 +544,7 @@ class FHIRCoverageEligibilityResponseEvent extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'CoverageEligibilityResponseEvent', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_WHEN_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_WHEN_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getWhenDateTime())) {
             $xw->writeAttribute(self::FIELD_WHEN_DATE_TIME, $v->getValue()?->getFormattedValue());
         }
@@ -554,7 +554,7 @@ class FHIRCoverageEligibilityResponseEvent extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_WHEN_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_WHEN_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getWhenDateTime())) {
             $xw->startElement(self::FIELD_WHEN_DATE_TIME);
             $v->xmlSerialize($xw, $config);

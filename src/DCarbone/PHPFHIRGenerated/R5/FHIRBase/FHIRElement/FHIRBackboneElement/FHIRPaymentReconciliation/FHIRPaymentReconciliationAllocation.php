@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -289,7 +289,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRPaymentReconciliationAllocation Constructor
@@ -581,16 +581,16 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTargetItemString(null|string|FHIRStringPrimitive|FHIRString $targetItemString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTargetItemString(null|string|FHIRStringPrimitive|FHIRString $targetItemString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $targetItemString && !($targetItemString instanceof FHIRString)) {
             $targetItemString = new FHIRString($targetItemString);
         }
         $this->_trackValueSet($this->targetItemString, $targetItemString);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TARGET_ITEM_STRING])) {
-            $this->_primitiveXmlLocations[self::FIELD_TARGET_ITEM_STRING] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TARGET_ITEM_STRING])) {
+            $this->_xmlLocations[self::FIELD_TARGET_ITEM_STRING] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TARGET_ITEM_STRING][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TARGET_ITEM_STRING][0] = $xmlLocation;
         $this->targetItemString = $targetItemString;
         return $this;
     }
@@ -664,16 +664,16 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTargetItemPositiveInt(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $targetItemPositiveInt = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTargetItemPositiveInt(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $targetItemPositiveInt = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $targetItemPositiveInt && !($targetItemPositiveInt instanceof FHIRPositiveInt)) {
             $targetItemPositiveInt = new FHIRPositiveInt($targetItemPositiveInt);
         }
         $this->_trackValueSet($this->targetItemPositiveInt, $targetItemPositiveInt);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TARGET_ITEM_POSITIVE_INT])) {
-            $this->_primitiveXmlLocations[self::FIELD_TARGET_ITEM_POSITIVE_INT] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TARGET_ITEM_POSITIVE_INT])) {
+            $this->_xmlLocations[self::FIELD_TARGET_ITEM_POSITIVE_INT] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TARGET_ITEM_POSITIVE_INT][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TARGET_ITEM_POSITIVE_INT][0] = $xmlLocation;
         $this->targetItemPositiveInt = $targetItemPositiveInt;
         return $this;
     }
@@ -881,16 +881,16 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $date && !($date instanceof FHIRDate)) {
             $date = new FHIRDate($date);
         }
         $this->_trackValueSet($this->date, $date);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DATE])) {
+            $this->_xmlLocations[self::FIELD_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DATE][0] = $xmlLocation;
         $this->date = $date;
         return $this;
     }
@@ -1448,15 +1448,15 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'PaymentReconciliationAllocation', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TARGET_ITEM_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TARGET_ITEM_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTargetItemString())) {
             $xw->writeAttribute(self::FIELD_TARGET_ITEM_STRING, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TARGET_ITEM_POSITIVE_INT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TARGET_ITEM_POSITIVE_INT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTargetItemPositiveInt())) {
             $xw->writeAttribute(self::FIELD_TARGET_ITEM_POSITIVE_INT, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDate())) {
             $xw->writeAttribute(self::FIELD_DATE, $v->getValue()?->getFormattedValue());
         }
@@ -1476,7 +1476,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TARGET_ITEM_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TARGET_ITEM_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTargetItemString())) {
             $xw->startElement(self::FIELD_TARGET_ITEM_STRING);
             $v->xmlSerialize($xw, $config);
@@ -1487,7 +1487,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TARGET_ITEM_POSITIVE_INT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TARGET_ITEM_POSITIVE_INT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTargetItemPositiveInt())) {
             $xw->startElement(self::FIELD_TARGET_ITEM_POSITIVE_INT);
             $v->xmlSerialize($xw, $config);
@@ -1518,7 +1518,7 @@ class FHIRPaymentReconciliationAllocation extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDate())) {
             $xw->startElement(self::FIELD_DATE);
             $v->xmlSerialize($xw, $config);

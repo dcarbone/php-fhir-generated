@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -168,7 +168,7 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMedicationKnowledgeMedicineClassification Constructor
@@ -311,16 +311,16 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSourceString(null|string|FHIRStringPrimitive|FHIRString $sourceString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSourceString(null|string|FHIRStringPrimitive|FHIRString $sourceString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $sourceString && !($sourceString instanceof FHIRString)) {
             $sourceString = new FHIRString($sourceString);
         }
         $this->_trackValueSet($this->sourceString, $sourceString);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SOURCE_STRING])) {
-            $this->_primitiveXmlLocations[self::FIELD_SOURCE_STRING] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SOURCE_STRING])) {
+            $this->_xmlLocations[self::FIELD_SOURCE_STRING] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SOURCE_STRING][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SOURCE_STRING][0] = $xmlLocation;
         $this->sourceString = $sourceString;
         return $this;
     }
@@ -352,16 +352,16 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSourceUri(null|string|FHIRUriPrimitive|FHIRUri $sourceUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSourceUri(null|string|FHIRUriPrimitive|FHIRUri $sourceUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $sourceUri && !($sourceUri instanceof FHIRUri)) {
             $sourceUri = new FHIRUri($sourceUri);
         }
         $this->_trackValueSet($this->sourceUri, $sourceUri);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SOURCE_URI])) {
-            $this->_primitiveXmlLocations[self::FIELD_SOURCE_URI] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SOURCE_URI])) {
+            $this->_xmlLocations[self::FIELD_SOURCE_URI] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SOURCE_URI][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SOURCE_URI][0] = $xmlLocation;
         $this->sourceUri = $sourceUri;
         return $this;
     }
@@ -665,11 +665,11 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'MedicationKnowledgeMedicineClassification', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SOURCE_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SOURCE_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSourceString())) {
             $xw->writeAttribute(self::FIELD_SOURCE_STRING, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SOURCE_URI] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SOURCE_URI] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSourceUri())) {
             $xw->writeAttribute(self::FIELD_SOURCE_URI, $v->getValue()?->getFormattedValue());
         }
@@ -679,13 +679,13 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SOURCE_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SOURCE_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSourceString())) {
             $xw->startElement(self::FIELD_SOURCE_STRING);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SOURCE_URI] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SOURCE_URI] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSourceUri())) {
             $xw->startElement(self::FIELD_SOURCE_URI);
             $v->xmlSerialize($xw, $config);

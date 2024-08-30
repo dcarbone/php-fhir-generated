@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -237,7 +237,7 @@ class FHIRMedicationPrescription extends FHIRResource implements PHPFHIRContaine
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMedicationPrescription Constructor
@@ -487,16 +487,16 @@ class FHIRMedicationPrescription extends FHIRResource implements PHPFHIRContaine
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDateWritten(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateWritten = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDateWritten(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateWritten = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $dateWritten && !($dateWritten instanceof FHIRDateTime)) {
             $dateWritten = new FHIRDateTime($dateWritten);
         }
         $this->_trackValueSet($this->dateWritten, $dateWritten);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DATE_WRITTEN])) {
-            $this->_primitiveXmlLocations[self::FIELD_DATE_WRITTEN] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DATE_WRITTEN])) {
+            $this->_xmlLocations[self::FIELD_DATE_WRITTEN] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DATE_WRITTEN][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DATE_WRITTEN][0] = $xmlLocation;
         $this->dateWritten = $dateWritten;
         return $this;
     }
@@ -1309,7 +1309,7 @@ class FHIRMedicationPrescription extends FHIRResource implements PHPFHIRContaine
             $openedRoot = true;
             $xw->openRootNode($config, 'MedicationPrescription', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DATE_WRITTEN] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DATE_WRITTEN] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDateWritten())) {
             $xw->writeAttribute(self::FIELD_DATE_WRITTEN, $v->getValue()?->getFormattedValue());
         }
@@ -1319,7 +1319,7 @@ class FHIRMedicationPrescription extends FHIRResource implements PHPFHIRContaine
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DATE_WRITTEN] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DATE_WRITTEN] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDateWritten())) {
             $xw->startElement(self::FIELD_DATE_WRITTEN);
             $v->xmlSerialize($xw, $config);

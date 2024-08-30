@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -215,7 +215,7 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements PHPFHIRContai
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRSubscriptionStatus Constructor
@@ -443,16 +443,16 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setEventsSinceSubscriptionStart(null|string|int|float|FHIRInteger64Primitive|FHIRInteger64 $eventsSinceSubscriptionStart = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setEventsSinceSubscriptionStart(null|string|int|float|FHIRInteger64Primitive|FHIRInteger64 $eventsSinceSubscriptionStart = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $eventsSinceSubscriptionStart && !($eventsSinceSubscriptionStart instanceof FHIRInteger64)) {
             $eventsSinceSubscriptionStart = new FHIRInteger64($eventsSinceSubscriptionStart);
         }
         $this->_trackValueSet($this->eventsSinceSubscriptionStart, $eventsSinceSubscriptionStart);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START])) {
-            $this->_primitiveXmlLocations[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START])) {
+            $this->_xmlLocations[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START][0] = $xmlLocation;
         $this->eventsSinceSubscriptionStart = $eventsSinceSubscriptionStart;
         return $this;
     }
@@ -576,16 +576,16 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTopic(null|string|FHIRCanonicalPrimitive|FHIRCanonical $topic = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTopic(null|string|FHIRCanonicalPrimitive|FHIRCanonical $topic = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $topic && !($topic instanceof FHIRCanonical)) {
             $topic = new FHIRCanonical($topic);
         }
         $this->_trackValueSet($this->topic, $topic);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TOPIC])) {
-            $this->_primitiveXmlLocations[self::FIELD_TOPIC] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TOPIC])) {
+            $this->_xmlLocations[self::FIELD_TOPIC] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TOPIC][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TOPIC][0] = $xmlLocation;
         $this->topic = $topic;
         return $this;
     }
@@ -1033,11 +1033,11 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements PHPFHIRContai
             $openedRoot = true;
             $xw->openRootNode($config, 'SubscriptionStatus', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getEventsSinceSubscriptionStart())) {
             $xw->writeAttribute(self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TOPIC] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TOPIC] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTopic())) {
             $xw->writeAttribute(self::FIELD_TOPIC, $v->getValue()?->getFormattedValue());
         }
@@ -1052,7 +1052,7 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements PHPFHIRContai
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getEventsSinceSubscriptionStart())) {
             $xw->startElement(self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START);
             $v->xmlSerialize($xw, $config);
@@ -1068,7 +1068,7 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements PHPFHIRContai
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TOPIC] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TOPIC] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTopic())) {
             $xw->startElement(self::FIELD_TOPIC);
             $v->xmlSerialize($xw, $config);

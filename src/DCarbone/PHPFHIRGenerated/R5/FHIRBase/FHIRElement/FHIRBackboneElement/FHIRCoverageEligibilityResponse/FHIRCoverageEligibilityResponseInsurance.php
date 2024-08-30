@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -164,7 +164,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRCoverageEligibilityResponseInsurance Constructor
@@ -295,16 +295,16 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInforce(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $inforce = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setInforce(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $inforce = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $inforce && !($inforce instanceof FHIRBoolean)) {
             $inforce = new FHIRBoolean($inforce);
         }
         $this->_trackValueSet($this->inforce, $inforce);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_INFORCE])) {
-            $this->_primitiveXmlLocations[self::FIELD_INFORCE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_INFORCE])) {
+            $this->_xmlLocations[self::FIELD_INFORCE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_INFORCE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_INFORCE][0] = $xmlLocation;
         $this->inforce = $inforce;
         return $this;
     }
@@ -628,7 +628,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'CoverageEligibilityResponseInsurance', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INFORCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INFORCE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInforce())) {
             $xw->writeAttribute(self::FIELD_INFORCE, $v->getValue()?->getFormattedValue());
         }
@@ -638,7 +638,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INFORCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INFORCE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInforce())) {
             $xw->startElement(self::FIELD_INFORCE);
             $v->xmlSerialize($xw, $config);

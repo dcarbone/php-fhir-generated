@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAudit
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -119,7 +119,7 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRAuditEventNetwork Constructor
@@ -202,16 +202,16 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAddress(null|string|FHIRStringPrimitive|FHIRString $address = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAddress(null|string|FHIRStringPrimitive|FHIRString $address = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $address && !($address instanceof FHIRString)) {
             $address = new FHIRString($address);
         }
         $this->_trackValueSet($this->address, $address);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ADDRESS])) {
-            $this->_primitiveXmlLocations[self::FIELD_ADDRESS] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ADDRESS])) {
+            $this->_xmlLocations[self::FIELD_ADDRESS] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ADDRESS][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ADDRESS][0] = $xmlLocation;
         $this->address = $address;
         return $this;
     }
@@ -436,12 +436,12 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'AuditEventNetwork', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ADDRESS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ADDRESS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAddress())) {
             $xw->writeAttribute(self::FIELD_ADDRESS, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ADDRESS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ADDRESS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAddress())) {
             $xw->startElement(self::FIELD_ADDRESS);
             $v->xmlSerialize($xw, $config);

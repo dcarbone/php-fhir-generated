@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -214,7 +214,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRCoverageEligibilityRequestItem Constructor
@@ -382,16 +382,20 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addSupportingInfoSequence(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $supportingInfoSequence = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addSupportingInfoSequence(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $supportingInfoSequence = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $supportingInfoSequence && !($supportingInfoSequence instanceof FHIRPositiveInt)) {
             $supportingInfoSequence = new FHIRPositiveInt($supportingInfoSequence);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SUPPORTING_INFO_SEQUENCE])) {
-            $this->_primitiveXmlLocations[self::FIELD_SUPPORTING_INFO_SEQUENCE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SUPPORTING_INFO_SEQUENCE])) {
+            $this->_xmlLocations[self::FIELD_SUPPORTING_INFO_SEQUENCE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SUPPORTING_INFO_SEQUENCE][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_SUPPORTING_INFO_SEQUENCE]) {
+            $this->_xmlLocations[self::FIELD_SUPPORTING_INFO_SEQUENCE][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_SUPPORTING_INFO_SEQUENCE][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->supportingInfoSequence[] = $supportingInfoSequence;
         return $this;
     }
@@ -408,9 +412,9 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSupportingInfoSequence(array $supportingInfoSequence = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSupportingInfoSequence(array $supportingInfoSequence = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_SUPPORTING_INFO_SEQUENCE]);
+        unset($this->_xmlLocations[self::FIELD_SUPPORTING_INFO_SEQUENCE]);
         if ([] !== $this->supportingInfoSequence) {
             $this->_trackValuesRemoved(count($this->supportingInfoSequence));
             $this->supportingInfoSequence = [];
@@ -1174,14 +1178,14 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'CoverageEligibilityRequestItem', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SUPPORTING_INFO_SEQUENCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SUPPORTING_INFO_SEQUENCE] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getSupportingInfoSequence())) {
             $xw->writeAttribute(self::FIELD_SUPPORTING_INFO_SEQUENCE, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getSupportingInfoSequence()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_SUPPORTING_INFO_SEQUENCE, $vs[$idx]->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SUPPORTING_INFO_SEQUENCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SUPPORTING_INFO_SEQUENCE] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getSupportingInfoSequence())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

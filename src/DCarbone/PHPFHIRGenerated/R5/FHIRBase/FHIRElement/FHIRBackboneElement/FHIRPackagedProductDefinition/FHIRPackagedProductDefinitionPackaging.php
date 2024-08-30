@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -242,7 +242,7 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRPackagedProductDefinitionPackaging Constructor
@@ -556,16 +556,16 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setComponentPart(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $componentPart = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setComponentPart(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $componentPart = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $componentPart && !($componentPart instanceof FHIRBoolean)) {
             $componentPart = new FHIRBoolean($componentPart);
         }
         $this->_trackValueSet($this->componentPart, $componentPart);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_COMPONENT_PART])) {
-            $this->_primitiveXmlLocations[self::FIELD_COMPONENT_PART] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_COMPONENT_PART])) {
+            $this->_xmlLocations[self::FIELD_COMPONENT_PART] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_COMPONENT_PART][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_COMPONENT_PART][0] = $xmlLocation;
         $this->componentPart = $componentPart;
         return $this;
     }
@@ -601,16 +601,16 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setQuantity(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $quantity = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setQuantity(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $quantity = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $quantity && !($quantity instanceof FHIRInteger)) {
             $quantity = new FHIRInteger($quantity);
         }
         $this->_trackValueSet($this->quantity, $quantity);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_QUANTITY])) {
-            $this->_primitiveXmlLocations[self::FIELD_QUANTITY] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_QUANTITY])) {
+            $this->_xmlLocations[self::FIELD_QUANTITY] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_QUANTITY][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_QUANTITY][0] = $xmlLocation;
         $this->quantity = $quantity;
         return $this;
     }
@@ -1415,11 +1415,11 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'PackagedProductDefinitionPackaging', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_COMPONENT_PART] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_COMPONENT_PART] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getComponentPart())) {
             $xw->writeAttribute(self::FIELD_COMPONENT_PART, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_QUANTITY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_QUANTITY] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getQuantity())) {
             $xw->writeAttribute(self::FIELD_QUANTITY, $v->getValue()?->getFormattedValue());
         }
@@ -1434,13 +1434,13 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_COMPONENT_PART] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_COMPONENT_PART] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getComponentPart())) {
             $xw->startElement(self::FIELD_COMPONENT_PART);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_QUANTITY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_QUANTITY] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getQuantity())) {
             $xw->startElement(self::FIELD_QUANTITY);
             $v->xmlSerialize($xw, $config);

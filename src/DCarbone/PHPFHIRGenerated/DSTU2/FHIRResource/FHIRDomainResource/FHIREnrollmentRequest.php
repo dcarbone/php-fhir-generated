@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -224,7 +224,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements PHPFHIRContain
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIREnrollmentRequest Constructor
@@ -504,16 +504,16 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements PHPFHIRContain
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $created && !($created instanceof FHIRDateTime)) {
             $created = new FHIRDateTime($created);
         }
         $this->_trackValueSet($this->created, $created);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CREATED])) {
-            $this->_primitiveXmlLocations[self::FIELD_CREATED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CREATED])) {
+            $this->_xmlLocations[self::FIELD_CREATED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CREATED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_CREATED][0] = $xmlLocation;
         $this->created = $created;
         return $this;
     }
@@ -1150,7 +1150,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements PHPFHIRContain
             $openedRoot = true;
             $xw->openRootNode($config, 'EnrollmentRequest', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CREATED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CREATED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCreated())) {
             $xw->writeAttribute(self::FIELD_CREATED, $v->getValue()?->getFormattedValue());
         }
@@ -1170,7 +1170,7 @@ class FHIREnrollmentRequest extends FHIRDomainResource implements PHPFHIRContain
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CREATED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CREATED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCreated())) {
             $xw->startElement(self::FIELD_CREATED);
             $v->xmlSerialize($xw, $config);

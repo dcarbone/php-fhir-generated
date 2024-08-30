@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -354,7 +354,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMedicationKnowledge Constructor
@@ -946,16 +946,20 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $name && !($name instanceof FHIRString)) {
             $name = new FHIRString($name);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NAME])) {
-            $this->_primitiveXmlLocations[self::FIELD_NAME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NAME])) {
+            $this->_xmlLocations[self::FIELD_NAME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NAME][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_NAME]) {
+            $this->_xmlLocations[self::FIELD_NAME][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_NAME][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->name[] = $name;
         return $this;
     }
@@ -973,9 +977,9 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setName(array $name = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setName(array $name = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_NAME]);
+        unset($this->_xmlLocations[self::FIELD_NAME]);
         if ([] !== $this->name) {
             $this->_trackValuesRemoved(count($this->name));
             $this->name = [];
@@ -1268,16 +1272,16 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPreparationInstruction(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $preparationInstruction = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPreparationInstruction(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $preparationInstruction = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $preparationInstruction && !($preparationInstruction instanceof FHIRMarkdown)) {
             $preparationInstruction = new FHIRMarkdown($preparationInstruction);
         }
         $this->_trackValueSet($this->preparationInstruction, $preparationInstruction);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PREPARATION_INSTRUCTION])) {
-            $this->_primitiveXmlLocations[self::FIELD_PREPARATION_INSTRUCTION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PREPARATION_INSTRUCTION])) {
+            $this->_xmlLocations[self::FIELD_PREPARATION_INSTRUCTION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PREPARATION_INSTRUCTION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PREPARATION_INSTRUCTION][0] = $xmlLocation;
         $this->preparationInstruction = $preparationInstruction;
         return $this;
     }
@@ -2404,13 +2408,13 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
             $openedRoot = true;
             $xw->openRootNode($config, 'MedicationKnowledge', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NAME] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getName())) {
             $xw->writeAttribute(self::FIELD_NAME, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getName()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_NAME, $vs[$idx]->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PREPARATION_INSTRUCTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PREPARATION_INSTRUCTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPreparationInstruction())) {
             $xw->writeAttribute(self::FIELD_PREPARATION_INSTRUCTION, $v->getValue()?->getFormattedValue());
         }
@@ -2440,7 +2444,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NAME] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getName())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
@@ -2470,7 +2474,7 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PREPARATION_INSTRUCTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PREPARATION_INSTRUCTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPreparationInstruction())) {
             $xw->startElement(self::FIELD_PREPARATION_INSTRUCTION);
             $v->xmlSerialize($xw, $config);

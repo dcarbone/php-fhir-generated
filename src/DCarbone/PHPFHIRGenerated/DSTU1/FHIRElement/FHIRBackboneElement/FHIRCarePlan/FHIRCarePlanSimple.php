@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -223,7 +223,7 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRCarePlanSimple Constructor
@@ -523,16 +523,16 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTimingString(null|string|FHIRStringPrimitive|FHIRString $timingString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTimingString(null|string|FHIRStringPrimitive|FHIRString $timingString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $timingString && !($timingString instanceof FHIRString)) {
             $timingString = new FHIRString($timingString);
         }
         $this->_trackValueSet($this->timingString, $timingString);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TIMING_STRING])) {
-            $this->_primitiveXmlLocations[self::FIELD_TIMING_STRING] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TIMING_STRING])) {
+            $this->_xmlLocations[self::FIELD_TIMING_STRING] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TIMING_STRING][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TIMING_STRING][0] = $xmlLocation;
         $this->timingString = $timingString;
         return $this;
     }
@@ -773,16 +773,16 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDetails(null|string|FHIRStringPrimitive|FHIRString $details = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDetails(null|string|FHIRStringPrimitive|FHIRString $details = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $details && !($details instanceof FHIRString)) {
             $details = new FHIRString($details);
         }
         $this->_trackValueSet($this->details, $details);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DETAILS])) {
-            $this->_primitiveXmlLocations[self::FIELD_DETAILS] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DETAILS])) {
+            $this->_xmlLocations[self::FIELD_DETAILS] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DETAILS][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DETAILS][0] = $xmlLocation;
         $this->details = $details;
         return $this;
     }
@@ -1154,11 +1154,11 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'CarePlanSimple', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TIMING_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TIMING_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTimingString())) {
             $xw->writeAttribute(self::FIELD_TIMING_STRING, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DETAILS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DETAILS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDetails())) {
             $xw->writeAttribute(self::FIELD_DETAILS, $v->getValue()?->getFormattedValue());
         }
@@ -1183,7 +1183,7 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TIMING_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TIMING_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTimingString())) {
             $xw->startElement(self::FIELD_TIMING_STRING);
             $v->xmlSerialize($xw, $config);
@@ -1214,7 +1214,7 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DETAILS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DETAILS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDetails())) {
             $xw->startElement(self::FIELD_DETAILS);
             $v->xmlSerialize($xw, $config);

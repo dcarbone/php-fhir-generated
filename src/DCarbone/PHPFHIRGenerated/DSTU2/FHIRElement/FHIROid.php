@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,7 @@ class FHIROid extends FHIRElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIROid Constructor
@@ -154,10 +154,10 @@ class FHIROid extends FHIRElement
             $value = new FHIROidPrimitive($value);
         }
         $this->_trackValueSet($this->value, $value);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALUE])) {
-            $this->_primitiveXmlLocations[self::FIELD_VALUE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_VALUE])) {
+            $this->_xmlLocations[self::FIELD_VALUE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_VALUE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_VALUE][0] = $xmlLocation;
         $this->value = $value;
         return $this;
     }
@@ -315,12 +315,12 @@ class FHIROid extends FHIRElement
             $openedRoot = true;
             $xw->openRootNode($config, 'oid', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALUE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValue())) {
             $xw->writeAttribute(self::FIELD_VALUE, $v->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALUE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValue())) {
             $xw->startElement(self::FIELD_VALUE);
             $v->xmlSerialize($xw, $config);

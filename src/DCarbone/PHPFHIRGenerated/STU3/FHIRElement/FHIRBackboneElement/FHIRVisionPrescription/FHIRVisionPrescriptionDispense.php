@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRVis
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -274,7 +274,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRVisionPrescriptionDispense Constructor
@@ -626,16 +626,16 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSphere(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $sphere = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSphere(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $sphere = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $sphere && !($sphere instanceof FHIRDecimal)) {
             $sphere = new FHIRDecimal($sphere);
         }
         $this->_trackValueSet($this->sphere, $sphere);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SPHERE])) {
-            $this->_primitiveXmlLocations[self::FIELD_SPHERE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SPHERE])) {
+            $this->_xmlLocations[self::FIELD_SPHERE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SPHERE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SPHERE][0] = $xmlLocation;
         $this->sphere = $sphere;
         return $this;
     }
@@ -667,16 +667,16 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCylinder(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $cylinder = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setCylinder(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $cylinder = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $cylinder && !($cylinder instanceof FHIRDecimal)) {
             $cylinder = new FHIRDecimal($cylinder);
         }
         $this->_trackValueSet($this->cylinder, $cylinder);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CYLINDER])) {
-            $this->_primitiveXmlLocations[self::FIELD_CYLINDER] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CYLINDER])) {
+            $this->_xmlLocations[self::FIELD_CYLINDER] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CYLINDER][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_CYLINDER][0] = $xmlLocation;
         $this->cylinder = $cylinder;
         return $this;
     }
@@ -706,16 +706,16 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAxis(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $axis = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAxis(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $axis = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $axis && !($axis instanceof FHIRInteger)) {
             $axis = new FHIRInteger($axis);
         }
         $this->_trackValueSet($this->axis, $axis);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_AXIS])) {
-            $this->_primitiveXmlLocations[self::FIELD_AXIS] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_AXIS])) {
+            $this->_xmlLocations[self::FIELD_AXIS] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_AXIS][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_AXIS][0] = $xmlLocation;
         $this->axis = $axis;
         return $this;
     }
@@ -747,16 +747,16 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPrism(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $prism = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPrism(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $prism = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $prism && !($prism instanceof FHIRDecimal)) {
             $prism = new FHIRDecimal($prism);
         }
         $this->_trackValueSet($this->prism, $prism);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PRISM])) {
-            $this->_primitiveXmlLocations[self::FIELD_PRISM] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PRISM])) {
+            $this->_xmlLocations[self::FIELD_PRISM] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PRISM][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PRISM][0] = $xmlLocation;
         $this->prism = $prism;
         return $this;
     }
@@ -820,16 +820,16 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAdd(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $add = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAdd(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $add = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $add && !($add instanceof FHIRDecimal)) {
             $add = new FHIRDecimal($add);
         }
         $this->_trackValueSet($this->add, $add);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ADD])) {
-            $this->_primitiveXmlLocations[self::FIELD_ADD] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ADD])) {
+            $this->_xmlLocations[self::FIELD_ADD] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ADD][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ADD][0] = $xmlLocation;
         $this->add = $add;
         return $this;
     }
@@ -861,16 +861,16 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPower(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $power = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPower(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $power = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $power && !($power instanceof FHIRDecimal)) {
             $power = new FHIRDecimal($power);
         }
         $this->_trackValueSet($this->power, $power);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_POWER])) {
-            $this->_primitiveXmlLocations[self::FIELD_POWER] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_POWER])) {
+            $this->_xmlLocations[self::FIELD_POWER] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_POWER][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_POWER][0] = $xmlLocation;
         $this->power = $power;
         return $this;
     }
@@ -902,16 +902,16 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setBackCurve(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $backCurve = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setBackCurve(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $backCurve = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $backCurve && !($backCurve instanceof FHIRDecimal)) {
             $backCurve = new FHIRDecimal($backCurve);
         }
         $this->_trackValueSet($this->backCurve, $backCurve);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_BACK_CURVE])) {
-            $this->_primitiveXmlLocations[self::FIELD_BACK_CURVE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_BACK_CURVE])) {
+            $this->_xmlLocations[self::FIELD_BACK_CURVE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_BACK_CURVE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_BACK_CURVE][0] = $xmlLocation;
         $this->backCurve = $backCurve;
         return $this;
     }
@@ -943,16 +943,16 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDiameter(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $diameter = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDiameter(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $diameter = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $diameter && !($diameter instanceof FHIRDecimal)) {
             $diameter = new FHIRDecimal($diameter);
         }
         $this->_trackValueSet($this->diameter, $diameter);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DIAMETER])) {
-            $this->_primitiveXmlLocations[self::FIELD_DIAMETER] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DIAMETER])) {
+            $this->_xmlLocations[self::FIELD_DIAMETER] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DIAMETER][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DIAMETER][0] = $xmlLocation;
         $this->diameter = $diameter;
         return $this;
     }
@@ -1020,16 +1020,16 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setColor(null|string|FHIRStringPrimitive|FHIRString $color = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setColor(null|string|FHIRStringPrimitive|FHIRString $color = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $color && !($color instanceof FHIRString)) {
             $color = new FHIRString($color);
         }
         $this->_trackValueSet($this->color, $color);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_COLOR])) {
-            $this->_primitiveXmlLocations[self::FIELD_COLOR] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_COLOR])) {
+            $this->_xmlLocations[self::FIELD_COLOR] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_COLOR][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_COLOR][0] = $xmlLocation;
         $this->color = $color;
         return $this;
     }
@@ -1059,16 +1059,16 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setBrand(null|string|FHIRStringPrimitive|FHIRString $brand = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setBrand(null|string|FHIRStringPrimitive|FHIRString $brand = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $brand && !($brand instanceof FHIRString)) {
             $brand = new FHIRString($brand);
         }
         $this->_trackValueSet($this->brand, $brand);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_BRAND])) {
-            $this->_primitiveXmlLocations[self::FIELD_BRAND] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_BRAND])) {
+            $this->_xmlLocations[self::FIELD_BRAND] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_BRAND][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_BRAND][0] = $xmlLocation;
         $this->brand = $brand;
         return $this;
     }
@@ -1642,43 +1642,43 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'VisionPrescriptionDispense', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SPHERE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SPHERE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSphere())) {
             $xw->writeAttribute(self::FIELD_SPHERE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CYLINDER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CYLINDER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCylinder())) {
             $xw->writeAttribute(self::FIELD_CYLINDER, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_AXIS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_AXIS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAxis())) {
             $xw->writeAttribute(self::FIELD_AXIS, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PRISM] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PRISM] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPrism())) {
             $xw->writeAttribute(self::FIELD_PRISM, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ADD] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ADD] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAdd())) {
             $xw->writeAttribute(self::FIELD_ADD, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_POWER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_POWER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPower())) {
             $xw->writeAttribute(self::FIELD_POWER, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_BACK_CURVE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_BACK_CURVE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getBackCurve())) {
             $xw->writeAttribute(self::FIELD_BACK_CURVE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DIAMETER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DIAMETER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDiameter())) {
             $xw->writeAttribute(self::FIELD_DIAMETER, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_COLOR] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_COLOR] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getColor())) {
             $xw->writeAttribute(self::FIELD_COLOR, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_BRAND] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_BRAND] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getBrand())) {
             $xw->writeAttribute(self::FIELD_BRAND, $v->getValue()?->getFormattedValue());
         }
@@ -1693,25 +1693,25 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SPHERE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SPHERE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSphere())) {
             $xw->startElement(self::FIELD_SPHERE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CYLINDER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CYLINDER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCylinder())) {
             $xw->startElement(self::FIELD_CYLINDER);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_AXIS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_AXIS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAxis())) {
             $xw->startElement(self::FIELD_AXIS);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PRISM] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PRISM] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPrism())) {
             $xw->startElement(self::FIELD_PRISM);
             $v->xmlSerialize($xw, $config);
@@ -1722,25 +1722,25 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ADD] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ADD] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAdd())) {
             $xw->startElement(self::FIELD_ADD);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_POWER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_POWER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPower())) {
             $xw->startElement(self::FIELD_POWER);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_BACK_CURVE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_BACK_CURVE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getBackCurve())) {
             $xw->startElement(self::FIELD_BACK_CURVE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DIAMETER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DIAMETER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDiameter())) {
             $xw->startElement(self::FIELD_DIAMETER);
             $v->xmlSerialize($xw, $config);
@@ -1751,13 +1751,13 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_COLOR] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_COLOR] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getColor())) {
             $xw->startElement(self::FIELD_COLOR);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_BRAND] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_BRAND] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getBrand())) {
             $xw->startElement(self::FIELD_BRAND);
             $v->xmlSerialize($xw, $config);

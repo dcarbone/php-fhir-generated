@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -110,7 +110,7 @@ class FHIRTerminologyCapabilitiesValidateCode extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRTerminologyCapabilitiesValidateCode Constructor
@@ -172,16 +172,16 @@ class FHIRTerminologyCapabilitiesValidateCode extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTranslations(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $translations = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTranslations(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $translations = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $translations && !($translations instanceof FHIRBoolean)) {
             $translations = new FHIRBoolean($translations);
         }
         $this->_trackValueSet($this->translations, $translations);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TRANSLATIONS])) {
-            $this->_primitiveXmlLocations[self::FIELD_TRANSLATIONS] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TRANSLATIONS])) {
+            $this->_xmlLocations[self::FIELD_TRANSLATIONS] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TRANSLATIONS][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TRANSLATIONS][0] = $xmlLocation;
         $this->translations = $translations;
         return $this;
     }
@@ -353,12 +353,12 @@ class FHIRTerminologyCapabilitiesValidateCode extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'TerminologyCapabilitiesValidateCode', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TRANSLATIONS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TRANSLATIONS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTranslations())) {
             $xw->writeAttribute(self::FIELD_TRANSLATIONS, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TRANSLATIONS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TRANSLATIONS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTranslations())) {
             $xw->startElement(self::FIELD_TRANSLATIONS);
             $v->xmlSerialize($xw, $config);

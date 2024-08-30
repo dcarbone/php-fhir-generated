@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -179,7 +179,7 @@ class FHIRPatientContact extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRPatientContact Constructor
@@ -499,16 +499,16 @@ class FHIRPatientContact extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setGender(null|string|FHIRCodePrimitive|FHIRCode $gender = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setGender(null|string|FHIRCodePrimitive|FHIRCode $gender = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $gender && !($gender instanceof FHIRCode)) {
             $gender = new FHIRCode($gender);
         }
         $this->_trackValueSet($this->gender, $gender);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_GENDER])) {
-            $this->_primitiveXmlLocations[self::FIELD_GENDER] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_GENDER])) {
+            $this->_xmlLocations[self::FIELD_GENDER] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_GENDER][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_GENDER][0] = $xmlLocation;
         $this->gender = $gender;
         return $this;
     }
@@ -870,7 +870,7 @@ class FHIRPatientContact extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'PatientContact', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_GENDER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_GENDER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getGender())) {
             $xw->writeAttribute(self::FIELD_GENDER, $v->getValue()?->getFormattedValue());
         }
@@ -895,7 +895,7 @@ class FHIRPatientContact extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_GENDER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_GENDER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getGender())) {
             $xw->startElement(self::FIELD_GENDER);
             $v->xmlSerialize($xw, $config);

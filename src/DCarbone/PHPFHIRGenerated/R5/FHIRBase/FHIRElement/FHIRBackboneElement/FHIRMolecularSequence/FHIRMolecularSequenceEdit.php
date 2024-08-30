@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -171,7 +171,7 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMolecularSequenceEdit Constructor
@@ -288,16 +288,16 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setStart(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $start = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setStart(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $start = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $start && !($start instanceof FHIRInteger)) {
             $start = new FHIRInteger($start);
         }
         $this->_trackValueSet($this->start, $start);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_START])) {
-            $this->_primitiveXmlLocations[self::FIELD_START] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_START])) {
+            $this->_xmlLocations[self::FIELD_START] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_START][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_START][0] = $xmlLocation;
         $this->start = $start;
         return $this;
     }
@@ -333,16 +333,16 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setEnd(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $end = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setEnd(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $end = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $end && !($end instanceof FHIRInteger)) {
             $end = new FHIRInteger($end);
         }
         $this->_trackValueSet($this->end, $end);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_END])) {
-            $this->_primitiveXmlLocations[self::FIELD_END] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_END])) {
+            $this->_xmlLocations[self::FIELD_END] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_END][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_END][0] = $xmlLocation;
         $this->end = $end;
         return $this;
     }
@@ -380,16 +380,16 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setReplacementSequence(null|string|FHIRStringPrimitive|FHIRString $replacementSequence = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setReplacementSequence(null|string|FHIRStringPrimitive|FHIRString $replacementSequence = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $replacementSequence && !($replacementSequence instanceof FHIRString)) {
             $replacementSequence = new FHIRString($replacementSequence);
         }
         $this->_trackValueSet($this->replacementSequence, $replacementSequence);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_REPLACEMENT_SEQUENCE])) {
-            $this->_primitiveXmlLocations[self::FIELD_REPLACEMENT_SEQUENCE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_REPLACEMENT_SEQUENCE])) {
+            $this->_xmlLocations[self::FIELD_REPLACEMENT_SEQUENCE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_REPLACEMENT_SEQUENCE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_REPLACEMENT_SEQUENCE][0] = $xmlLocation;
         $this->replacementSequence = $replacementSequence;
         return $this;
     }
@@ -427,16 +427,16 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setReplacedSequence(null|string|FHIRStringPrimitive|FHIRString $replacedSequence = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setReplacedSequence(null|string|FHIRStringPrimitive|FHIRString $replacedSequence = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $replacedSequence && !($replacedSequence instanceof FHIRString)) {
             $replacedSequence = new FHIRString($replacedSequence);
         }
         $this->_trackValueSet($this->replacedSequence, $replacedSequence);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_REPLACED_SEQUENCE])) {
-            $this->_primitiveXmlLocations[self::FIELD_REPLACED_SEQUENCE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_REPLACED_SEQUENCE])) {
+            $this->_xmlLocations[self::FIELD_REPLACED_SEQUENCE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_REPLACED_SEQUENCE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_REPLACED_SEQUENCE][0] = $xmlLocation;
         $this->replacedSequence = $replacedSequence;
         return $this;
     }
@@ -689,42 +689,42 @@ class FHIRMolecularSequenceEdit extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'MolecularSequenceEdit', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_START] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_START] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getStart())) {
             $xw->writeAttribute(self::FIELD_START, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_END] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_END] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getEnd())) {
             $xw->writeAttribute(self::FIELD_END, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_REPLACEMENT_SEQUENCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_REPLACEMENT_SEQUENCE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getReplacementSequence())) {
             $xw->writeAttribute(self::FIELD_REPLACEMENT_SEQUENCE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_REPLACED_SEQUENCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_REPLACED_SEQUENCE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getReplacedSequence())) {
             $xw->writeAttribute(self::FIELD_REPLACED_SEQUENCE, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_START] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_START] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getStart())) {
             $xw->startElement(self::FIELD_START);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_END] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_END] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getEnd())) {
             $xw->startElement(self::FIELD_END);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_REPLACEMENT_SEQUENCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_REPLACEMENT_SEQUENCE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getReplacementSequence())) {
             $xw->startElement(self::FIELD_REPLACEMENT_SEQUENCE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_REPLACED_SEQUENCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_REPLACED_SEQUENCE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getReplacedSequence())) {
             $xw->startElement(self::FIELD_REPLACED_SEQUENCE);
             $v->xmlSerialize($xw, $config);

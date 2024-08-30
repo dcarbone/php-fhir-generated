@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -291,7 +291,7 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRProcessRequest Constructor
@@ -735,16 +735,16 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $created && !($created instanceof FHIRDateTime)) {
             $created = new FHIRDateTime($created);
         }
         $this->_trackValueSet($this->created, $created);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CREATED])) {
-            $this->_primitiveXmlLocations[self::FIELD_CREATED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CREATED])) {
+            $this->_xmlLocations[self::FIELD_CREATED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CREATED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_CREATED][0] = $xmlLocation;
         $this->created = $created;
         return $this;
     }
@@ -946,16 +946,16 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setNullify(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $nullify = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setNullify(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $nullify = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $nullify && !($nullify instanceof FHIRBoolean)) {
             $nullify = new FHIRBoolean($nullify);
         }
         $this->_trackValueSet($this->nullify, $nullify);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NULLIFY])) {
-            $this->_primitiveXmlLocations[self::FIELD_NULLIFY] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NULLIFY])) {
+            $this->_xmlLocations[self::FIELD_NULLIFY] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NULLIFY][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NULLIFY][0] = $xmlLocation;
         $this->nullify = $nullify;
         return $this;
     }
@@ -985,16 +985,16 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setReference(null|string|FHIRStringPrimitive|FHIRString $reference = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setReference(null|string|FHIRStringPrimitive|FHIRString $reference = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $reference && !($reference instanceof FHIRString)) {
             $reference = new FHIRString($reference);
         }
         $this->_trackValueSet($this->reference, $reference);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_REFERENCE])) {
-            $this->_primitiveXmlLocations[self::FIELD_REFERENCE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_REFERENCE])) {
+            $this->_xmlLocations[self::FIELD_REFERENCE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_REFERENCE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_REFERENCE][0] = $xmlLocation;
         $this->reference = $reference;
         return $this;
     }
@@ -1083,16 +1083,20 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addInclude(null|string|FHIRStringPrimitive|FHIRString $include = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addInclude(null|string|FHIRStringPrimitive|FHIRString $include = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $include && !($include instanceof FHIRString)) {
             $include = new FHIRString($include);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_INCLUDE])) {
-            $this->_primitiveXmlLocations[self::FIELD_INCLUDE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_INCLUDE])) {
+            $this->_xmlLocations[self::FIELD_INCLUDE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_INCLUDE][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_INCLUDE]) {
+            $this->_xmlLocations[self::FIELD_INCLUDE][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_INCLUDE][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->include[] = $include;
         return $this;
     }
@@ -1108,9 +1112,9 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInclude(array $include = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setInclude(array $include = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_INCLUDE]);
+        unset($this->_xmlLocations[self::FIELD_INCLUDE]);
         if ([] !== $this->include) {
             $this->_trackValuesRemoved(count($this->include));
             $this->include = [];
@@ -1153,16 +1157,20 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addExclude(null|string|FHIRStringPrimitive|FHIRString $exclude = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addExclude(null|string|FHIRStringPrimitive|FHIRString $exclude = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $exclude && !($exclude instanceof FHIRString)) {
             $exclude = new FHIRString($exclude);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EXCLUDE])) {
-            $this->_primitiveXmlLocations[self::FIELD_EXCLUDE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EXCLUDE])) {
+            $this->_xmlLocations[self::FIELD_EXCLUDE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EXCLUDE][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_EXCLUDE]) {
+            $this->_xmlLocations[self::FIELD_EXCLUDE][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_EXCLUDE][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->exclude[] = $exclude;
         return $this;
     }
@@ -1178,9 +1186,9 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setExclude(array $exclude = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setExclude(array $exclude = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_EXCLUDE]);
+        unset($this->_xmlLocations[self::FIELD_EXCLUDE]);
         if ([] !== $this->exclude) {
             $this->_trackValuesRemoved(count($this->exclude));
             $this->exclude = [];
@@ -1802,25 +1810,25 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
             $openedRoot = true;
             $xw->openRootNode($config, 'ProcessRequest', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CREATED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CREATED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCreated())) {
             $xw->writeAttribute(self::FIELD_CREATED, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NULLIFY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NULLIFY] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getNullify())) {
             $xw->writeAttribute(self::FIELD_NULLIFY, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_REFERENCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_REFERENCE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getReference())) {
             $xw->writeAttribute(self::FIELD_REFERENCE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INCLUDE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INCLUDE] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getInclude())) {
             $xw->writeAttribute(self::FIELD_INCLUDE, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getInclude()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_INCLUDE, $vs[$idx]->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXCLUDE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXCLUDE] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getExclude())) {
             $xw->writeAttribute(self::FIELD_EXCLUDE, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getExclude()) && isset($vs[$idx])) {
@@ -1847,7 +1855,7 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CREATED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CREATED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCreated())) {
             $xw->startElement(self::FIELD_CREATED);
             $v->xmlSerialize($xw, $config);
@@ -1878,13 +1886,13 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NULLIFY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NULLIFY] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getNullify())) {
             $xw->startElement(self::FIELD_NULLIFY);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_REFERENCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_REFERENCE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getReference())) {
             $xw->startElement(self::FIELD_REFERENCE);
             $v->xmlSerialize($xw, $config);
@@ -1895,7 +1903,7 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INCLUDE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INCLUDE] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getInclude())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
@@ -1905,7 +1913,7 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
                 }
             }
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXCLUDE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXCLUDE] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getExclude())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

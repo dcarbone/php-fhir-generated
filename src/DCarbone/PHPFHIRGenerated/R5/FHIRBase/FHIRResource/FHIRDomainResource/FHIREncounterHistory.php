@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -296,7 +296,7 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIREncounterHistory Constructor
@@ -921,16 +921,16 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPlannedStartDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $plannedStartDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPlannedStartDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $plannedStartDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $plannedStartDate && !($plannedStartDate instanceof FHIRDateTime)) {
             $plannedStartDate = new FHIRDateTime($plannedStartDate);
         }
         $this->_trackValueSet($this->plannedStartDate, $plannedStartDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PLANNED_START_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_PLANNED_START_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PLANNED_START_DATE])) {
+            $this->_xmlLocations[self::FIELD_PLANNED_START_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PLANNED_START_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PLANNED_START_DATE][0] = $xmlLocation;
         $this->plannedStartDate = $plannedStartDate;
         return $this;
     }
@@ -968,16 +968,16 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPlannedEndDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $plannedEndDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPlannedEndDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $plannedEndDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $plannedEndDate && !($plannedEndDate instanceof FHIRDateTime)) {
             $plannedEndDate = new FHIRDateTime($plannedEndDate);
         }
         $this->_trackValueSet($this->plannedEndDate, $plannedEndDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PLANNED_END_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_PLANNED_END_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PLANNED_END_DATE])) {
+            $this->_xmlLocations[self::FIELD_PLANNED_END_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PLANNED_END_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PLANNED_END_DATE][0] = $xmlLocation;
         $this->plannedEndDate = $plannedEndDate;
         return $this;
     }
@@ -1581,11 +1581,11 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
             $openedRoot = true;
             $xw->openRootNode($config, 'EncounterHistory', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PLANNED_START_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PLANNED_START_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPlannedStartDate())) {
             $xw->writeAttribute(self::FIELD_PLANNED_START_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PLANNED_END_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PLANNED_END_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPlannedEndDate())) {
             $xw->writeAttribute(self::FIELD_PLANNED_END_DATE, $v->getValue()?->getFormattedValue());
         }
@@ -1635,13 +1635,13 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PLANNED_START_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PLANNED_START_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPlannedStartDate())) {
             $xw->startElement(self::FIELD_PLANNED_START_DATE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PLANNED_END_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PLANNED_END_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPlannedEndDate())) {
             $xw->startElement(self::FIELD_PLANNED_END_DATE);
             $v->xmlSerialize($xw, $config);

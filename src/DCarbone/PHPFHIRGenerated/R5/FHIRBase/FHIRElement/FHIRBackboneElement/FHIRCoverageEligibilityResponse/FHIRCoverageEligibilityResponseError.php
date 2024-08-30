@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -144,7 +144,7 @@ class FHIRCoverageEligibilityResponseError extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRCoverageEligibilityResponseError Constructor
@@ -272,16 +272,20 @@ class FHIRCoverageEligibilityResponseError extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addExpression(null|string|FHIRStringPrimitive|FHIRString $expression = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addExpression(null|string|FHIRStringPrimitive|FHIRString $expression = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $expression && !($expression instanceof FHIRString)) {
             $expression = new FHIRString($expression);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EXPRESSION])) {
-            $this->_primitiveXmlLocations[self::FIELD_EXPRESSION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EXPRESSION])) {
+            $this->_xmlLocations[self::FIELD_EXPRESSION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EXPRESSION][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_EXPRESSION]) {
+            $this->_xmlLocations[self::FIELD_EXPRESSION][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_EXPRESSION][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->expression[] = $expression;
         return $this;
     }
@@ -299,9 +303,9 @@ class FHIRCoverageEligibilityResponseError extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setExpression(array $expression = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setExpression(array $expression = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_EXPRESSION]);
+        unset($this->_xmlLocations[self::FIELD_EXPRESSION]);
         if ([] !== $this->expression) {
             $this->_trackValuesRemoved(count($this->expression));
             $this->expression = [];
@@ -502,7 +506,7 @@ class FHIRCoverageEligibilityResponseError extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'CoverageEligibilityResponseError', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXPRESSION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXPRESSION] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getExpression())) {
             $xw->writeAttribute(self::FIELD_EXPRESSION, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getExpression()) && isset($vs[$idx])) {
@@ -514,7 +518,7 @@ class FHIRCoverageEligibilityResponseError extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXPRESSION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXPRESSION] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getExpression())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -138,7 +138,7 @@ class FHIRContractSigner extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRContractSigner Constructor
@@ -284,16 +284,16 @@ class FHIRContractSigner extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSignature(null|string|FHIRStringPrimitive|FHIRString $signature = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSignature(null|string|FHIRStringPrimitive|FHIRString $signature = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $signature && !($signature instanceof FHIRString)) {
             $signature = new FHIRString($signature);
         }
         $this->_trackValueSet($this->signature, $signature);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SIGNATURE])) {
-            $this->_primitiveXmlLocations[self::FIELD_SIGNATURE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SIGNATURE])) {
+            $this->_xmlLocations[self::FIELD_SIGNATURE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SIGNATURE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SIGNATURE][0] = $xmlLocation;
         $this->signature = $signature;
         return $this;
     }
@@ -503,7 +503,7 @@ class FHIRContractSigner extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ContractSigner', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SIGNATURE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SIGNATURE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSignature())) {
             $xw->writeAttribute(self::FIELD_SIGNATURE, $v->getValue()?->getFormattedValue());
         }
@@ -518,7 +518,7 @@ class FHIRContractSigner extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SIGNATURE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SIGNATURE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSignature())) {
             $xw->startElement(self::FIELD_SIGNATURE);
             $v->xmlSerialize($xw, $config);

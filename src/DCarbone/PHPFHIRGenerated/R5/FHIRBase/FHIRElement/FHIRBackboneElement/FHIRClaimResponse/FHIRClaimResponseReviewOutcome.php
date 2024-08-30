@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -161,7 +161,7 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRClaimResponseReviewOutcome Constructor
@@ -357,16 +357,16 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPreAuthRef(null|string|FHIRStringPrimitive|FHIRString $preAuthRef = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPreAuthRef(null|string|FHIRStringPrimitive|FHIRString $preAuthRef = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $preAuthRef && !($preAuthRef instanceof FHIRString)) {
             $preAuthRef = new FHIRString($preAuthRef);
         }
         $this->_trackValueSet($this->preAuthRef, $preAuthRef);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PRE_AUTH_REF])) {
-            $this->_primitiveXmlLocations[self::FIELD_PRE_AUTH_REF] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PRE_AUTH_REF])) {
+            $this->_xmlLocations[self::FIELD_PRE_AUTH_REF] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PRE_AUTH_REF][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PRE_AUTH_REF][0] = $xmlLocation;
         $this->preAuthRef = $preAuthRef;
         return $this;
     }
@@ -631,7 +631,7 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ClaimResponseReviewOutcome', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PRE_AUTH_REF] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PRE_AUTH_REF] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPreAuthRef())) {
             $xw->writeAttribute(self::FIELD_PRE_AUTH_REF, $v->getValue()?->getFormattedValue());
         }
@@ -646,7 +646,7 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PRE_AUTH_REF] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PRE_AUTH_REF] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPreAuthRef())) {
             $xw->startElement(self::FIELD_PRE_AUTH_REF);
             $v->xmlSerialize($xw, $config);

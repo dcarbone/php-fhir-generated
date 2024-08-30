@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -128,7 +128,7 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRClaimResponseDetail Constructor
@@ -222,16 +222,16 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSequenceLinkId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequenceLinkId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSequenceLinkId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequenceLinkId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $sequenceLinkId && !($sequenceLinkId instanceof FHIRPositiveInt)) {
             $sequenceLinkId = new FHIRPositiveInt($sequenceLinkId);
         }
         $this->_trackValueSet($this->sequenceLinkId, $sequenceLinkId);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SEQUENCE_LINK_ID])) {
-            $this->_primitiveXmlLocations[self::FIELD_SEQUENCE_LINK_ID] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SEQUENCE_LINK_ID])) {
+            $this->_xmlLocations[self::FIELD_SEQUENCE_LINK_ID] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SEQUENCE_LINK_ID][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SEQUENCE_LINK_ID][0] = $xmlLocation;
         $this->sequenceLinkId = $sequenceLinkId;
         return $this;
     }
@@ -557,12 +557,12 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ClaimResponseDetail', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SEQUENCE_LINK_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SEQUENCE_LINK_ID] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSequenceLinkId())) {
             $xw->writeAttribute(self::FIELD_SEQUENCE_LINK_ID, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SEQUENCE_LINK_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SEQUENCE_LINK_ID] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSequenceLinkId())) {
             $xw->startElement(self::FIELD_SEQUENCE_LINK_ID);
             $v->xmlSerialize($xw, $config);

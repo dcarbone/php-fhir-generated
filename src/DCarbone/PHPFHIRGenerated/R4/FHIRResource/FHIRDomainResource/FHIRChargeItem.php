@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -458,7 +458,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRChargeItem Constructor
@@ -952,16 +952,20 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addDefinitionUri(null|string|FHIRUriPrimitive|FHIRUri $definitionUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addDefinitionUri(null|string|FHIRUriPrimitive|FHIRUri $definitionUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $definitionUri && !($definitionUri instanceof FHIRUri)) {
             $definitionUri = new FHIRUri($definitionUri);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DEFINITION_URI])) {
-            $this->_primitiveXmlLocations[self::FIELD_DEFINITION_URI] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DEFINITION_URI])) {
+            $this->_xmlLocations[self::FIELD_DEFINITION_URI] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DEFINITION_URI][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_DEFINITION_URI]) {
+            $this->_xmlLocations[self::FIELD_DEFINITION_URI][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_DEFINITION_URI][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->definitionUri[] = $definitionUri;
         return $this;
     }
@@ -978,9 +982,9 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDefinitionUri(array $definitionUri = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDefinitionUri(array $definitionUri = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_DEFINITION_URI]);
+        unset($this->_xmlLocations[self::FIELD_DEFINITION_URI]);
         if ([] !== $this->definitionUri) {
             $this->_trackValuesRemoved(count($this->definitionUri));
             $this->definitionUri = [];
@@ -1027,16 +1031,20 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addDefinitionCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definitionCanonical = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addDefinitionCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definitionCanonical = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $definitionCanonical && !($definitionCanonical instanceof FHIRCanonical)) {
             $definitionCanonical = new FHIRCanonical($definitionCanonical);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DEFINITION_CANONICAL])) {
-            $this->_primitiveXmlLocations[self::FIELD_DEFINITION_CANONICAL] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DEFINITION_CANONICAL])) {
+            $this->_xmlLocations[self::FIELD_DEFINITION_CANONICAL] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DEFINITION_CANONICAL][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_DEFINITION_CANONICAL]) {
+            $this->_xmlLocations[self::FIELD_DEFINITION_CANONICAL][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_DEFINITION_CANONICAL][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->definitionCanonical[] = $definitionCanonical;
         return $this;
     }
@@ -1054,9 +1062,9 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDefinitionCanonical(array $definitionCanonical = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDefinitionCanonical(array $definitionCanonical = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_DEFINITION_CANONICAL]);
+        unset($this->_xmlLocations[self::FIELD_DEFINITION_CANONICAL]);
         if ([] !== $this->definitionCanonical) {
             $this->_trackValuesRemoved(count($this->definitionCanonical));
             $this->definitionCanonical = [];
@@ -1300,16 +1308,16 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $occurrenceDateTime && !($occurrenceDateTime instanceof FHIRDateTime)) {
             $occurrenceDateTime = new FHIRDateTime($occurrenceDateTime);
         }
         $this->_trackValueSet($this->occurrenceDateTime, $occurrenceDateTime);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE_TIME])) {
-            $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_OCCURRENCE_DATE_TIME])) {
+            $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE_TIME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE_TIME][0] = $xmlLocation;
         $this->occurrenceDateTime = $occurrenceDateTime;
         return $this;
     }
@@ -1684,16 +1692,16 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setFactorOverride(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factorOverride = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setFactorOverride(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factorOverride = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $factorOverride && !($factorOverride instanceof FHIRDecimal)) {
             $factorOverride = new FHIRDecimal($factorOverride);
         }
         $this->_trackValueSet($this->factorOverride, $factorOverride);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_FACTOR_OVERRIDE])) {
-            $this->_primitiveXmlLocations[self::FIELD_FACTOR_OVERRIDE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_FACTOR_OVERRIDE])) {
+            $this->_xmlLocations[self::FIELD_FACTOR_OVERRIDE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_FACTOR_OVERRIDE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_FACTOR_OVERRIDE][0] = $xmlLocation;
         $this->factorOverride = $factorOverride;
         return $this;
     }
@@ -1761,16 +1769,16 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setOverrideReason(null|string|FHIRStringPrimitive|FHIRString $overrideReason = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setOverrideReason(null|string|FHIRStringPrimitive|FHIRString $overrideReason = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $overrideReason && !($overrideReason instanceof FHIRString)) {
             $overrideReason = new FHIRString($overrideReason);
         }
         $this->_trackValueSet($this->overrideReason, $overrideReason);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_OVERRIDE_REASON])) {
-            $this->_primitiveXmlLocations[self::FIELD_OVERRIDE_REASON] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_OVERRIDE_REASON])) {
+            $this->_xmlLocations[self::FIELD_OVERRIDE_REASON] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_OVERRIDE_REASON][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_OVERRIDE_REASON][0] = $xmlLocation;
         $this->overrideReason = $overrideReason;
         return $this;
     }
@@ -1840,16 +1848,16 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setEnteredDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $enteredDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setEnteredDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $enteredDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $enteredDate && !($enteredDate instanceof FHIRDateTime)) {
             $enteredDate = new FHIRDateTime($enteredDate);
         }
         $this->_trackValueSet($this->enteredDate, $enteredDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ENTERED_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_ENTERED_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ENTERED_DATE])) {
+            $this->_xmlLocations[self::FIELD_ENTERED_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ENTERED_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ENTERED_DATE][0] = $xmlLocation;
         $this->enteredDate = $enteredDate;
         return $this;
     }
@@ -3068,31 +3076,31 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $openedRoot = true;
             $xw->openRootNode($config, 'ChargeItem', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DEFINITION_URI] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DEFINITION_URI] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getDefinitionUri())) {
             $xw->writeAttribute(self::FIELD_DEFINITION_URI, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getDefinitionUri()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_DEFINITION_URI, $vs[$idx]->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DEFINITION_CANONICAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DEFINITION_CANONICAL] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getDefinitionCanonical())) {
             $xw->writeAttribute(self::FIELD_DEFINITION_CANONICAL, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getDefinitionCanonical()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_DEFINITION_CANONICAL, $vs[$idx]->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getOccurrenceDateTime())) {
             $xw->writeAttribute(self::FIELD_OCCURRENCE_DATE_TIME, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_FACTOR_OVERRIDE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_FACTOR_OVERRIDE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getFactorOverride())) {
             $xw->writeAttribute(self::FIELD_FACTOR_OVERRIDE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OVERRIDE_REASON] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OVERRIDE_REASON] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getOverrideReason())) {
             $xw->writeAttribute(self::FIELD_OVERRIDE_REASON, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ENTERED_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ENTERED_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getEnteredDate())) {
             $xw->writeAttribute(self::FIELD_ENTERED_DATE, $v->getValue()?->getFormattedValue());
         }
@@ -3102,7 +3110,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DEFINITION_URI] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DEFINITION_URI] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getDefinitionUri())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
@@ -3112,7 +3120,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 }
             }
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DEFINITION_CANONICAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DEFINITION_CANONICAL] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getDefinitionCanonical())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
@@ -3147,7 +3155,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getOccurrenceDateTime())) {
             $xw->startElement(self::FIELD_OCCURRENCE_DATE_TIME);
             $v->xmlSerialize($xw, $config);
@@ -3193,7 +3201,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_FACTOR_OVERRIDE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_FACTOR_OVERRIDE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getFactorOverride())) {
             $xw->startElement(self::FIELD_FACTOR_OVERRIDE);
             $v->xmlSerialize($xw, $config);
@@ -3204,7 +3212,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OVERRIDE_REASON] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OVERRIDE_REASON] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getOverrideReason())) {
             $xw->startElement(self::FIELD_OVERRIDE_REASON);
             $v->xmlSerialize($xw, $config);
@@ -3215,7 +3223,7 @@ class FHIRChargeItem extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ENTERED_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ENTERED_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getEnteredDate())) {
             $xw->startElement(self::FIELD_ENTERED_DATE);
             $v->xmlSerialize($xw, $config);

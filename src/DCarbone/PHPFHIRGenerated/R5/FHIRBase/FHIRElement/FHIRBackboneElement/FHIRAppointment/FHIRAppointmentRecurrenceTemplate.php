@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -233,7 +233,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRAppointmentRecurrenceTemplate Constructor
@@ -519,16 +519,16 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setLastOccurrenceDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastOccurrenceDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setLastOccurrenceDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lastOccurrenceDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $lastOccurrenceDate && !($lastOccurrenceDate instanceof FHIRDate)) {
             $lastOccurrenceDate = new FHIRDate($lastOccurrenceDate);
         }
         $this->_trackValueSet($this->lastOccurrenceDate, $lastOccurrenceDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_LAST_OCCURRENCE_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_LAST_OCCURRENCE_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_LAST_OCCURRENCE_DATE])) {
+            $this->_xmlLocations[self::FIELD_LAST_OCCURRENCE_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_LAST_OCCURRENCE_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_LAST_OCCURRENCE_DATE][0] = $xmlLocation;
         $this->lastOccurrenceDate = $lastOccurrenceDate;
         return $this;
     }
@@ -558,16 +558,16 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setOccurrenceCount(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $occurrenceCount = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setOccurrenceCount(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $occurrenceCount = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $occurrenceCount && !($occurrenceCount instanceof FHIRPositiveInt)) {
             $occurrenceCount = new FHIRPositiveInt($occurrenceCount);
         }
         $this->_trackValueSet($this->occurrenceCount, $occurrenceCount);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_COUNT])) {
-            $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_COUNT] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_OCCURRENCE_COUNT])) {
+            $this->_xmlLocations[self::FIELD_OCCURRENCE_COUNT] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_COUNT][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_OCCURRENCE_COUNT][0] = $xmlLocation;
         $this->occurrenceCount = $occurrenceCount;
         return $this;
     }
@@ -599,16 +599,20 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addOccurrenceDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $occurrenceDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addOccurrenceDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $occurrenceDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $occurrenceDate && !($occurrenceDate instanceof FHIRDate)) {
             $occurrenceDate = new FHIRDate($occurrenceDate);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_OCCURRENCE_DATE])) {
+            $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE]) {
+            $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->occurrenceDate[] = $occurrenceDate;
         return $this;
     }
@@ -625,9 +629,9 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setOccurrenceDate(array $occurrenceDate = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setOccurrenceDate(array $occurrenceDate = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE]);
+        unset($this->_xmlLocations[self::FIELD_OCCURRENCE_DATE]);
         if ([] !== $this->occurrenceDate) {
             $this->_trackValuesRemoved(count($this->occurrenceDate));
             $this->occurrenceDate = [];
@@ -774,16 +778,20 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addExcludingDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $excludingDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addExcludingDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $excludingDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $excludingDate && !($excludingDate instanceof FHIRDate)) {
             $excludingDate = new FHIRDate($excludingDate);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EXCLUDING_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_EXCLUDING_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EXCLUDING_DATE])) {
+            $this->_xmlLocations[self::FIELD_EXCLUDING_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EXCLUDING_DATE][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_EXCLUDING_DATE]) {
+            $this->_xmlLocations[self::FIELD_EXCLUDING_DATE][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_EXCLUDING_DATE][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->excludingDate[] = $excludingDate;
         return $this;
     }
@@ -800,9 +808,9 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setExcludingDate(array $excludingDate = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setExcludingDate(array $excludingDate = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_EXCLUDING_DATE]);
+        unset($this->_xmlLocations[self::FIELD_EXCLUDING_DATE]);
         if ([] !== $this->excludingDate) {
             $this->_trackValuesRemoved(count($this->excludingDate));
             $this->excludingDate = [];
@@ -845,16 +853,20 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addExcludingRecurrenceId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $excludingRecurrenceId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addExcludingRecurrenceId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $excludingRecurrenceId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $excludingRecurrenceId && !($excludingRecurrenceId instanceof FHIRPositiveInt)) {
             $excludingRecurrenceId = new FHIRPositiveInt($excludingRecurrenceId);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EXCLUDING_RECURRENCE_ID])) {
-            $this->_primitiveXmlLocations[self::FIELD_EXCLUDING_RECURRENCE_ID] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EXCLUDING_RECURRENCE_ID])) {
+            $this->_xmlLocations[self::FIELD_EXCLUDING_RECURRENCE_ID] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EXCLUDING_RECURRENCE_ID][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_EXCLUDING_RECURRENCE_ID]) {
+            $this->_xmlLocations[self::FIELD_EXCLUDING_RECURRENCE_ID][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_EXCLUDING_RECURRENCE_ID][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->excludingRecurrenceId[] = $excludingRecurrenceId;
         return $this;
     }
@@ -870,9 +882,9 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setExcludingRecurrenceId(array $excludingRecurrenceId = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setExcludingRecurrenceId(array $excludingRecurrenceId = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_EXCLUDING_RECURRENCE_ID]);
+        unset($this->_xmlLocations[self::FIELD_EXCLUDING_RECURRENCE_ID]);
         if ([] !== $this->excludingRecurrenceId) {
             $this->_trackValuesRemoved(count($this->excludingRecurrenceId));
             $this->excludingRecurrenceId = [];
@@ -1251,27 +1263,27 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'AppointmentRecurrenceTemplate', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LAST_OCCURRENCE_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LAST_OCCURRENCE_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getLastOccurrenceDate())) {
             $xw->writeAttribute(self::FIELD_LAST_OCCURRENCE_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_COUNT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OCCURRENCE_COUNT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getOccurrenceCount())) {
             $xw->writeAttribute(self::FIELD_OCCURRENCE_COUNT, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getOccurrenceDate())) {
             $xw->writeAttribute(self::FIELD_OCCURRENCE_DATE, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getOccurrenceDate()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_OCCURRENCE_DATE, $vs[$idx]->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXCLUDING_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXCLUDING_DATE] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getExcludingDate())) {
             $xw->writeAttribute(self::FIELD_EXCLUDING_DATE, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getExcludingDate()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_EXCLUDING_DATE, $vs[$idx]->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXCLUDING_RECURRENCE_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXCLUDING_RECURRENCE_ID] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getExcludingRecurrenceId())) {
             $xw->writeAttribute(self::FIELD_EXCLUDING_RECURRENCE_ID, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getExcludingRecurrenceId()) && isset($vs[$idx])) {
@@ -1288,19 +1300,19 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LAST_OCCURRENCE_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LAST_OCCURRENCE_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getLastOccurrenceDate())) {
             $xw->startElement(self::FIELD_LAST_OCCURRENCE_DATE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_COUNT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OCCURRENCE_COUNT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getOccurrenceCount())) {
             $xw->startElement(self::FIELD_OCCURRENCE_COUNT);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OCCURRENCE_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OCCURRENCE_DATE] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getOccurrenceDate())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
@@ -1325,7 +1337,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXCLUDING_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXCLUDING_DATE] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getExcludingDate())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
@@ -1335,7 +1347,7 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
                 }
             }
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXCLUDING_RECURRENCE_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXCLUDING_RECURRENCE_ID] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getExcludingRecurrenceId())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

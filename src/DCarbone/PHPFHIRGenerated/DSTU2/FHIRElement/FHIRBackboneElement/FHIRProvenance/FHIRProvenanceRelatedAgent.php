@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,7 @@ class FHIRProvenanceRelatedAgent extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRProvenanceRelatedAgent Constructor
@@ -242,16 +242,16 @@ class FHIRProvenanceRelatedAgent extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTarget(null|string|FHIRUriPrimitive|FHIRUri $target = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTarget(null|string|FHIRUriPrimitive|FHIRUri $target = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $target && !($target instanceof FHIRUri)) {
             $target = new FHIRUri($target);
         }
         $this->_trackValueSet($this->target, $target);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TARGET])) {
-            $this->_primitiveXmlLocations[self::FIELD_TARGET] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TARGET])) {
+            $this->_xmlLocations[self::FIELD_TARGET] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TARGET][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TARGET][0] = $xmlLocation;
         $this->target = $target;
         return $this;
     }
@@ -442,7 +442,7 @@ class FHIRProvenanceRelatedAgent extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ProvenanceRelatedAgent', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TARGET] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TARGET] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTarget())) {
             $xw->writeAttribute(self::FIELD_TARGET, $v->getValue()?->getFormattedValue());
         }
@@ -452,7 +452,7 @@ class FHIRProvenanceRelatedAgent extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TARGET] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TARGET] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTarget())) {
             $xw->startElement(self::FIELD_TARGET);
             $v->xmlSerialize($xw, $config);

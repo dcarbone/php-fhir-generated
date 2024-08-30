@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -172,7 +172,7 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRTestPlanTestCase Constructor
@@ -313,16 +313,16 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSequence(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $sequence = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSequence(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $sequence = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $sequence && !($sequence instanceof FHIRInteger)) {
             $sequence = new FHIRInteger($sequence);
         }
         $this->_trackValueSet($this->sequence, $sequence);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SEQUENCE])) {
-            $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SEQUENCE])) {
+            $this->_xmlLocations[self::FIELD_SEQUENCE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SEQUENCE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SEQUENCE][0] = $xmlLocation;
         $this->sequence = $sequence;
         return $this;
     }
@@ -879,12 +879,12 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'TestPlanTestCase', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SEQUENCE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSequence())) {
             $xw->writeAttribute(self::FIELD_SEQUENCE, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SEQUENCE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSequence())) {
             $xw->startElement(self::FIELD_SEQUENCE);
             $v->xmlSerialize($xw, $config);

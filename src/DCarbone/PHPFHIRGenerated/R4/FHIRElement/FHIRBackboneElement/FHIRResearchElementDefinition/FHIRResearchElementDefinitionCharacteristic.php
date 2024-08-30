@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRResea
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -372,7 +372,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRResearchElementDefinitionCharacteristic Constructor
@@ -704,16 +704,16 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDefinitionCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definitionCanonical = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDefinitionCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definitionCanonical = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $definitionCanonical && !($definitionCanonical instanceof FHIRCanonical)) {
             $definitionCanonical = new FHIRCanonical($definitionCanonical);
         }
         $this->_trackValueSet($this->definitionCanonical, $definitionCanonical);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DEFINITION_CANONICAL])) {
-            $this->_primitiveXmlLocations[self::FIELD_DEFINITION_CANONICAL] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DEFINITION_CANONICAL])) {
+            $this->_xmlLocations[self::FIELD_DEFINITION_CANONICAL] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DEFINITION_CANONICAL][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DEFINITION_CANONICAL][0] = $xmlLocation;
         $this->definitionCanonical = $definitionCanonical;
         return $this;
     }
@@ -898,16 +898,16 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setExclude(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exclude = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setExclude(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exclude = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $exclude && !($exclude instanceof FHIRBoolean)) {
             $exclude = new FHIRBoolean($exclude);
         }
         $this->_trackValueSet($this->exclude, $exclude);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EXCLUDE])) {
-            $this->_primitiveXmlLocations[self::FIELD_EXCLUDE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EXCLUDE])) {
+            $this->_xmlLocations[self::FIELD_EXCLUDE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EXCLUDE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_EXCLUDE][0] = $xmlLocation;
         $this->exclude = $exclude;
         return $this;
     }
@@ -973,16 +973,16 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setStudyEffectiveDescription(null|string|FHIRStringPrimitive|FHIRString $studyEffectiveDescription = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setStudyEffectiveDescription(null|string|FHIRStringPrimitive|FHIRString $studyEffectiveDescription = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $studyEffectiveDescription && !($studyEffectiveDescription instanceof FHIRString)) {
             $studyEffectiveDescription = new FHIRString($studyEffectiveDescription);
         }
         $this->_trackValueSet($this->studyEffectiveDescription, $studyEffectiveDescription);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION])) {
-            $this->_primitiveXmlLocations[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION])) {
+            $this->_xmlLocations[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION][0] = $xmlLocation;
         $this->studyEffectiveDescription = $studyEffectiveDescription;
         return $this;
     }
@@ -1018,16 +1018,16 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setStudyEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $studyEffectiveDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setStudyEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $studyEffectiveDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $studyEffectiveDateTime && !($studyEffectiveDateTime instanceof FHIRDateTime)) {
             $studyEffectiveDateTime = new FHIRDateTime($studyEffectiveDateTime);
         }
         $this->_trackValueSet($this->studyEffectiveDateTime, $studyEffectiveDateTime);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_STUDY_EFFECTIVE_DATE_TIME])) {
-            $this->_primitiveXmlLocations[self::FIELD_STUDY_EFFECTIVE_DATE_TIME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_STUDY_EFFECTIVE_DATE_TIME])) {
+            $this->_xmlLocations[self::FIELD_STUDY_EFFECTIVE_DATE_TIME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_STUDY_EFFECTIVE_DATE_TIME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_STUDY_EFFECTIVE_DATE_TIME][0] = $xmlLocation;
         $this->studyEffectiveDateTime = $studyEffectiveDateTime;
         return $this;
     }
@@ -1233,16 +1233,16 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setParticipantEffectiveDescription(null|string|FHIRStringPrimitive|FHIRString $participantEffectiveDescription = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setParticipantEffectiveDescription(null|string|FHIRStringPrimitive|FHIRString $participantEffectiveDescription = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $participantEffectiveDescription && !($participantEffectiveDescription instanceof FHIRString)) {
             $participantEffectiveDescription = new FHIRString($participantEffectiveDescription);
         }
         $this->_trackValueSet($this->participantEffectiveDescription, $participantEffectiveDescription);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION])) {
-            $this->_primitiveXmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION])) {
+            $this->_xmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION][0] = $xmlLocation;
         $this->participantEffectiveDescription = $participantEffectiveDescription;
         return $this;
     }
@@ -1278,16 +1278,16 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setParticipantEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $participantEffectiveDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setParticipantEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $participantEffectiveDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $participantEffectiveDateTime && !($participantEffectiveDateTime instanceof FHIRDateTime)) {
             $participantEffectiveDateTime = new FHIRDateTime($participantEffectiveDateTime);
         }
         $this->_trackValueSet($this->participantEffectiveDateTime, $participantEffectiveDateTime);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME])) {
-            $this->_primitiveXmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME])) {
+            $this->_xmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME][0] = $xmlLocation;
         $this->participantEffectiveDateTime = $participantEffectiveDateTime;
         return $this;
     }
@@ -2057,27 +2057,27 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ResearchElementDefinitionCharacteristic', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DEFINITION_CANONICAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DEFINITION_CANONICAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDefinitionCanonical())) {
             $xw->writeAttribute(self::FIELD_DEFINITION_CANONICAL, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXCLUDE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXCLUDE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getExclude())) {
             $xw->writeAttribute(self::FIELD_EXCLUDE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getStudyEffectiveDescription())) {
             $xw->writeAttribute(self::FIELD_STUDY_EFFECTIVE_DESCRIPTION, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_STUDY_EFFECTIVE_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_STUDY_EFFECTIVE_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getStudyEffectiveDateTime())) {
             $xw->writeAttribute(self::FIELD_STUDY_EFFECTIVE_DATE_TIME, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getParticipantEffectiveDescription())) {
             $xw->writeAttribute(self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getParticipantEffectiveDateTime())) {
             $xw->writeAttribute(self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME, $v->getValue()?->getFormattedValue());
         }
@@ -2087,7 +2087,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DEFINITION_CANONICAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DEFINITION_CANONICAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDefinitionCanonical())) {
             $xw->startElement(self::FIELD_DEFINITION_CANONICAL);
             $v->xmlSerialize($xw, $config);
@@ -2108,7 +2108,7 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXCLUDE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXCLUDE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getExclude())) {
             $xw->startElement(self::FIELD_EXCLUDE);
             $v->xmlSerialize($xw, $config);
@@ -2119,13 +2119,13 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_STUDY_EFFECTIVE_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getStudyEffectiveDescription())) {
             $xw->startElement(self::FIELD_STUDY_EFFECTIVE_DESCRIPTION);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_STUDY_EFFECTIVE_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_STUDY_EFFECTIVE_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getStudyEffectiveDateTime())) {
             $xw->startElement(self::FIELD_STUDY_EFFECTIVE_DATE_TIME);
             $v->xmlSerialize($xw, $config);
@@ -2156,13 +2156,13 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getParticipantEffectiveDescription())) {
             $xw->startElement(self::FIELD_PARTICIPANT_EFFECTIVE_DESCRIPTION);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getParticipantEffectiveDateTime())) {
             $xw->startElement(self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME);
             $v->xmlSerialize($xw, $config);

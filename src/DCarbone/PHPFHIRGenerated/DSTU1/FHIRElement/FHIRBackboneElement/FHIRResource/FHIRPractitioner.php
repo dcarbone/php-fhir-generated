@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -257,7 +257,7 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRPractitioner Constructor
@@ -722,16 +722,16 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setBirthDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $birthDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setBirthDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $birthDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $birthDate && !($birthDate instanceof FHIRDateTime)) {
             $birthDate = new FHIRDateTime($birthDate);
         }
         $this->_trackValueSet($this->birthDate, $birthDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_BIRTH_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_BIRTH_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_BIRTH_DATE])) {
+            $this->_xmlLocations[self::FIELD_BIRTH_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_BIRTH_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_BIRTH_DATE][0] = $xmlLocation;
         $this->birthDate = $birthDate;
         return $this;
     }
@@ -1648,7 +1648,7 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
             $openedRoot = true;
             $xw->openRootNode($config, 'Practitioner', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_BIRTH_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_BIRTH_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getBirthDate())) {
             $xw->writeAttribute(self::FIELD_BIRTH_DATE, $v->getValue()?->getFormattedValue());
         }
@@ -1678,7 +1678,7 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_BIRTH_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_BIRTH_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getBirthDate())) {
             $xw->startElement(self::FIELD_BIRTH_DATE);
             $v->xmlSerialize($xw, $config);

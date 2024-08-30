@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -143,7 +143,7 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRBinary Constructor
@@ -241,16 +241,16 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $contentType && !($contentType instanceof FHIRCode)) {
             $contentType = new FHIRCode($contentType);
         }
         $this->_trackValueSet($this->contentType, $contentType);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CONTENT_TYPE])) {
-            $this->_primitiveXmlLocations[self::FIELD_CONTENT_TYPE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CONTENT_TYPE])) {
+            $this->_xmlLocations[self::FIELD_CONTENT_TYPE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CONTENT_TYPE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_CONTENT_TYPE][0] = $xmlLocation;
         $this->contentType = $contentType;
         return $this;
     }
@@ -314,16 +314,16 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setContent(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $content = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setContent(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $content = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $content && !($content instanceof FHIRBase64Binary)) {
             $content = new FHIRBase64Binary($content);
         }
         $this->_trackValueSet($this->content, $content);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CONTENT])) {
-            $this->_primitiveXmlLocations[self::FIELD_CONTENT] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CONTENT])) {
+            $this->_xmlLocations[self::FIELD_CONTENT] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CONTENT][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_CONTENT][0] = $xmlLocation;
         $this->content = $content;
         return $this;
     }
@@ -571,16 +571,16 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
             $openedRoot = true;
             $xw->openRootNode($config, 'Binary', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CONTENT_TYPE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CONTENT_TYPE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getContentType())) {
             $xw->writeAttribute(self::FIELD_CONTENT_TYPE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CONTENT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CONTENT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getContent())) {
             $xw->writeAttribute(self::FIELD_CONTENT, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CONTENT_TYPE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CONTENT_TYPE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getContentType())) {
             $xw->startElement(self::FIELD_CONTENT_TYPE);
             $v->xmlSerialize($xw, $config);
@@ -591,7 +591,7 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CONTENT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CONTENT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getContent())) {
             $xw->startElement(self::FIELD_CONTENT);
             $v->xmlSerialize($xw, $config);

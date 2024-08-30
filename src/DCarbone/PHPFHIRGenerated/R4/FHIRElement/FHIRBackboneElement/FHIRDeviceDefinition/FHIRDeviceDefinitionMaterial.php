@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -131,7 +131,7 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRDeviceDefinitionMaterial Constructor
@@ -253,16 +253,16 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAlternate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $alternate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAlternate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $alternate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $alternate && !($alternate instanceof FHIRBoolean)) {
             $alternate = new FHIRBoolean($alternate);
         }
         $this->_trackValueSet($this->alternate, $alternate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ALTERNATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_ALTERNATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ALTERNATE])) {
+            $this->_xmlLocations[self::FIELD_ALTERNATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ALTERNATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ALTERNATE][0] = $xmlLocation;
         $this->alternate = $alternate;
         return $this;
     }
@@ -290,16 +290,16 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAllergenicIndicator(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allergenicIndicator = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAllergenicIndicator(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allergenicIndicator = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $allergenicIndicator && !($allergenicIndicator instanceof FHIRBoolean)) {
             $allergenicIndicator = new FHIRBoolean($allergenicIndicator);
         }
         $this->_trackValueSet($this->allergenicIndicator, $allergenicIndicator);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ALLERGENIC_INDICATOR])) {
-            $this->_primitiveXmlLocations[self::FIELD_ALLERGENIC_INDICATOR] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ALLERGENIC_INDICATOR])) {
+            $this->_xmlLocations[self::FIELD_ALLERGENIC_INDICATOR] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ALLERGENIC_INDICATOR][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ALLERGENIC_INDICATOR][0] = $xmlLocation;
         $this->allergenicIndicator = $allergenicIndicator;
         return $this;
     }
@@ -517,11 +517,11 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'DeviceDefinitionMaterial', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ALTERNATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ALTERNATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAlternate())) {
             $xw->writeAttribute(self::FIELD_ALTERNATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ALLERGENIC_INDICATOR] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ALLERGENIC_INDICATOR] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAllergenicIndicator())) {
             $xw->writeAttribute(self::FIELD_ALLERGENIC_INDICATOR, $v->getValue()?->getFormattedValue());
         }
@@ -531,13 +531,13 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ALTERNATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ALTERNATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAlternate())) {
             $xw->startElement(self::FIELD_ALTERNATE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ALLERGENIC_INDICATOR] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ALLERGENIC_INDICATOR] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAllergenicIndicator())) {
             $xw->startElement(self::FIELD_ALLERGENIC_INDICATOR);
             $v->xmlSerialize($xw, $config);

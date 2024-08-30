@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -265,7 +265,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMessageHeader Constructor
@@ -486,16 +486,16 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setEventUri(null|string|FHIRUriPrimitive|FHIRUri $eventUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setEventUri(null|string|FHIRUriPrimitive|FHIRUri $eventUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $eventUri && !($eventUri instanceof FHIRUri)) {
             $eventUri = new FHIRUri($eventUri);
         }
         $this->_trackValueSet($this->eventUri, $eventUri);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EVENT_URI])) {
-            $this->_primitiveXmlLocations[self::FIELD_EVENT_URI] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EVENT_URI])) {
+            $this->_xmlLocations[self::FIELD_EVENT_URI] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EVENT_URI][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_EVENT_URI][0] = $xmlLocation;
         $this->eventUri = $eventUri;
         return $this;
     }
@@ -911,16 +911,16 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDefinition(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definition = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDefinition(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definition = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $definition && !($definition instanceof FHIRCanonical)) {
             $definition = new FHIRCanonical($definition);
         }
         $this->_trackValueSet($this->definition, $definition);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DEFINITION])) {
-            $this->_primitiveXmlLocations[self::FIELD_DEFINITION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DEFINITION])) {
+            $this->_xmlLocations[self::FIELD_DEFINITION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DEFINITION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DEFINITION][0] = $xmlLocation;
         $this->definition = $definition;
         return $this;
     }
@@ -1401,11 +1401,11 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
             $openedRoot = true;
             $xw->openRootNode($config, 'MessageHeader', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EVENT_URI] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EVENT_URI] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getEventUri())) {
             $xw->writeAttribute(self::FIELD_EVENT_URI, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DEFINITION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DEFINITION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDefinition())) {
             $xw->writeAttribute(self::FIELD_DEFINITION, $v->getValue()?->getFormattedValue());
         }
@@ -1415,7 +1415,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EVENT_URI] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EVENT_URI] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getEventUri())) {
             $xw->startElement(self::FIELD_EVENT_URI);
             $v->xmlSerialize($xw, $config);
@@ -1466,7 +1466,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DEFINITION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DEFINITION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDefinition())) {
             $xw->startElement(self::FIELD_DEFINITION);
             $v->xmlSerialize($xw, $config);

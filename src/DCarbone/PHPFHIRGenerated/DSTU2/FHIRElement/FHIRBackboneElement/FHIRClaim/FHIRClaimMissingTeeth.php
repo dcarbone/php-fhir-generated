@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,7 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRClaimMissingTeeth Constructor
@@ -283,16 +283,16 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setExtractionDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $extractionDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setExtractionDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $extractionDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $extractionDate && !($extractionDate instanceof FHIRDate)) {
             $extractionDate = new FHIRDate($extractionDate);
         }
         $this->_trackValueSet($this->extractionDate, $extractionDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EXTRACTION_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_EXTRACTION_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EXTRACTION_DATE])) {
+            $this->_xmlLocations[self::FIELD_EXTRACTION_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EXTRACTION_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_EXTRACTION_DATE][0] = $xmlLocation;
         $this->extractionDate = $extractionDate;
         return $this;
     }
@@ -502,7 +502,7 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ClaimMissingTeeth', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXTRACTION_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXTRACTION_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getExtractionDate())) {
             $xw->writeAttribute(self::FIELD_EXTRACTION_DATE, $v->getValue()?->getFormattedValue());
         }
@@ -517,7 +517,7 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXTRACTION_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXTRACTION_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getExtractionDate())) {
             $xw->startElement(self::FIELD_EXTRACTION_DATE);
             $v->xmlSerialize($xw, $config);

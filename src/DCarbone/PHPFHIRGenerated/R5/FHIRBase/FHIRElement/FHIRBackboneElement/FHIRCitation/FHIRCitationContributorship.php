@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -151,7 +151,7 @@ class FHIRCitationContributorship extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRCitationContributorship Constructor
@@ -243,16 +243,16 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setComplete(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $complete = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setComplete(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $complete = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $complete && !($complete instanceof FHIRBoolean)) {
             $complete = new FHIRBoolean($complete);
         }
         $this->_trackValueSet($this->complete, $complete);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_COMPLETE])) {
-            $this->_primitiveXmlLocations[self::FIELD_COMPLETE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_COMPLETE])) {
+            $this->_xmlLocations[self::FIELD_COMPLETE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_COMPLETE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_COMPLETE][0] = $xmlLocation;
         $this->complete = $complete;
         return $this;
     }
@@ -596,12 +596,12 @@ class FHIRCitationContributorship extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'CitationContributorship', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_COMPLETE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_COMPLETE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getComplete())) {
             $xw->writeAttribute(self::FIELD_COMPLETE, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_COMPLETE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_COMPLETE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getComplete())) {
             $xw->startElement(self::FIELD_COMPLETE);
             $v->xmlSerialize($xw, $config);

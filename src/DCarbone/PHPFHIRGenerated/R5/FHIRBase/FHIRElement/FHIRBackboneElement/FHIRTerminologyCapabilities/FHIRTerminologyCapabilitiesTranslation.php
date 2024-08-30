@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,7 +130,7 @@ class FHIRTerminologyCapabilitiesTranslation extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRTerminologyCapabilitiesTranslation Constructor
@@ -192,16 +192,16 @@ class FHIRTerminologyCapabilitiesTranslation extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setNeedsMap(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $needsMap = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setNeedsMap(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $needsMap = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $needsMap && !($needsMap instanceof FHIRBoolean)) {
             $needsMap = new FHIRBoolean($needsMap);
         }
         $this->_trackValueSet($this->needsMap, $needsMap);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NEEDS_MAP])) {
-            $this->_primitiveXmlLocations[self::FIELD_NEEDS_MAP] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NEEDS_MAP])) {
+            $this->_xmlLocations[self::FIELD_NEEDS_MAP] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NEEDS_MAP][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NEEDS_MAP][0] = $xmlLocation;
         $this->needsMap = $needsMap;
         return $this;
     }
@@ -373,12 +373,12 @@ class FHIRTerminologyCapabilitiesTranslation extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'TerminologyCapabilitiesTranslation', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NEEDS_MAP] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NEEDS_MAP] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getNeedsMap())) {
             $xw->writeAttribute(self::FIELD_NEEDS_MAP, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NEEDS_MAP] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NEEDS_MAP] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getNeedsMap())) {
             $xw->startElement(self::FIELD_NEEDS_MAP);
             $v->xmlSerialize($xw, $config);

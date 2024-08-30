@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -144,7 +144,7 @@ class FHIRAccountCoverage extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRAccountCoverage Constructor
@@ -255,16 +255,16 @@ class FHIRAccountCoverage extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPriority(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $priority = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPriority(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $priority = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $priority && !($priority instanceof FHIRPositiveInt)) {
             $priority = new FHIRPositiveInt($priority);
         }
         $this->_trackValueSet($this->priority, $priority);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PRIORITY])) {
-            $this->_primitiveXmlLocations[self::FIELD_PRIORITY] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PRIORITY])) {
+            $this->_xmlLocations[self::FIELD_PRIORITY] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PRIORITY][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PRIORITY][0] = $xmlLocation;
         $this->priority = $priority;
         return $this;
     }
@@ -455,7 +455,7 @@ class FHIRAccountCoverage extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'AccountCoverage', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PRIORITY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PRIORITY] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPriority())) {
             $xw->writeAttribute(self::FIELD_PRIORITY, $v->getValue()?->getFormattedValue());
         }
@@ -465,7 +465,7 @@ class FHIRAccountCoverage extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PRIORITY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PRIORITY] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPriority())) {
             $xw->startElement(self::FIELD_PRIORITY);
             $v->xmlSerialize($xw, $config);

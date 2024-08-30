@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -361,7 +361,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRClinicalImpression Constructor
@@ -827,16 +827,16 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $description && !($description instanceof FHIRString)) {
             $description = new FHIRString($description);
         }
         $this->_trackValueSet($this->description, $description);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DESCRIPTION])) {
-            $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DESCRIPTION])) {
+            $this->_xmlLocations[self::FIELD_DESCRIPTION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
         $this->description = $description;
         return $this;
     }
@@ -940,16 +940,16 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setEffectiveDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $effectiveDateTime && !($effectiveDateTime instanceof FHIRDateTime)) {
             $effectiveDateTime = new FHIRDateTime($effectiveDateTime);
         }
         $this->_trackValueSet($this->effectiveDateTime, $effectiveDateTime);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EFFECTIVE_DATE_TIME])) {
-            $this->_primitiveXmlLocations[self::FIELD_EFFECTIVE_DATE_TIME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EFFECTIVE_DATE_TIME])) {
+            $this->_xmlLocations[self::FIELD_EFFECTIVE_DATE_TIME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EFFECTIVE_DATE_TIME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_EFFECTIVE_DATE_TIME][0] = $xmlLocation;
         $this->effectiveDateTime = $effectiveDateTime;
         return $this;
     }
@@ -1019,16 +1019,16 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $date && !($date instanceof FHIRDateTime)) {
             $date = new FHIRDateTime($date);
         }
         $this->_trackValueSet($this->date, $date);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DATE])) {
+            $this->_xmlLocations[self::FIELD_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DATE][0] = $xmlLocation;
         $this->date = $date;
         return $this;
     }
@@ -1276,16 +1276,20 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addProtocol(null|string|FHIRUriPrimitive|FHIRUri $protocol = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addProtocol(null|string|FHIRUriPrimitive|FHIRUri $protocol = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $protocol && !($protocol instanceof FHIRUri)) {
             $protocol = new FHIRUri($protocol);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PROTOCOL])) {
-            $this->_primitiveXmlLocations[self::FIELD_PROTOCOL] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PROTOCOL])) {
+            $this->_xmlLocations[self::FIELD_PROTOCOL] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PROTOCOL][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_PROTOCOL]) {
+            $this->_xmlLocations[self::FIELD_PROTOCOL][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_PROTOCOL][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->protocol[] = $protocol;
         return $this;
     }
@@ -1302,9 +1306,9 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setProtocol(array $protocol = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setProtocol(array $protocol = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_PROTOCOL]);
+        unset($this->_xmlLocations[self::FIELD_PROTOCOL]);
         if ([] !== $this->protocol) {
             $this->_trackValuesRemoved(count($this->protocol));
             $this->protocol = [];
@@ -1347,16 +1351,16 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSummary(null|string|FHIRStringPrimitive|FHIRString $summary = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSummary(null|string|FHIRStringPrimitive|FHIRString $summary = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $summary && !($summary instanceof FHIRString)) {
             $summary = new FHIRString($summary);
         }
         $this->_trackValueSet($this->summary, $summary);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SUMMARY])) {
-            $this->_primitiveXmlLocations[self::FIELD_SUMMARY] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SUMMARY])) {
+            $this->_xmlLocations[self::FIELD_SUMMARY] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SUMMARY][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SUMMARY][0] = $xmlLocation;
         $this->summary = $summary;
         return $this;
     }
@@ -2341,25 +2345,25 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
             $openedRoot = true;
             $xw->openRootNode($config, 'ClinicalImpression', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDescription())) {
             $xw->writeAttribute(self::FIELD_DESCRIPTION, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EFFECTIVE_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EFFECTIVE_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getEffectiveDateTime())) {
             $xw->writeAttribute(self::FIELD_EFFECTIVE_DATE_TIME, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDate())) {
             $xw->writeAttribute(self::FIELD_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PROTOCOL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PROTOCOL] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getProtocol())) {
             $xw->writeAttribute(self::FIELD_PROTOCOL, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getProtocol()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_PROTOCOL, $vs[$idx]->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SUMMARY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SUMMARY] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSummary())) {
             $xw->writeAttribute(self::FIELD_SUMMARY, $v->getValue()?->getFormattedValue());
         }
@@ -2379,7 +2383,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDescription())) {
             $xw->startElement(self::FIELD_DESCRIPTION);
             $v->xmlSerialize($xw, $config);
@@ -2395,7 +2399,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EFFECTIVE_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EFFECTIVE_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getEffectiveDateTime())) {
             $xw->startElement(self::FIELD_EFFECTIVE_DATE_TIME);
             $v->xmlSerialize($xw, $config);
@@ -2406,7 +2410,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDate())) {
             $xw->startElement(self::FIELD_DATE);
             $v->xmlSerialize($xw, $config);
@@ -2432,7 +2436,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PROTOCOL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PROTOCOL] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getProtocol())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
@@ -2442,7 +2446,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 }
             }
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SUMMARY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SUMMARY] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSummary())) {
             $xw->startElement(self::FIELD_SUMMARY);
             $v->xmlSerialize($xw, $config);

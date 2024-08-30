@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -256,7 +256,7 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRProvenance Constructor
@@ -559,16 +559,16 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setRecorded(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $recorded = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setRecorded(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $recorded = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $recorded && !($recorded instanceof FHIRInstant)) {
             $recorded = new FHIRInstant($recorded);
         }
         $this->_trackValueSet($this->recorded, $recorded);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_RECORDED])) {
-            $this->_primitiveXmlLocations[self::FIELD_RECORDED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_RECORDED])) {
+            $this->_xmlLocations[self::FIELD_RECORDED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_RECORDED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_RECORDED][0] = $xmlLocation;
         $this->recorded = $recorded;
         return $this;
     }
@@ -738,16 +738,20 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addPolicy(null|string|FHIRUriPrimitive|FHIRUri $policy = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addPolicy(null|string|FHIRUriPrimitive|FHIRUri $policy = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $policy && !($policy instanceof FHIRUri)) {
             $policy = new FHIRUri($policy);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_POLICY])) {
-            $this->_primitiveXmlLocations[self::FIELD_POLICY] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_POLICY])) {
+            $this->_xmlLocations[self::FIELD_POLICY] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_POLICY][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_POLICY]) {
+            $this->_xmlLocations[self::FIELD_POLICY][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_POLICY][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->policy[] = $policy;
         return $this;
     }
@@ -765,9 +769,9 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPolicy(array $policy = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPolicy(array $policy = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_POLICY]);
+        unset($this->_xmlLocations[self::FIELD_POLICY]);
         if ([] !== $this->policy) {
             $this->_trackValuesRemoved(count($this->policy));
             $this->policy = [];
@@ -1460,11 +1464,11 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $openedRoot = true;
             $xw->openRootNode($config, 'Provenance', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RECORDED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RECORDED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getRecorded())) {
             $xw->writeAttribute(self::FIELD_RECORDED, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_POLICY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_POLICY] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getPolicy())) {
             $xw->writeAttribute(self::FIELD_POLICY, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getPolicy()) && isset($vs[$idx])) {
@@ -1481,7 +1485,7 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RECORDED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RECORDED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getRecorded())) {
             $xw->startElement(self::FIELD_RECORDED);
             $v->xmlSerialize($xw, $config);
@@ -1502,7 +1506,7 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_POLICY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_POLICY] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getPolicy())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

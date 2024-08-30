@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBac
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -174,7 +174,7 @@ class FHIRProductShelfLife extends FHIRBackboneType
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRProductShelfLife Constructor
@@ -359,16 +359,16 @@ class FHIRProductShelfLife extends FHIRBackboneType
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPeriodString(null|string|FHIRStringPrimitive|FHIRString $periodString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPeriodString(null|string|FHIRStringPrimitive|FHIRString $periodString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $periodString && !($periodString instanceof FHIRString)) {
             $periodString = new FHIRString($periodString);
         }
         $this->_trackValueSet($this->periodString, $periodString);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PERIOD_STRING])) {
-            $this->_primitiveXmlLocations[self::FIELD_PERIOD_STRING] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PERIOD_STRING])) {
+            $this->_xmlLocations[self::FIELD_PERIOD_STRING] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PERIOD_STRING][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PERIOD_STRING][0] = $xmlLocation;
         $this->periodString = $periodString;
         return $this;
     }
@@ -667,7 +667,7 @@ class FHIRProductShelfLife extends FHIRBackboneType
             $openedRoot = true;
             $xw->openRootNode($config, 'ProductShelfLife', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PERIOD_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PERIOD_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPeriodString())) {
             $xw->writeAttribute(self::FIELD_PERIOD_STRING, $v->getValue()?->getFormattedValue());
         }
@@ -682,7 +682,7 @@ class FHIRProductShelfLife extends FHIRBackboneType
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PERIOD_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PERIOD_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPeriodString())) {
             $xw->startElement(self::FIELD_PERIOD_STRING);
             $v->xmlSerialize($xw, $config);

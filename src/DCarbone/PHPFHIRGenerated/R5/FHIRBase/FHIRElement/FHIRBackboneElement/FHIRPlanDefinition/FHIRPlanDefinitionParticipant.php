@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -187,7 +187,7 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRPlanDefinitionParticipant Constructor
@@ -306,16 +306,16 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setActorId(null|string|FHIRStringPrimitive|FHIRString $actorId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setActorId(null|string|FHIRStringPrimitive|FHIRString $actorId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $actorId && !($actorId instanceof FHIRString)) {
             $actorId = new FHIRString($actorId);
         }
         $this->_trackValueSet($this->actorId, $actorId);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ACTOR_ID])) {
-            $this->_primitiveXmlLocations[self::FIELD_ACTOR_ID] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ACTOR_ID])) {
+            $this->_xmlLocations[self::FIELD_ACTOR_ID] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ACTOR_ID][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ACTOR_ID][0] = $xmlLocation;
         $this->actorId = $actorId;
         return $this;
     }
@@ -377,16 +377,16 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTypeCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $typeCanonical = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTypeCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $typeCanonical = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $typeCanonical && !($typeCanonical instanceof FHIRCanonical)) {
             $typeCanonical = new FHIRCanonical($typeCanonical);
         }
         $this->_trackValueSet($this->typeCanonical, $typeCanonical);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TYPE_CANONICAL])) {
-            $this->_primitiveXmlLocations[self::FIELD_TYPE_CANONICAL] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TYPE_CANONICAL])) {
+            $this->_xmlLocations[self::FIELD_TYPE_CANONICAL] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TYPE_CANONICAL][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TYPE_CANONICAL][0] = $xmlLocation;
         $this->typeCanonical = $typeCanonical;
         return $this;
     }
@@ -769,16 +769,16 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'PlanDefinitionParticipant', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTOR_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACTOR_ID] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getActorId())) {
             $xw->writeAttribute(self::FIELD_ACTOR_ID, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TYPE_CANONICAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TYPE_CANONICAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTypeCanonical())) {
             $xw->writeAttribute(self::FIELD_TYPE_CANONICAL, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTOR_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACTOR_ID] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getActorId())) {
             $xw->startElement(self::FIELD_ACTOR_ID);
             $v->xmlSerialize($xw, $config);
@@ -789,7 +789,7 @@ class FHIRPlanDefinitionParticipant extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TYPE_CANONICAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TYPE_CANONICAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTypeCanonical())) {
             $xw->startElement(self::FIELD_TYPE_CANONICAL);
             $v->xmlSerialize($xw, $config);

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -178,7 +178,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRConformanceRest Constructor
@@ -377,16 +377,16 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $documentation && !($documentation instanceof FHIRString)) {
             $documentation = new FHIRString($documentation);
         }
         $this->_trackValueSet($this->documentation, $documentation);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DOCUMENTATION])) {
-            $this->_primitiveXmlLocations[self::FIELD_DOCUMENTATION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DOCUMENTATION])) {
+            $this->_xmlLocations[self::FIELD_DOCUMENTATION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DOCUMENTATION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DOCUMENTATION][0] = $xmlLocation;
         $this->documentation = $documentation;
         return $this;
     }
@@ -636,16 +636,20 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addDocumentMailbox(null|string|FHIRUriPrimitive|FHIRUri $documentMailbox = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addDocumentMailbox(null|string|FHIRUriPrimitive|FHIRUri $documentMailbox = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $documentMailbox && !($documentMailbox instanceof FHIRUri)) {
             $documentMailbox = new FHIRUri($documentMailbox);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DOCUMENT_MAILBOX])) {
-            $this->_primitiveXmlLocations[self::FIELD_DOCUMENT_MAILBOX] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DOCUMENT_MAILBOX])) {
+            $this->_xmlLocations[self::FIELD_DOCUMENT_MAILBOX] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DOCUMENT_MAILBOX][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_DOCUMENT_MAILBOX]) {
+            $this->_xmlLocations[self::FIELD_DOCUMENT_MAILBOX][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_DOCUMENT_MAILBOX][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->documentMailbox[] = $documentMailbox;
         return $this;
     }
@@ -664,9 +668,9 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDocumentMailbox(array $documentMailbox = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDocumentMailbox(array $documentMailbox = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_DOCUMENT_MAILBOX]);
+        unset($this->_xmlLocations[self::FIELD_DOCUMENT_MAILBOX]);
         if ([] !== $this->documentMailbox) {
             $this->_trackValuesRemoved(count($this->documentMailbox));
             $this->documentMailbox = [];
@@ -976,11 +980,11 @@ class FHIRConformanceRest extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ConformanceRest', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DOCUMENTATION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DOCUMENTATION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDocumentation())) {
             $xw->writeAttribute(self::FIELD_DOCUMENTATION, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DOCUMENT_MAILBOX] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DOCUMENT_MAILBOX] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getDocumentMailbox())) {
             $xw->writeAttribute(self::FIELD_DOCUMENT_MAILBOX, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getDocumentMailbox()) && isset($vs[$idx])) {
@@ -992,7 +996,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DOCUMENTATION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DOCUMENTATION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDocumentation())) {
             $xw->startElement(self::FIELD_DOCUMENTATION);
             $v->xmlSerialize($xw, $config);
@@ -1018,7 +1022,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DOCUMENT_MAILBOX] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DOCUMENT_MAILBOX] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getDocumentMailbox())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

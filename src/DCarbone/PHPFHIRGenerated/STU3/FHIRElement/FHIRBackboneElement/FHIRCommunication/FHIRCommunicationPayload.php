@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCom
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -141,7 +141,7 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRCommunicationPayload Constructor
@@ -221,16 +221,16 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setContentString(null|string|FHIRStringPrimitive|FHIRString $contentString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setContentString(null|string|FHIRStringPrimitive|FHIRString $contentString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $contentString && !($contentString instanceof FHIRString)) {
             $contentString = new FHIRString($contentString);
         }
         $this->_trackValueSet($this->contentString, $contentString);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CONTENT_STRING])) {
-            $this->_primitiveXmlLocations[self::FIELD_CONTENT_STRING] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CONTENT_STRING])) {
+            $this->_xmlLocations[self::FIELD_CONTENT_STRING] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CONTENT_STRING][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_CONTENT_STRING][0] = $xmlLocation;
         $this->contentString = $contentString;
         return $this;
     }
@@ -512,12 +512,12 @@ class FHIRCommunicationPayload extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'CommunicationPayload', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CONTENT_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CONTENT_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getContentString())) {
             $xw->writeAttribute(self::FIELD_CONTENT_STRING, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CONTENT_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CONTENT_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getContentString())) {
             $xw->startElement(self::FIELD_CONTENT_STRING);
             $v->xmlSerialize($xw, $config);

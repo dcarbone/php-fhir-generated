@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -222,7 +222,7 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRNutritionIntakeConsumedItem Constructor
@@ -530,16 +530,16 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setNotConsumed(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $notConsumed = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setNotConsumed(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $notConsumed = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $notConsumed && !($notConsumed instanceof FHIRBoolean)) {
             $notConsumed = new FHIRBoolean($notConsumed);
         }
         $this->_trackValueSet($this->notConsumed, $notConsumed);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NOT_CONSUMED])) {
-            $this->_primitiveXmlLocations[self::FIELD_NOT_CONSUMED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NOT_CONSUMED])) {
+            $this->_xmlLocations[self::FIELD_NOT_CONSUMED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NOT_CONSUMED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NOT_CONSUMED][0] = $xmlLocation;
         $this->notConsumed = $notConsumed;
         return $this;
     }
@@ -863,7 +863,7 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'NutritionIntakeConsumedItem', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NOT_CONSUMED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NOT_CONSUMED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getNotConsumed())) {
             $xw->writeAttribute(self::FIELD_NOT_CONSUMED, $v->getValue()?->getFormattedValue());
         }
@@ -893,7 +893,7 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NOT_CONSUMED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NOT_CONSUMED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getNotConsumed())) {
             $xw->startElement(self::FIELD_NOT_CONSUMED);
             $v->xmlSerialize($xw, $config);

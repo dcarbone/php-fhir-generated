@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -170,7 +170,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRSpecimenDefinition Constructor
@@ -435,16 +435,16 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTimeAspect(null|string|FHIRStringPrimitive|FHIRString $timeAspect = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTimeAspect(null|string|FHIRStringPrimitive|FHIRString $timeAspect = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $timeAspect && !($timeAspect instanceof FHIRString)) {
             $timeAspect = new FHIRString($timeAspect);
         }
         $this->_trackValueSet($this->timeAspect, $timeAspect);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TIME_ASPECT])) {
-            $this->_primitiveXmlLocations[self::FIELD_TIME_ASPECT] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TIME_ASPECT])) {
+            $this->_xmlLocations[self::FIELD_TIME_ASPECT] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TIME_ASPECT][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TIME_ASPECT][0] = $xmlLocation;
         $this->timeAspect = $timeAspect;
         return $this;
     }
@@ -920,7 +920,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
             $openedRoot = true;
             $xw->openRootNode($config, 'SpecimenDefinition', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TIME_ASPECT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TIME_ASPECT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTimeAspect())) {
             $xw->writeAttribute(self::FIELD_TIME_ASPECT, $v->getValue()?->getFormattedValue());
         }
@@ -940,7 +940,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TIME_ASPECT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TIME_ASPECT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTimeAspect())) {
             $xw->startElement(self::FIELD_TIME_ASPECT);
             $v->xmlSerialize($xw, $config);

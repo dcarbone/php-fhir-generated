@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -240,7 +240,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRFamilyMemberHistoryProcedure Constructor
@@ -466,16 +466,16 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setContributedToDeath(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $contributedToDeath = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setContributedToDeath(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $contributedToDeath = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $contributedToDeath && !($contributedToDeath instanceof FHIRBoolean)) {
             $contributedToDeath = new FHIRBoolean($contributedToDeath);
         }
         $this->_trackValueSet($this->contributedToDeath, $contributedToDeath);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CONTRIBUTED_TO_DEATH])) {
-            $this->_primitiveXmlLocations[self::FIELD_CONTRIBUTED_TO_DEATH] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CONTRIBUTED_TO_DEATH])) {
+            $this->_xmlLocations[self::FIELD_CONTRIBUTED_TO_DEATH] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CONTRIBUTED_TO_DEATH][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_CONTRIBUTED_TO_DEATH][0] = $xmlLocation;
         $this->contributedToDeath = $contributedToDeath;
         return $this;
     }
@@ -623,16 +623,16 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPerformedString(null|string|FHIRStringPrimitive|FHIRString $performedString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPerformedString(null|string|FHIRStringPrimitive|FHIRString $performedString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $performedString && !($performedString instanceof FHIRString)) {
             $performedString = new FHIRString($performedString);
         }
         $this->_trackValueSet($this->performedString, $performedString);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PERFORMED_STRING])) {
-            $this->_primitiveXmlLocations[self::FIELD_PERFORMED_STRING] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PERFORMED_STRING])) {
+            $this->_xmlLocations[self::FIELD_PERFORMED_STRING] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PERFORMED_STRING][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PERFORMED_STRING][0] = $xmlLocation;
         $this->performedString = $performedString;
         return $this;
     }
@@ -674,16 +674,16 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPerformedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $performedDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPerformedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $performedDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $performedDateTime && !($performedDateTime instanceof FHIRDateTime)) {
             $performedDateTime = new FHIRDateTime($performedDateTime);
         }
         $this->_trackValueSet($this->performedDateTime, $performedDateTime);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PERFORMED_DATE_TIME])) {
-            $this->_primitiveXmlLocations[self::FIELD_PERFORMED_DATE_TIME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PERFORMED_DATE_TIME])) {
+            $this->_xmlLocations[self::FIELD_PERFORMED_DATE_TIME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PERFORMED_DATE_TIME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PERFORMED_DATE_TIME][0] = $xmlLocation;
         $this->performedDateTime = $performedDateTime;
         return $this;
     }
@@ -1087,15 +1087,15 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'FamilyMemberHistoryProcedure', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CONTRIBUTED_TO_DEATH] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CONTRIBUTED_TO_DEATH] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getContributedToDeath())) {
             $xw->writeAttribute(self::FIELD_CONTRIBUTED_TO_DEATH, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PERFORMED_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PERFORMED_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPerformedString())) {
             $xw->writeAttribute(self::FIELD_PERFORMED_STRING, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PERFORMED_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PERFORMED_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPerformedDateTime())) {
             $xw->writeAttribute(self::FIELD_PERFORMED_DATE_TIME, $v->getValue()?->getFormattedValue());
         }
@@ -1110,7 +1110,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CONTRIBUTED_TO_DEATH] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CONTRIBUTED_TO_DEATH] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getContributedToDeath())) {
             $xw->startElement(self::FIELD_CONTRIBUTED_TO_DEATH);
             $v->xmlSerialize($xw, $config);
@@ -1131,13 +1131,13 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PERFORMED_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PERFORMED_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPerformedString())) {
             $xw->startElement(self::FIELD_PERFORMED_STRING);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PERFORMED_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PERFORMED_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPerformedDateTime())) {
             $xw->startElement(self::FIELD_PERFORMED_DATE_TIME);
             $v->xmlSerialize($xw, $config);

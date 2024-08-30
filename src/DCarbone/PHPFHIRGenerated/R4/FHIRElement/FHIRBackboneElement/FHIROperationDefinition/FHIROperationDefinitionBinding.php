@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIROpera
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -128,7 +128,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIROperationDefinitionBinding Constructor
@@ -249,16 +249,16 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueSet = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueSet = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $valueSet && !($valueSet instanceof FHIRCanonical)) {
             $valueSet = new FHIRCanonical($valueSet);
         }
         $this->_trackValueSet($this->valueSet, $valueSet);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALUE_SET])) {
-            $this->_primitiveXmlLocations[self::FIELD_VALUE_SET] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_VALUE_SET])) {
+            $this->_xmlLocations[self::FIELD_VALUE_SET] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_VALUE_SET][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_VALUE_SET][0] = $xmlLocation;
         $this->valueSet = $valueSet;
         return $this;
     }
@@ -449,7 +449,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'OperationDefinitionBinding', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_SET] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALUE_SET] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValueSet())) {
             $xw->writeAttribute(self::FIELD_VALUE_SET, $v->getValue()?->getFormattedValue());
         }
@@ -459,7 +459,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_SET] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALUE_SET] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValueSet())) {
             $xw->startElement(self::FIELD_VALUE_SET);
             $v->xmlSerialize($xw, $config);

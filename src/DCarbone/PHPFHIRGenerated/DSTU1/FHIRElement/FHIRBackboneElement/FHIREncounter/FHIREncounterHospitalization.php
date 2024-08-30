@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREn
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -219,7 +219,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIREncounterHospitalization Constructor
@@ -842,16 +842,16 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setReAdmission(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $reAdmission = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setReAdmission(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $reAdmission = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $reAdmission && !($reAdmission instanceof FHIRBoolean)) {
             $reAdmission = new FHIRBoolean($reAdmission);
         }
         $this->_trackValueSet($this->reAdmission, $reAdmission);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_RE_ADMISSION])) {
-            $this->_primitiveXmlLocations[self::FIELD_RE_ADMISSION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_RE_ADMISSION])) {
+            $this->_xmlLocations[self::FIELD_RE_ADMISSION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_RE_ADMISSION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_RE_ADMISSION][0] = $xmlLocation;
         $this->reAdmission = $reAdmission;
         return $this;
     }
@@ -1238,7 +1238,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'EncounterHospitalization', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RE_ADMISSION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RE_ADMISSION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getReAdmission())) {
             $xw->writeAttribute(self::FIELD_RE_ADMISSION, $v->getValue()?->getFormattedValue());
         }
@@ -1298,7 +1298,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RE_ADMISSION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RE_ADMISSION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getReAdmission())) {
             $xw->startElement(self::FIELD_RE_ADMISSION);
             $v->xmlSerialize($xw, $config);

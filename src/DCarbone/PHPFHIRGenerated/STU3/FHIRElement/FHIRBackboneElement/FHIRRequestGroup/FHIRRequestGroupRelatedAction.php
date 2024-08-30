@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRReq
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -151,7 +151,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRRequestGroupRelatedAction Constructor
@@ -252,16 +252,16 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setActionId(null|string|FHIRIdPrimitive|FHIRId $actionId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setActionId(null|string|FHIRIdPrimitive|FHIRId $actionId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $actionId && !($actionId instanceof FHIRId)) {
             $actionId = new FHIRId($actionId);
         }
         $this->_trackValueSet($this->actionId, $actionId);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ACTION_ID])) {
-            $this->_primitiveXmlLocations[self::FIELD_ACTION_ID] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ACTION_ID])) {
+            $this->_xmlLocations[self::FIELD_ACTION_ID] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ACTION_ID][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ACTION_ID][0] = $xmlLocation;
         $this->actionId = $actionId;
         return $this;
     }
@@ -594,12 +594,12 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'RequestGroupRelatedAction', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTION_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACTION_ID] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getActionId())) {
             $xw->writeAttribute(self::FIELD_ACTION_ID, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTION_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACTION_ID] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getActionId())) {
             $xw->startElement(self::FIELD_ACTION_ID);
             $v->xmlSerialize($xw, $config);

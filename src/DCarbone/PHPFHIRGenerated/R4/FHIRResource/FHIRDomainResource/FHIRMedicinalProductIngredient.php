@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -173,7 +173,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMedicinalProductIngredient Constructor
@@ -370,16 +370,16 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAllergenicIndicator(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allergenicIndicator = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAllergenicIndicator(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allergenicIndicator = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $allergenicIndicator && !($allergenicIndicator instanceof FHIRBoolean)) {
             $allergenicIndicator = new FHIRBoolean($allergenicIndicator);
         }
         $this->_trackValueSet($this->allergenicIndicator, $allergenicIndicator);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ALLERGENIC_INDICATOR])) {
-            $this->_primitiveXmlLocations[self::FIELD_ALLERGENIC_INDICATOR] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ALLERGENIC_INDICATOR])) {
+            $this->_xmlLocations[self::FIELD_ALLERGENIC_INDICATOR] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ALLERGENIC_INDICATOR][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ALLERGENIC_INDICATOR][0] = $xmlLocation;
         $this->allergenicIndicator = $allergenicIndicator;
         return $this;
     }
@@ -880,7 +880,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
             $openedRoot = true;
             $xw->openRootNode($config, 'MedicinalProductIngredient', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ALLERGENIC_INDICATOR] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ALLERGENIC_INDICATOR] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAllergenicIndicator())) {
             $xw->writeAttribute(self::FIELD_ALLERGENIC_INDICATOR, $v->getValue()?->getFormattedValue());
         }
@@ -895,7 +895,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ALLERGENIC_INDICATOR] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ALLERGENIC_INDICATOR] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAllergenicIndicator())) {
             $xw->startElement(self::FIELD_ALLERGENIC_INDICATOR);
             $v->xmlSerialize($xw, $config);

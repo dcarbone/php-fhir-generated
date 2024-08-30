@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -153,7 +153,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRTerminologyCapabilitiesExpansion Constructor
@@ -281,16 +281,16 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setHierarchical(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $hierarchical = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setHierarchical(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $hierarchical = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $hierarchical && !($hierarchical instanceof FHIRBoolean)) {
             $hierarchical = new FHIRBoolean($hierarchical);
         }
         $this->_trackValueSet($this->hierarchical, $hierarchical);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_HIERARCHICAL])) {
-            $this->_primitiveXmlLocations[self::FIELD_HIERARCHICAL] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_HIERARCHICAL])) {
+            $this->_xmlLocations[self::FIELD_HIERARCHICAL] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_HIERARCHICAL][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_HIERARCHICAL][0] = $xmlLocation;
         $this->hierarchical = $hierarchical;
         return $this;
     }
@@ -318,16 +318,16 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPaging(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $paging = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPaging(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $paging = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $paging && !($paging instanceof FHIRBoolean)) {
             $paging = new FHIRBoolean($paging);
         }
         $this->_trackValueSet($this->paging, $paging);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PAGING])) {
-            $this->_primitiveXmlLocations[self::FIELD_PAGING] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PAGING])) {
+            $this->_xmlLocations[self::FIELD_PAGING] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PAGING][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PAGING][0] = $xmlLocation;
         $this->paging = $paging;
         return $this;
     }
@@ -355,16 +355,16 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setIncomplete(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $incomplete = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setIncomplete(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $incomplete = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $incomplete && !($incomplete instanceof FHIRBoolean)) {
             $incomplete = new FHIRBoolean($incomplete);
         }
         $this->_trackValueSet($this->incomplete, $incomplete);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_INCOMPLETE])) {
-            $this->_primitiveXmlLocations[self::FIELD_INCOMPLETE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_INCOMPLETE])) {
+            $this->_xmlLocations[self::FIELD_INCOMPLETE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_INCOMPLETE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_INCOMPLETE][0] = $xmlLocation;
         $this->incomplete = $incomplete;
         return $this;
     }
@@ -461,16 +461,16 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTextFilter(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $textFilter = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTextFilter(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $textFilter = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $textFilter && !($textFilter instanceof FHIRMarkdown)) {
             $textFilter = new FHIRMarkdown($textFilter);
         }
         $this->_trackValueSet($this->textFilter, $textFilter);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TEXT_FILTER])) {
-            $this->_primitiveXmlLocations[self::FIELD_TEXT_FILTER] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TEXT_FILTER])) {
+            $this->_xmlLocations[self::FIELD_TEXT_FILTER] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TEXT_FILTER][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TEXT_FILTER][0] = $xmlLocation;
         $this->textFilter = $textFilter;
         return $this;
     }
@@ -744,36 +744,36 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'TerminologyCapabilitiesExpansion', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_HIERARCHICAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_HIERARCHICAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getHierarchical())) {
             $xw->writeAttribute(self::FIELD_HIERARCHICAL, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PAGING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PAGING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPaging())) {
             $xw->writeAttribute(self::FIELD_PAGING, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INCOMPLETE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INCOMPLETE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getIncomplete())) {
             $xw->writeAttribute(self::FIELD_INCOMPLETE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TEXT_FILTER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TEXT_FILTER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTextFilter())) {
             $xw->writeAttribute(self::FIELD_TEXT_FILTER, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_HIERARCHICAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_HIERARCHICAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getHierarchical())) {
             $xw->startElement(self::FIELD_HIERARCHICAL);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PAGING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PAGING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPaging())) {
             $xw->startElement(self::FIELD_PAGING);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INCOMPLETE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INCOMPLETE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getIncomplete())) {
             $xw->startElement(self::FIELD_INCOMPLETE);
             $v->xmlSerialize($xw, $config);
@@ -784,7 +784,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TEXT_FILTER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TEXT_FILTER] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTextFilter())) {
             $xw->startElement(self::FIELD_TEXT_FILTER);
             $v->xmlSerialize($xw, $config);

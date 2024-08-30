@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -410,7 +410,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRExplanationOfBenefitItem Constructor
@@ -850,16 +850,16 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSequence(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSequence(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $sequence && !($sequence instanceof FHIRPositiveInt)) {
             $sequence = new FHIRPositiveInt($sequence);
         }
         $this->_trackValueSet($this->sequence, $sequence);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SEQUENCE])) {
-            $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SEQUENCE])) {
+            $this->_xmlLocations[self::FIELD_SEQUENCE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SEQUENCE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SEQUENCE][0] = $xmlLocation;
         $this->sequence = $sequence;
         return $this;
     }
@@ -889,16 +889,20 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addCareTeamLinkId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $careTeamLinkId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addCareTeamLinkId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $careTeamLinkId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $careTeamLinkId && !($careTeamLinkId instanceof FHIRPositiveInt)) {
             $careTeamLinkId = new FHIRPositiveInt($careTeamLinkId);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CARE_TEAM_LINK_ID])) {
-            $this->_primitiveXmlLocations[self::FIELD_CARE_TEAM_LINK_ID] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CARE_TEAM_LINK_ID])) {
+            $this->_xmlLocations[self::FIELD_CARE_TEAM_LINK_ID] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CARE_TEAM_LINK_ID][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_CARE_TEAM_LINK_ID]) {
+            $this->_xmlLocations[self::FIELD_CARE_TEAM_LINK_ID][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_CARE_TEAM_LINK_ID][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->careTeamLinkId[] = $careTeamLinkId;
         return $this;
     }
@@ -914,9 +918,9 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCareTeamLinkId(array $careTeamLinkId = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setCareTeamLinkId(array $careTeamLinkId = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_CARE_TEAM_LINK_ID]);
+        unset($this->_xmlLocations[self::FIELD_CARE_TEAM_LINK_ID]);
         if ([] !== $this->careTeamLinkId) {
             $this->_trackValuesRemoved(count($this->careTeamLinkId));
             $this->careTeamLinkId = [];
@@ -959,16 +963,20 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addDiagnosisLinkId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $diagnosisLinkId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addDiagnosisLinkId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $diagnosisLinkId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $diagnosisLinkId && !($diagnosisLinkId instanceof FHIRPositiveInt)) {
             $diagnosisLinkId = new FHIRPositiveInt($diagnosisLinkId);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DIAGNOSIS_LINK_ID])) {
-            $this->_primitiveXmlLocations[self::FIELD_DIAGNOSIS_LINK_ID] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DIAGNOSIS_LINK_ID])) {
+            $this->_xmlLocations[self::FIELD_DIAGNOSIS_LINK_ID] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DIAGNOSIS_LINK_ID][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_DIAGNOSIS_LINK_ID]) {
+            $this->_xmlLocations[self::FIELD_DIAGNOSIS_LINK_ID][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_DIAGNOSIS_LINK_ID][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->diagnosisLinkId[] = $diagnosisLinkId;
         return $this;
     }
@@ -984,9 +992,9 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDiagnosisLinkId(array $diagnosisLinkId = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDiagnosisLinkId(array $diagnosisLinkId = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_DIAGNOSIS_LINK_ID]);
+        unset($this->_xmlLocations[self::FIELD_DIAGNOSIS_LINK_ID]);
         if ([] !== $this->diagnosisLinkId) {
             $this->_trackValuesRemoved(count($this->diagnosisLinkId));
             $this->diagnosisLinkId = [];
@@ -1029,16 +1037,20 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addProcedureLinkId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $procedureLinkId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addProcedureLinkId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $procedureLinkId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $procedureLinkId && !($procedureLinkId instanceof FHIRPositiveInt)) {
             $procedureLinkId = new FHIRPositiveInt($procedureLinkId);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PROCEDURE_LINK_ID])) {
-            $this->_primitiveXmlLocations[self::FIELD_PROCEDURE_LINK_ID] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PROCEDURE_LINK_ID])) {
+            $this->_xmlLocations[self::FIELD_PROCEDURE_LINK_ID] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PROCEDURE_LINK_ID][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_PROCEDURE_LINK_ID]) {
+            $this->_xmlLocations[self::FIELD_PROCEDURE_LINK_ID][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_PROCEDURE_LINK_ID][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->procedureLinkId[] = $procedureLinkId;
         return $this;
     }
@@ -1054,9 +1066,9 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setProcedureLinkId(array $procedureLinkId = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setProcedureLinkId(array $procedureLinkId = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_PROCEDURE_LINK_ID]);
+        unset($this->_xmlLocations[self::FIELD_PROCEDURE_LINK_ID]);
         if ([] !== $this->procedureLinkId) {
             $this->_trackValuesRemoved(count($this->procedureLinkId));
             $this->procedureLinkId = [];
@@ -1101,16 +1113,20 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addInformationLinkId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $informationLinkId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addInformationLinkId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $informationLinkId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $informationLinkId && !($informationLinkId instanceof FHIRPositiveInt)) {
             $informationLinkId = new FHIRPositiveInt($informationLinkId);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_INFORMATION_LINK_ID])) {
-            $this->_primitiveXmlLocations[self::FIELD_INFORMATION_LINK_ID] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_INFORMATION_LINK_ID])) {
+            $this->_xmlLocations[self::FIELD_INFORMATION_LINK_ID] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_INFORMATION_LINK_ID][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_INFORMATION_LINK_ID]) {
+            $this->_xmlLocations[self::FIELD_INFORMATION_LINK_ID][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_INFORMATION_LINK_ID][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->informationLinkId[] = $informationLinkId;
         return $this;
     }
@@ -1127,9 +1143,9 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInformationLinkId(array $informationLinkId = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setInformationLinkId(array $informationLinkId = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_INFORMATION_LINK_ID]);
+        unset($this->_xmlLocations[self::FIELD_INFORMATION_LINK_ID]);
         if ([] !== $this->informationLinkId) {
             $this->_trackValuesRemoved(count($this->informationLinkId));
             $this->informationLinkId = [];
@@ -1425,16 +1441,16 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setServicedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $servicedDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setServicedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $servicedDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $servicedDate && !($servicedDate instanceof FHIRDate)) {
             $servicedDate = new FHIRDate($servicedDate);
         }
         $this->_trackValueSet($this->servicedDate, $servicedDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SERVICED_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_SERVICED_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SERVICED_DATE])) {
+            $this->_xmlLocations[self::FIELD_SERVICED_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SERVICED_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SERVICED_DATE][0] = $xmlLocation;
         $this->servicedDate = $servicedDate;
         return $this;
     }
@@ -1692,16 +1708,16 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setFactor(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setFactor(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $factor && !($factor instanceof FHIRDecimal)) {
             $factor = new FHIRDecimal($factor);
         }
         $this->_trackValueSet($this->factor, $factor);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_FACTOR])) {
-            $this->_primitiveXmlLocations[self::FIELD_FACTOR] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_FACTOR])) {
+            $this->_xmlLocations[self::FIELD_FACTOR] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_FACTOR][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_FACTOR][0] = $xmlLocation;
         $this->factor = $factor;
         return $this;
     }
@@ -1987,16 +2003,20 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addNoteNumber(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $noteNumber = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addNoteNumber(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $noteNumber = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $noteNumber && !($noteNumber instanceof FHIRPositiveInt)) {
             $noteNumber = new FHIRPositiveInt($noteNumber);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NOTE_NUMBER])) {
-            $this->_primitiveXmlLocations[self::FIELD_NOTE_NUMBER] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NOTE_NUMBER])) {
+            $this->_xmlLocations[self::FIELD_NOTE_NUMBER] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NOTE_NUMBER][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_NOTE_NUMBER]) {
+            $this->_xmlLocations[self::FIELD_NOTE_NUMBER][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_NOTE_NUMBER][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->noteNumber[] = $noteNumber;
         return $this;
     }
@@ -2012,9 +2032,9 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setNoteNumber(array $noteNumber = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setNoteNumber(array $noteNumber = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_NOTE_NUMBER]);
+        unset($this->_xmlLocations[self::FIELD_NOTE_NUMBER]);
         if ([] !== $this->noteNumber) {
             $this->_trackValuesRemoved(count($this->noteNumber));
             $this->noteNumber = [];
@@ -2847,56 +2867,56 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ExplanationOfBenefitItem', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SEQUENCE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSequence())) {
             $xw->writeAttribute(self::FIELD_SEQUENCE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CARE_TEAM_LINK_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CARE_TEAM_LINK_ID] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getCareTeamLinkId())) {
             $xw->writeAttribute(self::FIELD_CARE_TEAM_LINK_ID, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getCareTeamLinkId()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_CARE_TEAM_LINK_ID, $vs[$idx]->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DIAGNOSIS_LINK_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DIAGNOSIS_LINK_ID] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getDiagnosisLinkId())) {
             $xw->writeAttribute(self::FIELD_DIAGNOSIS_LINK_ID, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getDiagnosisLinkId()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_DIAGNOSIS_LINK_ID, $vs[$idx]->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PROCEDURE_LINK_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PROCEDURE_LINK_ID] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getProcedureLinkId())) {
             $xw->writeAttribute(self::FIELD_PROCEDURE_LINK_ID, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getProcedureLinkId()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_PROCEDURE_LINK_ID, $vs[$idx]->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INFORMATION_LINK_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INFORMATION_LINK_ID] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getInformationLinkId())) {
             $xw->writeAttribute(self::FIELD_INFORMATION_LINK_ID, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getInformationLinkId()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_INFORMATION_LINK_ID, $vs[$idx]->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SERVICED_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SERVICED_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getServicedDate())) {
             $xw->writeAttribute(self::FIELD_SERVICED_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_FACTOR] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_FACTOR] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getFactor())) {
             $xw->writeAttribute(self::FIELD_FACTOR, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NOTE_NUMBER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NOTE_NUMBER] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getNoteNumber())) {
             $xw->writeAttribute(self::FIELD_NOTE_NUMBER, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getNoteNumber()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_NOTE_NUMBER, $vs[$idx]->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SEQUENCE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSequence())) {
             $xw->startElement(self::FIELD_SEQUENCE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CARE_TEAM_LINK_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CARE_TEAM_LINK_ID] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getCareTeamLinkId())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
@@ -2906,7 +2926,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 }
             }
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DIAGNOSIS_LINK_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DIAGNOSIS_LINK_ID] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getDiagnosisLinkId())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
@@ -2916,7 +2936,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 }
             }
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PROCEDURE_LINK_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PROCEDURE_LINK_ID] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getProcedureLinkId())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
@@ -2926,7 +2946,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
                 }
             }
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INFORMATION_LINK_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INFORMATION_LINK_ID] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getInformationLinkId())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
@@ -2961,7 +2981,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SERVICED_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SERVICED_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getServicedDate())) {
             $xw->startElement(self::FIELD_SERVICED_DATE);
             $v->xmlSerialize($xw, $config);
@@ -2997,7 +3017,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_FACTOR] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_FACTOR] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getFactor())) {
             $xw->startElement(self::FIELD_FACTOR);
             $v->xmlSerialize($xw, $config);
@@ -3028,7 +3048,7 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NOTE_NUMBER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NOTE_NUMBER] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getNoteNumber())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

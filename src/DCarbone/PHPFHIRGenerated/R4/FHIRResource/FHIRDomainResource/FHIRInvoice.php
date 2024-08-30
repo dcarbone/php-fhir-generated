@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -301,7 +301,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRInvoice Constructor
@@ -647,16 +647,16 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCancelledReason(null|string|FHIRStringPrimitive|FHIRString $cancelledReason = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setCancelledReason(null|string|FHIRStringPrimitive|FHIRString $cancelledReason = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $cancelledReason && !($cancelledReason instanceof FHIRString)) {
             $cancelledReason = new FHIRString($cancelledReason);
         }
         $this->_trackValueSet($this->cancelledReason, $cancelledReason);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CANCELLED_REASON])) {
-            $this->_primitiveXmlLocations[self::FIELD_CANCELLED_REASON] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CANCELLED_REASON])) {
+            $this->_xmlLocations[self::FIELD_CANCELLED_REASON] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CANCELLED_REASON][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_CANCELLED_REASON][0] = $xmlLocation;
         $this->cancelledReason = $cancelledReason;
         return $this;
     }
@@ -800,16 +800,16 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $date && !($date instanceof FHIRDateTime)) {
             $date = new FHIRDateTime($date);
         }
         $this->_trackValueSet($this->date, $date);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DATE])) {
+            $this->_xmlLocations[self::FIELD_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DATE][0] = $xmlLocation;
         $this->date = $date;
         return $this;
     }
@@ -1165,16 +1165,16 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPaymentTerms(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $paymentTerms = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPaymentTerms(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $paymentTerms = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $paymentTerms && !($paymentTerms instanceof FHIRMarkdown)) {
             $paymentTerms = new FHIRMarkdown($paymentTerms);
         }
         $this->_trackValueSet($this->paymentTerms, $paymentTerms);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PAYMENT_TERMS])) {
-            $this->_primitiveXmlLocations[self::FIELD_PAYMENT_TERMS] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PAYMENT_TERMS])) {
+            $this->_xmlLocations[self::FIELD_PAYMENT_TERMS] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PAYMENT_TERMS][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PAYMENT_TERMS][0] = $xmlLocation;
         $this->paymentTerms = $paymentTerms;
         return $this;
     }
@@ -1807,15 +1807,15 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
             $openedRoot = true;
             $xw->openRootNode($config, 'Invoice', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CANCELLED_REASON] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CANCELLED_REASON] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCancelledReason())) {
             $xw->writeAttribute(self::FIELD_CANCELLED_REASON, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDate())) {
             $xw->writeAttribute(self::FIELD_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PAYMENT_TERMS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PAYMENT_TERMS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPaymentTerms())) {
             $xw->writeAttribute(self::FIELD_PAYMENT_TERMS, $v->getValue()?->getFormattedValue());
         }
@@ -1830,7 +1830,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CANCELLED_REASON] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CANCELLED_REASON] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCancelledReason())) {
             $xw->startElement(self::FIELD_CANCELLED_REASON);
             $v->xmlSerialize($xw, $config);
@@ -1851,7 +1851,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDate())) {
             $xw->startElement(self::FIELD_DATE);
             $v->xmlSerialize($xw, $config);
@@ -1892,7 +1892,7 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PAYMENT_TERMS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PAYMENT_TERMS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPaymentTerms())) {
             $xw->startElement(self::FIELD_PAYMENT_TERMS);
             $v->xmlSerialize($xw, $config);

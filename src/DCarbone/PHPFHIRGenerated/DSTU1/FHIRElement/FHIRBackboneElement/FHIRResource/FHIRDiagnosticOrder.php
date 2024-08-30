@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -210,7 +210,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRDiagnosticOrder Constructor
@@ -566,16 +566,16 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setClinicalNotes(null|string|FHIRStringPrimitive|FHIRString $clinicalNotes = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setClinicalNotes(null|string|FHIRStringPrimitive|FHIRString $clinicalNotes = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $clinicalNotes && !($clinicalNotes instanceof FHIRString)) {
             $clinicalNotes = new FHIRString($clinicalNotes);
         }
         $this->_trackValueSet($this->clinicalNotes, $clinicalNotes);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_CLINICAL_NOTES])) {
-            $this->_primitiveXmlLocations[self::FIELD_CLINICAL_NOTES] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_CLINICAL_NOTES])) {
+            $this->_xmlLocations[self::FIELD_CLINICAL_NOTES] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_CLINICAL_NOTES][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_CLINICAL_NOTES][0] = $xmlLocation;
         $this->clinicalNotes = $clinicalNotes;
         return $this;
     }
@@ -1219,7 +1219,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
             $openedRoot = true;
             $xw->openRootNode($config, 'DiagnosticOrder', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CLINICAL_NOTES] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CLINICAL_NOTES] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getClinicalNotes())) {
             $xw->writeAttribute(self::FIELD_CLINICAL_NOTES, $v->getValue()?->getFormattedValue());
         }
@@ -1244,7 +1244,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_CLINICAL_NOTES] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_CLINICAL_NOTES] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getClinicalNotes())) {
             $xw->startElement(self::FIELD_CLINICAL_NOTES);
             $v->xmlSerialize($xw, $config);

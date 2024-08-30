@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -149,7 +149,7 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRImagingSelectionImageRegion3D Constructor
@@ -283,16 +283,20 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addCoordinate(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $coordinate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addCoordinate(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $coordinate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $coordinate && !($coordinate instanceof FHIRDecimal)) {
             $coordinate = new FHIRDecimal($coordinate);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_COORDINATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_COORDINATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_COORDINATE])) {
+            $this->_xmlLocations[self::FIELD_COORDINATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_COORDINATE][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_COORDINATE]) {
+            $this->_xmlLocations[self::FIELD_COORDINATE][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_COORDINATE][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->coordinate[] = $coordinate;
         return $this;
     }
@@ -312,9 +316,9 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCoordinate(array $coordinate = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setCoordinate(array $coordinate = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_COORDINATE]);
+        unset($this->_xmlLocations[self::FIELD_COORDINATE]);
         if ([] !== $this->coordinate) {
             $this->_trackValuesRemoved(count($this->coordinate));
             $this->coordinate = [];
@@ -515,7 +519,7 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ImagingSelectionImageRegion3D', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_COORDINATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_COORDINATE] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getCoordinate())) {
             $xw->writeAttribute(self::FIELD_COORDINATE, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getCoordinate()) && isset($vs[$idx])) {
@@ -527,7 +531,7 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_COORDINATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_COORDINATE] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getCoordinate())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

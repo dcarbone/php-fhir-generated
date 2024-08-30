@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,7 @@ class FHIRTerminologyCapabilitiesClosure extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRTerminologyCapabilitiesClosure Constructor
@@ -168,16 +168,16 @@ class FHIRTerminologyCapabilitiesClosure extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTranslation(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $translation = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTranslation(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $translation = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $translation && !($translation instanceof FHIRBoolean)) {
             $translation = new FHIRBoolean($translation);
         }
         $this->_trackValueSet($this->translation, $translation);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TRANSLATION])) {
-            $this->_primitiveXmlLocations[self::FIELD_TRANSLATION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TRANSLATION])) {
+            $this->_xmlLocations[self::FIELD_TRANSLATION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TRANSLATION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TRANSLATION][0] = $xmlLocation;
         $this->translation = $translation;
         return $this;
     }
@@ -349,12 +349,12 @@ class FHIRTerminologyCapabilitiesClosure extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'TerminologyCapabilitiesClosure', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TRANSLATION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TRANSLATION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTranslation())) {
             $xw->writeAttribute(self::FIELD_TRANSLATION, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TRANSLATION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TRANSLATION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTranslation())) {
             $xw->startElement(self::FIELD_TRANSLATION);
             $v->xmlSerialize($xw, $config);

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestS
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,7 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRTestScriptOrigin Constructor
@@ -198,16 +198,16 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setIndex(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $index = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setIndex(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $index = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $index && !($index instanceof FHIRInteger)) {
             $index = new FHIRInteger($index);
         }
         $this->_trackValueSet($this->index, $index);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_INDEX])) {
-            $this->_primitiveXmlLocations[self::FIELD_INDEX] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_INDEX])) {
+            $this->_xmlLocations[self::FIELD_INDEX] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_INDEX][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_INDEX][0] = $xmlLocation;
         $this->index = $index;
         return $this;
     }
@@ -432,12 +432,12 @@ class FHIRTestScriptOrigin extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'TestScriptOrigin', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INDEX] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INDEX] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getIndex())) {
             $xw->writeAttribute(self::FIELD_INDEX, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INDEX] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INDEX] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getIndex())) {
             $xw->startElement(self::FIELD_INDEX);
             $v->xmlSerialize($xw, $config);

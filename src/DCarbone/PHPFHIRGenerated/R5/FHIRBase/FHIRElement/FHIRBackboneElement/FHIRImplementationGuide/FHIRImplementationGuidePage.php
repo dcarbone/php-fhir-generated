@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -211,7 +211,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRImplementationGuidePage Constructor
@@ -375,16 +375,16 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSourceUrl(null|string|FHIRUrlPrimitive|FHIRUrl $sourceUrl = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSourceUrl(null|string|FHIRUrlPrimitive|FHIRUrl $sourceUrl = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $sourceUrl && !($sourceUrl instanceof FHIRUrl)) {
             $sourceUrl = new FHIRUrl($sourceUrl);
         }
         $this->_trackValueSet($this->sourceUrl, $sourceUrl);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SOURCE_URL])) {
-            $this->_primitiveXmlLocations[self::FIELD_SOURCE_URL] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SOURCE_URL])) {
+            $this->_xmlLocations[self::FIELD_SOURCE_URL] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SOURCE_URL][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SOURCE_URL][0] = $xmlLocation;
         $this->sourceUrl = $sourceUrl;
         return $this;
     }
@@ -414,16 +414,16 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSourceString(null|string|FHIRStringPrimitive|FHIRString $sourceString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSourceString(null|string|FHIRStringPrimitive|FHIRString $sourceString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $sourceString && !($sourceString instanceof FHIRString)) {
             $sourceString = new FHIRString($sourceString);
         }
         $this->_trackValueSet($this->sourceString, $sourceString);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SOURCE_STRING])) {
-            $this->_primitiveXmlLocations[self::FIELD_SOURCE_STRING] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SOURCE_STRING])) {
+            $this->_xmlLocations[self::FIELD_SOURCE_STRING] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SOURCE_STRING][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SOURCE_STRING][0] = $xmlLocation;
         $this->sourceString = $sourceString;
         return $this;
     }
@@ -461,16 +461,16 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSourceMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $sourceMarkdown = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSourceMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $sourceMarkdown = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $sourceMarkdown && !($sourceMarkdown instanceof FHIRMarkdown)) {
             $sourceMarkdown = new FHIRMarkdown($sourceMarkdown);
         }
         $this->_trackValueSet($this->sourceMarkdown, $sourceMarkdown);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SOURCE_MARKDOWN])) {
-            $this->_primitiveXmlLocations[self::FIELD_SOURCE_MARKDOWN] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SOURCE_MARKDOWN])) {
+            $this->_xmlLocations[self::FIELD_SOURCE_MARKDOWN] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SOURCE_MARKDOWN][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SOURCE_MARKDOWN][0] = $xmlLocation;
         $this->sourceMarkdown = $sourceMarkdown;
         return $this;
     }
@@ -500,16 +500,16 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setName(null|string|FHIRUrlPrimitive|FHIRUrl $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setName(null|string|FHIRUrlPrimitive|FHIRUrl $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $name && !($name instanceof FHIRUrl)) {
             $name = new FHIRUrl($name);
         }
         $this->_trackValueSet($this->name, $name);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NAME])) {
-            $this->_primitiveXmlLocations[self::FIELD_NAME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NAME])) {
+            $this->_xmlLocations[self::FIELD_NAME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NAME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NAME][0] = $xmlLocation;
         $this->name = $name;
         return $this;
     }
@@ -541,16 +541,16 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $title && !($title instanceof FHIRString)) {
             $title = new FHIRString($title);
         }
         $this->_trackValueSet($this->title, $title);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TITLE])) {
-            $this->_primitiveXmlLocations[self::FIELD_TITLE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TITLE])) {
+            $this->_xmlLocations[self::FIELD_TITLE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TITLE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TITLE][0] = $xmlLocation;
         $this->title = $title;
         return $this;
     }
@@ -962,52 +962,52 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ImplementationGuidePage', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SOURCE_URL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SOURCE_URL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSourceUrl())) {
             $xw->writeAttribute(self::FIELD_SOURCE_URL, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SOURCE_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SOURCE_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSourceString())) {
             $xw->writeAttribute(self::FIELD_SOURCE_STRING, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SOURCE_MARKDOWN] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SOURCE_MARKDOWN] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSourceMarkdown())) {
             $xw->writeAttribute(self::FIELD_SOURCE_MARKDOWN, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getName())) {
             $xw->writeAttribute(self::FIELD_NAME, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TITLE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TITLE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTitle())) {
             $xw->writeAttribute(self::FIELD_TITLE, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SOURCE_URL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SOURCE_URL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSourceUrl())) {
             $xw->startElement(self::FIELD_SOURCE_URL);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SOURCE_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SOURCE_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSourceString())) {
             $xw->startElement(self::FIELD_SOURCE_STRING);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SOURCE_MARKDOWN] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SOURCE_MARKDOWN] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSourceMarkdown())) {
             $xw->startElement(self::FIELD_SOURCE_MARKDOWN);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getName())) {
             $xw->startElement(self::FIELD_NAME);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TITLE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TITLE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTitle())) {
             $xw->startElement(self::FIELD_TITLE);
             $v->xmlSerialize($xw, $config);

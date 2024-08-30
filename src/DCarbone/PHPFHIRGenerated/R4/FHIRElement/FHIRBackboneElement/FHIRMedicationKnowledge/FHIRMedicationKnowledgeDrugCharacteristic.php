@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -154,7 +154,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMedicationKnowledgeDrugCharacteristic Constructor
@@ -330,16 +330,16 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $valueString && !($valueString instanceof FHIRString)) {
             $valueString = new FHIRString($valueString);
         }
         $this->_trackValueSet($this->valueString, $valueString);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALUE_STRING])) {
-            $this->_primitiveXmlLocations[self::FIELD_VALUE_STRING] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_VALUE_STRING])) {
+            $this->_xmlLocations[self::FIELD_VALUE_STRING] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_VALUE_STRING][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_VALUE_STRING][0] = $xmlLocation;
         $this->valueString = $valueString;
         return $this;
     }
@@ -407,16 +407,16 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setValueBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $valueBase64Binary = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setValueBase64Binary(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $valueBase64Binary = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $valueBase64Binary && !($valueBase64Binary instanceof FHIRBase64Binary)) {
             $valueBase64Binary = new FHIRBase64Binary($valueBase64Binary);
         }
         $this->_trackValueSet($this->valueBase64Binary, $valueBase64Binary);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALUE_BASE_64BINARY])) {
-            $this->_primitiveXmlLocations[self::FIELD_VALUE_BASE_64BINARY] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_VALUE_BASE_64BINARY])) {
+            $this->_xmlLocations[self::FIELD_VALUE_BASE_64BINARY] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_VALUE_BASE_64BINARY][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_VALUE_BASE_64BINARY][0] = $xmlLocation;
         $this->valueBase64Binary = $valueBase64Binary;
         return $this;
     }
@@ -672,11 +672,11 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'MedicationKnowledgeDrugCharacteristic', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALUE_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValueString())) {
             $xw->writeAttribute(self::FIELD_VALUE_STRING, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_BASE_64BINARY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALUE_BASE_64BINARY] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValueBase64Binary())) {
             $xw->writeAttribute(self::FIELD_VALUE_BASE_64BINARY, $v->getValue()?->getFormattedValue());
         }
@@ -691,7 +691,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_STRING] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALUE_STRING] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValueString())) {
             $xw->startElement(self::FIELD_VALUE_STRING);
             $v->xmlSerialize($xw, $config);
@@ -702,7 +702,7 @@ class FHIRMedicationKnowledgeDrugCharacteristic extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_BASE_64BINARY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALUE_BASE_64BINARY] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValueBase64Binary())) {
             $xw->startElement(self::FIELD_VALUE_BASE_64BINARY);
             $v->xmlSerialize($xw, $config);

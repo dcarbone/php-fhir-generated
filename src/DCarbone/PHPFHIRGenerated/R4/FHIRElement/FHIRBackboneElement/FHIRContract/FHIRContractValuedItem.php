@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -286,7 +286,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRContractValuedItem Constructor
@@ -652,16 +652,16 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setEffectiveTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setEffectiveTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $effectiveTime && !($effectiveTime instanceof FHIRDateTime)) {
             $effectiveTime = new FHIRDateTime($effectiveTime);
         }
         $this->_trackValueSet($this->effectiveTime, $effectiveTime);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EFFECTIVE_TIME])) {
-            $this->_primitiveXmlLocations[self::FIELD_EFFECTIVE_TIME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EFFECTIVE_TIME])) {
+            $this->_xmlLocations[self::FIELD_EFFECTIVE_TIME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EFFECTIVE_TIME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_EFFECTIVE_TIME][0] = $xmlLocation;
         $this->effectiveTime = $effectiveTime;
         return $this;
     }
@@ -771,16 +771,16 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setFactor(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setFactor(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $factor && !($factor instanceof FHIRDecimal)) {
             $factor = new FHIRDecimal($factor);
         }
         $this->_trackValueSet($this->factor, $factor);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_FACTOR])) {
-            $this->_primitiveXmlLocations[self::FIELD_FACTOR] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_FACTOR])) {
+            $this->_xmlLocations[self::FIELD_FACTOR] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_FACTOR][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_FACTOR][0] = $xmlLocation;
         $this->factor = $factor;
         return $this;
     }
@@ -818,16 +818,16 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPoints(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $points = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPoints(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $points = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $points && !($points instanceof FHIRDecimal)) {
             $points = new FHIRDecimal($points);
         }
         $this->_trackValueSet($this->points, $points);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_POINTS])) {
-            $this->_primitiveXmlLocations[self::FIELD_POINTS] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_POINTS])) {
+            $this->_xmlLocations[self::FIELD_POINTS] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_POINTS][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_POINTS][0] = $xmlLocation;
         $this->points = $points;
         return $this;
     }
@@ -897,16 +897,16 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPayment(null|string|FHIRStringPrimitive|FHIRString $payment = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPayment(null|string|FHIRStringPrimitive|FHIRString $payment = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $payment && !($payment instanceof FHIRString)) {
             $payment = new FHIRString($payment);
         }
         $this->_trackValueSet($this->payment, $payment);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PAYMENT])) {
-            $this->_primitiveXmlLocations[self::FIELD_PAYMENT] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PAYMENT])) {
+            $this->_xmlLocations[self::FIELD_PAYMENT] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PAYMENT][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PAYMENT][0] = $xmlLocation;
         $this->payment = $payment;
         return $this;
     }
@@ -942,16 +942,16 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPaymentDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $paymentDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPaymentDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $paymentDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $paymentDate && !($paymentDate instanceof FHIRDateTime)) {
             $paymentDate = new FHIRDateTime($paymentDate);
         }
         $this->_trackValueSet($this->paymentDate, $paymentDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PAYMENT_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_PAYMENT_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PAYMENT_DATE])) {
+            $this->_xmlLocations[self::FIELD_PAYMENT_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PAYMENT_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PAYMENT_DATE][0] = $xmlLocation;
         $this->paymentDate = $paymentDate;
         return $this;
     }
@@ -1051,16 +1051,20 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $linkId && !($linkId instanceof FHIRString)) {
             $linkId = new FHIRString($linkId);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_LINK_ID])) {
-            $this->_primitiveXmlLocations[self::FIELD_LINK_ID] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_LINK_ID])) {
+            $this->_xmlLocations[self::FIELD_LINK_ID] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_LINK_ID][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_LINK_ID]) {
+            $this->_xmlLocations[self::FIELD_LINK_ID][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_LINK_ID][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->linkId[] = $linkId;
         return $this;
     }
@@ -1077,9 +1081,9 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setLinkId(array $linkId = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setLinkId(array $linkId = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_LINK_ID]);
+        unset($this->_xmlLocations[self::FIELD_LINK_ID]);
         if ([] !== $this->linkId) {
             $this->_trackValuesRemoved(count($this->linkId));
             $this->linkId = [];
@@ -1124,16 +1128,20 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addSecurityLabelNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $securityLabelNumber = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addSecurityLabelNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $securityLabelNumber = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $securityLabelNumber && !($securityLabelNumber instanceof FHIRUnsignedInt)) {
             $securityLabelNumber = new FHIRUnsignedInt($securityLabelNumber);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SECURITY_LABEL_NUMBER])) {
-            $this->_primitiveXmlLocations[self::FIELD_SECURITY_LABEL_NUMBER] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SECURITY_LABEL_NUMBER])) {
+            $this->_xmlLocations[self::FIELD_SECURITY_LABEL_NUMBER] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SECURITY_LABEL_NUMBER][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_SECURITY_LABEL_NUMBER]) {
+            $this->_xmlLocations[self::FIELD_SECURITY_LABEL_NUMBER][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_SECURITY_LABEL_NUMBER][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->securityLabelNumber[] = $securityLabelNumber;
         return $this;
     }
@@ -1150,9 +1158,9 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSecurityLabelNumber(array $securityLabelNumber = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSecurityLabelNumber(array $securityLabelNumber = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_SECURITY_LABEL_NUMBER]);
+        unset($this->_xmlLocations[self::FIELD_SECURITY_LABEL_NUMBER]);
         if ([] !== $this->securityLabelNumber) {
             $this->_trackValuesRemoved(count($this->securityLabelNumber));
             $this->securityLabelNumber = [];
@@ -1645,33 +1653,33 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ContractValuedItem', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EFFECTIVE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EFFECTIVE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getEffectiveTime())) {
             $xw->writeAttribute(self::FIELD_EFFECTIVE_TIME, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_FACTOR] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_FACTOR] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getFactor())) {
             $xw->writeAttribute(self::FIELD_FACTOR, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_POINTS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_POINTS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPoints())) {
             $xw->writeAttribute(self::FIELD_POINTS, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PAYMENT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PAYMENT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPayment())) {
             $xw->writeAttribute(self::FIELD_PAYMENT, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PAYMENT_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PAYMENT_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPaymentDate())) {
             $xw->writeAttribute(self::FIELD_PAYMENT_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LINK_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LINK_ID] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getLinkId())) {
             $xw->writeAttribute(self::FIELD_LINK_ID, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getLinkId()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_LINK_ID, $vs[$idx]->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SECURITY_LABEL_NUMBER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SECURITY_LABEL_NUMBER] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getSecurityLabelNumber())) {
             $xw->writeAttribute(self::FIELD_SECURITY_LABEL_NUMBER, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getSecurityLabelNumber()) && isset($vs[$idx])) {
@@ -1693,7 +1701,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EFFECTIVE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EFFECTIVE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getEffectiveTime())) {
             $xw->startElement(self::FIELD_EFFECTIVE_TIME);
             $v->xmlSerialize($xw, $config);
@@ -1709,13 +1717,13 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_FACTOR] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_FACTOR] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getFactor())) {
             $xw->startElement(self::FIELD_FACTOR);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_POINTS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_POINTS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPoints())) {
             $xw->startElement(self::FIELD_POINTS);
             $v->xmlSerialize($xw, $config);
@@ -1726,13 +1734,13 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PAYMENT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PAYMENT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPayment())) {
             $xw->startElement(self::FIELD_PAYMENT);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PAYMENT_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PAYMENT_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPaymentDate())) {
             $xw->startElement(self::FIELD_PAYMENT_DATE);
             $v->xmlSerialize($xw, $config);
@@ -1748,7 +1756,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LINK_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LINK_ID] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getLinkId())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
@@ -1758,7 +1766,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 }
             }
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SECURITY_LABEL_NUMBER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SECURITY_LABEL_NUMBER] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getSecurityLabelNumber())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

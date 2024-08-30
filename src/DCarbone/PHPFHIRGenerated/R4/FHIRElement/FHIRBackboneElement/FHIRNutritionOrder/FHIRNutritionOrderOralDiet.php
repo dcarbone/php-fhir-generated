@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutri
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -167,7 +167,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRNutritionOrderOralDiet Constructor
@@ -631,16 +631,16 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInstruction(null|string|FHIRStringPrimitive|FHIRString $instruction = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setInstruction(null|string|FHIRStringPrimitive|FHIRString $instruction = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $instruction && !($instruction instanceof FHIRString)) {
             $instruction = new FHIRString($instruction);
         }
         $this->_trackValueSet($this->instruction, $instruction);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_INSTRUCTION])) {
-            $this->_primitiveXmlLocations[self::FIELD_INSTRUCTION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_INSTRUCTION])) {
+            $this->_xmlLocations[self::FIELD_INSTRUCTION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_INSTRUCTION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_INSTRUCTION][0] = $xmlLocation;
         $this->instruction = $instruction;
         return $this;
     }
@@ -917,7 +917,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'NutritionOrderOralDiet', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INSTRUCTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INSTRUCTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInstruction())) {
             $xw->writeAttribute(self::FIELD_INSTRUCTION, $v->getValue()?->getFormattedValue());
         }
@@ -947,7 +947,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INSTRUCTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INSTRUCTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInstruction())) {
             $xw->startElement(self::FIELD_INSTRUCTION);
             $v->xmlSerialize($xw, $config);

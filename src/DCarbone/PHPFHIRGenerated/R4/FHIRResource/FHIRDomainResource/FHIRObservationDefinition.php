@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -259,7 +259,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRObservationDefinition Constructor
@@ -695,16 +695,16 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setMultipleResultsAllowed(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $multipleResultsAllowed = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setMultipleResultsAllowed(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $multipleResultsAllowed = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $multipleResultsAllowed && !($multipleResultsAllowed instanceof FHIRBoolean)) {
             $multipleResultsAllowed = new FHIRBoolean($multipleResultsAllowed);
         }
         $this->_trackValueSet($this->multipleResultsAllowed, $multipleResultsAllowed);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_MULTIPLE_RESULTS_ALLOWED])) {
-            $this->_primitiveXmlLocations[self::FIELD_MULTIPLE_RESULTS_ALLOWED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_MULTIPLE_RESULTS_ALLOWED])) {
+            $this->_xmlLocations[self::FIELD_MULTIPLE_RESULTS_ALLOWED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_MULTIPLE_RESULTS_ALLOWED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_MULTIPLE_RESULTS_ALLOWED][0] = $xmlLocation;
         $this->multipleResultsAllowed = $multipleResultsAllowed;
         return $this;
     }
@@ -772,16 +772,16 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPreferredReportName(null|string|FHIRStringPrimitive|FHIRString $preferredReportName = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setPreferredReportName(null|string|FHIRStringPrimitive|FHIRString $preferredReportName = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $preferredReportName && !($preferredReportName instanceof FHIRString)) {
             $preferredReportName = new FHIRString($preferredReportName);
         }
         $this->_trackValueSet($this->preferredReportName, $preferredReportName);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PREFERRED_REPORT_NAME])) {
-            $this->_primitiveXmlLocations[self::FIELD_PREFERRED_REPORT_NAME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PREFERRED_REPORT_NAME])) {
+            $this->_xmlLocations[self::FIELD_PREFERRED_REPORT_NAME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PREFERRED_REPORT_NAME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PREFERRED_REPORT_NAME][0] = $xmlLocation;
         $this->preferredReportName = $preferredReportName;
         return $this;
     }
@@ -1520,11 +1520,11 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
             $openedRoot = true;
             $xw->openRootNode($config, 'ObservationDefinition', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_MULTIPLE_RESULTS_ALLOWED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_MULTIPLE_RESULTS_ALLOWED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getMultipleResultsAllowed())) {
             $xw->writeAttribute(self::FIELD_MULTIPLE_RESULTS_ALLOWED, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PREFERRED_REPORT_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PREFERRED_REPORT_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPreferredReportName())) {
             $xw->writeAttribute(self::FIELD_PREFERRED_REPORT_NAME, $v->getValue()?->getFormattedValue());
         }
@@ -1549,7 +1549,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_MULTIPLE_RESULTS_ALLOWED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_MULTIPLE_RESULTS_ALLOWED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getMultipleResultsAllowed())) {
             $xw->startElement(self::FIELD_MULTIPLE_RESULTS_ALLOWED);
             $v->xmlSerialize($xw, $config);
@@ -1560,7 +1560,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PREFERRED_REPORT_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PREFERRED_REPORT_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPreferredReportName())) {
             $xw->startElement(self::FIELD_PREFERRED_REPORT_NAME);
             $v->xmlSerialize($xw, $config);

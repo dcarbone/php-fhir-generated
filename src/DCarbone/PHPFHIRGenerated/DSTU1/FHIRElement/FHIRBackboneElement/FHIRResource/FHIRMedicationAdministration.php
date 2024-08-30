@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -258,7 +258,7 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMedicationAdministration Constructor
@@ -702,16 +702,16 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setWasNotGiven(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $wasNotGiven = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setWasNotGiven(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $wasNotGiven = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $wasNotGiven && !($wasNotGiven instanceof FHIRBoolean)) {
             $wasNotGiven = new FHIRBoolean($wasNotGiven);
         }
         $this->_trackValueSet($this->wasNotGiven, $wasNotGiven);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_WAS_NOT_GIVEN])) {
-            $this->_primitiveXmlLocations[self::FIELD_WAS_NOT_GIVEN] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_WAS_NOT_GIVEN])) {
+            $this->_xmlLocations[self::FIELD_WAS_NOT_GIVEN] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_WAS_NOT_GIVEN][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_WAS_NOT_GIVEN][0] = $xmlLocation;
         $this->wasNotGiven = $wasNotGiven;
         return $this;
     }
@@ -1414,7 +1414,7 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
             $openedRoot = true;
             $xw->openRootNode($config, 'MedicationAdministration', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_WAS_NOT_GIVEN] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_WAS_NOT_GIVEN] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getWasNotGiven())) {
             $xw->writeAttribute(self::FIELD_WAS_NOT_GIVEN, $v->getValue()?->getFormattedValue());
         }
@@ -1449,7 +1449,7 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_WAS_NOT_GIVEN] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_WAS_NOT_GIVEN] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getWasNotGiven())) {
             $xw->startElement(self::FIELD_WAS_NOT_GIVEN);
             $v->xmlSerialize($xw, $config);

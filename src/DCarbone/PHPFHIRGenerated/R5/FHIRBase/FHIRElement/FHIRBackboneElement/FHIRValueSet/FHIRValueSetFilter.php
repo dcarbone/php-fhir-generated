@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -166,7 +166,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRValueSetFilter Constructor
@@ -266,16 +266,16 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setProperty(null|string|FHIRCodePrimitive|FHIRCode $property = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setProperty(null|string|FHIRCodePrimitive|FHIRCode $property = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $property && !($property instanceof FHIRCode)) {
             $property = new FHIRCode($property);
         }
         $this->_trackValueSet($this->property, $property);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PROPERTY])) {
-            $this->_primitiveXmlLocations[self::FIELD_PROPERTY] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PROPERTY])) {
+            $this->_xmlLocations[self::FIELD_PROPERTY] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PROPERTY][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PROPERTY][0] = $xmlLocation;
         $this->property = $property;
         return $this;
     }
@@ -345,16 +345,16 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setValue(null|string|FHIRStringPrimitive|FHIRString $value = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setValue(null|string|FHIRStringPrimitive|FHIRString $value = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $value && !($value instanceof FHIRString)) {
             $value = new FHIRString($value);
         }
         $this->_trackValueSet($this->value, $value);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALUE])) {
-            $this->_primitiveXmlLocations[self::FIELD_VALUE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_VALUE])) {
+            $this->_xmlLocations[self::FIELD_VALUE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_VALUE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_VALUE][0] = $xmlLocation;
         $this->value = $value;
         return $this;
     }
@@ -572,16 +572,16 @@ class FHIRValueSetFilter extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ValueSetFilter', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PROPERTY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PROPERTY] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getProperty())) {
             $xw->writeAttribute(self::FIELD_PROPERTY, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALUE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValue())) {
             $xw->writeAttribute(self::FIELD_VALUE, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PROPERTY] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PROPERTY] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getProperty())) {
             $xw->startElement(self::FIELD_PROPERTY);
             $v->xmlSerialize($xw, $config);
@@ -592,7 +592,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALUE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValue())) {
             $xw->startElement(self::FIELD_VALUE);
             $v->xmlSerialize($xw, $config);

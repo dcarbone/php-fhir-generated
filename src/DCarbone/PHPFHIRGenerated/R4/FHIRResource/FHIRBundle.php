@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -194,7 +194,7 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRBundle Constructor
@@ -422,16 +422,16 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTimestamp(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $timestamp = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTimestamp(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $timestamp = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $timestamp && !($timestamp instanceof FHIRInstant)) {
             $timestamp = new FHIRInstant($timestamp);
         }
         $this->_trackValueSet($this->timestamp, $timestamp);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TIMESTAMP])) {
-            $this->_primitiveXmlLocations[self::FIELD_TIMESTAMP] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TIMESTAMP])) {
+            $this->_xmlLocations[self::FIELD_TIMESTAMP] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TIMESTAMP][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TIMESTAMP][0] = $xmlLocation;
         $this->timestamp = $timestamp;
         return $this;
     }
@@ -467,16 +467,16 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTotal(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $total = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTotal(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $total = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $total && !($total instanceof FHIRUnsignedInt)) {
             $total = new FHIRUnsignedInt($total);
         }
         $this->_trackValueSet($this->total, $total);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TOTAL])) {
-            $this->_primitiveXmlLocations[self::FIELD_TOTAL] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TOTAL])) {
+            $this->_xmlLocations[self::FIELD_TOTAL] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TOTAL][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TOTAL][0] = $xmlLocation;
         $this->total = $total;
         return $this;
     }
@@ -955,11 +955,11 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
             $openedRoot = true;
             $xw->openRootNode($config, 'Bundle', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TIMESTAMP] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TIMESTAMP] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTimestamp())) {
             $xw->writeAttribute(self::FIELD_TIMESTAMP, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TOTAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TOTAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTotal())) {
             $xw->writeAttribute(self::FIELD_TOTAL, $v->getValue()?->getFormattedValue());
         }
@@ -974,13 +974,13 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TIMESTAMP] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TIMESTAMP] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTimestamp())) {
             $xw->startElement(self::FIELD_TIMESTAMP);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TOTAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TOTAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTotal())) {
             $xw->startElement(self::FIELD_TOTAL);
             $v->xmlSerialize($xw, $config);

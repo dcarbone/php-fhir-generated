@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -252,7 +252,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMessageHeader Constructor
@@ -414,16 +414,16 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTimestamp(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $timestamp = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTimestamp(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $timestamp = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $timestamp && !($timestamp instanceof FHIRInstant)) {
             $timestamp = new FHIRInstant($timestamp);
         }
         $this->_trackValueSet($this->timestamp, $timestamp);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TIMESTAMP])) {
-            $this->_primitiveXmlLocations[self::FIELD_TIMESTAMP] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TIMESTAMP])) {
+            $this->_xmlLocations[self::FIELD_TIMESTAMP] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TIMESTAMP][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_TIMESTAMP][0] = $xmlLocation;
         $this->timestamp = $timestamp;
         return $this;
     }
@@ -1301,12 +1301,12 @@ class FHIRMessageHeader extends FHIRDomainResource implements PHPFHIRContainedTy
             $openedRoot = true;
             $xw->openRootNode($config, 'MessageHeader', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TIMESTAMP] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TIMESTAMP] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTimestamp())) {
             $xw->writeAttribute(self::FIELD_TIMESTAMP, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TIMESTAMP] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TIMESTAMP] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTimestamp())) {
             $xw->startElement(self::FIELD_TIMESTAMP);
             $v->xmlSerialize($xw, $config);

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -161,7 +161,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMedication Constructor
@@ -301,16 +301,16 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setIsBrand(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isBrand = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setIsBrand(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isBrand = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $isBrand && !($isBrand instanceof FHIRBoolean)) {
             $isBrand = new FHIRBoolean($isBrand);
         }
         $this->_trackValueSet($this->isBrand, $isBrand);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_IS_BRAND])) {
-            $this->_primitiveXmlLocations[self::FIELD_IS_BRAND] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_IS_BRAND])) {
+            $this->_xmlLocations[self::FIELD_IS_BRAND] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_IS_BRAND][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_IS_BRAND][0] = $xmlLocation;
         $this->isBrand = $isBrand;
         return $this;
     }
@@ -744,7 +744,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $openedRoot = true;
             $xw->openRootNode($config, 'Medication', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_IS_BRAND] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_IS_BRAND] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getIsBrand())) {
             $xw->writeAttribute(self::FIELD_IS_BRAND, $v->getValue()?->getFormattedValue());
         }
@@ -754,7 +754,7 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_IS_BRAND] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_IS_BRAND] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getIsBrand())) {
             $xw->startElement(self::FIELD_IS_BRAND);
             $v->xmlSerialize($xw, $config);

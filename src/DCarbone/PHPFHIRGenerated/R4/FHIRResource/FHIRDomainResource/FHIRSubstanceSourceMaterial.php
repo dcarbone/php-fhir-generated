@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -314,7 +314,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRSubstanceSourceMaterial Constructor
@@ -706,16 +706,16 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setOrganismName(null|string|FHIRStringPrimitive|FHIRString $organismName = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setOrganismName(null|string|FHIRStringPrimitive|FHIRString $organismName = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $organismName && !($organismName instanceof FHIRString)) {
             $organismName = new FHIRString($organismName);
         }
         $this->_trackValueSet($this->organismName, $organismName);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ORGANISM_NAME])) {
-            $this->_primitiveXmlLocations[self::FIELD_ORGANISM_NAME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ORGANISM_NAME])) {
+            $this->_xmlLocations[self::FIELD_ORGANISM_NAME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ORGANISM_NAME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ORGANISM_NAME][0] = $xmlLocation;
         $this->organismName = $organismName;
         return $this;
     }
@@ -810,16 +810,20 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addParentSubstanceName(null|string|FHIRStringPrimitive|FHIRString $parentSubstanceName = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addParentSubstanceName(null|string|FHIRStringPrimitive|FHIRString $parentSubstanceName = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $parentSubstanceName && !($parentSubstanceName instanceof FHIRString)) {
             $parentSubstanceName = new FHIRString($parentSubstanceName);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PARENT_SUBSTANCE_NAME])) {
-            $this->_primitiveXmlLocations[self::FIELD_PARENT_SUBSTANCE_NAME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PARENT_SUBSTANCE_NAME])) {
+            $this->_xmlLocations[self::FIELD_PARENT_SUBSTANCE_NAME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PARENT_SUBSTANCE_NAME][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_PARENT_SUBSTANCE_NAME]) {
+            $this->_xmlLocations[self::FIELD_PARENT_SUBSTANCE_NAME][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_PARENT_SUBSTANCE_NAME][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->parentSubstanceName[] = $parentSubstanceName;
         return $this;
     }
@@ -835,9 +839,9 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setParentSubstanceName(array $parentSubstanceName = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setParentSubstanceName(array $parentSubstanceName = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_PARENT_SUBSTANCE_NAME]);
+        unset($this->_xmlLocations[self::FIELD_PARENT_SUBSTANCE_NAME]);
         if ([] !== $this->parentSubstanceName) {
             $this->_trackValuesRemoved(count($this->parentSubstanceName));
             $this->parentSubstanceName = [];
@@ -956,16 +960,20 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addGeographicalLocation(null|string|FHIRStringPrimitive|FHIRString $geographicalLocation = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addGeographicalLocation(null|string|FHIRStringPrimitive|FHIRString $geographicalLocation = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $geographicalLocation && !($geographicalLocation instanceof FHIRString)) {
             $geographicalLocation = new FHIRString($geographicalLocation);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_GEOGRAPHICAL_LOCATION])) {
-            $this->_primitiveXmlLocations[self::FIELD_GEOGRAPHICAL_LOCATION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_GEOGRAPHICAL_LOCATION])) {
+            $this->_xmlLocations[self::FIELD_GEOGRAPHICAL_LOCATION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_GEOGRAPHICAL_LOCATION][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_GEOGRAPHICAL_LOCATION]) {
+            $this->_xmlLocations[self::FIELD_GEOGRAPHICAL_LOCATION][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_GEOGRAPHICAL_LOCATION][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->geographicalLocation[] = $geographicalLocation;
         return $this;
     }
@@ -982,9 +990,9 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setGeographicalLocation(array $geographicalLocation = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setGeographicalLocation(array $geographicalLocation = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_GEOGRAPHICAL_LOCATION]);
+        unset($this->_xmlLocations[self::FIELD_GEOGRAPHICAL_LOCATION]);
         if ([] !== $this->geographicalLocation) {
             $this->_trackValuesRemoved(count($this->geographicalLocation));
             $this->geographicalLocation = [];
@@ -1802,17 +1810,17 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
             $openedRoot = true;
             $xw->openRootNode($config, 'SubstanceSourceMaterial', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ORGANISM_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ORGANISM_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getOrganismName())) {
             $xw->writeAttribute(self::FIELD_ORGANISM_NAME, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PARENT_SUBSTANCE_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PARENT_SUBSTANCE_NAME] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getParentSubstanceName())) {
             $xw->writeAttribute(self::FIELD_PARENT_SUBSTANCE_NAME, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getParentSubstanceName()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_PARENT_SUBSTANCE_NAME, $vs[$idx]->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_GEOGRAPHICAL_LOCATION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_GEOGRAPHICAL_LOCATION] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getGeographicalLocation())) {
             $xw->writeAttribute(self::FIELD_GEOGRAPHICAL_LOCATION, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getGeographicalLocation()) && isset($vs[$idx])) {
@@ -1839,7 +1847,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ORGANISM_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ORGANISM_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getOrganismName())) {
             $xw->startElement(self::FIELD_ORGANISM_NAME);
             $v->xmlSerialize($xw, $config);
@@ -1850,7 +1858,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PARENT_SUBSTANCE_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PARENT_SUBSTANCE_NAME] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getParentSubstanceName())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
@@ -1865,7 +1873,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_GEOGRAPHICAL_LOCATION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_GEOGRAPHICAL_LOCATION] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getGeographicalLocation())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

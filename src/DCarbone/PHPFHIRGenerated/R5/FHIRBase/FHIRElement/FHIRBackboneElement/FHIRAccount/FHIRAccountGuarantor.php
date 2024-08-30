@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -152,7 +152,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRAccountGuarantor Constructor
@@ -264,16 +264,16 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setOnHold(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $onHold = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setOnHold(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $onHold = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $onHold && !($onHold instanceof FHIRBoolean)) {
             $onHold = new FHIRBoolean($onHold);
         }
         $this->_trackValueSet($this->onHold, $onHold);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ON_HOLD])) {
-            $this->_primitiveXmlLocations[self::FIELD_ON_HOLD] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ON_HOLD])) {
+            $this->_xmlLocations[self::FIELD_ON_HOLD] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ON_HOLD][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ON_HOLD][0] = $xmlLocation;
         $this->onHold = $onHold;
         return $this;
     }
@@ -517,7 +517,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'AccountGuarantor', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ON_HOLD] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ON_HOLD] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getOnHold())) {
             $xw->writeAttribute(self::FIELD_ON_HOLD, $v->getValue()?->getFormattedValue());
         }
@@ -527,7 +527,7 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ON_HOLD] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ON_HOLD] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getOnHold())) {
             $xw->startElement(self::FIELD_ON_HOLD);
             $v->xmlSerialize($xw, $config);

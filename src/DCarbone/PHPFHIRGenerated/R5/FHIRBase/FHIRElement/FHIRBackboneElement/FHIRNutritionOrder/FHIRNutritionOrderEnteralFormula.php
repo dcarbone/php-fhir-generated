@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -234,7 +234,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRNutritionOrderEnteralFormula Constructor
@@ -428,16 +428,16 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setBaseFormulaProductName(null|string|FHIRStringPrimitive|FHIRString $baseFormulaProductName = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setBaseFormulaProductName(null|string|FHIRStringPrimitive|FHIRString $baseFormulaProductName = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $baseFormulaProductName && !($baseFormulaProductName instanceof FHIRString)) {
             $baseFormulaProductName = new FHIRString($baseFormulaProductName);
         }
         $this->_trackValueSet($this->baseFormulaProductName, $baseFormulaProductName);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_BASE_FORMULA_PRODUCT_NAME])) {
-            $this->_primitiveXmlLocations[self::FIELD_BASE_FORMULA_PRODUCT_NAME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_BASE_FORMULA_PRODUCT_NAME])) {
+            $this->_xmlLocations[self::FIELD_BASE_FORMULA_PRODUCT_NAME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_BASE_FORMULA_PRODUCT_NAME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_BASE_FORMULA_PRODUCT_NAME][0] = $xmlLocation;
         $this->baseFormulaProductName = $baseFormulaProductName;
         return $this;
     }
@@ -790,16 +790,16 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAdministrationInstruction(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $administrationInstruction = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAdministrationInstruction(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $administrationInstruction = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $administrationInstruction && !($administrationInstruction instanceof FHIRMarkdown)) {
             $administrationInstruction = new FHIRMarkdown($administrationInstruction);
         }
         $this->_trackValueSet($this->administrationInstruction, $administrationInstruction);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ADMINISTRATION_INSTRUCTION])) {
-            $this->_primitiveXmlLocations[self::FIELD_ADMINISTRATION_INSTRUCTION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ADMINISTRATION_INSTRUCTION])) {
+            $this->_xmlLocations[self::FIELD_ADMINISTRATION_INSTRUCTION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ADMINISTRATION_INSTRUCTION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ADMINISTRATION_INSTRUCTION][0] = $xmlLocation;
         $this->administrationInstruction = $administrationInstruction;
         return $this;
     }
@@ -1137,11 +1137,11 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'NutritionOrderEnteralFormula', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_BASE_FORMULA_PRODUCT_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_BASE_FORMULA_PRODUCT_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getBaseFormulaProductName())) {
             $xw->writeAttribute(self::FIELD_BASE_FORMULA_PRODUCT_NAME, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ADMINISTRATION_INSTRUCTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ADMINISTRATION_INSTRUCTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAdministrationInstruction())) {
             $xw->writeAttribute(self::FIELD_ADMINISTRATION_INSTRUCTION, $v->getValue()?->getFormattedValue());
         }
@@ -1151,7 +1151,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_BASE_FORMULA_PRODUCT_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_BASE_FORMULA_PRODUCT_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getBaseFormulaProductName())) {
             $xw->startElement(self::FIELD_BASE_FORMULA_PRODUCT_NAME);
             $v->xmlSerialize($xw, $config);
@@ -1187,7 +1187,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ADMINISTRATION_INSTRUCTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ADMINISTRATION_INSTRUCTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAdministrationInstruction())) {
             $xw->startElement(self::FIELD_ADMINISTRATION_INSTRUCTION);
             $v->xmlSerialize($xw, $config);

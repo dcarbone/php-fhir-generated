@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRRis
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -197,7 +197,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRRiskAssessmentPrediction Constructor
@@ -370,16 +370,16 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setProbabilityDecimal(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $probabilityDecimal = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setProbabilityDecimal(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $probabilityDecimal = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $probabilityDecimal && !($probabilityDecimal instanceof FHIRDecimal)) {
             $probabilityDecimal = new FHIRDecimal($probabilityDecimal);
         }
         $this->_trackValueSet($this->probabilityDecimal, $probabilityDecimal);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_PROBABILITY_DECIMAL])) {
-            $this->_primitiveXmlLocations[self::FIELD_PROBABILITY_DECIMAL] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_PROBABILITY_DECIMAL])) {
+            $this->_xmlLocations[self::FIELD_PROBABILITY_DECIMAL] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_PROBABILITY_DECIMAL][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_PROBABILITY_DECIMAL][0] = $xmlLocation;
         $this->probabilityDecimal = $probabilityDecimal;
         return $this;
     }
@@ -489,16 +489,16 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setRelativeRisk(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $relativeRisk = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setRelativeRisk(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $relativeRisk = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $relativeRisk && !($relativeRisk instanceof FHIRDecimal)) {
             $relativeRisk = new FHIRDecimal($relativeRisk);
         }
         $this->_trackValueSet($this->relativeRisk, $relativeRisk);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_RELATIVE_RISK])) {
-            $this->_primitiveXmlLocations[self::FIELD_RELATIVE_RISK] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_RELATIVE_RISK])) {
+            $this->_xmlLocations[self::FIELD_RELATIVE_RISK] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_RELATIVE_RISK][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_RELATIVE_RISK][0] = $xmlLocation;
         $this->relativeRisk = $relativeRisk;
         return $this;
     }
@@ -600,16 +600,16 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setRationale(null|string|FHIRStringPrimitive|FHIRString $rationale = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setRationale(null|string|FHIRStringPrimitive|FHIRString $rationale = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $rationale && !($rationale instanceof FHIRString)) {
             $rationale = new FHIRString($rationale);
         }
         $this->_trackValueSet($this->rationale, $rationale);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_RATIONALE])) {
-            $this->_primitiveXmlLocations[self::FIELD_RATIONALE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_RATIONALE])) {
+            $this->_xmlLocations[self::FIELD_RATIONALE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_RATIONALE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_RATIONALE][0] = $xmlLocation;
         $this->rationale = $rationale;
         return $this;
     }
@@ -930,15 +930,15 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'RiskAssessmentPrediction', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PROBABILITY_DECIMAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PROBABILITY_DECIMAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getProbabilityDecimal())) {
             $xw->writeAttribute(self::FIELD_PROBABILITY_DECIMAL, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RELATIVE_RISK] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RELATIVE_RISK] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getRelativeRisk())) {
             $xw->writeAttribute(self::FIELD_RELATIVE_RISK, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RATIONALE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RATIONALE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getRationale())) {
             $xw->writeAttribute(self::FIELD_RATIONALE, $v->getValue()?->getFormattedValue());
         }
@@ -948,7 +948,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_PROBABILITY_DECIMAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_PROBABILITY_DECIMAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getProbabilityDecimal())) {
             $xw->startElement(self::FIELD_PROBABILITY_DECIMAL);
             $v->xmlSerialize($xw, $config);
@@ -964,7 +964,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RELATIVE_RISK] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RELATIVE_RISK] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getRelativeRisk())) {
             $xw->startElement(self::FIELD_RELATIVE_RISK);
             $v->xmlSerialize($xw, $config);
@@ -980,7 +980,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RATIONALE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RATIONALE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getRationale())) {
             $xw->startElement(self::FIELD_RATIONALE);
             $v->xmlSerialize($xw, $config);

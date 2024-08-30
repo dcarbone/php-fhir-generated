@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -165,7 +165,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRTerminologyCapabilitiesCodeSystem Constructor
@@ -280,16 +280,16 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setUri(null|string|FHIRCanonicalPrimitive|FHIRCanonical $uri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setUri(null|string|FHIRCanonicalPrimitive|FHIRCanonical $uri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $uri && !($uri instanceof FHIRCanonical)) {
             $uri = new FHIRCanonical($uri);
         }
         $this->_trackValueSet($this->uri, $uri);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_URI])) {
-            $this->_primitiveXmlLocations[self::FIELD_URI] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_URI])) {
+            $this->_xmlLocations[self::FIELD_URI] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_URI][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_URI][0] = $xmlLocation;
         $this->uri = $uri;
         return $this;
     }
@@ -408,16 +408,16 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSubsumption(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $subsumption = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setSubsumption(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $subsumption = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $subsumption && !($subsumption instanceof FHIRBoolean)) {
             $subsumption = new FHIRBoolean($subsumption);
         }
         $this->_trackValueSet($this->subsumption, $subsumption);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_SUBSUMPTION])) {
-            $this->_primitiveXmlLocations[self::FIELD_SUBSUMPTION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_SUBSUMPTION])) {
+            $this->_xmlLocations[self::FIELD_SUBSUMPTION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_SUBSUMPTION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_SUBSUMPTION][0] = $xmlLocation;
         $this->subsumption = $subsumption;
         return $this;
     }
@@ -656,16 +656,16 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'TerminologyCapabilitiesCodeSystem', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_URI] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_URI] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getUri())) {
             $xw->writeAttribute(self::FIELD_URI, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SUBSUMPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SUBSUMPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSubsumption())) {
             $xw->writeAttribute(self::FIELD_SUBSUMPTION, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_URI] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_URI] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getUri())) {
             $xw->startElement(self::FIELD_URI);
             $v->xmlSerialize($xw, $config);
@@ -681,7 +681,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_SUBSUMPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_SUBSUMPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSubsumption())) {
             $xw->startElement(self::FIELD_SUBSUMPTION);
             $v->xmlSerialize($xw, $config);

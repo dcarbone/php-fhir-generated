@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -164,7 +164,7 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRLinkage Constructor
@@ -256,16 +256,16 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $active && !($active instanceof FHIRBoolean)) {
             $active = new FHIRBoolean($active);
         }
         $this->_trackValueSet($this->active, $active);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ACTIVE])) {
-            $this->_primitiveXmlLocations[self::FIELD_ACTIVE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ACTIVE])) {
+            $this->_xmlLocations[self::FIELD_ACTIVE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ACTIVE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ACTIVE][0] = $xmlLocation;
         $this->active = $active;
         return $this;
     }
@@ -665,12 +665,12 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
             $openedRoot = true;
             $xw->openRootNode($config, 'Linkage', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTIVE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACTIVE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getActive())) {
             $xw->writeAttribute(self::FIELD_ACTIVE, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTIVE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACTIVE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getActive())) {
             $xw->startElement(self::FIELD_ACTIVE);
             $v->xmlSerialize($xw, $config);

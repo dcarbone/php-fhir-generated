@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -159,7 +159,7 @@ class FHIRCitationStatusDate extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRCitationStatusDate Constructor
@@ -275,16 +275,16 @@ class FHIRCitationStatusDate extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setActual(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $actual = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setActual(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $actual = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $actual && !($actual instanceof FHIRBoolean)) {
             $actual = new FHIRBoolean($actual);
         }
         $this->_trackValueSet($this->actual, $actual);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ACTUAL])) {
-            $this->_primitiveXmlLocations[self::FIELD_ACTUAL] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ACTUAL])) {
+            $this->_xmlLocations[self::FIELD_ACTUAL] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ACTUAL][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ACTUAL][0] = $xmlLocation;
         $this->actual = $actual;
         return $this;
     }
@@ -528,7 +528,7 @@ class FHIRCitationStatusDate extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'CitationStatusDate', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTUAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACTUAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getActual())) {
             $xw->writeAttribute(self::FIELD_ACTUAL, $v->getValue()?->getFormattedValue());
         }
@@ -538,7 +538,7 @@ class FHIRCitationStatusDate extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTUAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACTUAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getActual())) {
             $xw->startElement(self::FIELD_ACTUAL);
             $v->xmlSerialize($xw, $config);

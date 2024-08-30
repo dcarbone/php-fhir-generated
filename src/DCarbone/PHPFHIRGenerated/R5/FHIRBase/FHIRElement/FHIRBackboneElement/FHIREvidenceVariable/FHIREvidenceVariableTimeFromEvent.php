@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -223,7 +223,7 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIREvidenceVariableTimeFromEvent Constructor
@@ -372,16 +372,16 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $description && !($description instanceof FHIRMarkdown)) {
             $description = new FHIRMarkdown($description);
         }
         $this->_trackValueSet($this->description, $description);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DESCRIPTION])) {
-            $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DESCRIPTION])) {
+            $this->_xmlLocations[self::FIELD_DESCRIPTION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
         $this->description = $description;
         return $this;
     }
@@ -551,16 +551,16 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setEventDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $eventDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setEventDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $eventDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $eventDateTime && !($eventDateTime instanceof FHIRDateTime)) {
             $eventDateTime = new FHIRDateTime($eventDateTime);
         }
         $this->_trackValueSet($this->eventDateTime, $eventDateTime);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EVENT_DATE_TIME])) {
-            $this->_primitiveXmlLocations[self::FIELD_EVENT_DATE_TIME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EVENT_DATE_TIME])) {
+            $this->_xmlLocations[self::FIELD_EVENT_DATE_TIME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EVENT_DATE_TIME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_EVENT_DATE_TIME][0] = $xmlLocation;
         $this->eventDateTime = $eventDateTime;
         return $this;
     }
@@ -596,16 +596,16 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setEventId(null|string|FHIRIdPrimitive|FHIRId $eventId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setEventId(null|string|FHIRIdPrimitive|FHIRId $eventId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $eventId && !($eventId instanceof FHIRId)) {
             $eventId = new FHIRId($eventId);
         }
         $this->_trackValueSet($this->eventId, $eventId);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EVENT_ID])) {
-            $this->_primitiveXmlLocations[self::FIELD_EVENT_ID] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EVENT_ID])) {
+            $this->_xmlLocations[self::FIELD_EVENT_ID] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EVENT_ID][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_EVENT_ID][0] = $xmlLocation;
         $this->eventId = $eventId;
         return $this;
     }
@@ -1002,20 +1002,20 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'EvidenceVariableTimeFromEvent', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDescription())) {
             $xw->writeAttribute(self::FIELD_DESCRIPTION, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EVENT_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EVENT_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getEventDateTime())) {
             $xw->writeAttribute(self::FIELD_EVENT_DATE_TIME, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EVENT_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EVENT_ID] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getEventId())) {
             $xw->writeAttribute(self::FIELD_EVENT_ID, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDescription())) {
             $xw->startElement(self::FIELD_DESCRIPTION);
             $v->xmlSerialize($xw, $config);
@@ -1036,13 +1036,13 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EVENT_DATE_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EVENT_DATE_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getEventDateTime())) {
             $xw->startElement(self::FIELD_EVENT_DATE_TIME);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EVENT_ID] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EVENT_ID] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getEventId())) {
             $xw->startElement(self::FIELD_EVENT_ID);
             $v->xmlSerialize($xw, $config);

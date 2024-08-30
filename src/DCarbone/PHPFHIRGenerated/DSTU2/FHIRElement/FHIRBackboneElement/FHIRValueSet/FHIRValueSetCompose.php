@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -122,7 +122,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRValueSetCompose Constructor
@@ -233,16 +233,20 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addImport(null|string|FHIRUriPrimitive|FHIRUri $import = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addImport(null|string|FHIRUriPrimitive|FHIRUri $import = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $import && !($import instanceof FHIRUri)) {
             $import = new FHIRUri($import);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_IMPORT])) {
-            $this->_primitiveXmlLocations[self::FIELD_IMPORT] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_IMPORT])) {
+            $this->_xmlLocations[self::FIELD_IMPORT] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_IMPORT][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_IMPORT]) {
+            $this->_xmlLocations[self::FIELD_IMPORT][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_IMPORT][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->import[] = $import;
         return $this;
     }
@@ -259,9 +263,9 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setImport(array $import = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setImport(array $import = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_IMPORT]);
+        unset($this->_xmlLocations[self::FIELD_IMPORT]);
         if ([] !== $this->import) {
             $this->_trackValuesRemoved(count($this->import));
             $this->import = [];
@@ -591,14 +595,14 @@ class FHIRValueSetCompose extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ValueSetCompose', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_IMPORT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_IMPORT] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getImport())) {
             $xw->writeAttribute(self::FIELD_IMPORT, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getImport()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_IMPORT, $vs[$idx]->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_IMPORT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_IMPORT] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getImport())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

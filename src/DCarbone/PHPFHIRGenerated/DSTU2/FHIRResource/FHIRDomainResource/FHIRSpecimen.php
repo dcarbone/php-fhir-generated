@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -219,7 +219,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRSpecimen Constructor
@@ -665,16 +665,16 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setReceivedTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $receivedTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setReceivedTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $receivedTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $receivedTime && !($receivedTime instanceof FHIRDateTime)) {
             $receivedTime = new FHIRDateTime($receivedTime);
         }
         $this->_trackValueSet($this->receivedTime, $receivedTime);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_RECEIVED_TIME])) {
-            $this->_primitiveXmlLocations[self::FIELD_RECEIVED_TIME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_RECEIVED_TIME])) {
+            $this->_xmlLocations[self::FIELD_RECEIVED_TIME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_RECEIVED_TIME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_RECEIVED_TIME][0] = $xmlLocation;
         $this->receivedTime = $receivedTime;
         return $this;
     }
@@ -1252,7 +1252,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $openedRoot = true;
             $xw->openRootNode($config, 'Specimen', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RECEIVED_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RECEIVED_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getReceivedTime())) {
             $xw->writeAttribute(self::FIELD_RECEIVED_TIME, $v->getValue()?->getFormattedValue());
         }
@@ -1287,7 +1287,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RECEIVED_TIME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RECEIVED_TIME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getReceivedTime())) {
             $xw->startElement(self::FIELD_RECEIVED_TIME);
             $v->xmlSerialize($xw, $config);

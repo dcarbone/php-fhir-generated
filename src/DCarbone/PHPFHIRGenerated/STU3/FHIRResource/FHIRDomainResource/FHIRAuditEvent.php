@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -236,7 +236,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRAuditEvent Constructor
@@ -568,16 +568,16 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setRecorded(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $recorded = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setRecorded(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $recorded = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $recorded && !($recorded instanceof FHIRInstant)) {
             $recorded = new FHIRInstant($recorded);
         }
         $this->_trackValueSet($this->recorded, $recorded);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_RECORDED])) {
-            $this->_primitiveXmlLocations[self::FIELD_RECORDED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_RECORDED])) {
+            $this->_xmlLocations[self::FIELD_RECORDED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_RECORDED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_RECORDED][0] = $xmlLocation;
         $this->recorded = $recorded;
         return $this;
     }
@@ -639,16 +639,16 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setOutcomeDesc(null|string|FHIRStringPrimitive|FHIRString $outcomeDesc = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setOutcomeDesc(null|string|FHIRStringPrimitive|FHIRString $outcomeDesc = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $outcomeDesc && !($outcomeDesc instanceof FHIRString)) {
             $outcomeDesc = new FHIRString($outcomeDesc);
         }
         $this->_trackValueSet($this->outcomeDesc, $outcomeDesc);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_OUTCOME_DESC])) {
-            $this->_primitiveXmlLocations[self::FIELD_OUTCOME_DESC] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_OUTCOME_DESC])) {
+            $this->_xmlLocations[self::FIELD_OUTCOME_DESC] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_OUTCOME_DESC][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_OUTCOME_DESC][0] = $xmlLocation;
         $this->outcomeDesc = $outcomeDesc;
         return $this;
     }
@@ -1309,11 +1309,11 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $openedRoot = true;
             $xw->openRootNode($config, 'AuditEvent', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RECORDED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RECORDED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getRecorded())) {
             $xw->writeAttribute(self::FIELD_RECORDED, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OUTCOME_DESC] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OUTCOME_DESC] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getOutcomeDesc())) {
             $xw->writeAttribute(self::FIELD_OUTCOME_DESC, $v->getValue()?->getFormattedValue());
         }
@@ -1333,7 +1333,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_RECORDED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_RECORDED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getRecorded())) {
             $xw->startElement(self::FIELD_RECORDED);
             $v->xmlSerialize($xw, $config);
@@ -1344,7 +1344,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_OUTCOME_DESC] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_OUTCOME_DESC] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getOutcomeDesc())) {
             $xw->startElement(self::FIELD_OUTCOME_DESC);
             $v->xmlSerialize($xw, $config);

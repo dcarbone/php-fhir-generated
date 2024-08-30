@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -241,7 +241,7 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIREvidenceStatistic Constructor
@@ -420,16 +420,16 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $description && !($description instanceof FHIRMarkdown)) {
             $description = new FHIRMarkdown($description);
         }
         $this->_trackValueSet($this->description, $description);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DESCRIPTION])) {
-            $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DESCRIPTION])) {
+            $this->_xmlLocations[self::FIELD_DESCRIPTION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
         $this->description = $description;
         return $this;
     }
@@ -637,16 +637,16 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setNumberOfEvents(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberOfEvents = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setNumberOfEvents(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberOfEvents = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $numberOfEvents && !($numberOfEvents instanceof FHIRUnsignedInt)) {
             $numberOfEvents = new FHIRUnsignedInt($numberOfEvents);
         }
         $this->_trackValueSet($this->numberOfEvents, $numberOfEvents);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NUMBER_OF_EVENTS])) {
-            $this->_primitiveXmlLocations[self::FIELD_NUMBER_OF_EVENTS] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NUMBER_OF_EVENTS])) {
+            $this->_xmlLocations[self::FIELD_NUMBER_OF_EVENTS] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NUMBER_OF_EVENTS][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NUMBER_OF_EVENTS][0] = $xmlLocation;
         $this->numberOfEvents = $numberOfEvents;
         return $this;
     }
@@ -678,16 +678,16 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setNumberAffected(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberAffected = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setNumberAffected(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $numberAffected = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $numberAffected && !($numberAffected instanceof FHIRUnsignedInt)) {
             $numberAffected = new FHIRUnsignedInt($numberAffected);
         }
         $this->_trackValueSet($this->numberAffected, $numberAffected);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NUMBER_AFFECTED])) {
-            $this->_primitiveXmlLocations[self::FIELD_NUMBER_AFFECTED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NUMBER_AFFECTED])) {
+            $this->_xmlLocations[self::FIELD_NUMBER_AFFECTED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NUMBER_AFFECTED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NUMBER_AFFECTED][0] = $xmlLocation;
         $this->numberAffected = $numberAffected;
         return $this;
     }
@@ -1212,20 +1212,20 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'EvidenceStatistic', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDescription())) {
             $xw->writeAttribute(self::FIELD_DESCRIPTION, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NUMBER_OF_EVENTS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NUMBER_OF_EVENTS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getNumberOfEvents())) {
             $xw->writeAttribute(self::FIELD_NUMBER_OF_EVENTS, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NUMBER_AFFECTED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NUMBER_AFFECTED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getNumberAffected())) {
             $xw->writeAttribute(self::FIELD_NUMBER_AFFECTED, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDescription())) {
             $xw->startElement(self::FIELD_DESCRIPTION);
             $v->xmlSerialize($xw, $config);
@@ -1251,13 +1251,13 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NUMBER_OF_EVENTS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NUMBER_OF_EVENTS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getNumberOfEvents())) {
             $xw->startElement(self::FIELD_NUMBER_OF_EVENTS);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NUMBER_AFFECTED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NUMBER_AFFECTED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getNumberAffected())) {
             $xw->startElement(self::FIELD_NUMBER_AFFECTED);
             $v->xmlSerialize($xw, $config);

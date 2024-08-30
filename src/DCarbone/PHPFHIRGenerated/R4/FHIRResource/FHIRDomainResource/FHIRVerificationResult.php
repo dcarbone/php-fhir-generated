@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -279,7 +279,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRVerificationResult Constructor
@@ -588,16 +588,20 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addTargetLocation(null|string|FHIRStringPrimitive|FHIRString $targetLocation = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addTargetLocation(null|string|FHIRStringPrimitive|FHIRString $targetLocation = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $targetLocation && !($targetLocation instanceof FHIRString)) {
             $targetLocation = new FHIRString($targetLocation);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_TARGET_LOCATION])) {
-            $this->_primitiveXmlLocations[self::FIELD_TARGET_LOCATION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_TARGET_LOCATION])) {
+            $this->_xmlLocations[self::FIELD_TARGET_LOCATION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_TARGET_LOCATION][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_TARGET_LOCATION]) {
+            $this->_xmlLocations[self::FIELD_TARGET_LOCATION][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_TARGET_LOCATION][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->targetLocation[] = $targetLocation;
         return $this;
     }
@@ -613,9 +617,9 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTargetLocation(array $targetLocation = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setTargetLocation(array $targetLocation = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_TARGET_LOCATION]);
+        unset($this->_xmlLocations[self::FIELD_TARGET_LOCATION]);
         if ([] !== $this->targetLocation) {
             $this->_trackValuesRemoved(count($this->targetLocation));
             $this->targetLocation = [];
@@ -734,16 +738,16 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $statusDate && !($statusDate instanceof FHIRDateTime)) {
             $statusDate = new FHIRDateTime($statusDate);
         }
         $this->_trackValueSet($this->statusDate, $statusDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_STATUS_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_STATUS_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_STATUS_DATE])) {
+            $this->_xmlLocations[self::FIELD_STATUS_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_STATUS_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_STATUS_DATE][0] = $xmlLocation;
         $this->statusDate = $statusDate;
         return $this;
     }
@@ -924,16 +928,16 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setLastPerformed(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $lastPerformed = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setLastPerformed(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $lastPerformed = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $lastPerformed && !($lastPerformed instanceof FHIRDateTime)) {
             $lastPerformed = new FHIRDateTime($lastPerformed);
         }
         $this->_trackValueSet($this->lastPerformed, $lastPerformed);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_LAST_PERFORMED])) {
-            $this->_primitiveXmlLocations[self::FIELD_LAST_PERFORMED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_LAST_PERFORMED])) {
+            $this->_xmlLocations[self::FIELD_LAST_PERFORMED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_LAST_PERFORMED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_LAST_PERFORMED][0] = $xmlLocation;
         $this->lastPerformed = $lastPerformed;
         return $this;
     }
@@ -965,16 +969,16 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setNextScheduled(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $nextScheduled = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setNextScheduled(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $nextScheduled = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $nextScheduled && !($nextScheduled instanceof FHIRDate)) {
             $nextScheduled = new FHIRDate($nextScheduled);
         }
         $this->_trackValueSet($this->nextScheduled, $nextScheduled);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NEXT_SCHEDULED])) {
-            $this->_primitiveXmlLocations[self::FIELD_NEXT_SCHEDULED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NEXT_SCHEDULED])) {
+            $this->_xmlLocations[self::FIELD_NEXT_SCHEDULED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NEXT_SCHEDULED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NEXT_SCHEDULED][0] = $xmlLocation;
         $this->nextScheduled = $nextScheduled;
         return $this;
     }
@@ -1690,21 +1694,21 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
             $openedRoot = true;
             $xw->openRootNode($config, 'VerificationResult', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TARGET_LOCATION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TARGET_LOCATION] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getTargetLocation())) {
             $xw->writeAttribute(self::FIELD_TARGET_LOCATION, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getTargetLocation()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_TARGET_LOCATION, $vs[$idx]->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_STATUS_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_STATUS_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getStatusDate())) {
             $xw->writeAttribute(self::FIELD_STATUS_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LAST_PERFORMED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LAST_PERFORMED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getLastPerformed())) {
             $xw->writeAttribute(self::FIELD_LAST_PERFORMED, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NEXT_SCHEDULED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NEXT_SCHEDULED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getNextScheduled())) {
             $xw->writeAttribute(self::FIELD_NEXT_SCHEDULED, $v->getValue()?->getFormattedValue());
         }
@@ -1714,7 +1718,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_TARGET_LOCATION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_TARGET_LOCATION] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getTargetLocation())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
@@ -1734,7 +1738,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_STATUS_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_STATUS_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getStatusDate())) {
             $xw->startElement(self::FIELD_STATUS_DATE);
             $v->xmlSerialize($xw, $config);
@@ -1755,13 +1759,13 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LAST_PERFORMED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LAST_PERFORMED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getLastPerformed())) {
             $xw->startElement(self::FIELD_LAST_PERFORMED);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NEXT_SCHEDULED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NEXT_SCHEDULED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getNextScheduled())) {
             $xw->startElement(self::FIELD_NEXT_SCHEDULED);
             $v->xmlSerialize($xw, $config);

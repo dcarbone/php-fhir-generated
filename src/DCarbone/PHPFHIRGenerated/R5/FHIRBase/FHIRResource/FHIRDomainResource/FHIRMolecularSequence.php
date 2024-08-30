@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -232,7 +232,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMolecularSequence Constructor
@@ -705,16 +705,16 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setLiteral(null|string|FHIRStringPrimitive|FHIRString $literal = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setLiteral(null|string|FHIRStringPrimitive|FHIRString $literal = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $literal && !($literal instanceof FHIRString)) {
             $literal = new FHIRString($literal);
         }
         $this->_trackValueSet($this->literal, $literal);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_LITERAL])) {
-            $this->_primitiveXmlLocations[self::FIELD_LITERAL] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_LITERAL])) {
+            $this->_xmlLocations[self::FIELD_LITERAL] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_LITERAL][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_LITERAL][0] = $xmlLocation;
         $this->literal = $literal;
         return $this;
     }
@@ -1268,7 +1268,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
             $openedRoot = true;
             $xw->openRootNode($config, 'MolecularSequence', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LITERAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LITERAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getLiteral())) {
             $xw->writeAttribute(self::FIELD_LITERAL, $v->getValue()?->getFormattedValue());
         }
@@ -1308,7 +1308,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LITERAL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LITERAL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getLiteral())) {
             $xw->startElement(self::FIELD_LITERAL);
             $v->xmlSerialize($xw, $config);

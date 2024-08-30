@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -221,7 +221,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRCarePlan Constructor
@@ -592,16 +592,16 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setModified(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $modified = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setModified(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $modified = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $modified && !($modified instanceof FHIRDateTime)) {
             $modified = new FHIRDateTime($modified);
         }
         $this->_trackValueSet($this->modified, $modified);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_MODIFIED])) {
-            $this->_primitiveXmlLocations[self::FIELD_MODIFIED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_MODIFIED])) {
+            $this->_xmlLocations[self::FIELD_MODIFIED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_MODIFIED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_MODIFIED][0] = $xmlLocation;
         $this->modified = $modified;
         return $this;
     }
@@ -874,16 +874,16 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setNotes(null|string|FHIRStringPrimitive|FHIRString $notes = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setNotes(null|string|FHIRStringPrimitive|FHIRString $notes = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $notes && !($notes instanceof FHIRString)) {
             $notes = new FHIRString($notes);
         }
         $this->_trackValueSet($this->notes, $notes);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NOTES])) {
-            $this->_primitiveXmlLocations[self::FIELD_NOTES] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NOTES])) {
+            $this->_xmlLocations[self::FIELD_NOTES] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NOTES][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NOTES][0] = $xmlLocation;
         $this->notes = $notes;
         return $this;
     }
@@ -1296,11 +1296,11 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
             $openedRoot = true;
             $xw->openRootNode($config, 'CarePlan', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_MODIFIED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_MODIFIED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getModified())) {
             $xw->writeAttribute(self::FIELD_MODIFIED, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NOTES] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NOTES] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getNotes())) {
             $xw->writeAttribute(self::FIELD_NOTES, $v->getValue()?->getFormattedValue());
         }
@@ -1325,7 +1325,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_MODIFIED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_MODIFIED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getModified())) {
             $xw->startElement(self::FIELD_MODIFIED);
             $v->xmlSerialize($xw, $config);
@@ -1351,7 +1351,7 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NOTES] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NOTES] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getNotes())) {
             $xw->startElement(self::FIELD_NOTES);
             $v->xmlSerialize($xw, $config);

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRVal
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -147,7 +147,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRValueSetCompose Constructor
@@ -266,16 +266,16 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setLockedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lockedDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setLockedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $lockedDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $lockedDate && !($lockedDate instanceof FHIRDate)) {
             $lockedDate = new FHIRDate($lockedDate);
         }
         $this->_trackValueSet($this->lockedDate, $lockedDate);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_LOCKED_DATE])) {
-            $this->_primitiveXmlLocations[self::FIELD_LOCKED_DATE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_LOCKED_DATE])) {
+            $this->_xmlLocations[self::FIELD_LOCKED_DATE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_LOCKED_DATE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_LOCKED_DATE][0] = $xmlLocation;
         $this->lockedDate = $lockedDate;
         return $this;
     }
@@ -313,16 +313,16 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInactive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $inactive = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setInactive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $inactive = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $inactive && !($inactive instanceof FHIRBoolean)) {
             $inactive = new FHIRBoolean($inactive);
         }
         $this->_trackValueSet($this->inactive, $inactive);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_INACTIVE])) {
-            $this->_primitiveXmlLocations[self::FIELD_INACTIVE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_INACTIVE])) {
+            $this->_xmlLocations[self::FIELD_INACTIVE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_INACTIVE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_INACTIVE][0] = $xmlLocation;
         $this->inactive = $inactive;
         return $this;
     }
@@ -672,22 +672,22 @@ class FHIRValueSetCompose extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ValueSetCompose', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LOCKED_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LOCKED_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getLockedDate())) {
             $xw->writeAttribute(self::FIELD_LOCKED_DATE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INACTIVE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INACTIVE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInactive())) {
             $xw->writeAttribute(self::FIELD_INACTIVE, $v->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LOCKED_DATE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LOCKED_DATE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getLockedDate())) {
             $xw->startElement(self::FIELD_LOCKED_DATE);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_INACTIVE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_INACTIVE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInactive())) {
             $xw->startElement(self::FIELD_INACTIVE);
             $v->xmlSerialize($xw, $config);

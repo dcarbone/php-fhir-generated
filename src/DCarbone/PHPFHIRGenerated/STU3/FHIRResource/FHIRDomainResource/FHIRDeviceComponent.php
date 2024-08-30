@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -232,7 +232,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRDeviceComponent Constructor
@@ -473,16 +473,16 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
      * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setLastSystemChange(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $lastSystemChange = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setLastSystemChange(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $lastSystemChange = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $lastSystemChange && !($lastSystemChange instanceof FHIRInstant)) {
             $lastSystemChange = new FHIRInstant($lastSystemChange);
         }
         $this->_trackValueSet($this->lastSystemChange, $lastSystemChange);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_LAST_SYSTEM_CHANGE])) {
-            $this->_primitiveXmlLocations[self::FIELD_LAST_SYSTEM_CHANGE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_LAST_SYSTEM_CHANGE])) {
+            $this->_xmlLocations[self::FIELD_LAST_SYSTEM_CHANGE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_LAST_SYSTEM_CHANGE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_LAST_SYSTEM_CHANGE][0] = $xmlLocation;
         $this->lastSystemChange = $lastSystemChange;
         return $this;
     }
@@ -1220,7 +1220,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
             $openedRoot = true;
             $xw->openRootNode($config, 'DeviceComponent', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LAST_SYSTEM_CHANGE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LAST_SYSTEM_CHANGE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getLastSystemChange())) {
             $xw->writeAttribute(self::FIELD_LAST_SYSTEM_CHANGE, $v->getValue()?->getFormattedValue());
         }
@@ -1235,7 +1235,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_LAST_SYSTEM_CHANGE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_LAST_SYSTEM_CHANGE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getLastSystemChange())) {
             $xw->startElement(self::FIELD_LAST_SYSTEM_CHANGE);
             $v->xmlSerialize($xw, $config);

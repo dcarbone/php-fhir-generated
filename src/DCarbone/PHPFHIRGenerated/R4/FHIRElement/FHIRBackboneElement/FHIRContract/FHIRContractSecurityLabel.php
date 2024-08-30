@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -144,7 +144,7 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRContractSecurityLabel Constructor
@@ -260,16 +260,20 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $number = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $number = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $number && !($number instanceof FHIRUnsignedInt)) {
             $number = new FHIRUnsignedInt($number);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NUMBER])) {
-            $this->_primitiveXmlLocations[self::FIELD_NUMBER] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NUMBER])) {
+            $this->_xmlLocations[self::FIELD_NUMBER] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NUMBER][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_NUMBER]) {
+            $this->_xmlLocations[self::FIELD_NUMBER][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_NUMBER][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->number[] = $number;
         return $this;
     }
@@ -285,9 +289,9 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setNumber(array $number = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setNumber(array $number = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_NUMBER]);
+        unset($this->_xmlLocations[self::FIELD_NUMBER]);
         if ([] !== $this->number) {
             $this->_trackValuesRemoved(count($this->number));
             $this->number = [];
@@ -690,14 +694,14 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ContractSecurityLabel', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NUMBER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NUMBER] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getNumber())) {
             $xw->writeAttribute(self::FIELD_NUMBER, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getNumber()) && isset($vs[$idx])) {
             $xw->writeAttribute(self::FIELD_NUMBER, $vs[$idx]->getValue()?->getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NUMBER] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NUMBER] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getNumber())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -277,7 +277,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRCoverageEligibilityResponseItem Constructor
@@ -669,16 +669,16 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setExcluded(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $excluded = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setExcluded(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $excluded = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $excluded && !($excluded instanceof FHIRBoolean)) {
             $excluded = new FHIRBoolean($excluded);
         }
         $this->_trackValueSet($this->excluded, $excluded);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EXCLUDED])) {
-            $this->_primitiveXmlLocations[self::FIELD_EXCLUDED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EXCLUDED])) {
+            $this->_xmlLocations[self::FIELD_EXCLUDED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EXCLUDED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_EXCLUDED][0] = $xmlLocation;
         $this->excluded = $excluded;
         return $this;
     }
@@ -708,16 +708,16 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $name && !($name instanceof FHIRString)) {
             $name = new FHIRString($name);
         }
         $this->_trackValueSet($this->name, $name);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NAME])) {
-            $this->_primitiveXmlLocations[self::FIELD_NAME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NAME])) {
+            $this->_xmlLocations[self::FIELD_NAME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NAME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NAME][0] = $xmlLocation;
         $this->name = $name;
         return $this;
     }
@@ -747,16 +747,16 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $description && !($description instanceof FHIRString)) {
             $description = new FHIRString($description);
         }
         $this->_trackValueSet($this->description, $description);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_DESCRIPTION])) {
-            $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_DESCRIPTION])) {
+            $this->_xmlLocations[self::FIELD_DESCRIPTION] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
         $this->description = $description;
         return $this;
     }
@@ -954,16 +954,16 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAuthorizationRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $authorizationRequired = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAuthorizationRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $authorizationRequired = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $authorizationRequired && !($authorizationRequired instanceof FHIRBoolean)) {
             $authorizationRequired = new FHIRBoolean($authorizationRequired);
         }
         $this->_trackValueSet($this->authorizationRequired, $authorizationRequired);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_AUTHORIZATION_REQUIRED])) {
-            $this->_primitiveXmlLocations[self::FIELD_AUTHORIZATION_REQUIRED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_AUTHORIZATION_REQUIRED])) {
+            $this->_xmlLocations[self::FIELD_AUTHORIZATION_REQUIRED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_AUTHORIZATION_REQUIRED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_AUTHORIZATION_REQUIRED][0] = $xmlLocation;
         $this->authorizationRequired = $authorizationRequired;
         return $this;
     }
@@ -1060,16 +1060,16 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R5\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAuthorizationUrl(null|string|FHIRUriPrimitive|FHIRUri $authorizationUrl = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAuthorizationUrl(null|string|FHIRUriPrimitive|FHIRUri $authorizationUrl = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $authorizationUrl && !($authorizationUrl instanceof FHIRUri)) {
             $authorizationUrl = new FHIRUri($authorizationUrl);
         }
         $this->_trackValueSet($this->authorizationUrl, $authorizationUrl);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_AUTHORIZATION_URL])) {
-            $this->_primitiveXmlLocations[self::FIELD_AUTHORIZATION_URL] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_AUTHORIZATION_URL])) {
+            $this->_xmlLocations[self::FIELD_AUTHORIZATION_URL] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_AUTHORIZATION_URL][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_AUTHORIZATION_URL][0] = $xmlLocation;
         $this->authorizationUrl = $authorizationUrl;
         return $this;
     }
@@ -1526,23 +1526,23 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'CoverageEligibilityResponseItem', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXCLUDED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXCLUDED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getExcluded())) {
             $xw->writeAttribute(self::FIELD_EXCLUDED, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getName())) {
             $xw->writeAttribute(self::FIELD_NAME, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDescription())) {
             $xw->writeAttribute(self::FIELD_DESCRIPTION, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_AUTHORIZATION_REQUIRED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_AUTHORIZATION_REQUIRED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAuthorizationRequired())) {
             $xw->writeAttribute(self::FIELD_AUTHORIZATION_REQUIRED, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_AUTHORIZATION_URL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_AUTHORIZATION_URL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAuthorizationUrl())) {
             $xw->writeAttribute(self::FIELD_AUTHORIZATION_URL, $v->getValue()?->getFormattedValue());
         }
@@ -1567,19 +1567,19 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXCLUDED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXCLUDED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getExcluded())) {
             $xw->startElement(self::FIELD_EXCLUDED);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getName())) {
             $xw->startElement(self::FIELD_NAME);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_DESCRIPTION] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDescription())) {
             $xw->startElement(self::FIELD_DESCRIPTION);
             $v->xmlSerialize($xw, $config);
@@ -1605,7 +1605,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_AUTHORIZATION_REQUIRED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_AUTHORIZATION_REQUIRED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAuthorizationRequired())) {
             $xw->startElement(self::FIELD_AUTHORIZATION_REQUIRED);
             $v->xmlSerialize($xw, $config);
@@ -1616,7 +1616,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_AUTHORIZATION_URL] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_AUTHORIZATION_URL] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAuthorizationUrl())) {
             $xw->startElement(self::FIELD_AUTHORIZATION_URL);
             $v->xmlSerialize($xw, $config);

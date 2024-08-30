@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmun
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -129,7 +129,7 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRImmunizationRecommendationDateCriterion Constructor
@@ -244,16 +244,16 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setValue(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $value = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setValue(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $value = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $value && !($value instanceof FHIRDateTime)) {
             $value = new FHIRDateTime($value);
         }
         $this->_trackValueSet($this->value, $value);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALUE])) {
-            $this->_primitiveXmlLocations[self::FIELD_VALUE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_VALUE])) {
+            $this->_xmlLocations[self::FIELD_VALUE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_VALUE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_VALUE][0] = $xmlLocation;
         $this->value = $value;
         return $this;
     }
@@ -444,7 +444,7 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ImmunizationRecommendationDateCriterion', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALUE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValue())) {
             $xw->writeAttribute(self::FIELD_VALUE, $v->getValue()?->getFormattedValue());
         }
@@ -454,7 +454,7 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALUE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValue())) {
             $xw->startElement(self::FIELD_VALUE);
             $v->xmlSerialize($xw, $config);

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -138,7 +138,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
     ];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRMedicationKnowledgePatientCharacteristics Constructor
@@ -309,16 +309,20 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addValue(null|string|FHIRStringPrimitive|FHIRString $value = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function addValue(null|string|FHIRStringPrimitive|FHIRString $value = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $value && !($value instanceof FHIRString)) {
             $value = new FHIRString($value);
         }
         $this->_trackValueAdded();
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALUE])) {
-            $this->_primitiveXmlLocations[self::FIELD_VALUE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_VALUE])) {
+            $this->_xmlLocations[self::FIELD_VALUE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_VALUE][] = $xmlLocation;
+        if ([] === $this->_xmlLocations[self::FIELD_VALUE]) {
+            $this->_xmlLocations[self::FIELD_VALUE][0] = $xmlLocation;
+        } else {
+            $this->_xmlLocations[self::FIELD_VALUE][] = PHPFHIRXmlLocationEnum::ELEMENT;
+        }
         $this->value[] = $value;
         return $this;
     }
@@ -334,9 +338,9 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setValue(array $value = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setValue(array $value = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
-        unset($this->_primitiveXmlLocations[self::FIELD_VALUE]);
+        unset($this->_xmlLocations[self::FIELD_VALUE]);
         if ([] !== $this->value) {
             $this->_trackValuesRemoved(count($this->value));
             $this->value = [];
@@ -556,7 +560,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
             $openedRoot = true;
             $xw->openRootNode($config, 'MedicationKnowledgePatientCharacteristics', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALUE] ?? [];
         if ([] === $locs && [] !== ($vs = $this->getValue())) {
             $xw->writeAttribute(self::FIELD_VALUE, $vs[0]->getValue()?->getFormattedValue());
         } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getValue()) && isset($vs[$idx])) {
@@ -573,7 +577,7 @@ class FHIRMedicationKnowledgePatientCharacteristics extends FHIRBackboneElement
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_VALUE] ?? [];
         if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getValue())) {
             foreach($vs as $i => $v) {
                 if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {

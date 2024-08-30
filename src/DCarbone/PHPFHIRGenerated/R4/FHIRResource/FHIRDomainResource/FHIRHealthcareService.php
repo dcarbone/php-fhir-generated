@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 22nd, 2024 02:47+0000
+ * Class creation date: August 30th, 2024 22:23+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -388,7 +388,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     private const _VALIDATION_RULES = [];
 
     /** @var array */
-    private array $_primitiveXmlLocations = [];
+    private array $_xmlLocations = [];
 
     /**
      * FHIRHealthcareService Constructor
@@ -863,16 +863,16 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $active && !($active instanceof FHIRBoolean)) {
             $active = new FHIRBoolean($active);
         }
         $this->_trackValueSet($this->active, $active);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_ACTIVE])) {
-            $this->_primitiveXmlLocations[self::FIELD_ACTIVE] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_ACTIVE])) {
+            $this->_xmlLocations[self::FIELD_ACTIVE] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_ACTIVE][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_ACTIVE][0] = $xmlLocation;
         $this->active = $active;
         return $this;
     }
@@ -1186,16 +1186,16 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $name && !($name instanceof FHIRString)) {
             $name = new FHIRString($name);
         }
         $this->_trackValueSet($this->name, $name);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_NAME])) {
-            $this->_primitiveXmlLocations[self::FIELD_NAME] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_NAME])) {
+            $this->_xmlLocations[self::FIELD_NAME] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_NAME][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_NAME][0] = $xmlLocation;
         $this->name = $name;
         return $this;
     }
@@ -1229,16 +1229,16 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $comment && !($comment instanceof FHIRString)) {
             $comment = new FHIRString($comment);
         }
         $this->_trackValueSet($this->comment, $comment);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_COMMENT])) {
-            $this->_primitiveXmlLocations[self::FIELD_COMMENT] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_COMMENT])) {
+            $this->_xmlLocations[self::FIELD_COMMENT] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_COMMENT][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_COMMENT][0] = $xmlLocation;
         $this->comment = $comment;
         return $this;
     }
@@ -1276,16 +1276,16 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setExtraDetails(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $extraDetails = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setExtraDetails(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $extraDetails = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $extraDetails && !($extraDetails instanceof FHIRMarkdown)) {
             $extraDetails = new FHIRMarkdown($extraDetails);
         }
         $this->_trackValueSet($this->extraDetails, $extraDetails);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_EXTRA_DETAILS])) {
-            $this->_primitiveXmlLocations[self::FIELD_EXTRA_DETAILS] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_EXTRA_DETAILS])) {
+            $this->_xmlLocations[self::FIELD_EXTRA_DETAILS] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_EXTRA_DETAILS][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_EXTRA_DETAILS][0] = $xmlLocation;
         $this->extraDetails = $extraDetails;
         return $this;
     }
@@ -1858,16 +1858,16 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAppointmentRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $appointmentRequired = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAppointmentRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $appointmentRequired = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $appointmentRequired && !($appointmentRequired instanceof FHIRBoolean)) {
             $appointmentRequired = new FHIRBoolean($appointmentRequired);
         }
         $this->_trackValueSet($this->appointmentRequired, $appointmentRequired);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_APPOINTMENT_REQUIRED])) {
-            $this->_primitiveXmlLocations[self::FIELD_APPOINTMENT_REQUIRED] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_APPOINTMENT_REQUIRED])) {
+            $this->_xmlLocations[self::FIELD_APPOINTMENT_REQUIRED] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_APPOINTMENT_REQUIRED][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_APPOINTMENT_REQUIRED][0] = $xmlLocation;
         $this->appointmentRequired = $appointmentRequired;
         return $this;
     }
@@ -2010,16 +2010,16 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAvailabilityExceptions(null|string|FHIRStringPrimitive|FHIRString $availabilityExceptions = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    public function setAvailabilityExceptions(null|string|FHIRStringPrimitive|FHIRString $availabilityExceptions = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ELEMENT): self
     {
         if (null !== $availabilityExceptions && !($availabilityExceptions instanceof FHIRString)) {
             $availabilityExceptions = new FHIRString($availabilityExceptions);
         }
         $this->_trackValueSet($this->availabilityExceptions, $availabilityExceptions);
-        if (!isset($this->_primitiveXmlLocations[self::FIELD_AVAILABILITY_EXCEPTIONS])) {
-            $this->_primitiveXmlLocations[self::FIELD_AVAILABILITY_EXCEPTIONS] = [];
+        if (!isset($this->_xmlLocations[self::FIELD_AVAILABILITY_EXCEPTIONS])) {
+            $this->_xmlLocations[self::FIELD_AVAILABILITY_EXCEPTIONS] = [];
         }
-        $this->_primitiveXmlLocations[self::FIELD_AVAILABILITY_EXCEPTIONS][0] = $xmlLocation;
+        $this->_xmlLocations[self::FIELD_AVAILABILITY_EXCEPTIONS][0] = $xmlLocation;
         $this->availabilityExceptions = $availabilityExceptions;
         return $this;
     }
@@ -2850,27 +2850,27 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
             $openedRoot = true;
             $xw->openRootNode($config, 'HealthcareService', $this->_getSourceXmlns());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTIVE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACTIVE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getActive())) {
             $xw->writeAttribute(self::FIELD_ACTIVE, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getName())) {
             $xw->writeAttribute(self::FIELD_NAME, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_COMMENT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_COMMENT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getComment())) {
             $xw->writeAttribute(self::FIELD_COMMENT, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXTRA_DETAILS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXTRA_DETAILS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getExtraDetails())) {
             $xw->writeAttribute(self::FIELD_EXTRA_DETAILS, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_APPOINTMENT_REQUIRED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_APPOINTMENT_REQUIRED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAppointmentRequired())) {
             $xw->writeAttribute(self::FIELD_APPOINTMENT_REQUIRED, $v->getValue()?->getFormattedValue());
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_AVAILABILITY_EXCEPTIONS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_AVAILABILITY_EXCEPTIONS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAvailabilityExceptions())) {
             $xw->writeAttribute(self::FIELD_AVAILABILITY_EXCEPTIONS, $v->getValue()?->getFormattedValue());
         }
@@ -2880,7 +2880,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTIVE] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_ACTIVE] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getActive())) {
             $xw->startElement(self::FIELD_ACTIVE);
             $v->xmlSerialize($xw, $config);
@@ -2911,19 +2911,19 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_NAME] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getName())) {
             $xw->startElement(self::FIELD_NAME);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_COMMENT] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_COMMENT] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getComment())) {
             $xw->startElement(self::FIELD_COMMENT);
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_EXTRA_DETAILS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_EXTRA_DETAILS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getExtraDetails())) {
             $xw->startElement(self::FIELD_EXTRA_DETAILS);
             $v->xmlSerialize($xw, $config);
@@ -2974,7 +2974,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_APPOINTMENT_REQUIRED] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_APPOINTMENT_REQUIRED] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAppointmentRequired())) {
             $xw->startElement(self::FIELD_APPOINTMENT_REQUIRED);
             $v->xmlSerialize($xw, $config);
@@ -2990,7 +2990,7 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
             $v->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        $locs = $this->_primitiveXmlLocations[self::FIELD_AVAILABILITY_EXCEPTIONS] ?? [];
+        $locs = $this->_xmlLocations[self::FIELD_AVAILABILITY_EXCEPTIONS] ?? [];
         if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAvailabilityExceptions())) {
             $xw->startElement(self::FIELD_AVAILABILITY_EXCEPTIONS);
             $v->xmlSerialize($xw, $config);
