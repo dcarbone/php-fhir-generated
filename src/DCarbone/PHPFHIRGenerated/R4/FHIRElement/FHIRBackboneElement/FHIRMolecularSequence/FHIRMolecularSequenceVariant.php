@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  */
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -79,33 +81,32 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_VARIANT;
-    const FIELD_CIGAR = 'cigar';
-    const FIELD_CIGAR_EXT = '_cigar';
+    const FIELD_START = 'start';
+    const FIELD_START_EXT = '_start';
     const FIELD_END = 'end';
     const FIELD_END_EXT = '_end';
     const FIELD_OBSERVED_ALLELE = 'observedAllele';
     const FIELD_OBSERVED_ALLELE_EXT = '_observedAllele';
     const FIELD_REFERENCE_ALLELE = 'referenceAllele';
     const FIELD_REFERENCE_ALLELE_EXT = '_referenceAllele';
-    const FIELD_START = 'start';
-    const FIELD_START_EXT = '_start';
+    const FIELD_CIGAR = 'cigar';
+    const FIELD_CIGAR_EXT = '_cigar';
     const FIELD_VARIANT_POINTER = 'variantPointer';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Extended CIGAR string for aligning the sequence with reference bases. See
-     * detailed documentation
-     * [here](http://support.illumina.com/help/SequencingAnalysisWorkflow/Content/Vault/Informatics/Sequencing_Analysis/CASAVA/swSEQ_mCA_ExtendedCIGARFormat.htm).
+     * Start position of the variant on the reference sequence. If the coordinate
+     * system is either 0-based or 1-based, then start position is inclusive.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    protected $cigar = null;
+    protected $start = null;
 
     /**
      * A whole number
@@ -154,16 +155,17 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
     protected $referenceAllele = null;
 
     /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Start position of the variant on the reference sequence. If the coordinate
-     * system is either 0-based or 1-based, then start position is inclusive.
+     * Extended CIGAR string for aligning the sequence with reference bases. See
+     * detailed documentation
+     * [here](http://support.illumina.com/help/SequencingAnalysisWorkflow/Content/Vault/Informatics/Sequencing_Analysis/CASAVA/swSEQ_mCA_ExtendedCIGARFormat.htm).
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $start = null;
+    protected $cigar = null;
 
     /**
      * A reference from one resource to another.
@@ -198,109 +200,9 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CIGAR]) || isset($data[self::FIELD_CIGAR_EXT])) {
-            if (isset($data[self::FIELD_CIGAR])) {
-                $value = $data[self::FIELD_CIGAR];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CIGAR_EXT]) && is_array($data[self::FIELD_CIGAR_EXT])) {
-                $ext = $data[self::FIELD_CIGAR_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setCigar($value);
-                } else if (is_array($value)) {
-                    $this->setCigar(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setCigar(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setCigar(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_END]) || isset($data[self::FIELD_END_EXT])) {
-            if (isset($data[self::FIELD_END])) {
-                $value = $data[self::FIELD_END];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_END_EXT]) && is_array($data[self::FIELD_END_EXT])) {
-                $ext = $data[self::FIELD_END_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->setEnd($value);
-                } else if (is_array($value)) {
-                    $this->setEnd(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->setEnd(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setEnd(new FHIRInteger($ext));
-            }
-        }
-        if (isset($data[self::FIELD_OBSERVED_ALLELE]) || isset($data[self::FIELD_OBSERVED_ALLELE_EXT])) {
-            if (isset($data[self::FIELD_OBSERVED_ALLELE])) {
-                $value = $data[self::FIELD_OBSERVED_ALLELE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_OBSERVED_ALLELE_EXT]) && is_array($data[self::FIELD_OBSERVED_ALLELE_EXT])) {
-                $ext = $data[self::FIELD_OBSERVED_ALLELE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setObservedAllele($value);
-                } else if (is_array($value)) {
-                    $this->setObservedAllele(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setObservedAllele(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setObservedAllele(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_REFERENCE_ALLELE]) || isset($data[self::FIELD_REFERENCE_ALLELE_EXT])) {
-            if (isset($data[self::FIELD_REFERENCE_ALLELE])) {
-                $value = $data[self::FIELD_REFERENCE_ALLELE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_REFERENCE_ALLELE_EXT]) && is_array($data[self::FIELD_REFERENCE_ALLELE_EXT])) {
-                $ext = $data[self::FIELD_REFERENCE_ALLELE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setReferenceAllele($value);
-                } else if (is_array($value)) {
-                    $this->setReferenceAllele(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setReferenceAllele(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setReferenceAllele(new FHIRString($ext));
-            }
-        }
         if (isset($data[self::FIELD_START]) || isset($data[self::FIELD_START_EXT])) {
-            if (isset($data[self::FIELD_START])) {
-                $value = $data[self::FIELD_START];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_START_EXT]) && is_array($data[self::FIELD_START_EXT])) {
-                $ext = $data[self::FIELD_START_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_START]) ? $data[self::FIELD_START] : null;
+            $ext = (isset($data[self::FIELD_START_EXT]) && is_array($data[self::FIELD_START_EXT])) ? $ext = $data[self::FIELD_START_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRInteger) {
                     $this->setStart($value);
@@ -309,8 +211,68 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
                 } else {
                     $this->setStart(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setStart(new FHIRInteger($ext));
+            }
+        }
+        if (isset($data[self::FIELD_END]) || isset($data[self::FIELD_END_EXT])) {
+            $value = isset($data[self::FIELD_END]) ? $data[self::FIELD_END] : null;
+            $ext = (isset($data[self::FIELD_END_EXT]) && is_array($data[self::FIELD_END_EXT])) ? $ext = $data[self::FIELD_END_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setEnd($value);
+                } else if (is_array($value)) {
+                    $this->setEnd(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setEnd(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setEnd(new FHIRInteger($ext));
+            }
+        }
+        if (isset($data[self::FIELD_OBSERVED_ALLELE]) || isset($data[self::FIELD_OBSERVED_ALLELE_EXT])) {
+            $value = isset($data[self::FIELD_OBSERVED_ALLELE]) ? $data[self::FIELD_OBSERVED_ALLELE] : null;
+            $ext = (isset($data[self::FIELD_OBSERVED_ALLELE_EXT]) && is_array($data[self::FIELD_OBSERVED_ALLELE_EXT])) ? $ext = $data[self::FIELD_OBSERVED_ALLELE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setObservedAllele($value);
+                } else if (is_array($value)) {
+                    $this->setObservedAllele(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setObservedAllele(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setObservedAllele(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_REFERENCE_ALLELE]) || isset($data[self::FIELD_REFERENCE_ALLELE_EXT])) {
+            $value = isset($data[self::FIELD_REFERENCE_ALLELE]) ? $data[self::FIELD_REFERENCE_ALLELE] : null;
+            $ext = (isset($data[self::FIELD_REFERENCE_ALLELE_EXT]) && is_array($data[self::FIELD_REFERENCE_ALLELE_EXT])) ? $ext = $data[self::FIELD_REFERENCE_ALLELE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setReferenceAllele($value);
+                } else if (is_array($value)) {
+                    $this->setReferenceAllele(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setReferenceAllele(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setReferenceAllele(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_CIGAR]) || isset($data[self::FIELD_CIGAR_EXT])) {
+            $value = isset($data[self::FIELD_CIGAR]) ? $data[self::FIELD_CIGAR] : null;
+            $ext = (isset($data[self::FIELD_CIGAR_EXT]) && is_array($data[self::FIELD_CIGAR_EXT])) ? $ext = $data[self::FIELD_CIGAR_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setCigar($value);
+                } else if (is_array($value)) {
+                    $this->setCigar(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setCigar(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setCigar(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_VARIANT_POINTER])) {
@@ -336,51 +298,45 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<MolecularSequenceVariant{$xmlns}></MolecularSequenceVariant>";
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Extended CIGAR string for aligning the sequence with reference bases. See
-     * detailed documentation
-     * [here](http://support.illumina.com/help/SequencingAnalysisWorkflow/Content/Vault/Informatics/Sequencing_Analysis/CASAVA/swSEQ_mCA_ExtendedCIGARFormat.htm).
+     * Start position of the variant on the reference sequence. If the coordinate
+     * system is either 0-based or 1-based, then start position is inclusive.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    public function getCigar()
+    public function getStart()
     {
-        return $this->cigar;
+        return $this->start;
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Extended CIGAR string for aligning the sequence with reference bases. See
-     * detailed documentation
-     * [here](http://support.illumina.com/help/SequencingAnalysisWorkflow/Content/Vault/Informatics/Sequencing_Analysis/CASAVA/swSEQ_mCA_ExtendedCIGARFormat.htm).
+     * Start position of the variant on the reference sequence. If the coordinate
+     * system is either 0-based or 1-based, then start position is inclusive.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $cigar
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $start
      * @return static
      */
-    public function setCigar($cigar = null)
+    public function setStart($start = null)
     {
-        if (null === $cigar) {
-            $this->cigar = null;
-            return $this;
+        if (null !== $start && !($start instanceof FHIRInteger)) {
+            $start = new FHIRInteger($start);
         }
-        if ($cigar instanceof FHIRString) {
-            $this->cigar = $cigar;
-            return $this;
-        }
-        $this->cigar = new FHIRString($cigar);
+        $this->_trackValueSet($this->start, $start);
+        $this->start = $start;
         return $this;
     }
 
@@ -416,15 +372,11 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      */
     public function setEnd($end = null)
     {
-        if (null === $end) {
-            $this->end = null;
-            return $this;
+        if (null !== $end && !($end instanceof FHIRInteger)) {
+            $end = new FHIRInteger($end);
         }
-        if ($end instanceof FHIRInteger) {
-            $this->end = $end;
-            return $this;
-        }
-        $this->end = new FHIRInteger($end);
+        $this->_trackValueSet($this->end, $end);
+        $this->end = $end;
         return $this;
     }
 
@@ -464,15 +416,11 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      */
     public function setObservedAllele($observedAllele = null)
     {
-        if (null === $observedAllele) {
-            $this->observedAllele = null;
-            return $this;
+        if (null !== $observedAllele && !($observedAllele instanceof FHIRString)) {
+            $observedAllele = new FHIRString($observedAllele);
         }
-        if ($observedAllele instanceof FHIRString) {
-            $this->observedAllele = $observedAllele;
-            return $this;
-        }
-        $this->observedAllele = new FHIRString($observedAllele);
+        $this->_trackValueSet($this->observedAllele, $observedAllele);
+        $this->observedAllele = $observedAllele;
         return $this;
     }
 
@@ -512,55 +460,49 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      */
     public function setReferenceAllele($referenceAllele = null)
     {
-        if (null === $referenceAllele) {
-            $this->referenceAllele = null;
-            return $this;
+        if (null !== $referenceAllele && !($referenceAllele instanceof FHIRString)) {
+            $referenceAllele = new FHIRString($referenceAllele);
         }
-        if ($referenceAllele instanceof FHIRString) {
-            $this->referenceAllele = $referenceAllele;
-            return $this;
-        }
-        $this->referenceAllele = new FHIRString($referenceAllele);
+        $this->_trackValueSet($this->referenceAllele, $referenceAllele);
+        $this->referenceAllele = $referenceAllele;
         return $this;
     }
 
     /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Start position of the variant on the reference sequence. If the coordinate
-     * system is either 0-based or 1-based, then start position is inclusive.
+     * Extended CIGAR string for aligning the sequence with reference bases. See
+     * detailed documentation
+     * [here](http://support.illumina.com/help/SequencingAnalysisWorkflow/Content/Vault/Informatics/Sequencing_Analysis/CASAVA/swSEQ_mCA_ExtendedCIGARFormat.htm).
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    public function getStart()
+    public function getCigar()
     {
-        return $this->start;
+        return $this->cigar;
     }
 
     /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Start position of the variant on the reference sequence. If the coordinate
-     * system is either 0-based or 1-based, then start position is inclusive.
+     * Extended CIGAR string for aligning the sequence with reference bases. See
+     * detailed documentation
+     * [here](http://support.illumina.com/help/SequencingAnalysisWorkflow/Content/Vault/Informatics/Sequencing_Analysis/CASAVA/swSEQ_mCA_ExtendedCIGARFormat.htm).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $start
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $cigar
      * @return static
      */
-    public function setStart($start = null)
+    public function setCigar($cigar = null)
     {
-        if (null === $start) {
-            $this->start = null;
-            return $this;
+        if (null !== $cigar && !($cigar instanceof FHIRString)) {
+            $cigar = new FHIRString($cigar);
         }
-        if ($start instanceof FHIRInteger) {
-            $this->start = $start;
-            return $this;
-        }
-        $this->start = new FHIRInteger($start);
+        $this->_trackValueSet($this->cigar, $cigar);
+        $this->cigar = $cigar;
         return $this;
     }
 
@@ -590,6 +532,7 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
      */
     public function setVariantPointer(FHIRReference $variantPointer = null)
     {
+        $this->_trackValueSet($this->variantPointer, $variantPointer);
         $this->variantPointer = $variantPointer;
         return $this;
     }
@@ -615,9 +558,9 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getCigar())) {
+        if (null !== ($v = $this->getStart())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CIGAR] = $fieldErrs;
+                $errs[self::FIELD_START] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getEnd())) {
@@ -635,9 +578,9 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
                 $errs[self::FIELD_REFERENCE_ALLELE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getStart())) {
+        if (null !== ($v = $this->getCigar())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_START] = $fieldErrs;
+                $errs[self::FIELD_CIGAR] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getVariantPointer())) {
@@ -645,15 +588,15 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
                 $errs[self::FIELD_VARIANT_POINTER] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CIGAR])) {
-            $v = $this->getCigar();
-            foreach($validationRules[self::FIELD_CIGAR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_VARIANT, self::FIELD_CIGAR, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_START])) {
+            $v = $this->getStart();
+            foreach($validationRules[self::FIELD_START] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_VARIANT, self::FIELD_START, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CIGAR])) {
-                        $errs[self::FIELD_CIGAR] = [];
+                    if (!isset($errs[self::FIELD_START])) {
+                        $errs[self::FIELD_START] = [];
                     }
-                    $errs[self::FIELD_CIGAR][$rule] = $err;
+                    $errs[self::FIELD_START][$rule] = $err;
                 }
             }
         }
@@ -693,15 +636,15 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_START])) {
-            $v = $this->getStart();
-            foreach($validationRules[self::FIELD_START] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_VARIANT, self::FIELD_START, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_CIGAR])) {
+            $v = $this->getCigar();
+            foreach($validationRules[self::FIELD_CIGAR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_VARIANT, self::FIELD_CIGAR, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_START])) {
-                        $errs[self::FIELD_START] = [];
+                    if (!isset($errs[self::FIELD_CIGAR])) {
+                        $errs[self::FIELD_CIGAR] = [];
                     }
-                    $errs[self::FIELD_START][$rule] = $err;
+                    $errs[self::FIELD_CIGAR][$rule] = $err;
                 }
             }
         }
@@ -757,136 +700,168 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceVariant $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceVariant
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRMolecularSequenceVariant::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMolecularSequenceVariant::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRMolecularSequenceVariant::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRMolecularSequenceVariant;
+            $type = new FHIRMolecularSequenceVariant(null);
         } elseif (!is_object($type) || !($type instanceof FHIRMolecularSequenceVariant)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMolecularSequenceVariant::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceVariant or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_START === $n->nodeName) {
+                $type->setStart(FHIRInteger::xmlUnserialize($n));
+            } elseif (self::FIELD_END === $n->nodeName) {
+                $type->setEnd(FHIRInteger::xmlUnserialize($n));
+            } elseif (self::FIELD_OBSERVED_ALLELE === $n->nodeName) {
+                $type->setObservedAllele(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_REFERENCE_ALLELE === $n->nodeName) {
+                $type->setReferenceAllele(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_CIGAR === $n->nodeName) {
+                $type->setCigar(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_VARIANT_POINTER === $n->nodeName) {
+                $type->setVariantPointer(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->cigar)) {
-            $type->setCigar(FHIRString::xmlUnserialize($children->cigar));
-        }
-        if (isset($attributes->cigar)) {
-            $pt = $type->getCigar();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->cigar);
-            } else {
-                $type->setCigar((string)$attributes->cigar);
-            }
-        }
-        if (isset($children->end)) {
-            $type->setEnd(FHIRInteger::xmlUnserialize($children->end));
-        }
-        if (isset($attributes->end)) {
-            $pt = $type->getEnd();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->end);
-            } else {
-                $type->setEnd((string)$attributes->end);
-            }
-        }
-        if (isset($children->observedAllele)) {
-            $type->setObservedAllele(FHIRString::xmlUnserialize($children->observedAllele));
-        }
-        if (isset($attributes->observedAllele)) {
-            $pt = $type->getObservedAllele();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->observedAllele);
-            } else {
-                $type->setObservedAllele((string)$attributes->observedAllele);
-            }
-        }
-        if (isset($children->referenceAllele)) {
-            $type->setReferenceAllele(FHIRString::xmlUnserialize($children->referenceAllele));
-        }
-        if (isset($attributes->referenceAllele)) {
-            $pt = $type->getReferenceAllele();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->referenceAllele);
-            } else {
-                $type->setReferenceAllele((string)$attributes->referenceAllele);
-            }
-        }
-        if (isset($children->start)) {
-            $type->setStart(FHIRInteger::xmlUnserialize($children->start));
-        }
-        if (isset($attributes->start)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_START);
+        if (null !== $n) {
             $pt = $type->getStart();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->start);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setStart((string)$attributes->start);
+                $type->setStart($n->nodeValue);
             }
         }
-        if (isset($children->variantPointer)) {
-            $type->setVariantPointer(FHIRReference::xmlUnserialize($children->variantPointer));
+        $n = $element->attributes->getNamedItem(self::FIELD_END);
+        if (null !== $n) {
+            $pt = $type->getEnd();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setEnd($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_OBSERVED_ALLELE);
+        if (null !== $n) {
+            $pt = $type->getObservedAllele();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setObservedAllele($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_REFERENCE_ALLELE);
+        if (null !== $n) {
+            $pt = $type->getReferenceAllele();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setReferenceAllele($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_CIGAR);
+        if (null !== $n) {
+            $pt = $type->getCigar();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setCigar($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getCigar())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CIGAR, null, $v->_getFHIRXMLNamespace()));
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getStart())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_START);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getEnd())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_END, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_END);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getObservedAllele())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OBSERVED_ALLELE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_OBSERVED_ALLELE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getReferenceAllele())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_ALLELE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_REFERENCE_ALLELE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getStart())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_START, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getCigar())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_CIGAR);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getVariantPointer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VARIANT_POINTER, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_VARIANT_POINTER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -895,56 +870,58 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCigar())) {
-            $a[self::FIELD_CIGAR] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_CIGAR_EXT] = $enc;
+        if (null !== ($v = $this->getStart())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_START] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRInteger::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_START_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getEnd())) {
-            $a[self::FIELD_END] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_END_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_END] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRInteger::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_END_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getObservedAllele())) {
-            $a[self::FIELD_OBSERVED_ALLELE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_OBSERVED_ALLELE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_OBSERVED_ALLELE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_OBSERVED_ALLELE_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getReferenceAllele())) {
-            $a[self::FIELD_REFERENCE_ALLELE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_REFERENCE_ALLELE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_REFERENCE_ALLELE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_REFERENCE_ALLELE_EXT] = $ext;
             }
         }
-        if (null !== ($v = $this->getStart())) {
-            $a[self::FIELD_START] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_START_EXT] = $enc;
+        if (null !== ($v = $this->getCigar())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CIGAR] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_CIGAR_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getVariantPointer())) {
             $a[self::FIELD_VARIANT_POINTER] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

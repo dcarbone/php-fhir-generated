@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffec
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -83,15 +85,15 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EFFECT_EVIDENCE_SYNTHESIS_DOT_EFFECT_ESTIMATE;
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
-    const FIELD_PRECISION_ESTIMATE = 'precisionEstimate';
     const FIELD_TYPE = 'type';
-    const FIELD_UNIT_OF_MEASURE = 'unitOfMeasure';
+    const FIELD_VARIANT_STATE = 'variantState';
     const FIELD_VALUE = 'value';
     const FIELD_VALUE_EXT = '_value';
-    const FIELD_VARIANT_STATE = 'variantState';
+    const FIELD_UNIT_OF_MEASURE = 'unitOfMeasure';
+    const FIELD_PRECISION_ESTIMATE = 'precisionEstimate';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * A sequence of Unicode characters
@@ -103,17 +105,6 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected $description = null;
-
-    /**
-     * The EffectEvidenceSynthesis resource describes the difference in an outcome
-     * between exposures states in a population where the effect estimate is derived
-     * from a combination of research studies.
-     *
-     * A description of the precision of the estimate for the effect.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate[]
-     */
-    protected $precisionEstimate = [];
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -133,11 +124,11 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specifies the UCUM unit for the outcome.
+     * Used to define variant exposure states such as low-risk state.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $unitOfMeasure = null;
+    protected $variantState = null;
 
     /**
      * A rational number with implicit precision
@@ -157,11 +148,22 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Used to define variant exposure states such as low-risk state.
+     * Specifies the UCUM unit for the outcome.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $variantState = null;
+    protected $unitOfMeasure = null;
+
+    /**
+     * The EffectEvidenceSynthesis resource describes the difference in an outcome
+     * between exposures states in a population where the effect estimate is derived
+     * from a combination of research studies.
+     *
+     * A description of the precision of the estimate for the effect.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate[]
+     */
+    protected $precisionEstimate = [];
 
     /**
      * Validation map for fields in type EffectEvidenceSynthesis.EffectEstimate
@@ -186,16 +188,8 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
-            if (isset($data[self::FIELD_DESCRIPTION])) {
-                $value = $data[self::FIELD_DESCRIPTION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) {
-                $ext = $data[self::FIELD_DESCRIPTION_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_DESCRIPTION]) ? $data[self::FIELD_DESCRIPTION] : null;
+            $ext = (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) ? $ext = $data[self::FIELD_DESCRIPTION_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setDescription($value);
@@ -204,8 +198,44 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
                 } else {
                     $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDescription(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_TYPE])) {
+            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setType($data[self::FIELD_TYPE]);
+            } else {
+                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
+            }
+        }
+        if (isset($data[self::FIELD_VARIANT_STATE])) {
+            if ($data[self::FIELD_VARIANT_STATE] instanceof FHIRCodeableConcept) {
+                $this->setVariantState($data[self::FIELD_VARIANT_STATE]);
+            } else {
+                $this->setVariantState(new FHIRCodeableConcept($data[self::FIELD_VARIANT_STATE]));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE]) || isset($data[self::FIELD_VALUE_EXT])) {
+            $value = isset($data[self::FIELD_VALUE]) ? $data[self::FIELD_VALUE] : null;
+            $ext = (isset($data[self::FIELD_VALUE_EXT]) && is_array($data[self::FIELD_VALUE_EXT])) ? $ext = $data[self::FIELD_VALUE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setValue($value);
+                } else if (is_array($value)) {
+                    $this->setValue(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setValue(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValue(new FHIRDecimal($ext));
+            }
+        }
+        if (isset($data[self::FIELD_UNIT_OF_MEASURE])) {
+            if ($data[self::FIELD_UNIT_OF_MEASURE] instanceof FHIRCodeableConcept) {
+                $this->setUnitOfMeasure($data[self::FIELD_UNIT_OF_MEASURE]);
+            } else {
+                $this->setUnitOfMeasure(new FHIRCodeableConcept($data[self::FIELD_UNIT_OF_MEASURE]));
             }
         }
         if (isset($data[self::FIELD_PRECISION_ESTIMATE])) {
@@ -220,54 +250,10 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
                         $this->addPrecisionEstimate(new FHIREffectEvidenceSynthesisPrecisionEstimate($v));
                     }
                 }
-            } else if ($data[self::FIELD_PRECISION_ESTIMATE] instanceof FHIREffectEvidenceSynthesisPrecisionEstimate) {
+            } elseif ($data[self::FIELD_PRECISION_ESTIMATE] instanceof FHIREffectEvidenceSynthesisPrecisionEstimate) {
                 $this->addPrecisionEstimate($data[self::FIELD_PRECISION_ESTIMATE]);
             } else {
                 $this->addPrecisionEstimate(new FHIREffectEvidenceSynthesisPrecisionEstimate($data[self::FIELD_PRECISION_ESTIMATE]));
-            }
-        }
-        if (isset($data[self::FIELD_TYPE])) {
-            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setType($data[self::FIELD_TYPE]);
-            } else {
-                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
-            }
-        }
-        if (isset($data[self::FIELD_UNIT_OF_MEASURE])) {
-            if ($data[self::FIELD_UNIT_OF_MEASURE] instanceof FHIRCodeableConcept) {
-                $this->setUnitOfMeasure($data[self::FIELD_UNIT_OF_MEASURE]);
-            } else {
-                $this->setUnitOfMeasure(new FHIRCodeableConcept($data[self::FIELD_UNIT_OF_MEASURE]));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE]) || isset($data[self::FIELD_VALUE_EXT])) {
-            if (isset($data[self::FIELD_VALUE])) {
-                $value = $data[self::FIELD_VALUE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_EXT]) && is_array($data[self::FIELD_VALUE_EXT])) {
-                $ext = $data[self::FIELD_VALUE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->setValue($value);
-                } else if (is_array($value)) {
-                    $this->setValue(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->setValue(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValue(new FHIRDecimal($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VARIANT_STATE])) {
-            if ($data[self::FIELD_VARIANT_STATE] instanceof FHIRCodeableConcept) {
-                $this->setVariantState($data[self::FIELD_VARIANT_STATE]);
-            } else {
-                $this->setVariantState(new FHIRCodeableConcept($data[self::FIELD_VARIANT_STATE]));
             }
         }
     }
@@ -286,7 +272,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<EffectEvidenceSynthesisEffectEstimate{$xmlns}></EffectEvidenceSynthesisEffectEstimate>";
@@ -318,71 +304,11 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      */
     public function setDescription($description = null)
     {
-        if (null === $description) {
-            $this->description = null;
-            return $this;
+        if (null !== $description && !($description instanceof FHIRString)) {
+            $description = new FHIRString($description);
         }
-        if ($description instanceof FHIRString) {
-            $this->description = $description;
-            return $this;
-        }
-        $this->description = new FHIRString($description);
-        return $this;
-    }
-
-    /**
-     * The EffectEvidenceSynthesis resource describes the difference in an outcome
-     * between exposures states in a population where the effect estimate is derived
-     * from a combination of research studies.
-     *
-     * A description of the precision of the estimate for the effect.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate[]
-     */
-    public function getPrecisionEstimate()
-    {
-        return $this->precisionEstimate;
-    }
-
-    /**
-     * The EffectEvidenceSynthesis resource describes the difference in an outcome
-     * between exposures states in a population where the effect estimate is derived
-     * from a combination of research studies.
-     *
-     * A description of the precision of the estimate for the effect.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate $precisionEstimate
-     * @return static
-     */
-    public function addPrecisionEstimate(FHIREffectEvidenceSynthesisPrecisionEstimate $precisionEstimate = null)
-    {
-        $this->precisionEstimate[] = $precisionEstimate;
-        return $this;
-    }
-
-    /**
-     * The EffectEvidenceSynthesis resource describes the difference in an outcome
-     * between exposures states in a population where the effect estimate is derived
-     * from a combination of research studies.
-     *
-     * A description of the precision of the estimate for the effect.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate[] $precisionEstimate
-     * @return static
-     */
-    public function setPrecisionEstimate(array $precisionEstimate = [])
-    {
-        $this->precisionEstimate = [];
-        if ([] === $precisionEstimate) {
-            return $this;
-        }
-        foreach($precisionEstimate as $v) {
-            if ($v instanceof FHIREffectEvidenceSynthesisPrecisionEstimate) {
-                $this->addPrecisionEstimate($v);
-            } else {
-                $this->addPrecisionEstimate(new FHIREffectEvidenceSynthesisPrecisionEstimate($v));
-            }
-        }
+        $this->_trackValueSet($this->description, $description);
+        $this->description = $description;
         return $this;
     }
 
@@ -414,79 +340,8 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
+        $this->_trackValueSet($this->type, $type);
         $this->type = $type;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Specifies the UCUM unit for the outcome.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getUnitOfMeasure()
-    {
-        return $this->unitOfMeasure;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Specifies the UCUM unit for the outcome.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $unitOfMeasure
-     * @return static
-     */
-    public function setUnitOfMeasure(FHIRCodeableConcept $unitOfMeasure = null)
-    {
-        $this->unitOfMeasure = $unitOfMeasure;
-        return $this;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The point estimate of the effect estimate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
-     */
-    public function getValue()
-    {
-        return $this->value;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The point estimate of the effect estimate.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $value
-     * @return static
-     */
-    public function setValue($value = null)
-    {
-        if (null === $value) {
-            $this->value = null;
-            return $this;
-        }
-        if ($value instanceof FHIRDecimal) {
-            $this->value = $value;
-            return $this;
-        }
-        $this->value = new FHIRDecimal($value);
         return $this;
     }
 
@@ -518,7 +373,137 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      */
     public function setVariantState(FHIRCodeableConcept $variantState = null)
     {
+        $this->_trackValueSet($this->variantState, $variantState);
         $this->variantState = $variantState;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The point estimate of the effect estimate.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The point estimate of the effect estimate.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $value
+     * @return static
+     */
+    public function setValue($value = null)
+    {
+        if (null !== $value && !($value instanceof FHIRDecimal)) {
+            $value = new FHIRDecimal($value);
+        }
+        $this->_trackValueSet($this->value, $value);
+        $this->value = $value;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specifies the UCUM unit for the outcome.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getUnitOfMeasure()
+    {
+        return $this->unitOfMeasure;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specifies the UCUM unit for the outcome.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $unitOfMeasure
+     * @return static
+     */
+    public function setUnitOfMeasure(FHIRCodeableConcept $unitOfMeasure = null)
+    {
+        $this->_trackValueSet($this->unitOfMeasure, $unitOfMeasure);
+        $this->unitOfMeasure = $unitOfMeasure;
+        return $this;
+    }
+
+    /**
+     * The EffectEvidenceSynthesis resource describes the difference in an outcome
+     * between exposures states in a population where the effect estimate is derived
+     * from a combination of research studies.
+     *
+     * A description of the precision of the estimate for the effect.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate[]
+     */
+    public function getPrecisionEstimate()
+    {
+        return $this->precisionEstimate;
+    }
+
+    /**
+     * The EffectEvidenceSynthesis resource describes the difference in an outcome
+     * between exposures states in a population where the effect estimate is derived
+     * from a combination of research studies.
+     *
+     * A description of the precision of the estimate for the effect.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate $precisionEstimate
+     * @return static
+     */
+    public function addPrecisionEstimate(FHIREffectEvidenceSynthesisPrecisionEstimate $precisionEstimate = null)
+    {
+        $this->_trackValueAdded();
+        $this->precisionEstimate[] = $precisionEstimate;
+        return $this;
+    }
+
+    /**
+     * The EffectEvidenceSynthesis resource describes the difference in an outcome
+     * between exposures states in a population where the effect estimate is derived
+     * from a combination of research studies.
+     *
+     * A description of the precision of the estimate for the effect.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate[] $precisionEstimate
+     * @return static
+     */
+    public function setPrecisionEstimate(array $precisionEstimate = [])
+    {
+        if ([] !== $this->precisionEstimate) {
+            $this->_trackValuesRemoved(count($this->precisionEstimate));
+            $this->precisionEstimate = [];
+        }
+        if ([] === $precisionEstimate) {
+            return $this;
+        }
+        foreach($precisionEstimate as $v) {
+            if ($v instanceof FHIREffectEvidenceSynthesisPrecisionEstimate) {
+                $this->addPrecisionEstimate($v);
+            } else {
+                $this->addPrecisionEstimate(new FHIREffectEvidenceSynthesisPrecisionEstimate($v));
+            }
+        }
         return $this;
     }
 
@@ -548,21 +533,14 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
                 $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getPrecisionEstimate())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_PRECISION_ESTIMATE, $i)] = $fieldErrs;
-                }
-            }
-        }
         if (null !== ($v = $this->getType())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_TYPE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getUnitOfMeasure())) {
+        if (null !== ($v = $this->getVariantState())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_UNIT_OF_MEASURE] = $fieldErrs;
+                $errs[self::FIELD_VARIANT_STATE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getValue())) {
@@ -570,9 +548,16 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
                 $errs[self::FIELD_VALUE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getVariantState())) {
+        if (null !== ($v = $this->getUnitOfMeasure())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VARIANT_STATE] = $fieldErrs;
+                $errs[self::FIELD_UNIT_OF_MEASURE] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getPrecisionEstimate())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_PRECISION_ESTIMATE, $i)] = $fieldErrs;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_DESCRIPTION])) {
@@ -584,18 +569,6 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
                         $errs[self::FIELD_DESCRIPTION] = [];
                     }
                     $errs[self::FIELD_DESCRIPTION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PRECISION_ESTIMATE])) {
-            $v = $this->getPrecisionEstimate();
-            foreach($validationRules[self::FIELD_PRECISION_ESTIMATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EFFECT_EVIDENCE_SYNTHESIS_DOT_EFFECT_ESTIMATE, self::FIELD_PRECISION_ESTIMATE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PRECISION_ESTIMATE])) {
-                        $errs[self::FIELD_PRECISION_ESTIMATE] = [];
-                    }
-                    $errs[self::FIELD_PRECISION_ESTIMATE][$rule] = $err;
                 }
             }
         }
@@ -611,15 +584,15 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_UNIT_OF_MEASURE])) {
-            $v = $this->getUnitOfMeasure();
-            foreach($validationRules[self::FIELD_UNIT_OF_MEASURE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EFFECT_EVIDENCE_SYNTHESIS_DOT_EFFECT_ESTIMATE, self::FIELD_UNIT_OF_MEASURE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VARIANT_STATE])) {
+            $v = $this->getVariantState();
+            foreach($validationRules[self::FIELD_VARIANT_STATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EFFECT_EVIDENCE_SYNTHESIS_DOT_EFFECT_ESTIMATE, self::FIELD_VARIANT_STATE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_UNIT_OF_MEASURE])) {
-                        $errs[self::FIELD_UNIT_OF_MEASURE] = [];
+                    if (!isset($errs[self::FIELD_VARIANT_STATE])) {
+                        $errs[self::FIELD_VARIANT_STATE] = [];
                     }
-                    $errs[self::FIELD_UNIT_OF_MEASURE][$rule] = $err;
+                    $errs[self::FIELD_VARIANT_STATE][$rule] = $err;
                 }
             }
         }
@@ -635,15 +608,27 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VARIANT_STATE])) {
-            $v = $this->getVariantState();
-            foreach($validationRules[self::FIELD_VARIANT_STATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EFFECT_EVIDENCE_SYNTHESIS_DOT_EFFECT_ESTIMATE, self::FIELD_VARIANT_STATE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_UNIT_OF_MEASURE])) {
+            $v = $this->getUnitOfMeasure();
+            foreach($validationRules[self::FIELD_UNIT_OF_MEASURE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EFFECT_EVIDENCE_SYNTHESIS_DOT_EFFECT_ESTIMATE, self::FIELD_UNIT_OF_MEASURE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VARIANT_STATE])) {
-                        $errs[self::FIELD_VARIANT_STATE] = [];
+                    if (!isset($errs[self::FIELD_UNIT_OF_MEASURE])) {
+                        $errs[self::FIELD_UNIT_OF_MEASURE] = [];
                     }
-                    $errs[self::FIELD_VARIANT_STATE][$rule] = $err;
+                    $errs[self::FIELD_UNIT_OF_MEASURE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PRECISION_ESTIMATE])) {
+            $v = $this->getPrecisionEstimate();
+            foreach($validationRules[self::FIELD_PRECISION_ESTIMATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EFFECT_EVIDENCE_SYNTHESIS_DOT_EFFECT_ESTIMATE, self::FIELD_PRECISION_ESTIMATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PRECISION_ESTIMATE])) {
+                        $errs[self::FIELD_PRECISION_ESTIMATE] = [];
+                    }
+                    $errs[self::FIELD_PRECISION_ESTIMATE][$rule] = $err;
                 }
             }
         }
@@ -687,120 +672,146 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisEffectEstimate $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisEffectEstimate
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIREffectEvidenceSynthesisEffectEstimate::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIREffectEvidenceSynthesisEffectEstimate::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIREffectEvidenceSynthesisEffectEstimate::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIREffectEvidenceSynthesisEffectEstimate;
+            $type = new FHIREffectEvidenceSynthesisEffectEstimate(null);
         } elseif (!is_object($type) || !($type instanceof FHIREffectEvidenceSynthesisEffectEstimate)) {
             throw new \RuntimeException(sprintf(
                 'FHIREffectEvidenceSynthesisEffectEstimate::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisEffectEstimate or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_DESCRIPTION === $n->nodeName) {
+                $type->setDescription(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_TYPE === $n->nodeName) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_VARIANT_STATE === $n->nodeName) {
+                $type->setVariantState(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE === $n->nodeName) {
+                $type->setValue(FHIRDecimal::xmlUnserialize($n));
+            } elseif (self::FIELD_UNIT_OF_MEASURE === $n->nodeName) {
+                $type->setUnitOfMeasure(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_PRECISION_ESTIMATE === $n->nodeName) {
+                $type->addPrecisionEstimate(FHIREffectEvidenceSynthesisPrecisionEstimate::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->description)) {
-            $type->setDescription(FHIRString::xmlUnserialize($children->description));
-        }
-        if (isset($attributes->description)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DESCRIPTION);
+        if (null !== $n) {
             $pt = $type->getDescription();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->description);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDescription((string)$attributes->description);
+                $type->setDescription($n->nodeValue);
             }
         }
-        if (isset($children->precisionEstimate)) {
-            foreach($children->precisionEstimate as $child) {
-                $type->addPrecisionEstimate(FHIREffectEvidenceSynthesisPrecisionEstimate::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->type)) {
-            $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
-        }
-        if (isset($children->unitOfMeasure)) {
-            $type->setUnitOfMeasure(FHIRCodeableConcept::xmlUnserialize($children->unitOfMeasure));
-        }
-        if (isset($children->value)) {
-            $type->setValue(FHIRDecimal::xmlUnserialize($children->value));
-        }
-        if (isset($attributes->value)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE);
+        if (null !== $n) {
             $pt = $type->getValue();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->value);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setValue((string)$attributes->value);
+                $type->setValue($n->nodeValue);
             }
         }
-        if (isset($children->variantState)) {
-            $type->setVariantState(FHIRCodeableConcept::xmlUnserialize($children->variantState));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DESCRIPTION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getVariantState())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VARIANT_STATE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValue())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getUnitOfMeasure())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_UNIT_OF_MEASURE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getPrecisionEstimate())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PRECISION_ESTIMATE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PRECISION_ESTIMATE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getUnitOfMeasure())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_OF_MEASURE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValue())) {
-            $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getVariantState())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VARIANT_STATE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -810,13 +821,33 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
             }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DESCRIPTION_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            $a[self::FIELD_TYPE] = $v;
+        }
+        if (null !== ($v = $this->getVariantState())) {
+            $a[self::FIELD_VARIANT_STATE] = $v;
+        }
+        if (null !== ($v = $this->getValue())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDecimal::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getUnitOfMeasure())) {
+            $a[self::FIELD_UNIT_OF_MEASURE] = $v;
         }
         if ([] !== ($vs = $this->getPrecisionEstimate())) {
             $a[self::FIELD_PRECISION_ESTIMATE] = [];
@@ -826,27 +857,6 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
                 }
                 $a[self::FIELD_PRECISION_ESTIMATE][] = $v;
             }
-        }
-        if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
-        }
-        if (null !== ($v = $this->getUnitOfMeasure())) {
-            $a[self::FIELD_UNIT_OF_MEASURE] = $v;
-        }
-        if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getVariantState())) {
-            $a[self::FIELD_VARIANT_STATE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

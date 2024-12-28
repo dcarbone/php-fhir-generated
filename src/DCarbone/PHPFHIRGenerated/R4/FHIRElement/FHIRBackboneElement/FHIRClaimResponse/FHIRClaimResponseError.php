@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -79,29 +81,28 @@ class FHIRClaimResponseError extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_ERROR;
-    const FIELD_CODE = 'code';
-    const FIELD_DETAIL_SEQUENCE = 'detailSequence';
-    const FIELD_DETAIL_SEQUENCE_EXT = '_detailSequence';
     const FIELD_ITEM_SEQUENCE = 'itemSequence';
     const FIELD_ITEM_SEQUENCE_EXT = '_itemSequence';
+    const FIELD_DETAIL_SEQUENCE = 'detailSequence';
+    const FIELD_DETAIL_SEQUENCE_EXT = '_detailSequence';
     const FIELD_SUB_DETAIL_SEQUENCE = 'subDetailSequence';
     const FIELD_SUB_DETAIL_SEQUENCE_EXT = '_subDetailSequence';
+    const FIELD_CODE = 'code';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
-     * An error code, from a specified code system, which details why the claim could
-     * not be adjudicated.
+     * The sequence number of the line item submitted which contains the error. This
+     * value is omitted when the error occurs outside of the item structure.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
-    protected $code = null;
+    protected $itemSequence = null;
 
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -121,18 +122,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The sequence number of the line item submitted which contains the error. This
-     * value is omitted when the error occurs outside of the item structure.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
-     */
-    protected $itemSequence = null;
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
      * The sequence number of the sub-detail within the detail within the line item
      * submitted which contains the error. This value is omitted when the error occurs
      * outside of the item structure.
@@ -140,6 +129,19 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
     protected $subDetailSequence = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An error code, from a specified code system, which details why the claim could
+     * not be adjudicated.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $code = null;
 
     /**
      * Validation map for fields in type ClaimResponse.Error
@@ -163,47 +165,9 @@ class FHIRClaimResponseError extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CODE])) {
-            if ($data[self::FIELD_CODE] instanceof FHIRCodeableConcept) {
-                $this->setCode($data[self::FIELD_CODE]);
-            } else {
-                $this->setCode(new FHIRCodeableConcept($data[self::FIELD_CODE]));
-            }
-        }
-        if (isset($data[self::FIELD_DETAIL_SEQUENCE]) || isset($data[self::FIELD_DETAIL_SEQUENCE_EXT])) {
-            if (isset($data[self::FIELD_DETAIL_SEQUENCE])) {
-                $value = $data[self::FIELD_DETAIL_SEQUENCE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DETAIL_SEQUENCE_EXT]) && is_array($data[self::FIELD_DETAIL_SEQUENCE_EXT])) {
-                $ext = $data[self::FIELD_DETAIL_SEQUENCE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $this->setDetailSequence($value);
-                } else if (is_array($value)) {
-                    $this->setDetailSequence(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $this->setDetailSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDetailSequence(new FHIRPositiveInt($ext));
-            }
-        }
         if (isset($data[self::FIELD_ITEM_SEQUENCE]) || isset($data[self::FIELD_ITEM_SEQUENCE_EXT])) {
-            if (isset($data[self::FIELD_ITEM_SEQUENCE])) {
-                $value = $data[self::FIELD_ITEM_SEQUENCE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ITEM_SEQUENCE_EXT]) && is_array($data[self::FIELD_ITEM_SEQUENCE_EXT])) {
-                $ext = $data[self::FIELD_ITEM_SEQUENCE_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_ITEM_SEQUENCE]) ? $data[self::FIELD_ITEM_SEQUENCE] : null;
+            $ext = (isset($data[self::FIELD_ITEM_SEQUENCE_EXT]) && is_array($data[self::FIELD_ITEM_SEQUENCE_EXT])) ? $ext = $data[self::FIELD_ITEM_SEQUENCE_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRPositiveInt) {
                     $this->setItemSequence($value);
@@ -212,21 +176,28 @@ class FHIRClaimResponseError extends FHIRBackboneElement
                 } else {
                     $this->setItemSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setItemSequence(new FHIRPositiveInt($ext));
             }
         }
+        if (isset($data[self::FIELD_DETAIL_SEQUENCE]) || isset($data[self::FIELD_DETAIL_SEQUENCE_EXT])) {
+            $value = isset($data[self::FIELD_DETAIL_SEQUENCE]) ? $data[self::FIELD_DETAIL_SEQUENCE] : null;
+            $ext = (isset($data[self::FIELD_DETAIL_SEQUENCE_EXT]) && is_array($data[self::FIELD_DETAIL_SEQUENCE_EXT])) ? $ext = $data[self::FIELD_DETAIL_SEQUENCE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setDetailSequence($value);
+                } else if (is_array($value)) {
+                    $this->setDetailSequence(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->setDetailSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDetailSequence(new FHIRPositiveInt($ext));
+            }
+        }
         if (isset($data[self::FIELD_SUB_DETAIL_SEQUENCE]) || isset($data[self::FIELD_SUB_DETAIL_SEQUENCE_EXT])) {
-            if (isset($data[self::FIELD_SUB_DETAIL_SEQUENCE])) {
-                $value = $data[self::FIELD_SUB_DETAIL_SEQUENCE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SUB_DETAIL_SEQUENCE_EXT]) && is_array($data[self::FIELD_SUB_DETAIL_SEQUENCE_EXT])) {
-                $ext = $data[self::FIELD_SUB_DETAIL_SEQUENCE_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_SUB_DETAIL_SEQUENCE]) ? $data[self::FIELD_SUB_DETAIL_SEQUENCE] : null;
+            $ext = (isset($data[self::FIELD_SUB_DETAIL_SEQUENCE_EXT]) && is_array($data[self::FIELD_SUB_DETAIL_SEQUENCE_EXT])) ? $ext = $data[self::FIELD_SUB_DETAIL_SEQUENCE_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRPositiveInt) {
                     $this->setSubDetailSequence($value);
@@ -235,8 +206,15 @@ class FHIRClaimResponseError extends FHIRBackboneElement
                 } else {
                     $this->setSubDetailSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setSubDetailSequence(new FHIRPositiveInt($ext));
+            }
+        }
+        if (isset($data[self::FIELD_CODE])) {
+            if ($data[self::FIELD_CODE] instanceof FHIRCodeableConcept) {
+                $this->setCode($data[self::FIELD_CODE]);
+            } else {
+                $this->setCode(new FHIRCodeableConcept($data[self::FIELD_CODE]));
             }
         }
     }
@@ -255,43 +233,45 @@ class FHIRClaimResponseError extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ClaimResponseError{$xmlns}></ClaimResponseError>";
     }
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
-     * An error code, from a specified code system, which details why the claim could
-     * not be adjudicated.
+     * The sequence number of the line item submitted which contains the error. This
+     * value is omitted when the error occurs outside of the item structure.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
-    public function getCode()
+    public function getItemSequence()
     {
-        return $this->code;
+        return $this->itemSequence;
     }
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
-     * An error code, from a specified code system, which details why the claim could
-     * not be adjudicated.
+     * The sequence number of the line item submitted which contains the error. This
+     * value is omitted when the error occurs outside of the item structure.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $itemSequence
      * @return static
      */
-    public function setCode(FHIRCodeableConcept $code = null)
+    public function setItemSequence($itemSequence = null)
     {
-        $this->code = $code;
+        if (null !== $itemSequence && !($itemSequence instanceof FHIRPositiveInt)) {
+            $itemSequence = new FHIRPositiveInt($itemSequence);
+        }
+        $this->_trackValueSet($this->itemSequence, $itemSequence);
+        $this->itemSequence = $itemSequence;
         return $this;
     }
 
@@ -325,55 +305,11 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      */
     public function setDetailSequence($detailSequence = null)
     {
-        if (null === $detailSequence) {
-            $this->detailSequence = null;
-            return $this;
+        if (null !== $detailSequence && !($detailSequence instanceof FHIRPositiveInt)) {
+            $detailSequence = new FHIRPositiveInt($detailSequence);
         }
-        if ($detailSequence instanceof FHIRPositiveInt) {
-            $this->detailSequence = $detailSequence;
-            return $this;
-        }
-        $this->detailSequence = new FHIRPositiveInt($detailSequence);
-        return $this;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * The sequence number of the line item submitted which contains the error. This
-     * value is omitted when the error occurs outside of the item structure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
-     */
-    public function getItemSequence()
-    {
-        return $this->itemSequence;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * The sequence number of the line item submitted which contains the error. This
-     * value is omitted when the error occurs outside of the item structure.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $itemSequence
-     * @return static
-     */
-    public function setItemSequence($itemSequence = null)
-    {
-        if (null === $itemSequence) {
-            $this->itemSequence = null;
-            return $this;
-        }
-        if ($itemSequence instanceof FHIRPositiveInt) {
-            $this->itemSequence = $itemSequence;
-            return $this;
-        }
-        $this->itemSequence = new FHIRPositiveInt($itemSequence);
+        $this->_trackValueSet($this->detailSequence, $detailSequence);
+        $this->detailSequence = $detailSequence;
         return $this;
     }
 
@@ -407,15 +343,46 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      */
     public function setSubDetailSequence($subDetailSequence = null)
     {
-        if (null === $subDetailSequence) {
-            $this->subDetailSequence = null;
-            return $this;
+        if (null !== $subDetailSequence && !($subDetailSequence instanceof FHIRPositiveInt)) {
+            $subDetailSequence = new FHIRPositiveInt($subDetailSequence);
         }
-        if ($subDetailSequence instanceof FHIRPositiveInt) {
-            $this->subDetailSequence = $subDetailSequence;
-            return $this;
-        }
-        $this->subDetailSequence = new FHIRPositiveInt($subDetailSequence);
+        $this->_trackValueSet($this->subDetailSequence, $subDetailSequence);
+        $this->subDetailSequence = $subDetailSequence;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An error code, from a specified code system, which details why the claim could
+     * not be adjudicated.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An error code, from a specified code system, which details why the claim could
+     * not be adjudicated.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
+     * @return static
+     */
+    public function setCode(FHIRCodeableConcept $code = null)
+    {
+        $this->_trackValueSet($this->code, $code);
+        $this->code = $code;
         return $this;
     }
 
@@ -440,9 +407,9 @@ class FHIRClaimResponseError extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getCode())) {
+        if (null !== ($v = $this->getItemSequence())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CODE] = $fieldErrs;
+                $errs[self::FIELD_ITEM_SEQUENCE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDetailSequence())) {
@@ -450,25 +417,25 @@ class FHIRClaimResponseError extends FHIRBackboneElement
                 $errs[self::FIELD_DETAIL_SEQUENCE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getItemSequence())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ITEM_SEQUENCE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getSubDetailSequence())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_SUB_DETAIL_SEQUENCE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CODE])) {
-            $v = $this->getCode();
-            foreach($validationRules[self::FIELD_CODE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_ERROR, self::FIELD_CODE, $rule, $constraint, $v);
+        if (null !== ($v = $this->getCode())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CODE] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_ITEM_SEQUENCE])) {
+            $v = $this->getItemSequence();
+            foreach($validationRules[self::FIELD_ITEM_SEQUENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_ERROR, self::FIELD_ITEM_SEQUENCE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CODE])) {
-                        $errs[self::FIELD_CODE] = [];
+                    if (!isset($errs[self::FIELD_ITEM_SEQUENCE])) {
+                        $errs[self::FIELD_ITEM_SEQUENCE] = [];
                     }
-                    $errs[self::FIELD_CODE][$rule] = $err;
+                    $errs[self::FIELD_ITEM_SEQUENCE][$rule] = $err;
                 }
             }
         }
@@ -484,18 +451,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_ITEM_SEQUENCE])) {
-            $v = $this->getItemSequence();
-            foreach($validationRules[self::FIELD_ITEM_SEQUENCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_ERROR, self::FIELD_ITEM_SEQUENCE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ITEM_SEQUENCE])) {
-                        $errs[self::FIELD_ITEM_SEQUENCE] = [];
-                    }
-                    $errs[self::FIELD_ITEM_SEQUENCE][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_SUB_DETAIL_SEQUENCE])) {
             $v = $this->getSubDetailSequence();
             foreach($validationRules[self::FIELD_SUB_DETAIL_SEQUENCE] as $rule => $constraint) {
@@ -505,6 +460,18 @@ class FHIRClaimResponseError extends FHIRBackboneElement
                         $errs[self::FIELD_SUB_DETAIL_SEQUENCE] = [];
                     }
                     $errs[self::FIELD_SUB_DETAIL_SEQUENCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CODE])) {
+            $v = $this->getCode();
+            foreach($validationRules[self::FIELD_CODE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_ERROR, self::FIELD_CODE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CODE])) {
+                        $errs[self::FIELD_CODE] = [];
+                    }
+                    $errs[self::FIELD_CODE][$rule] = $err;
                 }
             }
         }
@@ -548,108 +515,136 @@ class FHIRClaimResponseError extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRClaimResponseError::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRClaimResponseError::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRClaimResponseError::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRClaimResponseError;
+            $type = new FHIRClaimResponseError(null);
         } elseif (!is_object($type) || !($type instanceof FHIRClaimResponseError)) {
             throw new \RuntimeException(sprintf(
                 'FHIRClaimResponseError::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_ITEM_SEQUENCE === $n->nodeName) {
+                $type->setItemSequence(FHIRPositiveInt::xmlUnserialize($n));
+            } elseif (self::FIELD_DETAIL_SEQUENCE === $n->nodeName) {
+                $type->setDetailSequence(FHIRPositiveInt::xmlUnserialize($n));
+            } elseif (self::FIELD_SUB_DETAIL_SEQUENCE === $n->nodeName) {
+                $type->setSubDetailSequence(FHIRPositiveInt::xmlUnserialize($n));
+            } elseif (self::FIELD_CODE === $n->nodeName) {
+                $type->setCode(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->code)) {
-            $type->setCode(FHIRCodeableConcept::xmlUnserialize($children->code));
-        }
-        if (isset($children->detailSequence)) {
-            $type->setDetailSequence(FHIRPositiveInt::xmlUnserialize($children->detailSequence));
-        }
-        if (isset($attributes->detailSequence)) {
-            $pt = $type->getDetailSequence();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->detailSequence);
-            } else {
-                $type->setDetailSequence((string)$attributes->detailSequence);
-            }
-        }
-        if (isset($children->itemSequence)) {
-            $type->setItemSequence(FHIRPositiveInt::xmlUnserialize($children->itemSequence));
-        }
-        if (isset($attributes->itemSequence)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_ITEM_SEQUENCE);
+        if (null !== $n) {
             $pt = $type->getItemSequence();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->itemSequence);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setItemSequence((string)$attributes->itemSequence);
+                $type->setItemSequence($n->nodeValue);
             }
         }
-        if (isset($children->subDetailSequence)) {
-            $type->setSubDetailSequence(FHIRPositiveInt::xmlUnserialize($children->subDetailSequence));
+        $n = $element->attributes->getNamedItem(self::FIELD_DETAIL_SEQUENCE);
+        if (null !== $n) {
+            $pt = $type->getDetailSequence();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setDetailSequence($n->nodeValue);
+            }
         }
-        if (isset($attributes->subDetailSequence)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_SUB_DETAIL_SEQUENCE);
+        if (null !== $n) {
             $pt = $type->getSubDetailSequence();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->subDetailSequence);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setSubDetailSequence((string)$attributes->subDetailSequence);
+                $type->setSubDetailSequence($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getItemSequence())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_ITEM_SEQUENCE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getDetailSequence())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getItemSequence())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DETAIL_SEQUENCE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getSubDetailSequence())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_DETAIL_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_SUB_DETAIL_SEQUENCE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_CODE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -658,38 +653,38 @@ class FHIRClaimResponseError extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCode())) {
-            $a[self::FIELD_CODE] = $v;
-        }
-        if (null !== ($v = $this->getDetailSequence())) {
-            $a[self::FIELD_DETAIL_SEQUENCE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
-                $a[self::FIELD_DETAIL_SEQUENCE_EXT] = $enc;
+        if (null !== ($v = $this->getItemSequence())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ITEM_SEQUENCE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRPositiveInt::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_ITEM_SEQUENCE_EXT] = $ext;
             }
         }
-        if (null !== ($v = $this->getItemSequence())) {
-            $a[self::FIELD_ITEM_SEQUENCE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
-                $a[self::FIELD_ITEM_SEQUENCE_EXT] = $enc;
+        if (null !== ($v = $this->getDetailSequence())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DETAIL_SEQUENCE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRPositiveInt::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DETAIL_SEQUENCE_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getSubDetailSequence())) {
-            $a[self::FIELD_SUB_DETAIL_SEQUENCE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
-                $a[self::FIELD_SUB_DETAIL_SEQUENCE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SUB_DETAIL_SEQUENCE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRPositiveInt::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_SUB_DETAIL_SEQUENCE_EXT] = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getCode())) {
+            $a[self::FIELD_CODE] = $v;
         }
         return $a;
     }

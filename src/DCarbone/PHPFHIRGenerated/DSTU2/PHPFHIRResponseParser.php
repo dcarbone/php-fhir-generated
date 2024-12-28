@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -150,16 +150,25 @@ class PHPFHIRResponseParser
      */
     protected function parseObjectSimpleXMLElementInput(\SimpleXMLElement $input)
     {
-        $elementName = $input->getName();
+        return self::parseObjectDOMDocumentInput(dom_import_simplexml($input));
+    }
+
+    /**
+     * @param \DOMDocument $input
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface|null
+     */
+    protected function parseObjectDOMDocumentInput(\DOMDocument $input)
+    {
+        $elementName = $input->documentElement->nodeName;
         $className = PHPFHIRTypeMap::getTypeClass($elementName);
-        if (null === $className) {
+         if (null === $className) {
             throw new \UnexpectedValueException(sprintf(
                 'Unable to locate class for root XML element "%s". Input seen: %s',
                 $elementName,
                 $this->getPrintableStringInput($input->saveXML())
             ));
         }
-        return $className::xmlUnserialize($input);
+        return $className::xmlUnserialize($input->documentElement);
     }
 
     /**
@@ -172,6 +181,8 @@ class PHPFHIRResponseParser
             return $input;
         } elseif ($input instanceof \SimpleXMLElement) {
             return $this->parseObjectSimpleXMLElementInput($input);
+        } elseif ($input instanceof \DOMDocument) {
+            return $this->parseObjectDOMDocumentInput($input);
         }
         throw new \UnexpectedValueException(sprintf(
             'Unable parse provided input object of type "%s"',
@@ -188,11 +199,12 @@ class PHPFHIRResponseParser
     protected function parseStringXMLInput($input, $libxmlOpts = 591872)
     {
         libxml_use_internal_errors(true);
-        $sxe = new \SimpleXMLElement($input, $libxmlOpts);
+        $dom = new \DOMDocument();
+        $dom->loadXML($input, $libxmlOpts);
         $err = libxml_get_last_error();
         libxml_use_internal_errors(false);
-        if ($sxe instanceof \SimpleXMLElement) {
-            return $this->parseObjectSimpleXMLElementInput($sxe);
+        if ($dom instanceof \DOMDocument) {
+            return $this->parseObjectDOMDocumentInput($dom);
         }
         throw new \DomainException(sprintf(
             'Unable to parse provided input as XML.  Error: %s; Input: %s',

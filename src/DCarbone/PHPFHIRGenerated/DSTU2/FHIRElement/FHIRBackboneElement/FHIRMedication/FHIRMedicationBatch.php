@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,9 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMe
 
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
@@ -79,13 +81,24 @@ class FHIRMedicationBatch extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_DOT_BATCH;
-    const FIELD_EXPIRATION_DATE = 'expirationDate';
-    const FIELD_EXPIRATION_DATE_EXT = '_expirationDate';
     const FIELD_LOT_NUMBER = 'lotNumber';
     const FIELD_LOT_NUMBER_EXT = '_lotNumber';
+    const FIELD_EXPIRATION_DATE = 'expirationDate';
+    const FIELD_EXPIRATION_DATE_EXT = '_expirationDate';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The assigned lot number of a batch of the specified product.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    protected $lotNumber = null;
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -100,17 +113,6 @@ class FHIRMedicationBatch extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected $expirationDate = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The assigned lot number of a batch of the specified product.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    protected $lotNumber = null;
 
     /**
      * Validation map for fields in type Medication.Batch
@@ -134,40 +136,9 @@ class FHIRMedicationBatch extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_EXPIRATION_DATE]) || isset($data[self::FIELD_EXPIRATION_DATE_EXT])) {
-            if (isset($data[self::FIELD_EXPIRATION_DATE])) {
-                $value = $data[self::FIELD_EXPIRATION_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_EXPIRATION_DATE_EXT]) && is_array($data[self::FIELD_EXPIRATION_DATE_EXT])) {
-                $ext = $data[self::FIELD_EXPIRATION_DATE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $this->setExpirationDate($value);
-                } else if (is_array($value)) {
-                    $this->setExpirationDate(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $this->setExpirationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setExpirationDate(new FHIRDateTime($ext));
-            }
-        }
         if (isset($data[self::FIELD_LOT_NUMBER]) || isset($data[self::FIELD_LOT_NUMBER_EXT])) {
-            if (isset($data[self::FIELD_LOT_NUMBER])) {
-                $value = $data[self::FIELD_LOT_NUMBER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_LOT_NUMBER_EXT]) && is_array($data[self::FIELD_LOT_NUMBER_EXT])) {
-                $ext = $data[self::FIELD_LOT_NUMBER_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_LOT_NUMBER]) ? $data[self::FIELD_LOT_NUMBER] : null;
+            $ext = (isset($data[self::FIELD_LOT_NUMBER_EXT]) && is_array($data[self::FIELD_LOT_NUMBER_EXT])) ? $ext = $data[self::FIELD_LOT_NUMBER_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setLotNumber($value);
@@ -176,8 +147,23 @@ class FHIRMedicationBatch extends FHIRBackboneElement
                 } else {
                     $this->setLotNumber(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setLotNumber(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_EXPIRATION_DATE]) || isset($data[self::FIELD_EXPIRATION_DATE_EXT])) {
+            $value = isset($data[self::FIELD_EXPIRATION_DATE]) ? $data[self::FIELD_EXPIRATION_DATE] : null;
+            $ext = (isset($data[self::FIELD_EXPIRATION_DATE_EXT]) && is_array($data[self::FIELD_EXPIRATION_DATE_EXT])) ? $ext = $data[self::FIELD_EXPIRATION_DATE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setExpirationDate($value);
+                } else if (is_array($value)) {
+                    $this->setExpirationDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setExpirationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setExpirationDate(new FHIRDateTime($ext));
             }
         }
     }
@@ -196,10 +182,44 @@ class FHIRMedicationBatch extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<MedicationBatch{$xmlns}></MedicationBatch>";
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The assigned lot number of a batch of the specified product.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    public function getLotNumber()
+    {
+        return $this->lotNumber;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The assigned lot number of a batch of the specified product.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $lotNumber
+     * @return static
+     */
+    public function setLotNumber($lotNumber = null)
+    {
+        if (null !== $lotNumber && !($lotNumber instanceof FHIRString)) {
+            $lotNumber = new FHIRString($lotNumber);
+        }
+        $this->_trackValueSet($this->lotNumber, $lotNumber);
+        $this->lotNumber = $lotNumber;
+        return $this;
     }
 
     /**
@@ -234,53 +254,11 @@ class FHIRMedicationBatch extends FHIRBackboneElement
      */
     public function setExpirationDate($expirationDate = null)
     {
-        if (null === $expirationDate) {
-            $this->expirationDate = null;
-            return $this;
+        if (null !== $expirationDate && !($expirationDate instanceof FHIRDateTime)) {
+            $expirationDate = new FHIRDateTime($expirationDate);
         }
-        if ($expirationDate instanceof FHIRDateTime) {
-            $this->expirationDate = $expirationDate;
-            return $this;
-        }
-        $this->expirationDate = new FHIRDateTime($expirationDate);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The assigned lot number of a batch of the specified product.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    public function getLotNumber()
-    {
-        return $this->lotNumber;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The assigned lot number of a batch of the specified product.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $lotNumber
-     * @return static
-     */
-    public function setLotNumber($lotNumber = null)
-    {
-        if (null === $lotNumber) {
-            $this->lotNumber = null;
-            return $this;
-        }
-        if ($lotNumber instanceof FHIRString) {
-            $this->lotNumber = $lotNumber;
-            return $this;
-        }
-        $this->lotNumber = new FHIRString($lotNumber);
+        $this->_trackValueSet($this->expirationDate, $expirationDate);
+        $this->expirationDate = $expirationDate;
         return $this;
     }
 
@@ -305,26 +283,14 @@ class FHIRMedicationBatch extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getExpirationDate())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_EXPIRATION_DATE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getLotNumber())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_LOT_NUMBER] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_EXPIRATION_DATE])) {
-            $v = $this->getExpirationDate();
-            foreach($validationRules[self::FIELD_EXPIRATION_DATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_DOT_BATCH, self::FIELD_EXPIRATION_DATE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EXPIRATION_DATE])) {
-                        $errs[self::FIELD_EXPIRATION_DATE] = [];
-                    }
-                    $errs[self::FIELD_EXPIRATION_DATE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getExpirationDate())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EXPIRATION_DATE] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_LOT_NUMBER])) {
@@ -336,6 +302,18 @@ class FHIRMedicationBatch extends FHIRBackboneElement
                         $errs[self::FIELD_LOT_NUMBER] = [];
                     }
                     $errs[self::FIELD_LOT_NUMBER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXPIRATION_DATE])) {
+            $v = $this->getExpirationDate();
+            foreach($validationRules[self::FIELD_EXPIRATION_DATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_DOT_BATCH, self::FIELD_EXPIRATION_DATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXPIRATION_DATE])) {
+                        $errs[self::FIELD_EXPIRATION_DATE] = [];
+                    }
+                    $errs[self::FIELD_EXPIRATION_DATE][$rule] = $err;
                 }
             }
         }
@@ -379,88 +357,113 @@ class FHIRMedicationBatch extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRMedicationBatch::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMedicationBatch::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRMedicationBatch::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRMedicationBatch;
+            $type = new FHIRMedicationBatch(null);
         } elseif (!is_object($type) || !($type instanceof FHIRMedicationBatch)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMedicationBatch::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_LOT_NUMBER === $n->nodeName) {
+                $type->setLotNumber(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_EXPIRATION_DATE === $n->nodeName) {
+                $type->setExpirationDate(FHIRDateTime::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->expirationDate)) {
-            $type->setExpirationDate(FHIRDateTime::xmlUnserialize($children->expirationDate));
-        }
-        if (isset($attributes->expirationDate)) {
-            $pt = $type->getExpirationDate();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->expirationDate);
-            } else {
-                $type->setExpirationDate((string)$attributes->expirationDate);
-            }
-        }
-        if (isset($children->lotNumber)) {
-            $type->setLotNumber(FHIRString::xmlUnserialize($children->lotNumber));
-        }
-        if (isset($attributes->lotNumber)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_LOT_NUMBER);
+        if (null !== $n) {
             $pt = $type->getLotNumber();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->lotNumber);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setLotNumber((string)$attributes->lotNumber);
+                $type->setLotNumber($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_EXPIRATION_DATE);
+        if (null !== $n) {
+            $pt = $type->getExpirationDate();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setExpirationDate($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getExpirationDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXPIRATION_DATE, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getLotNumber())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LOT_NUMBER, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_LOT_NUMBER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getExpirationDate())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_EXPIRATION_DATE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -469,26 +472,25 @@ class FHIRMedicationBatch extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getExpirationDate())) {
-            $a[self::FIELD_EXPIRATION_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_EXPIRATION_DATE_EXT] = $enc;
-            }
-        }
         if (null !== ($v = $this->getLotNumber())) {
-            $a[self::FIELD_LOT_NUMBER] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_LOT_NUMBER_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LOT_NUMBER] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_LOT_NUMBER_EXT] = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getExpirationDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_EXPIRATION_DATE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDateTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_EXPIRATION_DATE_EXT] = $ext;
+            }
         }
         return $a;
     }

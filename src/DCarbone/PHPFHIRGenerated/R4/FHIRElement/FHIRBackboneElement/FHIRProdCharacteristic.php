@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,8 +65,10 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -83,35 +85,55 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC;
-    const FIELD_COLOR = 'color';
-    const FIELD_COLOR_EXT = '_color';
-    const FIELD_DEPTH = 'depth';
-    const FIELD_EXTERNAL_DIAMETER = 'externalDiameter';
     const FIELD_HEIGHT = 'height';
-    const FIELD_IMAGE = 'image';
-    const FIELD_IMPRINT = 'imprint';
-    const FIELD_IMPRINT_EXT = '_imprint';
+    const FIELD_WIDTH = 'width';
+    const FIELD_DEPTH = 'depth';
+    const FIELD_WEIGHT = 'weight';
     const FIELD_NOMINAL_VOLUME = 'nominalVolume';
-    const FIELD_SCORING = 'scoring';
+    const FIELD_EXTERNAL_DIAMETER = 'externalDiameter';
     const FIELD_SHAPE = 'shape';
     const FIELD_SHAPE_EXT = '_shape';
-    const FIELD_WEIGHT = 'weight';
-    const FIELD_WIDTH = 'width';
+    const FIELD_COLOR = 'color';
+    const FIELD_COLOR_EXT = '_color';
+    const FIELD_IMPRINT = 'imprint';
+    const FIELD_IMPRINT_EXT = '_imprint';
+    const FIELD_IMAGE = 'image';
+    const FIELD_SCORING = 'scoring';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where applicable, the color can be specified An appropriate controlled
-     * vocabulary shall be used The term and the term identifier shall be used.
+     * Where applicable, the height can be specified using a numerical value and its
+     * unit of measurement The unit of measurement shall be specified in accordance
+     * with ISO 11240 and the resulting terminology The symbol and the symbol
+     * identifier shall be used.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    protected $color = [];
+    protected $height = null;
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where applicable, the width can be specified using a numerical value and its
+     * unit of measurement The unit of measurement shall be specified in accordance
+     * with ISO 11240 and the resulting terminology The symbol and the symbol
+     * identifier shall be used.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    protected $width = null;
 
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -136,53 +158,14 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where applicable, the external diameter can be specified using a numerical value
-     * and its unit of measurement The unit of measurement shall be specified in
-     * accordance with ISO 11240 and the resulting terminology The symbol and the
-     * symbol identifier shall be used.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    protected $externalDiameter = null;
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where applicable, the height can be specified using a numerical value and its
+     * Where applicable, the weight can be specified using a numerical value and its
      * unit of measurement The unit of measurement shall be specified in accordance
      * with ISO 11240 and the resulting terminology The symbol and the symbol
      * identifier shall be used.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    protected $height = null;
-
-    /**
-     * For referring to data content defined in other formats.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where applicable, the image can be provided The format of the image attachment
-     * shall be specified by regional implementations.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment[]
-     */
-    protected $image = [];
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Where applicable, the imprint can be specified as text.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
-     */
-    protected $imprint = [];
+    protected $weight = null;
 
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -201,17 +184,20 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     protected $nominalVolume = null;
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where applicable, the scoring can be specified An appropriate controlled
-     * vocabulary shall be used The term and the term identifier shall be used.
+     * Where applicable, the external diameter can be specified using a numerical value
+     * and its unit of measurement The unit of measurement shall be specified in
+     * accordance with ISO 11240 and the resulting terminology The symbol and the
+     * symbol identifier shall be used.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    protected $scoring = null;
+    protected $externalDiameter = null;
 
     /**
      * A sequence of Unicode characters
@@ -226,36 +212,52 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     protected $shape = null;
 
     /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Where applicable, the weight can be specified using a numerical value and its
-     * unit of measurement The unit of measurement shall be specified in accordance
-     * with ISO 11240 and the resulting terminology The symbol and the symbol
-     * identifier shall be used.
+     * Where applicable, the color can be specified An appropriate controlled
+     * vocabulary shall be used The term and the term identifier shall be used.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    protected $weight = null;
+    protected $color = [];
 
     /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Where applicable, the imprint can be specified as text.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
+     */
+    protected $imprint = [];
+
+    /**
+     * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where applicable, the width can be specified using a numerical value and its
-     * unit of measurement The unit of measurement shall be specified in accordance
-     * with ISO 11240 and the resulting terminology The symbol and the symbol
-     * identifier shall be used.
+     * Where applicable, the image can be provided The format of the image attachment
+     * shall be specified by regional implementations.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment[]
      */
-    protected $width = null;
+    protected $image = [];
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where applicable, the scoring can be specified An appropriate controlled
+     * vocabulary shall be used The term and the term identifier shall be used.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $scoring = null;
 
     /**
      * Validation map for fields in type ProdCharacteristic
@@ -279,17 +281,66 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_HEIGHT])) {
+            if ($data[self::FIELD_HEIGHT] instanceof FHIRQuantity) {
+                $this->setHeight($data[self::FIELD_HEIGHT]);
+            } else {
+                $this->setHeight(new FHIRQuantity($data[self::FIELD_HEIGHT]));
+            }
+        }
+        if (isset($data[self::FIELD_WIDTH])) {
+            if ($data[self::FIELD_WIDTH] instanceof FHIRQuantity) {
+                $this->setWidth($data[self::FIELD_WIDTH]);
+            } else {
+                $this->setWidth(new FHIRQuantity($data[self::FIELD_WIDTH]));
+            }
+        }
+        if (isset($data[self::FIELD_DEPTH])) {
+            if ($data[self::FIELD_DEPTH] instanceof FHIRQuantity) {
+                $this->setDepth($data[self::FIELD_DEPTH]);
+            } else {
+                $this->setDepth(new FHIRQuantity($data[self::FIELD_DEPTH]));
+            }
+        }
+        if (isset($data[self::FIELD_WEIGHT])) {
+            if ($data[self::FIELD_WEIGHT] instanceof FHIRQuantity) {
+                $this->setWeight($data[self::FIELD_WEIGHT]);
+            } else {
+                $this->setWeight(new FHIRQuantity($data[self::FIELD_WEIGHT]));
+            }
+        }
+        if (isset($data[self::FIELD_NOMINAL_VOLUME])) {
+            if ($data[self::FIELD_NOMINAL_VOLUME] instanceof FHIRQuantity) {
+                $this->setNominalVolume($data[self::FIELD_NOMINAL_VOLUME]);
+            } else {
+                $this->setNominalVolume(new FHIRQuantity($data[self::FIELD_NOMINAL_VOLUME]));
+            }
+        }
+        if (isset($data[self::FIELD_EXTERNAL_DIAMETER])) {
+            if ($data[self::FIELD_EXTERNAL_DIAMETER] instanceof FHIRQuantity) {
+                $this->setExternalDiameter($data[self::FIELD_EXTERNAL_DIAMETER]);
+            } else {
+                $this->setExternalDiameter(new FHIRQuantity($data[self::FIELD_EXTERNAL_DIAMETER]));
+            }
+        }
+        if (isset($data[self::FIELD_SHAPE]) || isset($data[self::FIELD_SHAPE_EXT])) {
+            $value = isset($data[self::FIELD_SHAPE]) ? $data[self::FIELD_SHAPE] : null;
+            $ext = (isset($data[self::FIELD_SHAPE_EXT]) && is_array($data[self::FIELD_SHAPE_EXT])) ? $ext = $data[self::FIELD_SHAPE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setShape($value);
+                } else if (is_array($value)) {
+                    $this->setShape(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setShape(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setShape(new FHIRString($ext));
+            }
+        }
         if (isset($data[self::FIELD_COLOR]) || isset($data[self::FIELD_COLOR_EXT])) {
-            if (isset($data[self::FIELD_COLOR])) {
-                $value = $data[self::FIELD_COLOR];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_COLOR_EXT]) && is_array($data[self::FIELD_COLOR_EXT])) {
-                $ext = $data[self::FIELD_COLOR_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_COLOR]) ? $data[self::FIELD_COLOR] : null;
+            $ext = (isset($data[self::FIELD_COLOR_EXT]) && is_array($data[self::FIELD_COLOR_EXT])) ? $ext = $data[self::FIELD_COLOR_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->addColor($value);
@@ -311,62 +362,15 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 } else {
                     $this->addColor(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addColor(new FHIRString($iext));
                 }
             }
         }
-        if (isset($data[self::FIELD_DEPTH])) {
-            if ($data[self::FIELD_DEPTH] instanceof FHIRQuantity) {
-                $this->setDepth($data[self::FIELD_DEPTH]);
-            } else {
-                $this->setDepth(new FHIRQuantity($data[self::FIELD_DEPTH]));
-            }
-        }
-        if (isset($data[self::FIELD_EXTERNAL_DIAMETER])) {
-            if ($data[self::FIELD_EXTERNAL_DIAMETER] instanceof FHIRQuantity) {
-                $this->setExternalDiameter($data[self::FIELD_EXTERNAL_DIAMETER]);
-            } else {
-                $this->setExternalDiameter(new FHIRQuantity($data[self::FIELD_EXTERNAL_DIAMETER]));
-            }
-        }
-        if (isset($data[self::FIELD_HEIGHT])) {
-            if ($data[self::FIELD_HEIGHT] instanceof FHIRQuantity) {
-                $this->setHeight($data[self::FIELD_HEIGHT]);
-            } else {
-                $this->setHeight(new FHIRQuantity($data[self::FIELD_HEIGHT]));
-            }
-        }
-        if (isset($data[self::FIELD_IMAGE])) {
-            if (is_array($data[self::FIELD_IMAGE])) {
-                foreach($data[self::FIELD_IMAGE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRAttachment) {
-                        $this->addImage($v);
-                    } else {
-                        $this->addImage(new FHIRAttachment($v));
-                    }
-                }
-            } else if ($data[self::FIELD_IMAGE] instanceof FHIRAttachment) {
-                $this->addImage($data[self::FIELD_IMAGE]);
-            } else {
-                $this->addImage(new FHIRAttachment($data[self::FIELD_IMAGE]));
-            }
-        }
         if (isset($data[self::FIELD_IMPRINT]) || isset($data[self::FIELD_IMPRINT_EXT])) {
-            if (isset($data[self::FIELD_IMPRINT])) {
-                $value = $data[self::FIELD_IMPRINT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_IMPRINT_EXT]) && is_array($data[self::FIELD_IMPRINT_EXT])) {
-                $ext = $data[self::FIELD_IMPRINT_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_IMPRINT]) ? $data[self::FIELD_IMPRINT] : null;
+            $ext = (isset($data[self::FIELD_IMPRINT_EXT]) && is_array($data[self::FIELD_IMPRINT_EXT])) ? $ext = $data[self::FIELD_IMPRINT_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->addImprint($value);
@@ -388,17 +392,28 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 } else {
                     $this->addImprint(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addImprint(new FHIRString($iext));
                 }
             }
         }
-        if (isset($data[self::FIELD_NOMINAL_VOLUME])) {
-            if ($data[self::FIELD_NOMINAL_VOLUME] instanceof FHIRQuantity) {
-                $this->setNominalVolume($data[self::FIELD_NOMINAL_VOLUME]);
+        if (isset($data[self::FIELD_IMAGE])) {
+            if (is_array($data[self::FIELD_IMAGE])) {
+                foreach($data[self::FIELD_IMAGE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRAttachment) {
+                        $this->addImage($v);
+                    } else {
+                        $this->addImage(new FHIRAttachment($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_IMAGE] instanceof FHIRAttachment) {
+                $this->addImage($data[self::FIELD_IMAGE]);
             } else {
-                $this->setNominalVolume(new FHIRQuantity($data[self::FIELD_NOMINAL_VOLUME]));
+                $this->addImage(new FHIRAttachment($data[self::FIELD_IMAGE]));
             }
         }
         if (isset($data[self::FIELD_SCORING])) {
@@ -406,43 +421,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 $this->setScoring($data[self::FIELD_SCORING]);
             } else {
                 $this->setScoring(new FHIRCodeableConcept($data[self::FIELD_SCORING]));
-            }
-        }
-        if (isset($data[self::FIELD_SHAPE]) || isset($data[self::FIELD_SHAPE_EXT])) {
-            if (isset($data[self::FIELD_SHAPE])) {
-                $value = $data[self::FIELD_SHAPE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SHAPE_EXT]) && is_array($data[self::FIELD_SHAPE_EXT])) {
-                $ext = $data[self::FIELD_SHAPE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setShape($value);
-                } else if (is_array($value)) {
-                    $this->setShape(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setShape(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setShape(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_WEIGHT])) {
-            if ($data[self::FIELD_WEIGHT] instanceof FHIRQuantity) {
-                $this->setWeight($data[self::FIELD_WEIGHT]);
-            } else {
-                $this->setWeight(new FHIRQuantity($data[self::FIELD_WEIGHT]));
-            }
-        }
-        if (isset($data[self::FIELD_WIDTH])) {
-            if ($data[self::FIELD_WIDTH] instanceof FHIRQuantity) {
-                $this->setWidth($data[self::FIELD_WIDTH]);
-            } else {
-                $this->setWidth(new FHIRQuantity($data[self::FIELD_WIDTH]));
             }
         }
     }
@@ -461,157 +439,10 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ProdCharacteristic{$xmlns}></ProdCharacteristic>";
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Where applicable, the color can be specified An appropriate controlled
-     * vocabulary shall be used The term and the term identifier shall be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
-     */
-    public function getColor()
-    {
-        return $this->color;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Where applicable, the color can be specified An appropriate controlled
-     * vocabulary shall be used The term and the term identifier shall be used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $color
-     * @return static
-     */
-    public function addColor($color = null)
-    {
-        if (null === $color) {
-            $this->color = [];
-            return $this;
-        }
-        if ($color instanceof FHIRString) {
-            $this->color[] = $color;
-            return $this;
-        }
-        $this->color[] = new FHIRString($color);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Where applicable, the color can be specified An appropriate controlled
-     * vocabulary shall be used The term and the term identifier shall be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $color
-     * @return static
-     */
-    public function setColor(array $color = [])
-    {
-        $this->color = [];
-        if ([] === $color) {
-            return $this;
-        }
-        foreach($color as $v) {
-            if ($v instanceof FHIRString) {
-                $this->addColor($v);
-            } else {
-                $this->addColor(new FHIRString($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where applicable, the depth can be specified using a numerical value and its
-     * unit of measurement The unit of measurement shall be specified in accordance
-     * with ISO 11240 and the resulting terminology The symbol and the symbol
-     * identifier shall be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    public function getDepth()
-    {
-        return $this->depth;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where applicable, the depth can be specified using a numerical value and its
-     * unit of measurement The unit of measurement shall be specified in accordance
-     * with ISO 11240 and the resulting terminology The symbol and the symbol
-     * identifier shall be used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $depth
-     * @return static
-     */
-    public function setDepth(FHIRQuantity $depth = null)
-    {
-        $this->depth = $depth;
-        return $this;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where applicable, the external diameter can be specified using a numerical value
-     * and its unit of measurement The unit of measurement shall be specified in
-     * accordance with ISO 11240 and the resulting terminology The symbol and the
-     * symbol identifier shall be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    public function getExternalDiameter()
-    {
-        return $this->externalDiameter;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where applicable, the external diameter can be specified using a numerical value
-     * and its unit of measurement The unit of measurement shall be specified in
-     * accordance with ISO 11240 and the resulting terminology The symbol and the
-     * symbol identifier shall be used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $externalDiameter
-     * @return static
-     */
-    public function setExternalDiameter(FHIRQuantity $externalDiameter = null)
-    {
-        $this->externalDiameter = $externalDiameter;
-        return $this;
     }
 
     /**
@@ -650,284 +481,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      */
     public function setHeight(FHIRQuantity $height = null)
     {
+        $this->_trackValueSet($this->height, $height);
         $this->height = $height;
-        return $this;
-    }
-
-    /**
-     * For referring to data content defined in other formats.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where applicable, the image can be provided The format of the image attachment
-     * shall be specified by regional implementations.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment[]
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
-
-    /**
-     * For referring to data content defined in other formats.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where applicable, the image can be provided The format of the image attachment
-     * shall be specified by regional implementations.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $image
-     * @return static
-     */
-    public function addImage(FHIRAttachment $image = null)
-    {
-        $this->image[] = $image;
-        return $this;
-    }
-
-    /**
-     * For referring to data content defined in other formats.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where applicable, the image can be provided The format of the image attachment
-     * shall be specified by regional implementations.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment[] $image
-     * @return static
-     */
-    public function setImage(array $image = [])
-    {
-        $this->image = [];
-        if ([] === $image) {
-            return $this;
-        }
-        foreach($image as $v) {
-            if ($v instanceof FHIRAttachment) {
-                $this->addImage($v);
-            } else {
-                $this->addImage(new FHIRAttachment($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Where applicable, the imprint can be specified as text.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
-     */
-    public function getImprint()
-    {
-        return $this->imprint;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Where applicable, the imprint can be specified as text.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $imprint
-     * @return static
-     */
-    public function addImprint($imprint = null)
-    {
-        if (null === $imprint) {
-            $this->imprint = [];
-            return $this;
-        }
-        if ($imprint instanceof FHIRString) {
-            $this->imprint[] = $imprint;
-            return $this;
-        }
-        $this->imprint[] = new FHIRString($imprint);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Where applicable, the imprint can be specified as text.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $imprint
-     * @return static
-     */
-    public function setImprint(array $imprint = [])
-    {
-        $this->imprint = [];
-        if ([] === $imprint) {
-            return $this;
-        }
-        foreach($imprint as $v) {
-            if ($v instanceof FHIRString) {
-                $this->addImprint($v);
-            } else {
-                $this->addImprint(new FHIRString($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where applicable, the nominal volume can be specified using a numerical value
-     * and its unit of measurement The unit of measurement shall be specified in
-     * accordance with ISO 11240 and the resulting terminology The symbol and the
-     * symbol identifier shall be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    public function getNominalVolume()
-    {
-        return $this->nominalVolume;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where applicable, the nominal volume can be specified using a numerical value
-     * and its unit of measurement The unit of measurement shall be specified in
-     * accordance with ISO 11240 and the resulting terminology The symbol and the
-     * symbol identifier shall be used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $nominalVolume
-     * @return static
-     */
-    public function setNominalVolume(FHIRQuantity $nominalVolume = null)
-    {
-        $this->nominalVolume = $nominalVolume;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where applicable, the scoring can be specified An appropriate controlled
-     * vocabulary shall be used The term and the term identifier shall be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getScoring()
-    {
-        return $this->scoring;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where applicable, the scoring can be specified An appropriate controlled
-     * vocabulary shall be used The term and the term identifier shall be used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $scoring
-     * @return static
-     */
-    public function setScoring(FHIRCodeableConcept $scoring = null)
-    {
-        $this->scoring = $scoring;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Where applicable, the shape can be specified An appropriate controlled
-     * vocabulary shall be used The term and the term identifier shall be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getShape()
-    {
-        return $this->shape;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Where applicable, the shape can be specified An appropriate controlled
-     * vocabulary shall be used The term and the term identifier shall be used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $shape
-     * @return static
-     */
-    public function setShape($shape = null)
-    {
-        if (null === $shape) {
-            $this->shape = null;
-            return $this;
-        }
-        if ($shape instanceof FHIRString) {
-            $this->shape = $shape;
-            return $this;
-        }
-        $this->shape = new FHIRString($shape);
-        return $this;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where applicable, the weight can be specified using a numerical value and its
-     * unit of measurement The unit of measurement shall be specified in accordance
-     * with ISO 11240 and the resulting terminology The symbol and the symbol
-     * identifier shall be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    public function getWeight()
-    {
-        return $this->weight;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where applicable, the weight can be specified using a numerical value and its
-     * unit of measurement The unit of measurement shall be specified in accordance
-     * with ISO 11240 and the resulting terminology The symbol and the symbol
-     * identifier shall be used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $weight
-     * @return static
-     */
-    public function setWeight(FHIRQuantity $weight = null)
-    {
-        $this->weight = $weight;
         return $this;
     }
 
@@ -967,7 +522,435 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      */
     public function setWidth(FHIRQuantity $width = null)
     {
+        $this->_trackValueSet($this->width, $width);
         $this->width = $width;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where applicable, the depth can be specified using a numerical value and its
+     * unit of measurement The unit of measurement shall be specified in accordance
+     * with ISO 11240 and the resulting terminology The symbol and the symbol
+     * identifier shall be used.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    public function getDepth()
+    {
+        return $this->depth;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where applicable, the depth can be specified using a numerical value and its
+     * unit of measurement The unit of measurement shall be specified in accordance
+     * with ISO 11240 and the resulting terminology The symbol and the symbol
+     * identifier shall be used.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $depth
+     * @return static
+     */
+    public function setDepth(FHIRQuantity $depth = null)
+    {
+        $this->_trackValueSet($this->depth, $depth);
+        $this->depth = $depth;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where applicable, the weight can be specified using a numerical value and its
+     * unit of measurement The unit of measurement shall be specified in accordance
+     * with ISO 11240 and the resulting terminology The symbol and the symbol
+     * identifier shall be used.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where applicable, the weight can be specified using a numerical value and its
+     * unit of measurement The unit of measurement shall be specified in accordance
+     * with ISO 11240 and the resulting terminology The symbol and the symbol
+     * identifier shall be used.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $weight
+     * @return static
+     */
+    public function setWeight(FHIRQuantity $weight = null)
+    {
+        $this->_trackValueSet($this->weight, $weight);
+        $this->weight = $weight;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where applicable, the nominal volume can be specified using a numerical value
+     * and its unit of measurement The unit of measurement shall be specified in
+     * accordance with ISO 11240 and the resulting terminology The symbol and the
+     * symbol identifier shall be used.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    public function getNominalVolume()
+    {
+        return $this->nominalVolume;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where applicable, the nominal volume can be specified using a numerical value
+     * and its unit of measurement The unit of measurement shall be specified in
+     * accordance with ISO 11240 and the resulting terminology The symbol and the
+     * symbol identifier shall be used.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $nominalVolume
+     * @return static
+     */
+    public function setNominalVolume(FHIRQuantity $nominalVolume = null)
+    {
+        $this->_trackValueSet($this->nominalVolume, $nominalVolume);
+        $this->nominalVolume = $nominalVolume;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where applicable, the external diameter can be specified using a numerical value
+     * and its unit of measurement The unit of measurement shall be specified in
+     * accordance with ISO 11240 and the resulting terminology The symbol and the
+     * symbol identifier shall be used.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    public function getExternalDiameter()
+    {
+        return $this->externalDiameter;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where applicable, the external diameter can be specified using a numerical value
+     * and its unit of measurement The unit of measurement shall be specified in
+     * accordance with ISO 11240 and the resulting terminology The symbol and the
+     * symbol identifier shall be used.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $externalDiameter
+     * @return static
+     */
+    public function setExternalDiameter(FHIRQuantity $externalDiameter = null)
+    {
+        $this->_trackValueSet($this->externalDiameter, $externalDiameter);
+        $this->externalDiameter = $externalDiameter;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Where applicable, the shape can be specified An appropriate controlled
+     * vocabulary shall be used The term and the term identifier shall be used.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getShape()
+    {
+        return $this->shape;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Where applicable, the shape can be specified An appropriate controlled
+     * vocabulary shall be used The term and the term identifier shall be used.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $shape
+     * @return static
+     */
+    public function setShape($shape = null)
+    {
+        if (null !== $shape && !($shape instanceof FHIRString)) {
+            $shape = new FHIRString($shape);
+        }
+        $this->_trackValueSet($this->shape, $shape);
+        $this->shape = $shape;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Where applicable, the color can be specified An appropriate controlled
+     * vocabulary shall be used The term and the term identifier shall be used.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Where applicable, the color can be specified An appropriate controlled
+     * vocabulary shall be used The term and the term identifier shall be used.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $color
+     * @return static
+     */
+    public function addColor($color = null)
+    {
+        if (null !== $color && !($color instanceof FHIRString)) {
+            $color = new FHIRString($color);
+        }
+        $this->_trackValueAdded();
+        $this->color[] = $color;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Where applicable, the color can be specified An appropriate controlled
+     * vocabulary shall be used The term and the term identifier shall be used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $color
+     * @return static
+     */
+    public function setColor(array $color = [])
+    {
+        if ([] !== $this->color) {
+            $this->_trackValuesRemoved(count($this->color));
+            $this->color = [];
+        }
+        if ([] === $color) {
+            return $this;
+        }
+        foreach($color as $v) {
+            if ($v instanceof FHIRString) {
+                $this->addColor($v);
+            } else {
+                $this->addColor(new FHIRString($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Where applicable, the imprint can be specified as text.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
+     */
+    public function getImprint()
+    {
+        return $this->imprint;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Where applicable, the imprint can be specified as text.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $imprint
+     * @return static
+     */
+    public function addImprint($imprint = null)
+    {
+        if (null !== $imprint && !($imprint instanceof FHIRString)) {
+            $imprint = new FHIRString($imprint);
+        }
+        $this->_trackValueAdded();
+        $this->imprint[] = $imprint;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Where applicable, the imprint can be specified as text.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $imprint
+     * @return static
+     */
+    public function setImprint(array $imprint = [])
+    {
+        if ([] !== $this->imprint) {
+            $this->_trackValuesRemoved(count($this->imprint));
+            $this->imprint = [];
+        }
+        if ([] === $imprint) {
+            return $this;
+        }
+        foreach($imprint as $v) {
+            if ($v instanceof FHIRString) {
+                $this->addImprint($v);
+            } else {
+                $this->addImprint(new FHIRString($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * For referring to data content defined in other formats.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where applicable, the image can be provided The format of the image attachment
+     * shall be specified by regional implementations.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment[]
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * For referring to data content defined in other formats.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where applicable, the image can be provided The format of the image attachment
+     * shall be specified by regional implementations.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $image
+     * @return static
+     */
+    public function addImage(FHIRAttachment $image = null)
+    {
+        $this->_trackValueAdded();
+        $this->image[] = $image;
+        return $this;
+    }
+
+    /**
+     * For referring to data content defined in other formats.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where applicable, the image can be provided The format of the image attachment
+     * shall be specified by regional implementations.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment[] $image
+     * @return static
+     */
+    public function setImage(array $image = [])
+    {
+        if ([] !== $this->image) {
+            $this->_trackValuesRemoved(count($this->image));
+            $this->image = [];
+        }
+        if ([] === $image) {
+            return $this;
+        }
+        foreach($image as $v) {
+            if ($v instanceof FHIRAttachment) {
+                $this->addImage($v);
+            } else {
+                $this->addImage(new FHIRAttachment($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where applicable, the scoring can be specified An appropriate controlled
+     * vocabulary shall be used The term and the term identifier shall be used.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getScoring()
+    {
+        return $this->scoring;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where applicable, the scoring can be specified An appropriate controlled
+     * vocabulary shall be used The term and the term identifier shall be used.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $scoring
+     * @return static
+     */
+    public function setScoring(FHIRCodeableConcept $scoring = null)
+    {
+        $this->_trackValueSet($this->scoring, $scoring);
+        $this->scoring = $scoring;
         return $this;
     }
 
@@ -992,11 +975,14 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getColor())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_COLOR, $i)] = $fieldErrs;
-                }
+        if (null !== ($v = $this->getHeight())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_HEIGHT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getWidth())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_WIDTH] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDepth())) {
@@ -1004,20 +990,30 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 $errs[self::FIELD_DEPTH] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getWeight())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_WEIGHT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getNominalVolume())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_NOMINAL_VOLUME] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getExternalDiameter())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_EXTERNAL_DIAMETER] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getHeight())) {
+        if (null !== ($v = $this->getShape())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_HEIGHT] = $fieldErrs;
+                $errs[self::FIELD_SHAPE] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getImage())) {
+        if ([] !== ($vs = $this->getColor())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_IMAGE, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_COLOR, $i)] = $fieldErrs;
                 }
             }
         }
@@ -1028,9 +1024,11 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getNominalVolume())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_NOMINAL_VOLUME] = $fieldErrs;
+        if ([] !== ($vs = $this->getImage())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_IMAGE, $i)] = $fieldErrs;
+                }
             }
         }
         if (null !== ($v = $this->getScoring())) {
@@ -1038,30 +1036,27 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 $errs[self::FIELD_SCORING] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getShape())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SHAPE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getWeight())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_WEIGHT] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getWidth())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_WIDTH] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_COLOR])) {
-            $v = $this->getColor();
-            foreach($validationRules[self::FIELD_COLOR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC, self::FIELD_COLOR, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_HEIGHT])) {
+            $v = $this->getHeight();
+            foreach($validationRules[self::FIELD_HEIGHT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC, self::FIELD_HEIGHT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COLOR])) {
-                        $errs[self::FIELD_COLOR] = [];
+                    if (!isset($errs[self::FIELD_HEIGHT])) {
+                        $errs[self::FIELD_HEIGHT] = [];
                     }
-                    $errs[self::FIELD_COLOR][$rule] = $err;
+                    $errs[self::FIELD_HEIGHT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_WIDTH])) {
+            $v = $this->getWidth();
+            foreach($validationRules[self::FIELD_WIDTH] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC, self::FIELD_WIDTH, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_WIDTH])) {
+                        $errs[self::FIELD_WIDTH] = [];
+                    }
+                    $errs[self::FIELD_WIDTH][$rule] = $err;
                 }
             }
         }
@@ -1077,51 +1072,15 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_EXTERNAL_DIAMETER])) {
-            $v = $this->getExternalDiameter();
-            foreach($validationRules[self::FIELD_EXTERNAL_DIAMETER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC, self::FIELD_EXTERNAL_DIAMETER, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_WEIGHT])) {
+            $v = $this->getWeight();
+            foreach($validationRules[self::FIELD_WEIGHT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC, self::FIELD_WEIGHT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EXTERNAL_DIAMETER])) {
-                        $errs[self::FIELD_EXTERNAL_DIAMETER] = [];
+                    if (!isset($errs[self::FIELD_WEIGHT])) {
+                        $errs[self::FIELD_WEIGHT] = [];
                     }
-                    $errs[self::FIELD_EXTERNAL_DIAMETER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_HEIGHT])) {
-            $v = $this->getHeight();
-            foreach($validationRules[self::FIELD_HEIGHT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC, self::FIELD_HEIGHT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_HEIGHT])) {
-                        $errs[self::FIELD_HEIGHT] = [];
-                    }
-                    $errs[self::FIELD_HEIGHT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_IMAGE])) {
-            $v = $this->getImage();
-            foreach($validationRules[self::FIELD_IMAGE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC, self::FIELD_IMAGE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_IMAGE])) {
-                        $errs[self::FIELD_IMAGE] = [];
-                    }
-                    $errs[self::FIELD_IMAGE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_IMPRINT])) {
-            $v = $this->getImprint();
-            foreach($validationRules[self::FIELD_IMPRINT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC, self::FIELD_IMPRINT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_IMPRINT])) {
-                        $errs[self::FIELD_IMPRINT] = [];
-                    }
-                    $errs[self::FIELD_IMPRINT][$rule] = $err;
+                    $errs[self::FIELD_WEIGHT][$rule] = $err;
                 }
             }
         }
@@ -1137,15 +1096,15 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SCORING])) {
-            $v = $this->getScoring();
-            foreach($validationRules[self::FIELD_SCORING] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC, self::FIELD_SCORING, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_EXTERNAL_DIAMETER])) {
+            $v = $this->getExternalDiameter();
+            foreach($validationRules[self::FIELD_EXTERNAL_DIAMETER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC, self::FIELD_EXTERNAL_DIAMETER, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SCORING])) {
-                        $errs[self::FIELD_SCORING] = [];
+                    if (!isset($errs[self::FIELD_EXTERNAL_DIAMETER])) {
+                        $errs[self::FIELD_EXTERNAL_DIAMETER] = [];
                     }
-                    $errs[self::FIELD_SCORING][$rule] = $err;
+                    $errs[self::FIELD_EXTERNAL_DIAMETER][$rule] = $err;
                 }
             }
         }
@@ -1161,27 +1120,51 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_WEIGHT])) {
-            $v = $this->getWeight();
-            foreach($validationRules[self::FIELD_WEIGHT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC, self::FIELD_WEIGHT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_COLOR])) {
+            $v = $this->getColor();
+            foreach($validationRules[self::FIELD_COLOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC, self::FIELD_COLOR, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_WEIGHT])) {
-                        $errs[self::FIELD_WEIGHT] = [];
+                    if (!isset($errs[self::FIELD_COLOR])) {
+                        $errs[self::FIELD_COLOR] = [];
                     }
-                    $errs[self::FIELD_WEIGHT][$rule] = $err;
+                    $errs[self::FIELD_COLOR][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_WIDTH])) {
-            $v = $this->getWidth();
-            foreach($validationRules[self::FIELD_WIDTH] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC, self::FIELD_WIDTH, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_IMPRINT])) {
+            $v = $this->getImprint();
+            foreach($validationRules[self::FIELD_IMPRINT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC, self::FIELD_IMPRINT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_WIDTH])) {
-                        $errs[self::FIELD_WIDTH] = [];
+                    if (!isset($errs[self::FIELD_IMPRINT])) {
+                        $errs[self::FIELD_IMPRINT] = [];
                     }
-                    $errs[self::FIELD_WIDTH][$rule] = $err;
+                    $errs[self::FIELD_IMPRINT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_IMAGE])) {
+            $v = $this->getImage();
+            foreach($validationRules[self::FIELD_IMAGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC, self::FIELD_IMAGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_IMAGE])) {
+                        $errs[self::FIELD_IMAGE] = [];
+                    }
+                    $errs[self::FIELD_IMAGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SCORING])) {
+            $v = $this->getScoring();
+            foreach($validationRules[self::FIELD_SCORING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROD_CHARACTERISTIC, self::FIELD_SCORING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SCORING])) {
+                        $errs[self::FIELD_SCORING] = [];
+                    }
+                    $errs[self::FIELD_SCORING][$rule] = $err;
                 }
             }
         }
@@ -1225,129 +1208,172 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRProdCharacteristic::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRProdCharacteristic::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRProdCharacteristic::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRProdCharacteristic;
+            $type = new FHIRProdCharacteristic(null);
         } elseif (!is_object($type) || !($type instanceof FHIRProdCharacteristic)) {
             throw new \RuntimeException(sprintf(
                 'FHIRProdCharacteristic::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_HEIGHT === $n->nodeName) {
+                $type->setHeight(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_WIDTH === $n->nodeName) {
+                $type->setWidth(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_DEPTH === $n->nodeName) {
+                $type->setDepth(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_WEIGHT === $n->nodeName) {
+                $type->setWeight(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_NOMINAL_VOLUME === $n->nodeName) {
+                $type->setNominalVolume(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTERNAL_DIAMETER === $n->nodeName) {
+                $type->setExternalDiameter(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_SHAPE === $n->nodeName) {
+                $type->setShape(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_COLOR === $n->nodeName) {
+                $type->addColor(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_IMPRINT === $n->nodeName) {
+                $type->addImprint(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_IMAGE === $n->nodeName) {
+                $type->addImage(FHIRAttachment::xmlUnserialize($n));
+            } elseif (self::FIELD_SCORING === $n->nodeName) {
+                $type->setScoring(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->color)) {
-            foreach($children->color as $child) {
-                $type->addColor(FHIRString::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->depth)) {
-            $type->setDepth(FHIRQuantity::xmlUnserialize($children->depth));
-        }
-        if (isset($children->externalDiameter)) {
-            $type->setExternalDiameter(FHIRQuantity::xmlUnserialize($children->externalDiameter));
-        }
-        if (isset($children->height)) {
-            $type->setHeight(FHIRQuantity::xmlUnserialize($children->height));
-        }
-        if (isset($children->image)) {
-            foreach($children->image as $child) {
-                $type->addImage(FHIRAttachment::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->imprint)) {
-            foreach($children->imprint as $child) {
-                $type->addImprint(FHIRString::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->nominalVolume)) {
-            $type->setNominalVolume(FHIRQuantity::xmlUnserialize($children->nominalVolume));
-        }
-        if (isset($children->scoring)) {
-            $type->setScoring(FHIRCodeableConcept::xmlUnserialize($children->scoring));
-        }
-        if (isset($children->shape)) {
-            $type->setShape(FHIRString::xmlUnserialize($children->shape));
-        }
-        if (isset($attributes->shape)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_SHAPE);
+        if (null !== $n) {
             $pt = $type->getShape();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->shape);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setShape((string)$attributes->shape);
+                $type->setShape($n->nodeValue);
             }
         }
-        if (isset($children->weight)) {
-            $type->setWeight(FHIRQuantity::xmlUnserialize($children->weight));
+        $n = $element->attributes->getNamedItem(self::FIELD_COLOR);
+        if (null !== $n) {
+            $pt = $type->getColor();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->addColor($n->nodeValue);
+            }
         }
-        if (isset($children->width)) {
-            $type->setWidth(FHIRQuantity::xmlUnserialize($children->width));
+        $n = $element->attributes->getNamedItem(self::FIELD_IMPRINT);
+        if (null !== $n) {
+            $pt = $type->getImprint();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->addImprint($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getHeight())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_HEIGHT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getWidth())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_WIDTH);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDepth())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DEPTH);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getWeight())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_WEIGHT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getNominalVolume())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_NOMINAL_VOLUME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getExternalDiameter())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_EXTERNAL_DIAMETER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getShape())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SHAPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if ([] !== ($vs = $this->getColor())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COLOR, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getDepth())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEPTH, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getExternalDiameter())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXTERNAL_DIAMETER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getHeight())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_HEIGHT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getImage())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IMAGE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_COLOR);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getImprint())) {
@@ -1355,25 +1381,27 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IMPRINT, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_IMPRINT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getNominalVolume())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NOMINAL_VOLUME, null, $v->_getFHIRXMLNamespace()));
+        if ([] !== ($vs = $this->getImage())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_IMAGE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
         }
         if (null !== ($v = $this->getScoring())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SCORING, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_SCORING);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getShape())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SHAPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getWeight())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WEIGHT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getWidth())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WIDTH, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -1382,37 +1410,81 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getColor())) {
-            $a[self::FIELD_COLOR] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_COLOR][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRString::FIELD_VALUE]) || array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRString::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
-            }
-            if ($encValued) {
-                $a[self::FIELD_COLOR_EXT] = $encs;
-            }
+        if (null !== ($v = $this->getHeight())) {
+            $a[self::FIELD_HEIGHT] = $v;
+        }
+        if (null !== ($v = $this->getWidth())) {
+            $a[self::FIELD_WIDTH] = $v;
         }
         if (null !== ($v = $this->getDepth())) {
             $a[self::FIELD_DEPTH] = $v;
         }
+        if (null !== ($v = $this->getWeight())) {
+            $a[self::FIELD_WEIGHT] = $v;
+        }
+        if (null !== ($v = $this->getNominalVolume())) {
+            $a[self::FIELD_NOMINAL_VOLUME] = $v;
+        }
         if (null !== ($v = $this->getExternalDiameter())) {
             $a[self::FIELD_EXTERNAL_DIAMETER] = $v;
         }
-        if (null !== ($v = $this->getHeight())) {
-            $a[self::FIELD_HEIGHT] = $v;
+        if (null !== ($v = $this->getShape())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SHAPE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_SHAPE_EXT] = $ext;
+            }
+        }
+        if ([] !== ($vs = $this->getColor())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext[FHIRString::FIELD_VALUE]);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $a[self::FIELD_COLOR] = $vals;
+            }
+            if ([] !== $exts) {
+                $a[self::FIELD_COLOR_EXT] = $exts;
+            }
+        }
+        if ([] !== ($vs = $this->getImprint())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext[FHIRString::FIELD_VALUE]);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $a[self::FIELD_IMPRINT] = $vals;
+            }
+            if ([] !== $exts) {
+                $a[self::FIELD_IMPRINT_EXT] = $exts;
+            }
         }
         if ([] !== ($vs = $this->getImage())) {
             $a[self::FIELD_IMAGE] = [];
@@ -1423,52 +1495,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 $a[self::FIELD_IMAGE][] = $v;
             }
         }
-        if ([] !== ($vs = $this->getImprint())) {
-            $a[self::FIELD_IMPRINT] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IMPRINT][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRString::FIELD_VALUE]) || array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRString::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
-            }
-            if ($encValued) {
-                $a[self::FIELD_IMPRINT_EXT] = $encs;
-            }
-        }
-        if (null !== ($v = $this->getNominalVolume())) {
-            $a[self::FIELD_NOMINAL_VOLUME] = $v;
-        }
         if (null !== ($v = $this->getScoring())) {
             $a[self::FIELD_SCORING] = $v;
-        }
-        if (null !== ($v = $this->getShape())) {
-            $a[self::FIELD_SHAPE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_SHAPE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getWeight())) {
-            $a[self::FIELD_WEIGHT] = $v;
-        }
-        if (null !== ($v = $this->getWidth())) {
-            $a[self::FIELD_WIDTH] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

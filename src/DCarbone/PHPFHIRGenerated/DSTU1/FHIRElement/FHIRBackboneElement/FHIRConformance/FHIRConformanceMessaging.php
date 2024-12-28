@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,9 +58,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  */
 
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
@@ -76,16 +78,37 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_MESSAGING;
-    const FIELD_DOCUMENTATION = 'documentation';
-    const FIELD_DOCUMENTATION_EXT = '_documentation';
     const FIELD_ENDPOINT = 'endpoint';
     const FIELD_ENDPOINT_EXT = '_endpoint';
-    const FIELD_EVENT = 'event';
     const FIELD_RELIABLE_CACHE = 'reliableCache';
     const FIELD_RELIABLE_CACHE_EXT = '_reliableCache';
+    const FIELD_DOCUMENTATION = 'documentation';
+    const FIELD_DOCUMENTATION_EXT = '_documentation';
+    const FIELD_EVENT = 'event';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * String of characters used to identify a name or a resource
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An address to which messages and/or replies are to be sent.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
+     */
+    protected $endpoint = null;
+
+    /**
+     * A whole number
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Length if the receiver's reliable messaging cache (if a receiver) or how long
+     * the cache length on the receiver should be (if a sender).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
+     */
+    protected $reliableCache = null;
 
     /**
      * A sequence of Unicode characters
@@ -100,16 +123,6 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
     protected $documentation = null;
 
     /**
-     * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An address to which messages and/or replies are to be sent.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
-     */
-    protected $endpoint = null;
-
-    /**
      * A conformance statement is a set of requirements for a desired implementation or
      * a description of how a target application fulfills those requirements in a
      * particular implementation.
@@ -119,17 +132,6 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceEvent[]
      */
     protected $event = [];
-
-    /**
-     * A whole number
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Length if the receiver's reliable messaging cache (if a receiver) or how long
-     * the cache length on the receiver should be (if a sender).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
-     */
-    protected $reliableCache = null;
 
     /**
      * Validation map for fields in type Conformance.Messaging
@@ -157,40 +159,9 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_DOCUMENTATION]) || isset($data[self::FIELD_DOCUMENTATION_EXT])) {
-            if (isset($data[self::FIELD_DOCUMENTATION])) {
-                $value = $data[self::FIELD_DOCUMENTATION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DOCUMENTATION_EXT]) && is_array($data[self::FIELD_DOCUMENTATION_EXT])) {
-                $ext = $data[self::FIELD_DOCUMENTATION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setDocumentation($value);
-                } else if (is_array($value)) {
-                    $this->setDocumentation(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setDocumentation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDocumentation(new FHIRString($ext));
-            }
-        }
         if (isset($data[self::FIELD_ENDPOINT]) || isset($data[self::FIELD_ENDPOINT_EXT])) {
-            if (isset($data[self::FIELD_ENDPOINT])) {
-                $value = $data[self::FIELD_ENDPOINT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ENDPOINT_EXT]) && is_array($data[self::FIELD_ENDPOINT_EXT])) {
-                $ext = $data[self::FIELD_ENDPOINT_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_ENDPOINT]) ? $data[self::FIELD_ENDPOINT] : null;
+            $ext = (isset($data[self::FIELD_ENDPOINT_EXT]) && is_array($data[self::FIELD_ENDPOINT_EXT])) ? $ext = $data[self::FIELD_ENDPOINT_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRUri) {
                     $this->setEndpoint($value);
@@ -199,8 +170,38 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
                 } else {
                     $this->setEndpoint(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setEndpoint(new FHIRUri($ext));
+            }
+        }
+        if (isset($data[self::FIELD_RELIABLE_CACHE]) || isset($data[self::FIELD_RELIABLE_CACHE_EXT])) {
+            $value = isset($data[self::FIELD_RELIABLE_CACHE]) ? $data[self::FIELD_RELIABLE_CACHE] : null;
+            $ext = (isset($data[self::FIELD_RELIABLE_CACHE_EXT]) && is_array($data[self::FIELD_RELIABLE_CACHE_EXT])) ? $ext = $data[self::FIELD_RELIABLE_CACHE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setReliableCache($value);
+                } else if (is_array($value)) {
+                    $this->setReliableCache(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setReliableCache(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setReliableCache(new FHIRInteger($ext));
+            }
+        }
+        if (isset($data[self::FIELD_DOCUMENTATION]) || isset($data[self::FIELD_DOCUMENTATION_EXT])) {
+            $value = isset($data[self::FIELD_DOCUMENTATION]) ? $data[self::FIELD_DOCUMENTATION] : null;
+            $ext = (isset($data[self::FIELD_DOCUMENTATION_EXT]) && is_array($data[self::FIELD_DOCUMENTATION_EXT])) ? $ext = $data[self::FIELD_DOCUMENTATION_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDocumentation($value);
+                } else if (is_array($value)) {
+                    $this->setDocumentation(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDocumentation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDocumentation(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_EVENT])) {
@@ -215,33 +216,10 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
                         $this->addEvent(new FHIRConformanceEvent($v));
                     }
                 }
-            } else if ($data[self::FIELD_EVENT] instanceof FHIRConformanceEvent) {
+            } elseif ($data[self::FIELD_EVENT] instanceof FHIRConformanceEvent) {
                 $this->addEvent($data[self::FIELD_EVENT]);
             } else {
                 $this->addEvent(new FHIRConformanceEvent($data[self::FIELD_EVENT]));
-            }
-        }
-        if (isset($data[self::FIELD_RELIABLE_CACHE]) || isset($data[self::FIELD_RELIABLE_CACHE_EXT])) {
-            if (isset($data[self::FIELD_RELIABLE_CACHE])) {
-                $value = $data[self::FIELD_RELIABLE_CACHE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_RELIABLE_CACHE_EXT]) && is_array($data[self::FIELD_RELIABLE_CACHE_EXT])) {
-                $ext = $data[self::FIELD_RELIABLE_CACHE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->setReliableCache($value);
-                } else if (is_array($value)) {
-                    $this->setReliableCache(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->setReliableCache(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setReliableCache(new FHIRInteger($ext));
             }
         }
     }
@@ -260,10 +238,76 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ConformanceMessaging{$xmlns}></ConformanceMessaging>";
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An address to which messages and/or replies are to be sent.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
+     */
+    public function getEndpoint()
+    {
+        return $this->endpoint;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An address to which messages and/or replies are to be sent.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $endpoint
+     * @return static
+     */
+    public function setEndpoint($endpoint = null)
+    {
+        if (null !== $endpoint && !($endpoint instanceof FHIRUri)) {
+            $endpoint = new FHIRUri($endpoint);
+        }
+        $this->_trackValueSet($this->endpoint, $endpoint);
+        $this->endpoint = $endpoint;
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Length if the receiver's reliable messaging cache (if a receiver) or how long
+     * the cache length on the receiver should be (if a sender).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
+     */
+    public function getReliableCache()
+    {
+        return $this->reliableCache;
+    }
+
+    /**
+     * A whole number
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Length if the receiver's reliable messaging cache (if a receiver) or how long
+     * the cache length on the receiver should be (if a sender).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger $reliableCache
+     * @return static
+     */
+    public function setReliableCache($reliableCache = null)
+    {
+        if (null !== $reliableCache && !($reliableCache instanceof FHIRInteger)) {
+            $reliableCache = new FHIRInteger($reliableCache);
+        }
+        $this->_trackValueSet($this->reliableCache, $reliableCache);
+        $this->reliableCache = $reliableCache;
+        return $this;
     }
 
     /**
@@ -294,51 +338,11 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      */
     public function setDocumentation($documentation = null)
     {
-        if (null === $documentation) {
-            $this->documentation = null;
-            return $this;
+        if (null !== $documentation && !($documentation instanceof FHIRString)) {
+            $documentation = new FHIRString($documentation);
         }
-        if ($documentation instanceof FHIRString) {
-            $this->documentation = $documentation;
-            return $this;
-        }
-        $this->documentation = new FHIRString($documentation);
-        return $this;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An address to which messages and/or replies are to be sent.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
-     */
-    public function getEndpoint()
-    {
-        return $this->endpoint;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An address to which messages and/or replies are to be sent.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $endpoint
-     * @return static
-     */
-    public function setEndpoint($endpoint = null)
-    {
-        if (null === $endpoint) {
-            $this->endpoint = null;
-            return $this;
-        }
-        if ($endpoint instanceof FHIRUri) {
-            $this->endpoint = $endpoint;
-            return $this;
-        }
-        $this->endpoint = new FHIRUri($endpoint);
+        $this->_trackValueSet($this->documentation, $documentation);
+        $this->documentation = $documentation;
         return $this;
     }
 
@@ -368,6 +372,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      */
     public function addEvent(FHIRConformanceEvent $event = null)
     {
+        $this->_trackValueAdded();
         $this->event[] = $event;
         return $this;
     }
@@ -384,7 +389,10 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      */
     public function setEvent(array $event = [])
     {
-        $this->event = [];
+        if ([] !== $this->event) {
+            $this->_trackValuesRemoved(count($this->event));
+            $this->event = [];
+        }
         if ([] === $event) {
             return $this;
         }
@@ -395,44 +403,6 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
                 $this->addEvent(new FHIRConformanceEvent($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Length if the receiver's reliable messaging cache (if a receiver) or how long
-     * the cache length on the receiver should be (if a sender).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
-     */
-    public function getReliableCache()
-    {
-        return $this->reliableCache;
-    }
-
-    /**
-     * A whole number
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Length if the receiver's reliable messaging cache (if a receiver) or how long
-     * the cache length on the receiver should be (if a sender).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger $reliableCache
-     * @return static
-     */
-    public function setReliableCache($reliableCache = null)
-    {
-        if (null === $reliableCache) {
-            $this->reliableCache = null;
-            return $this;
-        }
-        if ($reliableCache instanceof FHIRInteger) {
-            $this->reliableCache = $reliableCache;
-            return $this;
-        }
-        $this->reliableCache = new FHIRInteger($reliableCache);
         return $this;
     }
 
@@ -457,21 +427,9 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getDocumentation())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DOCUMENTATION] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getEndpoint())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_ENDPOINT] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getEvent())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_EVENT, $i)] = $fieldErrs;
-                }
             }
         }
         if (null !== ($v = $this->getReliableCache())) {
@@ -479,15 +437,15 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
                 $errs[self::FIELD_RELIABLE_CACHE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DOCUMENTATION])) {
-            $v = $this->getDocumentation();
-            foreach($validationRules[self::FIELD_DOCUMENTATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_MESSAGING, self::FIELD_DOCUMENTATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DOCUMENTATION])) {
-                        $errs[self::FIELD_DOCUMENTATION] = [];
-                    }
-                    $errs[self::FIELD_DOCUMENTATION][$rule] = $err;
+        if (null !== ($v = $this->getDocumentation())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DOCUMENTATION] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getEvent())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_EVENT, $i)] = $fieldErrs;
                 }
             }
         }
@@ -503,18 +461,6 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_EVENT])) {
-            $v = $this->getEvent();
-            foreach($validationRules[self::FIELD_EVENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_MESSAGING, self::FIELD_EVENT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EVENT])) {
-                        $errs[self::FIELD_EVENT] = [];
-                    }
-                    $errs[self::FIELD_EVENT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_RELIABLE_CACHE])) {
             $v = $this->getReliableCache();
             foreach($validationRules[self::FIELD_RELIABLE_CACHE] as $rule => $constraint) {
@@ -524,6 +470,30 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
                         $errs[self::FIELD_RELIABLE_CACHE] = [];
                     }
                     $errs[self::FIELD_RELIABLE_CACHE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DOCUMENTATION])) {
+            $v = $this->getDocumentation();
+            foreach($validationRules[self::FIELD_DOCUMENTATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_MESSAGING, self::FIELD_DOCUMENTATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DOCUMENTATION])) {
+                        $errs[self::FIELD_DOCUMENTATION] = [];
+                    }
+                    $errs[self::FIELD_DOCUMENTATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EVENT])) {
+            $v = $this->getEvent();
+            foreach($validationRules[self::FIELD_EVENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_MESSAGING, self::FIELD_EVENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EVENT])) {
+                        $errs[self::FIELD_EVENT] = [];
+                    }
+                    $errs[self::FIELD_EVENT][$rule] = $err;
                 }
             }
         }
@@ -567,115 +537,141 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRConformanceMessaging::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRConformanceMessaging::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRConformanceMessaging::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRConformanceMessaging;
+            $type = new FHIRConformanceMessaging(null);
         } elseif (!is_object($type) || !($type instanceof FHIRConformanceMessaging)) {
             throw new \RuntimeException(sprintf(
                 'FHIRConformanceMessaging::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_ENDPOINT === $n->nodeName) {
+                $type->setEndpoint(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_RELIABLE_CACHE === $n->nodeName) {
+                $type->setReliableCache(FHIRInteger::xmlUnserialize($n));
+            } elseif (self::FIELD_DOCUMENTATION === $n->nodeName) {
+                $type->setDocumentation(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_EVENT === $n->nodeName) {
+                $type->addEvent(FHIRConformanceEvent::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->documentation)) {
-            $type->setDocumentation(FHIRString::xmlUnserialize($children->documentation));
-        }
-        if (isset($attributes->documentation)) {
-            $pt = $type->getDocumentation();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->documentation);
-            } else {
-                $type->setDocumentation((string)$attributes->documentation);
-            }
-        }
-        if (isset($children->endpoint)) {
-            $type->setEndpoint(FHIRUri::xmlUnserialize($children->endpoint));
-        }
-        if (isset($attributes->endpoint)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_ENDPOINT);
+        if (null !== $n) {
             $pt = $type->getEndpoint();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->endpoint);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setEndpoint((string)$attributes->endpoint);
+                $type->setEndpoint($n->nodeValue);
             }
         }
-        if (isset($children->event)) {
-            foreach($children->event as $child) {
-                $type->addEvent(FHIRConformanceEvent::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->reliableCache)) {
-            $type->setReliableCache(FHIRInteger::xmlUnserialize($children->reliableCache));
-        }
-        if (isset($attributes->reliableCache)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_RELIABLE_CACHE);
+        if (null !== $n) {
             $pt = $type->getReliableCache();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->reliableCache);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setReliableCache((string)$attributes->reliableCache);
+                $type->setReliableCache($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_DOCUMENTATION);
+        if (null !== $n) {
+            $pt = $type->getDocumentation();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setDocumentation($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getDocumentation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getEndpoint())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENDPOINT, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_ENDPOINT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getReliableCache())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_RELIABLE_CACHE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDocumentation())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DOCUMENTATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getEvent())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_EVENT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getReliableCache())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RELIABLE_CACHE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -684,22 +680,34 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getDocumentation())) {
-            $a[self::FIELD_DOCUMENTATION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DOCUMENTATION_EXT] = $enc;
+        if (null !== ($v = $this->getEndpoint())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ENDPOINT] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUri::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_ENDPOINT_EXT] = $ext;
             }
         }
-        if (null !== ($v = $this->getEndpoint())) {
-            $a[self::FIELD_ENDPOINT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_ENDPOINT_EXT] = $enc;
+        if (null !== ($v = $this->getReliableCache())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RELIABLE_CACHE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRInteger::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_RELIABLE_CACHE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getDocumentation())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DOCUMENTATION] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DOCUMENTATION_EXT] = $ext;
             }
         }
         if ([] !== ($vs = $this->getEvent())) {
@@ -710,18 +718,6 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
                 }
                 $a[self::FIELD_EVENT][] = $v;
             }
-        }
-        if (null !== ($v = $this->getReliableCache())) {
-            $a[self::FIELD_RELIABLE_CACHE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_RELIABLE_CACHE_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

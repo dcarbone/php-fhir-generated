@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,9 +66,11 @@ use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConformanceEventMode;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMessageSignificanceCategory;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
@@ -84,30 +86,20 @@ class FHIRConformanceEvent extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_EVENT;
+    const FIELD_CODE = 'code';
     const FIELD_CATEGORY = 'category';
     const FIELD_CATEGORY_EXT = '_category';
-    const FIELD_CODE = 'code';
-    const FIELD_DOCUMENTATION = 'documentation';
-    const FIELD_DOCUMENTATION_EXT = '_documentation';
-    const FIELD_FOCUS = 'focus';
-    const FIELD_FOCUS_EXT = '_focus';
     const FIELD_MODE = 'mode';
     const FIELD_MODE_EXT = '_mode';
+    const FIELD_FOCUS = 'focus';
+    const FIELD_FOCUS_EXT = '_focus';
     const FIELD_REQUEST = 'request';
     const FIELD_RESPONSE = 'response';
+    const FIELD_DOCUMENTATION = 'documentation';
+    const FIELD_DOCUMENTATION_EXT = '_documentation';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * The impact of the content of a message.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The impact of the content of the message.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMessageSignificanceCategory
-     */
-    protected $category = null;
+    private $_xmlns = '';
 
     /**
      * A reference to a code defined by a terminology system.
@@ -121,16 +113,24 @@ class FHIRConformanceEvent extends FHIRBackboneElement
     protected $code = null;
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
+     * The impact of the content of a message.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Guidance on how this event is handled, such as internal system trigger points,
-     * business rules, etc.
+     * The impact of the content of the message.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMessageSignificanceCategory
      */
-    protected $documentation = null;
+    protected $category = null;
+
+    /**
+     * The mode of a message conformance statement.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The mode of this event declaration - whether application is sender or receiver.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConformanceEventMode
+     */
+    protected $mode = null;
 
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -144,16 +144,6 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     protected $focus = null;
-
-    /**
-     * The mode of a message conformance statement.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The mode of this event declaration - whether application is sender or receiver.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConformanceEventMode
-     */
-    protected $mode = null;
 
     /**
      * A reference from one resource to another.
@@ -178,6 +168,18 @@ class FHIRConformanceEvent extends FHIRBackboneElement
     protected $response = null;
 
     /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Guidance on how this event is handled, such as internal system trigger points,
+     * business rules, etc.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    protected $documentation = null;
+
+    /**
      * Validation map for fields in type Conformance.Event
      * @var array
      */
@@ -199,17 +201,16 @@ class FHIRConformanceEvent extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_CODE])) {
+            if ($data[self::FIELD_CODE] instanceof FHIRCoding) {
+                $this->setCode($data[self::FIELD_CODE]);
+            } else {
+                $this->setCode(new FHIRCoding($data[self::FIELD_CODE]));
+            }
+        }
         if (isset($data[self::FIELD_CATEGORY]) || isset($data[self::FIELD_CATEGORY_EXT])) {
-            if (isset($data[self::FIELD_CATEGORY])) {
-                $value = $data[self::FIELD_CATEGORY];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CATEGORY_EXT]) && is_array($data[self::FIELD_CATEGORY_EXT])) {
-                $ext = $data[self::FIELD_CATEGORY_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_CATEGORY]) ? $data[self::FIELD_CATEGORY] : null;
+            $ext = (isset($data[self::FIELD_CATEGORY_EXT]) && is_array($data[self::FIELD_CATEGORY_EXT])) ? $ext = $data[self::FIELD_CATEGORY_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRMessageSignificanceCategory) {
                     $this->setCategory($value);
@@ -218,74 +219,13 @@ class FHIRConformanceEvent extends FHIRBackboneElement
                 } else {
                     $this->setCategory(new FHIRMessageSignificanceCategory([FHIRMessageSignificanceCategory::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setCategory(new FHIRMessageSignificanceCategory($ext));
             }
         }
-        if (isset($data[self::FIELD_CODE])) {
-            if ($data[self::FIELD_CODE] instanceof FHIRCoding) {
-                $this->setCode($data[self::FIELD_CODE]);
-            } else {
-                $this->setCode(new FHIRCoding($data[self::FIELD_CODE]));
-            }
-        }
-        if (isset($data[self::FIELD_DOCUMENTATION]) || isset($data[self::FIELD_DOCUMENTATION_EXT])) {
-            if (isset($data[self::FIELD_DOCUMENTATION])) {
-                $value = $data[self::FIELD_DOCUMENTATION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DOCUMENTATION_EXT]) && is_array($data[self::FIELD_DOCUMENTATION_EXT])) {
-                $ext = $data[self::FIELD_DOCUMENTATION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setDocumentation($value);
-                } else if (is_array($value)) {
-                    $this->setDocumentation(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setDocumentation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDocumentation(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_FOCUS]) || isset($data[self::FIELD_FOCUS_EXT])) {
-            if (isset($data[self::FIELD_FOCUS])) {
-                $value = $data[self::FIELD_FOCUS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_FOCUS_EXT]) && is_array($data[self::FIELD_FOCUS_EXT])) {
-                $ext = $data[self::FIELD_FOCUS_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRCode) {
-                    $this->setFocus($value);
-                } else if (is_array($value)) {
-                    $this->setFocus(new FHIRCode(array_merge($ext, $value)));
-                } else {
-                    $this->setFocus(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setFocus(new FHIRCode($ext));
-            }
-        }
         if (isset($data[self::FIELD_MODE]) || isset($data[self::FIELD_MODE_EXT])) {
-            if (isset($data[self::FIELD_MODE])) {
-                $value = $data[self::FIELD_MODE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_MODE_EXT]) && is_array($data[self::FIELD_MODE_EXT])) {
-                $ext = $data[self::FIELD_MODE_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_MODE]) ? $data[self::FIELD_MODE] : null;
+            $ext = (isset($data[self::FIELD_MODE_EXT]) && is_array($data[self::FIELD_MODE_EXT])) ? $ext = $data[self::FIELD_MODE_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRConformanceEventMode) {
                     $this->setMode($value);
@@ -294,8 +234,23 @@ class FHIRConformanceEvent extends FHIRBackboneElement
                 } else {
                     $this->setMode(new FHIRConformanceEventMode([FHIRConformanceEventMode::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setMode(new FHIRConformanceEventMode($ext));
+            }
+        }
+        if (isset($data[self::FIELD_FOCUS]) || isset($data[self::FIELD_FOCUS_EXT])) {
+            $value = isset($data[self::FIELD_FOCUS]) ? $data[self::FIELD_FOCUS] : null;
+            $ext = (isset($data[self::FIELD_FOCUS_EXT]) && is_array($data[self::FIELD_FOCUS_EXT])) ? $ext = $data[self::FIELD_FOCUS_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRCode) {
+                    $this->setFocus($value);
+                } else if (is_array($value)) {
+                    $this->setFocus(new FHIRCode(array_merge($ext, $value)));
+                } else {
+                    $this->setFocus(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setFocus(new FHIRCode($ext));
             }
         }
         if (isset($data[self::FIELD_REQUEST])) {
@@ -310,6 +265,21 @@ class FHIRConformanceEvent extends FHIRBackboneElement
                 $this->setResponse($data[self::FIELD_RESPONSE]);
             } else {
                 $this->setResponse(new FHIRReference($data[self::FIELD_RESPONSE]));
+            }
+        }
+        if (isset($data[self::FIELD_DOCUMENTATION]) || isset($data[self::FIELD_DOCUMENTATION_EXT])) {
+            $value = isset($data[self::FIELD_DOCUMENTATION]) ? $data[self::FIELD_DOCUMENTATION] : null;
+            $ext = (isset($data[self::FIELD_DOCUMENTATION_EXT]) && is_array($data[self::FIELD_DOCUMENTATION_EXT])) ? $ext = $data[self::FIELD_DOCUMENTATION_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDocumentation($value);
+                } else if (is_array($value)) {
+                    $this->setDocumentation(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDocumentation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDocumentation(new FHIRString($ext));
             }
         }
     }
@@ -328,38 +298,10 @@ class FHIRConformanceEvent extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ConformanceEvent{$xmlns}></ConformanceEvent>";
-    }
-
-    /**
-     * The impact of the content of a message.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The impact of the content of the message.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMessageSignificanceCategory
-     */
-    public function getCategory()
-    {
-        return $this->category;
-    }
-
-    /**
-     * The impact of the content of a message.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The impact of the content of the message.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMessageSignificanceCategory $category
-     * @return static
-     */
-    public function setCategory(FHIRMessageSignificanceCategory $category = null)
-    {
-        $this->category = $category;
-        return $this;
     }
 
     /**
@@ -388,47 +330,66 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      */
     public function setCode(FHIRCoding $code = null)
     {
+        $this->_trackValueSet($this->code, $code);
         $this->code = $code;
         return $this;
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
+     * The impact of the content of a message.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Guidance on how this event is handled, such as internal system trigger points,
-     * business rules, etc.
+     * The impact of the content of the message.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMessageSignificanceCategory
      */
-    public function getDocumentation()
+    public function getCategory()
     {
-        return $this->documentation;
+        return $this->category;
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
+     * The impact of the content of a message.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Guidance on how this event is handled, such as internal system trigger points,
-     * business rules, etc.
+     * The impact of the content of the message.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $documentation
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMessageSignificanceCategory $category
      * @return static
      */
-    public function setDocumentation($documentation = null)
+    public function setCategory(FHIRMessageSignificanceCategory $category = null)
     {
-        if (null === $documentation) {
-            $this->documentation = null;
-            return $this;
-        }
-        if ($documentation instanceof FHIRString) {
-            $this->documentation = $documentation;
-            return $this;
-        }
-        $this->documentation = new FHIRString($documentation);
+        $this->_trackValueSet($this->category, $category);
+        $this->category = $category;
+        return $this;
+    }
+
+    /**
+     * The mode of a message conformance statement.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The mode of this event declaration - whether application is sender or receiver.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConformanceEventMode
+     */
+    public function getMode()
+    {
+        return $this->mode;
+    }
+
+    /**
+     * The mode of a message conformance statement.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The mode of this event declaration - whether application is sender or receiver.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConformanceEventMode $mode
+     * @return static
+     */
+    public function setMode(FHIRConformanceEventMode $mode = null)
+    {
+        $this->_trackValueSet($this->mode, $mode);
+        $this->mode = $mode;
         return $this;
     }
 
@@ -462,43 +423,11 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      */
     public function setFocus($focus = null)
     {
-        if (null === $focus) {
-            $this->focus = null;
-            return $this;
+        if (null !== $focus && !($focus instanceof FHIRCode)) {
+            $focus = new FHIRCode($focus);
         }
-        if ($focus instanceof FHIRCode) {
-            $this->focus = $focus;
-            return $this;
-        }
-        $this->focus = new FHIRCode($focus);
-        return $this;
-    }
-
-    /**
-     * The mode of a message conformance statement.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The mode of this event declaration - whether application is sender or receiver.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConformanceEventMode
-     */
-    public function getMode()
-    {
-        return $this->mode;
-    }
-
-    /**
-     * The mode of a message conformance statement.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The mode of this event declaration - whether application is sender or receiver.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConformanceEventMode $mode
-     * @return static
-     */
-    public function setMode(FHIRConformanceEventMode $mode = null)
-    {
-        $this->mode = $mode;
+        $this->_trackValueSet($this->focus, $focus);
+        $this->focus = $focus;
         return $this;
     }
 
@@ -528,6 +457,7 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      */
     public function setRequest(FHIRReference $request = null)
     {
+        $this->_trackValueSet($this->request, $request);
         $this->request = $request;
         return $this;
     }
@@ -558,7 +488,44 @@ class FHIRConformanceEvent extends FHIRBackboneElement
      */
     public function setResponse(FHIRReference $response = null)
     {
+        $this->_trackValueSet($this->response, $response);
         $this->response = $response;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Guidance on how this event is handled, such as internal system trigger points,
+     * business rules, etc.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    public function getDocumentation()
+    {
+        return $this->documentation;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Guidance on how this event is handled, such as internal system trigger points,
+     * business rules, etc.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $documentation
+     * @return static
+     */
+    public function setDocumentation($documentation = null)
+    {
+        if (null !== $documentation && !($documentation instanceof FHIRString)) {
+            $documentation = new FHIRString($documentation);
+        }
+        $this->_trackValueSet($this->documentation, $documentation);
+        $this->documentation = $documentation;
         return $this;
     }
 
@@ -583,29 +550,24 @@ class FHIRConformanceEvent extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getCategory())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CATEGORY] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getCode())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_CODE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getDocumentation())) {
+        if (null !== ($v = $this->getCategory())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DOCUMENTATION] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getFocus())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_FOCUS] = $fieldErrs;
+                $errs[self::FIELD_CATEGORY] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getMode())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_MODE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getFocus())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_FOCUS] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getRequest())) {
@@ -618,16 +580,9 @@ class FHIRConformanceEvent extends FHIRBackboneElement
                 $errs[self::FIELD_RESPONSE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CATEGORY])) {
-            $v = $this->getCategory();
-            foreach($validationRules[self::FIELD_CATEGORY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_EVENT, self::FIELD_CATEGORY, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CATEGORY])) {
-                        $errs[self::FIELD_CATEGORY] = [];
-                    }
-                    $errs[self::FIELD_CATEGORY][$rule] = $err;
-                }
+        if (null !== ($v = $this->getDocumentation())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DOCUMENTATION] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_CODE])) {
@@ -642,27 +597,15 @@ class FHIRConformanceEvent extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DOCUMENTATION])) {
-            $v = $this->getDocumentation();
-            foreach($validationRules[self::FIELD_DOCUMENTATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_EVENT, self::FIELD_DOCUMENTATION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_CATEGORY])) {
+            $v = $this->getCategory();
+            foreach($validationRules[self::FIELD_CATEGORY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_EVENT, self::FIELD_CATEGORY, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DOCUMENTATION])) {
-                        $errs[self::FIELD_DOCUMENTATION] = [];
+                    if (!isset($errs[self::FIELD_CATEGORY])) {
+                        $errs[self::FIELD_CATEGORY] = [];
                     }
-                    $errs[self::FIELD_DOCUMENTATION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_FOCUS])) {
-            $v = $this->getFocus();
-            foreach($validationRules[self::FIELD_FOCUS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_EVENT, self::FIELD_FOCUS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FOCUS])) {
-                        $errs[self::FIELD_FOCUS] = [];
-                    }
-                    $errs[self::FIELD_FOCUS][$rule] = $err;
+                    $errs[self::FIELD_CATEGORY][$rule] = $err;
                 }
             }
         }
@@ -675,6 +618,18 @@ class FHIRConformanceEvent extends FHIRBackboneElement
                         $errs[self::FIELD_MODE] = [];
                     }
                     $errs[self::FIELD_MODE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_FOCUS])) {
+            $v = $this->getFocus();
+            foreach($validationRules[self::FIELD_FOCUS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_EVENT, self::FIELD_FOCUS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FOCUS])) {
+                        $errs[self::FIELD_FOCUS] = [];
+                    }
+                    $errs[self::FIELD_FOCUS][$rule] = $err;
                 }
             }
         }
@@ -699,6 +654,18 @@ class FHIRConformanceEvent extends FHIRBackboneElement
                         $errs[self::FIELD_RESPONSE] = [];
                     }
                     $errs[self::FIELD_RESPONSE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DOCUMENTATION])) {
+            $v = $this->getDocumentation();
+            foreach($validationRules[self::FIELD_DOCUMENTATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_EVENT, self::FIELD_DOCUMENTATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DOCUMENTATION])) {
+                        $errs[self::FIELD_DOCUMENTATION] = [];
+                    }
+                    $errs[self::FIELD_DOCUMENTATION][$rule] = $err;
                 }
             }
         }
@@ -742,118 +709,148 @@ class FHIRConformanceEvent extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceEvent $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceEvent
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRConformanceEvent::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRConformanceEvent::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRConformanceEvent::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRConformanceEvent;
+            $type = new FHIRConformanceEvent(null);
         } elseif (!is_object($type) || !($type instanceof FHIRConformanceEvent)) {
             throw new \RuntimeException(sprintf(
                 'FHIRConformanceEvent::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceEvent or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_CODE === $n->nodeName) {
+                $type->setCode(FHIRCoding::xmlUnserialize($n));
+            } elseif (self::FIELD_CATEGORY === $n->nodeName) {
+                $type->setCategory(FHIRMessageSignificanceCategory::xmlUnserialize($n));
+            } elseif (self::FIELD_MODE === $n->nodeName) {
+                $type->setMode(FHIRConformanceEventMode::xmlUnserialize($n));
+            } elseif (self::FIELD_FOCUS === $n->nodeName) {
+                $type->setFocus(FHIRCode::xmlUnserialize($n));
+            } elseif (self::FIELD_REQUEST === $n->nodeName) {
+                $type->setRequest(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_RESPONSE === $n->nodeName) {
+                $type->setResponse(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_DOCUMENTATION === $n->nodeName) {
+                $type->setDocumentation(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->category)) {
-            $type->setCategory(FHIRMessageSignificanceCategory::xmlUnserialize($children->category));
-        }
-        if (isset($children->code)) {
-            $type->setCode(FHIRCoding::xmlUnserialize($children->code));
-        }
-        if (isset($children->documentation)) {
-            $type->setDocumentation(FHIRString::xmlUnserialize($children->documentation));
-        }
-        if (isset($attributes->documentation)) {
-            $pt = $type->getDocumentation();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->documentation);
-            } else {
-                $type->setDocumentation((string)$attributes->documentation);
-            }
-        }
-        if (isset($children->focus)) {
-            $type->setFocus(FHIRCode::xmlUnserialize($children->focus));
-        }
-        if (isset($attributes->focus)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_FOCUS);
+        if (null !== $n) {
             $pt = $type->getFocus();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->focus);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setFocus((string)$attributes->focus);
+                $type->setFocus($n->nodeValue);
             }
         }
-        if (isset($children->mode)) {
-            $type->setMode(FHIRConformanceEventMode::xmlUnserialize($children->mode));
+        $n = $element->attributes->getNamedItem(self::FIELD_DOCUMENTATION);
+        if (null !== $n) {
+            $pt = $type->getDocumentation();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setDocumentation($n->nodeValue);
+            }
         }
-        if (isset($children->request)) {
-            $type->setRequest(FHIRReference::xmlUnserialize($children->request));
-        }
-        if (isset($children->response)) {
-            $type->setResponse(FHIRReference::xmlUnserialize($children->response));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getCategory())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_CODE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getDocumentation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getFocus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FOCUS, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getCategory())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_CATEGORY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getMode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MODE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_MODE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getFocus())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_FOCUS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getRequest())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_REQUEST);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getResponse())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_RESPONSE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getDocumentation())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DOCUMENTATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -862,43 +859,37 @@ class FHIRConformanceEvent extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCategory())) {
-            $a[self::FIELD_CATEGORY] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMessageSignificanceCategory::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRMessageSignificanceCategory::FIELD_VALUE]);
-                $a[self::FIELD_CATEGORY_EXT] = $enc;
-            }
-        }
         if (null !== ($v = $this->getCode())) {
             $a[self::FIELD_CODE] = $v;
         }
-        if (null !== ($v = $this->getDocumentation())) {
-            $a[self::FIELD_DOCUMENTATION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DOCUMENTATION_EXT] = $enc;
+        if (null !== ($v = $this->getCategory())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CATEGORY] = $val;
             }
-        }
-        if (null !== ($v = $this->getFocus())) {
-            $a[self::FIELD_FOCUS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCode::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCode::FIELD_VALUE]);
-                $a[self::FIELD_FOCUS_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRMessageSignificanceCategory::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_CATEGORY_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getMode())) {
-            $a[self::FIELD_MODE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRConformanceEventMode::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRConformanceEventMode::FIELD_VALUE]);
-                $a[self::FIELD_MODE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MODE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRConformanceEventMode::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_MODE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getFocus())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FOCUS] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRCode::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_FOCUS_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getRequest())) {
@@ -907,8 +898,15 @@ class FHIRConformanceEvent extends FHIRBackboneElement
         if (null !== ($v = $this->getResponse())) {
             $a[self::FIELD_RESPONSE] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getDocumentation())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DOCUMENTATION] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DOCUMENTATION_EXT] = $ext;
+            }
         }
         return $a;
     }

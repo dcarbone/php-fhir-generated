@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,7 +68,7 @@ abstract class PHPFHIRConstants
     const SOURCE_GENERATION_DATE = 'Tue, Sep 30, 2014 18:08+1000';
 
     // PHPFHIR
-    const CODE_GENERATION_DATE = 'December 26th, 2019 15:43+0000';
+    const CODE_GENERATION_DATE = 'December 28th, 2024 17:13+0000';
 
     // Common
     const JSON_FIELD_RESOURCE_TYPE = 'resourceType';
@@ -402,6 +402,7 @@ abstract class PHPFHIRConstants
     const TYPE_NAME_QUESTIONNAIRE_STATUS_HYPHEN_LIST = 'QuestionnaireStatus-list';
     const TYPE_NAME_RANGE = 'Range';
     const TYPE_NAME_RATIO = 'Ratio';
+    const TYPE_NAME_RAW = 'raw';
     const TYPE_NAME_REACTION_SEVERITY = 'ReactionSeverity';
     const TYPE_NAME_REACTION_SEVERITY_HYPHEN_LIST = 'ReactionSeverity-list';
     const TYPE_NAME_RELATED_PERSON = 'RelatedPerson';
@@ -793,6 +794,7 @@ abstract class PHPFHIRConstants
     const TYPE_CLASS_QUESTIONNAIRE_STATUS_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\DSTU1\\FHIRStringPrimitive\\FHIRQuestionnaireStatusList';
     const TYPE_CLASS_RANGE = '\\DCarbone\\PHPFHIRGenerated\\DSTU1\\FHIRElement\\FHIRRange';
     const TYPE_CLASS_RATIO = '\\DCarbone\\PHPFHIRGenerated\\DSTU1\\FHIRElement\\FHIRRatio';
+    const TYPE_CLASS_RAW = '\\DCarbone\\PHPFHIRGenerated\\DSTU1\\FHIRRaw';
     const TYPE_CLASS_REACTION_SEVERITY = '\\DCarbone\\PHPFHIRGenerated\\DSTU1\\FHIRElement\\FHIRReactionSeverity';
     const TYPE_CLASS_REACTION_SEVERITY_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\DSTU1\\FHIRStringPrimitive\\FHIRReactionSeverityList';
     const TYPE_CLASS_RELATED_PERSON = '\\DCarbone\\PHPFHIRGenerated\\DSTU1\\FHIRElement\\FHIRBackboneElement\\FHIRResource\\FHIRRelatedPerson';

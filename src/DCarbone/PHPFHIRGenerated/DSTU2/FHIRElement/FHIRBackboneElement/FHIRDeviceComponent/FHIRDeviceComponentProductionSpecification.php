@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,8 +64,10 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDe
 
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
@@ -80,13 +82,26 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_COMPONENT_DOT_PRODUCTION_SPECIFICATION;
+    const FIELD_SPEC_TYPE = 'specType';
     const FIELD_COMPONENT_ID = 'componentId';
     const FIELD_PRODUCTION_SPEC = 'productionSpec';
     const FIELD_PRODUCTION_SPEC_EXT = '_productionSpec';
-    const FIELD_SPEC_TYPE = 'specType';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Describes the specification type, such as, serial number, part number, hardware
+     * revision, software revision, etc.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
+     */
+    protected $specType = null;
 
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -113,19 +128,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
     protected $productionSpec = null;
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Describes the specification type, such as, serial number, part number, hardware
-     * revision, software revision, etc.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
-     */
-    protected $specType = null;
-
-    /**
      * Validation map for fields in type DeviceComponent.ProductionSpecification
      * @var array
      */
@@ -147,6 +149,13 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_SPEC_TYPE])) {
+            if ($data[self::FIELD_SPEC_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setSpecType($data[self::FIELD_SPEC_TYPE]);
+            } else {
+                $this->setSpecType(new FHIRCodeableConcept($data[self::FIELD_SPEC_TYPE]));
+            }
+        }
         if (isset($data[self::FIELD_COMPONENT_ID])) {
             if ($data[self::FIELD_COMPONENT_ID] instanceof FHIRIdentifier) {
                 $this->setComponentId($data[self::FIELD_COMPONENT_ID]);
@@ -155,16 +164,8 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_PRODUCTION_SPEC]) || isset($data[self::FIELD_PRODUCTION_SPEC_EXT])) {
-            if (isset($data[self::FIELD_PRODUCTION_SPEC])) {
-                $value = $data[self::FIELD_PRODUCTION_SPEC];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PRODUCTION_SPEC_EXT]) && is_array($data[self::FIELD_PRODUCTION_SPEC_EXT])) {
-                $ext = $data[self::FIELD_PRODUCTION_SPEC_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_PRODUCTION_SPEC]) ? $data[self::FIELD_PRODUCTION_SPEC] : null;
+            $ext = (isset($data[self::FIELD_PRODUCTION_SPEC_EXT]) && is_array($data[self::FIELD_PRODUCTION_SPEC_EXT])) ? $ext = $data[self::FIELD_PRODUCTION_SPEC_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setProductionSpec($value);
@@ -173,15 +174,8 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
                 } else {
                     $this->setProductionSpec(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setProductionSpec(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_SPEC_TYPE])) {
-            if ($data[self::FIELD_SPEC_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setSpecType($data[self::FIELD_SPEC_TYPE]);
-            } else {
-                $this->setSpecType(new FHIRCodeableConcept($data[self::FIELD_SPEC_TYPE]));
             }
         }
     }
@@ -200,82 +194,10 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<DeviceComponentProductionSpecification{$xmlns}></DeviceComponentProductionSpecification>";
-    }
-
-    /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Describes the internal component unique identification. This is a provision for
-     * manufacture specific standard components using a private OID. 11073-10101 has a
-     * partition for private OID semantic that the manufacture can make use of.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
-     */
-    public function getComponentId()
-    {
-        return $this->componentId;
-    }
-
-    /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Describes the internal component unique identification. This is a provision for
-     * manufacture specific standard components using a private OID. 11073-10101 has a
-     * partition for private OID semantic that the manufacture can make use of.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $componentId
-     * @return static
-     */
-    public function setComponentId(FHIRIdentifier $componentId = null)
-    {
-        $this->componentId = $componentId;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Describes the printable string defining the component.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    public function getProductionSpec()
-    {
-        return $this->productionSpec;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Describes the printable string defining the component.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $productionSpec
-     * @return static
-     */
-    public function setProductionSpec($productionSpec = null)
-    {
-        if (null === $productionSpec) {
-            $this->productionSpec = null;
-            return $this;
-        }
-        if ($productionSpec instanceof FHIRString) {
-            $this->productionSpec = $productionSpec;
-            return $this;
-        }
-        $this->productionSpec = new FHIRString($productionSpec);
-        return $this;
     }
 
     /**
@@ -308,7 +230,77 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      */
     public function setSpecType(FHIRCodeableConcept $specType = null)
     {
+        $this->_trackValueSet($this->specType, $specType);
         $this->specType = $specType;
+        return $this;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Describes the internal component unique identification. This is a provision for
+     * manufacture specific standard components using a private OID. 11073-10101 has a
+     * partition for private OID semantic that the manufacture can make use of.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
+     */
+    public function getComponentId()
+    {
+        return $this->componentId;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Describes the internal component unique identification. This is a provision for
+     * manufacture specific standard components using a private OID. 11073-10101 has a
+     * partition for private OID semantic that the manufacture can make use of.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $componentId
+     * @return static
+     */
+    public function setComponentId(FHIRIdentifier $componentId = null)
+    {
+        $this->_trackValueSet($this->componentId, $componentId);
+        $this->componentId = $componentId;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Describes the printable string defining the component.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    public function getProductionSpec()
+    {
+        return $this->productionSpec;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Describes the printable string defining the component.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $productionSpec
+     * @return static
+     */
+    public function setProductionSpec($productionSpec = null)
+    {
+        if (null !== $productionSpec && !($productionSpec instanceof FHIRString)) {
+            $productionSpec = new FHIRString($productionSpec);
+        }
+        $this->_trackValueSet($this->productionSpec, $productionSpec);
+        $this->productionSpec = $productionSpec;
         return $this;
     }
 
@@ -333,6 +325,11 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getSpecType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SPEC_TYPE] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getComponentId())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_COMPONENT_ID] = $fieldErrs;
@@ -343,9 +340,16 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
                 $errs[self::FIELD_PRODUCTION_SPEC] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getSpecType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SPEC_TYPE] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_SPEC_TYPE])) {
+            $v = $this->getSpecType();
+            foreach($validationRules[self::FIELD_SPEC_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DEVICE_COMPONENT_DOT_PRODUCTION_SPECIFICATION, self::FIELD_SPEC_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SPEC_TYPE])) {
+                        $errs[self::FIELD_SPEC_TYPE] = [];
+                    }
+                    $errs[self::FIELD_SPEC_TYPE][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_COMPONENT_ID])) {
@@ -369,18 +373,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
                         $errs[self::FIELD_PRODUCTION_SPEC] = [];
                     }
                     $errs[self::FIELD_PRODUCTION_SPEC][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SPEC_TYPE])) {
-            $v = $this->getSpecType();
-            foreach($validationRules[self::FIELD_SPEC_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DEVICE_COMPONENT_DOT_PRODUCTION_SPECIFICATION, self::FIELD_SPEC_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SPEC_TYPE])) {
-                        $errs[self::FIELD_SPEC_TYPE] = [];
-                    }
-                    $errs[self::FIELD_SPEC_TYPE][$rule] = $err;
                 }
             }
         }
@@ -424,86 +416,111 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRDeviceComponentProductionSpecification::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRDeviceComponentProductionSpecification::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRDeviceComponentProductionSpecification::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRDeviceComponentProductionSpecification;
+            $type = new FHIRDeviceComponentProductionSpecification(null);
         } elseif (!is_object($type) || !($type instanceof FHIRDeviceComponentProductionSpecification)) {
             throw new \RuntimeException(sprintf(
                 'FHIRDeviceComponentProductionSpecification::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_SPEC_TYPE === $n->nodeName) {
+                $type->setSpecType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_COMPONENT_ID === $n->nodeName) {
+                $type->setComponentId(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_PRODUCTION_SPEC === $n->nodeName) {
+                $type->setProductionSpec(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->componentId)) {
-            $type->setComponentId(FHIRIdentifier::xmlUnserialize($children->componentId));
-        }
-        if (isset($children->productionSpec)) {
-            $type->setProductionSpec(FHIRString::xmlUnserialize($children->productionSpec));
-        }
-        if (isset($attributes->productionSpec)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_PRODUCTION_SPEC);
+        if (null !== $n) {
             $pt = $type->getProductionSpec();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->productionSpec);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setProductionSpec((string)$attributes->productionSpec);
+                $type->setProductionSpec($n->nodeValue);
             }
         }
-        if (isset($children->specType)) {
-            $type->setSpecType(FHIRCodeableConcept::xmlUnserialize($children->specType));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getSpecType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SPEC_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if (null !== ($v = $this->getComponentId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COMPONENT_ID, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_COMPONENT_ID);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getProductionSpec())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCTION_SPEC, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_PRODUCTION_SPEC);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getSpecType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SPEC_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -512,23 +529,21 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getSpecType())) {
+            $a[self::FIELD_SPEC_TYPE] = $v;
+        }
         if (null !== ($v = $this->getComponentId())) {
             $a[self::FIELD_COMPONENT_ID] = $v;
         }
         if (null !== ($v = $this->getProductionSpec())) {
-            $a[self::FIELD_PRODUCTION_SPEC] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_PRODUCTION_SPEC_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PRODUCTION_SPEC] = $val;
             }
-        }
-        if (null !== ($v = $this->getSpecType())) {
-            $a[self::FIELD_SPEC_TYPE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PRODUCTION_SPEC_EXT] = $ext;
+            }
         }
         return $a;
     }

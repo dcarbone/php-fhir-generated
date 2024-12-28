@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,15 +63,22 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  */
 
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMeta;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeMap;
 
 /**
  * An assessment of the likely outcome(s) for a patient or other subject as well as
@@ -85,45 +92,32 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT;
-    const FIELD_BASIS = 'basis';
-    const FIELD_CONDITION = 'condition';
+    const FIELD_SUBJECT = 'subject';
     const FIELD_DATE = 'date';
     const FIELD_DATE_EXT = '_date';
+    const FIELD_CONDITION = 'condition';
     const FIELD_ENCOUNTER = 'encounter';
+    const FIELD_PERFORMER = 'performer';
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_METHOD = 'method';
+    const FIELD_BASIS = 'basis';
+    const FIELD_PREDICTION = 'prediction';
     const FIELD_MITIGATION = 'mitigation';
     const FIELD_MITIGATION_EXT = '_mitigation';
-    const FIELD_PERFORMER = 'performer';
-    const FIELD_PREDICTION = 'prediction';
-    const FIELD_SUBJECT = 'subject';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indicates the source data considered as part of the assessment (FamilyHistory,
-     * Observations, Procedures, Conditions, etc.).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
-     */
-    protected $basis = [];
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * For assessments or prognosis specific to a particular condition, indicates the
-     * condition being assessed.
+     * The patient or group the risk assessment applies to.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    protected $condition = null;
+    protected $subject = null;
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -144,11 +138,34 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * For assessments or prognosis specific to a particular condition, indicates the
+     * condition being assessed.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     */
+    protected $condition = null;
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The encounter where the assessment was performed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected $encounter = null;
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The provider or software application that performed the assessment.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     */
+    protected $performer = null;
 
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -174,26 +191,16 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     protected $method = null;
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A description of the steps that might be taken to reduce the identified risk(s).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    protected $mitigation = null;
-
-    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The provider or software application that performed the assessment.
+     * Indicates the source data considered as part of the assessment (FamilyHistory,
+     * Observations, Procedures, Conditions, etc.).
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
-    protected $performer = null;
+    protected $basis = [];
 
     /**
      * An assessment of the likely outcome(s) for a patient or other subject as well as
@@ -206,15 +213,15 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     protected $prediction = [];
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The patient or group the risk assessment applies to.
+     * A description of the steps that might be taken to reduce the identified risk(s).
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    protected $subject = null;
+    protected $mitigation = null;
 
     /**
      * Validation map for fields in type RiskAssessment
@@ -238,22 +245,26 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_BASIS])) {
-            if (is_array($data[self::FIELD_BASIS])) {
-                foreach($data[self::FIELD_BASIS] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRReference) {
-                        $this->addBasis($v);
-                    } else {
-                        $this->addBasis(new FHIRReference($v));
-                    }
-                }
-            } else if ($data[self::FIELD_BASIS] instanceof FHIRReference) {
-                $this->addBasis($data[self::FIELD_BASIS]);
+        if (isset($data[self::FIELD_SUBJECT])) {
+            if ($data[self::FIELD_SUBJECT] instanceof FHIRReference) {
+                $this->setSubject($data[self::FIELD_SUBJECT]);
             } else {
-                $this->addBasis(new FHIRReference($data[self::FIELD_BASIS]));
+                $this->setSubject(new FHIRReference($data[self::FIELD_SUBJECT]));
+            }
+        }
+        if (isset($data[self::FIELD_DATE]) || isset($data[self::FIELD_DATE_EXT])) {
+            $value = isset($data[self::FIELD_DATE]) ? $data[self::FIELD_DATE] : null;
+            $ext = (isset($data[self::FIELD_DATE_EXT]) && is_array($data[self::FIELD_DATE_EXT])) ? $ext = $data[self::FIELD_DATE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setDate($value);
+                } else if (is_array($value)) {
+                    $this->setDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDate(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_CONDITION])) {
@@ -263,34 +274,18 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
                 $this->setCondition(new FHIRReference($data[self::FIELD_CONDITION]));
             }
         }
-        if (isset($data[self::FIELD_DATE]) || isset($data[self::FIELD_DATE_EXT])) {
-            if (isset($data[self::FIELD_DATE])) {
-                $value = $data[self::FIELD_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DATE_EXT]) && is_array($data[self::FIELD_DATE_EXT])) {
-                $ext = $data[self::FIELD_DATE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $this->setDate($value);
-                } else if (is_array($value)) {
-                    $this->setDate(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDate(new FHIRDateTime($ext));
-            }
-        }
         if (isset($data[self::FIELD_ENCOUNTER])) {
             if ($data[self::FIELD_ENCOUNTER] instanceof FHIRReference) {
                 $this->setEncounter($data[self::FIELD_ENCOUNTER]);
             } else {
                 $this->setEncounter(new FHIRReference($data[self::FIELD_ENCOUNTER]));
+            }
+        }
+        if (isset($data[self::FIELD_PERFORMER])) {
+            if ($data[self::FIELD_PERFORMER] instanceof FHIRReference) {
+                $this->setPerformer($data[self::FIELD_PERFORMER]);
+            } else {
+                $this->setPerformer(new FHIRReference($data[self::FIELD_PERFORMER]));
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
@@ -307,34 +302,22 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
                 $this->setMethod(new FHIRCodeableConcept($data[self::FIELD_METHOD]));
             }
         }
-        if (isset($data[self::FIELD_MITIGATION]) || isset($data[self::FIELD_MITIGATION_EXT])) {
-            if (isset($data[self::FIELD_MITIGATION])) {
-                $value = $data[self::FIELD_MITIGATION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_MITIGATION_EXT]) && is_array($data[self::FIELD_MITIGATION_EXT])) {
-                $ext = $data[self::FIELD_MITIGATION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setMitigation($value);
-                } else if (is_array($value)) {
-                    $this->setMitigation(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setMitigation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+        if (isset($data[self::FIELD_BASIS])) {
+            if (is_array($data[self::FIELD_BASIS])) {
+                foreach($data[self::FIELD_BASIS] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRReference) {
+                        $this->addBasis($v);
+                    } else {
+                        $this->addBasis(new FHIRReference($v));
+                    }
                 }
-            } else if ([] !== $ext) {
-                $this->setMitigation(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_PERFORMER])) {
-            if ($data[self::FIELD_PERFORMER] instanceof FHIRReference) {
-                $this->setPerformer($data[self::FIELD_PERFORMER]);
+            } elseif ($data[self::FIELD_BASIS] instanceof FHIRReference) {
+                $this->addBasis($data[self::FIELD_BASIS]);
             } else {
-                $this->setPerformer(new FHIRReference($data[self::FIELD_PERFORMER]));
+                $this->addBasis(new FHIRReference($data[self::FIELD_BASIS]));
             }
         }
         if (isset($data[self::FIELD_PREDICTION])) {
@@ -349,17 +332,25 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
                         $this->addPrediction(new FHIRRiskAssessmentPrediction($v));
                     }
                 }
-            } else if ($data[self::FIELD_PREDICTION] instanceof FHIRRiskAssessmentPrediction) {
+            } elseif ($data[self::FIELD_PREDICTION] instanceof FHIRRiskAssessmentPrediction) {
                 $this->addPrediction($data[self::FIELD_PREDICTION]);
             } else {
                 $this->addPrediction(new FHIRRiskAssessmentPrediction($data[self::FIELD_PREDICTION]));
             }
         }
-        if (isset($data[self::FIELD_SUBJECT])) {
-            if ($data[self::FIELD_SUBJECT] instanceof FHIRReference) {
-                $this->setSubject($data[self::FIELD_SUBJECT]);
-            } else {
-                $this->setSubject(new FHIRReference($data[self::FIELD_SUBJECT]));
+        if (isset($data[self::FIELD_MITIGATION]) || isset($data[self::FIELD_MITIGATION_EXT])) {
+            $value = isset($data[self::FIELD_MITIGATION]) ? $data[self::FIELD_MITIGATION] : null;
+            $ext = (isset($data[self::FIELD_MITIGATION_EXT]) && is_array($data[self::FIELD_MITIGATION_EXT])) ? $ext = $data[self::FIELD_MITIGATION_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setMitigation($value);
+                } else if (is_array($value)) {
+                    $this->setMitigation(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setMitigation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setMitigation(new FHIRString($ext));
             }
         }
     }
@@ -378,7 +369,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<RiskAssessment{$xmlns}></RiskAssessment>";
@@ -397,73 +388,13 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indicates the source data considered as part of the assessment (FamilyHistory,
-     * Observations, Procedures, Conditions, etc.).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
-     */
-    public function getBasis()
-    {
-        return $this->basis;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the source data considered as part of the assessment (FamilyHistory,
-     * Observations, Procedures, Conditions, etc.).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $basis
-     * @return static
-     */
-    public function addBasis(FHIRReference $basis = null)
-    {
-        $this->basis[] = $basis;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the source data considered as part of the assessment (FamilyHistory,
-     * Observations, Procedures, Conditions, etc.).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[] $basis
-     * @return static
-     */
-    public function setBasis(array $basis = [])
-    {
-        $this->basis = [];
-        if ([] === $basis) {
-            return $this;
-        }
-        foreach($basis as $v) {
-            if ($v instanceof FHIRReference) {
-                $this->addBasis($v);
-            } else {
-                $this->addBasis(new FHIRReference($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * For assessments or prognosis specific to a particular condition, indicates the
-     * condition being assessed.
+     * The patient or group the risk assessment applies to.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    public function getCondition()
+    public function getSubject()
     {
-        return $this->condition;
+        return $this->subject;
     }
 
     /**
@@ -471,15 +402,15 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * For assessments or prognosis specific to a particular condition, indicates the
-     * condition being assessed.
+     * The patient or group the risk assessment applies to.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $condition
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $subject
      * @return static
      */
-    public function setCondition(FHIRReference $condition = null)
+    public function setSubject(FHIRReference $subject = null)
     {
-        $this->condition = $condition;
+        $this->_trackValueSet($this->subject, $subject);
+        $this->subject = $subject;
         return $this;
     }
 
@@ -515,15 +446,44 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      */
     public function setDate($date = null)
     {
-        if (null === $date) {
-            $this->date = null;
-            return $this;
+        if (null !== $date && !($date instanceof FHIRDateTime)) {
+            $date = new FHIRDateTime($date);
         }
-        if ($date instanceof FHIRDateTime) {
-            $this->date = $date;
-            return $this;
-        }
-        $this->date = new FHIRDateTime($date);
+        $this->_trackValueSet($this->date, $date);
+        $this->date = $date;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * For assessments or prognosis specific to a particular condition, indicates the
+     * condition being assessed.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     */
+    public function getCondition()
+    {
+        return $this->condition;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * For assessments or prognosis specific to a particular condition, indicates the
+     * condition being assessed.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $condition
+     * @return static
+     */
+    public function setCondition(FHIRReference $condition = null)
+    {
+        $this->_trackValueSet($this->condition, $condition);
+        $this->condition = $condition;
         return $this;
     }
 
@@ -553,7 +513,39 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      */
     public function setEncounter(FHIRReference $encounter = null)
     {
+        $this->_trackValueSet($this->encounter, $encounter);
         $this->encounter = $encounter;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The provider or software application that performed the assessment.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     */
+    public function getPerformer()
+    {
+        return $this->performer;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The provider or software application that performed the assessment.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $performer
+     * @return static
+     */
+    public function setPerformer(FHIRReference $performer = null)
+    {
+        $this->_trackValueSet($this->performer, $performer);
+        $this->performer = $performer;
         return $this;
     }
 
@@ -583,6 +575,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
+        $this->_trackValueSet($this->identifier, $identifier);
         $this->identifier = $identifier;
         return $this;
     }
@@ -615,7 +608,128 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      */
     public function setMethod(FHIRCodeableConcept $method = null)
     {
+        $this->_trackValueSet($this->method, $method);
         $this->method = $method;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the source data considered as part of the assessment (FamilyHistory,
+     * Observations, Procedures, Conditions, etc.).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
+     */
+    public function getBasis()
+    {
+        return $this->basis;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the source data considered as part of the assessment (FamilyHistory,
+     * Observations, Procedures, Conditions, etc.).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $basis
+     * @return static
+     */
+    public function addBasis(FHIRReference $basis = null)
+    {
+        $this->_trackValueAdded();
+        $this->basis[] = $basis;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the source data considered as part of the assessment (FamilyHistory,
+     * Observations, Procedures, Conditions, etc.).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[] $basis
+     * @return static
+     */
+    public function setBasis(array $basis = [])
+    {
+        if ([] !== $this->basis) {
+            $this->_trackValuesRemoved(count($this->basis));
+            $this->basis = [];
+        }
+        if ([] === $basis) {
+            return $this;
+        }
+        foreach($basis as $v) {
+            if ($v instanceof FHIRReference) {
+                $this->addBasis($v);
+            } else {
+                $this->addBasis(new FHIRReference($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * An assessment of the likely outcome(s) for a patient or other subject as well as
+     * the likelihood of each outcome.
+     *
+     * Describes the expected outcome for the subject.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction[]
+     */
+    public function getPrediction()
+    {
+        return $this->prediction;
+    }
+
+    /**
+     * An assessment of the likely outcome(s) for a patient or other subject as well as
+     * the likelihood of each outcome.
+     *
+     * Describes the expected outcome for the subject.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction $prediction
+     * @return static
+     */
+    public function addPrediction(FHIRRiskAssessmentPrediction $prediction = null)
+    {
+        $this->_trackValueAdded();
+        $this->prediction[] = $prediction;
+        return $this;
+    }
+
+    /**
+     * An assessment of the likely outcome(s) for a patient or other subject as well as
+     * the likelihood of each outcome.
+     *
+     * Describes the expected outcome for the subject.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction[] $prediction
+     * @return static
+     */
+    public function setPrediction(array $prediction = [])
+    {
+        if ([] !== $this->prediction) {
+            $this->_trackValuesRemoved(count($this->prediction));
+            $this->prediction = [];
+        }
+        if ([] === $prediction) {
+            return $this;
+        }
+        foreach($prediction as $v) {
+            if ($v instanceof FHIRRiskAssessmentPrediction) {
+                $this->addPrediction($v);
+            } else {
+                $this->addPrediction(new FHIRRiskAssessmentPrediction($v));
+            }
+        }
         return $this;
     }
 
@@ -645,128 +759,11 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      */
     public function setMitigation($mitigation = null)
     {
-        if (null === $mitigation) {
-            $this->mitigation = null;
-            return $this;
+        if (null !== $mitigation && !($mitigation instanceof FHIRString)) {
+            $mitigation = new FHIRString($mitigation);
         }
-        if ($mitigation instanceof FHIRString) {
-            $this->mitigation = $mitigation;
-            return $this;
-        }
-        $this->mitigation = new FHIRString($mitigation);
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The provider or software application that performed the assessment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
-     */
-    public function getPerformer()
-    {
-        return $this->performer;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The provider or software application that performed the assessment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $performer
-     * @return static
-     */
-    public function setPerformer(FHIRReference $performer = null)
-    {
-        $this->performer = $performer;
-        return $this;
-    }
-
-    /**
-     * An assessment of the likely outcome(s) for a patient or other subject as well as
-     * the likelihood of each outcome.
-     *
-     * Describes the expected outcome for the subject.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction[]
-     */
-    public function getPrediction()
-    {
-        return $this->prediction;
-    }
-
-    /**
-     * An assessment of the likely outcome(s) for a patient or other subject as well as
-     * the likelihood of each outcome.
-     *
-     * Describes the expected outcome for the subject.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction $prediction
-     * @return static
-     */
-    public function addPrediction(FHIRRiskAssessmentPrediction $prediction = null)
-    {
-        $this->prediction[] = $prediction;
-        return $this;
-    }
-
-    /**
-     * An assessment of the likely outcome(s) for a patient or other subject as well as
-     * the likelihood of each outcome.
-     *
-     * Describes the expected outcome for the subject.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction[] $prediction
-     * @return static
-     */
-    public function setPrediction(array $prediction = [])
-    {
-        $this->prediction = [];
-        if ([] === $prediction) {
-            return $this;
-        }
-        foreach($prediction as $v) {
-            if ($v instanceof FHIRRiskAssessmentPrediction) {
-                $this->addPrediction($v);
-            } else {
-                $this->addPrediction(new FHIRRiskAssessmentPrediction($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The patient or group the risk assessment applies to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
-     */
-    public function getSubject()
-    {
-        return $this->subject;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The patient or group the risk assessment applies to.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $subject
-     * @return static
-     */
-    public function setSubject(FHIRReference $subject = null)
-    {
-        $this->subject = $subject;
+        $this->_trackValueSet($this->mitigation, $mitigation);
+        $this->mitigation = $mitigation;
         return $this;
     }
 
@@ -791,16 +788,9 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getBasis())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_BASIS, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getCondition())) {
+        if (null !== ($v = $this->getSubject())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CONDITION] = $fieldErrs;
+                $errs[self::FIELD_SUBJECT] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDate())) {
@@ -808,9 +798,19 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
                 $errs[self::FIELD_DATE] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getCondition())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CONDITION] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getEncounter())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_ENCOUNTER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPerformer())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PERFORMER] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getIdentifier())) {
@@ -823,14 +823,11 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
                 $errs[self::FIELD_METHOD] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getMitigation())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_MITIGATION] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPerformer())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PERFORMER] = $fieldErrs;
+        if ([] !== ($vs = $this->getBasis())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_BASIS, $i)] = $fieldErrs;
+                }
             }
         }
         if ([] !== ($vs = $this->getPrediction())) {
@@ -840,32 +837,20 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
                 }
             }
         }
-        if (null !== ($v = $this->getSubject())) {
+        if (null !== ($v = $this->getMitigation())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SUBJECT] = $fieldErrs;
+                $errs[self::FIELD_MITIGATION] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_BASIS])) {
-            $v = $this->getBasis();
-            foreach($validationRules[self::FIELD_BASIS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT, self::FIELD_BASIS, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_SUBJECT])) {
+            $v = $this->getSubject();
+            foreach($validationRules[self::FIELD_SUBJECT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT, self::FIELD_SUBJECT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_BASIS])) {
-                        $errs[self::FIELD_BASIS] = [];
+                    if (!isset($errs[self::FIELD_SUBJECT])) {
+                        $errs[self::FIELD_SUBJECT] = [];
                     }
-                    $errs[self::FIELD_BASIS][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_CONDITION])) {
-            $v = $this->getCondition();
-            foreach($validationRules[self::FIELD_CONDITION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT, self::FIELD_CONDITION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CONDITION])) {
-                        $errs[self::FIELD_CONDITION] = [];
-                    }
-                    $errs[self::FIELD_CONDITION][$rule] = $err;
+                    $errs[self::FIELD_SUBJECT][$rule] = $err;
                 }
             }
         }
@@ -881,6 +866,18 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_CONDITION])) {
+            $v = $this->getCondition();
+            foreach($validationRules[self::FIELD_CONDITION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT, self::FIELD_CONDITION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONDITION])) {
+                        $errs[self::FIELD_CONDITION] = [];
+                    }
+                    $errs[self::FIELD_CONDITION][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_ENCOUNTER])) {
             $v = $this->getEncounter();
             foreach($validationRules[self::FIELD_ENCOUNTER] as $rule => $constraint) {
@@ -890,6 +887,18 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
                         $errs[self::FIELD_ENCOUNTER] = [];
                     }
                     $errs[self::FIELD_ENCOUNTER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PERFORMER])) {
+            $v = $this->getPerformer();
+            foreach($validationRules[self::FIELD_PERFORMER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT, self::FIELD_PERFORMER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PERFORMER])) {
+                        $errs[self::FIELD_PERFORMER] = [];
+                    }
+                    $errs[self::FIELD_PERFORMER][$rule] = $err;
                 }
             }
         }
@@ -917,27 +926,15 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_MITIGATION])) {
-            $v = $this->getMitigation();
-            foreach($validationRules[self::FIELD_MITIGATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT, self::FIELD_MITIGATION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_BASIS])) {
+            $v = $this->getBasis();
+            foreach($validationRules[self::FIELD_BASIS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT, self::FIELD_BASIS, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_MITIGATION])) {
-                        $errs[self::FIELD_MITIGATION] = [];
+                    if (!isset($errs[self::FIELD_BASIS])) {
+                        $errs[self::FIELD_BASIS] = [];
                     }
-                    $errs[self::FIELD_MITIGATION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PERFORMER])) {
-            $v = $this->getPerformer();
-            foreach($validationRules[self::FIELD_PERFORMER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT, self::FIELD_PERFORMER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PERFORMER])) {
-                        $errs[self::FIELD_PERFORMER] = [];
-                    }
-                    $errs[self::FIELD_PERFORMER][$rule] = $err;
+                    $errs[self::FIELD_BASIS][$rule] = $err;
                 }
             }
         }
@@ -953,15 +950,27 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SUBJECT])) {
-            $v = $this->getSubject();
-            foreach($validationRules[self::FIELD_SUBJECT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT, self::FIELD_SUBJECT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_MITIGATION])) {
+            $v = $this->getMitigation();
+            foreach($validationRules[self::FIELD_MITIGATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT, self::FIELD_MITIGATION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SUBJECT])) {
-                        $errs[self::FIELD_SUBJECT] = [];
+                    if (!isset($errs[self::FIELD_MITIGATION])) {
+                        $errs[self::FIELD_MITIGATION] = [];
                     }
-                    $errs[self::FIELD_SUBJECT][$rule] = $err;
+                    $errs[self::FIELD_MITIGATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
+                    }
+                    $errs[self::FIELD_TEXT][$rule] = $err;
                 }
             }
         }
@@ -1001,18 +1010,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ID])) {
             $v = $this->getId();
             foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
@@ -1022,6 +1019,18 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
                         $errs[self::FIELD_ID] = [];
                     }
                     $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
                 }
             }
         }
@@ -1049,166 +1058,216 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_META])) {
-            $v = $this->getMeta();
-            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_META])) {
-                        $errs[self::FIELD_META] = [];
-                    }
-                    $errs[self::FIELD_META][$rule] = $err;
-                }
-            }
-        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRRiskAssessment $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRRiskAssessment
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRRiskAssessment::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRRiskAssessment::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRRiskAssessment::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRRiskAssessment;
+            $type = new FHIRRiskAssessment(null);
         } elseif (!is_object($type) || !($type instanceof FHIRRiskAssessment)) {
             throw new \RuntimeException(sprintf(
                 'FHIRRiskAssessment::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRRiskAssessment or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRDomainResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_SUBJECT === $n->nodeName) {
+                $type->setSubject(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_DATE === $n->nodeName) {
+                $type->setDate(FHIRDateTime::xmlUnserialize($n));
+            } elseif (self::FIELD_CONDITION === $n->nodeName) {
+                $type->setCondition(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_ENCOUNTER === $n->nodeName) {
+                $type->setEncounter(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_PERFORMER === $n->nodeName) {
+                $type->setPerformer(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_IDENTIFIER === $n->nodeName) {
+                $type->setIdentifier(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_METHOD === $n->nodeName) {
+                $type->setMethod(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_BASIS === $n->nodeName) {
+                $type->addBasis(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_PREDICTION === $n->nodeName) {
+                $type->addPrediction(FHIRRiskAssessmentPrediction::xmlUnserialize($n));
+            } elseif (self::FIELD_MITIGATION === $n->nodeName) {
+                $type->setMitigation(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_TEXT === $n->nodeName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n));
+            } elseif (self::FIELD_CONTAINED === $n->nodeName) {
+                for ($ni = 0; $ni < $n->childNodes->length; $ni++) {
+                    $nn = $n->childNodes->item($ni);
+                    if ($nn instanceof \DOMElement) {
+                        $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn));
+                    }
+                }
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRId::xmlUnserialize($n));
+            } elseif (self::FIELD_META === $n->nodeName) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($n));
+            } elseif (self::FIELD_IMPLICIT_RULES === $n->nodeName) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_LANGUAGE === $n->nodeName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->basis)) {
-            foreach($children->basis as $child) {
-                $type->addBasis(FHIRReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->condition)) {
-            $type->setCondition(FHIRReference::xmlUnserialize($children->condition));
-        }
-        if (isset($children->date)) {
-            $type->setDate(FHIRDateTime::xmlUnserialize($children->date));
-        }
-        if (isset($attributes->date)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DATE);
+        if (null !== $n) {
             $pt = $type->getDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->date);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDate((string)$attributes->date);
+                $type->setDate($n->nodeValue);
             }
         }
-        if (isset($children->encounter)) {
-            $type->setEncounter(FHIRReference::xmlUnserialize($children->encounter));
-        }
-        if (isset($children->identifier)) {
-            $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
-        }
-        if (isset($children->method)) {
-            $type->setMethod(FHIRCodeableConcept::xmlUnserialize($children->method));
-        }
-        if (isset($children->mitigation)) {
-            $type->setMitigation(FHIRString::xmlUnserialize($children->mitigation));
-        }
-        if (isset($attributes->mitigation)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_MITIGATION);
+        if (null !== $n) {
             $pt = $type->getMitigation();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->mitigation);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setMitigation((string)$attributes->mitigation);
+                $type->setMitigation($n->nodeValue);
             }
         }
-        if (isset($children->performer)) {
-            $type->setPerformer(FHIRReference::xmlUnserialize($children->performer));
-        }
-        if (isset($children->prediction)) {
-            foreach($children->prediction as $child) {
-                $type->addPrediction(FHIRRiskAssessmentPrediction::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
-        if (isset($children->subject)) {
-            $type->setSubject(FHIRReference::xmlUnserialize($children->subject));
+        $n = $element->attributes->getNamedItem(self::FIELD_IMPLICIT_RULES);
+        if (null !== $n) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setImplicitRules($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_LANGUAGE);
+        if (null !== $n) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setLanguage($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getSubject())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SUBJECT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDate())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DATE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getCondition())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_CONDITION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getEncounter())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_ENCOUNTER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getPerformer())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PERFORMER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_IDENTIFIER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getMethod())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_METHOD);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if ([] !== ($vs = $this->getBasis())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_BASIS, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_BASIS);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
-        }
-        if (null !== ($v = $this->getCondition())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getEncounter())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getMethod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getMitigation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MITIGATION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPerformer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER, null, $v->_getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getPrediction())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PREDICTION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PREDICTION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getSubject())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getMitigation())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_MITIGATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -1217,6 +1276,34 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getSubject())) {
+            $a[self::FIELD_SUBJECT] = $v;
+        }
+        if (null !== ($v = $this->getDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DATE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDateTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DATE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getCondition())) {
+            $a[self::FIELD_CONDITION] = $v;
+        }
+        if (null !== ($v = $this->getEncounter())) {
+            $a[self::FIELD_ENCOUNTER] = $v;
+        }
+        if (null !== ($v = $this->getPerformer())) {
+            $a[self::FIELD_PERFORMER] = $v;
+        }
+        if (null !== ($v = $this->getIdentifier())) {
+            $a[self::FIELD_IDENTIFIER] = $v;
+        }
+        if (null !== ($v = $this->getMethod())) {
+            $a[self::FIELD_METHOD] = $v;
+        }
         if ([] !== ($vs = $this->getBasis())) {
             $a[self::FIELD_BASIS] = [];
             foreach($vs as $v) {
@@ -1225,39 +1312,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
                 }
                 $a[self::FIELD_BASIS][] = $v;
             }
-        }
-        if (null !== ($v = $this->getCondition())) {
-            $a[self::FIELD_CONDITION] = $v;
-        }
-        if (null !== ($v = $this->getDate())) {
-            $a[self::FIELD_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_DATE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getEncounter())) {
-            $a[self::FIELD_ENCOUNTER] = $v;
-        }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
-        }
-        if (null !== ($v = $this->getMethod())) {
-            $a[self::FIELD_METHOD] = $v;
-        }
-        if (null !== ($v = $this->getMitigation())) {
-            $a[self::FIELD_MITIGATION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_MITIGATION_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getPerformer())) {
-            $a[self::FIELD_PERFORMER] = $v;
         }
         if ([] !== ($vs = $this->getPrediction())) {
             $a[self::FIELD_PREDICTION] = [];
@@ -1268,11 +1322,15 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
                 $a[self::FIELD_PREDICTION][] = $v;
             }
         }
-        if (null !== ($v = $this->getSubject())) {
-            $a[self::FIELD_SUBJECT] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getMitigation())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MITIGATION] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_MITIGATION_EXT] = $ext;
+            }
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

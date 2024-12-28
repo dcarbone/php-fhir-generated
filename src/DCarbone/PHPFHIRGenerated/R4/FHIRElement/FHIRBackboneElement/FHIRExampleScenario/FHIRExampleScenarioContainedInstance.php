@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  */
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -83,7 +85,7 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
     const FIELD_VERSION_ID_EXT = '_versionId';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * A sequence of Unicode characters
@@ -130,16 +132,8 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_RESOURCE_ID]) || isset($data[self::FIELD_RESOURCE_ID_EXT])) {
-            if (isset($data[self::FIELD_RESOURCE_ID])) {
-                $value = $data[self::FIELD_RESOURCE_ID];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_RESOURCE_ID_EXT]) && is_array($data[self::FIELD_RESOURCE_ID_EXT])) {
-                $ext = $data[self::FIELD_RESOURCE_ID_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_RESOURCE_ID]) ? $data[self::FIELD_RESOURCE_ID] : null;
+            $ext = (isset($data[self::FIELD_RESOURCE_ID_EXT]) && is_array($data[self::FIELD_RESOURCE_ID_EXT])) ? $ext = $data[self::FIELD_RESOURCE_ID_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setResourceId($value);
@@ -148,21 +142,13 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
                 } else {
                     $this->setResourceId(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setResourceId(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_VERSION_ID]) || isset($data[self::FIELD_VERSION_ID_EXT])) {
-            if (isset($data[self::FIELD_VERSION_ID])) {
-                $value = $data[self::FIELD_VERSION_ID];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VERSION_ID_EXT]) && is_array($data[self::FIELD_VERSION_ID_EXT])) {
-                $ext = $data[self::FIELD_VERSION_ID_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_VERSION_ID]) ? $data[self::FIELD_VERSION_ID] : null;
+            $ext = (isset($data[self::FIELD_VERSION_ID_EXT]) && is_array($data[self::FIELD_VERSION_ID_EXT])) ? $ext = $data[self::FIELD_VERSION_ID_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setVersionId($value);
@@ -171,7 +157,7 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
                 } else {
                     $this->setVersionId(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setVersionId(new FHIRString($ext));
             }
         }
@@ -191,7 +177,7 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ExampleScenarioContainedInstance{$xmlns}></ExampleScenarioContainedInstance>";
@@ -223,15 +209,11 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
      */
     public function setResourceId($resourceId = null)
     {
-        if (null === $resourceId) {
-            $this->resourceId = null;
-            return $this;
+        if (null !== $resourceId && !($resourceId instanceof FHIRString)) {
+            $resourceId = new FHIRString($resourceId);
         }
-        if ($resourceId instanceof FHIRString) {
-            $this->resourceId = $resourceId;
-            return $this;
-        }
-        $this->resourceId = new FHIRString($resourceId);
+        $this->_trackValueSet($this->resourceId, $resourceId);
+        $this->resourceId = $resourceId;
         return $this;
     }
 
@@ -261,15 +243,11 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
      */
     public function setVersionId($versionId = null)
     {
-        if (null === $versionId) {
-            $this->versionId = null;
-            return $this;
+        if (null !== $versionId && !($versionId instanceof FHIRString)) {
+            $versionId = new FHIRString($versionId);
         }
-        if ($versionId instanceof FHIRString) {
-            $this->versionId = $versionId;
-            return $this;
-        }
-        $this->versionId = new FHIRString($versionId);
+        $this->_trackValueSet($this->versionId, $versionId);
+        $this->versionId = $versionId;
         return $this;
     }
 
@@ -368,88 +346,113 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioContainedInstance $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioContainedInstance
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRExampleScenarioContainedInstance::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRExampleScenarioContainedInstance::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRExampleScenarioContainedInstance::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRExampleScenarioContainedInstance;
+            $type = new FHIRExampleScenarioContainedInstance(null);
         } elseif (!is_object($type) || !($type instanceof FHIRExampleScenarioContainedInstance)) {
             throw new \RuntimeException(sprintf(
                 'FHIRExampleScenarioContainedInstance::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioContainedInstance or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_RESOURCE_ID === $n->nodeName) {
+                $type->setResourceId(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_VERSION_ID === $n->nodeName) {
+                $type->setVersionId(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->resourceId)) {
-            $type->setResourceId(FHIRString::xmlUnserialize($children->resourceId));
-        }
-        if (isset($attributes->resourceId)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_RESOURCE_ID);
+        if (null !== $n) {
             $pt = $type->getResourceId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->resourceId);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setResourceId((string)$attributes->resourceId);
+                $type->setResourceId($n->nodeValue);
             }
         }
-        if (isset($children->versionId)) {
-            $type->setVersionId(FHIRString::xmlUnserialize($children->versionId));
-        }
-        if (isset($attributes->versionId)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_VERSION_ID);
+        if (null !== $n) {
             $pt = $type->getVersionId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->versionId);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setVersionId((string)$attributes->versionId);
+                $type->setVersionId($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getResourceId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE_ID, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_RESOURCE_ID);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getVersionId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VERSION_ID, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_VERSION_ID);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -459,25 +462,24 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getResourceId())) {
-            $a[self::FIELD_RESOURCE_ID] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_RESOURCE_ID_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RESOURCE_ID] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_RESOURCE_ID_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getVersionId())) {
-            $a[self::FIELD_VERSION_ID] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_VERSION_ID_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VERSION_ID] = $val;
             }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VERSION_ID_EXT] = $ext;
+            }
         }
         return $a;
     }

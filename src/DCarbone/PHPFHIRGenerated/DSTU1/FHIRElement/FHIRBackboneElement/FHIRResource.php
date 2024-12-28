@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,7 +59,9 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
 
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRNarrative;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
@@ -76,22 +78,13 @@ class FHIRResource extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE;
-    const FIELD_CONTAINED = 'contained';
     const FIELD_LANGUAGE = 'language';
     const FIELD_LANGUAGE_EXT = '_language';
     const FIELD_TEXT = 'text';
+    const FIELD_CONTAINED = 'contained';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Contained, inline Resources. These resources do not have an independent
-     * existence apart from the resource that contains them - they cannot be identified
-     * independently, and nor can they have their own independent transaction scope
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface[]
-     */
-    protected $contained = [];
+    private $_xmlns = '';
 
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -118,6 +111,15 @@ class FHIRResource extends FHIRBackboneElement
     protected $text = null;
 
     /**
+     * Contained, inline Resources. These resources do not have an independent
+     * existence apart from the resource that contains them - they cannot be identified
+     * independently, and nor can they have their own independent transaction scope
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface[]
+     */
+    protected $contained = [];
+
+    /**
      * Validation map for fields in type Resource
      * @var array
      */
@@ -139,6 +141,28 @@ class FHIRResource extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_LANGUAGE]) || isset($data[self::FIELD_LANGUAGE_EXT])) {
+            $value = isset($data[self::FIELD_LANGUAGE]) ? $data[self::FIELD_LANGUAGE] : null;
+            $ext = (isset($data[self::FIELD_LANGUAGE_EXT]) && is_array($data[self::FIELD_LANGUAGE_EXT])) ? $ext = $data[self::FIELD_LANGUAGE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRCode) {
+                    $this->setLanguage($value);
+                } else if (is_array($value)) {
+                    $this->setLanguage(new FHIRCode(array_merge($ext, $value)));
+                } else {
+                    $this->setLanguage(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setLanguage(new FHIRCode($ext));
+            }
+        }
+        if (isset($data[self::FIELD_TEXT])) {
+            if ($data[self::FIELD_TEXT] instanceof FHIRNarrative) {
+                $this->setText($data[self::FIELD_TEXT]);
+            } else {
+                $this->setText(new FHIRNarrative($data[self::FIELD_TEXT]));
+            }
+        }
         if (isset($data[self::FIELD_CONTAINED])) {
             if (is_array($data[self::FIELD_CONTAINED])) {
                 if (is_int(key($data[self::FIELD_CONTAINED]))) {
@@ -153,38 +177,8 @@ class FHIRResource extends FHIRBackboneElement
                     }
                     $this->addContained(new $typeClass($data[self::FIELD_CONTAINED]));
                 }
-            } else if ($data[self::FIELD_CONTAINED] instanceof PHPFHIRContainedTypeInterface) {
+            } elseif ($data[self::FIELD_CONTAINED] instanceof PHPFHIRContainedTypeInterface) {
                 $this->addContained($data[self::FIELD_CONTAINED]);
-            }
-        }
-        if (isset($data[self::FIELD_LANGUAGE]) || isset($data[self::FIELD_LANGUAGE_EXT])) {
-            if (isset($data[self::FIELD_LANGUAGE])) {
-                $value = $data[self::FIELD_LANGUAGE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_LANGUAGE_EXT]) && is_array($data[self::FIELD_LANGUAGE_EXT])) {
-                $ext = $data[self::FIELD_LANGUAGE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRCode) {
-                    $this->setLanguage($value);
-                } else if (is_array($value)) {
-                    $this->setLanguage(new FHIRCode(array_merge($ext, $value)));
-                } else {
-                    $this->setLanguage(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setLanguage(new FHIRCode($ext));
-            }
-        }
-        if (isset($data[self::FIELD_TEXT])) {
-            if ($data[self::FIELD_TEXT] instanceof FHIRNarrative) {
-                $this->setText($data[self::FIELD_TEXT]);
-            } else {
-                $this->setText(new FHIRNarrative($data[self::FIELD_TEXT]));
             }
         }
     }
@@ -203,82 +197,10 @@ class FHIRResource extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<Resource{$xmlns}></Resource>";
-    }
-
-    /**
-     * Contained, inline Resources. These resources do not have an independent
-     * existence apart from the resource that contains them - they cannot be identified
-     * independently, and nor can they have their own independent transaction scope
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface[]
-     */
-    public function getContained()
-    {
-        return $this->contained;
-    }
-
-    /**
-     * Contained, inline Resources. These resources do not have an independent
-     * existence apart from the resource that contains them - they cannot be identified
-     * independently, and nor can they have their own independent transaction scope
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface $contained
-     * @return static
-     */
-    public function addContained(PHPFHIRContainedTypeInterface $contained = null)
-    {
-        $this->contained[] = $contained;
-        return $this;
-    }
-
-    /**
-     * Contained, inline Resources. These resources do not have an independent
-     * existence apart from the resource that contains them - they cannot be identified
-     * independently, and nor can they have their own independent transaction scope
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface[] $contained
-     * @return static
-     */
-    public function setContained(array $contained = [])
-    {
-        $this->contained = [];
-        if ([] === $contained) {
-            return $this;
-        }
-        foreach($contained as $v) {
-            if (null === $v) {
-                continue;
-            }
-            if (is_object($v)) {
-                if ($v instanceof PHPFHIRContainedTypeInterface) {
-                    $this->addContained($v);
-                } else {
-                    throw new \InvalidArgumentException(sprintf(
-                        'FHIRResource - Field "contained" must be an array of objects implementing PHPFHIRContainedTypeInterface, object of type %s seen',
-                        get_class($v)
-                    ));
-                }
-            } else if (is_array($v)) {
-                $typeClass = PHPFHIRTypeMap::getContainedTypeFromArray($v);
-                if (null === $typeClass) {
-                    throw new \InvalidArgumentException(sprintf(
-                        'FHIRResource - Unable to determine class for field "contained" from value: %s',
-                        json_encode($v)
-                    ));
-                }
-                $this->addContained(new $typeClass($v));
-            } else {
-                throw new \InvalidArgumentException(sprintf(
-                    'FHIRResource - Unable to determine class for field "contained" from value: %s',
-                    json_encode($v)
-                ));
-            }
-        }
-        return $this;
     }
 
     /**
@@ -311,15 +233,11 @@ class FHIRResource extends FHIRBackboneElement
      */
     public function setLanguage($language = null)
     {
-        if (null === $language) {
-            $this->language = null;
-            return $this;
+        if (null !== $language && !($language instanceof FHIRCode)) {
+            $language = new FHIRCode($language);
         }
-        if ($language instanceof FHIRCode) {
-            $this->language = $language;
-            return $this;
-        }
-        $this->language = new FHIRCode($language);
+        $this->_trackValueSet($this->language, $language);
+        $this->language = $language;
         return $this;
     }
 
@@ -349,7 +267,84 @@ class FHIRResource extends FHIRBackboneElement
      */
     public function setText(FHIRNarrative $text = null)
     {
+        $this->_trackValueSet($this->text, $text);
         $this->text = $text;
+        return $this;
+    }
+
+    /**
+     * Contained, inline Resources. These resources do not have an independent
+     * existence apart from the resource that contains them - they cannot be identified
+     * independently, and nor can they have their own independent transaction scope
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface[]
+     */
+    public function getContained()
+    {
+        return $this->contained;
+    }
+
+    /**
+     * Contained, inline Resources. These resources do not have an independent
+     * existence apart from the resource that contains them - they cannot be identified
+     * independently, and nor can they have their own independent transaction scope
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface $contained
+     * @return static
+     */
+    public function addContained(PHPFHIRContainedTypeInterface $contained = null)
+    {
+        $this->_trackValueAdded();
+        $this->contained[] = $contained;
+        return $this;
+    }
+
+    /**
+     * Contained, inline Resources. These resources do not have an independent
+     * existence apart from the resource that contains them - they cannot be identified
+     * independently, and nor can they have their own independent transaction scope
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface[] $contained
+     * @return static
+     */
+    public function setContained(array $contained = [])
+    {
+        if ([] !== $this->contained) {
+            $this->_trackValuesRemoved(count($this->contained));
+            $this->contained = [];
+        }
+        if ([] === $contained) {
+            return $this;
+        }
+        foreach($contained as $v) {
+            if (null === $v) {
+                continue;
+            }
+            if (is_object($v)) {
+                if ($v instanceof PHPFHIRContainedTypeInterface) {
+                    $this->addContained($v);
+                } else {
+                    throw new \InvalidArgumentException(sprintf(
+                        'FHIRResource - Field "contained" must be an array of objects implementing PHPFHIRContainedTypeInterface, object of type %s seen',
+                        get_class($v)
+                    ));
+                }
+            } elseif (is_array($v)) {
+                $typeClass = PHPFHIRTypeMap::getContainedTypeFromArray($v);
+                if (null === $typeClass) {
+                    throw new \InvalidArgumentException(sprintf(
+                        'FHIRResource - Unable to determine class for field "contained" from value: %s',
+                        json_encode($v)
+                    ));
+                }
+                $this->addContained(new $typeClass($v));
+            } else {
+                throw new \InvalidArgumentException(sprintf(
+                    'FHIRResource - Unable to determine class for field "contained" from value: %s',
+                    json_encode($v)
+                ));
+            }
+        }
         return $this;
     }
 
@@ -374,13 +369,6 @@ class FHIRResource extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getContained())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_CONTAINED, $i)] = $fieldErrs;
-                }
-            }
-        }
         if (null !== ($v = $this->getLanguage())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_LANGUAGE] = $fieldErrs;
@@ -391,15 +379,10 @@ class FHIRResource extends FHIRBackboneElement
                 $errs[self::FIELD_TEXT] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CONTAINED])) {
-            $v = $this->getContained();
-            foreach($validationRules[self::FIELD_CONTAINED] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_CONTAINED, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CONTAINED])) {
-                        $errs[self::FIELD_CONTAINED] = [];
-                    }
-                    $errs[self::FIELD_CONTAINED][$rule] = $err;
+        if ([] !== ($vs = $this->getContained())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_CONTAINED, $i)] = $fieldErrs;
                 }
             }
         }
@@ -424,6 +407,18 @@ class FHIRResource extends FHIRBackboneElement
                         $errs[self::FIELD_TEXT] = [];
                     }
                     $errs[self::FIELD_TEXT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONTAINED])) {
+            $v = $this->getContained();
+            foreach($validationRules[self::FIELD_CONTAINED] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_CONTAINED, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONTAINED])) {
+                        $errs[self::FIELD_CONTAINED] = [];
+                    }
+                    $errs[self::FIELD_CONTAINED][$rule] = $err;
                 }
             }
         }
@@ -467,96 +462,122 @@ class FHIRResource extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRResource::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRResource::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRResource::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRResource;
+            $type = new FHIRResource(null);
         } elseif (!is_object($type) || !($type instanceof FHIRResource)) {
             throw new \RuntimeException(sprintf(
                 'FHIRResource::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
-            }
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->contained)) {
-            foreach($children->contained as $child) {
-                foreach($child->children() as $babe) {
-                    $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($babe));
-                    continue 2;
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_LANGUAGE === $n->nodeName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n));
+            } elseif (self::FIELD_TEXT === $n->nodeName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n));
+            } elseif (self::FIELD_CONTAINED === $n->nodeName) {
+                for ($ni = 0; $ni < $n->childNodes->length; $ni++) {
+                    $nn = $n->childNodes->item($ni);
+                    if ($nn instanceof \DOMElement) {
+                        $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn));
+                    }
                 }
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        if (isset($children->language)) {
-            $type->setLanguage(FHIRCode::xmlUnserialize($children->language));
-        }
-        if (isset($attributes->language)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_LANGUAGE);
+        if (null !== $n) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->language);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setLanguage((string)$attributes->language);
+                $type->setLanguage($n->nodeValue);
             }
         }
-        if (isset($children->text)) {
-            $type->setText(FHIRNarrative::xmlUnserialize($children->text));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getLanguage())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_LANGUAGE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getText())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TEXT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if ([] !== ($vs = $this->getContained())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $tsxe = $sxe->addChild(self::FIELD_CONTAINED);
-                $v->xmlSerialize($tsxe->addChild($v->_getFHIRTypeName(), null, $v->_getFHIRXMLNamespace()));
+                $e2 = $element->ownerDocument->createElement(self::FIELD_CONTAINED);
+                $element->appendChild($e2);
+                $e3 = $element->ownerDocument->createElement($v->_getFHIRTypeName());
+                $e2->appendChild($e3);
+                $v->xmlSerialize($e3);
             }
-        }        if (null !== ($v = $this->getLanguage())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LANGUAGE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getText())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        }        return $element;
     }
 
     /**
@@ -565,6 +586,19 @@ class FHIRResource extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getLanguage())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LANGUAGE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRCode::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_LANGUAGE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getText())) {
+            $a[self::FIELD_TEXT] = $v;
+        }
         if ([] !== ($vs = $this->getContained())) {
             $a[self::FIELD_CONTAINED] = [];
             foreach($vs as $v) {
@@ -573,21 +607,6 @@ class FHIRResource extends FHIRBackboneElement
                 }
                 $a[self::FIELD_CONTAINED][] = $v;
             }
-        }
-        if (null !== ($v = $this->getLanguage())) {
-            $a[self::FIELD_LANGUAGE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCode::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCode::FIELD_VALUE]);
-                $a[self::FIELD_LANGUAGE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getText())) {
-            $a[self::FIELD_TEXT] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasu
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -80,13 +82,13 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEASURE_DOT_SUPPLEMENTAL_DATA;
     const FIELD_CODE = 'code';
-    const FIELD_CRITERIA = 'criteria';
+    const FIELD_USAGE = 'usage';
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
-    const FIELD_USAGE = 'usage';
+    const FIELD_CRITERIA = 'criteria';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -103,33 +105,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
     protected $code = null;
 
     /**
-     * A expression that is evaluated in a specified context and returns a value. The
-     * context of use of the expression must specify the context in which the
-     * expression is evaluated, and how the result of the expression is used.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The criteria for the supplemental data. This is typically the name of a valid
-     * expression defined within a referenced library, but it may also be a path to a
-     * specific data element. The criteria defines the data to be returned for this
-     * element.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
-     */
-    protected $criteria = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The human readable description of this supplemental data.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $description = null;
-
-    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -144,6 +119,33 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected $usage = [];
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The human readable description of this supplemental data.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected $description = null;
+
+    /**
+     * A expression that is evaluated in a specified context and returns a value. The
+     * context of use of the expression must specify the context in which the
+     * expression is evaluated, and how the result of the expression is used.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The criteria for the supplemental data. This is typically the name of a valid
+     * expression defined within a referenced library, but it may also be a path to a
+     * specific data element. The criteria defines the data to be returned for this
+     * element.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
+     */
+    protected $criteria = null;
 
     /**
      * Validation map for fields in type Measure.SupplementalData
@@ -174,36 +176,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
                 $this->setCode(new FHIRCodeableConcept($data[self::FIELD_CODE]));
             }
         }
-        if (isset($data[self::FIELD_CRITERIA])) {
-            if ($data[self::FIELD_CRITERIA] instanceof FHIRExpression) {
-                $this->setCriteria($data[self::FIELD_CRITERIA]);
-            } else {
-                $this->setCriteria(new FHIRExpression($data[self::FIELD_CRITERIA]));
-            }
-        }
-        if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
-            if (isset($data[self::FIELD_DESCRIPTION])) {
-                $value = $data[self::FIELD_DESCRIPTION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) {
-                $ext = $data[self::FIELD_DESCRIPTION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setDescription($value);
-                } else if (is_array($value)) {
-                    $this->setDescription(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDescription(new FHIRString($ext));
-            }
-        }
         if (isset($data[self::FIELD_USAGE])) {
             if (is_array($data[self::FIELD_USAGE])) {
                 foreach($data[self::FIELD_USAGE] as $v) {
@@ -216,10 +188,32 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
                         $this->addUsage(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_USAGE] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_USAGE] instanceof FHIRCodeableConcept) {
                 $this->addUsage($data[self::FIELD_USAGE]);
             } else {
                 $this->addUsage(new FHIRCodeableConcept($data[self::FIELD_USAGE]));
+            }
+        }
+        if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
+            $value = isset($data[self::FIELD_DESCRIPTION]) ? $data[self::FIELD_DESCRIPTION] : null;
+            $ext = (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) ? $ext = $data[self::FIELD_DESCRIPTION_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDescription($value);
+                } else if (is_array($value)) {
+                    $this->setDescription(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDescription(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_CRITERIA])) {
+            if ($data[self::FIELD_CRITERIA] instanceof FHIRExpression) {
+                $this->setCriteria($data[self::FIELD_CRITERIA]);
+            } else {
+                $this->setCriteria(new FHIRExpression($data[self::FIELD_CRITERIA]));
             }
         }
     }
@@ -238,7 +232,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<MeasureSupplementalData{$xmlns}></MeasureSupplementalData>";
@@ -276,85 +270,8 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      */
     public function setCode(FHIRCodeableConcept $code = null)
     {
+        $this->_trackValueSet($this->code, $code);
         $this->code = $code;
-        return $this;
-    }
-
-    /**
-     * A expression that is evaluated in a specified context and returns a value. The
-     * context of use of the expression must specify the context in which the
-     * expression is evaluated, and how the result of the expression is used.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The criteria for the supplemental data. This is typically the name of a valid
-     * expression defined within a referenced library, but it may also be a path to a
-     * specific data element. The criteria defines the data to be returned for this
-     * element.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
-     */
-    public function getCriteria()
-    {
-        return $this->criteria;
-    }
-
-    /**
-     * A expression that is evaluated in a specified context and returns a value. The
-     * context of use of the expression must specify the context in which the
-     * expression is evaluated, and how the result of the expression is used.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The criteria for the supplemental data. This is typically the name of a valid
-     * expression defined within a referenced library, but it may also be a path to a
-     * specific data element. The criteria defines the data to be returned for this
-     * element.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression $criteria
-     * @return static
-     */
-    public function setCriteria(FHIRExpression $criteria = null)
-    {
-        $this->criteria = $criteria;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The human readable description of this supplemental data.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The human readable description of this supplemental data.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $description
-     * @return static
-     */
-    public function setDescription($description = null)
-    {
-        if (null === $description) {
-            $this->description = null;
-            return $this;
-        }
-        if ($description instanceof FHIRString) {
-            $this->description = $description;
-            return $this;
-        }
-        $this->description = new FHIRString($description);
         return $this;
     }
 
@@ -394,6 +311,7 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      */
     public function addUsage(FHIRCodeableConcept $usage = null)
     {
+        $this->_trackValueAdded();
         $this->usage[] = $usage;
         return $this;
     }
@@ -415,7 +333,10 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      */
     public function setUsage(array $usage = [])
     {
-        $this->usage = [];
+        if ([] !== $this->usage) {
+            $this->_trackValuesRemoved(count($this->usage));
+            $this->usage = [];
+        }
         if ([] === $usage) {
             return $this;
         }
@@ -426,6 +347,81 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
                 $this->addUsage(new FHIRCodeableConcept($v));
             }
         }
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The human readable description of this supplemental data.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The human readable description of this supplemental data.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $description
+     * @return static
+     */
+    public function setDescription($description = null)
+    {
+        if (null !== $description && !($description instanceof FHIRString)) {
+            $description = new FHIRString($description);
+        }
+        $this->_trackValueSet($this->description, $description);
+        $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * A expression that is evaluated in a specified context and returns a value. The
+     * context of use of the expression must specify the context in which the
+     * expression is evaluated, and how the result of the expression is used.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The criteria for the supplemental data. This is typically the name of a valid
+     * expression defined within a referenced library, but it may also be a path to a
+     * specific data element. The criteria defines the data to be returned for this
+     * element.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
+     */
+    public function getCriteria()
+    {
+        return $this->criteria;
+    }
+
+    /**
+     * A expression that is evaluated in a specified context and returns a value. The
+     * context of use of the expression must specify the context in which the
+     * expression is evaluated, and how the result of the expression is used.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The criteria for the supplemental data. This is typically the name of a valid
+     * expression defined within a referenced library, but it may also be a path to a
+     * specific data element. The criteria defines the data to be returned for this
+     * element.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression $criteria
+     * @return static
+     */
+    public function setCriteria(FHIRExpression $criteria = null)
+    {
+        $this->_trackValueSet($this->criteria, $criteria);
+        $this->criteria = $criteria;
         return $this;
     }
 
@@ -455,9 +451,11 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
                 $errs[self::FIELD_CODE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getCriteria())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CRITERIA] = $fieldErrs;
+        if ([] !== ($vs = $this->getUsage())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_USAGE, $i)] = $fieldErrs;
+                }
             }
         }
         if (null !== ($v = $this->getDescription())) {
@@ -465,11 +463,9 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
                 $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getUsage())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_USAGE, $i)] = $fieldErrs;
-                }
+        if (null !== ($v = $this->getCriteria())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CRITERIA] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_CODE])) {
@@ -484,15 +480,15 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_CRITERIA])) {
-            $v = $this->getCriteria();
-            foreach($validationRules[self::FIELD_CRITERIA] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEASURE_DOT_SUPPLEMENTAL_DATA, self::FIELD_CRITERIA, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_USAGE])) {
+            $v = $this->getUsage();
+            foreach($validationRules[self::FIELD_USAGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEASURE_DOT_SUPPLEMENTAL_DATA, self::FIELD_USAGE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CRITERIA])) {
-                        $errs[self::FIELD_CRITERIA] = [];
+                    if (!isset($errs[self::FIELD_USAGE])) {
+                        $errs[self::FIELD_USAGE] = [];
                     }
-                    $errs[self::FIELD_CRITERIA][$rule] = $err;
+                    $errs[self::FIELD_USAGE][$rule] = $err;
                 }
             }
         }
@@ -508,15 +504,15 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_USAGE])) {
-            $v = $this->getUsage();
-            foreach($validationRules[self::FIELD_USAGE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEASURE_DOT_SUPPLEMENTAL_DATA, self::FIELD_USAGE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_CRITERIA])) {
+            $v = $this->getCriteria();
+            foreach($validationRules[self::FIELD_CRITERIA] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEASURE_DOT_SUPPLEMENTAL_DATA, self::FIELD_CRITERIA, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_USAGE])) {
-                        $errs[self::FIELD_USAGE] = [];
+                    if (!isset($errs[self::FIELD_CRITERIA])) {
+                        $errs[self::FIELD_CRITERIA] = [];
                     }
-                    $errs[self::FIELD_USAGE][$rule] = $err;
+                    $errs[self::FIELD_CRITERIA][$rule] = $err;
                 }
             }
         }
@@ -560,99 +556,123 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRMeasureSupplementalData::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMeasureSupplementalData::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRMeasureSupplementalData::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRMeasureSupplementalData;
+            $type = new FHIRMeasureSupplementalData(null);
         } elseif (!is_object($type) || !($type instanceof FHIRMeasureSupplementalData)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMeasureSupplementalData::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_CODE === $n->nodeName) {
+                $type->setCode(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_USAGE === $n->nodeName) {
+                $type->addUsage(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DESCRIPTION === $n->nodeName) {
+                $type->setDescription(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_CRITERIA === $n->nodeName) {
+                $type->setCriteria(FHIRExpression::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->code)) {
-            $type->setCode(FHIRCodeableConcept::xmlUnserialize($children->code));
-        }
-        if (isset($children->criteria)) {
-            $type->setCriteria(FHIRExpression::xmlUnserialize($children->criteria));
-        }
-        if (isset($children->description)) {
-            $type->setDescription(FHIRString::xmlUnserialize($children->description));
-        }
-        if (isset($attributes->description)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DESCRIPTION);
+        if (null !== $n) {
             $pt = $type->getDescription();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->description);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDescription((string)$attributes->description);
+                $type->setDescription($n->nodeValue);
             }
         }
-        if (isset($children->usage)) {
-            foreach($children->usage as $child) {
-                $type->addUsage(FHIRCodeableConcept::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getCriteria())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CRITERIA, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_CODE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getUsage())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_USAGE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_USAGE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        if (null !== ($v = $this->getDescription())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DESCRIPTION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getCriteria())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_CRITERIA);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -664,18 +684,6 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
         if (null !== ($v = $this->getCode())) {
             $a[self::FIELD_CODE] = $v;
         }
-        if (null !== ($v = $this->getCriteria())) {
-            $a[self::FIELD_CRITERIA] = $v;
-        }
-        if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DESCRIPTION_EXT] = $enc;
-            }
-        }
         if ([] !== ($vs = $this->getUsage())) {
             $a[self::FIELD_USAGE] = [];
             foreach($vs as $v) {
@@ -685,8 +693,18 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
                 $a[self::FIELD_USAGE][] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getDescription())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DESCRIPTION_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getCriteria())) {
+            $a[self::FIELD_CRITERIA] = $v;
         }
         return $a;
     }

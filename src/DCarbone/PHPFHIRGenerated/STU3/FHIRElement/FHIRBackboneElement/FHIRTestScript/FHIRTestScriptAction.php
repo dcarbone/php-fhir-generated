@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,8 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  */
 
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
@@ -77,11 +79,21 @@ class FHIRTestScriptAction extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_ACTION;
-    const FIELD_ASSERT = 'assert';
     const FIELD_OPERATION = 'operation';
+    const FIELD_ASSERT = 'assert';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * A structured set of tests against a FHIR server implementation to determine
+     * compliance against the FHIR specification.
+     *
+     * The operation to perform.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     */
+    protected $operation = null;
 
     /**
      * A structured set of tests against a FHIR server implementation to determine
@@ -93,16 +105,6 @@ class FHIRTestScriptAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert
      */
     protected $assert = null;
-
-    /**
-     * A structured set of tests against a FHIR server implementation to determine
-     * compliance against the FHIR specification.
-     *
-     * The operation to perform.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
-     */
-    protected $operation = null;
 
     /**
      * Validation map for fields in type TestScript.Action
@@ -126,18 +128,18 @@ class FHIRTestScriptAction extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ASSERT])) {
-            if ($data[self::FIELD_ASSERT] instanceof FHIRTestScriptAssert) {
-                $this->setAssert($data[self::FIELD_ASSERT]);
-            } else {
-                $this->setAssert(new FHIRTestScriptAssert($data[self::FIELD_ASSERT]));
-            }
-        }
         if (isset($data[self::FIELD_OPERATION])) {
             if ($data[self::FIELD_OPERATION] instanceof FHIRTestScriptOperation) {
                 $this->setOperation($data[self::FIELD_OPERATION]);
             } else {
                 $this->setOperation(new FHIRTestScriptOperation($data[self::FIELD_OPERATION]));
+            }
+        }
+        if (isset($data[self::FIELD_ASSERT])) {
+            if ($data[self::FIELD_ASSERT] instanceof FHIRTestScriptAssert) {
+                $this->setAssert($data[self::FIELD_ASSERT]);
+            } else {
+                $this->setAssert(new FHIRTestScriptAssert($data[self::FIELD_ASSERT]));
             }
         }
     }
@@ -156,10 +158,39 @@ class FHIRTestScriptAction extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<TestScriptAction{$xmlns}></TestScriptAction>";
+    }
+
+    /**
+     * A structured set of tests against a FHIR server implementation to determine
+     * compliance against the FHIR specification.
+     *
+     * The operation to perform.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
+     */
+    public function getOperation()
+    {
+        return $this->operation;
+    }
+
+    /**
+     * A structured set of tests against a FHIR server implementation to determine
+     * compliance against the FHIR specification.
+     *
+     * The operation to perform.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation $operation
+     * @return static
+     */
+    public function setOperation(FHIRTestScriptOperation $operation = null)
+    {
+        $this->_trackValueSet($this->operation, $operation);
+        $this->operation = $operation;
+        return $this;
     }
 
     /**
@@ -188,35 +219,8 @@ class FHIRTestScriptAction extends FHIRBackboneElement
      */
     public function setAssert(FHIRTestScriptAssert $assert = null)
     {
+        $this->_trackValueSet($this->assert, $assert);
         $this->assert = $assert;
-        return $this;
-    }
-
-    /**
-     * A structured set of tests against a FHIR server implementation to determine
-     * compliance against the FHIR specification.
-     *
-     * The operation to perform.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation
-     */
-    public function getOperation()
-    {
-        return $this->operation;
-    }
-
-    /**
-     * A structured set of tests against a FHIR server implementation to determine
-     * compliance against the FHIR specification.
-     *
-     * The operation to perform.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation $operation
-     * @return static
-     */
-    public function setOperation(FHIRTestScriptOperation $operation = null)
-    {
-        $this->operation = $operation;
         return $this;
     }
 
@@ -241,26 +245,14 @@ class FHIRTestScriptAction extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getAssert())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ASSERT] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getOperation())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_OPERATION] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_ASSERT])) {
-            $v = $this->getAssert();
-            foreach($validationRules[self::FIELD_ASSERT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_ACTION, self::FIELD_ASSERT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ASSERT])) {
-                        $errs[self::FIELD_ASSERT] = [];
-                    }
-                    $errs[self::FIELD_ASSERT][$rule] = $err;
-                }
+        if (null !== ($v = $this->getAssert())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ASSERT] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_OPERATION])) {
@@ -272,6 +264,18 @@ class FHIRTestScriptAction extends FHIRBackboneElement
                         $errs[self::FIELD_OPERATION] = [];
                     }
                     $errs[self::FIELD_OPERATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ASSERT])) {
+            $v = $this->getAssert();
+            foreach($validationRules[self::FIELD_ASSERT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_ACTION, self::FIELD_ASSERT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ASSERT])) {
+                        $errs[self::FIELD_ASSERT] = [];
+                    }
+                    $errs[self::FIELD_ASSERT][$rule] = $err;
                 }
             }
         }
@@ -315,72 +319,95 @@ class FHIRTestScriptAction extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRTestScriptAction::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRTestScriptAction::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRTestScriptAction::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRTestScriptAction;
+            $type = new FHIRTestScriptAction(null);
         } elseif (!is_object($type) || !($type instanceof FHIRTestScriptAction)) {
             throw new \RuntimeException(sprintf(
                 'FHIRTestScriptAction::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_OPERATION === $n->nodeName) {
+                $type->setOperation(FHIRTestScriptOperation::xmlUnserialize($n));
+            } elseif (self::FIELD_ASSERT === $n->nodeName) {
+                $type->setAssert(FHIRTestScriptAssert::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->assert)) {
-            $type->setAssert(FHIRTestScriptAssert::xmlUnserialize($children->assert));
-        }
-        if (isset($children->operation)) {
-            $type->setOperation(FHIRTestScriptOperation::xmlUnserialize($children->operation));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getAssert())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ASSERT, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getOperation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATION, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_OPERATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getAssert())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_ASSERT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -389,14 +416,11 @@ class FHIRTestScriptAction extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAssert())) {
-            $a[self::FIELD_ASSERT] = $v;
-        }
         if (null !== ($v = $this->getOperation())) {
             $a[self::FIELD_OPERATION] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getAssert())) {
+            $a[self::FIELD_ASSERT] = $v;
         }
         return $a;
     }

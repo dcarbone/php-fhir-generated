@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -372,6 +372,7 @@ abstract class PHPFHIRTypeMap
         PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_STATUS_HYPHEN_LIST => PHPFHIRConstants::TYPE_CLASS_QUESTIONNAIRE_STATUS_HYPHEN_LIST,
         PHPFHIRConstants::TYPE_NAME_RANGE => PHPFHIRConstants::TYPE_CLASS_RANGE,
         PHPFHIRConstants::TYPE_NAME_RATIO => PHPFHIRConstants::TYPE_CLASS_RATIO,
+        PHPFHIRConstants::TYPE_NAME_RAW => PHPFHIRConstants::TYPE_CLASS_RAW,
         PHPFHIRConstants::TYPE_NAME_REACTION_SEVERITY => PHPFHIRConstants::TYPE_CLASS_REACTION_SEVERITY,
         PHPFHIRConstants::TYPE_NAME_REACTION_SEVERITY_HYPHEN_LIST => PHPFHIRConstants::TYPE_CLASS_REACTION_SEVERITY_HYPHEN_LIST,
         PHPFHIRConstants::TYPE_NAME_RELATED_PERSON => PHPFHIRConstants::TYPE_CLASS_RELATED_PERSON,
@@ -561,12 +562,12 @@ abstract class PHPFHIRTypeMap
             if ($type instanceof PHPFHIRTypeInterface) {
                 return in_array('\\'.get_class($type), self::$_containableTypes, true);
             }
-            if ($type instanceof \SimpleXMLElement) {
-                return isset(self::$_containableTypes[$type->getName()]);
+            if ($type instanceof \DOMNode) {
+                return isset(self::$_containableTypes[$type->nodeName]);
             }
             throw new \InvalidArgumentException(sprintf(
                 'Expected "$type" to be instance of "\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface" or "%s", saw "%s"',
-                '\\SimpleXMLElement',
+                '\\DOMNode',
                 get_class($type)
             ));
         }
@@ -587,18 +588,18 @@ abstract class PHPFHIRTypeMap
     }
 
     /**
-     * @param \SimpleXMLElement $sxe Parent element containing inline resource
+     * @param \DOMNode $node Parent element containing inline resource
      * @return \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface|null
      */
-    public static function getContainedTypeFromXML(\SimpleXMLElement $sxe)
+    public static function getContainedTypeFromXML(\DOMNode $node)
     {
-        $typeName = $sxe->getName();
+        $typeName = $node->nodeName;
         $className = self::getContainedTypeClassName($typeName);
         if (null === $className) {
             throw self::createdInvalidContainedTypeException($typeName);
         }
         /** @var \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface $className */
-        return $className::xmlUnserialize($sxe);
+        return $className::xmlUnserialize($node);
     }
 
     /**

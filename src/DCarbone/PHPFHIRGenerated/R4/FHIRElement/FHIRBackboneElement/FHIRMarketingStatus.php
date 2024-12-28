@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -83,14 +85,14 @@ class FHIRMarketingStatus extends FHIRBackboneElement
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MARKETING_STATUS;
     const FIELD_COUNTRY = 'country';
-    const FIELD_DATE_RANGE = 'dateRange';
     const FIELD_JURISDICTION = 'jurisdiction';
+    const FIELD_STATUS = 'status';
+    const FIELD_DATE_RANGE = 'dateRange';
     const FIELD_RESTORE_DATE = 'restoreDate';
     const FIELD_RESTORE_DATE_EXT = '_restoreDate';
-    const FIELD_STATUS = 'status';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -104,6 +106,34 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected $country = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where a Medicines Regulatory Agency has granted a marketing authorisation for
+     * which specific provisions within a jurisdiction apply, the jurisdiction can be
+     * specified using an appropriate controlled terminology The controlled term and
+     * the controlled term identifier shall be specified.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $jurisdiction = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This attribute provides information on the status of the marketing of the
+     * medicinal product See ISO/TS 20443 for more information and examples.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $status = null;
 
     /**
      * A time period defined by a start and end date and optionally time.
@@ -120,21 +150,6 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected $dateRange = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where a Medicines Regulatory Agency has granted a marketing authorisation for
-     * which specific provisions within a jurisdiction apply, the jurisdiction can be
-     * specified using an appropriate controlled terminology The controlled term and
-     * the controlled term identifier shall be specified.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $jurisdiction = null;
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -154,19 +169,6 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected $restoreDate = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * This attribute provides information on the status of the marketing of the
-     * medicinal product See ISO/TS 20443 for more information and examples.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $status = null;
 
     /**
      * Validation map for fields in type MarketingStatus
@@ -197,13 +199,6 @@ class FHIRMarketingStatus extends FHIRBackboneElement
                 $this->setCountry(new FHIRCodeableConcept($data[self::FIELD_COUNTRY]));
             }
         }
-        if (isset($data[self::FIELD_DATE_RANGE])) {
-            if ($data[self::FIELD_DATE_RANGE] instanceof FHIRPeriod) {
-                $this->setDateRange($data[self::FIELD_DATE_RANGE]);
-            } else {
-                $this->setDateRange(new FHIRPeriod($data[self::FIELD_DATE_RANGE]));
-            }
-        }
         if (isset($data[self::FIELD_JURISDICTION])) {
             if ($data[self::FIELD_JURISDICTION] instanceof FHIRCodeableConcept) {
                 $this->setJurisdiction($data[self::FIELD_JURISDICTION]);
@@ -211,17 +206,23 @@ class FHIRMarketingStatus extends FHIRBackboneElement
                 $this->setJurisdiction(new FHIRCodeableConcept($data[self::FIELD_JURISDICTION]));
             }
         }
+        if (isset($data[self::FIELD_STATUS])) {
+            if ($data[self::FIELD_STATUS] instanceof FHIRCodeableConcept) {
+                $this->setStatus($data[self::FIELD_STATUS]);
+            } else {
+                $this->setStatus(new FHIRCodeableConcept($data[self::FIELD_STATUS]));
+            }
+        }
+        if (isset($data[self::FIELD_DATE_RANGE])) {
+            if ($data[self::FIELD_DATE_RANGE] instanceof FHIRPeriod) {
+                $this->setDateRange($data[self::FIELD_DATE_RANGE]);
+            } else {
+                $this->setDateRange(new FHIRPeriod($data[self::FIELD_DATE_RANGE]));
+            }
+        }
         if (isset($data[self::FIELD_RESTORE_DATE]) || isset($data[self::FIELD_RESTORE_DATE_EXT])) {
-            if (isset($data[self::FIELD_RESTORE_DATE])) {
-                $value = $data[self::FIELD_RESTORE_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_RESTORE_DATE_EXT]) && is_array($data[self::FIELD_RESTORE_DATE_EXT])) {
-                $ext = $data[self::FIELD_RESTORE_DATE_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_RESTORE_DATE]) ? $data[self::FIELD_RESTORE_DATE] : null;
+            $ext = (isset($data[self::FIELD_RESTORE_DATE_EXT]) && is_array($data[self::FIELD_RESTORE_DATE_EXT])) ? $ext = $data[self::FIELD_RESTORE_DATE_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRDateTime) {
                     $this->setRestoreDate($value);
@@ -230,15 +231,8 @@ class FHIRMarketingStatus extends FHIRBackboneElement
                 } else {
                     $this->setRestoreDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setRestoreDate(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_STATUS])) {
-            if ($data[self::FIELD_STATUS] instanceof FHIRCodeableConcept) {
-                $this->setStatus($data[self::FIELD_STATUS]);
-            } else {
-                $this->setStatus(new FHIRCodeableConcept($data[self::FIELD_STATUS]));
             }
         }
     }
@@ -257,7 +251,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<MarketingStatus{$xmlns}></MarketingStatus>";
@@ -293,7 +287,82 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      */
     public function setCountry(FHIRCodeableConcept $country = null)
     {
+        $this->_trackValueSet($this->country, $country);
         $this->country = $country;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where a Medicines Regulatory Agency has granted a marketing authorisation for
+     * which specific provisions within a jurisdiction apply, the jurisdiction can be
+     * specified using an appropriate controlled terminology The controlled term and
+     * the controlled term identifier shall be specified.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getJurisdiction()
+    {
+        return $this->jurisdiction;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where a Medicines Regulatory Agency has granted a marketing authorisation for
+     * which specific provisions within a jurisdiction apply, the jurisdiction can be
+     * specified using an appropriate controlled terminology The controlled term and
+     * the controlled term identifier shall be specified.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
+     * @return static
+     */
+    public function setJurisdiction(FHIRCodeableConcept $jurisdiction = null)
+    {
+        $this->_trackValueSet($this->jurisdiction, $jurisdiction);
+        $this->jurisdiction = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This attribute provides information on the status of the marketing of the
+     * medicinal product See ISO/TS 20443 for more information and examples.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This attribute provides information on the status of the marketing of the
+     * medicinal product See ISO/TS 20443 for more information and examples.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $status
+     * @return static
+     */
+    public function setStatus(FHIRCodeableConcept $status = null)
+    {
+        $this->_trackValueSet($this->status, $status);
+        $this->status = $status;
         return $this;
     }
 
@@ -333,45 +402,8 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      */
     public function setDateRange(FHIRPeriod $dateRange = null)
     {
+        $this->_trackValueSet($this->dateRange, $dateRange);
         $this->dateRange = $dateRange;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where a Medicines Regulatory Agency has granted a marketing authorisation for
-     * which specific provisions within a jurisdiction apply, the jurisdiction can be
-     * specified using an appropriate controlled terminology The controlled term and
-     * the controlled term identifier shall be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getJurisdiction()
-    {
-        return $this->jurisdiction;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where a Medicines Regulatory Agency has granted a marketing authorisation for
-     * which specific provisions within a jurisdiction apply, the jurisdiction can be
-     * specified using an appropriate controlled terminology The controlled term and
-     * the controlled term identifier shall be specified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return static
-     */
-    public function setJurisdiction(FHIRCodeableConcept $jurisdiction = null)
-    {
-        $this->jurisdiction = $jurisdiction;
         return $this;
     }
 
@@ -417,49 +449,11 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      */
     public function setRestoreDate($restoreDate = null)
     {
-        if (null === $restoreDate) {
-            $this->restoreDate = null;
-            return $this;
+        if (null !== $restoreDate && !($restoreDate instanceof FHIRDateTime)) {
+            $restoreDate = new FHIRDateTime($restoreDate);
         }
-        if ($restoreDate instanceof FHIRDateTime) {
-            $this->restoreDate = $restoreDate;
-            return $this;
-        }
-        $this->restoreDate = new FHIRDateTime($restoreDate);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * This attribute provides information on the status of the marketing of the
-     * medicinal product See ISO/TS 20443 for more information and examples.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * This attribute provides information on the status of the marketing of the
-     * medicinal product See ISO/TS 20443 for more information and examples.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $status
-     * @return static
-     */
-    public function setStatus(FHIRCodeableConcept $status = null)
-    {
-        $this->status = $status;
+        $this->_trackValueSet($this->restoreDate, $restoreDate);
+        $this->restoreDate = $restoreDate;
         return $this;
     }
 
@@ -489,24 +483,24 @@ class FHIRMarketingStatus extends FHIRBackboneElement
                 $errs[self::FIELD_COUNTRY] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getDateRange())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DATE_RANGE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getJurisdiction())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_JURISDICTION] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getRestoreDate())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_RESTORE_DATE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getStatus())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_STATUS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDateRange())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DATE_RANGE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getRestoreDate())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_RESTORE_DATE] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_COUNTRY])) {
@@ -518,18 +512,6 @@ class FHIRMarketingStatus extends FHIRBackboneElement
                         $errs[self::FIELD_COUNTRY] = [];
                     }
                     $errs[self::FIELD_COUNTRY][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_DATE_RANGE])) {
-            $v = $this->getDateRange();
-            foreach($validationRules[self::FIELD_DATE_RANGE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MARKETING_STATUS, self::FIELD_DATE_RANGE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DATE_RANGE])) {
-                        $errs[self::FIELD_DATE_RANGE] = [];
-                    }
-                    $errs[self::FIELD_DATE_RANGE][$rule] = $err;
                 }
             }
         }
@@ -545,18 +527,6 @@ class FHIRMarketingStatus extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_RESTORE_DATE])) {
-            $v = $this->getRestoreDate();
-            foreach($validationRules[self::FIELD_RESTORE_DATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MARKETING_STATUS, self::FIELD_RESTORE_DATE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RESTORE_DATE])) {
-                        $errs[self::FIELD_RESTORE_DATE] = [];
-                    }
-                    $errs[self::FIELD_RESTORE_DATE][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_STATUS])) {
             $v = $this->getStatus();
             foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
@@ -566,6 +536,30 @@ class FHIRMarketingStatus extends FHIRBackboneElement
                         $errs[self::FIELD_STATUS] = [];
                     }
                     $errs[self::FIELD_STATUS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DATE_RANGE])) {
+            $v = $this->getDateRange();
+            foreach($validationRules[self::FIELD_DATE_RANGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MARKETING_STATUS, self::FIELD_DATE_RANGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DATE_RANGE])) {
+                        $errs[self::FIELD_DATE_RANGE] = [];
+                    }
+                    $errs[self::FIELD_DATE_RANGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_RESTORE_DATE])) {
+            $v = $this->getRestoreDate();
+            foreach($validationRules[self::FIELD_RESTORE_DATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MARKETING_STATUS, self::FIELD_RESTORE_DATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RESTORE_DATE])) {
+                        $errs[self::FIELD_RESTORE_DATE] = [];
+                    }
+                    $errs[self::FIELD_RESTORE_DATE][$rule] = $err;
                 }
             }
         }
@@ -609,98 +603,125 @@ class FHIRMarketingStatus extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMarketingStatus $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMarketingStatus
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRMarketingStatus::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMarketingStatus::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRMarketingStatus::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRMarketingStatus;
+            $type = new FHIRMarketingStatus(null);
         } elseif (!is_object($type) || !($type instanceof FHIRMarketingStatus)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMarketingStatus::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMarketingStatus or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_COUNTRY === $n->nodeName) {
+                $type->setCountry(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_JURISDICTION === $n->nodeName) {
+                $type->setJurisdiction(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_STATUS === $n->nodeName) {
+                $type->setStatus(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DATE_RANGE === $n->nodeName) {
+                $type->setDateRange(FHIRPeriod::xmlUnserialize($n));
+            } elseif (self::FIELD_RESTORE_DATE === $n->nodeName) {
+                $type->setRestoreDate(FHIRDateTime::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->country)) {
-            $type->setCountry(FHIRCodeableConcept::xmlUnserialize($children->country));
-        }
-        if (isset($children->dateRange)) {
-            $type->setDateRange(FHIRPeriod::xmlUnserialize($children->dateRange));
-        }
-        if (isset($children->jurisdiction)) {
-            $type->setJurisdiction(FHIRCodeableConcept::xmlUnserialize($children->jurisdiction));
-        }
-        if (isset($children->restoreDate)) {
-            $type->setRestoreDate(FHIRDateTime::xmlUnserialize($children->restoreDate));
-        }
-        if (isset($attributes->restoreDate)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_RESTORE_DATE);
+        if (null !== $n) {
             $pt = $type->getRestoreDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->restoreDate);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setRestoreDate((string)$attributes->restoreDate);
+                $type->setRestoreDate($n->nodeValue);
             }
         }
-        if (isset($children->status)) {
-            $type->setStatus(FHIRCodeableConcept::xmlUnserialize($children->status));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getCountry())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COUNTRY, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDateRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_RANGE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_COUNTRY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getJurisdiction())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_JURISDICTION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getRestoreDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESTORE_DATE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_JURISDICTION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_STATUS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getDateRange())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DATE_RANGE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getRestoreDate())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_RESTORE_DATE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -712,26 +733,24 @@ class FHIRMarketingStatus extends FHIRBackboneElement
         if (null !== ($v = $this->getCountry())) {
             $a[self::FIELD_COUNTRY] = $v;
         }
-        if (null !== ($v = $this->getDateRange())) {
-            $a[self::FIELD_DATE_RANGE] = $v;
-        }
         if (null !== ($v = $this->getJurisdiction())) {
             $a[self::FIELD_JURISDICTION] = $v;
-        }
-        if (null !== ($v = $this->getRestoreDate())) {
-            $a[self::FIELD_RESTORE_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_RESTORE_DATE_EXT] = $enc;
-            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a[self::FIELD_STATUS] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getDateRange())) {
+            $a[self::FIELD_DATE_RANGE] = $v;
+        }
+        if (null !== ($v = $this->getRestoreDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RESTORE_DATE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDateTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_RESTORE_DATE_EXT] = $ext;
+            }
         }
         return $a;
     }

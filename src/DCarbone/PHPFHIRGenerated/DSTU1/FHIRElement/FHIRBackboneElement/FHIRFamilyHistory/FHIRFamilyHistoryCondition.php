@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,9 +59,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFa
 
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRange;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
@@ -76,27 +78,44 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_CONDITION;
-    const FIELD_NOTE = 'note';
-    const FIELD_NOTE_EXT = '_note';
+    const FIELD_TYPE = 'type';
+    const FIELD_OUTCOME = 'outcome';
     const FIELD_ONSET_AGE = 'onsetAge';
     const FIELD_ONSET_RANGE = 'onsetRange';
     const FIELD_ONSET_STRING = 'onsetString';
     const FIELD_ONSET_STRING_EXT = '_onsetString';
-    const FIELD_OUTCOME = 'outcome';
-    const FIELD_TYPE = 'type';
+    const FIELD_NOTE = 'note';
+    const FIELD_NOTE_EXT = '_note';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An area where general notes can be placed about this specific condition.
+     * The actual condition specified. Could be a coded condition (like MI or Diabetes)
+     * or a less specific string like 'cancer' depending on how much is known about the
+     * condition and the capabilities of the creating system.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    protected $note = null;
+    protected $type = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates what happened as a result of this condition. If the condition resulted
+     * in death, deceased date is captured on the relation.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
+     */
+    protected $outcome = null;
 
     /**
      * Either the age of onset, range of approximate age or descriptive string can be
@@ -133,31 +152,14 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
     protected $onsetString = null;
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates what happened as a result of this condition. If the condition resulted
-     * in death, deceased date is captured on the relation.
+     * An area where general notes can be placed about this specific condition.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    protected $outcome = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The actual condition specified. Could be a coded condition (like MI or Diabetes)
-     * or a less specific string like 'cancer' depending on how much is known about the
-     * condition and the capabilities of the creating system.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
-     */
-    protected $type = null;
+    protected $note = null;
 
     /**
      * Validation map for fields in type FamilyHistory.Condition
@@ -181,27 +183,18 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_NOTE]) || isset($data[self::FIELD_NOTE_EXT])) {
-            if (isset($data[self::FIELD_NOTE])) {
-                $value = $data[self::FIELD_NOTE];
+        if (isset($data[self::FIELD_TYPE])) {
+            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setType($data[self::FIELD_TYPE]);
             } else {
-                $value = null;
+                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
             }
-            if (isset($data[self::FIELD_NOTE_EXT]) && is_array($data[self::FIELD_NOTE_EXT])) {
-                $ext = $data[self::FIELD_NOTE_EXT];
+        }
+        if (isset($data[self::FIELD_OUTCOME])) {
+            if ($data[self::FIELD_OUTCOME] instanceof FHIRCodeableConcept) {
+                $this->setOutcome($data[self::FIELD_OUTCOME]);
             } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setNote($value);
-                } else if (is_array($value)) {
-                    $this->setNote(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setNote(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setNote(new FHIRString($ext));
+                $this->setOutcome(new FHIRCodeableConcept($data[self::FIELD_OUTCOME]));
             }
         }
         if (isset($data[self::FIELD_ONSET_AGE])) {
@@ -219,16 +212,8 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_ONSET_STRING]) || isset($data[self::FIELD_ONSET_STRING_EXT])) {
-            if (isset($data[self::FIELD_ONSET_STRING])) {
-                $value = $data[self::FIELD_ONSET_STRING];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ONSET_STRING_EXT]) && is_array($data[self::FIELD_ONSET_STRING_EXT])) {
-                $ext = $data[self::FIELD_ONSET_STRING_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_ONSET_STRING]) ? $data[self::FIELD_ONSET_STRING] : null;
+            $ext = (isset($data[self::FIELD_ONSET_STRING_EXT]) && is_array($data[self::FIELD_ONSET_STRING_EXT])) ? $ext = $data[self::FIELD_ONSET_STRING_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setOnsetString($value);
@@ -237,22 +222,23 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
                 } else {
                     $this->setOnsetString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setOnsetString(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_OUTCOME])) {
-            if ($data[self::FIELD_OUTCOME] instanceof FHIRCodeableConcept) {
-                $this->setOutcome($data[self::FIELD_OUTCOME]);
-            } else {
-                $this->setOutcome(new FHIRCodeableConcept($data[self::FIELD_OUTCOME]));
-            }
-        }
-        if (isset($data[self::FIELD_TYPE])) {
-            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setType($data[self::FIELD_TYPE]);
-            } else {
-                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
+        if (isset($data[self::FIELD_NOTE]) || isset($data[self::FIELD_NOTE_EXT])) {
+            $value = isset($data[self::FIELD_NOTE]) ? $data[self::FIELD_NOTE] : null;
+            $ext = (isset($data[self::FIELD_NOTE_EXT]) && is_array($data[self::FIELD_NOTE_EXT])) ? $ext = $data[self::FIELD_NOTE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setNote($value);
+                } else if (is_array($value)) {
+                    $this->setNote(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setNote(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setNote(new FHIRString($ext));
             }
         }
     }
@@ -271,180 +257,10 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<FamilyHistoryCondition{$xmlns}></FamilyHistoryCondition>";
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An area where general notes can be placed about this specific condition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
-     */
-    public function getNote()
-    {
-        return $this->note;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An area where general notes can be placed about this specific condition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $note
-     * @return static
-     */
-    public function setNote($note = null)
-    {
-        if (null === $note) {
-            $this->note = null;
-            return $this;
-        }
-        if ($note instanceof FHIRString) {
-            $this->note = $note;
-            return $this;
-        }
-        $this->note = new FHIRString($note);
-        return $this;
-    }
-
-    /**
-     * Either the age of onset, range of approximate age or descriptive string can be
-     * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge
-     */
-    public function getOnsetAge()
-    {
-        return $this->onsetAge;
-    }
-
-    /**
-     * Either the age of onset, range of approximate age or descriptive string can be
-     * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
-     * @return static
-     */
-    public function setOnsetAge(FHIRAge $onsetAge = null)
-    {
-        $this->onsetAge = $onsetAge;
-        return $this;
-    }
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Either the age of onset, range of approximate age or descriptive string can be
-     * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRange
-     */
-    public function getOnsetRange()
-    {
-        return $this->onsetRange;
-    }
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Either the age of onset, range of approximate age or descriptive string can be
-     * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRange $onsetRange
-     * @return static
-     */
-    public function setOnsetRange(FHIRRange $onsetRange = null)
-    {
-        $this->onsetRange = $onsetRange;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Either the age of onset, range of approximate age or descriptive string can be
-     * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
-     */
-    public function getOnsetString()
-    {
-        return $this->onsetString;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Either the age of onset, range of approximate age or descriptive string can be
-     * recorded. For conditions with multiple occurrences, this describes the first
-     * known occurrence.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $onsetString
-     * @return static
-     */
-    public function setOnsetString($onsetString = null)
-    {
-        if (null === $onsetString) {
-            $this->onsetString = null;
-            return $this;
-        }
-        if ($onsetString instanceof FHIRString) {
-            $this->onsetString = $onsetString;
-            return $this;
-        }
-        $this->onsetString = new FHIRString($onsetString);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates what happened as a result of this condition. If the condition resulted
-     * in death, deceased date is captured on the relation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
-     */
-    public function getOutcome()
-    {
-        return $this->outcome;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates what happened as a result of this condition. If the condition resulted
-     * in death, deceased date is captured on the relation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $outcome
-     * @return static
-     */
-    public function setOutcome(FHIRCodeableConcept $outcome = null)
-    {
-        $this->outcome = $outcome;
-        return $this;
     }
 
     /**
@@ -479,7 +295,173 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
+        $this->_trackValueSet($this->type, $type);
         $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates what happened as a result of this condition. If the condition resulted
+     * in death, deceased date is captured on the relation.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
+     */
+    public function getOutcome()
+    {
+        return $this->outcome;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates what happened as a result of this condition. If the condition resulted
+     * in death, deceased date is captured on the relation.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $outcome
+     * @return static
+     */
+    public function setOutcome(FHIRCodeableConcept $outcome = null)
+    {
+        $this->_trackValueSet($this->outcome, $outcome);
+        $this->outcome = $outcome;
+        return $this;
+    }
+
+    /**
+     * Either the age of onset, range of approximate age or descriptive string can be
+     * recorded. For conditions with multiple occurrences, this describes the first
+     * known occurrence.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge
+     */
+    public function getOnsetAge()
+    {
+        return $this->onsetAge;
+    }
+
+    /**
+     * Either the age of onset, range of approximate age or descriptive string can be
+     * recorded. For conditions with multiple occurrences, this describes the first
+     * known occurrence.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge $onsetAge
+     * @return static
+     */
+    public function setOnsetAge(FHIRAge $onsetAge = null)
+    {
+        $this->_trackValueSet($this->onsetAge, $onsetAge);
+        $this->onsetAge = $onsetAge;
+        return $this;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Either the age of onset, range of approximate age or descriptive string can be
+     * recorded. For conditions with multiple occurrences, this describes the first
+     * known occurrence.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRange
+     */
+    public function getOnsetRange()
+    {
+        return $this->onsetRange;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Either the age of onset, range of approximate age or descriptive string can be
+     * recorded. For conditions with multiple occurrences, this describes the first
+     * known occurrence.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRange $onsetRange
+     * @return static
+     */
+    public function setOnsetRange(FHIRRange $onsetRange = null)
+    {
+        $this->_trackValueSet($this->onsetRange, $onsetRange);
+        $this->onsetRange = $onsetRange;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Either the age of onset, range of approximate age or descriptive string can be
+     * recorded. For conditions with multiple occurrences, this describes the first
+     * known occurrence.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
+     */
+    public function getOnsetString()
+    {
+        return $this->onsetString;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Either the age of onset, range of approximate age or descriptive string can be
+     * recorded. For conditions with multiple occurrences, this describes the first
+     * known occurrence.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $onsetString
+     * @return static
+     */
+    public function setOnsetString($onsetString = null)
+    {
+        if (null !== $onsetString && !($onsetString instanceof FHIRString)) {
+            $onsetString = new FHIRString($onsetString);
+        }
+        $this->_trackValueSet($this->onsetString, $onsetString);
+        $this->onsetString = $onsetString;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An area where general notes can be placed about this specific condition.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An area where general notes can be placed about this specific condition.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $note
+     * @return static
+     */
+    public function setNote($note = null)
+    {
+        if (null !== $note && !($note instanceof FHIRString)) {
+            $note = new FHIRString($note);
+        }
+        $this->_trackValueSet($this->note, $note);
+        $this->note = $note;
         return $this;
     }
 
@@ -504,9 +486,14 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getNote())) {
+        if (null !== ($v = $this->getType())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_NOTE] = $fieldErrs;
+                $errs[self::FIELD_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getOutcome())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_OUTCOME] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getOnsetAge())) {
@@ -524,25 +511,32 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
                 $errs[self::FIELD_ONSET_STRING] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getOutcome())) {
+        if (null !== ($v = $this->getNote())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_OUTCOME] = $fieldErrs;
+                $errs[self::FIELD_NOTE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TYPE] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_NOTE])) {
-            $v = $this->getNote();
-            foreach($validationRules[self::FIELD_NOTE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_CONDITION, self::FIELD_NOTE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_CONDITION, self::FIELD_TYPE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_NOTE])) {
-                        $errs[self::FIELD_NOTE] = [];
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
                     }
-                    $errs[self::FIELD_NOTE][$rule] = $err;
+                    $errs[self::FIELD_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_OUTCOME])) {
+            $v = $this->getOutcome();
+            foreach($validationRules[self::FIELD_OUTCOME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_CONDITION, self::FIELD_OUTCOME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_OUTCOME])) {
+                        $errs[self::FIELD_OUTCOME] = [];
+                    }
+                    $errs[self::FIELD_OUTCOME][$rule] = $err;
                 }
             }
         }
@@ -582,27 +576,15 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_OUTCOME])) {
-            $v = $this->getOutcome();
-            foreach($validationRules[self::FIELD_OUTCOME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_CONDITION, self::FIELD_OUTCOME, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_NOTE])) {
+            $v = $this->getNote();
+            foreach($validationRules[self::FIELD_NOTE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_CONDITION, self::FIELD_NOTE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_OUTCOME])) {
-                        $errs[self::FIELD_OUTCOME] = [];
+                    if (!isset($errs[self::FIELD_NOTE])) {
+                        $errs[self::FIELD_NOTE] = [];
                     }
-                    $errs[self::FIELD_OUTCOME][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_TYPE])) {
-            $v = $this->getType();
-            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_CONDITION, self::FIELD_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TYPE])) {
-                        $errs[self::FIELD_TYPE] = [];
-                    }
-                    $errs[self::FIELD_TYPE][$rule] = $err;
+                    $errs[self::FIELD_NOTE][$rule] = $err;
                 }
             }
         }
@@ -646,112 +628,141 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRFamilyHistoryCondition::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRFamilyHistoryCondition::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRFamilyHistoryCondition::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRFamilyHistoryCondition;
+            $type = new FHIRFamilyHistoryCondition(null);
         } elseif (!is_object($type) || !($type instanceof FHIRFamilyHistoryCondition)) {
             throw new \RuntimeException(sprintf(
                 'FHIRFamilyHistoryCondition::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_TYPE === $n->nodeName) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_OUTCOME === $n->nodeName) {
+                $type->setOutcome(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_ONSET_AGE === $n->nodeName) {
+                $type->setOnsetAge(FHIRAge::xmlUnserialize($n));
+            } elseif (self::FIELD_ONSET_RANGE === $n->nodeName) {
+                $type->setOnsetRange(FHIRRange::xmlUnserialize($n));
+            } elseif (self::FIELD_ONSET_STRING === $n->nodeName) {
+                $type->setOnsetString(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_NOTE === $n->nodeName) {
+                $type->setNote(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->note)) {
-            $type->setNote(FHIRString::xmlUnserialize($children->note));
-        }
-        if (isset($attributes->note)) {
-            $pt = $type->getNote();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->note);
-            } else {
-                $type->setNote((string)$attributes->note);
-            }
-        }
-        if (isset($children->onsetAge)) {
-            $type->setOnsetAge(FHIRAge::xmlUnserialize($children->onsetAge));
-        }
-        if (isset($children->onsetRange)) {
-            $type->setOnsetRange(FHIRRange::xmlUnserialize($children->onsetRange));
-        }
-        if (isset($children->onsetString)) {
-            $type->setOnsetString(FHIRString::xmlUnserialize($children->onsetString));
-        }
-        if (isset($attributes->onsetString)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_ONSET_STRING);
+        if (null !== $n) {
             $pt = $type->getOnsetString();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->onsetString);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setOnsetString((string)$attributes->onsetString);
+                $type->setOnsetString($n->nodeValue);
             }
         }
-        if (isset($children->outcome)) {
-            $type->setOutcome(FHIRCodeableConcept::xmlUnserialize($children->outcome));
+        $n = $element->attributes->getNamedItem(self::FIELD_NOTE);
+        if (null !== $n) {
+            $pt = $type->getNote();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setNote($n->nodeValue);
+            }
         }
-        if (isset($children->type)) {
-            $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getNote())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getOnsetAge())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_AGE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getOnsetRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_RANGE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getOnsetString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET_STRING, null, $v->_getFHIRXMLNamespace()));
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getOutcome())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_OUTCOME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getOnsetAge())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_ONSET_AGE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getOnsetRange())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_ONSET_RANGE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getOnsetString())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_ONSET_STRING);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getNote())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_NOTE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -760,14 +771,11 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getNote())) {
-            $a[self::FIELD_NOTE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_NOTE_EXT] = $enc;
-            }
+        if (null !== ($v = $this->getType())) {
+            $a[self::FIELD_TYPE] = $v;
+        }
+        if (null !== ($v = $this->getOutcome())) {
+            $a[self::FIELD_OUTCOME] = $v;
         }
         if (null !== ($v = $this->getOnsetAge())) {
             $a[self::FIELD_ONSET_AGE] = $v;
@@ -776,22 +784,24 @@ class FHIRFamilyHistoryCondition extends FHIRBackboneElement
             $a[self::FIELD_ONSET_RANGE] = $v;
         }
         if (null !== ($v = $this->getOnsetString())) {
-            $a[self::FIELD_ONSET_STRING] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_ONSET_STRING_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ONSET_STRING] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_ONSET_STRING_EXT] = $ext;
             }
         }
-        if (null !== ($v = $this->getOutcome())) {
-            $a[self::FIELD_OUTCOME] = $v;
-        }
-        if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getNote())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NOTE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_NOTE_EXT] = $ext;
+            }
         }
         return $a;
     }

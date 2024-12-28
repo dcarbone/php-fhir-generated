@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,8 +66,13 @@ use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinical
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionInvestigations;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionRuledOut;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRClinicalImpressionStatus;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRId;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMeta;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri;
@@ -75,6 +80,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeMap;
 
 /**
  * A record of a clinical assessment performed to determine what problem(s) may
@@ -93,44 +99,44 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION;
-    const FIELD_ACTION = 'action';
+    const FIELD_PATIENT = 'patient';
     const FIELD_ASSESSOR = 'assessor';
+    const FIELD_STATUS = 'status';
+    const FIELD_STATUS_EXT = '_status';
     const FIELD_DATE = 'date';
     const FIELD_DATE_EXT = '_date';
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
-    const FIELD_FINDING = 'finding';
-    const FIELD_INVESTIGATIONS = 'investigations';
-    const FIELD_PATIENT = 'patient';
-    const FIELD_PLAN = 'plan';
     const FIELD_PREVIOUS = 'previous';
     const FIELD_PROBLEM = 'problem';
-    const FIELD_PROGNOSIS = 'prognosis';
-    const FIELD_PROGNOSIS_EXT = '_prognosis';
-    const FIELD_PROTOCOL = 'protocol';
-    const FIELD_PROTOCOL_EXT = '_protocol';
-    const FIELD_RESOLVED = 'resolved';
-    const FIELD_RULED_OUT = 'ruledOut';
-    const FIELD_STATUS = 'status';
-    const FIELD_STATUS_EXT = '_status';
-    const FIELD_SUMMARY = 'summary';
-    const FIELD_SUMMARY_EXT = '_summary';
     const FIELD_TRIGGER_CODEABLE_CONCEPT = 'triggerCodeableConcept';
     const FIELD_TRIGGER_REFERENCE = 'triggerReference';
+    const FIELD_INVESTIGATIONS = 'investigations';
+    const FIELD_PROTOCOL = 'protocol';
+    const FIELD_PROTOCOL_EXT = '_protocol';
+    const FIELD_SUMMARY = 'summary';
+    const FIELD_SUMMARY_EXT = '_summary';
+    const FIELD_FINDING = 'finding';
+    const FIELD_RESOLVED = 'resolved';
+    const FIELD_RULED_OUT = 'ruledOut';
+    const FIELD_PROGNOSIS = 'prognosis';
+    const FIELD_PROGNOSIS_EXT = '_prognosis';
+    const FIELD_PLAN = 'plan';
+    const FIELD_ACTION = 'action';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Actions taken during assessment.
+     * The patient being assessed.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    protected $action = [];
+    protected $patient = null;
 
     /**
      * A reference from one resource to another.
@@ -142,6 +148,16 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected $assessor = null;
+
+    /**
+     * The workflow state of a clinical impression.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Identifies the workflow status of the assessment.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRClinicalImpressionStatus
+     */
+    protected $status = null;
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -171,63 +187,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     protected $description = null;
 
     /**
-     * A record of a clinical assessment performed to determine what problem(s) may
-     * affect the patient and before planning the treatments or management strategies
-     * that are best to manage a patient's condition. Assessments are often 1:1 with a
-     * clinical consultation / encounter, but this varies greatly depending on the
-     * clinical workflow. This resource is called "ClinicalImpression" rather than
-     * "ClinicalAssessment" to avoid confusion with the recording of assessment tools
-     * such as Apgar score.
-     *
-     * Specific findings or diagnoses that was considered likely or relevant to ongoing
-     * treatment.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding[]
-     */
-    protected $finding = [];
-
-    /**
-     * A record of a clinical assessment performed to determine what problem(s) may
-     * affect the patient and before planning the treatments or management strategies
-     * that are best to manage a patient's condition. Assessments are often 1:1 with a
-     * clinical consultation / encounter, but this varies greatly depending on the
-     * clinical workflow. This resource is called "ClinicalImpression" rather than
-     * "ClinicalAssessment" to avoid confusion with the recording of assessment tools
-     * such as Apgar score.
-     *
-     * One or more sets of investigations (signs, symptions, etc.). The actual grouping
-     * of investigations vary greatly depending on the type and context of the
-     * assessment. These investigations may include data generated during the
-     * assessment process, or data previously generated and recorded that is pertinent
-     * to the outcomes.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionInvestigations[]
-     */
-    protected $investigations = [];
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The patient being assessed.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
-     */
-    protected $patient = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Plan of action after assessment.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
-     */
-    protected $plan = [];
-
-    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -253,15 +212,48 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     protected $problem = [];
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Estimate of likely outcome.
+     * The request or event that necessitated this assessment. This may be a diagnosis,
+     * a Care Plan, a Request Referral, or some other resource.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    protected $prognosis = null;
+    protected $triggerCodeableConcept = null;
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The request or event that necessitated this assessment. This may be a diagnosis,
+     * a Care Plan, a Request Referral, or some other resource.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     */
+    protected $triggerReference = null;
+
+    /**
+     * A record of a clinical assessment performed to determine what problem(s) may
+     * affect the patient and before planning the treatments or management strategies
+     * that are best to manage a patient's condition. Assessments are often 1:1 with a
+     * clinical consultation / encounter, but this varies greatly depending on the
+     * clinical workflow. This resource is called "ClinicalImpression" rather than
+     * "ClinicalAssessment" to avoid confusion with the recording of assessment tools
+     * such as Apgar score.
+     *
+     * One or more sets of investigations (signs, symptions, etc.). The actual grouping
+     * of investigations vary greatly depending on the type and context of the
+     * assessment. These investigations may include data generated during the
+     * assessment process, or data previously generated and recorded that is pertinent
+     * to the outcomes.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionInvestigations[]
+     */
+    protected $investigations = [];
 
     /**
      * String of characters used to identify a name or a resource
@@ -274,6 +266,33 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     protected $protocol = null;
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A text summary of the investigations and the diagnosis.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    protected $summary = null;
+
+    /**
+     * A record of a clinical assessment performed to determine what problem(s) may
+     * affect the patient and before planning the treatments or management strategies
+     * that are best to manage a patient's condition. Assessments are often 1:1 with a
+     * clinical consultation / encounter, but this varies greatly depending on the
+     * clinical workflow. This resource is called "ClinicalImpression" rather than
+     * "ClinicalAssessment" to avoid confusion with the recording of assessment tools
+     * such as Apgar score.
+     *
+     * Specific findings or diagnoses that was considered likely or relevant to ongoing
+     * treatment.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding[]
+     */
+    protected $finding = [];
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -303,50 +322,37 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     protected $ruledOut = [];
 
     /**
-     * The workflow state of a clinical impression.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Identifies the workflow status of the assessment.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRClinicalImpressionStatus
-     */
-    protected $status = null;
-
-    /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A text summary of the investigations and the diagnosis.
+     * Estimate of likely outcome.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    protected $summary = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The request or event that necessitated this assessment. This may be a diagnosis,
-     * a Care Plan, a Request Referral, or some other resource.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
-     */
-    protected $triggerCodeableConcept = null;
+    protected $prognosis = null;
 
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The request or event that necessitated this assessment. This may be a diagnosis,
-     * a Care Plan, a Request Referral, or some other resource.
+     * Plan of action after assessment.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
-    protected $triggerReference = null;
+    protected $plan = [];
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Actions taken during assessment.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
+     */
+    protected $action = [];
 
     /**
      * Validation map for fields in type ClinicalImpression
@@ -370,22 +376,11 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ACTION])) {
-            if (is_array($data[self::FIELD_ACTION])) {
-                foreach($data[self::FIELD_ACTION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRReference) {
-                        $this->addAction($v);
-                    } else {
-                        $this->addAction(new FHIRReference($v));
-                    }
-                }
-            } else if ($data[self::FIELD_ACTION] instanceof FHIRReference) {
-                $this->addAction($data[self::FIELD_ACTION]);
+        if (isset($data[self::FIELD_PATIENT])) {
+            if ($data[self::FIELD_PATIENT] instanceof FHIRReference) {
+                $this->setPatient($data[self::FIELD_PATIENT]);
             } else {
-                $this->addAction(new FHIRReference($data[self::FIELD_ACTION]));
+                $this->setPatient(new FHIRReference($data[self::FIELD_PATIENT]));
             }
         }
         if (isset($data[self::FIELD_ASSESSOR])) {
@@ -395,17 +390,24 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 $this->setAssessor(new FHIRReference($data[self::FIELD_ASSESSOR]));
             }
         }
+        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
+            $value = isset($data[self::FIELD_STATUS]) ? $data[self::FIELD_STATUS] : null;
+            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) ? $ext = $data[self::FIELD_STATUS_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRClinicalImpressionStatus) {
+                    $this->setStatus($value);
+                } else if (is_array($value)) {
+                    $this->setStatus(new FHIRClinicalImpressionStatus(array_merge($ext, $value)));
+                } else {
+                    $this->setStatus(new FHIRClinicalImpressionStatus([FHIRClinicalImpressionStatus::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setStatus(new FHIRClinicalImpressionStatus($ext));
+            }
+        }
         if (isset($data[self::FIELD_DATE]) || isset($data[self::FIELD_DATE_EXT])) {
-            if (isset($data[self::FIELD_DATE])) {
-                $value = $data[self::FIELD_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DATE_EXT]) && is_array($data[self::FIELD_DATE_EXT])) {
-                $ext = $data[self::FIELD_DATE_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_DATE]) ? $data[self::FIELD_DATE] : null;
+            $ext = (isset($data[self::FIELD_DATE_EXT]) && is_array($data[self::FIELD_DATE_EXT])) ? $ext = $data[self::FIELD_DATE_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRDateTime) {
                     $this->setDate($value);
@@ -414,21 +416,13 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 } else {
                     $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDate(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
-            if (isset($data[self::FIELD_DESCRIPTION])) {
-                $value = $data[self::FIELD_DESCRIPTION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) {
-                $ext = $data[self::FIELD_DESCRIPTION_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_DESCRIPTION]) ? $data[self::FIELD_DESCRIPTION] : null;
+            $ext = (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) ? $ext = $data[self::FIELD_DESCRIPTION_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setDescription($value);
@@ -437,69 +431,8 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 } else {
                     $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDescription(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_FINDING])) {
-            if (is_array($data[self::FIELD_FINDING])) {
-                foreach($data[self::FIELD_FINDING] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRClinicalImpressionFinding) {
-                        $this->addFinding($v);
-                    } else {
-                        $this->addFinding(new FHIRClinicalImpressionFinding($v));
-                    }
-                }
-            } else if ($data[self::FIELD_FINDING] instanceof FHIRClinicalImpressionFinding) {
-                $this->addFinding($data[self::FIELD_FINDING]);
-            } else {
-                $this->addFinding(new FHIRClinicalImpressionFinding($data[self::FIELD_FINDING]));
-            }
-        }
-        if (isset($data[self::FIELD_INVESTIGATIONS])) {
-            if (is_array($data[self::FIELD_INVESTIGATIONS])) {
-                foreach($data[self::FIELD_INVESTIGATIONS] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRClinicalImpressionInvestigations) {
-                        $this->addInvestigations($v);
-                    } else {
-                        $this->addInvestigations(new FHIRClinicalImpressionInvestigations($v));
-                    }
-                }
-            } else if ($data[self::FIELD_INVESTIGATIONS] instanceof FHIRClinicalImpressionInvestigations) {
-                $this->addInvestigations($data[self::FIELD_INVESTIGATIONS]);
-            } else {
-                $this->addInvestigations(new FHIRClinicalImpressionInvestigations($data[self::FIELD_INVESTIGATIONS]));
-            }
-        }
-        if (isset($data[self::FIELD_PATIENT])) {
-            if ($data[self::FIELD_PATIENT] instanceof FHIRReference) {
-                $this->setPatient($data[self::FIELD_PATIENT]);
-            } else {
-                $this->setPatient(new FHIRReference($data[self::FIELD_PATIENT]));
-            }
-        }
-        if (isset($data[self::FIELD_PLAN])) {
-            if (is_array($data[self::FIELD_PLAN])) {
-                foreach($data[self::FIELD_PLAN] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRReference) {
-                        $this->addPlan($v);
-                    } else {
-                        $this->addPlan(new FHIRReference($v));
-                    }
-                }
-            } else if ($data[self::FIELD_PLAN] instanceof FHIRReference) {
-                $this->addPlan($data[self::FIELD_PLAN]);
-            } else {
-                $this->addPlan(new FHIRReference($data[self::FIELD_PLAN]));
             }
         }
         if (isset($data[self::FIELD_PREVIOUS])) {
@@ -521,46 +454,47 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                         $this->addProblem(new FHIRReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_PROBLEM] instanceof FHIRReference) {
+            } elseif ($data[self::FIELD_PROBLEM] instanceof FHIRReference) {
                 $this->addProblem($data[self::FIELD_PROBLEM]);
             } else {
                 $this->addProblem(new FHIRReference($data[self::FIELD_PROBLEM]));
             }
         }
-        if (isset($data[self::FIELD_PROGNOSIS]) || isset($data[self::FIELD_PROGNOSIS_EXT])) {
-            if (isset($data[self::FIELD_PROGNOSIS])) {
-                $value = $data[self::FIELD_PROGNOSIS];
+        if (isset($data[self::FIELD_TRIGGER_CODEABLE_CONCEPT])) {
+            if ($data[self::FIELD_TRIGGER_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
+                $this->setTriggerCodeableConcept($data[self::FIELD_TRIGGER_CODEABLE_CONCEPT]);
             } else {
-                $value = null;
+                $this->setTriggerCodeableConcept(new FHIRCodeableConcept($data[self::FIELD_TRIGGER_CODEABLE_CONCEPT]));
             }
-            if (isset($data[self::FIELD_PROGNOSIS_EXT]) && is_array($data[self::FIELD_PROGNOSIS_EXT])) {
-                $ext = $data[self::FIELD_PROGNOSIS_EXT];
+        }
+        if (isset($data[self::FIELD_TRIGGER_REFERENCE])) {
+            if ($data[self::FIELD_TRIGGER_REFERENCE] instanceof FHIRReference) {
+                $this->setTriggerReference($data[self::FIELD_TRIGGER_REFERENCE]);
             } else {
-                $ext = [];
+                $this->setTriggerReference(new FHIRReference($data[self::FIELD_TRIGGER_REFERENCE]));
             }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setPrognosis($value);
-                } else if (is_array($value)) {
-                    $this->setPrognosis(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setPrognosis(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+        }
+        if (isset($data[self::FIELD_INVESTIGATIONS])) {
+            if (is_array($data[self::FIELD_INVESTIGATIONS])) {
+                foreach($data[self::FIELD_INVESTIGATIONS] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRClinicalImpressionInvestigations) {
+                        $this->addInvestigations($v);
+                    } else {
+                        $this->addInvestigations(new FHIRClinicalImpressionInvestigations($v));
+                    }
                 }
-            } else if ([] !== $ext) {
-                $this->setPrognosis(new FHIRString($ext));
+            } elseif ($data[self::FIELD_INVESTIGATIONS] instanceof FHIRClinicalImpressionInvestigations) {
+                $this->addInvestigations($data[self::FIELD_INVESTIGATIONS]);
+            } else {
+                $this->addInvestigations(new FHIRClinicalImpressionInvestigations($data[self::FIELD_INVESTIGATIONS]));
             }
         }
         if (isset($data[self::FIELD_PROTOCOL]) || isset($data[self::FIELD_PROTOCOL_EXT])) {
-            if (isset($data[self::FIELD_PROTOCOL])) {
-                $value = $data[self::FIELD_PROTOCOL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PROTOCOL_EXT]) && is_array($data[self::FIELD_PROTOCOL_EXT])) {
-                $ext = $data[self::FIELD_PROTOCOL_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_PROTOCOL]) ? $data[self::FIELD_PROTOCOL] : null;
+            $ext = (isset($data[self::FIELD_PROTOCOL_EXT]) && is_array($data[self::FIELD_PROTOCOL_EXT])) ? $ext = $data[self::FIELD_PROTOCOL_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRUri) {
                     $this->setProtocol($value);
@@ -569,8 +503,41 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 } else {
                     $this->setProtocol(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setProtocol(new FHIRUri($ext));
+            }
+        }
+        if (isset($data[self::FIELD_SUMMARY]) || isset($data[self::FIELD_SUMMARY_EXT])) {
+            $value = isset($data[self::FIELD_SUMMARY]) ? $data[self::FIELD_SUMMARY] : null;
+            $ext = (isset($data[self::FIELD_SUMMARY_EXT]) && is_array($data[self::FIELD_SUMMARY_EXT])) ? $ext = $data[self::FIELD_SUMMARY_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setSummary($value);
+                } else if (is_array($value)) {
+                    $this->setSummary(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setSummary(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setSummary(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_FINDING])) {
+            if (is_array($data[self::FIELD_FINDING])) {
+                foreach($data[self::FIELD_FINDING] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRClinicalImpressionFinding) {
+                        $this->addFinding($v);
+                    } else {
+                        $this->addFinding(new FHIRClinicalImpressionFinding($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_FINDING] instanceof FHIRClinicalImpressionFinding) {
+                $this->addFinding($data[self::FIELD_FINDING]);
+            } else {
+                $this->addFinding(new FHIRClinicalImpressionFinding($data[self::FIELD_FINDING]));
             }
         }
         if (isset($data[self::FIELD_RESOLVED])) {
@@ -585,7 +552,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                         $this->addResolved(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_RESOLVED] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_RESOLVED] instanceof FHIRCodeableConcept) {
                 $this->addResolved($data[self::FIELD_RESOLVED]);
             } else {
                 $this->addResolved(new FHIRCodeableConcept($data[self::FIELD_RESOLVED]));
@@ -603,70 +570,61 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                         $this->addRuledOut(new FHIRClinicalImpressionRuledOut($v));
                     }
                 }
-            } else if ($data[self::FIELD_RULED_OUT] instanceof FHIRClinicalImpressionRuledOut) {
+            } elseif ($data[self::FIELD_RULED_OUT] instanceof FHIRClinicalImpressionRuledOut) {
                 $this->addRuledOut($data[self::FIELD_RULED_OUT]);
             } else {
                 $this->addRuledOut(new FHIRClinicalImpressionRuledOut($data[self::FIELD_RULED_OUT]));
             }
         }
-        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
-            if (isset($data[self::FIELD_STATUS])) {
-                $value = $data[self::FIELD_STATUS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
-                $ext = $data[self::FIELD_STATUS_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRClinicalImpressionStatus) {
-                    $this->setStatus($value);
-                } else if (is_array($value)) {
-                    $this->setStatus(new FHIRClinicalImpressionStatus(array_merge($ext, $value)));
-                } else {
-                    $this->setStatus(new FHIRClinicalImpressionStatus([FHIRClinicalImpressionStatus::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setStatus(new FHIRClinicalImpressionStatus($ext));
-            }
-        }
-        if (isset($data[self::FIELD_SUMMARY]) || isset($data[self::FIELD_SUMMARY_EXT])) {
-            if (isset($data[self::FIELD_SUMMARY])) {
-                $value = $data[self::FIELD_SUMMARY];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SUMMARY_EXT]) && is_array($data[self::FIELD_SUMMARY_EXT])) {
-                $ext = $data[self::FIELD_SUMMARY_EXT];
-            } else {
-                $ext = [];
-            }
+        if (isset($data[self::FIELD_PROGNOSIS]) || isset($data[self::FIELD_PROGNOSIS_EXT])) {
+            $value = isset($data[self::FIELD_PROGNOSIS]) ? $data[self::FIELD_PROGNOSIS] : null;
+            $ext = (isset($data[self::FIELD_PROGNOSIS_EXT]) && is_array($data[self::FIELD_PROGNOSIS_EXT])) ? $ext = $data[self::FIELD_PROGNOSIS_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
-                    $this->setSummary($value);
+                    $this->setPrognosis($value);
                 } else if (is_array($value)) {
-                    $this->setSummary(new FHIRString(array_merge($ext, $value)));
+                    $this->setPrognosis(new FHIRString(array_merge($ext, $value)));
                 } else {
-                    $this->setSummary(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                    $this->setPrognosis(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                $this->setSummary(new FHIRString($ext));
+            } elseif ([] !== $ext) {
+                $this->setPrognosis(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_TRIGGER_CODEABLE_CONCEPT])) {
-            if ($data[self::FIELD_TRIGGER_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
-                $this->setTriggerCodeableConcept($data[self::FIELD_TRIGGER_CODEABLE_CONCEPT]);
+        if (isset($data[self::FIELD_PLAN])) {
+            if (is_array($data[self::FIELD_PLAN])) {
+                foreach($data[self::FIELD_PLAN] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRReference) {
+                        $this->addPlan($v);
+                    } else {
+                        $this->addPlan(new FHIRReference($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_PLAN] instanceof FHIRReference) {
+                $this->addPlan($data[self::FIELD_PLAN]);
             } else {
-                $this->setTriggerCodeableConcept(new FHIRCodeableConcept($data[self::FIELD_TRIGGER_CODEABLE_CONCEPT]));
+                $this->addPlan(new FHIRReference($data[self::FIELD_PLAN]));
             }
         }
-        if (isset($data[self::FIELD_TRIGGER_REFERENCE])) {
-            if ($data[self::FIELD_TRIGGER_REFERENCE] instanceof FHIRReference) {
-                $this->setTriggerReference($data[self::FIELD_TRIGGER_REFERENCE]);
+        if (isset($data[self::FIELD_ACTION])) {
+            if (is_array($data[self::FIELD_ACTION])) {
+                foreach($data[self::FIELD_ACTION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRReference) {
+                        $this->addAction($v);
+                    } else {
+                        $this->addAction(new FHIRReference($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_ACTION] instanceof FHIRReference) {
+                $this->addAction($data[self::FIELD_ACTION]);
             } else {
-                $this->setTriggerReference(new FHIRReference($data[self::FIELD_TRIGGER_REFERENCE]));
+                $this->addAction(new FHIRReference($data[self::FIELD_ACTION]));
             }
         }
     }
@@ -685,7 +643,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ClinicalImpression{$xmlns}></ClinicalImpression>";
@@ -704,13 +662,13 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Actions taken during assessment.
+     * The patient being assessed.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    public function getAction()
+    public function getPatient()
     {
-        return $this->action;
+        return $this->patient;
     }
 
     /**
@@ -718,40 +676,15 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Actions taken during assessment.
+     * The patient being assessed.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $action
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $patient
      * @return static
      */
-    public function addAction(FHIRReference $action = null)
+    public function setPatient(FHIRReference $patient = null)
     {
-        $this->action[] = $action;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Actions taken during assessment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[] $action
-     * @return static
-     */
-    public function setAction(array $action = [])
-    {
-        $this->action = [];
-        if ([] === $action) {
-            return $this;
-        }
-        foreach($action as $v) {
-            if ($v instanceof FHIRReference) {
-                $this->addAction($v);
-            } else {
-                $this->addAction(new FHIRReference($v));
-            }
-        }
+        $this->_trackValueSet($this->patient, $patient);
+        $this->patient = $patient;
         return $this;
     }
 
@@ -781,7 +714,37 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      */
     public function setAssessor(FHIRReference $assessor = null)
     {
+        $this->_trackValueSet($this->assessor, $assessor);
         $this->assessor = $assessor;
+        return $this;
+    }
+
+    /**
+     * The workflow state of a clinical impression.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Identifies the workflow status of the assessment.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRClinicalImpressionStatus
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * The workflow state of a clinical impression.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Identifies the workflow status of the assessment.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRClinicalImpressionStatus $status
+     * @return static
+     */
+    public function setStatus(FHIRClinicalImpressionStatus $status = null)
+    {
+        $this->_trackValueSet($this->status, $status);
+        $this->status = $status;
         return $this;
     }
 
@@ -819,15 +782,11 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      */
     public function setDate($date = null)
     {
-        if (null === $date) {
-            $this->date = null;
-            return $this;
+        if (null !== $date && !($date instanceof FHIRDateTime)) {
+            $date = new FHIRDateTime($date);
         }
-        if ($date instanceof FHIRDateTime) {
-            $this->date = $date;
-            return $this;
-        }
-        $this->date = new FHIRDateTime($date);
+        $this->_trackValueSet($this->date, $date);
+        $this->date = $date;
         return $this;
     }
 
@@ -859,86 +818,176 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      */
     public function setDescription($description = null)
     {
-        if (null === $description) {
-            $this->description = null;
-            return $this;
+        if (null !== $description && !($description instanceof FHIRString)) {
+            $description = new FHIRString($description);
         }
-        if ($description instanceof FHIRString) {
-            $this->description = $description;
-            return $this;
-        }
-        $this->description = new FHIRString($description);
+        $this->_trackValueSet($this->description, $description);
+        $this->description = $description;
         return $this;
     }
 
     /**
-     * A record of a clinical assessment performed to determine what problem(s) may
-     * affect the patient and before planning the treatments or management strategies
-     * that are best to manage a patient's condition. Assessments are often 1:1 with a
-     * clinical consultation / encounter, but this varies greatly depending on the
-     * clinical workflow. This resource is called "ClinicalImpression" rather than
-     * "ClinicalAssessment" to avoid confusion with the recording of assessment tools
-     * such as Apgar score.
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specific findings or diagnoses that was considered likely or relevant to ongoing
-     * treatment.
+     * A reference to the last assesment that was conducted bon this patient.
+     * Assessments are often/usually ongoing in nature; a care provider (practitioner
+     * or team) will make new assessments on an ongoing basis as new data arises or the
+     * patient's conditions changes.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding[]
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    public function getFinding()
+    public function getPrevious()
     {
-        return $this->finding;
+        return $this->previous;
     }
 
     /**
-     * A record of a clinical assessment performed to determine what problem(s) may
-     * affect the patient and before planning the treatments or management strategies
-     * that are best to manage a patient's condition. Assessments are often 1:1 with a
-     * clinical consultation / encounter, but this varies greatly depending on the
-     * clinical workflow. This resource is called "ClinicalImpression" rather than
-     * "ClinicalAssessment" to avoid confusion with the recording of assessment tools
-     * such as Apgar score.
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specific findings or diagnoses that was considered likely or relevant to ongoing
-     * treatment.
+     * A reference to the last assesment that was conducted bon this patient.
+     * Assessments are often/usually ongoing in nature; a care provider (practitioner
+     * or team) will make new assessments on an ongoing basis as new data arises or the
+     * patient's conditions changes.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding $finding
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $previous
      * @return static
      */
-    public function addFinding(FHIRClinicalImpressionFinding $finding = null)
+    public function setPrevious(FHIRReference $previous = null)
     {
-        $this->finding[] = $finding;
+        $this->_trackValueSet($this->previous, $previous);
+        $this->previous = $previous;
         return $this;
     }
 
     /**
-     * A record of a clinical assessment performed to determine what problem(s) may
-     * affect the patient and before planning the treatments or management strategies
-     * that are best to manage a patient's condition. Assessments are often 1:1 with a
-     * clinical consultation / encounter, but this varies greatly depending on the
-     * clinical workflow. This resource is called "ClinicalImpression" rather than
-     * "ClinicalAssessment" to avoid confusion with the recording of assessment tools
-     * such as Apgar score.
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specific findings or diagnoses that was considered likely or relevant to ongoing
-     * treatment.
+     * This a list of the general problems/conditions for a patient.
      *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding[] $finding
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
+     */
+    public function getProblem()
+    {
+        return $this->problem;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This a list of the general problems/conditions for a patient.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $problem
      * @return static
      */
-    public function setFinding(array $finding = [])
+    public function addProblem(FHIRReference $problem = null)
     {
-        $this->finding = [];
-        if ([] === $finding) {
+        $this->_trackValueAdded();
+        $this->problem[] = $problem;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This a list of the general problems/conditions for a patient.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[] $problem
+     * @return static
+     */
+    public function setProblem(array $problem = [])
+    {
+        if ([] !== $this->problem) {
+            $this->_trackValuesRemoved(count($this->problem));
+            $this->problem = [];
+        }
+        if ([] === $problem) {
             return $this;
         }
-        foreach($finding as $v) {
-            if ($v instanceof FHIRClinicalImpressionFinding) {
-                $this->addFinding($v);
+        foreach($problem as $v) {
+            if ($v instanceof FHIRReference) {
+                $this->addProblem($v);
             } else {
-                $this->addFinding(new FHIRClinicalImpressionFinding($v));
+                $this->addProblem(new FHIRReference($v));
             }
         }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The request or event that necessitated this assessment. This may be a diagnosis,
+     * a Care Plan, a Request Referral, or some other resource.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
+     */
+    public function getTriggerCodeableConcept()
+    {
+        return $this->triggerCodeableConcept;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The request or event that necessitated this assessment. This may be a diagnosis,
+     * a Care Plan, a Request Referral, or some other resource.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $triggerCodeableConcept
+     * @return static
+     */
+    public function setTriggerCodeableConcept(FHIRCodeableConcept $triggerCodeableConcept = null)
+    {
+        $this->_trackValueSet($this->triggerCodeableConcept, $triggerCodeableConcept);
+        $this->triggerCodeableConcept = $triggerCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The request or event that necessitated this assessment. This may be a diagnosis,
+     * a Care Plan, a Request Referral, or some other resource.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     */
+    public function getTriggerReference()
+    {
+        return $this->triggerReference;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The request or event that necessitated this assessment. This may be a diagnosis,
+     * a Care Plan, a Request Referral, or some other resource.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $triggerReference
+     * @return static
+     */
+    public function setTriggerReference(FHIRReference $triggerReference = null)
+    {
+        $this->_trackValueSet($this->triggerReference, $triggerReference);
+        $this->triggerReference = $triggerReference;
         return $this;
     }
 
@@ -984,6 +1033,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      */
     public function addInvestigations(FHIRClinicalImpressionInvestigations $investigations = null)
     {
+        $this->_trackValueAdded();
         $this->investigations[] = $investigations;
         return $this;
     }
@@ -1008,7 +1058,10 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      */
     public function setInvestigations(array $investigations = [])
     {
-        $this->investigations = [];
+        if ([] !== $this->investigations) {
+            $this->_trackValuesRemoved(count($this->investigations));
+            $this->investigations = [];
+        }
         if ([] === $investigations) {
             return $this;
         }
@@ -1019,222 +1072,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 $this->addInvestigations(new FHIRClinicalImpressionInvestigations($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The patient being assessed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
-     */
-    public function getPatient()
-    {
-        return $this->patient;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The patient being assessed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $patient
-     * @return static
-     */
-    public function setPatient(FHIRReference $patient = null)
-    {
-        $this->patient = $patient;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Plan of action after assessment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
-     */
-    public function getPlan()
-    {
-        return $this->plan;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Plan of action after assessment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $plan
-     * @return static
-     */
-    public function addPlan(FHIRReference $plan = null)
-    {
-        $this->plan[] = $plan;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Plan of action after assessment.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[] $plan
-     * @return static
-     */
-    public function setPlan(array $plan = [])
-    {
-        $this->plan = [];
-        if ([] === $plan) {
-            return $this;
-        }
-        foreach($plan as $v) {
-            if ($v instanceof FHIRReference) {
-                $this->addPlan($v);
-            } else {
-                $this->addPlan(new FHIRReference($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A reference to the last assesment that was conducted bon this patient.
-     * Assessments are often/usually ongoing in nature; a care provider (practitioner
-     * or team) will make new assessments on an ongoing basis as new data arises or the
-     * patient's conditions changes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
-     */
-    public function getPrevious()
-    {
-        return $this->previous;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A reference to the last assesment that was conducted bon this patient.
-     * Assessments are often/usually ongoing in nature; a care provider (practitioner
-     * or team) will make new assessments on an ongoing basis as new data arises or the
-     * patient's conditions changes.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $previous
-     * @return static
-     */
-    public function setPrevious(FHIRReference $previous = null)
-    {
-        $this->previous = $previous;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * This a list of the general problems/conditions for a patient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
-     */
-    public function getProblem()
-    {
-        return $this->problem;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * This a list of the general problems/conditions for a patient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $problem
-     * @return static
-     */
-    public function addProblem(FHIRReference $problem = null)
-    {
-        $this->problem[] = $problem;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * This a list of the general problems/conditions for a patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[] $problem
-     * @return static
-     */
-    public function setProblem(array $problem = [])
-    {
-        $this->problem = [];
-        if ([] === $problem) {
-            return $this;
-        }
-        foreach($problem as $v) {
-            if ($v instanceof FHIRReference) {
-                $this->addProblem($v);
-            } else {
-                $this->addProblem(new FHIRReference($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Estimate of likely outcome.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    public function getPrognosis()
-    {
-        return $this->prognosis;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Estimate of likely outcome.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $prognosis
-     * @return static
-     */
-    public function setPrognosis($prognosis = null)
-    {
-        if (null === $prognosis) {
-            $this->prognosis = null;
-            return $this;
-        }
-        if ($prognosis instanceof FHIRString) {
-            $this->prognosis = $prognosis;
-            return $this;
-        }
-        $this->prognosis = new FHIRString($prognosis);
         return $this;
     }
 
@@ -1266,15 +1103,120 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      */
     public function setProtocol($protocol = null)
     {
-        if (null === $protocol) {
-            $this->protocol = null;
+        if (null !== $protocol && !($protocol instanceof FHIRUri)) {
+            $protocol = new FHIRUri($protocol);
+        }
+        $this->_trackValueSet($this->protocol, $protocol);
+        $this->protocol = $protocol;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A text summary of the investigations and the diagnosis.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    public function getSummary()
+    {
+        return $this->summary;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A text summary of the investigations and the diagnosis.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $summary
+     * @return static
+     */
+    public function setSummary($summary = null)
+    {
+        if (null !== $summary && !($summary instanceof FHIRString)) {
+            $summary = new FHIRString($summary);
+        }
+        $this->_trackValueSet($this->summary, $summary);
+        $this->summary = $summary;
+        return $this;
+    }
+
+    /**
+     * A record of a clinical assessment performed to determine what problem(s) may
+     * affect the patient and before planning the treatments or management strategies
+     * that are best to manage a patient's condition. Assessments are often 1:1 with a
+     * clinical consultation / encounter, but this varies greatly depending on the
+     * clinical workflow. This resource is called "ClinicalImpression" rather than
+     * "ClinicalAssessment" to avoid confusion with the recording of assessment tools
+     * such as Apgar score.
+     *
+     * Specific findings or diagnoses that was considered likely or relevant to ongoing
+     * treatment.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding[]
+     */
+    public function getFinding()
+    {
+        return $this->finding;
+    }
+
+    /**
+     * A record of a clinical assessment performed to determine what problem(s) may
+     * affect the patient and before planning the treatments or management strategies
+     * that are best to manage a patient's condition. Assessments are often 1:1 with a
+     * clinical consultation / encounter, but this varies greatly depending on the
+     * clinical workflow. This resource is called "ClinicalImpression" rather than
+     * "ClinicalAssessment" to avoid confusion with the recording of assessment tools
+     * such as Apgar score.
+     *
+     * Specific findings or diagnoses that was considered likely or relevant to ongoing
+     * treatment.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding $finding
+     * @return static
+     */
+    public function addFinding(FHIRClinicalImpressionFinding $finding = null)
+    {
+        $this->_trackValueAdded();
+        $this->finding[] = $finding;
+        return $this;
+    }
+
+    /**
+     * A record of a clinical assessment performed to determine what problem(s) may
+     * affect the patient and before planning the treatments or management strategies
+     * that are best to manage a patient's condition. Assessments are often 1:1 with a
+     * clinical consultation / encounter, but this varies greatly depending on the
+     * clinical workflow. This resource is called "ClinicalImpression" rather than
+     * "ClinicalAssessment" to avoid confusion with the recording of assessment tools
+     * such as Apgar score.
+     *
+     * Specific findings or diagnoses that was considered likely or relevant to ongoing
+     * treatment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding[] $finding
+     * @return static
+     */
+    public function setFinding(array $finding = [])
+    {
+        if ([] !== $this->finding) {
+            $this->_trackValuesRemoved(count($this->finding));
+            $this->finding = [];
+        }
+        if ([] === $finding) {
             return $this;
         }
-        if ($protocol instanceof FHIRUri) {
-            $this->protocol = $protocol;
-            return $this;
+        foreach($finding as $v) {
+            if ($v instanceof FHIRClinicalImpressionFinding) {
+                $this->addFinding($v);
+            } else {
+                $this->addFinding(new FHIRClinicalImpressionFinding($v));
+            }
         }
-        $this->protocol = new FHIRUri($protocol);
         return $this;
     }
 
@@ -1306,6 +1248,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      */
     public function addResolved(FHIRCodeableConcept $resolved = null)
     {
+        $this->_trackValueAdded();
         $this->resolved[] = $resolved;
         return $this;
     }
@@ -1323,7 +1266,10 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      */
     public function setResolved(array $resolved = [])
     {
-        $this->resolved = [];
+        if ([] !== $this->resolved) {
+            $this->_trackValuesRemoved(count($this->resolved));
+            $this->resolved = [];
+        }
         if ([] === $resolved) {
             return $this;
         }
@@ -1371,6 +1317,7 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      */
     public function addRuledOut(FHIRClinicalImpressionRuledOut $ruledOut = null)
     {
+        $this->_trackValueAdded();
         $this->ruledOut[] = $ruledOut;
         return $this;
     }
@@ -1391,7 +1338,10 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      */
     public function setRuledOut(array $ruledOut = [])
     {
-        $this->ruledOut = [];
+        if ([] !== $this->ruledOut) {
+            $this->_trackValuesRemoved(count($this->ruledOut));
+            $this->ruledOut = [];
+        }
         if ([] === $ruledOut) {
             return $this;
         }
@@ -1406,45 +1356,17 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
-     * The workflow state of a clinical impression.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Identifies the workflow status of the assessment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRClinicalImpressionStatus
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * The workflow state of a clinical impression.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Identifies the workflow status of the assessment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRClinicalImpressionStatus $status
-     * @return static
-     */
-    public function setStatus(FHIRClinicalImpressionStatus $status = null)
-    {
-        $this->status = $status;
-        return $this;
-    }
-
-    /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A text summary of the investigations and the diagnosis.
+     * Estimate of likely outcome.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    public function getSummary()
+    public function getPrognosis()
     {
-        return $this->summary;
+        return $this->prognosis;
     }
 
     /**
@@ -1452,56 +1374,18 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A text summary of the investigations and the diagnosis.
+     * Estimate of likely outcome.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $summary
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $prognosis
      * @return static
      */
-    public function setSummary($summary = null)
+    public function setPrognosis($prognosis = null)
     {
-        if (null === $summary) {
-            $this->summary = null;
-            return $this;
+        if (null !== $prognosis && !($prognosis instanceof FHIRString)) {
+            $prognosis = new FHIRString($prognosis);
         }
-        if ($summary instanceof FHIRString) {
-            $this->summary = $summary;
-            return $this;
-        }
-        $this->summary = new FHIRString($summary);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The request or event that necessitated this assessment. This may be a diagnosis,
-     * a Care Plan, a Request Referral, or some other resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
-     */
-    public function getTriggerCodeableConcept()
-    {
-        return $this->triggerCodeableConcept;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The request or event that necessitated this assessment. This may be a diagnosis,
-     * a Care Plan, a Request Referral, or some other resource.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $triggerCodeableConcept
-     * @return static
-     */
-    public function setTriggerCodeableConcept(FHIRCodeableConcept $triggerCodeableConcept = null)
-    {
-        $this->triggerCodeableConcept = $triggerCodeableConcept;
+        $this->_trackValueSet($this->prognosis, $prognosis);
+        $this->prognosis = $prognosis;
         return $this;
     }
 
@@ -1510,14 +1394,13 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The request or event that necessitated this assessment. This may be a diagnosis,
-     * a Care Plan, a Request Referral, or some other resource.
+     * Plan of action after assessment.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
-    public function getTriggerReference()
+    public function getPlan()
     {
-        return $this->triggerReference;
+        return $this->plan;
     }
 
     /**
@@ -1525,15 +1408,104 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The request or event that necessitated this assessment. This may be a diagnosis,
-     * a Care Plan, a Request Referral, or some other resource.
+     * Plan of action after assessment.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $triggerReference
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $plan
      * @return static
      */
-    public function setTriggerReference(FHIRReference $triggerReference = null)
+    public function addPlan(FHIRReference $plan = null)
     {
-        $this->triggerReference = $triggerReference;
+        $this->_trackValueAdded();
+        $this->plan[] = $plan;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Plan of action after assessment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[] $plan
+     * @return static
+     */
+    public function setPlan(array $plan = [])
+    {
+        if ([] !== $this->plan) {
+            $this->_trackValuesRemoved(count($this->plan));
+            $this->plan = [];
+        }
+        if ([] === $plan) {
+            return $this;
+        }
+        foreach($plan as $v) {
+            if ($v instanceof FHIRReference) {
+                $this->addPlan($v);
+            } else {
+                $this->addPlan(new FHIRReference($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Actions taken during assessment.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
+     */
+    public function getAction()
+    {
+        return $this->action;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Actions taken during assessment.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $action
+     * @return static
+     */
+    public function addAction(FHIRReference $action = null)
+    {
+        $this->_trackValueAdded();
+        $this->action[] = $action;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Actions taken during assessment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[] $action
+     * @return static
+     */
+    public function setAction(array $action = [])
+    {
+        if ([] !== $this->action) {
+            $this->_trackValuesRemoved(count($this->action));
+            $this->action = [];
+        }
+        if ([] === $action) {
+            return $this;
+        }
+        foreach($action as $v) {
+            if ($v instanceof FHIRReference) {
+                $this->addAction($v);
+            } else {
+                $this->addAction(new FHIRReference($v));
+            }
+        }
         return $this;
     }
 
@@ -1558,16 +1530,19 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getAction())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_ACTION, $i)] = $fieldErrs;
-                }
+        if (null !== ($v = $this->getPatient())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PATIENT] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getAssessor())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_ASSESSOR] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_STATUS] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDate())) {
@@ -1578,32 +1553,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
         if (null !== ($v = $this->getDescription())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getFinding())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_FINDING, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getInvestigations())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_INVESTIGATIONS, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getPatient())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PATIENT] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getPlan())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_PLAN, $i)] = $fieldErrs;
-                }
             }
         }
         if (null !== ($v = $this->getPrevious())) {
@@ -1618,14 +1567,38 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 }
             }
         }
-        if (null !== ($v = $this->getPrognosis())) {
+        if (null !== ($v = $this->getTriggerCodeableConcept())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PROGNOSIS] = $fieldErrs;
+                $errs[self::FIELD_TRIGGER_CODEABLE_CONCEPT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getTriggerReference())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TRIGGER_REFERENCE] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getInvestigations())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_INVESTIGATIONS, $i)] = $fieldErrs;
+                }
             }
         }
         if (null !== ($v = $this->getProtocol())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_PROTOCOL] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSummary())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUMMARY] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getFinding())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_FINDING, $i)] = $fieldErrs;
+                }
             }
         }
         if ([] !== ($vs = $this->getResolved())) {
@@ -1642,35 +1615,34 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 }
             }
         }
-        if (null !== ($v = $this->getStatus())) {
+        if (null !== ($v = $this->getPrognosis())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_STATUS] = $fieldErrs;
+                $errs[self::FIELD_PROGNOSIS] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getSummary())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SUMMARY] = $fieldErrs;
+        if ([] !== ($vs = $this->getPlan())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_PLAN, $i)] = $fieldErrs;
+                }
             }
         }
-        if (null !== ($v = $this->getTriggerCodeableConcept())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TRIGGER_CODEABLE_CONCEPT] = $fieldErrs;
+        if ([] !== ($vs = $this->getAction())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_ACTION, $i)] = $fieldErrs;
+                }
             }
         }
-        if (null !== ($v = $this->getTriggerReference())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TRIGGER_REFERENCE] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_ACTION])) {
-            $v = $this->getAction();
-            foreach($validationRules[self::FIELD_ACTION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_ACTION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_PATIENT])) {
+            $v = $this->getPatient();
+            foreach($validationRules[self::FIELD_PATIENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_PATIENT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ACTION])) {
-                        $errs[self::FIELD_ACTION] = [];
+                    if (!isset($errs[self::FIELD_PATIENT])) {
+                        $errs[self::FIELD_PATIENT] = [];
                     }
-                    $errs[self::FIELD_ACTION][$rule] = $err;
+                    $errs[self::FIELD_PATIENT][$rule] = $err;
                 }
             }
         }
@@ -1683,6 +1655,18 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                         $errs[self::FIELD_ASSESSOR] = [];
                     }
                     $errs[self::FIELD_ASSESSOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_STATUS])) {
+            $v = $this->getStatus();
+            foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_STATUS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_STATUS])) {
+                        $errs[self::FIELD_STATUS] = [];
+                    }
+                    $errs[self::FIELD_STATUS][$rule] = $err;
                 }
             }
         }
@@ -1710,54 +1694,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_FINDING])) {
-            $v = $this->getFinding();
-            foreach($validationRules[self::FIELD_FINDING] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_FINDING, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FINDING])) {
-                        $errs[self::FIELD_FINDING] = [];
-                    }
-                    $errs[self::FIELD_FINDING][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_INVESTIGATIONS])) {
-            $v = $this->getInvestigations();
-            foreach($validationRules[self::FIELD_INVESTIGATIONS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_INVESTIGATIONS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INVESTIGATIONS])) {
-                        $errs[self::FIELD_INVESTIGATIONS] = [];
-                    }
-                    $errs[self::FIELD_INVESTIGATIONS][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PATIENT])) {
-            $v = $this->getPatient();
-            foreach($validationRules[self::FIELD_PATIENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_PATIENT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PATIENT])) {
-                        $errs[self::FIELD_PATIENT] = [];
-                    }
-                    $errs[self::FIELD_PATIENT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PLAN])) {
-            $v = $this->getPlan();
-            foreach($validationRules[self::FIELD_PLAN] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_PLAN, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PLAN])) {
-                        $errs[self::FIELD_PLAN] = [];
-                    }
-                    $errs[self::FIELD_PLAN][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_PREVIOUS])) {
             $v = $this->getPrevious();
             foreach($validationRules[self::FIELD_PREVIOUS] as $rule => $constraint) {
@@ -1782,15 +1718,39 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PROGNOSIS])) {
-            $v = $this->getPrognosis();
-            foreach($validationRules[self::FIELD_PROGNOSIS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_PROGNOSIS, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_TRIGGER_CODEABLE_CONCEPT])) {
+            $v = $this->getTriggerCodeableConcept();
+            foreach($validationRules[self::FIELD_TRIGGER_CODEABLE_CONCEPT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_TRIGGER_CODEABLE_CONCEPT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PROGNOSIS])) {
-                        $errs[self::FIELD_PROGNOSIS] = [];
+                    if (!isset($errs[self::FIELD_TRIGGER_CODEABLE_CONCEPT])) {
+                        $errs[self::FIELD_TRIGGER_CODEABLE_CONCEPT] = [];
                     }
-                    $errs[self::FIELD_PROGNOSIS][$rule] = $err;
+                    $errs[self::FIELD_TRIGGER_CODEABLE_CONCEPT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TRIGGER_REFERENCE])) {
+            $v = $this->getTriggerReference();
+            foreach($validationRules[self::FIELD_TRIGGER_REFERENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_TRIGGER_REFERENCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TRIGGER_REFERENCE])) {
+                        $errs[self::FIELD_TRIGGER_REFERENCE] = [];
+                    }
+                    $errs[self::FIELD_TRIGGER_REFERENCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INVESTIGATIONS])) {
+            $v = $this->getInvestigations();
+            foreach($validationRules[self::FIELD_INVESTIGATIONS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_INVESTIGATIONS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INVESTIGATIONS])) {
+                        $errs[self::FIELD_INVESTIGATIONS] = [];
+                    }
+                    $errs[self::FIELD_INVESTIGATIONS][$rule] = $err;
                 }
             }
         }
@@ -1803,6 +1763,30 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                         $errs[self::FIELD_PROTOCOL] = [];
                     }
                     $errs[self::FIELD_PROTOCOL][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUMMARY])) {
+            $v = $this->getSummary();
+            foreach($validationRules[self::FIELD_SUMMARY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_SUMMARY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUMMARY])) {
+                        $errs[self::FIELD_SUMMARY] = [];
+                    }
+                    $errs[self::FIELD_SUMMARY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_FINDING])) {
+            $v = $this->getFinding();
+            foreach($validationRules[self::FIELD_FINDING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_FINDING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FINDING])) {
+                        $errs[self::FIELD_FINDING] = [];
+                    }
+                    $errs[self::FIELD_FINDING][$rule] = $err;
                 }
             }
         }
@@ -1830,51 +1814,51 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_STATUS])) {
-            $v = $this->getStatus();
-            foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_STATUS, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_PROGNOSIS])) {
+            $v = $this->getPrognosis();
+            foreach($validationRules[self::FIELD_PROGNOSIS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_PROGNOSIS, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_STATUS])) {
-                        $errs[self::FIELD_STATUS] = [];
+                    if (!isset($errs[self::FIELD_PROGNOSIS])) {
+                        $errs[self::FIELD_PROGNOSIS] = [];
                     }
-                    $errs[self::FIELD_STATUS][$rule] = $err;
+                    $errs[self::FIELD_PROGNOSIS][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SUMMARY])) {
-            $v = $this->getSummary();
-            foreach($validationRules[self::FIELD_SUMMARY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_SUMMARY, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_PLAN])) {
+            $v = $this->getPlan();
+            foreach($validationRules[self::FIELD_PLAN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_PLAN, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SUMMARY])) {
-                        $errs[self::FIELD_SUMMARY] = [];
+                    if (!isset($errs[self::FIELD_PLAN])) {
+                        $errs[self::FIELD_PLAN] = [];
                     }
-                    $errs[self::FIELD_SUMMARY][$rule] = $err;
+                    $errs[self::FIELD_PLAN][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TRIGGER_CODEABLE_CONCEPT])) {
-            $v = $this->getTriggerCodeableConcept();
-            foreach($validationRules[self::FIELD_TRIGGER_CODEABLE_CONCEPT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_TRIGGER_CODEABLE_CONCEPT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_ACTION])) {
+            $v = $this->getAction();
+            foreach($validationRules[self::FIELD_ACTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_ACTION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TRIGGER_CODEABLE_CONCEPT])) {
-                        $errs[self::FIELD_TRIGGER_CODEABLE_CONCEPT] = [];
+                    if (!isset($errs[self::FIELD_ACTION])) {
+                        $errs[self::FIELD_ACTION] = [];
                     }
-                    $errs[self::FIELD_TRIGGER_CODEABLE_CONCEPT][$rule] = $err;
+                    $errs[self::FIELD_ACTION][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TRIGGER_REFERENCE])) {
-            $v = $this->getTriggerReference();
-            foreach($validationRules[self::FIELD_TRIGGER_REFERENCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION, self::FIELD_TRIGGER_REFERENCE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TRIGGER_REFERENCE])) {
-                        $errs[self::FIELD_TRIGGER_REFERENCE] = [];
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
                     }
-                    $errs[self::FIELD_TRIGGER_REFERENCE][$rule] = $err;
+                    $errs[self::FIELD_TEXT][$rule] = $err;
                 }
             }
         }
@@ -1914,18 +1898,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ID])) {
             $v = $this->getId();
             foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
@@ -1935,6 +1907,18 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                         $errs[self::FIELD_ID] = [];
                     }
                     $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
                 }
             }
         }
@@ -1962,250 +1946,286 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_META])) {
-            $v = $this->getMeta();
-            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_META])) {
-                        $errs[self::FIELD_META] = [];
-                    }
-                    $errs[self::FIELD_META][$rule] = $err;
-                }
-            }
-        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClinicalImpression $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClinicalImpression
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRClinicalImpression::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRClinicalImpression::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRClinicalImpression::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRClinicalImpression;
+            $type = new FHIRClinicalImpression(null);
         } elseif (!is_object($type) || !($type instanceof FHIRClinicalImpression)) {
             throw new \RuntimeException(sprintf(
                 'FHIRClinicalImpression::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRClinicalImpression or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRDomainResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_PATIENT === $n->nodeName) {
+                $type->setPatient(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_ASSESSOR === $n->nodeName) {
+                $type->setAssessor(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_STATUS === $n->nodeName) {
+                $type->setStatus(FHIRClinicalImpressionStatus::xmlUnserialize($n));
+            } elseif (self::FIELD_DATE === $n->nodeName) {
+                $type->setDate(FHIRDateTime::xmlUnserialize($n));
+            } elseif (self::FIELD_DESCRIPTION === $n->nodeName) {
+                $type->setDescription(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_PREVIOUS === $n->nodeName) {
+                $type->setPrevious(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_PROBLEM === $n->nodeName) {
+                $type->addProblem(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_TRIGGER_CODEABLE_CONCEPT === $n->nodeName) {
+                $type->setTriggerCodeableConcept(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_TRIGGER_REFERENCE === $n->nodeName) {
+                $type->setTriggerReference(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_INVESTIGATIONS === $n->nodeName) {
+                $type->addInvestigations(FHIRClinicalImpressionInvestigations::xmlUnserialize($n));
+            } elseif (self::FIELD_PROTOCOL === $n->nodeName) {
+                $type->setProtocol(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_SUMMARY === $n->nodeName) {
+                $type->setSummary(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_FINDING === $n->nodeName) {
+                $type->addFinding(FHIRClinicalImpressionFinding::xmlUnserialize($n));
+            } elseif (self::FIELD_RESOLVED === $n->nodeName) {
+                $type->addResolved(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_RULED_OUT === $n->nodeName) {
+                $type->addRuledOut(FHIRClinicalImpressionRuledOut::xmlUnserialize($n));
+            } elseif (self::FIELD_PROGNOSIS === $n->nodeName) {
+                $type->setPrognosis(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_PLAN === $n->nodeName) {
+                $type->addPlan(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_ACTION === $n->nodeName) {
+                $type->addAction(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_TEXT === $n->nodeName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n));
+            } elseif (self::FIELD_CONTAINED === $n->nodeName) {
+                for ($ni = 0; $ni < $n->childNodes->length; $ni++) {
+                    $nn = $n->childNodes->item($ni);
+                    if ($nn instanceof \DOMElement) {
+                        $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn));
+                    }
+                }
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRId::xmlUnserialize($n));
+            } elseif (self::FIELD_META === $n->nodeName) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($n));
+            } elseif (self::FIELD_IMPLICIT_RULES === $n->nodeName) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_LANGUAGE === $n->nodeName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->action)) {
-            foreach($children->action as $child) {
-                $type->addAction(FHIRReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->assessor)) {
-            $type->setAssessor(FHIRReference::xmlUnserialize($children->assessor));
-        }
-        if (isset($children->date)) {
-            $type->setDate(FHIRDateTime::xmlUnserialize($children->date));
-        }
-        if (isset($attributes->date)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DATE);
+        if (null !== $n) {
             $pt = $type->getDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->date);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDate((string)$attributes->date);
+                $type->setDate($n->nodeValue);
             }
         }
-        if (isset($children->description)) {
-            $type->setDescription(FHIRString::xmlUnserialize($children->description));
-        }
-        if (isset($attributes->description)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DESCRIPTION);
+        if (null !== $n) {
             $pt = $type->getDescription();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->description);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDescription((string)$attributes->description);
+                $type->setDescription($n->nodeValue);
             }
         }
-        if (isset($children->finding)) {
-            foreach($children->finding as $child) {
-                $type->addFinding(FHIRClinicalImpressionFinding::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->investigations)) {
-            foreach($children->investigations as $child) {
-                $type->addInvestigations(FHIRClinicalImpressionInvestigations::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->patient)) {
-            $type->setPatient(FHIRReference::xmlUnserialize($children->patient));
-        }
-        if (isset($children->plan)) {
-            foreach($children->plan as $child) {
-                $type->addPlan(FHIRReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->previous)) {
-            $type->setPrevious(FHIRReference::xmlUnserialize($children->previous));
-        }
-        if (isset($children->problem)) {
-            foreach($children->problem as $child) {
-                $type->addProblem(FHIRReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->prognosis)) {
-            $type->setPrognosis(FHIRString::xmlUnserialize($children->prognosis));
-        }
-        if (isset($attributes->prognosis)) {
-            $pt = $type->getPrognosis();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->prognosis);
-            } else {
-                $type->setPrognosis((string)$attributes->prognosis);
-            }
-        }
-        if (isset($children->protocol)) {
-            $type->setProtocol(FHIRUri::xmlUnserialize($children->protocol));
-        }
-        if (isset($attributes->protocol)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_PROTOCOL);
+        if (null !== $n) {
             $pt = $type->getProtocol();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->protocol);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setProtocol((string)$attributes->protocol);
+                $type->setProtocol($n->nodeValue);
             }
         }
-        if (isset($children->resolved)) {
-            foreach($children->resolved as $child) {
-                $type->addResolved(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->ruledOut)) {
-            foreach($children->ruledOut as $child) {
-                $type->addRuledOut(FHIRClinicalImpressionRuledOut::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->status)) {
-            $type->setStatus(FHIRClinicalImpressionStatus::xmlUnserialize($children->status));
-        }
-        if (isset($children->summary)) {
-            $type->setSummary(FHIRString::xmlUnserialize($children->summary));
-        }
-        if (isset($attributes->summary)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_SUMMARY);
+        if (null !== $n) {
             $pt = $type->getSummary();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->summary);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setSummary((string)$attributes->summary);
+                $type->setSummary($n->nodeValue);
             }
         }
-        if (isset($children->triggerCodeableConcept)) {
-            $type->setTriggerCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->triggerCodeableConcept));
+        $n = $element->attributes->getNamedItem(self::FIELD_PROGNOSIS);
+        if (null !== $n) {
+            $pt = $type->getPrognosis();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setPrognosis($n->nodeValue);
+            }
         }
-        if (isset($children->triggerReference)) {
-            $type->setTriggerReference(FHIRReference::xmlUnserialize($children->triggerReference));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_IMPLICIT_RULES);
+        if (null !== $n) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setImplicitRules($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_LANGUAGE);
+        if (null !== $n) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setLanguage($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getAction())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION, null, $v->_getFHIRXMLNamespace()));
-            }
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getPatient())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PATIENT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getAssessor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ASSESSOR, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_ASSESSOR);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_STATUS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DATE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getFinding())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_FINDING, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if ([] !== ($vs = $this->getInvestigations())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INVESTIGATIONS, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getPatient())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getPlan())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PLAN, null, $v->_getFHIRXMLNamespace()));
-            }
+            $telement = $element->ownerDocument->createElement(self::FIELD_DESCRIPTION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getPrevious())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PREVIOUS, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_PREVIOUS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getProblem())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PROBLEM, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PROBLEM);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getPrognosis())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PROGNOSIS, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getTriggerCodeableConcept())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TRIGGER_CODEABLE_CONCEPT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getTriggerReference())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TRIGGER_REFERENCE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getInvestigations())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_INVESTIGATIONS);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
         }
         if (null !== ($v = $this->getProtocol())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PROTOCOL, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_PROTOCOL);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getSummary())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SUMMARY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getFinding())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_FINDING);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
         }
         if ([] !== ($vs = $this->getResolved())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_RESOLVED, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_RESOLVED);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getRuledOut())) {
@@ -2213,22 +2233,37 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_RULED_OUT, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_RULED_OUT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getPrognosis())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PROGNOSIS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getSummary())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUMMARY, null, $v->_getFHIRXMLNamespace()));
+        if ([] !== ($vs = $this->getPlan())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_PLAN);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
         }
-        if (null !== ($v = $this->getTriggerCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TRIGGER_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
+        if ([] !== ($vs = $this->getAction())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_ACTION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
         }
-        if (null !== ($v = $this->getTriggerReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TRIGGER_REFERENCE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -2237,64 +2272,40 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getAction())) {
-            $a[self::FIELD_ACTION] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_ACTION][] = $v;
-            }
+        if (null !== ($v = $this->getPatient())) {
+            $a[self::FIELD_PATIENT] = $v;
         }
         if (null !== ($v = $this->getAssessor())) {
             $a[self::FIELD_ASSESSOR] = $v;
         }
+        if (null !== ($v = $this->getStatus())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRClinicalImpressionStatus::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_STATUS_EXT] = $ext;
+            }
+        }
         if (null !== ($v = $this->getDate())) {
-            $a[self::FIELD_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_DATE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DATE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDateTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DATE_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
             }
-        }
-        if ([] !== ($vs = $this->getFinding())) {
-            $a[self::FIELD_FINDING] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_FINDING][] = $v;
-            }
-        }
-        if ([] !== ($vs = $this->getInvestigations())) {
-            $a[self::FIELD_INVESTIGATIONS] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_INVESTIGATIONS][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getPatient())) {
-            $a[self::FIELD_PATIENT] = $v;
-        }
-        if ([] !== ($vs = $this->getPlan())) {
-            $a[self::FIELD_PLAN] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PLAN][] = $v;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DESCRIPTION_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getPrevious())) {
@@ -2309,22 +2320,48 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 $a[self::FIELD_PROBLEM][] = $v;
             }
         }
-        if (null !== ($v = $this->getPrognosis())) {
-            $a[self::FIELD_PROGNOSIS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_PROGNOSIS_EXT] = $enc;
+        if (null !== ($v = $this->getTriggerCodeableConcept())) {
+            $a[self::FIELD_TRIGGER_CODEABLE_CONCEPT] = $v;
+        }
+        if (null !== ($v = $this->getTriggerReference())) {
+            $a[self::FIELD_TRIGGER_REFERENCE] = $v;
+        }
+        if ([] !== ($vs = $this->getInvestigations())) {
+            $a[self::FIELD_INVESTIGATIONS] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_INVESTIGATIONS][] = $v;
             }
         }
         if (null !== ($v = $this->getProtocol())) {
-            $a[self::FIELD_PROTOCOL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_PROTOCOL_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PROTOCOL] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUri::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PROTOCOL_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getSummary())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SUMMARY] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_SUMMARY_EXT] = $ext;
+            }
+        }
+        if ([] !== ($vs = $this->getFinding())) {
+            $a[self::FIELD_FINDING] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_FINDING][] = $v;
             }
         }
         if ([] !== ($vs = $this->getResolved())) {
@@ -2345,32 +2382,33 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
                 $a[self::FIELD_RULED_OUT][] = $v;
             }
         }
-        if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRClinicalImpressionStatus::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRClinicalImpressionStatus::FIELD_VALUE]);
-                $a[self::FIELD_STATUS_EXT] = $enc;
+        if (null !== ($v = $this->getPrognosis())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PROGNOSIS] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PROGNOSIS_EXT] = $ext;
             }
         }
-        if (null !== ($v = $this->getSummary())) {
-            $a[self::FIELD_SUMMARY] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_SUMMARY_EXT] = $enc;
+        if ([] !== ($vs = $this->getPlan())) {
+            $a[self::FIELD_PLAN] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PLAN][] = $v;
             }
         }
-        if (null !== ($v = $this->getTriggerCodeableConcept())) {
-            $a[self::FIELD_TRIGGER_CODEABLE_CONCEPT] = $v;
-        }
-        if (null !== ($v = $this->getTriggerReference())) {
-            $a[self::FIELD_TRIGGER_REFERENCE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getAction())) {
+            $a[self::FIELD_ACTION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ACTION][] = $v;
+            }
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

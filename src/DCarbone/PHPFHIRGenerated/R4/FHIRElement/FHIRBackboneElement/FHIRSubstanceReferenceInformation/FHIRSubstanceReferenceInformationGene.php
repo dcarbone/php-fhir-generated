@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -78,24 +80,12 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_REFERENCE_INFORMATION_DOT_GENE;
-    const FIELD_GENE = 'gene';
     const FIELD_GENE_SEQUENCE_ORIGIN = 'geneSequenceOrigin';
+    const FIELD_GENE = 'gene';
     const FIELD_SOURCE = 'source';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Todo.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $gene = null;
+    private $_xmlns = '';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -108,6 +98,18 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected $geneSequenceOrigin = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Todo.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $gene = null;
 
     /**
      * A reference from one resource to another.
@@ -142,18 +144,18 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_GENE])) {
-            if ($data[self::FIELD_GENE] instanceof FHIRCodeableConcept) {
-                $this->setGene($data[self::FIELD_GENE]);
-            } else {
-                $this->setGene(new FHIRCodeableConcept($data[self::FIELD_GENE]));
-            }
-        }
         if (isset($data[self::FIELD_GENE_SEQUENCE_ORIGIN])) {
             if ($data[self::FIELD_GENE_SEQUENCE_ORIGIN] instanceof FHIRCodeableConcept) {
                 $this->setGeneSequenceOrigin($data[self::FIELD_GENE_SEQUENCE_ORIGIN]);
             } else {
                 $this->setGeneSequenceOrigin(new FHIRCodeableConcept($data[self::FIELD_GENE_SEQUENCE_ORIGIN]));
+            }
+        }
+        if (isset($data[self::FIELD_GENE])) {
+            if ($data[self::FIELD_GENE] instanceof FHIRCodeableConcept) {
+                $this->setGene($data[self::FIELD_GENE]);
+            } else {
+                $this->setGene(new FHIRCodeableConcept($data[self::FIELD_GENE]));
             }
         }
         if (isset($data[self::FIELD_SOURCE])) {
@@ -168,7 +170,7 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement
                         $this->addSource(new FHIRReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_SOURCE] instanceof FHIRReference) {
+            } elseif ($data[self::FIELD_SOURCE] instanceof FHIRReference) {
                 $this->addSource($data[self::FIELD_SOURCE]);
             } else {
                 $this->addSource(new FHIRReference($data[self::FIELD_SOURCE]));
@@ -190,42 +192,10 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<SubstanceReferenceInformationGene{$xmlns}></SubstanceReferenceInformationGene>";
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getGene()
-    {
-        return $this->gene;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $gene
-     * @return static
-     */
-    public function setGene(FHIRCodeableConcept $gene = null)
-    {
-        $this->gene = $gene;
-        return $this;
     }
 
     /**
@@ -256,7 +226,41 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement
      */
     public function setGeneSequenceOrigin(FHIRCodeableConcept $geneSequenceOrigin = null)
     {
+        $this->_trackValueSet($this->geneSequenceOrigin, $geneSequenceOrigin);
         $this->geneSequenceOrigin = $geneSequenceOrigin;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Todo.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getGene()
+    {
+        return $this->gene;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Todo.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $gene
+     * @return static
+     */
+    public function setGene(FHIRCodeableConcept $gene = null)
+    {
+        $this->_trackValueSet($this->gene, $gene);
+        $this->gene = $gene;
         return $this;
     }
 
@@ -286,6 +290,7 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement
      */
     public function addSource(FHIRReference $source = null)
     {
+        $this->_trackValueAdded();
         $this->source[] = $source;
         return $this;
     }
@@ -302,7 +307,10 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement
      */
     public function setSource(array $source = [])
     {
-        $this->source = [];
+        if ([] !== $this->source) {
+            $this->_trackValuesRemoved(count($this->source));
+            $this->source = [];
+        }
         if ([] === $source) {
             return $this;
         }
@@ -337,32 +345,20 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getGene())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_GENE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getGeneSequenceOrigin())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_GENE_SEQUENCE_ORIGIN] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getGene())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_GENE] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getSource())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_SOURCE, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_GENE])) {
-            $v = $this->getGene();
-            foreach($validationRules[self::FIELD_GENE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_REFERENCE_INFORMATION_DOT_GENE, self::FIELD_GENE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_GENE])) {
-                        $errs[self::FIELD_GENE] = [];
-                    }
-                    $errs[self::FIELD_GENE][$rule] = $err;
                 }
             }
         }
@@ -375,6 +371,18 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement
                         $errs[self::FIELD_GENE_SEQUENCE_ORIGIN] = [];
                     }
                     $errs[self::FIELD_GENE_SEQUENCE_ORIGIN][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_GENE])) {
+            $v = $this->getGene();
+            foreach($validationRules[self::FIELD_GENE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_REFERENCE_INFORMATION_DOT_GENE, self::FIELD_GENE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_GENE])) {
+                        $errs[self::FIELD_GENE] = [];
+                    }
+                    $errs[self::FIELD_GENE][$rule] = $err;
                 }
             }
         }
@@ -430,85 +438,107 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGene $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGene
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRSubstanceReferenceInformationGene::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSubstanceReferenceInformationGene::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRSubstanceReferenceInformationGene::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRSubstanceReferenceInformationGene;
+            $type = new FHIRSubstanceReferenceInformationGene(null);
         } elseif (!is_object($type) || !($type instanceof FHIRSubstanceReferenceInformationGene)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSubstanceReferenceInformationGene::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGene or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_GENE_SEQUENCE_ORIGIN === $n->nodeName) {
+                $type->setGeneSequenceOrigin(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_GENE === $n->nodeName) {
+                $type->setGene(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_SOURCE === $n->nodeName) {
+                $type->addSource(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->gene)) {
-            $type->setGene(FHIRCodeableConcept::xmlUnserialize($children->gene));
-        }
-        if (isset($children->geneSequenceOrigin)) {
-            $type->setGeneSequenceOrigin(FHIRCodeableConcept::xmlUnserialize($children->geneSequenceOrigin));
-        }
-        if (isset($children->source)) {
-            foreach($children->source as $child) {
-                $type->addSource(FHIRReference::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getGene())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_GENE, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getGeneSequenceOrigin())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_GENE_SEQUENCE_ORIGIN, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_GENE_SEQUENCE_ORIGIN);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getGene())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_GENE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getSource())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_SOURCE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -517,11 +547,11 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getGene())) {
-            $a[self::FIELD_GENE] = $v;
-        }
         if (null !== ($v = $this->getGeneSequenceOrigin())) {
             $a[self::FIELD_GENE_SEQUENCE_ORIGIN] = $v;
+        }
+        if (null !== ($v = $this->getGene())) {
+            $a[self::FIELD_GENE] = $v;
         }
         if ([] !== ($vs = $this->getSource())) {
             $a[self::FIELD_SOURCE] = [];
@@ -531,9 +561,6 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement
                 }
                 $a[self::FIELD_SOURCE][] = $v;
             }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

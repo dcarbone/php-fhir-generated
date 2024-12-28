@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,8 +59,10 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
 
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSlicingRules;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
@@ -84,7 +86,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     const FIELD_RULES_EXT = '_rules';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
@@ -147,16 +149,8 @@ class FHIRProfileSlicing extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_DISCRIMINATOR]) || isset($data[self::FIELD_DISCRIMINATOR_EXT])) {
-            if (isset($data[self::FIELD_DISCRIMINATOR])) {
-                $value = $data[self::FIELD_DISCRIMINATOR];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DISCRIMINATOR_EXT]) && is_array($data[self::FIELD_DISCRIMINATOR_EXT])) {
-                $ext = $data[self::FIELD_DISCRIMINATOR_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_DISCRIMINATOR]) ? $data[self::FIELD_DISCRIMINATOR] : null;
+            $ext = (isset($data[self::FIELD_DISCRIMINATOR_EXT]) && is_array($data[self::FIELD_DISCRIMINATOR_EXT])) ? $ext = $data[self::FIELD_DISCRIMINATOR_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRId) {
                     $this->setDiscriminator($value);
@@ -165,21 +159,13 @@ class FHIRProfileSlicing extends FHIRBackboneElement
                 } else {
                     $this->setDiscriminator(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDiscriminator(new FHIRId($ext));
             }
         }
         if (isset($data[self::FIELD_ORDERED]) || isset($data[self::FIELD_ORDERED_EXT])) {
-            if (isset($data[self::FIELD_ORDERED])) {
-                $value = $data[self::FIELD_ORDERED];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ORDERED_EXT]) && is_array($data[self::FIELD_ORDERED_EXT])) {
-                $ext = $data[self::FIELD_ORDERED_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_ORDERED]) ? $data[self::FIELD_ORDERED] : null;
+            $ext = (isset($data[self::FIELD_ORDERED_EXT]) && is_array($data[self::FIELD_ORDERED_EXT])) ? $ext = $data[self::FIELD_ORDERED_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setOrdered($value);
@@ -188,21 +174,13 @@ class FHIRProfileSlicing extends FHIRBackboneElement
                 } else {
                     $this->setOrdered(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setOrdered(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_RULES]) || isset($data[self::FIELD_RULES_EXT])) {
-            if (isset($data[self::FIELD_RULES])) {
-                $value = $data[self::FIELD_RULES];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_RULES_EXT]) && is_array($data[self::FIELD_RULES_EXT])) {
-                $ext = $data[self::FIELD_RULES_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_RULES]) ? $data[self::FIELD_RULES] : null;
+            $ext = (isset($data[self::FIELD_RULES_EXT]) && is_array($data[self::FIELD_RULES_EXT])) ? $ext = $data[self::FIELD_RULES_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRSlicingRules) {
                     $this->setRules($value);
@@ -211,7 +189,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
                 } else {
                     $this->setRules(new FHIRSlicingRules([FHIRSlicingRules::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setRules(new FHIRSlicingRules($ext));
             }
         }
@@ -231,7 +209,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ProfileSlicing{$xmlns}></ProfileSlicing>";
@@ -273,15 +251,11 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      */
     public function setDiscriminator($discriminator = null)
     {
-        if (null === $discriminator) {
-            $this->discriminator = null;
-            return $this;
+        if (null !== $discriminator && !($discriminator instanceof FHIRId)) {
+            $discriminator = new FHIRId($discriminator);
         }
-        if ($discriminator instanceof FHIRId) {
-            $this->discriminator = $discriminator;
-            return $this;
-        }
-        $this->discriminator = new FHIRId($discriminator);
+        $this->_trackValueSet($this->discriminator, $discriminator);
+        $this->discriminator = $discriminator;
         return $this;
     }
 
@@ -311,15 +285,11 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      */
     public function setOrdered($ordered = null)
     {
-        if (null === $ordered) {
-            $this->ordered = null;
-            return $this;
+        if (null !== $ordered && !($ordered instanceof FHIRBoolean)) {
+            $ordered = new FHIRBoolean($ordered);
         }
-        if ($ordered instanceof FHIRBoolean) {
-            $this->ordered = $ordered;
-            return $this;
-        }
-        $this->ordered = new FHIRBoolean($ordered);
+        $this->_trackValueSet($this->ordered, $ordered);
+        $this->ordered = $ordered;
         return $this;
     }
 
@@ -349,6 +319,7 @@ class FHIRProfileSlicing extends FHIRBackboneElement
      */
     public function setRules(FHIRSlicingRules $rules = null)
     {
+        $this->_trackValueSet($this->rules, $rules);
         $this->rules = $rules;
         return $this;
     }
@@ -465,94 +436,120 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRProfileSlicing::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRProfileSlicing::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRProfileSlicing::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRProfileSlicing;
+            $type = new FHIRProfileSlicing(null);
         } elseif (!is_object($type) || !($type instanceof FHIRProfileSlicing)) {
             throw new \RuntimeException(sprintf(
                 'FHIRProfileSlicing::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_DISCRIMINATOR === $n->nodeName) {
+                $type->setDiscriminator(FHIRId::xmlUnserialize($n));
+            } elseif (self::FIELD_ORDERED === $n->nodeName) {
+                $type->setOrdered(FHIRBoolean::xmlUnserialize($n));
+            } elseif (self::FIELD_RULES === $n->nodeName) {
+                $type->setRules(FHIRSlicingRules::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->discriminator)) {
-            $type->setDiscriminator(FHIRId::xmlUnserialize($children->discriminator));
-        }
-        if (isset($attributes->discriminator)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DISCRIMINATOR);
+        if (null !== $n) {
             $pt = $type->getDiscriminator();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->discriminator);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDiscriminator((string)$attributes->discriminator);
+                $type->setDiscriminator($n->nodeValue);
             }
         }
-        if (isset($children->ordered)) {
-            $type->setOrdered(FHIRBoolean::xmlUnserialize($children->ordered));
-        }
-        if (isset($attributes->ordered)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_ORDERED);
+        if (null !== $n) {
             $pt = $type->getOrdered();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->ordered);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setOrdered((string)$attributes->ordered);
+                $type->setOrdered($n->nodeValue);
             }
         }
-        if (isset($children->rules)) {
-            $type->setRules(FHIRSlicingRules::xmlUnserialize($children->rules));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getDiscriminator())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DISCRIMINATOR, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DISCRIMINATOR);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getOrdered())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ORDERED, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_ORDERED);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getRules())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RULES, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_RULES);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -562,34 +559,34 @@ class FHIRProfileSlicing extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDiscriminator())) {
-            $a[self::FIELD_DISCRIMINATOR] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRId::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRId::FIELD_VALUE]);
-                $a[self::FIELD_DISCRIMINATOR_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DISCRIMINATOR] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRId::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DISCRIMINATOR_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getOrdered())) {
-            $a[self::FIELD_ORDERED] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_ORDERED_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ORDERED] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBoolean::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_ORDERED_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getRules())) {
-            $a[self::FIELD_RULES] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRSlicingRules::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRSlicingRules::FIELD_VALUE]);
-                $a[self::FIELD_RULES_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RULES] = $val;
             }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRSlicingRules::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_RULES_EXT] = $ext;
+            }
         }
         return $a;
     }

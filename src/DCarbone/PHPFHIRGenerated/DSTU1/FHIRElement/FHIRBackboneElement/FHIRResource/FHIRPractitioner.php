@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,16 +61,21 @@ use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAddress;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAttachment;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHumanName;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeMap;
 
 /**
  * A person who is directly or indirectly involved in the provisioning of
@@ -84,24 +89,59 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PRACTITIONER;
+    const FIELD_IDENTIFIER = 'identifier';
+    const FIELD_NAME = 'name';
+    const FIELD_TELECOM = 'telecom';
     const FIELD_ADDRESS = 'address';
+    const FIELD_GENDER = 'gender';
     const FIELD_BIRTH_DATE = 'birthDate';
     const FIELD_BIRTH_DATE_EXT = '_birthDate';
-    const FIELD_COMMUNICATION = 'communication';
-    const FIELD_GENDER = 'gender';
-    const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_LOCATION = 'location';
-    const FIELD_NAME = 'name';
-    const FIELD_ORGANIZATION = 'organization';
-    const FIELD_PERIOD = 'period';
     const FIELD_PHOTO = 'photo';
-    const FIELD_QUALIFICATION = 'qualification';
+    const FIELD_ORGANIZATION = 'organization';
     const FIELD_ROLE = 'role';
     const FIELD_SPECIALTY = 'specialty';
-    const FIELD_TELECOM = 'telecom';
+    const FIELD_PERIOD = 'period';
+    const FIELD_LOCATION = 'location';
+    const FIELD_QUALIFICATION = 'qualification';
+    const FIELD_COMMUNICATION = 'communication';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An identifier that applies to this person in this role.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
+     */
+    protected $identifier = [];
+
+    /**
+     * A human's name with the ability to identify parts and usage.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A name associated with the person.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHumanName
+     */
+    protected $name = null;
+
+    /**
+     * All kinds of technology mediated contact details for a person or organization,
+     * including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A contact detail for the practitioner, e.g. a telephone number or an email
+     * address.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact[]
+     */
+    protected $telecom = [];
 
     /**
      * There is a variety of postal address formats defined around the world. This
@@ -117,31 +157,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
     protected $address = null;
 
     /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
-     * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The date and time of birth for the practitioner.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
-     */
-    protected $birthDate = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A language the practitioner is able to use in patient communication.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
-     */
-    protected $communication = [];
-
-    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -155,60 +170,17 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
     protected $gender = null;
 
     /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
+     * but may also be ignored. Dates SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * An identifier that applies to this person in this role.
+     * The date and time of birth for the practitioner.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
-    protected $identifier = [];
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The location(s) at which this practitioner provides care.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
-     */
-    protected $location = [];
-
-    /**
-     * A human's name with the ability to identify parts and usage.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A name associated with the person.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHumanName
-     */
-    protected $name = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The organization that the practitioner represents.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
-     */
-    protected $organization = null;
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The period during which the person is authorized to act as a practitioner in
-     * these role(s) for the organization.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
-     */
-    protected $period = null;
+    protected $birthDate = null;
 
     /**
      * For referring to data content defined in other formats.
@@ -222,14 +194,15 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
     protected $photo = [];
 
     /**
-     * A person who is directly or indirectly involved in the provisioning of
-     * healthcare.
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Qualifications obtained by training and certification.
+     * The organization that the practitioner represents.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification[]
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    protected $qualification = [];
+    protected $organization = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -256,17 +229,49 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
     protected $specialty = [];
 
     /**
-     * All kinds of technology mediated contact details for a person or organization,
-     * including telephone, email, etc.
+     * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A contact detail for the practitioner, e.g. a telephone number or an email
-     * address.
+     * The period during which the person is authorized to act as a practitioner in
+     * these role(s) for the organization.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact[]
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
-    protected $telecom = [];
+    protected $period = null;
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The location(s) at which this practitioner provides care.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
+     */
+    protected $location = [];
+
+    /**
+     * A person who is directly or indirectly involved in the provisioning of
+     * healthcare.
+     *
+     * Qualifications obtained by training and certification.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification[]
+     */
+    protected $qualification = [];
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A language the practitioner is able to use in patient communication.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
+     */
+    protected $communication = [];
 
     /**
      * Validation map for fields in type Practitioner
@@ -290,61 +295,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ADDRESS])) {
-            if ($data[self::FIELD_ADDRESS] instanceof FHIRAddress) {
-                $this->setAddress($data[self::FIELD_ADDRESS]);
-            } else {
-                $this->setAddress(new FHIRAddress($data[self::FIELD_ADDRESS]));
-            }
-        }
-        if (isset($data[self::FIELD_BIRTH_DATE]) || isset($data[self::FIELD_BIRTH_DATE_EXT])) {
-            if (isset($data[self::FIELD_BIRTH_DATE])) {
-                $value = $data[self::FIELD_BIRTH_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_BIRTH_DATE_EXT]) && is_array($data[self::FIELD_BIRTH_DATE_EXT])) {
-                $ext = $data[self::FIELD_BIRTH_DATE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $this->setBirthDate($value);
-                } else if (is_array($value)) {
-                    $this->setBirthDate(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $this->setBirthDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setBirthDate(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_COMMUNICATION])) {
-            if (is_array($data[self::FIELD_COMMUNICATION])) {
-                foreach($data[self::FIELD_COMMUNICATION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addCommunication($v);
-                    } else {
-                        $this->addCommunication(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_COMMUNICATION] instanceof FHIRCodeableConcept) {
-                $this->addCommunication($data[self::FIELD_COMMUNICATION]);
-            } else {
-                $this->addCommunication(new FHIRCodeableConcept($data[self::FIELD_COMMUNICATION]));
-            }
-        }
-        if (isset($data[self::FIELD_GENDER])) {
-            if ($data[self::FIELD_GENDER] instanceof FHIRCodeableConcept) {
-                $this->setGender($data[self::FIELD_GENDER]);
-            } else {
-                $this->setGender(new FHIRCodeableConcept($data[self::FIELD_GENDER]));
-            }
-        }
         if (isset($data[self::FIELD_IDENTIFIER])) {
             if (is_array($data[self::FIELD_IDENTIFIER])) {
                 foreach($data[self::FIELD_IDENTIFIER] as $v) {
@@ -357,28 +307,10 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
-            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
-            }
-        }
-        if (isset($data[self::FIELD_LOCATION])) {
-            if (is_array($data[self::FIELD_LOCATION])) {
-                foreach($data[self::FIELD_LOCATION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRResourceReference) {
-                        $this->addLocation($v);
-                    } else {
-                        $this->addLocation(new FHIRResourceReference($v));
-                    }
-                }
-            } else if ($data[self::FIELD_LOCATION] instanceof FHIRResourceReference) {
-                $this->addLocation($data[self::FIELD_LOCATION]);
-            } else {
-                $this->addLocation(new FHIRResourceReference($data[self::FIELD_LOCATION]));
             }
         }
         if (isset($data[self::FIELD_NAME])) {
@@ -388,18 +320,51 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                 $this->setName(new FHIRHumanName($data[self::FIELD_NAME]));
             }
         }
-        if (isset($data[self::FIELD_ORGANIZATION])) {
-            if ($data[self::FIELD_ORGANIZATION] instanceof FHIRResourceReference) {
-                $this->setOrganization($data[self::FIELD_ORGANIZATION]);
+        if (isset($data[self::FIELD_TELECOM])) {
+            if (is_array($data[self::FIELD_TELECOM])) {
+                foreach($data[self::FIELD_TELECOM] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRContact) {
+                        $this->addTelecom($v);
+                    } else {
+                        $this->addTelecom(new FHIRContact($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_TELECOM] instanceof FHIRContact) {
+                $this->addTelecom($data[self::FIELD_TELECOM]);
             } else {
-                $this->setOrganization(new FHIRResourceReference($data[self::FIELD_ORGANIZATION]));
+                $this->addTelecom(new FHIRContact($data[self::FIELD_TELECOM]));
             }
         }
-        if (isset($data[self::FIELD_PERIOD])) {
-            if ($data[self::FIELD_PERIOD] instanceof FHIRPeriod) {
-                $this->setPeriod($data[self::FIELD_PERIOD]);
+        if (isset($data[self::FIELD_ADDRESS])) {
+            if ($data[self::FIELD_ADDRESS] instanceof FHIRAddress) {
+                $this->setAddress($data[self::FIELD_ADDRESS]);
             } else {
-                $this->setPeriod(new FHIRPeriod($data[self::FIELD_PERIOD]));
+                $this->setAddress(new FHIRAddress($data[self::FIELD_ADDRESS]));
+            }
+        }
+        if (isset($data[self::FIELD_GENDER])) {
+            if ($data[self::FIELD_GENDER] instanceof FHIRCodeableConcept) {
+                $this->setGender($data[self::FIELD_GENDER]);
+            } else {
+                $this->setGender(new FHIRCodeableConcept($data[self::FIELD_GENDER]));
+            }
+        }
+        if (isset($data[self::FIELD_BIRTH_DATE]) || isset($data[self::FIELD_BIRTH_DATE_EXT])) {
+            $value = isset($data[self::FIELD_BIRTH_DATE]) ? $data[self::FIELD_BIRTH_DATE] : null;
+            $ext = (isset($data[self::FIELD_BIRTH_DATE_EXT]) && is_array($data[self::FIELD_BIRTH_DATE_EXT])) ? $ext = $data[self::FIELD_BIRTH_DATE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setBirthDate($value);
+                } else if (is_array($value)) {
+                    $this->setBirthDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setBirthDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setBirthDate(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_PHOTO])) {
@@ -414,28 +379,17 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                         $this->addPhoto(new FHIRAttachment($v));
                     }
                 }
-            } else if ($data[self::FIELD_PHOTO] instanceof FHIRAttachment) {
+            } elseif ($data[self::FIELD_PHOTO] instanceof FHIRAttachment) {
                 $this->addPhoto($data[self::FIELD_PHOTO]);
             } else {
                 $this->addPhoto(new FHIRAttachment($data[self::FIELD_PHOTO]));
             }
         }
-        if (isset($data[self::FIELD_QUALIFICATION])) {
-            if (is_array($data[self::FIELD_QUALIFICATION])) {
-                foreach($data[self::FIELD_QUALIFICATION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRPractitionerQualification) {
-                        $this->addQualification($v);
-                    } else {
-                        $this->addQualification(new FHIRPractitionerQualification($v));
-                    }
-                }
-            } else if ($data[self::FIELD_QUALIFICATION] instanceof FHIRPractitionerQualification) {
-                $this->addQualification($data[self::FIELD_QUALIFICATION]);
+        if (isset($data[self::FIELD_ORGANIZATION])) {
+            if ($data[self::FIELD_ORGANIZATION] instanceof FHIRResourceReference) {
+                $this->setOrganization($data[self::FIELD_ORGANIZATION]);
             } else {
-                $this->addQualification(new FHIRPractitionerQualification($data[self::FIELD_QUALIFICATION]));
+                $this->setOrganization(new FHIRResourceReference($data[self::FIELD_ORGANIZATION]));
             }
         }
         if (isset($data[self::FIELD_ROLE])) {
@@ -450,7 +404,7 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                         $this->addRole(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_ROLE] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_ROLE] instanceof FHIRCodeableConcept) {
                 $this->addRole($data[self::FIELD_ROLE]);
             } else {
                 $this->addRole(new FHIRCodeableConcept($data[self::FIELD_ROLE]));
@@ -468,28 +422,71 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                         $this->addSpecialty(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_SPECIALTY] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_SPECIALTY] instanceof FHIRCodeableConcept) {
                 $this->addSpecialty($data[self::FIELD_SPECIALTY]);
             } else {
                 $this->addSpecialty(new FHIRCodeableConcept($data[self::FIELD_SPECIALTY]));
             }
         }
-        if (isset($data[self::FIELD_TELECOM])) {
-            if (is_array($data[self::FIELD_TELECOM])) {
-                foreach($data[self::FIELD_TELECOM] as $v) {
+        if (isset($data[self::FIELD_PERIOD])) {
+            if ($data[self::FIELD_PERIOD] instanceof FHIRPeriod) {
+                $this->setPeriod($data[self::FIELD_PERIOD]);
+            } else {
+                $this->setPeriod(new FHIRPeriod($data[self::FIELD_PERIOD]));
+            }
+        }
+        if (isset($data[self::FIELD_LOCATION])) {
+            if (is_array($data[self::FIELD_LOCATION])) {
+                foreach($data[self::FIELD_LOCATION] as $v) {
                     if (null === $v) {
                         continue;
                     }
-                    if ($v instanceof FHIRContact) {
-                        $this->addTelecom($v);
+                    if ($v instanceof FHIRResourceReference) {
+                        $this->addLocation($v);
                     } else {
-                        $this->addTelecom(new FHIRContact($v));
+                        $this->addLocation(new FHIRResourceReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_TELECOM] instanceof FHIRContact) {
-                $this->addTelecom($data[self::FIELD_TELECOM]);
+            } elseif ($data[self::FIELD_LOCATION] instanceof FHIRResourceReference) {
+                $this->addLocation($data[self::FIELD_LOCATION]);
             } else {
-                $this->addTelecom(new FHIRContact($data[self::FIELD_TELECOM]));
+                $this->addLocation(new FHIRResourceReference($data[self::FIELD_LOCATION]));
+            }
+        }
+        if (isset($data[self::FIELD_QUALIFICATION])) {
+            if (is_array($data[self::FIELD_QUALIFICATION])) {
+                foreach($data[self::FIELD_QUALIFICATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRPractitionerQualification) {
+                        $this->addQualification($v);
+                    } else {
+                        $this->addQualification(new FHIRPractitionerQualification($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_QUALIFICATION] instanceof FHIRPractitionerQualification) {
+                $this->addQualification($data[self::FIELD_QUALIFICATION]);
+            } else {
+                $this->addQualification(new FHIRPractitionerQualification($data[self::FIELD_QUALIFICATION]));
+            }
+        }
+        if (isset($data[self::FIELD_COMMUNICATION])) {
+            if (is_array($data[self::FIELD_COMMUNICATION])) {
+                foreach($data[self::FIELD_COMMUNICATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addCommunication($v);
+                    } else {
+                        $this->addCommunication(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_COMMUNICATION] instanceof FHIRCodeableConcept) {
+                $this->addCommunication($data[self::FIELD_COMMUNICATION]);
+            } else {
+                $this->addCommunication(new FHIRCodeableConcept($data[self::FIELD_COMMUNICATION]));
             }
         }
     }
@@ -508,7 +505,7 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<Practitioner{$xmlns}></Practitioner>";
@@ -521,6 +518,163 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
         return static::FHIR_TYPE_NAME;
     }
 
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An identifier that applies to this person in this role.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
+     */
+    public function getIdentifier()
+    {
+        return $this->identifier;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An identifier that applies to this person in this role.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
+     * @return static
+     */
+    public function addIdentifier(FHIRIdentifier $identifier = null)
+    {
+        $this->_trackValueAdded();
+        $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An identifier that applies to this person in this role.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[] $identifier
+     * @return static
+     */
+    public function setIdentifier(array $identifier = [])
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            if ($v instanceof FHIRIdentifier) {
+                $this->addIdentifier($v);
+            } else {
+                $this->addIdentifier(new FHIRIdentifier($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A human's name with the ability to identify parts and usage.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A name associated with the person.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHumanName
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * A human's name with the ability to identify parts and usage.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A name associated with the person.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHumanName $name
+     * @return static
+     */
+    public function setName(FHIRHumanName $name = null)
+    {
+        $this->_trackValueSet($this->name, $name);
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * All kinds of technology mediated contact details for a person or organization,
+     * including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A contact detail for the practitioner, e.g. a telephone number or an email
+     * address.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact[]
+     */
+    public function getTelecom()
+    {
+        return $this->telecom;
+    }
+
+    /**
+     * All kinds of technology mediated contact details for a person or organization,
+     * including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A contact detail for the practitioner, e.g. a telephone number or an email
+     * address.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact $telecom
+     * @return static
+     */
+    public function addTelecom(FHIRContact $telecom = null)
+    {
+        $this->_trackValueAdded();
+        $this->telecom[] = $telecom;
+        return $this;
+    }
+
+    /**
+     * All kinds of technology mediated contact details for a person or organization,
+     * including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A contact detail for the practitioner, e.g. a telephone number or an email
+     * address.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact[] $telecom
+     * @return static
+     */
+    public function setTelecom(array $telecom = [])
+    {
+        if ([] !== $this->telecom) {
+            $this->_trackValuesRemoved(count($this->telecom));
+            $this->telecom = [];
+        }
+        if ([] === $telecom) {
+            return $this;
+        }
+        foreach($telecom as $v) {
+            if ($v instanceof FHIRContact) {
+                $this->addTelecom($v);
+            } else {
+                $this->addTelecom(new FHIRContact($v));
+            }
+        }
+        return $this;
+    }
 
     /**
      * There is a variety of postal address formats defined around the world. This
@@ -552,108 +706,8 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      */
     public function setAddress(FHIRAddress $address = null)
     {
+        $this->_trackValueSet($this->address, $address);
         $this->address = $address;
-        return $this;
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
-     * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The date and time of birth for the practitioner.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
-     */
-    public function getBirthDate()
-    {
-        return $this->birthDate;
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
-     * but may also be ignored. Dates SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The date and time of birth for the practitioner.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime $birthDate
-     * @return static
-     */
-    public function setBirthDate($birthDate = null)
-    {
-        if (null === $birthDate) {
-            $this->birthDate = null;
-            return $this;
-        }
-        if ($birthDate instanceof FHIRDateTime) {
-            $this->birthDate = $birthDate;
-            return $this;
-        }
-        $this->birthDate = new FHIRDateTime($birthDate);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A language the practitioner is able to use in patient communication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getCommunication()
-    {
-        return $this->communication;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A language the practitioner is able to use in patient communication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $communication
-     * @return static
-     */
-    public function addCommunication(FHIRCodeableConcept $communication = null)
-    {
-        $this->communication[] = $communication;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A language the practitioner is able to use in patient communication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[] $communication
-     * @return static
-     */
-    public function setCommunication(array $communication = [])
-    {
-        $this->communication = [];
-        if ([] === $communication) {
-            return $this;
-        }
-        foreach($communication as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addCommunication($v);
-            } else {
-                $this->addCommunication(new FHIRCodeableConcept($v));
-            }
-        }
         return $this;
     }
 
@@ -687,211 +741,46 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      */
     public function setGender(FHIRCodeableConcept $gender = null)
     {
+        $this->_trackValueSet($this->gender, $gender);
         $this->gender = $gender;
         return $this;
     }
 
     /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
+     * but may also be ignored. Dates SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * An identifier that applies to this person in this role.
+     * The date and time of birth for the practitioner.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
-    public function getIdentifier()
+    public function getBirthDate()
     {
-        return $this->identifier;
+        return $this->birthDate;
     }
 
     /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided
+     * but may also be ignored. Dates SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * An identifier that applies to this person in this role.
+     * The date and time of birth for the practitioner.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime $birthDate
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier = null)
+    public function setBirthDate($birthDate = null)
     {
-        $this->identifier[] = $identifier;
-        return $this;
-    }
-
-    /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * An identifier that applies to this person in this role.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[] $identifier
-     * @return static
-     */
-    public function setIdentifier(array $identifier = [])
-    {
-        $this->identifier = [];
-        if ([] === $identifier) {
-            return $this;
+        if (null !== $birthDate && !($birthDate instanceof FHIRDateTime)) {
+            $birthDate = new FHIRDateTime($birthDate);
         }
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->addIdentifier($v);
-            } else {
-                $this->addIdentifier(new FHIRIdentifier($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The location(s) at which this practitioner provides care.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
-     */
-    public function getLocation()
-    {
-        return $this->location;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The location(s) at which this practitioner provides care.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $location
-     * @return static
-     */
-    public function addLocation(FHIRResourceReference $location = null)
-    {
-        $this->location[] = $location;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The location(s) at which this practitioner provides care.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $location
-     * @return static
-     */
-    public function setLocation(array $location = [])
-    {
-        $this->location = [];
-        if ([] === $location) {
-            return $this;
-        }
-        foreach($location as $v) {
-            if ($v instanceof FHIRResourceReference) {
-                $this->addLocation($v);
-            } else {
-                $this->addLocation(new FHIRResourceReference($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A human's name with the ability to identify parts and usage.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A name associated with the person.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHumanName
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * A human's name with the ability to identify parts and usage.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A name associated with the person.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHumanName $name
-     * @return static
-     */
-    public function setName(FHIRHumanName $name = null)
-    {
-        $this->name = $name;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The organization that the practitioner represents.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
-     */
-    public function getOrganization()
-    {
-        return $this->organization;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The organization that the practitioner represents.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $organization
-     * @return static
-     */
-    public function setOrganization(FHIRResourceReference $organization = null)
-    {
-        $this->organization = $organization;
-        return $this;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The period during which the person is authorized to act as a practitioner in
-     * these role(s) for the organization.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
-     */
-    public function getPeriod()
-    {
-        return $this->period;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The period during which the person is authorized to act as a practitioner in
-     * these role(s) for the organization.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $period
-     * @return static
-     */
-    public function setPeriod(FHIRPeriod $period = null)
-    {
-        $this->period = $period;
+        $this->_trackValueSet($this->birthDate, $birthDate);
+        $this->birthDate = $birthDate;
         return $this;
     }
 
@@ -921,6 +810,7 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      */
     public function addPhoto(FHIRAttachment $photo = null)
     {
+        $this->_trackValueAdded();
         $this->photo[] = $photo;
         return $this;
     }
@@ -937,7 +827,10 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      */
     public function setPhoto(array $photo = [])
     {
-        $this->photo = [];
+        if ([] !== $this->photo) {
+            $this->_trackValuesRemoved(count($this->photo));
+            $this->photo = [];
+        }
         if ([] === $photo) {
             return $this;
         }
@@ -952,55 +845,33 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
     }
 
     /**
-     * A person who is directly or indirectly involved in the provisioning of
-     * healthcare.
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Qualifications obtained by training and certification.
+     * The organization that the practitioner represents.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification[]
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    public function getQualification()
+    public function getOrganization()
     {
-        return $this->qualification;
+        return $this->organization;
     }
 
     /**
-     * A person who is directly or indirectly involved in the provisioning of
-     * healthcare.
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Qualifications obtained by training and certification.
+     * The organization that the practitioner represents.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification $qualification
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $organization
      * @return static
      */
-    public function addQualification(FHIRPractitionerQualification $qualification = null)
+    public function setOrganization(FHIRResourceReference $organization = null)
     {
-        $this->qualification[] = $qualification;
-        return $this;
-    }
-
-    /**
-     * A person who is directly or indirectly involved in the provisioning of
-     * healthcare.
-     *
-     * Qualifications obtained by training and certification.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification[] $qualification
-     * @return static
-     */
-    public function setQualification(array $qualification = [])
-    {
-        $this->qualification = [];
-        if ([] === $qualification) {
-            return $this;
-        }
-        foreach($qualification as $v) {
-            if ($v instanceof FHIRPractitionerQualification) {
-                $this->addQualification($v);
-            } else {
-                $this->addQualification(new FHIRPractitionerQualification($v));
-            }
-        }
+        $this->_trackValueSet($this->organization, $organization);
+        $this->organization = $organization;
         return $this;
     }
 
@@ -1032,6 +903,7 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      */
     public function addRole(FHIRCodeableConcept $role = null)
     {
+        $this->_trackValueAdded();
         $this->role[] = $role;
         return $this;
     }
@@ -1049,7 +921,10 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      */
     public function setRole(array $role = [])
     {
-        $this->role = [];
+        if ([] !== $this->role) {
+            $this->_trackValuesRemoved(count($this->role));
+            $this->role = [];
+        }
         if ([] === $role) {
             return $this;
         }
@@ -1091,6 +966,7 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      */
     public function addSpecialty(FHIRCodeableConcept $specialty = null)
     {
+        $this->_trackValueAdded();
         $this->specialty[] = $specialty;
         return $this;
     }
@@ -1108,7 +984,10 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      */
     public function setSpecialty(array $specialty = [])
     {
-        $this->specialty = [];
+        if ([] !== $this->specialty) {
+            $this->_trackValuesRemoved(count($this->specialty));
+            $this->specialty = [];
+        }
         if ([] === $specialty) {
             return $this;
         }
@@ -1123,62 +1002,213 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
     }
 
     /**
-     * All kinds of technology mediated contact details for a person or organization,
-     * including telephone, email, etc.
+     * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A contact detail for the practitioner, e.g. a telephone number or an email
-     * address.
+     * The period during which the person is authorized to act as a practitioner in
+     * these role(s) for the organization.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact[]
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
-    public function getTelecom()
+    public function getPeriod()
     {
-        return $this->telecom;
+        return $this->period;
     }
 
     /**
-     * All kinds of technology mediated contact details for a person or organization,
-     * including telephone, email, etc.
+     * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A contact detail for the practitioner, e.g. a telephone number or an email
-     * address.
+     * The period during which the person is authorized to act as a practitioner in
+     * these role(s) for the organization.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact $telecom
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $period
      * @return static
      */
-    public function addTelecom(FHIRContact $telecom = null)
+    public function setPeriod(FHIRPeriod $period = null)
     {
-        $this->telecom[] = $telecom;
+        $this->_trackValueSet($this->period, $period);
+        $this->period = $period;
         return $this;
     }
 
     /**
-     * All kinds of technology mediated contact details for a person or organization,
-     * including telephone, email, etc.
+     * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A contact detail for the practitioner, e.g. a telephone number or an email
-     * address.
+     * The location(s) at which this practitioner provides care.
      *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact[] $telecom
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The location(s) at which this practitioner provides care.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $location
      * @return static
      */
-    public function setTelecom(array $telecom = [])
+    public function addLocation(FHIRResourceReference $location = null)
     {
-        $this->telecom = [];
-        if ([] === $telecom) {
+        $this->_trackValueAdded();
+        $this->location[] = $location;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The location(s) at which this practitioner provides care.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $location
+     * @return static
+     */
+    public function setLocation(array $location = [])
+    {
+        if ([] !== $this->location) {
+            $this->_trackValuesRemoved(count($this->location));
+            $this->location = [];
+        }
+        if ([] === $location) {
             return $this;
         }
-        foreach($telecom as $v) {
-            if ($v instanceof FHIRContact) {
-                $this->addTelecom($v);
+        foreach($location as $v) {
+            if ($v instanceof FHIRResourceReference) {
+                $this->addLocation($v);
             } else {
-                $this->addTelecom(new FHIRContact($v));
+                $this->addLocation(new FHIRResourceReference($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A person who is directly or indirectly involved in the provisioning of
+     * healthcare.
+     *
+     * Qualifications obtained by training and certification.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification[]
+     */
+    public function getQualification()
+    {
+        return $this->qualification;
+    }
+
+    /**
+     * A person who is directly or indirectly involved in the provisioning of
+     * healthcare.
+     *
+     * Qualifications obtained by training and certification.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification $qualification
+     * @return static
+     */
+    public function addQualification(FHIRPractitionerQualification $qualification = null)
+    {
+        $this->_trackValueAdded();
+        $this->qualification[] = $qualification;
+        return $this;
+    }
+
+    /**
+     * A person who is directly or indirectly involved in the provisioning of
+     * healthcare.
+     *
+     * Qualifications obtained by training and certification.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification[] $qualification
+     * @return static
+     */
+    public function setQualification(array $qualification = [])
+    {
+        if ([] !== $this->qualification) {
+            $this->_trackValuesRemoved(count($this->qualification));
+            $this->qualification = [];
+        }
+        if ([] === $qualification) {
+            return $this;
+        }
+        foreach($qualification as $v) {
+            if ($v instanceof FHIRPractitionerQualification) {
+                $this->addQualification($v);
+            } else {
+                $this->addQualification(new FHIRPractitionerQualification($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A language the practitioner is able to use in patient communication.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getCommunication()
+    {
+        return $this->communication;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A language the practitioner is able to use in patient communication.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $communication
+     * @return static
+     */
+    public function addCommunication(FHIRCodeableConcept $communication = null)
+    {
+        $this->_trackValueAdded();
+        $this->communication[] = $communication;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A language the practitioner is able to use in patient communication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[] $communication
+     * @return static
+     */
+    public function setCommunication(array $communication = [])
+    {
+        if ([] !== $this->communication) {
+            $this->_trackValuesRemoved(count($this->communication));
+            $this->communication = [];
+        }
+        if ([] === $communication) {
+            return $this;
+        }
+        foreach($communication as $v) {
+            if ($v instanceof FHIRCodeableConcept) {
+                $this->addCommunication($v);
+            } else {
+                $this->addCommunication(new FHIRCodeableConcept($v));
             }
         }
         return $this;
@@ -1205,39 +1235,10 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getAddress())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ADDRESS] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getBirthDate())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_BIRTH_DATE] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getCommunication())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_COMMUNICATION, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getGender())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_GENDER] = $fieldErrs;
-            }
-        }
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_IDENTIFIER, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getLocation())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_LOCATION, $i)] = $fieldErrs;
                 }
             }
         }
@@ -1246,14 +1247,26 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                 $errs[self::FIELD_NAME] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getOrganization())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ORGANIZATION] = $fieldErrs;
+        if ([] !== ($vs = $this->getTelecom())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_TELECOM, $i)] = $fieldErrs;
+                }
             }
         }
-        if (null !== ($v = $this->getPeriod())) {
+        if (null !== ($v = $this->getAddress())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PERIOD] = $fieldErrs;
+                $errs[self::FIELD_ADDRESS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getGender())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_GENDER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getBirthDate())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BIRTH_DATE] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getPhoto())) {
@@ -1263,11 +1276,9 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                 }
             }
         }
-        if ([] !== ($vs = $this->getQualification())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_QUALIFICATION, $i)] = $fieldErrs;
-                }
+        if (null !== ($v = $this->getOrganization())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ORGANIZATION] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getRole())) {
@@ -1284,58 +1295,29 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                 }
             }
         }
-        if ([] !== ($vs = $this->getTelecom())) {
+        if (null !== ($v = $this->getPeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PERIOD] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getLocation())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_TELECOM, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_LOCATION, $i)] = $fieldErrs;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_ADDRESS])) {
-            $v = $this->getAddress();
-            foreach($validationRules[self::FIELD_ADDRESS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_ADDRESS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ADDRESS])) {
-                        $errs[self::FIELD_ADDRESS] = [];
-                    }
-                    $errs[self::FIELD_ADDRESS][$rule] = $err;
+        if ([] !== ($vs = $this->getQualification())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_QUALIFICATION, $i)] = $fieldErrs;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_BIRTH_DATE])) {
-            $v = $this->getBirthDate();
-            foreach($validationRules[self::FIELD_BIRTH_DATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_BIRTH_DATE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_BIRTH_DATE])) {
-                        $errs[self::FIELD_BIRTH_DATE] = [];
-                    }
-                    $errs[self::FIELD_BIRTH_DATE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_COMMUNICATION])) {
-            $v = $this->getCommunication();
-            foreach($validationRules[self::FIELD_COMMUNICATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_COMMUNICATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COMMUNICATION])) {
-                        $errs[self::FIELD_COMMUNICATION] = [];
-                    }
-                    $errs[self::FIELD_COMMUNICATION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_GENDER])) {
-            $v = $this->getGender();
-            foreach($validationRules[self::FIELD_GENDER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_GENDER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_GENDER])) {
-                        $errs[self::FIELD_GENDER] = [];
-                    }
-                    $errs[self::FIELD_GENDER][$rule] = $err;
+        if ([] !== ($vs = $this->getCommunication())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_COMMUNICATION, $i)] = $fieldErrs;
                 }
             }
         }
@@ -1351,18 +1333,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_LOCATION])) {
-            $v = $this->getLocation();
-            foreach($validationRules[self::FIELD_LOCATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_LOCATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_LOCATION])) {
-                        $errs[self::FIELD_LOCATION] = [];
-                    }
-                    $errs[self::FIELD_LOCATION][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_NAME])) {
             $v = $this->getName();
             foreach($validationRules[self::FIELD_NAME] as $rule => $constraint) {
@@ -1375,27 +1345,51 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_ORGANIZATION])) {
-            $v = $this->getOrganization();
-            foreach($validationRules[self::FIELD_ORGANIZATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_ORGANIZATION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_TELECOM])) {
+            $v = $this->getTelecom();
+            foreach($validationRules[self::FIELD_TELECOM] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_TELECOM, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ORGANIZATION])) {
-                        $errs[self::FIELD_ORGANIZATION] = [];
+                    if (!isset($errs[self::FIELD_TELECOM])) {
+                        $errs[self::FIELD_TELECOM] = [];
                     }
-                    $errs[self::FIELD_ORGANIZATION][$rule] = $err;
+                    $errs[self::FIELD_TELECOM][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PERIOD])) {
-            $v = $this->getPeriod();
-            foreach($validationRules[self::FIELD_PERIOD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_PERIOD, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_ADDRESS])) {
+            $v = $this->getAddress();
+            foreach($validationRules[self::FIELD_ADDRESS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_ADDRESS, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PERIOD])) {
-                        $errs[self::FIELD_PERIOD] = [];
+                    if (!isset($errs[self::FIELD_ADDRESS])) {
+                        $errs[self::FIELD_ADDRESS] = [];
                     }
-                    $errs[self::FIELD_PERIOD][$rule] = $err;
+                    $errs[self::FIELD_ADDRESS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_GENDER])) {
+            $v = $this->getGender();
+            foreach($validationRules[self::FIELD_GENDER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_GENDER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_GENDER])) {
+                        $errs[self::FIELD_GENDER] = [];
+                    }
+                    $errs[self::FIELD_GENDER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BIRTH_DATE])) {
+            $v = $this->getBirthDate();
+            foreach($validationRules[self::FIELD_BIRTH_DATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_BIRTH_DATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BIRTH_DATE])) {
+                        $errs[self::FIELD_BIRTH_DATE] = [];
+                    }
+                    $errs[self::FIELD_BIRTH_DATE][$rule] = $err;
                 }
             }
         }
@@ -1411,15 +1405,15 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_QUALIFICATION])) {
-            $v = $this->getQualification();
-            foreach($validationRules[self::FIELD_QUALIFICATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_QUALIFICATION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_ORGANIZATION])) {
+            $v = $this->getOrganization();
+            foreach($validationRules[self::FIELD_ORGANIZATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_ORGANIZATION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_QUALIFICATION])) {
-                        $errs[self::FIELD_QUALIFICATION] = [];
+                    if (!isset($errs[self::FIELD_ORGANIZATION])) {
+                        $errs[self::FIELD_ORGANIZATION] = [];
                     }
-                    $errs[self::FIELD_QUALIFICATION][$rule] = $err;
+                    $errs[self::FIELD_ORGANIZATION][$rule] = $err;
                 }
             }
         }
@@ -1447,27 +1441,51 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TELECOM])) {
-            $v = $this->getTelecom();
-            foreach($validationRules[self::FIELD_TELECOM] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_TELECOM, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_PERIOD])) {
+            $v = $this->getPeriod();
+            foreach($validationRules[self::FIELD_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_PERIOD, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TELECOM])) {
-                        $errs[self::FIELD_TELECOM] = [];
+                    if (!isset($errs[self::FIELD_PERIOD])) {
+                        $errs[self::FIELD_PERIOD] = [];
                     }
-                    $errs[self::FIELD_TELECOM][$rule] = $err;
+                    $errs[self::FIELD_PERIOD][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_CONTAINED])) {
-            $v = $this->getContained();
-            foreach($validationRules[self::FIELD_CONTAINED] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_CONTAINED, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_LOCATION])) {
+            $v = $this->getLocation();
+            foreach($validationRules[self::FIELD_LOCATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_LOCATION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CONTAINED])) {
-                        $errs[self::FIELD_CONTAINED] = [];
+                    if (!isset($errs[self::FIELD_LOCATION])) {
+                        $errs[self::FIELD_LOCATION] = [];
                     }
-                    $errs[self::FIELD_CONTAINED][$rule] = $err;
+                    $errs[self::FIELD_LOCATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_QUALIFICATION])) {
+            $v = $this->getQualification();
+            foreach($validationRules[self::FIELD_QUALIFICATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_QUALIFICATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_QUALIFICATION])) {
+                        $errs[self::FIELD_QUALIFICATION] = [];
+                    }
+                    $errs[self::FIELD_QUALIFICATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_COMMUNICATION])) {
+            $v = $this->getCommunication();
+            foreach($validationRules[self::FIELD_COMMUNICATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PRACTITIONER, self::FIELD_COMMUNICATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_COMMUNICATION])) {
+                        $errs[self::FIELD_COMMUNICATION] = [];
+                    }
+                    $errs[self::FIELD_COMMUNICATION][$rule] = $err;
                 }
             }
         }
@@ -1492,6 +1510,18 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                         $errs[self::FIELD_TEXT] = [];
                     }
                     $errs[self::FIELD_TEXT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONTAINED])) {
+            $v = $this->getContained();
+            foreach($validationRules[self::FIELD_CONTAINED] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_CONTAINED, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONTAINED])) {
+                        $errs[self::FIELD_CONTAINED] = [];
+                    }
+                    $errs[self::FIELD_CONTAINED][$rule] = $err;
                 }
             }
         }
@@ -1535,189 +1565,200 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRPractitioner $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRPractitioner
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRPractitioner::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRPractitioner::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRPractitioner::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRPractitioner;
+            $type = new FHIRPractitioner(null);
         } elseif (!is_object($type) || !($type instanceof FHIRPractitioner)) {
             throw new \RuntimeException(sprintf(
                 'FHIRPractitioner::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRPractitioner or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_IDENTIFIER === $n->nodeName) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_NAME === $n->nodeName) {
+                $type->setName(FHIRHumanName::xmlUnserialize($n));
+            } elseif (self::FIELD_TELECOM === $n->nodeName) {
+                $type->addTelecom(FHIRContact::xmlUnserialize($n));
+            } elseif (self::FIELD_ADDRESS === $n->nodeName) {
+                $type->setAddress(FHIRAddress::xmlUnserialize($n));
+            } elseif (self::FIELD_GENDER === $n->nodeName) {
+                $type->setGender(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_BIRTH_DATE === $n->nodeName) {
+                $type->setBirthDate(FHIRDateTime::xmlUnserialize($n));
+            } elseif (self::FIELD_PHOTO === $n->nodeName) {
+                $type->addPhoto(FHIRAttachment::xmlUnserialize($n));
+            } elseif (self::FIELD_ORGANIZATION === $n->nodeName) {
+                $type->setOrganization(FHIRResourceReference::xmlUnserialize($n));
+            } elseif (self::FIELD_ROLE === $n->nodeName) {
+                $type->addRole(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_SPECIALTY === $n->nodeName) {
+                $type->addSpecialty(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_PERIOD === $n->nodeName) {
+                $type->setPeriod(FHIRPeriod::xmlUnserialize($n));
+            } elseif (self::FIELD_LOCATION === $n->nodeName) {
+                $type->addLocation(FHIRResourceReference::xmlUnserialize($n));
+            } elseif (self::FIELD_QUALIFICATION === $n->nodeName) {
+                $type->addQualification(FHIRPractitionerQualification::xmlUnserialize($n));
+            } elseif (self::FIELD_COMMUNICATION === $n->nodeName) {
+                $type->addCommunication(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_LANGUAGE === $n->nodeName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n));
+            } elseif (self::FIELD_TEXT === $n->nodeName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n));
+            } elseif (self::FIELD_CONTAINED === $n->nodeName) {
+                for ($ni = 0; $ni < $n->childNodes->length; $ni++) {
+                    $nn = $n->childNodes->item($ni);
+                    if ($nn instanceof \DOMElement) {
+                        $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn));
+                    }
+                }
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->address)) {
-            $type->setAddress(FHIRAddress::xmlUnserialize($children->address));
-        }
-        if (isset($children->birthDate)) {
-            $type->setBirthDate(FHIRDateTime::xmlUnserialize($children->birthDate));
-        }
-        if (isset($attributes->birthDate)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_BIRTH_DATE);
+        if (null !== $n) {
             $pt = $type->getBirthDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->birthDate);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setBirthDate((string)$attributes->birthDate);
+                $type->setBirthDate($n->nodeValue);
             }
         }
-        if (isset($children->communication)) {
-            foreach($children->communication as $child) {
-                $type->addCommunication(FHIRCodeableConcept::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_LANGUAGE);
+        if (null !== $n) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setLanguage($n->nodeValue);
             }
         }
-        if (isset($children->gender)) {
-            $type->setGender(FHIRCodeableConcept::xmlUnserialize($children->gender));
-        }
-        if (isset($children->identifier)) {
-            foreach($children->identifier as $child) {
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->location)) {
-            foreach($children->location as $child) {
-                $type->addLocation(FHIRResourceReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->name)) {
-            $type->setName(FHIRHumanName::xmlUnserialize($children->name));
-        }
-        if (isset($children->organization)) {
-            $type->setOrganization(FHIRResourceReference::xmlUnserialize($children->organization));
-        }
-        if (isset($children->period)) {
-            $type->setPeriod(FHIRPeriod::xmlUnserialize($children->period));
-        }
-        if (isset($children->photo)) {
-            foreach($children->photo as $child) {
-                $type->addPhoto(FHIRAttachment::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->qualification)) {
-            foreach($children->qualification as $child) {
-                $type->addQualification(FHIRPractitionerQualification::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->role)) {
-            foreach($children->role as $child) {
-                $type->addRole(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->specialty)) {
-            foreach($children->specialty as $child) {
-                $type->addSpecialty(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->telecom)) {
-            foreach($children->telecom as $child) {
-                $type->addTelecom(FHIRContact::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getAddress())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ADDRESS, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getBirthDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BIRTH_DATE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getCommunication())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COMMUNICATION, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getGender())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_GENDER, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_IDENTIFIER);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if ([] !== ($vs = $this->getLocation())) {
+        if (null !== ($v = $this->getName())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_NAME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getTelecom())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_LOCATION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_TELECOM);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getAddress())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_ADDRESS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getOrganization())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANIZATION, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getGender())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_GENDER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getBirthDate())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_BIRTH_DATE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getPhoto())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PHOTO, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PHOTO);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if ([] !== ($vs = $this->getQualification())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_QUALIFICATION, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (null !== ($v = $this->getOrganization())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_ORGANIZATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getRole())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_ROLE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getSpecialty())) {
@@ -1725,18 +1766,47 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIALTY, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_SPECIALTY);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if ([] !== ($vs = $this->getTelecom())) {
+        if (null !== ($v = $this->getPeriod())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PERIOD);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getLocation())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TELECOM, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_LOCATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        if ([] !== ($vs = $this->getQualification())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_QUALIFICATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if ([] !== ($vs = $this->getCommunication())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_COMMUNICATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        return $element;
     }
 
     /**
@@ -1745,30 +1815,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAddress())) {
-            $a[self::FIELD_ADDRESS] = $v;
-        }
-        if (null !== ($v = $this->getBirthDate())) {
-            $a[self::FIELD_BIRTH_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_BIRTH_DATE_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->getCommunication())) {
-            $a[self::FIELD_COMMUNICATION] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_COMMUNICATION][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getGender())) {
-            $a[self::FIELD_GENDER] = $v;
-        }
         if ([] !== ($vs = $this->getIdentifier())) {
             $a[self::FIELD_IDENTIFIER] = [];
             foreach($vs as $v) {
@@ -1778,23 +1824,33 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                 $a[self::FIELD_IDENTIFIER][] = $v;
             }
         }
-        if ([] !== ($vs = $this->getLocation())) {
-            $a[self::FIELD_LOCATION] = [];
+        if (null !== ($v = $this->getName())) {
+            $a[self::FIELD_NAME] = $v;
+        }
+        if ([] !== ($vs = $this->getTelecom())) {
+            $a[self::FIELD_TELECOM] = [];
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_LOCATION][] = $v;
+                $a[self::FIELD_TELECOM][] = $v;
             }
         }
-        if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = $v;
+        if (null !== ($v = $this->getAddress())) {
+            $a[self::FIELD_ADDRESS] = $v;
         }
-        if (null !== ($v = $this->getOrganization())) {
-            $a[self::FIELD_ORGANIZATION] = $v;
+        if (null !== ($v = $this->getGender())) {
+            $a[self::FIELD_GENDER] = $v;
         }
-        if (null !== ($v = $this->getPeriod())) {
-            $a[self::FIELD_PERIOD] = $v;
+        if (null !== ($v = $this->getBirthDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_BIRTH_DATE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDateTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_BIRTH_DATE_EXT] = $ext;
+            }
         }
         if ([] !== ($vs = $this->getPhoto())) {
             $a[self::FIELD_PHOTO] = [];
@@ -1805,14 +1861,8 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                 $a[self::FIELD_PHOTO][] = $v;
             }
         }
-        if ([] !== ($vs = $this->getQualification())) {
-            $a[self::FIELD_QUALIFICATION] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_QUALIFICATION][] = $v;
-            }
+        if (null !== ($v = $this->getOrganization())) {
+            $a[self::FIELD_ORGANIZATION] = $v;
         }
         if ([] !== ($vs = $this->getRole())) {
             $a[self::FIELD_ROLE] = [];
@@ -1832,17 +1882,35 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                 $a[self::FIELD_SPECIALTY][] = $v;
             }
         }
-        if ([] !== ($vs = $this->getTelecom())) {
-            $a[self::FIELD_TELECOM] = [];
+        if (null !== ($v = $this->getPeriod())) {
+            $a[self::FIELD_PERIOD] = $v;
+        }
+        if ([] !== ($vs = $this->getLocation())) {
+            $a[self::FIELD_LOCATION] = [];
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_TELECOM][] = $v;
+                $a[self::FIELD_LOCATION][] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getQualification())) {
+            $a[self::FIELD_QUALIFICATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_QUALIFICATION][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->getCommunication())) {
+            $a[self::FIELD_COMMUNICATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_COMMUNICATION][] = $v;
+            }
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -82,14 +84,38 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE_DOT_SUBSTITUTION;
-    const FIELD_REASON = 'reason';
-    const FIELD_RESPONSIBLE_PARTY = 'responsibleParty';
-    const FIELD_TYPE = 'type';
     const FIELD_WAS_SUBSTITUTED = 'wasSubstituted';
     const FIELD_WAS_SUBSTITUTED_EXT = '_wasSubstituted';
+    const FIELD_TYPE = 'type';
+    const FIELD_REASON = 'reason';
+    const FIELD_RESPONSIBLE_PARTY = 'responsibleParty';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * True if the dispenser dispensed a different drug or product from what was
+     * prescribed.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    protected $wasSubstituted = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code signifying whether a different drug was dispensed from what was
+     * prescribed.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $type = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -116,30 +142,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
     protected $responsibleParty = [];
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A code signifying whether a different drug was dispensed from what was
-     * prescribed.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $type = null;
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * True if the dispenser dispensed a different drug or product from what was
-     * prescribed.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    protected $wasSubstituted = null;
-
-    /**
      * Validation map for fields in type MedicationDispense.Substitution
      * @var array
      */
@@ -161,6 +163,28 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_WAS_SUBSTITUTED]) || isset($data[self::FIELD_WAS_SUBSTITUTED_EXT])) {
+            $value = isset($data[self::FIELD_WAS_SUBSTITUTED]) ? $data[self::FIELD_WAS_SUBSTITUTED] : null;
+            $ext = (isset($data[self::FIELD_WAS_SUBSTITUTED_EXT]) && is_array($data[self::FIELD_WAS_SUBSTITUTED_EXT])) ? $ext = $data[self::FIELD_WAS_SUBSTITUTED_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setWasSubstituted($value);
+                } else if (is_array($value)) {
+                    $this->setWasSubstituted(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setWasSubstituted(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setWasSubstituted(new FHIRBoolean($ext));
+            }
+        }
+        if (isset($data[self::FIELD_TYPE])) {
+            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setType($data[self::FIELD_TYPE]);
+            } else {
+                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
+            }
+        }
         if (isset($data[self::FIELD_REASON])) {
             if (is_array($data[self::FIELD_REASON])) {
                 foreach($data[self::FIELD_REASON] as $v) {
@@ -173,7 +197,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
                         $this->addReason(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_REASON] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_REASON] instanceof FHIRCodeableConcept) {
                 $this->addReason($data[self::FIELD_REASON]);
             } else {
                 $this->addReason(new FHIRCodeableConcept($data[self::FIELD_REASON]));
@@ -191,40 +215,10 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
                         $this->addResponsibleParty(new FHIRReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_RESPONSIBLE_PARTY] instanceof FHIRReference) {
+            } elseif ($data[self::FIELD_RESPONSIBLE_PARTY] instanceof FHIRReference) {
                 $this->addResponsibleParty($data[self::FIELD_RESPONSIBLE_PARTY]);
             } else {
                 $this->addResponsibleParty(new FHIRReference($data[self::FIELD_RESPONSIBLE_PARTY]));
-            }
-        }
-        if (isset($data[self::FIELD_TYPE])) {
-            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setType($data[self::FIELD_TYPE]);
-            } else {
-                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
-            }
-        }
-        if (isset($data[self::FIELD_WAS_SUBSTITUTED]) || isset($data[self::FIELD_WAS_SUBSTITUTED_EXT])) {
-            if (isset($data[self::FIELD_WAS_SUBSTITUTED])) {
-                $value = $data[self::FIELD_WAS_SUBSTITUTED];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_WAS_SUBSTITUTED_EXT]) && is_array($data[self::FIELD_WAS_SUBSTITUTED_EXT])) {
-                $ext = $data[self::FIELD_WAS_SUBSTITUTED_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setWasSubstituted($value);
-                } else if (is_array($value)) {
-                    $this->setWasSubstituted(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setWasSubstituted(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setWasSubstituted(new FHIRBoolean($ext));
             }
         }
     }
@@ -243,10 +237,79 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<MedicationDispenseSubstitution{$xmlns}></MedicationDispenseSubstitution>";
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * True if the dispenser dispensed a different drug or product from what was
+     * prescribed.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    public function getWasSubstituted()
+    {
+        return $this->wasSubstituted;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * True if the dispenser dispensed a different drug or product from what was
+     * prescribed.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $wasSubstituted
+     * @return static
+     */
+    public function setWasSubstituted($wasSubstituted = null)
+    {
+        if (null !== $wasSubstituted && !($wasSubstituted instanceof FHIRBoolean)) {
+            $wasSubstituted = new FHIRBoolean($wasSubstituted);
+        }
+        $this->_trackValueSet($this->wasSubstituted, $wasSubstituted);
+        $this->wasSubstituted = $wasSubstituted;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code signifying whether a different drug was dispensed from what was
+     * prescribed.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code signifying whether a different drug was dispensed from what was
+     * prescribed.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
+     * @return static
+     */
+    public function setType(FHIRCodeableConcept $type = null)
+    {
+        $this->_trackValueSet($this->type, $type);
+        $this->type = $type;
+        return $this;
     }
 
     /**
@@ -279,6 +342,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      */
     public function addReason(FHIRCodeableConcept $reason = null)
     {
+        $this->_trackValueAdded();
         $this->reason[] = $reason;
         return $this;
     }
@@ -297,7 +361,10 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      */
     public function setReason(array $reason = [])
     {
-        $this->reason = [];
+        if ([] !== $this->reason) {
+            $this->_trackValuesRemoved(count($this->reason));
+            $this->reason = [];
+        }
         if ([] === $reason) {
             return $this;
         }
@@ -337,6 +404,7 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      */
     public function addResponsibleParty(FHIRReference $responsibleParty = null)
     {
+        $this->_trackValueAdded();
         $this->responsibleParty[] = $responsibleParty;
         return $this;
     }
@@ -353,7 +421,10 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      */
     public function setResponsibleParty(array $responsibleParty = [])
     {
-        $this->responsibleParty = [];
+        if ([] !== $this->responsibleParty) {
+            $this->_trackValuesRemoved(count($this->responsibleParty));
+            $this->responsibleParty = [];
+        }
         if ([] === $responsibleParty) {
             return $this;
         }
@@ -364,78 +435,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
                 $this->addResponsibleParty(new FHIRReference($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A code signifying whether a different drug was dispensed from what was
-     * prescribed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A code signifying whether a different drug was dispensed from what was
-     * prescribed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return static
-     */
-    public function setType(FHIRCodeableConcept $type = null)
-    {
-        $this->type = $type;
-        return $this;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * True if the dispenser dispensed a different drug or product from what was
-     * prescribed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    public function getWasSubstituted()
-    {
-        return $this->wasSubstituted;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * True if the dispenser dispensed a different drug or product from what was
-     * prescribed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $wasSubstituted
-     * @return static
-     */
-    public function setWasSubstituted($wasSubstituted = null)
-    {
-        if (null === $wasSubstituted) {
-            $this->wasSubstituted = null;
-            return $this;
-        }
-        if ($wasSubstituted instanceof FHIRBoolean) {
-            $this->wasSubstituted = $wasSubstituted;
-            return $this;
-        }
-        $this->wasSubstituted = new FHIRBoolean($wasSubstituted);
         return $this;
     }
 
@@ -460,6 +459,16 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getWasSubstituted())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_WAS_SUBSTITUTED] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TYPE] = $fieldErrs;
+            }
+        }
         if ([] !== ($vs = $this->getReason())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
@@ -474,14 +483,28 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TYPE] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_WAS_SUBSTITUTED])) {
+            $v = $this->getWasSubstituted();
+            foreach($validationRules[self::FIELD_WAS_SUBSTITUTED] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE_DOT_SUBSTITUTION, self::FIELD_WAS_SUBSTITUTED, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_WAS_SUBSTITUTED])) {
+                        $errs[self::FIELD_WAS_SUBSTITUTED] = [];
+                    }
+                    $errs[self::FIELD_WAS_SUBSTITUTED][$rule] = $err;
+                }
             }
         }
-        if (null !== ($v = $this->getWasSubstituted())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_WAS_SUBSTITUTED] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE_DOT_SUBSTITUTION, self::FIELD_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
+                    }
+                    $errs[self::FIELD_TYPE][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_REASON])) {
@@ -505,30 +528,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
                         $errs[self::FIELD_RESPONSIBLE_PARTY] = [];
                     }
                     $errs[self::FIELD_RESPONSIBLE_PARTY][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_TYPE])) {
-            $v = $this->getType();
-            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE_DOT_SUBSTITUTION, self::FIELD_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TYPE])) {
-                        $errs[self::FIELD_TYPE] = [];
-                    }
-                    $errs[self::FIELD_TYPE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_WAS_SUBSTITUTED])) {
-            $v = $this->getWasSubstituted();
-            foreach($validationRules[self::FIELD_WAS_SUBSTITUTED] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE_DOT_SUBSTITUTION, self::FIELD_WAS_SUBSTITUTED, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_WAS_SUBSTITUTED])) {
-                        $errs[self::FIELD_WAS_SUBSTITUTED] = [];
-                    }
-                    $errs[self::FIELD_WAS_SUBSTITUTED][$rule] = $err;
                 }
             }
         }
@@ -572,89 +571,115 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRMedicationDispenseSubstitution::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMedicationDispenseSubstitution::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRMedicationDispenseSubstitution::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRMedicationDispenseSubstitution;
+            $type = new FHIRMedicationDispenseSubstitution(null);
         } elseif (!is_object($type) || !($type instanceof FHIRMedicationDispenseSubstitution)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMedicationDispenseSubstitution::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_WAS_SUBSTITUTED === $n->nodeName) {
+                $type->setWasSubstituted(FHIRBoolean::xmlUnserialize($n));
+            } elseif (self::FIELD_TYPE === $n->nodeName) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_REASON === $n->nodeName) {
+                $type->addReason(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_RESPONSIBLE_PARTY === $n->nodeName) {
+                $type->addResponsibleParty(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->reason)) {
-            foreach($children->reason as $child) {
-                $type->addReason(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->responsibleParty)) {
-            foreach($children->responsibleParty as $child) {
-                $type->addResponsibleParty(FHIRReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->type)) {
-            $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
-        }
-        if (isset($children->wasSubstituted)) {
-            $type->setWasSubstituted(FHIRBoolean::xmlUnserialize($children->wasSubstituted));
-        }
-        if (isset($attributes->wasSubstituted)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_WAS_SUBSTITUTED);
+        if (null !== $n) {
             $pt = $type->getWasSubstituted();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->wasSubstituted);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setWasSubstituted((string)$attributes->wasSubstituted);
+                $type->setWasSubstituted($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getWasSubstituted())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_WAS_SUBSTITUTED);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if ([] !== ($vs = $this->getReason())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_REASON);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getResponsibleParty())) {
@@ -662,16 +687,12 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSIBLE_PARTY, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_RESPONSIBLE_PARTY);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getWasSubstituted())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WAS_SUBSTITUTED, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -680,6 +701,19 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getWasSubstituted())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_WAS_SUBSTITUTED] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBoolean::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_WAS_SUBSTITUTED_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            $a[self::FIELD_TYPE] = $v;
+        }
         if ([] !== ($vs = $this->getReason())) {
             $a[self::FIELD_REASON] = [];
             foreach($vs as $v) {
@@ -697,21 +731,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
                 }
                 $a[self::FIELD_RESPONSIBLE_PARTY][] = $v;
             }
-        }
-        if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
-        }
-        if (null !== ($v = $this->getWasSubstituted())) {
-            $a[self::FIELD_WAS_SUBSTITUTED] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_WAS_SUBSTITUTED_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

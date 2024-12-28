@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAdver
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAdver
  */
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -80,23 +82,11 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY;
-    const FIELD_CAUSALITY = 'causality';
     const FIELD_INSTANCE = 'instance';
+    const FIELD_CAUSALITY = 'causality';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Actual or potential/avoided event causing unintended physical injury resulting
-     * from or contributed to by medical care, a research study or other healthcare
-     * setting factors that requires additional monitoring, treatment, or
-     * hospitalization, or that results in death.
-     *
-     * Information on the possible cause of the event.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality[]
-     */
-    protected $causality = [];
+    private $_xmlns = '';
 
     /**
      * A reference from one resource to another.
@@ -110,6 +100,18 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected $instance = null;
+
+    /**
+     * Actual or potential/avoided event causing unintended physical injury resulting
+     * from or contributed to by medical care, a research study or other healthcare
+     * setting factors that requires additional monitoring, treatment, or
+     * hospitalization, or that results in death.
+     *
+     * Information on the possible cause of the event.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality[]
+     */
+    protected $causality = [];
 
     /**
      * Validation map for fields in type AdverseEvent.SuspectEntity
@@ -133,6 +135,13 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_INSTANCE])) {
+            if ($data[self::FIELD_INSTANCE] instanceof FHIRReference) {
+                $this->setInstance($data[self::FIELD_INSTANCE]);
+            } else {
+                $this->setInstance(new FHIRReference($data[self::FIELD_INSTANCE]));
+            }
+        }
         if (isset($data[self::FIELD_CAUSALITY])) {
             if (is_array($data[self::FIELD_CAUSALITY])) {
                 foreach($data[self::FIELD_CAUSALITY] as $v) {
@@ -145,17 +154,10 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                         $this->addCausality(new FHIRAdverseEventCausality($v));
                     }
                 }
-            } else if ($data[self::FIELD_CAUSALITY] instanceof FHIRAdverseEventCausality) {
+            } elseif ($data[self::FIELD_CAUSALITY] instanceof FHIRAdverseEventCausality) {
                 $this->addCausality($data[self::FIELD_CAUSALITY]);
             } else {
                 $this->addCausality(new FHIRAdverseEventCausality($data[self::FIELD_CAUSALITY]));
-            }
-        }
-        if (isset($data[self::FIELD_INSTANCE])) {
-            if ($data[self::FIELD_INSTANCE] instanceof FHIRReference) {
-                $this->setInstance($data[self::FIELD_INSTANCE]);
-            } else {
-                $this->setInstance(new FHIRReference($data[self::FIELD_INSTANCE]));
             }
         }
     }
@@ -174,69 +176,10 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<AdverseEventSuspectEntity{$xmlns}></AdverseEventSuspectEntity>";
-    }
-
-    /**
-     * Actual or potential/avoided event causing unintended physical injury resulting
-     * from or contributed to by medical care, a research study or other healthcare
-     * setting factors that requires additional monitoring, treatment, or
-     * hospitalization, or that results in death.
-     *
-     * Information on the possible cause of the event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality[]
-     */
-    public function getCausality()
-    {
-        return $this->causality;
-    }
-
-    /**
-     * Actual or potential/avoided event causing unintended physical injury resulting
-     * from or contributed to by medical care, a research study or other healthcare
-     * setting factors that requires additional monitoring, treatment, or
-     * hospitalization, or that results in death.
-     *
-     * Information on the possible cause of the event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality $causality
-     * @return static
-     */
-    public function addCausality(FHIRAdverseEventCausality $causality = null)
-    {
-        $this->causality[] = $causality;
-        return $this;
-    }
-
-    /**
-     * Actual or potential/avoided event causing unintended physical injury resulting
-     * from or contributed to by medical care, a research study or other healthcare
-     * setting factors that requires additional monitoring, treatment, or
-     * hospitalization, or that results in death.
-     *
-     * Information on the possible cause of the event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality[] $causality
-     * @return static
-     */
-    public function setCausality(array $causality = [])
-    {
-        $this->causality = [];
-        if ([] === $causality) {
-            return $this;
-        }
-        foreach($causality as $v) {
-            if ($v instanceof FHIRAdverseEventCausality) {
-                $this->addCausality($v);
-            } else {
-                $this->addCausality(new FHIRAdverseEventCausality($v));
-            }
-        }
-        return $this;
     }
 
     /**
@@ -269,7 +212,71 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      */
     public function setInstance(FHIRReference $instance = null)
     {
+        $this->_trackValueSet($this->instance, $instance);
         $this->instance = $instance;
+        return $this;
+    }
+
+    /**
+     * Actual or potential/avoided event causing unintended physical injury resulting
+     * from or contributed to by medical care, a research study or other healthcare
+     * setting factors that requires additional monitoring, treatment, or
+     * hospitalization, or that results in death.
+     *
+     * Information on the possible cause of the event.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality[]
+     */
+    public function getCausality()
+    {
+        return $this->causality;
+    }
+
+    /**
+     * Actual or potential/avoided event causing unintended physical injury resulting
+     * from or contributed to by medical care, a research study or other healthcare
+     * setting factors that requires additional monitoring, treatment, or
+     * hospitalization, or that results in death.
+     *
+     * Information on the possible cause of the event.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality $causality
+     * @return static
+     */
+    public function addCausality(FHIRAdverseEventCausality $causality = null)
+    {
+        $this->_trackValueAdded();
+        $this->causality[] = $causality;
+        return $this;
+    }
+
+    /**
+     * Actual or potential/avoided event causing unintended physical injury resulting
+     * from or contributed to by medical care, a research study or other healthcare
+     * setting factors that requires additional monitoring, treatment, or
+     * hospitalization, or that results in death.
+     *
+     * Information on the possible cause of the event.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventCausality[] $causality
+     * @return static
+     */
+    public function setCausality(array $causality = [])
+    {
+        if ([] !== $this->causality) {
+            $this->_trackValuesRemoved(count($this->causality));
+            $this->causality = [];
+        }
+        if ([] === $causality) {
+            return $this;
+        }
+        foreach($causality as $v) {
+            if ($v instanceof FHIRAdverseEventCausality) {
+                $this->addCausality($v);
+            } else {
+                $this->addCausality(new FHIRAdverseEventCausality($v));
+            }
+        }
         return $this;
     }
 
@@ -294,27 +301,15 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getCausality())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_CAUSALITY, $i)] = $fieldErrs;
-                }
-            }
-        }
         if (null !== ($v = $this->getInstance())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_INSTANCE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CAUSALITY])) {
-            $v = $this->getCausality();
-            foreach($validationRules[self::FIELD_CAUSALITY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY, self::FIELD_CAUSALITY, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CAUSALITY])) {
-                        $errs[self::FIELD_CAUSALITY] = [];
-                    }
-                    $errs[self::FIELD_CAUSALITY][$rule] = $err;
+        if ([] !== ($vs = $this->getCausality())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_CAUSALITY, $i)] = $fieldErrs;
                 }
             }
         }
@@ -327,6 +322,18 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                         $errs[self::FIELD_INSTANCE] = [];
                     }
                     $errs[self::FIELD_INSTANCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CAUSALITY])) {
+            $v = $this->getCausality();
+            foreach($validationRules[self::FIELD_CAUSALITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY, self::FIELD_CAUSALITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CAUSALITY])) {
+                        $errs[self::FIELD_CAUSALITY] = [];
+                    }
+                    $errs[self::FIELD_CAUSALITY][$rule] = $err;
                 }
             }
         }
@@ -370,79 +377,100 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRAdverseEventSuspectEntity::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRAdverseEventSuspectEntity::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRAdverseEventSuspectEntity::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRAdverseEventSuspectEntity;
+            $type = new FHIRAdverseEventSuspectEntity(null);
         } elseif (!is_object($type) || !($type instanceof FHIRAdverseEventSuspectEntity)) {
             throw new \RuntimeException(sprintf(
                 'FHIRAdverseEventSuspectEntity::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_INSTANCE === $n->nodeName) {
+                $type->setInstance(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_CAUSALITY === $n->nodeName) {
+                $type->addCausality(FHIRAdverseEventCausality::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->causality)) {
-            foreach($children->causality as $child) {
-                $type->addCausality(FHIRAdverseEventCausality::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
-        }
-        if (isset($children->instance)) {
-            $type->setInstance(FHIRReference::xmlUnserialize($children->instance));
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getInstance())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_INSTANCE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if ([] !== ($vs = $this->getCausality())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSALITY, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_CAUSALITY);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getInstance())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANCE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -451,6 +479,9 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getInstance())) {
+            $a[self::FIELD_INSTANCE] = $v;
+        }
         if ([] !== ($vs = $this->getCausality())) {
             $a[self::FIELD_CAUSALITY] = [];
             foreach($vs as $v) {
@@ -459,12 +490,6 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                 }
                 $a[self::FIELD_CAUSALITY][] = $v;
             }
-        }
-        if (null !== ($v = $this->getInstance())) {
-            $a[self::FIELD_INSTANCE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

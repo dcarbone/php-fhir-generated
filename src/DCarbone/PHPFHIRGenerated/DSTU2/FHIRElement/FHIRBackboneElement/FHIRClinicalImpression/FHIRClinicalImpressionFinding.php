@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,9 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
 
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
@@ -84,23 +86,12 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION_DOT_FINDING;
+    const FIELD_ITEM = 'item';
     const FIELD_CAUSE = 'cause';
     const FIELD_CAUSE_EXT = '_cause';
-    const FIELD_ITEM = 'item';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Which investigations support finding or diagnosis.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    protected $cause = null;
+    private $_xmlns = '';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -113,6 +104,17 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected $item = null;
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Which investigations support finding or diagnosis.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    protected $cause = null;
 
     /**
      * Validation map for fields in type ClinicalImpression.Finding
@@ -136,17 +138,16 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_ITEM])) {
+            if ($data[self::FIELD_ITEM] instanceof FHIRCodeableConcept) {
+                $this->setItem($data[self::FIELD_ITEM]);
+            } else {
+                $this->setItem(new FHIRCodeableConcept($data[self::FIELD_ITEM]));
+            }
+        }
         if (isset($data[self::FIELD_CAUSE]) || isset($data[self::FIELD_CAUSE_EXT])) {
-            if (isset($data[self::FIELD_CAUSE])) {
-                $value = $data[self::FIELD_CAUSE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CAUSE_EXT]) && is_array($data[self::FIELD_CAUSE_EXT])) {
-                $ext = $data[self::FIELD_CAUSE_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_CAUSE]) ? $data[self::FIELD_CAUSE] : null;
+            $ext = (isset($data[self::FIELD_CAUSE_EXT]) && is_array($data[self::FIELD_CAUSE_EXT])) ? $ext = $data[self::FIELD_CAUSE_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setCause($value);
@@ -155,15 +156,8 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
                 } else {
                     $this->setCause(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setCause(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_ITEM])) {
-            if ($data[self::FIELD_ITEM] instanceof FHIRCodeableConcept) {
-                $this->setItem($data[self::FIELD_ITEM]);
-            } else {
-                $this->setItem(new FHIRCodeableConcept($data[self::FIELD_ITEM]));
             }
         }
     }
@@ -182,48 +176,10 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ClinicalImpressionFinding{$xmlns}></ClinicalImpressionFinding>";
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Which investigations support finding or diagnosis.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    public function getCause()
-    {
-        return $this->cause;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Which investigations support finding or diagnosis.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $cause
-     * @return static
-     */
-    public function setCause($cause = null)
-    {
-        if (null === $cause) {
-            $this->cause = null;
-            return $this;
-        }
-        if ($cause instanceof FHIRString) {
-            $this->cause = $cause;
-            return $this;
-        }
-        $this->cause = new FHIRString($cause);
-        return $this;
     }
 
     /**
@@ -254,7 +210,42 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
      */
     public function setItem(FHIRCodeableConcept $item = null)
     {
+        $this->_trackValueSet($this->item, $item);
         $this->item = $item;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Which investigations support finding or diagnosis.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    public function getCause()
+    {
+        return $this->cause;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Which investigations support finding or diagnosis.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $cause
+     * @return static
+     */
+    public function setCause($cause = null)
+    {
+        if (null !== $cause && !($cause instanceof FHIRString)) {
+            $cause = new FHIRString($cause);
+        }
+        $this->_trackValueSet($this->cause, $cause);
+        $this->cause = $cause;
         return $this;
     }
 
@@ -279,26 +270,14 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getCause())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CAUSE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getItem())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_ITEM] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CAUSE])) {
-            $v = $this->getCause();
-            foreach($validationRules[self::FIELD_CAUSE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION_DOT_FINDING, self::FIELD_CAUSE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CAUSE])) {
-                        $errs[self::FIELD_CAUSE] = [];
-                    }
-                    $errs[self::FIELD_CAUSE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getCause())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CAUSE] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_ITEM])) {
@@ -310,6 +289,18 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
                         $errs[self::FIELD_ITEM] = [];
                     }
                     $errs[self::FIELD_ITEM][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CAUSE])) {
+            $v = $this->getCause();
+            foreach($validationRules[self::FIELD_CAUSE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLINICAL_IMPRESSION_DOT_FINDING, self::FIELD_CAUSE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CAUSE])) {
+                        $errs[self::FIELD_CAUSE] = [];
+                    }
+                    $errs[self::FIELD_CAUSE][$rule] = $err;
                 }
             }
         }
@@ -353,80 +344,104 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRClinicalImpressionFinding::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRClinicalImpressionFinding::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRClinicalImpressionFinding::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRClinicalImpressionFinding;
+            $type = new FHIRClinicalImpressionFinding(null);
         } elseif (!is_object($type) || !($type instanceof FHIRClinicalImpressionFinding)) {
             throw new \RuntimeException(sprintf(
                 'FHIRClinicalImpressionFinding::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_ITEM === $n->nodeName) {
+                $type->setItem(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_CAUSE === $n->nodeName) {
+                $type->setCause(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->cause)) {
-            $type->setCause(FHIRString::xmlUnserialize($children->cause));
-        }
-        if (isset($attributes->cause)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_CAUSE);
+        if (null !== $n) {
             $pt = $type->getCause();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->cause);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setCause((string)$attributes->cause);
+                $type->setCause($n->nodeValue);
             }
         }
-        if (isset($children->item)) {
-            $type->setItem(FHIRCodeableConcept::xmlUnserialize($children->item));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getCause())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSE, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getItem())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_ITEM);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getCause())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_CAUSE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -435,20 +450,18 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCause())) {
-            $a[self::FIELD_CAUSE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_CAUSE_EXT] = $enc;
-            }
-        }
         if (null !== ($v = $this->getItem())) {
             $a[self::FIELD_ITEM] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getCause())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CAUSE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_CAUSE_EXT] = $ext;
+            }
         }
         return $a;
     }

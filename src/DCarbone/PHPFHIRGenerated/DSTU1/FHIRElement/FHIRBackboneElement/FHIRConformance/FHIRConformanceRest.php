@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,9 +58,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  */
 
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRestfulConformanceMode;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
@@ -76,33 +78,30 @@ class FHIRConformanceRest extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_REST;
-    const FIELD_DOCUMENT_MAILBOX = 'documentMailbox';
-    const FIELD_DOCUMENT_MAILBOX_EXT = '_documentMailbox';
-    const FIELD_DOCUMENTATION = 'documentation';
-    const FIELD_DOCUMENTATION_EXT = '_documentation';
     const FIELD_MODE = 'mode';
     const FIELD_MODE_EXT = '_mode';
+    const FIELD_DOCUMENTATION = 'documentation';
+    const FIELD_DOCUMENTATION_EXT = '_documentation';
+    const FIELD_SECURITY = 'security';
+    const FIELD_RESOURCE = 'resource';
     const FIELD_OPERATION = 'operation';
     const FIELD_QUERY = 'query';
-    const FIELD_RESOURCE = 'resource';
-    const FIELD_SECURITY = 'security';
+    const FIELD_DOCUMENT_MAILBOX = 'documentMailbox';
+    const FIELD_DOCUMENT_MAILBOX_EXT = '_documentMailbox';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
-     * String of characters used to identify a name or a resource
+     * The mode of a RESTful conformance statement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A list of profiles that this server implements for accepting documents in the
-     * mailbox. If this list is empty, then documents are not accepted. The base
-     * specification has the profile identifier
-     * "http://hl7.org/fhir/documents/mailbox". Other specifications can declare their
-     * own identifier for this purpose.
+     * Identifies whether this portion of the statement is describing ability to
+     * initiate or receive restful operations.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri[]
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRestfulConformanceMode
      */
-    protected $documentMailbox = [];
+    protected $mode = null;
 
     /**
      * A sequence of Unicode characters
@@ -116,15 +115,27 @@ class FHIRConformanceRest extends FHIRBackboneElement
     protected $documentation = null;
 
     /**
-     * The mode of a RESTful conformance statement
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A conformance statement is a set of requirements for a desired implementation or
+     * a description of how a target application fulfills those requirements in a
+     * particular implementation.
      *
-     * Identifies whether this portion of the statement is describing ability to
-     * initiate or receive restful operations.
+     * Information about security of implementation.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRestfulConformanceMode
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity
      */
-    protected $mode = null;
+    protected $security = null;
+
+    /**
+     * A conformance statement is a set of requirements for a desired implementation or
+     * a description of how a target application fulfills those requirements in a
+     * particular implementation.
+     *
+     * A specification of the restful capabilities of the solution for a specific
+     * resource type.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource[]
+     */
+    protected $resource = [];
 
     /**
      * A conformance statement is a set of requirements for a desired implementation or
@@ -149,27 +160,18 @@ class FHIRConformanceRest extends FHIRBackboneElement
     protected $query = [];
 
     /**
-     * A conformance statement is a set of requirements for a desired implementation or
-     * a description of how a target application fulfills those requirements in a
-     * particular implementation.
+     * String of characters used to identify a name or a resource
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A specification of the restful capabilities of the solution for a specific
-     * resource type.
+     * A list of profiles that this server implements for accepting documents in the
+     * mailbox. If this list is empty, then documents are not accepted. The base
+     * specification has the profile identifier
+     * "http://hl7.org/fhir/documents/mailbox". Other specifications can declare their
+     * own identifier for this purpose.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource[]
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri[]
      */
-    protected $resource = [];
-
-    /**
-     * A conformance statement is a set of requirements for a desired implementation or
-     * a description of how a target application fulfills those requirements in a
-     * particular implementation.
-     *
-     * Information about security of implementation.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity
-     */
-    protected $security = null;
+    protected $documentMailbox = [];
 
     /**
      * Validation map for fields in type Conformance.Rest
@@ -197,17 +199,100 @@ class FHIRConformanceRest extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_MODE]) || isset($data[self::FIELD_MODE_EXT])) {
+            $value = isset($data[self::FIELD_MODE]) ? $data[self::FIELD_MODE] : null;
+            $ext = (isset($data[self::FIELD_MODE_EXT]) && is_array($data[self::FIELD_MODE_EXT])) ? $ext = $data[self::FIELD_MODE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRRestfulConformanceMode) {
+                    $this->setMode($value);
+                } else if (is_array($value)) {
+                    $this->setMode(new FHIRRestfulConformanceMode(array_merge($ext, $value)));
+                } else {
+                    $this->setMode(new FHIRRestfulConformanceMode([FHIRRestfulConformanceMode::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setMode(new FHIRRestfulConformanceMode($ext));
+            }
+        }
+        if (isset($data[self::FIELD_DOCUMENTATION]) || isset($data[self::FIELD_DOCUMENTATION_EXT])) {
+            $value = isset($data[self::FIELD_DOCUMENTATION]) ? $data[self::FIELD_DOCUMENTATION] : null;
+            $ext = (isset($data[self::FIELD_DOCUMENTATION_EXT]) && is_array($data[self::FIELD_DOCUMENTATION_EXT])) ? $ext = $data[self::FIELD_DOCUMENTATION_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDocumentation($value);
+                } else if (is_array($value)) {
+                    $this->setDocumentation(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDocumentation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDocumentation(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_SECURITY])) {
+            if ($data[self::FIELD_SECURITY] instanceof FHIRConformanceSecurity) {
+                $this->setSecurity($data[self::FIELD_SECURITY]);
+            } else {
+                $this->setSecurity(new FHIRConformanceSecurity($data[self::FIELD_SECURITY]));
+            }
+        }
+        if (isset($data[self::FIELD_RESOURCE])) {
+            if (is_array($data[self::FIELD_RESOURCE])) {
+                foreach($data[self::FIELD_RESOURCE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRConformanceResource) {
+                        $this->addResource($v);
+                    } else {
+                        $this->addResource(new FHIRConformanceResource($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_RESOURCE] instanceof FHIRConformanceResource) {
+                $this->addResource($data[self::FIELD_RESOURCE]);
+            } else {
+                $this->addResource(new FHIRConformanceResource($data[self::FIELD_RESOURCE]));
+            }
+        }
+        if (isset($data[self::FIELD_OPERATION])) {
+            if (is_array($data[self::FIELD_OPERATION])) {
+                foreach($data[self::FIELD_OPERATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRConformanceOperation1) {
+                        $this->addOperation($v);
+                    } else {
+                        $this->addOperation(new FHIRConformanceOperation1($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_OPERATION] instanceof FHIRConformanceOperation1) {
+                $this->addOperation($data[self::FIELD_OPERATION]);
+            } else {
+                $this->addOperation(new FHIRConformanceOperation1($data[self::FIELD_OPERATION]));
+            }
+        }
+        if (isset($data[self::FIELD_QUERY])) {
+            if (is_array($data[self::FIELD_QUERY])) {
+                foreach($data[self::FIELD_QUERY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRConformanceQuery) {
+                        $this->addQuery($v);
+                    } else {
+                        $this->addQuery(new FHIRConformanceQuery($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_QUERY] instanceof FHIRConformanceQuery) {
+                $this->addQuery($data[self::FIELD_QUERY]);
+            } else {
+                $this->addQuery(new FHIRConformanceQuery($data[self::FIELD_QUERY]));
+            }
+        }
         if (isset($data[self::FIELD_DOCUMENT_MAILBOX]) || isset($data[self::FIELD_DOCUMENT_MAILBOX_EXT])) {
-            if (isset($data[self::FIELD_DOCUMENT_MAILBOX])) {
-                $value = $data[self::FIELD_DOCUMENT_MAILBOX];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DOCUMENT_MAILBOX_EXT]) && is_array($data[self::FIELD_DOCUMENT_MAILBOX_EXT])) {
-                $ext = $data[self::FIELD_DOCUMENT_MAILBOX_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_DOCUMENT_MAILBOX]) ? $data[self::FIELD_DOCUMENT_MAILBOX] : null;
+            $ext = (isset($data[self::FIELD_DOCUMENT_MAILBOX_EXT]) && is_array($data[self::FIELD_DOCUMENT_MAILBOX_EXT])) ? $ext = $data[self::FIELD_DOCUMENT_MAILBOX_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRUri) {
                     $this->addDocumentMailbox($value);
@@ -229,117 +314,10 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 } else {
                     $this->addDocumentMailbox(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addDocumentMailbox(new FHIRUri($iext));
                 }
-            }
-        }
-        if (isset($data[self::FIELD_DOCUMENTATION]) || isset($data[self::FIELD_DOCUMENTATION_EXT])) {
-            if (isset($data[self::FIELD_DOCUMENTATION])) {
-                $value = $data[self::FIELD_DOCUMENTATION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DOCUMENTATION_EXT]) && is_array($data[self::FIELD_DOCUMENTATION_EXT])) {
-                $ext = $data[self::FIELD_DOCUMENTATION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setDocumentation($value);
-                } else if (is_array($value)) {
-                    $this->setDocumentation(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setDocumentation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDocumentation(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_MODE]) || isset($data[self::FIELD_MODE_EXT])) {
-            if (isset($data[self::FIELD_MODE])) {
-                $value = $data[self::FIELD_MODE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_MODE_EXT]) && is_array($data[self::FIELD_MODE_EXT])) {
-                $ext = $data[self::FIELD_MODE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRRestfulConformanceMode) {
-                    $this->setMode($value);
-                } else if (is_array($value)) {
-                    $this->setMode(new FHIRRestfulConformanceMode(array_merge($ext, $value)));
-                } else {
-                    $this->setMode(new FHIRRestfulConformanceMode([FHIRRestfulConformanceMode::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setMode(new FHIRRestfulConformanceMode($ext));
-            }
-        }
-        if (isset($data[self::FIELD_OPERATION])) {
-            if (is_array($data[self::FIELD_OPERATION])) {
-                foreach($data[self::FIELD_OPERATION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRConformanceOperation1) {
-                        $this->addOperation($v);
-                    } else {
-                        $this->addOperation(new FHIRConformanceOperation1($v));
-                    }
-                }
-            } else if ($data[self::FIELD_OPERATION] instanceof FHIRConformanceOperation1) {
-                $this->addOperation($data[self::FIELD_OPERATION]);
-            } else {
-                $this->addOperation(new FHIRConformanceOperation1($data[self::FIELD_OPERATION]));
-            }
-        }
-        if (isset($data[self::FIELD_QUERY])) {
-            if (is_array($data[self::FIELD_QUERY])) {
-                foreach($data[self::FIELD_QUERY] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRConformanceQuery) {
-                        $this->addQuery($v);
-                    } else {
-                        $this->addQuery(new FHIRConformanceQuery($v));
-                    }
-                }
-            } else if ($data[self::FIELD_QUERY] instanceof FHIRConformanceQuery) {
-                $this->addQuery($data[self::FIELD_QUERY]);
-            } else {
-                $this->addQuery(new FHIRConformanceQuery($data[self::FIELD_QUERY]));
-            }
-        }
-        if (isset($data[self::FIELD_RESOURCE])) {
-            if (is_array($data[self::FIELD_RESOURCE])) {
-                foreach($data[self::FIELD_RESOURCE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRConformanceResource) {
-                        $this->addResource($v);
-                    } else {
-                        $this->addResource(new FHIRConformanceResource($v));
-                    }
-                }
-            } else if ($data[self::FIELD_RESOURCE] instanceof FHIRConformanceResource) {
-                $this->addResource($data[self::FIELD_RESOURCE]);
-            } else {
-                $this->addResource(new FHIRConformanceResource($data[self::FIELD_RESOURCE]));
-            }
-        }
-        if (isset($data[self::FIELD_SECURITY])) {
-            if ($data[self::FIELD_SECURITY] instanceof FHIRConformanceSecurity) {
-                $this->setSecurity($data[self::FIELD_SECURITY]);
-            } else {
-                $this->setSecurity(new FHIRConformanceSecurity($data[self::FIELD_SECURITY]));
             }
         }
     }
@@ -358,82 +336,40 @@ class FHIRConformanceRest extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ConformanceRest{$xmlns}></ConformanceRest>";
     }
 
     /**
-     * String of characters used to identify a name or a resource
+     * The mode of a RESTful conformance statement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A list of profiles that this server implements for accepting documents in the
-     * mailbox. If this list is empty, then documents are not accepted. The base
-     * specification has the profile identifier
-     * "http://hl7.org/fhir/documents/mailbox". Other specifications can declare their
-     * own identifier for this purpose.
+     * Identifies whether this portion of the statement is describing ability to
+     * initiate or receive restful operations.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri[]
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRestfulConformanceMode
      */
-    public function getDocumentMailbox()
+    public function getMode()
     {
-        return $this->documentMailbox;
+        return $this->mode;
     }
 
     /**
-     * String of characters used to identify a name or a resource
+     * The mode of a RESTful conformance statement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A list of profiles that this server implements for accepting documents in the
-     * mailbox. If this list is empty, then documents are not accepted. The base
-     * specification has the profile identifier
-     * "http://hl7.org/fhir/documents/mailbox". Other specifications can declare their
-     * own identifier for this purpose.
+     * Identifies whether this portion of the statement is describing ability to
+     * initiate or receive restful operations.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $documentMailbox
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRestfulConformanceMode $mode
      * @return static
      */
-    public function addDocumentMailbox($documentMailbox = null)
+    public function setMode(FHIRRestfulConformanceMode $mode = null)
     {
-        if (null === $documentMailbox) {
-            $this->documentMailbox = [];
-            return $this;
-        }
-        if ($documentMailbox instanceof FHIRUri) {
-            $this->documentMailbox[] = $documentMailbox;
-            return $this;
-        }
-        $this->documentMailbox[] = new FHIRUri($documentMailbox);
-        return $this;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A list of profiles that this server implements for accepting documents in the
-     * mailbox. If this list is empty, then documents are not accepted. The base
-     * specification has the profile identifier
-     * "http://hl7.org/fhir/documents/mailbox". Other specifications can declare their
-     * own identifier for this purpose.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri[] $documentMailbox
-     * @return static
-     */
-    public function setDocumentMailbox(array $documentMailbox = [])
-    {
-        $this->documentMailbox = [];
-        if ([] === $documentMailbox) {
-            return $this;
-        }
-        foreach($documentMailbox as $v) {
-            if ($v instanceof FHIRUri) {
-                $this->addDocumentMailbox($v);
-            } else {
-                $this->addDocumentMailbox(new FHIRUri($v));
-            }
-        }
+        $this->_trackValueSet($this->mode, $mode);
+        $this->mode = $mode;
         return $this;
     }
 
@@ -463,45 +399,105 @@ class FHIRConformanceRest extends FHIRBackboneElement
      */
     public function setDocumentation($documentation = null)
     {
-        if (null === $documentation) {
-            $this->documentation = null;
-            return $this;
+        if (null !== $documentation && !($documentation instanceof FHIRString)) {
+            $documentation = new FHIRString($documentation);
         }
-        if ($documentation instanceof FHIRString) {
-            $this->documentation = $documentation;
-            return $this;
-        }
-        $this->documentation = new FHIRString($documentation);
+        $this->_trackValueSet($this->documentation, $documentation);
+        $this->documentation = $documentation;
         return $this;
     }
 
     /**
-     * The mode of a RESTful conformance statement
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A conformance statement is a set of requirements for a desired implementation or
+     * a description of how a target application fulfills those requirements in a
+     * particular implementation.
      *
-     * Identifies whether this portion of the statement is describing ability to
-     * initiate or receive restful operations.
+     * Information about security of implementation.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRestfulConformanceMode
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity
      */
-    public function getMode()
+    public function getSecurity()
     {
-        return $this->mode;
+        return $this->security;
     }
 
     /**
-     * The mode of a RESTful conformance statement
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A conformance statement is a set of requirements for a desired implementation or
+     * a description of how a target application fulfills those requirements in a
+     * particular implementation.
      *
-     * Identifies whether this portion of the statement is describing ability to
-     * initiate or receive restful operations.
+     * Information about security of implementation.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRestfulConformanceMode $mode
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity $security
      * @return static
      */
-    public function setMode(FHIRRestfulConformanceMode $mode = null)
+    public function setSecurity(FHIRConformanceSecurity $security = null)
     {
-        $this->mode = $mode;
+        $this->_trackValueSet($this->security, $security);
+        $this->security = $security;
+        return $this;
+    }
+
+    /**
+     * A conformance statement is a set of requirements for a desired implementation or
+     * a description of how a target application fulfills those requirements in a
+     * particular implementation.
+     *
+     * A specification of the restful capabilities of the solution for a specific
+     * resource type.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource[]
+     */
+    public function getResource()
+    {
+        return $this->resource;
+    }
+
+    /**
+     * A conformance statement is a set of requirements for a desired implementation or
+     * a description of how a target application fulfills those requirements in a
+     * particular implementation.
+     *
+     * A specification of the restful capabilities of the solution for a specific
+     * resource type.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource $resource
+     * @return static
+     */
+    public function addResource(FHIRConformanceResource $resource = null)
+    {
+        $this->_trackValueAdded();
+        $this->resource[] = $resource;
+        return $this;
+    }
+
+    /**
+     * A conformance statement is a set of requirements for a desired implementation or
+     * a description of how a target application fulfills those requirements in a
+     * particular implementation.
+     *
+     * A specification of the restful capabilities of the solution for a specific
+     * resource type.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource[] $resource
+     * @return static
+     */
+    public function setResource(array $resource = [])
+    {
+        if ([] !== $this->resource) {
+            $this->_trackValuesRemoved(count($this->resource));
+            $this->resource = [];
+        }
+        if ([] === $resource) {
+            return $this;
+        }
+        foreach($resource as $v) {
+            if ($v instanceof FHIRConformanceResource) {
+                $this->addResource($v);
+            } else {
+                $this->addResource(new FHIRConformanceResource($v));
+            }
+        }
         return $this;
     }
 
@@ -531,6 +527,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      */
     public function addOperation(FHIRConformanceOperation1 $operation = null)
     {
+        $this->_trackValueAdded();
         $this->operation[] = $operation;
         return $this;
     }
@@ -547,7 +544,10 @@ class FHIRConformanceRest extends FHIRBackboneElement
      */
     public function setOperation(array $operation = [])
     {
-        $this->operation = [];
+        if ([] !== $this->operation) {
+            $this->_trackValuesRemoved(count($this->operation));
+            $this->operation = [];
+        }
         if ([] === $operation) {
             return $this;
         }
@@ -587,6 +587,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      */
     public function addQuery(FHIRConformanceQuery $query = null)
     {
+        $this->_trackValueAdded();
         $this->query[] = $query;
         return $this;
     }
@@ -603,7 +604,10 @@ class FHIRConformanceRest extends FHIRBackboneElement
      */
     public function setQuery(array $query = [])
     {
-        $this->query = [];
+        if ([] !== $this->query) {
+            $this->_trackValuesRemoved(count($this->query));
+            $this->query = [];
+        }
         if ([] === $query) {
             return $this;
         }
@@ -618,91 +622,74 @@ class FHIRConformanceRest extends FHIRBackboneElement
     }
 
     /**
-     * A conformance statement is a set of requirements for a desired implementation or
-     * a description of how a target application fulfills those requirements in a
-     * particular implementation.
+     * String of characters used to identify a name or a resource
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A specification of the restful capabilities of the solution for a specific
-     * resource type.
+     * A list of profiles that this server implements for accepting documents in the
+     * mailbox. If this list is empty, then documents are not accepted. The base
+     * specification has the profile identifier
+     * "http://hl7.org/fhir/documents/mailbox". Other specifications can declare their
+     * own identifier for this purpose.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource[]
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri[]
      */
-    public function getResource()
+    public function getDocumentMailbox()
     {
-        return $this->resource;
+        return $this->documentMailbox;
     }
 
     /**
-     * A conformance statement is a set of requirements for a desired implementation or
-     * a description of how a target application fulfills those requirements in a
-     * particular implementation.
+     * String of characters used to identify a name or a resource
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A specification of the restful capabilities of the solution for a specific
-     * resource type.
+     * A list of profiles that this server implements for accepting documents in the
+     * mailbox. If this list is empty, then documents are not accepted. The base
+     * specification has the profile identifier
+     * "http://hl7.org/fhir/documents/mailbox". Other specifications can declare their
+     * own identifier for this purpose.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource $resource
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $documentMailbox
      * @return static
      */
-    public function addResource(FHIRConformanceResource $resource = null)
+    public function addDocumentMailbox($documentMailbox = null)
     {
-        $this->resource[] = $resource;
+        if (null !== $documentMailbox && !($documentMailbox instanceof FHIRUri)) {
+            $documentMailbox = new FHIRUri($documentMailbox);
+        }
+        $this->_trackValueAdded();
+        $this->documentMailbox[] = $documentMailbox;
         return $this;
     }
 
     /**
-     * A conformance statement is a set of requirements for a desired implementation or
-     * a description of how a target application fulfills those requirements in a
-     * particular implementation.
+     * String of characters used to identify a name or a resource
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A specification of the restful capabilities of the solution for a specific
-     * resource type.
+     * A list of profiles that this server implements for accepting documents in the
+     * mailbox. If this list is empty, then documents are not accepted. The base
+     * specification has the profile identifier
+     * "http://hl7.org/fhir/documents/mailbox". Other specifications can declare their
+     * own identifier for this purpose.
      *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource[] $resource
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri[] $documentMailbox
      * @return static
      */
-    public function setResource(array $resource = [])
+    public function setDocumentMailbox(array $documentMailbox = [])
     {
-        $this->resource = [];
-        if ([] === $resource) {
+        if ([] !== $this->documentMailbox) {
+            $this->_trackValuesRemoved(count($this->documentMailbox));
+            $this->documentMailbox = [];
+        }
+        if ([] === $documentMailbox) {
             return $this;
         }
-        foreach($resource as $v) {
-            if ($v instanceof FHIRConformanceResource) {
-                $this->addResource($v);
+        foreach($documentMailbox as $v) {
+            if ($v instanceof FHIRUri) {
+                $this->addDocumentMailbox($v);
             } else {
-                $this->addResource(new FHIRConformanceResource($v));
+                $this->addDocumentMailbox(new FHIRUri($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * A conformance statement is a set of requirements for a desired implementation or
-     * a description of how a target application fulfills those requirements in a
-     * particular implementation.
-     *
-     * Information about security of implementation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity
-     */
-    public function getSecurity()
-    {
-        return $this->security;
-    }
-
-    /**
-     * A conformance statement is a set of requirements for a desired implementation or
-     * a description of how a target application fulfills those requirements in a
-     * particular implementation.
-     *
-     * Information about security of implementation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity $security
-     * @return static
-     */
-    public function setSecurity(FHIRConformanceSecurity $security = null)
-    {
-        $this->security = $security;
         return $this;
     }
 
@@ -727,11 +714,9 @@ class FHIRConformanceRest extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getDocumentMailbox())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_DOCUMENT_MAILBOX, $i)] = $fieldErrs;
-                }
+        if (null !== ($v = $this->getMode())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MODE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDocumentation())) {
@@ -739,9 +724,16 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 $errs[self::FIELD_DOCUMENTATION] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getMode())) {
+        if (null !== ($v = $this->getSecurity())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_MODE] = $fieldErrs;
+                $errs[self::FIELD_SECURITY] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getResource())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_RESOURCE, $i)] = $fieldErrs;
+                }
             }
         }
         if ([] !== ($vs = $this->getOperation())) {
@@ -758,27 +750,22 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 }
             }
         }
-        if ([] !== ($vs = $this->getResource())) {
+        if ([] !== ($vs = $this->getDocumentMailbox())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_RESOURCE, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_DOCUMENT_MAILBOX, $i)] = $fieldErrs;
                 }
             }
         }
-        if (null !== ($v = $this->getSecurity())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SECURITY] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_DOCUMENT_MAILBOX])) {
-            $v = $this->getDocumentMailbox();
-            foreach($validationRules[self::FIELD_DOCUMENT_MAILBOX] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_REST, self::FIELD_DOCUMENT_MAILBOX, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_MODE])) {
+            $v = $this->getMode();
+            foreach($validationRules[self::FIELD_MODE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_REST, self::FIELD_MODE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DOCUMENT_MAILBOX])) {
-                        $errs[self::FIELD_DOCUMENT_MAILBOX] = [];
+                    if (!isset($errs[self::FIELD_MODE])) {
+                        $errs[self::FIELD_MODE] = [];
                     }
-                    $errs[self::FIELD_DOCUMENT_MAILBOX][$rule] = $err;
+                    $errs[self::FIELD_MODE][$rule] = $err;
                 }
             }
         }
@@ -794,15 +781,27 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_MODE])) {
-            $v = $this->getMode();
-            foreach($validationRules[self::FIELD_MODE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_REST, self::FIELD_MODE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_SECURITY])) {
+            $v = $this->getSecurity();
+            foreach($validationRules[self::FIELD_SECURITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_REST, self::FIELD_SECURITY, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_MODE])) {
-                        $errs[self::FIELD_MODE] = [];
+                    if (!isset($errs[self::FIELD_SECURITY])) {
+                        $errs[self::FIELD_SECURITY] = [];
                     }
-                    $errs[self::FIELD_MODE][$rule] = $err;
+                    $errs[self::FIELD_SECURITY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_RESOURCE])) {
+            $v = $this->getResource();
+            foreach($validationRules[self::FIELD_RESOURCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_REST, self::FIELD_RESOURCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RESOURCE])) {
+                        $errs[self::FIELD_RESOURCE] = [];
+                    }
+                    $errs[self::FIELD_RESOURCE][$rule] = $err;
                 }
             }
         }
@@ -830,27 +829,15 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_RESOURCE])) {
-            $v = $this->getResource();
-            foreach($validationRules[self::FIELD_RESOURCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_REST, self::FIELD_RESOURCE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_DOCUMENT_MAILBOX])) {
+            $v = $this->getDocumentMailbox();
+            foreach($validationRules[self::FIELD_DOCUMENT_MAILBOX] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_REST, self::FIELD_DOCUMENT_MAILBOX, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RESOURCE])) {
-                        $errs[self::FIELD_RESOURCE] = [];
+                    if (!isset($errs[self::FIELD_DOCUMENT_MAILBOX])) {
+                        $errs[self::FIELD_DOCUMENT_MAILBOX] = [];
                     }
-                    $errs[self::FIELD_RESOURCE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SECURITY])) {
-            $v = $this->getSecurity();
-            foreach($validationRules[self::FIELD_SECURITY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_REST, self::FIELD_SECURITY, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SECURITY])) {
-                        $errs[self::FIELD_SECURITY] = [];
-                    }
-                    $errs[self::FIELD_SECURITY][$rule] = $err;
+                    $errs[self::FIELD_DOCUMENT_MAILBOX][$rule] = $err;
                 }
             }
         }
@@ -894,116 +881,145 @@ class FHIRConformanceRest extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRConformanceRest::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRConformanceRest::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRConformanceRest::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRConformanceRest;
+            $type = new FHIRConformanceRest(null);
         } elseif (!is_object($type) || !($type instanceof FHIRConformanceRest)) {
             throw new \RuntimeException(sprintf(
                 'FHIRConformanceRest::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_MODE === $n->nodeName) {
+                $type->setMode(FHIRRestfulConformanceMode::xmlUnserialize($n));
+            } elseif (self::FIELD_DOCUMENTATION === $n->nodeName) {
+                $type->setDocumentation(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_SECURITY === $n->nodeName) {
+                $type->setSecurity(FHIRConformanceSecurity::xmlUnserialize($n));
+            } elseif (self::FIELD_RESOURCE === $n->nodeName) {
+                $type->addResource(FHIRConformanceResource::xmlUnserialize($n));
+            } elseif (self::FIELD_OPERATION === $n->nodeName) {
+                $type->addOperation(FHIRConformanceOperation1::xmlUnserialize($n));
+            } elseif (self::FIELD_QUERY === $n->nodeName) {
+                $type->addQuery(FHIRConformanceQuery::xmlUnserialize($n));
+            } elseif (self::FIELD_DOCUMENT_MAILBOX === $n->nodeName) {
+                $type->addDocumentMailbox(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->documentMailbox)) {
-            foreach($children->documentMailbox as $child) {
-                $type->addDocumentMailbox(FHIRUri::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->documentation)) {
-            $type->setDocumentation(FHIRString::xmlUnserialize($children->documentation));
-        }
-        if (isset($attributes->documentation)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DOCUMENTATION);
+        if (null !== $n) {
             $pt = $type->getDocumentation();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->documentation);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDocumentation((string)$attributes->documentation);
+                $type->setDocumentation($n->nodeValue);
             }
         }
-        if (isset($children->mode)) {
-            $type->setMode(FHIRRestfulConformanceMode::xmlUnserialize($children->mode));
-        }
-        if (isset($children->operation)) {
-            foreach($children->operation as $child) {
-                $type->addOperation(FHIRConformanceOperation1::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_DOCUMENT_MAILBOX);
+        if (null !== $n) {
+            $pt = $type->getDocumentMailbox();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->addDocumentMailbox($n->nodeValue);
             }
         }
-        if (isset($children->query)) {
-            foreach($children->query as $child) {
-                $type->addQuery(FHIRConformanceQuery::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
-        }
-        if (isset($children->resource)) {
-            foreach($children->resource as $child) {
-                $type->addResource(FHIRConformanceResource::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->security)) {
-            $type->setSecurity(FHIRConformanceSecurity::xmlUnserialize($children->security));
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getDocumentMailbox())) {
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getMode())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_MODE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDocumentation())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DOCUMENTATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getSecurity())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SECURITY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getResource())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENT_MAILBOX, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_RESOURCE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
-        }
-        if (null !== ($v = $this->getDocumentation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getMode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MODE, null, $v->_getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getOperation())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_OPERATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getQuery())) {
@@ -1011,21 +1027,22 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_QUERY, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_QUERY);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if ([] !== ($vs = $this->getResource())) {
+        if ([] !== ($vs = $this->getDocumentMailbox())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_DOCUMENT_MAILBOX);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getSecurity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -1034,45 +1051,36 @@ class FHIRConformanceRest extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getDocumentMailbox())) {
-            $a[self::FIELD_DOCUMENT_MAILBOX] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_DOCUMENT_MAILBOX][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRUri::FIELD_VALUE]) || array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRUri::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
+        if (null !== ($v = $this->getMode())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MODE] = $val;
             }
-            if ($encValued) {
-                $a[self::FIELD_DOCUMENT_MAILBOX_EXT] = $encs;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRRestfulConformanceMode::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_MODE_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getDocumentation())) {
-            $a[self::FIELD_DOCUMENTATION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DOCUMENTATION_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DOCUMENTATION] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DOCUMENTATION_EXT] = $ext;
             }
         }
-        if (null !== ($v = $this->getMode())) {
-            $a[self::FIELD_MODE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRRestfulConformanceMode::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRRestfulConformanceMode::FIELD_VALUE]);
-                $a[self::FIELD_MODE_EXT] = $enc;
+        if (null !== ($v = $this->getSecurity())) {
+            $a[self::FIELD_SECURITY] = $v;
+        }
+        if ([] !== ($vs = $this->getResource())) {
+            $a[self::FIELD_RESOURCE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_RESOURCE][] = $v;
             }
         }
         if ([] !== ($vs = $this->getOperation())) {
@@ -1093,20 +1101,29 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 $a[self::FIELD_QUERY][] = $v;
             }
         }
-        if ([] !== ($vs = $this->getResource())) {
-            $a[self::FIELD_RESOURCE] = [];
-            foreach($vs as $v) {
+        if ([] !== ($vs = $this->getDocumentMailbox())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_RESOURCE][] = $v;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext[FHIRUri::FIELD_VALUE]);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
             }
-        }
-        if (null !== ($v = $this->getSecurity())) {
-            $a[self::FIELD_SECURITY] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+            if ([] !== $vals) {
+                $a[self::FIELD_DOCUMENT_MAILBOX] = $vals;
+            }
+            if ([] !== $exts) {
+                $a[self::FIELD_DOCUMENT_MAILBOX_EXT] = $exts;
+            }
         }
         return $a;
     }

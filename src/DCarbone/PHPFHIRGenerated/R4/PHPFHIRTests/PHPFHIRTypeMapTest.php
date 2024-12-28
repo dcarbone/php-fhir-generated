@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\PHPFHIRTests;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -898,6 +898,7 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('QuestionnaireResponseStatus-list'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Range'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Ratio'));
+        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('raw'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Reference'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ReferenceHandlingPolicy'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ReferenceHandlingPolicy-list'));
@@ -2842,6 +2843,8 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio'));
+        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRRaw'));
+        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRRaw'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReferenceHandlingPolicy'));
@@ -4263,6 +4266,7 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('QuestionnaireResponseStatus-list'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Range'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Ratio'));
+        $this->assertFalse(PHPFHIRTypeMap::isContainableResource('raw'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('Reference'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ReferenceHandlingPolicy'));
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource('ReferenceHandlingPolicy-list'));
@@ -6207,6 +6211,8 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
+        $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRRaw;
+        $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
         $this->assertFalse(PHPFHIRTypeMap::isContainableResource($type));
         $type = new \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReferenceHandlingPolicy;
@@ -7770,6 +7776,7 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRMarkdownPrimitive', PHPFHIRTypeMap::getTypeClass('markdown-primitive'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIROidPrimitive', PHPFHIRTypeMap::getTypeClass('oid-primitive'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRPositiveIntPrimitive', PHPFHIRTypeMap::getTypeClass('positiveInt-primitive'));
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRRaw', PHPFHIRTypeMap::getTypeClass('raw'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource', PHPFHIRTypeMap::getTypeClass('Resource'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResourceContainer', PHPFHIRTypeMap::getTypeClass('ResourceContainer'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBinary', PHPFHIRTypeMap::getTypeClass('Binary'));

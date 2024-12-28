@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,8 +64,10 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -82,15 +84,27 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_DEPENDS_ON;
-    const FIELD_PACKAGE_ID = 'packageId';
-    const FIELD_PACKAGE_ID_EXT = '_packageId';
     const FIELD_URI = 'uri';
     const FIELD_URI_EXT = '_uri';
+    const FIELD_PACKAGE_ID = 'packageId';
+    const FIELD_PACKAGE_ID_EXT = '_packageId';
     const FIELD_VERSION = 'version';
     const FIELD_VERSION_EXT = '_version';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A canonical reference to the Implementation guide for the dependency.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
+     */
+    protected $uri = null;
 
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -105,18 +119,6 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
     protected $packageId = null;
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A canonical reference to the Implementation guide for the dependency.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
-     */
-    protected $uri = null;
 
     /**
      * A sequence of Unicode characters
@@ -152,40 +154,9 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_PACKAGE_ID]) || isset($data[self::FIELD_PACKAGE_ID_EXT])) {
-            if (isset($data[self::FIELD_PACKAGE_ID])) {
-                $value = $data[self::FIELD_PACKAGE_ID];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PACKAGE_ID_EXT]) && is_array($data[self::FIELD_PACKAGE_ID_EXT])) {
-                $ext = $data[self::FIELD_PACKAGE_ID_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRId) {
-                    $this->setPackageId($value);
-                } else if (is_array($value)) {
-                    $this->setPackageId(new FHIRId(array_merge($ext, $value)));
-                } else {
-                    $this->setPackageId(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPackageId(new FHIRId($ext));
-            }
-        }
         if (isset($data[self::FIELD_URI]) || isset($data[self::FIELD_URI_EXT])) {
-            if (isset($data[self::FIELD_URI])) {
-                $value = $data[self::FIELD_URI];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_URI_EXT]) && is_array($data[self::FIELD_URI_EXT])) {
-                $ext = $data[self::FIELD_URI_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_URI]) ? $data[self::FIELD_URI] : null;
+            $ext = (isset($data[self::FIELD_URI_EXT]) && is_array($data[self::FIELD_URI_EXT])) ? $ext = $data[self::FIELD_URI_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRCanonical) {
                     $this->setUri($value);
@@ -194,21 +165,28 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
                 } else {
                     $this->setUri(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setUri(new FHIRCanonical($ext));
             }
         }
+        if (isset($data[self::FIELD_PACKAGE_ID]) || isset($data[self::FIELD_PACKAGE_ID_EXT])) {
+            $value = isset($data[self::FIELD_PACKAGE_ID]) ? $data[self::FIELD_PACKAGE_ID] : null;
+            $ext = (isset($data[self::FIELD_PACKAGE_ID_EXT]) && is_array($data[self::FIELD_PACKAGE_ID_EXT])) ? $ext = $data[self::FIELD_PACKAGE_ID_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRId) {
+                    $this->setPackageId($value);
+                } else if (is_array($value)) {
+                    $this->setPackageId(new FHIRId(array_merge($ext, $value)));
+                } else {
+                    $this->setPackageId(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPackageId(new FHIRId($ext));
+            }
+        }
         if (isset($data[self::FIELD_VERSION]) || isset($data[self::FIELD_VERSION_EXT])) {
-            if (isset($data[self::FIELD_VERSION])) {
-                $value = $data[self::FIELD_VERSION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VERSION_EXT]) && is_array($data[self::FIELD_VERSION_EXT])) {
-                $ext = $data[self::FIELD_VERSION_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_VERSION]) ? $data[self::FIELD_VERSION] : null;
+            $ext = (isset($data[self::FIELD_VERSION_EXT]) && is_array($data[self::FIELD_VERSION_EXT])) ? $ext = $data[self::FIELD_VERSION_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setVersion($value);
@@ -217,7 +195,7 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
                 } else {
                     $this->setVersion(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setVersion(new FHIRString($ext));
             }
         }
@@ -237,10 +215,46 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ImplementationGuideDependsOn{$xmlns}></ImplementationGuideDependsOn>";
+    }
+
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A canonical reference to the Implementation guide for the dependency.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
+     */
+    public function getUri()
+    {
+        return $this->uri;
+    }
+
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A canonical reference to the Implementation guide for the dependency.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $uri
+     * @return static
+     */
+    public function setUri($uri = null)
+    {
+        if (null !== $uri && !($uri instanceof FHIRCanonical)) {
+            $uri = new FHIRCanonical($uri);
+        }
+        $this->_trackValueSet($this->uri, $uri);
+        $this->uri = $uri;
+        return $this;
     }
 
     /**
@@ -275,55 +289,11 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      */
     public function setPackageId($packageId = null)
     {
-        if (null === $packageId) {
-            $this->packageId = null;
-            return $this;
+        if (null !== $packageId && !($packageId instanceof FHIRId)) {
+            $packageId = new FHIRId($packageId);
         }
-        if ($packageId instanceof FHIRId) {
-            $this->packageId = $packageId;
-            return $this;
-        }
-        $this->packageId = new FHIRId($packageId);
-        return $this;
-    }
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A canonical reference to the Implementation guide for the dependency.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
-     */
-    public function getUri()
-    {
-        return $this->uri;
-    }
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A canonical reference to the Implementation guide for the dependency.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $uri
-     * @return static
-     */
-    public function setUri($uri = null)
-    {
-        if (null === $uri) {
-            $this->uri = null;
-            return $this;
-        }
-        if ($uri instanceof FHIRCanonical) {
-            $this->uri = $uri;
-            return $this;
-        }
-        $this->uri = new FHIRCanonical($uri);
+        $this->_trackValueSet($this->packageId, $packageId);
+        $this->packageId = $packageId;
         return $this;
     }
 
@@ -355,15 +325,11 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      */
     public function setVersion($version = null)
     {
-        if (null === $version) {
-            $this->version = null;
-            return $this;
+        if (null !== $version && !($version instanceof FHIRString)) {
+            $version = new FHIRString($version);
         }
-        if ($version instanceof FHIRString) {
-            $this->version = $version;
-            return $this;
-        }
-        $this->version = new FHIRString($version);
+        $this->_trackValueSet($this->version, $version);
+        $this->version = $version;
         return $this;
     }
 
@@ -388,31 +354,19 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getPackageId())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PACKAGE_ID] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getUri())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_URI] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getPackageId())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PACKAGE_ID] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getVersion())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_VERSION] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_PACKAGE_ID])) {
-            $v = $this->getPackageId();
-            foreach($validationRules[self::FIELD_PACKAGE_ID] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_DEPENDS_ON, self::FIELD_PACKAGE_ID, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PACKAGE_ID])) {
-                        $errs[self::FIELD_PACKAGE_ID] = [];
-                    }
-                    $errs[self::FIELD_PACKAGE_ID][$rule] = $err;
-                }
             }
         }
         if (isset($validationRules[self::FIELD_URI])) {
@@ -424,6 +378,18 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
                         $errs[self::FIELD_URI] = [];
                     }
                     $errs[self::FIELD_URI][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PACKAGE_ID])) {
+            $v = $this->getPackageId();
+            foreach($validationRules[self::FIELD_PACKAGE_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_DEPENDS_ON, self::FIELD_PACKAGE_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PACKAGE_ID])) {
+                        $errs[self::FIELD_PACKAGE_ID] = [];
+                    }
+                    $errs[self::FIELD_PACKAGE_ID][$rule] = $err;
                 }
             }
         }
@@ -479,102 +445,129 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependsOn $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependsOn
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRImplementationGuideDependsOn::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRImplementationGuideDependsOn::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRImplementationGuideDependsOn::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRImplementationGuideDependsOn;
+            $type = new FHIRImplementationGuideDependsOn(null);
         } elseif (!is_object($type) || !($type instanceof FHIRImplementationGuideDependsOn)) {
             throw new \RuntimeException(sprintf(
                 'FHIRImplementationGuideDependsOn::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependsOn or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_URI === $n->nodeName) {
+                $type->setUri(FHIRCanonical::xmlUnserialize($n));
+            } elseif (self::FIELD_PACKAGE_ID === $n->nodeName) {
+                $type->setPackageId(FHIRId::xmlUnserialize($n));
+            } elseif (self::FIELD_VERSION === $n->nodeName) {
+                $type->setVersion(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->packageId)) {
-            $type->setPackageId(FHIRId::xmlUnserialize($children->packageId));
-        }
-        if (isset($attributes->packageId)) {
-            $pt = $type->getPackageId();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->packageId);
-            } else {
-                $type->setPackageId((string)$attributes->packageId);
-            }
-        }
-        if (isset($children->uri)) {
-            $type->setUri(FHIRCanonical::xmlUnserialize($children->uri));
-        }
-        if (isset($attributes->uri)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_URI);
+        if (null !== $n) {
             $pt = $type->getUri();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->uri);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setUri((string)$attributes->uri);
+                $type->setUri($n->nodeValue);
             }
         }
-        if (isset($children->version)) {
-            $type->setVersion(FHIRString::xmlUnserialize($children->version));
+        $n = $element->attributes->getNamedItem(self::FIELD_PACKAGE_ID);
+        if (null !== $n) {
+            $pt = $type->getPackageId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setPackageId($n->nodeValue);
+            }
         }
-        if (isset($attributes->version)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_VERSION);
+        if (null !== $n) {
             $pt = $type->getVersion();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->version);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setVersion((string)$attributes->version);
+                $type->setVersion($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getPackageId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PACKAGE_ID, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_URI, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_URI);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getPackageId())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PACKAGE_ID);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getVersion())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VERSION, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_VERSION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -583,35 +576,35 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getPackageId())) {
-            $a[self::FIELD_PACKAGE_ID] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRId::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRId::FIELD_VALUE]);
-                $a[self::FIELD_PACKAGE_ID_EXT] = $enc;
+        if (null !== ($v = $this->getUri())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_URI] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRCanonical::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_URI_EXT] = $ext;
             }
         }
-        if (null !== ($v = $this->getUri())) {
-            $a[self::FIELD_URI] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCanonical::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCanonical::FIELD_VALUE]);
-                $a[self::FIELD_URI_EXT] = $enc;
+        if (null !== ($v = $this->getPackageId())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PACKAGE_ID] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRId::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PACKAGE_ID_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getVersion())) {
-            $a[self::FIELD_VERSION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_VERSION_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VERSION] = $val;
             }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VERSION_EXT] = $ext;
+            }
         }
         return $a;
     }

@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,8 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffec
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -80,23 +82,24 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EFFECT_EVIDENCE_SYNTHESIS_DOT_CERTAINTY;
-    const FIELD_CERTAINTY_SUBCOMPONENT = 'certaintySubcomponent';
-    const FIELD_NOTE = 'note';
     const FIELD_RATING = 'rating';
+    const FIELD_NOTE = 'note';
+    const FIELD_CERTAINTY_SUBCOMPONENT = 'certaintySubcomponent';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
-     * The EffectEvidenceSynthesis resource describes the difference in an outcome
-     * between exposures states in a population where the effect estimate is derived
-     * from a combination of research studies.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A description of a component of the overall certainty.
+     * A rating of the certainty of the effect estimate.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertaintySubcomponent[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    protected $certaintySubcomponent = [];
+    protected $rating = [];
 
     /**
      * A text note which also contains information about who made the statement and
@@ -111,16 +114,15 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
     protected $note = [];
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * The EffectEvidenceSynthesis resource describes the difference in an outcome
+     * between exposures states in a population where the effect estimate is derived
+     * from a combination of research studies.
      *
-     * A rating of the certainty of the effect estimate.
+     * A description of a component of the overall certainty.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertaintySubcomponent[]
      */
-    protected $rating = [];
+    protected $certaintySubcomponent = [];
 
     /**
      * Validation map for fields in type EffectEvidenceSynthesis.Certainty
@@ -144,22 +146,22 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CERTAINTY_SUBCOMPONENT])) {
-            if (is_array($data[self::FIELD_CERTAINTY_SUBCOMPONENT])) {
-                foreach($data[self::FIELD_CERTAINTY_SUBCOMPONENT] as $v) {
+        if (isset($data[self::FIELD_RATING])) {
+            if (is_array($data[self::FIELD_RATING])) {
+                foreach($data[self::FIELD_RATING] as $v) {
                     if (null === $v) {
                         continue;
                     }
-                    if ($v instanceof FHIREffectEvidenceSynthesisCertaintySubcomponent) {
-                        $this->addCertaintySubcomponent($v);
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addRating($v);
                     } else {
-                        $this->addCertaintySubcomponent(new FHIREffectEvidenceSynthesisCertaintySubcomponent($v));
+                        $this->addRating(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_CERTAINTY_SUBCOMPONENT] instanceof FHIREffectEvidenceSynthesisCertaintySubcomponent) {
-                $this->addCertaintySubcomponent($data[self::FIELD_CERTAINTY_SUBCOMPONENT]);
+            } elseif ($data[self::FIELD_RATING] instanceof FHIRCodeableConcept) {
+                $this->addRating($data[self::FIELD_RATING]);
             } else {
-                $this->addCertaintySubcomponent(new FHIREffectEvidenceSynthesisCertaintySubcomponent($data[self::FIELD_CERTAINTY_SUBCOMPONENT]));
+                $this->addRating(new FHIRCodeableConcept($data[self::FIELD_RATING]));
             }
         }
         if (isset($data[self::FIELD_NOTE])) {
@@ -174,28 +176,28 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
                         $this->addNote(new FHIRAnnotation($v));
                     }
                 }
-            } else if ($data[self::FIELD_NOTE] instanceof FHIRAnnotation) {
+            } elseif ($data[self::FIELD_NOTE] instanceof FHIRAnnotation) {
                 $this->addNote($data[self::FIELD_NOTE]);
             } else {
                 $this->addNote(new FHIRAnnotation($data[self::FIELD_NOTE]));
             }
         }
-        if (isset($data[self::FIELD_RATING])) {
-            if (is_array($data[self::FIELD_RATING])) {
-                foreach($data[self::FIELD_RATING] as $v) {
+        if (isset($data[self::FIELD_CERTAINTY_SUBCOMPONENT])) {
+            if (is_array($data[self::FIELD_CERTAINTY_SUBCOMPONENT])) {
+                foreach($data[self::FIELD_CERTAINTY_SUBCOMPONENT] as $v) {
                     if (null === $v) {
                         continue;
                     }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addRating($v);
+                    if ($v instanceof FHIREffectEvidenceSynthesisCertaintySubcomponent) {
+                        $this->addCertaintySubcomponent($v);
                     } else {
-                        $this->addRating(new FHIRCodeableConcept($v));
+                        $this->addCertaintySubcomponent(new FHIREffectEvidenceSynthesisCertaintySubcomponent($v));
                     }
                 }
-            } else if ($data[self::FIELD_RATING] instanceof FHIRCodeableConcept) {
-                $this->addRating($data[self::FIELD_RATING]);
+            } elseif ($data[self::FIELD_CERTAINTY_SUBCOMPONENT] instanceof FHIREffectEvidenceSynthesisCertaintySubcomponent) {
+                $this->addCertaintySubcomponent($data[self::FIELD_CERTAINTY_SUBCOMPONENT]);
             } else {
-                $this->addRating(new FHIRCodeableConcept($data[self::FIELD_RATING]));
+                $this->addCertaintySubcomponent(new FHIREffectEvidenceSynthesisCertaintySubcomponent($data[self::FIELD_CERTAINTY_SUBCOMPONENT]));
             }
         }
     }
@@ -214,63 +216,70 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<EffectEvidenceSynthesisCertainty{$xmlns}></EffectEvidenceSynthesisCertainty>";
     }
 
     /**
-     * The EffectEvidenceSynthesis resource describes the difference in an outcome
-     * between exposures states in a population where the effect estimate is derived
-     * from a combination of research studies.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A description of a component of the overall certainty.
+     * A rating of the certainty of the effect estimate.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertaintySubcomponent[]
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getCertaintySubcomponent()
+    public function getRating()
     {
-        return $this->certaintySubcomponent;
+        return $this->rating;
     }
 
     /**
-     * The EffectEvidenceSynthesis resource describes the difference in an outcome
-     * between exposures states in a population where the effect estimate is derived
-     * from a combination of research studies.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A description of a component of the overall certainty.
+     * A rating of the certainty of the effect estimate.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertaintySubcomponent $certaintySubcomponent
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $rating
      * @return static
      */
-    public function addCertaintySubcomponent(FHIREffectEvidenceSynthesisCertaintySubcomponent $certaintySubcomponent = null)
+    public function addRating(FHIRCodeableConcept $rating = null)
     {
-        $this->certaintySubcomponent[] = $certaintySubcomponent;
+        $this->_trackValueAdded();
+        $this->rating[] = $rating;
         return $this;
     }
 
     /**
-     * The EffectEvidenceSynthesis resource describes the difference in an outcome
-     * between exposures states in a population where the effect estimate is derived
-     * from a combination of research studies.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A description of a component of the overall certainty.
+     * A rating of the certainty of the effect estimate.
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertaintySubcomponent[] $certaintySubcomponent
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $rating
      * @return static
      */
-    public function setCertaintySubcomponent(array $certaintySubcomponent = [])
+    public function setRating(array $rating = [])
     {
-        $this->certaintySubcomponent = [];
-        if ([] === $certaintySubcomponent) {
+        if ([] !== $this->rating) {
+            $this->_trackValuesRemoved(count($this->rating));
+            $this->rating = [];
+        }
+        if ([] === $rating) {
             return $this;
         }
-        foreach($certaintySubcomponent as $v) {
-            if ($v instanceof FHIREffectEvidenceSynthesisCertaintySubcomponent) {
-                $this->addCertaintySubcomponent($v);
+        foreach($rating as $v) {
+            if ($v instanceof FHIRCodeableConcept) {
+                $this->addRating($v);
             } else {
-                $this->addCertaintySubcomponent(new FHIREffectEvidenceSynthesisCertaintySubcomponent($v));
+                $this->addRating(new FHIRCodeableConcept($v));
             }
         }
         return $this;
@@ -304,6 +313,7 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
      */
     public function addNote(FHIRAnnotation $note = null)
     {
+        $this->_trackValueAdded();
         $this->note[] = $note;
         return $this;
     }
@@ -321,7 +331,10 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
      */
     public function setNote(array $note = [])
     {
-        $this->note = [];
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
         if ([] === $note) {
             return $this;
         }
@@ -336,59 +349,60 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
     }
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * The EffectEvidenceSynthesis resource describes the difference in an outcome
+     * between exposures states in a population where the effect estimate is derived
+     * from a combination of research studies.
      *
-     * A rating of the certainty of the effect estimate.
+     * A description of a component of the overall certainty.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertaintySubcomponent[]
      */
-    public function getRating()
+    public function getCertaintySubcomponent()
     {
-        return $this->rating;
+        return $this->certaintySubcomponent;
     }
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * The EffectEvidenceSynthesis resource describes the difference in an outcome
+     * between exposures states in a population where the effect estimate is derived
+     * from a combination of research studies.
      *
-     * A rating of the certainty of the effect estimate.
+     * A description of a component of the overall certainty.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $rating
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertaintySubcomponent $certaintySubcomponent
      * @return static
      */
-    public function addRating(FHIRCodeableConcept $rating = null)
+    public function addCertaintySubcomponent(FHIREffectEvidenceSynthesisCertaintySubcomponent $certaintySubcomponent = null)
     {
-        $this->rating[] = $rating;
+        $this->_trackValueAdded();
+        $this->certaintySubcomponent[] = $certaintySubcomponent;
         return $this;
     }
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * The EffectEvidenceSynthesis resource describes the difference in an outcome
+     * between exposures states in a population where the effect estimate is derived
+     * from a combination of research studies.
      *
-     * A rating of the certainty of the effect estimate.
+     * A description of a component of the overall certainty.
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $rating
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertaintySubcomponent[] $certaintySubcomponent
      * @return static
      */
-    public function setRating(array $rating = [])
+    public function setCertaintySubcomponent(array $certaintySubcomponent = [])
     {
-        $this->rating = [];
-        if ([] === $rating) {
+        if ([] !== $this->certaintySubcomponent) {
+            $this->_trackValuesRemoved(count($this->certaintySubcomponent));
+            $this->certaintySubcomponent = [];
+        }
+        if ([] === $certaintySubcomponent) {
             return $this;
         }
-        foreach($rating as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addRating($v);
+        foreach($certaintySubcomponent as $v) {
+            if ($v instanceof FHIREffectEvidenceSynthesisCertaintySubcomponent) {
+                $this->addCertaintySubcomponent($v);
             } else {
-                $this->addRating(new FHIRCodeableConcept($v));
+                $this->addCertaintySubcomponent(new FHIREffectEvidenceSynthesisCertaintySubcomponent($v));
             }
         }
         return $this;
@@ -415,10 +429,10 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getCertaintySubcomponent())) {
+        if ([] !== ($vs = $this->getRating())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_CERTAINTY_SUBCOMPONENT, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_RATING, $i)] = $fieldErrs;
                 }
             }
         }
@@ -429,22 +443,22 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
                 }
             }
         }
-        if ([] !== ($vs = $this->getRating())) {
+        if ([] !== ($vs = $this->getCertaintySubcomponent())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_RATING, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_CERTAINTY_SUBCOMPONENT, $i)] = $fieldErrs;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_CERTAINTY_SUBCOMPONENT])) {
-            $v = $this->getCertaintySubcomponent();
-            foreach($validationRules[self::FIELD_CERTAINTY_SUBCOMPONENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EFFECT_EVIDENCE_SYNTHESIS_DOT_CERTAINTY, self::FIELD_CERTAINTY_SUBCOMPONENT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_RATING])) {
+            $v = $this->getRating();
+            foreach($validationRules[self::FIELD_RATING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EFFECT_EVIDENCE_SYNTHESIS_DOT_CERTAINTY, self::FIELD_RATING, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CERTAINTY_SUBCOMPONENT])) {
-                        $errs[self::FIELD_CERTAINTY_SUBCOMPONENT] = [];
+                    if (!isset($errs[self::FIELD_RATING])) {
+                        $errs[self::FIELD_RATING] = [];
                     }
-                    $errs[self::FIELD_CERTAINTY_SUBCOMPONENT][$rule] = $err;
+                    $errs[self::FIELD_RATING][$rule] = $err;
                 }
             }
         }
@@ -460,15 +474,15 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_RATING])) {
-            $v = $this->getRating();
-            foreach($validationRules[self::FIELD_RATING] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EFFECT_EVIDENCE_SYNTHESIS_DOT_CERTAINTY, self::FIELD_RATING, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_CERTAINTY_SUBCOMPONENT])) {
+            $v = $this->getCertaintySubcomponent();
+            foreach($validationRules[self::FIELD_CERTAINTY_SUBCOMPONENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EFFECT_EVIDENCE_SYNTHESIS_DOT_CERTAINTY, self::FIELD_CERTAINTY_SUBCOMPONENT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RATING])) {
-                        $errs[self::FIELD_RATING] = [];
+                    if (!isset($errs[self::FIELD_CERTAINTY_SUBCOMPONENT])) {
+                        $errs[self::FIELD_CERTAINTY_SUBCOMPONENT] = [];
                     }
-                    $errs[self::FIELD_RATING][$rule] = $err;
+                    $errs[self::FIELD_CERTAINTY_SUBCOMPONENT][$rule] = $err;
                 }
             }
         }
@@ -512,80 +526,94 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertainty $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertainty
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIREffectEvidenceSynthesisCertainty::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIREffectEvidenceSynthesisCertainty::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIREffectEvidenceSynthesisCertainty::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIREffectEvidenceSynthesisCertainty;
+            $type = new FHIREffectEvidenceSynthesisCertainty(null);
         } elseif (!is_object($type) || !($type instanceof FHIREffectEvidenceSynthesisCertainty)) {
             throw new \RuntimeException(sprintf(
                 'FHIREffectEvidenceSynthesisCertainty::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisCertainty or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_RATING === $n->nodeName) {
+                $type->addRating(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_NOTE === $n->nodeName) {
+                $type->addNote(FHIRAnnotation::xmlUnserialize($n));
+            } elseif (self::FIELD_CERTAINTY_SUBCOMPONENT === $n->nodeName) {
+                $type->addCertaintySubcomponent(FHIREffectEvidenceSynthesisCertaintySubcomponent::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->certaintySubcomponent)) {
-            foreach($children->certaintySubcomponent as $child) {
-                $type->addCertaintySubcomponent(FHIREffectEvidenceSynthesisCertaintySubcomponent::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->note)) {
-            foreach($children->note as $child) {
-                $type->addNote(FHIRAnnotation::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->rating)) {
-            foreach($children->rating as $child) {
-                $type->addRating(FHIRCodeableConcept::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getCertaintySubcomponent())) {
+        parent::xmlSerialize($element);
+        if ([] !== ($vs = $this->getRating())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CERTAINTY_SUBCOMPONENT, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_RATING);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getNote())) {
@@ -593,18 +621,22 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_NOTE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if ([] !== ($vs = $this->getRating())) {
+        if ([] !== ($vs = $this->getCertaintySubcomponent())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_RATING, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_CERTAINTY_SUBCOMPONENT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -613,13 +645,13 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getCertaintySubcomponent())) {
-            $a[self::FIELD_CERTAINTY_SUBCOMPONENT] = [];
+        if ([] !== ($vs = $this->getRating())) {
+            $a[self::FIELD_RATING] = [];
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_CERTAINTY_SUBCOMPONENT][] = $v;
+                $a[self::FIELD_RATING][] = $v;
             }
         }
         if ([] !== ($vs = $this->getNote())) {
@@ -631,17 +663,14 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
                 $a[self::FIELD_NOTE][] = $v;
             }
         }
-        if ([] !== ($vs = $this->getRating())) {
-            $a[self::FIELD_RATING] = [];
+        if ([] !== ($vs = $this->getCertaintySubcomponent())) {
+            $a[self::FIELD_CERTAINTY_SUBCOMPONENT] = [];
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_RATING][] = $v;
+                $a[self::FIELD_CERTAINTY_SUBCOMPONENT][] = $v;
             }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

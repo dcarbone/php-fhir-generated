@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROpe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,8 +64,10 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROpe
 
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBindingStrength;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
@@ -82,12 +84,12 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_OPERATION_DEFINITION_DOT_BINDING;
     const FIELD_STRENGTH = 'strength';
     const FIELD_STRENGTH_EXT = '_strength';
-    const FIELD_VALUE_SET_REFERENCE = 'valueSetReference';
     const FIELD_VALUE_SET_URI = 'valueSetUri';
     const FIELD_VALUE_SET_URI_EXT = '_valueSetUri';
+    const FIELD_VALUE_SET_REFERENCE = 'valueSetReference';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * Indication of the degree of conformance expectations associated with a binding.
@@ -102,18 +104,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
     protected $strength = null;
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Points to the value set or external definition (e.g. implicit value set) that
-     * identifies the set of codes to be used.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    protected $valueSetReference = null;
-
-    /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -124,6 +114,18 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected $valueSetUri = null;
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Points to the value set or external definition (e.g. implicit value set) that
+     * identifies the set of codes to be used.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    protected $valueSetReference = null;
 
     /**
      * Validation map for fields in type OperationDefinition.Binding
@@ -148,16 +150,8 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_STRENGTH]) || isset($data[self::FIELD_STRENGTH_EXT])) {
-            if (isset($data[self::FIELD_STRENGTH])) {
-                $value = $data[self::FIELD_STRENGTH];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_STRENGTH_EXT]) && is_array($data[self::FIELD_STRENGTH_EXT])) {
-                $ext = $data[self::FIELD_STRENGTH_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_STRENGTH]) ? $data[self::FIELD_STRENGTH] : null;
+            $ext = (isset($data[self::FIELD_STRENGTH_EXT]) && is_array($data[self::FIELD_STRENGTH_EXT])) ? $ext = $data[self::FIELD_STRENGTH_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRBindingStrength) {
                     $this->setStrength($value);
@@ -166,28 +160,13 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
                 } else {
                     $this->setStrength(new FHIRBindingStrength([FHIRBindingStrength::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setStrength(new FHIRBindingStrength($ext));
             }
         }
-        if (isset($data[self::FIELD_VALUE_SET_REFERENCE])) {
-            if ($data[self::FIELD_VALUE_SET_REFERENCE] instanceof FHIRReference) {
-                $this->setValueSetReference($data[self::FIELD_VALUE_SET_REFERENCE]);
-            } else {
-                $this->setValueSetReference(new FHIRReference($data[self::FIELD_VALUE_SET_REFERENCE]));
-            }
-        }
         if (isset($data[self::FIELD_VALUE_SET_URI]) || isset($data[self::FIELD_VALUE_SET_URI_EXT])) {
-            if (isset($data[self::FIELD_VALUE_SET_URI])) {
-                $value = $data[self::FIELD_VALUE_SET_URI];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_SET_URI_EXT]) && is_array($data[self::FIELD_VALUE_SET_URI_EXT])) {
-                $ext = $data[self::FIELD_VALUE_SET_URI_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_VALUE_SET_URI]) ? $data[self::FIELD_VALUE_SET_URI] : null;
+            $ext = (isset($data[self::FIELD_VALUE_SET_URI_EXT]) && is_array($data[self::FIELD_VALUE_SET_URI_EXT])) ? $ext = $data[self::FIELD_VALUE_SET_URI_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRUri) {
                     $this->setValueSetUri($value);
@@ -196,8 +175,15 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
                 } else {
                     $this->setValueSetUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setValueSetUri(new FHIRUri($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_SET_REFERENCE])) {
+            if ($data[self::FIELD_VALUE_SET_REFERENCE] instanceof FHIRReference) {
+                $this->setValueSetReference($data[self::FIELD_VALUE_SET_REFERENCE]);
+            } else {
+                $this->setValueSetReference(new FHIRReference($data[self::FIELD_VALUE_SET_REFERENCE]));
             }
         }
     }
@@ -216,7 +202,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<OperationDefinitionBinding{$xmlns}></OperationDefinitionBinding>";
@@ -250,39 +236,8 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
      */
     public function setStrength(FHIRBindingStrength $strength = null)
     {
+        $this->_trackValueSet($this->strength, $strength);
         $this->strength = $strength;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Points to the value set or external definition (e.g. implicit value set) that
-     * identifies the set of codes to be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    public function getValueSetReference()
-    {
-        return $this->valueSetReference;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Points to the value set or external definition (e.g. implicit value set) that
-     * identifies the set of codes to be used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $valueSetReference
-     * @return static
-     */
-    public function setValueSetReference(FHIRReference $valueSetReference = null)
-    {
-        $this->valueSetReference = $valueSetReference;
         return $this;
     }
 
@@ -314,15 +269,44 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
      */
     public function setValueSetUri($valueSetUri = null)
     {
-        if (null === $valueSetUri) {
-            $this->valueSetUri = null;
-            return $this;
+        if (null !== $valueSetUri && !($valueSetUri instanceof FHIRUri)) {
+            $valueSetUri = new FHIRUri($valueSetUri);
         }
-        if ($valueSetUri instanceof FHIRUri) {
-            $this->valueSetUri = $valueSetUri;
-            return $this;
-        }
-        $this->valueSetUri = new FHIRUri($valueSetUri);
+        $this->_trackValueSet($this->valueSetUri, $valueSetUri);
+        $this->valueSetUri = $valueSetUri;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Points to the value set or external definition (e.g. implicit value set) that
+     * identifies the set of codes to be used.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    public function getValueSetReference()
+    {
+        return $this->valueSetReference;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Points to the value set or external definition (e.g. implicit value set) that
+     * identifies the set of codes to be used.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $valueSetReference
+     * @return static
+     */
+    public function setValueSetReference(FHIRReference $valueSetReference = null)
+    {
+        $this->_trackValueSet($this->valueSetReference, $valueSetReference);
+        $this->valueSetReference = $valueSetReference;
         return $this;
     }
 
@@ -352,14 +336,14 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
                 $errs[self::FIELD_STRENGTH] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getValueSetReference())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_SET_REFERENCE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getValueSetUri())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_VALUE_SET_URI] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getValueSetReference())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_SET_REFERENCE] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_STRENGTH])) {
@@ -374,18 +358,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_SET_REFERENCE])) {
-            $v = $this->getValueSetReference();
-            foreach($validationRules[self::FIELD_VALUE_SET_REFERENCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_OPERATION_DEFINITION_DOT_BINDING, self::FIELD_VALUE_SET_REFERENCE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_SET_REFERENCE])) {
-                        $errs[self::FIELD_VALUE_SET_REFERENCE] = [];
-                    }
-                    $errs[self::FIELD_VALUE_SET_REFERENCE][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_VALUE_SET_URI])) {
             $v = $this->getValueSetUri();
             foreach($validationRules[self::FIELD_VALUE_SET_URI] as $rule => $constraint) {
@@ -395,6 +367,18 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
                         $errs[self::FIELD_VALUE_SET_URI] = [];
                     }
                     $errs[self::FIELD_VALUE_SET_URI][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE_SET_REFERENCE])) {
+            $v = $this->getValueSetReference();
+            foreach($validationRules[self::FIELD_VALUE_SET_REFERENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_OPERATION_DEFINITION_DOT_BINDING, self::FIELD_VALUE_SET_REFERENCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_SET_REFERENCE])) {
+                        $errs[self::FIELD_VALUE_SET_REFERENCE] = [];
+                    }
+                    $errs[self::FIELD_VALUE_SET_REFERENCE][$rule] = $err;
                 }
             }
         }
@@ -438,86 +422,111 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIROperationDefinitionBinding::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIROperationDefinitionBinding::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIROperationDefinitionBinding::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIROperationDefinitionBinding;
+            $type = new FHIROperationDefinitionBinding(null);
         } elseif (!is_object($type) || !($type instanceof FHIROperationDefinitionBinding)) {
             throw new \RuntimeException(sprintf(
                 'FHIROperationDefinitionBinding::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_STRENGTH === $n->nodeName) {
+                $type->setStrength(FHIRBindingStrength::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_SET_URI === $n->nodeName) {
+                $type->setValueSetUri(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_SET_REFERENCE === $n->nodeName) {
+                $type->setValueSetReference(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->strength)) {
-            $type->setStrength(FHIRBindingStrength::xmlUnserialize($children->strength));
-        }
-        if (isset($children->valueSetReference)) {
-            $type->setValueSetReference(FHIRReference::xmlUnserialize($children->valueSetReference));
-        }
-        if (isset($children->valueSetUri)) {
-            $type->setValueSetUri(FHIRUri::xmlUnserialize($children->valueSetUri));
-        }
-        if (isset($attributes->valueSetUri)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_SET_URI);
+        if (null !== $n) {
             $pt = $type->getValueSetUri();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueSetUri);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setValueSetUri((string)$attributes->valueSetUri);
+                $type->setValueSetUri($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getStrength())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STRENGTH, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueSetReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_SET_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_STRENGTH);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getValueSetUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_SET_URI, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_SET_URI);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getValueSetReference())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_SET_REFERENCE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -527,28 +536,27 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getStrength())) {
-            $a[self::FIELD_STRENGTH] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBindingStrength::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBindingStrength::FIELD_VALUE]);
-                $a[self::FIELD_STRENGTH_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STRENGTH] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBindingStrength::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_STRENGTH_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueSetUri())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_SET_URI] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUri::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_SET_URI_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getValueSetReference())) {
             $a[self::FIELD_VALUE_SET_REFERENCE] = $v;
-        }
-        if (null !== ($v = $this->getValueSetUri())) {
-            $a[self::FIELD_VALUE_SET_URI] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_SET_URI_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

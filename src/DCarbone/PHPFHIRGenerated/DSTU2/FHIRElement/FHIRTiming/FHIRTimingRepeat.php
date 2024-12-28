@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,11 +65,13 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIREventTiming;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRDuration;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRange;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnitsOfTime;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
@@ -88,9 +90,9 @@ class FHIRTimingRepeat extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT;
-    const FIELD_BOUNDS_PERIOD = 'boundsPeriod';
     const FIELD_BOUNDS_QUANTITY = 'boundsQuantity';
     const FIELD_BOUNDS_RANGE = 'boundsRange';
+    const FIELD_BOUNDS_PERIOD = 'boundsPeriod';
     const FIELD_COUNT = 'count';
     const FIELD_COUNT_EXT = '_count';
     const FIELD_DURATION = 'duration';
@@ -113,19 +115,7 @@ class FHIRTimingRepeat extends FHIRElement
     const FIELD_WHEN_EXT = '_when';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Either a duration for the length of the timing schedule, a range of possible
-     * length, or outer bounds for start and/or end limits of the timing schedule.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
-     */
-    protected $boundsPeriod = null;
+    private $_xmlns = '';
 
     /**
      * Either a duration for the length of the timing schedule, a range of possible
@@ -146,6 +136,18 @@ class FHIRTimingRepeat extends FHIRElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRange
      */
     protected $boundsRange = null;
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Either a duration for the length of the timing schedule, a range of possible
+     * length, or outer bounds for start and/or end limits of the timing schedule.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
+     */
+    protected $boundsPeriod = null;
 
     /**
      * A whole number
@@ -285,13 +287,6 @@ class FHIRTimingRepeat extends FHIRElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_BOUNDS_PERIOD])) {
-            if ($data[self::FIELD_BOUNDS_PERIOD] instanceof FHIRPeriod) {
-                $this->setBoundsPeriod($data[self::FIELD_BOUNDS_PERIOD]);
-            } else {
-                $this->setBoundsPeriod(new FHIRPeriod($data[self::FIELD_BOUNDS_PERIOD]));
-            }
-        }
         if (isset($data[self::FIELD_BOUNDS_QUANTITY])) {
             if ($data[self::FIELD_BOUNDS_QUANTITY] instanceof FHIRDuration) {
                 $this->setBoundsQuantity($data[self::FIELD_BOUNDS_QUANTITY]);
@@ -306,17 +301,16 @@ class FHIRTimingRepeat extends FHIRElement
                 $this->setBoundsRange(new FHIRRange($data[self::FIELD_BOUNDS_RANGE]));
             }
         }
+        if (isset($data[self::FIELD_BOUNDS_PERIOD])) {
+            if ($data[self::FIELD_BOUNDS_PERIOD] instanceof FHIRPeriod) {
+                $this->setBoundsPeriod($data[self::FIELD_BOUNDS_PERIOD]);
+            } else {
+                $this->setBoundsPeriod(new FHIRPeriod($data[self::FIELD_BOUNDS_PERIOD]));
+            }
+        }
         if (isset($data[self::FIELD_COUNT]) || isset($data[self::FIELD_COUNT_EXT])) {
-            if (isset($data[self::FIELD_COUNT])) {
-                $value = $data[self::FIELD_COUNT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_COUNT_EXT]) && is_array($data[self::FIELD_COUNT_EXT])) {
-                $ext = $data[self::FIELD_COUNT_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_COUNT]) ? $data[self::FIELD_COUNT] : null;
+            $ext = (isset($data[self::FIELD_COUNT_EXT]) && is_array($data[self::FIELD_COUNT_EXT])) ? $ext = $data[self::FIELD_COUNT_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRInteger) {
                     $this->setCount($value);
@@ -325,21 +319,13 @@ class FHIRTimingRepeat extends FHIRElement
                 } else {
                     $this->setCount(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setCount(new FHIRInteger($ext));
             }
         }
         if (isset($data[self::FIELD_DURATION]) || isset($data[self::FIELD_DURATION_EXT])) {
-            if (isset($data[self::FIELD_DURATION])) {
-                $value = $data[self::FIELD_DURATION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DURATION_EXT]) && is_array($data[self::FIELD_DURATION_EXT])) {
-                $ext = $data[self::FIELD_DURATION_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_DURATION]) ? $data[self::FIELD_DURATION] : null;
+            $ext = (isset($data[self::FIELD_DURATION_EXT]) && is_array($data[self::FIELD_DURATION_EXT])) ? $ext = $data[self::FIELD_DURATION_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRDecimal) {
                     $this->setDuration($value);
@@ -348,21 +334,13 @@ class FHIRTimingRepeat extends FHIRElement
                 } else {
                     $this->setDuration(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDuration(new FHIRDecimal($ext));
             }
         }
         if (isset($data[self::FIELD_DURATION_MAX]) || isset($data[self::FIELD_DURATION_MAX_EXT])) {
-            if (isset($data[self::FIELD_DURATION_MAX])) {
-                $value = $data[self::FIELD_DURATION_MAX];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DURATION_MAX_EXT]) && is_array($data[self::FIELD_DURATION_MAX_EXT])) {
-                $ext = $data[self::FIELD_DURATION_MAX_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_DURATION_MAX]) ? $data[self::FIELD_DURATION_MAX] : null;
+            $ext = (isset($data[self::FIELD_DURATION_MAX_EXT]) && is_array($data[self::FIELD_DURATION_MAX_EXT])) ? $ext = $data[self::FIELD_DURATION_MAX_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRDecimal) {
                     $this->setDurationMax($value);
@@ -371,21 +349,13 @@ class FHIRTimingRepeat extends FHIRElement
                 } else {
                     $this->setDurationMax(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDurationMax(new FHIRDecimal($ext));
             }
         }
         if (isset($data[self::FIELD_DURATION_UNITS]) || isset($data[self::FIELD_DURATION_UNITS_EXT])) {
-            if (isset($data[self::FIELD_DURATION_UNITS])) {
-                $value = $data[self::FIELD_DURATION_UNITS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DURATION_UNITS_EXT]) && is_array($data[self::FIELD_DURATION_UNITS_EXT])) {
-                $ext = $data[self::FIELD_DURATION_UNITS_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_DURATION_UNITS]) ? $data[self::FIELD_DURATION_UNITS] : null;
+            $ext = (isset($data[self::FIELD_DURATION_UNITS_EXT]) && is_array($data[self::FIELD_DURATION_UNITS_EXT])) ? $ext = $data[self::FIELD_DURATION_UNITS_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRUnitsOfTime) {
                     $this->setDurationUnits($value);
@@ -394,21 +364,13 @@ class FHIRTimingRepeat extends FHIRElement
                 } else {
                     $this->setDurationUnits(new FHIRUnitsOfTime([FHIRUnitsOfTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDurationUnits(new FHIRUnitsOfTime($ext));
             }
         }
         if (isset($data[self::FIELD_FREQUENCY]) || isset($data[self::FIELD_FREQUENCY_EXT])) {
-            if (isset($data[self::FIELD_FREQUENCY])) {
-                $value = $data[self::FIELD_FREQUENCY];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_FREQUENCY_EXT]) && is_array($data[self::FIELD_FREQUENCY_EXT])) {
-                $ext = $data[self::FIELD_FREQUENCY_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_FREQUENCY]) ? $data[self::FIELD_FREQUENCY] : null;
+            $ext = (isset($data[self::FIELD_FREQUENCY_EXT]) && is_array($data[self::FIELD_FREQUENCY_EXT])) ? $ext = $data[self::FIELD_FREQUENCY_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRInteger) {
                     $this->setFrequency($value);
@@ -417,21 +379,13 @@ class FHIRTimingRepeat extends FHIRElement
                 } else {
                     $this->setFrequency(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setFrequency(new FHIRInteger($ext));
             }
         }
         if (isset($data[self::FIELD_FREQUENCY_MAX]) || isset($data[self::FIELD_FREQUENCY_MAX_EXT])) {
-            if (isset($data[self::FIELD_FREQUENCY_MAX])) {
-                $value = $data[self::FIELD_FREQUENCY_MAX];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_FREQUENCY_MAX_EXT]) && is_array($data[self::FIELD_FREQUENCY_MAX_EXT])) {
-                $ext = $data[self::FIELD_FREQUENCY_MAX_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_FREQUENCY_MAX]) ? $data[self::FIELD_FREQUENCY_MAX] : null;
+            $ext = (isset($data[self::FIELD_FREQUENCY_MAX_EXT]) && is_array($data[self::FIELD_FREQUENCY_MAX_EXT])) ? $ext = $data[self::FIELD_FREQUENCY_MAX_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRInteger) {
                     $this->setFrequencyMax($value);
@@ -440,21 +394,13 @@ class FHIRTimingRepeat extends FHIRElement
                 } else {
                     $this->setFrequencyMax(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setFrequencyMax(new FHIRInteger($ext));
             }
         }
         if (isset($data[self::FIELD_PERIOD]) || isset($data[self::FIELD_PERIOD_EXT])) {
-            if (isset($data[self::FIELD_PERIOD])) {
-                $value = $data[self::FIELD_PERIOD];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PERIOD_EXT]) && is_array($data[self::FIELD_PERIOD_EXT])) {
-                $ext = $data[self::FIELD_PERIOD_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_PERIOD]) ? $data[self::FIELD_PERIOD] : null;
+            $ext = (isset($data[self::FIELD_PERIOD_EXT]) && is_array($data[self::FIELD_PERIOD_EXT])) ? $ext = $data[self::FIELD_PERIOD_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRDecimal) {
                     $this->setPeriod($value);
@@ -463,21 +409,13 @@ class FHIRTimingRepeat extends FHIRElement
                 } else {
                     $this->setPeriod(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setPeriod(new FHIRDecimal($ext));
             }
         }
         if (isset($data[self::FIELD_PERIOD_MAX]) || isset($data[self::FIELD_PERIOD_MAX_EXT])) {
-            if (isset($data[self::FIELD_PERIOD_MAX])) {
-                $value = $data[self::FIELD_PERIOD_MAX];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PERIOD_MAX_EXT]) && is_array($data[self::FIELD_PERIOD_MAX_EXT])) {
-                $ext = $data[self::FIELD_PERIOD_MAX_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_PERIOD_MAX]) ? $data[self::FIELD_PERIOD_MAX] : null;
+            $ext = (isset($data[self::FIELD_PERIOD_MAX_EXT]) && is_array($data[self::FIELD_PERIOD_MAX_EXT])) ? $ext = $data[self::FIELD_PERIOD_MAX_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRDecimal) {
                     $this->setPeriodMax($value);
@@ -486,21 +424,13 @@ class FHIRTimingRepeat extends FHIRElement
                 } else {
                     $this->setPeriodMax(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setPeriodMax(new FHIRDecimal($ext));
             }
         }
         if (isset($data[self::FIELD_PERIOD_UNITS]) || isset($data[self::FIELD_PERIOD_UNITS_EXT])) {
-            if (isset($data[self::FIELD_PERIOD_UNITS])) {
-                $value = $data[self::FIELD_PERIOD_UNITS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PERIOD_UNITS_EXT]) && is_array($data[self::FIELD_PERIOD_UNITS_EXT])) {
-                $ext = $data[self::FIELD_PERIOD_UNITS_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_PERIOD_UNITS]) ? $data[self::FIELD_PERIOD_UNITS] : null;
+            $ext = (isset($data[self::FIELD_PERIOD_UNITS_EXT]) && is_array($data[self::FIELD_PERIOD_UNITS_EXT])) ? $ext = $data[self::FIELD_PERIOD_UNITS_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRUnitsOfTime) {
                     $this->setPeriodUnits($value);
@@ -509,21 +439,13 @@ class FHIRTimingRepeat extends FHIRElement
                 } else {
                     $this->setPeriodUnits(new FHIRUnitsOfTime([FHIRUnitsOfTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setPeriodUnits(new FHIRUnitsOfTime($ext));
             }
         }
         if (isset($data[self::FIELD_WHEN]) || isset($data[self::FIELD_WHEN_EXT])) {
-            if (isset($data[self::FIELD_WHEN])) {
-                $value = $data[self::FIELD_WHEN];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_WHEN_EXT]) && is_array($data[self::FIELD_WHEN_EXT])) {
-                $ext = $data[self::FIELD_WHEN_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_WHEN]) ? $data[self::FIELD_WHEN] : null;
+            $ext = (isset($data[self::FIELD_WHEN_EXT]) && is_array($data[self::FIELD_WHEN_EXT])) ? $ext = $data[self::FIELD_WHEN_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIREventTiming) {
                     $this->setWhen($value);
@@ -532,7 +454,7 @@ class FHIRTimingRepeat extends FHIRElement
                 } else {
                     $this->setWhen(new FHIREventTiming([FHIREventTiming::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setWhen(new FHIREventTiming($ext));
             }
         }
@@ -552,42 +474,10 @@ class FHIRTimingRepeat extends FHIRElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<TimingRepeat{$xmlns}></TimingRepeat>";
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Either a duration for the length of the timing schedule, a range of possible
-     * length, or outer bounds for start and/or end limits of the timing schedule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
-     */
-    public function getBoundsPeriod()
-    {
-        return $this->boundsPeriod;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Either a duration for the length of the timing schedule, a range of possible
-     * length, or outer bounds for start and/or end limits of the timing schedule.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod $boundsPeriod
-     * @return static
-     */
-    public function setBoundsPeriod(FHIRPeriod $boundsPeriod = null)
-    {
-        $this->boundsPeriod = $boundsPeriod;
-        return $this;
     }
 
     /**
@@ -610,6 +500,7 @@ class FHIRTimingRepeat extends FHIRElement
      */
     public function setBoundsQuantity(FHIRDuration $boundsQuantity = null)
     {
+        $this->_trackValueSet($this->boundsQuantity, $boundsQuantity);
         $this->boundsQuantity = $boundsQuantity;
         return $this;
     }
@@ -642,7 +533,41 @@ class FHIRTimingRepeat extends FHIRElement
      */
     public function setBoundsRange(FHIRRange $boundsRange = null)
     {
+        $this->_trackValueSet($this->boundsRange, $boundsRange);
         $this->boundsRange = $boundsRange;
+        return $this;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Either a duration for the length of the timing schedule, a range of possible
+     * length, or outer bounds for start and/or end limits of the timing schedule.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
+     */
+    public function getBoundsPeriod()
+    {
+        return $this->boundsPeriod;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Either a duration for the length of the timing schedule, a range of possible
+     * length, or outer bounds for start and/or end limits of the timing schedule.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod $boundsPeriod
+     * @return static
+     */
+    public function setBoundsPeriod(FHIRPeriod $boundsPeriod = null)
+    {
+        $this->_trackValueSet($this->boundsPeriod, $boundsPeriod);
+        $this->boundsPeriod = $boundsPeriod;
         return $this;
     }
 
@@ -672,15 +597,11 @@ class FHIRTimingRepeat extends FHIRElement
      */
     public function setCount($count = null)
     {
-        if (null === $count) {
-            $this->count = null;
-            return $this;
+        if (null !== $count && !($count instanceof FHIRInteger)) {
+            $count = new FHIRInteger($count);
         }
-        if ($count instanceof FHIRInteger) {
-            $this->count = $count;
-            return $this;
-        }
-        $this->count = new FHIRInteger($count);
+        $this->_trackValueSet($this->count, $count);
+        $this->count = $count;
         return $this;
     }
 
@@ -712,15 +633,11 @@ class FHIRTimingRepeat extends FHIRElement
      */
     public function setDuration($duration = null)
     {
-        if (null === $duration) {
-            $this->duration = null;
-            return $this;
+        if (null !== $duration && !($duration instanceof FHIRDecimal)) {
+            $duration = new FHIRDecimal($duration);
         }
-        if ($duration instanceof FHIRDecimal) {
-            $this->duration = $duration;
-            return $this;
-        }
-        $this->duration = new FHIRDecimal($duration);
+        $this->_trackValueSet($this->duration, $duration);
+        $this->duration = $duration;
         return $this;
     }
 
@@ -752,15 +669,11 @@ class FHIRTimingRepeat extends FHIRElement
      */
     public function setDurationMax($durationMax = null)
     {
-        if (null === $durationMax) {
-            $this->durationMax = null;
-            return $this;
+        if (null !== $durationMax && !($durationMax instanceof FHIRDecimal)) {
+            $durationMax = new FHIRDecimal($durationMax);
         }
-        if ($durationMax instanceof FHIRDecimal) {
-            $this->durationMax = $durationMax;
-            return $this;
-        }
-        $this->durationMax = new FHIRDecimal($durationMax);
+        $this->_trackValueSet($this->durationMax, $durationMax);
+        $this->durationMax = $durationMax;
         return $this;
     }
 
@@ -788,6 +701,7 @@ class FHIRTimingRepeat extends FHIRElement
      */
     public function setDurationUnits(FHIRUnitsOfTime $durationUnits = null)
     {
+        $this->_trackValueSet($this->durationUnits, $durationUnits);
         $this->durationUnits = $durationUnits;
         return $this;
     }
@@ -820,15 +734,11 @@ class FHIRTimingRepeat extends FHIRElement
      */
     public function setFrequency($frequency = null)
     {
-        if (null === $frequency) {
-            $this->frequency = null;
-            return $this;
+        if (null !== $frequency && !($frequency instanceof FHIRInteger)) {
+            $frequency = new FHIRInteger($frequency);
         }
-        if ($frequency instanceof FHIRInteger) {
-            $this->frequency = $frequency;
-            return $this;
-        }
-        $this->frequency = new FHIRInteger($frequency);
+        $this->_trackValueSet($this->frequency, $frequency);
+        $this->frequency = $frequency;
         return $this;
     }
 
@@ -860,15 +770,11 @@ class FHIRTimingRepeat extends FHIRElement
      */
     public function setFrequencyMax($frequencyMax = null)
     {
-        if (null === $frequencyMax) {
-            $this->frequencyMax = null;
-            return $this;
+        if (null !== $frequencyMax && !($frequencyMax instanceof FHIRInteger)) {
+            $frequencyMax = new FHIRInteger($frequencyMax);
         }
-        if ($frequencyMax instanceof FHIRInteger) {
-            $this->frequencyMax = $frequencyMax;
-            return $this;
-        }
-        $this->frequencyMax = new FHIRInteger($frequencyMax);
+        $this->_trackValueSet($this->frequencyMax, $frequencyMax);
+        $this->frequencyMax = $frequencyMax;
         return $this;
     }
 
@@ -904,15 +810,11 @@ class FHIRTimingRepeat extends FHIRElement
      */
     public function setPeriod($period = null)
     {
-        if (null === $period) {
-            $this->period = null;
-            return $this;
+        if (null !== $period && !($period instanceof FHIRDecimal)) {
+            $period = new FHIRDecimal($period);
         }
-        if ($period instanceof FHIRDecimal) {
-            $this->period = $period;
-            return $this;
-        }
-        $this->period = new FHIRDecimal($period);
+        $this->_trackValueSet($this->period, $period);
+        $this->period = $period;
         return $this;
     }
 
@@ -946,15 +848,11 @@ class FHIRTimingRepeat extends FHIRElement
      */
     public function setPeriodMax($periodMax = null)
     {
-        if (null === $periodMax) {
-            $this->periodMax = null;
-            return $this;
+        if (null !== $periodMax && !($periodMax instanceof FHIRDecimal)) {
+            $periodMax = new FHIRDecimal($periodMax);
         }
-        if ($periodMax instanceof FHIRDecimal) {
-            $this->periodMax = $periodMax;
-            return $this;
-        }
-        $this->periodMax = new FHIRDecimal($periodMax);
+        $this->_trackValueSet($this->periodMax, $periodMax);
+        $this->periodMax = $periodMax;
         return $this;
     }
 
@@ -982,6 +880,7 @@ class FHIRTimingRepeat extends FHIRElement
      */
     public function setPeriodUnits(FHIRUnitsOfTime $periodUnits = null)
     {
+        $this->_trackValueSet($this->periodUnits, $periodUnits);
         $this->periodUnits = $periodUnits;
         return $this;
     }
@@ -1010,6 +909,7 @@ class FHIRTimingRepeat extends FHIRElement
      */
     public function setWhen(FHIREventTiming $when = null)
     {
+        $this->_trackValueSet($this->when, $when);
         $this->when = $when;
         return $this;
     }
@@ -1035,11 +935,6 @@ class FHIRTimingRepeat extends FHIRElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getBoundsPeriod())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_BOUNDS_PERIOD] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getBoundsQuantity())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_BOUNDS_QUANTITY] = $fieldErrs;
@@ -1048,6 +943,11 @@ class FHIRTimingRepeat extends FHIRElement
         if (null !== ($v = $this->getBoundsRange())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_BOUNDS_RANGE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getBoundsPeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BOUNDS_PERIOD] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getCount())) {
@@ -1100,18 +1000,6 @@ class FHIRTimingRepeat extends FHIRElement
                 $errs[self::FIELD_WHEN] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_BOUNDS_PERIOD])) {
-            $v = $this->getBoundsPeriod();
-            foreach($validationRules[self::FIELD_BOUNDS_PERIOD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_BOUNDS_PERIOD, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_BOUNDS_PERIOD])) {
-                        $errs[self::FIELD_BOUNDS_PERIOD] = [];
-                    }
-                    $errs[self::FIELD_BOUNDS_PERIOD][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_BOUNDS_QUANTITY])) {
             $v = $this->getBoundsQuantity();
             foreach($validationRules[self::FIELD_BOUNDS_QUANTITY] as $rule => $constraint) {
@@ -1133,6 +1021,18 @@ class FHIRTimingRepeat extends FHIRElement
                         $errs[self::FIELD_BOUNDS_RANGE] = [];
                     }
                     $errs[self::FIELD_BOUNDS_RANGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BOUNDS_PERIOD])) {
+            $v = $this->getBoundsPeriod();
+            foreach($validationRules[self::FIELD_BOUNDS_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_BOUNDS_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BOUNDS_PERIOD])) {
+                        $errs[self::FIELD_BOUNDS_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_BOUNDS_PERIOD][$rule] = $err;
                 }
             }
         }
@@ -1284,194 +1184,233 @@ class FHIRTimingRepeat extends FHIRElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming\FHIRTimingRepeat $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming\FHIRTimingRepeat
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRTimingRepeat::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRTimingRepeat::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRTimingRepeat::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRTimingRepeat;
+            $type = new FHIRTimingRepeat(null);
         } elseif (!is_object($type) || !($type instanceof FHIRTimingRepeat)) {
             throw new \RuntimeException(sprintf(
                 'FHIRTimingRepeat::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming\FHIRTimingRepeat or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_BOUNDS_QUANTITY === $n->nodeName) {
+                $type->setBoundsQuantity(FHIRDuration::xmlUnserialize($n));
+            } elseif (self::FIELD_BOUNDS_RANGE === $n->nodeName) {
+                $type->setBoundsRange(FHIRRange::xmlUnserialize($n));
+            } elseif (self::FIELD_BOUNDS_PERIOD === $n->nodeName) {
+                $type->setBoundsPeriod(FHIRPeriod::xmlUnserialize($n));
+            } elseif (self::FIELD_COUNT === $n->nodeName) {
+                $type->setCount(FHIRInteger::xmlUnserialize($n));
+            } elseif (self::FIELD_DURATION === $n->nodeName) {
+                $type->setDuration(FHIRDecimal::xmlUnserialize($n));
+            } elseif (self::FIELD_DURATION_MAX === $n->nodeName) {
+                $type->setDurationMax(FHIRDecimal::xmlUnserialize($n));
+            } elseif (self::FIELD_DURATION_UNITS === $n->nodeName) {
+                $type->setDurationUnits(FHIRUnitsOfTime::xmlUnserialize($n));
+            } elseif (self::FIELD_FREQUENCY === $n->nodeName) {
+                $type->setFrequency(FHIRInteger::xmlUnserialize($n));
+            } elseif (self::FIELD_FREQUENCY_MAX === $n->nodeName) {
+                $type->setFrequencyMax(FHIRInteger::xmlUnserialize($n));
+            } elseif (self::FIELD_PERIOD === $n->nodeName) {
+                $type->setPeriod(FHIRDecimal::xmlUnserialize($n));
+            } elseif (self::FIELD_PERIOD_MAX === $n->nodeName) {
+                $type->setPeriodMax(FHIRDecimal::xmlUnserialize($n));
+            } elseif (self::FIELD_PERIOD_UNITS === $n->nodeName) {
+                $type->setPeriodUnits(FHIRUnitsOfTime::xmlUnserialize($n));
+            } elseif (self::FIELD_WHEN === $n->nodeName) {
+                $type->setWhen(FHIREventTiming::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->boundsPeriod)) {
-            $type->setBoundsPeriod(FHIRPeriod::xmlUnserialize($children->boundsPeriod));
-        }
-        if (isset($children->boundsQuantity)) {
-            $type->setBoundsQuantity(FHIRDuration::xmlUnserialize($children->boundsQuantity));
-        }
-        if (isset($children->boundsRange)) {
-            $type->setBoundsRange(FHIRRange::xmlUnserialize($children->boundsRange));
-        }
-        if (isset($children->count)) {
-            $type->setCount(FHIRInteger::xmlUnserialize($children->count));
-        }
-        if (isset($attributes->count)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_COUNT);
+        if (null !== $n) {
             $pt = $type->getCount();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->count);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setCount((string)$attributes->count);
+                $type->setCount($n->nodeValue);
             }
         }
-        if (isset($children->duration)) {
-            $type->setDuration(FHIRDecimal::xmlUnserialize($children->duration));
-        }
-        if (isset($attributes->duration)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DURATION);
+        if (null !== $n) {
             $pt = $type->getDuration();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->duration);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDuration((string)$attributes->duration);
+                $type->setDuration($n->nodeValue);
             }
         }
-        if (isset($children->durationMax)) {
-            $type->setDurationMax(FHIRDecimal::xmlUnserialize($children->durationMax));
-        }
-        if (isset($attributes->durationMax)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DURATION_MAX);
+        if (null !== $n) {
             $pt = $type->getDurationMax();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->durationMax);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDurationMax((string)$attributes->durationMax);
+                $type->setDurationMax($n->nodeValue);
             }
         }
-        if (isset($children->durationUnits)) {
-            $type->setDurationUnits(FHIRUnitsOfTime::xmlUnserialize($children->durationUnits));
-        }
-        if (isset($children->frequency)) {
-            $type->setFrequency(FHIRInteger::xmlUnserialize($children->frequency));
-        }
-        if (isset($attributes->frequency)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_FREQUENCY);
+        if (null !== $n) {
             $pt = $type->getFrequency();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->frequency);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setFrequency((string)$attributes->frequency);
+                $type->setFrequency($n->nodeValue);
             }
         }
-        if (isset($children->frequencyMax)) {
-            $type->setFrequencyMax(FHIRInteger::xmlUnserialize($children->frequencyMax));
-        }
-        if (isset($attributes->frequencyMax)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_FREQUENCY_MAX);
+        if (null !== $n) {
             $pt = $type->getFrequencyMax();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->frequencyMax);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setFrequencyMax((string)$attributes->frequencyMax);
+                $type->setFrequencyMax($n->nodeValue);
             }
         }
-        if (isset($children->period)) {
-            $type->setPeriod(FHIRDecimal::xmlUnserialize($children->period));
-        }
-        if (isset($attributes->period)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_PERIOD);
+        if (null !== $n) {
             $pt = $type->getPeriod();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->period);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setPeriod((string)$attributes->period);
+                $type->setPeriod($n->nodeValue);
             }
         }
-        if (isset($children->periodMax)) {
-            $type->setPeriodMax(FHIRDecimal::xmlUnserialize($children->periodMax));
-        }
-        if (isset($attributes->periodMax)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_PERIOD_MAX);
+        if (null !== $n) {
             $pt = $type->getPeriodMax();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->periodMax);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setPeriodMax((string)$attributes->periodMax);
+                $type->setPeriodMax($n->nodeValue);
             }
         }
-        if (isset($children->periodUnits)) {
-            $type->setPeriodUnits(FHIRUnitsOfTime::xmlUnserialize($children->periodUnits));
-        }
-        if (isset($children->when)) {
-            $type->setWhen(FHIREventTiming::xmlUnserialize($children->when));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getBoundsPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BOUNDS_PERIOD, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getBoundsQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BOUNDS_QUANTITY, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_BOUNDS_QUANTITY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getBoundsRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BOUNDS_RANGE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_BOUNDS_RANGE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getBoundsPeriod())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_BOUNDS_PERIOD);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getCount())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COUNT, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_COUNT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getDuration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DURATION, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DURATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getDurationMax())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DURATION_MAX, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DURATION_MAX);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getDurationUnits())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DURATION_UNITS, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DURATION_UNITS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getFrequency())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FREQUENCY, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_FREQUENCY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getFrequencyMax())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FREQUENCY_MAX, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_FREQUENCY_MAX);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_PERIOD);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getPeriodMax())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD_MAX, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_PERIOD_MAX);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getPeriodUnits())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD_UNITS, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_PERIOD_UNITS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getWhen())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHEN, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_WHEN);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -1480,107 +1419,114 @@ class FHIRTimingRepeat extends FHIRElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getBoundsPeriod())) {
-            $a[self::FIELD_BOUNDS_PERIOD] = $v;
-        }
         if (null !== ($v = $this->getBoundsQuantity())) {
             $a[self::FIELD_BOUNDS_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getBoundsRange())) {
             $a[self::FIELD_BOUNDS_RANGE] = $v;
         }
+        if (null !== ($v = $this->getBoundsPeriod())) {
+            $a[self::FIELD_BOUNDS_PERIOD] = $v;
+        }
         if (null !== ($v = $this->getCount())) {
-            $a[self::FIELD_COUNT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_COUNT_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_COUNT] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRInteger::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_COUNT_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getDuration())) {
-            $a[self::FIELD_DURATION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_DURATION_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DURATION] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDecimal::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DURATION_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getDurationMax())) {
-            $a[self::FIELD_DURATION_MAX] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_DURATION_MAX_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DURATION_MAX] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDecimal::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DURATION_MAX_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getDurationUnits())) {
-            $a[self::FIELD_DURATION_UNITS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUnitsOfTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUnitsOfTime::FIELD_VALUE]);
-                $a[self::FIELD_DURATION_UNITS_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DURATION_UNITS] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUnitsOfTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DURATION_UNITS_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getFrequency())) {
-            $a[self::FIELD_FREQUENCY] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_FREQUENCY_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FREQUENCY] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRInteger::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_FREQUENCY_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getFrequencyMax())) {
-            $a[self::FIELD_FREQUENCY_MAX] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_FREQUENCY_MAX_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FREQUENCY_MAX] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRInteger::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_FREQUENCY_MAX_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getPeriod())) {
-            $a[self::FIELD_PERIOD] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_PERIOD_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PERIOD] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDecimal::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PERIOD_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getPeriodMax())) {
-            $a[self::FIELD_PERIOD_MAX] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_PERIOD_MAX_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PERIOD_MAX] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDecimal::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PERIOD_MAX_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getPeriodUnits())) {
-            $a[self::FIELD_PERIOD_UNITS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUnitsOfTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUnitsOfTime::FIELD_VALUE]);
-                $a[self::FIELD_PERIOD_UNITS_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PERIOD_UNITS] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUnitsOfTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PERIOD_UNITS_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getWhen())) {
-            $a[self::FIELD_WHEN] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIREventTiming::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIREventTiming::FIELD_VALUE]);
-                $a[self::FIELD_WHEN_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_WHEN] = $val;
             }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIREventTiming::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_WHEN_EXT] = $ext;
+            }
         }
         return $a;
     }

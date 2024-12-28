@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -68,14 +68,21 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicall
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBiologicallyDerivedProductCategory;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBiologicallyDerivedProductStatus;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeMap;
 
 /**
  * A material substance originating from a biological entity intended to be
@@ -89,33 +96,23 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT;
-    const FIELD_COLLECTION = 'collection';
     const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_MANIPULATION = 'manipulation';
-    const FIELD_PARENT = 'parent';
-    const FIELD_PROCESSING = 'processing';
     const FIELD_PRODUCT_CATEGORY = 'productCategory';
     const FIELD_PRODUCT_CATEGORY_EXT = '_productCategory';
     const FIELD_PRODUCT_CODE = 'productCode';
-    const FIELD_QUANTITY = 'quantity';
-    const FIELD_QUANTITY_EXT = '_quantity';
-    const FIELD_REQUEST = 'request';
     const FIELD_STATUS = 'status';
     const FIELD_STATUS_EXT = '_status';
+    const FIELD_REQUEST = 'request';
+    const FIELD_QUANTITY = 'quantity';
+    const FIELD_QUANTITY_EXT = '_quantity';
+    const FIELD_PARENT = 'parent';
+    const FIELD_COLLECTION = 'collection';
+    const FIELD_PROCESSING = 'processing';
+    const FIELD_MANIPULATION = 'manipulation';
     const FIELD_STORAGE = 'storage';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A material substance originating from a biological entity intended to be
-     * transplanted or infused into another (possibly the same) biological entity.
-     *
-     * How this product was collected.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
-     */
-    protected $collection = null;
+    private $_xmlns = '';
 
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -131,41 +128,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected $identifier = [];
-
-    /**
-     * A material substance originating from a biological entity intended to be
-     * transplanted or infused into another (possibly the same) biological entity.
-     *
-     * Any manipulation of product post-collection that is intended to alter the
-     * product. For example a buffy-coat enrichment or CD8 reduction of Peripheral
-     * Blood Stem Cells to make it more suitable for infusion.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation
-     */
-    protected $manipulation = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Parent product (if any).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
-     */
-    protected $parent = [];
-
-    /**
-     * A material substance originating from a biological entity intended to be
-     * transplanted or infused into another (possibly the same) biological entity.
-     *
-     * Any processing of the product during collection that does not change the
-     * fundamental nature of the product. For example adding anti-coagulants during the
-     * collection of Peripheral Blood Stem Cells.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing[]
-     */
-    protected $processing = [];
 
     /**
      * Biologically Derived Product Category.
@@ -191,6 +153,27 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     protected $productCode = null;
 
     /**
+     * Biologically Derived Product Status.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Whether the product is currently available.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBiologicallyDerivedProductStatus
+     */
+    protected $status = null;
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Procedure request to obtain this biologically derived product.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
+     */
+    protected $request = [];
+
+    /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -206,21 +189,45 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Procedure request to obtain this biologically derived product.
+     * Parent product (if any).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    protected $request = [];
+    protected $parent = [];
 
     /**
-     * Biologically Derived Product Status.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A material substance originating from a biological entity intended to be
+     * transplanted or infused into another (possibly the same) biological entity.
      *
-     * Whether the product is currently available.
+     * How this product was collected.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBiologicallyDerivedProductStatus
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
      */
-    protected $status = null;
+    protected $collection = null;
+
+    /**
+     * A material substance originating from a biological entity intended to be
+     * transplanted or infused into another (possibly the same) biological entity.
+     *
+     * Any processing of the product during collection that does not change the
+     * fundamental nature of the product. For example adding anti-coagulants during the
+     * collection of Peripheral Blood Stem Cells.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing[]
+     */
+    protected $processing = [];
+
+    /**
+     * A material substance originating from a biological entity intended to be
+     * transplanted or infused into another (possibly the same) biological entity.
+     *
+     * Any manipulation of product post-collection that is intended to alter the
+     * product. For example a buffy-coat enrichment or CD8 reduction of Peripheral
+     * Blood Stem Cells to make it more suitable for infusion.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation
+     */
+    protected $manipulation = null;
 
     /**
      * A material substance originating from a biological entity intended to be
@@ -254,13 +261,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_COLLECTION])) {
-            if ($data[self::FIELD_COLLECTION] instanceof FHIRBiologicallyDerivedProductCollection) {
-                $this->setCollection($data[self::FIELD_COLLECTION]);
-            } else {
-                $this->setCollection(new FHIRBiologicallyDerivedProductCollection($data[self::FIELD_COLLECTION]));
-            }
-        }
         if (isset($data[self::FIELD_IDENTIFIER])) {
             if (is_array($data[self::FIELD_IDENTIFIER])) {
                 foreach($data[self::FIELD_IDENTIFIER] as $v) {
@@ -273,66 +273,15 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
-            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
         }
-        if (isset($data[self::FIELD_MANIPULATION])) {
-            if ($data[self::FIELD_MANIPULATION] instanceof FHIRBiologicallyDerivedProductManipulation) {
-                $this->setManipulation($data[self::FIELD_MANIPULATION]);
-            } else {
-                $this->setManipulation(new FHIRBiologicallyDerivedProductManipulation($data[self::FIELD_MANIPULATION]));
-            }
-        }
-        if (isset($data[self::FIELD_PARENT])) {
-            if (is_array($data[self::FIELD_PARENT])) {
-                foreach($data[self::FIELD_PARENT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRReference) {
-                        $this->addParent($v);
-                    } else {
-                        $this->addParent(new FHIRReference($v));
-                    }
-                }
-            } else if ($data[self::FIELD_PARENT] instanceof FHIRReference) {
-                $this->addParent($data[self::FIELD_PARENT]);
-            } else {
-                $this->addParent(new FHIRReference($data[self::FIELD_PARENT]));
-            }
-        }
-        if (isset($data[self::FIELD_PROCESSING])) {
-            if (is_array($data[self::FIELD_PROCESSING])) {
-                foreach($data[self::FIELD_PROCESSING] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRBiologicallyDerivedProductProcessing) {
-                        $this->addProcessing($v);
-                    } else {
-                        $this->addProcessing(new FHIRBiologicallyDerivedProductProcessing($v));
-                    }
-                }
-            } else if ($data[self::FIELD_PROCESSING] instanceof FHIRBiologicallyDerivedProductProcessing) {
-                $this->addProcessing($data[self::FIELD_PROCESSING]);
-            } else {
-                $this->addProcessing(new FHIRBiologicallyDerivedProductProcessing($data[self::FIELD_PROCESSING]));
-            }
-        }
         if (isset($data[self::FIELD_PRODUCT_CATEGORY]) || isset($data[self::FIELD_PRODUCT_CATEGORY_EXT])) {
-            if (isset($data[self::FIELD_PRODUCT_CATEGORY])) {
-                $value = $data[self::FIELD_PRODUCT_CATEGORY];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PRODUCT_CATEGORY_EXT]) && is_array($data[self::FIELD_PRODUCT_CATEGORY_EXT])) {
-                $ext = $data[self::FIELD_PRODUCT_CATEGORY_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_PRODUCT_CATEGORY]) ? $data[self::FIELD_PRODUCT_CATEGORY] : null;
+            $ext = (isset($data[self::FIELD_PRODUCT_CATEGORY_EXT]) && is_array($data[self::FIELD_PRODUCT_CATEGORY_EXT])) ? $ext = $data[self::FIELD_PRODUCT_CATEGORY_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRBiologicallyDerivedProductCategory) {
                     $this->setProductCategory($value);
@@ -341,7 +290,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                 } else {
                     $this->setProductCategory(new FHIRBiologicallyDerivedProductCategory([FHIRBiologicallyDerivedProductCategory::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setProductCategory(new FHIRBiologicallyDerivedProductCategory($ext));
             }
         }
@@ -352,27 +301,19 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                 $this->setProductCode(new FHIRCodeableConcept($data[self::FIELD_PRODUCT_CODE]));
             }
         }
-        if (isset($data[self::FIELD_QUANTITY]) || isset($data[self::FIELD_QUANTITY_EXT])) {
-            if (isset($data[self::FIELD_QUANTITY])) {
-                $value = $data[self::FIELD_QUANTITY];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_QUANTITY_EXT]) && is_array($data[self::FIELD_QUANTITY_EXT])) {
-                $ext = $data[self::FIELD_QUANTITY_EXT];
-            } else {
-                $ext = [];
-            }
+        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
+            $value = isset($data[self::FIELD_STATUS]) ? $data[self::FIELD_STATUS] : null;
+            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) ? $ext = $data[self::FIELD_STATUS_EXT] : $ext = [];
             if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->setQuantity($value);
+                if ($value instanceof FHIRBiologicallyDerivedProductStatus) {
+                    $this->setStatus($value);
                 } else if (is_array($value)) {
-                    $this->setQuantity(new FHIRInteger(array_merge($ext, $value)));
+                    $this->setStatus(new FHIRBiologicallyDerivedProductStatus(array_merge($ext, $value)));
                 } else {
-                    $this->setQuantity(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                    $this->setStatus(new FHIRBiologicallyDerivedProductStatus([FHIRBiologicallyDerivedProductStatus::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                $this->setQuantity(new FHIRInteger($ext));
+            } elseif ([] !== $ext) {
+                $this->setStatus(new FHIRBiologicallyDerivedProductStatus($ext));
             }
         }
         if (isset($data[self::FIELD_REQUEST])) {
@@ -387,33 +328,75 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                         $this->addRequest(new FHIRReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_REQUEST] instanceof FHIRReference) {
+            } elseif ($data[self::FIELD_REQUEST] instanceof FHIRReference) {
                 $this->addRequest($data[self::FIELD_REQUEST]);
             } else {
                 $this->addRequest(new FHIRReference($data[self::FIELD_REQUEST]));
             }
         }
-        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
-            if (isset($data[self::FIELD_STATUS])) {
-                $value = $data[self::FIELD_STATUS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
-                $ext = $data[self::FIELD_STATUS_EXT];
-            } else {
-                $ext = [];
-            }
+        if (isset($data[self::FIELD_QUANTITY]) || isset($data[self::FIELD_QUANTITY_EXT])) {
+            $value = isset($data[self::FIELD_QUANTITY]) ? $data[self::FIELD_QUANTITY] : null;
+            $ext = (isset($data[self::FIELD_QUANTITY_EXT]) && is_array($data[self::FIELD_QUANTITY_EXT])) ? $ext = $data[self::FIELD_QUANTITY_EXT] : $ext = [];
             if (null !== $value) {
-                if ($value instanceof FHIRBiologicallyDerivedProductStatus) {
-                    $this->setStatus($value);
+                if ($value instanceof FHIRInteger) {
+                    $this->setQuantity($value);
                 } else if (is_array($value)) {
-                    $this->setStatus(new FHIRBiologicallyDerivedProductStatus(array_merge($ext, $value)));
+                    $this->setQuantity(new FHIRInteger(array_merge($ext, $value)));
                 } else {
-                    $this->setStatus(new FHIRBiologicallyDerivedProductStatus([FHIRBiologicallyDerivedProductStatus::FIELD_VALUE => $value] + $ext));
+                    $this->setQuantity(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                $this->setStatus(new FHIRBiologicallyDerivedProductStatus($ext));
+            } elseif ([] !== $ext) {
+                $this->setQuantity(new FHIRInteger($ext));
+            }
+        }
+        if (isset($data[self::FIELD_PARENT])) {
+            if (is_array($data[self::FIELD_PARENT])) {
+                foreach($data[self::FIELD_PARENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRReference) {
+                        $this->addParent($v);
+                    } else {
+                        $this->addParent(new FHIRReference($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_PARENT] instanceof FHIRReference) {
+                $this->addParent($data[self::FIELD_PARENT]);
+            } else {
+                $this->addParent(new FHIRReference($data[self::FIELD_PARENT]));
+            }
+        }
+        if (isset($data[self::FIELD_COLLECTION])) {
+            if ($data[self::FIELD_COLLECTION] instanceof FHIRBiologicallyDerivedProductCollection) {
+                $this->setCollection($data[self::FIELD_COLLECTION]);
+            } else {
+                $this->setCollection(new FHIRBiologicallyDerivedProductCollection($data[self::FIELD_COLLECTION]));
+            }
+        }
+        if (isset($data[self::FIELD_PROCESSING])) {
+            if (is_array($data[self::FIELD_PROCESSING])) {
+                foreach($data[self::FIELD_PROCESSING] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRBiologicallyDerivedProductProcessing) {
+                        $this->addProcessing($v);
+                    } else {
+                        $this->addProcessing(new FHIRBiologicallyDerivedProductProcessing($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_PROCESSING] instanceof FHIRBiologicallyDerivedProductProcessing) {
+                $this->addProcessing($data[self::FIELD_PROCESSING]);
+            } else {
+                $this->addProcessing(new FHIRBiologicallyDerivedProductProcessing($data[self::FIELD_PROCESSING]));
+            }
+        }
+        if (isset($data[self::FIELD_MANIPULATION])) {
+            if ($data[self::FIELD_MANIPULATION] instanceof FHIRBiologicallyDerivedProductManipulation) {
+                $this->setManipulation($data[self::FIELD_MANIPULATION]);
+            } else {
+                $this->setManipulation(new FHIRBiologicallyDerivedProductManipulation($data[self::FIELD_MANIPULATION]));
             }
         }
         if (isset($data[self::FIELD_STORAGE])) {
@@ -428,7 +411,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                         $this->addStorage(new FHIRBiologicallyDerivedProductStorage($v));
                     }
                 }
-            } else if ($data[self::FIELD_STORAGE] instanceof FHIRBiologicallyDerivedProductStorage) {
+            } elseif ($data[self::FIELD_STORAGE] instanceof FHIRBiologicallyDerivedProductStorage) {
                 $this->addStorage($data[self::FIELD_STORAGE]);
             } else {
                 $this->addStorage(new FHIRBiologicallyDerivedProductStorage($data[self::FIELD_STORAGE]));
@@ -450,7 +433,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<BiologicallyDerivedProduct{$xmlns}></BiologicallyDerivedProduct>";
@@ -463,34 +446,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
         return static::FHIR_TYPE_NAME;
     }
 
-
-    /**
-     * A material substance originating from a biological entity intended to be
-     * transplanted or infused into another (possibly the same) biological entity.
-     *
-     * How this product was collected.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
-     */
-    public function getCollection()
-    {
-        return $this->collection;
-    }
-
-    /**
-     * A material substance originating from a biological entity intended to be
-     * transplanted or infused into another (possibly the same) biological entity.
-     *
-     * How this product was collected.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection $collection
-     * @return static
-     */
-    public function setCollection(FHIRBiologicallyDerivedProductCollection $collection = null)
-    {
-        $this->collection = $collection;
-        return $this;
-    }
 
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -526,6 +481,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
+        $this->_trackValueAdded();
         $this->identifier[] = $identifier;
         return $this;
     }
@@ -546,7 +502,10 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      */
     public function setIdentifier(array $identifier = [])
     {
-        $this->identifier = [];
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
         if ([] === $identifier) {
             return $this;
         }
@@ -555,153 +514,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                 $this->addIdentifier($v);
             } else {
                 $this->addIdentifier(new FHIRIdentifier($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A material substance originating from a biological entity intended to be
-     * transplanted or infused into another (possibly the same) biological entity.
-     *
-     * Any manipulation of product post-collection that is intended to alter the
-     * product. For example a buffy-coat enrichment or CD8 reduction of Peripheral
-     * Blood Stem Cells to make it more suitable for infusion.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation
-     */
-    public function getManipulation()
-    {
-        return $this->manipulation;
-    }
-
-    /**
-     * A material substance originating from a biological entity intended to be
-     * transplanted or infused into another (possibly the same) biological entity.
-     *
-     * Any manipulation of product post-collection that is intended to alter the
-     * product. For example a buffy-coat enrichment or CD8 reduction of Peripheral
-     * Blood Stem Cells to make it more suitable for infusion.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation $manipulation
-     * @return static
-     */
-    public function setManipulation(FHIRBiologicallyDerivedProductManipulation $manipulation = null)
-    {
-        $this->manipulation = $manipulation;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Parent product (if any).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
-     */
-    public function getParent()
-    {
-        return $this->parent;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Parent product (if any).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $parent
-     * @return static
-     */
-    public function addParent(FHIRReference $parent = null)
-    {
-        $this->parent[] = $parent;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Parent product (if any).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $parent
-     * @return static
-     */
-    public function setParent(array $parent = [])
-    {
-        $this->parent = [];
-        if ([] === $parent) {
-            return $this;
-        }
-        foreach($parent as $v) {
-            if ($v instanceof FHIRReference) {
-                $this->addParent($v);
-            } else {
-                $this->addParent(new FHIRReference($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A material substance originating from a biological entity intended to be
-     * transplanted or infused into another (possibly the same) biological entity.
-     *
-     * Any processing of the product during collection that does not change the
-     * fundamental nature of the product. For example adding anti-coagulants during the
-     * collection of Peripheral Blood Stem Cells.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing[]
-     */
-    public function getProcessing()
-    {
-        return $this->processing;
-    }
-
-    /**
-     * A material substance originating from a biological entity intended to be
-     * transplanted or infused into another (possibly the same) biological entity.
-     *
-     * Any processing of the product during collection that does not change the
-     * fundamental nature of the product. For example adding anti-coagulants during the
-     * collection of Peripheral Blood Stem Cells.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing $processing
-     * @return static
-     */
-    public function addProcessing(FHIRBiologicallyDerivedProductProcessing $processing = null)
-    {
-        $this->processing[] = $processing;
-        return $this;
-    }
-
-    /**
-     * A material substance originating from a biological entity intended to be
-     * transplanted or infused into another (possibly the same) biological entity.
-     *
-     * Any processing of the product during collection that does not change the
-     * fundamental nature of the product. For example adding anti-coagulants during the
-     * collection of Peripheral Blood Stem Cells.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing[] $processing
-     * @return static
-     */
-    public function setProcessing(array $processing = [])
-    {
-        $this->processing = [];
-        if ([] === $processing) {
-            return $this;
-        }
-        foreach($processing as $v) {
-            if ($v instanceof FHIRBiologicallyDerivedProductProcessing) {
-                $this->addProcessing($v);
-            } else {
-                $this->addProcessing(new FHIRBiologicallyDerivedProductProcessing($v));
             }
         }
         return $this;
@@ -731,6 +543,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      */
     public function setProductCategory(FHIRBiologicallyDerivedProductCategory $productCategory = null)
     {
+        $this->_trackValueSet($this->productCategory, $productCategory);
         $this->productCategory = $productCategory;
         return $this;
     }
@@ -765,45 +578,37 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      */
     public function setProductCode(FHIRCodeableConcept $productCode = null)
     {
+        $this->_trackValueSet($this->productCode, $productCode);
         $this->productCode = $productCode;
         return $this;
     }
 
     /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
+     * Biologically Derived Product Status.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Number of discrete units within this product.
+     * Whether the product is currently available.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBiologicallyDerivedProductStatus
      */
-    public function getQuantity()
+    public function getStatus()
     {
-        return $this->quantity;
+        return $this->status;
     }
 
     /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
+     * Biologically Derived Product Status.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Number of discrete units within this product.
+     * Whether the product is currently available.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBiologicallyDerivedProductStatus $status
      * @return static
      */
-    public function setQuantity($quantity = null)
+    public function setStatus(FHIRBiologicallyDerivedProductStatus $status = null)
     {
-        if (null === $quantity) {
-            $this->quantity = null;
-            return $this;
-        }
-        if ($quantity instanceof FHIRInteger) {
-            $this->quantity = $quantity;
-            return $this;
-        }
-        $this->quantity = new FHIRInteger($quantity);
+        $this->_trackValueSet($this->status, $status);
+        $this->status = $status;
         return $this;
     }
 
@@ -833,6 +638,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      */
     public function addRequest(FHIRReference $request = null)
     {
+        $this->_trackValueAdded();
         $this->request[] = $request;
         return $this;
     }
@@ -849,7 +655,10 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      */
     public function setRequest(array $request = [])
     {
-        $this->request = [];
+        if ([] !== $this->request) {
+            $this->_trackValuesRemoved(count($this->request));
+            $this->request = [];
+        }
         if ([] === $request) {
             return $this;
         }
@@ -864,30 +673,221 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     }
 
     /**
-     * Biologically Derived Product Status.
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Whether the product is currently available.
+     * Number of discrete units within this product.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBiologicallyDerivedProductStatus
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    public function getStatus()
+    public function getQuantity()
     {
-        return $this->status;
+        return $this->quantity;
     }
 
     /**
-     * Biologically Derived Product Status.
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Whether the product is currently available.
+     * Number of discrete units within this product.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBiologicallyDerivedProductStatus $status
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $quantity
      * @return static
      */
-    public function setStatus(FHIRBiologicallyDerivedProductStatus $status = null)
+    public function setQuantity($quantity = null)
     {
-        $this->status = $status;
+        if (null !== $quantity && !($quantity instanceof FHIRInteger)) {
+            $quantity = new FHIRInteger($quantity);
+        }
+        $this->_trackValueSet($this->quantity, $quantity);
+        $this->quantity = $quantity;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Parent product (if any).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
+     */
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Parent product (if any).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $parent
+     * @return static
+     */
+    public function addParent(FHIRReference $parent = null)
+    {
+        $this->_trackValueAdded();
+        $this->parent[] = $parent;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Parent product (if any).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $parent
+     * @return static
+     */
+    public function setParent(array $parent = [])
+    {
+        if ([] !== $this->parent) {
+            $this->_trackValuesRemoved(count($this->parent));
+            $this->parent = [];
+        }
+        if ([] === $parent) {
+            return $this;
+        }
+        foreach($parent as $v) {
+            if ($v instanceof FHIRReference) {
+                $this->addParent($v);
+            } else {
+                $this->addParent(new FHIRReference($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A material substance originating from a biological entity intended to be
+     * transplanted or infused into another (possibly the same) biological entity.
+     *
+     * How this product was collected.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
+     */
+    public function getCollection()
+    {
+        return $this->collection;
+    }
+
+    /**
+     * A material substance originating from a biological entity intended to be
+     * transplanted or infused into another (possibly the same) biological entity.
+     *
+     * How this product was collected.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection $collection
+     * @return static
+     */
+    public function setCollection(FHIRBiologicallyDerivedProductCollection $collection = null)
+    {
+        $this->_trackValueSet($this->collection, $collection);
+        $this->collection = $collection;
+        return $this;
+    }
+
+    /**
+     * A material substance originating from a biological entity intended to be
+     * transplanted or infused into another (possibly the same) biological entity.
+     *
+     * Any processing of the product during collection that does not change the
+     * fundamental nature of the product. For example adding anti-coagulants during the
+     * collection of Peripheral Blood Stem Cells.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing[]
+     */
+    public function getProcessing()
+    {
+        return $this->processing;
+    }
+
+    /**
+     * A material substance originating from a biological entity intended to be
+     * transplanted or infused into another (possibly the same) biological entity.
+     *
+     * Any processing of the product during collection that does not change the
+     * fundamental nature of the product. For example adding anti-coagulants during the
+     * collection of Peripheral Blood Stem Cells.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing $processing
+     * @return static
+     */
+    public function addProcessing(FHIRBiologicallyDerivedProductProcessing $processing = null)
+    {
+        $this->_trackValueAdded();
+        $this->processing[] = $processing;
+        return $this;
+    }
+
+    /**
+     * A material substance originating from a biological entity intended to be
+     * transplanted or infused into another (possibly the same) biological entity.
+     *
+     * Any processing of the product during collection that does not change the
+     * fundamental nature of the product. For example adding anti-coagulants during the
+     * collection of Peripheral Blood Stem Cells.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing[] $processing
+     * @return static
+     */
+    public function setProcessing(array $processing = [])
+    {
+        if ([] !== $this->processing) {
+            $this->_trackValuesRemoved(count($this->processing));
+            $this->processing = [];
+        }
+        if ([] === $processing) {
+            return $this;
+        }
+        foreach($processing as $v) {
+            if ($v instanceof FHIRBiologicallyDerivedProductProcessing) {
+                $this->addProcessing($v);
+            } else {
+                $this->addProcessing(new FHIRBiologicallyDerivedProductProcessing($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A material substance originating from a biological entity intended to be
+     * transplanted or infused into another (possibly the same) biological entity.
+     *
+     * Any manipulation of product post-collection that is intended to alter the
+     * product. For example a buffy-coat enrichment or CD8 reduction of Peripheral
+     * Blood Stem Cells to make it more suitable for infusion.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation
+     */
+    public function getManipulation()
+    {
+        return $this->manipulation;
+    }
+
+    /**
+     * A material substance originating from a biological entity intended to be
+     * transplanted or infused into another (possibly the same) biological entity.
+     *
+     * Any manipulation of product post-collection that is intended to alter the
+     * product. For example a buffy-coat enrichment or CD8 reduction of Peripheral
+     * Blood Stem Cells to make it more suitable for infusion.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation $manipulation
+     * @return static
+     */
+    public function setManipulation(FHIRBiologicallyDerivedProductManipulation $manipulation = null)
+    {
+        $this->_trackValueSet($this->manipulation, $manipulation);
+        $this->manipulation = $manipulation;
         return $this;
     }
 
@@ -915,6 +915,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      */
     public function addStorage(FHIRBiologicallyDerivedProductStorage $storage = null)
     {
+        $this->_trackValueAdded();
         $this->storage[] = $storage;
         return $this;
     }
@@ -930,7 +931,10 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      */
     public function setStorage(array $storage = [])
     {
-        $this->storage = [];
+        if ([] !== $this->storage) {
+            $this->_trackValuesRemoved(count($this->storage));
+            $this->storage = [];
+        }
         if ([] === $storage) {
             return $this;
         }
@@ -965,34 +969,10 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getCollection())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_COLLECTION] = $fieldErrs;
-            }
-        }
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_IDENTIFIER, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getManipulation())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_MANIPULATION] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getParent())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_PARENT, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getProcessing())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_PROCESSING, $i)] = $fieldErrs;
                 }
             }
         }
@@ -1006,9 +986,9 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                 $errs[self::FIELD_PRODUCT_CODE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getQuantity())) {
+        if (null !== ($v = $this->getStatus())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_QUANTITY] = $fieldErrs;
+                $errs[self::FIELD_STATUS] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getRequest())) {
@@ -1018,27 +998,39 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                 }
             }
         }
-        if (null !== ($v = $this->getStatus())) {
+        if (null !== ($v = $this->getQuantity())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_STATUS] = $fieldErrs;
+                $errs[self::FIELD_QUANTITY] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getParent())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_PARENT, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getCollection())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_COLLECTION] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getProcessing())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_PROCESSING, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getManipulation())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MANIPULATION] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getStorage())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_STORAGE, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_COLLECTION])) {
-            $v = $this->getCollection();
-            foreach($validationRules[self::FIELD_COLLECTION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT, self::FIELD_COLLECTION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COLLECTION])) {
-                        $errs[self::FIELD_COLLECTION] = [];
-                    }
-                    $errs[self::FIELD_COLLECTION][$rule] = $err;
                 }
             }
         }
@@ -1051,42 +1043,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                         $errs[self::FIELD_IDENTIFIER] = [];
                     }
                     $errs[self::FIELD_IDENTIFIER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_MANIPULATION])) {
-            $v = $this->getManipulation();
-            foreach($validationRules[self::FIELD_MANIPULATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT, self::FIELD_MANIPULATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_MANIPULATION])) {
-                        $errs[self::FIELD_MANIPULATION] = [];
-                    }
-                    $errs[self::FIELD_MANIPULATION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PARENT])) {
-            $v = $this->getParent();
-            foreach($validationRules[self::FIELD_PARENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT, self::FIELD_PARENT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PARENT])) {
-                        $errs[self::FIELD_PARENT] = [];
-                    }
-                    $errs[self::FIELD_PARENT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PROCESSING])) {
-            $v = $this->getProcessing();
-            foreach($validationRules[self::FIELD_PROCESSING] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT, self::FIELD_PROCESSING, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PROCESSING])) {
-                        $errs[self::FIELD_PROCESSING] = [];
-                    }
-                    $errs[self::FIELD_PROCESSING][$rule] = $err;
                 }
             }
         }
@@ -1114,15 +1070,15 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_QUANTITY])) {
-            $v = $this->getQuantity();
-            foreach($validationRules[self::FIELD_QUANTITY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT, self::FIELD_QUANTITY, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_STATUS])) {
+            $v = $this->getStatus();
+            foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT, self::FIELD_STATUS, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_QUANTITY])) {
-                        $errs[self::FIELD_QUANTITY] = [];
+                    if (!isset($errs[self::FIELD_STATUS])) {
+                        $errs[self::FIELD_STATUS] = [];
                     }
-                    $errs[self::FIELD_QUANTITY][$rule] = $err;
+                    $errs[self::FIELD_STATUS][$rule] = $err;
                 }
             }
         }
@@ -1138,15 +1094,63 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_STATUS])) {
-            $v = $this->getStatus();
-            foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT, self::FIELD_STATUS, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_QUANTITY])) {
+            $v = $this->getQuantity();
+            foreach($validationRules[self::FIELD_QUANTITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT, self::FIELD_QUANTITY, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_STATUS])) {
-                        $errs[self::FIELD_STATUS] = [];
+                    if (!isset($errs[self::FIELD_QUANTITY])) {
+                        $errs[self::FIELD_QUANTITY] = [];
                     }
-                    $errs[self::FIELD_STATUS][$rule] = $err;
+                    $errs[self::FIELD_QUANTITY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PARENT])) {
+            $v = $this->getParent();
+            foreach($validationRules[self::FIELD_PARENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT, self::FIELD_PARENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PARENT])) {
+                        $errs[self::FIELD_PARENT] = [];
+                    }
+                    $errs[self::FIELD_PARENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_COLLECTION])) {
+            $v = $this->getCollection();
+            foreach($validationRules[self::FIELD_COLLECTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT, self::FIELD_COLLECTION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_COLLECTION])) {
+                        $errs[self::FIELD_COLLECTION] = [];
+                    }
+                    $errs[self::FIELD_COLLECTION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PROCESSING])) {
+            $v = $this->getProcessing();
+            foreach($validationRules[self::FIELD_PROCESSING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT, self::FIELD_PROCESSING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PROCESSING])) {
+                        $errs[self::FIELD_PROCESSING] = [];
+                    }
+                    $errs[self::FIELD_PROCESSING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MANIPULATION])) {
+            $v = $this->getManipulation();
+            foreach($validationRules[self::FIELD_MANIPULATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT, self::FIELD_MANIPULATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MANIPULATION])) {
+                        $errs[self::FIELD_MANIPULATION] = [];
+                    }
+                    $errs[self::FIELD_MANIPULATION][$rule] = $err;
                 }
             }
         }
@@ -1159,6 +1163,18 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                         $errs[self::FIELD_STORAGE] = [];
                     }
                     $errs[self::FIELD_STORAGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
+                    }
+                    $errs[self::FIELD_TEXT][$rule] = $err;
                 }
             }
         }
@@ -1198,18 +1214,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ID])) {
             $v = $this->getId();
             foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
@@ -1219,6 +1223,18 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                         $errs[self::FIELD_ID] = [];
                     }
                     $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
                 }
             }
         }
@@ -1246,185 +1262,229 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_META])) {
-            $v = $this->getMeta();
-            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_META])) {
-                        $errs[self::FIELD_META] = [];
-                    }
-                    $errs[self::FIELD_META][$rule] = $err;
-                }
-            }
-        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRBiologicallyDerivedProduct::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRBiologicallyDerivedProduct::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRBiologicallyDerivedProduct::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRBiologicallyDerivedProduct;
+            $type = new FHIRBiologicallyDerivedProduct(null);
         } elseif (!is_object($type) || !($type instanceof FHIRBiologicallyDerivedProduct)) {
             throw new \RuntimeException(sprintf(
                 'FHIRBiologicallyDerivedProduct::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRBiologicallyDerivedProduct or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRDomainResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_IDENTIFIER === $n->nodeName) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_PRODUCT_CATEGORY === $n->nodeName) {
+                $type->setProductCategory(FHIRBiologicallyDerivedProductCategory::xmlUnserialize($n));
+            } elseif (self::FIELD_PRODUCT_CODE === $n->nodeName) {
+                $type->setProductCode(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_STATUS === $n->nodeName) {
+                $type->setStatus(FHIRBiologicallyDerivedProductStatus::xmlUnserialize($n));
+            } elseif (self::FIELD_REQUEST === $n->nodeName) {
+                $type->addRequest(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_QUANTITY === $n->nodeName) {
+                $type->setQuantity(FHIRInteger::xmlUnserialize($n));
+            } elseif (self::FIELD_PARENT === $n->nodeName) {
+                $type->addParent(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_COLLECTION === $n->nodeName) {
+                $type->setCollection(FHIRBiologicallyDerivedProductCollection::xmlUnserialize($n));
+            } elseif (self::FIELD_PROCESSING === $n->nodeName) {
+                $type->addProcessing(FHIRBiologicallyDerivedProductProcessing::xmlUnserialize($n));
+            } elseif (self::FIELD_MANIPULATION === $n->nodeName) {
+                $type->setManipulation(FHIRBiologicallyDerivedProductManipulation::xmlUnserialize($n));
+            } elseif (self::FIELD_STORAGE === $n->nodeName) {
+                $type->addStorage(FHIRBiologicallyDerivedProductStorage::xmlUnserialize($n));
+            } elseif (self::FIELD_TEXT === $n->nodeName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n));
+            } elseif (self::FIELD_CONTAINED === $n->nodeName) {
+                for ($ni = 0; $ni < $n->childNodes->length; $ni++) {
+                    $nn = $n->childNodes->item($ni);
+                    if ($nn instanceof \DOMElement) {
+                        $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn));
+                    }
+                }
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRId::xmlUnserialize($n));
+            } elseif (self::FIELD_META === $n->nodeName) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($n));
+            } elseif (self::FIELD_IMPLICIT_RULES === $n->nodeName) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_LANGUAGE === $n->nodeName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->collection)) {
-            $type->setCollection(FHIRBiologicallyDerivedProductCollection::xmlUnserialize($children->collection));
-        }
-        if (isset($children->identifier)) {
-            foreach($children->identifier as $child) {
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->manipulation)) {
-            $type->setManipulation(FHIRBiologicallyDerivedProductManipulation::xmlUnserialize($children->manipulation));
-        }
-        if (isset($children->parent)) {
-            foreach($children->parent as $child) {
-                $type->addParent(FHIRReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->processing)) {
-            foreach($children->processing as $child) {
-                $type->addProcessing(FHIRBiologicallyDerivedProductProcessing::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->productCategory)) {
-            $type->setProductCategory(FHIRBiologicallyDerivedProductCategory::xmlUnserialize($children->productCategory));
-        }
-        if (isset($children->productCode)) {
-            $type->setProductCode(FHIRCodeableConcept::xmlUnserialize($children->productCode));
-        }
-        if (isset($children->quantity)) {
-            $type->setQuantity(FHIRInteger::xmlUnserialize($children->quantity));
-        }
-        if (isset($attributes->quantity)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_QUANTITY);
+        if (null !== $n) {
             $pt = $type->getQuantity();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->quantity);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setQuantity((string)$attributes->quantity);
+                $type->setQuantity($n->nodeValue);
             }
         }
-        if (isset($children->request)) {
-            foreach($children->request as $child) {
-                $type->addRequest(FHIRReference::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
-        if (isset($children->status)) {
-            $type->setStatus(FHIRBiologicallyDerivedProductStatus::xmlUnserialize($children->status));
+        $n = $element->attributes->getNamedItem(self::FIELD_IMPLICIT_RULES);
+        if (null !== $n) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setImplicitRules($n->nodeValue);
+            }
         }
-        if (isset($children->storage)) {
-            foreach($children->storage as $child) {
-                $type->addStorage(FHIRBiologicallyDerivedProductStorage::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_LANGUAGE);
+        if (null !== $n) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setLanguage($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getCollection())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTION, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getManipulation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MANIPULATION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getParent())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PARENT, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if ([] !== ($vs = $this->getProcessing())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PROCESSING, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_IDENTIFIER);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if (null !== ($v = $this->getProductCategory())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT_CATEGORY, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_PRODUCT_CATEGORY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getProductCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT_CODE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_PRODUCT_CODE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getStatus())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_STATUS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getRequest())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_REQUEST);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getQuantity())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_QUANTITY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getParent())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_PARENT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if (null !== ($v = $this->getCollection())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_COLLECTION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getProcessing())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_PROCESSING);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if (null !== ($v = $this->getManipulation())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_MANIPULATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getStorage())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_STORAGE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_STORAGE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -1433,9 +1493,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCollection())) {
-            $a[self::FIELD_COLLECTION] = $v;
-        }
         if ([] !== ($vs = $this->getIdentifier())) {
             $a[self::FIELD_IDENTIFIER] = [];
             foreach($vs as $v) {
@@ -1445,46 +1502,27 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                 $a[self::FIELD_IDENTIFIER][] = $v;
             }
         }
-        if (null !== ($v = $this->getManipulation())) {
-            $a[self::FIELD_MANIPULATION] = $v;
-        }
-        if ([] !== ($vs = $this->getParent())) {
-            $a[self::FIELD_PARENT] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PARENT][] = $v;
-            }
-        }
-        if ([] !== ($vs = $this->getProcessing())) {
-            $a[self::FIELD_PROCESSING] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PROCESSING][] = $v;
-            }
-        }
         if (null !== ($v = $this->getProductCategory())) {
-            $a[self::FIELD_PRODUCT_CATEGORY] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBiologicallyDerivedProductCategory::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBiologicallyDerivedProductCategory::FIELD_VALUE]);
-                $a[self::FIELD_PRODUCT_CATEGORY_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PRODUCT_CATEGORY] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBiologicallyDerivedProductCategory::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PRODUCT_CATEGORY_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getProductCode())) {
             $a[self::FIELD_PRODUCT_CODE] = $v;
         }
-        if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_QUANTITY_EXT] = $enc;
+        if (null !== ($v = $this->getStatus())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBiologicallyDerivedProductStatus::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_STATUS_EXT] = $ext;
             }
         }
         if ([] !== ($vs = $this->getRequest())) {
@@ -1496,14 +1534,39 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                 $a[self::FIELD_REQUEST][] = $v;
             }
         }
-        if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBiologicallyDerivedProductStatus::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBiologicallyDerivedProductStatus::FIELD_VALUE]);
-                $a[self::FIELD_STATUS_EXT] = $enc;
+        if (null !== ($v = $this->getQuantity())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_QUANTITY] = $val;
             }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRInteger::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_QUANTITY_EXT] = $ext;
+            }
+        }
+        if ([] !== ($vs = $this->getParent())) {
+            $a[self::FIELD_PARENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PARENT][] = $v;
+            }
+        }
+        if (null !== ($v = $this->getCollection())) {
+            $a[self::FIELD_COLLECTION] = $v;
+        }
+        if ([] !== ($vs = $this->getProcessing())) {
+            $a[self::FIELD_PROCESSING] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PROCESSING][] = $v;
+            }
+        }
+        if (null !== ($v = $this->getManipulation())) {
+            $a[self::FIELD_MANIPULATION] = $v;
         }
         if ([] !== ($vs = $this->getStorage())) {
             $a[self::FIELD_STORAGE] = [];
@@ -1513,9 +1576,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
                 }
                 $a[self::FIELD_STORAGE][] = $v;
             }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

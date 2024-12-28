@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,8 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanD
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionConditionKind;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -81,12 +83,22 @@ class FHIRPlanDefinitionCondition extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_CONDITION;
-    const FIELD_EXPRESSION = 'expression';
     const FIELD_KIND = 'kind';
     const FIELD_KIND_EXT = '_kind';
+    const FIELD_EXPRESSION = 'expression';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * Defines the kinds of conditions that can appear on actions.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The kind of condition.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionConditionKind
+     */
+    protected $kind = null;
 
     /**
      * A expression that is evaluated in a specified context and returns a value. The
@@ -101,16 +113,6 @@ class FHIRPlanDefinitionCondition extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
     protected $expression = null;
-
-    /**
-     * Defines the kinds of conditions that can appear on actions.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The kind of condition.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionConditionKind
-     */
-    protected $kind = null;
 
     /**
      * Validation map for fields in type PlanDefinition.Condition
@@ -134,24 +136,9 @@ class FHIRPlanDefinitionCondition extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_EXPRESSION])) {
-            if ($data[self::FIELD_EXPRESSION] instanceof FHIRExpression) {
-                $this->setExpression($data[self::FIELD_EXPRESSION]);
-            } else {
-                $this->setExpression(new FHIRExpression($data[self::FIELD_EXPRESSION]));
-            }
-        }
         if (isset($data[self::FIELD_KIND]) || isset($data[self::FIELD_KIND_EXT])) {
-            if (isset($data[self::FIELD_KIND])) {
-                $value = $data[self::FIELD_KIND];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_KIND_EXT]) && is_array($data[self::FIELD_KIND_EXT])) {
-                $ext = $data[self::FIELD_KIND_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_KIND]) ? $data[self::FIELD_KIND] : null;
+            $ext = (isset($data[self::FIELD_KIND_EXT]) && is_array($data[self::FIELD_KIND_EXT])) ? $ext = $data[self::FIELD_KIND_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRActionConditionKind) {
                     $this->setKind($value);
@@ -160,8 +147,15 @@ class FHIRPlanDefinitionCondition extends FHIRBackboneElement
                 } else {
                     $this->setKind(new FHIRActionConditionKind([FHIRActionConditionKind::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setKind(new FHIRActionConditionKind($ext));
+            }
+        }
+        if (isset($data[self::FIELD_EXPRESSION])) {
+            if ($data[self::FIELD_EXPRESSION] instanceof FHIRExpression) {
+                $this->setExpression($data[self::FIELD_EXPRESSION]);
+            } else {
+                $this->setExpression(new FHIRExpression($data[self::FIELD_EXPRESSION]));
             }
         }
     }
@@ -180,10 +174,39 @@ class FHIRPlanDefinitionCondition extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<PlanDefinitionCondition{$xmlns}></PlanDefinitionCondition>";
+    }
+
+    /**
+     * Defines the kinds of conditions that can appear on actions.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The kind of condition.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionConditionKind
+     */
+    public function getKind()
+    {
+        return $this->kind;
+    }
+
+    /**
+     * Defines the kinds of conditions that can appear on actions.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The kind of condition.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionConditionKind $kind
+     * @return static
+     */
+    public function setKind(FHIRActionConditionKind $kind = null)
+    {
+        $this->_trackValueSet($this->kind, $kind);
+        $this->kind = $kind;
+        return $this;
     }
 
     /**
@@ -218,35 +241,8 @@ class FHIRPlanDefinitionCondition extends FHIRBackboneElement
      */
     public function setExpression(FHIRExpression $expression = null)
     {
+        $this->_trackValueSet($this->expression, $expression);
         $this->expression = $expression;
-        return $this;
-    }
-
-    /**
-     * Defines the kinds of conditions that can appear on actions.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The kind of condition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionConditionKind
-     */
-    public function getKind()
-    {
-        return $this->kind;
-    }
-
-    /**
-     * Defines the kinds of conditions that can appear on actions.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The kind of condition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRActionConditionKind $kind
-     * @return static
-     */
-    public function setKind(FHIRActionConditionKind $kind = null)
-    {
-        $this->kind = $kind;
         return $this;
     }
 
@@ -271,26 +267,14 @@ class FHIRPlanDefinitionCondition extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getExpression())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_EXPRESSION] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getKind())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_KIND] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_EXPRESSION])) {
-            $v = $this->getExpression();
-            foreach($validationRules[self::FIELD_EXPRESSION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_CONDITION, self::FIELD_EXPRESSION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EXPRESSION])) {
-                        $errs[self::FIELD_EXPRESSION] = [];
-                    }
-                    $errs[self::FIELD_EXPRESSION][$rule] = $err;
-                }
+        if (null !== ($v = $this->getExpression())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EXPRESSION] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_KIND])) {
@@ -302,6 +286,18 @@ class FHIRPlanDefinitionCondition extends FHIRBackboneElement
                         $errs[self::FIELD_KIND] = [];
                     }
                     $errs[self::FIELD_KIND][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXPRESSION])) {
+            $v = $this->getExpression();
+            foreach($validationRules[self::FIELD_EXPRESSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_CONDITION, self::FIELD_EXPRESSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXPRESSION])) {
+                        $errs[self::FIELD_EXPRESSION] = [];
+                    }
+                    $errs[self::FIELD_EXPRESSION][$rule] = $err;
                 }
             }
         }
@@ -345,72 +341,95 @@ class FHIRPlanDefinitionCondition extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRPlanDefinitionCondition::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRPlanDefinitionCondition::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRPlanDefinitionCondition::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRPlanDefinitionCondition;
+            $type = new FHIRPlanDefinitionCondition(null);
         } elseif (!is_object($type) || !($type instanceof FHIRPlanDefinitionCondition)) {
             throw new \RuntimeException(sprintf(
                 'FHIRPlanDefinitionCondition::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_KIND === $n->nodeName) {
+                $type->setKind(FHIRActionConditionKind::xmlUnserialize($n));
+            } elseif (self::FIELD_EXPRESSION === $n->nodeName) {
+                $type->setExpression(FHIRExpression::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->expression)) {
-            $type->setExpression(FHIRExpression::xmlUnserialize($children->expression));
-        }
-        if (isset($children->kind)) {
-            $type->setKind(FHIRActionConditionKind::xmlUnserialize($children->kind));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getExpression())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXPRESSION, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getKind())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_KIND, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_KIND);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getExpression())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_EXPRESSION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -419,20 +438,18 @@ class FHIRPlanDefinitionCondition extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getExpression())) {
-            $a[self::FIELD_EXPRESSION] = $v;
-        }
         if (null !== ($v = $this->getKind())) {
-            $a[self::FIELD_KIND] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRActionConditionKind::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRActionConditionKind::FIELD_VALUE]);
-                $a[self::FIELD_KIND_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_KIND] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRActionConditionKind::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_KIND_EXT] = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getExpression())) {
+            $a[self::FIELD_EXPRESSION] = $v;
         }
         return $a;
     }

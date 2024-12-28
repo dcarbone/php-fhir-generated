@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -79,39 +81,12 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CONTRAINDICATION_DOT_OTHER_THERAPY;
+    const FIELD_THERAPY_RELATIONSHIP_TYPE = 'therapyRelationshipType';
     const FIELD_MEDICATION_CODEABLE_CONCEPT = 'medicationCodeableConcept';
     const FIELD_MEDICATION_REFERENCE = 'medicationReference';
-    const FIELD_THERAPY_RELATIONSHIP_TYPE = 'therapyRelationshipType';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Reference to a specific medication (active substance, medicinal product or class
-     * of products) as part of an indication or contraindication. (choose any one of
-     * medication*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $medicationCodeableConcept = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Reference to a specific medication (active substance, medicinal product or class
-     * of products) as part of an indication or contraindication. (choose any one of
-     * medication*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $medicationReference = null;
+    private $_xmlns = '';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -125,6 +100,31 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected $therapyRelationshipType = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reference to a specific medication (active substance, medicinal product or class
+     * of products) as part of an indication or contraindication.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $medicationCodeableConcept = null;
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reference to a specific medication (active substance, medicinal product or class
+     * of products) as part of an indication or contraindication.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected $medicationReference = null;
 
     /**
      * Validation map for fields in type MedicinalProductContraindication.OtherTherapy
@@ -148,6 +148,13 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_THERAPY_RELATIONSHIP_TYPE])) {
+            if ($data[self::FIELD_THERAPY_RELATIONSHIP_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setTherapyRelationshipType($data[self::FIELD_THERAPY_RELATIONSHIP_TYPE]);
+            } else {
+                $this->setTherapyRelationshipType(new FHIRCodeableConcept($data[self::FIELD_THERAPY_RELATIONSHIP_TYPE]));
+            }
+        }
         if (isset($data[self::FIELD_MEDICATION_CODEABLE_CONCEPT])) {
             if ($data[self::FIELD_MEDICATION_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
                 $this->setMedicationCodeableConcept($data[self::FIELD_MEDICATION_CODEABLE_CONCEPT]);
@@ -160,13 +167,6 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
                 $this->setMedicationReference($data[self::FIELD_MEDICATION_REFERENCE]);
             } else {
                 $this->setMedicationReference(new FHIRReference($data[self::FIELD_MEDICATION_REFERENCE]));
-            }
-        }
-        if (isset($data[self::FIELD_THERAPY_RELATIONSHIP_TYPE])) {
-            if ($data[self::FIELD_THERAPY_RELATIONSHIP_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setTherapyRelationshipType($data[self::FIELD_THERAPY_RELATIONSHIP_TYPE]);
-            } else {
-                $this->setTherapyRelationshipType(new FHIRCodeableConcept($data[self::FIELD_THERAPY_RELATIONSHIP_TYPE]));
             }
         }
     }
@@ -185,80 +185,10 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<MedicinalProductContraindicationOtherTherapy{$xmlns}></MedicinalProductContraindicationOtherTherapy>";
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Reference to a specific medication (active substance, medicinal product or class
-     * of products) as part of an indication or contraindication. (choose any one of
-     * medication*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getMedicationCodeableConcept()
-    {
-        return $this->medicationCodeableConcept;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Reference to a specific medication (active substance, medicinal product or class
-     * of products) as part of an indication or contraindication. (choose any one of
-     * medication*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
-     * @return static
-     */
-    public function setMedicationCodeableConcept(FHIRCodeableConcept $medicationCodeableConcept = null)
-    {
-        $this->medicationCodeableConcept = $medicationCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Reference to a specific medication (active substance, medicinal product or class
-     * of products) as part of an indication or contraindication. (choose any one of
-     * medication*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getMedicationReference()
-    {
-        return $this->medicationReference;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Reference to a specific medication (active substance, medicinal product or class
-     * of products) as part of an indication or contraindication. (choose any one of
-     * medication*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $medicationReference
-     * @return static
-     */
-    public function setMedicationReference(FHIRReference $medicationReference = null)
-    {
-        $this->medicationReference = $medicationReference;
-        return $this;
     }
 
     /**
@@ -291,7 +221,76 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
      */
     public function setTherapyRelationshipType(FHIRCodeableConcept $therapyRelationshipType = null)
     {
+        $this->_trackValueSet($this->therapyRelationshipType, $therapyRelationshipType);
         $this->therapyRelationshipType = $therapyRelationshipType;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reference to a specific medication (active substance, medicinal product or class
+     * of products) as part of an indication or contraindication.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getMedicationCodeableConcept()
+    {
+        return $this->medicationCodeableConcept;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reference to a specific medication (active substance, medicinal product or class
+     * of products) as part of an indication or contraindication.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $medicationCodeableConcept
+     * @return static
+     */
+    public function setMedicationCodeableConcept(FHIRCodeableConcept $medicationCodeableConcept = null)
+    {
+        $this->_trackValueSet($this->medicationCodeableConcept, $medicationCodeableConcept);
+        $this->medicationCodeableConcept = $medicationCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reference to a specific medication (active substance, medicinal product or class
+     * of products) as part of an indication or contraindication.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getMedicationReference()
+    {
+        return $this->medicationReference;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reference to a specific medication (active substance, medicinal product or class
+     * of products) as part of an indication or contraindication.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $medicationReference
+     * @return static
+     */
+    public function setMedicationReference(FHIRReference $medicationReference = null)
+    {
+        $this->_trackValueSet($this->medicationReference, $medicationReference);
+        $this->medicationReference = $medicationReference;
         return $this;
     }
 
@@ -316,6 +315,11 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getTherapyRelationshipType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_THERAPY_RELATIONSHIP_TYPE] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getMedicationCodeableConcept())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_MEDICATION_CODEABLE_CONCEPT] = $fieldErrs;
@@ -326,9 +330,16 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
                 $errs[self::FIELD_MEDICATION_REFERENCE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getTherapyRelationshipType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_THERAPY_RELATIONSHIP_TYPE] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_THERAPY_RELATIONSHIP_TYPE])) {
+            $v = $this->getTherapyRelationshipType();
+            foreach($validationRules[self::FIELD_THERAPY_RELATIONSHIP_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CONTRAINDICATION_DOT_OTHER_THERAPY, self::FIELD_THERAPY_RELATIONSHIP_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_THERAPY_RELATIONSHIP_TYPE])) {
+                        $errs[self::FIELD_THERAPY_RELATIONSHIP_TYPE] = [];
+                    }
+                    $errs[self::FIELD_THERAPY_RELATIONSHIP_TYPE][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_MEDICATION_CODEABLE_CONCEPT])) {
@@ -352,18 +363,6 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
                         $errs[self::FIELD_MEDICATION_REFERENCE] = [];
                     }
                     $errs[self::FIELD_MEDICATION_REFERENCE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_THERAPY_RELATIONSHIP_TYPE])) {
-            $v = $this->getTherapyRelationshipType();
-            foreach($validationRules[self::FIELD_THERAPY_RELATIONSHIP_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_CONTRAINDICATION_DOT_OTHER_THERAPY, self::FIELD_THERAPY_RELATIONSHIP_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_THERAPY_RELATIONSHIP_TYPE])) {
-                        $errs[self::FIELD_THERAPY_RELATIONSHIP_TYPE] = [];
-                    }
-                    $errs[self::FIELD_THERAPY_RELATIONSHIP_TYPE][$rule] = $err;
                 }
             }
         }
@@ -407,78 +406,102 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRMedicinalProductContraindicationOtherTherapy::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMedicinalProductContraindicationOtherTherapy::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRMedicinalProductContraindicationOtherTherapy::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRMedicinalProductContraindicationOtherTherapy;
+            $type = new FHIRMedicinalProductContraindicationOtherTherapy(null);
         } elseif (!is_object($type) || !($type instanceof FHIRMedicinalProductContraindicationOtherTherapy)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMedicinalProductContraindicationOtherTherapy::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductContraindication\FHIRMedicinalProductContraindicationOtherTherapy or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_THERAPY_RELATIONSHIP_TYPE === $n->nodeName) {
+                $type->setTherapyRelationshipType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICATION_CODEABLE_CONCEPT === $n->nodeName) {
+                $type->setMedicationCodeableConcept(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICATION_REFERENCE === $n->nodeName) {
+                $type->setMedicationReference(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->medicationCodeableConcept)) {
-            $type->setMedicationCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->medicationCodeableConcept));
-        }
-        if (isset($children->medicationReference)) {
-            $type->setMedicationReference(FHIRReference::xmlUnserialize($children->medicationReference));
-        }
-        if (isset($children->therapyRelationshipType)) {
-            $type->setTherapyRelationshipType(FHIRCodeableConcept::xmlUnserialize($children->therapyRelationshipType));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getTherapyRelationshipType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_THERAPY_RELATIONSHIP_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if (null !== ($v = $this->getMedicationCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MEDICATION_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_MEDICATION_CODEABLE_CONCEPT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getMedicationReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MEDICATION_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_MEDICATION_REFERENCE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getTherapyRelationshipType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_THERAPY_RELATIONSHIP_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -487,17 +510,14 @@ class FHIRMedicinalProductContraindicationOtherTherapy extends FHIRBackboneEleme
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getTherapyRelationshipType())) {
+            $a[self::FIELD_THERAPY_RELATIONSHIP_TYPE] = $v;
+        }
         if (null !== ($v = $this->getMedicationCodeableConcept())) {
             $a[self::FIELD_MEDICATION_CODEABLE_CONCEPT] = $v;
         }
         if (null !== ($v = $this->getMedicationReference())) {
             $a[self::FIELD_MEDICATION_REFERENCE] = $v;
-        }
-        if (null !== ($v = $this->getTherapyRelationshipType())) {
-            $a[self::FIELD_THERAPY_RELATIONSHIP_TYPE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

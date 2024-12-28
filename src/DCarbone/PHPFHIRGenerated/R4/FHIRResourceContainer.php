@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -210,8 +210,6 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRVisionPresc
 use DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRParameters;
 
 /**
- * (choose any one of the elements, but only one)
- *
  * Class FHIRResourceContainer
  * @package \DCarbone\PHPFHIRGenerated\R4
  */
@@ -219,6 +217,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
 {
     use PHPFHIRCommentContainerTrait;
     use PHPFHIRValidationAssertionsTrait;
+    use PHPFHIRChangeTrackingTrait;
 
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_CONTAINER;
@@ -324,7 +323,6 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
     const FIELD_OPERATION_OUTCOME = 'OperationOutcome';
     const FIELD_ORGANIZATION = 'Organization';
     const FIELD_ORGANIZATION_AFFILIATION = 'OrganizationAffiliation';
-    const FIELD_PARAMETERS = 'Parameters';
     const FIELD_PATIENT = 'Patient';
     const FIELD_PAYMENT_NOTICE = 'PaymentNotice';
     const FIELD_PAYMENT_RECONCILIATION = 'PaymentReconciliation';
@@ -369,9 +367,10 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
     const FIELD_VALUE_SET = 'ValueSet';
     const FIELD_VERIFICATION_RESULT = 'VerificationResult';
     const FIELD_VISION_PRESCRIPTION = 'VisionPrescription';
+    const FIELD_PARAMETERS = 'Parameters';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * A financial tool for tracking value accrued for a particular purpose. In the
@@ -1359,16 +1358,6 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
     protected $OrganizationAffiliation = null;
 
     /**
-     * This resource is a non-persisted resource used to pass information into and back
-     * from an [operation](operations.html). It has no other use, and there is no
-     * RESTful endpoint associated with it.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRParameters
-     */
-    protected $Parameters = null;
-
-    /**
      * Demographics and other administrative information about an individual or animal
      * receiving care or other health-related services.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1799,6 +1788,16 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
     protected $VisionPrescription = null;
 
     /**
+     * This resource is a non-persisted resource used to pass information into and back
+     * from an [operation](operations.html). It has no other use, and there is no
+     * RESTful endpoint associated with it.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRParameters
+     */
+    protected $Parameters = null;
+
+    /**
      * Validation map for fields in type ResourceContainer
      * @var array
      */
@@ -1822,7 +1821,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
         if (isset($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
             if (is_array($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
                 $this->_setFHIRComments($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS]);
-            } else if (is_string($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
+            } elseif (is_string($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
                 $this->_addFHIRComment($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS]);
             }
         }
@@ -2533,13 +2532,6 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
                 $this->setOrganizationAffiliation(new FHIROrganizationAffiliation($data[self::FIELD_ORGANIZATION_AFFILIATION]));
             }
         }
-        if (isset($data[self::FIELD_PARAMETERS])) {
-            if ($data[self::FIELD_PARAMETERS] instanceof FHIRParameters) {
-                $this->setParameters($data[self::FIELD_PARAMETERS]);
-            } else {
-                $this->setParameters(new FHIRParameters($data[self::FIELD_PARAMETERS]));
-            }
-        }
         if (isset($data[self::FIELD_PATIENT])) {
             if ($data[self::FIELD_PATIENT] instanceof FHIRPatient) {
                 $this->setPatient($data[self::FIELD_PATIENT]);
@@ -2848,6 +2840,13 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
                 $this->setVisionPrescription(new FHIRVisionPrescription($data[self::FIELD_VISION_PRESCRIPTION]));
             }
         }
+        if (isset($data[self::FIELD_PARAMETERS])) {
+            if ($data[self::FIELD_PARAMETERS] instanceof FHIRParameters) {
+                $this->setParameters($data[self::FIELD_PARAMETERS]);
+            } else {
+                $this->setParameters(new FHIRParameters($data[self::FIELD_PARAMETERS]));
+            }
+        }
     }
 
     /**
@@ -2859,11 +2858,11 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
     }
 
     /**
-     * @return string|null
+     * @return string
      */
     public function _getFHIRXMLNamespace()
     {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
+        return $this->_xmlns;
     }
 
     /**
@@ -2872,15 +2871,10 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
+        $this->_xmlns = trim((string)$xmlNamespace);
+        return $this;
     }
+
 
     /**
      * @return string
@@ -2888,7 +2882,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ResourceContainer{$xmlns}></ResourceContainer>";
@@ -2916,6 +2910,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setAccount(FHIRAccount $Account = null)
     {
+        $this->_trackValueSet($this->Account, $Account);
         $this->Account = $Account;
         return $this;
     }
@@ -2942,6 +2937,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setActivityDefinition(FHIRActivityDefinition $ActivityDefinition = null)
     {
+        $this->_trackValueSet($this->ActivityDefinition, $ActivityDefinition);
         $this->ActivityDefinition = $ActivityDefinition;
         return $this;
     }
@@ -2972,6 +2968,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setAdverseEvent(FHIRAdverseEvent $AdverseEvent = null)
     {
+        $this->_trackValueSet($this->AdverseEvent, $AdverseEvent);
         $this->AdverseEvent = $AdverseEvent;
         return $this;
     }
@@ -2998,6 +2995,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setAllergyIntolerance(FHIRAllergyIntolerance $AllergyIntolerance = null)
     {
+        $this->_trackValueSet($this->AllergyIntolerance, $AllergyIntolerance);
         $this->AllergyIntolerance = $AllergyIntolerance;
         return $this;
     }
@@ -3026,6 +3024,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setAppointment(FHIRAppointment $Appointment = null)
     {
+        $this->_trackValueSet($this->Appointment, $Appointment);
         $this->Appointment = $Appointment;
         return $this;
     }
@@ -3052,6 +3051,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setAppointmentResponse(FHIRAppointmentResponse $AppointmentResponse = null)
     {
+        $this->_trackValueSet($this->AppointmentResponse, $AppointmentResponse);
         $this->AppointmentResponse = $AppointmentResponse;
         return $this;
     }
@@ -3080,6 +3080,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setAuditEvent(FHIRAuditEvent $AuditEvent = null)
     {
+        $this->_trackValueSet($this->AuditEvent, $AuditEvent);
         $this->AuditEvent = $AuditEvent;
         return $this;
     }
@@ -3108,6 +3109,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setBasic(FHIRBasic $Basic = null)
     {
+        $this->_trackValueSet($this->Basic, $Basic);
         $this->Basic = $Basic;
         return $this;
     }
@@ -3136,6 +3138,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setBinary(FHIRBinary $Binary = null)
     {
+        $this->_trackValueSet($this->Binary, $Binary);
         $this->Binary = $Binary;
         return $this;
     }
@@ -3162,6 +3165,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setBiologicallyDerivedProduct(FHIRBiologicallyDerivedProduct $BiologicallyDerivedProduct = null)
     {
+        $this->_trackValueSet($this->BiologicallyDerivedProduct, $BiologicallyDerivedProduct);
         $this->BiologicallyDerivedProduct = $BiologicallyDerivedProduct;
         return $this;
     }
@@ -3188,6 +3192,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setBodyStructure(FHIRBodyStructure $BodyStructure = null)
     {
+        $this->_trackValueSet($this->BodyStructure, $BodyStructure);
         $this->BodyStructure = $BodyStructure;
         return $this;
     }
@@ -3212,6 +3217,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setBundle(FHIRBundle $Bundle = null)
     {
+        $this->_trackValueSet($this->Bundle, $Bundle);
         $this->Bundle = $Bundle;
         return $this;
     }
@@ -3242,6 +3248,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setCapabilityStatement(FHIRCapabilityStatement $CapabilityStatement = null)
     {
+        $this->_trackValueSet($this->CapabilityStatement, $CapabilityStatement);
         $this->CapabilityStatement = $CapabilityStatement;
         return $this;
     }
@@ -3270,6 +3277,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setCarePlan(FHIRCarePlan $CarePlan = null)
     {
+        $this->_trackValueSet($this->CarePlan, $CarePlan);
         $this->CarePlan = $CarePlan;
         return $this;
     }
@@ -3296,6 +3304,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setCareTeam(FHIRCareTeam $CareTeam = null)
     {
+        $this->_trackValueSet($this->CareTeam, $CareTeam);
         $this->CareTeam = $CareTeam;
         return $this;
     }
@@ -3320,6 +3329,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setCatalogEntry(FHIRCatalogEntry $CatalogEntry = null)
     {
+        $this->_trackValueSet($this->CatalogEntry, $CatalogEntry);
         $this->CatalogEntry = $CatalogEntry;
         return $this;
     }
@@ -3352,6 +3362,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setChargeItem(FHIRChargeItem $ChargeItem = null)
     {
+        $this->_trackValueSet($this->ChargeItem, $ChargeItem);
         $this->ChargeItem = $ChargeItem;
         return $this;
     }
@@ -3382,6 +3393,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setChargeItemDefinition(FHIRChargeItemDefinition $ChargeItemDefinition = null)
     {
+        $this->_trackValueSet($this->ChargeItemDefinition, $ChargeItemDefinition);
         $this->ChargeItemDefinition = $ChargeItemDefinition;
         return $this;
     }
@@ -3410,6 +3422,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setClaim(FHIRClaim $Claim = null)
     {
+        $this->_trackValueSet($this->Claim, $Claim);
         $this->Claim = $Claim;
         return $this;
     }
@@ -3436,6 +3449,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setClaimResponse(FHIRClaimResponse $ClaimResponse = null)
     {
+        $this->_trackValueSet($this->ClaimResponse, $ClaimResponse);
         $this->ClaimResponse = $ClaimResponse;
         return $this;
     }
@@ -3472,6 +3486,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setClinicalImpression(FHIRClinicalImpression $ClinicalImpression = null)
     {
+        $this->_trackValueSet($this->ClinicalImpression, $ClinicalImpression);
         $this->ClinicalImpression = $ClinicalImpression;
         return $this;
     }
@@ -3500,6 +3515,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setCodeSystem(FHIRCodeSystem $CodeSystem = null)
     {
+        $this->_trackValueSet($this->CodeSystem, $CodeSystem);
         $this->CodeSystem = $CodeSystem;
         return $this;
     }
@@ -3528,6 +3544,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setCommunication(FHIRCommunication $Communication = null)
     {
+        $this->_trackValueSet($this->Communication, $Communication);
         $this->Communication = $Communication;
         return $this;
     }
@@ -3556,6 +3573,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setCommunicationRequest(FHIRCommunicationRequest $CommunicationRequest = null)
     {
+        $this->_trackValueSet($this->CommunicationRequest, $CommunicationRequest);
         $this->CommunicationRequest = $CommunicationRequest;
         return $this;
     }
@@ -3580,6 +3598,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setCompartmentDefinition(FHIRCompartmentDefinition $CompartmentDefinition = null)
     {
+        $this->_trackValueSet($this->CompartmentDefinition, $CompartmentDefinition);
         $this->CompartmentDefinition = $CompartmentDefinition;
         return $this;
     }
@@ -3620,6 +3639,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setComposition(FHIRComposition $Composition = null)
     {
+        $this->_trackValueSet($this->Composition, $Composition);
         $this->Composition = $Composition;
         return $this;
     }
@@ -3648,6 +3668,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setConceptMap(FHIRConceptMap $ConceptMap = null)
     {
+        $this->_trackValueSet($this->ConceptMap, $ConceptMap);
         $this->ConceptMap = $ConceptMap;
         return $this;
     }
@@ -3674,6 +3695,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setCondition(FHIRCondition $Condition = null)
     {
+        $this->_trackValueSet($this->Condition, $Condition);
         $this->Condition = $Condition;
         return $this;
     }
@@ -3702,6 +3724,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setConsent(FHIRConsent $Consent = null)
     {
+        $this->_trackValueSet($this->Consent, $Consent);
         $this->Consent = $Consent;
         return $this;
     }
@@ -3728,6 +3751,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setContract(FHIRContract $Contract = null)
     {
+        $this->_trackValueSet($this->Contract, $Contract);
         $this->Contract = $Contract;
         return $this;
     }
@@ -3754,6 +3778,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setCoverage(FHIRCoverage $Coverage = null)
     {
+        $this->_trackValueSet($this->Coverage, $Coverage);
         $this->Coverage = $Coverage;
         return $this;
     }
@@ -3786,6 +3811,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setCoverageEligibilityRequest(FHIRCoverageEligibilityRequest $CoverageEligibilityRequest = null)
     {
+        $this->_trackValueSet($this->CoverageEligibilityRequest, $CoverageEligibilityRequest);
         $this->CoverageEligibilityRequest = $CoverageEligibilityRequest;
         return $this;
     }
@@ -3812,6 +3838,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setCoverageEligibilityResponse(FHIRCoverageEligibilityResponse $CoverageEligibilityResponse = null)
     {
+        $this->_trackValueSet($this->CoverageEligibilityResponse, $CoverageEligibilityResponse);
         $this->CoverageEligibilityResponse = $CoverageEligibilityResponse;
         return $this;
     }
@@ -3840,6 +3867,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setDetectedIssue(FHIRDetectedIssue $DetectedIssue = null)
     {
+        $this->_trackValueSet($this->DetectedIssue, $DetectedIssue);
         $this->DetectedIssue = $DetectedIssue;
         return $this;
     }
@@ -3868,6 +3896,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setDevice(FHIRDevice $Device = null)
     {
+        $this->_trackValueSet($this->Device, $Device);
         $this->Device = $Device;
         return $this;
     }
@@ -3894,6 +3923,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setDeviceDefinition(FHIRDeviceDefinition $DeviceDefinition = null)
     {
+        $this->_trackValueSet($this->DeviceDefinition, $DeviceDefinition);
         $this->DeviceDefinition = $DeviceDefinition;
         return $this;
     }
@@ -3918,6 +3948,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setDeviceMetric(FHIRDeviceMetric $DeviceMetric = null)
     {
+        $this->_trackValueSet($this->DeviceMetric, $DeviceMetric);
         $this->DeviceMetric = $DeviceMetric;
         return $this;
     }
@@ -3944,6 +3975,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setDeviceRequest(FHIRDeviceRequest $DeviceRequest = null)
     {
+        $this->_trackValueSet($this->DeviceRequest, $DeviceRequest);
         $this->DeviceRequest = $DeviceRequest;
         return $this;
     }
@@ -3970,6 +4002,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setDeviceUseStatement(FHIRDeviceUseStatement $DeviceUseStatement = null)
     {
+        $this->_trackValueSet($this->DeviceUseStatement, $DeviceUseStatement);
         $this->DeviceUseStatement = $DeviceUseStatement;
         return $this;
     }
@@ -4002,6 +4035,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setDiagnosticReport(FHIRDiagnosticReport $DiagnosticReport = null)
     {
+        $this->_trackValueSet($this->DiagnosticReport, $DiagnosticReport);
         $this->DiagnosticReport = $DiagnosticReport;
         return $this;
     }
@@ -4028,6 +4062,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setDocumentManifest(FHIRDocumentManifest $DocumentManifest = null)
     {
+        $this->_trackValueSet($this->DocumentManifest, $DocumentManifest);
         $this->DocumentManifest = $DocumentManifest;
         return $this;
     }
@@ -4060,6 +4095,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setDocumentReference(FHIRDocumentReference $DocumentReference = null)
     {
+        $this->_trackValueSet($this->DocumentReference, $DocumentReference);
         $this->DocumentReference = $DocumentReference;
         return $this;
     }
@@ -4088,6 +4124,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setEffectEvidenceSynthesis(FHIREffectEvidenceSynthesis $EffectEvidenceSynthesis = null)
     {
+        $this->_trackValueSet($this->EffectEvidenceSynthesis, $EffectEvidenceSynthesis);
         $this->EffectEvidenceSynthesis = $EffectEvidenceSynthesis;
         return $this;
     }
@@ -4114,6 +4151,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setEncounter(FHIREncounter $Encounter = null)
     {
+        $this->_trackValueSet($this->Encounter, $Encounter);
         $this->Encounter = $Encounter;
         return $this;
     }
@@ -4142,6 +4180,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setEndpoint(FHIREndpoint $Endpoint = null)
     {
+        $this->_trackValueSet($this->Endpoint, $Endpoint);
         $this->Endpoint = $Endpoint;
         return $this;
     }
@@ -4168,6 +4207,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setEnrollmentRequest(FHIREnrollmentRequest $EnrollmentRequest = null)
     {
+        $this->_trackValueSet($this->EnrollmentRequest, $EnrollmentRequest);
         $this->EnrollmentRequest = $EnrollmentRequest;
         return $this;
     }
@@ -4194,6 +4234,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setEnrollmentResponse(FHIREnrollmentResponse $EnrollmentResponse = null)
     {
+        $this->_trackValueSet($this->EnrollmentResponse, $EnrollmentResponse);
         $this->EnrollmentResponse = $EnrollmentResponse;
         return $this;
     }
@@ -4222,6 +4263,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setEpisodeOfCare(FHIREpisodeOfCare $EpisodeOfCare = null)
     {
+        $this->_trackValueSet($this->EpisodeOfCare, $EpisodeOfCare);
         $this->EpisodeOfCare = $EpisodeOfCare;
         return $this;
     }
@@ -4248,6 +4290,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setEventDefinition(FHIREventDefinition $EventDefinition = null)
     {
+        $this->_trackValueSet($this->EventDefinition, $EventDefinition);
         $this->EventDefinition = $EventDefinition;
         return $this;
     }
@@ -4276,6 +4319,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setEvidence(FHIREvidence $Evidence = null)
     {
+        $this->_trackValueSet($this->Evidence, $Evidence);
         $this->Evidence = $Evidence;
         return $this;
     }
@@ -4302,6 +4346,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setEvidenceVariable(FHIREvidenceVariable $EvidenceVariable = null)
     {
+        $this->_trackValueSet($this->EvidenceVariable, $EvidenceVariable);
         $this->EvidenceVariable = $EvidenceVariable;
         return $this;
     }
@@ -4326,6 +4371,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setExampleScenario(FHIRExampleScenario $ExampleScenario = null)
     {
+        $this->_trackValueSet($this->ExampleScenario, $ExampleScenario);
         $this->ExampleScenario = $ExampleScenario;
         return $this;
     }
@@ -4354,6 +4400,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setExplanationOfBenefit(FHIRExplanationOfBenefit $ExplanationOfBenefit = null)
     {
+        $this->_trackValueSet($this->ExplanationOfBenefit, $ExplanationOfBenefit);
         $this->ExplanationOfBenefit = $ExplanationOfBenefit;
         return $this;
     }
@@ -4380,6 +4427,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setFamilyMemberHistory(FHIRFamilyMemberHistory $FamilyMemberHistory = null)
     {
+        $this->_trackValueSet($this->FamilyMemberHistory, $FamilyMemberHistory);
         $this->FamilyMemberHistory = $FamilyMemberHistory;
         return $this;
     }
@@ -4404,6 +4452,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setFlag(FHIRFlag $Flag = null)
     {
+        $this->_trackValueSet($this->Flag, $Flag);
         $this->Flag = $Flag;
         return $this;
     }
@@ -4432,6 +4481,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setGoal(FHIRGoal $Goal = null)
     {
+        $this->_trackValueSet($this->Goal, $Goal);
         $this->Goal = $Goal;
         return $this;
     }
@@ -4460,6 +4510,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setGraphDefinition(FHIRGraphDefinition $GraphDefinition = null)
     {
+        $this->_trackValueSet($this->GraphDefinition, $GraphDefinition);
         $this->GraphDefinition = $GraphDefinition;
         return $this;
     }
@@ -4490,6 +4541,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setGroup(FHIRGroup $Group = null)
     {
+        $this->_trackValueSet($this->Group, $Group);
         $this->Group = $Group;
         return $this;
     }
@@ -4518,6 +4570,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setGuidanceResponse(FHIRGuidanceResponse $GuidanceResponse = null)
     {
+        $this->_trackValueSet($this->GuidanceResponse, $GuidanceResponse);
         $this->GuidanceResponse = $GuidanceResponse;
         return $this;
     }
@@ -4542,6 +4595,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setHealthcareService(FHIRHealthcareService $HealthcareService = null)
     {
+        $this->_trackValueSet($this->HealthcareService, $HealthcareService);
         $this->HealthcareService = $HealthcareService;
         return $this;
     }
@@ -4574,6 +4628,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setImagingStudy(FHIRImagingStudy $ImagingStudy = null)
     {
+        $this->_trackValueSet($this->ImagingStudy, $ImagingStudy);
         $this->ImagingStudy = $ImagingStudy;
         return $this;
     }
@@ -4600,6 +4655,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setImmunization(FHIRImmunization $Immunization = null)
     {
+        $this->_trackValueSet($this->Immunization, $Immunization);
         $this->Immunization = $Immunization;
         return $this;
     }
@@ -4628,6 +4684,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setImmunizationEvaluation(FHIRImmunizationEvaluation $ImmunizationEvaluation = null)
     {
+        $this->_trackValueSet($this->ImmunizationEvaluation, $ImmunizationEvaluation);
         $this->ImmunizationEvaluation = $ImmunizationEvaluation;
         return $this;
     }
@@ -4654,6 +4711,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setImmunizationRecommendation(FHIRImmunizationRecommendation $ImmunizationRecommendation = null)
     {
+        $this->_trackValueSet($this->ImmunizationRecommendation, $ImmunizationRecommendation);
         $this->ImmunizationRecommendation = $ImmunizationRecommendation;
         return $this;
     }
@@ -4684,6 +4742,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setImplementationGuide(FHIRImplementationGuide $ImplementationGuide = null)
     {
+        $this->_trackValueSet($this->ImplementationGuide, $ImplementationGuide);
         $this->ImplementationGuide = $ImplementationGuide;
         return $this;
     }
@@ -4708,6 +4767,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setInsurancePlan(FHIRInsurancePlan $InsurancePlan = null)
     {
+        $this->_trackValueSet($this->InsurancePlan, $InsurancePlan);
         $this->InsurancePlan = $InsurancePlan;
         return $this;
     }
@@ -4734,6 +4794,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setInvoice(FHIRInvoice $Invoice = null)
     {
+        $this->_trackValueSet($this->Invoice, $Invoice);
         $this->Invoice = $Invoice;
         return $this;
     }
@@ -4764,6 +4825,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setLibrary(FHIRLibrary $Library = null)
     {
+        $this->_trackValueSet($this->Library, $Library);
         $this->Library = $Library;
         return $this;
     }
@@ -4790,6 +4852,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setLinkage(FHIRLinkage $Linkage = null)
     {
+        $this->_trackValueSet($this->Linkage, $Linkage);
         $this->Linkage = $Linkage;
         return $this;
     }
@@ -4814,6 +4877,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setList(FHIRList $List = null)
     {
+        $this->_trackValueSet($this->List, $List);
         $this->List = $List;
         return $this;
     }
@@ -4842,6 +4906,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setLocation(FHIRLocation $Location = null)
     {
+        $this->_trackValueSet($this->Location, $Location);
         $this->Location = $Location;
         return $this;
     }
@@ -4866,6 +4931,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMeasure(FHIRMeasure $Measure = null)
     {
+        $this->_trackValueSet($this->Measure, $Measure);
         $this->Measure = $Measure;
         return $this;
     }
@@ -4892,6 +4958,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMeasureReport(FHIRMeasureReport $MeasureReport = null)
     {
+        $this->_trackValueSet($this->MeasureReport, $MeasureReport);
         $this->MeasureReport = $MeasureReport;
         return $this;
     }
@@ -4918,6 +4985,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedia(FHIRMedia $Media = null)
     {
+        $this->_trackValueSet($this->Media, $Media);
         $this->Media = $Media;
         return $this;
     }
@@ -4946,6 +5014,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedication(FHIRMedication $Medication = null)
     {
+        $this->_trackValueSet($this->Medication, $Medication);
         $this->Medication = $Medication;
         return $this;
     }
@@ -4978,6 +5047,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedicationAdministration(FHIRMedicationAdministration $MedicationAdministration = null)
     {
+        $this->_trackValueSet($this->MedicationAdministration, $MedicationAdministration);
         $this->MedicationAdministration = $MedicationAdministration;
         return $this;
     }
@@ -5008,6 +5078,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedicationDispense(FHIRMedicationDispense $MedicationDispense = null)
     {
+        $this->_trackValueSet($this->MedicationDispense, $MedicationDispense);
         $this->MedicationDispense = $MedicationDispense;
         return $this;
     }
@@ -5032,6 +5103,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedicationKnowledge(FHIRMedicationKnowledge $MedicationKnowledge = null)
     {
+        $this->_trackValueSet($this->MedicationKnowledge, $MedicationKnowledge);
         $this->MedicationKnowledge = $MedicationKnowledge;
         return $this;
     }
@@ -5064,6 +5136,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedicationRequest(FHIRMedicationRequest $MedicationRequest = null)
     {
+        $this->_trackValueSet($this->MedicationRequest, $MedicationRequest);
         $this->MedicationRequest = $MedicationRequest;
         return $this;
     }
@@ -5126,6 +5199,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedicationStatement(FHIRMedicationStatement $MedicationStatement = null)
     {
+        $this->_trackValueSet($this->MedicationStatement, $MedicationStatement);
         $this->MedicationStatement = $MedicationStatement;
         return $this;
     }
@@ -5152,6 +5226,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedicinalProduct(FHIRMedicinalProduct $MedicinalProduct = null)
     {
+        $this->_trackValueSet($this->MedicinalProduct, $MedicinalProduct);
         $this->MedicinalProduct = $MedicinalProduct;
         return $this;
     }
@@ -5176,6 +5251,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedicinalProductAuthorization(FHIRMedicinalProductAuthorization $MedicinalProductAuthorization = null)
     {
+        $this->_trackValueSet($this->MedicinalProductAuthorization, $MedicinalProductAuthorization);
         $this->MedicinalProductAuthorization = $MedicinalProductAuthorization;
         return $this;
     }
@@ -5202,6 +5278,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedicinalProductContraindication(FHIRMedicinalProductContraindication $MedicinalProductContraindication = null)
     {
+        $this->_trackValueSet($this->MedicinalProductContraindication, $MedicinalProductContraindication);
         $this->MedicinalProductContraindication = $MedicinalProductContraindication;
         return $this;
     }
@@ -5226,6 +5303,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedicinalProductIndication(FHIRMedicinalProductIndication $MedicinalProductIndication = null)
     {
+        $this->_trackValueSet($this->MedicinalProductIndication, $MedicinalProductIndication);
         $this->MedicinalProductIndication = $MedicinalProductIndication;
         return $this;
     }
@@ -5250,6 +5328,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedicinalProductIngredient(FHIRMedicinalProductIngredient $MedicinalProductIngredient = null)
     {
+        $this->_trackValueSet($this->MedicinalProductIngredient, $MedicinalProductIngredient);
         $this->MedicinalProductIngredient = $MedicinalProductIngredient;
         return $this;
     }
@@ -5276,6 +5355,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedicinalProductInteraction(FHIRMedicinalProductInteraction $MedicinalProductInteraction = null)
     {
+        $this->_trackValueSet($this->MedicinalProductInteraction, $MedicinalProductInteraction);
         $this->MedicinalProductInteraction = $MedicinalProductInteraction;
         return $this;
     }
@@ -5300,6 +5380,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedicinalProductManufactured(FHIRMedicinalProductManufactured $MedicinalProductManufactured = null)
     {
+        $this->_trackValueSet($this->MedicinalProductManufactured, $MedicinalProductManufactured);
         $this->MedicinalProductManufactured = $MedicinalProductManufactured;
         return $this;
     }
@@ -5324,6 +5405,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedicinalProductPackaged(FHIRMedicinalProductPackaged $MedicinalProductPackaged = null)
     {
+        $this->_trackValueSet($this->MedicinalProductPackaged, $MedicinalProductPackaged);
         $this->MedicinalProductPackaged = $MedicinalProductPackaged;
         return $this;
     }
@@ -5348,6 +5430,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedicinalProductPharmaceutical(FHIRMedicinalProductPharmaceutical $MedicinalProductPharmaceutical = null)
     {
+        $this->_trackValueSet($this->MedicinalProductPharmaceutical, $MedicinalProductPharmaceutical);
         $this->MedicinalProductPharmaceutical = $MedicinalProductPharmaceutical;
         return $this;
     }
@@ -5372,6 +5455,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMedicinalProductUndesirableEffect(FHIRMedicinalProductUndesirableEffect $MedicinalProductUndesirableEffect = null)
     {
+        $this->_trackValueSet($this->MedicinalProductUndesirableEffect, $MedicinalProductUndesirableEffect);
         $this->MedicinalProductUndesirableEffect = $MedicinalProductUndesirableEffect;
         return $this;
     }
@@ -5400,6 +5484,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMessageDefinition(FHIRMessageDefinition $MessageDefinition = null)
     {
+        $this->_trackValueSet($this->MessageDefinition, $MessageDefinition);
         $this->MessageDefinition = $MessageDefinition;
         return $this;
     }
@@ -5430,6 +5515,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMessageHeader(FHIRMessageHeader $MessageHeader = null)
     {
+        $this->_trackValueSet($this->MessageHeader, $MessageHeader);
         $this->MessageHeader = $MessageHeader;
         return $this;
     }
@@ -5454,6 +5540,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setMolecularSequence(FHIRMolecularSequence $MolecularSequence = null)
     {
+        $this->_trackValueSet($this->MolecularSequence, $MolecularSequence);
         $this->MolecularSequence = $MolecularSequence;
         return $this;
     }
@@ -5482,6 +5569,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setNamingSystem(FHIRNamingSystem $NamingSystem = null)
     {
+        $this->_trackValueSet($this->NamingSystem, $NamingSystem);
         $this->NamingSystem = $NamingSystem;
         return $this;
     }
@@ -5508,6 +5596,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setNutritionOrder(FHIRNutritionOrder $NutritionOrder = null)
     {
+        $this->_trackValueSet($this->NutritionOrder, $NutritionOrder);
         $this->NutritionOrder = $NutritionOrder;
         return $this;
     }
@@ -5534,6 +5623,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setObservation(FHIRObservation $Observation = null)
     {
+        $this->_trackValueSet($this->Observation, $Observation);
         $this->Observation = $Observation;
         return $this;
     }
@@ -5560,6 +5650,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setObservationDefinition(FHIRObservationDefinition $ObservationDefinition = null)
     {
+        $this->_trackValueSet($this->ObservationDefinition, $ObservationDefinition);
         $this->ObservationDefinition = $ObservationDefinition;
         return $this;
     }
@@ -5586,6 +5677,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setOperationDefinition(FHIROperationDefinition $OperationDefinition = null)
     {
+        $this->_trackValueSet($this->OperationDefinition, $OperationDefinition);
         $this->OperationDefinition = $OperationDefinition;
         return $this;
     }
@@ -5612,6 +5704,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setOperationOutcome(FHIROperationOutcome $OperationOutcome = null)
     {
+        $this->_trackValueSet($this->OperationOutcome, $OperationOutcome);
         $this->OperationOutcome = $OperationOutcome;
         return $this;
     }
@@ -5642,6 +5735,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setOrganization(FHIROrganization $Organization = null)
     {
+        $this->_trackValueSet($this->Organization, $Organization);
         $this->Organization = $Organization;
         return $this;
     }
@@ -5668,35 +5762,8 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setOrganizationAffiliation(FHIROrganizationAffiliation $OrganizationAffiliation = null)
     {
+        $this->_trackValueSet($this->OrganizationAffiliation, $OrganizationAffiliation);
         $this->OrganizationAffiliation = $OrganizationAffiliation;
-        return $this;
-    }
-
-    /**
-     * This resource is a non-persisted resource used to pass information into and back
-     * from an [operation](operations.html). It has no other use, and there is no
-     * RESTful endpoint associated with it.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRParameters
-     */
-    public function getParameters()
-    {
-        return $this->Parameters;
-    }
-
-    /**
-     * This resource is a non-persisted resource used to pass information into and back
-     * from an [operation](operations.html). It has no other use, and there is no
-     * RESTful endpoint associated with it.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRParameters $Parameters
-     * @return static
-     */
-    public function setParameters(FHIRParameters $Parameters = null)
-    {
-        $this->Parameters = $Parameters;
         return $this;
     }
 
@@ -5722,6 +5789,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setPatient(FHIRPatient $Patient = null)
     {
+        $this->_trackValueSet($this->Patient, $Patient);
         $this->Patient = $Patient;
         return $this;
     }
@@ -5748,6 +5816,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setPaymentNotice(FHIRPaymentNotice $PaymentNotice = null)
     {
+        $this->_trackValueSet($this->PaymentNotice, $PaymentNotice);
         $this->PaymentNotice = $PaymentNotice;
         return $this;
     }
@@ -5774,6 +5843,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setPaymentReconciliation(FHIRPaymentReconciliation $PaymentReconciliation = null)
     {
+        $this->_trackValueSet($this->PaymentReconciliation, $PaymentReconciliation);
         $this->PaymentReconciliation = $PaymentReconciliation;
         return $this;
     }
@@ -5800,6 +5870,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setPerson(FHIRPerson $Person = null)
     {
+        $this->_trackValueSet($this->Person, $Person);
         $this->Person = $Person;
         return $this;
     }
@@ -5830,6 +5901,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setPlanDefinition(FHIRPlanDefinition $PlanDefinition = null)
     {
+        $this->_trackValueSet($this->PlanDefinition, $PlanDefinition);
         $this->PlanDefinition = $PlanDefinition;
         return $this;
     }
@@ -5856,6 +5928,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setPractitioner(FHIRPractitioner $Practitioner = null)
     {
+        $this->_trackValueSet($this->Practitioner, $Practitioner);
         $this->Practitioner = $Practitioner;
         return $this;
     }
@@ -5882,6 +5955,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setPractitionerRole(FHIRPractitionerRole $PractitionerRole = null)
     {
+        $this->_trackValueSet($this->PractitionerRole, $PractitionerRole);
         $this->PractitionerRole = $PractitionerRole;
         return $this;
     }
@@ -5910,6 +5984,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setProcedure(FHIRProcedure $Procedure = null)
     {
+        $this->_trackValueSet($this->Procedure, $Procedure);
         $this->Procedure = $Procedure;
         return $this;
     }
@@ -5950,6 +6025,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setProvenance(FHIRProvenance $Provenance = null)
     {
+        $this->_trackValueSet($this->Provenance, $Provenance);
         $this->Provenance = $Provenance;
         return $this;
     }
@@ -5978,6 +6054,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setQuestionnaire(FHIRQuestionnaire $Questionnaire = null)
     {
+        $this->_trackValueSet($this->Questionnaire, $Questionnaire);
         $this->Questionnaire = $Questionnaire;
         return $this;
     }
@@ -6006,6 +6083,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setQuestionnaireResponse(FHIRQuestionnaireResponse $QuestionnaireResponse = null)
     {
+        $this->_trackValueSet($this->QuestionnaireResponse, $QuestionnaireResponse);
         $this->QuestionnaireResponse = $QuestionnaireResponse;
         return $this;
     }
@@ -6034,6 +6112,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setRelatedPerson(FHIRRelatedPerson $RelatedPerson = null)
     {
+        $this->_trackValueSet($this->RelatedPerson, $RelatedPerson);
         $this->RelatedPerson = $RelatedPerson;
         return $this;
     }
@@ -6060,6 +6139,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setRequestGroup(FHIRRequestGroup $RequestGroup = null)
     {
+        $this->_trackValueSet($this->RequestGroup, $RequestGroup);
         $this->RequestGroup = $RequestGroup;
         return $this;
     }
@@ -6088,6 +6168,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setResearchDefinition(FHIRResearchDefinition $ResearchDefinition = null)
     {
+        $this->_trackValueSet($this->ResearchDefinition, $ResearchDefinition);
         $this->ResearchDefinition = $ResearchDefinition;
         return $this;
     }
@@ -6114,6 +6195,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setResearchElementDefinition(FHIRResearchElementDefinition $ResearchElementDefinition = null)
     {
+        $this->_trackValueSet($this->ResearchElementDefinition, $ResearchElementDefinition);
         $this->ResearchElementDefinition = $ResearchElementDefinition;
         return $this;
     }
@@ -6148,6 +6230,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setResearchStudy(FHIRResearchStudy $ResearchStudy = null)
     {
+        $this->_trackValueSet($this->ResearchStudy, $ResearchStudy);
         $this->ResearchStudy = $ResearchStudy;
         return $this;
     }
@@ -6174,6 +6257,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setResearchSubject(FHIRResearchSubject $ResearchSubject = null)
     {
+        $this->_trackValueSet($this->ResearchSubject, $ResearchSubject);
         $this->ResearchSubject = $ResearchSubject;
         return $this;
     }
@@ -6200,6 +6284,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setRiskAssessment(FHIRRiskAssessment $RiskAssessment = null)
     {
+        $this->_trackValueSet($this->RiskAssessment, $RiskAssessment);
         $this->RiskAssessment = $RiskAssessment;
         return $this;
     }
@@ -6228,6 +6313,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setRiskEvidenceSynthesis(FHIRRiskEvidenceSynthesis $RiskEvidenceSynthesis = null)
     {
+        $this->_trackValueSet($this->RiskEvidenceSynthesis, $RiskEvidenceSynthesis);
         $this->RiskEvidenceSynthesis = $RiskEvidenceSynthesis;
         return $this;
     }
@@ -6252,6 +6338,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setSchedule(FHIRSchedule $Schedule = null)
     {
+        $this->_trackValueSet($this->Schedule, $Schedule);
         $this->Schedule = $Schedule;
         return $this;
     }
@@ -6278,6 +6365,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setSearchParameter(FHIRSearchParameter $SearchParameter = null)
     {
+        $this->_trackValueSet($this->SearchParameter, $SearchParameter);
         $this->SearchParameter = $SearchParameter;
         return $this;
     }
@@ -6304,6 +6392,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setServiceRequest(FHIRServiceRequest $ServiceRequest = null)
     {
+        $this->_trackValueSet($this->ServiceRequest, $ServiceRequest);
         $this->ServiceRequest = $ServiceRequest;
         return $this;
     }
@@ -6328,6 +6417,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setSlot(FHIRSlot $Slot = null)
     {
+        $this->_trackValueSet($this->Slot, $Slot);
         $this->Slot = $Slot;
         return $this;
     }
@@ -6352,6 +6442,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setSpecimen(FHIRSpecimen $Specimen = null)
     {
+        $this->_trackValueSet($this->Specimen, $Specimen);
         $this->Specimen = $Specimen;
         return $this;
     }
@@ -6376,6 +6467,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setSpecimenDefinition(FHIRSpecimenDefinition $SpecimenDefinition = null)
     {
+        $this->_trackValueSet($this->SpecimenDefinition, $SpecimenDefinition);
         $this->SpecimenDefinition = $SpecimenDefinition;
         return $this;
     }
@@ -6404,6 +6496,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setStructureDefinition(FHIRStructureDefinition $StructureDefinition = null)
     {
+        $this->_trackValueSet($this->StructureDefinition, $StructureDefinition);
         $this->StructureDefinition = $StructureDefinition;
         return $this;
     }
@@ -6428,6 +6521,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setStructureMap(FHIRStructureMap $StructureMap = null)
     {
+        $this->_trackValueSet($this->StructureMap, $StructureMap);
         $this->StructureMap = $StructureMap;
         return $this;
     }
@@ -6460,6 +6554,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setSubscription(FHIRSubscription $Subscription = null)
     {
+        $this->_trackValueSet($this->Subscription, $Subscription);
         $this->Subscription = $Subscription;
         return $this;
     }
@@ -6484,6 +6579,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setSubstance(FHIRSubstance $Substance = null)
     {
+        $this->_trackValueSet($this->Substance, $Substance);
         $this->Substance = $Substance;
         return $this;
     }
@@ -6514,6 +6610,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setSubstanceNucleicAcid(FHIRSubstanceNucleicAcid $SubstanceNucleicAcid = null)
     {
+        $this->_trackValueSet($this->SubstanceNucleicAcid, $SubstanceNucleicAcid);
         $this->SubstanceNucleicAcid = $SubstanceNucleicAcid;
         return $this;
     }
@@ -6538,6 +6635,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setSubstancePolymer(FHIRSubstancePolymer $SubstancePolymer = null)
     {
+        $this->_trackValueSet($this->SubstancePolymer, $SubstancePolymer);
         $this->SubstancePolymer = $SubstancePolymer;
         return $this;
     }
@@ -6576,6 +6674,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setSubstanceProtein(FHIRSubstanceProtein $SubstanceProtein = null)
     {
+        $this->_trackValueSet($this->SubstanceProtein, $SubstanceProtein);
         $this->SubstanceProtein = $SubstanceProtein;
         return $this;
     }
@@ -6600,6 +6699,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setSubstanceReferenceInformation(FHIRSubstanceReferenceInformation $SubstanceReferenceInformation = null)
     {
+        $this->_trackValueSet($this->SubstanceReferenceInformation, $SubstanceReferenceInformation);
         $this->SubstanceReferenceInformation = $SubstanceReferenceInformation;
         return $this;
     }
@@ -6648,6 +6748,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setSubstanceSourceMaterial(FHIRSubstanceSourceMaterial $SubstanceSourceMaterial = null)
     {
+        $this->_trackValueSet($this->SubstanceSourceMaterial, $SubstanceSourceMaterial);
         $this->SubstanceSourceMaterial = $SubstanceSourceMaterial;
         return $this;
     }
@@ -6674,6 +6775,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setSubstanceSpecification(FHIRSubstanceSpecification $SubstanceSpecification = null)
     {
+        $this->_trackValueSet($this->SubstanceSpecification, $SubstanceSpecification);
         $this->SubstanceSpecification = $SubstanceSpecification;
         return $this;
     }
@@ -6698,6 +6800,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setSupplyDelivery(FHIRSupplyDelivery $SupplyDelivery = null)
     {
+        $this->_trackValueSet($this->SupplyDelivery, $SupplyDelivery);
         $this->SupplyDelivery = $SupplyDelivery;
         return $this;
     }
@@ -6724,6 +6827,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setSupplyRequest(FHIRSupplyRequest $SupplyRequest = null)
     {
+        $this->_trackValueSet($this->SupplyRequest, $SupplyRequest);
         $this->SupplyRequest = $SupplyRequest;
         return $this;
     }
@@ -6748,6 +6852,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setTask(FHIRTask $Task = null)
     {
+        $this->_trackValueSet($this->Task, $Task);
         $this->Task = $Task;
         return $this;
     }
@@ -6776,6 +6881,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setTerminologyCapabilities(FHIRTerminologyCapabilities $TerminologyCapabilities = null)
     {
+        $this->_trackValueSet($this->TerminologyCapabilities, $TerminologyCapabilities);
         $this->TerminologyCapabilities = $TerminologyCapabilities;
         return $this;
     }
@@ -6800,6 +6906,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setTestReport(FHIRTestReport $TestReport = null)
     {
+        $this->_trackValueSet($this->TestReport, $TestReport);
         $this->TestReport = $TestReport;
         return $this;
     }
@@ -6826,6 +6933,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setTestScript(FHIRTestScript $TestScript = null)
     {
+        $this->_trackValueSet($this->TestScript, $TestScript);
         $this->TestScript = $TestScript;
         return $this;
     }
@@ -6856,6 +6964,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setValueSet(FHIRValueSet $ValueSet = null)
     {
+        $this->_trackValueSet($this->ValueSet, $ValueSet);
         $this->ValueSet = $ValueSet;
         return $this;
     }
@@ -6882,6 +6991,7 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setVerificationResult(FHIRVerificationResult $VerificationResult = null)
     {
+        $this->_trackValueSet($this->VerificationResult, $VerificationResult);
         $this->VerificationResult = $VerificationResult;
         return $this;
     }
@@ -6908,7 +7018,37 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
      */
     public function setVisionPrescription(FHIRVisionPrescription $VisionPrescription = null)
     {
+        $this->_trackValueSet($this->VisionPrescription, $VisionPrescription);
         $this->VisionPrescription = $VisionPrescription;
+        return $this;
+    }
+
+    /**
+     * This resource is a non-persisted resource used to pass information into and back
+     * from an [operation](operations.html). It has no other use, and there is no
+     * RESTful endpoint associated with it.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRParameters
+     */
+    public function getParameters()
+    {
+        return $this->Parameters;
+    }
+
+    /**
+     * This resource is a non-persisted resource used to pass information into and back
+     * from an [operation](operations.html). It has no other use, and there is no
+     * RESTful endpoint associated with it.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRParameters $Parameters
+     * @return static
+     */
+    public function setParameters(FHIRParameters $Parameters = null)
+    {
+        $this->_trackValueSet($this->Parameters, $Parameters);
+        $this->Parameters = $Parameters;
         return $this;
     }
 
@@ -7438,11 +7578,6 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
                 $errs[self::FIELD_ORGANIZATION_AFFILIATION] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getParameters())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PARAMETERS] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getPatient())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_PATIENT] = $fieldErrs;
@@ -7663,938 +7798,802 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
                 $errs[self::FIELD_VISION_PRESCRIPTION] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getParameters())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PARAMETERS] = $fieldErrs;
+            }
+        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResourceContainer $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResourceContainer
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRResourceContainer::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRResourceContainer::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRResourceContainer::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRResourceContainer;
+            $type = new FHIRResourceContainer(null);
         } elseif (!is_object($type) || !($type instanceof FHIRResourceContainer)) {
             throw new \RuntimeException(sprintf(
                 'FHIRResourceContainer::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResourceContainer or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
             }
-        }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->Account)) {
-            $type->setAccount(FHIRAccount::xmlUnserialize($children->Account));
-        }
-        if (isset($children->ActivityDefinition)) {
-            $type->setActivityDefinition(FHIRActivityDefinition::xmlUnserialize($children->ActivityDefinition));
-        }
-        if (isset($children->AdverseEvent)) {
-            $type->setAdverseEvent(FHIRAdverseEvent::xmlUnserialize($children->AdverseEvent));
-        }
-        if (isset($children->AllergyIntolerance)) {
-            $type->setAllergyIntolerance(FHIRAllergyIntolerance::xmlUnserialize($children->AllergyIntolerance));
-        }
-        if (isset($children->Appointment)) {
-            $type->setAppointment(FHIRAppointment::xmlUnserialize($children->Appointment));
-        }
-        if (isset($children->AppointmentResponse)) {
-            $type->setAppointmentResponse(FHIRAppointmentResponse::xmlUnserialize($children->AppointmentResponse));
-        }
-        if (isset($children->AuditEvent)) {
-            $type->setAuditEvent(FHIRAuditEvent::xmlUnserialize($children->AuditEvent));
-        }
-        if (isset($children->Basic)) {
-            $type->setBasic(FHIRBasic::xmlUnserialize($children->Basic));
-        }
-        if (isset($children->Binary)) {
-            $type->setBinary(FHIRBinary::xmlUnserialize($children->Binary));
-        }
-        if (isset($children->BiologicallyDerivedProduct)) {
-            $type->setBiologicallyDerivedProduct(FHIRBiologicallyDerivedProduct::xmlUnserialize($children->BiologicallyDerivedProduct));
-        }
-        if (isset($children->BodyStructure)) {
-            $type->setBodyStructure(FHIRBodyStructure::xmlUnserialize($children->BodyStructure));
-        }
-        if (isset($children->Bundle)) {
-            $type->setBundle(FHIRBundle::xmlUnserialize($children->Bundle));
-        }
-        if (isset($children->CapabilityStatement)) {
-            $type->setCapabilityStatement(FHIRCapabilityStatement::xmlUnserialize($children->CapabilityStatement));
-        }
-        if (isset($children->CarePlan)) {
-            $type->setCarePlan(FHIRCarePlan::xmlUnserialize($children->CarePlan));
-        }
-        if (isset($children->CareTeam)) {
-            $type->setCareTeam(FHIRCareTeam::xmlUnserialize($children->CareTeam));
-        }
-        if (isset($children->CatalogEntry)) {
-            $type->setCatalogEntry(FHIRCatalogEntry::xmlUnserialize($children->CatalogEntry));
-        }
-        if (isset($children->ChargeItem)) {
-            $type->setChargeItem(FHIRChargeItem::xmlUnserialize($children->ChargeItem));
-        }
-        if (isset($children->ChargeItemDefinition)) {
-            $type->setChargeItemDefinition(FHIRChargeItemDefinition::xmlUnserialize($children->ChargeItemDefinition));
-        }
-        if (isset($children->Claim)) {
-            $type->setClaim(FHIRClaim::xmlUnserialize($children->Claim));
-        }
-        if (isset($children->ClaimResponse)) {
-            $type->setClaimResponse(FHIRClaimResponse::xmlUnserialize($children->ClaimResponse));
-        }
-        if (isset($children->ClinicalImpression)) {
-            $type->setClinicalImpression(FHIRClinicalImpression::xmlUnserialize($children->ClinicalImpression));
-        }
-        if (isset($children->CodeSystem)) {
-            $type->setCodeSystem(FHIRCodeSystem::xmlUnserialize($children->CodeSystem));
-        }
-        if (isset($children->Communication)) {
-            $type->setCommunication(FHIRCommunication::xmlUnserialize($children->Communication));
-        }
-        if (isset($children->CommunicationRequest)) {
-            $type->setCommunicationRequest(FHIRCommunicationRequest::xmlUnserialize($children->CommunicationRequest));
-        }
-        if (isset($children->CompartmentDefinition)) {
-            $type->setCompartmentDefinition(FHIRCompartmentDefinition::xmlUnserialize($children->CompartmentDefinition));
-        }
-        if (isset($children->Composition)) {
-            $type->setComposition(FHIRComposition::xmlUnserialize($children->Composition));
-        }
-        if (isset($children->ConceptMap)) {
-            $type->setConceptMap(FHIRConceptMap::xmlUnserialize($children->ConceptMap));
-        }
-        if (isset($children->Condition)) {
-            $type->setCondition(FHIRCondition::xmlUnserialize($children->Condition));
-        }
-        if (isset($children->Consent)) {
-            $type->setConsent(FHIRConsent::xmlUnserialize($children->Consent));
-        }
-        if (isset($children->Contract)) {
-            $type->setContract(FHIRContract::xmlUnserialize($children->Contract));
-        }
-        if (isset($children->Coverage)) {
-            $type->setCoverage(FHIRCoverage::xmlUnserialize($children->Coverage));
-        }
-        if (isset($children->CoverageEligibilityRequest)) {
-            $type->setCoverageEligibilityRequest(FHIRCoverageEligibilityRequest::xmlUnserialize($children->CoverageEligibilityRequest));
-        }
-        if (isset($children->CoverageEligibilityResponse)) {
-            $type->setCoverageEligibilityResponse(FHIRCoverageEligibilityResponse::xmlUnserialize($children->CoverageEligibilityResponse));
-        }
-        if (isset($children->DetectedIssue)) {
-            $type->setDetectedIssue(FHIRDetectedIssue::xmlUnserialize($children->DetectedIssue));
-        }
-        if (isset($children->Device)) {
-            $type->setDevice(FHIRDevice::xmlUnserialize($children->Device));
-        }
-        if (isset($children->DeviceDefinition)) {
-            $type->setDeviceDefinition(FHIRDeviceDefinition::xmlUnserialize($children->DeviceDefinition));
-        }
-        if (isset($children->DeviceMetric)) {
-            $type->setDeviceMetric(FHIRDeviceMetric::xmlUnserialize($children->DeviceMetric));
-        }
-        if (isset($children->DeviceRequest)) {
-            $type->setDeviceRequest(FHIRDeviceRequest::xmlUnserialize($children->DeviceRequest));
-        }
-        if (isset($children->DeviceUseStatement)) {
-            $type->setDeviceUseStatement(FHIRDeviceUseStatement::xmlUnserialize($children->DeviceUseStatement));
-        }
-        if (isset($children->DiagnosticReport)) {
-            $type->setDiagnosticReport(FHIRDiagnosticReport::xmlUnserialize($children->DiagnosticReport));
-        }
-        if (isset($children->DocumentManifest)) {
-            $type->setDocumentManifest(FHIRDocumentManifest::xmlUnserialize($children->DocumentManifest));
-        }
-        if (isset($children->DocumentReference)) {
-            $type->setDocumentReference(FHIRDocumentReference::xmlUnserialize($children->DocumentReference));
-        }
-        if (isset($children->EffectEvidenceSynthesis)) {
-            $type->setEffectEvidenceSynthesis(FHIREffectEvidenceSynthesis::xmlUnserialize($children->EffectEvidenceSynthesis));
-        }
-        if (isset($children->Encounter)) {
-            $type->setEncounter(FHIREncounter::xmlUnserialize($children->Encounter));
-        }
-        if (isset($children->Endpoint)) {
-            $type->setEndpoint(FHIREndpoint::xmlUnserialize($children->Endpoint));
-        }
-        if (isset($children->EnrollmentRequest)) {
-            $type->setEnrollmentRequest(FHIREnrollmentRequest::xmlUnserialize($children->EnrollmentRequest));
-        }
-        if (isset($children->EnrollmentResponse)) {
-            $type->setEnrollmentResponse(FHIREnrollmentResponse::xmlUnserialize($children->EnrollmentResponse));
-        }
-        if (isset($children->EpisodeOfCare)) {
-            $type->setEpisodeOfCare(FHIREpisodeOfCare::xmlUnserialize($children->EpisodeOfCare));
-        }
-        if (isset($children->EventDefinition)) {
-            $type->setEventDefinition(FHIREventDefinition::xmlUnserialize($children->EventDefinition));
-        }
-        if (isset($children->Evidence)) {
-            $type->setEvidence(FHIREvidence::xmlUnserialize($children->Evidence));
-        }
-        if (isset($children->EvidenceVariable)) {
-            $type->setEvidenceVariable(FHIREvidenceVariable::xmlUnserialize($children->EvidenceVariable));
-        }
-        if (isset($children->ExampleScenario)) {
-            $type->setExampleScenario(FHIRExampleScenario::xmlUnserialize($children->ExampleScenario));
-        }
-        if (isset($children->ExplanationOfBenefit)) {
-            $type->setExplanationOfBenefit(FHIRExplanationOfBenefit::xmlUnserialize($children->ExplanationOfBenefit));
-        }
-        if (isset($children->FamilyMemberHistory)) {
-            $type->setFamilyMemberHistory(FHIRFamilyMemberHistory::xmlUnserialize($children->FamilyMemberHistory));
-        }
-        if (isset($children->Flag)) {
-            $type->setFlag(FHIRFlag::xmlUnserialize($children->Flag));
-        }
-        if (isset($children->Goal)) {
-            $type->setGoal(FHIRGoal::xmlUnserialize($children->Goal));
-        }
-        if (isset($children->GraphDefinition)) {
-            $type->setGraphDefinition(FHIRGraphDefinition::xmlUnserialize($children->GraphDefinition));
-        }
-        if (isset($children->Group)) {
-            $type->setGroup(FHIRGroup::xmlUnserialize($children->Group));
-        }
-        if (isset($children->GuidanceResponse)) {
-            $type->setGuidanceResponse(FHIRGuidanceResponse::xmlUnserialize($children->GuidanceResponse));
-        }
-        if (isset($children->HealthcareService)) {
-            $type->setHealthcareService(FHIRHealthcareService::xmlUnserialize($children->HealthcareService));
-        }
-        if (isset($children->ImagingStudy)) {
-            $type->setImagingStudy(FHIRImagingStudy::xmlUnserialize($children->ImagingStudy));
-        }
-        if (isset($children->Immunization)) {
-            $type->setImmunization(FHIRImmunization::xmlUnserialize($children->Immunization));
-        }
-        if (isset($children->ImmunizationEvaluation)) {
-            $type->setImmunizationEvaluation(FHIRImmunizationEvaluation::xmlUnserialize($children->ImmunizationEvaluation));
-        }
-        if (isset($children->ImmunizationRecommendation)) {
-            $type->setImmunizationRecommendation(FHIRImmunizationRecommendation::xmlUnserialize($children->ImmunizationRecommendation));
-        }
-        if (isset($children->ImplementationGuide)) {
-            $type->setImplementationGuide(FHIRImplementationGuide::xmlUnserialize($children->ImplementationGuide));
-        }
-        if (isset($children->InsurancePlan)) {
-            $type->setInsurancePlan(FHIRInsurancePlan::xmlUnserialize($children->InsurancePlan));
-        }
-        if (isset($children->Invoice)) {
-            $type->setInvoice(FHIRInvoice::xmlUnserialize($children->Invoice));
-        }
-        if (isset($children->Library)) {
-            $type->setLibrary(FHIRLibrary::xmlUnserialize($children->Library));
-        }
-        if (isset($children->Linkage)) {
-            $type->setLinkage(FHIRLinkage::xmlUnserialize($children->Linkage));
-        }
-        if (isset($children->List)) {
-            $type->setList(FHIRList::xmlUnserialize($children->List));
-        }
-        if (isset($children->Location)) {
-            $type->setLocation(FHIRLocation::xmlUnserialize($children->Location));
-        }
-        if (isset($children->Measure)) {
-            $type->setMeasure(FHIRMeasure::xmlUnserialize($children->Measure));
-        }
-        if (isset($children->MeasureReport)) {
-            $type->setMeasureReport(FHIRMeasureReport::xmlUnserialize($children->MeasureReport));
-        }
-        if (isset($children->Media)) {
-            $type->setMedia(FHIRMedia::xmlUnserialize($children->Media));
-        }
-        if (isset($children->Medication)) {
-            $type->setMedication(FHIRMedication::xmlUnserialize($children->Medication));
-        }
-        if (isset($children->MedicationAdministration)) {
-            $type->setMedicationAdministration(FHIRMedicationAdministration::xmlUnserialize($children->MedicationAdministration));
-        }
-        if (isset($children->MedicationDispense)) {
-            $type->setMedicationDispense(FHIRMedicationDispense::xmlUnserialize($children->MedicationDispense));
-        }
-        if (isset($children->MedicationKnowledge)) {
-            $type->setMedicationKnowledge(FHIRMedicationKnowledge::xmlUnserialize($children->MedicationKnowledge));
-        }
-        if (isset($children->MedicationRequest)) {
-            $type->setMedicationRequest(FHIRMedicationRequest::xmlUnserialize($children->MedicationRequest));
-        }
-        if (isset($children->MedicationStatement)) {
-            $type->setMedicationStatement(FHIRMedicationStatement::xmlUnserialize($children->MedicationStatement));
-        }
-        if (isset($children->MedicinalProduct)) {
-            $type->setMedicinalProduct(FHIRMedicinalProduct::xmlUnserialize($children->MedicinalProduct));
-        }
-        if (isset($children->MedicinalProductAuthorization)) {
-            $type->setMedicinalProductAuthorization(FHIRMedicinalProductAuthorization::xmlUnserialize($children->MedicinalProductAuthorization));
-        }
-        if (isset($children->MedicinalProductContraindication)) {
-            $type->setMedicinalProductContraindication(FHIRMedicinalProductContraindication::xmlUnserialize($children->MedicinalProductContraindication));
-        }
-        if (isset($children->MedicinalProductIndication)) {
-            $type->setMedicinalProductIndication(FHIRMedicinalProductIndication::xmlUnserialize($children->MedicinalProductIndication));
-        }
-        if (isset($children->MedicinalProductIngredient)) {
-            $type->setMedicinalProductIngredient(FHIRMedicinalProductIngredient::xmlUnserialize($children->MedicinalProductIngredient));
-        }
-        if (isset($children->MedicinalProductInteraction)) {
-            $type->setMedicinalProductInteraction(FHIRMedicinalProductInteraction::xmlUnserialize($children->MedicinalProductInteraction));
-        }
-        if (isset($children->MedicinalProductManufactured)) {
-            $type->setMedicinalProductManufactured(FHIRMedicinalProductManufactured::xmlUnserialize($children->MedicinalProductManufactured));
-        }
-        if (isset($children->MedicinalProductPackaged)) {
-            $type->setMedicinalProductPackaged(FHIRMedicinalProductPackaged::xmlUnserialize($children->MedicinalProductPackaged));
-        }
-        if (isset($children->MedicinalProductPharmaceutical)) {
-            $type->setMedicinalProductPharmaceutical(FHIRMedicinalProductPharmaceutical::xmlUnserialize($children->MedicinalProductPharmaceutical));
-        }
-        if (isset($children->MedicinalProductUndesirableEffect)) {
-            $type->setMedicinalProductUndesirableEffect(FHIRMedicinalProductUndesirableEffect::xmlUnserialize($children->MedicinalProductUndesirableEffect));
-        }
-        if (isset($children->MessageDefinition)) {
-            $type->setMessageDefinition(FHIRMessageDefinition::xmlUnserialize($children->MessageDefinition));
-        }
-        if (isset($children->MessageHeader)) {
-            $type->setMessageHeader(FHIRMessageHeader::xmlUnserialize($children->MessageHeader));
-        }
-        if (isset($children->MolecularSequence)) {
-            $type->setMolecularSequence(FHIRMolecularSequence::xmlUnserialize($children->MolecularSequence));
-        }
-        if (isset($children->NamingSystem)) {
-            $type->setNamingSystem(FHIRNamingSystem::xmlUnserialize($children->NamingSystem));
-        }
-        if (isset($children->NutritionOrder)) {
-            $type->setNutritionOrder(FHIRNutritionOrder::xmlUnserialize($children->NutritionOrder));
-        }
-        if (isset($children->Observation)) {
-            $type->setObservation(FHIRObservation::xmlUnserialize($children->Observation));
-        }
-        if (isset($children->ObservationDefinition)) {
-            $type->setObservationDefinition(FHIRObservationDefinition::xmlUnserialize($children->ObservationDefinition));
-        }
-        if (isset($children->OperationDefinition)) {
-            $type->setOperationDefinition(FHIROperationDefinition::xmlUnserialize($children->OperationDefinition));
-        }
-        if (isset($children->OperationOutcome)) {
-            $type->setOperationOutcome(FHIROperationOutcome::xmlUnserialize($children->OperationOutcome));
-        }
-        if (isset($children->Organization)) {
-            $type->setOrganization(FHIROrganization::xmlUnserialize($children->Organization));
-        }
-        if (isset($children->OrganizationAffiliation)) {
-            $type->setOrganizationAffiliation(FHIROrganizationAffiliation::xmlUnserialize($children->OrganizationAffiliation));
-        }
-        if (isset($children->Parameters)) {
-            $type->setParameters(FHIRParameters::xmlUnserialize($children->Parameters));
-        }
-        if (isset($children->Patient)) {
-            $type->setPatient(FHIRPatient::xmlUnserialize($children->Patient));
-        }
-        if (isset($children->PaymentNotice)) {
-            $type->setPaymentNotice(FHIRPaymentNotice::xmlUnserialize($children->PaymentNotice));
-        }
-        if (isset($children->PaymentReconciliation)) {
-            $type->setPaymentReconciliation(FHIRPaymentReconciliation::xmlUnserialize($children->PaymentReconciliation));
-        }
-        if (isset($children->Person)) {
-            $type->setPerson(FHIRPerson::xmlUnserialize($children->Person));
-        }
-        if (isset($children->PlanDefinition)) {
-            $type->setPlanDefinition(FHIRPlanDefinition::xmlUnserialize($children->PlanDefinition));
-        }
-        if (isset($children->Practitioner)) {
-            $type->setPractitioner(FHIRPractitioner::xmlUnserialize($children->Practitioner));
-        }
-        if (isset($children->PractitionerRole)) {
-            $type->setPractitionerRole(FHIRPractitionerRole::xmlUnserialize($children->PractitionerRole));
-        }
-        if (isset($children->Procedure)) {
-            $type->setProcedure(FHIRProcedure::xmlUnserialize($children->Procedure));
-        }
-        if (isset($children->Provenance)) {
-            $type->setProvenance(FHIRProvenance::xmlUnserialize($children->Provenance));
-        }
-        if (isset($children->Questionnaire)) {
-            $type->setQuestionnaire(FHIRQuestionnaire::xmlUnserialize($children->Questionnaire));
-        }
-        if (isset($children->QuestionnaireResponse)) {
-            $type->setQuestionnaireResponse(FHIRQuestionnaireResponse::xmlUnserialize($children->QuestionnaireResponse));
-        }
-        if (isset($children->RelatedPerson)) {
-            $type->setRelatedPerson(FHIRRelatedPerson::xmlUnserialize($children->RelatedPerson));
-        }
-        if (isset($children->RequestGroup)) {
-            $type->setRequestGroup(FHIRRequestGroup::xmlUnserialize($children->RequestGroup));
-        }
-        if (isset($children->ResearchDefinition)) {
-            $type->setResearchDefinition(FHIRResearchDefinition::xmlUnserialize($children->ResearchDefinition));
-        }
-        if (isset($children->ResearchElementDefinition)) {
-            $type->setResearchElementDefinition(FHIRResearchElementDefinition::xmlUnserialize($children->ResearchElementDefinition));
-        }
-        if (isset($children->ResearchStudy)) {
-            $type->setResearchStudy(FHIRResearchStudy::xmlUnserialize($children->ResearchStudy));
-        }
-        if (isset($children->ResearchSubject)) {
-            $type->setResearchSubject(FHIRResearchSubject::xmlUnserialize($children->ResearchSubject));
-        }
-        if (isset($children->RiskAssessment)) {
-            $type->setRiskAssessment(FHIRRiskAssessment::xmlUnserialize($children->RiskAssessment));
-        }
-        if (isset($children->RiskEvidenceSynthesis)) {
-            $type->setRiskEvidenceSynthesis(FHIRRiskEvidenceSynthesis::xmlUnserialize($children->RiskEvidenceSynthesis));
-        }
-        if (isset($children->Schedule)) {
-            $type->setSchedule(FHIRSchedule::xmlUnserialize($children->Schedule));
-        }
-        if (isset($children->SearchParameter)) {
-            $type->setSearchParameter(FHIRSearchParameter::xmlUnserialize($children->SearchParameter));
-        }
-        if (isset($children->ServiceRequest)) {
-            $type->setServiceRequest(FHIRServiceRequest::xmlUnserialize($children->ServiceRequest));
-        }
-        if (isset($children->Slot)) {
-            $type->setSlot(FHIRSlot::xmlUnserialize($children->Slot));
-        }
-        if (isset($children->Specimen)) {
-            $type->setSpecimen(FHIRSpecimen::xmlUnserialize($children->Specimen));
-        }
-        if (isset($children->SpecimenDefinition)) {
-            $type->setSpecimenDefinition(FHIRSpecimenDefinition::xmlUnserialize($children->SpecimenDefinition));
-        }
-        if (isset($children->StructureDefinition)) {
-            $type->setStructureDefinition(FHIRStructureDefinition::xmlUnserialize($children->StructureDefinition));
-        }
-        if (isset($children->StructureMap)) {
-            $type->setStructureMap(FHIRStructureMap::xmlUnserialize($children->StructureMap));
-        }
-        if (isset($children->Subscription)) {
-            $type->setSubscription(FHIRSubscription::xmlUnserialize($children->Subscription));
-        }
-        if (isset($children->Substance)) {
-            $type->setSubstance(FHIRSubstance::xmlUnserialize($children->Substance));
-        }
-        if (isset($children->SubstanceNucleicAcid)) {
-            $type->setSubstanceNucleicAcid(FHIRSubstanceNucleicAcid::xmlUnserialize($children->SubstanceNucleicAcid));
-        }
-        if (isset($children->SubstancePolymer)) {
-            $type->setSubstancePolymer(FHIRSubstancePolymer::xmlUnserialize($children->SubstancePolymer));
-        }
-        if (isset($children->SubstanceProtein)) {
-            $type->setSubstanceProtein(FHIRSubstanceProtein::xmlUnserialize($children->SubstanceProtein));
-        }
-        if (isset($children->SubstanceReferenceInformation)) {
-            $type->setSubstanceReferenceInformation(FHIRSubstanceReferenceInformation::xmlUnserialize($children->SubstanceReferenceInformation));
-        }
-        if (isset($children->SubstanceSourceMaterial)) {
-            $type->setSubstanceSourceMaterial(FHIRSubstanceSourceMaterial::xmlUnserialize($children->SubstanceSourceMaterial));
-        }
-        if (isset($children->SubstanceSpecification)) {
-            $type->setSubstanceSpecification(FHIRSubstanceSpecification::xmlUnserialize($children->SubstanceSpecification));
-        }
-        if (isset($children->SupplyDelivery)) {
-            $type->setSupplyDelivery(FHIRSupplyDelivery::xmlUnserialize($children->SupplyDelivery));
-        }
-        if (isset($children->SupplyRequest)) {
-            $type->setSupplyRequest(FHIRSupplyRequest::xmlUnserialize($children->SupplyRequest));
-        }
-        if (isset($children->Task)) {
-            $type->setTask(FHIRTask::xmlUnserialize($children->Task));
-        }
-        if (isset($children->TerminologyCapabilities)) {
-            $type->setTerminologyCapabilities(FHIRTerminologyCapabilities::xmlUnserialize($children->TerminologyCapabilities));
-        }
-        if (isset($children->TestReport)) {
-            $type->setTestReport(FHIRTestReport::xmlUnserialize($children->TestReport));
-        }
-        if (isset($children->TestScript)) {
-            $type->setTestScript(FHIRTestScript::xmlUnserialize($children->TestScript));
-        }
-        if (isset($children->ValueSet)) {
-            $type->setValueSet(FHIRValueSet::xmlUnserialize($children->ValueSet));
-        }
-        if (isset($children->VerificationResult)) {
-            $type->setVerificationResult(FHIRVerificationResult::xmlUnserialize($children->VerificationResult));
-        }
-        if (isset($children->VisionPrescription)) {
-            $type->setVisionPrescription(FHIRVisionPrescription::xmlUnserialize($children->VisionPrescription));
+            if (self::FIELD_ACCOUNT === $n->nodeName) {
+                $type->setAccount(FHIRAccount::xmlUnserialize($n));
+            } elseif (self::FIELD_ACTIVITY_DEFINITION === $n->nodeName) {
+                $type->setActivityDefinition(FHIRActivityDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_ADVERSE_EVENT === $n->nodeName) {
+                $type->setAdverseEvent(FHIRAdverseEvent::xmlUnserialize($n));
+            } elseif (self::FIELD_ALLERGY_INTOLERANCE === $n->nodeName) {
+                $type->setAllergyIntolerance(FHIRAllergyIntolerance::xmlUnserialize($n));
+            } elseif (self::FIELD_APPOINTMENT === $n->nodeName) {
+                $type->setAppointment(FHIRAppointment::xmlUnserialize($n));
+            } elseif (self::FIELD_APPOINTMENT_RESPONSE === $n->nodeName) {
+                $type->setAppointmentResponse(FHIRAppointmentResponse::xmlUnserialize($n));
+            } elseif (self::FIELD_AUDIT_EVENT === $n->nodeName) {
+                $type->setAuditEvent(FHIRAuditEvent::xmlUnserialize($n));
+            } elseif (self::FIELD_BASIC === $n->nodeName) {
+                $type->setBasic(FHIRBasic::xmlUnserialize($n));
+            } elseif (self::FIELD_BINARY === $n->nodeName) {
+                $type->setBinary(FHIRBinary::xmlUnserialize($n));
+            } elseif (self::FIELD_BIOLOGICALLY_DERIVED_PRODUCT === $n->nodeName) {
+                $type->setBiologicallyDerivedProduct(FHIRBiologicallyDerivedProduct::xmlUnserialize($n));
+            } elseif (self::FIELD_BODY_STRUCTURE === $n->nodeName) {
+                $type->setBodyStructure(FHIRBodyStructure::xmlUnserialize($n));
+            } elseif (self::FIELD_BUNDLE === $n->nodeName) {
+                $type->setBundle(FHIRBundle::xmlUnserialize($n));
+            } elseif (self::FIELD_CAPABILITY_STATEMENT === $n->nodeName) {
+                $type->setCapabilityStatement(FHIRCapabilityStatement::xmlUnserialize($n));
+            } elseif (self::FIELD_CARE_PLAN === $n->nodeName) {
+                $type->setCarePlan(FHIRCarePlan::xmlUnserialize($n));
+            } elseif (self::FIELD_CARE_TEAM === $n->nodeName) {
+                $type->setCareTeam(FHIRCareTeam::xmlUnserialize($n));
+            } elseif (self::FIELD_CATALOG_ENTRY === $n->nodeName) {
+                $type->setCatalogEntry(FHIRCatalogEntry::xmlUnserialize($n));
+            } elseif (self::FIELD_CHARGE_ITEM === $n->nodeName) {
+                $type->setChargeItem(FHIRChargeItem::xmlUnserialize($n));
+            } elseif (self::FIELD_CHARGE_ITEM_DEFINITION === $n->nodeName) {
+                $type->setChargeItemDefinition(FHIRChargeItemDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_CLAIM === $n->nodeName) {
+                $type->setClaim(FHIRClaim::xmlUnserialize($n));
+            } elseif (self::FIELD_CLAIM_RESPONSE === $n->nodeName) {
+                $type->setClaimResponse(FHIRClaimResponse::xmlUnserialize($n));
+            } elseif (self::FIELD_CLINICAL_IMPRESSION === $n->nodeName) {
+                $type->setClinicalImpression(FHIRClinicalImpression::xmlUnserialize($n));
+            } elseif (self::FIELD_CODE_SYSTEM === $n->nodeName) {
+                $type->setCodeSystem(FHIRCodeSystem::xmlUnserialize($n));
+            } elseif (self::FIELD_COMMUNICATION === $n->nodeName) {
+                $type->setCommunication(FHIRCommunication::xmlUnserialize($n));
+            } elseif (self::FIELD_COMMUNICATION_REQUEST === $n->nodeName) {
+                $type->setCommunicationRequest(FHIRCommunicationRequest::xmlUnserialize($n));
+            } elseif (self::FIELD_COMPARTMENT_DEFINITION === $n->nodeName) {
+                $type->setCompartmentDefinition(FHIRCompartmentDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_COMPOSITION === $n->nodeName) {
+                $type->setComposition(FHIRComposition::xmlUnserialize($n));
+            } elseif (self::FIELD_CONCEPT_MAP === $n->nodeName) {
+                $type->setConceptMap(FHIRConceptMap::xmlUnserialize($n));
+            } elseif (self::FIELD_CONDITION === $n->nodeName) {
+                $type->setCondition(FHIRCondition::xmlUnserialize($n));
+            } elseif (self::FIELD_CONSENT === $n->nodeName) {
+                $type->setConsent(FHIRConsent::xmlUnserialize($n));
+            } elseif (self::FIELD_CONTRACT === $n->nodeName) {
+                $type->setContract(FHIRContract::xmlUnserialize($n));
+            } elseif (self::FIELD_COVERAGE === $n->nodeName) {
+                $type->setCoverage(FHIRCoverage::xmlUnserialize($n));
+            } elseif (self::FIELD_COVERAGE_ELIGIBILITY_REQUEST === $n->nodeName) {
+                $type->setCoverageEligibilityRequest(FHIRCoverageEligibilityRequest::xmlUnserialize($n));
+            } elseif (self::FIELD_COVERAGE_ELIGIBILITY_RESPONSE === $n->nodeName) {
+                $type->setCoverageEligibilityResponse(FHIRCoverageEligibilityResponse::xmlUnserialize($n));
+            } elseif (self::FIELD_DETECTED_ISSUE === $n->nodeName) {
+                $type->setDetectedIssue(FHIRDetectedIssue::xmlUnserialize($n));
+            } elseif (self::FIELD_DEVICE === $n->nodeName) {
+                $type->setDevice(FHIRDevice::xmlUnserialize($n));
+            } elseif (self::FIELD_DEVICE_DEFINITION === $n->nodeName) {
+                $type->setDeviceDefinition(FHIRDeviceDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_DEVICE_METRIC === $n->nodeName) {
+                $type->setDeviceMetric(FHIRDeviceMetric::xmlUnserialize($n));
+            } elseif (self::FIELD_DEVICE_REQUEST === $n->nodeName) {
+                $type->setDeviceRequest(FHIRDeviceRequest::xmlUnserialize($n));
+            } elseif (self::FIELD_DEVICE_USE_STATEMENT === $n->nodeName) {
+                $type->setDeviceUseStatement(FHIRDeviceUseStatement::xmlUnserialize($n));
+            } elseif (self::FIELD_DIAGNOSTIC_REPORT === $n->nodeName) {
+                $type->setDiagnosticReport(FHIRDiagnosticReport::xmlUnserialize($n));
+            } elseif (self::FIELD_DOCUMENT_MANIFEST === $n->nodeName) {
+                $type->setDocumentManifest(FHIRDocumentManifest::xmlUnserialize($n));
+            } elseif (self::FIELD_DOCUMENT_REFERENCE === $n->nodeName) {
+                $type->setDocumentReference(FHIRDocumentReference::xmlUnserialize($n));
+            } elseif (self::FIELD_EFFECT_EVIDENCE_SYNTHESIS === $n->nodeName) {
+                $type->setEffectEvidenceSynthesis(FHIREffectEvidenceSynthesis::xmlUnserialize($n));
+            } elseif (self::FIELD_ENCOUNTER === $n->nodeName) {
+                $type->setEncounter(FHIREncounter::xmlUnserialize($n));
+            } elseif (self::FIELD_ENDPOINT === $n->nodeName) {
+                $type->setEndpoint(FHIREndpoint::xmlUnserialize($n));
+            } elseif (self::FIELD_ENROLLMENT_REQUEST === $n->nodeName) {
+                $type->setEnrollmentRequest(FHIREnrollmentRequest::xmlUnserialize($n));
+            } elseif (self::FIELD_ENROLLMENT_RESPONSE === $n->nodeName) {
+                $type->setEnrollmentResponse(FHIREnrollmentResponse::xmlUnserialize($n));
+            } elseif (self::FIELD_EPISODE_OF_CARE === $n->nodeName) {
+                $type->setEpisodeOfCare(FHIREpisodeOfCare::xmlUnserialize($n));
+            } elseif (self::FIELD_EVENT_DEFINITION === $n->nodeName) {
+                $type->setEventDefinition(FHIREventDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_EVIDENCE === $n->nodeName) {
+                $type->setEvidence(FHIREvidence::xmlUnserialize($n));
+            } elseif (self::FIELD_EVIDENCE_VARIABLE === $n->nodeName) {
+                $type->setEvidenceVariable(FHIREvidenceVariable::xmlUnserialize($n));
+            } elseif (self::FIELD_EXAMPLE_SCENARIO === $n->nodeName) {
+                $type->setExampleScenario(FHIRExampleScenario::xmlUnserialize($n));
+            } elseif (self::FIELD_EXPLANATION_OF_BENEFIT === $n->nodeName) {
+                $type->setExplanationOfBenefit(FHIRExplanationOfBenefit::xmlUnserialize($n));
+            } elseif (self::FIELD_FAMILY_MEMBER_HISTORY === $n->nodeName) {
+                $type->setFamilyMemberHistory(FHIRFamilyMemberHistory::xmlUnserialize($n));
+            } elseif (self::FIELD_FLAG === $n->nodeName) {
+                $type->setFlag(FHIRFlag::xmlUnserialize($n));
+            } elseif (self::FIELD_GOAL === $n->nodeName) {
+                $type->setGoal(FHIRGoal::xmlUnserialize($n));
+            } elseif (self::FIELD_GRAPH_DEFINITION === $n->nodeName) {
+                $type->setGraphDefinition(FHIRGraphDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_GROUP === $n->nodeName) {
+                $type->setGroup(FHIRGroup::xmlUnserialize($n));
+            } elseif (self::FIELD_GUIDANCE_RESPONSE === $n->nodeName) {
+                $type->setGuidanceResponse(FHIRGuidanceResponse::xmlUnserialize($n));
+            } elseif (self::FIELD_HEALTHCARE_SERVICE === $n->nodeName) {
+                $type->setHealthcareService(FHIRHealthcareService::xmlUnserialize($n));
+            } elseif (self::FIELD_IMAGING_STUDY === $n->nodeName) {
+                $type->setImagingStudy(FHIRImagingStudy::xmlUnserialize($n));
+            } elseif (self::FIELD_IMMUNIZATION === $n->nodeName) {
+                $type->setImmunization(FHIRImmunization::xmlUnserialize($n));
+            } elseif (self::FIELD_IMMUNIZATION_EVALUATION === $n->nodeName) {
+                $type->setImmunizationEvaluation(FHIRImmunizationEvaluation::xmlUnserialize($n));
+            } elseif (self::FIELD_IMMUNIZATION_RECOMMENDATION === $n->nodeName) {
+                $type->setImmunizationRecommendation(FHIRImmunizationRecommendation::xmlUnserialize($n));
+            } elseif (self::FIELD_IMPLEMENTATION_GUIDE === $n->nodeName) {
+                $type->setImplementationGuide(FHIRImplementationGuide::xmlUnserialize($n));
+            } elseif (self::FIELD_INSURANCE_PLAN === $n->nodeName) {
+                $type->setInsurancePlan(FHIRInsurancePlan::xmlUnserialize($n));
+            } elseif (self::FIELD_INVOICE === $n->nodeName) {
+                $type->setInvoice(FHIRInvoice::xmlUnserialize($n));
+            } elseif (self::FIELD_LIBRARY === $n->nodeName) {
+                $type->setLibrary(FHIRLibrary::xmlUnserialize($n));
+            } elseif (self::FIELD_LINKAGE === $n->nodeName) {
+                $type->setLinkage(FHIRLinkage::xmlUnserialize($n));
+            } elseif (self::FIELD_LIST === $n->nodeName) {
+                $type->setList(FHIRList::xmlUnserialize($n));
+            } elseif (self::FIELD_LOCATION === $n->nodeName) {
+                $type->setLocation(FHIRLocation::xmlUnserialize($n));
+            } elseif (self::FIELD_MEASURE === $n->nodeName) {
+                $type->setMeasure(FHIRMeasure::xmlUnserialize($n));
+            } elseif (self::FIELD_MEASURE_REPORT === $n->nodeName) {
+                $type->setMeasureReport(FHIRMeasureReport::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDIA === $n->nodeName) {
+                $type->setMedia(FHIRMedia::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICATION === $n->nodeName) {
+                $type->setMedication(FHIRMedication::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICATION_ADMINISTRATION === $n->nodeName) {
+                $type->setMedicationAdministration(FHIRMedicationAdministration::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICATION_DISPENSE === $n->nodeName) {
+                $type->setMedicationDispense(FHIRMedicationDispense::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICATION_KNOWLEDGE === $n->nodeName) {
+                $type->setMedicationKnowledge(FHIRMedicationKnowledge::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICATION_REQUEST === $n->nodeName) {
+                $type->setMedicationRequest(FHIRMedicationRequest::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICATION_STATEMENT === $n->nodeName) {
+                $type->setMedicationStatement(FHIRMedicationStatement::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICINAL_PRODUCT === $n->nodeName) {
+                $type->setMedicinalProduct(FHIRMedicinalProduct::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICINAL_PRODUCT_AUTHORIZATION === $n->nodeName) {
+                $type->setMedicinalProductAuthorization(FHIRMedicinalProductAuthorization::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICINAL_PRODUCT_CONTRAINDICATION === $n->nodeName) {
+                $type->setMedicinalProductContraindication(FHIRMedicinalProductContraindication::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICINAL_PRODUCT_INDICATION === $n->nodeName) {
+                $type->setMedicinalProductIndication(FHIRMedicinalProductIndication::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICINAL_PRODUCT_INGREDIENT === $n->nodeName) {
+                $type->setMedicinalProductIngredient(FHIRMedicinalProductIngredient::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICINAL_PRODUCT_INTERACTION === $n->nodeName) {
+                $type->setMedicinalProductInteraction(FHIRMedicinalProductInteraction::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICINAL_PRODUCT_MANUFACTURED === $n->nodeName) {
+                $type->setMedicinalProductManufactured(FHIRMedicinalProductManufactured::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICINAL_PRODUCT_PACKAGED === $n->nodeName) {
+                $type->setMedicinalProductPackaged(FHIRMedicinalProductPackaged::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICINAL_PRODUCT_PHARMACEUTICAL === $n->nodeName) {
+                $type->setMedicinalProductPharmaceutical(FHIRMedicinalProductPharmaceutical::xmlUnserialize($n));
+            } elseif (self::FIELD_MEDICINAL_PRODUCT_UNDESIRABLE_EFFECT === $n->nodeName) {
+                $type->setMedicinalProductUndesirableEffect(FHIRMedicinalProductUndesirableEffect::xmlUnserialize($n));
+            } elseif (self::FIELD_MESSAGE_DEFINITION === $n->nodeName) {
+                $type->setMessageDefinition(FHIRMessageDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_MESSAGE_HEADER === $n->nodeName) {
+                $type->setMessageHeader(FHIRMessageHeader::xmlUnserialize($n));
+            } elseif (self::FIELD_MOLECULAR_SEQUENCE === $n->nodeName) {
+                $type->setMolecularSequence(FHIRMolecularSequence::xmlUnserialize($n));
+            } elseif (self::FIELD_NAMING_SYSTEM === $n->nodeName) {
+                $type->setNamingSystem(FHIRNamingSystem::xmlUnserialize($n));
+            } elseif (self::FIELD_NUTRITION_ORDER === $n->nodeName) {
+                $type->setNutritionOrder(FHIRNutritionOrder::xmlUnserialize($n));
+            } elseif (self::FIELD_OBSERVATION === $n->nodeName) {
+                $type->setObservation(FHIRObservation::xmlUnserialize($n));
+            } elseif (self::FIELD_OBSERVATION_DEFINITION === $n->nodeName) {
+                $type->setObservationDefinition(FHIRObservationDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_OPERATION_DEFINITION === $n->nodeName) {
+                $type->setOperationDefinition(FHIROperationDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_OPERATION_OUTCOME === $n->nodeName) {
+                $type->setOperationOutcome(FHIROperationOutcome::xmlUnserialize($n));
+            } elseif (self::FIELD_ORGANIZATION === $n->nodeName) {
+                $type->setOrganization(FHIROrganization::xmlUnserialize($n));
+            } elseif (self::FIELD_ORGANIZATION_AFFILIATION === $n->nodeName) {
+                $type->setOrganizationAffiliation(FHIROrganizationAffiliation::xmlUnserialize($n));
+            } elseif (self::FIELD_PATIENT === $n->nodeName) {
+                $type->setPatient(FHIRPatient::xmlUnserialize($n));
+            } elseif (self::FIELD_PAYMENT_NOTICE === $n->nodeName) {
+                $type->setPaymentNotice(FHIRPaymentNotice::xmlUnserialize($n));
+            } elseif (self::FIELD_PAYMENT_RECONCILIATION === $n->nodeName) {
+                $type->setPaymentReconciliation(FHIRPaymentReconciliation::xmlUnserialize($n));
+            } elseif (self::FIELD_PERSON === $n->nodeName) {
+                $type->setPerson(FHIRPerson::xmlUnserialize($n));
+            } elseif (self::FIELD_PLAN_DEFINITION === $n->nodeName) {
+                $type->setPlanDefinition(FHIRPlanDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_PRACTITIONER === $n->nodeName) {
+                $type->setPractitioner(FHIRPractitioner::xmlUnserialize($n));
+            } elseif (self::FIELD_PRACTITIONER_ROLE === $n->nodeName) {
+                $type->setPractitionerRole(FHIRPractitionerRole::xmlUnserialize($n));
+            } elseif (self::FIELD_PROCEDURE === $n->nodeName) {
+                $type->setProcedure(FHIRProcedure::xmlUnserialize($n));
+            } elseif (self::FIELD_PROVENANCE === $n->nodeName) {
+                $type->setProvenance(FHIRProvenance::xmlUnserialize($n));
+            } elseif (self::FIELD_QUESTIONNAIRE === $n->nodeName) {
+                $type->setQuestionnaire(FHIRQuestionnaire::xmlUnserialize($n));
+            } elseif (self::FIELD_QUESTIONNAIRE_RESPONSE === $n->nodeName) {
+                $type->setQuestionnaireResponse(FHIRQuestionnaireResponse::xmlUnserialize($n));
+            } elseif (self::FIELD_RELATED_PERSON === $n->nodeName) {
+                $type->setRelatedPerson(FHIRRelatedPerson::xmlUnserialize($n));
+            } elseif (self::FIELD_REQUEST_GROUP === $n->nodeName) {
+                $type->setRequestGroup(FHIRRequestGroup::xmlUnserialize($n));
+            } elseif (self::FIELD_RESEARCH_DEFINITION === $n->nodeName) {
+                $type->setResearchDefinition(FHIRResearchDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_RESEARCH_ELEMENT_DEFINITION === $n->nodeName) {
+                $type->setResearchElementDefinition(FHIRResearchElementDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_RESEARCH_STUDY === $n->nodeName) {
+                $type->setResearchStudy(FHIRResearchStudy::xmlUnserialize($n));
+            } elseif (self::FIELD_RESEARCH_SUBJECT === $n->nodeName) {
+                $type->setResearchSubject(FHIRResearchSubject::xmlUnserialize($n));
+            } elseif (self::FIELD_RISK_ASSESSMENT === $n->nodeName) {
+                $type->setRiskAssessment(FHIRRiskAssessment::xmlUnserialize($n));
+            } elseif (self::FIELD_RISK_EVIDENCE_SYNTHESIS === $n->nodeName) {
+                $type->setRiskEvidenceSynthesis(FHIRRiskEvidenceSynthesis::xmlUnserialize($n));
+            } elseif (self::FIELD_SCHEDULE === $n->nodeName) {
+                $type->setSchedule(FHIRSchedule::xmlUnserialize($n));
+            } elseif (self::FIELD_SEARCH_PARAMETER === $n->nodeName) {
+                $type->setSearchParameter(FHIRSearchParameter::xmlUnserialize($n));
+            } elseif (self::FIELD_SERVICE_REQUEST === $n->nodeName) {
+                $type->setServiceRequest(FHIRServiceRequest::xmlUnserialize($n));
+            } elseif (self::FIELD_SLOT === $n->nodeName) {
+                $type->setSlot(FHIRSlot::xmlUnserialize($n));
+            } elseif (self::FIELD_SPECIMEN === $n->nodeName) {
+                $type->setSpecimen(FHIRSpecimen::xmlUnserialize($n));
+            } elseif (self::FIELD_SPECIMEN_DEFINITION === $n->nodeName) {
+                $type->setSpecimenDefinition(FHIRSpecimenDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_STRUCTURE_DEFINITION === $n->nodeName) {
+                $type->setStructureDefinition(FHIRStructureDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_STRUCTURE_MAP === $n->nodeName) {
+                $type->setStructureMap(FHIRStructureMap::xmlUnserialize($n));
+            } elseif (self::FIELD_SUBSCRIPTION === $n->nodeName) {
+                $type->setSubscription(FHIRSubscription::xmlUnserialize($n));
+            } elseif (self::FIELD_SUBSTANCE === $n->nodeName) {
+                $type->setSubstance(FHIRSubstance::xmlUnserialize($n));
+            } elseif (self::FIELD_SUBSTANCE_NUCLEIC_ACID === $n->nodeName) {
+                $type->setSubstanceNucleicAcid(FHIRSubstanceNucleicAcid::xmlUnserialize($n));
+            } elseif (self::FIELD_SUBSTANCE_POLYMER === $n->nodeName) {
+                $type->setSubstancePolymer(FHIRSubstancePolymer::xmlUnserialize($n));
+            } elseif (self::FIELD_SUBSTANCE_PROTEIN === $n->nodeName) {
+                $type->setSubstanceProtein(FHIRSubstanceProtein::xmlUnserialize($n));
+            } elseif (self::FIELD_SUBSTANCE_REFERENCE_INFORMATION === $n->nodeName) {
+                $type->setSubstanceReferenceInformation(FHIRSubstanceReferenceInformation::xmlUnserialize($n));
+            } elseif (self::FIELD_SUBSTANCE_SOURCE_MATERIAL === $n->nodeName) {
+                $type->setSubstanceSourceMaterial(FHIRSubstanceSourceMaterial::xmlUnserialize($n));
+            } elseif (self::FIELD_SUBSTANCE_SPECIFICATION === $n->nodeName) {
+                $type->setSubstanceSpecification(FHIRSubstanceSpecification::xmlUnserialize($n));
+            } elseif (self::FIELD_SUPPLY_DELIVERY === $n->nodeName) {
+                $type->setSupplyDelivery(FHIRSupplyDelivery::xmlUnserialize($n));
+            } elseif (self::FIELD_SUPPLY_REQUEST === $n->nodeName) {
+                $type->setSupplyRequest(FHIRSupplyRequest::xmlUnserialize($n));
+            } elseif (self::FIELD_TASK === $n->nodeName) {
+                $type->setTask(FHIRTask::xmlUnserialize($n));
+            } elseif (self::FIELD_TERMINOLOGY_CAPABILITIES === $n->nodeName) {
+                $type->setTerminologyCapabilities(FHIRTerminologyCapabilities::xmlUnserialize($n));
+            } elseif (self::FIELD_TEST_REPORT === $n->nodeName) {
+                $type->setTestReport(FHIRTestReport::xmlUnserialize($n));
+            } elseif (self::FIELD_TEST_SCRIPT === $n->nodeName) {
+                $type->setTestScript(FHIRTestScript::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_SET === $n->nodeName) {
+                $type->setValueSet(FHIRValueSet::xmlUnserialize($n));
+            } elseif (self::FIELD_VERIFICATION_RESULT === $n->nodeName) {
+                $type->setVerificationResult(FHIRVerificationResult::xmlUnserialize($n));
+            } elseif (self::FIELD_VISION_PRESCRIPTION === $n->nodeName) {
+                $type->setVisionPrescription(FHIRVisionPrescription::xmlUnserialize($n));
+            } elseif (self::FIELD_PARAMETERS === $n->nodeName) {
+                $type->setParameters(FHIRParameters::xmlUnserialize($n));
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return string|\SimpleXMLElement
+     * @return string|\DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
         if (null !== ($v = $this->getAccount())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getActivityDefinition())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getAdverseEvent())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getAllergyIntolerance())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getAppointment())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getAppointmentResponse())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getAuditEvent())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getBasic())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getBinary())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getBiologicallyDerivedProduct())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getBodyStructure())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getBundle())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getCapabilityStatement())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getCarePlan())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getCareTeam())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getCatalogEntry())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getChargeItem())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getChargeItemDefinition())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getClaim())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getClaimResponse())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getClinicalImpression())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getCodeSystem())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getCommunication())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getCommunicationRequest())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getCompartmentDefinition())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getComposition())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getConceptMap())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getCondition())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getConsent())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getContract())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getCoverage())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getCoverageEligibilityRequest())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getCoverageEligibilityResponse())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getDetectedIssue())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getDevice())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getDeviceDefinition())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getDeviceMetric())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getDeviceRequest())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getDeviceUseStatement())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getDiagnosticReport())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getDocumentManifest())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getDocumentReference())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getEffectEvidenceSynthesis())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getEncounter())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getEndpoint())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getEnrollmentRequest())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getEnrollmentResponse())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getEpisodeOfCare())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getEventDefinition())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getEvidence())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getEvidenceVariable())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getExampleScenario())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getExplanationOfBenefit())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getFamilyMemberHistory())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getFlag())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getGoal())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getGraphDefinition())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getGroup())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getGuidanceResponse())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getHealthcareService())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getImagingStudy())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getImmunization())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getImmunizationEvaluation())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getImmunizationRecommendation())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getImplementationGuide())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getInsurancePlan())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getInvoice())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getLibrary())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getLinkage())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getList())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getLocation())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMeasure())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMeasureReport())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedia())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedication())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicationAdministration())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicationDispense())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicationKnowledge())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicationRequest())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicationStatement())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicinalProduct())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicinalProductAuthorization())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicinalProductContraindication())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicinalProductIndication())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicinalProductIngredient())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicinalProductInteraction())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicinalProductManufactured())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicinalProductPackaged())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicinalProductPharmaceutical())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMedicinalProductUndesirableEffect())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMessageDefinition())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMessageHeader())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getMolecularSequence())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getNamingSystem())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getNutritionOrder())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getObservation())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getObservationDefinition())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getOperationDefinition())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getOperationOutcome())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getOrganization())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getOrganizationAffiliation())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
-        }
-        if (null !== ($v = $this->getParameters())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getPatient())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getPaymentNotice())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getPaymentReconciliation())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getPerson())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getPlanDefinition())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getPractitioner())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getPractitionerRole())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getProcedure())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getProvenance())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getQuestionnaire())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getQuestionnaireResponse())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getRelatedPerson())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getRequestGroup())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getResearchDefinition())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getResearchElementDefinition())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getResearchStudy())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getResearchSubject())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getRiskAssessment())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getRiskEvidenceSynthesis())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getSchedule())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getSearchParameter())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getServiceRequest())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getSlot())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getSpecimen())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getSpecimenDefinition())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getStructureDefinition())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getStructureMap())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getSubscription())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getSubstance())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getSubstanceNucleicAcid())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getSubstancePolymer())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getSubstanceProtein())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getSubstanceReferenceInformation())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getSubstanceSourceMaterial())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getSubstanceSpecification())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getSupplyDelivery())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getSupplyRequest())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getTask())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getTerminologyCapabilities())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getTestReport())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getTestScript())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getValueSet())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getVerificationResult())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
         if (null !== ($v = $this->getVisionPrescription())) {
-            return $v->xmlSerialize($sxe, $libxmlOpts);
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null !== ($v = $this->getParameters())) {
+            return $v->xmlSerialize($element, $libxmlOpts);
         }
-        return $sxe;
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        }
+        return $element;
     }
 
     /**
@@ -8905,9 +8904,6 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
         if (null !== ($v = $this->getOrganizationAffiliation())) {
             return $v;
         }
-        if (null !== ($v = $this->getParameters())) {
-            return $v;
-        }
         if (null !== ($v = $this->getPatient())) {
             return $v;
         }
@@ -9038,6 +9034,9 @@ class FHIRResourceContainer implements PHPFHIRCommentContainerInterface, PHPFHIR
             return $v;
         }
         if (null !== ($v = $this->getVisionPrescription())) {
+            return $v;
+        }
+        if (null !== ($v = $this->getParameters())) {
             return $v;
         }
         return null;

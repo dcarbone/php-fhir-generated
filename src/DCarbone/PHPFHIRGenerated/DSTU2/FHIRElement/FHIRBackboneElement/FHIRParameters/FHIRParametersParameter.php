@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,6 +76,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier;
@@ -98,6 +99,7 @@ use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUuid;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
@@ -117,63 +119,63 @@ class FHIRParametersParameter extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER;
     const FIELD_NAME = 'name';
     const FIELD_NAME_EXT = '_name';
-    const FIELD_PART = 'part';
-    const FIELD_RESOURCE = 'resource';
-    const FIELD_VALUE_ADDRESS = 'valueAddress';
-    const FIELD_VALUE_ANNOTATION = 'valueAnnotation';
-    const FIELD_VALUE_ATTACHMENT = 'valueAttachment';
-    const FIELD_VALUE_BASE_64BINARY = 'valueBase64Binary';
-    const FIELD_VALUE_BASE_64BINARY_EXT = '_valueBase64Binary';
     const FIELD_VALUE_BOOLEAN = 'valueBoolean';
     const FIELD_VALUE_BOOLEAN_EXT = '_valueBoolean';
-    const FIELD_VALUE_CODE = 'valueCode';
-    const FIELD_VALUE_CODE_EXT = '_valueCode';
-    const FIELD_VALUE_CODEABLE_CONCEPT = 'valueCodeableConcept';
-    const FIELD_VALUE_CODING = 'valueCoding';
-    const FIELD_VALUE_CONTACT_POINT = 'valueContactPoint';
+    const FIELD_VALUE_INTEGER = 'valueInteger';
+    const FIELD_VALUE_INTEGER_EXT = '_valueInteger';
+    const FIELD_VALUE_DECIMAL = 'valueDecimal';
+    const FIELD_VALUE_DECIMAL_EXT = '_valueDecimal';
+    const FIELD_VALUE_BASE_64BINARY = 'valueBase64Binary';
+    const FIELD_VALUE_BASE_64BINARY_EXT = '_valueBase64Binary';
+    const FIELD_VALUE_INSTANT = 'valueInstant';
+    const FIELD_VALUE_INSTANT_EXT = '_valueInstant';
+    const FIELD_VALUE_STRING = 'valueString';
+    const FIELD_VALUE_STRING_EXT = '_valueString';
+    const FIELD_VALUE_URI = 'valueUri';
+    const FIELD_VALUE_URI_EXT = '_valueUri';
     const FIELD_VALUE_DATE = 'valueDate';
     const FIELD_VALUE_DATE_EXT = '_valueDate';
     const FIELD_VALUE_DATE_TIME = 'valueDateTime';
     const FIELD_VALUE_DATE_TIME_EXT = '_valueDateTime';
-    const FIELD_VALUE_DECIMAL = 'valueDecimal';
-    const FIELD_VALUE_DECIMAL_EXT = '_valueDecimal';
-    const FIELD_VALUE_ELEMENT_DEFINITION = 'valueElementDefinition';
-    const FIELD_VALUE_HUMAN_NAME = 'valueHumanName';
-    const FIELD_VALUE_ID = 'valueId';
-    const FIELD_VALUE_ID_EXT = '_valueId';
-    const FIELD_VALUE_IDENTIFIER = 'valueIdentifier';
-    const FIELD_VALUE_INSTANT = 'valueInstant';
-    const FIELD_VALUE_INSTANT_EXT = '_valueInstant';
-    const FIELD_VALUE_INTEGER = 'valueInteger';
-    const FIELD_VALUE_INTEGER_EXT = '_valueInteger';
-    const FIELD_VALUE_MARKDOWN = 'valueMarkdown';
-    const FIELD_VALUE_MARKDOWN_EXT = '_valueMarkdown';
-    const FIELD_VALUE_META = 'valueMeta';
+    const FIELD_VALUE_TIME = 'valueTime';
+    const FIELD_VALUE_TIME_EXT = '_valueTime';
+    const FIELD_VALUE_CODE = 'valueCode';
+    const FIELD_VALUE_CODE_EXT = '_valueCode';
     const FIELD_VALUE_OID = 'valueOid';
     const FIELD_VALUE_OID_EXT = '_valueOid';
-    const FIELD_VALUE_PERIOD = 'valuePeriod';
+    const FIELD_VALUE_UUID = 'valueUuid';
+    const FIELD_VALUE_UUID_EXT = '_valueUuid';
+    const FIELD_VALUE_ID = 'valueId';
+    const FIELD_VALUE_ID_EXT = '_valueId';
+    const FIELD_VALUE_UNSIGNED_INT = 'valueUnsignedInt';
+    const FIELD_VALUE_UNSIGNED_INT_EXT = '_valueUnsignedInt';
     const FIELD_VALUE_POSITIVE_INT = 'valuePositiveInt';
     const FIELD_VALUE_POSITIVE_INT_EXT = '_valuePositiveInt';
+    const FIELD_VALUE_MARKDOWN = 'valueMarkdown';
+    const FIELD_VALUE_MARKDOWN_EXT = '_valueMarkdown';
+    const FIELD_VALUE_ANNOTATION = 'valueAnnotation';
+    const FIELD_VALUE_ATTACHMENT = 'valueAttachment';
+    const FIELD_VALUE_IDENTIFIER = 'valueIdentifier';
+    const FIELD_VALUE_CODEABLE_CONCEPT = 'valueCodeableConcept';
+    const FIELD_VALUE_CODING = 'valueCoding';
     const FIELD_VALUE_QUANTITY = 'valueQuantity';
     const FIELD_VALUE_RANGE = 'valueRange';
+    const FIELD_VALUE_PERIOD = 'valuePeriod';
     const FIELD_VALUE_RATIO = 'valueRatio';
     const FIELD_VALUE_REFERENCE = 'valueReference';
     const FIELD_VALUE_SAMPLED_DATA = 'valueSampledData';
     const FIELD_VALUE_SIGNATURE = 'valueSignature';
-    const FIELD_VALUE_STRING = 'valueString';
-    const FIELD_VALUE_STRING_EXT = '_valueString';
-    const FIELD_VALUE_TIME = 'valueTime';
-    const FIELD_VALUE_TIME_EXT = '_valueTime';
+    const FIELD_VALUE_HUMAN_NAME = 'valueHumanName';
+    const FIELD_VALUE_ADDRESS = 'valueAddress';
+    const FIELD_VALUE_CONTACT_POINT = 'valueContactPoint';
     const FIELD_VALUE_TIMING = 'valueTiming';
-    const FIELD_VALUE_UNSIGNED_INT = 'valueUnsignedInt';
-    const FIELD_VALUE_UNSIGNED_INT_EXT = '_valueUnsignedInt';
-    const FIELD_VALUE_URI = 'valueUri';
-    const FIELD_VALUE_URI_EXT = '_valueUri';
-    const FIELD_VALUE_UUID = 'valueUuid';
-    const FIELD_VALUE_UUID_EXT = '_valueUuid';
+    const FIELD_VALUE_META = 'valueMeta';
+    const FIELD_VALUE_ELEMENT_DEFINITION = 'valueElementDefinition';
+    const FIELD_RESOURCE = 'resource';
+    const FIELD_PART = 'part';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * A sequence of Unicode characters
@@ -187,58 +189,37 @@ class FHIRParametersParameter extends FHIRBackboneElement
     protected $name = null;
 
     /**
-     * This special resource type is used to represent an operation request and
-     * response (operations.html). It has no other use, and there is no RESTful
-     * endpoint associated with it.
-     *
-     * A named part of a parameter. In many implementation context, a set of named
-     * parts is known as a "Tuple".
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[]
-     */
-    protected $part = [];
-
-    /**
-     * If the parameter is a whole resource.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRContainedTypeInterface
-     */
-    protected $resource = null;
-
-    /**
-     * There is a variety of postal address formats defined around the world. This
-     * format defines a superset that is the basis for all addresses around the world.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    protected $valueAddress = null;
+    protected $valueBoolean = null;
 
     /**
-     * A text note which also contains information about who made the statement and
-     * when.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInteger
      */
-    protected $valueAnnotation = null;
+    protected $valueInteger = null;
 
     /**
-     * For referring to data content defined in other formats.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDecimal
      */
-    protected $valueAttachment = null;
+    protected $valueDecimal = null;
 
     /**
      * A stream of bytes
@@ -252,61 +233,39 @@ class FHIRParametersParameter extends FHIRBackboneElement
     protected $valueBase64Binary = null;
 
     /**
-     * Value of "true" or "false"
+     * An instant in time - known at least to the second
+     * Note: This is intended for precisely observed times, typically system logs etc.,
+     * and not human-reported times - for them, see date and dateTime below. Time zone
+     * is always required
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant
      */
-    protected $valueBoolean = null;
+    protected $valueInstant = null;
 
     /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    protected $valueCode = null;
+    protected $valueString = null;
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
-    protected $valueCodeableConcept = null;
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
-     */
-    protected $valueCoding = null;
-
-    /**
-     * Details for all kinds of technology mediated contact points for a person or
-     * organization, including telephone, email, etc.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint
-     */
-    protected $valueContactPoint = null;
+    protected $valueUri = null;
 
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
@@ -335,38 +294,50 @@ class FHIRParametersParameter extends FHIRBackboneElement
     protected $valueDateTime = null;
 
     /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDecimal
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTime
      */
-    protected $valueDecimal = null;
+    protected $valueTime = null;
 
     /**
-     * Captures constraints on each element within the resource, profile, or extension.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
-    protected $valueElementDefinition = null;
+    protected $valueCode = null;
 
     /**
-     * A human's name with the ability to identify parts and usage.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * An oid represented as a URI
+     * RFC 3001. See also ISO/IEC 8824:1990 €
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid
      */
-    protected $valueHumanName = null;
+    protected $valueOid = null;
+
+    /**
+     * A UUID, represented as a URI
+     * See The Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A.
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUuid
+     */
+    protected $valueUuid = null;
 
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -383,39 +354,26 @@ class FHIRParametersParameter extends FHIRBackboneElement
     protected $valueId = null;
 
     /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * An integer with a value that is not negative (e.g. >= 0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt
      */
-    protected $valueIdentifier = null;
+    protected $valueUnsignedInt = null;
 
     /**
-     * An instant in time - known at least to the second
-     * Note: This is intended for precisely observed times, typically system logs etc.,
-     * and not human-reported times - for them, see date and dateTime below. Time zone
-     * is always required
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
      */
-    protected $valueInstant = null;
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInteger
-     */
-    protected $valueInteger = null;
+    protected $valuePositiveInt = null;
 
     /**
      * A string that may contain markdown syntax for optional processing by a mark down
@@ -435,51 +393,61 @@ class FHIRParametersParameter extends FHIRBackboneElement
     protected $valueMarkdown = null;
 
     /**
-     * The metadata about a resource. This is content in the resource that is
-     * maintained by the infrastructure. Changes to the content may not always be
-     * associated with version changes to the resource.
+     * A text note which also contains information about who made the statement and
+     * when.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMeta
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation
      */
-    protected $valueMeta = null;
+    protected $valueAnnotation = null;
 
     /**
-     * An oid represented as a URI
-     * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid
-     */
-    protected $valueOid = null;
-
-    /**
-     * A time period defined by a start and end date and optionally time.
+     * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
      */
-    protected $valuePeriod = null;
+    protected $valueAttachment = null;
 
     /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
      */
-    protected $valuePositiveInt = null;
+    protected $valueIdentifier = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
+     */
+    protected $valueCodeableConcept = null;
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
+     */
+    protected $valueCoding = null;
 
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -504,6 +472,17 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRange
      */
     protected $valueRange = null;
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
+     */
+    protected $valuePeriod = null;
 
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -555,25 +534,39 @@ class FHIRParametersParameter extends FHIRBackboneElement
     protected $valueSignature = null;
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A human's name with the ability to identify parts and usage.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName
      */
-    protected $valueString = null;
+    protected $valueHumanName = null;
 
     /**
-     * A time during the day, with no date specified
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * There is a variety of postal address formats defined around the world. This
+     * format defines a superset that is the basis for all addresses around the world.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTime
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress
      */
-    protected $valueTime = null;
+    protected $valueAddress = null;
+
+    /**
+     * Details for all kinds of technology mediated contact points for a person or
+     * organization, including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint
+     */
+    protected $valueContactPoint = null;
 
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
@@ -590,38 +583,47 @@ class FHIRParametersParameter extends FHIRBackboneElement
     protected $valueTiming = null;
 
     /**
-     * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content may not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMeta
      */
-    protected $valueUnsignedInt = null;
+    protected $valueMeta = null;
 
     /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * Captures constraints on each element within the resource, profile, or extension.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition
      */
-    protected $valueUri = null;
+    protected $valueElementDefinition = null;
 
     /**
-     * A UUID, represented as a URI
-     * See The Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A.
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * If the parameter is a whole resource.
      *
-     * If the parameter is a data type.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUuid
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRContainedTypeInterface
      */
-    protected $valueUuid = null;
+    protected $resource = null;
+
+    /**
+     * This special resource type is used to represent an operation request and
+     * response (operations.html). It has no other use, and there is no RESTful
+     * endpoint associated with it.
+     *
+     * A named part of a parameter. In many implementation context, a set of named
+     * parts is known as a "Tuple".
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[]
+     */
+    protected $part = [];
 
     /**
      * Validation map for fields in type Parameters.Parameter
@@ -646,16 +648,8 @@ class FHIRParametersParameter extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_NAME]) || isset($data[self::FIELD_NAME_EXT])) {
-            if (isset($data[self::FIELD_NAME])) {
-                $value = $data[self::FIELD_NAME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_NAME_EXT]) && is_array($data[self::FIELD_NAME_EXT])) {
-                $ext = $data[self::FIELD_NAME_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_NAME]) ? $data[self::FIELD_NAME] : null;
+            $ext = (isset($data[self::FIELD_NAME_EXT]) && is_array($data[self::FIELD_NAME_EXT])) ? $ext = $data[self::FIELD_NAME_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setName($value);
@@ -664,59 +658,263 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 } else {
                     $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setName(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_PART])) {
-            if (is_array($data[self::FIELD_PART])) {
-                foreach($data[self::FIELD_PART] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRParametersParameter) {
-                        $this->addPart($v);
-                    } else {
-                        $this->addPart(new FHIRParametersParameter($v));
-                    }
-                }
-            } else if ($data[self::FIELD_PART] instanceof FHIRParametersParameter) {
-                $this->addPart($data[self::FIELD_PART]);
-            } else {
-                $this->addPart(new FHIRParametersParameter($data[self::FIELD_PART]));
-            }
-        }
-        if (isset($data[self::FIELD_RESOURCE])) {
-            if (is_object($data[self::FIELD_RESOURCE])) {
-                if ($data[self::FIELD_RESOURCE] instanceof PHPFHIRContainedTypeInterface) {
-                    $this->setResource($data[self::FIELD_RESOURCE]);
+        if (isset($data[self::FIELD_VALUE_BOOLEAN]) || isset($data[self::FIELD_VALUE_BOOLEAN_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_BOOLEAN]) ? $data[self::FIELD_VALUE_BOOLEAN] : null;
+            $ext = (isset($data[self::FIELD_VALUE_BOOLEAN_EXT]) && is_array($data[self::FIELD_VALUE_BOOLEAN_EXT])) ? $ext = $data[self::FIELD_VALUE_BOOLEAN_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setValueBoolean($value);
+                } else if (is_array($value)) {
+                    $this->setValueBoolean(new FHIRBoolean(array_merge($ext, $value)));
                 } else {
-                    throw new \InvalidArgumentException(sprintf(
-                        'FHIRParametersParameter - Field "resource" must be an object implementing PHPFHIRContainedTypeInterface, object of type %s seen',
-                        get_class($data[self::FIELD_RESOURCE])
-                    ));
+                    $this->setValueBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if (is_array($data[self::FIELD_RESOURCE])) {
-                $typeClass = PHPFHIRTypeMap::getContainedTypeFromArray($data[self::FIELD_RESOURCE]);
-                if (null === $typeClass) {
-                    throw new \InvalidArgumentException(sprintf(
-                        'FHIRParametersParameter - Unable to determine class for field "resource" from value: %s',
-                        json_encode($data[self::FIELD_RESOURCE])
-                    ));
-                }
-                $this->setResource(new $typeClass($data[self::FIELD_RESOURCE]));
-            } else {
-                throw new \InvalidArgumentException(sprintf(
-                    'FHIRParametersParameter - Unable to determine class for field "resource" from value: %s',
-                    json_encode($data[self::FIELD_RESOURCE])
-                ));
+            } elseif ([] !== $ext) {
+                $this->setValueBoolean(new FHIRBoolean($ext));
             }
         }
-        if (isset($data[self::FIELD_VALUE_ADDRESS])) {
-            if ($data[self::FIELD_VALUE_ADDRESS] instanceof FHIRAddress) {
-                $this->setValueAddress($data[self::FIELD_VALUE_ADDRESS]);
-            } else {
-                $this->setValueAddress(new FHIRAddress($data[self::FIELD_VALUE_ADDRESS]));
+        if (isset($data[self::FIELD_VALUE_INTEGER]) || isset($data[self::FIELD_VALUE_INTEGER_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_INTEGER]) ? $data[self::FIELD_VALUE_INTEGER] : null;
+            $ext = (isset($data[self::FIELD_VALUE_INTEGER_EXT]) && is_array($data[self::FIELD_VALUE_INTEGER_EXT])) ? $ext = $data[self::FIELD_VALUE_INTEGER_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setValueInteger($value);
+                } else if (is_array($value)) {
+                    $this->setValueInteger(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setValueInteger(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueInteger(new FHIRInteger($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_DECIMAL]) || isset($data[self::FIELD_VALUE_DECIMAL_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_DECIMAL]) ? $data[self::FIELD_VALUE_DECIMAL] : null;
+            $ext = (isset($data[self::FIELD_VALUE_DECIMAL_EXT]) && is_array($data[self::FIELD_VALUE_DECIMAL_EXT])) ? $ext = $data[self::FIELD_VALUE_DECIMAL_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setValueDecimal($value);
+                } else if (is_array($value)) {
+                    $this->setValueDecimal(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setValueDecimal(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueDecimal(new FHIRDecimal($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_BASE_64BINARY]) || isset($data[self::FIELD_VALUE_BASE_64BINARY_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_BASE_64BINARY]) ? $data[self::FIELD_VALUE_BASE_64BINARY] : null;
+            $ext = (isset($data[self::FIELD_VALUE_BASE_64BINARY_EXT]) && is_array($data[self::FIELD_VALUE_BASE_64BINARY_EXT])) ? $ext = $data[self::FIELD_VALUE_BASE_64BINARY_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBase64Binary) {
+                    $this->setValueBase64Binary($value);
+                } else if (is_array($value)) {
+                    $this->setValueBase64Binary(new FHIRBase64Binary(array_merge($ext, $value)));
+                } else {
+                    $this->setValueBase64Binary(new FHIRBase64Binary([FHIRBase64Binary::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueBase64Binary(new FHIRBase64Binary($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_INSTANT]) || isset($data[self::FIELD_VALUE_INSTANT_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_INSTANT]) ? $data[self::FIELD_VALUE_INSTANT] : null;
+            $ext = (isset($data[self::FIELD_VALUE_INSTANT_EXT]) && is_array($data[self::FIELD_VALUE_INSTANT_EXT])) ? $ext = $data[self::FIELD_VALUE_INSTANT_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInstant) {
+                    $this->setValueInstant($value);
+                } else if (is_array($value)) {
+                    $this->setValueInstant(new FHIRInstant(array_merge($ext, $value)));
+                } else {
+                    $this->setValueInstant(new FHIRInstant([FHIRInstant::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueInstant(new FHIRInstant($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_STRING]) || isset($data[self::FIELD_VALUE_STRING_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_STRING]) ? $data[self::FIELD_VALUE_STRING] : null;
+            $ext = (isset($data[self::FIELD_VALUE_STRING_EXT]) && is_array($data[self::FIELD_VALUE_STRING_EXT])) ? $ext = $data[self::FIELD_VALUE_STRING_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setValueString($value);
+                } else if (is_array($value)) {
+                    $this->setValueString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setValueString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueString(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_URI]) || isset($data[self::FIELD_VALUE_URI_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_URI]) ? $data[self::FIELD_VALUE_URI] : null;
+            $ext = (isset($data[self::FIELD_VALUE_URI_EXT]) && is_array($data[self::FIELD_VALUE_URI_EXT])) ? $ext = $data[self::FIELD_VALUE_URI_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setValueUri($value);
+                } else if (is_array($value)) {
+                    $this->setValueUri(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setValueUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueUri(new FHIRUri($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_DATE]) || isset($data[self::FIELD_VALUE_DATE_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_DATE]) ? $data[self::FIELD_VALUE_DATE] : null;
+            $ext = (isset($data[self::FIELD_VALUE_DATE_EXT]) && is_array($data[self::FIELD_VALUE_DATE_EXT])) ? $ext = $data[self::FIELD_VALUE_DATE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDate) {
+                    $this->setValueDate($value);
+                } else if (is_array($value)) {
+                    $this->setValueDate(new FHIRDate(array_merge($ext, $value)));
+                } else {
+                    $this->setValueDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueDate(new FHIRDate($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_DATE_TIME]) || isset($data[self::FIELD_VALUE_DATE_TIME_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_DATE_TIME]) ? $data[self::FIELD_VALUE_DATE_TIME] : null;
+            $ext = (isset($data[self::FIELD_VALUE_DATE_TIME_EXT]) && is_array($data[self::FIELD_VALUE_DATE_TIME_EXT])) ? $ext = $data[self::FIELD_VALUE_DATE_TIME_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setValueDateTime($value);
+                } else if (is_array($value)) {
+                    $this->setValueDateTime(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setValueDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueDateTime(new FHIRDateTime($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_TIME]) || isset($data[self::FIELD_VALUE_TIME_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_TIME]) ? $data[self::FIELD_VALUE_TIME] : null;
+            $ext = (isset($data[self::FIELD_VALUE_TIME_EXT]) && is_array($data[self::FIELD_VALUE_TIME_EXT])) ? $ext = $data[self::FIELD_VALUE_TIME_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRTime) {
+                    $this->setValueTime($value);
+                } else if (is_array($value)) {
+                    $this->setValueTime(new FHIRTime(array_merge($ext, $value)));
+                } else {
+                    $this->setValueTime(new FHIRTime([FHIRTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueTime(new FHIRTime($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_CODE]) || isset($data[self::FIELD_VALUE_CODE_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_CODE]) ? $data[self::FIELD_VALUE_CODE] : null;
+            $ext = (isset($data[self::FIELD_VALUE_CODE_EXT]) && is_array($data[self::FIELD_VALUE_CODE_EXT])) ? $ext = $data[self::FIELD_VALUE_CODE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRCode) {
+                    $this->setValueCode($value);
+                } else if (is_array($value)) {
+                    $this->setValueCode(new FHIRCode(array_merge($ext, $value)));
+                } else {
+                    $this->setValueCode(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueCode(new FHIRCode($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_OID]) || isset($data[self::FIELD_VALUE_OID_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_OID]) ? $data[self::FIELD_VALUE_OID] : null;
+            $ext = (isset($data[self::FIELD_VALUE_OID_EXT]) && is_array($data[self::FIELD_VALUE_OID_EXT])) ? $ext = $data[self::FIELD_VALUE_OID_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIROid) {
+                    $this->setValueOid($value);
+                } else if (is_array($value)) {
+                    $this->setValueOid(new FHIROid(array_merge($ext, $value)));
+                } else {
+                    $this->setValueOid(new FHIROid([FHIROid::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueOid(new FHIROid($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_UUID]) || isset($data[self::FIELD_VALUE_UUID_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_UUID]) ? $data[self::FIELD_VALUE_UUID] : null;
+            $ext = (isset($data[self::FIELD_VALUE_UUID_EXT]) && is_array($data[self::FIELD_VALUE_UUID_EXT])) ? $ext = $data[self::FIELD_VALUE_UUID_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRUuid) {
+                    $this->setValueUuid($value);
+                } else if (is_array($value)) {
+                    $this->setValueUuid(new FHIRUuid(array_merge($ext, $value)));
+                } else {
+                    $this->setValueUuid(new FHIRUuid([FHIRUuid::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueUuid(new FHIRUuid($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_ID]) || isset($data[self::FIELD_VALUE_ID_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_ID]) ? $data[self::FIELD_VALUE_ID] : null;
+            $ext = (isset($data[self::FIELD_VALUE_ID_EXT]) && is_array($data[self::FIELD_VALUE_ID_EXT])) ? $ext = $data[self::FIELD_VALUE_ID_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRId) {
+                    $this->setValueId($value);
+                } else if (is_array($value)) {
+                    $this->setValueId(new FHIRId(array_merge($ext, $value)));
+                } else {
+                    $this->setValueId(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueId(new FHIRId($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_UNSIGNED_INT]) || isset($data[self::FIELD_VALUE_UNSIGNED_INT_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_UNSIGNED_INT]) ? $data[self::FIELD_VALUE_UNSIGNED_INT] : null;
+            $ext = (isset($data[self::FIELD_VALUE_UNSIGNED_INT_EXT]) && is_array($data[self::FIELD_VALUE_UNSIGNED_INT_EXT])) ? $ext = $data[self::FIELD_VALUE_UNSIGNED_INT_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRUnsignedInt) {
+                    $this->setValueUnsignedInt($value);
+                } else if (is_array($value)) {
+                    $this->setValueUnsignedInt(new FHIRUnsignedInt(array_merge($ext, $value)));
+                } else {
+                    $this->setValueUnsignedInt(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueUnsignedInt(new FHIRUnsignedInt($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_POSITIVE_INT]) || isset($data[self::FIELD_VALUE_POSITIVE_INT_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_POSITIVE_INT]) ? $data[self::FIELD_VALUE_POSITIVE_INT] : null;
+            $ext = (isset($data[self::FIELD_VALUE_POSITIVE_INT_EXT]) && is_array($data[self::FIELD_VALUE_POSITIVE_INT_EXT])) ? $ext = $data[self::FIELD_VALUE_POSITIVE_INT_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setValuePositiveInt($value);
+                } else if (is_array($value)) {
+                    $this->setValuePositiveInt(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->setValuePositiveInt(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValuePositiveInt(new FHIRPositiveInt($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_MARKDOWN]) || isset($data[self::FIELD_VALUE_MARKDOWN_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_MARKDOWN]) ? $data[self::FIELD_VALUE_MARKDOWN] : null;
+            $ext = (isset($data[self::FIELD_VALUE_MARKDOWN_EXT]) && is_array($data[self::FIELD_VALUE_MARKDOWN_EXT])) ? $ext = $data[self::FIELD_VALUE_MARKDOWN_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRMarkdown) {
+                    $this->setValueMarkdown($value);
+                } else if (is_array($value)) {
+                    $this->setValueMarkdown(new FHIRMarkdown(array_merge($ext, $value)));
+                } else {
+                    $this->setValueMarkdown(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueMarkdown(new FHIRMarkdown($ext));
             }
         }
         if (isset($data[self::FIELD_VALUE_ANNOTATION])) {
@@ -733,73 +931,11 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 $this->setValueAttachment(new FHIRAttachment($data[self::FIELD_VALUE_ATTACHMENT]));
             }
         }
-        if (isset($data[self::FIELD_VALUE_BASE_64BINARY]) || isset($data[self::FIELD_VALUE_BASE_64BINARY_EXT])) {
-            if (isset($data[self::FIELD_VALUE_BASE_64BINARY])) {
-                $value = $data[self::FIELD_VALUE_BASE_64BINARY];
+        if (isset($data[self::FIELD_VALUE_IDENTIFIER])) {
+            if ($data[self::FIELD_VALUE_IDENTIFIER] instanceof FHIRIdentifier) {
+                $this->setValueIdentifier($data[self::FIELD_VALUE_IDENTIFIER]);
             } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_BASE_64BINARY_EXT]) && is_array($data[self::FIELD_VALUE_BASE_64BINARY_EXT])) {
-                $ext = $data[self::FIELD_VALUE_BASE_64BINARY_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBase64Binary) {
-                    $this->setValueBase64Binary($value);
-                } else if (is_array($value)) {
-                    $this->setValueBase64Binary(new FHIRBase64Binary(array_merge($ext, $value)));
-                } else {
-                    $this->setValueBase64Binary(new FHIRBase64Binary([FHIRBase64Binary::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueBase64Binary(new FHIRBase64Binary($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_BOOLEAN]) || isset($data[self::FIELD_VALUE_BOOLEAN_EXT])) {
-            if (isset($data[self::FIELD_VALUE_BOOLEAN])) {
-                $value = $data[self::FIELD_VALUE_BOOLEAN];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_BOOLEAN_EXT]) && is_array($data[self::FIELD_VALUE_BOOLEAN_EXT])) {
-                $ext = $data[self::FIELD_VALUE_BOOLEAN_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setValueBoolean($value);
-                } else if (is_array($value)) {
-                    $this->setValueBoolean(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setValueBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueBoolean(new FHIRBoolean($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_CODE]) || isset($data[self::FIELD_VALUE_CODE_EXT])) {
-            if (isset($data[self::FIELD_VALUE_CODE])) {
-                $value = $data[self::FIELD_VALUE_CODE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_CODE_EXT]) && is_array($data[self::FIELD_VALUE_CODE_EXT])) {
-                $ext = $data[self::FIELD_VALUE_CODE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRCode) {
-                    $this->setValueCode($value);
-                } else if (is_array($value)) {
-                    $this->setValueCode(new FHIRCode(array_merge($ext, $value)));
-                } else {
-                    $this->setValueCode(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueCode(new FHIRCode($ext));
+                $this->setValueIdentifier(new FHIRIdentifier($data[self::FIELD_VALUE_IDENTIFIER]));
             }
         }
         if (isset($data[self::FIELD_VALUE_CODEABLE_CONCEPT])) {
@@ -816,255 +952,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 $this->setValueCoding(new FHIRCoding($data[self::FIELD_VALUE_CODING]));
             }
         }
-        if (isset($data[self::FIELD_VALUE_CONTACT_POINT])) {
-            if ($data[self::FIELD_VALUE_CONTACT_POINT] instanceof FHIRContactPoint) {
-                $this->setValueContactPoint($data[self::FIELD_VALUE_CONTACT_POINT]);
-            } else {
-                $this->setValueContactPoint(new FHIRContactPoint($data[self::FIELD_VALUE_CONTACT_POINT]));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_DATE]) || isset($data[self::FIELD_VALUE_DATE_EXT])) {
-            if (isset($data[self::FIELD_VALUE_DATE])) {
-                $value = $data[self::FIELD_VALUE_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_DATE_EXT]) && is_array($data[self::FIELD_VALUE_DATE_EXT])) {
-                $ext = $data[self::FIELD_VALUE_DATE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDate) {
-                    $this->setValueDate($value);
-                } else if (is_array($value)) {
-                    $this->setValueDate(new FHIRDate(array_merge($ext, $value)));
-                } else {
-                    $this->setValueDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueDate(new FHIRDate($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_DATE_TIME]) || isset($data[self::FIELD_VALUE_DATE_TIME_EXT])) {
-            if (isset($data[self::FIELD_VALUE_DATE_TIME])) {
-                $value = $data[self::FIELD_VALUE_DATE_TIME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_DATE_TIME_EXT]) && is_array($data[self::FIELD_VALUE_DATE_TIME_EXT])) {
-                $ext = $data[self::FIELD_VALUE_DATE_TIME_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $this->setValueDateTime($value);
-                } else if (is_array($value)) {
-                    $this->setValueDateTime(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $this->setValueDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueDateTime(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_DECIMAL]) || isset($data[self::FIELD_VALUE_DECIMAL_EXT])) {
-            if (isset($data[self::FIELD_VALUE_DECIMAL])) {
-                $value = $data[self::FIELD_VALUE_DECIMAL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_DECIMAL_EXT]) && is_array($data[self::FIELD_VALUE_DECIMAL_EXT])) {
-                $ext = $data[self::FIELD_VALUE_DECIMAL_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->setValueDecimal($value);
-                } else if (is_array($value)) {
-                    $this->setValueDecimal(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->setValueDecimal(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueDecimal(new FHIRDecimal($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_ELEMENT_DEFINITION])) {
-            if ($data[self::FIELD_VALUE_ELEMENT_DEFINITION] instanceof FHIRElementDefinition) {
-                $this->setValueElementDefinition($data[self::FIELD_VALUE_ELEMENT_DEFINITION]);
-            } else {
-                $this->setValueElementDefinition(new FHIRElementDefinition($data[self::FIELD_VALUE_ELEMENT_DEFINITION]));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_HUMAN_NAME])) {
-            if ($data[self::FIELD_VALUE_HUMAN_NAME] instanceof FHIRHumanName) {
-                $this->setValueHumanName($data[self::FIELD_VALUE_HUMAN_NAME]);
-            } else {
-                $this->setValueHumanName(new FHIRHumanName($data[self::FIELD_VALUE_HUMAN_NAME]));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_ID]) || isset($data[self::FIELD_VALUE_ID_EXT])) {
-            if (isset($data[self::FIELD_VALUE_ID])) {
-                $value = $data[self::FIELD_VALUE_ID];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_ID_EXT]) && is_array($data[self::FIELD_VALUE_ID_EXT])) {
-                $ext = $data[self::FIELD_VALUE_ID_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRId) {
-                    $this->setValueId($value);
-                } else if (is_array($value)) {
-                    $this->setValueId(new FHIRId(array_merge($ext, $value)));
-                } else {
-                    $this->setValueId(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueId(new FHIRId($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_IDENTIFIER])) {
-            if ($data[self::FIELD_VALUE_IDENTIFIER] instanceof FHIRIdentifier) {
-                $this->setValueIdentifier($data[self::FIELD_VALUE_IDENTIFIER]);
-            } else {
-                $this->setValueIdentifier(new FHIRIdentifier($data[self::FIELD_VALUE_IDENTIFIER]));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_INSTANT]) || isset($data[self::FIELD_VALUE_INSTANT_EXT])) {
-            if (isset($data[self::FIELD_VALUE_INSTANT])) {
-                $value = $data[self::FIELD_VALUE_INSTANT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_INSTANT_EXT]) && is_array($data[self::FIELD_VALUE_INSTANT_EXT])) {
-                $ext = $data[self::FIELD_VALUE_INSTANT_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInstant) {
-                    $this->setValueInstant($value);
-                } else if (is_array($value)) {
-                    $this->setValueInstant(new FHIRInstant(array_merge($ext, $value)));
-                } else {
-                    $this->setValueInstant(new FHIRInstant([FHIRInstant::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueInstant(new FHIRInstant($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_INTEGER]) || isset($data[self::FIELD_VALUE_INTEGER_EXT])) {
-            if (isset($data[self::FIELD_VALUE_INTEGER])) {
-                $value = $data[self::FIELD_VALUE_INTEGER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_INTEGER_EXT]) && is_array($data[self::FIELD_VALUE_INTEGER_EXT])) {
-                $ext = $data[self::FIELD_VALUE_INTEGER_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->setValueInteger($value);
-                } else if (is_array($value)) {
-                    $this->setValueInteger(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->setValueInteger(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueInteger(new FHIRInteger($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_MARKDOWN]) || isset($data[self::FIELD_VALUE_MARKDOWN_EXT])) {
-            if (isset($data[self::FIELD_VALUE_MARKDOWN])) {
-                $value = $data[self::FIELD_VALUE_MARKDOWN];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_MARKDOWN_EXT]) && is_array($data[self::FIELD_VALUE_MARKDOWN_EXT])) {
-                $ext = $data[self::FIELD_VALUE_MARKDOWN_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRMarkdown) {
-                    $this->setValueMarkdown($value);
-                } else if (is_array($value)) {
-                    $this->setValueMarkdown(new FHIRMarkdown(array_merge($ext, $value)));
-                } else {
-                    $this->setValueMarkdown(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueMarkdown(new FHIRMarkdown($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_META])) {
-            if ($data[self::FIELD_VALUE_META] instanceof FHIRMeta) {
-                $this->setValueMeta($data[self::FIELD_VALUE_META]);
-            } else {
-                $this->setValueMeta(new FHIRMeta($data[self::FIELD_VALUE_META]));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_OID]) || isset($data[self::FIELD_VALUE_OID_EXT])) {
-            if (isset($data[self::FIELD_VALUE_OID])) {
-                $value = $data[self::FIELD_VALUE_OID];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_OID_EXT]) && is_array($data[self::FIELD_VALUE_OID_EXT])) {
-                $ext = $data[self::FIELD_VALUE_OID_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIROid) {
-                    $this->setValueOid($value);
-                } else if (is_array($value)) {
-                    $this->setValueOid(new FHIROid(array_merge($ext, $value)));
-                } else {
-                    $this->setValueOid(new FHIROid([FHIROid::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueOid(new FHIROid($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_PERIOD])) {
-            if ($data[self::FIELD_VALUE_PERIOD] instanceof FHIRPeriod) {
-                $this->setValuePeriod($data[self::FIELD_VALUE_PERIOD]);
-            } else {
-                $this->setValuePeriod(new FHIRPeriod($data[self::FIELD_VALUE_PERIOD]));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_POSITIVE_INT]) || isset($data[self::FIELD_VALUE_POSITIVE_INT_EXT])) {
-            if (isset($data[self::FIELD_VALUE_POSITIVE_INT])) {
-                $value = $data[self::FIELD_VALUE_POSITIVE_INT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_POSITIVE_INT_EXT]) && is_array($data[self::FIELD_VALUE_POSITIVE_INT_EXT])) {
-                $ext = $data[self::FIELD_VALUE_POSITIVE_INT_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $this->setValuePositiveInt($value);
-                } else if (is_array($value)) {
-                    $this->setValuePositiveInt(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $this->setValuePositiveInt(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValuePositiveInt(new FHIRPositiveInt($ext));
-            }
-        }
         if (isset($data[self::FIELD_VALUE_QUANTITY])) {
             if ($data[self::FIELD_VALUE_QUANTITY] instanceof FHIRQuantity) {
                 $this->setValueQuantity($data[self::FIELD_VALUE_QUANTITY]);
@@ -1077,6 +964,13 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 $this->setValueRange($data[self::FIELD_VALUE_RANGE]);
             } else {
                 $this->setValueRange(new FHIRRange($data[self::FIELD_VALUE_RANGE]));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_PERIOD])) {
+            if ($data[self::FIELD_VALUE_PERIOD] instanceof FHIRPeriod) {
+                $this->setValuePeriod($data[self::FIELD_VALUE_PERIOD]);
+            } else {
+                $this->setValuePeriod(new FHIRPeriod($data[self::FIELD_VALUE_PERIOD]));
             }
         }
         if (isset($data[self::FIELD_VALUE_RATIO])) {
@@ -1107,50 +1001,25 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 $this->setValueSignature(new FHIRSignature($data[self::FIELD_VALUE_SIGNATURE]));
             }
         }
-        if (isset($data[self::FIELD_VALUE_STRING]) || isset($data[self::FIELD_VALUE_STRING_EXT])) {
-            if (isset($data[self::FIELD_VALUE_STRING])) {
-                $value = $data[self::FIELD_VALUE_STRING];
+        if (isset($data[self::FIELD_VALUE_HUMAN_NAME])) {
+            if ($data[self::FIELD_VALUE_HUMAN_NAME] instanceof FHIRHumanName) {
+                $this->setValueHumanName($data[self::FIELD_VALUE_HUMAN_NAME]);
             } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_STRING_EXT]) && is_array($data[self::FIELD_VALUE_STRING_EXT])) {
-                $ext = $data[self::FIELD_VALUE_STRING_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setValueString($value);
-                } else if (is_array($value)) {
-                    $this->setValueString(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setValueString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueString(new FHIRString($ext));
+                $this->setValueHumanName(new FHIRHumanName($data[self::FIELD_VALUE_HUMAN_NAME]));
             }
         }
-        if (isset($data[self::FIELD_VALUE_TIME]) || isset($data[self::FIELD_VALUE_TIME_EXT])) {
-            if (isset($data[self::FIELD_VALUE_TIME])) {
-                $value = $data[self::FIELD_VALUE_TIME];
+        if (isset($data[self::FIELD_VALUE_ADDRESS])) {
+            if ($data[self::FIELD_VALUE_ADDRESS] instanceof FHIRAddress) {
+                $this->setValueAddress($data[self::FIELD_VALUE_ADDRESS]);
             } else {
-                $value = null;
+                $this->setValueAddress(new FHIRAddress($data[self::FIELD_VALUE_ADDRESS]));
             }
-            if (isset($data[self::FIELD_VALUE_TIME_EXT]) && is_array($data[self::FIELD_VALUE_TIME_EXT])) {
-                $ext = $data[self::FIELD_VALUE_TIME_EXT];
+        }
+        if (isset($data[self::FIELD_VALUE_CONTACT_POINT])) {
+            if ($data[self::FIELD_VALUE_CONTACT_POINT] instanceof FHIRContactPoint) {
+                $this->setValueContactPoint($data[self::FIELD_VALUE_CONTACT_POINT]);
             } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRTime) {
-                    $this->setValueTime($value);
-                } else if (is_array($value)) {
-                    $this->setValueTime(new FHIRTime(array_merge($ext, $value)));
-                } else {
-                    $this->setValueTime(new FHIRTime([FHIRTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueTime(new FHIRTime($ext));
+                $this->setValueContactPoint(new FHIRContactPoint($data[self::FIELD_VALUE_CONTACT_POINT]));
             }
         }
         if (isset($data[self::FIELD_VALUE_TIMING])) {
@@ -1160,73 +1029,62 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 $this->setValueTiming(new FHIRTiming($data[self::FIELD_VALUE_TIMING]));
             }
         }
-        if (isset($data[self::FIELD_VALUE_UNSIGNED_INT]) || isset($data[self::FIELD_VALUE_UNSIGNED_INT_EXT])) {
-            if (isset($data[self::FIELD_VALUE_UNSIGNED_INT])) {
-                $value = $data[self::FIELD_VALUE_UNSIGNED_INT];
+        if (isset($data[self::FIELD_VALUE_META])) {
+            if ($data[self::FIELD_VALUE_META] instanceof FHIRMeta) {
+                $this->setValueMeta($data[self::FIELD_VALUE_META]);
             } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_UNSIGNED_INT_EXT]) && is_array($data[self::FIELD_VALUE_UNSIGNED_INT_EXT])) {
-                $ext = $data[self::FIELD_VALUE_UNSIGNED_INT_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRUnsignedInt) {
-                    $this->setValueUnsignedInt($value);
-                } else if (is_array($value)) {
-                    $this->setValueUnsignedInt(new FHIRUnsignedInt(array_merge($ext, $value)));
-                } else {
-                    $this->setValueUnsignedInt(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueUnsignedInt(new FHIRUnsignedInt($ext));
+                $this->setValueMeta(new FHIRMeta($data[self::FIELD_VALUE_META]));
             }
         }
-        if (isset($data[self::FIELD_VALUE_URI]) || isset($data[self::FIELD_VALUE_URI_EXT])) {
-            if (isset($data[self::FIELD_VALUE_URI])) {
-                $value = $data[self::FIELD_VALUE_URI];
+        if (isset($data[self::FIELD_VALUE_ELEMENT_DEFINITION])) {
+            if ($data[self::FIELD_VALUE_ELEMENT_DEFINITION] instanceof FHIRElementDefinition) {
+                $this->setValueElementDefinition($data[self::FIELD_VALUE_ELEMENT_DEFINITION]);
             } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_URI_EXT]) && is_array($data[self::FIELD_VALUE_URI_EXT])) {
-                $ext = $data[self::FIELD_VALUE_URI_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRUri) {
-                    $this->setValueUri($value);
-                } else if (is_array($value)) {
-                    $this->setValueUri(new FHIRUri(array_merge($ext, $value)));
-                } else {
-                    $this->setValueUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueUri(new FHIRUri($ext));
+                $this->setValueElementDefinition(new FHIRElementDefinition($data[self::FIELD_VALUE_ELEMENT_DEFINITION]));
             }
         }
-        if (isset($data[self::FIELD_VALUE_UUID]) || isset($data[self::FIELD_VALUE_UUID_EXT])) {
-            if (isset($data[self::FIELD_VALUE_UUID])) {
-                $value = $data[self::FIELD_VALUE_UUID];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_UUID_EXT]) && is_array($data[self::FIELD_VALUE_UUID_EXT])) {
-                $ext = $data[self::FIELD_VALUE_UUID_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRUuid) {
-                    $this->setValueUuid($value);
-                } else if (is_array($value)) {
-                    $this->setValueUuid(new FHIRUuid(array_merge($ext, $value)));
+        if (isset($data[self::FIELD_RESOURCE])) {
+            if (is_object($data[self::FIELD_RESOURCE])) {
+                if ($data[self::FIELD_RESOURCE] instanceof PHPFHIRContainedTypeInterface) {
+                    $this->setResource($data[self::FIELD_RESOURCE]);
                 } else {
-                    $this->setValueUuid(new FHIRUuid([FHIRUuid::FIELD_VALUE => $value] + $ext));
+                    throw new \InvalidArgumentException(sprintf(
+                        'FHIRParametersParameter - Field "resource" must be an object implementing PHPFHIRContainedTypeInterface, object of type %s seen',
+                        get_class($data[self::FIELD_RESOURCE])
+                    ));
                 }
-            } else if ([] !== $ext) {
-                $this->setValueUuid(new FHIRUuid($ext));
+            } elseif (is_array($data[self::FIELD_RESOURCE])) {
+                $typeClass = PHPFHIRTypeMap::getContainedTypeFromArray($data[self::FIELD_RESOURCE]);
+                if (null === $typeClass) {
+                    throw new \InvalidArgumentException(sprintf(
+                        'FHIRParametersParameter - Unable to determine class for field "resource" from value: %s',
+                        json_encode($data[self::FIELD_RESOURCE])
+                    ));
+                }
+                $this->setResource(new $typeClass($data[self::FIELD_RESOURCE]));
+            } else {
+                throw new \InvalidArgumentException(sprintf(
+                    'FHIRParametersParameter - Unable to determine class for field "resource" from value: %s',
+                    json_encode($data[self::FIELD_RESOURCE])
+                ));
+            }
+        }
+        if (isset($data[self::FIELD_PART])) {
+            if (is_array($data[self::FIELD_PART])) {
+                foreach($data[self::FIELD_PART] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRParametersParameter) {
+                        $this->addPart($v);
+                    } else {
+                        $this->addPart(new FHIRParametersParameter($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_PART] instanceof FHIRParametersParameter) {
+                $this->addPart($data[self::FIELD_PART]);
+            } else {
+                $this->addPart(new FHIRParametersParameter($data[self::FIELD_PART]));
             }
         }
     }
@@ -1245,7 +1103,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ParametersParameter{$xmlns}></ParametersParameter>";
@@ -1277,190 +1135,113 @@ class FHIRParametersParameter extends FHIRBackboneElement
      */
     public function setName($name = null)
     {
-        if (null === $name) {
-            $this->name = null;
-            return $this;
+        if (null !== $name && !($name instanceof FHIRString)) {
+            $name = new FHIRString($name);
         }
-        if ($name instanceof FHIRString) {
-            $this->name = $name;
-            return $this;
+        $this->_trackValueSet($this->name, $name);
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
+     */
+    public function getValueBoolean()
+    {
+        return $this->valueBoolean;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $valueBoolean
+     * @return static
+     */
+    public function setValueBoolean($valueBoolean = null)
+    {
+        if (null !== $valueBoolean && !($valueBoolean instanceof FHIRBoolean)) {
+            $valueBoolean = new FHIRBoolean($valueBoolean);
         }
-        $this->name = new FHIRString($name);
+        $this->_trackValueSet($this->valueBoolean, $valueBoolean);
+        $this->valueBoolean = $valueBoolean;
         return $this;
     }
 
     /**
-     * This special resource type is used to represent an operation request and
-     * response (operations.html). It has no other use, and there is no RESTful
-     * endpoint associated with it.
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A named part of a parameter. In many implementation context, a set of named
-     * parts is known as a "Tuple".
+     * If the parameter is a data type.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[]
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInteger
      */
-    public function getPart()
+    public function getValueInteger()
     {
-        return $this->part;
+        return $this->valueInteger;
     }
 
     /**
-     * This special resource type is used to represent an operation request and
-     * response (operations.html). It has no other use, and there is no RESTful
-     * endpoint associated with it.
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A named part of a parameter. In many implementation context, a set of named
-     * parts is known as a "Tuple".
+     * If the parameter is a data type.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter $part
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInteger $valueInteger
      * @return static
      */
-    public function addPart(FHIRParametersParameter $part = null)
+    public function setValueInteger($valueInteger = null)
     {
-        $this->part[] = $part;
-        return $this;
-    }
-
-    /**
-     * This special resource type is used to represent an operation request and
-     * response (operations.html). It has no other use, and there is no RESTful
-     * endpoint associated with it.
-     *
-     * A named part of a parameter. In many implementation context, a set of named
-     * parts is known as a "Tuple".
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[] $part
-     * @return static
-     */
-    public function setPart(array $part = [])
-    {
-        $this->part = [];
-        if ([] === $part) {
-            return $this;
+        if (null !== $valueInteger && !($valueInteger instanceof FHIRInteger)) {
+            $valueInteger = new FHIRInteger($valueInteger);
         }
-        foreach($part as $v) {
-            if ($v instanceof FHIRParametersParameter) {
-                $this->addPart($v);
-            } else {
-                $this->addPart(new FHIRParametersParameter($v));
-            }
+        $this->_trackValueSet($this->valueInteger, $valueInteger);
+        $this->valueInteger = $valueInteger;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDecimal
+     */
+    public function getValueDecimal()
+    {
+        return $this->valueDecimal;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDecimal $valueDecimal
+     * @return static
+     */
+    public function setValueDecimal($valueDecimal = null)
+    {
+        if (null !== $valueDecimal && !($valueDecimal instanceof FHIRDecimal)) {
+            $valueDecimal = new FHIRDecimal($valueDecimal);
         }
-        return $this;
-    }
-
-    /**
-     * If the parameter is a whole resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRContainedTypeInterface
-     */
-    public function getResource()
-    {
-        return $this->resource;
-    }
-
-    /**
-     * If the parameter is a whole resource.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRContainedTypeInterface $resource
-     * @return static
-     */
-    public function setResource(PHPFHIRContainedTypeInterface $resource = null)
-    {
-        $this->resource = $resource;
-        return $this;
-    }
-
-    /**
-     * There is a variety of postal address formats defined around the world. This
-     * format defines a superset that is the basis for all addresses around the world.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress
-     */
-    public function getValueAddress()
-    {
-        return $this->valueAddress;
-    }
-
-    /**
-     * There is a variety of postal address formats defined around the world. This
-     * format defines a superset that is the basis for all addresses around the world.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress $valueAddress
-     * @return static
-     */
-    public function setValueAddress(FHIRAddress $valueAddress = null)
-    {
-        $this->valueAddress = $valueAddress;
-        return $this;
-    }
-
-    /**
-     * A text note which also contains information about who made the statement and
-     * when.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation
-     */
-    public function getValueAnnotation()
-    {
-        return $this->valueAnnotation;
-    }
-
-    /**
-     * A text note which also contains information about who made the statement and
-     * when.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation $valueAnnotation
-     * @return static
-     */
-    public function setValueAnnotation(FHIRAnnotation $valueAnnotation = null)
-    {
-        $this->valueAnnotation = $valueAnnotation;
-        return $this;
-    }
-
-    /**
-     * For referring to data content defined in other formats.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
-     */
-    public function getValueAttachment()
-    {
-        return $this->valueAttachment;
-    }
-
-    /**
-     * For referring to data content defined in other formats.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment $valueAttachment
-     * @return static
-     */
-    public function setValueAttachment(FHIRAttachment $valueAttachment = null)
-    {
-        $this->valueAttachment = $valueAttachment;
+        $this->_trackValueSet($this->valueDecimal, $valueDecimal);
+        $this->valueDecimal = $valueDecimal;
         return $this;
     }
 
@@ -1490,185 +1271,117 @@ class FHIRParametersParameter extends FHIRBackboneElement
      */
     public function setValueBase64Binary($valueBase64Binary = null)
     {
-        if (null === $valueBase64Binary) {
-            $this->valueBase64Binary = null;
-            return $this;
+        if (null !== $valueBase64Binary && !($valueBase64Binary instanceof FHIRBase64Binary)) {
+            $valueBase64Binary = new FHIRBase64Binary($valueBase64Binary);
         }
-        if ($valueBase64Binary instanceof FHIRBase64Binary) {
-            $this->valueBase64Binary = $valueBase64Binary;
-            return $this;
-        }
-        $this->valueBase64Binary = new FHIRBase64Binary($valueBase64Binary);
+        $this->_trackValueSet($this->valueBase64Binary, $valueBase64Binary);
+        $this->valueBase64Binary = $valueBase64Binary;
         return $this;
     }
 
     /**
-     * Value of "true" or "false"
+     * An instant in time - known at least to the second
+     * Note: This is intended for precisely observed times, typically system logs etc.,
+     * and not human-reported times - for them, see date and dateTime below. Time zone
+     * is always required
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant
      */
-    public function getValueBoolean()
+    public function getValueInstant()
     {
-        return $this->valueBoolean;
+        return $this->valueInstant;
     }
 
     /**
-     * Value of "true" or "false"
+     * An instant in time - known at least to the second
+     * Note: This is intended for precisely observed times, typically system logs etc.,
+     * and not human-reported times - for them, see date and dateTime below. Time zone
+     * is always required
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $valueBoolean
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant $valueInstant
      * @return static
      */
-    public function setValueBoolean($valueBoolean = null)
+    public function setValueInstant($valueInstant = null)
     {
-        if (null === $valueBoolean) {
-            $this->valueBoolean = null;
-            return $this;
+        if (null !== $valueInstant && !($valueInstant instanceof FHIRInstant)) {
+            $valueInstant = new FHIRInstant($valueInstant);
         }
-        if ($valueBoolean instanceof FHIRBoolean) {
-            $this->valueBoolean = $valueBoolean;
-            return $this;
-        }
-        $this->valueBoolean = new FHIRBoolean($valueBoolean);
+        $this->_trackValueSet($this->valueInstant, $valueInstant);
+        $this->valueInstant = $valueInstant;
         return $this;
     }
 
     /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    public function getValueCode()
+    public function getValueString()
     {
-        return $this->valueCode;
+        return $this->valueString;
     }
 
     /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode $valueCode
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $valueString
      * @return static
      */
-    public function setValueCode($valueCode = null)
+    public function setValueString($valueString = null)
     {
-        if (null === $valueCode) {
-            $this->valueCode = null;
-            return $this;
+        if (null !== $valueString && !($valueString instanceof FHIRString)) {
+            $valueString = new FHIRString($valueString);
         }
-        if ($valueCode instanceof FHIRCode) {
-            $this->valueCode = $valueCode;
-            return $this;
+        $this->_trackValueSet($this->valueString, $valueString);
+        $this->valueString = $valueString;
+        return $this;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
+     */
+    public function getValueUri()
+    {
+        return $this->valueUri;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $valueUri
+     * @return static
+     */
+    public function setValueUri($valueUri = null)
+    {
+        if (null !== $valueUri && !($valueUri instanceof FHIRUri)) {
+            $valueUri = new FHIRUri($valueUri);
         }
-        $this->valueCode = new FHIRCode($valueCode);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
-     */
-    public function getValueCodeableConcept()
-    {
-        return $this->valueCodeableConcept;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
-     * @return static
-     */
-    public function setValueCodeableConcept(FHIRCodeableConcept $valueCodeableConcept = null)
-    {
-        $this->valueCodeableConcept = $valueCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
-     */
-    public function getValueCoding()
-    {
-        return $this->valueCoding;
-    }
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $valueCoding
-     * @return static
-     */
-    public function setValueCoding(FHIRCoding $valueCoding = null)
-    {
-        $this->valueCoding = $valueCoding;
-        return $this;
-    }
-
-    /**
-     * Details for all kinds of technology mediated contact points for a person or
-     * organization, including telephone, email, etc.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint
-     */
-    public function getValueContactPoint()
-    {
-        return $this->valueContactPoint;
-    }
-
-    /**
-     * Details for all kinds of technology mediated contact points for a person or
-     * organization, including telephone, email, etc.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint $valueContactPoint
-     * @return static
-     */
-    public function setValueContactPoint(FHIRContactPoint $valueContactPoint = null)
-    {
-        $this->valueContactPoint = $valueContactPoint;
+        $this->_trackValueSet($this->valueUri, $valueUri);
+        $this->valueUri = $valueUri;
         return $this;
     }
 
@@ -1700,15 +1413,11 @@ class FHIRParametersParameter extends FHIRBackboneElement
      */
     public function setValueDate($valueDate = null)
     {
-        if (null === $valueDate) {
-            $this->valueDate = null;
-            return $this;
+        if (null !== $valueDate && !($valueDate instanceof FHIRDate)) {
+            $valueDate = new FHIRDate($valueDate);
         }
-        if ($valueDate instanceof FHIRDate) {
-            $this->valueDate = $valueDate;
-            return $this;
-        }
-        $this->valueDate = new FHIRDate($valueDate);
+        $this->_trackValueSet($this->valueDate, $valueDate);
+        $this->valueDate = $valueDate;
         return $this;
     }
 
@@ -1744,115 +1453,151 @@ class FHIRParametersParameter extends FHIRBackboneElement
      */
     public function setValueDateTime($valueDateTime = null)
     {
-        if (null === $valueDateTime) {
-            $this->valueDateTime = null;
-            return $this;
+        if (null !== $valueDateTime && !($valueDateTime instanceof FHIRDateTime)) {
+            $valueDateTime = new FHIRDateTime($valueDateTime);
         }
-        if ($valueDateTime instanceof FHIRDateTime) {
-            $this->valueDateTime = $valueDateTime;
-            return $this;
-        }
-        $this->valueDateTime = new FHIRDateTime($valueDateTime);
+        $this->_trackValueSet($this->valueDateTime, $valueDateTime);
+        $this->valueDateTime = $valueDateTime;
         return $this;
     }
 
     /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDecimal
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTime
      */
-    public function getValueDecimal()
+    public function getValueTime()
     {
-        return $this->valueDecimal;
+        return $this->valueTime;
     }
 
     /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDecimal $valueDecimal
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTime $valueTime
      * @return static
      */
-    public function setValueDecimal($valueDecimal = null)
+    public function setValueTime($valueTime = null)
     {
-        if (null === $valueDecimal) {
-            $this->valueDecimal = null;
-            return $this;
+        if (null !== $valueTime && !($valueTime instanceof FHIRTime)) {
+            $valueTime = new FHIRTime($valueTime);
         }
-        if ($valueDecimal instanceof FHIRDecimal) {
-            $this->valueDecimal = $valueDecimal;
-            return $this;
-        }
-        $this->valueDecimal = new FHIRDecimal($valueDecimal);
+        $this->_trackValueSet($this->valueTime, $valueTime);
+        $this->valueTime = $valueTime;
         return $this;
     }
 
     /**
-     * Captures constraints on each element within the resource, profile, or extension.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
-    public function getValueElementDefinition()
+    public function getValueCode()
     {
-        return $this->valueElementDefinition;
+        return $this->valueCode;
     }
 
     /**
-     * Captures constraints on each element within the resource, profile, or extension.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition $valueElementDefinition
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode $valueCode
      * @return static
      */
-    public function setValueElementDefinition(FHIRElementDefinition $valueElementDefinition = null)
+    public function setValueCode($valueCode = null)
     {
-        $this->valueElementDefinition = $valueElementDefinition;
+        if (null !== $valueCode && !($valueCode instanceof FHIRCode)) {
+            $valueCode = new FHIRCode($valueCode);
+        }
+        $this->_trackValueSet($this->valueCode, $valueCode);
+        $this->valueCode = $valueCode;
         return $this;
     }
 
     /**
-     * A human's name with the ability to identify parts and usage.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * An oid represented as a URI
+     * RFC 3001. See also ISO/IEC 8824:1990 €
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid
      */
-    public function getValueHumanName()
+    public function getValueOid()
     {
-        return $this->valueHumanName;
+        return $this->valueOid;
     }
 
     /**
-     * A human's name with the ability to identify parts and usage.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * An oid represented as a URI
+     * RFC 3001. See also ISO/IEC 8824:1990 €
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName $valueHumanName
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid $valueOid
      * @return static
      */
-    public function setValueHumanName(FHIRHumanName $valueHumanName = null)
+    public function setValueOid($valueOid = null)
     {
-        $this->valueHumanName = $valueHumanName;
+        if (null !== $valueOid && !($valueOid instanceof FHIROid)) {
+            $valueOid = new FHIROid($valueOid);
+        }
+        $this->_trackValueSet($this->valueOid, $valueOid);
+        $this->valueOid = $valueOid;
+        return $this;
+    }
+
+    /**
+     * A UUID, represented as a URI
+     * See The Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A.
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUuid
+     */
+    public function getValueUuid()
+    {
+        return $this->valueUuid;
+    }
+
+    /**
+     * A UUID, represented as a URI
+     * See The Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A.
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUuid $valueUuid
+     * @return static
+     */
+    public function setValueUuid($valueUuid = null)
+    {
+        if (null !== $valueUuid && !($valueUuid instanceof FHIRUuid)) {
+            $valueUuid = new FHIRUuid($valueUuid);
+        }
+        $this->_trackValueSet($this->valueUuid, $valueUuid);
+        $this->valueUuid = $valueUuid;
         return $this;
     }
 
@@ -1888,125 +1633,79 @@ class FHIRParametersParameter extends FHIRBackboneElement
      */
     public function setValueId($valueId = null)
     {
-        if (null === $valueId) {
-            $this->valueId = null;
-            return $this;
+        if (null !== $valueId && !($valueId instanceof FHIRId)) {
+            $valueId = new FHIRId($valueId);
         }
-        if ($valueId instanceof FHIRId) {
-            $this->valueId = $valueId;
-            return $this;
-        }
-        $this->valueId = new FHIRId($valueId);
+        $this->_trackValueSet($this->valueId, $valueId);
+        $this->valueId = $valueId;
         return $this;
     }
 
     /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * An integer with a value that is not negative (e.g. >= 0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt
      */
-    public function getValueIdentifier()
+    public function getValueUnsignedInt()
     {
-        return $this->valueIdentifier;
+        return $this->valueUnsignedInt;
     }
 
     /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * An integer with a value that is not negative (e.g. >= 0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $valueIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt $valueUnsignedInt
      * @return static
      */
-    public function setValueIdentifier(FHIRIdentifier $valueIdentifier = null)
+    public function setValueUnsignedInt($valueUnsignedInt = null)
     {
-        $this->valueIdentifier = $valueIdentifier;
+        if (null !== $valueUnsignedInt && !($valueUnsignedInt instanceof FHIRUnsignedInt)) {
+            $valueUnsignedInt = new FHIRUnsignedInt($valueUnsignedInt);
+        }
+        $this->_trackValueSet($this->valueUnsignedInt, $valueUnsignedInt);
+        $this->valueUnsignedInt = $valueUnsignedInt;
         return $this;
     }
 
     /**
-     * An instant in time - known at least to the second
-     * Note: This is intended for precisely observed times, typically system logs etc.,
-     * and not human-reported times - for them, see date and dateTime below. Time zone
-     * is always required
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
      */
-    public function getValueInstant()
+    public function getValuePositiveInt()
     {
-        return $this->valueInstant;
+        return $this->valuePositiveInt;
     }
 
     /**
-     * An instant in time - known at least to the second
-     * Note: This is intended for precisely observed times, typically system logs etc.,
-     * and not human-reported times - for them, see date and dateTime below. Time zone
-     * is always required
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant $valueInstant
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt $valuePositiveInt
      * @return static
      */
-    public function setValueInstant($valueInstant = null)
+    public function setValuePositiveInt($valuePositiveInt = null)
     {
-        if (null === $valueInstant) {
-            $this->valueInstant = null;
-            return $this;
+        if (null !== $valuePositiveInt && !($valuePositiveInt instanceof FHIRPositiveInt)) {
+            $valuePositiveInt = new FHIRPositiveInt($valuePositiveInt);
         }
-        if ($valueInstant instanceof FHIRInstant) {
-            $this->valueInstant = $valueInstant;
-            return $this;
-        }
-        $this->valueInstant = new FHIRInstant($valueInstant);
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInteger
-     */
-    public function getValueInteger()
-    {
-        return $this->valueInteger;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInteger $valueInteger
-     * @return static
-     */
-    public function setValueInteger($valueInteger = null)
-    {
-        if (null === $valueInteger) {
-            $this->valueInteger = null;
-            return $this;
-        }
-        if ($valueInteger instanceof FHIRInteger) {
-            $this->valueInteger = $valueInteger;
-            return $this;
-        }
-        $this->valueInteger = new FHIRInteger($valueInteger);
+        $this->_trackValueSet($this->valuePositiveInt, $valuePositiveInt);
+        $this->valuePositiveInt = $valuePositiveInt;
         return $this;
     }
 
@@ -2048,157 +1747,170 @@ class FHIRParametersParameter extends FHIRBackboneElement
      */
     public function setValueMarkdown($valueMarkdown = null)
     {
-        if (null === $valueMarkdown) {
-            $this->valueMarkdown = null;
-            return $this;
+        if (null !== $valueMarkdown && !($valueMarkdown instanceof FHIRMarkdown)) {
+            $valueMarkdown = new FHIRMarkdown($valueMarkdown);
         }
-        if ($valueMarkdown instanceof FHIRMarkdown) {
-            $this->valueMarkdown = $valueMarkdown;
-            return $this;
-        }
-        $this->valueMarkdown = new FHIRMarkdown($valueMarkdown);
+        $this->_trackValueSet($this->valueMarkdown, $valueMarkdown);
+        $this->valueMarkdown = $valueMarkdown;
         return $this;
     }
 
     /**
-     * The metadata about a resource. This is content in the resource that is
-     * maintained by the infrastructure. Changes to the content may not always be
-     * associated with version changes to the resource.
+     * A text note which also contains information about who made the statement and
+     * when.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMeta
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation
      */
-    public function getValueMeta()
+    public function getValueAnnotation()
     {
-        return $this->valueMeta;
+        return $this->valueAnnotation;
     }
 
     /**
-     * The metadata about a resource. This is content in the resource that is
-     * maintained by the infrastructure. Changes to the content may not always be
-     * associated with version changes to the resource.
+     * A text note which also contains information about who made the statement and
+     * when.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMeta $valueMeta
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation $valueAnnotation
      * @return static
      */
-    public function setValueMeta(FHIRMeta $valueMeta = null)
+    public function setValueAnnotation(FHIRAnnotation $valueAnnotation = null)
     {
-        $this->valueMeta = $valueMeta;
+        $this->_trackValueSet($this->valueAnnotation, $valueAnnotation);
+        $this->valueAnnotation = $valueAnnotation;
         return $this;
     }
 
     /**
-     * An oid represented as a URI
-     * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid
-     */
-    public function getValueOid()
-    {
-        return $this->valueOid;
-    }
-
-    /**
-     * An oid represented as a URI
-     * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * If the parameter is a data type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid $valueOid
-     * @return static
-     */
-    public function setValueOid($valueOid = null)
-    {
-        if (null === $valueOid) {
-            $this->valueOid = null;
-            return $this;
-        }
-        if ($valueOid instanceof FHIROid) {
-            $this->valueOid = $valueOid;
-            return $this;
-        }
-        $this->valueOid = new FHIROid($valueOid);
-        return $this;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
+     * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
      */
-    public function getValuePeriod()
+    public function getValueAttachment()
     {
-        return $this->valuePeriod;
+        return $this->valueAttachment;
     }
 
     /**
-     * A time period defined by a start and end date and optionally time.
+     * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod $valuePeriod
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment $valueAttachment
      * @return static
      */
-    public function setValuePeriod(FHIRPeriod $valuePeriod = null)
+    public function setValueAttachment(FHIRAttachment $valueAttachment = null)
     {
-        $this->valuePeriod = $valuePeriod;
+        $this->_trackValueSet($this->valueAttachment, $valueAttachment);
+        $this->valueAttachment = $valueAttachment;
         return $this;
     }
 
     /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
      */
-    public function getValuePositiveInt()
+    public function getValueIdentifier()
     {
-        return $this->valuePositiveInt;
+        return $this->valueIdentifier;
     }
 
     /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt $valuePositiveInt
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $valueIdentifier
      * @return static
      */
-    public function setValuePositiveInt($valuePositiveInt = null)
+    public function setValueIdentifier(FHIRIdentifier $valueIdentifier = null)
     {
-        if (null === $valuePositiveInt) {
-            $this->valuePositiveInt = null;
-            return $this;
-        }
-        if ($valuePositiveInt instanceof FHIRPositiveInt) {
-            $this->valuePositiveInt = $valuePositiveInt;
-            return $this;
-        }
-        $this->valuePositiveInt = new FHIRPositiveInt($valuePositiveInt);
+        $this->_trackValueSet($this->valueIdentifier, $valueIdentifier);
+        $this->valueIdentifier = $valueIdentifier;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
+     */
+    public function getValueCodeableConcept()
+    {
+        return $this->valueCodeableConcept;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
+     * @return static
+     */
+    public function setValueCodeableConcept(FHIRCodeableConcept $valueCodeableConcept = null)
+    {
+        $this->_trackValueSet($this->valueCodeableConcept, $valueCodeableConcept);
+        $this->valueCodeableConcept = $valueCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
+     */
+    public function getValueCoding()
+    {
+        return $this->valueCoding;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $valueCoding
+     * @return static
+     */
+    public function setValueCoding(FHIRCoding $valueCoding = null)
+    {
+        $this->_trackValueSet($this->valueCoding, $valueCoding);
+        $this->valueCoding = $valueCoding;
         return $this;
     }
 
@@ -2232,6 +1944,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      */
     public function setValueQuantity(FHIRQuantity $valueQuantity = null)
     {
+        $this->_trackValueSet($this->valueQuantity, $valueQuantity);
         $this->valueQuantity = $valueQuantity;
         return $this;
     }
@@ -2262,7 +1975,39 @@ class FHIRParametersParameter extends FHIRBackboneElement
      */
     public function setValueRange(FHIRRange $valueRange = null)
     {
+        $this->_trackValueSet($this->valueRange, $valueRange);
         $this->valueRange = $valueRange;
+        return $this;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
+     */
+    public function getValuePeriod()
+    {
+        return $this->valuePeriod;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod $valuePeriod
+     * @return static
+     */
+    public function setValuePeriod(FHIRPeriod $valuePeriod = null)
+    {
+        $this->_trackValueSet($this->valuePeriod, $valuePeriod);
+        $this->valuePeriod = $valuePeriod;
         return $this;
     }
 
@@ -2294,6 +2039,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      */
     public function setValueRatio(FHIRRatio $valueRatio = null)
     {
+        $this->_trackValueSet($this->valueRatio, $valueRatio);
         $this->valueRatio = $valueRatio;
         return $this;
     }
@@ -2324,6 +2070,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      */
     public function setValueReference(FHIRReference $valueReference = null)
     {
+        $this->_trackValueSet($this->valueReference, $valueReference);
         $this->valueReference = $valueReference;
         return $this;
     }
@@ -2356,6 +2103,7 @@ class FHIRParametersParameter extends FHIRBackboneElement
      */
     public function setValueSampledData(FHIRSampledData $valueSampledData = null)
     {
+        $this->_trackValueSet($this->valueSampledData, $valueSampledData);
         $this->valueSampledData = $valueSampledData;
         return $this;
     }
@@ -2392,81 +2140,105 @@ class FHIRParametersParameter extends FHIRBackboneElement
      */
     public function setValueSignature(FHIRSignature $valueSignature = null)
     {
+        $this->_trackValueSet($this->valueSignature, $valueSignature);
         $this->valueSignature = $valueSignature;
         return $this;
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A human's name with the ability to identify parts and usage.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName
      */
-    public function getValueString()
+    public function getValueHumanName()
     {
-        return $this->valueString;
+        return $this->valueHumanName;
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A human's name with the ability to identify parts and usage.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $valueString
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName $valueHumanName
      * @return static
      */
-    public function setValueString($valueString = null)
+    public function setValueHumanName(FHIRHumanName $valueHumanName = null)
     {
-        if (null === $valueString) {
-            $this->valueString = null;
-            return $this;
-        }
-        if ($valueString instanceof FHIRString) {
-            $this->valueString = $valueString;
-            return $this;
-        }
-        $this->valueString = new FHIRString($valueString);
+        $this->_trackValueSet($this->valueHumanName, $valueHumanName);
+        $this->valueHumanName = $valueHumanName;
         return $this;
     }
 
     /**
-     * A time during the day, with no date specified
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * There is a variety of postal address formats defined around the world. This
+     * format defines a superset that is the basis for all addresses around the world.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTime
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress
      */
-    public function getValueTime()
+    public function getValueAddress()
     {
-        return $this->valueTime;
+        return $this->valueAddress;
     }
 
     /**
-     * A time during the day, with no date specified
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * There is a variety of postal address formats defined around the world. This
+     * format defines a superset that is the basis for all addresses around the world.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTime $valueTime
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress $valueAddress
      * @return static
      */
-    public function setValueTime($valueTime = null)
+    public function setValueAddress(FHIRAddress $valueAddress = null)
     {
-        if (null === $valueTime) {
-            $this->valueTime = null;
-            return $this;
-        }
-        if ($valueTime instanceof FHIRTime) {
-            $this->valueTime = $valueTime;
-            return $this;
-        }
-        $this->valueTime = new FHIRTime($valueTime);
+        $this->_trackValueSet($this->valueAddress, $valueAddress);
+        $this->valueAddress = $valueAddress;
+        return $this;
+    }
+
+    /**
+     * Details for all kinds of technology mediated contact points for a person or
+     * organization, including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint
+     */
+    public function getValueContactPoint()
+    {
+        return $this->valueContactPoint;
+    }
+
+    /**
+     * Details for all kinds of technology mediated contact points for a person or
+     * organization, including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * If the parameter is a data type.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint $valueContactPoint
+     * @return static
+     */
+    public function setValueContactPoint(FHIRContactPoint $valueContactPoint = null)
+    {
+        $this->_trackValueSet($this->valueContactPoint, $valueContactPoint);
+        $this->valueContactPoint = $valueContactPoint;
         return $this;
     }
 
@@ -2502,123 +2274,160 @@ class FHIRParametersParameter extends FHIRBackboneElement
      */
     public function setValueTiming(FHIRTiming $valueTiming = null)
     {
+        $this->_trackValueSet($this->valueTiming, $valueTiming);
         $this->valueTiming = $valueTiming;
         return $this;
     }
 
     /**
-     * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content may not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMeta
      */
-    public function getValueUnsignedInt()
+    public function getValueMeta()
     {
-        return $this->valueUnsignedInt;
+        return $this->valueMeta;
     }
 
     /**
-     * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * The metadata about a resource. This is content in the resource that is
+     * maintained by the infrastructure. Changes to the content may not always be
+     * associated with version changes to the resource.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt $valueUnsignedInt
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMeta $valueMeta
      * @return static
      */
-    public function setValueUnsignedInt($valueUnsignedInt = null)
+    public function setValueMeta(FHIRMeta $valueMeta = null)
     {
-        if (null === $valueUnsignedInt) {
-            $this->valueUnsignedInt = null;
-            return $this;
-        }
-        if ($valueUnsignedInt instanceof FHIRUnsignedInt) {
-            $this->valueUnsignedInt = $valueUnsignedInt;
-            return $this;
-        }
-        $this->valueUnsignedInt = new FHIRUnsignedInt($valueUnsignedInt);
+        $this->_trackValueSet($this->valueMeta, $valueMeta);
+        $this->valueMeta = $valueMeta;
         return $this;
     }
 
     /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * Captures constraints on each element within the resource, profile, or extension.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition
      */
-    public function getValueUri()
+    public function getValueElementDefinition()
     {
-        return $this->valueUri;
+        return $this->valueElementDefinition;
     }
 
     /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * Captures constraints on each element within the resource, profile, or extension.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $valueUri
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition $valueElementDefinition
      * @return static
      */
-    public function setValueUri($valueUri = null)
+    public function setValueElementDefinition(FHIRElementDefinition $valueElementDefinition = null)
     {
-        if (null === $valueUri) {
-            $this->valueUri = null;
-            return $this;
-        }
-        if ($valueUri instanceof FHIRUri) {
-            $this->valueUri = $valueUri;
-            return $this;
-        }
-        $this->valueUri = new FHIRUri($valueUri);
+        $this->_trackValueSet($this->valueElementDefinition, $valueElementDefinition);
+        $this->valueElementDefinition = $valueElementDefinition;
         return $this;
     }
 
     /**
-     * A UUID, represented as a URI
-     * See The Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A.
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * If the parameter is a whole resource.
      *
-     * If the parameter is a data type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUuid
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRContainedTypeInterface
      */
-    public function getValueUuid()
+    public function getResource()
     {
-        return $this->valueUuid;
+        return $this->resource;
     }
 
     /**
-     * A UUID, represented as a URI
-     * See The Open Group, CDE 1.1 Remote Procedure Call specification, Appendix A.
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * If the parameter is a whole resource.
      *
-     * If the parameter is a data type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUuid $valueUuid
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRContainedTypeInterface $resource
      * @return static
      */
-    public function setValueUuid($valueUuid = null)
+    public function setResource(PHPFHIRContainedTypeInterface $resource = null)
     {
-        if (null === $valueUuid) {
-            $this->valueUuid = null;
+        $this->_trackValueSet($this->resource, $resource);
+        $this->resource = $resource;
+        return $this;
+    }
+
+    /**
+     * This special resource type is used to represent an operation request and
+     * response (operations.html). It has no other use, and there is no RESTful
+     * endpoint associated with it.
+     *
+     * A named part of a parameter. In many implementation context, a set of named
+     * parts is known as a "Tuple".
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[]
+     */
+    public function getPart()
+    {
+        return $this->part;
+    }
+
+    /**
+     * This special resource type is used to represent an operation request and
+     * response (operations.html). It has no other use, and there is no RESTful
+     * endpoint associated with it.
+     *
+     * A named part of a parameter. In many implementation context, a set of named
+     * parts is known as a "Tuple".
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter $part
+     * @return static
+     */
+    public function addPart(FHIRParametersParameter $part = null)
+    {
+        $this->_trackValueAdded();
+        $this->part[] = $part;
+        return $this;
+    }
+
+    /**
+     * This special resource type is used to represent an operation request and
+     * response (operations.html). It has no other use, and there is no RESTful
+     * endpoint associated with it.
+     *
+     * A named part of a parameter. In many implementation context, a set of named
+     * parts is known as a "Tuple".
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[] $part
+     * @return static
+     */
+    public function setPart(array $part = [])
+    {
+        if ([] !== $this->part) {
+            $this->_trackValuesRemoved(count($this->part));
+            $this->part = [];
+        }
+        if ([] === $part) {
             return $this;
         }
-        if ($valueUuid instanceof FHIRUuid) {
-            $this->valueUuid = $valueUuid;
-            return $this;
+        foreach($part as $v) {
+            if ($v instanceof FHIRParametersParameter) {
+                $this->addPart($v);
+            } else {
+                $this->addPart(new FHIRParametersParameter($v));
+            }
         }
-        $this->valueUuid = new FHIRUuid($valueUuid);
         return $this;
     }
 
@@ -2648,31 +2457,19 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 $errs[self::FIELD_NAME] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getPart())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_PART, $i)] = $fieldErrs;
-                }
+        if (null !== ($v = $this->getValueBoolean())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_BOOLEAN] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getResource())) {
+        if (null !== ($v = $this->getValueInteger())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_RESOURCE] = $fieldErrs;
+                $errs[self::FIELD_VALUE_INTEGER] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getValueAddress())) {
+        if (null !== ($v = $this->getValueDecimal())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_ADDRESS] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getValueAnnotation())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_ANNOTATION] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getValueAttachment())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_ATTACHMENT] = $fieldErrs;
+                $errs[self::FIELD_VALUE_DECIMAL] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getValueBase64Binary())) {
@@ -2680,29 +2477,19 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 $errs[self::FIELD_VALUE_BASE_64BINARY] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getValueBoolean())) {
+        if (null !== ($v = $this->getValueInstant())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_BOOLEAN] = $fieldErrs;
+                $errs[self::FIELD_VALUE_INSTANT] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getValueCode())) {
+        if (null !== ($v = $this->getValueString())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_CODE] = $fieldErrs;
+                $errs[self::FIELD_VALUE_STRING] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getValueCodeableConcept())) {
+        if (null !== ($v = $this->getValueUri())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_CODEABLE_CONCEPT] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getValueCoding())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_CODING] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getValueContactPoint())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_CONTACT_POINT] = $fieldErrs;
+                $errs[self::FIELD_VALUE_URI] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getValueDate())) {
@@ -2715,49 +2502,14 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 $errs[self::FIELD_VALUE_DATE_TIME] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getValueDecimal())) {
+        if (null !== ($v = $this->getValueTime())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_DECIMAL] = $fieldErrs;
+                $errs[self::FIELD_VALUE_TIME] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getValueElementDefinition())) {
+        if (null !== ($v = $this->getValueCode())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_ELEMENT_DEFINITION] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getValueHumanName())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_HUMAN_NAME] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getValueId())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_ID] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getValueIdentifier())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_IDENTIFIER] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getValueInstant())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_INSTANT] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getValueInteger())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_INTEGER] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getValueMarkdown())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_MARKDOWN] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getValueMeta())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_META] = $fieldErrs;
+                $errs[self::FIELD_VALUE_CODE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getValueOid())) {
@@ -2765,14 +2517,54 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 $errs[self::FIELD_VALUE_OID] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getValuePeriod())) {
+        if (null !== ($v = $this->getValueUuid())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_PERIOD] = $fieldErrs;
+                $errs[self::FIELD_VALUE_UUID] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getValueId())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_ID] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getValueUnsignedInt())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_UNSIGNED_INT] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getValuePositiveInt())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_VALUE_POSITIVE_INT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getValueMarkdown())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_MARKDOWN] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getValueAnnotation())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_ANNOTATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getValueAttachment())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_ATTACHMENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getValueIdentifier())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_IDENTIFIER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getValueCodeableConcept())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_CODEABLE_CONCEPT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getValueCoding())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_CODING] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getValueQuantity())) {
@@ -2783,6 +2575,11 @@ class FHIRParametersParameter extends FHIRBackboneElement
         if (null !== ($v = $this->getValueRange())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_VALUE_RANGE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getValuePeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_PERIOD] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getValueRatio())) {
@@ -2805,14 +2602,19 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 $errs[self::FIELD_VALUE_SIGNATURE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getValueString())) {
+        if (null !== ($v = $this->getValueHumanName())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_STRING] = $fieldErrs;
+                $errs[self::FIELD_VALUE_HUMAN_NAME] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getValueTime())) {
+        if (null !== ($v = $this->getValueAddress())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_TIME] = $fieldErrs;
+                $errs[self::FIELD_VALUE_ADDRESS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getValueContactPoint())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_CONTACT_POINT] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getValueTiming())) {
@@ -2820,19 +2622,26 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 $errs[self::FIELD_VALUE_TIMING] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getValueUnsignedInt())) {
+        if (null !== ($v = $this->getValueMeta())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_UNSIGNED_INT] = $fieldErrs;
+                $errs[self::FIELD_VALUE_META] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getValueUri())) {
+        if (null !== ($v = $this->getValueElementDefinition())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_URI] = $fieldErrs;
+                $errs[self::FIELD_VALUE_ELEMENT_DEFINITION] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getValueUuid())) {
+        if (null !== ($v = $this->getResource())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_UUID] = $fieldErrs;
+                $errs[self::FIELD_RESOURCE] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getPart())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_PART, $i)] = $fieldErrs;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_NAME])) {
@@ -2844,78 +2653,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
                         $errs[self::FIELD_NAME] = [];
                     }
                     $errs[self::FIELD_NAME][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PART])) {
-            $v = $this->getPart();
-            foreach($validationRules[self::FIELD_PART] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_PART, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PART])) {
-                        $errs[self::FIELD_PART] = [];
-                    }
-                    $errs[self::FIELD_PART][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_RESOURCE])) {
-            $v = $this->getResource();
-            foreach($validationRules[self::FIELD_RESOURCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_RESOURCE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RESOURCE])) {
-                        $errs[self::FIELD_RESOURCE] = [];
-                    }
-                    $errs[self::FIELD_RESOURCE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VALUE_ADDRESS])) {
-            $v = $this->getValueAddress();
-            foreach($validationRules[self::FIELD_VALUE_ADDRESS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_ADDRESS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_ADDRESS])) {
-                        $errs[self::FIELD_VALUE_ADDRESS] = [];
-                    }
-                    $errs[self::FIELD_VALUE_ADDRESS][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VALUE_ANNOTATION])) {
-            $v = $this->getValueAnnotation();
-            foreach($validationRules[self::FIELD_VALUE_ANNOTATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_ANNOTATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_ANNOTATION])) {
-                        $errs[self::FIELD_VALUE_ANNOTATION] = [];
-                    }
-                    $errs[self::FIELD_VALUE_ANNOTATION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VALUE_ATTACHMENT])) {
-            $v = $this->getValueAttachment();
-            foreach($validationRules[self::FIELD_VALUE_ATTACHMENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_ATTACHMENT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_ATTACHMENT])) {
-                        $errs[self::FIELD_VALUE_ATTACHMENT] = [];
-                    }
-                    $errs[self::FIELD_VALUE_ATTACHMENT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VALUE_BASE_64BINARY])) {
-            $v = $this->getValueBase64Binary();
-            foreach($validationRules[self::FIELD_VALUE_BASE_64BINARY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_BASE_64BINARY, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_BASE_64BINARY])) {
-                        $errs[self::FIELD_VALUE_BASE_64BINARY] = [];
-                    }
-                    $errs[self::FIELD_VALUE_BASE_64BINARY][$rule] = $err;
                 }
             }
         }
@@ -2931,51 +2668,75 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_CODE])) {
-            $v = $this->getValueCode();
-            foreach($validationRules[self::FIELD_VALUE_CODE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_CODE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VALUE_INTEGER])) {
+            $v = $this->getValueInteger();
+            foreach($validationRules[self::FIELD_VALUE_INTEGER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_INTEGER, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_CODE])) {
-                        $errs[self::FIELD_VALUE_CODE] = [];
+                    if (!isset($errs[self::FIELD_VALUE_INTEGER])) {
+                        $errs[self::FIELD_VALUE_INTEGER] = [];
                     }
-                    $errs[self::FIELD_VALUE_CODE][$rule] = $err;
+                    $errs[self::FIELD_VALUE_INTEGER][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_CODEABLE_CONCEPT])) {
-            $v = $this->getValueCodeableConcept();
-            foreach($validationRules[self::FIELD_VALUE_CODEABLE_CONCEPT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_CODEABLE_CONCEPT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VALUE_DECIMAL])) {
+            $v = $this->getValueDecimal();
+            foreach($validationRules[self::FIELD_VALUE_DECIMAL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_DECIMAL, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_CODEABLE_CONCEPT])) {
-                        $errs[self::FIELD_VALUE_CODEABLE_CONCEPT] = [];
+                    if (!isset($errs[self::FIELD_VALUE_DECIMAL])) {
+                        $errs[self::FIELD_VALUE_DECIMAL] = [];
                     }
-                    $errs[self::FIELD_VALUE_CODEABLE_CONCEPT][$rule] = $err;
+                    $errs[self::FIELD_VALUE_DECIMAL][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_CODING])) {
-            $v = $this->getValueCoding();
-            foreach($validationRules[self::FIELD_VALUE_CODING] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_CODING, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VALUE_BASE_64BINARY])) {
+            $v = $this->getValueBase64Binary();
+            foreach($validationRules[self::FIELD_VALUE_BASE_64BINARY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_BASE_64BINARY, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_CODING])) {
-                        $errs[self::FIELD_VALUE_CODING] = [];
+                    if (!isset($errs[self::FIELD_VALUE_BASE_64BINARY])) {
+                        $errs[self::FIELD_VALUE_BASE_64BINARY] = [];
                     }
-                    $errs[self::FIELD_VALUE_CODING][$rule] = $err;
+                    $errs[self::FIELD_VALUE_BASE_64BINARY][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_CONTACT_POINT])) {
-            $v = $this->getValueContactPoint();
-            foreach($validationRules[self::FIELD_VALUE_CONTACT_POINT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_CONTACT_POINT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VALUE_INSTANT])) {
+            $v = $this->getValueInstant();
+            foreach($validationRules[self::FIELD_VALUE_INSTANT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_INSTANT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_CONTACT_POINT])) {
-                        $errs[self::FIELD_VALUE_CONTACT_POINT] = [];
+                    if (!isset($errs[self::FIELD_VALUE_INSTANT])) {
+                        $errs[self::FIELD_VALUE_INSTANT] = [];
                     }
-                    $errs[self::FIELD_VALUE_CONTACT_POINT][$rule] = $err;
+                    $errs[self::FIELD_VALUE_INSTANT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE_STRING])) {
+            $v = $this->getValueString();
+            foreach($validationRules[self::FIELD_VALUE_STRING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_STRING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_STRING])) {
+                        $errs[self::FIELD_VALUE_STRING] = [];
+                    }
+                    $errs[self::FIELD_VALUE_STRING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE_URI])) {
+            $v = $this->getValueUri();
+            foreach($validationRules[self::FIELD_VALUE_URI] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_URI, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_URI])) {
+                        $errs[self::FIELD_VALUE_URI] = [];
+                    }
+                    $errs[self::FIELD_VALUE_URI][$rule] = $err;
                 }
             }
         }
@@ -3003,111 +2764,27 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_DECIMAL])) {
-            $v = $this->getValueDecimal();
-            foreach($validationRules[self::FIELD_VALUE_DECIMAL] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_DECIMAL, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VALUE_TIME])) {
+            $v = $this->getValueTime();
+            foreach($validationRules[self::FIELD_VALUE_TIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_TIME, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_DECIMAL])) {
-                        $errs[self::FIELD_VALUE_DECIMAL] = [];
+                    if (!isset($errs[self::FIELD_VALUE_TIME])) {
+                        $errs[self::FIELD_VALUE_TIME] = [];
                     }
-                    $errs[self::FIELD_VALUE_DECIMAL][$rule] = $err;
+                    $errs[self::FIELD_VALUE_TIME][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_ELEMENT_DEFINITION])) {
-            $v = $this->getValueElementDefinition();
-            foreach($validationRules[self::FIELD_VALUE_ELEMENT_DEFINITION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_ELEMENT_DEFINITION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VALUE_CODE])) {
+            $v = $this->getValueCode();
+            foreach($validationRules[self::FIELD_VALUE_CODE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_CODE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_ELEMENT_DEFINITION])) {
-                        $errs[self::FIELD_VALUE_ELEMENT_DEFINITION] = [];
+                    if (!isset($errs[self::FIELD_VALUE_CODE])) {
+                        $errs[self::FIELD_VALUE_CODE] = [];
                     }
-                    $errs[self::FIELD_VALUE_ELEMENT_DEFINITION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VALUE_HUMAN_NAME])) {
-            $v = $this->getValueHumanName();
-            foreach($validationRules[self::FIELD_VALUE_HUMAN_NAME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_HUMAN_NAME, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_HUMAN_NAME])) {
-                        $errs[self::FIELD_VALUE_HUMAN_NAME] = [];
-                    }
-                    $errs[self::FIELD_VALUE_HUMAN_NAME][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VALUE_ID])) {
-            $v = $this->getValueId();
-            foreach($validationRules[self::FIELD_VALUE_ID] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_ID, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_ID])) {
-                        $errs[self::FIELD_VALUE_ID] = [];
-                    }
-                    $errs[self::FIELD_VALUE_ID][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VALUE_IDENTIFIER])) {
-            $v = $this->getValueIdentifier();
-            foreach($validationRules[self::FIELD_VALUE_IDENTIFIER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_IDENTIFIER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_IDENTIFIER])) {
-                        $errs[self::FIELD_VALUE_IDENTIFIER] = [];
-                    }
-                    $errs[self::FIELD_VALUE_IDENTIFIER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VALUE_INSTANT])) {
-            $v = $this->getValueInstant();
-            foreach($validationRules[self::FIELD_VALUE_INSTANT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_INSTANT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_INSTANT])) {
-                        $errs[self::FIELD_VALUE_INSTANT] = [];
-                    }
-                    $errs[self::FIELD_VALUE_INSTANT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VALUE_INTEGER])) {
-            $v = $this->getValueInteger();
-            foreach($validationRules[self::FIELD_VALUE_INTEGER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_INTEGER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_INTEGER])) {
-                        $errs[self::FIELD_VALUE_INTEGER] = [];
-                    }
-                    $errs[self::FIELD_VALUE_INTEGER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VALUE_MARKDOWN])) {
-            $v = $this->getValueMarkdown();
-            foreach($validationRules[self::FIELD_VALUE_MARKDOWN] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_MARKDOWN, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_MARKDOWN])) {
-                        $errs[self::FIELD_VALUE_MARKDOWN] = [];
-                    }
-                    $errs[self::FIELD_VALUE_MARKDOWN][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VALUE_META])) {
-            $v = $this->getValueMeta();
-            foreach($validationRules[self::FIELD_VALUE_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_META])) {
-                        $errs[self::FIELD_VALUE_META] = [];
-                    }
-                    $errs[self::FIELD_VALUE_META][$rule] = $err;
+                    $errs[self::FIELD_VALUE_CODE][$rule] = $err;
                 }
             }
         }
@@ -3123,15 +2800,39 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_PERIOD])) {
-            $v = $this->getValuePeriod();
-            foreach($validationRules[self::FIELD_VALUE_PERIOD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_PERIOD, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VALUE_UUID])) {
+            $v = $this->getValueUuid();
+            foreach($validationRules[self::FIELD_VALUE_UUID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_UUID, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_PERIOD])) {
-                        $errs[self::FIELD_VALUE_PERIOD] = [];
+                    if (!isset($errs[self::FIELD_VALUE_UUID])) {
+                        $errs[self::FIELD_VALUE_UUID] = [];
                     }
-                    $errs[self::FIELD_VALUE_PERIOD][$rule] = $err;
+                    $errs[self::FIELD_VALUE_UUID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE_ID])) {
+            $v = $this->getValueId();
+            foreach($validationRules[self::FIELD_VALUE_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_ID])) {
+                        $errs[self::FIELD_VALUE_ID] = [];
+                    }
+                    $errs[self::FIELD_VALUE_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE_UNSIGNED_INT])) {
+            $v = $this->getValueUnsignedInt();
+            foreach($validationRules[self::FIELD_VALUE_UNSIGNED_INT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_UNSIGNED_INT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_UNSIGNED_INT])) {
+                        $errs[self::FIELD_VALUE_UNSIGNED_INT] = [];
+                    }
+                    $errs[self::FIELD_VALUE_UNSIGNED_INT][$rule] = $err;
                 }
             }
         }
@@ -3144,6 +2845,78 @@ class FHIRParametersParameter extends FHIRBackboneElement
                         $errs[self::FIELD_VALUE_POSITIVE_INT] = [];
                     }
                     $errs[self::FIELD_VALUE_POSITIVE_INT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE_MARKDOWN])) {
+            $v = $this->getValueMarkdown();
+            foreach($validationRules[self::FIELD_VALUE_MARKDOWN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_MARKDOWN, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_MARKDOWN])) {
+                        $errs[self::FIELD_VALUE_MARKDOWN] = [];
+                    }
+                    $errs[self::FIELD_VALUE_MARKDOWN][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE_ANNOTATION])) {
+            $v = $this->getValueAnnotation();
+            foreach($validationRules[self::FIELD_VALUE_ANNOTATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_ANNOTATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_ANNOTATION])) {
+                        $errs[self::FIELD_VALUE_ANNOTATION] = [];
+                    }
+                    $errs[self::FIELD_VALUE_ANNOTATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE_ATTACHMENT])) {
+            $v = $this->getValueAttachment();
+            foreach($validationRules[self::FIELD_VALUE_ATTACHMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_ATTACHMENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_ATTACHMENT])) {
+                        $errs[self::FIELD_VALUE_ATTACHMENT] = [];
+                    }
+                    $errs[self::FIELD_VALUE_ATTACHMENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE_IDENTIFIER])) {
+            $v = $this->getValueIdentifier();
+            foreach($validationRules[self::FIELD_VALUE_IDENTIFIER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_IDENTIFIER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_IDENTIFIER])) {
+                        $errs[self::FIELD_VALUE_IDENTIFIER] = [];
+                    }
+                    $errs[self::FIELD_VALUE_IDENTIFIER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE_CODEABLE_CONCEPT])) {
+            $v = $this->getValueCodeableConcept();
+            foreach($validationRules[self::FIELD_VALUE_CODEABLE_CONCEPT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_CODEABLE_CONCEPT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_CODEABLE_CONCEPT])) {
+                        $errs[self::FIELD_VALUE_CODEABLE_CONCEPT] = [];
+                    }
+                    $errs[self::FIELD_VALUE_CODEABLE_CONCEPT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE_CODING])) {
+            $v = $this->getValueCoding();
+            foreach($validationRules[self::FIELD_VALUE_CODING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_CODING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_CODING])) {
+                        $errs[self::FIELD_VALUE_CODING] = [];
+                    }
+                    $errs[self::FIELD_VALUE_CODING][$rule] = $err;
                 }
             }
         }
@@ -3168,6 +2941,18 @@ class FHIRParametersParameter extends FHIRBackboneElement
                         $errs[self::FIELD_VALUE_RANGE] = [];
                     }
                     $errs[self::FIELD_VALUE_RANGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE_PERIOD])) {
+            $v = $this->getValuePeriod();
+            foreach($validationRules[self::FIELD_VALUE_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_PERIOD])) {
+                        $errs[self::FIELD_VALUE_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_VALUE_PERIOD][$rule] = $err;
                 }
             }
         }
@@ -3219,27 +3004,39 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_STRING])) {
-            $v = $this->getValueString();
-            foreach($validationRules[self::FIELD_VALUE_STRING] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_STRING, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VALUE_HUMAN_NAME])) {
+            $v = $this->getValueHumanName();
+            foreach($validationRules[self::FIELD_VALUE_HUMAN_NAME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_HUMAN_NAME, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_STRING])) {
-                        $errs[self::FIELD_VALUE_STRING] = [];
+                    if (!isset($errs[self::FIELD_VALUE_HUMAN_NAME])) {
+                        $errs[self::FIELD_VALUE_HUMAN_NAME] = [];
                     }
-                    $errs[self::FIELD_VALUE_STRING][$rule] = $err;
+                    $errs[self::FIELD_VALUE_HUMAN_NAME][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_TIME])) {
-            $v = $this->getValueTime();
-            foreach($validationRules[self::FIELD_VALUE_TIME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_TIME, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VALUE_ADDRESS])) {
+            $v = $this->getValueAddress();
+            foreach($validationRules[self::FIELD_VALUE_ADDRESS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_ADDRESS, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_TIME])) {
-                        $errs[self::FIELD_VALUE_TIME] = [];
+                    if (!isset($errs[self::FIELD_VALUE_ADDRESS])) {
+                        $errs[self::FIELD_VALUE_ADDRESS] = [];
                     }
-                    $errs[self::FIELD_VALUE_TIME][$rule] = $err;
+                    $errs[self::FIELD_VALUE_ADDRESS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE_CONTACT_POINT])) {
+            $v = $this->getValueContactPoint();
+            foreach($validationRules[self::FIELD_VALUE_CONTACT_POINT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_CONTACT_POINT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_CONTACT_POINT])) {
+                        $errs[self::FIELD_VALUE_CONTACT_POINT] = [];
+                    }
+                    $errs[self::FIELD_VALUE_CONTACT_POINT][$rule] = $err;
                 }
             }
         }
@@ -3255,39 +3052,51 @@ class FHIRParametersParameter extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_UNSIGNED_INT])) {
-            $v = $this->getValueUnsignedInt();
-            foreach($validationRules[self::FIELD_VALUE_UNSIGNED_INT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_UNSIGNED_INT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VALUE_META])) {
+            $v = $this->getValueMeta();
+            foreach($validationRules[self::FIELD_VALUE_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_META, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_UNSIGNED_INT])) {
-                        $errs[self::FIELD_VALUE_UNSIGNED_INT] = [];
+                    if (!isset($errs[self::FIELD_VALUE_META])) {
+                        $errs[self::FIELD_VALUE_META] = [];
                     }
-                    $errs[self::FIELD_VALUE_UNSIGNED_INT][$rule] = $err;
+                    $errs[self::FIELD_VALUE_META][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_URI])) {
-            $v = $this->getValueUri();
-            foreach($validationRules[self::FIELD_VALUE_URI] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_URI, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VALUE_ELEMENT_DEFINITION])) {
+            $v = $this->getValueElementDefinition();
+            foreach($validationRules[self::FIELD_VALUE_ELEMENT_DEFINITION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_ELEMENT_DEFINITION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_URI])) {
-                        $errs[self::FIELD_VALUE_URI] = [];
+                    if (!isset($errs[self::FIELD_VALUE_ELEMENT_DEFINITION])) {
+                        $errs[self::FIELD_VALUE_ELEMENT_DEFINITION] = [];
                     }
-                    $errs[self::FIELD_VALUE_URI][$rule] = $err;
+                    $errs[self::FIELD_VALUE_ELEMENT_DEFINITION][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_UUID])) {
-            $v = $this->getValueUuid();
-            foreach($validationRules[self::FIELD_VALUE_UUID] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_VALUE_UUID, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_RESOURCE])) {
+            $v = $this->getResource();
+            foreach($validationRules[self::FIELD_RESOURCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_RESOURCE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_UUID])) {
-                        $errs[self::FIELD_VALUE_UUID] = [];
+                    if (!isset($errs[self::FIELD_RESOURCE])) {
+                        $errs[self::FIELD_RESOURCE] = [];
                     }
-                    $errs[self::FIELD_VALUE_UUID][$rule] = $err;
+                    $errs[self::FIELD_RESOURCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PART])) {
+            $v = $this->getPart();
+            foreach($validationRules[self::FIELD_PART] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PARAMETERS_DOT_PARAMETER, self::FIELD_PART, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PART])) {
+                        $errs[self::FIELD_PART] = [];
+                    }
+                    $errs[self::FIELD_PART][$rule] = $err;
                 }
             }
         }
@@ -3331,445 +3140,521 @@ class FHIRParametersParameter extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRParametersParameter::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRParametersParameter::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRParametersParameter::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRParametersParameter;
+            $type = new FHIRParametersParameter(null);
         } elseif (!is_object($type) || !($type instanceof FHIRParametersParameter)) {
             throw new \RuntimeException(sprintf(
                 'FHIRParametersParameter::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_NAME === $n->nodeName) {
+                $type->setName(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_BOOLEAN === $n->nodeName) {
+                $type->setValueBoolean(FHIRBoolean::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_INTEGER === $n->nodeName) {
+                $type->setValueInteger(FHIRInteger::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_DECIMAL === $n->nodeName) {
+                $type->setValueDecimal(FHIRDecimal::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_BASE_64BINARY === $n->nodeName) {
+                $type->setValueBase64Binary(FHIRBase64Binary::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_INSTANT === $n->nodeName) {
+                $type->setValueInstant(FHIRInstant::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_STRING === $n->nodeName) {
+                $type->setValueString(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_URI === $n->nodeName) {
+                $type->setValueUri(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_DATE === $n->nodeName) {
+                $type->setValueDate(FHIRDate::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_DATE_TIME === $n->nodeName) {
+                $type->setValueDateTime(FHIRDateTime::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_TIME === $n->nodeName) {
+                $type->setValueTime(FHIRTime::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_CODE === $n->nodeName) {
+                $type->setValueCode(FHIRCode::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_OID === $n->nodeName) {
+                $type->setValueOid(FHIROid::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_UUID === $n->nodeName) {
+                $type->setValueUuid(FHIRUuid::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_ID === $n->nodeName) {
+                $type->setValueId(FHIRId::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_UNSIGNED_INT === $n->nodeName) {
+                $type->setValueUnsignedInt(FHIRUnsignedInt::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_POSITIVE_INT === $n->nodeName) {
+                $type->setValuePositiveInt(FHIRPositiveInt::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_MARKDOWN === $n->nodeName) {
+                $type->setValueMarkdown(FHIRMarkdown::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_ANNOTATION === $n->nodeName) {
+                $type->setValueAnnotation(FHIRAnnotation::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_ATTACHMENT === $n->nodeName) {
+                $type->setValueAttachment(FHIRAttachment::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_IDENTIFIER === $n->nodeName) {
+                $type->setValueIdentifier(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_CODEABLE_CONCEPT === $n->nodeName) {
+                $type->setValueCodeableConcept(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_CODING === $n->nodeName) {
+                $type->setValueCoding(FHIRCoding::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_QUANTITY === $n->nodeName) {
+                $type->setValueQuantity(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_RANGE === $n->nodeName) {
+                $type->setValueRange(FHIRRange::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_PERIOD === $n->nodeName) {
+                $type->setValuePeriod(FHIRPeriod::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_RATIO === $n->nodeName) {
+                $type->setValueRatio(FHIRRatio::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_REFERENCE === $n->nodeName) {
+                $type->setValueReference(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_SAMPLED_DATA === $n->nodeName) {
+                $type->setValueSampledData(FHIRSampledData::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_SIGNATURE === $n->nodeName) {
+                $type->setValueSignature(FHIRSignature::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_HUMAN_NAME === $n->nodeName) {
+                $type->setValueHumanName(FHIRHumanName::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_ADDRESS === $n->nodeName) {
+                $type->setValueAddress(FHIRAddress::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_CONTACT_POINT === $n->nodeName) {
+                $type->setValueContactPoint(FHIRContactPoint::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_TIMING === $n->nodeName) {
+                $type->setValueTiming(FHIRTiming::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_META === $n->nodeName) {
+                $type->setValueMeta(FHIRMeta::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_ELEMENT_DEFINITION === $n->nodeName) {
+                $type->setValueElementDefinition(FHIRElementDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_RESOURCE === $n->nodeName) {
+                for ($ni = 0; $ni < $n->childNodes->length; $ni++) {
+                    $nn = $n->childNodes->item($ni);
+                    if ($nn instanceof \DOMElement) {
+                        $type->setResource(PHPFHIRTypeMap::getContainedTypeFromXML($nn));
+                    }
+                }
+            } elseif (self::FIELD_PART === $n->nodeName) {
+                $type->addPart(FHIRParametersParameter::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->name)) {
-            $type->setName(FHIRString::xmlUnserialize($children->name));
-        }
-        if (isset($attributes->name)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_NAME);
+        if (null !== $n) {
             $pt = $type->getName();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->name);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setName((string)$attributes->name);
+                $type->setName($n->nodeValue);
             }
         }
-        if (isset($children->part)) {
-            foreach($children->part as $child) {
-                $type->addPart(FHIRParametersParameter::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->resource)) {
-            foreach($children->resource as $child) {
-                foreach($child->children() as $babe) {
-                    $type->setResource(PHPFHIRTypeMap::getContainedTypeFromXML($babe));
-                    break 2;
-                }
-            }
-        }
-        if (isset($children->valueAddress)) {
-            $type->setValueAddress(FHIRAddress::xmlUnserialize($children->valueAddress));
-        }
-        if (isset($children->valueAnnotation)) {
-            $type->setValueAnnotation(FHIRAnnotation::xmlUnserialize($children->valueAnnotation));
-        }
-        if (isset($children->valueAttachment)) {
-            $type->setValueAttachment(FHIRAttachment::xmlUnserialize($children->valueAttachment));
-        }
-        if (isset($children->valueBase64Binary)) {
-            $type->setValueBase64Binary(FHIRBase64Binary::xmlUnserialize($children->valueBase64Binary));
-        }
-        if (isset($attributes->valueBase64Binary)) {
-            $pt = $type->getValueBase64Binary();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueBase64Binary);
-            } else {
-                $type->setValueBase64Binary((string)$attributes->valueBase64Binary);
-            }
-        }
-        if (isset($children->valueBoolean)) {
-            $type->setValueBoolean(FHIRBoolean::xmlUnserialize($children->valueBoolean));
-        }
-        if (isset($attributes->valueBoolean)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_BOOLEAN);
+        if (null !== $n) {
             $pt = $type->getValueBoolean();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueBoolean);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setValueBoolean((string)$attributes->valueBoolean);
+                $type->setValueBoolean($n->nodeValue);
             }
         }
-        if (isset($children->valueCode)) {
-            $type->setValueCode(FHIRCode::xmlUnserialize($children->valueCode));
-        }
-        if (isset($attributes->valueCode)) {
-            $pt = $type->getValueCode();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueCode);
-            } else {
-                $type->setValueCode((string)$attributes->valueCode);
-            }
-        }
-        if (isset($children->valueCodeableConcept)) {
-            $type->setValueCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->valueCodeableConcept));
-        }
-        if (isset($children->valueCoding)) {
-            $type->setValueCoding(FHIRCoding::xmlUnserialize($children->valueCoding));
-        }
-        if (isset($children->valueContactPoint)) {
-            $type->setValueContactPoint(FHIRContactPoint::xmlUnserialize($children->valueContactPoint));
-        }
-        if (isset($children->valueDate)) {
-            $type->setValueDate(FHIRDate::xmlUnserialize($children->valueDate));
-        }
-        if (isset($attributes->valueDate)) {
-            $pt = $type->getValueDate();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueDate);
-            } else {
-                $type->setValueDate((string)$attributes->valueDate);
-            }
-        }
-        if (isset($children->valueDateTime)) {
-            $type->setValueDateTime(FHIRDateTime::xmlUnserialize($children->valueDateTime));
-        }
-        if (isset($attributes->valueDateTime)) {
-            $pt = $type->getValueDateTime();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueDateTime);
-            } else {
-                $type->setValueDateTime((string)$attributes->valueDateTime);
-            }
-        }
-        if (isset($children->valueDecimal)) {
-            $type->setValueDecimal(FHIRDecimal::xmlUnserialize($children->valueDecimal));
-        }
-        if (isset($attributes->valueDecimal)) {
-            $pt = $type->getValueDecimal();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueDecimal);
-            } else {
-                $type->setValueDecimal((string)$attributes->valueDecimal);
-            }
-        }
-        if (isset($children->valueElementDefinition)) {
-            $type->setValueElementDefinition(FHIRElementDefinition::xmlUnserialize($children->valueElementDefinition));
-        }
-        if (isset($children->valueHumanName)) {
-            $type->setValueHumanName(FHIRHumanName::xmlUnserialize($children->valueHumanName));
-        }
-        if (isset($children->valueId)) {
-            $type->setValueId(FHIRId::xmlUnserialize($children->valueId));
-        }
-        if (isset($attributes->valueId)) {
-            $pt = $type->getValueId();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueId);
-            } else {
-                $type->setValueId((string)$attributes->valueId);
-            }
-        }
-        if (isset($children->valueIdentifier)) {
-            $type->setValueIdentifier(FHIRIdentifier::xmlUnserialize($children->valueIdentifier));
-        }
-        if (isset($children->valueInstant)) {
-            $type->setValueInstant(FHIRInstant::xmlUnserialize($children->valueInstant));
-        }
-        if (isset($attributes->valueInstant)) {
-            $pt = $type->getValueInstant();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueInstant);
-            } else {
-                $type->setValueInstant((string)$attributes->valueInstant);
-            }
-        }
-        if (isset($children->valueInteger)) {
-            $type->setValueInteger(FHIRInteger::xmlUnserialize($children->valueInteger));
-        }
-        if (isset($attributes->valueInteger)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_INTEGER);
+        if (null !== $n) {
             $pt = $type->getValueInteger();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueInteger);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setValueInteger((string)$attributes->valueInteger);
+                $type->setValueInteger($n->nodeValue);
             }
         }
-        if (isset($children->valueMarkdown)) {
-            $type->setValueMarkdown(FHIRMarkdown::xmlUnserialize($children->valueMarkdown));
-        }
-        if (isset($attributes->valueMarkdown)) {
-            $pt = $type->getValueMarkdown();
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_DECIMAL);
+        if (null !== $n) {
+            $pt = $type->getValueDecimal();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueMarkdown);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setValueMarkdown((string)$attributes->valueMarkdown);
+                $type->setValueDecimal($n->nodeValue);
             }
         }
-        if (isset($children->valueMeta)) {
-            $type->setValueMeta(FHIRMeta::xmlUnserialize($children->valueMeta));
-        }
-        if (isset($children->valueOid)) {
-            $type->setValueOid(FHIROid::xmlUnserialize($children->valueOid));
-        }
-        if (isset($attributes->valueOid)) {
-            $pt = $type->getValueOid();
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_BASE_64BINARY);
+        if (null !== $n) {
+            $pt = $type->getValueBase64Binary();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueOid);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setValueOid((string)$attributes->valueOid);
+                $type->setValueBase64Binary($n->nodeValue);
             }
         }
-        if (isset($children->valuePeriod)) {
-            $type->setValuePeriod(FHIRPeriod::xmlUnserialize($children->valuePeriod));
-        }
-        if (isset($children->valuePositiveInt)) {
-            $type->setValuePositiveInt(FHIRPositiveInt::xmlUnserialize($children->valuePositiveInt));
-        }
-        if (isset($attributes->valuePositiveInt)) {
-            $pt = $type->getValuePositiveInt();
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_INSTANT);
+        if (null !== $n) {
+            $pt = $type->getValueInstant();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->valuePositiveInt);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setValuePositiveInt((string)$attributes->valuePositiveInt);
+                $type->setValueInstant($n->nodeValue);
             }
         }
-        if (isset($children->valueQuantity)) {
-            $type->setValueQuantity(FHIRQuantity::xmlUnserialize($children->valueQuantity));
-        }
-        if (isset($children->valueRange)) {
-            $type->setValueRange(FHIRRange::xmlUnserialize($children->valueRange));
-        }
-        if (isset($children->valueRatio)) {
-            $type->setValueRatio(FHIRRatio::xmlUnserialize($children->valueRatio));
-        }
-        if (isset($children->valueReference)) {
-            $type->setValueReference(FHIRReference::xmlUnserialize($children->valueReference));
-        }
-        if (isset($children->valueSampledData)) {
-            $type->setValueSampledData(FHIRSampledData::xmlUnserialize($children->valueSampledData));
-        }
-        if (isset($children->valueSignature)) {
-            $type->setValueSignature(FHIRSignature::xmlUnserialize($children->valueSignature));
-        }
-        if (isset($children->valueString)) {
-            $type->setValueString(FHIRString::xmlUnserialize($children->valueString));
-        }
-        if (isset($attributes->valueString)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_STRING);
+        if (null !== $n) {
             $pt = $type->getValueString();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueString);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setValueString((string)$attributes->valueString);
+                $type->setValueString($n->nodeValue);
             }
         }
-        if (isset($children->valueTime)) {
-            $type->setValueTime(FHIRTime::xmlUnserialize($children->valueTime));
-        }
-        if (isset($attributes->valueTime)) {
-            $pt = $type->getValueTime();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueTime);
-            } else {
-                $type->setValueTime((string)$attributes->valueTime);
-            }
-        }
-        if (isset($children->valueTiming)) {
-            $type->setValueTiming(FHIRTiming::xmlUnserialize($children->valueTiming));
-        }
-        if (isset($children->valueUnsignedInt)) {
-            $type->setValueUnsignedInt(FHIRUnsignedInt::xmlUnserialize($children->valueUnsignedInt));
-        }
-        if (isset($attributes->valueUnsignedInt)) {
-            $pt = $type->getValueUnsignedInt();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueUnsignedInt);
-            } else {
-                $type->setValueUnsignedInt((string)$attributes->valueUnsignedInt);
-            }
-        }
-        if (isset($children->valueUri)) {
-            $type->setValueUri(FHIRUri::xmlUnserialize($children->valueUri));
-        }
-        if (isset($attributes->valueUri)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_URI);
+        if (null !== $n) {
             $pt = $type->getValueUri();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueUri);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setValueUri((string)$attributes->valueUri);
+                $type->setValueUri($n->nodeValue);
             }
         }
-        if (isset($children->valueUuid)) {
-            $type->setValueUuid(FHIRUuid::xmlUnserialize($children->valueUuid));
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_DATE);
+        if (null !== $n) {
+            $pt = $type->getValueDate();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setValueDate($n->nodeValue);
+            }
         }
-        if (isset($attributes->valueUuid)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_DATE_TIME);
+        if (null !== $n) {
+            $pt = $type->getValueDateTime();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setValueDateTime($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_TIME);
+        if (null !== $n) {
+            $pt = $type->getValueTime();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setValueTime($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_CODE);
+        if (null !== $n) {
+            $pt = $type->getValueCode();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setValueCode($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_OID);
+        if (null !== $n) {
+            $pt = $type->getValueOid();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setValueOid($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_UUID);
+        if (null !== $n) {
             $pt = $type->getValueUuid();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueUuid);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setValueUuid((string)$attributes->valueUuid);
+                $type->setValueUuid($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_ID);
+        if (null !== $n) {
+            $pt = $type->getValueId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setValueId($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_UNSIGNED_INT);
+        if (null !== $n) {
+            $pt = $type->getValueUnsignedInt();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setValueUnsignedInt($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_POSITIVE_INT);
+        if (null !== $n) {
+            $pt = $type->getValuePositiveInt();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setValuePositiveInt($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_MARKDOWN);
+        if (null !== $n) {
+            $pt = $type->getValueMarkdown();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setValueMarkdown($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_NAME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueBoolean())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_BOOLEAN);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueInteger())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_INTEGER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueDecimal())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_DECIMAL);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueBase64Binary())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_BASE_64BINARY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueInstant())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_INSTANT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueString())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_STRING);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueUri())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_URI);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueDate())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_DATE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueDateTime())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_DATE_TIME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueTime())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_TIME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueCode())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_CODE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueOid())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_OID);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueUuid())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_UUID);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueId())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_ID);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueUnsignedInt())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_UNSIGNED_INT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValuePositiveInt())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_POSITIVE_INT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueMarkdown())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_MARKDOWN);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueAnnotation())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_ANNOTATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueAttachment())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_ATTACHMENT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueIdentifier())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_IDENTIFIER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueCodeableConcept())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_CODEABLE_CONCEPT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueCoding())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_CODING);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueQuantity())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_QUANTITY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueRange())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_RANGE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValuePeriod())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_PERIOD);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueRatio())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_RATIO);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueReference())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_REFERENCE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueSampledData())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_SAMPLED_DATA);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueSignature())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_SIGNATURE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueHumanName())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_HUMAN_NAME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueAddress())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_ADDRESS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueContactPoint())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_CONTACT_POINT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueTiming())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_TIMING);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueMeta())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_META);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueElementDefinition())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_ELEMENT_DEFINITION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getResource())) {
+            $e2 = $element->ownerDocument->createElement(self::FIELD_RESOURCE);
+            $element->appendChild($e2);
+            $e3 = $element->ownerDocument->createElement($v->_getFHIRTypeName());
+            $e2->appendChild($e3);
+            $v->xmlSerialize($e3);
         }
         if ([] !== ($vs = $this->getPart())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PART, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PART);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getResource())) {
-            $tsxe = $sxe->addChild(self::FIELD_RESOURCE);
-            $v->xmlSerialize($tsxe->addChild($v->_getFHIRTypeName(), null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueAddress())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ADDRESS, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueAnnotation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ANNOTATION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ATTACHMENT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueBase64Binary())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_BASE_64BINARY, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CODE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueCoding())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CODING, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueContactPoint())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CONTACT_POINT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DATE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueDecimal())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DECIMAL, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueElementDefinition())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ELEMENT_DEFINITION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueHumanName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_HUMAN_NAME, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ID, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueInstant())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_INSTANT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueInteger())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_INTEGER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueMarkdown())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_MARKDOWN, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueMeta())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_META, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueOid())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_OID, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValuePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_PERIOD, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValuePositiveInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_POSITIVE_INT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_RANGE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueRatio())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_RATIO, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_REFERENCE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueSampledData())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_SAMPLED_DATA, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueSignature())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_SIGNATURE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_STRING, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_TIME, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_TIMING, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueUnsignedInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_UNSIGNED_INT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_URI, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueUuid())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_UUID, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -3779,28 +3664,184 @@ class FHIRParametersParameter extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_NAME_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NAME] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_NAME_EXT] = $ext;
             }
         }
-        if ([] !== ($vs = $this->getPart())) {
-            $a[self::FIELD_PART] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PART][] = $v;
+        if (null !== ($v = $this->getValueBoolean())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_BOOLEAN] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBoolean::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_BOOLEAN_EXT] = $ext;
             }
         }
-        if (null !== ($v = $this->getResource())) {
-            $a[self::FIELD_RESOURCE] = $v;
+        if (null !== ($v = $this->getValueInteger())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_INTEGER] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRInteger::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_INTEGER_EXT] = $ext;
+            }
         }
-        if (null !== ($v = $this->getValueAddress())) {
-            $a[self::FIELD_VALUE_ADDRESS] = $v;
+        if (null !== ($v = $this->getValueDecimal())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_DECIMAL] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDecimal::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_DECIMAL_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueBase64Binary())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_BASE_64BINARY] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBase64Binary::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_BASE_64BINARY_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueInstant())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_INSTANT] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRInstant::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_INSTANT_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueString())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_STRING] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_STRING_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueUri())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_URI] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUri::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_URI_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_DATE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDate::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_DATE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueDateTime())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_DATE_TIME] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDateTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_DATE_TIME_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueTime())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_TIME] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_TIME_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueCode())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_CODE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRCode::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_CODE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueOid())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_OID] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIROid::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_OID_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueUuid())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_UUID] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUuid::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_UUID_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueId())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_ID] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRId::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_ID_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueUnsignedInt())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_UNSIGNED_INT] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUnsignedInt::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_UNSIGNED_INT_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValuePositiveInt())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_POSITIVE_INT] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRPositiveInt::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_POSITIVE_INT_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueMarkdown())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_MARKDOWN] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRMarkdown::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_MARKDOWN_EXT] = $ext;
+            }
         }
         if (null !== ($v = $this->getValueAnnotation())) {
             $a[self::FIELD_VALUE_ANNOTATION] = $v;
@@ -3808,32 +3849,8 @@ class FHIRParametersParameter extends FHIRBackboneElement
         if (null !== ($v = $this->getValueAttachment())) {
             $a[self::FIELD_VALUE_ATTACHMENT] = $v;
         }
-        if (null !== ($v = $this->getValueBase64Binary())) {
-            $a[self::FIELD_VALUE_BASE_64BINARY] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBase64Binary::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBase64Binary::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_BASE_64BINARY_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getValueBoolean())) {
-            $a[self::FIELD_VALUE_BOOLEAN] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_BOOLEAN_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getValueCode())) {
-            $a[self::FIELD_VALUE_CODE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCode::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCode::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_CODE_EXT] = $enc;
-            }
+        if (null !== ($v = $this->getValueIdentifier())) {
+            $a[self::FIELD_VALUE_IDENTIFIER] = $v;
         }
         if (null !== ($v = $this->getValueCodeableConcept())) {
             $a[self::FIELD_VALUE_CODEABLE_CONCEPT] = $v;
@@ -3841,110 +3858,14 @@ class FHIRParametersParameter extends FHIRBackboneElement
         if (null !== ($v = $this->getValueCoding())) {
             $a[self::FIELD_VALUE_CODING] = $v;
         }
-        if (null !== ($v = $this->getValueContactPoint())) {
-            $a[self::FIELD_VALUE_CONTACT_POINT] = $v;
-        }
-        if (null !== ($v = $this->getValueDate())) {
-            $a[self::FIELD_VALUE_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDate::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDate::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_DATE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getValueDateTime())) {
-            $a[self::FIELD_VALUE_DATE_TIME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_DATE_TIME_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getValueDecimal())) {
-            $a[self::FIELD_VALUE_DECIMAL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_DECIMAL_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getValueElementDefinition())) {
-            $a[self::FIELD_VALUE_ELEMENT_DEFINITION] = $v;
-        }
-        if (null !== ($v = $this->getValueHumanName())) {
-            $a[self::FIELD_VALUE_HUMAN_NAME] = $v;
-        }
-        if (null !== ($v = $this->getValueId())) {
-            $a[self::FIELD_VALUE_ID] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRId::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRId::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_ID_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getValueIdentifier())) {
-            $a[self::FIELD_VALUE_IDENTIFIER] = $v;
-        }
-        if (null !== ($v = $this->getValueInstant())) {
-            $a[self::FIELD_VALUE_INSTANT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInstant::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInstant::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_INSTANT_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getValueInteger())) {
-            $a[self::FIELD_VALUE_INTEGER] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_INTEGER_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getValueMarkdown())) {
-            $a[self::FIELD_VALUE_MARKDOWN] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMarkdown::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRMarkdown::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_MARKDOWN_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getValueMeta())) {
-            $a[self::FIELD_VALUE_META] = $v;
-        }
-        if (null !== ($v = $this->getValueOid())) {
-            $a[self::FIELD_VALUE_OID] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIROid::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIROid::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_OID_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getValuePeriod())) {
-            $a[self::FIELD_VALUE_PERIOD] = $v;
-        }
-        if (null !== ($v = $this->getValuePositiveInt())) {
-            $a[self::FIELD_VALUE_POSITIVE_INT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_POSITIVE_INT_EXT] = $enc;
-            }
-        }
         if (null !== ($v = $this->getValueQuantity())) {
             $a[self::FIELD_VALUE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getValueRange())) {
             $a[self::FIELD_VALUE_RANGE] = $v;
+        }
+        if (null !== ($v = $this->getValuePeriod())) {
+            $a[self::FIELD_VALUE_PERIOD] = $v;
         }
         if (null !== ($v = $this->getValueRatio())) {
             $a[self::FIELD_VALUE_RATIO] = $v;
@@ -3958,56 +3879,35 @@ class FHIRParametersParameter extends FHIRBackboneElement
         if (null !== ($v = $this->getValueSignature())) {
             $a[self::FIELD_VALUE_SIGNATURE] = $v;
         }
-        if (null !== ($v = $this->getValueString())) {
-            $a[self::FIELD_VALUE_STRING] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_STRING_EXT] = $enc;
-            }
+        if (null !== ($v = $this->getValueHumanName())) {
+            $a[self::FIELD_VALUE_HUMAN_NAME] = $v;
         }
-        if (null !== ($v = $this->getValueTime())) {
-            $a[self::FIELD_VALUE_TIME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRTime::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_TIME_EXT] = $enc;
-            }
+        if (null !== ($v = $this->getValueAddress())) {
+            $a[self::FIELD_VALUE_ADDRESS] = $v;
+        }
+        if (null !== ($v = $this->getValueContactPoint())) {
+            $a[self::FIELD_VALUE_CONTACT_POINT] = $v;
         }
         if (null !== ($v = $this->getValueTiming())) {
             $a[self::FIELD_VALUE_TIMING] = $v;
         }
-        if (null !== ($v = $this->getValueUnsignedInt())) {
-            $a[self::FIELD_VALUE_UNSIGNED_INT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUnsignedInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUnsignedInt::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_UNSIGNED_INT_EXT] = $enc;
-            }
+        if (null !== ($v = $this->getValueMeta())) {
+            $a[self::FIELD_VALUE_META] = $v;
         }
-        if (null !== ($v = $this->getValueUri())) {
-            $a[self::FIELD_VALUE_URI] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_URI_EXT] = $enc;
-            }
+        if (null !== ($v = $this->getValueElementDefinition())) {
+            $a[self::FIELD_VALUE_ELEMENT_DEFINITION] = $v;
         }
-        if (null !== ($v = $this->getValueUuid())) {
-            $a[self::FIELD_VALUE_UUID] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUuid::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUuid::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_UUID_EXT] = $enc;
-            }
+        if (null !== ($v = $this->getResource())) {
+            $a[self::FIELD_RESOURCE] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getPart())) {
+            $a[self::FIELD_PART] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PART][] = $v;
+            }
         }
         return $a;
     }

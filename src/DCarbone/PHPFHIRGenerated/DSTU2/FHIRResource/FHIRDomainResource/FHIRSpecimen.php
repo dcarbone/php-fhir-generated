@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,15 +65,22 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenTreatment;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMeta;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSpecimenStatus;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeMap;
 
 /**
  * A sample to be used for analysis.
@@ -86,53 +93,21 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SPECIMEN;
-    const FIELD_ACCESSION_IDENTIFIER = 'accessionIdentifier';
-    const FIELD_COLLECTION = 'collection';
-    const FIELD_CONTAINER = 'container';
     const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_PARENT = 'parent';
-    const FIELD_RECEIVED_TIME = 'receivedTime';
-    const FIELD_RECEIVED_TIME_EXT = '_receivedTime';
     const FIELD_STATUS = 'status';
     const FIELD_STATUS_EXT = '_status';
-    const FIELD_SUBJECT = 'subject';
-    const FIELD_TREATMENT = 'treatment';
     const FIELD_TYPE = 'type';
+    const FIELD_PARENT = 'parent';
+    const FIELD_SUBJECT = 'subject';
+    const FIELD_ACCESSION_IDENTIFIER = 'accessionIdentifier';
+    const FIELD_RECEIVED_TIME = 'receivedTime';
+    const FIELD_RECEIVED_TIME_EXT = '_receivedTime';
+    const FIELD_COLLECTION = 'collection';
+    const FIELD_TREATMENT = 'treatment';
+    const FIELD_CONTAINER = 'container';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The identifier assigned by the lab when accessioning specimen(s). This is not
-     * necessarily the same as the specimen identifier, depending on local lab
-     * procedures.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
-     */
-    protected $accessionIdentifier = null;
-
-    /**
-     * A sample to be used for analysis.
-     *
-     * Details concerning the specimen collection.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
-     */
-    protected $collection = null;
-
-    /**
-     * A sample to be used for analysis.
-     *
-     * The container holding the specimen. The recursive nature of containers; i.e.
-     * blood in tube in tray in rack is not addressed here.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer[]
-     */
-    protected $container = [];
+    private $_xmlns = '';
 
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -146,6 +121,28 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     protected $identifier = [];
 
     /**
+     * Codes providing the status/availability of a specimen.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The availability of the specimen.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSpecimenStatus
+     */
+    protected $status = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The kind of material that forms the specimen.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
+     */
+    protected $type = null;
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -156,6 +153,31 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected $parent = [];
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where the specimen came from. This may be from the patient(s) or from the
+     * environment or a device.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     */
+    protected $subject = null;
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The identifier assigned by the lab when accessioning specimen(s). This is not
+     * necessarily the same as the specimen identifier, depending on local lab
+     * procedures.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
+     */
+    protected $accessionIdentifier = null;
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -172,26 +194,13 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     protected $receivedTime = null;
 
     /**
-     * Codes providing the status/availability of a specimen.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A sample to be used for analysis.
      *
-     * The availability of the specimen.
+     * Details concerning the specimen collection.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSpecimenStatus
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
      */
-    protected $status = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where the specimen came from. This may be from the patient(s) or from the
-     * environment or a device.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
-     */
-    protected $subject = null;
+    protected $collection = null;
 
     /**
      * A sample to be used for analysis.
@@ -203,16 +212,14 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     protected $treatment = [];
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A sample to be used for analysis.
      *
-     * The kind of material that forms the specimen.
+     * The container holding the specimen. The recursive nature of containers; i.e.
+     * blood in tube in tray in rack is not addressed here.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer[]
      */
-    protected $type = null;
+    protected $container = [];
 
     /**
      * Validation map for fields in type Specimen
@@ -236,38 +243,6 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ACCESSION_IDENTIFIER])) {
-            if ($data[self::FIELD_ACCESSION_IDENTIFIER] instanceof FHIRIdentifier) {
-                $this->setAccessionIdentifier($data[self::FIELD_ACCESSION_IDENTIFIER]);
-            } else {
-                $this->setAccessionIdentifier(new FHIRIdentifier($data[self::FIELD_ACCESSION_IDENTIFIER]));
-            }
-        }
-        if (isset($data[self::FIELD_COLLECTION])) {
-            if ($data[self::FIELD_COLLECTION] instanceof FHIRSpecimenCollection) {
-                $this->setCollection($data[self::FIELD_COLLECTION]);
-            } else {
-                $this->setCollection(new FHIRSpecimenCollection($data[self::FIELD_COLLECTION]));
-            }
-        }
-        if (isset($data[self::FIELD_CONTAINER])) {
-            if (is_array($data[self::FIELD_CONTAINER])) {
-                foreach($data[self::FIELD_CONTAINER] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRSpecimenContainer) {
-                        $this->addContainer($v);
-                    } else {
-                        $this->addContainer(new FHIRSpecimenContainer($v));
-                    }
-                }
-            } else if ($data[self::FIELD_CONTAINER] instanceof FHIRSpecimenContainer) {
-                $this->addContainer($data[self::FIELD_CONTAINER]);
-            } else {
-                $this->addContainer(new FHIRSpecimenContainer($data[self::FIELD_CONTAINER]));
-            }
-        }
         if (isset($data[self::FIELD_IDENTIFIER])) {
             if (is_array($data[self::FIELD_IDENTIFIER])) {
                 foreach($data[self::FIELD_IDENTIFIER] as $v) {
@@ -280,10 +255,32 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
-            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
+            }
+        }
+        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
+            $value = isset($data[self::FIELD_STATUS]) ? $data[self::FIELD_STATUS] : null;
+            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) ? $ext = $data[self::FIELD_STATUS_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRSpecimenStatus) {
+                    $this->setStatus($value);
+                } else if (is_array($value)) {
+                    $this->setStatus(new FHIRSpecimenStatus(array_merge($ext, $value)));
+                } else {
+                    $this->setStatus(new FHIRSpecimenStatus([FHIRSpecimenStatus::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setStatus(new FHIRSpecimenStatus($ext));
+            }
+        }
+        if (isset($data[self::FIELD_TYPE])) {
+            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setType($data[self::FIELD_TYPE]);
+            } else {
+                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
             }
         }
         if (isset($data[self::FIELD_PARENT])) {
@@ -298,23 +295,29 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                         $this->addParent(new FHIRReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_PARENT] instanceof FHIRReference) {
+            } elseif ($data[self::FIELD_PARENT] instanceof FHIRReference) {
                 $this->addParent($data[self::FIELD_PARENT]);
             } else {
                 $this->addParent(new FHIRReference($data[self::FIELD_PARENT]));
             }
         }
+        if (isset($data[self::FIELD_SUBJECT])) {
+            if ($data[self::FIELD_SUBJECT] instanceof FHIRReference) {
+                $this->setSubject($data[self::FIELD_SUBJECT]);
+            } else {
+                $this->setSubject(new FHIRReference($data[self::FIELD_SUBJECT]));
+            }
+        }
+        if (isset($data[self::FIELD_ACCESSION_IDENTIFIER])) {
+            if ($data[self::FIELD_ACCESSION_IDENTIFIER] instanceof FHIRIdentifier) {
+                $this->setAccessionIdentifier($data[self::FIELD_ACCESSION_IDENTIFIER]);
+            } else {
+                $this->setAccessionIdentifier(new FHIRIdentifier($data[self::FIELD_ACCESSION_IDENTIFIER]));
+            }
+        }
         if (isset($data[self::FIELD_RECEIVED_TIME]) || isset($data[self::FIELD_RECEIVED_TIME_EXT])) {
-            if (isset($data[self::FIELD_RECEIVED_TIME])) {
-                $value = $data[self::FIELD_RECEIVED_TIME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_RECEIVED_TIME_EXT]) && is_array($data[self::FIELD_RECEIVED_TIME_EXT])) {
-                $ext = $data[self::FIELD_RECEIVED_TIME_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_RECEIVED_TIME]) ? $data[self::FIELD_RECEIVED_TIME] : null;
+            $ext = (isset($data[self::FIELD_RECEIVED_TIME_EXT]) && is_array($data[self::FIELD_RECEIVED_TIME_EXT])) ? $ext = $data[self::FIELD_RECEIVED_TIME_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRDateTime) {
                     $this->setReceivedTime($value);
@@ -323,38 +326,15 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 } else {
                     $this->setReceivedTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setReceivedTime(new FHIRDateTime($ext));
             }
         }
-        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
-            if (isset($data[self::FIELD_STATUS])) {
-                $value = $data[self::FIELD_STATUS];
+        if (isset($data[self::FIELD_COLLECTION])) {
+            if ($data[self::FIELD_COLLECTION] instanceof FHIRSpecimenCollection) {
+                $this->setCollection($data[self::FIELD_COLLECTION]);
             } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
-                $ext = $data[self::FIELD_STATUS_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRSpecimenStatus) {
-                    $this->setStatus($value);
-                } else if (is_array($value)) {
-                    $this->setStatus(new FHIRSpecimenStatus(array_merge($ext, $value)));
-                } else {
-                    $this->setStatus(new FHIRSpecimenStatus([FHIRSpecimenStatus::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setStatus(new FHIRSpecimenStatus($ext));
-            }
-        }
-        if (isset($data[self::FIELD_SUBJECT])) {
-            if ($data[self::FIELD_SUBJECT] instanceof FHIRReference) {
-                $this->setSubject($data[self::FIELD_SUBJECT]);
-            } else {
-                $this->setSubject(new FHIRReference($data[self::FIELD_SUBJECT]));
+                $this->setCollection(new FHIRSpecimenCollection($data[self::FIELD_COLLECTION]));
             }
         }
         if (isset($data[self::FIELD_TREATMENT])) {
@@ -369,17 +349,28 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                         $this->addTreatment(new FHIRSpecimenTreatment($v));
                     }
                 }
-            } else if ($data[self::FIELD_TREATMENT] instanceof FHIRSpecimenTreatment) {
+            } elseif ($data[self::FIELD_TREATMENT] instanceof FHIRSpecimenTreatment) {
                 $this->addTreatment($data[self::FIELD_TREATMENT]);
             } else {
                 $this->addTreatment(new FHIRSpecimenTreatment($data[self::FIELD_TREATMENT]));
             }
         }
-        if (isset($data[self::FIELD_TYPE])) {
-            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setType($data[self::FIELD_TYPE]);
+        if (isset($data[self::FIELD_CONTAINER])) {
+            if (is_array($data[self::FIELD_CONTAINER])) {
+                foreach($data[self::FIELD_CONTAINER] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRSpecimenContainer) {
+                        $this->addContainer($v);
+                    } else {
+                        $this->addContainer(new FHIRSpecimenContainer($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_CONTAINER] instanceof FHIRSpecimenContainer) {
+                $this->addContainer($data[self::FIELD_CONTAINER]);
             } else {
-                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
+                $this->addContainer(new FHIRSpecimenContainer($data[self::FIELD_CONTAINER]));
             }
         }
     }
@@ -398,7 +389,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<Specimen{$xmlns}></Specimen>";
@@ -411,119 +402,6 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         return static::FHIR_TYPE_NAME;
     }
 
-
-    /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The identifier assigned by the lab when accessioning specimen(s). This is not
-     * necessarily the same as the specimen identifier, depending on local lab
-     * procedures.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
-     */
-    public function getAccessionIdentifier()
-    {
-        return $this->accessionIdentifier;
-    }
-
-    /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The identifier assigned by the lab when accessioning specimen(s). This is not
-     * necessarily the same as the specimen identifier, depending on local lab
-     * procedures.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $accessionIdentifier
-     * @return static
-     */
-    public function setAccessionIdentifier(FHIRIdentifier $accessionIdentifier = null)
-    {
-        $this->accessionIdentifier = $accessionIdentifier;
-        return $this;
-    }
-
-    /**
-     * A sample to be used for analysis.
-     *
-     * Details concerning the specimen collection.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
-     */
-    public function getCollection()
-    {
-        return $this->collection;
-    }
-
-    /**
-     * A sample to be used for analysis.
-     *
-     * Details concerning the specimen collection.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection $collection
-     * @return static
-     */
-    public function setCollection(FHIRSpecimenCollection $collection = null)
-    {
-        $this->collection = $collection;
-        return $this;
-    }
-
-    /**
-     * A sample to be used for analysis.
-     *
-     * The container holding the specimen. The recursive nature of containers; i.e.
-     * blood in tube in tray in rack is not addressed here.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer[]
-     */
-    public function getContainer()
-    {
-        return $this->container;
-    }
-
-    /**
-     * A sample to be used for analysis.
-     *
-     * The container holding the specimen. The recursive nature of containers; i.e.
-     * blood in tube in tray in rack is not addressed here.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer $container
-     * @return static
-     */
-    public function addContainer(FHIRSpecimenContainer $container = null)
-    {
-        $this->container[] = $container;
-        return $this;
-    }
-
-    /**
-     * A sample to be used for analysis.
-     *
-     * The container holding the specimen. The recursive nature of containers; i.e.
-     * blood in tube in tray in rack is not addressed here.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer[] $container
-     * @return static
-     */
-    public function setContainer(array $container = [])
-    {
-        $this->container = [];
-        if ([] === $container) {
-            return $this;
-        }
-        foreach($container as $v) {
-            if ($v instanceof FHIRSpecimenContainer) {
-                $this->addContainer($v);
-            } else {
-                $this->addContainer(new FHIRSpecimenContainer($v));
-            }
-        }
-        return $this;
-    }
 
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -551,6 +429,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
+        $this->_trackValueAdded();
         $this->identifier[] = $identifier;
         return $this;
     }
@@ -567,7 +446,10 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      */
     public function setIdentifier(array $identifier = [])
     {
-        $this->identifier = [];
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
         if ([] === $identifier) {
             return $this;
         }
@@ -578,6 +460,68 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $this->addIdentifier(new FHIRIdentifier($v));
             }
         }
+        return $this;
+    }
+
+    /**
+     * Codes providing the status/availability of a specimen.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The availability of the specimen.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSpecimenStatus
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Codes providing the status/availability of a specimen.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The availability of the specimen.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSpecimenStatus $status
+     * @return static
+     */
+    public function setStatus(FHIRSpecimenStatus $status = null)
+    {
+        $this->_trackValueSet($this->status, $status);
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The kind of material that forms the specimen.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The kind of material that forms the specimen.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $type
+     * @return static
+     */
+    public function setType(FHIRCodeableConcept $type = null)
+    {
+        $this->_trackValueSet($this->type, $type);
+        $this->type = $type;
         return $this;
     }
 
@@ -609,6 +553,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      */
     public function addParent(FHIRReference $parent = null)
     {
+        $this->_trackValueAdded();
         $this->parent[] = $parent;
         return $this;
     }
@@ -626,7 +571,10 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      */
     public function setParent(array $parent = [])
     {
-        $this->parent = [];
+        if ([] !== $this->parent) {
+            $this->_trackValuesRemoved(count($this->parent));
+            $this->parent = [];
+        }
         if ([] === $parent) {
             return $this;
         }
@@ -637,6 +585,74 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $this->addParent(new FHIRReference($v));
             }
         }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where the specimen came from. This may be from the patient(s) or from the
+     * environment or a device.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     */
+    public function getSubject()
+    {
+        return $this->subject;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where the specimen came from. This may be from the patient(s) or from the
+     * environment or a device.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $subject
+     * @return static
+     */
+    public function setSubject(FHIRReference $subject = null)
+    {
+        $this->_trackValueSet($this->subject, $subject);
+        $this->subject = $subject;
+        return $this;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The identifier assigned by the lab when accessioning specimen(s). This is not
+     * necessarily the same as the specimen identifier, depending on local lab
+     * procedures.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
+     */
+    public function getAccessionIdentifier()
+    {
+        return $this->accessionIdentifier;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The identifier assigned by the lab when accessioning specimen(s). This is not
+     * necessarily the same as the specimen identifier, depending on local lab
+     * procedures.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $accessionIdentifier
+     * @return static
+     */
+    public function setAccessionIdentifier(FHIRIdentifier $accessionIdentifier = null)
+    {
+        $this->_trackValueSet($this->accessionIdentifier, $accessionIdentifier);
+        $this->accessionIdentifier = $accessionIdentifier;
         return $this;
     }
 
@@ -672,75 +688,38 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      */
     public function setReceivedTime($receivedTime = null)
     {
-        if (null === $receivedTime) {
-            $this->receivedTime = null;
-            return $this;
+        if (null !== $receivedTime && !($receivedTime instanceof FHIRDateTime)) {
+            $receivedTime = new FHIRDateTime($receivedTime);
         }
-        if ($receivedTime instanceof FHIRDateTime) {
-            $this->receivedTime = $receivedTime;
-            return $this;
-        }
-        $this->receivedTime = new FHIRDateTime($receivedTime);
+        $this->_trackValueSet($this->receivedTime, $receivedTime);
+        $this->receivedTime = $receivedTime;
         return $this;
     }
 
     /**
-     * Codes providing the status/availability of a specimen.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A sample to be used for analysis.
      *
-     * The availability of the specimen.
+     * Details concerning the specimen collection.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSpecimenStatus
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
      */
-    public function getStatus()
+    public function getCollection()
     {
-        return $this->status;
+        return $this->collection;
     }
 
     /**
-     * Codes providing the status/availability of a specimen.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A sample to be used for analysis.
      *
-     * The availability of the specimen.
+     * Details concerning the specimen collection.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSpecimenStatus $status
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection $collection
      * @return static
      */
-    public function setStatus(FHIRSpecimenStatus $status = null)
+    public function setCollection(FHIRSpecimenCollection $collection = null)
     {
-        $this->status = $status;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where the specimen came from. This may be from the patient(s) or from the
-     * environment or a device.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
-     */
-    public function getSubject()
-    {
-        return $this->subject;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where the specimen came from. This may be from the patient(s) or from the
-     * environment or a device.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $subject
-     * @return static
-     */
-    public function setSubject(FHIRReference $subject = null)
-    {
-        $this->subject = $subject;
+        $this->_trackValueSet($this->collection, $collection);
+        $this->collection = $collection;
         return $this;
     }
 
@@ -766,6 +745,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      */
     public function addTreatment(FHIRSpecimenTreatment $treatment = null)
     {
+        $this->_trackValueAdded();
         $this->treatment[] = $treatment;
         return $this;
     }
@@ -780,7 +760,10 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      */
     public function setTreatment(array $treatment = [])
     {
-        $this->treatment = [];
+        if ([] !== $this->treatment) {
+            $this->_trackValuesRemoved(count($this->treatment));
+            $this->treatment = [];
+        }
         if ([] === $treatment) {
             return $this;
         }
@@ -795,34 +778,59 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A sample to be used for analysis.
      *
-     * The kind of material that forms the specimen.
+     * The container holding the specimen. The recursive nature of containers; i.e.
+     * blood in tube in tray in rack is not addressed here.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer[]
      */
-    public function getType()
+    public function getContainer()
     {
-        return $this->type;
+        return $this->container;
     }
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A sample to be used for analysis.
      *
-     * The kind of material that forms the specimen.
+     * The container holding the specimen. The recursive nature of containers; i.e.
+     * blood in tube in tray in rack is not addressed here.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $type
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer $container
      * @return static
      */
-    public function setType(FHIRCodeableConcept $type = null)
+    public function addContainer(FHIRSpecimenContainer $container = null)
     {
-        $this->type = $type;
+        $this->_trackValueAdded();
+        $this->container[] = $container;
+        return $this;
+    }
+
+    /**
+     * A sample to be used for analysis.
+     *
+     * The container holding the specimen. The recursive nature of containers; i.e.
+     * blood in tube in tray in rack is not addressed here.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer[] $container
+     * @return static
+     */
+    public function setContainer(array $container = [])
+    {
+        if ([] !== $this->container) {
+            $this->_trackValuesRemoved(count($this->container));
+            $this->container = [];
+        }
+        if ([] === $container) {
+            return $this;
+        }
+        foreach($container as $v) {
+            if ($v instanceof FHIRSpecimenContainer) {
+                $this->addContainer($v);
+            } else {
+                $this->addContainer(new FHIRSpecimenContainer($v));
+            }
+        }
         return $this;
     }
 
@@ -847,28 +855,21 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getAccessionIdentifier())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ACCESSION_IDENTIFIER] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getCollection())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_COLLECTION] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getContainer())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_CONTAINER, $i)] = $fieldErrs;
-                }
-            }
-        }
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_IDENTIFIER, $i)] = $fieldErrs;
                 }
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_STATUS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TYPE] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getParent())) {
@@ -878,19 +879,24 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 }
             }
         }
+        if (null !== ($v = $this->getSubject())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUBJECT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getAccessionIdentifier())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ACCESSION_IDENTIFIER] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getReceivedTime())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_RECEIVED_TIME] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getStatus())) {
+        if (null !== ($v = $this->getCollection())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_STATUS] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getSubject())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SUBJECT] = $fieldErrs;
+                $errs[self::FIELD_COLLECTION] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getTreatment())) {
@@ -900,44 +906,10 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 }
             }
         }
-        if (null !== ($v = $this->getType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TYPE] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_ACCESSION_IDENTIFIER])) {
-            $v = $this->getAccessionIdentifier();
-            foreach($validationRules[self::FIELD_ACCESSION_IDENTIFIER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN, self::FIELD_ACCESSION_IDENTIFIER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ACCESSION_IDENTIFIER])) {
-                        $errs[self::FIELD_ACCESSION_IDENTIFIER] = [];
-                    }
-                    $errs[self::FIELD_ACCESSION_IDENTIFIER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_COLLECTION])) {
-            $v = $this->getCollection();
-            foreach($validationRules[self::FIELD_COLLECTION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN, self::FIELD_COLLECTION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COLLECTION])) {
-                        $errs[self::FIELD_COLLECTION] = [];
-                    }
-                    $errs[self::FIELD_COLLECTION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_CONTAINER])) {
-            $v = $this->getContainer();
-            foreach($validationRules[self::FIELD_CONTAINER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN, self::FIELD_CONTAINER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CONTAINER])) {
-                        $errs[self::FIELD_CONTAINER] = [];
-                    }
-                    $errs[self::FIELD_CONTAINER][$rule] = $err;
+        if ([] !== ($vs = $this->getContainer())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_CONTAINER, $i)] = $fieldErrs;
                 }
             }
         }
@@ -953,30 +925,6 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PARENT])) {
-            $v = $this->getParent();
-            foreach($validationRules[self::FIELD_PARENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN, self::FIELD_PARENT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PARENT])) {
-                        $errs[self::FIELD_PARENT] = [];
-                    }
-                    $errs[self::FIELD_PARENT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_RECEIVED_TIME])) {
-            $v = $this->getReceivedTime();
-            foreach($validationRules[self::FIELD_RECEIVED_TIME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN, self::FIELD_RECEIVED_TIME, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RECEIVED_TIME])) {
-                        $errs[self::FIELD_RECEIVED_TIME] = [];
-                    }
-                    $errs[self::FIELD_RECEIVED_TIME][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_STATUS])) {
             $v = $this->getStatus();
             foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
@@ -986,6 +934,30 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                         $errs[self::FIELD_STATUS] = [];
                     }
                     $errs[self::FIELD_STATUS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN, self::FIELD_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
+                    }
+                    $errs[self::FIELD_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PARENT])) {
+            $v = $this->getParent();
+            foreach($validationRules[self::FIELD_PARENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN, self::FIELD_PARENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PARENT])) {
+                        $errs[self::FIELD_PARENT] = [];
+                    }
+                    $errs[self::FIELD_PARENT][$rule] = $err;
                 }
             }
         }
@@ -1001,6 +973,42 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_ACCESSION_IDENTIFIER])) {
+            $v = $this->getAccessionIdentifier();
+            foreach($validationRules[self::FIELD_ACCESSION_IDENTIFIER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN, self::FIELD_ACCESSION_IDENTIFIER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ACCESSION_IDENTIFIER])) {
+                        $errs[self::FIELD_ACCESSION_IDENTIFIER] = [];
+                    }
+                    $errs[self::FIELD_ACCESSION_IDENTIFIER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_RECEIVED_TIME])) {
+            $v = $this->getReceivedTime();
+            foreach($validationRules[self::FIELD_RECEIVED_TIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN, self::FIELD_RECEIVED_TIME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RECEIVED_TIME])) {
+                        $errs[self::FIELD_RECEIVED_TIME] = [];
+                    }
+                    $errs[self::FIELD_RECEIVED_TIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_COLLECTION])) {
+            $v = $this->getCollection();
+            foreach($validationRules[self::FIELD_COLLECTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN, self::FIELD_COLLECTION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_COLLECTION])) {
+                        $errs[self::FIELD_COLLECTION] = [];
+                    }
+                    $errs[self::FIELD_COLLECTION][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_TREATMENT])) {
             $v = $this->getTreatment();
             foreach($validationRules[self::FIELD_TREATMENT] as $rule => $constraint) {
@@ -1013,15 +1021,27 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TYPE])) {
-            $v = $this->getType();
-            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN, self::FIELD_TYPE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_CONTAINER])) {
+            $v = $this->getContainer();
+            foreach($validationRules[self::FIELD_CONTAINER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN, self::FIELD_CONTAINER, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TYPE])) {
-                        $errs[self::FIELD_TYPE] = [];
+                    if (!isset($errs[self::FIELD_CONTAINER])) {
+                        $errs[self::FIELD_CONTAINER] = [];
                     }
-                    $errs[self::FIELD_TYPE][$rule] = $err;
+                    $errs[self::FIELD_CONTAINER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
+                    }
+                    $errs[self::FIELD_TEXT][$rule] = $err;
                 }
             }
         }
@@ -1061,18 +1081,6 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ID])) {
             $v = $this->getId();
             foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
@@ -1082,6 +1090,18 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                         $errs[self::FIELD_ID] = [];
                     }
                     $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
                 }
             }
         }
@@ -1109,172 +1129,217 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_META])) {
-            $v = $this->getMeta();
-            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_META])) {
-                        $errs[self::FIELD_META] = [];
-                    }
-                    $errs[self::FIELD_META][$rule] = $err;
-                }
-            }
-        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRSpecimen $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRSpecimen
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRSpecimen::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSpecimen::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRSpecimen::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRSpecimen;
+            $type = new FHIRSpecimen(null);
         } elseif (!is_object($type) || !($type instanceof FHIRSpecimen)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSpecimen::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRSpecimen or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRDomainResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_IDENTIFIER === $n->nodeName) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_STATUS === $n->nodeName) {
+                $type->setStatus(FHIRSpecimenStatus::xmlUnserialize($n));
+            } elseif (self::FIELD_TYPE === $n->nodeName) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_PARENT === $n->nodeName) {
+                $type->addParent(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_SUBJECT === $n->nodeName) {
+                $type->setSubject(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_ACCESSION_IDENTIFIER === $n->nodeName) {
+                $type->setAccessionIdentifier(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_RECEIVED_TIME === $n->nodeName) {
+                $type->setReceivedTime(FHIRDateTime::xmlUnserialize($n));
+            } elseif (self::FIELD_COLLECTION === $n->nodeName) {
+                $type->setCollection(FHIRSpecimenCollection::xmlUnserialize($n));
+            } elseif (self::FIELD_TREATMENT === $n->nodeName) {
+                $type->addTreatment(FHIRSpecimenTreatment::xmlUnserialize($n));
+            } elseif (self::FIELD_CONTAINER === $n->nodeName) {
+                $type->addContainer(FHIRSpecimenContainer::xmlUnserialize($n));
+            } elseif (self::FIELD_TEXT === $n->nodeName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n));
+            } elseif (self::FIELD_CONTAINED === $n->nodeName) {
+                for ($ni = 0; $ni < $n->childNodes->length; $ni++) {
+                    $nn = $n->childNodes->item($ni);
+                    if ($nn instanceof \DOMElement) {
+                        $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn));
+                    }
+                }
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRId::xmlUnserialize($n));
+            } elseif (self::FIELD_META === $n->nodeName) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($n));
+            } elseif (self::FIELD_IMPLICIT_RULES === $n->nodeName) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_LANGUAGE === $n->nodeName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->accessionIdentifier)) {
-            $type->setAccessionIdentifier(FHIRIdentifier::xmlUnserialize($children->accessionIdentifier));
-        }
-        if (isset($children->collection)) {
-            $type->setCollection(FHIRSpecimenCollection::xmlUnserialize($children->collection));
-        }
-        if (isset($children->container)) {
-            foreach($children->container as $child) {
-                $type->addContainer(FHIRSpecimenContainer::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->identifier)) {
-            foreach($children->identifier as $child) {
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->parent)) {
-            foreach($children->parent as $child) {
-                $type->addParent(FHIRReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->receivedTime)) {
-            $type->setReceivedTime(FHIRDateTime::xmlUnserialize($children->receivedTime));
-        }
-        if (isset($attributes->receivedTime)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_RECEIVED_TIME);
+        if (null !== $n) {
             $pt = $type->getReceivedTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->receivedTime);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setReceivedTime((string)$attributes->receivedTime);
+                $type->setReceivedTime($n->nodeValue);
             }
         }
-        if (isset($children->status)) {
-            $type->setStatus(FHIRSpecimenStatus::xmlUnserialize($children->status));
-        }
-        if (isset($children->subject)) {
-            $type->setSubject(FHIRReference::xmlUnserialize($children->subject));
-        }
-        if (isset($children->treatment)) {
-            foreach($children->treatment as $child) {
-                $type->addTreatment(FHIRSpecimenTreatment::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
-        if (isset($children->type)) {
-            $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
+        $n = $element->attributes->getNamedItem(self::FIELD_IMPLICIT_RULES);
+        if (null !== $n) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setImplicitRules($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_LANGUAGE);
+        if (null !== $n) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setLanguage($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getAccessionIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ACCESSION_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getCollection())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getContainer())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTAINER, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
+        parent::xmlSerialize($element);
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_IDENTIFIER);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_STATUS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getParent())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PARENT, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PARENT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getReceivedTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RECEIVED_TIME, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
-        }
         if (null !== ($v = $this->getSubject())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_SUBJECT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getAccessionIdentifier())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_ACCESSION_IDENTIFIER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getReceivedTime())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_RECEIVED_TIME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getCollection())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_COLLECTION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getTreatment())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TREATMENT, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_TREATMENT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
+        if ([] !== ($vs = $this->getContainer())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_CONTAINER);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -1283,21 +1348,6 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAccessionIdentifier())) {
-            $a[self::FIELD_ACCESSION_IDENTIFIER] = $v;
-        }
-        if (null !== ($v = $this->getCollection())) {
-            $a[self::FIELD_COLLECTION] = $v;
-        }
-        if ([] !== ($vs = $this->getContainer())) {
-            $a[self::FIELD_CONTAINER] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_CONTAINER][] = $v;
-            }
-        }
         if ([] !== ($vs = $this->getIdentifier())) {
             $a[self::FIELD_IDENTIFIER] = [];
             foreach($vs as $v) {
@@ -1306,6 +1356,19 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 }
                 $a[self::FIELD_IDENTIFIER][] = $v;
             }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRSpecimenStatus::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_STATUS_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            $a[self::FIELD_TYPE] = $v;
         }
         if ([] !== ($vs = $this->getParent())) {
             $a[self::FIELD_PARENT] = [];
@@ -1316,26 +1379,24 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $a[self::FIELD_PARENT][] = $v;
             }
         }
-        if (null !== ($v = $this->getReceivedTime())) {
-            $a[self::FIELD_RECEIVED_TIME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_RECEIVED_TIME_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRSpecimenStatus::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRSpecimenStatus::FIELD_VALUE]);
-                $a[self::FIELD_STATUS_EXT] = $enc;
-            }
-        }
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;
+        }
+        if (null !== ($v = $this->getAccessionIdentifier())) {
+            $a[self::FIELD_ACCESSION_IDENTIFIER] = $v;
+        }
+        if (null !== ($v = $this->getReceivedTime())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RECEIVED_TIME] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDateTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_RECEIVED_TIME_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getCollection())) {
+            $a[self::FIELD_COLLECTION] = $v;
         }
         if ([] !== ($vs = $this->getTreatment())) {
             $a[self::FIELD_TREATMENT] = [];
@@ -1346,11 +1407,14 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $a[self::FIELD_TREATMENT][] = $v;
             }
         }
-        if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getContainer())) {
+            $a[self::FIELD_CONTAINER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CONTAINER][] = $v;
+            }
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

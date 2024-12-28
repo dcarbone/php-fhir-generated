@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValue
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -83,12 +85,12 @@ class FHIRValueSetConcept extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_CONCEPT;
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
-    const FIELD_DESIGNATION = 'designation';
     const FIELD_DISPLAY = 'display';
     const FIELD_DISPLAY_EXT = '_display';
+    const FIELD_DESIGNATION = 'designation';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -103,19 +105,6 @@ class FHIRValueSetConcept extends FHIRBackboneElement
     protected $code = null;
 
     /**
-     * A ValueSet resource instance specifies a set of codes drawn from one or more
-     * code systems, intended for use in a particular context. Value sets link between
-     * [[[CodeSystem]]] definitions and their use in [coded
-     * elements](terminologies.html).
-     *
-     * Additional representations for this concept when used in this value set - other
-     * languages, aliases, specialized purposes, used for particular purposes, etc.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation[]
-     */
-    protected $designation = [];
-
-    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -127,6 +116,19 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected $display = null;
+
+    /**
+     * A ValueSet resource instance specifies a set of codes drawn from one or more
+     * code systems, intended for use in a particular context. Value sets link between
+     * [[[CodeSystem]]] definitions and their use in [coded
+     * elements](terminologies.html).
+     *
+     * Additional representations for this concept when used in this value set - other
+     * languages, aliases, specialized purposes, used for particular purposes, etc.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation[]
+     */
+    protected $designation = [];
 
     /**
      * Validation map for fields in type ValueSet.Concept
@@ -151,16 +153,8 @@ class FHIRValueSetConcept extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_CODE]) || isset($data[self::FIELD_CODE_EXT])) {
-            if (isset($data[self::FIELD_CODE])) {
-                $value = $data[self::FIELD_CODE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CODE_EXT]) && is_array($data[self::FIELD_CODE_EXT])) {
-                $ext = $data[self::FIELD_CODE_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_CODE]) ? $data[self::FIELD_CODE] : null;
+            $ext = (isset($data[self::FIELD_CODE_EXT]) && is_array($data[self::FIELD_CODE_EXT])) ? $ext = $data[self::FIELD_CODE_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRCode) {
                     $this->setCode($value);
@@ -169,8 +163,23 @@ class FHIRValueSetConcept extends FHIRBackboneElement
                 } else {
                     $this->setCode(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setCode(new FHIRCode($ext));
+            }
+        }
+        if (isset($data[self::FIELD_DISPLAY]) || isset($data[self::FIELD_DISPLAY_EXT])) {
+            $value = isset($data[self::FIELD_DISPLAY]) ? $data[self::FIELD_DISPLAY] : null;
+            $ext = (isset($data[self::FIELD_DISPLAY_EXT]) && is_array($data[self::FIELD_DISPLAY_EXT])) ? $ext = $data[self::FIELD_DISPLAY_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDisplay($value);
+                } else if (is_array($value)) {
+                    $this->setDisplay(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDisplay(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDisplay(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_DESIGNATION])) {
@@ -185,33 +194,10 @@ class FHIRValueSetConcept extends FHIRBackboneElement
                         $this->addDesignation(new FHIRValueSetDesignation($v));
                     }
                 }
-            } else if ($data[self::FIELD_DESIGNATION] instanceof FHIRValueSetDesignation) {
+            } elseif ($data[self::FIELD_DESIGNATION] instanceof FHIRValueSetDesignation) {
                 $this->addDesignation($data[self::FIELD_DESIGNATION]);
             } else {
                 $this->addDesignation(new FHIRValueSetDesignation($data[self::FIELD_DESIGNATION]));
-            }
-        }
-        if (isset($data[self::FIELD_DISPLAY]) || isset($data[self::FIELD_DISPLAY_EXT])) {
-            if (isset($data[self::FIELD_DISPLAY])) {
-                $value = $data[self::FIELD_DISPLAY];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DISPLAY_EXT]) && is_array($data[self::FIELD_DISPLAY_EXT])) {
-                $ext = $data[self::FIELD_DISPLAY_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setDisplay($value);
-                } else if (is_array($value)) {
-                    $this->setDisplay(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setDisplay(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDisplay(new FHIRString($ext));
             }
         }
     }
@@ -230,7 +216,7 @@ class FHIRValueSetConcept extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ValueSetConcept{$xmlns}></ValueSetConcept>";
@@ -264,77 +250,11 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      */
     public function setCode($code = null)
     {
-        if (null === $code) {
-            $this->code = null;
-            return $this;
+        if (null !== $code && !($code instanceof FHIRCode)) {
+            $code = new FHIRCode($code);
         }
-        if ($code instanceof FHIRCode) {
-            $this->code = $code;
-            return $this;
-        }
-        $this->code = new FHIRCode($code);
-        return $this;
-    }
-
-    /**
-     * A ValueSet resource instance specifies a set of codes drawn from one or more
-     * code systems, intended for use in a particular context. Value sets link between
-     * [[[CodeSystem]]] definitions and their use in [coded
-     * elements](terminologies.html).
-     *
-     * Additional representations for this concept when used in this value set - other
-     * languages, aliases, specialized purposes, used for particular purposes, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation[]
-     */
-    public function getDesignation()
-    {
-        return $this->designation;
-    }
-
-    /**
-     * A ValueSet resource instance specifies a set of codes drawn from one or more
-     * code systems, intended for use in a particular context. Value sets link between
-     * [[[CodeSystem]]] definitions and their use in [coded
-     * elements](terminologies.html).
-     *
-     * Additional representations for this concept when used in this value set - other
-     * languages, aliases, specialized purposes, used for particular purposes, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation $designation
-     * @return static
-     */
-    public function addDesignation(FHIRValueSetDesignation $designation = null)
-    {
-        $this->designation[] = $designation;
-        return $this;
-    }
-
-    /**
-     * A ValueSet resource instance specifies a set of codes drawn from one or more
-     * code systems, intended for use in a particular context. Value sets link between
-     * [[[CodeSystem]]] definitions and their use in [coded
-     * elements](terminologies.html).
-     *
-     * Additional representations for this concept when used in this value set - other
-     * languages, aliases, specialized purposes, used for particular purposes, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation[] $designation
-     * @return static
-     */
-    public function setDesignation(array $designation = [])
-    {
-        $this->designation = [];
-        if ([] === $designation) {
-            return $this;
-        }
-        foreach($designation as $v) {
-            if ($v instanceof FHIRValueSetDesignation) {
-                $this->addDesignation($v);
-            } else {
-                $this->addDesignation(new FHIRValueSetDesignation($v));
-            }
-        }
+        $this->_trackValueSet($this->code, $code);
+        $this->code = $code;
         return $this;
     }
 
@@ -368,15 +288,77 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      */
     public function setDisplay($display = null)
     {
-        if (null === $display) {
-            $this->display = null;
+        if (null !== $display && !($display instanceof FHIRString)) {
+            $display = new FHIRString($display);
+        }
+        $this->_trackValueSet($this->display, $display);
+        $this->display = $display;
+        return $this;
+    }
+
+    /**
+     * A ValueSet resource instance specifies a set of codes drawn from one or more
+     * code systems, intended for use in a particular context. Value sets link between
+     * [[[CodeSystem]]] definitions and their use in [coded
+     * elements](terminologies.html).
+     *
+     * Additional representations for this concept when used in this value set - other
+     * languages, aliases, specialized purposes, used for particular purposes, etc.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation[]
+     */
+    public function getDesignation()
+    {
+        return $this->designation;
+    }
+
+    /**
+     * A ValueSet resource instance specifies a set of codes drawn from one or more
+     * code systems, intended for use in a particular context. Value sets link between
+     * [[[CodeSystem]]] definitions and their use in [coded
+     * elements](terminologies.html).
+     *
+     * Additional representations for this concept when used in this value set - other
+     * languages, aliases, specialized purposes, used for particular purposes, etc.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation $designation
+     * @return static
+     */
+    public function addDesignation(FHIRValueSetDesignation $designation = null)
+    {
+        $this->_trackValueAdded();
+        $this->designation[] = $designation;
+        return $this;
+    }
+
+    /**
+     * A ValueSet resource instance specifies a set of codes drawn from one or more
+     * code systems, intended for use in a particular context. Value sets link between
+     * [[[CodeSystem]]] definitions and their use in [coded
+     * elements](terminologies.html).
+     *
+     * Additional representations for this concept when used in this value set - other
+     * languages, aliases, specialized purposes, used for particular purposes, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation[] $designation
+     * @return static
+     */
+    public function setDesignation(array $designation = [])
+    {
+        if ([] !== $this->designation) {
+            $this->_trackValuesRemoved(count($this->designation));
+            $this->designation = [];
+        }
+        if ([] === $designation) {
             return $this;
         }
-        if ($display instanceof FHIRString) {
-            $this->display = $display;
-            return $this;
+        foreach($designation as $v) {
+            if ($v instanceof FHIRValueSetDesignation) {
+                $this->addDesignation($v);
+            } else {
+                $this->addDesignation(new FHIRValueSetDesignation($v));
+            }
         }
-        $this->display = new FHIRString($display);
         return $this;
     }
 
@@ -406,16 +388,16 @@ class FHIRValueSetConcept extends FHIRBackboneElement
                 $errs[self::FIELD_CODE] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getDisplay())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DISPLAY] = $fieldErrs;
+            }
+        }
         if ([] !== ($vs = $this->getDesignation())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_DESIGNATION, $i)] = $fieldErrs;
                 }
-            }
-        }
-        if (null !== ($v = $this->getDisplay())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DISPLAY] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_CODE])) {
@@ -430,18 +412,6 @@ class FHIRValueSetConcept extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DESIGNATION])) {
-            $v = $this->getDesignation();
-            foreach($validationRules[self::FIELD_DESIGNATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_CONCEPT, self::FIELD_DESIGNATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DESIGNATION])) {
-                        $errs[self::FIELD_DESIGNATION] = [];
-                    }
-                    $errs[self::FIELD_DESIGNATION][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_DISPLAY])) {
             $v = $this->getDisplay();
             foreach($validationRules[self::FIELD_DISPLAY] as $rule => $constraint) {
@@ -451,6 +421,18 @@ class FHIRValueSetConcept extends FHIRBackboneElement
                         $errs[self::FIELD_DISPLAY] = [];
                     }
                     $errs[self::FIELD_DISPLAY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DESIGNATION])) {
+            $v = $this->getDesignation();
+            foreach($validationRules[self::FIELD_DESIGNATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_CONCEPT, self::FIELD_DESIGNATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DESIGNATION])) {
+                        $errs[self::FIELD_DESIGNATION] = [];
+                    }
+                    $errs[self::FIELD_DESIGNATION][$rule] = $err;
                 }
             }
         }
@@ -494,101 +476,125 @@ class FHIRValueSetConcept extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRValueSetConcept::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRValueSetConcept::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRValueSetConcept::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRValueSetConcept;
+            $type = new FHIRValueSetConcept(null);
         } elseif (!is_object($type) || !($type instanceof FHIRValueSetConcept)) {
             throw new \RuntimeException(sprintf(
                 'FHIRValueSetConcept::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_CODE === $n->nodeName) {
+                $type->setCode(FHIRCode::xmlUnserialize($n));
+            } elseif (self::FIELD_DISPLAY === $n->nodeName) {
+                $type->setDisplay(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_DESIGNATION === $n->nodeName) {
+                $type->addDesignation(FHIRValueSetDesignation::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->code)) {
-            $type->setCode(FHIRCode::xmlUnserialize($children->code));
-        }
-        if (isset($attributes->code)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_CODE);
+        if (null !== $n) {
             $pt = $type->getCode();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->code);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setCode((string)$attributes->code);
+                $type->setCode($n->nodeValue);
             }
         }
-        if (isset($children->designation)) {
-            foreach($children->designation as $child) {
-                $type->addDesignation(FHIRValueSetDesignation::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->display)) {
-            $type->setDisplay(FHIRString::xmlUnserialize($children->display));
-        }
-        if (isset($attributes->display)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DISPLAY);
+        if (null !== $n) {
             $pt = $type->getDisplay();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->display);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDisplay((string)$attributes->display);
+                $type->setDisplay($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_CODE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDisplay())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DISPLAY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getDesignation())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DESIGNATION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_DESIGNATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getDisplay())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DISPLAY, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -598,12 +604,23 @@ class FHIRValueSetConcept extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
-            $a[self::FIELD_CODE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCode::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCode::FIELD_VALUE]);
-                $a[self::FIELD_CODE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CODE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRCode::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_CODE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getDisplay())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DISPLAY] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DISPLAY_EXT] = $ext;
             }
         }
         if ([] !== ($vs = $this->getDesignation())) {
@@ -614,18 +631,6 @@ class FHIRValueSetConcept extends FHIRBackboneElement
                 }
                 $a[self::FIELD_DESIGNATION][] = $v;
             }
-        }
-        if (null !== ($v = $this->getDisplay())) {
-            $a[self::FIELD_DISPLAY] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DISPLAY_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConse
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConse
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -81,28 +83,14 @@ class FHIRConsentVerification extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONSENT_DOT_VERIFICATION;
-    const FIELD_VERIFICATION_DATE = 'verificationDate';
-    const FIELD_VERIFICATION_DATE_EXT = '_verificationDate';
     const FIELD_VERIFIED = 'verified';
     const FIELD_VERIFIED_EXT = '_verified';
     const FIELD_VERIFIED_WITH = 'verifiedWith';
+    const FIELD_VERIFICATION_DATE = 'verificationDate';
+    const FIELD_VERIFICATION_DATE_EXT = '_verificationDate';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Date verification was collected.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
-     */
-    protected $verificationDate = null;
+    private $_xmlns = '';
 
     /**
      * Value of "true" or "false"
@@ -126,6 +114,20 @@ class FHIRConsentVerification extends FHIRBackboneElement
     protected $verifiedWith = null;
 
     /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Date verification was collected.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
+     */
+    protected $verificationDate = null;
+
+    /**
      * Validation map for fields in type Consent.Verification
      * @var array
      */
@@ -147,40 +149,9 @@ class FHIRConsentVerification extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_VERIFICATION_DATE]) || isset($data[self::FIELD_VERIFICATION_DATE_EXT])) {
-            if (isset($data[self::FIELD_VERIFICATION_DATE])) {
-                $value = $data[self::FIELD_VERIFICATION_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VERIFICATION_DATE_EXT]) && is_array($data[self::FIELD_VERIFICATION_DATE_EXT])) {
-                $ext = $data[self::FIELD_VERIFICATION_DATE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $this->setVerificationDate($value);
-                } else if (is_array($value)) {
-                    $this->setVerificationDate(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $this->setVerificationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setVerificationDate(new FHIRDateTime($ext));
-            }
-        }
         if (isset($data[self::FIELD_VERIFIED]) || isset($data[self::FIELD_VERIFIED_EXT])) {
-            if (isset($data[self::FIELD_VERIFIED])) {
-                $value = $data[self::FIELD_VERIFIED];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VERIFIED_EXT]) && is_array($data[self::FIELD_VERIFIED_EXT])) {
-                $ext = $data[self::FIELD_VERIFIED_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_VERIFIED]) ? $data[self::FIELD_VERIFIED] : null;
+            $ext = (isset($data[self::FIELD_VERIFIED_EXT]) && is_array($data[self::FIELD_VERIFIED_EXT])) ? $ext = $data[self::FIELD_VERIFIED_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setVerified($value);
@@ -189,7 +160,7 @@ class FHIRConsentVerification extends FHIRBackboneElement
                 } else {
                     $this->setVerified(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setVerified(new FHIRBoolean($ext));
             }
         }
@@ -198,6 +169,21 @@ class FHIRConsentVerification extends FHIRBackboneElement
                 $this->setVerifiedWith($data[self::FIELD_VERIFIED_WITH]);
             } else {
                 $this->setVerifiedWith(new FHIRReference($data[self::FIELD_VERIFIED_WITH]));
+            }
+        }
+        if (isset($data[self::FIELD_VERIFICATION_DATE]) || isset($data[self::FIELD_VERIFICATION_DATE_EXT])) {
+            $value = isset($data[self::FIELD_VERIFICATION_DATE]) ? $data[self::FIELD_VERIFICATION_DATE] : null;
+            $ext = (isset($data[self::FIELD_VERIFICATION_DATE_EXT]) && is_array($data[self::FIELD_VERIFICATION_DATE_EXT])) ? $ext = $data[self::FIELD_VERIFICATION_DATE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setVerificationDate($value);
+                } else if (is_array($value)) {
+                    $this->setVerificationDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setVerificationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setVerificationDate(new FHIRDateTime($ext));
             }
         }
     }
@@ -216,10 +202,73 @@ class FHIRConsentVerification extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ConsentVerification{$xmlns}></ConsentVerification>";
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Has the instruction been verified.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    public function getVerified()
+    {
+        return $this->verified;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Has the instruction been verified.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $verified
+     * @return static
+     */
+    public function setVerified($verified = null)
+    {
+        if (null !== $verified && !($verified instanceof FHIRBoolean)) {
+            $verified = new FHIRBoolean($verified);
+        }
+        $this->_trackValueSet($this->verified, $verified);
+        $this->verified = $verified;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Who verified the instruction (Patient, Relative or other Authorized Person).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getVerifiedWith()
+    {
+        return $this->verifiedWith;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Who verified the instruction (Patient, Relative or other Authorized Person).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $verifiedWith
+     * @return static
+     */
+    public function setVerifiedWith(FHIRReference $verifiedWith = null)
+    {
+        $this->_trackValueSet($this->verifiedWith, $verifiedWith);
+        $this->verifiedWith = $verifiedWith;
+        return $this;
     }
 
     /**
@@ -254,81 +303,11 @@ class FHIRConsentVerification extends FHIRBackboneElement
      */
     public function setVerificationDate($verificationDate = null)
     {
-        if (null === $verificationDate) {
-            $this->verificationDate = null;
-            return $this;
+        if (null !== $verificationDate && !($verificationDate instanceof FHIRDateTime)) {
+            $verificationDate = new FHIRDateTime($verificationDate);
         }
-        if ($verificationDate instanceof FHIRDateTime) {
-            $this->verificationDate = $verificationDate;
-            return $this;
-        }
-        $this->verificationDate = new FHIRDateTime($verificationDate);
-        return $this;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Has the instruction been verified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    public function getVerified()
-    {
-        return $this->verified;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Has the instruction been verified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $verified
-     * @return static
-     */
-    public function setVerified($verified = null)
-    {
-        if (null === $verified) {
-            $this->verified = null;
-            return $this;
-        }
-        if ($verified instanceof FHIRBoolean) {
-            $this->verified = $verified;
-            return $this;
-        }
-        $this->verified = new FHIRBoolean($verified);
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Who verified the instruction (Patient, Relative or other Authorized Person).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getVerifiedWith()
-    {
-        return $this->verifiedWith;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Who verified the instruction (Patient, Relative or other Authorized Person).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $verifiedWith
-     * @return static
-     */
-    public function setVerifiedWith(FHIRReference $verifiedWith = null)
-    {
-        $this->verifiedWith = $verifiedWith;
+        $this->_trackValueSet($this->verificationDate, $verificationDate);
+        $this->verificationDate = $verificationDate;
         return $this;
     }
 
@@ -353,11 +332,6 @@ class FHIRConsentVerification extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getVerificationDate())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VERIFICATION_DATE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getVerified())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_VERIFIED] = $fieldErrs;
@@ -368,16 +342,9 @@ class FHIRConsentVerification extends FHIRBackboneElement
                 $errs[self::FIELD_VERIFIED_WITH] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_VERIFICATION_DATE])) {
-            $v = $this->getVerificationDate();
-            foreach($validationRules[self::FIELD_VERIFICATION_DATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONSENT_DOT_VERIFICATION, self::FIELD_VERIFICATION_DATE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VERIFICATION_DATE])) {
-                        $errs[self::FIELD_VERIFICATION_DATE] = [];
-                    }
-                    $errs[self::FIELD_VERIFICATION_DATE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getVerificationDate())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VERIFICATION_DATE] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_VERIFIED])) {
@@ -401,6 +368,18 @@ class FHIRConsentVerification extends FHIRBackboneElement
                         $errs[self::FIELD_VERIFIED_WITH] = [];
                     }
                     $errs[self::FIELD_VERIFIED_WITH][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VERIFICATION_DATE])) {
+            $v = $this->getVerificationDate();
+            foreach($validationRules[self::FIELD_VERIFICATION_DATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONSENT_DOT_VERIFICATION, self::FIELD_VERIFICATION_DATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VERIFICATION_DATE])) {
+                        $errs[self::FIELD_VERIFICATION_DATE] = [];
+                    }
+                    $errs[self::FIELD_VERIFICATION_DATE][$rule] = $err;
                 }
             }
         }
@@ -444,94 +423,120 @@ class FHIRConsentVerification extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRConsentVerification::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRConsentVerification::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRConsentVerification::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRConsentVerification;
+            $type = new FHIRConsentVerification(null);
         } elseif (!is_object($type) || !($type instanceof FHIRConsentVerification)) {
             throw new \RuntimeException(sprintf(
                 'FHIRConsentVerification::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_VERIFIED === $n->nodeName) {
+                $type->setVerified(FHIRBoolean::xmlUnserialize($n));
+            } elseif (self::FIELD_VERIFIED_WITH === $n->nodeName) {
+                $type->setVerifiedWith(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_VERIFICATION_DATE === $n->nodeName) {
+                $type->setVerificationDate(FHIRDateTime::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->verificationDate)) {
-            $type->setVerificationDate(FHIRDateTime::xmlUnserialize($children->verificationDate));
-        }
-        if (isset($attributes->verificationDate)) {
-            $pt = $type->getVerificationDate();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->verificationDate);
-            } else {
-                $type->setVerificationDate((string)$attributes->verificationDate);
-            }
-        }
-        if (isset($children->verified)) {
-            $type->setVerified(FHIRBoolean::xmlUnserialize($children->verified));
-        }
-        if (isset($attributes->verified)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_VERIFIED);
+        if (null !== $n) {
             $pt = $type->getVerified();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->verified);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setVerified((string)$attributes->verified);
+                $type->setVerified($n->nodeValue);
             }
         }
-        if (isset($children->verifiedWith)) {
-            $type->setVerifiedWith(FHIRReference::xmlUnserialize($children->verifiedWith));
+        $n = $element->attributes->getNamedItem(self::FIELD_VERIFICATION_DATE);
+        if (null !== $n) {
+            $pt = $type->getVerificationDate();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setVerificationDate($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getVerificationDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VERIFICATION_DATE, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getVerified())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VERIFIED, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_VERIFIED);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getVerifiedWith())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VERIFIED_WITH, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_VERIFIED_WITH);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getVerificationDate())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VERIFICATION_DATE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -540,29 +545,28 @@ class FHIRConsentVerification extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getVerificationDate())) {
-            $a[self::FIELD_VERIFICATION_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_VERIFICATION_DATE_EXT] = $enc;
-            }
-        }
         if (null !== ($v = $this->getVerified())) {
-            $a[self::FIELD_VERIFIED] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_VERIFIED_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VERIFIED] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBoolean::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VERIFIED_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getVerifiedWith())) {
             $a[self::FIELD_VERIFIED_WITH] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getVerificationDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VERIFICATION_DATE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDateTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VERIFICATION_DATE_EXT] = $ext;
+            }
         }
         return $a;
     }

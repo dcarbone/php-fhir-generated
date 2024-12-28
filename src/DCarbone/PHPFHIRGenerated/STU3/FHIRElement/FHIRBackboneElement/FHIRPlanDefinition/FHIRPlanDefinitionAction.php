@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,6 +72,7 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration;
@@ -81,6 +82,7 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
@@ -97,75 +99,96 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION;
-    const FIELD_ACTION = 'action';
-    const FIELD_CARDINALITY_BEHAVIOR = 'cardinalityBehavior';
-    const FIELD_CARDINALITY_BEHAVIOR_EXT = '_cardinalityBehavior';
-    const FIELD_CODE = 'code';
-    const FIELD_CONDITION = 'condition';
-    const FIELD_DEFINITION = 'definition';
-    const FIELD_DESCRIPTION = 'description';
-    const FIELD_DESCRIPTION_EXT = '_description';
-    const FIELD_DOCUMENTATION = 'documentation';
-    const FIELD_DYNAMIC_VALUE = 'dynamicValue';
-    const FIELD_GOAL_ID = 'goalId';
-    const FIELD_GOAL_ID_EXT = '_goalId';
-    const FIELD_GROUPING_BEHAVIOR = 'groupingBehavior';
-    const FIELD_GROUPING_BEHAVIOR_EXT = '_groupingBehavior';
-    const FIELD_INPUT = 'input';
     const FIELD_LABEL = 'label';
     const FIELD_LABEL_EXT = '_label';
-    const FIELD_OUTPUT = 'output';
-    const FIELD_PARTICIPANT = 'participant';
-    const FIELD_PRECHECK_BEHAVIOR = 'precheckBehavior';
-    const FIELD_PRECHECK_BEHAVIOR_EXT = '_precheckBehavior';
-    const FIELD_REASON = 'reason';
-    const FIELD_RELATED_ACTION = 'relatedAction';
-    const FIELD_REQUIRED_BEHAVIOR = 'requiredBehavior';
-    const FIELD_REQUIRED_BEHAVIOR_EXT = '_requiredBehavior';
-    const FIELD_SELECTION_BEHAVIOR = 'selectionBehavior';
-    const FIELD_SELECTION_BEHAVIOR_EXT = '_selectionBehavior';
-    const FIELD_TEXT_EQUIVALENT = 'textEquivalent';
-    const FIELD_TEXT_EQUIVALENT_EXT = '_textEquivalent';
-    const FIELD_TIMING_DATE_TIME = 'timingDateTime';
-    const FIELD_TIMING_DATE_TIME_EXT = '_timingDateTime';
-    const FIELD_TIMING_DURATION = 'timingDuration';
-    const FIELD_TIMING_PERIOD = 'timingPeriod';
-    const FIELD_TIMING_RANGE = 'timingRange';
-    const FIELD_TIMING_TIMING = 'timingTiming';
     const FIELD_TITLE = 'title';
     const FIELD_TITLE_EXT = '_title';
-    const FIELD_TRANSFORM = 'transform';
+    const FIELD_DESCRIPTION = 'description';
+    const FIELD_DESCRIPTION_EXT = '_description';
+    const FIELD_TEXT_EQUIVALENT = 'textEquivalent';
+    const FIELD_TEXT_EQUIVALENT_EXT = '_textEquivalent';
+    const FIELD_CODE = 'code';
+    const FIELD_REASON = 'reason';
+    const FIELD_DOCUMENTATION = 'documentation';
+    const FIELD_GOAL_ID = 'goalId';
+    const FIELD_GOAL_ID_EXT = '_goalId';
     const FIELD_TRIGGER_DEFINITION = 'triggerDefinition';
+    const FIELD_CONDITION = 'condition';
+    const FIELD_INPUT = 'input';
+    const FIELD_OUTPUT = 'output';
+    const FIELD_RELATED_ACTION = 'relatedAction';
+    const FIELD_TIMING_DATE_TIME = 'timingDateTime';
+    const FIELD_TIMING_DATE_TIME_EXT = '_timingDateTime';
+    const FIELD_TIMING_PERIOD = 'timingPeriod';
+    const FIELD_TIMING_DURATION = 'timingDuration';
+    const FIELD_TIMING_RANGE = 'timingRange';
+    const FIELD_TIMING_TIMING = 'timingTiming';
+    const FIELD_PARTICIPANT = 'participant';
     const FIELD_TYPE = 'type';
+    const FIELD_GROUPING_BEHAVIOR = 'groupingBehavior';
+    const FIELD_GROUPING_BEHAVIOR_EXT = '_groupingBehavior';
+    const FIELD_SELECTION_BEHAVIOR = 'selectionBehavior';
+    const FIELD_SELECTION_BEHAVIOR_EXT = '_selectionBehavior';
+    const FIELD_REQUIRED_BEHAVIOR = 'requiredBehavior';
+    const FIELD_REQUIRED_BEHAVIOR_EXT = '_requiredBehavior';
+    const FIELD_PRECHECK_BEHAVIOR = 'precheckBehavior';
+    const FIELD_PRECHECK_BEHAVIOR_EXT = '_precheckBehavior';
+    const FIELD_CARDINALITY_BEHAVIOR = 'cardinalityBehavior';
+    const FIELD_CARDINALITY_BEHAVIOR_EXT = '_cardinalityBehavior';
+    const FIELD_DEFINITION = 'definition';
+    const FIELD_TRANSFORM = 'transform';
+    const FIELD_DYNAMIC_VALUE = 'dynamicValue';
+    const FIELD_ACTION = 'action';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
-     * This resource allows for the definition of various types of plans as a sharable,
-     * consumable, and executable artifact. The resource is general enough to support
-     * the description of a broad range of clinical artifacts such as clinical decision
-     * support rules, order sets and protocols.
-     *
-     * Sub actions that are contained within the action. The behavior of this action
-     * determines the functionality of the sub-actions. For example, a selection
-     * behavior of at-most-one indicates that of the sub-actions, at most one may be
-     * chosen as part of realizing the action definition.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction[]
-     */
-    protected $action = [];
-
-    /**
-     * Defines behavior for an action or a group for how many times that item may be
-     * repeated
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Defines whether the action can be selected multiple times.
+     * A user-visible label for the action.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionCardinalityBehavior
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    protected $cardinalityBehavior = null;
+    protected $label = null;
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The title of the action displayed to a user.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    protected $title = null;
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A short description of the action used to provide a summary to display to the
+     * user.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    protected $description = null;
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A text equivalent of the action to be performed. This provides a
+     * human-interpretable description of the action when the definition is consumed by
+     * a system that may not be capable of interpreting it dynamically.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    protected $textEquivalent = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -181,41 +204,16 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     protected $code = [];
 
     /**
-     * This resource allows for the definition of various types of plans as a sharable,
-     * consumable, and executable artifact. The resource is general enough to support
-     * the description of a broad range of clinical artifacts such as clinical decision
-     * support rules, order sets and protocols.
-     *
-     * An expression that describes applicability criteria, or start/stop conditions
-     * for the action.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition[]
-     */
-    protected $condition = [];
-
-    /**
-     * A reference from one resource to another.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A reference to an ActivityDefinition that describes the action to be taken in
-     * detail, or a PlanDefinition that describes a series of actions to be taken.
+     * A description of why this action is necessary or appropriate.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    protected $definition = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A short description of the action used to provide a summary to display to the
-     * user.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    protected $description = null;
+    protected $reason = [];
 
     /**
      * Related artifacts such as additional documentation, justification, or
@@ -230,21 +228,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact[]
      */
     protected $documentation = [];
-
-    /**
-     * This resource allows for the definition of various types of plans as a sharable,
-     * consumable, and executable artifact. The resource is general enough to support
-     * the description of a broad range of clinical artifacts such as clinical decision
-     * support rules, order sets and protocols.
-     *
-     * Customizations that should be applied to the statically defined resource. For
-     * example, if the dosage of a medication must be computed based on the patient's
-     * weight, a customization would be used to specify an expression that calculated
-     * the weight, and the path on the resource that would contain the result.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue[]
-     */
-    protected $dynamicValue = [];
 
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -262,14 +245,28 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     protected $goalId = [];
 
     /**
-     * Defines organization behavior of a group
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A description of a triggering event.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the grouping behavior for the action and its children.
+     * A description of when the action should be triggered.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionGroupingBehavior
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition[]
      */
-    protected $groupingBehavior = null;
+    protected $triggerDefinition = [];
+
+    /**
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical artifacts such as clinical decision
+     * support rules, order sets and protocols.
+     *
+     * An expression that describes applicability criteria, or start/stop conditions
+     * for the action.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition[]
+     */
+    protected $condition = [];
 
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
@@ -282,17 +279,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement[]
      */
     protected $input = [];
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A user-visible label for the action.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    protected $label = null;
 
     /**
      * Describes a required data item for evaluation in terms of the type of data, and
@@ -312,79 +298,12 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * the description of a broad range of clinical artifacts such as clinical decision
      * support rules, order sets and protocols.
      *
-     * Indicates who should participate in performing the action described.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant[]
-     */
-    protected $participant = [];
-
-    /**
-     * Defines selection frequency behavior for an action or group
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Defines whether the action should usually be preselected.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionPrecheckBehavior
-     */
-    protected $precheckBehavior = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A description of why this action is necessary or appropriate.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
-     */
-    protected $reason = [];
-
-    /**
-     * This resource allows for the definition of various types of plans as a sharable,
-     * consumable, and executable artifact. The resource is general enough to support
-     * the description of a broad range of clinical artifacts such as clinical decision
-     * support rules, order sets and protocols.
-     *
      * A relationship to another action such as "before" or "30-60 minutes after start
      * of".
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction[]
      */
     protected $relatedAction = [];
-
-    /**
-     * Defines requiredness behavior for selecting an action or an action group
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Defines the requiredness behavior for the action.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionRequiredBehavior
-     */
-    protected $requiredBehavior = null;
-
-    /**
-     * Defines selection behavior of a group
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Defines the selection behavior for the action and its children.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionSelectionBehavior
-     */
-    protected $selectionBehavior = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A text equivalent of the action to be performed. This provides a
-     * human-interpretable description of the action when the definition is consumed by
-     * a system that may not be capable of interpreting it dynamically.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    protected $textEquivalent = null;
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -401,17 +320,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     protected $timingDateTime = null;
 
     /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * An optional value describing when the action should be performed.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
-     */
-    protected $timingDuration = null;
-
-    /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -421,6 +329,17 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected $timingPeriod = null;
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An optional value describing when the action should be performed.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
+     */
+    protected $timingDuration = null;
 
     /**
      * A set of ordered Quantities defined by a low and high limit.
@@ -449,15 +368,90 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     protected $timingTiming = null;
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical artifacts such as clinical decision
+     * support rules, order sets and protocols.
+     *
+     * Indicates who should participate in performing the action described.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant[]
+     */
+    protected $participant = [];
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of action to perform (create, update, remove).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
+     */
+    protected $type = null;
+
+    /**
+     * Defines organization behavior of a group
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The title of the action displayed to a user.
+     * Defines the grouping behavior for the action and its children.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionGroupingBehavior
      */
-    protected $title = null;
+    protected $groupingBehavior = null;
+
+    /**
+     * Defines selection behavior of a group
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Defines the selection behavior for the action and its children.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionSelectionBehavior
+     */
+    protected $selectionBehavior = null;
+
+    /**
+     * Defines requiredness behavior for selecting an action or an action group
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Defines the requiredness behavior for the action.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionRequiredBehavior
+     */
+    protected $requiredBehavior = null;
+
+    /**
+     * Defines selection frequency behavior for an action or group
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Defines whether the action should usually be preselected.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionPrecheckBehavior
+     */
+    protected $precheckBehavior = null;
+
+    /**
+     * Defines behavior for an action or a group for how many times that item may be
+     * repeated
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Defines whether the action can be selected multiple times.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionCardinalityBehavior
+     */
+    protected $cardinalityBehavior = null;
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reference to an ActivityDefinition that describes the action to be taken in
+     * detail, or a PlanDefinition that describes a series of actions to be taken.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    protected $definition = null;
 
     /**
      * A reference from one resource to another.
@@ -473,26 +467,34 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     protected $transform = null;
 
     /**
-     * A description of a triggering event.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical artifacts such as clinical decision
+     * support rules, order sets and protocols.
      *
-     * A description of when the action should be triggered.
+     * Customizations that should be applied to the statically defined resource. For
+     * example, if the dosage of a medication must be computed based on the patient's
+     * weight, a customization would be used to specify an expression that calculated
+     * the weight, and the path on the resource that would contain the result.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition[]
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue[]
      */
-    protected $triggerDefinition = [];
+    protected $dynamicValue = [];
 
     /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical artifacts such as clinical decision
+     * support rules, order sets and protocols.
      *
-     * The type of action to perform (create, update, remove).
+     * Sub actions that are contained within the action. The behavior of this action
+     * determines the functionality of the sub-actions. For example, a selection
+     * behavior of at-most-one indicates that of the sub-actions, at most one may be
+     * chosen as part of realizing the action definition.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction[]
      */
-    protected $type = null;
+    protected $action = [];
 
     /**
      * Validation map for fields in type PlanDefinition.Action
@@ -516,45 +518,64 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ACTION])) {
-            if (is_array($data[self::FIELD_ACTION])) {
-                foreach($data[self::FIELD_ACTION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRPlanDefinitionAction) {
-                        $this->addAction($v);
-                    } else {
-                        $this->addAction(new FHIRPlanDefinitionAction($v));
-                    }
+        if (isset($data[self::FIELD_LABEL]) || isset($data[self::FIELD_LABEL_EXT])) {
+            $value = isset($data[self::FIELD_LABEL]) ? $data[self::FIELD_LABEL] : null;
+            $ext = (isset($data[self::FIELD_LABEL_EXT]) && is_array($data[self::FIELD_LABEL_EXT])) ? $ext = $data[self::FIELD_LABEL_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setLabel($value);
+                } else if (is_array($value)) {
+                    $this->setLabel(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setLabel(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ($data[self::FIELD_ACTION] instanceof FHIRPlanDefinitionAction) {
-                $this->addAction($data[self::FIELD_ACTION]);
-            } else {
-                $this->addAction(new FHIRPlanDefinitionAction($data[self::FIELD_ACTION]));
+            } elseif ([] !== $ext) {
+                $this->setLabel(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_CARDINALITY_BEHAVIOR]) || isset($data[self::FIELD_CARDINALITY_BEHAVIOR_EXT])) {
-            if (isset($data[self::FIELD_CARDINALITY_BEHAVIOR])) {
-                $value = $data[self::FIELD_CARDINALITY_BEHAVIOR];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CARDINALITY_BEHAVIOR_EXT]) && is_array($data[self::FIELD_CARDINALITY_BEHAVIOR_EXT])) {
-                $ext = $data[self::FIELD_CARDINALITY_BEHAVIOR_EXT];
-            } else {
-                $ext = [];
-            }
+        if (isset($data[self::FIELD_TITLE]) || isset($data[self::FIELD_TITLE_EXT])) {
+            $value = isset($data[self::FIELD_TITLE]) ? $data[self::FIELD_TITLE] : null;
+            $ext = (isset($data[self::FIELD_TITLE_EXT]) && is_array($data[self::FIELD_TITLE_EXT])) ? $ext = $data[self::FIELD_TITLE_EXT] : $ext = [];
             if (null !== $value) {
-                if ($value instanceof FHIRActionCardinalityBehavior) {
-                    $this->setCardinalityBehavior($value);
+                if ($value instanceof FHIRString) {
+                    $this->setTitle($value);
                 } else if (is_array($value)) {
-                    $this->setCardinalityBehavior(new FHIRActionCardinalityBehavior(array_merge($ext, $value)));
+                    $this->setTitle(new FHIRString(array_merge($ext, $value)));
                 } else {
-                    $this->setCardinalityBehavior(new FHIRActionCardinalityBehavior([FHIRActionCardinalityBehavior::FIELD_VALUE => $value] + $ext));
+                    $this->setTitle(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                $this->setCardinalityBehavior(new FHIRActionCardinalityBehavior($ext));
+            } elseif ([] !== $ext) {
+                $this->setTitle(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
+            $value = isset($data[self::FIELD_DESCRIPTION]) ? $data[self::FIELD_DESCRIPTION] : null;
+            $ext = (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) ? $ext = $data[self::FIELD_DESCRIPTION_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDescription($value);
+                } else if (is_array($value)) {
+                    $this->setDescription(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDescription(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_TEXT_EQUIVALENT]) || isset($data[self::FIELD_TEXT_EQUIVALENT_EXT])) {
+            $value = isset($data[self::FIELD_TEXT_EQUIVALENT]) ? $data[self::FIELD_TEXT_EQUIVALENT] : null;
+            $ext = (isset($data[self::FIELD_TEXT_EQUIVALENT_EXT]) && is_array($data[self::FIELD_TEXT_EQUIVALENT_EXT])) ? $ext = $data[self::FIELD_TEXT_EQUIVALENT_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setTextEquivalent($value);
+                } else if (is_array($value)) {
+                    $this->setTextEquivalent(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setTextEquivalent(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setTextEquivalent(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_CODE])) {
@@ -569,58 +590,28 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                         $this->addCode(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_CODE] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_CODE] instanceof FHIRCodeableConcept) {
                 $this->addCode($data[self::FIELD_CODE]);
             } else {
                 $this->addCode(new FHIRCodeableConcept($data[self::FIELD_CODE]));
             }
         }
-        if (isset($data[self::FIELD_CONDITION])) {
-            if (is_array($data[self::FIELD_CONDITION])) {
-                foreach($data[self::FIELD_CONDITION] as $v) {
+        if (isset($data[self::FIELD_REASON])) {
+            if (is_array($data[self::FIELD_REASON])) {
+                foreach($data[self::FIELD_REASON] as $v) {
                     if (null === $v) {
                         continue;
                     }
-                    if ($v instanceof FHIRPlanDefinitionCondition) {
-                        $this->addCondition($v);
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addReason($v);
                     } else {
-                        $this->addCondition(new FHIRPlanDefinitionCondition($v));
+                        $this->addReason(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_CONDITION] instanceof FHIRPlanDefinitionCondition) {
-                $this->addCondition($data[self::FIELD_CONDITION]);
+            } elseif ($data[self::FIELD_REASON] instanceof FHIRCodeableConcept) {
+                $this->addReason($data[self::FIELD_REASON]);
             } else {
-                $this->addCondition(new FHIRPlanDefinitionCondition($data[self::FIELD_CONDITION]));
-            }
-        }
-        if (isset($data[self::FIELD_DEFINITION])) {
-            if ($data[self::FIELD_DEFINITION] instanceof FHIRReference) {
-                $this->setDefinition($data[self::FIELD_DEFINITION]);
-            } else {
-                $this->setDefinition(new FHIRReference($data[self::FIELD_DEFINITION]));
-            }
-        }
-        if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
-            if (isset($data[self::FIELD_DESCRIPTION])) {
-                $value = $data[self::FIELD_DESCRIPTION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) {
-                $ext = $data[self::FIELD_DESCRIPTION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setDescription($value);
-                } else if (is_array($value)) {
-                    $this->setDescription(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDescription(new FHIRString($ext));
+                $this->addReason(new FHIRCodeableConcept($data[self::FIELD_REASON]));
             }
         }
         if (isset($data[self::FIELD_DOCUMENTATION])) {
@@ -635,41 +626,15 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                         $this->addDocumentation(new FHIRRelatedArtifact($v));
                     }
                 }
-            } else if ($data[self::FIELD_DOCUMENTATION] instanceof FHIRRelatedArtifact) {
+            } elseif ($data[self::FIELD_DOCUMENTATION] instanceof FHIRRelatedArtifact) {
                 $this->addDocumentation($data[self::FIELD_DOCUMENTATION]);
             } else {
                 $this->addDocumentation(new FHIRRelatedArtifact($data[self::FIELD_DOCUMENTATION]));
             }
         }
-        if (isset($data[self::FIELD_DYNAMIC_VALUE])) {
-            if (is_array($data[self::FIELD_DYNAMIC_VALUE])) {
-                foreach($data[self::FIELD_DYNAMIC_VALUE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRPlanDefinitionDynamicValue) {
-                        $this->addDynamicValue($v);
-                    } else {
-                        $this->addDynamicValue(new FHIRPlanDefinitionDynamicValue($v));
-                    }
-                }
-            } else if ($data[self::FIELD_DYNAMIC_VALUE] instanceof FHIRPlanDefinitionDynamicValue) {
-                $this->addDynamicValue($data[self::FIELD_DYNAMIC_VALUE]);
-            } else {
-                $this->addDynamicValue(new FHIRPlanDefinitionDynamicValue($data[self::FIELD_DYNAMIC_VALUE]));
-            }
-        }
         if (isset($data[self::FIELD_GOAL_ID]) || isset($data[self::FIELD_GOAL_ID_EXT])) {
-            if (isset($data[self::FIELD_GOAL_ID])) {
-                $value = $data[self::FIELD_GOAL_ID];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_GOAL_ID_EXT]) && is_array($data[self::FIELD_GOAL_ID_EXT])) {
-                $ext = $data[self::FIELD_GOAL_ID_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_GOAL_ID]) ? $data[self::FIELD_GOAL_ID] : null;
+            $ext = (isset($data[self::FIELD_GOAL_ID_EXT]) && is_array($data[self::FIELD_GOAL_ID_EXT])) ? $ext = $data[self::FIELD_GOAL_ID_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRId) {
                     $this->addGoalId($value);
@@ -691,33 +656,46 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 } else {
                     $this->addGoalId(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addGoalId(new FHIRId($iext));
                 }
             }
         }
-        if (isset($data[self::FIELD_GROUPING_BEHAVIOR]) || isset($data[self::FIELD_GROUPING_BEHAVIOR_EXT])) {
-            if (isset($data[self::FIELD_GROUPING_BEHAVIOR])) {
-                $value = $data[self::FIELD_GROUPING_BEHAVIOR];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_GROUPING_BEHAVIOR_EXT]) && is_array($data[self::FIELD_GROUPING_BEHAVIOR_EXT])) {
-                $ext = $data[self::FIELD_GROUPING_BEHAVIOR_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRActionGroupingBehavior) {
-                    $this->setGroupingBehavior($value);
-                } else if (is_array($value)) {
-                    $this->setGroupingBehavior(new FHIRActionGroupingBehavior(array_merge($ext, $value)));
-                } else {
-                    $this->setGroupingBehavior(new FHIRActionGroupingBehavior([FHIRActionGroupingBehavior::FIELD_VALUE => $value] + $ext));
+        if (isset($data[self::FIELD_TRIGGER_DEFINITION])) {
+            if (is_array($data[self::FIELD_TRIGGER_DEFINITION])) {
+                foreach($data[self::FIELD_TRIGGER_DEFINITION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRTriggerDefinition) {
+                        $this->addTriggerDefinition($v);
+                    } else {
+                        $this->addTriggerDefinition(new FHIRTriggerDefinition($v));
+                    }
                 }
-            } else if ([] !== $ext) {
-                $this->setGroupingBehavior(new FHIRActionGroupingBehavior($ext));
+            } elseif ($data[self::FIELD_TRIGGER_DEFINITION] instanceof FHIRTriggerDefinition) {
+                $this->addTriggerDefinition($data[self::FIELD_TRIGGER_DEFINITION]);
+            } else {
+                $this->addTriggerDefinition(new FHIRTriggerDefinition($data[self::FIELD_TRIGGER_DEFINITION]));
+            }
+        }
+        if (isset($data[self::FIELD_CONDITION])) {
+            if (is_array($data[self::FIELD_CONDITION])) {
+                foreach($data[self::FIELD_CONDITION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRPlanDefinitionCondition) {
+                        $this->addCondition($v);
+                    } else {
+                        $this->addCondition(new FHIRPlanDefinitionCondition($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_CONDITION] instanceof FHIRPlanDefinitionCondition) {
+                $this->addCondition($data[self::FIELD_CONDITION]);
+            } else {
+                $this->addCondition(new FHIRPlanDefinitionCondition($data[self::FIELD_CONDITION]));
             }
         }
         if (isset($data[self::FIELD_INPUT])) {
@@ -732,33 +710,10 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                         $this->addInput(new FHIRDataRequirement($v));
                     }
                 }
-            } else if ($data[self::FIELD_INPUT] instanceof FHIRDataRequirement) {
+            } elseif ($data[self::FIELD_INPUT] instanceof FHIRDataRequirement) {
                 $this->addInput($data[self::FIELD_INPUT]);
             } else {
                 $this->addInput(new FHIRDataRequirement($data[self::FIELD_INPUT]));
-            }
-        }
-        if (isset($data[self::FIELD_LABEL]) || isset($data[self::FIELD_LABEL_EXT])) {
-            if (isset($data[self::FIELD_LABEL])) {
-                $value = $data[self::FIELD_LABEL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_LABEL_EXT]) && is_array($data[self::FIELD_LABEL_EXT])) {
-                $ext = $data[self::FIELD_LABEL_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setLabel($value);
-                } else if (is_array($value)) {
-                    $this->setLabel(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setLabel(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setLabel(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_OUTPUT])) {
@@ -773,69 +728,10 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                         $this->addOutput(new FHIRDataRequirement($v));
                     }
                 }
-            } else if ($data[self::FIELD_OUTPUT] instanceof FHIRDataRequirement) {
+            } elseif ($data[self::FIELD_OUTPUT] instanceof FHIRDataRequirement) {
                 $this->addOutput($data[self::FIELD_OUTPUT]);
             } else {
                 $this->addOutput(new FHIRDataRequirement($data[self::FIELD_OUTPUT]));
-            }
-        }
-        if (isset($data[self::FIELD_PARTICIPANT])) {
-            if (is_array($data[self::FIELD_PARTICIPANT])) {
-                foreach($data[self::FIELD_PARTICIPANT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRPlanDefinitionParticipant) {
-                        $this->addParticipant($v);
-                    } else {
-                        $this->addParticipant(new FHIRPlanDefinitionParticipant($v));
-                    }
-                }
-            } else if ($data[self::FIELD_PARTICIPANT] instanceof FHIRPlanDefinitionParticipant) {
-                $this->addParticipant($data[self::FIELD_PARTICIPANT]);
-            } else {
-                $this->addParticipant(new FHIRPlanDefinitionParticipant($data[self::FIELD_PARTICIPANT]));
-            }
-        }
-        if (isset($data[self::FIELD_PRECHECK_BEHAVIOR]) || isset($data[self::FIELD_PRECHECK_BEHAVIOR_EXT])) {
-            if (isset($data[self::FIELD_PRECHECK_BEHAVIOR])) {
-                $value = $data[self::FIELD_PRECHECK_BEHAVIOR];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PRECHECK_BEHAVIOR_EXT]) && is_array($data[self::FIELD_PRECHECK_BEHAVIOR_EXT])) {
-                $ext = $data[self::FIELD_PRECHECK_BEHAVIOR_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRActionPrecheckBehavior) {
-                    $this->setPrecheckBehavior($value);
-                } else if (is_array($value)) {
-                    $this->setPrecheckBehavior(new FHIRActionPrecheckBehavior(array_merge($ext, $value)));
-                } else {
-                    $this->setPrecheckBehavior(new FHIRActionPrecheckBehavior([FHIRActionPrecheckBehavior::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPrecheckBehavior(new FHIRActionPrecheckBehavior($ext));
-            }
-        }
-        if (isset($data[self::FIELD_REASON])) {
-            if (is_array($data[self::FIELD_REASON])) {
-                foreach($data[self::FIELD_REASON] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addReason($v);
-                    } else {
-                        $this->addReason(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_REASON] instanceof FHIRCodeableConcept) {
-                $this->addReason($data[self::FIELD_REASON]);
-            } else {
-                $this->addReason(new FHIRCodeableConcept($data[self::FIELD_REASON]));
             }
         }
         if (isset($data[self::FIELD_RELATED_ACTION])) {
@@ -850,92 +746,15 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                         $this->addRelatedAction(new FHIRPlanDefinitionRelatedAction($v));
                     }
                 }
-            } else if ($data[self::FIELD_RELATED_ACTION] instanceof FHIRPlanDefinitionRelatedAction) {
+            } elseif ($data[self::FIELD_RELATED_ACTION] instanceof FHIRPlanDefinitionRelatedAction) {
                 $this->addRelatedAction($data[self::FIELD_RELATED_ACTION]);
             } else {
                 $this->addRelatedAction(new FHIRPlanDefinitionRelatedAction($data[self::FIELD_RELATED_ACTION]));
             }
         }
-        if (isset($data[self::FIELD_REQUIRED_BEHAVIOR]) || isset($data[self::FIELD_REQUIRED_BEHAVIOR_EXT])) {
-            if (isset($data[self::FIELD_REQUIRED_BEHAVIOR])) {
-                $value = $data[self::FIELD_REQUIRED_BEHAVIOR];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_REQUIRED_BEHAVIOR_EXT]) && is_array($data[self::FIELD_REQUIRED_BEHAVIOR_EXT])) {
-                $ext = $data[self::FIELD_REQUIRED_BEHAVIOR_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRActionRequiredBehavior) {
-                    $this->setRequiredBehavior($value);
-                } else if (is_array($value)) {
-                    $this->setRequiredBehavior(new FHIRActionRequiredBehavior(array_merge($ext, $value)));
-                } else {
-                    $this->setRequiredBehavior(new FHIRActionRequiredBehavior([FHIRActionRequiredBehavior::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setRequiredBehavior(new FHIRActionRequiredBehavior($ext));
-            }
-        }
-        if (isset($data[self::FIELD_SELECTION_BEHAVIOR]) || isset($data[self::FIELD_SELECTION_BEHAVIOR_EXT])) {
-            if (isset($data[self::FIELD_SELECTION_BEHAVIOR])) {
-                $value = $data[self::FIELD_SELECTION_BEHAVIOR];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SELECTION_BEHAVIOR_EXT]) && is_array($data[self::FIELD_SELECTION_BEHAVIOR_EXT])) {
-                $ext = $data[self::FIELD_SELECTION_BEHAVIOR_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRActionSelectionBehavior) {
-                    $this->setSelectionBehavior($value);
-                } else if (is_array($value)) {
-                    $this->setSelectionBehavior(new FHIRActionSelectionBehavior(array_merge($ext, $value)));
-                } else {
-                    $this->setSelectionBehavior(new FHIRActionSelectionBehavior([FHIRActionSelectionBehavior::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setSelectionBehavior(new FHIRActionSelectionBehavior($ext));
-            }
-        }
-        if (isset($data[self::FIELD_TEXT_EQUIVALENT]) || isset($data[self::FIELD_TEXT_EQUIVALENT_EXT])) {
-            if (isset($data[self::FIELD_TEXT_EQUIVALENT])) {
-                $value = $data[self::FIELD_TEXT_EQUIVALENT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TEXT_EQUIVALENT_EXT]) && is_array($data[self::FIELD_TEXT_EQUIVALENT_EXT])) {
-                $ext = $data[self::FIELD_TEXT_EQUIVALENT_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setTextEquivalent($value);
-                } else if (is_array($value)) {
-                    $this->setTextEquivalent(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setTextEquivalent(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setTextEquivalent(new FHIRString($ext));
-            }
-        }
         if (isset($data[self::FIELD_TIMING_DATE_TIME]) || isset($data[self::FIELD_TIMING_DATE_TIME_EXT])) {
-            if (isset($data[self::FIELD_TIMING_DATE_TIME])) {
-                $value = $data[self::FIELD_TIMING_DATE_TIME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TIMING_DATE_TIME_EXT]) && is_array($data[self::FIELD_TIMING_DATE_TIME_EXT])) {
-                $ext = $data[self::FIELD_TIMING_DATE_TIME_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_TIMING_DATE_TIME]) ? $data[self::FIELD_TIMING_DATE_TIME] : null;
+            $ext = (isset($data[self::FIELD_TIMING_DATE_TIME_EXT]) && is_array($data[self::FIELD_TIMING_DATE_TIME_EXT])) ? $ext = $data[self::FIELD_TIMING_DATE_TIME_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRDateTime) {
                     $this->setTimingDateTime($value);
@@ -944,15 +763,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 } else {
                     $this->setTimingDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setTimingDateTime(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_TIMING_DURATION])) {
-            if ($data[self::FIELD_TIMING_DURATION] instanceof FHIRDuration) {
-                $this->setTimingDuration($data[self::FIELD_TIMING_DURATION]);
-            } else {
-                $this->setTimingDuration(new FHIRDuration($data[self::FIELD_TIMING_DURATION]));
             }
         }
         if (isset($data[self::FIELD_TIMING_PERIOD])) {
@@ -960,6 +772,13 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $this->setTimingPeriod($data[self::FIELD_TIMING_PERIOD]);
             } else {
                 $this->setTimingPeriod(new FHIRPeriod($data[self::FIELD_TIMING_PERIOD]));
+            }
+        }
+        if (isset($data[self::FIELD_TIMING_DURATION])) {
+            if ($data[self::FIELD_TIMING_DURATION] instanceof FHIRDuration) {
+                $this->setTimingDuration($data[self::FIELD_TIMING_DURATION]);
+            } else {
+                $this->setTimingDuration(new FHIRDuration($data[self::FIELD_TIMING_DURATION]));
             }
         }
         if (isset($data[self::FIELD_TIMING_RANGE])) {
@@ -976,27 +795,111 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $this->setTimingTiming(new FHIRTiming($data[self::FIELD_TIMING_TIMING]));
             }
         }
-        if (isset($data[self::FIELD_TITLE]) || isset($data[self::FIELD_TITLE_EXT])) {
-            if (isset($data[self::FIELD_TITLE])) {
-                $value = $data[self::FIELD_TITLE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TITLE_EXT]) && is_array($data[self::FIELD_TITLE_EXT])) {
-                $ext = $data[self::FIELD_TITLE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setTitle($value);
-                } else if (is_array($value)) {
-                    $this->setTitle(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setTitle(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+        if (isset($data[self::FIELD_PARTICIPANT])) {
+            if (is_array($data[self::FIELD_PARTICIPANT])) {
+                foreach($data[self::FIELD_PARTICIPANT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRPlanDefinitionParticipant) {
+                        $this->addParticipant($v);
+                    } else {
+                        $this->addParticipant(new FHIRPlanDefinitionParticipant($v));
+                    }
                 }
-            } else if ([] !== $ext) {
-                $this->setTitle(new FHIRString($ext));
+            } elseif ($data[self::FIELD_PARTICIPANT] instanceof FHIRPlanDefinitionParticipant) {
+                $this->addParticipant($data[self::FIELD_PARTICIPANT]);
+            } else {
+                $this->addParticipant(new FHIRPlanDefinitionParticipant($data[self::FIELD_PARTICIPANT]));
+            }
+        }
+        if (isset($data[self::FIELD_TYPE])) {
+            if ($data[self::FIELD_TYPE] instanceof FHIRCoding) {
+                $this->setType($data[self::FIELD_TYPE]);
+            } else {
+                $this->setType(new FHIRCoding($data[self::FIELD_TYPE]));
+            }
+        }
+        if (isset($data[self::FIELD_GROUPING_BEHAVIOR]) || isset($data[self::FIELD_GROUPING_BEHAVIOR_EXT])) {
+            $value = isset($data[self::FIELD_GROUPING_BEHAVIOR]) ? $data[self::FIELD_GROUPING_BEHAVIOR] : null;
+            $ext = (isset($data[self::FIELD_GROUPING_BEHAVIOR_EXT]) && is_array($data[self::FIELD_GROUPING_BEHAVIOR_EXT])) ? $ext = $data[self::FIELD_GROUPING_BEHAVIOR_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRActionGroupingBehavior) {
+                    $this->setGroupingBehavior($value);
+                } else if (is_array($value)) {
+                    $this->setGroupingBehavior(new FHIRActionGroupingBehavior(array_merge($ext, $value)));
+                } else {
+                    $this->setGroupingBehavior(new FHIRActionGroupingBehavior([FHIRActionGroupingBehavior::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setGroupingBehavior(new FHIRActionGroupingBehavior($ext));
+            }
+        }
+        if (isset($data[self::FIELD_SELECTION_BEHAVIOR]) || isset($data[self::FIELD_SELECTION_BEHAVIOR_EXT])) {
+            $value = isset($data[self::FIELD_SELECTION_BEHAVIOR]) ? $data[self::FIELD_SELECTION_BEHAVIOR] : null;
+            $ext = (isset($data[self::FIELD_SELECTION_BEHAVIOR_EXT]) && is_array($data[self::FIELD_SELECTION_BEHAVIOR_EXT])) ? $ext = $data[self::FIELD_SELECTION_BEHAVIOR_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRActionSelectionBehavior) {
+                    $this->setSelectionBehavior($value);
+                } else if (is_array($value)) {
+                    $this->setSelectionBehavior(new FHIRActionSelectionBehavior(array_merge($ext, $value)));
+                } else {
+                    $this->setSelectionBehavior(new FHIRActionSelectionBehavior([FHIRActionSelectionBehavior::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setSelectionBehavior(new FHIRActionSelectionBehavior($ext));
+            }
+        }
+        if (isset($data[self::FIELD_REQUIRED_BEHAVIOR]) || isset($data[self::FIELD_REQUIRED_BEHAVIOR_EXT])) {
+            $value = isset($data[self::FIELD_REQUIRED_BEHAVIOR]) ? $data[self::FIELD_REQUIRED_BEHAVIOR] : null;
+            $ext = (isset($data[self::FIELD_REQUIRED_BEHAVIOR_EXT]) && is_array($data[self::FIELD_REQUIRED_BEHAVIOR_EXT])) ? $ext = $data[self::FIELD_REQUIRED_BEHAVIOR_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRActionRequiredBehavior) {
+                    $this->setRequiredBehavior($value);
+                } else if (is_array($value)) {
+                    $this->setRequiredBehavior(new FHIRActionRequiredBehavior(array_merge($ext, $value)));
+                } else {
+                    $this->setRequiredBehavior(new FHIRActionRequiredBehavior([FHIRActionRequiredBehavior::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setRequiredBehavior(new FHIRActionRequiredBehavior($ext));
+            }
+        }
+        if (isset($data[self::FIELD_PRECHECK_BEHAVIOR]) || isset($data[self::FIELD_PRECHECK_BEHAVIOR_EXT])) {
+            $value = isset($data[self::FIELD_PRECHECK_BEHAVIOR]) ? $data[self::FIELD_PRECHECK_BEHAVIOR] : null;
+            $ext = (isset($data[self::FIELD_PRECHECK_BEHAVIOR_EXT]) && is_array($data[self::FIELD_PRECHECK_BEHAVIOR_EXT])) ? $ext = $data[self::FIELD_PRECHECK_BEHAVIOR_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRActionPrecheckBehavior) {
+                    $this->setPrecheckBehavior($value);
+                } else if (is_array($value)) {
+                    $this->setPrecheckBehavior(new FHIRActionPrecheckBehavior(array_merge($ext, $value)));
+                } else {
+                    $this->setPrecheckBehavior(new FHIRActionPrecheckBehavior([FHIRActionPrecheckBehavior::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPrecheckBehavior(new FHIRActionPrecheckBehavior($ext));
+            }
+        }
+        if (isset($data[self::FIELD_CARDINALITY_BEHAVIOR]) || isset($data[self::FIELD_CARDINALITY_BEHAVIOR_EXT])) {
+            $value = isset($data[self::FIELD_CARDINALITY_BEHAVIOR]) ? $data[self::FIELD_CARDINALITY_BEHAVIOR] : null;
+            $ext = (isset($data[self::FIELD_CARDINALITY_BEHAVIOR_EXT]) && is_array($data[self::FIELD_CARDINALITY_BEHAVIOR_EXT])) ? $ext = $data[self::FIELD_CARDINALITY_BEHAVIOR_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRActionCardinalityBehavior) {
+                    $this->setCardinalityBehavior($value);
+                } else if (is_array($value)) {
+                    $this->setCardinalityBehavior(new FHIRActionCardinalityBehavior(array_merge($ext, $value)));
+                } else {
+                    $this->setCardinalityBehavior(new FHIRActionCardinalityBehavior([FHIRActionCardinalityBehavior::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setCardinalityBehavior(new FHIRActionCardinalityBehavior($ext));
+            }
+        }
+        if (isset($data[self::FIELD_DEFINITION])) {
+            if ($data[self::FIELD_DEFINITION] instanceof FHIRReference) {
+                $this->setDefinition($data[self::FIELD_DEFINITION]);
+            } else {
+                $this->setDefinition(new FHIRReference($data[self::FIELD_DEFINITION]));
             }
         }
         if (isset($data[self::FIELD_TRANSFORM])) {
@@ -1006,29 +909,40 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $this->setTransform(new FHIRReference($data[self::FIELD_TRANSFORM]));
             }
         }
-        if (isset($data[self::FIELD_TRIGGER_DEFINITION])) {
-            if (is_array($data[self::FIELD_TRIGGER_DEFINITION])) {
-                foreach($data[self::FIELD_TRIGGER_DEFINITION] as $v) {
+        if (isset($data[self::FIELD_DYNAMIC_VALUE])) {
+            if (is_array($data[self::FIELD_DYNAMIC_VALUE])) {
+                foreach($data[self::FIELD_DYNAMIC_VALUE] as $v) {
                     if (null === $v) {
                         continue;
                     }
-                    if ($v instanceof FHIRTriggerDefinition) {
-                        $this->addTriggerDefinition($v);
+                    if ($v instanceof FHIRPlanDefinitionDynamicValue) {
+                        $this->addDynamicValue($v);
                     } else {
-                        $this->addTriggerDefinition(new FHIRTriggerDefinition($v));
+                        $this->addDynamicValue(new FHIRPlanDefinitionDynamicValue($v));
                     }
                 }
-            } else if ($data[self::FIELD_TRIGGER_DEFINITION] instanceof FHIRTriggerDefinition) {
-                $this->addTriggerDefinition($data[self::FIELD_TRIGGER_DEFINITION]);
+            } elseif ($data[self::FIELD_DYNAMIC_VALUE] instanceof FHIRPlanDefinitionDynamicValue) {
+                $this->addDynamicValue($data[self::FIELD_DYNAMIC_VALUE]);
             } else {
-                $this->addTriggerDefinition(new FHIRTriggerDefinition($data[self::FIELD_TRIGGER_DEFINITION]));
+                $this->addDynamicValue(new FHIRPlanDefinitionDynamicValue($data[self::FIELD_DYNAMIC_VALUE]));
             }
         }
-        if (isset($data[self::FIELD_TYPE])) {
-            if ($data[self::FIELD_TYPE] instanceof FHIRCoding) {
-                $this->setType($data[self::FIELD_TYPE]);
+        if (isset($data[self::FIELD_ACTION])) {
+            if (is_array($data[self::FIELD_ACTION])) {
+                foreach($data[self::FIELD_ACTION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRPlanDefinitionAction) {
+                        $this->addAction($v);
+                    } else {
+                        $this->addAction(new FHIRPlanDefinitionAction($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_ACTION] instanceof FHIRPlanDefinitionAction) {
+                $this->addAction($data[self::FIELD_ACTION]);
             } else {
-                $this->setType(new FHIRCoding($data[self::FIELD_TYPE]));
+                $this->addAction(new FHIRPlanDefinitionAction($data[self::FIELD_ACTION]));
             }
         }
     }
@@ -1047,107 +961,151 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<PlanDefinitionAction{$xmlns}></PlanDefinitionAction>";
     }
 
     /**
-     * This resource allows for the definition of various types of plans as a sharable,
-     * consumable, and executable artifact. The resource is general enough to support
-     * the description of a broad range of clinical artifacts such as clinical decision
-     * support rules, order sets and protocols.
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Sub actions that are contained within the action. The behavior of this action
-     * determines the functionality of the sub-actions. For example, a selection
-     * behavior of at-most-one indicates that of the sub-actions, at most one may be
-     * chosen as part of realizing the action definition.
+     * A user-visible label for the action.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction[]
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    public function getAction()
+    public function getLabel()
     {
-        return $this->action;
+        return $this->label;
     }
 
     /**
-     * This resource allows for the definition of various types of plans as a sharable,
-     * consumable, and executable artifact. The resource is general enough to support
-     * the description of a broad range of clinical artifacts such as clinical decision
-     * support rules, order sets and protocols.
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Sub actions that are contained within the action. The behavior of this action
-     * determines the functionality of the sub-actions. For example, a selection
-     * behavior of at-most-one indicates that of the sub-actions, at most one may be
-     * chosen as part of realizing the action definition.
+     * A user-visible label for the action.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction $action
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $label
      * @return static
      */
-    public function addAction(FHIRPlanDefinitionAction $action = null)
+    public function setLabel($label = null)
     {
-        $this->action[] = $action;
+        if (null !== $label && !($label instanceof FHIRString)) {
+            $label = new FHIRString($label);
+        }
+        $this->_trackValueSet($this->label, $label);
+        $this->label = $label;
         return $this;
     }
 
     /**
-     * This resource allows for the definition of various types of plans as a sharable,
-     * consumable, and executable artifact. The resource is general enough to support
-     * the description of a broad range of clinical artifacts such as clinical decision
-     * support rules, order sets and protocols.
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Sub actions that are contained within the action. The behavior of this action
-     * determines the functionality of the sub-actions. For example, a selection
-     * behavior of at-most-one indicates that of the sub-actions, at most one may be
-     * chosen as part of realizing the action definition.
+     * The title of the action displayed to a user.
      *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction[] $action
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The title of the action displayed to a user.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $title
      * @return static
      */
-    public function setAction(array $action = [])
+    public function setTitle($title = null)
     {
-        $this->action = [];
-        if ([] === $action) {
-            return $this;
+        if (null !== $title && !($title instanceof FHIRString)) {
+            $title = new FHIRString($title);
         }
-        foreach($action as $v) {
-            if ($v instanceof FHIRPlanDefinitionAction) {
-                $this->addAction($v);
-            } else {
-                $this->addAction(new FHIRPlanDefinitionAction($v));
-            }
-        }
+        $this->_trackValueSet($this->title, $title);
+        $this->title = $title;
         return $this;
     }
 
     /**
-     * Defines behavior for an action or a group for how many times that item may be
-     * repeated
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Defines whether the action can be selected multiple times.
+     * A short description of the action used to provide a summary to display to the
+     * user.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionCardinalityBehavior
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    public function getCardinalityBehavior()
+    public function getDescription()
     {
-        return $this->cardinalityBehavior;
+        return $this->description;
     }
 
     /**
-     * Defines behavior for an action or a group for how many times that item may be
-     * repeated
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Defines whether the action can be selected multiple times.
+     * A short description of the action used to provide a summary to display to the
+     * user.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionCardinalityBehavior $cardinalityBehavior
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $description
      * @return static
      */
-    public function setCardinalityBehavior(FHIRActionCardinalityBehavior $cardinalityBehavior = null)
+    public function setDescription($description = null)
     {
-        $this->cardinalityBehavior = $cardinalityBehavior;
+        if (null !== $description && !($description instanceof FHIRString)) {
+            $description = new FHIRString($description);
+        }
+        $this->_trackValueSet($this->description, $description);
+        $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A text equivalent of the action to be performed. This provides a
+     * human-interpretable description of the action when the definition is consumed by
+     * a system that may not be capable of interpreting it dynamically.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    public function getTextEquivalent()
+    {
+        return $this->textEquivalent;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A text equivalent of the action to be performed. This provides a
+     * human-interpretable description of the action when the definition is consumed by
+     * a system that may not be capable of interpreting it dynamically.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $textEquivalent
+     * @return static
+     */
+    public function setTextEquivalent($textEquivalent = null)
+    {
+        if (null !== $textEquivalent && !($textEquivalent instanceof FHIRString)) {
+            $textEquivalent = new FHIRString($textEquivalent);
+        }
+        $this->_trackValueSet($this->textEquivalent, $textEquivalent);
+        $this->textEquivalent = $textEquivalent;
         return $this;
     }
 
@@ -1181,6 +1139,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function addCode(FHIRCodeableConcept $code = null)
     {
+        $this->_trackValueAdded();
         $this->code[] = $code;
         return $this;
     }
@@ -1199,7 +1158,10 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function setCode(array $code = [])
     {
-        $this->code = [];
+        if ([] !== $this->code) {
+            $this->_trackValuesRemoved(count($this->code));
+            $this->code = [];
+        }
         if ([] === $code) {
             return $this;
         }
@@ -1214,136 +1176,65 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     }
 
     /**
-     * This resource allows for the definition of various types of plans as a sharable,
-     * consumable, and executable artifact. The resource is general enough to support
-     * the description of a broad range of clinical artifacts such as clinical decision
-     * support rules, order sets and protocols.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An expression that describes applicability criteria, or start/stop conditions
-     * for the action.
+     * A description of why this action is necessary or appropriate.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition[]
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getCondition()
+    public function getReason()
     {
-        return $this->condition;
+        return $this->reason;
     }
 
     /**
-     * This resource allows for the definition of various types of plans as a sharable,
-     * consumable, and executable artifact. The resource is general enough to support
-     * the description of a broad range of clinical artifacts such as clinical decision
-     * support rules, order sets and protocols.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An expression that describes applicability criteria, or start/stop conditions
-     * for the action.
+     * A description of why this action is necessary or appropriate.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition $condition
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $reason
      * @return static
      */
-    public function addCondition(FHIRPlanDefinitionCondition $condition = null)
+    public function addReason(FHIRCodeableConcept $reason = null)
     {
-        $this->condition[] = $condition;
+        $this->_trackValueAdded();
+        $this->reason[] = $reason;
         return $this;
     }
 
     /**
-     * This resource allows for the definition of various types of plans as a sharable,
-     * consumable, and executable artifact. The resource is general enough to support
-     * the description of a broad range of clinical artifacts such as clinical decision
-     * support rules, order sets and protocols.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * An expression that describes applicability criteria, or start/stop conditions
-     * for the action.
+     * A description of why this action is necessary or appropriate.
      *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition[] $condition
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $reason
      * @return static
      */
-    public function setCondition(array $condition = [])
+    public function setReason(array $reason = [])
     {
-        $this->condition = [];
-        if ([] === $condition) {
+        if ([] !== $this->reason) {
+            $this->_trackValuesRemoved(count($this->reason));
+            $this->reason = [];
+        }
+        if ([] === $reason) {
             return $this;
         }
-        foreach($condition as $v) {
-            if ($v instanceof FHIRPlanDefinitionCondition) {
-                $this->addCondition($v);
+        foreach($reason as $v) {
+            if ($v instanceof FHIRCodeableConcept) {
+                $this->addReason($v);
             } else {
-                $this->addCondition(new FHIRPlanDefinitionCondition($v));
+                $this->addReason(new FHIRCodeableConcept($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A reference to an ActivityDefinition that describes the action to be taken in
-     * detail, or a PlanDefinition that describes a series of actions to be taken.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    public function getDefinition()
-    {
-        return $this->definition;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A reference to an ActivityDefinition that describes the action to be taken in
-     * detail, or a PlanDefinition that describes a series of actions to be taken.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $definition
-     * @return static
-     */
-    public function setDefinition(FHIRReference $definition = null)
-    {
-        $this->definition = $definition;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A short description of the action used to provide a summary to display to the
-     * user.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A short description of the action used to provide a summary to display to the
-     * user.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $description
-     * @return static
-     */
-    public function setDescription($description = null)
-    {
-        if (null === $description) {
-            $this->description = null;
-            return $this;
-        }
-        if ($description instanceof FHIRString) {
-            $this->description = $description;
-            return $this;
-        }
-        $this->description = new FHIRString($description);
         return $this;
     }
 
@@ -1379,6 +1270,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function addDocumentation(FHIRRelatedArtifact $documentation = null)
     {
+        $this->_trackValueAdded();
         $this->documentation[] = $documentation;
         return $this;
     }
@@ -1398,7 +1290,10 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function setDocumentation(array $documentation = [])
     {
-        $this->documentation = [];
+        if ([] !== $this->documentation) {
+            $this->_trackValuesRemoved(count($this->documentation));
+            $this->documentation = [];
+        }
         if ([] === $documentation) {
             return $this;
         }
@@ -1407,74 +1302,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $this->addDocumentation($v);
             } else {
                 $this->addDocumentation(new FHIRRelatedArtifact($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * This resource allows for the definition of various types of plans as a sharable,
-     * consumable, and executable artifact. The resource is general enough to support
-     * the description of a broad range of clinical artifacts such as clinical decision
-     * support rules, order sets and protocols.
-     *
-     * Customizations that should be applied to the statically defined resource. For
-     * example, if the dosage of a medication must be computed based on the patient's
-     * weight, a customization would be used to specify an expression that calculated
-     * the weight, and the path on the resource that would contain the result.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue[]
-     */
-    public function getDynamicValue()
-    {
-        return $this->dynamicValue;
-    }
-
-    /**
-     * This resource allows for the definition of various types of plans as a sharable,
-     * consumable, and executable artifact. The resource is general enough to support
-     * the description of a broad range of clinical artifacts such as clinical decision
-     * support rules, order sets and protocols.
-     *
-     * Customizations that should be applied to the statically defined resource. For
-     * example, if the dosage of a medication must be computed based on the patient's
-     * weight, a customization would be used to specify an expression that calculated
-     * the weight, and the path on the resource that would contain the result.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue $dynamicValue
-     * @return static
-     */
-    public function addDynamicValue(FHIRPlanDefinitionDynamicValue $dynamicValue = null)
-    {
-        $this->dynamicValue[] = $dynamicValue;
-        return $this;
-    }
-
-    /**
-     * This resource allows for the definition of various types of plans as a sharable,
-     * consumable, and executable artifact. The resource is general enough to support
-     * the description of a broad range of clinical artifacts such as clinical decision
-     * support rules, order sets and protocols.
-     *
-     * Customizations that should be applied to the statically defined resource. For
-     * example, if the dosage of a medication must be computed based on the patient's
-     * weight, a customization would be used to specify an expression that calculated
-     * the weight, and the path on the resource that would contain the result.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue[] $dynamicValue
-     * @return static
-     */
-    public function setDynamicValue(array $dynamicValue = [])
-    {
-        $this->dynamicValue = [];
-        if ([] === $dynamicValue) {
-            return $this;
-        }
-        foreach($dynamicValue as $v) {
-            if ($v instanceof FHIRPlanDefinitionDynamicValue) {
-                $this->addDynamicValue($v);
-            } else {
-                $this->addDynamicValue(new FHIRPlanDefinitionDynamicValue($v));
             }
         }
         return $this;
@@ -1514,15 +1341,11 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function addGoalId($goalId = null)
     {
-        if (null === $goalId) {
-            $this->goalId = [];
-            return $this;
+        if (null !== $goalId && !($goalId instanceof FHIRId)) {
+            $goalId = new FHIRId($goalId);
         }
-        if ($goalId instanceof FHIRId) {
-            $this->goalId[] = $goalId;
-            return $this;
-        }
-        $this->goalId[] = new FHIRId($goalId);
+        $this->_trackValueAdded();
+        $this->goalId[] = $goalId;
         return $this;
     }
 
@@ -1542,7 +1365,10 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function setGoalId(array $goalId = [])
     {
-        $this->goalId = [];
+        if ([] !== $this->goalId) {
+            $this->_trackValuesRemoved(count($this->goalId));
+            $this->goalId = [];
+        }
         if ([] === $goalId) {
             return $this;
         }
@@ -1557,30 +1383,128 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     }
 
     /**
-     * Defines organization behavior of a group
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A description of a triggering event.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the grouping behavior for the action and its children.
+     * A description of when the action should be triggered.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionGroupingBehavior
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition[]
      */
-    public function getGroupingBehavior()
+    public function getTriggerDefinition()
     {
-        return $this->groupingBehavior;
+        return $this->triggerDefinition;
     }
 
     /**
-     * Defines organization behavior of a group
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A description of a triggering event.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Defines the grouping behavior for the action and its children.
+     * A description of when the action should be triggered.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionGroupingBehavior $groupingBehavior
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition $triggerDefinition
      * @return static
      */
-    public function setGroupingBehavior(FHIRActionGroupingBehavior $groupingBehavior = null)
+    public function addTriggerDefinition(FHIRTriggerDefinition $triggerDefinition = null)
     {
-        $this->groupingBehavior = $groupingBehavior;
+        $this->_trackValueAdded();
+        $this->triggerDefinition[] = $triggerDefinition;
+        return $this;
+    }
+
+    /**
+     * A description of a triggering event.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A description of when the action should be triggered.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition[] $triggerDefinition
+     * @return static
+     */
+    public function setTriggerDefinition(array $triggerDefinition = [])
+    {
+        if ([] !== $this->triggerDefinition) {
+            $this->_trackValuesRemoved(count($this->triggerDefinition));
+            $this->triggerDefinition = [];
+        }
+        if ([] === $triggerDefinition) {
+            return $this;
+        }
+        foreach($triggerDefinition as $v) {
+            if ($v instanceof FHIRTriggerDefinition) {
+                $this->addTriggerDefinition($v);
+            } else {
+                $this->addTriggerDefinition(new FHIRTriggerDefinition($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical artifacts such as clinical decision
+     * support rules, order sets and protocols.
+     *
+     * An expression that describes applicability criteria, or start/stop conditions
+     * for the action.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition[]
+     */
+    public function getCondition()
+    {
+        return $this->condition;
+    }
+
+    /**
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical artifacts such as clinical decision
+     * support rules, order sets and protocols.
+     *
+     * An expression that describes applicability criteria, or start/stop conditions
+     * for the action.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition $condition
+     * @return static
+     */
+    public function addCondition(FHIRPlanDefinitionCondition $condition = null)
+    {
+        $this->_trackValueAdded();
+        $this->condition[] = $condition;
+        return $this;
+    }
+
+    /**
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical artifacts such as clinical decision
+     * support rules, order sets and protocols.
+     *
+     * An expression that describes applicability criteria, or start/stop conditions
+     * for the action.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition[] $condition
+     * @return static
+     */
+    public function setCondition(array $condition = [])
+    {
+        if ([] !== $this->condition) {
+            $this->_trackValuesRemoved(count($this->condition));
+            $this->condition = [];
+        }
+        if ([] === $condition) {
+            return $this;
+        }
+        foreach($condition as $v) {
+            if ($v instanceof FHIRPlanDefinitionCondition) {
+                $this->addCondition($v);
+            } else {
+                $this->addCondition(new FHIRPlanDefinitionCondition($v));
+            }
+        }
         return $this;
     }
 
@@ -1612,6 +1536,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function addInput(FHIRDataRequirement $input = null)
     {
+        $this->_trackValueAdded();
         $this->input[] = $input;
         return $this;
     }
@@ -1629,7 +1554,10 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function setInput(array $input = [])
     {
-        $this->input = [];
+        if ([] !== $this->input) {
+            $this->_trackValuesRemoved(count($this->input));
+            $this->input = [];
+        }
         if ([] === $input) {
             return $this;
         }
@@ -1640,44 +1568,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $this->addInput(new FHIRDataRequirement($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A user-visible label for the action.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getLabel()
-    {
-        return $this->label;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A user-visible label for the action.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $label
-     * @return static
-     */
-    public function setLabel($label = null)
-    {
-        if (null === $label) {
-            $this->label = null;
-            return $this;
-        }
-        if ($label instanceof FHIRString) {
-            $this->label = $label;
-            return $this;
-        }
-        $this->label = new FHIRString($label);
         return $this;
     }
 
@@ -1709,6 +1599,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function addOutput(FHIRDataRequirement $output = null)
     {
+        $this->_trackValueAdded();
         $this->output[] = $output;
         return $this;
     }
@@ -1726,7 +1617,10 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function setOutput(array $output = [])
     {
-        $this->output = [];
+        if ([] !== $this->output) {
+            $this->_trackValuesRemoved(count($this->output));
+            $this->output = [];
+        }
         if ([] === $output) {
             return $this;
         }
@@ -1735,152 +1629,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $this->addOutput($v);
             } else {
                 $this->addOutput(new FHIRDataRequirement($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * This resource allows for the definition of various types of plans as a sharable,
-     * consumable, and executable artifact. The resource is general enough to support
-     * the description of a broad range of clinical artifacts such as clinical decision
-     * support rules, order sets and protocols.
-     *
-     * Indicates who should participate in performing the action described.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant[]
-     */
-    public function getParticipant()
-    {
-        return $this->participant;
-    }
-
-    /**
-     * This resource allows for the definition of various types of plans as a sharable,
-     * consumable, and executable artifact. The resource is general enough to support
-     * the description of a broad range of clinical artifacts such as clinical decision
-     * support rules, order sets and protocols.
-     *
-     * Indicates who should participate in performing the action described.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant $participant
-     * @return static
-     */
-    public function addParticipant(FHIRPlanDefinitionParticipant $participant = null)
-    {
-        $this->participant[] = $participant;
-        return $this;
-    }
-
-    /**
-     * This resource allows for the definition of various types of plans as a sharable,
-     * consumable, and executable artifact. The resource is general enough to support
-     * the description of a broad range of clinical artifacts such as clinical decision
-     * support rules, order sets and protocols.
-     *
-     * Indicates who should participate in performing the action described.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant[] $participant
-     * @return static
-     */
-    public function setParticipant(array $participant = [])
-    {
-        $this->participant = [];
-        if ([] === $participant) {
-            return $this;
-        }
-        foreach($participant as $v) {
-            if ($v instanceof FHIRPlanDefinitionParticipant) {
-                $this->addParticipant($v);
-            } else {
-                $this->addParticipant(new FHIRPlanDefinitionParticipant($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * Defines selection frequency behavior for an action or group
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Defines whether the action should usually be preselected.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionPrecheckBehavior
-     */
-    public function getPrecheckBehavior()
-    {
-        return $this->precheckBehavior;
-    }
-
-    /**
-     * Defines selection frequency behavior for an action or group
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Defines whether the action should usually be preselected.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionPrecheckBehavior $precheckBehavior
-     * @return static
-     */
-    public function setPrecheckBehavior(FHIRActionPrecheckBehavior $precheckBehavior = null)
-    {
-        $this->precheckBehavior = $precheckBehavior;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A description of why this action is necessary or appropriate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getReason()
-    {
-        return $this->reason;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A description of why this action is necessary or appropriate.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $reason
-     * @return static
-     */
-    public function addReason(FHIRCodeableConcept $reason = null)
-    {
-        $this->reason[] = $reason;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A description of why this action is necessary or appropriate.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $reason
-     * @return static
-     */
-    public function setReason(array $reason = [])
-    {
-        $this->reason = [];
-        if ([] === $reason) {
-            return $this;
-        }
-        foreach($reason as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addReason($v);
-            } else {
-                $this->addReason(new FHIRCodeableConcept($v));
             }
         }
         return $this;
@@ -1916,6 +1664,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function addRelatedAction(FHIRPlanDefinitionRelatedAction $relatedAction = null)
     {
+        $this->_trackValueAdded();
         $this->relatedAction[] = $relatedAction;
         return $this;
     }
@@ -1934,7 +1683,10 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function setRelatedAction(array $relatedAction = [])
     {
-        $this->relatedAction = [];
+        if ([] !== $this->relatedAction) {
+            $this->_trackValuesRemoved(count($this->relatedAction));
+            $this->relatedAction = [];
+        }
         if ([] === $relatedAction) {
             return $this;
         }
@@ -1945,104 +1697,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $this->addRelatedAction(new FHIRPlanDefinitionRelatedAction($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * Defines requiredness behavior for selecting an action or an action group
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Defines the requiredness behavior for the action.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionRequiredBehavior
-     */
-    public function getRequiredBehavior()
-    {
-        return $this->requiredBehavior;
-    }
-
-    /**
-     * Defines requiredness behavior for selecting an action or an action group
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Defines the requiredness behavior for the action.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionRequiredBehavior $requiredBehavior
-     * @return static
-     */
-    public function setRequiredBehavior(FHIRActionRequiredBehavior $requiredBehavior = null)
-    {
-        $this->requiredBehavior = $requiredBehavior;
-        return $this;
-    }
-
-    /**
-     * Defines selection behavior of a group
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Defines the selection behavior for the action and its children.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionSelectionBehavior
-     */
-    public function getSelectionBehavior()
-    {
-        return $this->selectionBehavior;
-    }
-
-    /**
-     * Defines selection behavior of a group
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Defines the selection behavior for the action and its children.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionSelectionBehavior $selectionBehavior
-     * @return static
-     */
-    public function setSelectionBehavior(FHIRActionSelectionBehavior $selectionBehavior = null)
-    {
-        $this->selectionBehavior = $selectionBehavior;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A text equivalent of the action to be performed. This provides a
-     * human-interpretable description of the action when the definition is consumed by
-     * a system that may not be capable of interpreting it dynamically.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getTextEquivalent()
-    {
-        return $this->textEquivalent;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A text equivalent of the action to be performed. This provides a
-     * human-interpretable description of the action when the definition is consumed by
-     * a system that may not be capable of interpreting it dynamically.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $textEquivalent
-     * @return static
-     */
-    public function setTextEquivalent($textEquivalent = null)
-    {
-        if (null === $textEquivalent) {
-            $this->textEquivalent = null;
-            return $this;
-        }
-        if ($textEquivalent instanceof FHIRString) {
-            $this->textEquivalent = $textEquivalent;
-            return $this;
-        }
-        $this->textEquivalent = new FHIRString($textEquivalent);
         return $this;
     }
 
@@ -2078,45 +1732,11 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function setTimingDateTime($timingDateTime = null)
     {
-        if (null === $timingDateTime) {
-            $this->timingDateTime = null;
-            return $this;
+        if (null !== $timingDateTime && !($timingDateTime instanceof FHIRDateTime)) {
+            $timingDateTime = new FHIRDateTime($timingDateTime);
         }
-        if ($timingDateTime instanceof FHIRDateTime) {
-            $this->timingDateTime = $timingDateTime;
-            return $this;
-        }
-        $this->timingDateTime = new FHIRDateTime($timingDateTime);
-        return $this;
-    }
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * An optional value describing when the action should be performed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
-     */
-    public function getTimingDuration()
-    {
-        return $this->timingDuration;
-    }
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * An optional value describing when the action should be performed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
-     * @return static
-     */
-    public function setTimingDuration(FHIRDuration $timingDuration = null)
-    {
-        $this->timingDuration = $timingDuration;
+        $this->_trackValueSet($this->timingDateTime, $timingDateTime);
+        $this->timingDateTime = $timingDateTime;
         return $this;
     }
 
@@ -2146,7 +1766,39 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function setTimingPeriod(FHIRPeriod $timingPeriod = null)
     {
+        $this->_trackValueSet($this->timingPeriod, $timingPeriod);
         $this->timingPeriod = $timingPeriod;
+        return $this;
+    }
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An optional value describing when the action should be performed.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
+     */
+    public function getTimingDuration()
+    {
+        return $this->timingDuration;
+    }
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An optional value describing when the action should be performed.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration $timingDuration
+     * @return static
+     */
+    public function setTimingDuration(FHIRDuration $timingDuration = null)
+    {
+        $this->_trackValueSet($this->timingDuration, $timingDuration);
+        $this->timingDuration = $timingDuration;
         return $this;
     }
 
@@ -2176,6 +1828,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function setTimingRange(FHIRRange $timingRange = null)
     {
+        $this->_trackValueSet($this->timingRange, $timingRange);
         $this->timingRange = $timingRange;
         return $this;
     }
@@ -2214,45 +1867,282 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function setTimingTiming(FHIRTiming $timingTiming = null)
     {
+        $this->_trackValueSet($this->timingTiming, $timingTiming);
         $this->timingTiming = $timingTiming;
         return $this;
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical artifacts such as clinical decision
+     * support rules, order sets and protocols.
      *
-     * The title of the action displayed to a user.
+     * Indicates who should participate in performing the action described.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant[]
      */
-    public function getTitle()
+    public function getParticipant()
     {
-        return $this->title;
+        return $this->participant;
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical artifacts such as clinical decision
+     * support rules, order sets and protocols.
      *
-     * The title of the action displayed to a user.
+     * Indicates who should participate in performing the action described.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $title
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant $participant
      * @return static
      */
-    public function setTitle($title = null)
+    public function addParticipant(FHIRPlanDefinitionParticipant $participant = null)
     {
-        if (null === $title) {
-            $this->title = null;
+        $this->_trackValueAdded();
+        $this->participant[] = $participant;
+        return $this;
+    }
+
+    /**
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical artifacts such as clinical decision
+     * support rules, order sets and protocols.
+     *
+     * Indicates who should participate in performing the action described.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant[] $participant
+     * @return static
+     */
+    public function setParticipant(array $participant = [])
+    {
+        if ([] !== $this->participant) {
+            $this->_trackValuesRemoved(count($this->participant));
+            $this->participant = [];
+        }
+        if ([] === $participant) {
             return $this;
         }
-        if ($title instanceof FHIRString) {
-            $this->title = $title;
-            return $this;
+        foreach($participant as $v) {
+            if ($v instanceof FHIRPlanDefinitionParticipant) {
+                $this->addParticipant($v);
+            } else {
+                $this->addParticipant(new FHIRPlanDefinitionParticipant($v));
+            }
         }
-        $this->title = new FHIRString($title);
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of action to perform (create, update, remove).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of action to perform (create, update, remove).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $type
+     * @return static
+     */
+    public function setType(FHIRCoding $type = null)
+    {
+        $this->_trackValueSet($this->type, $type);
+        $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * Defines organization behavior of a group
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Defines the grouping behavior for the action and its children.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionGroupingBehavior
+     */
+    public function getGroupingBehavior()
+    {
+        return $this->groupingBehavior;
+    }
+
+    /**
+     * Defines organization behavior of a group
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Defines the grouping behavior for the action and its children.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionGroupingBehavior $groupingBehavior
+     * @return static
+     */
+    public function setGroupingBehavior(FHIRActionGroupingBehavior $groupingBehavior = null)
+    {
+        $this->_trackValueSet($this->groupingBehavior, $groupingBehavior);
+        $this->groupingBehavior = $groupingBehavior;
+        return $this;
+    }
+
+    /**
+     * Defines selection behavior of a group
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Defines the selection behavior for the action and its children.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionSelectionBehavior
+     */
+    public function getSelectionBehavior()
+    {
+        return $this->selectionBehavior;
+    }
+
+    /**
+     * Defines selection behavior of a group
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Defines the selection behavior for the action and its children.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionSelectionBehavior $selectionBehavior
+     * @return static
+     */
+    public function setSelectionBehavior(FHIRActionSelectionBehavior $selectionBehavior = null)
+    {
+        $this->_trackValueSet($this->selectionBehavior, $selectionBehavior);
+        $this->selectionBehavior = $selectionBehavior;
+        return $this;
+    }
+
+    /**
+     * Defines requiredness behavior for selecting an action or an action group
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Defines the requiredness behavior for the action.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionRequiredBehavior
+     */
+    public function getRequiredBehavior()
+    {
+        return $this->requiredBehavior;
+    }
+
+    /**
+     * Defines requiredness behavior for selecting an action or an action group
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Defines the requiredness behavior for the action.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionRequiredBehavior $requiredBehavior
+     * @return static
+     */
+    public function setRequiredBehavior(FHIRActionRequiredBehavior $requiredBehavior = null)
+    {
+        $this->_trackValueSet($this->requiredBehavior, $requiredBehavior);
+        $this->requiredBehavior = $requiredBehavior;
+        return $this;
+    }
+
+    /**
+     * Defines selection frequency behavior for an action or group
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Defines whether the action should usually be preselected.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionPrecheckBehavior
+     */
+    public function getPrecheckBehavior()
+    {
+        return $this->precheckBehavior;
+    }
+
+    /**
+     * Defines selection frequency behavior for an action or group
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Defines whether the action should usually be preselected.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionPrecheckBehavior $precheckBehavior
+     * @return static
+     */
+    public function setPrecheckBehavior(FHIRActionPrecheckBehavior $precheckBehavior = null)
+    {
+        $this->_trackValueSet($this->precheckBehavior, $precheckBehavior);
+        $this->precheckBehavior = $precheckBehavior;
+        return $this;
+    }
+
+    /**
+     * Defines behavior for an action or a group for how many times that item may be
+     * repeated
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Defines whether the action can be selected multiple times.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionCardinalityBehavior
+     */
+    public function getCardinalityBehavior()
+    {
+        return $this->cardinalityBehavior;
+    }
+
+    /**
+     * Defines behavior for an action or a group for how many times that item may be
+     * repeated
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Defines whether the action can be selected multiple times.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionCardinalityBehavior $cardinalityBehavior
+     * @return static
+     */
+    public function setCardinalityBehavior(FHIRActionCardinalityBehavior $cardinalityBehavior = null)
+    {
+        $this->_trackValueSet($this->cardinalityBehavior, $cardinalityBehavior);
+        $this->cardinalityBehavior = $cardinalityBehavior;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reference to an ActivityDefinition that describes the action to be taken in
+     * detail, or a PlanDefinition that describes a series of actions to be taken.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    public function getDefinition()
+    {
+        return $this->definition;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reference to an ActivityDefinition that describes the action to be taken in
+     * detail, or a PlanDefinition that describes a series of actions to be taken.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $definition
+     * @return static
+     */
+    public function setDefinition(FHIRReference $definition = null)
+    {
+        $this->_trackValueSet($this->definition, $definition);
+        $this->definition = $definition;
         return $this;
     }
 
@@ -2286,93 +2176,152 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      */
     public function setTransform(FHIRReference $transform = null)
     {
+        $this->_trackValueSet($this->transform, $transform);
         $this->transform = $transform;
         return $this;
     }
 
     /**
-     * A description of a triggering event.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical artifacts such as clinical decision
+     * support rules, order sets and protocols.
      *
-     * A description of when the action should be triggered.
+     * Customizations that should be applied to the statically defined resource. For
+     * example, if the dosage of a medication must be computed based on the patient's
+     * weight, a customization would be used to specify an expression that calculated
+     * the weight, and the path on the resource that would contain the result.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition[]
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue[]
      */
-    public function getTriggerDefinition()
+    public function getDynamicValue()
     {
-        return $this->triggerDefinition;
+        return $this->dynamicValue;
     }
 
     /**
-     * A description of a triggering event.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical artifacts such as clinical decision
+     * support rules, order sets and protocols.
      *
-     * A description of when the action should be triggered.
+     * Customizations that should be applied to the statically defined resource. For
+     * example, if the dosage of a medication must be computed based on the patient's
+     * weight, a customization would be used to specify an expression that calculated
+     * the weight, and the path on the resource that would contain the result.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition $triggerDefinition
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue $dynamicValue
      * @return static
      */
-    public function addTriggerDefinition(FHIRTriggerDefinition $triggerDefinition = null)
+    public function addDynamicValue(FHIRPlanDefinitionDynamicValue $dynamicValue = null)
     {
-        $this->triggerDefinition[] = $triggerDefinition;
+        $this->_trackValueAdded();
+        $this->dynamicValue[] = $dynamicValue;
         return $this;
     }
 
     /**
-     * A description of a triggering event.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical artifacts such as clinical decision
+     * support rules, order sets and protocols.
      *
-     * A description of when the action should be triggered.
+     * Customizations that should be applied to the statically defined resource. For
+     * example, if the dosage of a medication must be computed based on the patient's
+     * weight, a customization would be used to specify an expression that calculated
+     * the weight, and the path on the resource that would contain the result.
      *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition[] $triggerDefinition
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue[] $dynamicValue
      * @return static
      */
-    public function setTriggerDefinition(array $triggerDefinition = [])
+    public function setDynamicValue(array $dynamicValue = [])
     {
-        $this->triggerDefinition = [];
-        if ([] === $triggerDefinition) {
+        if ([] !== $this->dynamicValue) {
+            $this->_trackValuesRemoved(count($this->dynamicValue));
+            $this->dynamicValue = [];
+        }
+        if ([] === $dynamicValue) {
             return $this;
         }
-        foreach($triggerDefinition as $v) {
-            if ($v instanceof FHIRTriggerDefinition) {
-                $this->addTriggerDefinition($v);
+        foreach($dynamicValue as $v) {
+            if ($v instanceof FHIRPlanDefinitionDynamicValue) {
+                $this->addDynamicValue($v);
             } else {
-                $this->addTriggerDefinition(new FHIRTriggerDefinition($v));
+                $this->addDynamicValue(new FHIRPlanDefinitionDynamicValue($v));
             }
         }
         return $this;
     }
 
     /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical artifacts such as clinical decision
+     * support rules, order sets and protocols.
      *
-     * The type of action to perform (create, update, remove).
+     * Sub actions that are contained within the action. The behavior of this action
+     * determines the functionality of the sub-actions. For example, a selection
+     * behavior of at-most-one indicates that of the sub-actions, at most one may be
+     * chosen as part of realizing the action definition.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction[]
      */
-    public function getType()
+    public function getAction()
     {
-        return $this->type;
+        return $this->action;
     }
 
     /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical artifacts such as clinical decision
+     * support rules, order sets and protocols.
      *
-     * The type of action to perform (create, update, remove).
+     * Sub actions that are contained within the action. The behavior of this action
+     * determines the functionality of the sub-actions. For example, a selection
+     * behavior of at-most-one indicates that of the sub-actions, at most one may be
+     * chosen as part of realizing the action definition.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $type
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction $action
      * @return static
      */
-    public function setType(FHIRCoding $type = null)
+    public function addAction(FHIRPlanDefinitionAction $action = null)
     {
-        $this->type = $type;
+        $this->_trackValueAdded();
+        $this->action[] = $action;
+        return $this;
+    }
+
+    /**
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical artifacts such as clinical decision
+     * support rules, order sets and protocols.
+     *
+     * Sub actions that are contained within the action. The behavior of this action
+     * determines the functionality of the sub-actions. For example, a selection
+     * behavior of at-most-one indicates that of the sub-actions, at most one may be
+     * chosen as part of realizing the action definition.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction[] $action
+     * @return static
+     */
+    public function setAction(array $action = [])
+    {
+        if ([] !== $this->action) {
+            $this->_trackValuesRemoved(count($this->action));
+            $this->action = [];
+        }
+        if ([] === $action) {
+            return $this;
+        }
+        foreach($action as $v) {
+            if ($v instanceof FHIRPlanDefinitionAction) {
+                $this->addAction($v);
+            } else {
+                $this->addAction(new FHIRPlanDefinitionAction($v));
+            }
+        }
         return $this;
     }
 
@@ -2397,16 +2346,24 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getAction())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_ACTION, $i)] = $fieldErrs;
-                }
+        if (null !== ($v = $this->getLabel())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_LABEL] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getCardinalityBehavior())) {
+        if (null !== ($v = $this->getTitle())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CARDINALITY_BEHAVIOR] = $fieldErrs;
+                $errs[self::FIELD_TITLE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDescription())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getTextEquivalent())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TEXT_EQUIVALENT] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getCode())) {
@@ -2416,34 +2373,17 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 }
             }
         }
-        if ([] !== ($vs = $this->getCondition())) {
+        if ([] !== ($vs = $this->getReason())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_CONDITION, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_REASON, $i)] = $fieldErrs;
                 }
-            }
-        }
-        if (null !== ($v = $this->getDefinition())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DEFINITION] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDescription())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getDocumentation())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_DOCUMENTATION, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getDynamicValue())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_DYNAMIC_VALUE, $i)] = $fieldErrs;
                 }
             }
         }
@@ -2454,9 +2394,18 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getGroupingBehavior())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_GROUPING_BEHAVIOR] = $fieldErrs;
+        if ([] !== ($vs = $this->getTriggerDefinition())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_TRIGGER_DEFINITION, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getCondition())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_CONDITION, $i)] = $fieldErrs;
+                }
             }
         }
         if ([] !== ($vs = $this->getInput())) {
@@ -2466,34 +2415,10 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getLabel())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_LABEL] = $fieldErrs;
-            }
-        }
         if ([] !== ($vs = $this->getOutput())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_OUTPUT, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getParticipant())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_PARTICIPANT, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getPrecheckBehavior())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PRECHECK_BEHAVIOR] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getReason())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_REASON, $i)] = $fieldErrs;
                 }
             }
         }
@@ -2504,34 +2429,19 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getRequiredBehavior())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_REQUIRED_BEHAVIOR] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getSelectionBehavior())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SELECTION_BEHAVIOR] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getTextEquivalent())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TEXT_EQUIVALENT] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getTimingDateTime())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_TIMING_DATE_TIME] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getTimingDuration())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TIMING_DURATION] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getTimingPeriod())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_TIMING_PERIOD] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getTimingDuration())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TIMING_DURATION] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getTimingRange())) {
@@ -2544,20 +2454,10 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $errs[self::FIELD_TIMING_TIMING] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getTitle())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TITLE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getTransform())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TRANSFORM] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getTriggerDefinition())) {
+        if ([] !== ($vs = $this->getParticipant())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_TRIGGER_DEFINITION, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_PARTICIPANT, $i)] = $fieldErrs;
                 }
             }
         }
@@ -2566,135 +2466,52 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $errs[self::FIELD_TYPE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_ACTION])) {
-            $v = $this->getAction();
-            foreach($validationRules[self::FIELD_ACTION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_ACTION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ACTION])) {
-                        $errs[self::FIELD_ACTION] = [];
-                    }
-                    $errs[self::FIELD_ACTION][$rule] = $err;
+        if (null !== ($v = $this->getGroupingBehavior())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_GROUPING_BEHAVIOR] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSelectionBehavior())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SELECTION_BEHAVIOR] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getRequiredBehavior())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_REQUIRED_BEHAVIOR] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPrecheckBehavior())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PRECHECK_BEHAVIOR] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCardinalityBehavior())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CARDINALITY_BEHAVIOR] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefinition())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFINITION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getTransform())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TRANSFORM] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getDynamicValue())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_DYNAMIC_VALUE, $i)] = $fieldErrs;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_CARDINALITY_BEHAVIOR])) {
-            $v = $this->getCardinalityBehavior();
-            foreach($validationRules[self::FIELD_CARDINALITY_BEHAVIOR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_CARDINALITY_BEHAVIOR, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CARDINALITY_BEHAVIOR])) {
-                        $errs[self::FIELD_CARDINALITY_BEHAVIOR] = [];
-                    }
-                    $errs[self::FIELD_CARDINALITY_BEHAVIOR][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_CODE])) {
-            $v = $this->getCode();
-            foreach($validationRules[self::FIELD_CODE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_CODE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CODE])) {
-                        $errs[self::FIELD_CODE] = [];
-                    }
-                    $errs[self::FIELD_CODE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_CONDITION])) {
-            $v = $this->getCondition();
-            foreach($validationRules[self::FIELD_CONDITION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_CONDITION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CONDITION])) {
-                        $errs[self::FIELD_CONDITION] = [];
-                    }
-                    $errs[self::FIELD_CONDITION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_DEFINITION])) {
-            $v = $this->getDefinition();
-            foreach($validationRules[self::FIELD_DEFINITION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_DEFINITION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DEFINITION])) {
-                        $errs[self::FIELD_DEFINITION] = [];
-                    }
-                    $errs[self::FIELD_DEFINITION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_DESCRIPTION])) {
-            $v = $this->getDescription();
-            foreach($validationRules[self::FIELD_DESCRIPTION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_DESCRIPTION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DESCRIPTION])) {
-                        $errs[self::FIELD_DESCRIPTION] = [];
-                    }
-                    $errs[self::FIELD_DESCRIPTION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_DOCUMENTATION])) {
-            $v = $this->getDocumentation();
-            foreach($validationRules[self::FIELD_DOCUMENTATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_DOCUMENTATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DOCUMENTATION])) {
-                        $errs[self::FIELD_DOCUMENTATION] = [];
-                    }
-                    $errs[self::FIELD_DOCUMENTATION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_DYNAMIC_VALUE])) {
-            $v = $this->getDynamicValue();
-            foreach($validationRules[self::FIELD_DYNAMIC_VALUE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_DYNAMIC_VALUE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DYNAMIC_VALUE])) {
-                        $errs[self::FIELD_DYNAMIC_VALUE] = [];
-                    }
-                    $errs[self::FIELD_DYNAMIC_VALUE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_GOAL_ID])) {
-            $v = $this->getGoalId();
-            foreach($validationRules[self::FIELD_GOAL_ID] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_GOAL_ID, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_GOAL_ID])) {
-                        $errs[self::FIELD_GOAL_ID] = [];
-                    }
-                    $errs[self::FIELD_GOAL_ID][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_GROUPING_BEHAVIOR])) {
-            $v = $this->getGroupingBehavior();
-            foreach($validationRules[self::FIELD_GROUPING_BEHAVIOR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_GROUPING_BEHAVIOR, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_GROUPING_BEHAVIOR])) {
-                        $errs[self::FIELD_GROUPING_BEHAVIOR] = [];
-                    }
-                    $errs[self::FIELD_GROUPING_BEHAVIOR][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_INPUT])) {
-            $v = $this->getInput();
-            foreach($validationRules[self::FIELD_INPUT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_INPUT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INPUT])) {
-                        $errs[self::FIELD_INPUT] = [];
-                    }
-                    $errs[self::FIELD_INPUT][$rule] = $err;
+        if ([] !== ($vs = $this->getAction())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_ACTION, $i)] = $fieldErrs;
                 }
             }
         }
@@ -2710,87 +2527,27 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_OUTPUT])) {
-            $v = $this->getOutput();
-            foreach($validationRules[self::FIELD_OUTPUT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_OUTPUT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_TITLE])) {
+            $v = $this->getTitle();
+            foreach($validationRules[self::FIELD_TITLE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_TITLE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_OUTPUT])) {
-                        $errs[self::FIELD_OUTPUT] = [];
+                    if (!isset($errs[self::FIELD_TITLE])) {
+                        $errs[self::FIELD_TITLE] = [];
                     }
-                    $errs[self::FIELD_OUTPUT][$rule] = $err;
+                    $errs[self::FIELD_TITLE][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PARTICIPANT])) {
-            $v = $this->getParticipant();
-            foreach($validationRules[self::FIELD_PARTICIPANT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_PARTICIPANT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_DESCRIPTION])) {
+            $v = $this->getDescription();
+            foreach($validationRules[self::FIELD_DESCRIPTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_DESCRIPTION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PARTICIPANT])) {
-                        $errs[self::FIELD_PARTICIPANT] = [];
+                    if (!isset($errs[self::FIELD_DESCRIPTION])) {
+                        $errs[self::FIELD_DESCRIPTION] = [];
                     }
-                    $errs[self::FIELD_PARTICIPANT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PRECHECK_BEHAVIOR])) {
-            $v = $this->getPrecheckBehavior();
-            foreach($validationRules[self::FIELD_PRECHECK_BEHAVIOR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_PRECHECK_BEHAVIOR, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PRECHECK_BEHAVIOR])) {
-                        $errs[self::FIELD_PRECHECK_BEHAVIOR] = [];
-                    }
-                    $errs[self::FIELD_PRECHECK_BEHAVIOR][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_REASON])) {
-            $v = $this->getReason();
-            foreach($validationRules[self::FIELD_REASON] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_REASON, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REASON])) {
-                        $errs[self::FIELD_REASON] = [];
-                    }
-                    $errs[self::FIELD_REASON][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_RELATED_ACTION])) {
-            $v = $this->getRelatedAction();
-            foreach($validationRules[self::FIELD_RELATED_ACTION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_RELATED_ACTION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RELATED_ACTION])) {
-                        $errs[self::FIELD_RELATED_ACTION] = [];
-                    }
-                    $errs[self::FIELD_RELATED_ACTION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_REQUIRED_BEHAVIOR])) {
-            $v = $this->getRequiredBehavior();
-            foreach($validationRules[self::FIELD_REQUIRED_BEHAVIOR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_REQUIRED_BEHAVIOR, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REQUIRED_BEHAVIOR])) {
-                        $errs[self::FIELD_REQUIRED_BEHAVIOR] = [];
-                    }
-                    $errs[self::FIELD_REQUIRED_BEHAVIOR][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SELECTION_BEHAVIOR])) {
-            $v = $this->getSelectionBehavior();
-            foreach($validationRules[self::FIELD_SELECTION_BEHAVIOR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_SELECTION_BEHAVIOR, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SELECTION_BEHAVIOR])) {
-                        $errs[self::FIELD_SELECTION_BEHAVIOR] = [];
-                    }
-                    $errs[self::FIELD_SELECTION_BEHAVIOR][$rule] = $err;
+                    $errs[self::FIELD_DESCRIPTION][$rule] = $err;
                 }
             }
         }
@@ -2806,6 +2563,114 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_CODE])) {
+            $v = $this->getCode();
+            foreach($validationRules[self::FIELD_CODE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_CODE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CODE])) {
+                        $errs[self::FIELD_CODE] = [];
+                    }
+                    $errs[self::FIELD_CODE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_REASON])) {
+            $v = $this->getReason();
+            foreach($validationRules[self::FIELD_REASON] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_REASON, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REASON])) {
+                        $errs[self::FIELD_REASON] = [];
+                    }
+                    $errs[self::FIELD_REASON][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DOCUMENTATION])) {
+            $v = $this->getDocumentation();
+            foreach($validationRules[self::FIELD_DOCUMENTATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_DOCUMENTATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DOCUMENTATION])) {
+                        $errs[self::FIELD_DOCUMENTATION] = [];
+                    }
+                    $errs[self::FIELD_DOCUMENTATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_GOAL_ID])) {
+            $v = $this->getGoalId();
+            foreach($validationRules[self::FIELD_GOAL_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_GOAL_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_GOAL_ID])) {
+                        $errs[self::FIELD_GOAL_ID] = [];
+                    }
+                    $errs[self::FIELD_GOAL_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TRIGGER_DEFINITION])) {
+            $v = $this->getTriggerDefinition();
+            foreach($validationRules[self::FIELD_TRIGGER_DEFINITION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_TRIGGER_DEFINITION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TRIGGER_DEFINITION])) {
+                        $errs[self::FIELD_TRIGGER_DEFINITION] = [];
+                    }
+                    $errs[self::FIELD_TRIGGER_DEFINITION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONDITION])) {
+            $v = $this->getCondition();
+            foreach($validationRules[self::FIELD_CONDITION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_CONDITION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONDITION])) {
+                        $errs[self::FIELD_CONDITION] = [];
+                    }
+                    $errs[self::FIELD_CONDITION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INPUT])) {
+            $v = $this->getInput();
+            foreach($validationRules[self::FIELD_INPUT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_INPUT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INPUT])) {
+                        $errs[self::FIELD_INPUT] = [];
+                    }
+                    $errs[self::FIELD_INPUT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_OUTPUT])) {
+            $v = $this->getOutput();
+            foreach($validationRules[self::FIELD_OUTPUT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_OUTPUT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_OUTPUT])) {
+                        $errs[self::FIELD_OUTPUT] = [];
+                    }
+                    $errs[self::FIELD_OUTPUT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_RELATED_ACTION])) {
+            $v = $this->getRelatedAction();
+            foreach($validationRules[self::FIELD_RELATED_ACTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_RELATED_ACTION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RELATED_ACTION])) {
+                        $errs[self::FIELD_RELATED_ACTION] = [];
+                    }
+                    $errs[self::FIELD_RELATED_ACTION][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_TIMING_DATE_TIME])) {
             $v = $this->getTimingDateTime();
             foreach($validationRules[self::FIELD_TIMING_DATE_TIME] as $rule => $constraint) {
@@ -2818,18 +2683,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TIMING_DURATION])) {
-            $v = $this->getTimingDuration();
-            foreach($validationRules[self::FIELD_TIMING_DURATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_TIMING_DURATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TIMING_DURATION])) {
-                        $errs[self::FIELD_TIMING_DURATION] = [];
-                    }
-                    $errs[self::FIELD_TIMING_DURATION][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_TIMING_PERIOD])) {
             $v = $this->getTimingPeriod();
             foreach($validationRules[self::FIELD_TIMING_PERIOD] as $rule => $constraint) {
@@ -2839,6 +2692,18 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                         $errs[self::FIELD_TIMING_PERIOD] = [];
                     }
                     $errs[self::FIELD_TIMING_PERIOD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TIMING_DURATION])) {
+            $v = $this->getTimingDuration();
+            foreach($validationRules[self::FIELD_TIMING_DURATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_TIMING_DURATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TIMING_DURATION])) {
+                        $errs[self::FIELD_TIMING_DURATION] = [];
+                    }
+                    $errs[self::FIELD_TIMING_DURATION][$rule] = $err;
                 }
             }
         }
@@ -2866,15 +2731,99 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TITLE])) {
-            $v = $this->getTitle();
-            foreach($validationRules[self::FIELD_TITLE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_TITLE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_PARTICIPANT])) {
+            $v = $this->getParticipant();
+            foreach($validationRules[self::FIELD_PARTICIPANT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_PARTICIPANT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TITLE])) {
-                        $errs[self::FIELD_TITLE] = [];
+                    if (!isset($errs[self::FIELD_PARTICIPANT])) {
+                        $errs[self::FIELD_PARTICIPANT] = [];
                     }
-                    $errs[self::FIELD_TITLE][$rule] = $err;
+                    $errs[self::FIELD_PARTICIPANT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
+                    }
+                    $errs[self::FIELD_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_GROUPING_BEHAVIOR])) {
+            $v = $this->getGroupingBehavior();
+            foreach($validationRules[self::FIELD_GROUPING_BEHAVIOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_GROUPING_BEHAVIOR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_GROUPING_BEHAVIOR])) {
+                        $errs[self::FIELD_GROUPING_BEHAVIOR] = [];
+                    }
+                    $errs[self::FIELD_GROUPING_BEHAVIOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SELECTION_BEHAVIOR])) {
+            $v = $this->getSelectionBehavior();
+            foreach($validationRules[self::FIELD_SELECTION_BEHAVIOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_SELECTION_BEHAVIOR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SELECTION_BEHAVIOR])) {
+                        $errs[self::FIELD_SELECTION_BEHAVIOR] = [];
+                    }
+                    $errs[self::FIELD_SELECTION_BEHAVIOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_REQUIRED_BEHAVIOR])) {
+            $v = $this->getRequiredBehavior();
+            foreach($validationRules[self::FIELD_REQUIRED_BEHAVIOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_REQUIRED_BEHAVIOR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REQUIRED_BEHAVIOR])) {
+                        $errs[self::FIELD_REQUIRED_BEHAVIOR] = [];
+                    }
+                    $errs[self::FIELD_REQUIRED_BEHAVIOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PRECHECK_BEHAVIOR])) {
+            $v = $this->getPrecheckBehavior();
+            foreach($validationRules[self::FIELD_PRECHECK_BEHAVIOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_PRECHECK_BEHAVIOR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PRECHECK_BEHAVIOR])) {
+                        $errs[self::FIELD_PRECHECK_BEHAVIOR] = [];
+                    }
+                    $errs[self::FIELD_PRECHECK_BEHAVIOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CARDINALITY_BEHAVIOR])) {
+            $v = $this->getCardinalityBehavior();
+            foreach($validationRules[self::FIELD_CARDINALITY_BEHAVIOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_CARDINALITY_BEHAVIOR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CARDINALITY_BEHAVIOR])) {
+                        $errs[self::FIELD_CARDINALITY_BEHAVIOR] = [];
+                    }
+                    $errs[self::FIELD_CARDINALITY_BEHAVIOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFINITION])) {
+            $v = $this->getDefinition();
+            foreach($validationRules[self::FIELD_DEFINITION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_DEFINITION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFINITION])) {
+                        $errs[self::FIELD_DEFINITION] = [];
+                    }
+                    $errs[self::FIELD_DEFINITION][$rule] = $err;
                 }
             }
         }
@@ -2890,27 +2839,27 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TRIGGER_DEFINITION])) {
-            $v = $this->getTriggerDefinition();
-            foreach($validationRules[self::FIELD_TRIGGER_DEFINITION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_TRIGGER_DEFINITION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_DYNAMIC_VALUE])) {
+            $v = $this->getDynamicValue();
+            foreach($validationRules[self::FIELD_DYNAMIC_VALUE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_DYNAMIC_VALUE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TRIGGER_DEFINITION])) {
-                        $errs[self::FIELD_TRIGGER_DEFINITION] = [];
+                    if (!isset($errs[self::FIELD_DYNAMIC_VALUE])) {
+                        $errs[self::FIELD_DYNAMIC_VALUE] = [];
                     }
-                    $errs[self::FIELD_TRIGGER_DEFINITION][$rule] = $err;
+                    $errs[self::FIELD_DYNAMIC_VALUE][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TYPE])) {
-            $v = $this->getType();
-            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_TYPE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_ACTION])) {
+            $v = $this->getAction();
+            foreach($validationRules[self::FIELD_ACTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_ACTION, self::FIELD_ACTION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TYPE])) {
-                        $errs[self::FIELD_TYPE] = [];
+                    if (!isset($errs[self::FIELD_ACTION])) {
+                        $errs[self::FIELD_ACTION] = [];
                     }
-                    $errs[self::FIELD_TYPE][$rule] = $err;
+                    $errs[self::FIELD_ACTION][$rule] = $err;
                 }
             }
         }
@@ -2954,257 +2903,240 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRPlanDefinitionAction::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRPlanDefinitionAction::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRPlanDefinitionAction::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRPlanDefinitionAction;
+            $type = new FHIRPlanDefinitionAction(null);
         } elseif (!is_object($type) || !($type instanceof FHIRPlanDefinitionAction)) {
             throw new \RuntimeException(sprintf(
                 'FHIRPlanDefinitionAction::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_LABEL === $n->nodeName) {
+                $type->setLabel(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_TITLE === $n->nodeName) {
+                $type->setTitle(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_DESCRIPTION === $n->nodeName) {
+                $type->setDescription(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_TEXT_EQUIVALENT === $n->nodeName) {
+                $type->setTextEquivalent(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_CODE === $n->nodeName) {
+                $type->addCode(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_REASON === $n->nodeName) {
+                $type->addReason(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DOCUMENTATION === $n->nodeName) {
+                $type->addDocumentation(FHIRRelatedArtifact::xmlUnserialize($n));
+            } elseif (self::FIELD_GOAL_ID === $n->nodeName) {
+                $type->addGoalId(FHIRId::xmlUnserialize($n));
+            } elseif (self::FIELD_TRIGGER_DEFINITION === $n->nodeName) {
+                $type->addTriggerDefinition(FHIRTriggerDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_CONDITION === $n->nodeName) {
+                $type->addCondition(FHIRPlanDefinitionCondition::xmlUnserialize($n));
+            } elseif (self::FIELD_INPUT === $n->nodeName) {
+                $type->addInput(FHIRDataRequirement::xmlUnserialize($n));
+            } elseif (self::FIELD_OUTPUT === $n->nodeName) {
+                $type->addOutput(FHIRDataRequirement::xmlUnserialize($n));
+            } elseif (self::FIELD_RELATED_ACTION === $n->nodeName) {
+                $type->addRelatedAction(FHIRPlanDefinitionRelatedAction::xmlUnserialize($n));
+            } elseif (self::FIELD_TIMING_DATE_TIME === $n->nodeName) {
+                $type->setTimingDateTime(FHIRDateTime::xmlUnserialize($n));
+            } elseif (self::FIELD_TIMING_PERIOD === $n->nodeName) {
+                $type->setTimingPeriod(FHIRPeriod::xmlUnserialize($n));
+            } elseif (self::FIELD_TIMING_DURATION === $n->nodeName) {
+                $type->setTimingDuration(FHIRDuration::xmlUnserialize($n));
+            } elseif (self::FIELD_TIMING_RANGE === $n->nodeName) {
+                $type->setTimingRange(FHIRRange::xmlUnserialize($n));
+            } elseif (self::FIELD_TIMING_TIMING === $n->nodeName) {
+                $type->setTimingTiming(FHIRTiming::xmlUnserialize($n));
+            } elseif (self::FIELD_PARTICIPANT === $n->nodeName) {
+                $type->addParticipant(FHIRPlanDefinitionParticipant::xmlUnserialize($n));
+            } elseif (self::FIELD_TYPE === $n->nodeName) {
+                $type->setType(FHIRCoding::xmlUnserialize($n));
+            } elseif (self::FIELD_GROUPING_BEHAVIOR === $n->nodeName) {
+                $type->setGroupingBehavior(FHIRActionGroupingBehavior::xmlUnserialize($n));
+            } elseif (self::FIELD_SELECTION_BEHAVIOR === $n->nodeName) {
+                $type->setSelectionBehavior(FHIRActionSelectionBehavior::xmlUnserialize($n));
+            } elseif (self::FIELD_REQUIRED_BEHAVIOR === $n->nodeName) {
+                $type->setRequiredBehavior(FHIRActionRequiredBehavior::xmlUnserialize($n));
+            } elseif (self::FIELD_PRECHECK_BEHAVIOR === $n->nodeName) {
+                $type->setPrecheckBehavior(FHIRActionPrecheckBehavior::xmlUnserialize($n));
+            } elseif (self::FIELD_CARDINALITY_BEHAVIOR === $n->nodeName) {
+                $type->setCardinalityBehavior(FHIRActionCardinalityBehavior::xmlUnserialize($n));
+            } elseif (self::FIELD_DEFINITION === $n->nodeName) {
+                $type->setDefinition(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_TRANSFORM === $n->nodeName) {
+                $type->setTransform(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_DYNAMIC_VALUE === $n->nodeName) {
+                $type->addDynamicValue(FHIRPlanDefinitionDynamicValue::xmlUnserialize($n));
+            } elseif (self::FIELD_ACTION === $n->nodeName) {
+                $type->addAction(FHIRPlanDefinitionAction::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->action)) {
-            foreach($children->action as $child) {
-                $type->addAction(FHIRPlanDefinitionAction::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->cardinalityBehavior)) {
-            $type->setCardinalityBehavior(FHIRActionCardinalityBehavior::xmlUnserialize($children->cardinalityBehavior));
-        }
-        if (isset($children->code)) {
-            foreach($children->code as $child) {
-                $type->addCode(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->condition)) {
-            foreach($children->condition as $child) {
-                $type->addCondition(FHIRPlanDefinitionCondition::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->definition)) {
-            $type->setDefinition(FHIRReference::xmlUnserialize($children->definition));
-        }
-        if (isset($children->description)) {
-            $type->setDescription(FHIRString::xmlUnserialize($children->description));
-        }
-        if (isset($attributes->description)) {
-            $pt = $type->getDescription();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->description);
-            } else {
-                $type->setDescription((string)$attributes->description);
-            }
-        }
-        if (isset($children->documentation)) {
-            foreach($children->documentation as $child) {
-                $type->addDocumentation(FHIRRelatedArtifact::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->dynamicValue)) {
-            foreach($children->dynamicValue as $child) {
-                $type->addDynamicValue(FHIRPlanDefinitionDynamicValue::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->goalId)) {
-            foreach($children->goalId as $child) {
-                $type->addGoalId(FHIRId::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->groupingBehavior)) {
-            $type->setGroupingBehavior(FHIRActionGroupingBehavior::xmlUnserialize($children->groupingBehavior));
-        }
-        if (isset($children->input)) {
-            foreach($children->input as $child) {
-                $type->addInput(FHIRDataRequirement::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->label)) {
-            $type->setLabel(FHIRString::xmlUnserialize($children->label));
-        }
-        if (isset($attributes->label)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_LABEL);
+        if (null !== $n) {
             $pt = $type->getLabel();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->label);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setLabel((string)$attributes->label);
+                $type->setLabel($n->nodeValue);
             }
         }
-        if (isset($children->output)) {
-            foreach($children->output as $child) {
-                $type->addOutput(FHIRDataRequirement::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->participant)) {
-            foreach($children->participant as $child) {
-                $type->addParticipant(FHIRPlanDefinitionParticipant::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->precheckBehavior)) {
-            $type->setPrecheckBehavior(FHIRActionPrecheckBehavior::xmlUnserialize($children->precheckBehavior));
-        }
-        if (isset($children->reason)) {
-            foreach($children->reason as $child) {
-                $type->addReason(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->relatedAction)) {
-            foreach($children->relatedAction as $child) {
-                $type->addRelatedAction(FHIRPlanDefinitionRelatedAction::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->requiredBehavior)) {
-            $type->setRequiredBehavior(FHIRActionRequiredBehavior::xmlUnserialize($children->requiredBehavior));
-        }
-        if (isset($children->selectionBehavior)) {
-            $type->setSelectionBehavior(FHIRActionSelectionBehavior::xmlUnserialize($children->selectionBehavior));
-        }
-        if (isset($children->textEquivalent)) {
-            $type->setTextEquivalent(FHIRString::xmlUnserialize($children->textEquivalent));
-        }
-        if (isset($attributes->textEquivalent)) {
-            $pt = $type->getTextEquivalent();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->textEquivalent);
-            } else {
-                $type->setTextEquivalent((string)$attributes->textEquivalent);
-            }
-        }
-        if (isset($children->timingDateTime)) {
-            $type->setTimingDateTime(FHIRDateTime::xmlUnserialize($children->timingDateTime));
-        }
-        if (isset($attributes->timingDateTime)) {
-            $pt = $type->getTimingDateTime();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->timingDateTime);
-            } else {
-                $type->setTimingDateTime((string)$attributes->timingDateTime);
-            }
-        }
-        if (isset($children->timingDuration)) {
-            $type->setTimingDuration(FHIRDuration::xmlUnserialize($children->timingDuration));
-        }
-        if (isset($children->timingPeriod)) {
-            $type->setTimingPeriod(FHIRPeriod::xmlUnserialize($children->timingPeriod));
-        }
-        if (isset($children->timingRange)) {
-            $type->setTimingRange(FHIRRange::xmlUnserialize($children->timingRange));
-        }
-        if (isset($children->timingTiming)) {
-            $type->setTimingTiming(FHIRTiming::xmlUnserialize($children->timingTiming));
-        }
-        if (isset($children->title)) {
-            $type->setTitle(FHIRString::xmlUnserialize($children->title));
-        }
-        if (isset($attributes->title)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_TITLE);
+        if (null !== $n) {
             $pt = $type->getTitle();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->title);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setTitle((string)$attributes->title);
+                $type->setTitle($n->nodeValue);
             }
         }
-        if (isset($children->transform)) {
-            $type->setTransform(FHIRReference::xmlUnserialize($children->transform));
-        }
-        if (isset($children->triggerDefinition)) {
-            foreach($children->triggerDefinition as $child) {
-                $type->addTriggerDefinition(FHIRTriggerDefinition::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_DESCRIPTION);
+        if (null !== $n) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setDescription($n->nodeValue);
             }
         }
-        if (isset($children->type)) {
-            $type->setType(FHIRCoding::xmlUnserialize($children->type));
+        $n = $element->attributes->getNamedItem(self::FIELD_TEXT_EQUIVALENT);
+        if (null !== $n) {
+            $pt = $type->getTextEquivalent();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setTextEquivalent($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_GOAL_ID);
+        if (null !== $n) {
+            $pt = $type->getGoalId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->addGoalId($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_TIMING_DATE_TIME);
+        if (null !== $n) {
+            $pt = $type->getTimingDateTime();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setTimingDateTime($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getAction())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION, null, $v->_getFHIRXMLNamespace()));
-            }
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getLabel())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_LABEL);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getCardinalityBehavior())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CARDINALITY_BEHAVIOR, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getTitle())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TITLE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DESCRIPTION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getTextEquivalent())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TEXT_EQUIVALENT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getCode())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_CODE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if ([] !== ($vs = $this->getCondition())) {
+        if ([] !== ($vs = $this->getReason())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_REASON);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
-        }
-        if (null !== ($v = $this->getDefinition())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getDocumentation())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if ([] !== ($vs = $this->getDynamicValue())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DYNAMIC_VALUE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_DOCUMENTATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getGoalId())) {
@@ -3212,48 +3144,49 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_GOAL_ID, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_GOAL_ID);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getGroupingBehavior())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_GROUPING_BEHAVIOR, null, $v->_getFHIRXMLNamespace()));
+        if ([] !== ($vs = $this->getTriggerDefinition())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_TRIGGER_DEFINITION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if ([] !== ($vs = $this->getCondition())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_CONDITION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
         }
         if ([] !== ($vs = $this->getInput())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INPUT, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_INPUT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
-        }
-        if (null !== ($v = $this->getLabel())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LABEL, null, $v->_getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getOutput())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_OUTPUT, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if ([] !== ($vs = $this->getParticipant())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getPrecheckBehavior())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRECHECK_BEHAVIOR, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getReason())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_OUTPUT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getRelatedAction())) {
@@ -3261,51 +3194,107 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_RELATED_ACTION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_RELATED_ACTION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getRequiredBehavior())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIRED_BEHAVIOR, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getSelectionBehavior())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SELECTION_BEHAVIOR, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getTextEquivalent())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT_EQUIVALENT, null, $v->_getFHIRXMLNamespace()));
-        }
         if (null !== ($v = $this->getTimingDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getTimingDuration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_DURATION, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_TIMING_DATE_TIME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getTimingPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_PERIOD, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_TIMING_PERIOD);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getTimingDuration())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TIMING_DURATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getTimingRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_RANGE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_TIMING_RANGE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getTimingTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMING_TIMING, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_TIMING_TIMING);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getTitle())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TITLE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getTransform())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TRANSFORM, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getTriggerDefinition())) {
+        if ([] !== ($vs = $this->getParticipant())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TRIGGER_DEFINITION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PARTICIPANT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getGroupingBehavior())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_GROUPING_BEHAVIOR);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getSelectionBehavior())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SELECTION_BEHAVIOR);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getRequiredBehavior())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_REQUIRED_BEHAVIOR);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getPrecheckBehavior())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PRECHECK_BEHAVIOR);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getCardinalityBehavior())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_CARDINALITY_BEHAVIOR);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDefinition())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DEFINITION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getTransform())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TRANSFORM);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getDynamicValue())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_DYNAMIC_VALUE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if ([] !== ($vs = $this->getAction())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_ACTION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        return $element;
     }
 
     /**
@@ -3314,22 +3303,44 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getAction())) {
-            $a[self::FIELD_ACTION] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_ACTION][] = $v;
+        if (null !== ($v = $this->getLabel())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LABEL] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_LABEL_EXT] = $ext;
             }
         }
-        if (null !== ($v = $this->getCardinalityBehavior())) {
-            $a[self::FIELD_CARDINALITY_BEHAVIOR] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRActionCardinalityBehavior::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRActionCardinalityBehavior::FIELD_VALUE]);
-                $a[self::FIELD_CARDINALITY_BEHAVIOR_EXT] = $enc;
+        if (null !== ($v = $this->getTitle())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TITLE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_TITLE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getDescription())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DESCRIPTION_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getTextEquivalent())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TEXT_EQUIVALENT] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_TEXT_EQUIVALENT_EXT] = $ext;
             }
         }
         if ([] !== ($vs = $this->getCode())) {
@@ -3341,25 +3352,13 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $a[self::FIELD_CODE][] = $v;
             }
         }
-        if ([] !== ($vs = $this->getCondition())) {
-            $a[self::FIELD_CONDITION] = [];
+        if ([] !== ($vs = $this->getReason())) {
+            $a[self::FIELD_REASON] = [];
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_CONDITION][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getDefinition())) {
-            $a[self::FIELD_DEFINITION] = $v;
-        }
-        if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+                $a[self::FIELD_REASON][] = $v;
             }
         }
         if ([] !== ($vs = $this->getDocumentation())) {
@@ -3371,45 +3370,46 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $a[self::FIELD_DOCUMENTATION][] = $v;
             }
         }
-        if ([] !== ($vs = $this->getDynamicValue())) {
-            $a[self::FIELD_DYNAMIC_VALUE] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_DYNAMIC_VALUE][] = $v;
-            }
-        }
         if ([] !== ($vs = $this->getGoalId())) {
-            $a[self::FIELD_GOAL_ID] = [];
-            $encs = [];
-            $encValued = false;
+            $vals = [];
+            $exts = [];
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_GOAL_ID][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRId::FIELD_VALUE]) || array_key_exists(FHIRId::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRId::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext[FHIRId::FIELD_VALUE]);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
                 }
             }
-            if ($encValued) {
-                $a[self::FIELD_GOAL_ID_EXT] = $encs;
+            if ([] !== $vals) {
+                $a[self::FIELD_GOAL_ID] = $vals;
+            }
+            if ([] !== $exts) {
+                $a[self::FIELD_GOAL_ID_EXT] = $exts;
             }
         }
-        if (null !== ($v = $this->getGroupingBehavior())) {
-            $a[self::FIELD_GROUPING_BEHAVIOR] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRActionGroupingBehavior::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRActionGroupingBehavior::FIELD_VALUE]);
-                $a[self::FIELD_GROUPING_BEHAVIOR_EXT] = $enc;
+        if ([] !== ($vs = $this->getTriggerDefinition())) {
+            $a[self::FIELD_TRIGGER_DEFINITION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_TRIGGER_DEFINITION][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->getCondition())) {
+            $a[self::FIELD_CONDITION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CONDITION][] = $v;
             }
         }
         if ([] !== ($vs = $this->getInput())) {
@@ -3421,15 +3421,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $a[self::FIELD_INPUT][] = $v;
             }
         }
-        if (null !== ($v = $this->getLabel())) {
-            $a[self::FIELD_LABEL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_LABEL_EXT] = $enc;
-            }
-        }
         if ([] !== ($vs = $this->getOutput())) {
             $a[self::FIELD_OUTPUT] = [];
             foreach($vs as $v) {
@@ -3437,33 +3428,6 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_OUTPUT][] = $v;
-            }
-        }
-        if ([] !== ($vs = $this->getParticipant())) {
-            $a[self::FIELD_PARTICIPANT] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PARTICIPANT][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getPrecheckBehavior())) {
-            $a[self::FIELD_PRECHECK_BEHAVIOR] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRActionPrecheckBehavior::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRActionPrecheckBehavior::FIELD_VALUE]);
-                $a[self::FIELD_PRECHECK_BEHAVIOR_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->getReason())) {
-            $a[self::FIELD_REASON] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_REASON][] = $v;
             }
         }
         if ([] !== ($vs = $this->getRelatedAction())) {
@@ -3475,47 +3439,21 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $a[self::FIELD_RELATED_ACTION][] = $v;
             }
         }
-        if (null !== ($v = $this->getRequiredBehavior())) {
-            $a[self::FIELD_REQUIRED_BEHAVIOR] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRActionRequiredBehavior::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRActionRequiredBehavior::FIELD_VALUE]);
-                $a[self::FIELD_REQUIRED_BEHAVIOR_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getSelectionBehavior())) {
-            $a[self::FIELD_SELECTION_BEHAVIOR] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRActionSelectionBehavior::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRActionSelectionBehavior::FIELD_VALUE]);
-                $a[self::FIELD_SELECTION_BEHAVIOR_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getTextEquivalent())) {
-            $a[self::FIELD_TEXT_EQUIVALENT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_TEXT_EQUIVALENT_EXT] = $enc;
-            }
-        }
         if (null !== ($v = $this->getTimingDateTime())) {
-            $a[self::FIELD_TIMING_DATE_TIME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_TIMING_DATE_TIME_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TIMING_DATE_TIME] = $val;
             }
-        }
-        if (null !== ($v = $this->getTimingDuration())) {
-            $a[self::FIELD_TIMING_DURATION] = $v;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDateTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_TIMING_DATE_TIME_EXT] = $ext;
+            }
         }
         if (null !== ($v = $this->getTimingPeriod())) {
             $a[self::FIELD_TIMING_PERIOD] = $v;
+        }
+        if (null !== ($v = $this->getTimingDuration())) {
+            $a[self::FIELD_TIMING_DURATION] = $v;
         }
         if (null !== ($v = $this->getTimingRange())) {
             $a[self::FIELD_TIMING_RANGE] = $v;
@@ -3523,32 +3461,91 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
         if (null !== ($v = $this->getTimingTiming())) {
             $a[self::FIELD_TIMING_TIMING] = $v;
         }
-        if (null !== ($v = $this->getTitle())) {
-            $a[self::FIELD_TITLE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_TITLE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getTransform())) {
-            $a[self::FIELD_TRANSFORM] = $v;
-        }
-        if ([] !== ($vs = $this->getTriggerDefinition())) {
-            $a[self::FIELD_TRIGGER_DEFINITION] = [];
+        if ([] !== ($vs = $this->getParticipant())) {
+            $a[self::FIELD_PARTICIPANT] = [];
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_TRIGGER_DEFINITION][] = $v;
+                $a[self::FIELD_PARTICIPANT][] = $v;
             }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getGroupingBehavior())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_GROUPING_BEHAVIOR] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRActionGroupingBehavior::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_GROUPING_BEHAVIOR_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getSelectionBehavior())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SELECTION_BEHAVIOR] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRActionSelectionBehavior::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_SELECTION_BEHAVIOR_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getRequiredBehavior())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_REQUIRED_BEHAVIOR] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRActionRequiredBehavior::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_REQUIRED_BEHAVIOR_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getPrecheckBehavior())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PRECHECK_BEHAVIOR] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRActionPrecheckBehavior::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PRECHECK_BEHAVIOR_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getCardinalityBehavior())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CARDINALITY_BEHAVIOR] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRActionCardinalityBehavior::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_CARDINALITY_BEHAVIOR_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getDefinition())) {
+            $a[self::FIELD_DEFINITION] = $v;
+        }
+        if (null !== ($v = $this->getTransform())) {
+            $a[self::FIELD_TRANSFORM] = $v;
+        }
+        if ([] !== ($vs = $this->getDynamicValue())) {
+            $a[self::FIELD_DYNAMIC_VALUE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_DYNAMIC_VALUE][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->getAction())) {
+            $a[self::FIELD_ACTION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ACTION][] = $v;
+            }
         }
         return $a;
     }

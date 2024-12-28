@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,8 +64,10 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -79,26 +81,15 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_POLYMER_DOT_REPEAT;
-    const FIELD_AVERAGE_MOLECULAR_FORMULA = 'averageMolecularFormula';
-    const FIELD_AVERAGE_MOLECULAR_FORMULA_EXT = '_averageMolecularFormula';
     const FIELD_NUMBER_OF_UNITS = 'numberOfUnits';
     const FIELD_NUMBER_OF_UNITS_EXT = '_numberOfUnits';
-    const FIELD_REPEAT_UNIT = 'repeatUnit';
+    const FIELD_AVERAGE_MOLECULAR_FORMULA = 'averageMolecularFormula';
+    const FIELD_AVERAGE_MOLECULAR_FORMULA_EXT = '_averageMolecularFormula';
     const FIELD_REPEAT_UNIT_AMOUNT_TYPE = 'repeatUnitAmountType';
+    const FIELD_REPEAT_UNIT = 'repeatUnit';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Todo.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $averageMolecularFormula = null;
+    private $_xmlns = '';
 
     /**
      * A whole number
@@ -112,13 +103,15 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
     protected $numberOfUnits = null;
 
     /**
-     * Todo.
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $repeatUnit = [];
+    protected $averageMolecularFormula = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -131,6 +124,15 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected $repeatUnitAmountType = null;
+
+    /**
+     * Todo.
+     *
+     * Todo.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit[]
+     */
+    protected $repeatUnit = [];
 
     /**
      * Validation map for fields in type SubstancePolymer.Repeat
@@ -154,40 +156,9 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA]) || isset($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT])) {
-            if (isset($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA])) {
-                $value = $data[self::FIELD_AVERAGE_MOLECULAR_FORMULA];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT]) && is_array($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT])) {
-                $ext = $data[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setAverageMolecularFormula($value);
-                } else if (is_array($value)) {
-                    $this->setAverageMolecularFormula(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setAverageMolecularFormula(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setAverageMolecularFormula(new FHIRString($ext));
-            }
-        }
         if (isset($data[self::FIELD_NUMBER_OF_UNITS]) || isset($data[self::FIELD_NUMBER_OF_UNITS_EXT])) {
-            if (isset($data[self::FIELD_NUMBER_OF_UNITS])) {
-                $value = $data[self::FIELD_NUMBER_OF_UNITS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_NUMBER_OF_UNITS_EXT]) && is_array($data[self::FIELD_NUMBER_OF_UNITS_EXT])) {
-                $ext = $data[self::FIELD_NUMBER_OF_UNITS_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_NUMBER_OF_UNITS]) ? $data[self::FIELD_NUMBER_OF_UNITS] : null;
+            $ext = (isset($data[self::FIELD_NUMBER_OF_UNITS_EXT]) && is_array($data[self::FIELD_NUMBER_OF_UNITS_EXT])) ? $ext = $data[self::FIELD_NUMBER_OF_UNITS_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRInteger) {
                     $this->setNumberOfUnits($value);
@@ -196,8 +167,30 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
                 } else {
                     $this->setNumberOfUnits(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setNumberOfUnits(new FHIRInteger($ext));
+            }
+        }
+        if (isset($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA]) || isset($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT])) {
+            $value = isset($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA]) ? $data[self::FIELD_AVERAGE_MOLECULAR_FORMULA] : null;
+            $ext = (isset($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT]) && is_array($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT])) ? $ext = $data[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setAverageMolecularFormula($value);
+                } else if (is_array($value)) {
+                    $this->setAverageMolecularFormula(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setAverageMolecularFormula(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setAverageMolecularFormula(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE])) {
+            if ($data[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setRepeatUnitAmountType($data[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE]);
+            } else {
+                $this->setRepeatUnitAmountType(new FHIRCodeableConcept($data[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE]));
             }
         }
         if (isset($data[self::FIELD_REPEAT_UNIT])) {
@@ -212,17 +205,10 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
                         $this->addRepeatUnit(new FHIRSubstancePolymerRepeatUnit($v));
                     }
                 }
-            } else if ($data[self::FIELD_REPEAT_UNIT] instanceof FHIRSubstancePolymerRepeatUnit) {
+            } elseif ($data[self::FIELD_REPEAT_UNIT] instanceof FHIRSubstancePolymerRepeatUnit) {
                 $this->addRepeatUnit($data[self::FIELD_REPEAT_UNIT]);
             } else {
                 $this->addRepeatUnit(new FHIRSubstancePolymerRepeatUnit($data[self::FIELD_REPEAT_UNIT]));
-            }
-        }
-        if (isset($data[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE])) {
-            if ($data[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setRepeatUnitAmountType($data[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE]);
-            } else {
-                $this->setRepeatUnitAmountType(new FHIRCodeableConcept($data[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE]));
             }
         }
     }
@@ -241,48 +227,10 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<SubstancePolymerRepeat{$xmlns}></SubstancePolymerRepeat>";
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getAverageMolecularFormula()
-    {
-        return $this->averageMolecularFormula;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $averageMolecularFormula
-     * @return static
-     */
-    public function setAverageMolecularFormula($averageMolecularFormula = null)
-    {
-        if (null === $averageMolecularFormula) {
-            $this->averageMolecularFormula = null;
-            return $this;
-        }
-        if ($averageMolecularFormula instanceof FHIRString) {
-            $this->averageMolecularFormula = $averageMolecularFormula;
-            return $this;
-        }
-        $this->averageMolecularFormula = new FHIRString($averageMolecularFormula);
-        return $this;
     }
 
     /**
@@ -311,65 +259,45 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
      */
     public function setNumberOfUnits($numberOfUnits = null)
     {
-        if (null === $numberOfUnits) {
-            $this->numberOfUnits = null;
-            return $this;
+        if (null !== $numberOfUnits && !($numberOfUnits instanceof FHIRInteger)) {
+            $numberOfUnits = new FHIRInteger($numberOfUnits);
         }
-        if ($numberOfUnits instanceof FHIRInteger) {
-            $this->numberOfUnits = $numberOfUnits;
-            return $this;
-        }
-        $this->numberOfUnits = new FHIRInteger($numberOfUnits);
+        $this->_trackValueSet($this->numberOfUnits, $numberOfUnits);
+        $this->numberOfUnits = $numberOfUnits;
         return $this;
     }
 
     /**
-     * Todo.
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit[]
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    public function getRepeatUnit()
+    public function getAverageMolecularFormula()
     {
-        return $this->repeatUnit;
+        return $this->averageMolecularFormula;
     }
 
     /**
-     * Todo.
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit $repeatUnit
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $averageMolecularFormula
      * @return static
      */
-    public function addRepeatUnit(FHIRSubstancePolymerRepeatUnit $repeatUnit = null)
+    public function setAverageMolecularFormula($averageMolecularFormula = null)
     {
-        $this->repeatUnit[] = $repeatUnit;
-        return $this;
-    }
-
-    /**
-     * Todo.
-     *
-     * Todo.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit[] $repeatUnit
-     * @return static
-     */
-    public function setRepeatUnit(array $repeatUnit = [])
-    {
-        $this->repeatUnit = [];
-        if ([] === $repeatUnit) {
-            return $this;
+        if (null !== $averageMolecularFormula && !($averageMolecularFormula instanceof FHIRString)) {
+            $averageMolecularFormula = new FHIRString($averageMolecularFormula);
         }
-        foreach($repeatUnit as $v) {
-            if ($v instanceof FHIRSubstancePolymerRepeatUnit) {
-                $this->addRepeatUnit($v);
-            } else {
-                $this->addRepeatUnit(new FHIRSubstancePolymerRepeatUnit($v));
-            }
-        }
+        $this->_trackValueSet($this->averageMolecularFormula, $averageMolecularFormula);
+        $this->averageMolecularFormula = $averageMolecularFormula;
         return $this;
     }
 
@@ -401,7 +329,62 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
      */
     public function setRepeatUnitAmountType(FHIRCodeableConcept $repeatUnitAmountType = null)
     {
+        $this->_trackValueSet($this->repeatUnitAmountType, $repeatUnitAmountType);
         $this->repeatUnitAmountType = $repeatUnitAmountType;
+        return $this;
+    }
+
+    /**
+     * Todo.
+     *
+     * Todo.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit[]
+     */
+    public function getRepeatUnit()
+    {
+        return $this->repeatUnit;
+    }
+
+    /**
+     * Todo.
+     *
+     * Todo.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit $repeatUnit
+     * @return static
+     */
+    public function addRepeatUnit(FHIRSubstancePolymerRepeatUnit $repeatUnit = null)
+    {
+        $this->_trackValueAdded();
+        $this->repeatUnit[] = $repeatUnit;
+        return $this;
+    }
+
+    /**
+     * Todo.
+     *
+     * Todo.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeatUnit[] $repeatUnit
+     * @return static
+     */
+    public function setRepeatUnit(array $repeatUnit = [])
+    {
+        if ([] !== $this->repeatUnit) {
+            $this->_trackValuesRemoved(count($this->repeatUnit));
+            $this->repeatUnit = [];
+        }
+        if ([] === $repeatUnit) {
+            return $this;
+        }
+        foreach($repeatUnit as $v) {
+            if ($v instanceof FHIRSubstancePolymerRepeatUnit) {
+                $this->addRepeatUnit($v);
+            } else {
+                $this->addRepeatUnit(new FHIRSubstancePolymerRepeatUnit($v));
+            }
+        }
         return $this;
     }
 
@@ -426,21 +409,14 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getAverageMolecularFormula())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_AVERAGE_MOLECULAR_FORMULA] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getNumberOfUnits())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_NUMBER_OF_UNITS] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getRepeatUnit())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_REPEAT_UNIT, $i)] = $fieldErrs;
-                }
+        if (null !== ($v = $this->getAverageMolecularFormula())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_AVERAGE_MOLECULAR_FORMULA] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getRepeatUnitAmountType())) {
@@ -448,15 +424,10 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
                 $errs[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_AVERAGE_MOLECULAR_FORMULA])) {
-            $v = $this->getAverageMolecularFormula();
-            foreach($validationRules[self::FIELD_AVERAGE_MOLECULAR_FORMULA] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_POLYMER_DOT_REPEAT, self::FIELD_AVERAGE_MOLECULAR_FORMULA, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_AVERAGE_MOLECULAR_FORMULA])) {
-                        $errs[self::FIELD_AVERAGE_MOLECULAR_FORMULA] = [];
-                    }
-                    $errs[self::FIELD_AVERAGE_MOLECULAR_FORMULA][$rule] = $err;
+        if ([] !== ($vs = $this->getRepeatUnit())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_REPEAT_UNIT, $i)] = $fieldErrs;
                 }
             }
         }
@@ -472,15 +443,15 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_REPEAT_UNIT])) {
-            $v = $this->getRepeatUnit();
-            foreach($validationRules[self::FIELD_REPEAT_UNIT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_POLYMER_DOT_REPEAT, self::FIELD_REPEAT_UNIT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_AVERAGE_MOLECULAR_FORMULA])) {
+            $v = $this->getAverageMolecularFormula();
+            foreach($validationRules[self::FIELD_AVERAGE_MOLECULAR_FORMULA] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_POLYMER_DOT_REPEAT, self::FIELD_AVERAGE_MOLECULAR_FORMULA, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REPEAT_UNIT])) {
-                        $errs[self::FIELD_REPEAT_UNIT] = [];
+                    if (!isset($errs[self::FIELD_AVERAGE_MOLECULAR_FORMULA])) {
+                        $errs[self::FIELD_AVERAGE_MOLECULAR_FORMULA] = [];
                     }
-                    $errs[self::FIELD_REPEAT_UNIT][$rule] = $err;
+                    $errs[self::FIELD_AVERAGE_MOLECULAR_FORMULA][$rule] = $err;
                 }
             }
         }
@@ -493,6 +464,18 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
                         $errs[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE] = [];
                     }
                     $errs[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_REPEAT_UNIT])) {
+            $v = $this->getRepeatUnit();
+            foreach($validationRules[self::FIELD_REPEAT_UNIT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_POLYMER_DOT_REPEAT, self::FIELD_REPEAT_UNIT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REPEAT_UNIT])) {
+                        $errs[self::FIELD_REPEAT_UNIT] = [];
+                    }
+                    $errs[self::FIELD_REPEAT_UNIT][$rule] = $err;
                 }
             }
         }
@@ -536,107 +519,132 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeat $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeat
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRSubstancePolymerRepeat::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSubstancePolymerRepeat::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRSubstancePolymerRepeat::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRSubstancePolymerRepeat;
+            $type = new FHIRSubstancePolymerRepeat(null);
         } elseif (!is_object($type) || !($type instanceof FHIRSubstancePolymerRepeat)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSubstancePolymerRepeat::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeat or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_NUMBER_OF_UNITS === $n->nodeName) {
+                $type->setNumberOfUnits(FHIRInteger::xmlUnserialize($n));
+            } elseif (self::FIELD_AVERAGE_MOLECULAR_FORMULA === $n->nodeName) {
+                $type->setAverageMolecularFormula(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_REPEAT_UNIT_AMOUNT_TYPE === $n->nodeName) {
+                $type->setRepeatUnitAmountType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_REPEAT_UNIT === $n->nodeName) {
+                $type->addRepeatUnit(FHIRSubstancePolymerRepeatUnit::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->averageMolecularFormula)) {
-            $type->setAverageMolecularFormula(FHIRString::xmlUnserialize($children->averageMolecularFormula));
-        }
-        if (isset($attributes->averageMolecularFormula)) {
-            $pt = $type->getAverageMolecularFormula();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->averageMolecularFormula);
-            } else {
-                $type->setAverageMolecularFormula((string)$attributes->averageMolecularFormula);
-            }
-        }
-        if (isset($children->numberOfUnits)) {
-            $type->setNumberOfUnits(FHIRInteger::xmlUnserialize($children->numberOfUnits));
-        }
-        if (isset($attributes->numberOfUnits)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_NUMBER_OF_UNITS);
+        if (null !== $n) {
             $pt = $type->getNumberOfUnits();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->numberOfUnits);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setNumberOfUnits((string)$attributes->numberOfUnits);
+                $type->setNumberOfUnits($n->nodeValue);
             }
         }
-        if (isset($children->repeatUnit)) {
-            foreach($children->repeatUnit as $child) {
-                $type->addRepeatUnit(FHIRSubstancePolymerRepeatUnit::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_AVERAGE_MOLECULAR_FORMULA);
+        if (null !== $n) {
+            $pt = $type->getAverageMolecularFormula();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setAverageMolecularFormula($n->nodeValue);
             }
         }
-        if (isset($children->repeatUnitAmountType)) {
-            $type->setRepeatUnitAmountType(FHIRCodeableConcept::xmlUnserialize($children->repeatUnitAmountType));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getAverageMolecularFormula())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AVERAGE_MOLECULAR_FORMULA, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getNumberOfUnits())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NUMBER_OF_UNITS, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_NUMBER_OF_UNITS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getAverageMolecularFormula())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_AVERAGE_MOLECULAR_FORMULA);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getRepeatUnitAmountType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_REPEAT_UNIT_AMOUNT_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getRepeatUnit())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REPEAT_UNIT, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_REPEAT_UNIT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getRepeatUnitAmountType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REPEAT_UNIT_AMOUNT_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -645,23 +653,28 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAverageMolecularFormula())) {
-            $a[self::FIELD_AVERAGE_MOLECULAR_FORMULA] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT] = $enc;
+        if (null !== ($v = $this->getNumberOfUnits())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NUMBER_OF_UNITS] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRInteger::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_NUMBER_OF_UNITS_EXT] = $ext;
             }
         }
-        if (null !== ($v = $this->getNumberOfUnits())) {
-            $a[self::FIELD_NUMBER_OF_UNITS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_NUMBER_OF_UNITS_EXT] = $enc;
+        if (null !== ($v = $this->getAverageMolecularFormula())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AVERAGE_MOLECULAR_FORMULA] = $val;
             }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getRepeatUnitAmountType())) {
+            $a[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE] = $v;
         }
         if ([] !== ($vs = $this->getRepeatUnit())) {
             $a[self::FIELD_REPEAT_UNIT] = [];
@@ -671,12 +684,6 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
                 }
                 $a[self::FIELD_REPEAT_UNIT][] = $v;
             }
-        }
-        if (null !== ($v = $this->getRepeatUnitAmountType())) {
-            $a[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

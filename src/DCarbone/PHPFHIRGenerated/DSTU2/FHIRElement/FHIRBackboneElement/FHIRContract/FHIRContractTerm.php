@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,10 +65,12 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
@@ -83,23 +85,96 @@ class FHIRContractTerm extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_TERM;
-    const FIELD_ACTION = 'action';
-    const FIELD_ACTION_REASON = 'actionReason';
-    const FIELD_ACTOR = 'actor';
-    const FIELD_APPLIES = 'applies';
-    const FIELD_GROUP = 'group';
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_ISSUED = 'issued';
     const FIELD_ISSUED_EXT = '_issued';
+    const FIELD_APPLIES = 'applies';
+    const FIELD_TYPE = 'type';
     const FIELD_SUB_TYPE = 'subType';
     const FIELD_SUBJECT = 'subject';
+    const FIELD_ACTION = 'action';
+    const FIELD_ACTION_REASON = 'actionReason';
+    const FIELD_ACTOR = 'actor';
     const FIELD_TEXT = 'text';
     const FIELD_TEXT_EXT = '_text';
-    const FIELD_TYPE = 'type';
     const FIELD_VALUED_ITEM = 'valuedItem';
+    const FIELD_GROUP = 'group';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique identifier for this particular Contract Provision.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
+     */
+    protected $identifier = null;
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * When this Contract Provision was issued.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
+     */
+    protected $issued = null;
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Relevant time or time-period when this Contract Provision is applicable.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
+     */
+    protected $applies = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Type of Contract Provision such as specific requirements, purposes for actions,
+     * obligations, prohibitions, e.g. life time maximum benefit.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
+     */
+    protected $type = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Subtype of this Contract Provision, e.g. life time maximum payment for a
+     * contract term for specific valued item, e.g. disability payment.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
+     */
+    protected $subType = null;
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Who or what this Contract Provision is about.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     */
+    protected $subject = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -136,76 +211,6 @@ class FHIRContractTerm extends FHIRBackboneElement
     protected $actor = [];
 
     /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Relevant time or time-period when this Contract Provision is applicable.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
-     */
-    protected $applies = null;
-
-    /**
-     * A formal agreement between parties regarding the conduct of business, exchange
-     * of information or other matters.
-     *
-     * Nested group of Contract Provisions.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm[]
-     */
-    protected $group = [];
-
-    /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Unique identifier for this particular Contract Provision.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
-     */
-    protected $identifier = null;
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * When this Contract Provision was issued.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
-     */
-    protected $issued = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Subtype of this Contract Provision, e.g. life time maximum payment for a
-     * contract term for specific valued item, e.g. disability payment.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
-     */
-    protected $subType = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Who or what this Contract Provision is about.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
-     */
-    protected $subject = null;
-
-    /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -217,19 +222,6 @@ class FHIRContractTerm extends FHIRBackboneElement
     protected $text = null;
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Type of Contract Provision such as specific requirements, purposes for actions,
-     * obligations, prohibitions, e.g. life time maximum benefit.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
-     */
-    protected $type = null;
-
-    /**
      * A formal agreement between parties regarding the conduct of business, exchange
      * of information or other matters.
      *
@@ -238,6 +230,16 @@ class FHIRContractTerm extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem1[]
      */
     protected $valuedItem = [];
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
+     * Nested group of Contract Provisions.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm[]
+     */
+    protected $group = [];
 
     /**
      * Validation map for fields in type Contract.Term
@@ -261,6 +263,56 @@ class FHIRContractTerm extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_IDENTIFIER])) {
+            if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+                $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
+            } else {
+                $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
+            }
+        }
+        if (isset($data[self::FIELD_ISSUED]) || isset($data[self::FIELD_ISSUED_EXT])) {
+            $value = isset($data[self::FIELD_ISSUED]) ? $data[self::FIELD_ISSUED] : null;
+            $ext = (isset($data[self::FIELD_ISSUED_EXT]) && is_array($data[self::FIELD_ISSUED_EXT])) ? $ext = $data[self::FIELD_ISSUED_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setIssued($value);
+                } else if (is_array($value)) {
+                    $this->setIssued(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setIssued(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setIssued(new FHIRDateTime($ext));
+            }
+        }
+        if (isset($data[self::FIELD_APPLIES])) {
+            if ($data[self::FIELD_APPLIES] instanceof FHIRPeriod) {
+                $this->setApplies($data[self::FIELD_APPLIES]);
+            } else {
+                $this->setApplies(new FHIRPeriod($data[self::FIELD_APPLIES]));
+            }
+        }
+        if (isset($data[self::FIELD_TYPE])) {
+            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setType($data[self::FIELD_TYPE]);
+            } else {
+                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
+            }
+        }
+        if (isset($data[self::FIELD_SUB_TYPE])) {
+            if ($data[self::FIELD_SUB_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setSubType($data[self::FIELD_SUB_TYPE]);
+            } else {
+                $this->setSubType(new FHIRCodeableConcept($data[self::FIELD_SUB_TYPE]));
+            }
+        }
+        if (isset($data[self::FIELD_SUBJECT])) {
+            if ($data[self::FIELD_SUBJECT] instanceof FHIRReference) {
+                $this->setSubject($data[self::FIELD_SUBJECT]);
+            } else {
+                $this->setSubject(new FHIRReference($data[self::FIELD_SUBJECT]));
+            }
+        }
         if (isset($data[self::FIELD_ACTION])) {
             if (is_array($data[self::FIELD_ACTION])) {
                 foreach($data[self::FIELD_ACTION] as $v) {
@@ -273,7 +325,7 @@ class FHIRContractTerm extends FHIRBackboneElement
                         $this->addAction(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_ACTION] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_ACTION] instanceof FHIRCodeableConcept) {
                 $this->addAction($data[self::FIELD_ACTION]);
             } else {
                 $this->addAction(new FHIRCodeableConcept($data[self::FIELD_ACTION]));
@@ -291,7 +343,7 @@ class FHIRContractTerm extends FHIRBackboneElement
                         $this->addActionReason(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_ACTION_REASON] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_ACTION_REASON] instanceof FHIRCodeableConcept) {
                 $this->addActionReason($data[self::FIELD_ACTION_REASON]);
             } else {
                 $this->addActionReason(new FHIRCodeableConcept($data[self::FIELD_ACTION_REASON]));
@@ -309,92 +361,15 @@ class FHIRContractTerm extends FHIRBackboneElement
                         $this->addActor(new FHIRContractActor1($v));
                     }
                 }
-            } else if ($data[self::FIELD_ACTOR] instanceof FHIRContractActor1) {
+            } elseif ($data[self::FIELD_ACTOR] instanceof FHIRContractActor1) {
                 $this->addActor($data[self::FIELD_ACTOR]);
             } else {
                 $this->addActor(new FHIRContractActor1($data[self::FIELD_ACTOR]));
             }
         }
-        if (isset($data[self::FIELD_APPLIES])) {
-            if ($data[self::FIELD_APPLIES] instanceof FHIRPeriod) {
-                $this->setApplies($data[self::FIELD_APPLIES]);
-            } else {
-                $this->setApplies(new FHIRPeriod($data[self::FIELD_APPLIES]));
-            }
-        }
-        if (isset($data[self::FIELD_GROUP])) {
-            if (is_array($data[self::FIELD_GROUP])) {
-                foreach($data[self::FIELD_GROUP] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRContractTerm) {
-                        $this->addGroup($v);
-                    } else {
-                        $this->addGroup(new FHIRContractTerm($v));
-                    }
-                }
-            } else if ($data[self::FIELD_GROUP] instanceof FHIRContractTerm) {
-                $this->addGroup($data[self::FIELD_GROUP]);
-            } else {
-                $this->addGroup(new FHIRContractTerm($data[self::FIELD_GROUP]));
-            }
-        }
-        if (isset($data[self::FIELD_IDENTIFIER])) {
-            if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
-                $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } else {
-                $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
-            }
-        }
-        if (isset($data[self::FIELD_ISSUED]) || isset($data[self::FIELD_ISSUED_EXT])) {
-            if (isset($data[self::FIELD_ISSUED])) {
-                $value = $data[self::FIELD_ISSUED];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ISSUED_EXT]) && is_array($data[self::FIELD_ISSUED_EXT])) {
-                $ext = $data[self::FIELD_ISSUED_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $this->setIssued($value);
-                } else if (is_array($value)) {
-                    $this->setIssued(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $this->setIssued(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setIssued(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_SUB_TYPE])) {
-            if ($data[self::FIELD_SUB_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setSubType($data[self::FIELD_SUB_TYPE]);
-            } else {
-                $this->setSubType(new FHIRCodeableConcept($data[self::FIELD_SUB_TYPE]));
-            }
-        }
-        if (isset($data[self::FIELD_SUBJECT])) {
-            if ($data[self::FIELD_SUBJECT] instanceof FHIRReference) {
-                $this->setSubject($data[self::FIELD_SUBJECT]);
-            } else {
-                $this->setSubject(new FHIRReference($data[self::FIELD_SUBJECT]));
-            }
-        }
         if (isset($data[self::FIELD_TEXT]) || isset($data[self::FIELD_TEXT_EXT])) {
-            if (isset($data[self::FIELD_TEXT])) {
-                $value = $data[self::FIELD_TEXT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TEXT_EXT]) && is_array($data[self::FIELD_TEXT_EXT])) {
-                $ext = $data[self::FIELD_TEXT_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_TEXT]) ? $data[self::FIELD_TEXT] : null;
+            $ext = (isset($data[self::FIELD_TEXT_EXT]) && is_array($data[self::FIELD_TEXT_EXT])) ? $ext = $data[self::FIELD_TEXT_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setText($value);
@@ -403,15 +378,8 @@ class FHIRContractTerm extends FHIRBackboneElement
                 } else {
                     $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setText(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_TYPE])) {
-            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setType($data[self::FIELD_TYPE]);
-            } else {
-                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
             }
         }
         if (isset($data[self::FIELD_VALUED_ITEM])) {
@@ -426,10 +394,28 @@ class FHIRContractTerm extends FHIRBackboneElement
                         $this->addValuedItem(new FHIRContractValuedItem1($v));
                     }
                 }
-            } else if ($data[self::FIELD_VALUED_ITEM] instanceof FHIRContractValuedItem1) {
+            } elseif ($data[self::FIELD_VALUED_ITEM] instanceof FHIRContractValuedItem1) {
                 $this->addValuedItem($data[self::FIELD_VALUED_ITEM]);
             } else {
                 $this->addValuedItem(new FHIRContractValuedItem1($data[self::FIELD_VALUED_ITEM]));
+            }
+        }
+        if (isset($data[self::FIELD_GROUP])) {
+            if (is_array($data[self::FIELD_GROUP])) {
+                foreach($data[self::FIELD_GROUP] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRContractTerm) {
+                        $this->addGroup($v);
+                    } else {
+                        $this->addGroup(new FHIRContractTerm($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_GROUP] instanceof FHIRContractTerm) {
+                $this->addGroup($data[self::FIELD_GROUP]);
+            } else {
+                $this->addGroup(new FHIRContractTerm($data[self::FIELD_GROUP]));
             }
         }
     }
@@ -448,10 +434,213 @@ class FHIRContractTerm extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ContractTerm{$xmlns}></ContractTerm>";
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique identifier for this particular Contract Provision.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
+     */
+    public function getIdentifier()
+    {
+        return $this->identifier;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique identifier for this particular Contract Provision.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier $identifier = null)
+    {
+        $this->_trackValueSet($this->identifier, $identifier);
+        $this->identifier = $identifier;
+        return $this;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * When this Contract Provision was issued.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
+     */
+    public function getIssued()
+    {
+        return $this->issued;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * When this Contract Provision was issued.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $issued
+     * @return static
+     */
+    public function setIssued($issued = null)
+    {
+        if (null !== $issued && !($issued instanceof FHIRDateTime)) {
+            $issued = new FHIRDateTime($issued);
+        }
+        $this->_trackValueSet($this->issued, $issued);
+        $this->issued = $issued;
+        return $this;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Relevant time or time-period when this Contract Provision is applicable.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
+     */
+    public function getApplies()
+    {
+        return $this->applies;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Relevant time or time-period when this Contract Provision is applicable.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod $applies
+     * @return static
+     */
+    public function setApplies(FHIRPeriod $applies = null)
+    {
+        $this->_trackValueSet($this->applies, $applies);
+        $this->applies = $applies;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Type of Contract Provision such as specific requirements, purposes for actions,
+     * obligations, prohibitions, e.g. life time maximum benefit.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Type of Contract Provision such as specific requirements, purposes for actions,
+     * obligations, prohibitions, e.g. life time maximum benefit.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $type
+     * @return static
+     */
+    public function setType(FHIRCodeableConcept $type = null)
+    {
+        $this->_trackValueSet($this->type, $type);
+        $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Subtype of this Contract Provision, e.g. life time maximum payment for a
+     * contract term for specific valued item, e.g. disability payment.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
+     */
+    public function getSubType()
+    {
+        return $this->subType;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Subtype of this Contract Provision, e.g. life time maximum payment for a
+     * contract term for specific valued item, e.g. disability payment.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $subType
+     * @return static
+     */
+    public function setSubType(FHIRCodeableConcept $subType = null)
+    {
+        $this->_trackValueSet($this->subType, $subType);
+        $this->subType = $subType;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Who or what this Contract Provision is about.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     */
+    public function getSubject()
+    {
+        return $this->subject;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Who or what this Contract Provision is about.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $subject
+     * @return static
+     */
+    public function setSubject(FHIRReference $subject = null)
+    {
+        $this->_trackValueSet($this->subject, $subject);
+        $this->subject = $subject;
+        return $this;
     }
 
     /**
@@ -482,6 +671,7 @@ class FHIRContractTerm extends FHIRBackboneElement
      */
     public function addAction(FHIRCodeableConcept $action = null)
     {
+        $this->_trackValueAdded();
         $this->action[] = $action;
         return $this;
     }
@@ -499,7 +689,10 @@ class FHIRContractTerm extends FHIRBackboneElement
      */
     public function setAction(array $action = [])
     {
-        $this->action = [];
+        if ([] !== $this->action) {
+            $this->_trackValuesRemoved(count($this->action));
+            $this->action = [];
+        }
         if ([] === $action) {
             return $this;
         }
@@ -541,6 +734,7 @@ class FHIRContractTerm extends FHIRBackboneElement
      */
     public function addActionReason(FHIRCodeableConcept $actionReason = null)
     {
+        $this->_trackValueAdded();
         $this->actionReason[] = $actionReason;
         return $this;
     }
@@ -558,7 +752,10 @@ class FHIRContractTerm extends FHIRBackboneElement
      */
     public function setActionReason(array $actionReason = [])
     {
-        $this->actionReason = [];
+        if ([] !== $this->actionReason) {
+            $this->_trackValuesRemoved(count($this->actionReason));
+            $this->actionReason = [];
+        }
         if ([] === $actionReason) {
             return $this;
         }
@@ -596,6 +793,7 @@ class FHIRContractTerm extends FHIRBackboneElement
      */
     public function addActor(FHIRContractActor1 $actor = null)
     {
+        $this->_trackValueAdded();
         $this->actor[] = $actor;
         return $this;
     }
@@ -611,7 +809,10 @@ class FHIRContractTerm extends FHIRBackboneElement
      */
     public function setActor(array $actor = [])
     {
-        $this->actor = [];
+        if ([] !== $this->actor) {
+            $this->_trackValuesRemoved(count($this->actor));
+            $this->actor = [];
+        }
         if ([] === $actor) {
             return $this;
         }
@@ -622,227 +823,6 @@ class FHIRContractTerm extends FHIRBackboneElement
                 $this->addActor(new FHIRContractActor1($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Relevant time or time-period when this Contract Provision is applicable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
-     */
-    public function getApplies()
-    {
-        return $this->applies;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Relevant time or time-period when this Contract Provision is applicable.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod $applies
-     * @return static
-     */
-    public function setApplies(FHIRPeriod $applies = null)
-    {
-        $this->applies = $applies;
-        return $this;
-    }
-
-    /**
-     * A formal agreement between parties regarding the conduct of business, exchange
-     * of information or other matters.
-     *
-     * Nested group of Contract Provisions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm[]
-     */
-    public function getGroup()
-    {
-        return $this->group;
-    }
-
-    /**
-     * A formal agreement between parties regarding the conduct of business, exchange
-     * of information or other matters.
-     *
-     * Nested group of Contract Provisions.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm $group
-     * @return static
-     */
-    public function addGroup(FHIRContractTerm $group = null)
-    {
-        $this->group[] = $group;
-        return $this;
-    }
-
-    /**
-     * A formal agreement between parties regarding the conduct of business, exchange
-     * of information or other matters.
-     *
-     * Nested group of Contract Provisions.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm[] $group
-     * @return static
-     */
-    public function setGroup(array $group = [])
-    {
-        $this->group = [];
-        if ([] === $group) {
-            return $this;
-        }
-        foreach($group as $v) {
-            if ($v instanceof FHIRContractTerm) {
-                $this->addGroup($v);
-            } else {
-                $this->addGroup(new FHIRContractTerm($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Unique identifier for this particular Contract Provision.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
-     */
-    public function getIdentifier()
-    {
-        return $this->identifier;
-    }
-
-    /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Unique identifier for this particular Contract Provision.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier $identifier
-     * @return static
-     */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
-    {
-        $this->identifier = $identifier;
-        return $this;
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * When this Contract Provision was issued.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
-     */
-    public function getIssued()
-    {
-        return $this->issued;
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * When this Contract Provision was issued.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $issued
-     * @return static
-     */
-    public function setIssued($issued = null)
-    {
-        if (null === $issued) {
-            $this->issued = null;
-            return $this;
-        }
-        if ($issued instanceof FHIRDateTime) {
-            $this->issued = $issued;
-            return $this;
-        }
-        $this->issued = new FHIRDateTime($issued);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Subtype of this Contract Provision, e.g. life time maximum payment for a
-     * contract term for specific valued item, e.g. disability payment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
-     */
-    public function getSubType()
-    {
-        return $this->subType;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Subtype of this Contract Provision, e.g. life time maximum payment for a
-     * contract term for specific valued item, e.g. disability payment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $subType
-     * @return static
-     */
-    public function setSubType(FHIRCodeableConcept $subType = null)
-    {
-        $this->subType = $subType;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Who or what this Contract Provision is about.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
-     */
-    public function getSubject()
-    {
-        return $this->subject;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Who or what this Contract Provision is about.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $subject
-     * @return static
-     */
-    public function setSubject(FHIRReference $subject = null)
-    {
-        $this->subject = $subject;
         return $this;
     }
 
@@ -872,49 +852,11 @@ class FHIRContractTerm extends FHIRBackboneElement
      */
     public function setText($text = null)
     {
-        if (null === $text) {
-            $this->text = null;
-            return $this;
+        if (null !== $text && !($text instanceof FHIRString)) {
+            $text = new FHIRString($text);
         }
-        if ($text instanceof FHIRString) {
-            $this->text = $text;
-            return $this;
-        }
-        $this->text = new FHIRString($text);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Type of Contract Provision such as specific requirements, purposes for actions,
-     * obligations, prohibitions, e.g. life time maximum benefit.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Type of Contract Provision such as specific requirements, purposes for actions,
-     * obligations, prohibitions, e.g. life time maximum benefit.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $type
-     * @return static
-     */
-    public function setType(FHIRCodeableConcept $type = null)
-    {
-        $this->type = $type;
+        $this->_trackValueSet($this->text, $text);
+        $this->text = $text;
         return $this;
     }
 
@@ -942,6 +884,7 @@ class FHIRContractTerm extends FHIRBackboneElement
      */
     public function addValuedItem(FHIRContractValuedItem1 $valuedItem = null)
     {
+        $this->_trackValueAdded();
         $this->valuedItem[] = $valuedItem;
         return $this;
     }
@@ -957,7 +900,10 @@ class FHIRContractTerm extends FHIRBackboneElement
      */
     public function setValuedItem(array $valuedItem = [])
     {
-        $this->valuedItem = [];
+        if ([] !== $this->valuedItem) {
+            $this->_trackValuesRemoved(count($this->valuedItem));
+            $this->valuedItem = [];
+        }
         if ([] === $valuedItem) {
             return $this;
         }
@@ -966,6 +912,63 @@ class FHIRContractTerm extends FHIRBackboneElement
                 $this->addValuedItem($v);
             } else {
                 $this->addValuedItem(new FHIRContractValuedItem1($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
+     * Nested group of Contract Provisions.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm[]
+     */
+    public function getGroup()
+    {
+        return $this->group;
+    }
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
+     * Nested group of Contract Provisions.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm $group
+     * @return static
+     */
+    public function addGroup(FHIRContractTerm $group = null)
+    {
+        $this->_trackValueAdded();
+        $this->group[] = $group;
+        return $this;
+    }
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
+     * Nested group of Contract Provisions.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm[] $group
+     * @return static
+     */
+    public function setGroup(array $group = [])
+    {
+        if ([] !== $this->group) {
+            $this->_trackValuesRemoved(count($this->group));
+            $this->group = [];
+        }
+        if ([] === $group) {
+            return $this;
+        }
+        foreach($group as $v) {
+            if ($v instanceof FHIRContractTerm) {
+                $this->addGroup($v);
+            } else {
+                $this->addGroup(new FHIRContractTerm($v));
             }
         }
         return $this;
@@ -992,6 +995,36 @@ class FHIRContractTerm extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getIdentifier())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_IDENTIFIER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getIssued())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ISSUED] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getApplies())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_APPLIES] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSubType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUB_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSubject())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUBJECT] = $fieldErrs;
+            }
+        }
         if ([] !== ($vs = $this->getAction())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
@@ -1013,9 +1046,16 @@ class FHIRContractTerm extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getApplies())) {
+        if (null !== ($v = $this->getText())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_APPLIES] = $fieldErrs;
+                $errs[self::FIELD_TEXT] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getValuedItem())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_VALUED_ITEM, $i)] = $fieldErrs;
+                }
             }
         }
         if ([] !== ($vs = $this->getGroup())) {
@@ -1025,40 +1065,75 @@ class FHIRContractTerm extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_IDENTIFIER] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_IDENTIFIER])) {
+            $v = $this->getIdentifier();
+            foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_TERM, self::FIELD_IDENTIFIER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_IDENTIFIER])) {
+                        $errs[self::FIELD_IDENTIFIER] = [];
+                    }
+                    $errs[self::FIELD_IDENTIFIER][$rule] = $err;
+                }
             }
         }
-        if (null !== ($v = $this->getIssued())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ISSUED] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_ISSUED])) {
+            $v = $this->getIssued();
+            foreach($validationRules[self::FIELD_ISSUED] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_TERM, self::FIELD_ISSUED, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ISSUED])) {
+                        $errs[self::FIELD_ISSUED] = [];
+                    }
+                    $errs[self::FIELD_ISSUED][$rule] = $err;
+                }
             }
         }
-        if (null !== ($v = $this->getSubType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SUB_TYPE] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_APPLIES])) {
+            $v = $this->getApplies();
+            foreach($validationRules[self::FIELD_APPLIES] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_TERM, self::FIELD_APPLIES, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_APPLIES])) {
+                        $errs[self::FIELD_APPLIES] = [];
+                    }
+                    $errs[self::FIELD_APPLIES][$rule] = $err;
+                }
             }
         }
-        if (null !== ($v = $this->getSubject())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SUBJECT] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_TERM, self::FIELD_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
+                    }
+                    $errs[self::FIELD_TYPE][$rule] = $err;
+                }
             }
         }
-        if (null !== ($v = $this->getText())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TEXT] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_SUB_TYPE])) {
+            $v = $this->getSubType();
+            foreach($validationRules[self::FIELD_SUB_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_TERM, self::FIELD_SUB_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUB_TYPE])) {
+                        $errs[self::FIELD_SUB_TYPE] = [];
+                    }
+                    $errs[self::FIELD_SUB_TYPE][$rule] = $err;
+                }
             }
         }
-        if (null !== ($v = $this->getType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TYPE] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getValuedItem())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_VALUED_ITEM, $i)] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_SUBJECT])) {
+            $v = $this->getSubject();
+            foreach($validationRules[self::FIELD_SUBJECT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_TERM, self::FIELD_SUBJECT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUBJECT])) {
+                        $errs[self::FIELD_SUBJECT] = [];
+                    }
+                    $errs[self::FIELD_SUBJECT][$rule] = $err;
                 }
             }
         }
@@ -1098,78 +1173,6 @@ class FHIRContractTerm extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_APPLIES])) {
-            $v = $this->getApplies();
-            foreach($validationRules[self::FIELD_APPLIES] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_TERM, self::FIELD_APPLIES, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_APPLIES])) {
-                        $errs[self::FIELD_APPLIES] = [];
-                    }
-                    $errs[self::FIELD_APPLIES][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_GROUP])) {
-            $v = $this->getGroup();
-            foreach($validationRules[self::FIELD_GROUP] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_TERM, self::FIELD_GROUP, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_GROUP])) {
-                        $errs[self::FIELD_GROUP] = [];
-                    }
-                    $errs[self::FIELD_GROUP][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_IDENTIFIER])) {
-            $v = $this->getIdentifier();
-            foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_TERM, self::FIELD_IDENTIFIER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_IDENTIFIER])) {
-                        $errs[self::FIELD_IDENTIFIER] = [];
-                    }
-                    $errs[self::FIELD_IDENTIFIER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_ISSUED])) {
-            $v = $this->getIssued();
-            foreach($validationRules[self::FIELD_ISSUED] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_TERM, self::FIELD_ISSUED, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ISSUED])) {
-                        $errs[self::FIELD_ISSUED] = [];
-                    }
-                    $errs[self::FIELD_ISSUED][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SUB_TYPE])) {
-            $v = $this->getSubType();
-            foreach($validationRules[self::FIELD_SUB_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_TERM, self::FIELD_SUB_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SUB_TYPE])) {
-                        $errs[self::FIELD_SUB_TYPE] = [];
-                    }
-                    $errs[self::FIELD_SUB_TYPE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SUBJECT])) {
-            $v = $this->getSubject();
-            foreach($validationRules[self::FIELD_SUBJECT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_TERM, self::FIELD_SUBJECT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SUBJECT])) {
-                        $errs[self::FIELD_SUBJECT] = [];
-                    }
-                    $errs[self::FIELD_SUBJECT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_TEXT])) {
             $v = $this->getText();
             foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
@@ -1182,18 +1185,6 @@ class FHIRContractTerm extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TYPE])) {
-            $v = $this->getType();
-            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_TERM, self::FIELD_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TYPE])) {
-                        $errs[self::FIELD_TYPE] = [];
-                    }
-                    $errs[self::FIELD_TYPE][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_VALUED_ITEM])) {
             $v = $this->getValuedItem();
             foreach($validationRules[self::FIELD_VALUED_ITEM] as $rule => $constraint) {
@@ -1203,6 +1194,18 @@ class FHIRContractTerm extends FHIRBackboneElement
                         $errs[self::FIELD_VALUED_ITEM] = [];
                     }
                     $errs[self::FIELD_VALUED_ITEM][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_GROUP])) {
+            $v = $this->getGroup();
+            foreach($validationRules[self::FIELD_GROUP] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_TERM, self::FIELD_GROUP, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_GROUP])) {
+                        $errs[self::FIELD_GROUP] = [];
+                    }
+                    $errs[self::FIELD_GROUP][$rule] = $err;
                 }
             }
         }
@@ -1246,127 +1249,160 @@ class FHIRContractTerm extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRContractTerm::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRContractTerm::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRContractTerm::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRContractTerm;
+            $type = new FHIRContractTerm(null);
         } elseif (!is_object($type) || !($type instanceof FHIRContractTerm)) {
             throw new \RuntimeException(sprintf(
                 'FHIRContractTerm::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_IDENTIFIER === $n->nodeName) {
+                $type->setIdentifier(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_ISSUED === $n->nodeName) {
+                $type->setIssued(FHIRDateTime::xmlUnserialize($n));
+            } elseif (self::FIELD_APPLIES === $n->nodeName) {
+                $type->setApplies(FHIRPeriod::xmlUnserialize($n));
+            } elseif (self::FIELD_TYPE === $n->nodeName) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_SUB_TYPE === $n->nodeName) {
+                $type->setSubType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_SUBJECT === $n->nodeName) {
+                $type->setSubject(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_ACTION === $n->nodeName) {
+                $type->addAction(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_ACTION_REASON === $n->nodeName) {
+                $type->addActionReason(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_ACTOR === $n->nodeName) {
+                $type->addActor(FHIRContractActor1::xmlUnserialize($n));
+            } elseif (self::FIELD_TEXT === $n->nodeName) {
+                $type->setText(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUED_ITEM === $n->nodeName) {
+                $type->addValuedItem(FHIRContractValuedItem1::xmlUnserialize($n));
+            } elseif (self::FIELD_GROUP === $n->nodeName) {
+                $type->addGroup(FHIRContractTerm::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->action)) {
-            foreach($children->action as $child) {
-                $type->addAction(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->actionReason)) {
-            foreach($children->actionReason as $child) {
-                $type->addActionReason(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->actor)) {
-            foreach($children->actor as $child) {
-                $type->addActor(FHIRContractActor1::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->applies)) {
-            $type->setApplies(FHIRPeriod::xmlUnserialize($children->applies));
-        }
-        if (isset($children->group)) {
-            foreach($children->group as $child) {
-                $type->addGroup(FHIRContractTerm::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->identifier)) {
-            $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
-        }
-        if (isset($children->issued)) {
-            $type->setIssued(FHIRDateTime::xmlUnserialize($children->issued));
-        }
-        if (isset($attributes->issued)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_ISSUED);
+        if (null !== $n) {
             $pt = $type->getIssued();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->issued);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setIssued((string)$attributes->issued);
+                $type->setIssued($n->nodeValue);
             }
         }
-        if (isset($children->subType)) {
-            $type->setSubType(FHIRCodeableConcept::xmlUnserialize($children->subType));
-        }
-        if (isset($children->subject)) {
-            $type->setSubject(FHIRReference::xmlUnserialize($children->subject));
-        }
-        if (isset($children->text)) {
-            $type->setText(FHIRString::xmlUnserialize($children->text));
-        }
-        if (isset($attributes->text)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_TEXT);
+        if (null !== $n) {
             $pt = $type->getText();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->text);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setText((string)$attributes->text);
+                $type->setText($n->nodeValue);
             }
         }
-        if (isset($children->type)) {
-            $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
-        }
-        if (isset($children->valuedItem)) {
-            foreach($children->valuedItem as $child) {
-                $type->addValuedItem(FHIRContractValuedItem1::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getIdentifier())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_IDENTIFIER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getIssued())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_ISSUED);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getApplies())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_APPLIES);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getSubType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SUB_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SUBJECT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if ([] !== ($vs = $this->getAction())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_ACTION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getActionReason())) {
@@ -1374,7 +1410,9 @@ class FHIRContractTerm extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION_REASON, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_ACTION_REASON);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getActor())) {
@@ -1382,47 +1420,37 @@ class FHIRContractTerm extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ACTOR, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_ACTOR);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
-        }
-        if (null !== ($v = $this->getApplies())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_APPLIES, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getGroup())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getIssued())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ISSUED, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getSubType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getSubject())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getText())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_TEXT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getValuedItem())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VALUED_ITEM, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_VALUED_ITEM);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        if ([] !== ($vs = $this->getGroup())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_GROUP);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        return $element;
     }
 
     /**
@@ -1431,6 +1459,31 @@ class FHIRContractTerm extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getIdentifier())) {
+            $a[self::FIELD_IDENTIFIER] = $v;
+        }
+        if (null !== ($v = $this->getIssued())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ISSUED] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDateTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_ISSUED_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getApplies())) {
+            $a[self::FIELD_APPLIES] = $v;
+        }
+        if (null !== ($v = $this->getType())) {
+            $a[self::FIELD_TYPE] = $v;
+        }
+        if (null !== ($v = $this->getSubType())) {
+            $a[self::FIELD_SUB_TYPE] = $v;
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $a[self::FIELD_SUBJECT] = $v;
+        }
         if ([] !== ($vs = $this->getAction())) {
             $a[self::FIELD_ACTION] = [];
             foreach($vs as $v) {
@@ -1458,47 +1511,15 @@ class FHIRContractTerm extends FHIRBackboneElement
                 $a[self::FIELD_ACTOR][] = $v;
             }
         }
-        if (null !== ($v = $this->getApplies())) {
-            $a[self::FIELD_APPLIES] = $v;
-        }
-        if ([] !== ($vs = $this->getGroup())) {
-            $a[self::FIELD_GROUP] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_GROUP][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
-        }
-        if (null !== ($v = $this->getIssued())) {
-            $a[self::FIELD_ISSUED] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_ISSUED_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getSubType())) {
-            $a[self::FIELD_SUB_TYPE] = $v;
-        }
-        if (null !== ($v = $this->getSubject())) {
-            $a[self::FIELD_SUBJECT] = $v;
-        }
         if (null !== ($v = $this->getText())) {
-            $a[self::FIELD_TEXT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_TEXT_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TEXT] = $val;
             }
-        }
-        if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_TEXT_EXT] = $ext;
+            }
         }
         if ([] !== ($vs = $this->getValuedItem())) {
             $a[self::FIELD_VALUED_ITEM] = [];
@@ -1509,8 +1530,14 @@ class FHIRContractTerm extends FHIRBackboneElement
                 $a[self::FIELD_VALUED_ITEM][] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getGroup())) {
+            $a[self::FIELD_GROUP] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_GROUP][] = $v;
+            }
         }
         return $a;
     }

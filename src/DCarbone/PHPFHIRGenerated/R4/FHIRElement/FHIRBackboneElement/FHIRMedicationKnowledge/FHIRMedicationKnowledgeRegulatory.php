@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  */
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -77,22 +79,13 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_REGULATORY;
-    const FIELD_MAX_DISPENSE = 'maxDispense';
     const FIELD_REGULATORY_AUTHORITY = 'regulatoryAuthority';
-    const FIELD_SCHEDULE = 'schedule';
     const FIELD_SUBSTITUTION = 'substitution';
+    const FIELD_SCHEDULE = 'schedule';
+    const FIELD_MAX_DISPENSE = 'maxDispense';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Information about a medication that is used to support knowledge.
-     *
-     * The maximum number of units of the medication that can be dispensed in a period.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense
-     */
-    protected $maxDispense = null;
+    private $_xmlns = '';
 
     /**
      * A reference from one resource to another.
@@ -108,6 +101,16 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
     /**
      * Information about a medication that is used to support knowledge.
      *
+     * Specifies if changes are allowed when dispensing a medication from a regulatory
+     * perspective.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSubstitution[]
+     */
+    protected $substitution = [];
+
+    /**
+     * Information about a medication that is used to support knowledge.
+     *
      * Specifies the schedule of a medication in jurisdiction.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule[]
@@ -117,12 +120,11 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
     /**
      * Information about a medication that is used to support knowledge.
      *
-     * Specifies if changes are allowed when dispensing a medication from a regulatory
-     * perspective.
+     * The maximum number of units of the medication that can be dispensed in a period.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSubstitution[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense
      */
-    protected $substitution = [];
+    protected $maxDispense = null;
 
     /**
      * Validation map for fields in type MedicationKnowledge.Regulatory
@@ -146,36 +148,11 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_MAX_DISPENSE])) {
-            if ($data[self::FIELD_MAX_DISPENSE] instanceof FHIRMedicationKnowledgeMaxDispense) {
-                $this->setMaxDispense($data[self::FIELD_MAX_DISPENSE]);
-            } else {
-                $this->setMaxDispense(new FHIRMedicationKnowledgeMaxDispense($data[self::FIELD_MAX_DISPENSE]));
-            }
-        }
         if (isset($data[self::FIELD_REGULATORY_AUTHORITY])) {
             if ($data[self::FIELD_REGULATORY_AUTHORITY] instanceof FHIRReference) {
                 $this->setRegulatoryAuthority($data[self::FIELD_REGULATORY_AUTHORITY]);
             } else {
                 $this->setRegulatoryAuthority(new FHIRReference($data[self::FIELD_REGULATORY_AUTHORITY]));
-            }
-        }
-        if (isset($data[self::FIELD_SCHEDULE])) {
-            if (is_array($data[self::FIELD_SCHEDULE])) {
-                foreach($data[self::FIELD_SCHEDULE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRMedicationKnowledgeSchedule) {
-                        $this->addSchedule($v);
-                    } else {
-                        $this->addSchedule(new FHIRMedicationKnowledgeSchedule($v));
-                    }
-                }
-            } else if ($data[self::FIELD_SCHEDULE] instanceof FHIRMedicationKnowledgeSchedule) {
-                $this->addSchedule($data[self::FIELD_SCHEDULE]);
-            } else {
-                $this->addSchedule(new FHIRMedicationKnowledgeSchedule($data[self::FIELD_SCHEDULE]));
             }
         }
         if (isset($data[self::FIELD_SUBSTITUTION])) {
@@ -190,10 +167,35 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
                         $this->addSubstitution(new FHIRMedicationKnowledgeSubstitution($v));
                     }
                 }
-            } else if ($data[self::FIELD_SUBSTITUTION] instanceof FHIRMedicationKnowledgeSubstitution) {
+            } elseif ($data[self::FIELD_SUBSTITUTION] instanceof FHIRMedicationKnowledgeSubstitution) {
                 $this->addSubstitution($data[self::FIELD_SUBSTITUTION]);
             } else {
                 $this->addSubstitution(new FHIRMedicationKnowledgeSubstitution($data[self::FIELD_SUBSTITUTION]));
+            }
+        }
+        if (isset($data[self::FIELD_SCHEDULE])) {
+            if (is_array($data[self::FIELD_SCHEDULE])) {
+                foreach($data[self::FIELD_SCHEDULE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRMedicationKnowledgeSchedule) {
+                        $this->addSchedule($v);
+                    } else {
+                        $this->addSchedule(new FHIRMedicationKnowledgeSchedule($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_SCHEDULE] instanceof FHIRMedicationKnowledgeSchedule) {
+                $this->addSchedule($data[self::FIELD_SCHEDULE]);
+            } else {
+                $this->addSchedule(new FHIRMedicationKnowledgeSchedule($data[self::FIELD_SCHEDULE]));
+            }
+        }
+        if (isset($data[self::FIELD_MAX_DISPENSE])) {
+            if ($data[self::FIELD_MAX_DISPENSE] instanceof FHIRMedicationKnowledgeMaxDispense) {
+                $this->setMaxDispense($data[self::FIELD_MAX_DISPENSE]);
+            } else {
+                $this->setMaxDispense(new FHIRMedicationKnowledgeMaxDispense($data[self::FIELD_MAX_DISPENSE]));
             }
         }
     }
@@ -212,36 +214,10 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<MedicationKnowledgeRegulatory{$xmlns}></MedicationKnowledgeRegulatory>";
-    }
-
-    /**
-     * Information about a medication that is used to support knowledge.
-     *
-     * The maximum number of units of the medication that can be dispensed in a period.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense
-     */
-    public function getMaxDispense()
-    {
-        return $this->maxDispense;
-    }
-
-    /**
-     * Information about a medication that is used to support knowledge.
-     *
-     * The maximum number of units of the medication that can be dispensed in a period.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense $maxDispense
-     * @return static
-     */
-    public function setMaxDispense(FHIRMedicationKnowledgeMaxDispense $maxDispense = null)
-    {
-        $this->maxDispense = $maxDispense;
-        return $this;
     }
 
     /**
@@ -270,57 +246,8 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      */
     public function setRegulatoryAuthority(FHIRReference $regulatoryAuthority = null)
     {
+        $this->_trackValueSet($this->regulatoryAuthority, $regulatoryAuthority);
         $this->regulatoryAuthority = $regulatoryAuthority;
-        return $this;
-    }
-
-    /**
-     * Information about a medication that is used to support knowledge.
-     *
-     * Specifies the schedule of a medication in jurisdiction.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule[]
-     */
-    public function getSchedule()
-    {
-        return $this->schedule;
-    }
-
-    /**
-     * Information about a medication that is used to support knowledge.
-     *
-     * Specifies the schedule of a medication in jurisdiction.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule $schedule
-     * @return static
-     */
-    public function addSchedule(FHIRMedicationKnowledgeSchedule $schedule = null)
-    {
-        $this->schedule[] = $schedule;
-        return $this;
-    }
-
-    /**
-     * Information about a medication that is used to support knowledge.
-     *
-     * Specifies the schedule of a medication in jurisdiction.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule[] $schedule
-     * @return static
-     */
-    public function setSchedule(array $schedule = [])
-    {
-        $this->schedule = [];
-        if ([] === $schedule) {
-            return $this;
-        }
-        foreach($schedule as $v) {
-            if ($v instanceof FHIRMedicationKnowledgeSchedule) {
-                $this->addSchedule($v);
-            } else {
-                $this->addSchedule(new FHIRMedicationKnowledgeSchedule($v));
-            }
-        }
         return $this;
     }
 
@@ -348,6 +275,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      */
     public function addSubstitution(FHIRMedicationKnowledgeSubstitution $substitution = null)
     {
+        $this->_trackValueAdded();
         $this->substitution[] = $substitution;
         return $this;
     }
@@ -363,7 +291,10 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      */
     public function setSubstitution(array $substitution = [])
     {
-        $this->substitution = [];
+        if ([] !== $this->substitution) {
+            $this->_trackValuesRemoved(count($this->substitution));
+            $this->substitution = [];
+        }
         if ([] === $substitution) {
             return $this;
         }
@@ -374,6 +305,87 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
                 $this->addSubstitution(new FHIRMedicationKnowledgeSubstitution($v));
             }
         }
+        return $this;
+    }
+
+    /**
+     * Information about a medication that is used to support knowledge.
+     *
+     * Specifies the schedule of a medication in jurisdiction.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule[]
+     */
+    public function getSchedule()
+    {
+        return $this->schedule;
+    }
+
+    /**
+     * Information about a medication that is used to support knowledge.
+     *
+     * Specifies the schedule of a medication in jurisdiction.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule $schedule
+     * @return static
+     */
+    public function addSchedule(FHIRMedicationKnowledgeSchedule $schedule = null)
+    {
+        $this->_trackValueAdded();
+        $this->schedule[] = $schedule;
+        return $this;
+    }
+
+    /**
+     * Information about a medication that is used to support knowledge.
+     *
+     * Specifies the schedule of a medication in jurisdiction.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule[] $schedule
+     * @return static
+     */
+    public function setSchedule(array $schedule = [])
+    {
+        if ([] !== $this->schedule) {
+            $this->_trackValuesRemoved(count($this->schedule));
+            $this->schedule = [];
+        }
+        if ([] === $schedule) {
+            return $this;
+        }
+        foreach($schedule as $v) {
+            if ($v instanceof FHIRMedicationKnowledgeSchedule) {
+                $this->addSchedule($v);
+            } else {
+                $this->addSchedule(new FHIRMedicationKnowledgeSchedule($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Information about a medication that is used to support knowledge.
+     *
+     * The maximum number of units of the medication that can be dispensed in a period.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense
+     */
+    public function getMaxDispense()
+    {
+        return $this->maxDispense;
+    }
+
+    /**
+     * Information about a medication that is used to support knowledge.
+     *
+     * The maximum number of units of the medication that can be dispensed in a period.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense $maxDispense
+     * @return static
+     */
+    public function setMaxDispense(FHIRMedicationKnowledgeMaxDispense $maxDispense = null)
+    {
+        $this->_trackValueSet($this->maxDispense, $maxDispense);
+        $this->maxDispense = $maxDispense;
         return $this;
     }
 
@@ -398,21 +410,9 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getMaxDispense())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_MAX_DISPENSE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getRegulatoryAuthority())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_REGULATORY_AUTHORITY] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getSchedule())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_SCHEDULE, $i)] = $fieldErrs;
-                }
             }
         }
         if ([] !== ($vs = $this->getSubstitution())) {
@@ -422,16 +422,16 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_MAX_DISPENSE])) {
-            $v = $this->getMaxDispense();
-            foreach($validationRules[self::FIELD_MAX_DISPENSE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_REGULATORY, self::FIELD_MAX_DISPENSE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_MAX_DISPENSE])) {
-                        $errs[self::FIELD_MAX_DISPENSE] = [];
-                    }
-                    $errs[self::FIELD_MAX_DISPENSE][$rule] = $err;
+        if ([] !== ($vs = $this->getSchedule())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_SCHEDULE, $i)] = $fieldErrs;
                 }
+            }
+        }
+        if (null !== ($v = $this->getMaxDispense())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MAX_DISPENSE] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_REGULATORY_AUTHORITY])) {
@@ -443,6 +443,18 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
                         $errs[self::FIELD_REGULATORY_AUTHORITY] = [];
                     }
                     $errs[self::FIELD_REGULATORY_AUTHORITY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUBSTITUTION])) {
+            $v = $this->getSubstitution();
+            foreach($validationRules[self::FIELD_SUBSTITUTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_REGULATORY, self::FIELD_SUBSTITUTION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUBSTITUTION])) {
+                        $errs[self::FIELD_SUBSTITUTION] = [];
+                    }
+                    $errs[self::FIELD_SUBSTITUTION][$rule] = $err;
                 }
             }
         }
@@ -458,15 +470,15 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SUBSTITUTION])) {
-            $v = $this->getSubstitution();
-            foreach($validationRules[self::FIELD_SUBSTITUTION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_REGULATORY, self::FIELD_SUBSTITUTION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_MAX_DISPENSE])) {
+            $v = $this->getMaxDispense();
+            foreach($validationRules[self::FIELD_MAX_DISPENSE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_KNOWLEDGE_DOT_REGULATORY, self::FIELD_MAX_DISPENSE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SUBSTITUTION])) {
-                        $errs[self::FIELD_SUBSTITUTION] = [];
+                    if (!isset($errs[self::FIELD_MAX_DISPENSE])) {
+                        $errs[self::FIELD_MAX_DISPENSE] = [];
                     }
-                    $errs[self::FIELD_SUBSTITUTION][$rule] = $err;
+                    $errs[self::FIELD_MAX_DISPENSE][$rule] = $err;
                 }
             }
         }
@@ -510,98 +522,119 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRMedicationKnowledgeRegulatory::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMedicationKnowledgeRegulatory::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRMedicationKnowledgeRegulatory::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRMedicationKnowledgeRegulatory;
+            $type = new FHIRMedicationKnowledgeRegulatory(null);
         } elseif (!is_object($type) || !($type instanceof FHIRMedicationKnowledgeRegulatory)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMedicationKnowledgeRegulatory::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_REGULATORY_AUTHORITY === $n->nodeName) {
+                $type->setRegulatoryAuthority(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_SUBSTITUTION === $n->nodeName) {
+                $type->addSubstitution(FHIRMedicationKnowledgeSubstitution::xmlUnserialize($n));
+            } elseif (self::FIELD_SCHEDULE === $n->nodeName) {
+                $type->addSchedule(FHIRMedicationKnowledgeSchedule::xmlUnserialize($n));
+            } elseif (self::FIELD_MAX_DISPENSE === $n->nodeName) {
+                $type->setMaxDispense(FHIRMedicationKnowledgeMaxDispense::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->maxDispense)) {
-            $type->setMaxDispense(FHIRMedicationKnowledgeMaxDispense::xmlUnserialize($children->maxDispense));
-        }
-        if (isset($children->regulatoryAuthority)) {
-            $type->setRegulatoryAuthority(FHIRReference::xmlUnserialize($children->regulatoryAuthority));
-        }
-        if (isset($children->schedule)) {
-            foreach($children->schedule as $child) {
-                $type->addSchedule(FHIRMedicationKnowledgeSchedule::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->substitution)) {
-            foreach($children->substitution as $child) {
-                $type->addSubstitution(FHIRMedicationKnowledgeSubstitution::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getMaxDispense())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_DISPENSE, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getRegulatoryAuthority())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REGULATORY_AUTHORITY, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getSchedule())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SCHEDULE, null, $v->_getFHIRXMLNamespace()));
-            }
+            $telement = $element->ownerDocument->createElement(self::FIELD_REGULATORY_AUTHORITY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getSubstitution())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSTITUTION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_SUBSTITUTION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        if ([] !== ($vs = $this->getSchedule())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_SCHEDULE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if (null !== ($v = $this->getMaxDispense())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_MAX_DISPENSE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -610,20 +643,8 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getMaxDispense())) {
-            $a[self::FIELD_MAX_DISPENSE] = $v;
-        }
         if (null !== ($v = $this->getRegulatoryAuthority())) {
             $a[self::FIELD_REGULATORY_AUTHORITY] = $v;
-        }
-        if ([] !== ($vs = $this->getSchedule())) {
-            $a[self::FIELD_SCHEDULE] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_SCHEDULE][] = $v;
-            }
         }
         if ([] !== ($vs = $this->getSubstitution())) {
             $a[self::FIELD_SUBSTITUTION] = [];
@@ -634,8 +655,17 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
                 $a[self::FIELD_SUBSTITUTION][] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getSchedule())) {
+            $a[self::FIELD_SCHEDULE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SCHEDULE][] = $v;
+            }
+        }
+        if (null !== ($v = $this->getMaxDispense())) {
+            $a[self::FIELD_MAX_DISPENSE] = $v;
         }
         return $a;
     }

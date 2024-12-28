@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,9 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAggregationMode;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
@@ -81,27 +83,15 @@ class FHIRElementDefinitionType extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ELEMENT_DEFINITION_DOT_TYPE;
-    const FIELD_AGGREGATION = 'aggregation';
-    const FIELD_AGGREGATION_EXT = '_aggregation';
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
     const FIELD_PROFILE = 'profile';
     const FIELD_PROFILE_EXT = '_profile';
+    const FIELD_AGGREGATION = 'aggregation';
+    const FIELD_AGGREGATION_EXT = '_aggregation';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * How resource references can be aggregated.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * If the type is a reference to another resource, how the resource is or can be
-     * aggregated - is it a contained resource, or a reference, and if the context is a
-     * bundle, is it included in the bundle.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAggregationMode[]
-     */
-    protected $aggregation = [];
+    private $_xmlns = '';
 
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -132,6 +122,18 @@ class FHIRElementDefinitionType extends FHIRElement
     protected $profile = [];
 
     /**
+     * How resource references can be aggregated.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If the type is a reference to another resource, how the resource is or can be
+     * aggregated - is it a contained resource, or a reference, and if the context is a
+     * bundle, is it included in the bundle.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAggregationMode[]
+     */
+    protected $aggregation = [];
+
+    /**
      * Validation map for fields in type ElementDefinition.Type
      * @var array
      */
@@ -153,55 +155,9 @@ class FHIRElementDefinitionType extends FHIRElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_AGGREGATION]) || isset($data[self::FIELD_AGGREGATION_EXT])) {
-            if (isset($data[self::FIELD_AGGREGATION])) {
-                $value = $data[self::FIELD_AGGREGATION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_AGGREGATION_EXT]) && is_array($data[self::FIELD_AGGREGATION_EXT])) {
-                $ext = $data[self::FIELD_AGGREGATION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRAggregationMode) {
-                    $this->addAggregation($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRAggregationMode) {
-                            $this->addAggregation($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $this->addAggregation(new FHIRAggregationMode(array_merge($v, $iext)));
-                            } else {
-                                $this->addAggregation(new FHIRAggregationMode([FHIRAggregationMode::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $this->addAggregation(new FHIRAggregationMode(array_merge($ext, $value)));
-                } else {
-                    $this->addAggregation(new FHIRAggregationMode([FHIRAggregationMode::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $this->addAggregation(new FHIRAggregationMode($iext));
-                }
-            }
-        }
         if (isset($data[self::FIELD_CODE]) || isset($data[self::FIELD_CODE_EXT])) {
-            if (isset($data[self::FIELD_CODE])) {
-                $value = $data[self::FIELD_CODE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CODE_EXT]) && is_array($data[self::FIELD_CODE_EXT])) {
-                $ext = $data[self::FIELD_CODE_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_CODE]) ? $data[self::FIELD_CODE] : null;
+            $ext = (isset($data[self::FIELD_CODE_EXT]) && is_array($data[self::FIELD_CODE_EXT])) ? $ext = $data[self::FIELD_CODE_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRCode) {
                     $this->setCode($value);
@@ -210,21 +166,13 @@ class FHIRElementDefinitionType extends FHIRElement
                 } else {
                     $this->setCode(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setCode(new FHIRCode($ext));
             }
         }
         if (isset($data[self::FIELD_PROFILE]) || isset($data[self::FIELD_PROFILE_EXT])) {
-            if (isset($data[self::FIELD_PROFILE])) {
-                $value = $data[self::FIELD_PROFILE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PROFILE_EXT]) && is_array($data[self::FIELD_PROFILE_EXT])) {
-                $ext = $data[self::FIELD_PROFILE_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_PROFILE]) ? $data[self::FIELD_PROFILE] : null;
+            $ext = (isset($data[self::FIELD_PROFILE_EXT]) && is_array($data[self::FIELD_PROFILE_EXT])) ? $ext = $data[self::FIELD_PROFILE_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRUri) {
                     $this->addProfile($value);
@@ -246,9 +194,39 @@ class FHIRElementDefinitionType extends FHIRElement
                 } else {
                     $this->addProfile(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addProfile(new FHIRUri($iext));
+                }
+            }
+        }
+        if (isset($data[self::FIELD_AGGREGATION]) || isset($data[self::FIELD_AGGREGATION_EXT])) {
+            $value = isset($data[self::FIELD_AGGREGATION]) ? $data[self::FIELD_AGGREGATION] : null;
+            $ext = (isset($data[self::FIELD_AGGREGATION_EXT]) && is_array($data[self::FIELD_AGGREGATION_EXT])) ? $ext = $data[self::FIELD_AGGREGATION_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRAggregationMode) {
+                    $this->addAggregation($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRAggregationMode) {
+                            $this->addAggregation($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addAggregation(new FHIRAggregationMode(array_merge($v, $iext)));
+                            } else {
+                                $this->addAggregation(new FHIRAggregationMode([FHIRAggregationMode::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addAggregation(new FHIRAggregationMode(array_merge($ext, $value)));
+                } else {
+                    $this->addAggregation(new FHIRAggregationMode([FHIRAggregationMode::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addAggregation(new FHIRAggregationMode($iext));
                 }
             }
         }
@@ -268,69 +246,10 @@ class FHIRElementDefinitionType extends FHIRElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ElementDefinitionType{$xmlns}></ElementDefinitionType>";
-    }
-
-    /**
-     * How resource references can be aggregated.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * If the type is a reference to another resource, how the resource is or can be
-     * aggregated - is it a contained resource, or a reference, and if the context is a
-     * bundle, is it included in the bundle.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAggregationMode[]
-     */
-    public function getAggregation()
-    {
-        return $this->aggregation;
-    }
-
-    /**
-     * How resource references can be aggregated.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * If the type is a reference to another resource, how the resource is or can be
-     * aggregated - is it a contained resource, or a reference, and if the context is a
-     * bundle, is it included in the bundle.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAggregationMode $aggregation
-     * @return static
-     */
-    public function addAggregation(FHIRAggregationMode $aggregation = null)
-    {
-        $this->aggregation[] = $aggregation;
-        return $this;
-    }
-
-    /**
-     * How resource references can be aggregated.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * If the type is a reference to another resource, how the resource is or can be
-     * aggregated - is it a contained resource, or a reference, and if the context is a
-     * bundle, is it included in the bundle.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAggregationMode[] $aggregation
-     * @return static
-     */
-    public function setAggregation(array $aggregation = [])
-    {
-        $this->aggregation = [];
-        if ([] === $aggregation) {
-            return $this;
-        }
-        foreach($aggregation as $v) {
-            if ($v instanceof FHIRAggregationMode) {
-                $this->addAggregation($v);
-            } else {
-                $this->addAggregation(new FHIRAggregationMode($v));
-            }
-        }
-        return $this;
     }
 
     /**
@@ -361,15 +280,11 @@ class FHIRElementDefinitionType extends FHIRElement
      */
     public function setCode($code = null)
     {
-        if (null === $code) {
-            $this->code = null;
-            return $this;
+        if (null !== $code && !($code instanceof FHIRCode)) {
+            $code = new FHIRCode($code);
         }
-        if ($code instanceof FHIRCode) {
-            $this->code = $code;
-            return $this;
-        }
-        $this->code = new FHIRCode($code);
+        $this->_trackValueSet($this->code, $code);
+        $this->code = $code;
         return $this;
     }
 
@@ -409,15 +324,11 @@ class FHIRElementDefinitionType extends FHIRElement
      */
     public function addProfile($profile = null)
     {
-        if (null === $profile) {
-            $this->profile = [];
-            return $this;
+        if (null !== $profile && !($profile instanceof FHIRUri)) {
+            $profile = new FHIRUri($profile);
         }
-        if ($profile instanceof FHIRUri) {
-            $this->profile[] = $profile;
-            return $this;
-        }
-        $this->profile[] = new FHIRUri($profile);
+        $this->_trackValueAdded();
+        $this->profile[] = $profile;
         return $this;
     }
 
@@ -438,7 +349,10 @@ class FHIRElementDefinitionType extends FHIRElement
      */
     public function setProfile(array $profile = [])
     {
-        $this->profile = [];
+        if ([] !== $this->profile) {
+            $this->_trackValuesRemoved(count($this->profile));
+            $this->profile = [];
+        }
         if ([] === $profile) {
             return $this;
         }
@@ -447,6 +361,69 @@ class FHIRElementDefinitionType extends FHIRElement
                 $this->addProfile($v);
             } else {
                 $this->addProfile(new FHIRUri($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * How resource references can be aggregated.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If the type is a reference to another resource, how the resource is or can be
+     * aggregated - is it a contained resource, or a reference, and if the context is a
+     * bundle, is it included in the bundle.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAggregationMode[]
+     */
+    public function getAggregation()
+    {
+        return $this->aggregation;
+    }
+
+    /**
+     * How resource references can be aggregated.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If the type is a reference to another resource, how the resource is or can be
+     * aggregated - is it a contained resource, or a reference, and if the context is a
+     * bundle, is it included in the bundle.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAggregationMode $aggregation
+     * @return static
+     */
+    public function addAggregation(FHIRAggregationMode $aggregation = null)
+    {
+        $this->_trackValueAdded();
+        $this->aggregation[] = $aggregation;
+        return $this;
+    }
+
+    /**
+     * How resource references can be aggregated.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If the type is a reference to another resource, how the resource is or can be
+     * aggregated - is it a contained resource, or a reference, and if the context is a
+     * bundle, is it included in the bundle.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAggregationMode[] $aggregation
+     * @return static
+     */
+    public function setAggregation(array $aggregation = [])
+    {
+        if ([] !== $this->aggregation) {
+            $this->_trackValuesRemoved(count($this->aggregation));
+            $this->aggregation = [];
+        }
+        if ([] === $aggregation) {
+            return $this;
+        }
+        foreach($aggregation as $v) {
+            if ($v instanceof FHIRAggregationMode) {
+                $this->addAggregation($v);
+            } else {
+                $this->addAggregation(new FHIRAggregationMode($v));
             }
         }
         return $this;
@@ -473,13 +450,6 @@ class FHIRElementDefinitionType extends FHIRElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getAggregation())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_AGGREGATION, $i)] = $fieldErrs;
-                }
-            }
-        }
         if (null !== ($v = $this->getCode())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_CODE] = $fieldErrs;
@@ -492,15 +462,10 @@ class FHIRElementDefinitionType extends FHIRElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_AGGREGATION])) {
-            $v = $this->getAggregation();
-            foreach($validationRules[self::FIELD_AGGREGATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT_DEFINITION_DOT_TYPE, self::FIELD_AGGREGATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_AGGREGATION])) {
-                        $errs[self::FIELD_AGGREGATION] = [];
-                    }
-                    $errs[self::FIELD_AGGREGATION][$rule] = $err;
+        if ([] !== ($vs = $this->getAggregation())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_AGGREGATION, $i)] = $fieldErrs;
                 }
             }
         }
@@ -525,6 +490,18 @@ class FHIRElementDefinitionType extends FHIRElement
                         $errs[self::FIELD_PROFILE] = [];
                     }
                     $errs[self::FIELD_PROFILE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AGGREGATION])) {
+            $v = $this->getAggregation();
+            foreach($validationRules[self::FIELD_AGGREGATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT_DEFINITION_DOT_TYPE, self::FIELD_AGGREGATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AGGREGATION])) {
+                        $errs[self::FIELD_AGGREGATION] = [];
+                    }
+                    $errs[self::FIELD_AGGREGATION][$rule] = $err;
                 }
             }
         }
@@ -556,100 +533,128 @@ class FHIRElementDefinitionType extends FHIRElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRElementDefinitionType::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRElementDefinitionType::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRElementDefinitionType::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRElementDefinitionType;
+            $type = new FHIRElementDefinitionType(null);
         } elseif (!is_object($type) || !($type instanceof FHIRElementDefinitionType)) {
             throw new \RuntimeException(sprintf(
                 'FHIRElementDefinitionType::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_CODE === $n->nodeName) {
+                $type->setCode(FHIRCode::xmlUnserialize($n));
+            } elseif (self::FIELD_PROFILE === $n->nodeName) {
+                $type->addProfile(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_AGGREGATION === $n->nodeName) {
+                $type->addAggregation(FHIRAggregationMode::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->aggregation)) {
-            foreach($children->aggregation as $child) {
-                $type->addAggregation(FHIRAggregationMode::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->code)) {
-            $type->setCode(FHIRCode::xmlUnserialize($children->code));
-        }
-        if (isset($attributes->code)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_CODE);
+        if (null !== $n) {
             $pt = $type->getCode();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->code);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setCode((string)$attributes->code);
+                $type->setCode($n->nodeValue);
             }
         }
-        if (isset($children->profile)) {
-            foreach($children->profile as $child) {
-                $type->addProfile(FHIRUri::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_PROFILE);
+        if (null !== $n) {
+            $pt = $type->getProfile();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->addProfile($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getAggregation())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_AGGREGATION, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_CODE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getProfile())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PROFILE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        if ([] !== ($vs = $this->getAggregation())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_AGGREGATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        return $element;
     }
 
     /**
@@ -658,63 +663,63 @@ class FHIRElementDefinitionType extends FHIRElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getAggregation())) {
-            $a[self::FIELD_AGGREGATION] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_AGGREGATION][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRAggregationMode::FIELD_VALUE]) || array_key_exists(FHIRAggregationMode::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRAggregationMode::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
-            }
-            if ($encValued) {
-                $a[self::FIELD_AGGREGATION_EXT] = $encs;
-            }
-        }
         if (null !== ($v = $this->getCode())) {
-            $a[self::FIELD_CODE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCode::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCode::FIELD_VALUE]);
-                $a[self::FIELD_CODE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CODE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRCode::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_CODE_EXT] = $ext;
             }
         }
         if ([] !== ($vs = $this->getProfile())) {
-            $a[self::FIELD_PROFILE] = [];
-            $encs = [];
-            $encValued = false;
+            $vals = [];
+            $exts = [];
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_PROFILE][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRUri::FIELD_VALUE]) || array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRUri::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext[FHIRUri::FIELD_VALUE]);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
                 }
             }
-            if ($encValued) {
-                $a[self::FIELD_PROFILE_EXT] = $encs;
+            if ([] !== $vals) {
+                $a[self::FIELD_PROFILE] = $vals;
+            }
+            if ([] !== $exts) {
+                $a[self::FIELD_PROFILE_EXT] = $exts;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getAggregation())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext[FHIRAggregationMode::FIELD_VALUE]);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $a[self::FIELD_AGGREGATION] = $vals;
+            }
+            if ([] !== $exts) {
+                $a[self::FIELD_AGGREGATION_EXT] = $exts;
+            }
         }
         return $a;
     }

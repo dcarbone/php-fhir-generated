@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,8 +65,10 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -83,20 +85,68 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT;
-    const FIELD_FIVE_PRIME = 'fivePrime';
-    const FIELD_LENGTH = 'length';
-    const FIELD_LENGTH_EXT = '_length';
-    const FIELD_LINKAGE = 'linkage';
-    const FIELD_SEQUENCE = 'sequence';
-    const FIELD_SEQUENCE_EXT = '_sequence';
-    const FIELD_SEQUENCE_ATTACHMENT = 'sequenceAttachment';
     const FIELD_SUBUNIT = 'subunit';
     const FIELD_SUBUNIT_EXT = '_subunit';
-    const FIELD_SUGAR = 'sugar';
+    const FIELD_SEQUENCE = 'sequence';
+    const FIELD_SEQUENCE_EXT = '_sequence';
+    const FIELD_LENGTH = 'length';
+    const FIELD_LENGTH_EXT = '_length';
+    const FIELD_SEQUENCE_ATTACHMENT = 'sequenceAttachment';
+    const FIELD_FIVE_PRIME = 'fivePrime';
     const FIELD_THREE_PRIME = 'threePrime';
+    const FIELD_LINKAGE = 'linkage';
+    const FIELD_SUGAR = 'sugar';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Index of linear sequences of nucleic acids in order of decreasing length.
+     * Sequences of the same length will be ordered by molecular weight. Subunits that
+     * have identical sequences will be repeated and have sequential subscripts.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     */
+    protected $subunit = null;
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Actual nucleotide sequence notation from 5' to 3' end using standard single
+     * letter codes. In addition to the base sequence, sugar and type of phosphate or
+     * non-phosphate linkage should also be captured.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected $sequence = null;
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The length of the sequence shall be captured.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     */
+    protected $length = null;
+
+    /**
+     * For referring to data content defined in other formats.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * (TBC).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
+     */
+    protected $sequenceAttachment = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -114,15 +164,19 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     protected $fivePrime = null;
 
     /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The length of the sequence shall be captured.
+     * The nucleotide present at the 3’ terminal shall be specified based on a
+     * controlled vocabulary. Since the sequence is represented from the 5' to the 3'
+     * end, the 5’ prime nucleotide is the letter at the last position in the
+     * sequence. A separate representation would be redundant.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $length = null;
+    protected $threePrime = null;
 
     /**
      * Nucleic acids are defined by three distinct elements: the base, sugar and
@@ -137,43 +191,6 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     protected $linkage = [];
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Actual nucleotide sequence notation from 5' to 3' end using standard single
-     * letter codes. In addition to the base sequence, sugar and type of phosphate or
-     * non-phosphate linkage should also be captured.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $sequence = null;
-
-    /**
-     * For referring to data content defined in other formats.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * (TBC).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
-     */
-    protected $sequenceAttachment = null;
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Index of linear sequences of nucleic acids in order of decreasing length.
-     * Sequences of the same length will be ordered by molecular weight. Subunits that
-     * have identical sequences will be repeated and have sequential subscripts.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
-     */
-    protected $subunit = null;
-
-    /**
      * Nucleic acids are defined by three distinct elements: the base, sugar and
      * linkage. Individual substance/moiety IDs will be created for each of these
      * elements. The nucleotide sequence will be always entered in the 5’-3’
@@ -184,21 +201,6 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar[]
      */
     protected $sugar = [];
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The nucleotide present at the 3’ terminal shall be specified based on a
-     * controlled vocabulary. Since the sequence is represented from the 5' to the 3'
-     * end, the 5’ prime nucleotide is the letter at the last position in the
-     * sequence. A separate representation would be redundant.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $threePrime = null;
 
     /**
      * Validation map for fields in type SubstanceNucleicAcid.Subunit
@@ -222,24 +224,39 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_FIVE_PRIME])) {
-            if ($data[self::FIELD_FIVE_PRIME] instanceof FHIRCodeableConcept) {
-                $this->setFivePrime($data[self::FIELD_FIVE_PRIME]);
-            } else {
-                $this->setFivePrime(new FHIRCodeableConcept($data[self::FIELD_FIVE_PRIME]));
+        if (isset($data[self::FIELD_SUBUNIT]) || isset($data[self::FIELD_SUBUNIT_EXT])) {
+            $value = isset($data[self::FIELD_SUBUNIT]) ? $data[self::FIELD_SUBUNIT] : null;
+            $ext = (isset($data[self::FIELD_SUBUNIT_EXT]) && is_array($data[self::FIELD_SUBUNIT_EXT])) ? $ext = $data[self::FIELD_SUBUNIT_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setSubunit($value);
+                } else if (is_array($value)) {
+                    $this->setSubunit(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setSubunit(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setSubunit(new FHIRInteger($ext));
+            }
+        }
+        if (isset($data[self::FIELD_SEQUENCE]) || isset($data[self::FIELD_SEQUENCE_EXT])) {
+            $value = isset($data[self::FIELD_SEQUENCE]) ? $data[self::FIELD_SEQUENCE] : null;
+            $ext = (isset($data[self::FIELD_SEQUENCE_EXT]) && is_array($data[self::FIELD_SEQUENCE_EXT])) ? $ext = $data[self::FIELD_SEQUENCE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setSequence($value);
+                } else if (is_array($value)) {
+                    $this->setSequence(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setSequence(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setSequence(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_LENGTH]) || isset($data[self::FIELD_LENGTH_EXT])) {
-            if (isset($data[self::FIELD_LENGTH])) {
-                $value = $data[self::FIELD_LENGTH];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_LENGTH_EXT]) && is_array($data[self::FIELD_LENGTH_EXT])) {
-                $ext = $data[self::FIELD_LENGTH_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_LENGTH]) ? $data[self::FIELD_LENGTH] : null;
+            $ext = (isset($data[self::FIELD_LENGTH_EXT]) && is_array($data[self::FIELD_LENGTH_EXT])) ? $ext = $data[self::FIELD_LENGTH_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRInteger) {
                     $this->setLength($value);
@@ -248,8 +265,29 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                 } else {
                     $this->setLength(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setLength(new FHIRInteger($ext));
+            }
+        }
+        if (isset($data[self::FIELD_SEQUENCE_ATTACHMENT])) {
+            if ($data[self::FIELD_SEQUENCE_ATTACHMENT] instanceof FHIRAttachment) {
+                $this->setSequenceAttachment($data[self::FIELD_SEQUENCE_ATTACHMENT]);
+            } else {
+                $this->setSequenceAttachment(new FHIRAttachment($data[self::FIELD_SEQUENCE_ATTACHMENT]));
+            }
+        }
+        if (isset($data[self::FIELD_FIVE_PRIME])) {
+            if ($data[self::FIELD_FIVE_PRIME] instanceof FHIRCodeableConcept) {
+                $this->setFivePrime($data[self::FIELD_FIVE_PRIME]);
+            } else {
+                $this->setFivePrime(new FHIRCodeableConcept($data[self::FIELD_FIVE_PRIME]));
+            }
+        }
+        if (isset($data[self::FIELD_THREE_PRIME])) {
+            if ($data[self::FIELD_THREE_PRIME] instanceof FHIRCodeableConcept) {
+                $this->setThreePrime($data[self::FIELD_THREE_PRIME]);
+            } else {
+                $this->setThreePrime(new FHIRCodeableConcept($data[self::FIELD_THREE_PRIME]));
             }
         }
         if (isset($data[self::FIELD_LINKAGE])) {
@@ -264,63 +302,10 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                         $this->addLinkage(new FHIRSubstanceNucleicAcidLinkage($v));
                     }
                 }
-            } else if ($data[self::FIELD_LINKAGE] instanceof FHIRSubstanceNucleicAcidLinkage) {
+            } elseif ($data[self::FIELD_LINKAGE] instanceof FHIRSubstanceNucleicAcidLinkage) {
                 $this->addLinkage($data[self::FIELD_LINKAGE]);
             } else {
                 $this->addLinkage(new FHIRSubstanceNucleicAcidLinkage($data[self::FIELD_LINKAGE]));
-            }
-        }
-        if (isset($data[self::FIELD_SEQUENCE]) || isset($data[self::FIELD_SEQUENCE_EXT])) {
-            if (isset($data[self::FIELD_SEQUENCE])) {
-                $value = $data[self::FIELD_SEQUENCE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SEQUENCE_EXT]) && is_array($data[self::FIELD_SEQUENCE_EXT])) {
-                $ext = $data[self::FIELD_SEQUENCE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setSequence($value);
-                } else if (is_array($value)) {
-                    $this->setSequence(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setSequence(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setSequence(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_SEQUENCE_ATTACHMENT])) {
-            if ($data[self::FIELD_SEQUENCE_ATTACHMENT] instanceof FHIRAttachment) {
-                $this->setSequenceAttachment($data[self::FIELD_SEQUENCE_ATTACHMENT]);
-            } else {
-                $this->setSequenceAttachment(new FHIRAttachment($data[self::FIELD_SEQUENCE_ATTACHMENT]));
-            }
-        }
-        if (isset($data[self::FIELD_SUBUNIT]) || isset($data[self::FIELD_SUBUNIT_EXT])) {
-            if (isset($data[self::FIELD_SUBUNIT])) {
-                $value = $data[self::FIELD_SUBUNIT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SUBUNIT_EXT]) && is_array($data[self::FIELD_SUBUNIT_EXT])) {
-                $ext = $data[self::FIELD_SUBUNIT_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->setSubunit($value);
-                } else if (is_array($value)) {
-                    $this->setSubunit(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->setSubunit(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setSubunit(new FHIRInteger($ext));
             }
         }
         if (isset($data[self::FIELD_SUGAR])) {
@@ -335,17 +320,10 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                         $this->addSugar(new FHIRSubstanceNucleicAcidSugar($v));
                     }
                 }
-            } else if ($data[self::FIELD_SUGAR] instanceof FHIRSubstanceNucleicAcidSugar) {
+            } elseif ($data[self::FIELD_SUGAR] instanceof FHIRSubstanceNucleicAcidSugar) {
                 $this->addSugar($data[self::FIELD_SUGAR]);
             } else {
                 $this->addSugar(new FHIRSubstanceNucleicAcidSugar($data[self::FIELD_SUGAR]));
-            }
-        }
-        if (isset($data[self::FIELD_THREE_PRIME])) {
-            if ($data[self::FIELD_THREE_PRIME] instanceof FHIRCodeableConcept) {
-                $this->setThreePrime($data[self::FIELD_THREE_PRIME]);
-            } else {
-                $this->setThreePrime(new FHIRCodeableConcept($data[self::FIELD_THREE_PRIME]));
             }
         }
     }
@@ -364,10 +342,151 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<SubstanceNucleicAcidSubunit{$xmlns}></SubstanceNucleicAcidSubunit>";
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Index of linear sequences of nucleic acids in order of decreasing length.
+     * Sequences of the same length will be ordered by molecular weight. Subunits that
+     * have identical sequences will be repeated and have sequential subscripts.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     */
+    public function getSubunit()
+    {
+        return $this->subunit;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Index of linear sequences of nucleic acids in order of decreasing length.
+     * Sequences of the same length will be ordered by molecular weight. Subunits that
+     * have identical sequences will be repeated and have sequential subscripts.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $subunit
+     * @return static
+     */
+    public function setSubunit($subunit = null)
+    {
+        if (null !== $subunit && !($subunit instanceof FHIRInteger)) {
+            $subunit = new FHIRInteger($subunit);
+        }
+        $this->_trackValueSet($this->subunit, $subunit);
+        $this->subunit = $subunit;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Actual nucleotide sequence notation from 5' to 3' end using standard single
+     * letter codes. In addition to the base sequence, sugar and type of phosphate or
+     * non-phosphate linkage should also be captured.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getSequence()
+    {
+        return $this->sequence;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Actual nucleotide sequence notation from 5' to 3' end using standard single
+     * letter codes. In addition to the base sequence, sugar and type of phosphate or
+     * non-phosphate linkage should also be captured.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $sequence
+     * @return static
+     */
+    public function setSequence($sequence = null)
+    {
+        if (null !== $sequence && !($sequence instanceof FHIRString)) {
+            $sequence = new FHIRString($sequence);
+        }
+        $this->_trackValueSet($this->sequence, $sequence);
+        $this->sequence = $sequence;
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The length of the sequence shall be captured.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     */
+    public function getLength()
+    {
+        return $this->length;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The length of the sequence shall be captured.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $length
+     * @return static
+     */
+    public function setLength($length = null)
+    {
+        if (null !== $length && !($length instanceof FHIRInteger)) {
+            $length = new FHIRInteger($length);
+        }
+        $this->_trackValueSet($this->length, $length);
+        $this->length = $length;
+        return $this;
+    }
+
+    /**
+     * For referring to data content defined in other formats.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * (TBC).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
+     */
+    public function getSequenceAttachment()
+    {
+        return $this->sequenceAttachment;
+    }
+
+    /**
+     * For referring to data content defined in other formats.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * (TBC).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $sequenceAttachment
+     * @return static
+     */
+    public function setSequenceAttachment(FHIRAttachment $sequenceAttachment = null)
+    {
+        $this->_trackValueSet($this->sequenceAttachment, $sequenceAttachment);
+        $this->sequenceAttachment = $sequenceAttachment;
+        return $this;
     }
 
     /**
@@ -404,277 +523,8 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      */
     public function setFivePrime(FHIRCodeableConcept $fivePrime = null)
     {
+        $this->_trackValueSet($this->fivePrime, $fivePrime);
         $this->fivePrime = $fivePrime;
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The length of the sequence shall be captured.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
-     */
-    public function getLength()
-    {
-        return $this->length;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The length of the sequence shall be captured.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $length
-     * @return static
-     */
-    public function setLength($length = null)
-    {
-        if (null === $length) {
-            $this->length = null;
-            return $this;
-        }
-        if ($length instanceof FHIRInteger) {
-            $this->length = $length;
-            return $this;
-        }
-        $this->length = new FHIRInteger($length);
-        return $this;
-    }
-
-    /**
-     * Nucleic acids are defined by three distinct elements: the base, sugar and
-     * linkage. Individual substance/moiety IDs will be created for each of these
-     * elements. The nucleotide sequence will be always entered in the 5’-3’
-     * direction.
-     *
-     * The linkages between sugar residues will also be captured.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidLinkage[]
-     */
-    public function getLinkage()
-    {
-        return $this->linkage;
-    }
-
-    /**
-     * Nucleic acids are defined by three distinct elements: the base, sugar and
-     * linkage. Individual substance/moiety IDs will be created for each of these
-     * elements. The nucleotide sequence will be always entered in the 5’-3’
-     * direction.
-     *
-     * The linkages between sugar residues will also be captured.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidLinkage $linkage
-     * @return static
-     */
-    public function addLinkage(FHIRSubstanceNucleicAcidLinkage $linkage = null)
-    {
-        $this->linkage[] = $linkage;
-        return $this;
-    }
-
-    /**
-     * Nucleic acids are defined by three distinct elements: the base, sugar and
-     * linkage. Individual substance/moiety IDs will be created for each of these
-     * elements. The nucleotide sequence will be always entered in the 5’-3’
-     * direction.
-     *
-     * The linkages between sugar residues will also be captured.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidLinkage[] $linkage
-     * @return static
-     */
-    public function setLinkage(array $linkage = [])
-    {
-        $this->linkage = [];
-        if ([] === $linkage) {
-            return $this;
-        }
-        foreach($linkage as $v) {
-            if ($v instanceof FHIRSubstanceNucleicAcidLinkage) {
-                $this->addLinkage($v);
-            } else {
-                $this->addLinkage(new FHIRSubstanceNucleicAcidLinkage($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Actual nucleotide sequence notation from 5' to 3' end using standard single
-     * letter codes. In addition to the base sequence, sugar and type of phosphate or
-     * non-phosphate linkage should also be captured.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getSequence()
-    {
-        return $this->sequence;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Actual nucleotide sequence notation from 5' to 3' end using standard single
-     * letter codes. In addition to the base sequence, sugar and type of phosphate or
-     * non-phosphate linkage should also be captured.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $sequence
-     * @return static
-     */
-    public function setSequence($sequence = null)
-    {
-        if (null === $sequence) {
-            $this->sequence = null;
-            return $this;
-        }
-        if ($sequence instanceof FHIRString) {
-            $this->sequence = $sequence;
-            return $this;
-        }
-        $this->sequence = new FHIRString($sequence);
-        return $this;
-    }
-
-    /**
-     * For referring to data content defined in other formats.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * (TBC).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
-     */
-    public function getSequenceAttachment()
-    {
-        return $this->sequenceAttachment;
-    }
-
-    /**
-     * For referring to data content defined in other formats.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * (TBC).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $sequenceAttachment
-     * @return static
-     */
-    public function setSequenceAttachment(FHIRAttachment $sequenceAttachment = null)
-    {
-        $this->sequenceAttachment = $sequenceAttachment;
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Index of linear sequences of nucleic acids in order of decreasing length.
-     * Sequences of the same length will be ordered by molecular weight. Subunits that
-     * have identical sequences will be repeated and have sequential subscripts.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
-     */
-    public function getSubunit()
-    {
-        return $this->subunit;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Index of linear sequences of nucleic acids in order of decreasing length.
-     * Sequences of the same length will be ordered by molecular weight. Subunits that
-     * have identical sequences will be repeated and have sequential subscripts.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $subunit
-     * @return static
-     */
-    public function setSubunit($subunit = null)
-    {
-        if (null === $subunit) {
-            $this->subunit = null;
-            return $this;
-        }
-        if ($subunit instanceof FHIRInteger) {
-            $this->subunit = $subunit;
-            return $this;
-        }
-        $this->subunit = new FHIRInteger($subunit);
-        return $this;
-    }
-
-    /**
-     * Nucleic acids are defined by three distinct elements: the base, sugar and
-     * linkage. Individual substance/moiety IDs will be created for each of these
-     * elements. The nucleotide sequence will be always entered in the 5’-3’
-     * direction.
-     *
-     * 5.3.6.8.1 Sugar ID (Mandatory).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar[]
-     */
-    public function getSugar()
-    {
-        return $this->sugar;
-    }
-
-    /**
-     * Nucleic acids are defined by three distinct elements: the base, sugar and
-     * linkage. Individual substance/moiety IDs will be created for each of these
-     * elements. The nucleotide sequence will be always entered in the 5’-3’
-     * direction.
-     *
-     * 5.3.6.8.1 Sugar ID (Mandatory).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar $sugar
-     * @return static
-     */
-    public function addSugar(FHIRSubstanceNucleicAcidSugar $sugar = null)
-    {
-        $this->sugar[] = $sugar;
-        return $this;
-    }
-
-    /**
-     * Nucleic acids are defined by three distinct elements: the base, sugar and
-     * linkage. Individual substance/moiety IDs will be created for each of these
-     * elements. The nucleotide sequence will be always entered in the 5’-3’
-     * direction.
-     *
-     * 5.3.6.8.1 Sugar ID (Mandatory).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar[] $sugar
-     * @return static
-     */
-    public function setSugar(array $sugar = [])
-    {
-        $this->sugar = [];
-        if ([] === $sugar) {
-            return $this;
-        }
-        foreach($sugar as $v) {
-            if ($v instanceof FHIRSubstanceNucleicAcidSugar) {
-                $this->addSugar($v);
-            } else {
-                $this->addSugar(new FHIRSubstanceNucleicAcidSugar($v));
-            }
-        }
         return $this;
     }
 
@@ -712,7 +562,134 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      */
     public function setThreePrime(FHIRCodeableConcept $threePrime = null)
     {
+        $this->_trackValueSet($this->threePrime, $threePrime);
         $this->threePrime = $threePrime;
+        return $this;
+    }
+
+    /**
+     * Nucleic acids are defined by three distinct elements: the base, sugar and
+     * linkage. Individual substance/moiety IDs will be created for each of these
+     * elements. The nucleotide sequence will be always entered in the 5’-3’
+     * direction.
+     *
+     * The linkages between sugar residues will also be captured.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidLinkage[]
+     */
+    public function getLinkage()
+    {
+        return $this->linkage;
+    }
+
+    /**
+     * Nucleic acids are defined by three distinct elements: the base, sugar and
+     * linkage. Individual substance/moiety IDs will be created for each of these
+     * elements. The nucleotide sequence will be always entered in the 5’-3’
+     * direction.
+     *
+     * The linkages between sugar residues will also be captured.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidLinkage $linkage
+     * @return static
+     */
+    public function addLinkage(FHIRSubstanceNucleicAcidLinkage $linkage = null)
+    {
+        $this->_trackValueAdded();
+        $this->linkage[] = $linkage;
+        return $this;
+    }
+
+    /**
+     * Nucleic acids are defined by three distinct elements: the base, sugar and
+     * linkage. Individual substance/moiety IDs will be created for each of these
+     * elements. The nucleotide sequence will be always entered in the 5’-3’
+     * direction.
+     *
+     * The linkages between sugar residues will also be captured.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidLinkage[] $linkage
+     * @return static
+     */
+    public function setLinkage(array $linkage = [])
+    {
+        if ([] !== $this->linkage) {
+            $this->_trackValuesRemoved(count($this->linkage));
+            $this->linkage = [];
+        }
+        if ([] === $linkage) {
+            return $this;
+        }
+        foreach($linkage as $v) {
+            if ($v instanceof FHIRSubstanceNucleicAcidLinkage) {
+                $this->addLinkage($v);
+            } else {
+                $this->addLinkage(new FHIRSubstanceNucleicAcidLinkage($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Nucleic acids are defined by three distinct elements: the base, sugar and
+     * linkage. Individual substance/moiety IDs will be created for each of these
+     * elements. The nucleotide sequence will be always entered in the 5’-3’
+     * direction.
+     *
+     * 5.3.6.8.1 Sugar ID (Mandatory).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar[]
+     */
+    public function getSugar()
+    {
+        return $this->sugar;
+    }
+
+    /**
+     * Nucleic acids are defined by three distinct elements: the base, sugar and
+     * linkage. Individual substance/moiety IDs will be created for each of these
+     * elements. The nucleotide sequence will be always entered in the 5’-3’
+     * direction.
+     *
+     * 5.3.6.8.1 Sugar ID (Mandatory).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar $sugar
+     * @return static
+     */
+    public function addSugar(FHIRSubstanceNucleicAcidSugar $sugar = null)
+    {
+        $this->_trackValueAdded();
+        $this->sugar[] = $sugar;
+        return $this;
+    }
+
+    /**
+     * Nucleic acids are defined by three distinct elements: the base, sugar and
+     * linkage. Individual substance/moiety IDs will be created for each of these
+     * elements. The nucleotide sequence will be always entered in the 5’-3’
+     * direction.
+     *
+     * 5.3.6.8.1 Sugar ID (Mandatory).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar[] $sugar
+     * @return static
+     */
+    public function setSugar(array $sugar = [])
+    {
+        if ([] !== $this->sugar) {
+            $this->_trackValuesRemoved(count($this->sugar));
+            $this->sugar = [];
+        }
+        if ([] === $sugar) {
+            return $this;
+        }
+        foreach($sugar as $v) {
+            if ($v instanceof FHIRSubstanceNucleicAcidSugar) {
+                $this->addSugar($v);
+            } else {
+                $this->addSugar(new FHIRSubstanceNucleicAcidSugar($v));
+            }
+        }
         return $this;
     }
 
@@ -737,14 +714,34 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getFivePrime())) {
+        if (null !== ($v = $this->getSubunit())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_FIVE_PRIME] = $fieldErrs;
+                $errs[self::FIELD_SUBUNIT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSequence())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SEQUENCE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getLength())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_LENGTH] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSequenceAttachment())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SEQUENCE_ATTACHMENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getFivePrime())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_FIVE_PRIME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getThreePrime())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_THREE_PRIME] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getLinkage())) {
@@ -754,90 +751,10 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getSequence())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SEQUENCE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getSequenceAttachment())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SEQUENCE_ATTACHMENT] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getSubunit())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SUBUNIT] = $fieldErrs;
-            }
-        }
         if ([] !== ($vs = $this->getSugar())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_SUGAR, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getThreePrime())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_THREE_PRIME] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_FIVE_PRIME])) {
-            $v = $this->getFivePrime();
-            foreach($validationRules[self::FIELD_FIVE_PRIME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_FIVE_PRIME, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FIVE_PRIME])) {
-                        $errs[self::FIELD_FIVE_PRIME] = [];
-                    }
-                    $errs[self::FIELD_FIVE_PRIME][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_LENGTH])) {
-            $v = $this->getLength();
-            foreach($validationRules[self::FIELD_LENGTH] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_LENGTH, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_LENGTH])) {
-                        $errs[self::FIELD_LENGTH] = [];
-                    }
-                    $errs[self::FIELD_LENGTH][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_LINKAGE])) {
-            $v = $this->getLinkage();
-            foreach($validationRules[self::FIELD_LINKAGE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_LINKAGE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_LINKAGE])) {
-                        $errs[self::FIELD_LINKAGE] = [];
-                    }
-                    $errs[self::FIELD_LINKAGE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SEQUENCE])) {
-            $v = $this->getSequence();
-            foreach($validationRules[self::FIELD_SEQUENCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_SEQUENCE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SEQUENCE])) {
-                        $errs[self::FIELD_SEQUENCE] = [];
-                    }
-                    $errs[self::FIELD_SEQUENCE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SEQUENCE_ATTACHMENT])) {
-            $v = $this->getSequenceAttachment();
-            foreach($validationRules[self::FIELD_SEQUENCE_ATTACHMENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_SEQUENCE_ATTACHMENT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SEQUENCE_ATTACHMENT])) {
-                        $errs[self::FIELD_SEQUENCE_ATTACHMENT] = [];
-                    }
-                    $errs[self::FIELD_SEQUENCE_ATTACHMENT][$rule] = $err;
                 }
             }
         }
@@ -853,15 +770,51 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SUGAR])) {
-            $v = $this->getSugar();
-            foreach($validationRules[self::FIELD_SUGAR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_SUGAR, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_SEQUENCE])) {
+            $v = $this->getSequence();
+            foreach($validationRules[self::FIELD_SEQUENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_SEQUENCE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SUGAR])) {
-                        $errs[self::FIELD_SUGAR] = [];
+                    if (!isset($errs[self::FIELD_SEQUENCE])) {
+                        $errs[self::FIELD_SEQUENCE] = [];
                     }
-                    $errs[self::FIELD_SUGAR][$rule] = $err;
+                    $errs[self::FIELD_SEQUENCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_LENGTH])) {
+            $v = $this->getLength();
+            foreach($validationRules[self::FIELD_LENGTH] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_LENGTH, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_LENGTH])) {
+                        $errs[self::FIELD_LENGTH] = [];
+                    }
+                    $errs[self::FIELD_LENGTH][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SEQUENCE_ATTACHMENT])) {
+            $v = $this->getSequenceAttachment();
+            foreach($validationRules[self::FIELD_SEQUENCE_ATTACHMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_SEQUENCE_ATTACHMENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SEQUENCE_ATTACHMENT])) {
+                        $errs[self::FIELD_SEQUENCE_ATTACHMENT] = [];
+                    }
+                    $errs[self::FIELD_SEQUENCE_ATTACHMENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_FIVE_PRIME])) {
+            $v = $this->getFivePrime();
+            foreach($validationRules[self::FIELD_FIVE_PRIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_FIVE_PRIME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FIVE_PRIME])) {
+                        $errs[self::FIELD_FIVE_PRIME] = [];
+                    }
+                    $errs[self::FIELD_FIVE_PRIME][$rule] = $err;
                 }
             }
         }
@@ -874,6 +827,30 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                         $errs[self::FIELD_THREE_PRIME] = [];
                     }
                     $errs[self::FIELD_THREE_PRIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_LINKAGE])) {
+            $v = $this->getLinkage();
+            foreach($validationRules[self::FIELD_LINKAGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_LINKAGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_LINKAGE])) {
+                        $errs[self::FIELD_LINKAGE] = [];
+                    }
+                    $errs[self::FIELD_LINKAGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUGAR])) {
+            $v = $this->getSugar();
+            foreach($validationRules[self::FIELD_SUGAR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_SUGAR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUGAR])) {
+                        $errs[self::FIELD_SUGAR] = [];
+                    }
+                    $errs[self::FIELD_SUGAR][$rule] = $err;
                 }
             }
         }
@@ -917,146 +894,174 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRSubstanceNucleicAcidSubunit::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSubstanceNucleicAcidSubunit::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRSubstanceNucleicAcidSubunit::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRSubstanceNucleicAcidSubunit;
+            $type = new FHIRSubstanceNucleicAcidSubunit(null);
         } elseif (!is_object($type) || !($type instanceof FHIRSubstanceNucleicAcidSubunit)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSubstanceNucleicAcidSubunit::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_SUBUNIT === $n->nodeName) {
+                $type->setSubunit(FHIRInteger::xmlUnserialize($n));
+            } elseif (self::FIELD_SEQUENCE === $n->nodeName) {
+                $type->setSequence(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_LENGTH === $n->nodeName) {
+                $type->setLength(FHIRInteger::xmlUnserialize($n));
+            } elseif (self::FIELD_SEQUENCE_ATTACHMENT === $n->nodeName) {
+                $type->setSequenceAttachment(FHIRAttachment::xmlUnserialize($n));
+            } elseif (self::FIELD_FIVE_PRIME === $n->nodeName) {
+                $type->setFivePrime(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_THREE_PRIME === $n->nodeName) {
+                $type->setThreePrime(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_LINKAGE === $n->nodeName) {
+                $type->addLinkage(FHIRSubstanceNucleicAcidLinkage::xmlUnserialize($n));
+            } elseif (self::FIELD_SUGAR === $n->nodeName) {
+                $type->addSugar(FHIRSubstanceNucleicAcidSugar::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->fivePrime)) {
-            $type->setFivePrime(FHIRCodeableConcept::xmlUnserialize($children->fivePrime));
-        }
-        if (isset($children->length)) {
-            $type->setLength(FHIRInteger::xmlUnserialize($children->length));
-        }
-        if (isset($attributes->length)) {
-            $pt = $type->getLength();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->length);
-            } else {
-                $type->setLength((string)$attributes->length);
-            }
-        }
-        if (isset($children->linkage)) {
-            foreach($children->linkage as $child) {
-                $type->addLinkage(FHIRSubstanceNucleicAcidLinkage::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->sequence)) {
-            $type->setSequence(FHIRString::xmlUnserialize($children->sequence));
-        }
-        if (isset($attributes->sequence)) {
-            $pt = $type->getSequence();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->sequence);
-            } else {
-                $type->setSequence((string)$attributes->sequence);
-            }
-        }
-        if (isset($children->sequenceAttachment)) {
-            $type->setSequenceAttachment(FHIRAttachment::xmlUnserialize($children->sequenceAttachment));
-        }
-        if (isset($children->subunit)) {
-            $type->setSubunit(FHIRInteger::xmlUnserialize($children->subunit));
-        }
-        if (isset($attributes->subunit)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_SUBUNIT);
+        if (null !== $n) {
             $pt = $type->getSubunit();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->subunit);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setSubunit((string)$attributes->subunit);
+                $type->setSubunit($n->nodeValue);
             }
         }
-        if (isset($children->sugar)) {
-            foreach($children->sugar as $child) {
-                $type->addSugar(FHIRSubstanceNucleicAcidSugar::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_SEQUENCE);
+        if (null !== $n) {
+            $pt = $type->getSequence();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setSequence($n->nodeValue);
             }
         }
-        if (isset($children->threePrime)) {
-            $type->setThreePrime(FHIRCodeableConcept::xmlUnserialize($children->threePrime));
+        $n = $element->attributes->getNamedItem(self::FIELD_LENGTH);
+        if (null !== $n) {
+            $pt = $type->getLength();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setLength($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getFivePrime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FIVE_PRIME, null, $v->_getFHIRXMLNamespace()));
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getSubunit())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SUBUNIT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getSequence())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SEQUENCE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getLength())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LENGTH, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_LENGTH);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getSequenceAttachment())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SEQUENCE_ATTACHMENT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getFivePrime())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_FIVE_PRIME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getThreePrime())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_THREE_PRIME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getLinkage())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_LINKAGE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_LINKAGE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
-        }
-        if (null !== ($v = $this->getSequence())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getSequenceAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE_ATTACHMENT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getSubunit())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBUNIT, null, $v->_getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getSugar())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUGAR, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_SUGAR);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getThreePrime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_THREE_PRIME, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -1065,17 +1070,44 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getSubunit())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SUBUNIT] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRInteger::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_SUBUNIT_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getSequence())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SEQUENCE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_SEQUENCE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getLength())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LENGTH] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRInteger::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_LENGTH_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getSequenceAttachment())) {
+            $a[self::FIELD_SEQUENCE_ATTACHMENT] = $v;
+        }
         if (null !== ($v = $this->getFivePrime())) {
             $a[self::FIELD_FIVE_PRIME] = $v;
         }
-        if (null !== ($v = $this->getLength())) {
-            $a[self::FIELD_LENGTH] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_LENGTH_EXT] = $enc;
-            }
+        if (null !== ($v = $this->getThreePrime())) {
+            $a[self::FIELD_THREE_PRIME] = $v;
         }
         if ([] !== ($vs = $this->getLinkage())) {
             $a[self::FIELD_LINKAGE] = [];
@@ -1086,27 +1118,6 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                 $a[self::FIELD_LINKAGE][] = $v;
             }
         }
-        if (null !== ($v = $this->getSequence())) {
-            $a[self::FIELD_SEQUENCE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_SEQUENCE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getSequenceAttachment())) {
-            $a[self::FIELD_SEQUENCE_ATTACHMENT] = $v;
-        }
-        if (null !== ($v = $this->getSubunit())) {
-            $a[self::FIELD_SUBUNIT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_SUBUNIT_EXT] = $enc;
-            }
-        }
         if ([] !== ($vs = $this->getSugar())) {
             $a[self::FIELD_SUGAR] = [];
             foreach($vs as $v) {
@@ -1115,12 +1126,6 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                 }
                 $a[self::FIELD_SUGAR][] = $v;
             }
-        }
-        if (null !== ($v = $this->getThreePrime())) {
-            $a[self::FIELD_THREE_PRIME] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmun
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,9 +64,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmun
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -81,29 +83,53 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION;
+    const FIELD_VACCINE_CODE = 'vaccineCode';
+    const FIELD_TARGET_DISEASE = 'targetDisease';
     const FIELD_CONTRAINDICATED_VACCINE_CODE = 'contraindicatedVaccineCode';
+    const FIELD_FORECAST_STATUS = 'forecastStatus';
+    const FIELD_FORECAST_REASON = 'forecastReason';
     const FIELD_DATE_CRITERION = 'dateCriterion';
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
+    const FIELD_SERIES = 'series';
+    const FIELD_SERIES_EXT = '_series';
     const FIELD_DOSE_NUMBER_POSITIVE_INT = 'doseNumberPositiveInt';
     const FIELD_DOSE_NUMBER_POSITIVE_INT_EXT = '_doseNumberPositiveInt';
     const FIELD_DOSE_NUMBER_STRING = 'doseNumberString';
     const FIELD_DOSE_NUMBER_STRING_EXT = '_doseNumberString';
-    const FIELD_FORECAST_REASON = 'forecastReason';
-    const FIELD_FORECAST_STATUS = 'forecastStatus';
-    const FIELD_SERIES = 'series';
-    const FIELD_SERIES_EXT = '_series';
     const FIELD_SERIES_DOSES_POSITIVE_INT = 'seriesDosesPositiveInt';
     const FIELD_SERIES_DOSES_POSITIVE_INT_EXT = '_seriesDosesPositiveInt';
     const FIELD_SERIES_DOSES_STRING = 'seriesDosesString';
     const FIELD_SERIES_DOSES_STRING_EXT = '_seriesDosesString';
     const FIELD_SUPPORTING_IMMUNIZATION = 'supportingImmunization';
     const FIELD_SUPPORTING_PATIENT_INFORMATION = 'supportingPatientInformation';
-    const FIELD_TARGET_DISEASE = 'targetDisease';
-    const FIELD_VACCINE_CODE = 'vaccineCode';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Vaccine(s) or vaccine group that pertain to the recommendation.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    protected $vaccineCode = [];
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The targeted disease for the recommendation.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $targetDisease = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -116,6 +142,31 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected $contraindicatedVaccineCode = [];
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the patient status with respect to the path to immunity for the target
+     * disease.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $forecastStatus = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The reason for the assigned forecast status.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    protected $forecastReason = [];
 
     /**
      * A patient's point-in-time set of recommendations (i.e. forecasting) according to
@@ -141,55 +192,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     protected $description = null;
 
     /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Nominal position of the recommended dose in a series (e.g. dose 2 is the next
-     * recommended dose). (choose any one of doseNumber*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
-     */
-    protected $doseNumberPositiveInt = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Nominal position of the recommended dose in a series (e.g. dose 2 is the next
-     * recommended dose). (choose any one of doseNumber*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $doseNumberString = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The reason for the assigned forecast status.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    protected $forecastReason = [];
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the patient status with respect to the path to immunity for the target
-     * disease.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $forecastStatus = null;
-
-    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -206,8 +208,31 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The recommended number of doses to achieve immunity. (choose any one of
-     * seriesDoses*, but only one)
+     * Nominal position of the recommended dose in a series (e.g. dose 2 is the next
+     * recommended dose).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
+     */
+    protected $doseNumberPositiveInt = null;
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Nominal position of the recommended dose in a series (e.g. dose 2 is the next
+     * recommended dose).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected $doseNumberString = null;
+
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * The recommended number of doses to achieve immunity.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -218,8 +243,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The recommended number of doses to achieve immunity. (choose any one of
-     * seriesDoses*, but only one)
+     * The recommended number of doses to achieve immunity.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -250,30 +274,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     protected $supportingPatientInformation = [];
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The targeted disease for the recommendation.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $targetDisease = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Vaccine(s) or vaccine group that pertain to the recommendation.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    protected $vaccineCode = [];
-
-    /**
      * Validation map for fields in type ImmunizationRecommendation.Recommendation
      * @var array
      */
@@ -295,6 +295,31 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_VACCINE_CODE])) {
+            if (is_array($data[self::FIELD_VACCINE_CODE])) {
+                foreach($data[self::FIELD_VACCINE_CODE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addVaccineCode($v);
+                    } else {
+                        $this->addVaccineCode(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_VACCINE_CODE] instanceof FHIRCodeableConcept) {
+                $this->addVaccineCode($data[self::FIELD_VACCINE_CODE]);
+            } else {
+                $this->addVaccineCode(new FHIRCodeableConcept($data[self::FIELD_VACCINE_CODE]));
+            }
+        }
+        if (isset($data[self::FIELD_TARGET_DISEASE])) {
+            if ($data[self::FIELD_TARGET_DISEASE] instanceof FHIRCodeableConcept) {
+                $this->setTargetDisease($data[self::FIELD_TARGET_DISEASE]);
+            } else {
+                $this->setTargetDisease(new FHIRCodeableConcept($data[self::FIELD_TARGET_DISEASE]));
+            }
+        }
         if (isset($data[self::FIELD_CONTRAINDICATED_VACCINE_CODE])) {
             if (is_array($data[self::FIELD_CONTRAINDICATED_VACCINE_CODE])) {
                 foreach($data[self::FIELD_CONTRAINDICATED_VACCINE_CODE] as $v) {
@@ -307,97 +332,17 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                         $this->addContraindicatedVaccineCode(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_CONTRAINDICATED_VACCINE_CODE] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_CONTRAINDICATED_VACCINE_CODE] instanceof FHIRCodeableConcept) {
                 $this->addContraindicatedVaccineCode($data[self::FIELD_CONTRAINDICATED_VACCINE_CODE]);
             } else {
                 $this->addContraindicatedVaccineCode(new FHIRCodeableConcept($data[self::FIELD_CONTRAINDICATED_VACCINE_CODE]));
             }
         }
-        if (isset($data[self::FIELD_DATE_CRITERION])) {
-            if (is_array($data[self::FIELD_DATE_CRITERION])) {
-                foreach($data[self::FIELD_DATE_CRITERION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRImmunizationRecommendationDateCriterion) {
-                        $this->addDateCriterion($v);
-                    } else {
-                        $this->addDateCriterion(new FHIRImmunizationRecommendationDateCriterion($v));
-                    }
-                }
-            } else if ($data[self::FIELD_DATE_CRITERION] instanceof FHIRImmunizationRecommendationDateCriterion) {
-                $this->addDateCriterion($data[self::FIELD_DATE_CRITERION]);
+        if (isset($data[self::FIELD_FORECAST_STATUS])) {
+            if ($data[self::FIELD_FORECAST_STATUS] instanceof FHIRCodeableConcept) {
+                $this->setForecastStatus($data[self::FIELD_FORECAST_STATUS]);
             } else {
-                $this->addDateCriterion(new FHIRImmunizationRecommendationDateCriterion($data[self::FIELD_DATE_CRITERION]));
-            }
-        }
-        if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
-            if (isset($data[self::FIELD_DESCRIPTION])) {
-                $value = $data[self::FIELD_DESCRIPTION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) {
-                $ext = $data[self::FIELD_DESCRIPTION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setDescription($value);
-                } else if (is_array($value)) {
-                    $this->setDescription(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDescription(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT]) || isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT])) {
-            if (isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT])) {
-                $value = $data[self::FIELD_DOSE_NUMBER_POSITIVE_INT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT]) && is_array($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT])) {
-                $ext = $data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $this->setDoseNumberPositiveInt($value);
-                } else if (is_array($value)) {
-                    $this->setDoseNumberPositiveInt(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $this->setDoseNumberPositiveInt(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDoseNumberPositiveInt(new FHIRPositiveInt($ext));
-            }
-        }
-        if (isset($data[self::FIELD_DOSE_NUMBER_STRING]) || isset($data[self::FIELD_DOSE_NUMBER_STRING_EXT])) {
-            if (isset($data[self::FIELD_DOSE_NUMBER_STRING])) {
-                $value = $data[self::FIELD_DOSE_NUMBER_STRING];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DOSE_NUMBER_STRING_EXT]) && is_array($data[self::FIELD_DOSE_NUMBER_STRING_EXT])) {
-                $ext = $data[self::FIELD_DOSE_NUMBER_STRING_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setDoseNumberString($value);
-                } else if (is_array($value)) {
-                    $this->setDoseNumberString(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setDoseNumberString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDoseNumberString(new FHIRString($ext));
+                $this->setForecastStatus(new FHIRCodeableConcept($data[self::FIELD_FORECAST_STATUS]));
             }
         }
         if (isset($data[self::FIELD_FORECAST_REASON])) {
@@ -412,30 +357,48 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                         $this->addForecastReason(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_FORECAST_REASON] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_FORECAST_REASON] instanceof FHIRCodeableConcept) {
                 $this->addForecastReason($data[self::FIELD_FORECAST_REASON]);
             } else {
                 $this->addForecastReason(new FHIRCodeableConcept($data[self::FIELD_FORECAST_REASON]));
             }
         }
-        if (isset($data[self::FIELD_FORECAST_STATUS])) {
-            if ($data[self::FIELD_FORECAST_STATUS] instanceof FHIRCodeableConcept) {
-                $this->setForecastStatus($data[self::FIELD_FORECAST_STATUS]);
+        if (isset($data[self::FIELD_DATE_CRITERION])) {
+            if (is_array($data[self::FIELD_DATE_CRITERION])) {
+                foreach($data[self::FIELD_DATE_CRITERION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRImmunizationRecommendationDateCriterion) {
+                        $this->addDateCriterion($v);
+                    } else {
+                        $this->addDateCriterion(new FHIRImmunizationRecommendationDateCriterion($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_DATE_CRITERION] instanceof FHIRImmunizationRecommendationDateCriterion) {
+                $this->addDateCriterion($data[self::FIELD_DATE_CRITERION]);
             } else {
-                $this->setForecastStatus(new FHIRCodeableConcept($data[self::FIELD_FORECAST_STATUS]));
+                $this->addDateCriterion(new FHIRImmunizationRecommendationDateCriterion($data[self::FIELD_DATE_CRITERION]));
+            }
+        }
+        if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
+            $value = isset($data[self::FIELD_DESCRIPTION]) ? $data[self::FIELD_DESCRIPTION] : null;
+            $ext = (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) ? $ext = $data[self::FIELD_DESCRIPTION_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDescription($value);
+                } else if (is_array($value)) {
+                    $this->setDescription(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDescription(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_SERIES]) || isset($data[self::FIELD_SERIES_EXT])) {
-            if (isset($data[self::FIELD_SERIES])) {
-                $value = $data[self::FIELD_SERIES];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SERIES_EXT]) && is_array($data[self::FIELD_SERIES_EXT])) {
-                $ext = $data[self::FIELD_SERIES_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_SERIES]) ? $data[self::FIELD_SERIES] : null;
+            $ext = (isset($data[self::FIELD_SERIES_EXT]) && is_array($data[self::FIELD_SERIES_EXT])) ? $ext = $data[self::FIELD_SERIES_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setSeries($value);
@@ -444,21 +407,43 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 } else {
                     $this->setSeries(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setSeries(new FHIRString($ext));
             }
         }
+        if (isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT]) || isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT])) {
+            $value = isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT]) ? $data[self::FIELD_DOSE_NUMBER_POSITIVE_INT] : null;
+            $ext = (isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT]) && is_array($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT])) ? $ext = $data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setDoseNumberPositiveInt($value);
+                } else if (is_array($value)) {
+                    $this->setDoseNumberPositiveInt(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->setDoseNumberPositiveInt(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDoseNumberPositiveInt(new FHIRPositiveInt($ext));
+            }
+        }
+        if (isset($data[self::FIELD_DOSE_NUMBER_STRING]) || isset($data[self::FIELD_DOSE_NUMBER_STRING_EXT])) {
+            $value = isset($data[self::FIELD_DOSE_NUMBER_STRING]) ? $data[self::FIELD_DOSE_NUMBER_STRING] : null;
+            $ext = (isset($data[self::FIELD_DOSE_NUMBER_STRING_EXT]) && is_array($data[self::FIELD_DOSE_NUMBER_STRING_EXT])) ? $ext = $data[self::FIELD_DOSE_NUMBER_STRING_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDoseNumberString($value);
+                } else if (is_array($value)) {
+                    $this->setDoseNumberString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDoseNumberString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDoseNumberString(new FHIRString($ext));
+            }
+        }
         if (isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT]) || isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT])) {
-            if (isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT])) {
-                $value = $data[self::FIELD_SERIES_DOSES_POSITIVE_INT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT]) && is_array($data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT])) {
-                $ext = $data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT]) ? $data[self::FIELD_SERIES_DOSES_POSITIVE_INT] : null;
+            $ext = (isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT]) && is_array($data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT])) ? $ext = $data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRPositiveInt) {
                     $this->setSeriesDosesPositiveInt($value);
@@ -467,21 +452,13 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 } else {
                     $this->setSeriesDosesPositiveInt(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setSeriesDosesPositiveInt(new FHIRPositiveInt($ext));
             }
         }
         if (isset($data[self::FIELD_SERIES_DOSES_STRING]) || isset($data[self::FIELD_SERIES_DOSES_STRING_EXT])) {
-            if (isset($data[self::FIELD_SERIES_DOSES_STRING])) {
-                $value = $data[self::FIELD_SERIES_DOSES_STRING];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SERIES_DOSES_STRING_EXT]) && is_array($data[self::FIELD_SERIES_DOSES_STRING_EXT])) {
-                $ext = $data[self::FIELD_SERIES_DOSES_STRING_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_SERIES_DOSES_STRING]) ? $data[self::FIELD_SERIES_DOSES_STRING] : null;
+            $ext = (isset($data[self::FIELD_SERIES_DOSES_STRING_EXT]) && is_array($data[self::FIELD_SERIES_DOSES_STRING_EXT])) ? $ext = $data[self::FIELD_SERIES_DOSES_STRING_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setSeriesDosesString($value);
@@ -490,7 +467,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 } else {
                     $this->setSeriesDosesString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setSeriesDosesString(new FHIRString($ext));
             }
         }
@@ -506,7 +483,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                         $this->addSupportingImmunization(new FHIRReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_SUPPORTING_IMMUNIZATION] instanceof FHIRReference) {
+            } elseif ($data[self::FIELD_SUPPORTING_IMMUNIZATION] instanceof FHIRReference) {
                 $this->addSupportingImmunization($data[self::FIELD_SUPPORTING_IMMUNIZATION]);
             } else {
                 $this->addSupportingImmunization(new FHIRReference($data[self::FIELD_SUPPORTING_IMMUNIZATION]));
@@ -524,35 +501,10 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                         $this->addSupportingPatientInformation(new FHIRReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_SUPPORTING_PATIENT_INFORMATION] instanceof FHIRReference) {
+            } elseif ($data[self::FIELD_SUPPORTING_PATIENT_INFORMATION] instanceof FHIRReference) {
                 $this->addSupportingPatientInformation($data[self::FIELD_SUPPORTING_PATIENT_INFORMATION]);
             } else {
                 $this->addSupportingPatientInformation(new FHIRReference($data[self::FIELD_SUPPORTING_PATIENT_INFORMATION]));
-            }
-        }
-        if (isset($data[self::FIELD_TARGET_DISEASE])) {
-            if ($data[self::FIELD_TARGET_DISEASE] instanceof FHIRCodeableConcept) {
-                $this->setTargetDisease($data[self::FIELD_TARGET_DISEASE]);
-            } else {
-                $this->setTargetDisease(new FHIRCodeableConcept($data[self::FIELD_TARGET_DISEASE]));
-            }
-        }
-        if (isset($data[self::FIELD_VACCINE_CODE])) {
-            if (is_array($data[self::FIELD_VACCINE_CODE])) {
-                foreach($data[self::FIELD_VACCINE_CODE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addVaccineCode($v);
-                    } else {
-                        $this->addVaccineCode(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_VACCINE_CODE] instanceof FHIRCodeableConcept) {
-                $this->addVaccineCode($data[self::FIELD_VACCINE_CODE]);
-            } else {
-                $this->addVaccineCode(new FHIRCodeableConcept($data[self::FIELD_VACCINE_CODE]));
             }
         }
     }
@@ -571,10 +523,106 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ImmunizationRecommendationRecommendation{$xmlns}></ImmunizationRecommendationRecommendation>";
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Vaccine(s) or vaccine group that pertain to the recommendation.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getVaccineCode()
+    {
+        return $this->vaccineCode;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Vaccine(s) or vaccine group that pertain to the recommendation.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $vaccineCode
+     * @return static
+     */
+    public function addVaccineCode(FHIRCodeableConcept $vaccineCode = null)
+    {
+        $this->_trackValueAdded();
+        $this->vaccineCode[] = $vaccineCode;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Vaccine(s) or vaccine group that pertain to the recommendation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $vaccineCode
+     * @return static
+     */
+    public function setVaccineCode(array $vaccineCode = [])
+    {
+        if ([] !== $this->vaccineCode) {
+            $this->_trackValuesRemoved(count($this->vaccineCode));
+            $this->vaccineCode = [];
+        }
+        if ([] === $vaccineCode) {
+            return $this;
+        }
+        foreach($vaccineCode as $v) {
+            if ($v instanceof FHIRCodeableConcept) {
+                $this->addVaccineCode($v);
+            } else {
+                $this->addVaccineCode(new FHIRCodeableConcept($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The targeted disease for the recommendation.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getTargetDisease()
+    {
+        return $this->targetDisease;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The targeted disease for the recommendation.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $targetDisease
+     * @return static
+     */
+    public function setTargetDisease(FHIRCodeableConcept $targetDisease = null)
+    {
+        $this->_trackValueSet($this->targetDisease, $targetDisease);
+        $this->targetDisease = $targetDisease;
+        return $this;
     }
 
     /**
@@ -605,6 +653,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function addContraindicatedVaccineCode(FHIRCodeableConcept $contraindicatedVaccineCode = null)
     {
+        $this->_trackValueAdded();
         $this->contraindicatedVaccineCode[] = $contraindicatedVaccineCode;
         return $this;
     }
@@ -622,7 +671,10 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function setContraindicatedVaccineCode(array $contraindicatedVaccineCode = [])
     {
-        $this->contraindicatedVaccineCode = [];
+        if ([] !== $this->contraindicatedVaccineCode) {
+            $this->_trackValuesRemoved(count($this->contraindicatedVaccineCode));
+            $this->contraindicatedVaccineCode = [];
+        }
         if ([] === $contraindicatedVaccineCode) {
             return $this;
         }
@@ -631,6 +683,104 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 $this->addContraindicatedVaccineCode($v);
             } else {
                 $this->addContraindicatedVaccineCode(new FHIRCodeableConcept($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the patient status with respect to the path to immunity for the target
+     * disease.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getForecastStatus()
+    {
+        return $this->forecastStatus;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the patient status with respect to the path to immunity for the target
+     * disease.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $forecastStatus
+     * @return static
+     */
+    public function setForecastStatus(FHIRCodeableConcept $forecastStatus = null)
+    {
+        $this->_trackValueSet($this->forecastStatus, $forecastStatus);
+        $this->forecastStatus = $forecastStatus;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The reason for the assigned forecast status.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getForecastReason()
+    {
+        return $this->forecastReason;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The reason for the assigned forecast status.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $forecastReason
+     * @return static
+     */
+    public function addForecastReason(FHIRCodeableConcept $forecastReason = null)
+    {
+        $this->_trackValueAdded();
+        $this->forecastReason[] = $forecastReason;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The reason for the assigned forecast status.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $forecastReason
+     * @return static
+     */
+    public function setForecastReason(array $forecastReason = [])
+    {
+        if ([] !== $this->forecastReason) {
+            $this->_trackValuesRemoved(count($this->forecastReason));
+            $this->forecastReason = [];
+        }
+        if ([] === $forecastReason) {
+            return $this;
+        }
+        foreach($forecastReason as $v) {
+            if ($v instanceof FHIRCodeableConcept) {
+                $this->addForecastReason($v);
+            } else {
+                $this->addForecastReason(new FHIRCodeableConcept($v));
             }
         }
         return $this;
@@ -662,6 +812,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function addDateCriterion(FHIRImmunizationRecommendationDateCriterion $dateCriterion = null)
     {
+        $this->_trackValueAdded();
         $this->dateCriterion[] = $dateCriterion;
         return $this;
     }
@@ -678,7 +829,10 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function setDateCriterion(array $dateCriterion = [])
     {
-        $this->dateCriterion = [];
+        if ([] !== $this->dateCriterion) {
+            $this->_trackValuesRemoved(count($this->dateCriterion));
+            $this->dateCriterion = [];
+        }
         if ([] === $dateCriterion) {
             return $this;
         }
@@ -720,188 +874,11 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function setDescription($description = null)
     {
-        if (null === $description) {
-            $this->description = null;
-            return $this;
+        if (null !== $description && !($description instanceof FHIRString)) {
+            $description = new FHIRString($description);
         }
-        if ($description instanceof FHIRString) {
-            $this->description = $description;
-            return $this;
-        }
-        $this->description = new FHIRString($description);
-        return $this;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Nominal position of the recommended dose in a series (e.g. dose 2 is the next
-     * recommended dose). (choose any one of doseNumber*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
-     */
-    public function getDoseNumberPositiveInt()
-    {
-        return $this->doseNumberPositiveInt;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Nominal position of the recommended dose in a series (e.g. dose 2 is the next
-     * recommended dose). (choose any one of doseNumber*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $doseNumberPositiveInt
-     * @return static
-     */
-    public function setDoseNumberPositiveInt($doseNumberPositiveInt = null)
-    {
-        if (null === $doseNumberPositiveInt) {
-            $this->doseNumberPositiveInt = null;
-            return $this;
-        }
-        if ($doseNumberPositiveInt instanceof FHIRPositiveInt) {
-            $this->doseNumberPositiveInt = $doseNumberPositiveInt;
-            return $this;
-        }
-        $this->doseNumberPositiveInt = new FHIRPositiveInt($doseNumberPositiveInt);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Nominal position of the recommended dose in a series (e.g. dose 2 is the next
-     * recommended dose). (choose any one of doseNumber*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getDoseNumberString()
-    {
-        return $this->doseNumberString;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Nominal position of the recommended dose in a series (e.g. dose 2 is the next
-     * recommended dose). (choose any one of doseNumber*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $doseNumberString
-     * @return static
-     */
-    public function setDoseNumberString($doseNumberString = null)
-    {
-        if (null === $doseNumberString) {
-            $this->doseNumberString = null;
-            return $this;
-        }
-        if ($doseNumberString instanceof FHIRString) {
-            $this->doseNumberString = $doseNumberString;
-            return $this;
-        }
-        $this->doseNumberString = new FHIRString($doseNumberString);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The reason for the assigned forecast status.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getForecastReason()
-    {
-        return $this->forecastReason;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The reason for the assigned forecast status.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $forecastReason
-     * @return static
-     */
-    public function addForecastReason(FHIRCodeableConcept $forecastReason = null)
-    {
-        $this->forecastReason[] = $forecastReason;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The reason for the assigned forecast status.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $forecastReason
-     * @return static
-     */
-    public function setForecastReason(array $forecastReason = [])
-    {
-        $this->forecastReason = [];
-        if ([] === $forecastReason) {
-            return $this;
-        }
-        foreach($forecastReason as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addForecastReason($v);
-            } else {
-                $this->addForecastReason(new FHIRCodeableConcept($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the patient status with respect to the path to immunity for the target
-     * disease.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getForecastStatus()
-    {
-        return $this->forecastStatus;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the patient status with respect to the path to immunity for the target
-     * disease.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $forecastStatus
-     * @return static
-     */
-    public function setForecastStatus(FHIRCodeableConcept $forecastStatus = null)
-    {
-        $this->forecastStatus = $forecastStatus;
+        $this->_trackValueSet($this->description, $description);
+        $this->description = $description;
         return $this;
     }
 
@@ -933,15 +910,11 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function setSeries($series = null)
     {
-        if (null === $series) {
-            $this->series = null;
-            return $this;
+        if (null !== $series && !($series instanceof FHIRString)) {
+            $series = new FHIRString($series);
         }
-        if ($series instanceof FHIRString) {
-            $this->series = $series;
-            return $this;
-        }
-        $this->series = new FHIRString($series);
+        $this->_trackValueSet($this->series, $series);
+        $this->series = $series;
         return $this;
     }
 
@@ -950,8 +923,79 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The recommended number of doses to achieve immunity. (choose any one of
-     * seriesDoses*, but only one)
+     * Nominal position of the recommended dose in a series (e.g. dose 2 is the next
+     * recommended dose).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
+     */
+    public function getDoseNumberPositiveInt()
+    {
+        return $this->doseNumberPositiveInt;
+    }
+
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Nominal position of the recommended dose in a series (e.g. dose 2 is the next
+     * recommended dose).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $doseNumberPositiveInt
+     * @return static
+     */
+    public function setDoseNumberPositiveInt($doseNumberPositiveInt = null)
+    {
+        if (null !== $doseNumberPositiveInt && !($doseNumberPositiveInt instanceof FHIRPositiveInt)) {
+            $doseNumberPositiveInt = new FHIRPositiveInt($doseNumberPositiveInt);
+        }
+        $this->_trackValueSet($this->doseNumberPositiveInt, $doseNumberPositiveInt);
+        $this->doseNumberPositiveInt = $doseNumberPositiveInt;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Nominal position of the recommended dose in a series (e.g. dose 2 is the next
+     * recommended dose).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getDoseNumberString()
+    {
+        return $this->doseNumberString;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Nominal position of the recommended dose in a series (e.g. dose 2 is the next
+     * recommended dose).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $doseNumberString
+     * @return static
+     */
+    public function setDoseNumberString($doseNumberString = null)
+    {
+        if (null !== $doseNumberString && !($doseNumberString instanceof FHIRString)) {
+            $doseNumberString = new FHIRString($doseNumberString);
+        }
+        $this->_trackValueSet($this->doseNumberString, $doseNumberString);
+        $this->doseNumberString = $doseNumberString;
+        return $this;
+    }
+
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * The recommended number of doses to achieve immunity.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
@@ -965,23 +1009,18 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The recommended number of doses to achieve immunity. (choose any one of
-     * seriesDoses*, but only one)
+     * The recommended number of doses to achieve immunity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $seriesDosesPositiveInt
      * @return static
      */
     public function setSeriesDosesPositiveInt($seriesDosesPositiveInt = null)
     {
-        if (null === $seriesDosesPositiveInt) {
-            $this->seriesDosesPositiveInt = null;
-            return $this;
+        if (null !== $seriesDosesPositiveInt && !($seriesDosesPositiveInt instanceof FHIRPositiveInt)) {
+            $seriesDosesPositiveInt = new FHIRPositiveInt($seriesDosesPositiveInt);
         }
-        if ($seriesDosesPositiveInt instanceof FHIRPositiveInt) {
-            $this->seriesDosesPositiveInt = $seriesDosesPositiveInt;
-            return $this;
-        }
-        $this->seriesDosesPositiveInt = new FHIRPositiveInt($seriesDosesPositiveInt);
+        $this->_trackValueSet($this->seriesDosesPositiveInt, $seriesDosesPositiveInt);
+        $this->seriesDosesPositiveInt = $seriesDosesPositiveInt;
         return $this;
     }
 
@@ -990,8 +1029,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The recommended number of doses to achieve immunity. (choose any one of
-     * seriesDoses*, but only one)
+     * The recommended number of doses to achieve immunity.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -1005,23 +1043,18 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The recommended number of doses to achieve immunity. (choose any one of
-     * seriesDoses*, but only one)
+     * The recommended number of doses to achieve immunity.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $seriesDosesString
      * @return static
      */
     public function setSeriesDosesString($seriesDosesString = null)
     {
-        if (null === $seriesDosesString) {
-            $this->seriesDosesString = null;
-            return $this;
+        if (null !== $seriesDosesString && !($seriesDosesString instanceof FHIRString)) {
+            $seriesDosesString = new FHIRString($seriesDosesString);
         }
-        if ($seriesDosesString instanceof FHIRString) {
-            $this->seriesDosesString = $seriesDosesString;
-            return $this;
-        }
-        $this->seriesDosesString = new FHIRString($seriesDosesString);
+        $this->_trackValueSet($this->seriesDosesString, $seriesDosesString);
+        $this->seriesDosesString = $seriesDosesString;
         return $this;
     }
 
@@ -1053,6 +1086,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function addSupportingImmunization(FHIRReference $supportingImmunization = null)
     {
+        $this->_trackValueAdded();
         $this->supportingImmunization[] = $supportingImmunization;
         return $this;
     }
@@ -1070,7 +1104,10 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function setSupportingImmunization(array $supportingImmunization = [])
     {
-        $this->supportingImmunization = [];
+        if ([] !== $this->supportingImmunization) {
+            $this->_trackValuesRemoved(count($this->supportingImmunization));
+            $this->supportingImmunization = [];
+        }
         if ([] === $supportingImmunization) {
             return $this;
         }
@@ -1112,6 +1149,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function addSupportingPatientInformation(FHIRReference $supportingPatientInformation = null)
     {
+        $this->_trackValueAdded();
         $this->supportingPatientInformation[] = $supportingPatientInformation;
         return $this;
     }
@@ -1129,7 +1167,10 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function setSupportingPatientInformation(array $supportingPatientInformation = [])
     {
-        $this->supportingPatientInformation = [];
+        if ([] !== $this->supportingPatientInformation) {
+            $this->_trackValuesRemoved(count($this->supportingPatientInformation));
+            $this->supportingPatientInformation = [];
+        }
         if ([] === $supportingPatientInformation) {
             return $this;
         }
@@ -1138,97 +1179,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 $this->addSupportingPatientInformation($v);
             } else {
                 $this->addSupportingPatientInformation(new FHIRReference($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The targeted disease for the recommendation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getTargetDisease()
-    {
-        return $this->targetDisease;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The targeted disease for the recommendation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $targetDisease
-     * @return static
-     */
-    public function setTargetDisease(FHIRCodeableConcept $targetDisease = null)
-    {
-        $this->targetDisease = $targetDisease;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Vaccine(s) or vaccine group that pertain to the recommendation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getVaccineCode()
-    {
-        return $this->vaccineCode;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Vaccine(s) or vaccine group that pertain to the recommendation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $vaccineCode
-     * @return static
-     */
-    public function addVaccineCode(FHIRCodeableConcept $vaccineCode = null)
-    {
-        $this->vaccineCode[] = $vaccineCode;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Vaccine(s) or vaccine group that pertain to the recommendation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $vaccineCode
-     * @return static
-     */
-    public function setVaccineCode(array $vaccineCode = [])
-    {
-        $this->vaccineCode = [];
-        if ([] === $vaccineCode) {
-            return $this;
-        }
-        foreach($vaccineCode as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addVaccineCode($v);
-            } else {
-                $this->addVaccineCode(new FHIRCodeableConcept($v));
             }
         }
         return $this;
@@ -1255,10 +1205,34 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if ([] !== ($vs = $this->getVaccineCode())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_VACCINE_CODE, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getTargetDisease())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TARGET_DISEASE] = $fieldErrs;
+            }
+        }
         if ([] !== ($vs = $this->getContraindicatedVaccineCode())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_CONTRAINDICATED_VACCINE_CODE, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getForecastStatus())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_FORECAST_STATUS] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getForecastReason())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_FORECAST_REASON, $i)] = $fieldErrs;
                 }
             }
         }
@@ -1274,6 +1248,11 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getSeries())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SERIES] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getDoseNumberPositiveInt())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_DOSE_NUMBER_POSITIVE_INT] = $fieldErrs;
@@ -1282,23 +1261,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         if (null !== ($v = $this->getDoseNumberString())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_DOSE_NUMBER_STRING] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getForecastReason())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_FORECAST_REASON, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getForecastStatus())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_FORECAST_STATUS] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getSeries())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SERIES] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getSeriesDosesPositiveInt())) {
@@ -1325,15 +1287,27 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getTargetDisease())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TARGET_DISEASE] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_VACCINE_CODE])) {
+            $v = $this->getVaccineCode();
+            foreach($validationRules[self::FIELD_VACCINE_CODE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_VACCINE_CODE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VACCINE_CODE])) {
+                        $errs[self::FIELD_VACCINE_CODE] = [];
+                    }
+                    $errs[self::FIELD_VACCINE_CODE][$rule] = $err;
+                }
             }
         }
-        if ([] !== ($vs = $this->getVaccineCode())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_VACCINE_CODE, $i)] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_TARGET_DISEASE])) {
+            $v = $this->getTargetDisease();
+            foreach($validationRules[self::FIELD_TARGET_DISEASE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_TARGET_DISEASE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TARGET_DISEASE])) {
+                        $errs[self::FIELD_TARGET_DISEASE] = [];
+                    }
+                    $errs[self::FIELD_TARGET_DISEASE][$rule] = $err;
                 }
             }
         }
@@ -1346,6 +1320,30 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                         $errs[self::FIELD_CONTRAINDICATED_VACCINE_CODE] = [];
                     }
                     $errs[self::FIELD_CONTRAINDICATED_VACCINE_CODE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_FORECAST_STATUS])) {
+            $v = $this->getForecastStatus();
+            foreach($validationRules[self::FIELD_FORECAST_STATUS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_FORECAST_STATUS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FORECAST_STATUS])) {
+                        $errs[self::FIELD_FORECAST_STATUS] = [];
+                    }
+                    $errs[self::FIELD_FORECAST_STATUS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_FORECAST_REASON])) {
+            $v = $this->getForecastReason();
+            foreach($validationRules[self::FIELD_FORECAST_REASON] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_FORECAST_REASON, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FORECAST_REASON])) {
+                        $errs[self::FIELD_FORECAST_REASON] = [];
+                    }
+                    $errs[self::FIELD_FORECAST_REASON][$rule] = $err;
                 }
             }
         }
@@ -1373,6 +1371,18 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_SERIES])) {
+            $v = $this->getSeries();
+            foreach($validationRules[self::FIELD_SERIES] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_SERIES, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SERIES])) {
+                        $errs[self::FIELD_SERIES] = [];
+                    }
+                    $errs[self::FIELD_SERIES][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_DOSE_NUMBER_POSITIVE_INT])) {
             $v = $this->getDoseNumberPositiveInt();
             foreach($validationRules[self::FIELD_DOSE_NUMBER_POSITIVE_INT] as $rule => $constraint) {
@@ -1394,42 +1404,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                         $errs[self::FIELD_DOSE_NUMBER_STRING] = [];
                     }
                     $errs[self::FIELD_DOSE_NUMBER_STRING][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_FORECAST_REASON])) {
-            $v = $this->getForecastReason();
-            foreach($validationRules[self::FIELD_FORECAST_REASON] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_FORECAST_REASON, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FORECAST_REASON])) {
-                        $errs[self::FIELD_FORECAST_REASON] = [];
-                    }
-                    $errs[self::FIELD_FORECAST_REASON][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_FORECAST_STATUS])) {
-            $v = $this->getForecastStatus();
-            foreach($validationRules[self::FIELD_FORECAST_STATUS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_FORECAST_STATUS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FORECAST_STATUS])) {
-                        $errs[self::FIELD_FORECAST_STATUS] = [];
-                    }
-                    $errs[self::FIELD_FORECAST_STATUS][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SERIES])) {
-            $v = $this->getSeries();
-            foreach($validationRules[self::FIELD_SERIES] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_SERIES, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SERIES])) {
-                        $errs[self::FIELD_SERIES] = [];
-                    }
-                    $errs[self::FIELD_SERIES][$rule] = $err;
                 }
             }
         }
@@ -1481,30 +1455,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TARGET_DISEASE])) {
-            $v = $this->getTargetDisease();
-            foreach($validationRules[self::FIELD_TARGET_DISEASE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_TARGET_DISEASE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TARGET_DISEASE])) {
-                        $errs[self::FIELD_TARGET_DISEASE] = [];
-                    }
-                    $errs[self::FIELD_TARGET_DISEASE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VACCINE_CODE])) {
-            $v = $this->getVaccineCode();
-            foreach($validationRules[self::FIELD_VACCINE_CODE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_VACCINE_CODE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VACCINE_CODE])) {
-                        $errs[self::FIELD_VACCINE_CODE] = [];
-                    }
-                    $errs[self::FIELD_VACCINE_CODE][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
             $v = $this->getModifierExtension();
             foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
@@ -1545,167 +1495,200 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRImmunizationRecommendationRecommendation::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRImmunizationRecommendationRecommendation::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRImmunizationRecommendationRecommendation::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRImmunizationRecommendationRecommendation;
+            $type = new FHIRImmunizationRecommendationRecommendation(null);
         } elseif (!is_object($type) || !($type instanceof FHIRImmunizationRecommendationRecommendation)) {
             throw new \RuntimeException(sprintf(
                 'FHIRImmunizationRecommendationRecommendation::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_VACCINE_CODE === $n->nodeName) {
+                $type->addVaccineCode(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_TARGET_DISEASE === $n->nodeName) {
+                $type->setTargetDisease(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_CONTRAINDICATED_VACCINE_CODE === $n->nodeName) {
+                $type->addContraindicatedVaccineCode(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_FORECAST_STATUS === $n->nodeName) {
+                $type->setForecastStatus(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_FORECAST_REASON === $n->nodeName) {
+                $type->addForecastReason(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DATE_CRITERION === $n->nodeName) {
+                $type->addDateCriterion(FHIRImmunizationRecommendationDateCriterion::xmlUnserialize($n));
+            } elseif (self::FIELD_DESCRIPTION === $n->nodeName) {
+                $type->setDescription(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_SERIES === $n->nodeName) {
+                $type->setSeries(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_DOSE_NUMBER_POSITIVE_INT === $n->nodeName) {
+                $type->setDoseNumberPositiveInt(FHIRPositiveInt::xmlUnserialize($n));
+            } elseif (self::FIELD_DOSE_NUMBER_STRING === $n->nodeName) {
+                $type->setDoseNumberString(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_SERIES_DOSES_POSITIVE_INT === $n->nodeName) {
+                $type->setSeriesDosesPositiveInt(FHIRPositiveInt::xmlUnserialize($n));
+            } elseif (self::FIELD_SERIES_DOSES_STRING === $n->nodeName) {
+                $type->setSeriesDosesString(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_SUPPORTING_IMMUNIZATION === $n->nodeName) {
+                $type->addSupportingImmunization(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_SUPPORTING_PATIENT_INFORMATION === $n->nodeName) {
+                $type->addSupportingPatientInformation(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->contraindicatedVaccineCode)) {
-            foreach($children->contraindicatedVaccineCode as $child) {
-                $type->addContraindicatedVaccineCode(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->dateCriterion)) {
-            foreach($children->dateCriterion as $child) {
-                $type->addDateCriterion(FHIRImmunizationRecommendationDateCriterion::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->description)) {
-            $type->setDescription(FHIRString::xmlUnserialize($children->description));
-        }
-        if (isset($attributes->description)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DESCRIPTION);
+        if (null !== $n) {
             $pt = $type->getDescription();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->description);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDescription((string)$attributes->description);
+                $type->setDescription($n->nodeValue);
             }
         }
-        if (isset($children->doseNumberPositiveInt)) {
-            $type->setDoseNumberPositiveInt(FHIRPositiveInt::xmlUnserialize($children->doseNumberPositiveInt));
-        }
-        if (isset($attributes->doseNumberPositiveInt)) {
-            $pt = $type->getDoseNumberPositiveInt();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->doseNumberPositiveInt);
-            } else {
-                $type->setDoseNumberPositiveInt((string)$attributes->doseNumberPositiveInt);
-            }
-        }
-        if (isset($children->doseNumberString)) {
-            $type->setDoseNumberString(FHIRString::xmlUnserialize($children->doseNumberString));
-        }
-        if (isset($attributes->doseNumberString)) {
-            $pt = $type->getDoseNumberString();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->doseNumberString);
-            } else {
-                $type->setDoseNumberString((string)$attributes->doseNumberString);
-            }
-        }
-        if (isset($children->forecastReason)) {
-            foreach($children->forecastReason as $child) {
-                $type->addForecastReason(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->forecastStatus)) {
-            $type->setForecastStatus(FHIRCodeableConcept::xmlUnserialize($children->forecastStatus));
-        }
-        if (isset($children->series)) {
-            $type->setSeries(FHIRString::xmlUnserialize($children->series));
-        }
-        if (isset($attributes->series)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_SERIES);
+        if (null !== $n) {
             $pt = $type->getSeries();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->series);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setSeries((string)$attributes->series);
+                $type->setSeries($n->nodeValue);
             }
         }
-        if (isset($children->seriesDosesPositiveInt)) {
-            $type->setSeriesDosesPositiveInt(FHIRPositiveInt::xmlUnserialize($children->seriesDosesPositiveInt));
+        $n = $element->attributes->getNamedItem(self::FIELD_DOSE_NUMBER_POSITIVE_INT);
+        if (null !== $n) {
+            $pt = $type->getDoseNumberPositiveInt();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setDoseNumberPositiveInt($n->nodeValue);
+            }
         }
-        if (isset($attributes->seriesDosesPositiveInt)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DOSE_NUMBER_STRING);
+        if (null !== $n) {
+            $pt = $type->getDoseNumberString();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setDoseNumberString($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_SERIES_DOSES_POSITIVE_INT);
+        if (null !== $n) {
             $pt = $type->getSeriesDosesPositiveInt();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->seriesDosesPositiveInt);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setSeriesDosesPositiveInt((string)$attributes->seriesDosesPositiveInt);
+                $type->setSeriesDosesPositiveInt($n->nodeValue);
             }
         }
-        if (isset($children->seriesDosesString)) {
-            $type->setSeriesDosesString(FHIRString::xmlUnserialize($children->seriesDosesString));
-        }
-        if (isset($attributes->seriesDosesString)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_SERIES_DOSES_STRING);
+        if (null !== $n) {
             $pt = $type->getSeriesDosesString();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->seriesDosesString);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setSeriesDosesString((string)$attributes->seriesDosesString);
+                $type->setSeriesDosesString($n->nodeValue);
             }
         }
-        if (isset($children->supportingImmunization)) {
-            foreach($children->supportingImmunization as $child) {
-                $type->addSupportingImmunization(FHIRReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->supportingPatientInformation)) {
-            foreach($children->supportingPatientInformation as $child) {
-                $type->addSupportingPatientInformation(FHIRReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->targetDisease)) {
-            $type->setTargetDisease(FHIRCodeableConcept::xmlUnserialize($children->targetDisease));
-        }
-        if (isset($children->vaccineCode)) {
-            foreach($children->vaccineCode as $child) {
-                $type->addVaccineCode(FHIRCodeableConcept::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if ([] !== ($vs = $this->getVaccineCode())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_VACCINE_CODE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if (null !== ($v = $this->getTargetDisease())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TARGET_DISEASE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if ([] !== ($vs = $this->getContraindicatedVaccineCode())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTRAINDICATED_VACCINE_CODE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_CONTRAINDICATED_VACCINE_CODE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if (null !== ($v = $this->getForecastStatus())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_FORECAST_STATUS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getForecastReason())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_FORECAST_REASON);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getDateCriterion())) {
@@ -1713,44 +1696,49 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_CRITERION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_DATE_CRITERION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDoseNumberPositiveInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_NUMBER_POSITIVE_INT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDoseNumberString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_NUMBER_STRING, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getForecastReason())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_FORECAST_REASON, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getForecastStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FORECAST_STATUS, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DESCRIPTION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getSeries())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SERIES, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_SERIES);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDoseNumberPositiveInt())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DOSE_NUMBER_POSITIVE_INT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDoseNumberString())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DOSE_NUMBER_STRING);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getSeriesDosesPositiveInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SERIES_DOSES_POSITIVE_INT, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_SERIES_DOSES_POSITIVE_INT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getSeriesDosesString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SERIES_DOSES_STRING, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_SERIES_DOSES_STRING);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getSupportingImmunization())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUPPORTING_IMMUNIZATION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_SUPPORTING_IMMUNIZATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getSupportingPatientInformation())) {
@@ -1758,21 +1746,12 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUPPORTING_PATIENT_INFORMATION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_SUPPORTING_PATIENT_INFORMATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getTargetDisease())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET_DISEASE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getVaccineCode())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VACCINE_CODE, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -1781,6 +1760,18 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if ([] !== ($vs = $this->getVaccineCode())) {
+            $a[self::FIELD_VACCINE_CODE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_VACCINE_CODE][] = $v;
+            }
+        }
+        if (null !== ($v = $this->getTargetDisease())) {
+            $a[self::FIELD_TARGET_DISEASE] = $v;
+        }
         if ([] !== ($vs = $this->getContraindicatedVaccineCode())) {
             $a[self::FIELD_CONTRAINDICATED_VACCINE_CODE] = [];
             foreach($vs as $v) {
@@ -1788,6 +1779,18 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_CONTRAINDICATED_VACCINE_CODE][] = $v;
+            }
+        }
+        if (null !== ($v = $this->getForecastStatus())) {
+            $a[self::FIELD_FORECAST_STATUS] = $v;
+        }
+        if ([] !== ($vs = $this->getForecastReason())) {
+            $a[self::FIELD_FORECAST_REASON] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_FORECAST_REASON][] = $v;
             }
         }
         if ([] !== ($vs = $this->getDateCriterion())) {
@@ -1800,69 +1803,63 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
             }
         }
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DESCRIPTION_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getSeries())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SERIES] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_SERIES_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getDoseNumberPositiveInt())) {
-            $a[self::FIELD_DOSE_NUMBER_POSITIVE_INT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
-                $a[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DOSE_NUMBER_POSITIVE_INT] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRPositiveInt::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getDoseNumberString())) {
-            $a[self::FIELD_DOSE_NUMBER_STRING] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DOSE_NUMBER_STRING_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DOSE_NUMBER_STRING] = $val;
             }
-        }
-        if ([] !== ($vs = $this->getForecastReason())) {
-            $a[self::FIELD_FORECAST_REASON] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_FORECAST_REASON][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getForecastStatus())) {
-            $a[self::FIELD_FORECAST_STATUS] = $v;
-        }
-        if (null !== ($v = $this->getSeries())) {
-            $a[self::FIELD_SERIES] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_SERIES_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DOSE_NUMBER_STRING_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getSeriesDosesPositiveInt())) {
-            $a[self::FIELD_SERIES_DOSES_POSITIVE_INT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
-                $a[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SERIES_DOSES_POSITIVE_INT] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRPositiveInt::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getSeriesDosesString())) {
-            $a[self::FIELD_SERIES_DOSES_STRING] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_SERIES_DOSES_STRING_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SERIES_DOSES_STRING] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_SERIES_DOSES_STRING_EXT] = $ext;
             }
         }
         if ([] !== ($vs = $this->getSupportingImmunization())) {
@@ -1882,21 +1879,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 }
                 $a[self::FIELD_SUPPORTING_PATIENT_INFORMATION][] = $v;
             }
-        }
-        if (null !== ($v = $this->getTargetDisease())) {
-            $a[self::FIELD_TARGET_DISEASE] = $v;
-        }
-        if ([] !== ($vs = $this->getVaccineCode())) {
-            $a[self::FIELD_VACCINE_CODE] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_VACCINE_CODE][] = $v;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

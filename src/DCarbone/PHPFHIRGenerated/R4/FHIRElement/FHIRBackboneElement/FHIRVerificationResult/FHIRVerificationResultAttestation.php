@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerif
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,9 +65,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerif
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -82,20 +84,42 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_ATTESTATION;
+    const FIELD_WHO = 'who';
+    const FIELD_ON_BEHALF_OF = 'onBehalfOf';
     const FIELD_COMMUNICATION_METHOD = 'communicationMethod';
     const FIELD_DATE = 'date';
     const FIELD_DATE_EXT = '_date';
-    const FIELD_ON_BEHALF_OF = 'onBehalfOf';
+    const FIELD_SOURCE_IDENTITY_CERTIFICATE = 'sourceIdentityCertificate';
+    const FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT = '_sourceIdentityCertificate';
     const FIELD_PROXY_IDENTITY_CERTIFICATE = 'proxyIdentityCertificate';
     const FIELD_PROXY_IDENTITY_CERTIFICATE_EXT = '_proxyIdentityCertificate';
     const FIELD_PROXY_SIGNATURE = 'proxySignature';
-    const FIELD_SOURCE_IDENTITY_CERTIFICATE = 'sourceIdentityCertificate';
-    const FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT = '_sourceIdentityCertificate';
     const FIELD_SOURCE_SIGNATURE = 'sourceSignature';
-    const FIELD_WHO = 'who';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The individual or organization attesting to information.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected $who = null;
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * When the who is asserting on behalf of another (organization or individual).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected $onBehalfOf = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -123,15 +147,15 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     protected $date = null;
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * When the who is asserting on behalf of another (organization or individual).
+     * A digital identity certificate associated with the attestation source.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $onBehalfOf = null;
+    protected $sourceIdentityCertificate = null;
 
     /**
      * A sequence of Unicode characters
@@ -162,17 +186,6 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     protected $proxySignature = null;
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A digital identity certificate associated with the attestation source.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $sourceIdentityCertificate = null;
-
-    /**
      * A signature along with supporting context. The signature may be a digital
      * signature that is cryptographic in nature, or some other signature acceptable to
      * the domain. This other signature may be as simple as a graphical image
@@ -187,17 +200,6 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature
      */
     protected $sourceSignature = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The individual or organization attesting to information.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $who = null;
 
     /**
      * Validation map for fields in type VerificationResult.Attestation
@@ -221,34 +223,11 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_COMMUNICATION_METHOD])) {
-            if ($data[self::FIELD_COMMUNICATION_METHOD] instanceof FHIRCodeableConcept) {
-                $this->setCommunicationMethod($data[self::FIELD_COMMUNICATION_METHOD]);
+        if (isset($data[self::FIELD_WHO])) {
+            if ($data[self::FIELD_WHO] instanceof FHIRReference) {
+                $this->setWho($data[self::FIELD_WHO]);
             } else {
-                $this->setCommunicationMethod(new FHIRCodeableConcept($data[self::FIELD_COMMUNICATION_METHOD]));
-            }
-        }
-        if (isset($data[self::FIELD_DATE]) || isset($data[self::FIELD_DATE_EXT])) {
-            if (isset($data[self::FIELD_DATE])) {
-                $value = $data[self::FIELD_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DATE_EXT]) && is_array($data[self::FIELD_DATE_EXT])) {
-                $ext = $data[self::FIELD_DATE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDate) {
-                    $this->setDate($value);
-                } else if (is_array($value)) {
-                    $this->setDate(new FHIRDate(array_merge($ext, $value)));
-                } else {
-                    $this->setDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDate(new FHIRDate($ext));
+                $this->setWho(new FHIRReference($data[self::FIELD_WHO]));
             }
         }
         if (isset($data[self::FIELD_ON_BEHALF_OF])) {
@@ -258,17 +237,46 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
                 $this->setOnBehalfOf(new FHIRReference($data[self::FIELD_ON_BEHALF_OF]));
             }
         }
+        if (isset($data[self::FIELD_COMMUNICATION_METHOD])) {
+            if ($data[self::FIELD_COMMUNICATION_METHOD] instanceof FHIRCodeableConcept) {
+                $this->setCommunicationMethod($data[self::FIELD_COMMUNICATION_METHOD]);
+            } else {
+                $this->setCommunicationMethod(new FHIRCodeableConcept($data[self::FIELD_COMMUNICATION_METHOD]));
+            }
+        }
+        if (isset($data[self::FIELD_DATE]) || isset($data[self::FIELD_DATE_EXT])) {
+            $value = isset($data[self::FIELD_DATE]) ? $data[self::FIELD_DATE] : null;
+            $ext = (isset($data[self::FIELD_DATE_EXT]) && is_array($data[self::FIELD_DATE_EXT])) ? $ext = $data[self::FIELD_DATE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDate) {
+                    $this->setDate($value);
+                } else if (is_array($value)) {
+                    $this->setDate(new FHIRDate(array_merge($ext, $value)));
+                } else {
+                    $this->setDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDate(new FHIRDate($ext));
+            }
+        }
+        if (isset($data[self::FIELD_SOURCE_IDENTITY_CERTIFICATE]) || isset($data[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT])) {
+            $value = isset($data[self::FIELD_SOURCE_IDENTITY_CERTIFICATE]) ? $data[self::FIELD_SOURCE_IDENTITY_CERTIFICATE] : null;
+            $ext = (isset($data[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT]) && is_array($data[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT])) ? $ext = $data[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setSourceIdentityCertificate($value);
+                } else if (is_array($value)) {
+                    $this->setSourceIdentityCertificate(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setSourceIdentityCertificate(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setSourceIdentityCertificate(new FHIRString($ext));
+            }
+        }
         if (isset($data[self::FIELD_PROXY_IDENTITY_CERTIFICATE]) || isset($data[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT])) {
-            if (isset($data[self::FIELD_PROXY_IDENTITY_CERTIFICATE])) {
-                $value = $data[self::FIELD_PROXY_IDENTITY_CERTIFICATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT]) && is_array($data[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT])) {
-                $ext = $data[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_PROXY_IDENTITY_CERTIFICATE]) ? $data[self::FIELD_PROXY_IDENTITY_CERTIFICATE] : null;
+            $ext = (isset($data[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT]) && is_array($data[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT])) ? $ext = $data[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setProxyIdentityCertificate($value);
@@ -277,7 +285,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
                 } else {
                     $this->setProxyIdentityCertificate(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setProxyIdentityCertificate(new FHIRString($ext));
             }
         }
@@ -288,41 +296,11 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
                 $this->setProxySignature(new FHIRSignature($data[self::FIELD_PROXY_SIGNATURE]));
             }
         }
-        if (isset($data[self::FIELD_SOURCE_IDENTITY_CERTIFICATE]) || isset($data[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT])) {
-            if (isset($data[self::FIELD_SOURCE_IDENTITY_CERTIFICATE])) {
-                $value = $data[self::FIELD_SOURCE_IDENTITY_CERTIFICATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT]) && is_array($data[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT])) {
-                $ext = $data[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setSourceIdentityCertificate($value);
-                } else if (is_array($value)) {
-                    $this->setSourceIdentityCertificate(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setSourceIdentityCertificate(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setSourceIdentityCertificate(new FHIRString($ext));
-            }
-        }
         if (isset($data[self::FIELD_SOURCE_SIGNATURE])) {
             if ($data[self::FIELD_SOURCE_SIGNATURE] instanceof FHIRSignature) {
                 $this->setSourceSignature($data[self::FIELD_SOURCE_SIGNATURE]);
             } else {
                 $this->setSourceSignature(new FHIRSignature($data[self::FIELD_SOURCE_SIGNATURE]));
-            }
-        }
-        if (isset($data[self::FIELD_WHO])) {
-            if ($data[self::FIELD_WHO] instanceof FHIRReference) {
-                $this->setWho($data[self::FIELD_WHO]);
-            } else {
-                $this->setWho(new FHIRReference($data[self::FIELD_WHO]));
             }
         }
     }
@@ -341,10 +319,72 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<VerificationResultAttestation{$xmlns}></VerificationResultAttestation>";
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The individual or organization attesting to information.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getWho()
+    {
+        return $this->who;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The individual or organization attesting to information.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $who
+     * @return static
+     */
+    public function setWho(FHIRReference $who = null)
+    {
+        $this->_trackValueSet($this->who, $who);
+        $this->who = $who;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * When the who is asserting on behalf of another (organization or individual).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getOnBehalfOf()
+    {
+        return $this->onBehalfOf;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * When the who is asserting on behalf of another (organization or individual).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $onBehalfOf
+     * @return static
+     */
+    public function setOnBehalfOf(FHIRReference $onBehalfOf = null)
+    {
+        $this->_trackValueSet($this->onBehalfOf, $onBehalfOf);
+        $this->onBehalfOf = $onBehalfOf;
+        return $this;
     }
 
     /**
@@ -377,6 +417,7 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      */
     public function setCommunicationMethod(FHIRCodeableConcept $communicationMethod = null)
     {
+        $this->_trackValueSet($this->communicationMethod, $communicationMethod);
         $this->communicationMethod = $communicationMethod;
         return $this;
     }
@@ -409,45 +450,45 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      */
     public function setDate($date = null)
     {
-        if (null === $date) {
-            $this->date = null;
-            return $this;
+        if (null !== $date && !($date instanceof FHIRDate)) {
+            $date = new FHIRDate($date);
         }
-        if ($date instanceof FHIRDate) {
-            $this->date = $date;
-            return $this;
-        }
-        $this->date = new FHIRDate($date);
+        $this->_trackValueSet($this->date, $date);
+        $this->date = $date;
         return $this;
     }
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * When the who is asserting on behalf of another (organization or individual).
+     * A digital identity certificate associated with the attestation source.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    public function getOnBehalfOf()
+    public function getSourceIdentityCertificate()
     {
-        return $this->onBehalfOf;
+        return $this->sourceIdentityCertificate;
     }
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * When the who is asserting on behalf of another (organization or individual).
+     * A digital identity certificate associated with the attestation source.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $onBehalfOf
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $sourceIdentityCertificate
      * @return static
      */
-    public function setOnBehalfOf(FHIRReference $onBehalfOf = null)
+    public function setSourceIdentityCertificate($sourceIdentityCertificate = null)
     {
-        $this->onBehalfOf = $onBehalfOf;
+        if (null !== $sourceIdentityCertificate && !($sourceIdentityCertificate instanceof FHIRString)) {
+            $sourceIdentityCertificate = new FHIRString($sourceIdentityCertificate);
+        }
+        $this->_trackValueSet($this->sourceIdentityCertificate, $sourceIdentityCertificate);
+        $this->sourceIdentityCertificate = $sourceIdentityCertificate;
         return $this;
     }
 
@@ -479,15 +520,11 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      */
     public function setProxyIdentityCertificate($proxyIdentityCertificate = null)
     {
-        if (null === $proxyIdentityCertificate) {
-            $this->proxyIdentityCertificate = null;
-            return $this;
+        if (null !== $proxyIdentityCertificate && !($proxyIdentityCertificate instanceof FHIRString)) {
+            $proxyIdentityCertificate = new FHIRString($proxyIdentityCertificate);
         }
-        if ($proxyIdentityCertificate instanceof FHIRString) {
-            $this->proxyIdentityCertificate = $proxyIdentityCertificate;
-            return $this;
-        }
-        $this->proxyIdentityCertificate = new FHIRString($proxyIdentityCertificate);
+        $this->_trackValueSet($this->proxyIdentityCertificate, $proxyIdentityCertificate);
+        $this->proxyIdentityCertificate = $proxyIdentityCertificate;
         return $this;
     }
 
@@ -527,45 +564,8 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      */
     public function setProxySignature(FHIRSignature $proxySignature = null)
     {
+        $this->_trackValueSet($this->proxySignature, $proxySignature);
         $this->proxySignature = $proxySignature;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A digital identity certificate associated with the attestation source.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getSourceIdentityCertificate()
-    {
-        return $this->sourceIdentityCertificate;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A digital identity certificate associated with the attestation source.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $sourceIdentityCertificate
-     * @return static
-     */
-    public function setSourceIdentityCertificate($sourceIdentityCertificate = null)
-    {
-        if (null === $sourceIdentityCertificate) {
-            $this->sourceIdentityCertificate = null;
-            return $this;
-        }
-        if ($sourceIdentityCertificate instanceof FHIRString) {
-            $this->sourceIdentityCertificate = $sourceIdentityCertificate;
-            return $this;
-        }
-        $this->sourceIdentityCertificate = new FHIRString($sourceIdentityCertificate);
         return $this;
     }
 
@@ -605,37 +605,8 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
      */
     public function setSourceSignature(FHIRSignature $sourceSignature = null)
     {
+        $this->_trackValueSet($this->sourceSignature, $sourceSignature);
         $this->sourceSignature = $sourceSignature;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The individual or organization attesting to information.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getWho()
-    {
-        return $this->who;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The individual or organization attesting to information.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $who
-     * @return static
-     */
-    public function setWho(FHIRReference $who = null)
-    {
-        $this->who = $who;
         return $this;
     }
 
@@ -660,6 +631,16 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getWho())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_WHO] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getOnBehalfOf())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ON_BEHALF_OF] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getCommunicationMethod())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_COMMUNICATION_METHOD] = $fieldErrs;
@@ -670,9 +651,9 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
                 $errs[self::FIELD_DATE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getOnBehalfOf())) {
+        if (null !== ($v = $this->getSourceIdentityCertificate())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ON_BEHALF_OF] = $fieldErrs;
+                $errs[self::FIELD_SOURCE_IDENTITY_CERTIFICATE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getProxyIdentityCertificate())) {
@@ -685,19 +666,33 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
                 $errs[self::FIELD_PROXY_SIGNATURE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getSourceIdentityCertificate())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SOURCE_IDENTITY_CERTIFICATE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getSourceSignature())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_SOURCE_SIGNATURE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getWho())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_WHO] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_WHO])) {
+            $v = $this->getWho();
+            foreach($validationRules[self::FIELD_WHO] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_ATTESTATION, self::FIELD_WHO, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_WHO])) {
+                        $errs[self::FIELD_WHO] = [];
+                    }
+                    $errs[self::FIELD_WHO][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ON_BEHALF_OF])) {
+            $v = $this->getOnBehalfOf();
+            foreach($validationRules[self::FIELD_ON_BEHALF_OF] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_ATTESTATION, self::FIELD_ON_BEHALF_OF, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ON_BEHALF_OF])) {
+                        $errs[self::FIELD_ON_BEHALF_OF] = [];
+                    }
+                    $errs[self::FIELD_ON_BEHALF_OF][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_COMMUNICATION_METHOD])) {
@@ -724,15 +719,15 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_ON_BEHALF_OF])) {
-            $v = $this->getOnBehalfOf();
-            foreach($validationRules[self::FIELD_ON_BEHALF_OF] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_ATTESTATION, self::FIELD_ON_BEHALF_OF, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_SOURCE_IDENTITY_CERTIFICATE])) {
+            $v = $this->getSourceIdentityCertificate();
+            foreach($validationRules[self::FIELD_SOURCE_IDENTITY_CERTIFICATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_ATTESTATION, self::FIELD_SOURCE_IDENTITY_CERTIFICATE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ON_BEHALF_OF])) {
-                        $errs[self::FIELD_ON_BEHALF_OF] = [];
+                    if (!isset($errs[self::FIELD_SOURCE_IDENTITY_CERTIFICATE])) {
+                        $errs[self::FIELD_SOURCE_IDENTITY_CERTIFICATE] = [];
                     }
-                    $errs[self::FIELD_ON_BEHALF_OF][$rule] = $err;
+                    $errs[self::FIELD_SOURCE_IDENTITY_CERTIFICATE][$rule] = $err;
                 }
             }
         }
@@ -760,18 +755,6 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SOURCE_IDENTITY_CERTIFICATE])) {
-            $v = $this->getSourceIdentityCertificate();
-            foreach($validationRules[self::FIELD_SOURCE_IDENTITY_CERTIFICATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_ATTESTATION, self::FIELD_SOURCE_IDENTITY_CERTIFICATE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SOURCE_IDENTITY_CERTIFICATE])) {
-                        $errs[self::FIELD_SOURCE_IDENTITY_CERTIFICATE] = [];
-                    }
-                    $errs[self::FIELD_SOURCE_IDENTITY_CERTIFICATE][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_SOURCE_SIGNATURE])) {
             $v = $this->getSourceSignature();
             foreach($validationRules[self::FIELD_SOURCE_SIGNATURE] as $rule => $constraint) {
@@ -781,18 +764,6 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
                         $errs[self::FIELD_SOURCE_SIGNATURE] = [];
                     }
                     $errs[self::FIELD_SOURCE_SIGNATURE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_WHO])) {
-            $v = $this->getWho();
-            foreach($validationRules[self::FIELD_WHO] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_ATTESTATION, self::FIELD_WHO, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_WHO])) {
-                        $errs[self::FIELD_WHO] = [];
-                    }
-                    $errs[self::FIELD_WHO][$rule] = $err;
                 }
             }
         }
@@ -836,132 +807,164 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRVerificationResultAttestation::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRVerificationResultAttestation::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRVerificationResultAttestation::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRVerificationResultAttestation;
+            $type = new FHIRVerificationResultAttestation(null);
         } elseif (!is_object($type) || !($type instanceof FHIRVerificationResultAttestation)) {
             throw new \RuntimeException(sprintf(
                 'FHIRVerificationResultAttestation::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_WHO === $n->nodeName) {
+                $type->setWho(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_ON_BEHALF_OF === $n->nodeName) {
+                $type->setOnBehalfOf(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_COMMUNICATION_METHOD === $n->nodeName) {
+                $type->setCommunicationMethod(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DATE === $n->nodeName) {
+                $type->setDate(FHIRDate::xmlUnserialize($n));
+            } elseif (self::FIELD_SOURCE_IDENTITY_CERTIFICATE === $n->nodeName) {
+                $type->setSourceIdentityCertificate(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_PROXY_IDENTITY_CERTIFICATE === $n->nodeName) {
+                $type->setProxyIdentityCertificate(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_PROXY_SIGNATURE === $n->nodeName) {
+                $type->setProxySignature(FHIRSignature::xmlUnserialize($n));
+            } elseif (self::FIELD_SOURCE_SIGNATURE === $n->nodeName) {
+                $type->setSourceSignature(FHIRSignature::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->communicationMethod)) {
-            $type->setCommunicationMethod(FHIRCodeableConcept::xmlUnserialize($children->communicationMethod));
-        }
-        if (isset($children->date)) {
-            $type->setDate(FHIRDate::xmlUnserialize($children->date));
-        }
-        if (isset($attributes->date)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DATE);
+        if (null !== $n) {
             $pt = $type->getDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->date);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDate((string)$attributes->date);
+                $type->setDate($n->nodeValue);
             }
         }
-        if (isset($children->onBehalfOf)) {
-            $type->setOnBehalfOf(FHIRReference::xmlUnserialize($children->onBehalfOf));
-        }
-        if (isset($children->proxyIdentityCertificate)) {
-            $type->setProxyIdentityCertificate(FHIRString::xmlUnserialize($children->proxyIdentityCertificate));
-        }
-        if (isset($attributes->proxyIdentityCertificate)) {
-            $pt = $type->getProxyIdentityCertificate();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->proxyIdentityCertificate);
-            } else {
-                $type->setProxyIdentityCertificate((string)$attributes->proxyIdentityCertificate);
-            }
-        }
-        if (isset($children->proxySignature)) {
-            $type->setProxySignature(FHIRSignature::xmlUnserialize($children->proxySignature));
-        }
-        if (isset($children->sourceIdentityCertificate)) {
-            $type->setSourceIdentityCertificate(FHIRString::xmlUnserialize($children->sourceIdentityCertificate));
-        }
-        if (isset($attributes->sourceIdentityCertificate)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_SOURCE_IDENTITY_CERTIFICATE);
+        if (null !== $n) {
             $pt = $type->getSourceIdentityCertificate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->sourceIdentityCertificate);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setSourceIdentityCertificate((string)$attributes->sourceIdentityCertificate);
+                $type->setSourceIdentityCertificate($n->nodeValue);
             }
         }
-        if (isset($children->sourceSignature)) {
-            $type->setSourceSignature(FHIRSignature::xmlUnserialize($children->sourceSignature));
+        $n = $element->attributes->getNamedItem(self::FIELD_PROXY_IDENTITY_CERTIFICATE);
+        if (null !== $n) {
+            $pt = $type->getProxyIdentityCertificate();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setProxyIdentityCertificate($n->nodeValue);
+            }
         }
-        if (isset($children->who)) {
-            $type->setWho(FHIRReference::xmlUnserialize($children->who));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getCommunicationMethod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COMMUNICATION_METHOD, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->_getFHIRXMLNamespace()));
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getWho())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_WHO);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getOnBehalfOf())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ON_BEHALF_OF, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_ON_BEHALF_OF);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getProxyIdentityCertificate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PROXY_IDENTITY_CERTIFICATE, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getCommunicationMethod())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_COMMUNICATION_METHOD);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getProxySignature())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PROXY_SIGNATURE, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getDate())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DATE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getSourceIdentityCertificate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_IDENTITY_CERTIFICATE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_SOURCE_IDENTITY_CERTIFICATE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getProxyIdentityCertificate())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PROXY_IDENTITY_CERTIFICATE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getProxySignature())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PROXY_SIGNATURE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getSourceSignature())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_SIGNATURE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_SOURCE_SIGNATURE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getWho())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHO, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -970,50 +973,50 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCommunicationMethod())) {
-            $a[self::FIELD_COMMUNICATION_METHOD] = $v;
-        }
-        if (null !== ($v = $this->getDate())) {
-            $a[self::FIELD_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDate::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDate::FIELD_VALUE]);
-                $a[self::FIELD_DATE_EXT] = $enc;
-            }
+        if (null !== ($v = $this->getWho())) {
+            $a[self::FIELD_WHO] = $v;
         }
         if (null !== ($v = $this->getOnBehalfOf())) {
             $a[self::FIELD_ON_BEHALF_OF] = $v;
         }
+        if (null !== ($v = $this->getCommunicationMethod())) {
+            $a[self::FIELD_COMMUNICATION_METHOD] = $v;
+        }
+        if (null !== ($v = $this->getDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DATE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDate::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DATE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getSourceIdentityCertificate())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SOURCE_IDENTITY_CERTIFICATE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT] = $ext;
+            }
+        }
         if (null !== ($v = $this->getProxyIdentityCertificate())) {
-            $a[self::FIELD_PROXY_IDENTITY_CERTIFICATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PROXY_IDENTITY_CERTIFICATE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getProxySignature())) {
             $a[self::FIELD_PROXY_SIGNATURE] = $v;
         }
-        if (null !== ($v = $this->getSourceIdentityCertificate())) {
-            $a[self::FIELD_SOURCE_IDENTITY_CERTIFICATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT] = $enc;
-            }
-        }
         if (null !== ($v = $this->getSourceSignature())) {
             $a[self::FIELD_SOURCE_SIGNATURE] = $v;
-        }
-        if (null !== ($v = $this->getWho())) {
-            $a[self::FIELD_WHO] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

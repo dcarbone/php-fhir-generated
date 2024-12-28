@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,8 +63,10 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  */
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -78,18 +80,29 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_PROCESS;
-    const FIELD_DESCRIPTION = 'description';
-    const FIELD_DESCRIPTION_EXT = '_description';
-    const FIELD_POST_CONDITIONS = 'postConditions';
-    const FIELD_POST_CONDITIONS_EXT = '_postConditions';
-    const FIELD_PRE_CONDITIONS = 'preConditions';
-    const FIELD_PRE_CONDITIONS_EXT = '_preConditions';
-    const FIELD_STEP = 'step';
     const FIELD_TITLE = 'title';
     const FIELD_TITLE_EXT = '_title';
+    const FIELD_DESCRIPTION = 'description';
+    const FIELD_DESCRIPTION_EXT = '_description';
+    const FIELD_PRE_CONDITIONS = 'preConditions';
+    const FIELD_PRE_CONDITIONS_EXT = '_preConditions';
+    const FIELD_POST_CONDITIONS = 'postConditions';
+    const FIELD_POST_CONDITIONS_EXT = '_postConditions';
+    const FIELD_STEP = 'step';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The diagram title of the group of operations.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected $title = null;
 
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -115,11 +128,11 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Description of final status after the process ends.
+     * Description of initial status before the process starts.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    protected $postConditions = null;
+    protected $preConditions = null;
 
     /**
      * A string that may contain Github Flavored Markdown syntax for optional
@@ -130,11 +143,11 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * Description of initial status before the process starts.
+     * Description of final status after the process ends.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    protected $preConditions = null;
+    protected $postConditions = null;
 
     /**
      * Example of workflow instance.
@@ -144,17 +157,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep[]
      */
     protected $step = [];
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The diagram title of the group of operations.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $title = null;
 
     /**
      * Validation map for fields in type ExampleScenario.Process
@@ -178,17 +180,24 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_TITLE]) || isset($data[self::FIELD_TITLE_EXT])) {
+            $value = isset($data[self::FIELD_TITLE]) ? $data[self::FIELD_TITLE] : null;
+            $ext = (isset($data[self::FIELD_TITLE_EXT]) && is_array($data[self::FIELD_TITLE_EXT])) ? $ext = $data[self::FIELD_TITLE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setTitle($value);
+                } else if (is_array($value)) {
+                    $this->setTitle(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setTitle(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setTitle(new FHIRString($ext));
+            }
+        }
         if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
-            if (isset($data[self::FIELD_DESCRIPTION])) {
-                $value = $data[self::FIELD_DESCRIPTION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) {
-                $ext = $data[self::FIELD_DESCRIPTION_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_DESCRIPTION]) ? $data[self::FIELD_DESCRIPTION] : null;
+            $ext = (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) ? $ext = $data[self::FIELD_DESCRIPTION_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRMarkdown) {
                     $this->setDescription($value);
@@ -197,44 +206,13 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
                 } else {
                     $this->setDescription(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDescription(new FHIRMarkdown($ext));
             }
         }
-        if (isset($data[self::FIELD_POST_CONDITIONS]) || isset($data[self::FIELD_POST_CONDITIONS_EXT])) {
-            if (isset($data[self::FIELD_POST_CONDITIONS])) {
-                $value = $data[self::FIELD_POST_CONDITIONS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_POST_CONDITIONS_EXT]) && is_array($data[self::FIELD_POST_CONDITIONS_EXT])) {
-                $ext = $data[self::FIELD_POST_CONDITIONS_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRMarkdown) {
-                    $this->setPostConditions($value);
-                } else if (is_array($value)) {
-                    $this->setPostConditions(new FHIRMarkdown(array_merge($ext, $value)));
-                } else {
-                    $this->setPostConditions(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPostConditions(new FHIRMarkdown($ext));
-            }
-        }
         if (isset($data[self::FIELD_PRE_CONDITIONS]) || isset($data[self::FIELD_PRE_CONDITIONS_EXT])) {
-            if (isset($data[self::FIELD_PRE_CONDITIONS])) {
-                $value = $data[self::FIELD_PRE_CONDITIONS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PRE_CONDITIONS_EXT]) && is_array($data[self::FIELD_PRE_CONDITIONS_EXT])) {
-                $ext = $data[self::FIELD_PRE_CONDITIONS_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_PRE_CONDITIONS]) ? $data[self::FIELD_PRE_CONDITIONS] : null;
+            $ext = (isset($data[self::FIELD_PRE_CONDITIONS_EXT]) && is_array($data[self::FIELD_PRE_CONDITIONS_EXT])) ? $ext = $data[self::FIELD_PRE_CONDITIONS_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRMarkdown) {
                     $this->setPreConditions($value);
@@ -243,8 +221,23 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
                 } else {
                     $this->setPreConditions(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setPreConditions(new FHIRMarkdown($ext));
+            }
+        }
+        if (isset($data[self::FIELD_POST_CONDITIONS]) || isset($data[self::FIELD_POST_CONDITIONS_EXT])) {
+            $value = isset($data[self::FIELD_POST_CONDITIONS]) ? $data[self::FIELD_POST_CONDITIONS] : null;
+            $ext = (isset($data[self::FIELD_POST_CONDITIONS_EXT]) && is_array($data[self::FIELD_POST_CONDITIONS_EXT])) ? $ext = $data[self::FIELD_POST_CONDITIONS_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRMarkdown) {
+                    $this->setPostConditions($value);
+                } else if (is_array($value)) {
+                    $this->setPostConditions(new FHIRMarkdown(array_merge($ext, $value)));
+                } else {
+                    $this->setPostConditions(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPostConditions(new FHIRMarkdown($ext));
             }
         }
         if (isset($data[self::FIELD_STEP])) {
@@ -259,33 +252,10 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
                         $this->addStep(new FHIRExampleScenarioStep($v));
                     }
                 }
-            } else if ($data[self::FIELD_STEP] instanceof FHIRExampleScenarioStep) {
+            } elseif ($data[self::FIELD_STEP] instanceof FHIRExampleScenarioStep) {
                 $this->addStep($data[self::FIELD_STEP]);
             } else {
                 $this->addStep(new FHIRExampleScenarioStep($data[self::FIELD_STEP]));
-            }
-        }
-        if (isset($data[self::FIELD_TITLE]) || isset($data[self::FIELD_TITLE_EXT])) {
-            if (isset($data[self::FIELD_TITLE])) {
-                $value = $data[self::FIELD_TITLE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TITLE_EXT]) && is_array($data[self::FIELD_TITLE_EXT])) {
-                $ext = $data[self::FIELD_TITLE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setTitle($value);
-                } else if (is_array($value)) {
-                    $this->setTitle(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setTitle(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setTitle(new FHIRString($ext));
             }
         }
     }
@@ -304,10 +274,44 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ExampleScenarioProcess{$xmlns}></ExampleScenarioProcess>";
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The diagram title of the group of operations.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The diagram title of the group of operations.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $title
+     * @return static
+     */
+    public function setTitle($title = null)
+    {
+        if (null !== $title && !($title instanceof FHIRString)) {
+            $title = new FHIRString($title);
+        }
+        $this->_trackValueSet($this->title, $title);
+        $this->title = $title;
+        return $this;
     }
 
     /**
@@ -344,61 +348,11 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      */
     public function setDescription($description = null)
     {
-        if (null === $description) {
-            $this->description = null;
-            return $this;
+        if (null !== $description && !($description instanceof FHIRMarkdown)) {
+            $description = new FHIRMarkdown($description);
         }
-        if ($description instanceof FHIRMarkdown) {
-            $this->description = $description;
-            return $this;
-        }
-        $this->description = new FHIRMarkdown($description);
-        return $this;
-    }
-
-    /**
-     * A string that may contain Github Flavored Markdown syntax for optional
-     * processing by a mark down presentation engine
-     * Systems are not required to have markdown support, so the text should be
-     * readable without markdown processing. The markdown syntax is GFM - see
-     * https://github.github.com/gfm/
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Description of final status after the process ends.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
-     */
-    public function getPostConditions()
-    {
-        return $this->postConditions;
-    }
-
-    /**
-     * A string that may contain Github Flavored Markdown syntax for optional
-     * processing by a mark down presentation engine
-     * Systems are not required to have markdown support, so the text should be
-     * readable without markdown processing. The markdown syntax is GFM - see
-     * https://github.github.com/gfm/
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Description of final status after the process ends.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $postConditions
-     * @return static
-     */
-    public function setPostConditions($postConditions = null)
-    {
-        if (null === $postConditions) {
-            $this->postConditions = null;
-            return $this;
-        }
-        if ($postConditions instanceof FHIRMarkdown) {
-            $this->postConditions = $postConditions;
-            return $this;
-        }
-        $this->postConditions = new FHIRMarkdown($postConditions);
+        $this->_trackValueSet($this->description, $description);
+        $this->description = $description;
         return $this;
     }
 
@@ -436,15 +390,53 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      */
     public function setPreConditions($preConditions = null)
     {
-        if (null === $preConditions) {
-            $this->preConditions = null;
-            return $this;
+        if (null !== $preConditions && !($preConditions instanceof FHIRMarkdown)) {
+            $preConditions = new FHIRMarkdown($preConditions);
         }
-        if ($preConditions instanceof FHIRMarkdown) {
-            $this->preConditions = $preConditions;
-            return $this;
+        $this->_trackValueSet($this->preConditions, $preConditions);
+        $this->preConditions = $preConditions;
+        return $this;
+    }
+
+    /**
+     * A string that may contain Github Flavored Markdown syntax for optional
+     * processing by a mark down presentation engine
+     * Systems are not required to have markdown support, so the text should be
+     * readable without markdown processing. The markdown syntax is GFM - see
+     * https://github.github.com/gfm/
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Description of final status after the process ends.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
+     */
+    public function getPostConditions()
+    {
+        return $this->postConditions;
+    }
+
+    /**
+     * A string that may contain Github Flavored Markdown syntax for optional
+     * processing by a mark down presentation engine
+     * Systems are not required to have markdown support, so the text should be
+     * readable without markdown processing. The markdown syntax is GFM - see
+     * https://github.github.com/gfm/
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Description of final status after the process ends.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $postConditions
+     * @return static
+     */
+    public function setPostConditions($postConditions = null)
+    {
+        if (null !== $postConditions && !($postConditions instanceof FHIRMarkdown)) {
+            $postConditions = new FHIRMarkdown($postConditions);
         }
-        $this->preConditions = new FHIRMarkdown($preConditions);
+        $this->_trackValueSet($this->postConditions, $postConditions);
+        $this->postConditions = $postConditions;
         return $this;
     }
 
@@ -470,6 +462,7 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      */
     public function addStep(FHIRExampleScenarioStep $step = null)
     {
+        $this->_trackValueAdded();
         $this->step[] = $step;
         return $this;
     }
@@ -484,7 +477,10 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      */
     public function setStep(array $step = [])
     {
-        $this->step = [];
+        if ([] !== $this->step) {
+            $this->_trackValuesRemoved(count($this->step));
+            $this->step = [];
+        }
         if ([] === $step) {
             return $this;
         }
@@ -495,44 +491,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
                 $this->addStep(new FHIRExampleScenarioStep($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The diagram title of the group of operations.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The diagram title of the group of operations.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $title
-     * @return static
-     */
-    public function setTitle($title = null)
-    {
-        if (null === $title) {
-            $this->title = null;
-            return $this;
-        }
-        if ($title instanceof FHIRString) {
-            $this->title = $title;
-            return $this;
-        }
-        $this->title = new FHIRString($title);
         return $this;
     }
 
@@ -557,19 +515,24 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getTitle())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TITLE] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getDescription())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getPostConditions())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_POST_CONDITIONS] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getPreConditions())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_PRE_CONDITIONS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPostConditions())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_POST_CONDITIONS] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getStep())) {
@@ -579,9 +542,16 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getTitle())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TITLE] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_TITLE])) {
+            $v = $this->getTitle();
+            foreach($validationRules[self::FIELD_TITLE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_PROCESS, self::FIELD_TITLE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TITLE])) {
+                        $errs[self::FIELD_TITLE] = [];
+                    }
+                    $errs[self::FIELD_TITLE][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_DESCRIPTION])) {
@@ -593,18 +563,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
                         $errs[self::FIELD_DESCRIPTION] = [];
                     }
                     $errs[self::FIELD_DESCRIPTION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_POST_CONDITIONS])) {
-            $v = $this->getPostConditions();
-            foreach($validationRules[self::FIELD_POST_CONDITIONS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_PROCESS, self::FIELD_POST_CONDITIONS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_POST_CONDITIONS])) {
-                        $errs[self::FIELD_POST_CONDITIONS] = [];
-                    }
-                    $errs[self::FIELD_POST_CONDITIONS][$rule] = $err;
                 }
             }
         }
@@ -620,6 +578,18 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_POST_CONDITIONS])) {
+            $v = $this->getPostConditions();
+            foreach($validationRules[self::FIELD_POST_CONDITIONS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_PROCESS, self::FIELD_POST_CONDITIONS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_POST_CONDITIONS])) {
+                        $errs[self::FIELD_POST_CONDITIONS] = [];
+                    }
+                    $errs[self::FIELD_POST_CONDITIONS][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_STEP])) {
             $v = $this->getStep();
             foreach($validationRules[self::FIELD_STEP] as $rule => $constraint) {
@@ -629,18 +599,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
                         $errs[self::FIELD_STEP] = [];
                     }
                     $errs[self::FIELD_STEP][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_TITLE])) {
-            $v = $this->getTitle();
-            foreach($validationRules[self::FIELD_TITLE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_PROCESS, self::FIELD_TITLE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TITLE])) {
-                        $errs[self::FIELD_TITLE] = [];
-                    }
-                    $errs[self::FIELD_TITLE][$rule] = $err;
                 }
             }
         }
@@ -684,129 +642,157 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRExampleScenarioProcess::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRExampleScenarioProcess::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRExampleScenarioProcess::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRExampleScenarioProcess;
+            $type = new FHIRExampleScenarioProcess(null);
         } elseif (!is_object($type) || !($type instanceof FHIRExampleScenarioProcess)) {
             throw new \RuntimeException(sprintf(
                 'FHIRExampleScenarioProcess::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_TITLE === $n->nodeName) {
+                $type->setTitle(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_DESCRIPTION === $n->nodeName) {
+                $type->setDescription(FHIRMarkdown::xmlUnserialize($n));
+            } elseif (self::FIELD_PRE_CONDITIONS === $n->nodeName) {
+                $type->setPreConditions(FHIRMarkdown::xmlUnserialize($n));
+            } elseif (self::FIELD_POST_CONDITIONS === $n->nodeName) {
+                $type->setPostConditions(FHIRMarkdown::xmlUnserialize($n));
+            } elseif (self::FIELD_STEP === $n->nodeName) {
+                $type->addStep(FHIRExampleScenarioStep::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->description)) {
-            $type->setDescription(FHIRMarkdown::xmlUnserialize($children->description));
-        }
-        if (isset($attributes->description)) {
-            $pt = $type->getDescription();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->description);
-            } else {
-                $type->setDescription((string)$attributes->description);
-            }
-        }
-        if (isset($children->postConditions)) {
-            $type->setPostConditions(FHIRMarkdown::xmlUnserialize($children->postConditions));
-        }
-        if (isset($attributes->postConditions)) {
-            $pt = $type->getPostConditions();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->postConditions);
-            } else {
-                $type->setPostConditions((string)$attributes->postConditions);
-            }
-        }
-        if (isset($children->preConditions)) {
-            $type->setPreConditions(FHIRMarkdown::xmlUnserialize($children->preConditions));
-        }
-        if (isset($attributes->preConditions)) {
-            $pt = $type->getPreConditions();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->preConditions);
-            } else {
-                $type->setPreConditions((string)$attributes->preConditions);
-            }
-        }
-        if (isset($children->step)) {
-            foreach($children->step as $child) {
-                $type->addStep(FHIRExampleScenarioStep::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->title)) {
-            $type->setTitle(FHIRString::xmlUnserialize($children->title));
-        }
-        if (isset($attributes->title)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_TITLE);
+        if (null !== $n) {
             $pt = $type->getTitle();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->title);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setTitle((string)$attributes->title);
+                $type->setTitle($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_DESCRIPTION);
+        if (null !== $n) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setDescription($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_PRE_CONDITIONS);
+        if (null !== $n) {
+            $pt = $type->getPreConditions();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setPreConditions($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_POST_CONDITIONS);
+        if (null !== $n) {
+            $pt = $type->getPostConditions();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setPostConditions($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getTitle())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TITLE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPostConditions())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_POST_CONDITIONS, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DESCRIPTION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getPreConditions())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRE_CONDITIONS, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_PRE_CONDITIONS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getPostConditions())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_POST_CONDITIONS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getStep())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_STEP, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_STEP);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getTitle())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TITLE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -815,31 +801,44 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMarkdown::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRMarkdown::FIELD_VALUE]);
-                $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+        if (null !== ($v = $this->getTitle())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TITLE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_TITLE_EXT] = $ext;
             }
         }
-        if (null !== ($v = $this->getPostConditions())) {
-            $a[self::FIELD_POST_CONDITIONS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMarkdown::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRMarkdown::FIELD_VALUE]);
-                $a[self::FIELD_POST_CONDITIONS_EXT] = $enc;
+        if (null !== ($v = $this->getDescription())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRMarkdown::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DESCRIPTION_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getPreConditions())) {
-            $a[self::FIELD_PRE_CONDITIONS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMarkdown::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRMarkdown::FIELD_VALUE]);
-                $a[self::FIELD_PRE_CONDITIONS_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PRE_CONDITIONS] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRMarkdown::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PRE_CONDITIONS_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getPostConditions())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_POST_CONDITIONS] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRMarkdown::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_POST_CONDITIONS_EXT] = $ext;
             }
         }
         if ([] !== ($vs = $this->getStep())) {
@@ -850,18 +849,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
                 }
                 $a[self::FIELD_STEP][] = $v;
             }
-        }
-        if (null !== ($v = $this->getTitle())) {
-            $a[self::FIELD_TITLE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_TITLE_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

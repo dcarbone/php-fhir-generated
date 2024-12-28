@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIROr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,7 +66,9 @@ use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
@@ -83,36 +85,13 @@ class FHIROrganizationContact extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ORGANIZATION_DOT_CONTACT;
-    const FIELD_ADDRESS = 'address';
-    const FIELD_NAME = 'name';
     const FIELD_PURPOSE = 'purpose';
+    const FIELD_NAME = 'name';
     const FIELD_TELECOM = 'telecom';
+    const FIELD_ADDRESS = 'address';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * There is a variety of postal address formats defined around the world. This
-     * format defines a superset that is the basis for all addresses around the world.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Visiting or postal addresses for the contact.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress
-     */
-    protected $address = null;
-
-    /**
-     * A human's name with the ability to identify parts and usage.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A name associated with the contact.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName
-     */
-    protected $name = null;
+    private $_xmlns = '';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -127,6 +106,17 @@ class FHIROrganizationContact extends FHIRBackboneElement
     protected $purpose = null;
 
     /**
+     * A human's name with the ability to identify parts and usage.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A name associated with the contact.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName
+     */
+    protected $name = null;
+
+    /**
      * Details for all kinds of technology mediated contact points for a person or
      * organization, including telephone, email, etc.
      * If the element is present, it must have a value for at least one of the defined
@@ -138,6 +128,18 @@ class FHIROrganizationContact extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint[]
      */
     protected $telecom = [];
+
+    /**
+     * There is a variety of postal address formats defined around the world. This
+     * format defines a superset that is the basis for all addresses around the world.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Visiting or postal addresses for the contact.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress
+     */
+    protected $address = null;
 
     /**
      * Validation map for fields in type Organization.Contact
@@ -161,11 +163,11 @@ class FHIROrganizationContact extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ADDRESS])) {
-            if ($data[self::FIELD_ADDRESS] instanceof FHIRAddress) {
-                $this->setAddress($data[self::FIELD_ADDRESS]);
+        if (isset($data[self::FIELD_PURPOSE])) {
+            if ($data[self::FIELD_PURPOSE] instanceof FHIRCodeableConcept) {
+                $this->setPurpose($data[self::FIELD_PURPOSE]);
             } else {
-                $this->setAddress(new FHIRAddress($data[self::FIELD_ADDRESS]));
+                $this->setPurpose(new FHIRCodeableConcept($data[self::FIELD_PURPOSE]));
             }
         }
         if (isset($data[self::FIELD_NAME])) {
@@ -173,13 +175,6 @@ class FHIROrganizationContact extends FHIRBackboneElement
                 $this->setName($data[self::FIELD_NAME]);
             } else {
                 $this->setName(new FHIRHumanName($data[self::FIELD_NAME]));
-            }
-        }
-        if (isset($data[self::FIELD_PURPOSE])) {
-            if ($data[self::FIELD_PURPOSE] instanceof FHIRCodeableConcept) {
-                $this->setPurpose($data[self::FIELD_PURPOSE]);
-            } else {
-                $this->setPurpose(new FHIRCodeableConcept($data[self::FIELD_PURPOSE]));
             }
         }
         if (isset($data[self::FIELD_TELECOM])) {
@@ -194,10 +189,17 @@ class FHIROrganizationContact extends FHIRBackboneElement
                         $this->addTelecom(new FHIRContactPoint($v));
                     }
                 }
-            } else if ($data[self::FIELD_TELECOM] instanceof FHIRContactPoint) {
+            } elseif ($data[self::FIELD_TELECOM] instanceof FHIRContactPoint) {
                 $this->addTelecom($data[self::FIELD_TELECOM]);
             } else {
                 $this->addTelecom(new FHIRContactPoint($data[self::FIELD_TELECOM]));
+            }
+        }
+        if (isset($data[self::FIELD_ADDRESS])) {
+            if ($data[self::FIELD_ADDRESS] instanceof FHIRAddress) {
+                $this->setAddress($data[self::FIELD_ADDRESS]);
+            } else {
+                $this->setAddress(new FHIRAddress($data[self::FIELD_ADDRESS]));
             }
         }
     }
@@ -216,72 +218,10 @@ class FHIROrganizationContact extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<OrganizationContact{$xmlns}></OrganizationContact>";
-    }
-
-    /**
-     * There is a variety of postal address formats defined around the world. This
-     * format defines a superset that is the basis for all addresses around the world.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Visiting or postal addresses for the contact.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress
-     */
-    public function getAddress()
-    {
-        return $this->address;
-    }
-
-    /**
-     * There is a variety of postal address formats defined around the world. This
-     * format defines a superset that is the basis for all addresses around the world.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Visiting or postal addresses for the contact.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress $address
-     * @return static
-     */
-    public function setAddress(FHIRAddress $address = null)
-    {
-        $this->address = $address;
-        return $this;
-    }
-
-    /**
-     * A human's name with the ability to identify parts and usage.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A name associated with the contact.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * A human's name with the ability to identify parts and usage.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A name associated with the contact.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName $name
-     * @return static
-     */
-    public function setName(FHIRHumanName $name = null)
-    {
-        $this->name = $name;
-        return $this;
     }
 
     /**
@@ -312,7 +252,39 @@ class FHIROrganizationContact extends FHIRBackboneElement
      */
     public function setPurpose(FHIRCodeableConcept $purpose = null)
     {
+        $this->_trackValueSet($this->purpose, $purpose);
         $this->purpose = $purpose;
+        return $this;
+    }
+
+    /**
+     * A human's name with the ability to identify parts and usage.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A name associated with the contact.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * A human's name with the ability to identify parts and usage.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A name associated with the contact.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName $name
+     * @return static
+     */
+    public function setName(FHIRHumanName $name = null)
+    {
+        $this->_trackValueSet($this->name, $name);
+        $this->name = $name;
         return $this;
     }
 
@@ -346,6 +318,7 @@ class FHIROrganizationContact extends FHIRBackboneElement
      */
     public function addTelecom(FHIRContactPoint $telecom = null)
     {
+        $this->_trackValueAdded();
         $this->telecom[] = $telecom;
         return $this;
     }
@@ -364,7 +337,10 @@ class FHIROrganizationContact extends FHIRBackboneElement
      */
     public function setTelecom(array $telecom = [])
     {
-        $this->telecom = [];
+        if ([] !== $this->telecom) {
+            $this->_trackValuesRemoved(count($this->telecom));
+            $this->telecom = [];
+        }
         if ([] === $telecom) {
             return $this;
         }
@@ -375,6 +351,39 @@ class FHIROrganizationContact extends FHIRBackboneElement
                 $this->addTelecom(new FHIRContactPoint($v));
             }
         }
+        return $this;
+    }
+
+    /**
+     * There is a variety of postal address formats defined around the world. This
+     * format defines a superset that is the basis for all addresses around the world.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Visiting or postal addresses for the contact.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * There is a variety of postal address formats defined around the world. This
+     * format defines a superset that is the basis for all addresses around the world.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Visiting or postal addresses for the contact.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress $address
+     * @return static
+     */
+    public function setAddress(FHIRAddress $address = null)
+    {
+        $this->_trackValueSet($this->address, $address);
+        $this->address = $address;
         return $this;
     }
 
@@ -399,19 +408,14 @@ class FHIROrganizationContact extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getAddress())) {
+        if (null !== ($v = $this->getPurpose())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ADDRESS] = $fieldErrs;
+                $errs[self::FIELD_PURPOSE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getName())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_NAME] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPurpose())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PURPOSE] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getTelecom())) {
@@ -421,15 +425,20 @@ class FHIROrganizationContact extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_ADDRESS])) {
-            $v = $this->getAddress();
-            foreach($validationRules[self::FIELD_ADDRESS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ORGANIZATION_DOT_CONTACT, self::FIELD_ADDRESS, $rule, $constraint, $v);
+        if (null !== ($v = $this->getAddress())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ADDRESS] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_PURPOSE])) {
+            $v = $this->getPurpose();
+            foreach($validationRules[self::FIELD_PURPOSE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ORGANIZATION_DOT_CONTACT, self::FIELD_PURPOSE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ADDRESS])) {
-                        $errs[self::FIELD_ADDRESS] = [];
+                    if (!isset($errs[self::FIELD_PURPOSE])) {
+                        $errs[self::FIELD_PURPOSE] = [];
                     }
-                    $errs[self::FIELD_ADDRESS][$rule] = $err;
+                    $errs[self::FIELD_PURPOSE][$rule] = $err;
                 }
             }
         }
@@ -445,18 +454,6 @@ class FHIROrganizationContact extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PURPOSE])) {
-            $v = $this->getPurpose();
-            foreach($validationRules[self::FIELD_PURPOSE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ORGANIZATION_DOT_CONTACT, self::FIELD_PURPOSE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PURPOSE])) {
-                        $errs[self::FIELD_PURPOSE] = [];
-                    }
-                    $errs[self::FIELD_PURPOSE][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_TELECOM])) {
             $v = $this->getTelecom();
             foreach($validationRules[self::FIELD_TELECOM] as $rule => $constraint) {
@@ -466,6 +463,18 @@ class FHIROrganizationContact extends FHIRBackboneElement
                         $errs[self::FIELD_TELECOM] = [];
                     }
                     $errs[self::FIELD_TELECOM][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ADDRESS])) {
+            $v = $this->getAddress();
+            foreach($validationRules[self::FIELD_ADDRESS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ORGANIZATION_DOT_CONTACT, self::FIELD_ADDRESS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ADDRESS])) {
+                        $errs[self::FIELD_ADDRESS] = [];
+                    }
+                    $errs[self::FIELD_ADDRESS][$rule] = $err;
                 }
             }
         }
@@ -509,91 +518,114 @@ class FHIROrganizationContact extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIROrganizationContact::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIROrganizationContact::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIROrganizationContact::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIROrganizationContact;
+            $type = new FHIROrganizationContact(null);
         } elseif (!is_object($type) || !($type instanceof FHIROrganizationContact)) {
             throw new \RuntimeException(sprintf(
                 'FHIROrganizationContact::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_PURPOSE === $n->nodeName) {
+                $type->setPurpose(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_NAME === $n->nodeName) {
+                $type->setName(FHIRHumanName::xmlUnserialize($n));
+            } elseif (self::FIELD_TELECOM === $n->nodeName) {
+                $type->addTelecom(FHIRContactPoint::xmlUnserialize($n));
+            } elseif (self::FIELD_ADDRESS === $n->nodeName) {
+                $type->setAddress(FHIRAddress::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->address)) {
-            $type->setAddress(FHIRAddress::xmlUnserialize($children->address));
-        }
-        if (isset($children->name)) {
-            $type->setName(FHIRHumanName::xmlUnserialize($children->name));
-        }
-        if (isset($children->purpose)) {
-            $type->setPurpose(FHIRCodeableConcept::xmlUnserialize($children->purpose));
-        }
-        if (isset($children->telecom)) {
-            foreach($children->telecom as $child) {
-                $type->addTelecom(FHIRContactPoint::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getAddress())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ADDRESS, null, $v->_getFHIRXMLNamespace()));
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getPurpose())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PURPOSE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPurpose())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PURPOSE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_NAME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getTelecom())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TELECOM, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_TELECOM);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        if (null !== ($v = $this->getAddress())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_ADDRESS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -602,14 +634,11 @@ class FHIROrganizationContact extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAddress())) {
-            $a[self::FIELD_ADDRESS] = $v;
+        if (null !== ($v = $this->getPurpose())) {
+            $a[self::FIELD_PURPOSE] = $v;
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v;
-        }
-        if (null !== ($v = $this->getPurpose())) {
-            $a[self::FIELD_PURPOSE] = $v;
         }
         if ([] !== ($vs = $this->getTelecom())) {
             $a[self::FIELD_TELECOM] = [];
@@ -620,8 +649,8 @@ class FHIROrganizationContact extends FHIRBackboneElement
                 $a[self::FIELD_TELECOM][] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getAddress())) {
+            $a[self::FIELD_ADDRESS] = $v;
         }
         return $a;
     }

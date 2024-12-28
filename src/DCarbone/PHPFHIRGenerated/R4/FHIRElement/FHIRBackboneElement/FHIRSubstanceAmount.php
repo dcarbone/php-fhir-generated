@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,9 +65,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -92,13 +94,13 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     const FIELD_AMOUNT_RANGE = 'amountRange';
     const FIELD_AMOUNT_STRING = 'amountString';
     const FIELD_AMOUNT_STRING_EXT = '_amountString';
+    const FIELD_AMOUNT_TYPE = 'amountType';
     const FIELD_AMOUNT_TEXT = 'amountText';
     const FIELD_AMOUNT_TEXT_EXT = '_amountText';
-    const FIELD_AMOUNT_TYPE = 'amountType';
     const FIELD_REFERENCE_RANGE = 'referenceRange';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -109,8 +111,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -123,8 +124,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -137,23 +137,11 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected $amountString = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A textual comment on a numeric value.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $amountText = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -172,6 +160,17 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected $amountType = null;
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A textual comment on a numeric value.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected $amountText = null;
 
     /**
      * Chemical substances are a single substance type whose primary defining element
@@ -226,16 +225,8 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
             }
         }
         if (isset($data[self::FIELD_AMOUNT_STRING]) || isset($data[self::FIELD_AMOUNT_STRING_EXT])) {
-            if (isset($data[self::FIELD_AMOUNT_STRING])) {
-                $value = $data[self::FIELD_AMOUNT_STRING];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_AMOUNT_STRING_EXT]) && is_array($data[self::FIELD_AMOUNT_STRING_EXT])) {
-                $ext = $data[self::FIELD_AMOUNT_STRING_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_AMOUNT_STRING]) ? $data[self::FIELD_AMOUNT_STRING] : null;
+            $ext = (isset($data[self::FIELD_AMOUNT_STRING_EXT]) && is_array($data[self::FIELD_AMOUNT_STRING_EXT])) ? $ext = $data[self::FIELD_AMOUNT_STRING_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setAmountString($value);
@@ -244,21 +235,20 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
                 } else {
                     $this->setAmountString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setAmountString(new FHIRString($ext));
             }
         }
+        if (isset($data[self::FIELD_AMOUNT_TYPE])) {
+            if ($data[self::FIELD_AMOUNT_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setAmountType($data[self::FIELD_AMOUNT_TYPE]);
+            } else {
+                $this->setAmountType(new FHIRCodeableConcept($data[self::FIELD_AMOUNT_TYPE]));
+            }
+        }
         if (isset($data[self::FIELD_AMOUNT_TEXT]) || isset($data[self::FIELD_AMOUNT_TEXT_EXT])) {
-            if (isset($data[self::FIELD_AMOUNT_TEXT])) {
-                $value = $data[self::FIELD_AMOUNT_TEXT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_AMOUNT_TEXT_EXT]) && is_array($data[self::FIELD_AMOUNT_TEXT_EXT])) {
-                $ext = $data[self::FIELD_AMOUNT_TEXT_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_AMOUNT_TEXT]) ? $data[self::FIELD_AMOUNT_TEXT] : null;
+            $ext = (isset($data[self::FIELD_AMOUNT_TEXT_EXT]) && is_array($data[self::FIELD_AMOUNT_TEXT_EXT])) ? $ext = $data[self::FIELD_AMOUNT_TEXT_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setAmountText($value);
@@ -267,15 +257,8 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
                 } else {
                     $this->setAmountText(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setAmountText(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_AMOUNT_TYPE])) {
-            if ($data[self::FIELD_AMOUNT_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setAmountType($data[self::FIELD_AMOUNT_TYPE]);
-            } else {
-                $this->setAmountType(new FHIRCodeableConcept($data[self::FIELD_AMOUNT_TYPE]));
             }
         }
         if (isset($data[self::FIELD_REFERENCE_RANGE])) {
@@ -301,7 +284,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<SubstanceAmount{$xmlns}></SubstanceAmount>";
@@ -316,8 +299,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -335,14 +317,14 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $amountQuantity
      * @return static
      */
     public function setAmountQuantity(FHIRQuantity $amountQuantity = null)
     {
+        $this->_trackValueSet($this->amountQuantity, $amountQuantity);
         $this->amountQuantity = $amountQuantity;
         return $this;
     }
@@ -354,8 +336,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
@@ -371,14 +352,14 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $amountRange
      * @return static
      */
     public function setAmountRange(FHIRRange $amountRange = null)
     {
+        $this->_trackValueSet($this->amountRange, $amountRange);
         $this->amountRange = $amountRange;
         return $this;
     }
@@ -390,8 +371,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
@@ -407,61 +387,18 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      *
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
-     * value for a given element is given, it would be captured in this field. (choose
-     * any one of amount*, but only one)
+     * value for a given element is given, it would be captured in this field.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $amountString
      * @return static
      */
     public function setAmountString($amountString = null)
     {
-        if (null === $amountString) {
-            $this->amountString = null;
-            return $this;
+        if (null !== $amountString && !($amountString instanceof FHIRString)) {
+            $amountString = new FHIRString($amountString);
         }
-        if ($amountString instanceof FHIRString) {
-            $this->amountString = $amountString;
-            return $this;
-        }
-        $this->amountString = new FHIRString($amountString);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A textual comment on a numeric value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getAmountText()
-    {
-        return $this->amountText;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A textual comment on a numeric value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $amountText
-     * @return static
-     */
-    public function setAmountText($amountText = null)
-    {
-        if (null === $amountText) {
-            $this->amountText = null;
-            return $this;
-        }
-        if ($amountText instanceof FHIRString) {
-            $this->amountText = $amountText;
-            return $this;
-        }
-        $this->amountText = new FHIRString($amountText);
+        $this->_trackValueSet($this->amountString, $amountString);
+        $this->amountString = $amountString;
         return $this;
     }
 
@@ -505,7 +442,42 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      */
     public function setAmountType(FHIRCodeableConcept $amountType = null)
     {
+        $this->_trackValueSet($this->amountType, $amountType);
         $this->amountType = $amountType;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A textual comment on a numeric value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getAmountText()
+    {
+        return $this->amountText;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A textual comment on a numeric value.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $amountText
+     * @return static
+     */
+    public function setAmountText($amountText = null)
+    {
+        if (null !== $amountText && !($amountText instanceof FHIRString)) {
+            $amountText = new FHIRString($amountText);
+        }
+        $this->_trackValueSet($this->amountText, $amountText);
+        $this->amountText = $amountText;
         return $this;
     }
 
@@ -545,6 +517,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      */
     public function setReferenceRange(FHIRSubstanceAmountReferenceRange $referenceRange = null)
     {
+        $this->_trackValueSet($this->referenceRange, $referenceRange);
         $this->referenceRange = $referenceRange;
         return $this;
     }
@@ -585,14 +558,14 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
                 $errs[self::FIELD_AMOUNT_STRING] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getAmountText())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_AMOUNT_TEXT] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getAmountType())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_AMOUNT_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getAmountText())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_AMOUNT_TEXT] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getReferenceRange())) {
@@ -636,18 +609,6 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_AMOUNT_TEXT])) {
-            $v = $this->getAmountText();
-            foreach($validationRules[self::FIELD_AMOUNT_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_AMOUNT, self::FIELD_AMOUNT_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_AMOUNT_TEXT])) {
-                        $errs[self::FIELD_AMOUNT_TEXT] = [];
-                    }
-                    $errs[self::FIELD_AMOUNT_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_AMOUNT_TYPE])) {
             $v = $this->getAmountType();
             foreach($validationRules[self::FIELD_AMOUNT_TYPE] as $rule => $constraint) {
@@ -657,6 +618,18 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
                         $errs[self::FIELD_AMOUNT_TYPE] = [];
                     }
                     $errs[self::FIELD_AMOUNT_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AMOUNT_TEXT])) {
+            $v = $this->getAmountText();
+            foreach($validationRules[self::FIELD_AMOUNT_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_AMOUNT, self::FIELD_AMOUNT_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AMOUNT_TEXT])) {
+                        $errs[self::FIELD_AMOUNT_TEXT] = [];
+                    }
+                    $errs[self::FIELD_AMOUNT_TEXT][$rule] = $err;
                 }
             }
         }
@@ -712,112 +685,141 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRSubstanceAmount::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSubstanceAmount::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRSubstanceAmount::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRSubstanceAmount;
+            $type = new FHIRSubstanceAmount(null);
         } elseif (!is_object($type) || !($type instanceof FHIRSubstanceAmount)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSubstanceAmount::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_AMOUNT_QUANTITY === $n->nodeName) {
+                $type->setAmountQuantity(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_AMOUNT_RANGE === $n->nodeName) {
+                $type->setAmountRange(FHIRRange::xmlUnserialize($n));
+            } elseif (self::FIELD_AMOUNT_STRING === $n->nodeName) {
+                $type->setAmountString(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_AMOUNT_TYPE === $n->nodeName) {
+                $type->setAmountType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_AMOUNT_TEXT === $n->nodeName) {
+                $type->setAmountText(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_REFERENCE_RANGE === $n->nodeName) {
+                $type->setReferenceRange(FHIRSubstanceAmountReferenceRange::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->amountQuantity)) {
-            $type->setAmountQuantity(FHIRQuantity::xmlUnserialize($children->amountQuantity));
-        }
-        if (isset($children->amountRange)) {
-            $type->setAmountRange(FHIRRange::xmlUnserialize($children->amountRange));
-        }
-        if (isset($children->amountString)) {
-            $type->setAmountString(FHIRString::xmlUnserialize($children->amountString));
-        }
-        if (isset($attributes->amountString)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_AMOUNT_STRING);
+        if (null !== $n) {
             $pt = $type->getAmountString();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->amountString);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setAmountString((string)$attributes->amountString);
+                $type->setAmountString($n->nodeValue);
             }
         }
-        if (isset($children->amountText)) {
-            $type->setAmountText(FHIRString::xmlUnserialize($children->amountText));
-        }
-        if (isset($attributes->amountText)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_AMOUNT_TEXT);
+        if (null !== $n) {
             $pt = $type->getAmountText();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->amountText);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setAmountText((string)$attributes->amountText);
+                $type->setAmountText($n->nodeValue);
             }
         }
-        if (isset($children->amountType)) {
-            $type->setAmountType(FHIRCodeableConcept::xmlUnserialize($children->amountType));
-        }
-        if (isset($children->referenceRange)) {
-            $type->setReferenceRange(FHIRSubstanceAmountReferenceRange::xmlUnserialize($children->referenceRange));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getAmountQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_QUANTITY, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_AMOUNT_QUANTITY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getAmountRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_RANGE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_AMOUNT_RANGE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getAmountString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_STRING, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getAmountText())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_TEXT, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_AMOUNT_STRING);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getAmountType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT_TYPE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_AMOUNT_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getAmountText())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_AMOUNT_TEXT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getReferenceRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_RANGE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_REFERENCE_RANGE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -833,31 +835,30 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
             $a[self::FIELD_AMOUNT_RANGE] = $v;
         }
         if (null !== ($v = $this->getAmountString())) {
-            $a[self::FIELD_AMOUNT_STRING] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_AMOUNT_STRING_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AMOUNT_STRING] = $val;
             }
-        }
-        if (null !== ($v = $this->getAmountText())) {
-            $a[self::FIELD_AMOUNT_TEXT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_AMOUNT_TEXT_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_AMOUNT_STRING_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getAmountType())) {
             $a[self::FIELD_AMOUNT_TYPE] = $v;
         }
+        if (null !== ($v = $this->getAmountText())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_AMOUNT_TEXT] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_AMOUNT_TEXT_EXT] = $ext;
+            }
+        }
         if (null !== ($v = $this->getReferenceRange())) {
             $a[self::FIELD_REFERENCE_RANGE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

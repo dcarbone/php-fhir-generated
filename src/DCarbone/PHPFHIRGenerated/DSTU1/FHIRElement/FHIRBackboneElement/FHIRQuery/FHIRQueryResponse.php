@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRQu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQueryOutcome;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
@@ -76,32 +77,21 @@ class FHIRQueryResponse extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUERY_DOT_RESPONSE;
-    const FIELD_FIRST = 'first';
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_IDENTIFIER_EXT = '_identifier';
-    const FIELD_LAST = 'last';
-    const FIELD_NEXT = 'next';
     const FIELD_OUTCOME = 'outcome';
     const FIELD_OUTCOME_EXT = '_outcome';
-    const FIELD_PARAMETER = 'parameter';
-    const FIELD_PREVIOUS = 'previous';
-    const FIELD_REFERENCE = 'reference';
     const FIELD_TOTAL = 'total';
     const FIELD_TOTAL_EXT = '_total';
+    const FIELD_PARAMETER = 'parameter';
+    const FIELD_FIRST = 'first';
+    const FIELD_PREVIOUS = 'previous';
+    const FIELD_NEXT = 'next';
+    const FIELD_LAST = 'last';
+    const FIELD_REFERENCE = 'reference';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Optional Extensions Element - found in all resources.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * To get first page (if paged).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
-     */
-    protected $first = [];
+    private $_xmlns = '';
 
     /**
      * String of characters used to identify a name or a resource
@@ -114,28 +104,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
     protected $identifier = null;
 
     /**
-     * Optional Extensions Element - found in all resources.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * To get last page (if paged).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
-     */
-    protected $last = [];
-
-    /**
-     * Optional Extensions Element - found in all resources.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * To get next page (if paged).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
-     */
-    protected $next = [];
-
-    /**
      * The outcome of processing a query request
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -144,6 +112,16 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQueryOutcome
      */
     protected $outcome = null;
+
+    /**
+     * A whole number
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Total number of matching records.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
+     */
+    protected $total = null;
 
     /**
      * Optional Extensions Element - found in all resources.
@@ -161,11 +139,44 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * To get first page (if paged).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
+     */
+    protected $first = [];
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * To get previous page (if paged).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
      */
     protected $previous = [];
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To get next page (if paged).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
+     */
+    protected $next = [];
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To get last page (if paged).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
+     */
+    protected $last = [];
 
     /**
      * A reference from one resource to another.
@@ -177,16 +188,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected $reference = [];
-
-    /**
-     * A whole number
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Total number of matching records.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
-     */
-    protected $total = null;
 
     /**
      * Validation map for fields in type Query.Response
@@ -210,35 +211,9 @@ class FHIRQueryResponse extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_FIRST])) {
-            if (is_array($data[self::FIELD_FIRST])) {
-                foreach($data[self::FIELD_FIRST] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRExtension) {
-                        $this->addFirst($v);
-                    } else {
-                        $this->addFirst(new FHIRExtension($v));
-                    }
-                }
-            } else if ($data[self::FIELD_FIRST] instanceof FHIRExtension) {
-                $this->addFirst($data[self::FIELD_FIRST]);
-            } else {
-                $this->addFirst(new FHIRExtension($data[self::FIELD_FIRST]));
-            }
-        }
         if (isset($data[self::FIELD_IDENTIFIER]) || isset($data[self::FIELD_IDENTIFIER_EXT])) {
-            if (isset($data[self::FIELD_IDENTIFIER])) {
-                $value = $data[self::FIELD_IDENTIFIER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT])) {
-                $ext = $data[self::FIELD_IDENTIFIER_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_IDENTIFIER]) ? $data[self::FIELD_IDENTIFIER] : null;
+            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT])) ? $ext = $data[self::FIELD_IDENTIFIER_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRUri) {
                     $this->setIdentifier($value);
@@ -247,57 +222,13 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 } else {
                     $this->setIdentifier(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setIdentifier(new FHIRUri($ext));
             }
         }
-        if (isset($data[self::FIELD_LAST])) {
-            if (is_array($data[self::FIELD_LAST])) {
-                foreach($data[self::FIELD_LAST] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRExtension) {
-                        $this->addLast($v);
-                    } else {
-                        $this->addLast(new FHIRExtension($v));
-                    }
-                }
-            } else if ($data[self::FIELD_LAST] instanceof FHIRExtension) {
-                $this->addLast($data[self::FIELD_LAST]);
-            } else {
-                $this->addLast(new FHIRExtension($data[self::FIELD_LAST]));
-            }
-        }
-        if (isset($data[self::FIELD_NEXT])) {
-            if (is_array($data[self::FIELD_NEXT])) {
-                foreach($data[self::FIELD_NEXT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRExtension) {
-                        $this->addNext($v);
-                    } else {
-                        $this->addNext(new FHIRExtension($v));
-                    }
-                }
-            } else if ($data[self::FIELD_NEXT] instanceof FHIRExtension) {
-                $this->addNext($data[self::FIELD_NEXT]);
-            } else {
-                $this->addNext(new FHIRExtension($data[self::FIELD_NEXT]));
-            }
-        }
         if (isset($data[self::FIELD_OUTCOME]) || isset($data[self::FIELD_OUTCOME_EXT])) {
-            if (isset($data[self::FIELD_OUTCOME])) {
-                $value = $data[self::FIELD_OUTCOME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_OUTCOME_EXT]) && is_array($data[self::FIELD_OUTCOME_EXT])) {
-                $ext = $data[self::FIELD_OUTCOME_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_OUTCOME]) ? $data[self::FIELD_OUTCOME] : null;
+            $ext = (isset($data[self::FIELD_OUTCOME_EXT]) && is_array($data[self::FIELD_OUTCOME_EXT])) ? $ext = $data[self::FIELD_OUTCOME_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRQueryOutcome) {
                     $this->setOutcome($value);
@@ -306,8 +237,23 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 } else {
                     $this->setOutcome(new FHIRQueryOutcome([FHIRQueryOutcome::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setOutcome(new FHIRQueryOutcome($ext));
+            }
+        }
+        if (isset($data[self::FIELD_TOTAL]) || isset($data[self::FIELD_TOTAL_EXT])) {
+            $value = isset($data[self::FIELD_TOTAL]) ? $data[self::FIELD_TOTAL] : null;
+            $ext = (isset($data[self::FIELD_TOTAL_EXT]) && is_array($data[self::FIELD_TOTAL_EXT])) ? $ext = $data[self::FIELD_TOTAL_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setTotal($value);
+                } else if (is_array($value)) {
+                    $this->setTotal(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setTotal(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setTotal(new FHIRInteger($ext));
             }
         }
         if (isset($data[self::FIELD_PARAMETER])) {
@@ -322,10 +268,28 @@ class FHIRQueryResponse extends FHIRBackboneElement
                         $this->addParameter(new FHIRExtension($v));
                     }
                 }
-            } else if ($data[self::FIELD_PARAMETER] instanceof FHIRExtension) {
+            } elseif ($data[self::FIELD_PARAMETER] instanceof FHIRExtension) {
                 $this->addParameter($data[self::FIELD_PARAMETER]);
             } else {
                 $this->addParameter(new FHIRExtension($data[self::FIELD_PARAMETER]));
+            }
+        }
+        if (isset($data[self::FIELD_FIRST])) {
+            if (is_array($data[self::FIELD_FIRST])) {
+                foreach($data[self::FIELD_FIRST] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRExtension) {
+                        $this->addFirst($v);
+                    } else {
+                        $this->addFirst(new FHIRExtension($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_FIRST] instanceof FHIRExtension) {
+                $this->addFirst($data[self::FIELD_FIRST]);
+            } else {
+                $this->addFirst(new FHIRExtension($data[self::FIELD_FIRST]));
             }
         }
         if (isset($data[self::FIELD_PREVIOUS])) {
@@ -340,10 +304,46 @@ class FHIRQueryResponse extends FHIRBackboneElement
                         $this->addPrevious(new FHIRExtension($v));
                     }
                 }
-            } else if ($data[self::FIELD_PREVIOUS] instanceof FHIRExtension) {
+            } elseif ($data[self::FIELD_PREVIOUS] instanceof FHIRExtension) {
                 $this->addPrevious($data[self::FIELD_PREVIOUS]);
             } else {
                 $this->addPrevious(new FHIRExtension($data[self::FIELD_PREVIOUS]));
+            }
+        }
+        if (isset($data[self::FIELD_NEXT])) {
+            if (is_array($data[self::FIELD_NEXT])) {
+                foreach($data[self::FIELD_NEXT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRExtension) {
+                        $this->addNext($v);
+                    } else {
+                        $this->addNext(new FHIRExtension($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_NEXT] instanceof FHIRExtension) {
+                $this->addNext($data[self::FIELD_NEXT]);
+            } else {
+                $this->addNext(new FHIRExtension($data[self::FIELD_NEXT]));
+            }
+        }
+        if (isset($data[self::FIELD_LAST])) {
+            if (is_array($data[self::FIELD_LAST])) {
+                foreach($data[self::FIELD_LAST] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRExtension) {
+                        $this->addLast($v);
+                    } else {
+                        $this->addLast(new FHIRExtension($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_LAST] instanceof FHIRExtension) {
+                $this->addLast($data[self::FIELD_LAST]);
+            } else {
+                $this->addLast(new FHIRExtension($data[self::FIELD_LAST]));
             }
         }
         if (isset($data[self::FIELD_REFERENCE])) {
@@ -358,33 +358,10 @@ class FHIRQueryResponse extends FHIRBackboneElement
                         $this->addReference(new FHIRResourceReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_REFERENCE] instanceof FHIRResourceReference) {
+            } elseif ($data[self::FIELD_REFERENCE] instanceof FHIRResourceReference) {
                 $this->addReference($data[self::FIELD_REFERENCE]);
             } else {
                 $this->addReference(new FHIRResourceReference($data[self::FIELD_REFERENCE]));
-            }
-        }
-        if (isset($data[self::FIELD_TOTAL]) || isset($data[self::FIELD_TOTAL_EXT])) {
-            if (isset($data[self::FIELD_TOTAL])) {
-                $value = $data[self::FIELD_TOTAL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TOTAL_EXT]) && is_array($data[self::FIELD_TOTAL_EXT])) {
-                $ext = $data[self::FIELD_TOTAL_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->setTotal($value);
-                } else if (is_array($value)) {
-                    $this->setTotal(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->setTotal(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setTotal(new FHIRInteger($ext));
             }
         }
     }
@@ -403,66 +380,10 @@ class FHIRQueryResponse extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<QueryResponse{$xmlns}></QueryResponse>";
-    }
-
-    /**
-     * Optional Extensions Element - found in all resources.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * To get first page (if paged).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
-     */
-    public function getFirst()
-    {
-        return $this->first;
-    }
-
-    /**
-     * Optional Extensions Element - found in all resources.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * To get first page (if paged).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension $first
-     * @return static
-     */
-    public function addFirst(FHIRExtension $first = null)
-    {
-        $this->first[] = $first;
-        return $this;
-    }
-
-    /**
-     * Optional Extensions Element - found in all resources.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * To get first page (if paged).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[] $first
-     * @return static
-     */
-    public function setFirst(array $first = [])
-    {
-        $this->first = [];
-        if ([] === $first) {
-            return $this;
-        }
-        foreach($first as $v) {
-            if ($v instanceof FHIRExtension) {
-                $this->addFirst($v);
-            } else {
-                $this->addFirst(new FHIRExtension($v));
-            }
-        }
-        return $this;
     }
 
     /**
@@ -489,127 +410,11 @@ class FHIRQueryResponse extends FHIRBackboneElement
      */
     public function setIdentifier($identifier = null)
     {
-        if (null === $identifier) {
-            $this->identifier = null;
-            return $this;
+        if (null !== $identifier && !($identifier instanceof FHIRUri)) {
+            $identifier = new FHIRUri($identifier);
         }
-        if ($identifier instanceof FHIRUri) {
-            $this->identifier = $identifier;
-            return $this;
-        }
-        $this->identifier = new FHIRUri($identifier);
-        return $this;
-    }
-
-    /**
-     * Optional Extensions Element - found in all resources.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * To get last page (if paged).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
-     */
-    public function getLast()
-    {
-        return $this->last;
-    }
-
-    /**
-     * Optional Extensions Element - found in all resources.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * To get last page (if paged).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension $last
-     * @return static
-     */
-    public function addLast(FHIRExtension $last = null)
-    {
-        $this->last[] = $last;
-        return $this;
-    }
-
-    /**
-     * Optional Extensions Element - found in all resources.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * To get last page (if paged).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[] $last
-     * @return static
-     */
-    public function setLast(array $last = [])
-    {
-        $this->last = [];
-        if ([] === $last) {
-            return $this;
-        }
-        foreach($last as $v) {
-            if ($v instanceof FHIRExtension) {
-                $this->addLast($v);
-            } else {
-                $this->addLast(new FHIRExtension($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * Optional Extensions Element - found in all resources.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * To get next page (if paged).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
-     */
-    public function getNext()
-    {
-        return $this->next;
-    }
-
-    /**
-     * Optional Extensions Element - found in all resources.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * To get next page (if paged).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension $next
-     * @return static
-     */
-    public function addNext(FHIRExtension $next = null)
-    {
-        $this->next[] = $next;
-        return $this;
-    }
-
-    /**
-     * Optional Extensions Element - found in all resources.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * To get next page (if paged).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[] $next
-     * @return static
-     */
-    public function setNext(array $next = [])
-    {
-        $this->next = [];
-        if ([] === $next) {
-            return $this;
-        }
-        foreach($next as $v) {
-            if ($v instanceof FHIRExtension) {
-                $this->addNext($v);
-            } else {
-                $this->addNext(new FHIRExtension($v));
-            }
-        }
+        $this->_trackValueSet($this->identifier, $identifier);
+        $this->identifier = $identifier;
         return $this;
     }
 
@@ -637,7 +442,40 @@ class FHIRQueryResponse extends FHIRBackboneElement
      */
     public function setOutcome(FHIRQueryOutcome $outcome = null)
     {
+        $this->_trackValueSet($this->outcome, $outcome);
         $this->outcome = $outcome;
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Total number of matching records.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
+     */
+    public function getTotal()
+    {
+        return $this->total;
+    }
+
+    /**
+     * A whole number
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Total number of matching records.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger $total
+     * @return static
+     */
+    public function setTotal($total = null)
+    {
+        if (null !== $total && !($total instanceof FHIRInteger)) {
+            $total = new FHIRInteger($total);
+        }
+        $this->_trackValueSet($this->total, $total);
+        $this->total = $total;
         return $this;
     }
 
@@ -667,6 +505,7 @@ class FHIRQueryResponse extends FHIRBackboneElement
      */
     public function addParameter(FHIRExtension $parameter = null)
     {
+        $this->_trackValueAdded();
         $this->parameter[] = $parameter;
         return $this;
     }
@@ -683,7 +522,10 @@ class FHIRQueryResponse extends FHIRBackboneElement
      */
     public function setParameter(array $parameter = [])
     {
-        $this->parameter = [];
+        if ([] !== $this->parameter) {
+            $this->_trackValuesRemoved(count($this->parameter));
+            $this->parameter = [];
+        }
         if ([] === $parameter) {
             return $this;
         }
@@ -692,6 +534,66 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 $this->addParameter($v);
             } else {
                 $this->addParameter(new FHIRExtension($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To get first page (if paged).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
+     */
+    public function getFirst()
+    {
+        return $this->first;
+    }
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To get first page (if paged).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension $first
+     * @return static
+     */
+    public function addFirst(FHIRExtension $first = null)
+    {
+        $this->_trackValueAdded();
+        $this->first[] = $first;
+        return $this;
+    }
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To get first page (if paged).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[] $first
+     * @return static
+     */
+    public function setFirst(array $first = [])
+    {
+        if ([] !== $this->first) {
+            $this->_trackValuesRemoved(count($this->first));
+            $this->first = [];
+        }
+        if ([] === $first) {
+            return $this;
+        }
+        foreach($first as $v) {
+            if ($v instanceof FHIRExtension) {
+                $this->addFirst($v);
+            } else {
+                $this->addFirst(new FHIRExtension($v));
             }
         }
         return $this;
@@ -723,6 +625,7 @@ class FHIRQueryResponse extends FHIRBackboneElement
      */
     public function addPrevious(FHIRExtension $previous = null)
     {
+        $this->_trackValueAdded();
         $this->previous[] = $previous;
         return $this;
     }
@@ -739,7 +642,10 @@ class FHIRQueryResponse extends FHIRBackboneElement
      */
     public function setPrevious(array $previous = [])
     {
-        $this->previous = [];
+        if ([] !== $this->previous) {
+            $this->_trackValuesRemoved(count($this->previous));
+            $this->previous = [];
+        }
         if ([] === $previous) {
             return $this;
         }
@@ -748,6 +654,126 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 $this->addPrevious($v);
             } else {
                 $this->addPrevious(new FHIRExtension($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To get next page (if paged).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
+     */
+    public function getNext()
+    {
+        return $this->next;
+    }
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To get next page (if paged).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension $next
+     * @return static
+     */
+    public function addNext(FHIRExtension $next = null)
+    {
+        $this->_trackValueAdded();
+        $this->next[] = $next;
+        return $this;
+    }
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To get next page (if paged).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[] $next
+     * @return static
+     */
+    public function setNext(array $next = [])
+    {
+        if ([] !== $this->next) {
+            $this->_trackValuesRemoved(count($this->next));
+            $this->next = [];
+        }
+        if ([] === $next) {
+            return $this;
+        }
+        foreach($next as $v) {
+            if ($v instanceof FHIRExtension) {
+                $this->addNext($v);
+            } else {
+                $this->addNext(new FHIRExtension($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To get last page (if paged).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
+     */
+    public function getLast()
+    {
+        return $this->last;
+    }
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To get last page (if paged).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension $last
+     * @return static
+     */
+    public function addLast(FHIRExtension $last = null)
+    {
+        $this->_trackValueAdded();
+        $this->last[] = $last;
+        return $this;
+    }
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To get last page (if paged).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[] $last
+     * @return static
+     */
+    public function setLast(array $last = [])
+    {
+        if ([] !== $this->last) {
+            $this->_trackValuesRemoved(count($this->last));
+            $this->last = [];
+        }
+        if ([] === $last) {
+            return $this;
+        }
+        foreach($last as $v) {
+            if ($v instanceof FHIRExtension) {
+                $this->addLast($v);
+            } else {
+                $this->addLast(new FHIRExtension($v));
             }
         }
         return $this;
@@ -779,6 +805,7 @@ class FHIRQueryResponse extends FHIRBackboneElement
      */
     public function addReference(FHIRResourceReference $reference = null)
     {
+        $this->_trackValueAdded();
         $this->reference[] = $reference;
         return $this;
     }
@@ -795,7 +822,10 @@ class FHIRQueryResponse extends FHIRBackboneElement
      */
     public function setReference(array $reference = [])
     {
-        $this->reference = [];
+        if ([] !== $this->reference) {
+            $this->_trackValuesRemoved(count($this->reference));
+            $this->reference = [];
+        }
         if ([] === $reference) {
             return $this;
         }
@@ -806,42 +836,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 $this->addReference(new FHIRResourceReference($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Total number of matching records.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
-     */
-    public function getTotal()
-    {
-        return $this->total;
-    }
-
-    /**
-     * A whole number
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Total number of matching records.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger $total
-     * @return static
-     */
-    public function setTotal($total = null)
-    {
-        if (null === $total) {
-            $this->total = null;
-            return $this;
-        }
-        if ($total instanceof FHIRInteger) {
-            $this->total = $total;
-            return $this;
-        }
-        $this->total = new FHIRInteger($total);
         return $this;
     }
 
@@ -866,30 +860,9 @@ class FHIRQueryResponse extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getFirst())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_FIRST, $i)] = $fieldErrs;
-                }
-            }
-        }
         if (null !== ($v = $this->getIdentifier())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_IDENTIFIER] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getLast())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_LAST, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getNext())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_NEXT, $i)] = $fieldErrs;
-                }
             }
         }
         if (null !== ($v = $this->getOutcome())) {
@@ -897,10 +870,22 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 $errs[self::FIELD_OUTCOME] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getTotal())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TOTAL] = $fieldErrs;
+            }
+        }
         if ([] !== ($vs = $this->getParameter())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_PARAMETER, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getFirst())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_FIRST, $i)] = $fieldErrs;
                 }
             }
         }
@@ -911,27 +896,24 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 }
             }
         }
+        if ([] !== ($vs = $this->getNext())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_NEXT, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getLast())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_LAST, $i)] = $fieldErrs;
+                }
+            }
+        }
         if ([] !== ($vs = $this->getReference())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_REFERENCE, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getTotal())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TOTAL] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_FIRST])) {
-            $v = $this->getFirst();
-            foreach($validationRules[self::FIELD_FIRST] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUERY_DOT_RESPONSE, self::FIELD_FIRST, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FIRST])) {
-                        $errs[self::FIELD_FIRST] = [];
-                    }
-                    $errs[self::FIELD_FIRST][$rule] = $err;
                 }
             }
         }
@@ -947,30 +929,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_LAST])) {
-            $v = $this->getLast();
-            foreach($validationRules[self::FIELD_LAST] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUERY_DOT_RESPONSE, self::FIELD_LAST, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_LAST])) {
-                        $errs[self::FIELD_LAST] = [];
-                    }
-                    $errs[self::FIELD_LAST][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_NEXT])) {
-            $v = $this->getNext();
-            foreach($validationRules[self::FIELD_NEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUERY_DOT_RESPONSE, self::FIELD_NEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_NEXT])) {
-                        $errs[self::FIELD_NEXT] = [];
-                    }
-                    $errs[self::FIELD_NEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_OUTCOME])) {
             $v = $this->getOutcome();
             foreach($validationRules[self::FIELD_OUTCOME] as $rule => $constraint) {
@@ -980,6 +938,18 @@ class FHIRQueryResponse extends FHIRBackboneElement
                         $errs[self::FIELD_OUTCOME] = [];
                     }
                     $errs[self::FIELD_OUTCOME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TOTAL])) {
+            $v = $this->getTotal();
+            foreach($validationRules[self::FIELD_TOTAL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUERY_DOT_RESPONSE, self::FIELD_TOTAL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TOTAL])) {
+                        $errs[self::FIELD_TOTAL] = [];
+                    }
+                    $errs[self::FIELD_TOTAL][$rule] = $err;
                 }
             }
         }
@@ -995,6 +965,18 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_FIRST])) {
+            $v = $this->getFirst();
+            foreach($validationRules[self::FIELD_FIRST] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUERY_DOT_RESPONSE, self::FIELD_FIRST, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FIRST])) {
+                        $errs[self::FIELD_FIRST] = [];
+                    }
+                    $errs[self::FIELD_FIRST][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_PREVIOUS])) {
             $v = $this->getPrevious();
             foreach($validationRules[self::FIELD_PREVIOUS] as $rule => $constraint) {
@@ -1007,6 +989,30 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_NEXT])) {
+            $v = $this->getNext();
+            foreach($validationRules[self::FIELD_NEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUERY_DOT_RESPONSE, self::FIELD_NEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NEXT])) {
+                        $errs[self::FIELD_NEXT] = [];
+                    }
+                    $errs[self::FIELD_NEXT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_LAST])) {
+            $v = $this->getLast();
+            foreach($validationRules[self::FIELD_LAST] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUERY_DOT_RESPONSE, self::FIELD_LAST, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_LAST])) {
+                        $errs[self::FIELD_LAST] = [];
+                    }
+                    $errs[self::FIELD_LAST][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_REFERENCE])) {
             $v = $this->getReference();
             foreach($validationRules[self::FIELD_REFERENCE] as $rule => $constraint) {
@@ -1016,18 +1022,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
                         $errs[self::FIELD_REFERENCE] = [];
                     }
                     $errs[self::FIELD_REFERENCE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_TOTAL])) {
-            $v = $this->getTotal();
-            foreach($validationRules[self::FIELD_TOTAL] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUERY_DOT_RESPONSE, self::FIELD_TOTAL, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TOTAL])) {
-                        $errs[self::FIELD_TOTAL] = [];
-                    }
-                    $errs[self::FIELD_TOTAL][$rule] = $err;
                 }
             }
         }
@@ -1071,150 +1065,149 @@ class FHIRQueryResponse extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRQuery\FHIRQueryResponse $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRQuery\FHIRQueryResponse
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRQueryResponse::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRQueryResponse::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRQueryResponse::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRQueryResponse;
+            $type = new FHIRQueryResponse(null);
         } elseif (!is_object($type) || !($type instanceof FHIRQueryResponse)) {
             throw new \RuntimeException(sprintf(
                 'FHIRQueryResponse::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRQuery\FHIRQueryResponse or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_IDENTIFIER === $n->nodeName) {
+                $type->setIdentifier(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_OUTCOME === $n->nodeName) {
+                $type->setOutcome(FHIRQueryOutcome::xmlUnserialize($n));
+            } elseif (self::FIELD_TOTAL === $n->nodeName) {
+                $type->setTotal(FHIRInteger::xmlUnserialize($n));
+            } elseif (self::FIELD_PARAMETER === $n->nodeName) {
+                $type->addParameter(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_FIRST === $n->nodeName) {
+                $type->addFirst(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_PREVIOUS === $n->nodeName) {
+                $type->addPrevious(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_NEXT === $n->nodeName) {
+                $type->addNext(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_LAST === $n->nodeName) {
+                $type->addLast(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_REFERENCE === $n->nodeName) {
+                $type->addReference(FHIRResourceReference::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->first)) {
-            foreach($children->first as $child) {
-                $type->addFirst(FHIRExtension::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->identifier)) {
-            $type->setIdentifier(FHIRUri::xmlUnserialize($children->identifier));
-        }
-        if (isset($attributes->identifier)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_IDENTIFIER);
+        if (null !== $n) {
             $pt = $type->getIdentifier();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->identifier);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setIdentifier((string)$attributes->identifier);
+                $type->setIdentifier($n->nodeValue);
             }
         }
-        if (isset($children->last)) {
-            foreach($children->last as $child) {
-                $type->addLast(FHIRExtension::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->next)) {
-            foreach($children->next as $child) {
-                $type->addNext(FHIRExtension::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->outcome)) {
-            $type->setOutcome(FHIRQueryOutcome::xmlUnserialize($children->outcome));
-        }
-        if (isset($children->parameter)) {
-            foreach($children->parameter as $child) {
-                $type->addParameter(FHIRExtension::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->previous)) {
-            foreach($children->previous as $child) {
-                $type->addPrevious(FHIRExtension::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->reference)) {
-            foreach($children->reference as $child) {
-                $type->addReference(FHIRResourceReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->total)) {
-            $type->setTotal(FHIRInteger::xmlUnserialize($children->total));
-        }
-        if (isset($attributes->total)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_TOTAL);
+        if (null !== $n) {
             $pt = $type->getTotal();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->total);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setTotal((string)$attributes->total);
+                $type->setTotal($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getFirst())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_FIRST, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getLast())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_LAST, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if ([] !== ($vs = $this->getNext())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NEXT, null, $v->_getFHIRXMLNamespace()));
-            }
+            $telement = $element->ownerDocument->createElement(self::FIELD_IDENTIFIER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getOutcome())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_OUTCOME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getTotal())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TOTAL);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getParameter())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PARAMETER, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PARAMETER);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if ([] !== ($vs = $this->getFirst())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_FIRST);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getPrevious())) {
@@ -1222,7 +1215,29 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PREVIOUS, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PREVIOUS);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if ([] !== ($vs = $this->getNext())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_NEXT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if ([] !== ($vs = $this->getLast())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_LAST);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getReference())) {
@@ -1230,13 +1245,12 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_REFERENCE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getTotal())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TOTAL, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -1245,49 +1259,34 @@ class FHIRQueryResponse extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getFirst())) {
-            $a[self::FIELD_FIRST] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_FIRST][] = $v;
-            }
-        }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_IDENTIFIER_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IDENTIFIER] = $val;
             }
-        }
-        if ([] !== ($vs = $this->getLast())) {
-            $a[self::FIELD_LAST] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_LAST][] = $v;
-            }
-        }
-        if ([] !== ($vs = $this->getNext())) {
-            $a[self::FIELD_NEXT] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_NEXT][] = $v;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUri::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_IDENTIFIER_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getOutcome())) {
-            $a[self::FIELD_OUTCOME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRQueryOutcome::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRQueryOutcome::FIELD_VALUE]);
-                $a[self::FIELD_OUTCOME_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_OUTCOME] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRQueryOutcome::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_OUTCOME_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getTotal())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TOTAL] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRInteger::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_TOTAL_EXT] = $ext;
             }
         }
         if ([] !== ($vs = $this->getParameter())) {
@@ -1299,6 +1298,15 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 $a[self::FIELD_PARAMETER][] = $v;
             }
         }
+        if ([] !== ($vs = $this->getFirst())) {
+            $a[self::FIELD_FIRST] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_FIRST][] = $v;
+            }
+        }
         if ([] !== ($vs = $this->getPrevious())) {
             $a[self::FIELD_PREVIOUS] = [];
             foreach($vs as $v) {
@@ -1306,6 +1314,24 @@ class FHIRQueryResponse extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_PREVIOUS][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->getNext())) {
+            $a[self::FIELD_NEXT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_NEXT][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->getLast())) {
+            $a[self::FIELD_LAST] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_LAST][] = $v;
             }
         }
         if ([] !== ($vs = $this->getReference())) {
@@ -1316,18 +1342,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 }
                 $a[self::FIELD_REFERENCE][] = $v;
             }
-        }
-        if (null !== ($v = $this->getTotal())) {
-            $a[self::FIELD_TOTAL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_TOTAL_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

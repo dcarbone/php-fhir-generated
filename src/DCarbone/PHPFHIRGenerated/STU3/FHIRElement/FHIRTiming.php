@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
 
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming\FHIRTimingRepeat;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
@@ -83,30 +84,13 @@ class FHIRTiming extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TIMING;
-    const FIELD_CODE = 'code';
     const FIELD_EVENT = 'event';
     const FIELD_EVENT_EXT = '_event';
     const FIELD_REPEAT = 'repeat';
+    const FIELD_CODE = 'code';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A code for the timing schedule. Some codes such as BID are ubiquitous, but many
-     * institutions define their own additional codes. If a code is provided, the code
-     * is understood to be a complete statement of whatever is specified in the
-     * structured timing data, and either the code or the data may be used to interpret
-     * the Timing, with the exception that .repeat.bounds still applies over the code
-     * (and is not contained in the code).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    protected $code = null;
+    private $_xmlns = '';
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -138,6 +122,23 @@ class FHIRTiming extends FHIRElement
     protected $repeat = null;
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code for the timing schedule. Some codes such as BID are ubiquitous, but many
+     * institutions define their own additional codes. If a code is provided, the code
+     * is understood to be a complete statement of whatever is specified in the
+     * structured timing data, and either the code or the data may be used to interpret
+     * the Timing, with the exception that .repeat.bounds still applies over the code
+     * (and is not contained in the code).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    protected $code = null;
+
+    /**
      * Validation map for fields in type Timing
      * @var array
      */
@@ -159,24 +160,9 @@ class FHIRTiming extends FHIRElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CODE])) {
-            if ($data[self::FIELD_CODE] instanceof FHIRCodeableConcept) {
-                $this->setCode($data[self::FIELD_CODE]);
-            } else {
-                $this->setCode(new FHIRCodeableConcept($data[self::FIELD_CODE]));
-            }
-        }
         if (isset($data[self::FIELD_EVENT]) || isset($data[self::FIELD_EVENT_EXT])) {
-            if (isset($data[self::FIELD_EVENT])) {
-                $value = $data[self::FIELD_EVENT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_EVENT_EXT]) && is_array($data[self::FIELD_EVENT_EXT])) {
-                $ext = $data[self::FIELD_EVENT_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_EVENT]) ? $data[self::FIELD_EVENT] : null;
+            $ext = (isset($data[self::FIELD_EVENT_EXT]) && is_array($data[self::FIELD_EVENT_EXT])) ? $ext = $data[self::FIELD_EVENT_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRDateTime) {
                     $this->addEvent($value);
@@ -198,7 +184,7 @@ class FHIRTiming extends FHIRElement
                 } else {
                     $this->addEvent(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addEvent(new FHIRDateTime($iext));
                 }
@@ -209,6 +195,13 @@ class FHIRTiming extends FHIRElement
                 $this->setRepeat($data[self::FIELD_REPEAT]);
             } else {
                 $this->setRepeat(new FHIRTimingRepeat($data[self::FIELD_REPEAT]));
+            }
+        }
+        if (isset($data[self::FIELD_CODE])) {
+            if ($data[self::FIELD_CODE] instanceof FHIRCodeableConcept) {
+                $this->setCode($data[self::FIELD_CODE]);
+            } else {
+                $this->setCode(new FHIRCodeableConcept($data[self::FIELD_CODE]));
             }
         }
     }
@@ -227,52 +220,10 @@ class FHIRTiming extends FHIRElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<Timing{$xmlns}></Timing>";
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A code for the timing schedule. Some codes such as BID are ubiquitous, but many
-     * institutions define their own additional codes. If a code is provided, the code
-     * is understood to be a complete statement of whatever is specified in the
-     * structured timing data, and either the code or the data may be used to interpret
-     * the Timing, with the exception that .repeat.bounds still applies over the code
-     * (and is not contained in the code).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    public function getCode()
-    {
-        return $this->code;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A code for the timing schedule. Some codes such as BID are ubiquitous, but many
-     * institutions define their own additional codes. If a code is provided, the code
-     * is understood to be a complete statement of whatever is specified in the
-     * structured timing data, and either the code or the data may be used to interpret
-     * the Timing, with the exception that .repeat.bounds still applies over the code
-     * (and is not contained in the code).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $code
-     * @return static
-     */
-    public function setCode(FHIRCodeableConcept $code = null)
-    {
-        $this->code = $code;
-        return $this;
     }
 
     /**
@@ -307,15 +258,11 @@ class FHIRTiming extends FHIRElement
      */
     public function addEvent($event = null)
     {
-        if (null === $event) {
-            $this->event = [];
-            return $this;
+        if (null !== $event && !($event instanceof FHIRDateTime)) {
+            $event = new FHIRDateTime($event);
         }
-        if ($event instanceof FHIRDateTime) {
-            $this->event[] = $event;
-            return $this;
-        }
-        $this->event[] = new FHIRDateTime($event);
+        $this->_trackValueAdded();
+        $this->event[] = $event;
         return $this;
     }
 
@@ -334,7 +281,10 @@ class FHIRTiming extends FHIRElement
      */
     public function setEvent(array $event = [])
     {
-        $this->event = [];
+        if ([] !== $this->event) {
+            $this->_trackValuesRemoved(count($this->event));
+            $this->event = [];
+        }
         if ([] === $event) {
             return $this;
         }
@@ -382,7 +332,51 @@ class FHIRTiming extends FHIRElement
      */
     public function setRepeat(FHIRTimingRepeat $repeat = null)
     {
+        $this->_trackValueSet($this->repeat, $repeat);
         $this->repeat = $repeat;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code for the timing schedule. Some codes such as BID are ubiquitous, but many
+     * institutions define their own additional codes. If a code is provided, the code
+     * is understood to be a complete statement of whatever is specified in the
+     * structured timing data, and either the code or the data may be used to interpret
+     * the Timing, with the exception that .repeat.bounds still applies over the code
+     * (and is not contained in the code).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code for the timing schedule. Some codes such as BID are ubiquitous, but many
+     * institutions define their own additional codes. If a code is provided, the code
+     * is understood to be a complete statement of whatever is specified in the
+     * structured timing data, and either the code or the data may be used to interpret
+     * the Timing, with the exception that .repeat.bounds still applies over the code
+     * (and is not contained in the code).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $code
+     * @return static
+     */
+    public function setCode(FHIRCodeableConcept $code = null)
+    {
+        $this->_trackValueSet($this->code, $code);
+        $this->code = $code;
         return $this;
     }
 
@@ -407,11 +401,6 @@ class FHIRTiming extends FHIRElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getCode())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CODE] = $fieldErrs;
-            }
-        }
         if ([] !== ($vs = $this->getEvent())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
@@ -424,16 +413,9 @@ class FHIRTiming extends FHIRElement
                 $errs[self::FIELD_REPEAT] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CODE])) {
-            $v = $this->getCode();
-            foreach($validationRules[self::FIELD_CODE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING, self::FIELD_CODE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CODE])) {
-                        $errs[self::FIELD_CODE] = [];
-                    }
-                    $errs[self::FIELD_CODE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getCode())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CODE] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_EVENT])) {
@@ -457,6 +439,18 @@ class FHIRTiming extends FHIRElement
                         $errs[self::FIELD_REPEAT] = [];
                     }
                     $errs[self::FIELD_REPEAT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CODE])) {
+            $v = $this->getCode();
+            foreach($validationRules[self::FIELD_CODE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING, self::FIELD_CODE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CODE])) {
+                        $errs[self::FIELD_CODE] = [];
+                    }
+                    $errs[self::FIELD_CODE][$rule] = $err;
                 }
             }
         }
@@ -488,85 +482,114 @@ class FHIRTiming extends FHIRElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRTiming::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRTiming::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRTiming::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRTiming;
+            $type = new FHIRTiming(null);
         } elseif (!is_object($type) || !($type instanceof FHIRTiming)) {
             throw new \RuntimeException(sprintf(
                 'FHIRTiming::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_EVENT === $n->nodeName) {
+                $type->addEvent(FHIRDateTime::xmlUnserialize($n));
+            } elseif (self::FIELD_REPEAT === $n->nodeName) {
+                $type->setRepeat(FHIRTimingRepeat::xmlUnserialize($n));
+            } elseif (self::FIELD_CODE === $n->nodeName) {
+                $type->setCode(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->code)) {
-            $type->setCode(FHIRCodeableConcept::xmlUnserialize($children->code));
-        }
-        if (isset($children->event)) {
-            foreach($children->event as $child) {
-                $type->addEvent(FHIRDateTime::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_EVENT);
+        if (null !== $n) {
+            $pt = $type->getEvent();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->addEvent($n->nodeValue);
             }
         }
-        if (isset($children->repeat)) {
-            $type->setRepeat(FHIRTimingRepeat::xmlUnserialize($children->repeat));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if ([] !== ($vs = $this->getEvent())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_EVENT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if (null !== ($v = $this->getRepeat())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REPEAT, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_REPEAT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getCode())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_CODE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -575,37 +598,35 @@ class FHIRTiming extends FHIRElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCode())) {
-            $a[self::FIELD_CODE] = $v;
-        }
         if ([] !== ($vs = $this->getEvent())) {
-            $a[self::FIELD_EVENT] = [];
-            $encs = [];
-            $encValued = false;
+            $vals = [];
+            $exts = [];
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_EVENT][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRDateTime::FIELD_VALUE]) || array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRDateTime::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext[FHIRDateTime::FIELD_VALUE]);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
                 }
             }
-            if ($encValued) {
-                $a[self::FIELD_EVENT_EXT] = $encs;
+            if ([] !== $vals) {
+                $a[self::FIELD_EVENT] = $vals;
+            }
+            if ([] !== $exts) {
+                $a[self::FIELD_EVENT_EXT] = $exts;
             }
         }
         if (null !== ($v = $this->getRepeat())) {
             $a[self::FIELD_REPEAT] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getCode())) {
+            $a[self::FIELD_CODE] = $v;
         }
         return $a;
     }

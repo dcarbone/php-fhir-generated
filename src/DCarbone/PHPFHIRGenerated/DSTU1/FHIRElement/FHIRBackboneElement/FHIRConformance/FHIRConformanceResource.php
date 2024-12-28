@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,8 +60,10 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
@@ -77,31 +79,32 @@ class FHIRConformanceResource extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_RESOURCE;
-    const FIELD_OPERATION = 'operation';
+    const FIELD_TYPE = 'type';
+    const FIELD_TYPE_EXT = '_type';
     const FIELD_PROFILE = 'profile';
+    const FIELD_OPERATION = 'operation';
     const FIELD_READ_HISTORY = 'readHistory';
     const FIELD_READ_HISTORY_EXT = '_readHistory';
+    const FIELD_UPDATE_CREATE = 'updateCreate';
+    const FIELD_UPDATE_CREATE_EXT = '_updateCreate';
     const FIELD_SEARCH_INCLUDE = 'searchInclude';
     const FIELD_SEARCH_INCLUDE_EXT = '_searchInclude';
     const FIELD_SEARCH_PARAM = 'searchParam';
-    const FIELD_TYPE = 'type';
-    const FIELD_TYPE_EXT = '_type';
-    const FIELD_UPDATE_CREATE = 'updateCreate';
-    const FIELD_UPDATE_CREATE_EXT = '_updateCreate';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
-     * A conformance statement is a set of requirements for a desired implementation or
-     * a description of how a target application fulfills those requirements in a
-     * particular implementation.
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
-     * Identifies a restful operation supported by the solution.
+     * A type of resource exposed via the restful interface.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation[]
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
-    protected $operation = [];
+    protected $type = null;
 
     /**
      * A reference from one resource to another.
@@ -117,6 +120,17 @@ class FHIRConformanceResource extends FHIRBackboneElement
     protected $profile = null;
 
     /**
+     * A conformance statement is a set of requirements for a desired implementation or
+     * a description of how a target application fulfills those requirements in a
+     * particular implementation.
+     *
+     * Identifies a restful operation supported by the solution.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation[]
+     */
+    protected $operation = [];
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -126,6 +140,19 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected $readHistory = null;
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A flag to indicate that the server allows the client to create new identities on
+     * the server. If the update operation is used (client) or allowed (server) to a
+     * new location where a resource doesn't already exist. This means that the server
+     * allows the client to create new identities on the server.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
+     */
+    protected $updateCreate = null;
 
     /**
      * A sequence of Unicode characters
@@ -147,31 +174,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam[]
      */
     protected $searchParam = [];
-
-    /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A type of resource exposed via the restful interface.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
-     */
-    protected $type = null;
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A flag to indicate that the server allows the client to create new identities on
-     * the server. If the update operation is used (client) or allowed (server) to a
-     * new location where a resource doesn't already exist. This means that the server
-     * allows the client to create new identities on the server.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
-     */
-    protected $updateCreate = null;
 
     /**
      * Validation map for fields in type Conformance.Resource
@@ -199,6 +201,28 @@ class FHIRConformanceResource extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_TYPE]) || isset($data[self::FIELD_TYPE_EXT])) {
+            $value = isset($data[self::FIELD_TYPE]) ? $data[self::FIELD_TYPE] : null;
+            $ext = (isset($data[self::FIELD_TYPE_EXT]) && is_array($data[self::FIELD_TYPE_EXT])) ? $ext = $data[self::FIELD_TYPE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRCode) {
+                    $this->setType($value);
+                } else if (is_array($value)) {
+                    $this->setType(new FHIRCode(array_merge($ext, $value)));
+                } else {
+                    $this->setType(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setType(new FHIRCode($ext));
+            }
+        }
+        if (isset($data[self::FIELD_PROFILE])) {
+            if ($data[self::FIELD_PROFILE] instanceof FHIRResourceReference) {
+                $this->setProfile($data[self::FIELD_PROFILE]);
+            } else {
+                $this->setProfile(new FHIRResourceReference($data[self::FIELD_PROFILE]));
+            }
+        }
         if (isset($data[self::FIELD_OPERATION])) {
             if (is_array($data[self::FIELD_OPERATION])) {
                 foreach($data[self::FIELD_OPERATION] as $v) {
@@ -211,30 +235,15 @@ class FHIRConformanceResource extends FHIRBackboneElement
                         $this->addOperation(new FHIRConformanceOperation($v));
                     }
                 }
-            } else if ($data[self::FIELD_OPERATION] instanceof FHIRConformanceOperation) {
+            } elseif ($data[self::FIELD_OPERATION] instanceof FHIRConformanceOperation) {
                 $this->addOperation($data[self::FIELD_OPERATION]);
             } else {
                 $this->addOperation(new FHIRConformanceOperation($data[self::FIELD_OPERATION]));
             }
         }
-        if (isset($data[self::FIELD_PROFILE])) {
-            if ($data[self::FIELD_PROFILE] instanceof FHIRResourceReference) {
-                $this->setProfile($data[self::FIELD_PROFILE]);
-            } else {
-                $this->setProfile(new FHIRResourceReference($data[self::FIELD_PROFILE]));
-            }
-        }
         if (isset($data[self::FIELD_READ_HISTORY]) || isset($data[self::FIELD_READ_HISTORY_EXT])) {
-            if (isset($data[self::FIELD_READ_HISTORY])) {
-                $value = $data[self::FIELD_READ_HISTORY];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_READ_HISTORY_EXT]) && is_array($data[self::FIELD_READ_HISTORY_EXT])) {
-                $ext = $data[self::FIELD_READ_HISTORY_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_READ_HISTORY]) ? $data[self::FIELD_READ_HISTORY] : null;
+            $ext = (isset($data[self::FIELD_READ_HISTORY_EXT]) && is_array($data[self::FIELD_READ_HISTORY_EXT])) ? $ext = $data[self::FIELD_READ_HISTORY_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setReadHistory($value);
@@ -243,21 +252,28 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 } else {
                     $this->setReadHistory(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setReadHistory(new FHIRBoolean($ext));
             }
         }
+        if (isset($data[self::FIELD_UPDATE_CREATE]) || isset($data[self::FIELD_UPDATE_CREATE_EXT])) {
+            $value = isset($data[self::FIELD_UPDATE_CREATE]) ? $data[self::FIELD_UPDATE_CREATE] : null;
+            $ext = (isset($data[self::FIELD_UPDATE_CREATE_EXT]) && is_array($data[self::FIELD_UPDATE_CREATE_EXT])) ? $ext = $data[self::FIELD_UPDATE_CREATE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setUpdateCreate($value);
+                } else if (is_array($value)) {
+                    $this->setUpdateCreate(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setUpdateCreate(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setUpdateCreate(new FHIRBoolean($ext));
+            }
+        }
         if (isset($data[self::FIELD_SEARCH_INCLUDE]) || isset($data[self::FIELD_SEARCH_INCLUDE_EXT])) {
-            if (isset($data[self::FIELD_SEARCH_INCLUDE])) {
-                $value = $data[self::FIELD_SEARCH_INCLUDE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SEARCH_INCLUDE_EXT]) && is_array($data[self::FIELD_SEARCH_INCLUDE_EXT])) {
-                $ext = $data[self::FIELD_SEARCH_INCLUDE_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_SEARCH_INCLUDE]) ? $data[self::FIELD_SEARCH_INCLUDE] : null;
+            $ext = (isset($data[self::FIELD_SEARCH_INCLUDE_EXT]) && is_array($data[self::FIELD_SEARCH_INCLUDE_EXT])) ? $ext = $data[self::FIELD_SEARCH_INCLUDE_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->addSearchInclude($value);
@@ -279,7 +295,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 } else {
                     $this->addSearchInclude(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addSearchInclude(new FHIRString($iext));
                 }
@@ -297,56 +313,10 @@ class FHIRConformanceResource extends FHIRBackboneElement
                         $this->addSearchParam(new FHIRConformanceSearchParam($v));
                     }
                 }
-            } else if ($data[self::FIELD_SEARCH_PARAM] instanceof FHIRConformanceSearchParam) {
+            } elseif ($data[self::FIELD_SEARCH_PARAM] instanceof FHIRConformanceSearchParam) {
                 $this->addSearchParam($data[self::FIELD_SEARCH_PARAM]);
             } else {
                 $this->addSearchParam(new FHIRConformanceSearchParam($data[self::FIELD_SEARCH_PARAM]));
-            }
-        }
-        if (isset($data[self::FIELD_TYPE]) || isset($data[self::FIELD_TYPE_EXT])) {
-            if (isset($data[self::FIELD_TYPE])) {
-                $value = $data[self::FIELD_TYPE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TYPE_EXT]) && is_array($data[self::FIELD_TYPE_EXT])) {
-                $ext = $data[self::FIELD_TYPE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRCode) {
-                    $this->setType($value);
-                } else if (is_array($value)) {
-                    $this->setType(new FHIRCode(array_merge($ext, $value)));
-                } else {
-                    $this->setType(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setType(new FHIRCode($ext));
-            }
-        }
-        if (isset($data[self::FIELD_UPDATE_CREATE]) || isset($data[self::FIELD_UPDATE_CREATE_EXT])) {
-            if (isset($data[self::FIELD_UPDATE_CREATE])) {
-                $value = $data[self::FIELD_UPDATE_CREATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_UPDATE_CREATE_EXT]) && is_array($data[self::FIELD_UPDATE_CREATE_EXT])) {
-                $ext = $data[self::FIELD_UPDATE_CREATE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setUpdateCreate($value);
-                } else if (is_array($value)) {
-                    $this->setUpdateCreate(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setUpdateCreate(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setUpdateCreate(new FHIRBoolean($ext));
             }
         }
     }
@@ -365,65 +335,45 @@ class FHIRConformanceResource extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ConformanceResource{$xmlns}></ConformanceResource>";
     }
 
     /**
-     * A conformance statement is a set of requirements for a desired implementation or
-     * a description of how a target application fulfills those requirements in a
-     * particular implementation.
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
-     * Identifies a restful operation supported by the solution.
+     * A type of resource exposed via the restful interface.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation[]
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
-    public function getOperation()
+    public function getType()
     {
-        return $this->operation;
+        return $this->type;
     }
 
     /**
-     * A conformance statement is a set of requirements for a desired implementation or
-     * a description of how a target application fulfills those requirements in a
-     * particular implementation.
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
-     * Identifies a restful operation supported by the solution.
+     * A type of resource exposed via the restful interface.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation $operation
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode $type
      * @return static
      */
-    public function addOperation(FHIRConformanceOperation $operation = null)
+    public function setType($type = null)
     {
-        $this->operation[] = $operation;
-        return $this;
-    }
-
-    /**
-     * A conformance statement is a set of requirements for a desired implementation or
-     * a description of how a target application fulfills those requirements in a
-     * particular implementation.
-     *
-     * Identifies a restful operation supported by the solution.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation[] $operation
-     * @return static
-     */
-    public function setOperation(array $operation = [])
-    {
-        $this->operation = [];
-        if ([] === $operation) {
-            return $this;
+        if (null !== $type && !($type instanceof FHIRCode)) {
+            $type = new FHIRCode($type);
         }
-        foreach($operation as $v) {
-            if ($v instanceof FHIRConformanceOperation) {
-                $this->addOperation($v);
-            } else {
-                $this->addOperation(new FHIRConformanceOperation($v));
-            }
-        }
+        $this->_trackValueSet($this->type, $type);
+        $this->type = $type;
         return $this;
     }
 
@@ -457,7 +407,68 @@ class FHIRConformanceResource extends FHIRBackboneElement
      */
     public function setProfile(FHIRResourceReference $profile = null)
     {
+        $this->_trackValueSet($this->profile, $profile);
         $this->profile = $profile;
+        return $this;
+    }
+
+    /**
+     * A conformance statement is a set of requirements for a desired implementation or
+     * a description of how a target application fulfills those requirements in a
+     * particular implementation.
+     *
+     * Identifies a restful operation supported by the solution.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation[]
+     */
+    public function getOperation()
+    {
+        return $this->operation;
+    }
+
+    /**
+     * A conformance statement is a set of requirements for a desired implementation or
+     * a description of how a target application fulfills those requirements in a
+     * particular implementation.
+     *
+     * Identifies a restful operation supported by the solution.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation $operation
+     * @return static
+     */
+    public function addOperation(FHIRConformanceOperation $operation = null)
+    {
+        $this->_trackValueAdded();
+        $this->operation[] = $operation;
+        return $this;
+    }
+
+    /**
+     * A conformance statement is a set of requirements for a desired implementation or
+     * a description of how a target application fulfills those requirements in a
+     * particular implementation.
+     *
+     * Identifies a restful operation supported by the solution.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation[] $operation
+     * @return static
+     */
+    public function setOperation(array $operation = [])
+    {
+        if ([] !== $this->operation) {
+            $this->_trackValuesRemoved(count($this->operation));
+            $this->operation = [];
+        }
+        if ([] === $operation) {
+            return $this;
+        }
+        foreach($operation as $v) {
+            if ($v instanceof FHIRConformanceOperation) {
+                $this->addOperation($v);
+            } else {
+                $this->addOperation(new FHIRConformanceOperation($v));
+            }
+        }
         return $this;
     }
 
@@ -487,15 +498,49 @@ class FHIRConformanceResource extends FHIRBackboneElement
      */
     public function setReadHistory($readHistory = null)
     {
-        if (null === $readHistory) {
-            $this->readHistory = null;
-            return $this;
+        if (null !== $readHistory && !($readHistory instanceof FHIRBoolean)) {
+            $readHistory = new FHIRBoolean($readHistory);
         }
-        if ($readHistory instanceof FHIRBoolean) {
-            $this->readHistory = $readHistory;
-            return $this;
+        $this->_trackValueSet($this->readHistory, $readHistory);
+        $this->readHistory = $readHistory;
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A flag to indicate that the server allows the client to create new identities on
+     * the server. If the update operation is used (client) or allowed (server) to a
+     * new location where a resource doesn't already exist. This means that the server
+     * allows the client to create new identities on the server.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
+     */
+    public function getUpdateCreate()
+    {
+        return $this->updateCreate;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A flag to indicate that the server allows the client to create new identities on
+     * the server. If the update operation is used (client) or allowed (server) to a
+     * new location where a resource doesn't already exist. This means that the server
+     * allows the client to create new identities on the server.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $updateCreate
+     * @return static
+     */
+    public function setUpdateCreate($updateCreate = null)
+    {
+        if (null !== $updateCreate && !($updateCreate instanceof FHIRBoolean)) {
+            $updateCreate = new FHIRBoolean($updateCreate);
         }
-        $this->readHistory = new FHIRBoolean($readHistory);
+        $this->_trackValueSet($this->updateCreate, $updateCreate);
+        $this->updateCreate = $updateCreate;
         return $this;
     }
 
@@ -523,15 +568,11 @@ class FHIRConformanceResource extends FHIRBackboneElement
      */
     public function addSearchInclude($searchInclude = null)
     {
-        if (null === $searchInclude) {
-            $this->searchInclude = [];
-            return $this;
+        if (null !== $searchInclude && !($searchInclude instanceof FHIRString)) {
+            $searchInclude = new FHIRString($searchInclude);
         }
-        if ($searchInclude instanceof FHIRString) {
-            $this->searchInclude[] = $searchInclude;
-            return $this;
-        }
-        $this->searchInclude[] = new FHIRString($searchInclude);
+        $this->_trackValueAdded();
+        $this->searchInclude[] = $searchInclude;
         return $this;
     }
 
@@ -546,7 +587,10 @@ class FHIRConformanceResource extends FHIRBackboneElement
      */
     public function setSearchInclude(array $searchInclude = [])
     {
-        $this->searchInclude = [];
+        if ([] !== $this->searchInclude) {
+            $this->_trackValuesRemoved(count($this->searchInclude));
+            $this->searchInclude = [];
+        }
         if ([] === $searchInclude) {
             return $this;
         }
@@ -586,6 +630,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
      */
     public function addSearchParam(FHIRConformanceSearchParam $searchParam = null)
     {
+        $this->_trackValueAdded();
         $this->searchParam[] = $searchParam;
         return $this;
     }
@@ -602,7 +647,10 @@ class FHIRConformanceResource extends FHIRBackboneElement
      */
     public function setSearchParam(array $searchParam = [])
     {
-        $this->searchParam = [];
+        if ([] !== $this->searchParam) {
+            $this->_trackValuesRemoved(count($this->searchParam));
+            $this->searchParam = [];
+        }
         if ([] === $searchParam) {
             return $this;
         }
@@ -613,88 +661,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 $this->addSearchParam(new FHIRConformanceSearchParam($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A type of resource exposed via the restful interface.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A type of resource exposed via the restful interface.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode $type
-     * @return static
-     */
-    public function setType($type = null)
-    {
-        if (null === $type) {
-            $this->type = null;
-            return $this;
-        }
-        if ($type instanceof FHIRCode) {
-            $this->type = $type;
-            return $this;
-        }
-        $this->type = new FHIRCode($type);
-        return $this;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A flag to indicate that the server allows the client to create new identities on
-     * the server. If the update operation is used (client) or allowed (server) to a
-     * new location where a resource doesn't already exist. This means that the server
-     * allows the client to create new identities on the server.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
-     */
-    public function getUpdateCreate()
-    {
-        return $this->updateCreate;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A flag to indicate that the server allows the client to create new identities on
-     * the server. If the update operation is used (client) or allowed (server) to a
-     * new location where a resource doesn't already exist. This means that the server
-     * allows the client to create new identities on the server.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $updateCreate
-     * @return static
-     */
-    public function setUpdateCreate($updateCreate = null)
-    {
-        if (null === $updateCreate) {
-            $this->updateCreate = null;
-            return $this;
-        }
-        if ($updateCreate instanceof FHIRBoolean) {
-            $this->updateCreate = $updateCreate;
-            return $this;
-        }
-        $this->updateCreate = new FHIRBoolean($updateCreate);
         return $this;
     }
 
@@ -719,11 +685,9 @@ class FHIRConformanceResource extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getOperation())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_OPERATION, $i)] = $fieldErrs;
-                }
+        if (null !== ($v = $this->getType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TYPE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getProfile())) {
@@ -731,9 +695,21 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 $errs[self::FIELD_PROFILE] = $fieldErrs;
             }
         }
+        if ([] !== ($vs = $this->getOperation())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_OPERATION, $i)] = $fieldErrs;
+                }
+            }
+        }
         if (null !== ($v = $this->getReadHistory())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_READ_HISTORY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getUpdateCreate())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_UPDATE_CREATE] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getSearchInclude())) {
@@ -750,25 +726,15 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TYPE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getUpdateCreate())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_UPDATE_CREATE] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_OPERATION])) {
-            $v = $this->getOperation();
-            foreach($validationRules[self::FIELD_OPERATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_RESOURCE, self::FIELD_OPERATION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_RESOURCE, self::FIELD_TYPE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_OPERATION])) {
-                        $errs[self::FIELD_OPERATION] = [];
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
                     }
-                    $errs[self::FIELD_OPERATION][$rule] = $err;
+                    $errs[self::FIELD_TYPE][$rule] = $err;
                 }
             }
         }
@@ -784,6 +750,18 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_OPERATION])) {
+            $v = $this->getOperation();
+            foreach($validationRules[self::FIELD_OPERATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_RESOURCE, self::FIELD_OPERATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_OPERATION])) {
+                        $errs[self::FIELD_OPERATION] = [];
+                    }
+                    $errs[self::FIELD_OPERATION][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_READ_HISTORY])) {
             $v = $this->getReadHistory();
             foreach($validationRules[self::FIELD_READ_HISTORY] as $rule => $constraint) {
@@ -793,6 +771,18 @@ class FHIRConformanceResource extends FHIRBackboneElement
                         $errs[self::FIELD_READ_HISTORY] = [];
                     }
                     $errs[self::FIELD_READ_HISTORY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_UPDATE_CREATE])) {
+            $v = $this->getUpdateCreate();
+            foreach($validationRules[self::FIELD_UPDATE_CREATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_RESOURCE, self::FIELD_UPDATE_CREATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_UPDATE_CREATE])) {
+                        $errs[self::FIELD_UPDATE_CREATE] = [];
+                    }
+                    $errs[self::FIELD_UPDATE_CREATE][$rule] = $err;
                 }
             }
         }
@@ -817,30 +807,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
                         $errs[self::FIELD_SEARCH_PARAM] = [];
                     }
                     $errs[self::FIELD_SEARCH_PARAM][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_TYPE])) {
-            $v = $this->getType();
-            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_RESOURCE, self::FIELD_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TYPE])) {
-                        $errs[self::FIELD_TYPE] = [];
-                    }
-                    $errs[self::FIELD_TYPE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_UPDATE_CREATE])) {
-            $v = $this->getUpdateCreate();
-            foreach($validationRules[self::FIELD_UPDATE_CREATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_RESOURCE, self::FIELD_UPDATE_CREATE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_UPDATE_CREATE])) {
-                        $errs[self::FIELD_UPDATE_CREATE] = [];
-                    }
-                    $errs[self::FIELD_UPDATE_CREATE][$rule] = $err;
                 }
             }
         }
@@ -884,130 +850,168 @@ class FHIRConformanceResource extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRConformanceResource::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRConformanceResource::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRConformanceResource::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRConformanceResource;
+            $type = new FHIRConformanceResource(null);
         } elseif (!is_object($type) || !($type instanceof FHIRConformanceResource)) {
             throw new \RuntimeException(sprintf(
                 'FHIRConformanceResource::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_TYPE === $n->nodeName) {
+                $type->setType(FHIRCode::xmlUnserialize($n));
+            } elseif (self::FIELD_PROFILE === $n->nodeName) {
+                $type->setProfile(FHIRResourceReference::xmlUnserialize($n));
+            } elseif (self::FIELD_OPERATION === $n->nodeName) {
+                $type->addOperation(FHIRConformanceOperation::xmlUnserialize($n));
+            } elseif (self::FIELD_READ_HISTORY === $n->nodeName) {
+                $type->setReadHistory(FHIRBoolean::xmlUnserialize($n));
+            } elseif (self::FIELD_UPDATE_CREATE === $n->nodeName) {
+                $type->setUpdateCreate(FHIRBoolean::xmlUnserialize($n));
+            } elseif (self::FIELD_SEARCH_INCLUDE === $n->nodeName) {
+                $type->addSearchInclude(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_SEARCH_PARAM === $n->nodeName) {
+                $type->addSearchParam(FHIRConformanceSearchParam::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->operation)) {
-            foreach($children->operation as $child) {
-                $type->addOperation(FHIRConformanceOperation::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->profile)) {
-            $type->setProfile(FHIRResourceReference::xmlUnserialize($children->profile));
-        }
-        if (isset($children->readHistory)) {
-            $type->setReadHistory(FHIRBoolean::xmlUnserialize($children->readHistory));
-        }
-        if (isset($attributes->readHistory)) {
-            $pt = $type->getReadHistory();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->readHistory);
-            } else {
-                $type->setReadHistory((string)$attributes->readHistory);
-            }
-        }
-        if (isset($children->searchInclude)) {
-            foreach($children->searchInclude as $child) {
-                $type->addSearchInclude(FHIRString::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->searchParam)) {
-            foreach($children->searchParam as $child) {
-                $type->addSearchParam(FHIRConformanceSearchParam::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->type)) {
-            $type->setType(FHIRCode::xmlUnserialize($children->type));
-        }
-        if (isset($attributes->type)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_TYPE);
+        if (null !== $n) {
             $pt = $type->getType();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->type);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setType((string)$attributes->type);
+                $type->setType($n->nodeValue);
             }
         }
-        if (isset($children->updateCreate)) {
-            $type->setUpdateCreate(FHIRBoolean::xmlUnserialize($children->updateCreate));
+        $n = $element->attributes->getNamedItem(self::FIELD_READ_HISTORY);
+        if (null !== $n) {
+            $pt = $type->getReadHistory();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setReadHistory($n->nodeValue);
+            }
         }
-        if (isset($attributes->updateCreate)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_UPDATE_CREATE);
+        if (null !== $n) {
             $pt = $type->getUpdateCreate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->updateCreate);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setUpdateCreate((string)$attributes->updateCreate);
+                $type->setUpdateCreate($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_SEARCH_INCLUDE);
+        if (null !== $n) {
+            $pt = $type->getSearchInclude();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->addSearchInclude($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getProfile())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PROFILE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if ([] !== ($vs = $this->getOperation())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_OPERATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getProfile())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE, null, $v->_getFHIRXMLNamespace()));
-        }
         if (null !== ($v = $this->getReadHistory())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_READ_HISTORY, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_READ_HISTORY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getUpdateCreate())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_UPDATE_CREATE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getSearchInclude())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SEARCH_INCLUDE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_SEARCH_INCLUDE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getSearchParam())) {
@@ -1015,16 +1019,12 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SEARCH_PARAM, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_SEARCH_PARAM);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getUpdateCreate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_UPDATE_CREATE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -1033,6 +1033,19 @@ class FHIRConformanceResource extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getType())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TYPE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRCode::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_TYPE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getProfile())) {
+            $a[self::FIELD_PROFILE] = $v;
+        }
         if ([] !== ($vs = $this->getOperation())) {
             $a[self::FIELD_OPERATION] = [];
             foreach($vs as $v) {
@@ -1042,39 +1055,48 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 $a[self::FIELD_OPERATION][] = $v;
             }
         }
-        if (null !== ($v = $this->getProfile())) {
-            $a[self::FIELD_PROFILE] = $v;
-        }
         if (null !== ($v = $this->getReadHistory())) {
-            $a[self::FIELD_READ_HISTORY] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_READ_HISTORY_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_READ_HISTORY] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBoolean::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_READ_HISTORY_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getUpdateCreate())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_UPDATE_CREATE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBoolean::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_UPDATE_CREATE_EXT] = $ext;
             }
         }
         if ([] !== ($vs = $this->getSearchInclude())) {
-            $a[self::FIELD_SEARCH_INCLUDE] = [];
-            $encs = [];
-            $encValued = false;
+            $vals = [];
+            $exts = [];
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_SEARCH_INCLUDE][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRString::FIELD_VALUE]) || array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRString::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext[FHIRString::FIELD_VALUE]);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
                 }
             }
-            if ($encValued) {
-                $a[self::FIELD_SEARCH_INCLUDE_EXT] = $encs;
+            if ([] !== $vals) {
+                $a[self::FIELD_SEARCH_INCLUDE] = $vals;
+            }
+            if ([] !== $exts) {
+                $a[self::FIELD_SEARCH_INCLUDE_EXT] = $exts;
             }
         }
         if ([] !== ($vs = $this->getSearchParam())) {
@@ -1085,27 +1107,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 }
                 $a[self::FIELD_SEARCH_PARAM][] = $v;
             }
-        }
-        if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCode::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCode::FIELD_VALUE]);
-                $a[self::FIELD_TYPE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getUpdateCreate())) {
-            $a[self::FIELD_UPDATE_CREATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_UPDATE_CREATE_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

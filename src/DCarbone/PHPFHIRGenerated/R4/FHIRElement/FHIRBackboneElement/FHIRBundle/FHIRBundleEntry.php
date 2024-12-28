@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundl
  */
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
@@ -79,16 +81,25 @@ class FHIRBundleEntry extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BUNDLE_DOT_ENTRY;
+    const FIELD_LINK = 'link';
     const FIELD_FULL_URL = 'fullUrl';
     const FIELD_FULL_URL_EXT = '_fullUrl';
-    const FIELD_LINK = 'link';
-    const FIELD_REQUEST = 'request';
     const FIELD_RESOURCE = 'resource';
-    const FIELD_RESPONSE = 'response';
     const FIELD_SEARCH = 'search';
+    const FIELD_REQUEST = 'request';
+    const FIELD_RESPONSE = 'response';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * A container for a collection of resources.
+     *
+     * A series of links that provide context to this entry.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[]
+     */
+    protected $link = [];
 
     /**
      * String of characters used to identify a name or a resource
@@ -108,13 +119,21 @@ class FHIRBundleEntry extends FHIRBackboneElement
     protected $fullUrl = null;
 
     /**
+     * The Resource for the entry. The purpose/meaning of the resource is determined by
+     * the Bundle.type.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface
+     */
+    protected $resource = null;
+
+    /**
      * A container for a collection of resources.
      *
-     * A series of links that provide context to this entry.
+     * Information about the search process that lead to the creation of this entry.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch
      */
-    protected $link = [];
+    protected $search = null;
 
     /**
      * A container for a collection of resources.
@@ -128,16 +147,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
     protected $request = null;
 
     /**
-     * (choose any one of the elements, but only one)
-     *
-     * The Resource for the entry. The purpose/meaning of the resource is determined by
-     * the Bundle.type.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface
-     */
-    protected $resource = null;
-
-    /**
      * A container for a collection of resources.
      *
      * Indicates the results of processing the corresponding 'request' entry in the
@@ -147,15 +156,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse
      */
     protected $response = null;
-
-    /**
-     * A container for a collection of resources.
-     *
-     * Information about the search process that lead to the creation of this entry.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch
-     */
-    protected $search = null;
 
     /**
      * Validation map for fields in type Bundle.Entry
@@ -179,29 +179,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_FULL_URL]) || isset($data[self::FIELD_FULL_URL_EXT])) {
-            if (isset($data[self::FIELD_FULL_URL])) {
-                $value = $data[self::FIELD_FULL_URL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_FULL_URL_EXT]) && is_array($data[self::FIELD_FULL_URL_EXT])) {
-                $ext = $data[self::FIELD_FULL_URL_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRUri) {
-                    $this->setFullUrl($value);
-                } else if (is_array($value)) {
-                    $this->setFullUrl(new FHIRUri(array_merge($ext, $value)));
-                } else {
-                    $this->setFullUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setFullUrl(new FHIRUri($ext));
-            }
-        }
         if (isset($data[self::FIELD_LINK])) {
             if (is_array($data[self::FIELD_LINK])) {
                 foreach($data[self::FIELD_LINK] as $v) {
@@ -214,17 +191,25 @@ class FHIRBundleEntry extends FHIRBackboneElement
                         $this->addLink(new FHIRBundleLink($v));
                     }
                 }
-            } else if ($data[self::FIELD_LINK] instanceof FHIRBundleLink) {
+            } elseif ($data[self::FIELD_LINK] instanceof FHIRBundleLink) {
                 $this->addLink($data[self::FIELD_LINK]);
             } else {
                 $this->addLink(new FHIRBundleLink($data[self::FIELD_LINK]));
             }
         }
-        if (isset($data[self::FIELD_REQUEST])) {
-            if ($data[self::FIELD_REQUEST] instanceof FHIRBundleRequest) {
-                $this->setRequest($data[self::FIELD_REQUEST]);
-            } else {
-                $this->setRequest(new FHIRBundleRequest($data[self::FIELD_REQUEST]));
+        if (isset($data[self::FIELD_FULL_URL]) || isset($data[self::FIELD_FULL_URL_EXT])) {
+            $value = isset($data[self::FIELD_FULL_URL]) ? $data[self::FIELD_FULL_URL] : null;
+            $ext = (isset($data[self::FIELD_FULL_URL_EXT]) && is_array($data[self::FIELD_FULL_URL_EXT])) ? $ext = $data[self::FIELD_FULL_URL_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setFullUrl($value);
+                } else if (is_array($value)) {
+                    $this->setFullUrl(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setFullUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setFullUrl(new FHIRUri($ext));
             }
         }
         if (isset($data[self::FIELD_RESOURCE])) {
@@ -237,7 +222,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
                         get_class($data[self::FIELD_RESOURCE])
                     ));
                 }
-            } else if (is_array($data[self::FIELD_RESOURCE])) {
+            } elseif (is_array($data[self::FIELD_RESOURCE])) {
                 $typeClass = PHPFHIRTypeMap::getContainedTypeFromArray($data[self::FIELD_RESOURCE]);
                 if (null === $typeClass) {
                     throw new \InvalidArgumentException(sprintf(
@@ -253,18 +238,25 @@ class FHIRBundleEntry extends FHIRBackboneElement
                 ));
             }
         }
-        if (isset($data[self::FIELD_RESPONSE])) {
-            if ($data[self::FIELD_RESPONSE] instanceof FHIRBundleResponse) {
-                $this->setResponse($data[self::FIELD_RESPONSE]);
-            } else {
-                $this->setResponse(new FHIRBundleResponse($data[self::FIELD_RESPONSE]));
-            }
-        }
         if (isset($data[self::FIELD_SEARCH])) {
             if ($data[self::FIELD_SEARCH] instanceof FHIRBundleSearch) {
                 $this->setSearch($data[self::FIELD_SEARCH]);
             } else {
                 $this->setSearch(new FHIRBundleSearch($data[self::FIELD_SEARCH]));
+            }
+        }
+        if (isset($data[self::FIELD_REQUEST])) {
+            if ($data[self::FIELD_REQUEST] instanceof FHIRBundleRequest) {
+                $this->setRequest($data[self::FIELD_REQUEST]);
+            } else {
+                $this->setRequest(new FHIRBundleRequest($data[self::FIELD_REQUEST]));
+            }
+        }
+        if (isset($data[self::FIELD_RESPONSE])) {
+            if ($data[self::FIELD_RESPONSE] instanceof FHIRBundleResponse) {
+                $this->setResponse($data[self::FIELD_RESPONSE]);
+            } else {
+                $this->setResponse(new FHIRBundleResponse($data[self::FIELD_RESPONSE]));
             }
         }
     }
@@ -283,10 +275,64 @@ class FHIRBundleEntry extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<BundleEntry{$xmlns}></BundleEntry>";
+    }
+
+    /**
+     * A container for a collection of resources.
+     *
+     * A series of links that provide context to this entry.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[]
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    /**
+     * A container for a collection of resources.
+     *
+     * A series of links that provide context to this entry.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink $link
+     * @return static
+     */
+    public function addLink(FHIRBundleLink $link = null)
+    {
+        $this->_trackValueAdded();
+        $this->link[] = $link;
+        return $this;
+    }
+
+    /**
+     * A container for a collection of resources.
+     *
+     * A series of links that provide context to this entry.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[] $link
+     * @return static
+     */
+    public function setLink(array $link = [])
+    {
+        if ([] !== $this->link) {
+            $this->_trackValuesRemoved(count($this->link));
+            $this->link = [];
+        }
+        if ([] === $link) {
+            return $this;
+        }
+        foreach($link as $v) {
+            if ($v instanceof FHIRBundleLink) {
+                $this->addLink($v);
+            } else {
+                $this->addLink(new FHIRBundleLink($v));
+            }
+        }
+        return $this;
     }
 
     /**
@@ -327,65 +373,63 @@ class FHIRBundleEntry extends FHIRBackboneElement
      */
     public function setFullUrl($fullUrl = null)
     {
-        if (null === $fullUrl) {
-            $this->fullUrl = null;
-            return $this;
+        if (null !== $fullUrl && !($fullUrl instanceof FHIRUri)) {
+            $fullUrl = new FHIRUri($fullUrl);
         }
-        if ($fullUrl instanceof FHIRUri) {
-            $this->fullUrl = $fullUrl;
-            return $this;
-        }
-        $this->fullUrl = new FHIRUri($fullUrl);
+        $this->_trackValueSet($this->fullUrl, $fullUrl);
+        $this->fullUrl = $fullUrl;
+        return $this;
+    }
+
+    /**
+     * The Resource for the entry. The purpose/meaning of the resource is determined by
+     * the Bundle.type.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface
+     */
+    public function getResource()
+    {
+        return $this->resource;
+    }
+
+    /**
+     * The Resource for the entry. The purpose/meaning of the resource is determined by
+     * the Bundle.type.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface $resource
+     * @return static
+     */
+    public function setResource(PHPFHIRContainedTypeInterface $resource = null)
+    {
+        $this->_trackValueSet($this->resource, $resource);
+        $this->resource = $resource;
         return $this;
     }
 
     /**
      * A container for a collection of resources.
      *
-     * A series of links that provide context to this entry.
+     * Information about the search process that lead to the creation of this entry.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[]
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch
      */
-    public function getLink()
+    public function getSearch()
     {
-        return $this->link;
+        return $this->search;
     }
 
     /**
      * A container for a collection of resources.
      *
-     * A series of links that provide context to this entry.
+     * Information about the search process that lead to the creation of this entry.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink $link
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch $search
      * @return static
      */
-    public function addLink(FHIRBundleLink $link = null)
+    public function setSearch(FHIRBundleSearch $search = null)
     {
-        $this->link[] = $link;
-        return $this;
-    }
-
-    /**
-     * A container for a collection of resources.
-     *
-     * A series of links that provide context to this entry.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[] $link
-     * @return static
-     */
-    public function setLink(array $link = [])
-    {
-        $this->link = [];
-        if ([] === $link) {
-            return $this;
-        }
-        foreach($link as $v) {
-            if ($v instanceof FHIRBundleLink) {
-                $this->addLink($v);
-            } else {
-                $this->addLink(new FHIRBundleLink($v));
-            }
-        }
+        $this->_trackValueSet($this->search, $search);
+        $this->search = $search;
         return $this;
     }
 
@@ -415,35 +459,8 @@ class FHIRBundleEntry extends FHIRBackboneElement
      */
     public function setRequest(FHIRBundleRequest $request = null)
     {
+        $this->_trackValueSet($this->request, $request);
         $this->request = $request;
-        return $this;
-    }
-
-    /**
-     * (choose any one of the elements, but only one)
-     *
-     * The Resource for the entry. The purpose/meaning of the resource is determined by
-     * the Bundle.type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface
-     */
-    public function getResource()
-    {
-        return $this->resource;
-    }
-
-    /**
-     * (choose any one of the elements, but only one)
-     *
-     * The Resource for the entry. The purpose/meaning of the resource is determined by
-     * the Bundle.type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface $resource
-     * @return static
-     */
-    public function setResource(PHPFHIRContainedTypeInterface $resource = null)
-    {
-        $this->resource = $resource;
         return $this;
     }
 
@@ -473,33 +490,8 @@ class FHIRBundleEntry extends FHIRBackboneElement
      */
     public function setResponse(FHIRBundleResponse $response = null)
     {
+        $this->_trackValueSet($this->response, $response);
         $this->response = $response;
-        return $this;
-    }
-
-    /**
-     * A container for a collection of resources.
-     *
-     * Information about the search process that lead to the creation of this entry.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch
-     */
-    public function getSearch()
-    {
-        return $this->search;
-    }
-
-    /**
-     * A container for a collection of resources.
-     *
-     * Information about the search process that lead to the creation of this entry.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch $search
-     * @return static
-     */
-    public function setSearch(FHIRBundleSearch $search = null)
-    {
-        $this->search = $search;
         return $this;
     }
 
@@ -524,11 +516,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getFullUrl())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_FULL_URL] = $fieldErrs;
-            }
-        }
         if ([] !== ($vs = $this->getLink())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
@@ -536,9 +523,9 @@ class FHIRBundleEntry extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getRequest())) {
+        if (null !== ($v = $this->getFullUrl())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_REQUEST] = $fieldErrs;
+                $errs[self::FIELD_FULL_URL] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getResource())) {
@@ -546,26 +533,19 @@ class FHIRBundleEntry extends FHIRBackboneElement
                 $errs[self::FIELD_RESOURCE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getResponse())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_RESPONSE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getSearch())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_SEARCH] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_FULL_URL])) {
-            $v = $this->getFullUrl();
-            foreach($validationRules[self::FIELD_FULL_URL] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BUNDLE_DOT_ENTRY, self::FIELD_FULL_URL, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FULL_URL])) {
-                        $errs[self::FIELD_FULL_URL] = [];
-                    }
-                    $errs[self::FIELD_FULL_URL][$rule] = $err;
-                }
+        if (null !== ($v = $this->getRequest())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_REQUEST] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getResponse())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_RESPONSE] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_LINK])) {
@@ -580,15 +560,15 @@ class FHIRBundleEntry extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_REQUEST])) {
-            $v = $this->getRequest();
-            foreach($validationRules[self::FIELD_REQUEST] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BUNDLE_DOT_ENTRY, self::FIELD_REQUEST, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_FULL_URL])) {
+            $v = $this->getFullUrl();
+            foreach($validationRules[self::FIELD_FULL_URL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BUNDLE_DOT_ENTRY, self::FIELD_FULL_URL, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REQUEST])) {
-                        $errs[self::FIELD_REQUEST] = [];
+                    if (!isset($errs[self::FIELD_FULL_URL])) {
+                        $errs[self::FIELD_FULL_URL] = [];
                     }
-                    $errs[self::FIELD_REQUEST][$rule] = $err;
+                    $errs[self::FIELD_FULL_URL][$rule] = $err;
                 }
             }
         }
@@ -604,18 +584,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_RESPONSE])) {
-            $v = $this->getResponse();
-            foreach($validationRules[self::FIELD_RESPONSE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BUNDLE_DOT_ENTRY, self::FIELD_RESPONSE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RESPONSE])) {
-                        $errs[self::FIELD_RESPONSE] = [];
-                    }
-                    $errs[self::FIELD_RESPONSE][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_SEARCH])) {
             $v = $this->getSearch();
             foreach($validationRules[self::FIELD_SEARCH] as $rule => $constraint) {
@@ -625,6 +593,30 @@ class FHIRBundleEntry extends FHIRBackboneElement
                         $errs[self::FIELD_SEARCH] = [];
                     }
                     $errs[self::FIELD_SEARCH][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_REQUEST])) {
+            $v = $this->getRequest();
+            foreach($validationRules[self::FIELD_REQUEST] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BUNDLE_DOT_ENTRY, self::FIELD_REQUEST, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REQUEST])) {
+                        $errs[self::FIELD_REQUEST] = [];
+                    }
+                    $errs[self::FIELD_REQUEST][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_RESPONSE])) {
+            $v = $this->getResponse();
+            foreach($validationRules[self::FIELD_RESPONSE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BUNDLE_DOT_ENTRY, self::FIELD_RESPONSE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RESPONSE])) {
+                        $errs[self::FIELD_RESPONSE] = [];
+                    }
+                    $errs[self::FIELD_RESPONSE][$rule] = $err;
                 }
             }
         }
@@ -668,117 +660,144 @@ class FHIRBundleEntry extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRBundleEntry::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRBundleEntry::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRBundleEntry::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRBundleEntry;
+            $type = new FHIRBundleEntry(null);
         } elseif (!is_object($type) || !($type instanceof FHIRBundleEntry)) {
             throw new \RuntimeException(sprintf(
                 'FHIRBundleEntry::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_LINK === $n->nodeName) {
+                $type->addLink(FHIRBundleLink::xmlUnserialize($n));
+            } elseif (self::FIELD_FULL_URL === $n->nodeName) {
+                $type->setFullUrl(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_RESOURCE === $n->nodeName) {
+                for ($ni = 0; $ni < $n->childNodes->length; $ni++) {
+                    $nn = $n->childNodes->item($ni);
+                    if ($nn instanceof \DOMElement) {
+                        $type->setResource(PHPFHIRTypeMap::getContainedTypeFromXML($nn));
+                    }
+                }
+            } elseif (self::FIELD_SEARCH === $n->nodeName) {
+                $type->setSearch(FHIRBundleSearch::xmlUnserialize($n));
+            } elseif (self::FIELD_REQUEST === $n->nodeName) {
+                $type->setRequest(FHIRBundleRequest::xmlUnserialize($n));
+            } elseif (self::FIELD_RESPONSE === $n->nodeName) {
+                $type->setResponse(FHIRBundleResponse::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->fullUrl)) {
-            $type->setFullUrl(FHIRUri::xmlUnserialize($children->fullUrl));
-        }
-        if (isset($attributes->fullUrl)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_FULL_URL);
+        if (null !== $n) {
             $pt = $type->getFullUrl();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->fullUrl);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setFullUrl((string)$attributes->fullUrl);
+                $type->setFullUrl($n->nodeValue);
             }
         }
-        if (isset($children->link)) {
-            foreach($children->link as $child) {
-                $type->addLink(FHIRBundleLink::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
-        }
-        if (isset($children->request)) {
-            $type->setRequest(FHIRBundleRequest::xmlUnserialize($children->request));
-        }
-        if (isset($children->resource)) {
-            foreach($children->resource as $child) {
-                foreach($child->children() as $babe) {
-                    $type->setResource(PHPFHIRTypeMap::getContainedTypeFromXML($babe));
-                    break 2;
-                }
-            }
-        }
-        if (isset($children->response)) {
-            $type->setResponse(FHIRBundleResponse::xmlUnserialize($children->response));
-        }
-        if (isset($children->search)) {
-            $type->setSearch(FHIRBundleSearch::xmlUnserialize($children->search));
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getFullUrl())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FULL_URL, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if ([] !== ($vs = $this->getLink())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_LINK, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_LINK);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getRequest())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getFullUrl())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_FULL_URL);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getResource())) {
-            $tsxe = $sxe->addChild(self::FIELD_RESOURCE);
-            $v->xmlSerialize($tsxe->addChild($v->_getFHIRTypeName(), null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getResponse())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSE, null, $v->_getFHIRXMLNamespace()));
+            $e2 = $element->ownerDocument->createElement(self::FIELD_RESOURCE);
+            $element->appendChild($e2);
+            $e3 = $element->ownerDocument->createElement($v->_getFHIRTypeName());
+            $e2->appendChild($e3);
+            $v->xmlSerialize($e3);
         }
         if (null !== ($v = $this->getSearch())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEARCH, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_SEARCH);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getRequest())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_REQUEST);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getResponse())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_RESPONSE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -787,15 +806,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getFullUrl())) {
-            $a[self::FIELD_FULL_URL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_FULL_URL_EXT] = $enc;
-            }
-        }
         if ([] !== ($vs = $this->getLink())) {
             $a[self::FIELD_LINK] = [];
             foreach($vs as $v) {
@@ -805,20 +815,27 @@ class FHIRBundleEntry extends FHIRBackboneElement
                 $a[self::FIELD_LINK][] = $v;
             }
         }
-        if (null !== ($v = $this->getRequest())) {
-            $a[self::FIELD_REQUEST] = $v;
+        if (null !== ($v = $this->getFullUrl())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FULL_URL] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUri::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_FULL_URL_EXT] = $ext;
+            }
         }
         if (null !== ($v = $this->getResource())) {
             $a[self::FIELD_RESOURCE] = $v;
         }
-        if (null !== ($v = $this->getResponse())) {
-            $a[self::FIELD_RESPONSE] = $v;
-        }
         if (null !== ($v = $this->getSearch())) {
             $a[self::FIELD_SEARCH] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getRequest())) {
+            $a[self::FIELD_REQUEST] = $v;
+        }
+        if (null !== ($v = $this->getResponse())) {
+            $a[self::FIELD_RESPONSE] = $v;
         }
         return $a;
     }

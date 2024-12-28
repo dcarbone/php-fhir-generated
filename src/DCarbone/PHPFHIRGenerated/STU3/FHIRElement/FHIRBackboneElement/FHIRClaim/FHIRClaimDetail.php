@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,10 +65,12 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCla
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
@@ -83,23 +85,46 @@ class FHIRClaimDetail extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_DETAIL;
-    const FIELD_CATEGORY = 'category';
-    const FIELD_FACTOR = 'factor';
-    const FIELD_FACTOR_EXT = '_factor';
-    const FIELD_MODIFIER = 'modifier';
-    const FIELD_NET = 'net';
-    const FIELD_PROGRAM_CODE = 'programCode';
-    const FIELD_QUANTITY = 'quantity';
-    const FIELD_REVENUE = 'revenue';
     const FIELD_SEQUENCE = 'sequence';
     const FIELD_SEQUENCE_EXT = '_sequence';
+    const FIELD_REVENUE = 'revenue';
+    const FIELD_CATEGORY = 'category';
     const FIELD_SERVICE = 'service';
-    const FIELD_SUB_DETAIL = 'subDetail';
-    const FIELD_UDI = 'udi';
+    const FIELD_MODIFIER = 'modifier';
+    const FIELD_PROGRAM_CODE = 'programCode';
+    const FIELD_QUANTITY = 'quantity';
     const FIELD_UNIT_PRICE = 'unitPrice';
+    const FIELD_FACTOR = 'factor';
+    const FIELD_FACTOR_EXT = '_factor';
+    const FIELD_NET = 'net';
+    const FIELD_UDI = 'udi';
+    const FIELD_SUB_DETAIL = 'subDetail';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A service line number.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
+     */
+    protected $sequence = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of reveneu or cost center providing the product and/or service.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    protected $revenue = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -115,18 +140,19 @@ class FHIRClaimDetail extends FHIRBackboneElement
     protected $category = null;
 
     /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A real number that represents a multiplier used in determining the overall value
-     * of services delivered and/or goods received. The concept of a Factor allows for
-     * a discount or surcharge multiplier to be applied to a monetary amount.
+     * If this is an actual service or product line, ie. not a Group, then use code to
+     * indicate the Professional Service or Product supplied (eg. CTP,
+     * HCPCS,USCLS,ICD10, NCPDP,DIN,ACHI,CCI). If a grouping item then use a group code
+     * to indicate the type of thing being grouped eg. 'glasses' or 'compound'.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    protected $factor = null;
+    protected $service = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -141,20 +167,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected $modifier = [];
-
-    /**
-     * An amount of economic utility in some recognized currency.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The quantity times the unit price for an addittional service or product or
-     * charge. For example, the formula: unit Quantity * unit Price (Cost per Point) *
-     * factor Number * points = net Amount. Quantity, factor and points are assumed to
-     * be 1 if not supplied.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
-     */
-    protected $net = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -183,52 +195,44 @@ class FHIRClaimDetail extends FHIRBackboneElement
     protected $quantity = null;
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
+     * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The type of reveneu or cost center providing the product and/or service.
+     * If the item is a node then this is the fee for the product or service, otherwise
+     * this is the total of the fees for the children of the group.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    protected $revenue = null;
+    protected $unitPrice = null;
 
     /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A service line number.
+     * A real number that represents a multiplier used in determining the overall value
+     * of services delivered and/or goods received. The concept of a Factor allows for
+     * a discount or surcharge multiplier to be applied to a monetary amount.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    protected $sequence = null;
+    protected $factor = null;
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
+     * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * If this is an actual service or product line, ie. not a Group, then use code to
-     * indicate the Professional Service or Product supplied (eg. CTP,
-     * HCPCS,USCLS,ICD10, NCPDP,DIN,ACHI,CCI). If a grouping item then use a group code
-     * to indicate the type of thing being grouped eg. 'glasses' or 'compound'.
+     * The quantity times the unit price for an addittional service or product or
+     * charge. For example, the formula: unit Quantity * unit Price (Cost per Point) *
+     * factor Number * points = net Amount. Quantity, factor and points are assumed to
+     * be 1 if not supplied.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
-    protected $service = null;
-
-    /**
-     * A provider issued list of services and products provided, or to be provided, to
-     * a patient which is provided to an insurer for payment recovery.
-     *
-     * Third tier of goods and services.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimSubDetail[]
-     */
-    protected $subDetail = [];
+    protected $net = null;
 
     /**
      * A reference from one resource to another.
@@ -242,16 +246,14 @@ class FHIRClaimDetail extends FHIRBackboneElement
     protected $udi = [];
 
     /**
-     * An amount of economic utility in some recognized currency.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A provider issued list of services and products provided, or to be provided, to
+     * a patient which is provided to an insurer for payment recovery.
      *
-     * If the item is a node then this is the fee for the product or service, otherwise
-     * this is the total of the fees for the children of the group.
+     * Third tier of goods and services.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimSubDetail[]
      */
-    protected $unitPrice = null;
+    protected $subDetail = [];
 
     /**
      * Validation map for fields in type Claim.Detail
@@ -275,6 +277,28 @@ class FHIRClaimDetail extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_SEQUENCE]) || isset($data[self::FIELD_SEQUENCE_EXT])) {
+            $value = isset($data[self::FIELD_SEQUENCE]) ? $data[self::FIELD_SEQUENCE] : null;
+            $ext = (isset($data[self::FIELD_SEQUENCE_EXT]) && is_array($data[self::FIELD_SEQUENCE_EXT])) ? $ext = $data[self::FIELD_SEQUENCE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setSequence($value);
+                } else if (is_array($value)) {
+                    $this->setSequence(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->setSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setSequence(new FHIRPositiveInt($ext));
+            }
+        }
+        if (isset($data[self::FIELD_REVENUE])) {
+            if ($data[self::FIELD_REVENUE] instanceof FHIRCodeableConcept) {
+                $this->setRevenue($data[self::FIELD_REVENUE]);
+            } else {
+                $this->setRevenue(new FHIRCodeableConcept($data[self::FIELD_REVENUE]));
+            }
+        }
         if (isset($data[self::FIELD_CATEGORY])) {
             if ($data[self::FIELD_CATEGORY] instanceof FHIRCodeableConcept) {
                 $this->setCategory($data[self::FIELD_CATEGORY]);
@@ -282,27 +306,11 @@ class FHIRClaimDetail extends FHIRBackboneElement
                 $this->setCategory(new FHIRCodeableConcept($data[self::FIELD_CATEGORY]));
             }
         }
-        if (isset($data[self::FIELD_FACTOR]) || isset($data[self::FIELD_FACTOR_EXT])) {
-            if (isset($data[self::FIELD_FACTOR])) {
-                $value = $data[self::FIELD_FACTOR];
+        if (isset($data[self::FIELD_SERVICE])) {
+            if ($data[self::FIELD_SERVICE] instanceof FHIRCodeableConcept) {
+                $this->setService($data[self::FIELD_SERVICE]);
             } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_FACTOR_EXT]) && is_array($data[self::FIELD_FACTOR_EXT])) {
-                $ext = $data[self::FIELD_FACTOR_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->setFactor($value);
-                } else if (is_array($value)) {
-                    $this->setFactor(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->setFactor(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setFactor(new FHIRDecimal($ext));
+                $this->setService(new FHIRCodeableConcept($data[self::FIELD_SERVICE]));
             }
         }
         if (isset($data[self::FIELD_MODIFIER])) {
@@ -317,17 +325,10 @@ class FHIRClaimDetail extends FHIRBackboneElement
                         $this->addModifier(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_MODIFIER] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_MODIFIER] instanceof FHIRCodeableConcept) {
                 $this->addModifier($data[self::FIELD_MODIFIER]);
             } else {
                 $this->addModifier(new FHIRCodeableConcept($data[self::FIELD_MODIFIER]));
-            }
-        }
-        if (isset($data[self::FIELD_NET])) {
-            if ($data[self::FIELD_NET] instanceof FHIRMoney) {
-                $this->setNet($data[self::FIELD_NET]);
-            } else {
-                $this->setNet(new FHIRMoney($data[self::FIELD_NET]));
             }
         }
         if (isset($data[self::FIELD_PROGRAM_CODE])) {
@@ -342,7 +343,7 @@ class FHIRClaimDetail extends FHIRBackboneElement
                         $this->addProgramCode(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_PROGRAM_CODE] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_PROGRAM_CODE] instanceof FHIRCodeableConcept) {
                 $this->addProgramCode($data[self::FIELD_PROGRAM_CODE]);
             } else {
                 $this->addProgramCode(new FHIRCodeableConcept($data[self::FIELD_PROGRAM_CODE]));
@@ -355,59 +356,33 @@ class FHIRClaimDetail extends FHIRBackboneElement
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
         }
-        if (isset($data[self::FIELD_REVENUE])) {
-            if ($data[self::FIELD_REVENUE] instanceof FHIRCodeableConcept) {
-                $this->setRevenue($data[self::FIELD_REVENUE]);
+        if (isset($data[self::FIELD_UNIT_PRICE])) {
+            if ($data[self::FIELD_UNIT_PRICE] instanceof FHIRMoney) {
+                $this->setUnitPrice($data[self::FIELD_UNIT_PRICE]);
             } else {
-                $this->setRevenue(new FHIRCodeableConcept($data[self::FIELD_REVENUE]));
+                $this->setUnitPrice(new FHIRMoney($data[self::FIELD_UNIT_PRICE]));
             }
         }
-        if (isset($data[self::FIELD_SEQUENCE]) || isset($data[self::FIELD_SEQUENCE_EXT])) {
-            if (isset($data[self::FIELD_SEQUENCE])) {
-                $value = $data[self::FIELD_SEQUENCE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SEQUENCE_EXT]) && is_array($data[self::FIELD_SEQUENCE_EXT])) {
-                $ext = $data[self::FIELD_SEQUENCE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (isset($data[self::FIELD_FACTOR]) || isset($data[self::FIELD_FACTOR_EXT])) {
+            $value = isset($data[self::FIELD_FACTOR]) ? $data[self::FIELD_FACTOR] : null;
+            $ext = (isset($data[self::FIELD_FACTOR_EXT]) && is_array($data[self::FIELD_FACTOR_EXT])) ? $ext = $data[self::FIELD_FACTOR_EXT] : $ext = [];
             if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $this->setSequence($value);
+                if ($value instanceof FHIRDecimal) {
+                    $this->setFactor($value);
                 } else if (is_array($value)) {
-                    $this->setSequence(new FHIRPositiveInt(array_merge($ext, $value)));
+                    $this->setFactor(new FHIRDecimal(array_merge($ext, $value)));
                 } else {
-                    $this->setSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                    $this->setFactor(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                $this->setSequence(new FHIRPositiveInt($ext));
+            } elseif ([] !== $ext) {
+                $this->setFactor(new FHIRDecimal($ext));
             }
         }
-        if (isset($data[self::FIELD_SERVICE])) {
-            if ($data[self::FIELD_SERVICE] instanceof FHIRCodeableConcept) {
-                $this->setService($data[self::FIELD_SERVICE]);
+        if (isset($data[self::FIELD_NET])) {
+            if ($data[self::FIELD_NET] instanceof FHIRMoney) {
+                $this->setNet($data[self::FIELD_NET]);
             } else {
-                $this->setService(new FHIRCodeableConcept($data[self::FIELD_SERVICE]));
-            }
-        }
-        if (isset($data[self::FIELD_SUB_DETAIL])) {
-            if (is_array($data[self::FIELD_SUB_DETAIL])) {
-                foreach($data[self::FIELD_SUB_DETAIL] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRClaimSubDetail) {
-                        $this->addSubDetail($v);
-                    } else {
-                        $this->addSubDetail(new FHIRClaimSubDetail($v));
-                    }
-                }
-            } else if ($data[self::FIELD_SUB_DETAIL] instanceof FHIRClaimSubDetail) {
-                $this->addSubDetail($data[self::FIELD_SUB_DETAIL]);
-            } else {
-                $this->addSubDetail(new FHIRClaimSubDetail($data[self::FIELD_SUB_DETAIL]));
+                $this->setNet(new FHIRMoney($data[self::FIELD_NET]));
             }
         }
         if (isset($data[self::FIELD_UDI])) {
@@ -422,17 +397,28 @@ class FHIRClaimDetail extends FHIRBackboneElement
                         $this->addUdi(new FHIRReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_UDI] instanceof FHIRReference) {
+            } elseif ($data[self::FIELD_UDI] instanceof FHIRReference) {
                 $this->addUdi($data[self::FIELD_UDI]);
             } else {
                 $this->addUdi(new FHIRReference($data[self::FIELD_UDI]));
             }
         }
-        if (isset($data[self::FIELD_UNIT_PRICE])) {
-            if ($data[self::FIELD_UNIT_PRICE] instanceof FHIRMoney) {
-                $this->setUnitPrice($data[self::FIELD_UNIT_PRICE]);
+        if (isset($data[self::FIELD_SUB_DETAIL])) {
+            if (is_array($data[self::FIELD_SUB_DETAIL])) {
+                foreach($data[self::FIELD_SUB_DETAIL] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRClaimSubDetail) {
+                        $this->addSubDetail($v);
+                    } else {
+                        $this->addSubDetail(new FHIRClaimSubDetail($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_SUB_DETAIL] instanceof FHIRClaimSubDetail) {
+                $this->addSubDetail($data[self::FIELD_SUB_DETAIL]);
             } else {
-                $this->setUnitPrice(new FHIRMoney($data[self::FIELD_UNIT_PRICE]));
+                $this->addSubDetail(new FHIRClaimSubDetail($data[self::FIELD_SUB_DETAIL]));
             }
         }
     }
@@ -451,10 +437,77 @@ class FHIRClaimDetail extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ClaimDetail{$xmlns}></ClaimDetail>";
+    }
+
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A service line number.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
+     */
+    public function getSequence()
+    {
+        return $this->sequence;
+    }
+
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A service line number.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt $sequence
+     * @return static
+     */
+    public function setSequence($sequence = null)
+    {
+        if (null !== $sequence && !($sequence instanceof FHIRPositiveInt)) {
+            $sequence = new FHIRPositiveInt($sequence);
+        }
+        $this->_trackValueSet($this->sequence, $sequence);
+        $this->sequence = $sequence;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of reveneu or cost center providing the product and/or service.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    public function getRevenue()
+    {
+        return $this->revenue;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of reveneu or cost center providing the product and/or service.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $revenue
+     * @return static
+     */
+    public function setRevenue(FHIRCodeableConcept $revenue = null)
+    {
+        $this->_trackValueSet($this->revenue, $revenue);
+        $this->revenue = $revenue;
+        return $this;
     }
 
     /**
@@ -487,51 +540,47 @@ class FHIRClaimDetail extends FHIRBackboneElement
      */
     public function setCategory(FHIRCodeableConcept $category = null)
     {
+        $this->_trackValueSet($this->category, $category);
         $this->category = $category;
         return $this;
     }
 
     /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A real number that represents a multiplier used in determining the overall value
-     * of services delivered and/or goods received. The concept of a Factor allows for
-     * a discount or surcharge multiplier to be applied to a monetary amount.
+     * If this is an actual service or product line, ie. not a Group, then use code to
+     * indicate the Professional Service or Product supplied (eg. CTP,
+     * HCPCS,USCLS,ICD10, NCPDP,DIN,ACHI,CCI). If a grouping item then use a group code
+     * to indicate the type of thing being grouped eg. 'glasses' or 'compound'.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    public function getFactor()
+    public function getService()
     {
-        return $this->factor;
+        return $this->service;
     }
 
     /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A real number that represents a multiplier used in determining the overall value
-     * of services delivered and/or goods received. The concept of a Factor allows for
-     * a discount or surcharge multiplier to be applied to a monetary amount.
+     * If this is an actual service or product line, ie. not a Group, then use code to
+     * indicate the Professional Service or Product supplied (eg. CTP,
+     * HCPCS,USCLS,ICD10, NCPDP,DIN,ACHI,CCI). If a grouping item then use a group code
+     * to indicate the type of thing being grouped eg. 'glasses' or 'compound'.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $factor
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $service
      * @return static
      */
-    public function setFactor($factor = null)
+    public function setService(FHIRCodeableConcept $service = null)
     {
-        if (null === $factor) {
-            $this->factor = null;
-            return $this;
-        }
-        if ($factor instanceof FHIRDecimal) {
-            $this->factor = $factor;
-            return $this;
-        }
-        $this->factor = new FHIRDecimal($factor);
+        $this->_trackValueSet($this->service, $service);
+        $this->service = $service;
         return $this;
     }
 
@@ -567,6 +616,7 @@ class FHIRClaimDetail extends FHIRBackboneElement
      */
     public function addModifier(FHIRCodeableConcept $modifier = null)
     {
+        $this->_trackValueAdded();
         $this->modifier[] = $modifier;
         return $this;
     }
@@ -586,7 +636,10 @@ class FHIRClaimDetail extends FHIRBackboneElement
      */
     public function setModifier(array $modifier = [])
     {
-        $this->modifier = [];
+        if ([] !== $this->modifier) {
+            $this->_trackValuesRemoved(count($this->modifier));
+            $this->modifier = [];
+        }
         if ([] === $modifier) {
             return $this;
         }
@@ -597,42 +650,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
                 $this->addModifier(new FHIRCodeableConcept($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * An amount of economic utility in some recognized currency.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The quantity times the unit price for an addittional service or product or
-     * charge. For example, the formula: unit Quantity * unit Price (Cost per Point) *
-     * factor Number * points = net Amount. Quantity, factor and points are assumed to
-     * be 1 if not supplied.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
-     */
-    public function getNet()
-    {
-        return $this->net;
-    }
-
-    /**
-     * An amount of economic utility in some recognized currency.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The quantity times the unit price for an addittional service or product or
-     * charge. For example, the formula: unit Quantity * unit Price (Cost per Point) *
-     * factor Number * points = net Amount. Quantity, factor and points are assumed to
-     * be 1 if not supplied.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney $net
-     * @return static
-     */
-    public function setNet(FHIRMoney $net = null)
-    {
-        $this->net = $net;
         return $this;
     }
 
@@ -666,6 +683,7 @@ class FHIRClaimDetail extends FHIRBackboneElement
      */
     public function addProgramCode(FHIRCodeableConcept $programCode = null)
     {
+        $this->_trackValueAdded();
         $this->programCode[] = $programCode;
         return $this;
     }
@@ -684,7 +702,10 @@ class FHIRClaimDetail extends FHIRBackboneElement
      */
     public function setProgramCode(array $programCode = [])
     {
-        $this->programCode = [];
+        if ([] !== $this->programCode) {
+            $this->_trackValuesRemoved(count($this->programCode));
+            $this->programCode = [];
+        }
         if ([] === $programCode) {
             return $this;
         }
@@ -728,224 +749,8 @@ class FHIRClaimDetail extends FHIRBackboneElement
      */
     public function setQuantity(FHIRQuantity $quantity = null)
     {
+        $this->_trackValueSet($this->quantity, $quantity);
         $this->quantity = $quantity;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The type of reveneu or cost center providing the product and/or service.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    public function getRevenue()
-    {
-        return $this->revenue;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The type of reveneu or cost center providing the product and/or service.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $revenue
-     * @return static
-     */
-    public function setRevenue(FHIRCodeableConcept $revenue = null)
-    {
-        $this->revenue = $revenue;
-        return $this;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A service line number.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
-     */
-    public function getSequence()
-    {
-        return $this->sequence;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A service line number.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt $sequence
-     * @return static
-     */
-    public function setSequence($sequence = null)
-    {
-        if (null === $sequence) {
-            $this->sequence = null;
-            return $this;
-        }
-        if ($sequence instanceof FHIRPositiveInt) {
-            $this->sequence = $sequence;
-            return $this;
-        }
-        $this->sequence = new FHIRPositiveInt($sequence);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If this is an actual service or product line, ie. not a Group, then use code to
-     * indicate the Professional Service or Product supplied (eg. CTP,
-     * HCPCS,USCLS,ICD10, NCPDP,DIN,ACHI,CCI). If a grouping item then use a group code
-     * to indicate the type of thing being grouped eg. 'glasses' or 'compound'.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    public function getService()
-    {
-        return $this->service;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If this is an actual service or product line, ie. not a Group, then use code to
-     * indicate the Professional Service or Product supplied (eg. CTP,
-     * HCPCS,USCLS,ICD10, NCPDP,DIN,ACHI,CCI). If a grouping item then use a group code
-     * to indicate the type of thing being grouped eg. 'glasses' or 'compound'.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $service
-     * @return static
-     */
-    public function setService(FHIRCodeableConcept $service = null)
-    {
-        $this->service = $service;
-        return $this;
-    }
-
-    /**
-     * A provider issued list of services and products provided, or to be provided, to
-     * a patient which is provided to an insurer for payment recovery.
-     *
-     * Third tier of goods and services.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimSubDetail[]
-     */
-    public function getSubDetail()
-    {
-        return $this->subDetail;
-    }
-
-    /**
-     * A provider issued list of services and products provided, or to be provided, to
-     * a patient which is provided to an insurer for payment recovery.
-     *
-     * Third tier of goods and services.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimSubDetail $subDetail
-     * @return static
-     */
-    public function addSubDetail(FHIRClaimSubDetail $subDetail = null)
-    {
-        $this->subDetail[] = $subDetail;
-        return $this;
-    }
-
-    /**
-     * A provider issued list of services and products provided, or to be provided, to
-     * a patient which is provided to an insurer for payment recovery.
-     *
-     * Third tier of goods and services.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimSubDetail[] $subDetail
-     * @return static
-     */
-    public function setSubDetail(array $subDetail = [])
-    {
-        $this->subDetail = [];
-        if ([] === $subDetail) {
-            return $this;
-        }
-        foreach($subDetail as $v) {
-            if ($v instanceof FHIRClaimSubDetail) {
-                $this->addSubDetail($v);
-            } else {
-                $this->addSubDetail(new FHIRClaimSubDetail($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * List of Unique Device Identifiers associated with this line item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
-     */
-    public function getUdi()
-    {
-        return $this->udi;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * List of Unique Device Identifiers associated with this line item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $udi
-     * @return static
-     */
-    public function addUdi(FHIRReference $udi = null)
-    {
-        $this->udi[] = $udi;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * List of Unique Device Identifiers associated with this line item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $udi
-     * @return static
-     */
-    public function setUdi(array $udi = [])
-    {
-        $this->udi = [];
-        if ([] === $udi) {
-            return $this;
-        }
-        foreach($udi as $v) {
-            if ($v instanceof FHIRReference) {
-                $this->addUdi($v);
-            } else {
-                $this->addUdi(new FHIRReference($v));
-            }
-        }
         return $this;
     }
 
@@ -977,7 +782,202 @@ class FHIRClaimDetail extends FHIRBackboneElement
      */
     public function setUnitPrice(FHIRMoney $unitPrice = null)
     {
+        $this->_trackValueSet($this->unitPrice, $unitPrice);
         $this->unitPrice = $unitPrice;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A real number that represents a multiplier used in determining the overall value
+     * of services delivered and/or goods received. The concept of a Factor allows for
+     * a discount or surcharge multiplier to be applied to a monetary amount.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     */
+    public function getFactor()
+    {
+        return $this->factor;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A real number that represents a multiplier used in determining the overall value
+     * of services delivered and/or goods received. The concept of a Factor allows for
+     * a discount or surcharge multiplier to be applied to a monetary amount.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $factor
+     * @return static
+     */
+    public function setFactor($factor = null)
+    {
+        if (null !== $factor && !($factor instanceof FHIRDecimal)) {
+            $factor = new FHIRDecimal($factor);
+        }
+        $this->_trackValueSet($this->factor, $factor);
+        $this->factor = $factor;
+        return $this;
+    }
+
+    /**
+     * An amount of economic utility in some recognized currency.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The quantity times the unit price for an addittional service or product or
+     * charge. For example, the formula: unit Quantity * unit Price (Cost per Point) *
+     * factor Number * points = net Amount. Quantity, factor and points are assumed to
+     * be 1 if not supplied.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
+     */
+    public function getNet()
+    {
+        return $this->net;
+    }
+
+    /**
+     * An amount of economic utility in some recognized currency.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The quantity times the unit price for an addittional service or product or
+     * charge. For example, the formula: unit Quantity * unit Price (Cost per Point) *
+     * factor Number * points = net Amount. Quantity, factor and points are assumed to
+     * be 1 if not supplied.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney $net
+     * @return static
+     */
+    public function setNet(FHIRMoney $net = null)
+    {
+        $this->_trackValueSet($this->net, $net);
+        $this->net = $net;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * List of Unique Device Identifiers associated with this line item.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
+     */
+    public function getUdi()
+    {
+        return $this->udi;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * List of Unique Device Identifiers associated with this line item.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $udi
+     * @return static
+     */
+    public function addUdi(FHIRReference $udi = null)
+    {
+        $this->_trackValueAdded();
+        $this->udi[] = $udi;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * List of Unique Device Identifiers associated with this line item.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[] $udi
+     * @return static
+     */
+    public function setUdi(array $udi = [])
+    {
+        if ([] !== $this->udi) {
+            $this->_trackValuesRemoved(count($this->udi));
+            $this->udi = [];
+        }
+        if ([] === $udi) {
+            return $this;
+        }
+        foreach($udi as $v) {
+            if ($v instanceof FHIRReference) {
+                $this->addUdi($v);
+            } else {
+                $this->addUdi(new FHIRReference($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A provider issued list of services and products provided, or to be provided, to
+     * a patient which is provided to an insurer for payment recovery.
+     *
+     * Third tier of goods and services.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimSubDetail[]
+     */
+    public function getSubDetail()
+    {
+        return $this->subDetail;
+    }
+
+    /**
+     * A provider issued list of services and products provided, or to be provided, to
+     * a patient which is provided to an insurer for payment recovery.
+     *
+     * Third tier of goods and services.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimSubDetail $subDetail
+     * @return static
+     */
+    public function addSubDetail(FHIRClaimSubDetail $subDetail = null)
+    {
+        $this->_trackValueAdded();
+        $this->subDetail[] = $subDetail;
+        return $this;
+    }
+
+    /**
+     * A provider issued list of services and products provided, or to be provided, to
+     * a patient which is provided to an insurer for payment recovery.
+     *
+     * Third tier of goods and services.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimSubDetail[] $subDetail
+     * @return static
+     */
+    public function setSubDetail(array $subDetail = [])
+    {
+        if ([] !== $this->subDetail) {
+            $this->_trackValuesRemoved(count($this->subDetail));
+            $this->subDetail = [];
+        }
+        if ([] === $subDetail) {
+            return $this;
+        }
+        foreach($subDetail as $v) {
+            if ($v instanceof FHIRClaimSubDetail) {
+                $this->addSubDetail($v);
+            } else {
+                $this->addSubDetail(new FHIRClaimSubDetail($v));
+            }
+        }
         return $this;
     }
 
@@ -1002,14 +1002,24 @@ class FHIRClaimDetail extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getSequence())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SEQUENCE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getRevenue())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_REVENUE] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getCategory())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_CATEGORY] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getFactor())) {
+        if (null !== ($v = $this->getService())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_FACTOR] = $fieldErrs;
+                $errs[self::FIELD_SERVICE] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getModifier())) {
@@ -1017,11 +1027,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_MODIFIER, $i)] = $fieldErrs;
                 }
-            }
-        }
-        if (null !== ($v = $this->getNet())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_NET] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getProgramCode())) {
@@ -1036,26 +1041,19 @@ class FHIRClaimDetail extends FHIRBackboneElement
                 $errs[self::FIELD_QUANTITY] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getRevenue())) {
+        if (null !== ($v = $this->getUnitPrice())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_REVENUE] = $fieldErrs;
+                $errs[self::FIELD_UNIT_PRICE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getSequence())) {
+        if (null !== ($v = $this->getFactor())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SEQUENCE] = $fieldErrs;
+                $errs[self::FIELD_FACTOR] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getService())) {
+        if (null !== ($v = $this->getNet())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SERVICE] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getSubDetail())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_SUB_DETAIL, $i)] = $fieldErrs;
-                }
+                $errs[self::FIELD_NET] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getUdi())) {
@@ -1065,9 +1063,35 @@ class FHIRClaimDetail extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getUnitPrice())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_UNIT_PRICE] = $fieldErrs;
+        if ([] !== ($vs = $this->getSubDetail())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_SUB_DETAIL, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SEQUENCE])) {
+            $v = $this->getSequence();
+            foreach($validationRules[self::FIELD_SEQUENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_DETAIL, self::FIELD_SEQUENCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SEQUENCE])) {
+                        $errs[self::FIELD_SEQUENCE] = [];
+                    }
+                    $errs[self::FIELD_SEQUENCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_REVENUE])) {
+            $v = $this->getRevenue();
+            foreach($validationRules[self::FIELD_REVENUE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_DETAIL, self::FIELD_REVENUE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REVENUE])) {
+                        $errs[self::FIELD_REVENUE] = [];
+                    }
+                    $errs[self::FIELD_REVENUE][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_CATEGORY])) {
@@ -1082,15 +1106,15 @@ class FHIRClaimDetail extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_FACTOR])) {
-            $v = $this->getFactor();
-            foreach($validationRules[self::FIELD_FACTOR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_DETAIL, self::FIELD_FACTOR, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_SERVICE])) {
+            $v = $this->getService();
+            foreach($validationRules[self::FIELD_SERVICE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_DETAIL, self::FIELD_SERVICE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FACTOR])) {
-                        $errs[self::FIELD_FACTOR] = [];
+                    if (!isset($errs[self::FIELD_SERVICE])) {
+                        $errs[self::FIELD_SERVICE] = [];
                     }
-                    $errs[self::FIELD_FACTOR][$rule] = $err;
+                    $errs[self::FIELD_SERVICE][$rule] = $err;
                 }
             }
         }
@@ -1103,18 +1127,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
                         $errs[self::FIELD_MODIFIER] = [];
                     }
                     $errs[self::FIELD_MODIFIER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_NET])) {
-            $v = $this->getNet();
-            foreach($validationRules[self::FIELD_NET] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_DETAIL, self::FIELD_NET, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_NET])) {
-                        $errs[self::FIELD_NET] = [];
-                    }
-                    $errs[self::FIELD_NET][$rule] = $err;
                 }
             }
         }
@@ -1142,51 +1154,39 @@ class FHIRClaimDetail extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_REVENUE])) {
-            $v = $this->getRevenue();
-            foreach($validationRules[self::FIELD_REVENUE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_DETAIL, self::FIELD_REVENUE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_UNIT_PRICE])) {
+            $v = $this->getUnitPrice();
+            foreach($validationRules[self::FIELD_UNIT_PRICE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_DETAIL, self::FIELD_UNIT_PRICE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REVENUE])) {
-                        $errs[self::FIELD_REVENUE] = [];
+                    if (!isset($errs[self::FIELD_UNIT_PRICE])) {
+                        $errs[self::FIELD_UNIT_PRICE] = [];
                     }
-                    $errs[self::FIELD_REVENUE][$rule] = $err;
+                    $errs[self::FIELD_UNIT_PRICE][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SEQUENCE])) {
-            $v = $this->getSequence();
-            foreach($validationRules[self::FIELD_SEQUENCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_DETAIL, self::FIELD_SEQUENCE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_FACTOR])) {
+            $v = $this->getFactor();
+            foreach($validationRules[self::FIELD_FACTOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_DETAIL, self::FIELD_FACTOR, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SEQUENCE])) {
-                        $errs[self::FIELD_SEQUENCE] = [];
+                    if (!isset($errs[self::FIELD_FACTOR])) {
+                        $errs[self::FIELD_FACTOR] = [];
                     }
-                    $errs[self::FIELD_SEQUENCE][$rule] = $err;
+                    $errs[self::FIELD_FACTOR][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SERVICE])) {
-            $v = $this->getService();
-            foreach($validationRules[self::FIELD_SERVICE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_DETAIL, self::FIELD_SERVICE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_NET])) {
+            $v = $this->getNet();
+            foreach($validationRules[self::FIELD_NET] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_DETAIL, self::FIELD_NET, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SERVICE])) {
-                        $errs[self::FIELD_SERVICE] = [];
+                    if (!isset($errs[self::FIELD_NET])) {
+                        $errs[self::FIELD_NET] = [];
                     }
-                    $errs[self::FIELD_SERVICE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SUB_DETAIL])) {
-            $v = $this->getSubDetail();
-            foreach($validationRules[self::FIELD_SUB_DETAIL] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_DETAIL, self::FIELD_SUB_DETAIL, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SUB_DETAIL])) {
-                        $errs[self::FIELD_SUB_DETAIL] = [];
-                    }
-                    $errs[self::FIELD_SUB_DETAIL][$rule] = $err;
+                    $errs[self::FIELD_NET][$rule] = $err;
                 }
             }
         }
@@ -1202,15 +1202,15 @@ class FHIRClaimDetail extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_UNIT_PRICE])) {
-            $v = $this->getUnitPrice();
-            foreach($validationRules[self::FIELD_UNIT_PRICE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_DETAIL, self::FIELD_UNIT_PRICE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_SUB_DETAIL])) {
+            $v = $this->getSubDetail();
+            foreach($validationRules[self::FIELD_SUB_DETAIL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_DETAIL, self::FIELD_SUB_DETAIL, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_UNIT_PRICE])) {
-                        $errs[self::FIELD_UNIT_PRICE] = [];
+                    if (!isset($errs[self::FIELD_SUB_DETAIL])) {
+                        $errs[self::FIELD_SUB_DETAIL] = [];
                     }
-                    $errs[self::FIELD_UNIT_PRICE][$rule] = $err;
+                    $errs[self::FIELD_SUB_DETAIL][$rule] = $err;
                 }
             }
         }
@@ -1254,176 +1254,203 @@ class FHIRClaimDetail extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDetail $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDetail
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRClaimDetail::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRClaimDetail::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRClaimDetail::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRClaimDetail;
+            $type = new FHIRClaimDetail(null);
         } elseif (!is_object($type) || !($type instanceof FHIRClaimDetail)) {
             throw new \RuntimeException(sprintf(
                 'FHIRClaimDetail::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDetail or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_SEQUENCE === $n->nodeName) {
+                $type->setSequence(FHIRPositiveInt::xmlUnserialize($n));
+            } elseif (self::FIELD_REVENUE === $n->nodeName) {
+                $type->setRevenue(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_CATEGORY === $n->nodeName) {
+                $type->setCategory(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_SERVICE === $n->nodeName) {
+                $type->setService(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER === $n->nodeName) {
+                $type->addModifier(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_PROGRAM_CODE === $n->nodeName) {
+                $type->addProgramCode(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_QUANTITY === $n->nodeName) {
+                $type->setQuantity(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_UNIT_PRICE === $n->nodeName) {
+                $type->setUnitPrice(FHIRMoney::xmlUnserialize($n));
+            } elseif (self::FIELD_FACTOR === $n->nodeName) {
+                $type->setFactor(FHIRDecimal::xmlUnserialize($n));
+            } elseif (self::FIELD_NET === $n->nodeName) {
+                $type->setNet(FHIRMoney::xmlUnserialize($n));
+            } elseif (self::FIELD_UDI === $n->nodeName) {
+                $type->addUdi(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_SUB_DETAIL === $n->nodeName) {
+                $type->addSubDetail(FHIRClaimSubDetail::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->category)) {
-            $type->setCategory(FHIRCodeableConcept::xmlUnserialize($children->category));
-        }
-        if (isset($children->factor)) {
-            $type->setFactor(FHIRDecimal::xmlUnserialize($children->factor));
-        }
-        if (isset($attributes->factor)) {
-            $pt = $type->getFactor();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->factor);
-            } else {
-                $type->setFactor((string)$attributes->factor);
-            }
-        }
-        if (isset($children->modifier)) {
-            foreach($children->modifier as $child) {
-                $type->addModifier(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->net)) {
-            $type->setNet(FHIRMoney::xmlUnserialize($children->net));
-        }
-        if (isset($children->programCode)) {
-            foreach($children->programCode as $child) {
-                $type->addProgramCode(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->quantity)) {
-            $type->setQuantity(FHIRQuantity::xmlUnserialize($children->quantity));
-        }
-        if (isset($children->revenue)) {
-            $type->setRevenue(FHIRCodeableConcept::xmlUnserialize($children->revenue));
-        }
-        if (isset($children->sequence)) {
-            $type->setSequence(FHIRPositiveInt::xmlUnserialize($children->sequence));
-        }
-        if (isset($attributes->sequence)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_SEQUENCE);
+        if (null !== $n) {
             $pt = $type->getSequence();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->sequence);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setSequence((string)$attributes->sequence);
+                $type->setSequence($n->nodeValue);
             }
         }
-        if (isset($children->service)) {
-            $type->setService(FHIRCodeableConcept::xmlUnserialize($children->service));
-        }
-        if (isset($children->subDetail)) {
-            foreach($children->subDetail as $child) {
-                $type->addSubDetail(FHIRClaimSubDetail::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_FACTOR);
+        if (null !== $n) {
+            $pt = $type->getFactor();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setFactor($n->nodeValue);
             }
         }
-        if (isset($children->udi)) {
-            foreach($children->udi as $child) {
-                $type->addUdi(FHIRReference::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
-        }
-        if (isset($children->unitPrice)) {
-            $type->setUnitPrice(FHIRMoney::xmlUnserialize($children->unitPrice));
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getSequence())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SEQUENCE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getRevenue())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_REVENUE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if (null !== ($v = $this->getCategory())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_CATEGORY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getFactor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getService())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SERVICE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getModifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MODIFIER, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_MODIFIER);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
-        }
-        if (null !== ($v = $this->getNet())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NET, null, $v->_getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getProgramCode())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PROGRAM_CODE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PROGRAM_CODE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_QUANTITY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getRevenue())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REVENUE, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getUnitPrice())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_UNIT_PRICE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getSequence())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getFactor())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_FACTOR);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getService())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getSubDetail())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_DETAIL, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (null !== ($v = $this->getNet())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_NET);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getUdi())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_UDI, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_UDI);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getUnitPrice())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_PRICE, null, $v->_getFHIRXMLNamespace()));
+        if ([] !== ($vs = $this->getSubDetail())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_SUB_DETAIL);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -1432,17 +1459,24 @@ class FHIRClaimDetail extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getSequence())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SEQUENCE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRPositiveInt::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_SEQUENCE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getRevenue())) {
+            $a[self::FIELD_REVENUE] = $v;
+        }
         if (null !== ($v = $this->getCategory())) {
             $a[self::FIELD_CATEGORY] = $v;
         }
-        if (null !== ($v = $this->getFactor())) {
-            $a[self::FIELD_FACTOR] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_FACTOR_EXT] = $enc;
-            }
+        if (null !== ($v = $this->getService())) {
+            $a[self::FIELD_SERVICE] = $v;
         }
         if ([] !== ($vs = $this->getModifier())) {
             $a[self::FIELD_MODIFIER] = [];
@@ -1452,9 +1486,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
                 }
                 $a[self::FIELD_MODIFIER][] = $v;
             }
-        }
-        if (null !== ($v = $this->getNet())) {
-            $a[self::FIELD_NET] = $v;
         }
         if ([] !== ($vs = $this->getProgramCode())) {
             $a[self::FIELD_PROGRAM_CODE] = [];
@@ -1468,29 +1499,21 @@ class FHIRClaimDetail extends FHIRBackboneElement
         if (null !== ($v = $this->getQuantity())) {
             $a[self::FIELD_QUANTITY] = $v;
         }
-        if (null !== ($v = $this->getRevenue())) {
-            $a[self::FIELD_REVENUE] = $v;
+        if (null !== ($v = $this->getUnitPrice())) {
+            $a[self::FIELD_UNIT_PRICE] = $v;
         }
-        if (null !== ($v = $this->getSequence())) {
-            $a[self::FIELD_SEQUENCE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
-                $a[self::FIELD_SEQUENCE_EXT] = $enc;
+        if (null !== ($v = $this->getFactor())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FACTOR] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDecimal::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_FACTOR_EXT] = $ext;
             }
         }
-        if (null !== ($v = $this->getService())) {
-            $a[self::FIELD_SERVICE] = $v;
-        }
-        if ([] !== ($vs = $this->getSubDetail())) {
-            $a[self::FIELD_SUB_DETAIL] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_SUB_DETAIL][] = $v;
-            }
+        if (null !== ($v = $this->getNet())) {
+            $a[self::FIELD_NET] = $v;
         }
         if ([] !== ($vs = $this->getUdi())) {
             $a[self::FIELD_UDI] = [];
@@ -1501,11 +1524,14 @@ class FHIRClaimDetail extends FHIRBackboneElement
                 $a[self::FIELD_UDI][] = $v;
             }
         }
-        if (null !== ($v = $this->getUnitPrice())) {
-            $a[self::FIELD_UNIT_PRICE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getSubDetail())) {
+            $a[self::FIELD_SUB_DETAIL] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SUB_DETAIL][] = $v;
+            }
         }
         return $a;
     }

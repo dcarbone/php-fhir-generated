@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -84,7 +86,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
     const FIELD_PATIENT_CHARACTERISTICS = 'patientCharacteristics';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * Information about a medication that is used to support knowledge.
@@ -101,8 +103,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indication for use that apply to the specific administration guidelines. (choose
-     * any one of indication*, but only one)
+     * Indication for use that apply to the specific administration guidelines.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -113,8 +114,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indication for use that apply to the specific administration guidelines. (choose
-     * any one of indication*, but only one)
+     * Indication for use that apply to the specific administration guidelines.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -164,7 +164,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
                         $this->addDosage(new FHIRMedicationKnowledgeDosage($v));
                     }
                 }
-            } else if ($data[self::FIELD_DOSAGE] instanceof FHIRMedicationKnowledgeDosage) {
+            } elseif ($data[self::FIELD_DOSAGE] instanceof FHIRMedicationKnowledgeDosage) {
                 $this->addDosage($data[self::FIELD_DOSAGE]);
             } else {
                 $this->addDosage(new FHIRMedicationKnowledgeDosage($data[self::FIELD_DOSAGE]));
@@ -196,7 +196,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
                         $this->addPatientCharacteristics(new FHIRMedicationKnowledgePatientCharacteristics($v));
                     }
                 }
-            } else if ($data[self::FIELD_PATIENT_CHARACTERISTICS] instanceof FHIRMedicationKnowledgePatientCharacteristics) {
+            } elseif ($data[self::FIELD_PATIENT_CHARACTERISTICS] instanceof FHIRMedicationKnowledgePatientCharacteristics) {
                 $this->addPatientCharacteristics($data[self::FIELD_PATIENT_CHARACTERISTICS]);
             } else {
                 $this->addPatientCharacteristics(new FHIRMedicationKnowledgePatientCharacteristics($data[self::FIELD_PATIENT_CHARACTERISTICS]));
@@ -218,7 +218,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<MedicationKnowledgeAdministrationGuidelines{$xmlns}></MedicationKnowledgeAdministrationGuidelines>";
@@ -246,6 +246,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      */
     public function addDosage(FHIRMedicationKnowledgeDosage $dosage = null)
     {
+        $this->_trackValueAdded();
         $this->dosage[] = $dosage;
         return $this;
     }
@@ -260,7 +261,10 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      */
     public function setDosage(array $dosage = [])
     {
-        $this->dosage = [];
+        if ([] !== $this->dosage) {
+            $this->_trackValuesRemoved(count($this->dosage));
+            $this->dosage = [];
+        }
         if ([] === $dosage) {
             return $this;
         }
@@ -280,8 +284,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indication for use that apply to the specific administration guidelines. (choose
-     * any one of indication*, but only one)
+     * Indication for use that apply to the specific administration guidelines.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -296,14 +299,14 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indication for use that apply to the specific administration guidelines. (choose
-     * any one of indication*, but only one)
+     * Indication for use that apply to the specific administration guidelines.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $indicationCodeableConcept
      * @return static
      */
     public function setIndicationCodeableConcept(FHIRCodeableConcept $indicationCodeableConcept = null)
     {
+        $this->_trackValueSet($this->indicationCodeableConcept, $indicationCodeableConcept);
         $this->indicationCodeableConcept = $indicationCodeableConcept;
         return $this;
     }
@@ -313,8 +316,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indication for use that apply to the specific administration guidelines. (choose
-     * any one of indication*, but only one)
+     * Indication for use that apply to the specific administration guidelines.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
@@ -328,14 +330,14 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indication for use that apply to the specific administration guidelines. (choose
-     * any one of indication*, but only one)
+     * Indication for use that apply to the specific administration guidelines.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $indicationReference
      * @return static
      */
     public function setIndicationReference(FHIRReference $indicationReference = null)
     {
+        $this->_trackValueSet($this->indicationReference, $indicationReference);
         $this->indicationReference = $indicationReference;
         return $this;
     }
@@ -364,6 +366,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      */
     public function addPatientCharacteristics(FHIRMedicationKnowledgePatientCharacteristics $patientCharacteristics = null)
     {
+        $this->_trackValueAdded();
         $this->patientCharacteristics[] = $patientCharacteristics;
         return $this;
     }
@@ -379,7 +382,10 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      */
     public function setPatientCharacteristics(array $patientCharacteristics = [])
     {
-        $this->patientCharacteristics = [];
+        if ([] !== $this->patientCharacteristics) {
+            $this->_trackValuesRemoved(count($this->patientCharacteristics));
+            $this->patientCharacteristics = [];
+        }
         if ([] === $patientCharacteristics) {
             return $this;
         }
@@ -526,98 +532,119 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRMedicationKnowledgeAdministrationGuidelines::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMedicationKnowledgeAdministrationGuidelines::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRMedicationKnowledgeAdministrationGuidelines::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRMedicationKnowledgeAdministrationGuidelines;
+            $type = new FHIRMedicationKnowledgeAdministrationGuidelines(null);
         } elseif (!is_object($type) || !($type instanceof FHIRMedicationKnowledgeAdministrationGuidelines)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMedicationKnowledgeAdministrationGuidelines::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_DOSAGE === $n->nodeName) {
+                $type->addDosage(FHIRMedicationKnowledgeDosage::xmlUnserialize($n));
+            } elseif (self::FIELD_INDICATION_CODEABLE_CONCEPT === $n->nodeName) {
+                $type->setIndicationCodeableConcept(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_INDICATION_REFERENCE === $n->nodeName) {
+                $type->setIndicationReference(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_PATIENT_CHARACTERISTICS === $n->nodeName) {
+                $type->addPatientCharacteristics(FHIRMedicationKnowledgePatientCharacteristics::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->dosage)) {
-            foreach($children->dosage as $child) {
-                $type->addDosage(FHIRMedicationKnowledgeDosage::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->indicationCodeableConcept)) {
-            $type->setIndicationCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->indicationCodeableConcept));
-        }
-        if (isset($children->indicationReference)) {
-            $type->setIndicationReference(FHIRReference::xmlUnserialize($children->indicationReference));
-        }
-        if (isset($children->patientCharacteristics)) {
-            foreach($children->patientCharacteristics as $child) {
-                $type->addPatientCharacteristics(FHIRMedicationKnowledgePatientCharacteristics::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
         if ([] !== ($vs = $this->getDosage())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DOSAGE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_DOSAGE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if (null !== ($v = $this->getIndicationCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INDICATION_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_INDICATION_CODEABLE_CONCEPT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getIndicationReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INDICATION_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_INDICATION_REFERENCE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getPatientCharacteristics())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT_CHARACTERISTICS, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PATIENT_CHARACTERISTICS);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -649,9 +676,6 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
                 }
                 $a[self::FIELD_PATIENT_CHARACTERISTICS][] = $v;
             }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

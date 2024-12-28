@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,8 +63,10 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  */
 
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
@@ -87,32 +89,14 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMAGING_OBJECT_SELECTION_DOT_SERIES;
-    const FIELD_INSTANCE = 'instance';
     const FIELD_UID = 'uid';
     const FIELD_UID_EXT = '_uid';
     const FIELD_URL = 'url';
     const FIELD_URL_EXT = '_url';
+    const FIELD_INSTANCE = 'instance';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances). The
-     * referenced SOP Instances (images or other content) are for a single patient, and
-     * may be from one or more studies. The referenced SOP Instances have been selected
-     * for a purpose, such as quality assurance, conference, or consult. Reflecting
-     * that range of purposes, typical ImagingObjectSelection resources may include all
-     * SOP Instances in a study (perhaps for sharing through a Health Information
-     * Exchange); key images from multiple studies (for reference by a referring or
-     * treating physician); a multi-frame ultrasound instance ("cine" video clip) and a
-     * set of measurements taken from that instance (for inclusion in a teaching file);
-     * and so on.
-     *
-     * Identity and locating information of the selected DICOM SOP instances.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionInstance[]
-     */
-    protected $instance = [];
+    private $_xmlns = '';
 
     /**
      * An oid represented as a URI
@@ -137,6 +121,24 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     protected $url = null;
+
+    /**
+     * A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances). The
+     * referenced SOP Instances (images or other content) are for a single patient, and
+     * may be from one or more studies. The referenced SOP Instances have been selected
+     * for a purpose, such as quality assurance, conference, or consult. Reflecting
+     * that range of purposes, typical ImagingObjectSelection resources may include all
+     * SOP Instances in a study (perhaps for sharing through a Health Information
+     * Exchange); key images from multiple studies (for reference by a referring or
+     * treating physician); a multi-frame ultrasound instance ("cine" video clip) and a
+     * set of measurements taken from that instance (for inclusion in a teaching file);
+     * and so on.
+     *
+     * Identity and locating information of the selected DICOM SOP instances.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionInstance[]
+     */
+    protected $instance = [];
 
     /**
      * Validation map for fields in type ImagingObjectSelection.Series
@@ -164,6 +166,36 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_UID]) || isset($data[self::FIELD_UID_EXT])) {
+            $value = isset($data[self::FIELD_UID]) ? $data[self::FIELD_UID] : null;
+            $ext = (isset($data[self::FIELD_UID_EXT]) && is_array($data[self::FIELD_UID_EXT])) ? $ext = $data[self::FIELD_UID_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIROid) {
+                    $this->setUid($value);
+                } else if (is_array($value)) {
+                    $this->setUid(new FHIROid(array_merge($ext, $value)));
+                } else {
+                    $this->setUid(new FHIROid([FHIROid::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setUid(new FHIROid($ext));
+            }
+        }
+        if (isset($data[self::FIELD_URL]) || isset($data[self::FIELD_URL_EXT])) {
+            $value = isset($data[self::FIELD_URL]) ? $data[self::FIELD_URL] : null;
+            $ext = (isset($data[self::FIELD_URL_EXT]) && is_array($data[self::FIELD_URL_EXT])) ? $ext = $data[self::FIELD_URL_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setUrl($value);
+                } else if (is_array($value)) {
+                    $this->setUrl(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setUrl(new FHIRUri($ext));
+            }
+        }
         if (isset($data[self::FIELD_INSTANCE])) {
             if (is_array($data[self::FIELD_INSTANCE])) {
                 foreach($data[self::FIELD_INSTANCE] as $v) {
@@ -176,56 +208,10 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
                         $this->addInstance(new FHIRImagingObjectSelectionInstance($v));
                     }
                 }
-            } else if ($data[self::FIELD_INSTANCE] instanceof FHIRImagingObjectSelectionInstance) {
+            } elseif ($data[self::FIELD_INSTANCE] instanceof FHIRImagingObjectSelectionInstance) {
                 $this->addInstance($data[self::FIELD_INSTANCE]);
             } else {
                 $this->addInstance(new FHIRImagingObjectSelectionInstance($data[self::FIELD_INSTANCE]));
-            }
-        }
-        if (isset($data[self::FIELD_UID]) || isset($data[self::FIELD_UID_EXT])) {
-            if (isset($data[self::FIELD_UID])) {
-                $value = $data[self::FIELD_UID];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_UID_EXT]) && is_array($data[self::FIELD_UID_EXT])) {
-                $ext = $data[self::FIELD_UID_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIROid) {
-                    $this->setUid($value);
-                } else if (is_array($value)) {
-                    $this->setUid(new FHIROid(array_merge($ext, $value)));
-                } else {
-                    $this->setUid(new FHIROid([FHIROid::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setUid(new FHIROid($ext));
-            }
-        }
-        if (isset($data[self::FIELD_URL]) || isset($data[self::FIELD_URL_EXT])) {
-            if (isset($data[self::FIELD_URL])) {
-                $value = $data[self::FIELD_URL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_URL_EXT]) && is_array($data[self::FIELD_URL_EXT])) {
-                $ext = $data[self::FIELD_URL_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRUri) {
-                    $this->setUrl($value);
-                } else if (is_array($value)) {
-                    $this->setUrl(new FHIRUri(array_merge($ext, $value)));
-                } else {
-                    $this->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setUrl(new FHIRUri($ext));
             }
         }
     }
@@ -244,10 +230,82 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ImagingObjectSelectionSeries{$xmlns}></ImagingObjectSelectionSeries>";
+    }
+
+    /**
+     * An oid represented as a URI
+     * RFC 3001. See also ISO/IEC 8824:1990 €
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Series instance UID of the SOP instances in the selection.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid
+     */
+    public function getUid()
+    {
+        return $this->uid;
+    }
+
+    /**
+     * An oid represented as a URI
+     * RFC 3001. See also ISO/IEC 8824:1990 €
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Series instance UID of the SOP instances in the selection.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid $uid
+     * @return static
+     */
+    public function setUid($uid = null)
+    {
+        if (null !== $uid && !($uid instanceof FHIROid)) {
+            $uid = new FHIROid($uid);
+        }
+        $this->_trackValueSet($this->uid, $uid);
+        $this->uid = $uid;
+        return $this;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * WADO-RS URL to retrieve the series. Note that this URL retrieves all SOP
+     * instances of the series not only those in the selection.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * WADO-RS URL to retrieve the series. Note that this URL retrieves all SOP
+     * instances of the series not only those in the selection.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $url
+     * @return static
+     */
+    public function setUrl($url = null)
+    {
+        if (null !== $url && !($url instanceof FHIRUri)) {
+            $url = new FHIRUri($url);
+        }
+        $this->_trackValueSet($this->url, $url);
+        $this->url = $url;
+        return $this;
     }
 
     /**
@@ -290,6 +348,7 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
      */
     public function addInstance(FHIRImagingObjectSelectionInstance $instance = null)
     {
+        $this->_trackValueAdded();
         $this->instance[] = $instance;
         return $this;
     }
@@ -313,7 +372,10 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
      */
     public function setInstance(array $instance = [])
     {
-        $this->instance = [];
+        if ([] !== $this->instance) {
+            $this->_trackValuesRemoved(count($this->instance));
+            $this->instance = [];
+        }
         if ([] === $instance) {
             return $this;
         }
@@ -324,86 +386,6 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
                 $this->addInstance(new FHIRImagingObjectSelectionInstance($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * An oid represented as a URI
-     * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Series instance UID of the SOP instances in the selection.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid
-     */
-    public function getUid()
-    {
-        return $this->uid;
-    }
-
-    /**
-     * An oid represented as a URI
-     * RFC 3001. See also ISO/IEC 8824:1990 €
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Series instance UID of the SOP instances in the selection.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid $uid
-     * @return static
-     */
-    public function setUid($uid = null)
-    {
-        if (null === $uid) {
-            $this->uid = null;
-            return $this;
-        }
-        if ($uid instanceof FHIROid) {
-            $this->uid = $uid;
-            return $this;
-        }
-        $this->uid = new FHIROid($uid);
-        return $this;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * WADO-RS URL to retrieve the series. Note that this URL retrieves all SOP
-     * instances of the series not only those in the selection.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * WADO-RS URL to retrieve the series. Note that this URL retrieves all SOP
-     * instances of the series not only those in the selection.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $url
-     * @return static
-     */
-    public function setUrl($url = null)
-    {
-        if (null === $url) {
-            $this->url = null;
-            return $this;
-        }
-        if ($url instanceof FHIRUri) {
-            $this->url = $url;
-            return $this;
-        }
-        $this->url = new FHIRUri($url);
         return $this;
     }
 
@@ -428,13 +410,6 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getInstance())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_INSTANCE, $i)] = $fieldErrs;
-                }
-            }
-        }
         if (null !== ($v = $this->getUid())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_UID] = $fieldErrs;
@@ -445,15 +420,10 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
                 $errs[self::FIELD_URL] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_INSTANCE])) {
-            $v = $this->getInstance();
-            foreach($validationRules[self::FIELD_INSTANCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMAGING_OBJECT_SELECTION_DOT_SERIES, self::FIELD_INSTANCE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INSTANCE])) {
-                        $errs[self::FIELD_INSTANCE] = [];
-                    }
-                    $errs[self::FIELD_INSTANCE][$rule] = $err;
+        if ([] !== ($vs = $this->getInstance())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_INSTANCE, $i)] = $fieldErrs;
                 }
             }
         }
@@ -478,6 +448,18 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
                         $errs[self::FIELD_URL] = [];
                     }
                     $errs[self::FIELD_URL][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INSTANCE])) {
+            $v = $this->getInstance();
+            foreach($validationRules[self::FIELD_INSTANCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMAGING_OBJECT_SELECTION_DOT_SERIES, self::FIELD_INSTANCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INSTANCE])) {
+                        $errs[self::FIELD_INSTANCE] = [];
+                    }
+                    $errs[self::FIELD_INSTANCE][$rule] = $err;
                 }
             }
         }
@@ -521,101 +503,125 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionSeries $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionSeries
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRImagingObjectSelectionSeries::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRImagingObjectSelectionSeries::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRImagingObjectSelectionSeries::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRImagingObjectSelectionSeries;
+            $type = new FHIRImagingObjectSelectionSeries(null);
         } elseif (!is_object($type) || !($type instanceof FHIRImagingObjectSelectionSeries)) {
             throw new \RuntimeException(sprintf(
                 'FHIRImagingObjectSelectionSeries::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionSeries or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_UID === $n->nodeName) {
+                $type->setUid(FHIROid::xmlUnserialize($n));
+            } elseif (self::FIELD_URL === $n->nodeName) {
+                $type->setUrl(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_INSTANCE === $n->nodeName) {
+                $type->addInstance(FHIRImagingObjectSelectionInstance::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->instance)) {
-            foreach($children->instance as $child) {
-                $type->addInstance(FHIRImagingObjectSelectionInstance::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->uid)) {
-            $type->setUid(FHIROid::xmlUnserialize($children->uid));
-        }
-        if (isset($attributes->uid)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_UID);
+        if (null !== $n) {
             $pt = $type->getUid();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->uid);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setUid((string)$attributes->uid);
+                $type->setUid($n->nodeValue);
             }
         }
-        if (isset($children->url)) {
-            $type->setUrl(FHIRUri::xmlUnserialize($children->url));
-        }
-        if (isset($attributes->url)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_URL);
+        if (null !== $n) {
             $pt = $type->getUrl();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->url);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setUrl((string)$attributes->url);
+                $type->setUrl($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getUid())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_UID);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getUrl())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_URL);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if ([] !== ($vs = $this->getInstance())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANCE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_INSTANCE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getUid())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_UID, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getUrl())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_URL, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -624,6 +630,26 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getUid())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_UID] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIROid::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_UID_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getUrl())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_URL] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUri::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_URL_EXT] = $ext;
+            }
+        }
         if ([] !== ($vs = $this->getInstance())) {
             $a[self::FIELD_INSTANCE] = [];
             foreach($vs as $v) {
@@ -632,27 +658,6 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
                 }
                 $a[self::FIELD_INSTANCE][] = $v;
             }
-        }
-        if (null !== ($v = $this->getUid())) {
-            $a[self::FIELD_UID] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIROid::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIROid::FIELD_VALUE]);
-                $a[self::FIELD_UID_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getUrl())) {
-            $a[self::FIELD_URL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_URL_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

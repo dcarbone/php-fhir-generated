@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,10 +64,12 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTe
 
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
@@ -82,33 +84,42 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_CAPABILITY;
-    const FIELD_CONFORMANCE = 'conformance';
+    const FIELD_REQUIRED = 'required';
+    const FIELD_REQUIRED_EXT = '_required';
+    const FIELD_VALIDATED = 'validated';
+    const FIELD_VALIDATED_EXT = '_validated';
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
     const FIELD_DESTINATION = 'destination';
     const FIELD_DESTINATION_EXT = '_destination';
     const FIELD_LINK = 'link';
     const FIELD_LINK_EXT = '_link';
-    const FIELD_REQUIRED = 'required';
-    const FIELD_REQUIRED_EXT = '_required';
-    const FIELD_VALIDATED = 'validated';
-    const FIELD_VALIDATED_EXT = '_validated';
+    const FIELD_CONFORMANCE = 'conformance';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Minimum conformance required of server for test script to execute successfully.
-     * If server does not meet at a minimum the reference conformance definition, then
-     * all tests in this script are skipped.
+     * Whether or not the test execution will require the given capabilities of the
+     * server in order for this test script to execute.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    protected $conformance = null;
+    protected $required = null;
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Whether or not the test execution will validate the given capabilities of the
+     * server in order for this test script to execute.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
+     */
+    protected $validated = null;
 
     /**
      * A sequence of Unicode characters
@@ -146,26 +157,17 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
     protected $link = [];
 
     /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Whether or not the test execution will require the given capabilities of the
-     * server in order for this test script to execute.
+     * Minimum conformance required of server for test script to execute successfully.
+     * If server does not meet at a minimum the reference conformance definition, then
+     * all tests in this script are skipped.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    protected $required = null;
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Whether or not the test execution will validate the given capabilities of the
-     * server in order for this test script to execute.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
-     */
-    protected $validated = null;
+    protected $conformance = null;
 
     /**
      * Validation map for fields in type TestScript.Capability
@@ -189,24 +191,39 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CONFORMANCE])) {
-            if ($data[self::FIELD_CONFORMANCE] instanceof FHIRReference) {
-                $this->setConformance($data[self::FIELD_CONFORMANCE]);
-            } else {
-                $this->setConformance(new FHIRReference($data[self::FIELD_CONFORMANCE]));
+        if (isset($data[self::FIELD_REQUIRED]) || isset($data[self::FIELD_REQUIRED_EXT])) {
+            $value = isset($data[self::FIELD_REQUIRED]) ? $data[self::FIELD_REQUIRED] : null;
+            $ext = (isset($data[self::FIELD_REQUIRED_EXT]) && is_array($data[self::FIELD_REQUIRED_EXT])) ? $ext = $data[self::FIELD_REQUIRED_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setRequired($value);
+                } else if (is_array($value)) {
+                    $this->setRequired(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setRequired(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setRequired(new FHIRBoolean($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALIDATED]) || isset($data[self::FIELD_VALIDATED_EXT])) {
+            $value = isset($data[self::FIELD_VALIDATED]) ? $data[self::FIELD_VALIDATED] : null;
+            $ext = (isset($data[self::FIELD_VALIDATED_EXT]) && is_array($data[self::FIELD_VALIDATED_EXT])) ? $ext = $data[self::FIELD_VALIDATED_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setValidated($value);
+                } else if (is_array($value)) {
+                    $this->setValidated(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setValidated(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValidated(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
-            if (isset($data[self::FIELD_DESCRIPTION])) {
-                $value = $data[self::FIELD_DESCRIPTION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) {
-                $ext = $data[self::FIELD_DESCRIPTION_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_DESCRIPTION]) ? $data[self::FIELD_DESCRIPTION] : null;
+            $ext = (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) ? $ext = $data[self::FIELD_DESCRIPTION_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setDescription($value);
@@ -215,21 +232,13 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
                 } else {
                     $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDescription(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_DESTINATION]) || isset($data[self::FIELD_DESTINATION_EXT])) {
-            if (isset($data[self::FIELD_DESTINATION])) {
-                $value = $data[self::FIELD_DESTINATION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DESTINATION_EXT]) && is_array($data[self::FIELD_DESTINATION_EXT])) {
-                $ext = $data[self::FIELD_DESTINATION_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_DESTINATION]) ? $data[self::FIELD_DESTINATION] : null;
+            $ext = (isset($data[self::FIELD_DESTINATION_EXT]) && is_array($data[self::FIELD_DESTINATION_EXT])) ? $ext = $data[self::FIELD_DESTINATION_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRInteger) {
                     $this->setDestination($value);
@@ -238,21 +247,13 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
                 } else {
                     $this->setDestination(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDestination(new FHIRInteger($ext));
             }
         }
         if (isset($data[self::FIELD_LINK]) || isset($data[self::FIELD_LINK_EXT])) {
-            if (isset($data[self::FIELD_LINK])) {
-                $value = $data[self::FIELD_LINK];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_LINK_EXT]) && is_array($data[self::FIELD_LINK_EXT])) {
-                $ext = $data[self::FIELD_LINK_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_LINK]) ? $data[self::FIELD_LINK] : null;
+            $ext = (isset($data[self::FIELD_LINK_EXT]) && is_array($data[self::FIELD_LINK_EXT])) ? $ext = $data[self::FIELD_LINK_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRUri) {
                     $this->addLink($value);
@@ -274,56 +275,17 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
                 } else {
                     $this->addLink(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addLink(new FHIRUri($iext));
                 }
             }
         }
-        if (isset($data[self::FIELD_REQUIRED]) || isset($data[self::FIELD_REQUIRED_EXT])) {
-            if (isset($data[self::FIELD_REQUIRED])) {
-                $value = $data[self::FIELD_REQUIRED];
+        if (isset($data[self::FIELD_CONFORMANCE])) {
+            if ($data[self::FIELD_CONFORMANCE] instanceof FHIRReference) {
+                $this->setConformance($data[self::FIELD_CONFORMANCE]);
             } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_REQUIRED_EXT]) && is_array($data[self::FIELD_REQUIRED_EXT])) {
-                $ext = $data[self::FIELD_REQUIRED_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setRequired($value);
-                } else if (is_array($value)) {
-                    $this->setRequired(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setRequired(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setRequired(new FHIRBoolean($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALIDATED]) || isset($data[self::FIELD_VALIDATED_EXT])) {
-            if (isset($data[self::FIELD_VALIDATED])) {
-                $value = $data[self::FIELD_VALIDATED];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALIDATED_EXT]) && is_array($data[self::FIELD_VALIDATED_EXT])) {
-                $ext = $data[self::FIELD_VALIDATED_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setValidated($value);
-                } else if (is_array($value)) {
-                    $this->setValidated(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setValidated(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValidated(new FHIRBoolean($ext));
+                $this->setConformance(new FHIRReference($data[self::FIELD_CONFORMANCE]));
             }
         }
     }
@@ -342,10 +304,214 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<TestScriptCapability{$xmlns}></TestScriptCapability>";
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Whether or not the test execution will require the given capabilities of the
+     * server in order for this test script to execute.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
+     */
+    public function getRequired()
+    {
+        return $this->required;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Whether or not the test execution will require the given capabilities of the
+     * server in order for this test script to execute.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $required
+     * @return static
+     */
+    public function setRequired($required = null)
+    {
+        if (null !== $required && !($required instanceof FHIRBoolean)) {
+            $required = new FHIRBoolean($required);
+        }
+        $this->_trackValueSet($this->required, $required);
+        $this->required = $required;
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Whether or not the test execution will validate the given capabilities of the
+     * server in order for this test script to execute.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
+     */
+    public function getValidated()
+    {
+        return $this->validated;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Whether or not the test execution will validate the given capabilities of the
+     * server in order for this test script to execute.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $validated
+     * @return static
+     */
+    public function setValidated($validated = null)
+    {
+        if (null !== $validated && !($validated instanceof FHIRBoolean)) {
+            $validated = new FHIRBoolean($validated);
+        }
+        $this->_trackValueSet($this->validated, $validated);
+        $this->validated = $validated;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Description of the capabilities that this test script is requiring the server to
+     * support.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Description of the capabilities that this test script is requiring the server to
+     * support.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $description
+     * @return static
+     */
+    public function setDescription($description = null)
+    {
+        if (null !== $description && !($description instanceof FHIRString)) {
+            $description = new FHIRString($description);
+        }
+        $this->_trackValueSet($this->description, $description);
+        $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Which server these requirements apply to.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInteger
+     */
+    public function getDestination()
+    {
+        return $this->destination;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Which server these requirements apply to.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInteger $destination
+     * @return static
+     */
+    public function setDestination($destination = null)
+    {
+        if (null !== $destination && !($destination instanceof FHIRInteger)) {
+            $destination = new FHIRInteger($destination);
+        }
+        $this->_trackValueSet($this->destination, $destination);
+        $this->destination = $destination;
+        return $this;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Links to the FHIR specification that describes this interaction and the
+     * resources involved in more detail.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri[]
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Links to the FHIR specification that describes this interaction and the
+     * resources involved in more detail.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $link
+     * @return static
+     */
+    public function addLink($link = null)
+    {
+        if (null !== $link && !($link instanceof FHIRUri)) {
+            $link = new FHIRUri($link);
+        }
+        $this->_trackValueAdded();
+        $this->link[] = $link;
+        return $this;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Links to the FHIR specification that describes this interaction and the
+     * resources involved in more detail.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri[] $link
+     * @return static
+     */
+    public function setLink(array $link = [])
+    {
+        if ([] !== $this->link) {
+            $this->_trackValuesRemoved(count($this->link));
+            $this->link = [];
+        }
+        if ([] === $link) {
+            return $this;
+        }
+        foreach($link as $v) {
+            if ($v instanceof FHIRUri) {
+                $this->addLink($v);
+            } else {
+                $this->addLink(new FHIRUri($v));
+            }
+        }
+        return $this;
     }
 
     /**
@@ -378,228 +544,8 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      */
     public function setConformance(FHIRReference $conformance = null)
     {
+        $this->_trackValueSet($this->conformance, $conformance);
         $this->conformance = $conformance;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Description of the capabilities that this test script is requiring the server to
-     * support.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Description of the capabilities that this test script is requiring the server to
-     * support.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $description
-     * @return static
-     */
-    public function setDescription($description = null)
-    {
-        if (null === $description) {
-            $this->description = null;
-            return $this;
-        }
-        if ($description instanceof FHIRString) {
-            $this->description = $description;
-            return $this;
-        }
-        $this->description = new FHIRString($description);
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Which server these requirements apply to.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInteger
-     */
-    public function getDestination()
-    {
-        return $this->destination;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Which server these requirements apply to.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInteger $destination
-     * @return static
-     */
-    public function setDestination($destination = null)
-    {
-        if (null === $destination) {
-            $this->destination = null;
-            return $this;
-        }
-        if ($destination instanceof FHIRInteger) {
-            $this->destination = $destination;
-            return $this;
-        }
-        $this->destination = new FHIRInteger($destination);
-        return $this;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Links to the FHIR specification that describes this interaction and the
-     * resources involved in more detail.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri[]
-     */
-    public function getLink()
-    {
-        return $this->link;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Links to the FHIR specification that describes this interaction and the
-     * resources involved in more detail.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $link
-     * @return static
-     */
-    public function addLink($link = null)
-    {
-        if (null === $link) {
-            $this->link = [];
-            return $this;
-        }
-        if ($link instanceof FHIRUri) {
-            $this->link[] = $link;
-            return $this;
-        }
-        $this->link[] = new FHIRUri($link);
-        return $this;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Links to the FHIR specification that describes this interaction and the
-     * resources involved in more detail.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri[] $link
-     * @return static
-     */
-    public function setLink(array $link = [])
-    {
-        $this->link = [];
-        if ([] === $link) {
-            return $this;
-        }
-        foreach($link as $v) {
-            if ($v instanceof FHIRUri) {
-                $this->addLink($v);
-            } else {
-                $this->addLink(new FHIRUri($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Whether or not the test execution will require the given capabilities of the
-     * server in order for this test script to execute.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
-     */
-    public function getRequired()
-    {
-        return $this->required;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Whether or not the test execution will require the given capabilities of the
-     * server in order for this test script to execute.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $required
-     * @return static
-     */
-    public function setRequired($required = null)
-    {
-        if (null === $required) {
-            $this->required = null;
-            return $this;
-        }
-        if ($required instanceof FHIRBoolean) {
-            $this->required = $required;
-            return $this;
-        }
-        $this->required = new FHIRBoolean($required);
-        return $this;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Whether or not the test execution will validate the given capabilities of the
-     * server in order for this test script to execute.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
-     */
-    public function getValidated()
-    {
-        return $this->validated;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Whether or not the test execution will validate the given capabilities of the
-     * server in order for this test script to execute.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $validated
-     * @return static
-     */
-    public function setValidated($validated = null)
-    {
-        if (null === $validated) {
-            $this->validated = null;
-            return $this;
-        }
-        if ($validated instanceof FHIRBoolean) {
-            $this->validated = $validated;
-            return $this;
-        }
-        $this->validated = new FHIRBoolean($validated);
         return $this;
     }
 
@@ -624,9 +570,14 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getConformance())) {
+        if (null !== ($v = $this->getRequired())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CONFORMANCE] = $fieldErrs;
+                $errs[self::FIELD_REQUIRED] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getValidated())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALIDATED] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDescription())) {
@@ -646,25 +597,32 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getRequired())) {
+        if (null !== ($v = $this->getConformance())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_REQUIRED] = $fieldErrs;
+                $errs[self::FIELD_CONFORMANCE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getValidated())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALIDATED] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_CONFORMANCE])) {
-            $v = $this->getConformance();
-            foreach($validationRules[self::FIELD_CONFORMANCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_CAPABILITY, self::FIELD_CONFORMANCE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_REQUIRED])) {
+            $v = $this->getRequired();
+            foreach($validationRules[self::FIELD_REQUIRED] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_CAPABILITY, self::FIELD_REQUIRED, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CONFORMANCE])) {
-                        $errs[self::FIELD_CONFORMANCE] = [];
+                    if (!isset($errs[self::FIELD_REQUIRED])) {
+                        $errs[self::FIELD_REQUIRED] = [];
                     }
-                    $errs[self::FIELD_CONFORMANCE][$rule] = $err;
+                    $errs[self::FIELD_REQUIRED][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALIDATED])) {
+            $v = $this->getValidated();
+            foreach($validationRules[self::FIELD_VALIDATED] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_CAPABILITY, self::FIELD_VALIDATED, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALIDATED])) {
+                        $errs[self::FIELD_VALIDATED] = [];
+                    }
+                    $errs[self::FIELD_VALIDATED][$rule] = $err;
                 }
             }
         }
@@ -704,27 +662,15 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_REQUIRED])) {
-            $v = $this->getRequired();
-            foreach($validationRules[self::FIELD_REQUIRED] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_CAPABILITY, self::FIELD_REQUIRED, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_CONFORMANCE])) {
+            $v = $this->getConformance();
+            foreach($validationRules[self::FIELD_CONFORMANCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_CAPABILITY, self::FIELD_CONFORMANCE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REQUIRED])) {
-                        $errs[self::FIELD_REQUIRED] = [];
+                    if (!isset($errs[self::FIELD_CONFORMANCE])) {
+                        $errs[self::FIELD_CONFORMANCE] = [];
                     }
-                    $errs[self::FIELD_REQUIRED][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VALIDATED])) {
-            $v = $this->getValidated();
-            foreach($validationRules[self::FIELD_VALIDATED] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_CAPABILITY, self::FIELD_VALIDATED, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALIDATED])) {
-                        $errs[self::FIELD_VALIDATED] = [];
-                    }
-                    $errs[self::FIELD_VALIDATED][$rule] = $err;
+                    $errs[self::FIELD_CONFORMANCE][$rule] = $err;
                 }
             }
         }
@@ -768,135 +714,173 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptCapability $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptCapability
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRTestScriptCapability::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRTestScriptCapability::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRTestScriptCapability::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRTestScriptCapability;
+            $type = new FHIRTestScriptCapability(null);
         } elseif (!is_object($type) || !($type instanceof FHIRTestScriptCapability)) {
             throw new \RuntimeException(sprintf(
                 'FHIRTestScriptCapability::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptCapability or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_REQUIRED === $n->nodeName) {
+                $type->setRequired(FHIRBoolean::xmlUnserialize($n));
+            } elseif (self::FIELD_VALIDATED === $n->nodeName) {
+                $type->setValidated(FHIRBoolean::xmlUnserialize($n));
+            } elseif (self::FIELD_DESCRIPTION === $n->nodeName) {
+                $type->setDescription(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_DESTINATION === $n->nodeName) {
+                $type->setDestination(FHIRInteger::xmlUnserialize($n));
+            } elseif (self::FIELD_LINK === $n->nodeName) {
+                $type->addLink(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_CONFORMANCE === $n->nodeName) {
+                $type->setConformance(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->conformance)) {
-            $type->setConformance(FHIRReference::xmlUnserialize($children->conformance));
-        }
-        if (isset($children->description)) {
-            $type->setDescription(FHIRString::xmlUnserialize($children->description));
-        }
-        if (isset($attributes->description)) {
-            $pt = $type->getDescription();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->description);
-            } else {
-                $type->setDescription((string)$attributes->description);
-            }
-        }
-        if (isset($children->destination)) {
-            $type->setDestination(FHIRInteger::xmlUnserialize($children->destination));
-        }
-        if (isset($attributes->destination)) {
-            $pt = $type->getDestination();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->destination);
-            } else {
-                $type->setDestination((string)$attributes->destination);
-            }
-        }
-        if (isset($children->link)) {
-            foreach($children->link as $child) {
-                $type->addLink(FHIRUri::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->required)) {
-            $type->setRequired(FHIRBoolean::xmlUnserialize($children->required));
-        }
-        if (isset($attributes->required)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_REQUIRED);
+        if (null !== $n) {
             $pt = $type->getRequired();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->required);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setRequired((string)$attributes->required);
+                $type->setRequired($n->nodeValue);
             }
         }
-        if (isset($children->validated)) {
-            $type->setValidated(FHIRBoolean::xmlUnserialize($children->validated));
-        }
-        if (isset($attributes->validated)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_VALIDATED);
+        if (null !== $n) {
             $pt = $type->getValidated();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->validated);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setValidated((string)$attributes->validated);
+                $type->setValidated($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_DESCRIPTION);
+        if (null !== $n) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setDescription($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_DESTINATION);
+        if (null !== $n) {
+            $pt = $type->getDestination();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setDestination($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_LINK);
+        if (null !== $n) {
+            $pt = $type->getLink();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->addLink($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getConformance())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONFORMANCE, null, $v->_getFHIRXMLNamespace()));
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getRequired())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_REQUIRED);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValidated())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALIDATED);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DESCRIPTION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getDestination())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESTINATION, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DESTINATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getLink())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_LINK, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_LINK);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getRequired())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIRED, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getConformance())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_CONFORMANCE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getValidated())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDATED, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -905,70 +889,72 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getConformance())) {
-            $a[self::FIELD_CONFORMANCE] = $v;
+        if (null !== ($v = $this->getRequired())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_REQUIRED] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBoolean::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_REQUIRED_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValidated())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALIDATED] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBoolean::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALIDATED_EXT] = $ext;
+            }
         }
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DESCRIPTION_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getDestination())) {
-            $a[self::FIELD_DESTINATION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_DESTINATION_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESTINATION] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRInteger::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DESTINATION_EXT] = $ext;
             }
         }
         if ([] !== ($vs = $this->getLink())) {
-            $a[self::FIELD_LINK] = [];
-            $encs = [];
-            $encValued = false;
+            $vals = [];
+            $exts = [];
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_LINK][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRUri::FIELD_VALUE]) || array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRUri::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext[FHIRUri::FIELD_VALUE]);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
                 }
             }
-            if ($encValued) {
-                $a[self::FIELD_LINK_EXT] = $encs;
+            if ([] !== $vals) {
+                $a[self::FIELD_LINK] = $vals;
+            }
+            if ([] !== $exts) {
+                $a[self::FIELD_LINK_EXT] = $exts;
             }
         }
-        if (null !== ($v = $this->getRequired())) {
-            $a[self::FIELD_REQUIRED] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_REQUIRED_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getValidated())) {
-            $a[self::FIELD_VALIDATED] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_VALIDATED_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getConformance())) {
+            $a[self::FIELD_CONFORMANCE] = $v;
         }
         return $a;
     }

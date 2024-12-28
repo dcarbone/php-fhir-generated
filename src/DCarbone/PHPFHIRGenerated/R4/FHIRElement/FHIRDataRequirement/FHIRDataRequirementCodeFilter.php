@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -82,31 +84,16 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DATA_REQUIREMENT_DOT_CODE_FILTER;
-    const FIELD_CODE = 'code';
     const FIELD_PATH = 'path';
     const FIELD_PATH_EXT = '_path';
     const FIELD_SEARCH_PARAM = 'searchParam';
     const FIELD_SEARCH_PARAM_EXT = '_searchParam';
     const FIELD_VALUE_SET = 'valueSet';
     const FIELD_VALUE_SET_EXT = '_valueSet';
+    const FIELD_CODE = 'code';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The codes for the code filter. If values are given, the filter will return only
-     * those data items for which the code-valued attribute specified by the path has a
-     * value that is one of the specified codes. If codes are specified in addition to
-     * a value set, the filter returns items matching a code in the value set or one of
-     * the specified codes.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[]
-     */
-    protected $code = [];
+    private $_xmlns = '';
 
     /**
      * A sequence of Unicode characters
@@ -155,6 +142,21 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     protected $valueSet = null;
 
     /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The codes for the code filter. If values are given, the filter will return only
+     * those data items for which the code-valued attribute specified by the path has a
+     * value that is one of the specified codes. If codes are specified in addition to
+     * a value set, the filter returns items matching a code in the value set or one of
+     * the specified codes.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[]
+     */
+    protected $code = [];
+
+    /**
      * Validation map for fields in type DataRequirement.CodeFilter
      * @var array
      */
@@ -176,6 +178,51 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_PATH]) || isset($data[self::FIELD_PATH_EXT])) {
+            $value = isset($data[self::FIELD_PATH]) ? $data[self::FIELD_PATH] : null;
+            $ext = (isset($data[self::FIELD_PATH_EXT]) && is_array($data[self::FIELD_PATH_EXT])) ? $ext = $data[self::FIELD_PATH_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setPath($value);
+                } else if (is_array($value)) {
+                    $this->setPath(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setPath(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPath(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_SEARCH_PARAM]) || isset($data[self::FIELD_SEARCH_PARAM_EXT])) {
+            $value = isset($data[self::FIELD_SEARCH_PARAM]) ? $data[self::FIELD_SEARCH_PARAM] : null;
+            $ext = (isset($data[self::FIELD_SEARCH_PARAM_EXT]) && is_array($data[self::FIELD_SEARCH_PARAM_EXT])) ? $ext = $data[self::FIELD_SEARCH_PARAM_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setSearchParam($value);
+                } else if (is_array($value)) {
+                    $this->setSearchParam(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setSearchParam(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setSearchParam(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_SET]) || isset($data[self::FIELD_VALUE_SET_EXT])) {
+            $value = isset($data[self::FIELD_VALUE_SET]) ? $data[self::FIELD_VALUE_SET] : null;
+            $ext = (isset($data[self::FIELD_VALUE_SET_EXT]) && is_array($data[self::FIELD_VALUE_SET_EXT])) ? $ext = $data[self::FIELD_VALUE_SET_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRCanonical) {
+                    $this->setValueSet($value);
+                } else if (is_array($value)) {
+                    $this->setValueSet(new FHIRCanonical(array_merge($ext, $value)));
+                } else {
+                    $this->setValueSet(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueSet(new FHIRCanonical($ext));
+            }
+        }
         if (isset($data[self::FIELD_CODE])) {
             if (is_array($data[self::FIELD_CODE])) {
                 foreach($data[self::FIELD_CODE] as $v) {
@@ -188,79 +235,10 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
                         $this->addCode(new FHIRCoding($v));
                     }
                 }
-            } else if ($data[self::FIELD_CODE] instanceof FHIRCoding) {
+            } elseif ($data[self::FIELD_CODE] instanceof FHIRCoding) {
                 $this->addCode($data[self::FIELD_CODE]);
             } else {
                 $this->addCode(new FHIRCoding($data[self::FIELD_CODE]));
-            }
-        }
-        if (isset($data[self::FIELD_PATH]) || isset($data[self::FIELD_PATH_EXT])) {
-            if (isset($data[self::FIELD_PATH])) {
-                $value = $data[self::FIELD_PATH];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PATH_EXT]) && is_array($data[self::FIELD_PATH_EXT])) {
-                $ext = $data[self::FIELD_PATH_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setPath($value);
-                } else if (is_array($value)) {
-                    $this->setPath(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setPath(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPath(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_SEARCH_PARAM]) || isset($data[self::FIELD_SEARCH_PARAM_EXT])) {
-            if (isset($data[self::FIELD_SEARCH_PARAM])) {
-                $value = $data[self::FIELD_SEARCH_PARAM];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SEARCH_PARAM_EXT]) && is_array($data[self::FIELD_SEARCH_PARAM_EXT])) {
-                $ext = $data[self::FIELD_SEARCH_PARAM_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setSearchParam($value);
-                } else if (is_array($value)) {
-                    $this->setSearchParam(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setSearchParam(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setSearchParam(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_SET]) || isset($data[self::FIELD_VALUE_SET_EXT])) {
-            if (isset($data[self::FIELD_VALUE_SET])) {
-                $value = $data[self::FIELD_VALUE_SET];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_SET_EXT]) && is_array($data[self::FIELD_VALUE_SET_EXT])) {
-                $ext = $data[self::FIELD_VALUE_SET_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRCanonical) {
-                    $this->setValueSet($value);
-                } else if (is_array($value)) {
-                    $this->setValueSet(new FHIRCanonical(array_merge($ext, $value)));
-                } else {
-                    $this->setValueSet(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueSet(new FHIRCanonical($ext));
             }
         }
     }
@@ -279,78 +257,10 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<DataRequirementCodeFilter{$xmlns}></DataRequirementCodeFilter>";
-    }
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The codes for the code filter. If values are given, the filter will return only
-     * those data items for which the code-valued attribute specified by the path has a
-     * value that is one of the specified codes. If codes are specified in addition to
-     * a value set, the filter returns items matching a code in the value set or one of
-     * the specified codes.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[]
-     */
-    public function getCode()
-    {
-        return $this->code;
-    }
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The codes for the code filter. If values are given, the filter will return only
-     * those data items for which the code-valued attribute specified by the path has a
-     * value that is one of the specified codes. If codes are specified in addition to
-     * a value set, the filter returns items matching a code in the value set or one of
-     * the specified codes.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $code
-     * @return static
-     */
-    public function addCode(FHIRCoding $code = null)
-    {
-        $this->code[] = $code;
-        return $this;
-    }
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The codes for the code filter. If values are given, the filter will return only
-     * those data items for which the code-valued attribute specified by the path has a
-     * value that is one of the specified codes. If codes are specified in addition to
-     * a value set, the filter returns items matching a code in the value set or one of
-     * the specified codes.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[] $code
-     * @return static
-     */
-    public function setCode(array $code = [])
-    {
-        $this->code = [];
-        if ([] === $code) {
-            return $this;
-        }
-        foreach($code as $v) {
-            if ($v instanceof FHIRCoding) {
-                $this->addCode($v);
-            } else {
-                $this->addCode(new FHIRCoding($v));
-            }
-        }
-        return $this;
     }
 
     /**
@@ -393,15 +303,11 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      */
     public function setPath($path = null)
     {
-        if (null === $path) {
-            $this->path = null;
-            return $this;
+        if (null !== $path && !($path instanceof FHIRString)) {
+            $path = new FHIRString($path);
         }
-        if ($path instanceof FHIRString) {
-            $this->path = $path;
-            return $this;
-        }
-        $this->path = new FHIRString($path);
+        $this->_trackValueSet($this->path, $path);
+        $this->path = $path;
         return $this;
     }
 
@@ -435,15 +341,11 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      */
     public function setSearchParam($searchParam = null)
     {
-        if (null === $searchParam) {
-            $this->searchParam = null;
-            return $this;
+        if (null !== $searchParam && !($searchParam instanceof FHIRString)) {
+            $searchParam = new FHIRString($searchParam);
         }
-        if ($searchParam instanceof FHIRString) {
-            $this->searchParam = $searchParam;
-            return $this;
-        }
-        $this->searchParam = new FHIRString($searchParam);
+        $this->_trackValueSet($this->searchParam, $searchParam);
+        $this->searchParam = $searchParam;
         return $this;
     }
 
@@ -481,15 +383,83 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      */
     public function setValueSet($valueSet = null)
     {
-        if (null === $valueSet) {
-            $this->valueSet = null;
+        if (null !== $valueSet && !($valueSet instanceof FHIRCanonical)) {
+            $valueSet = new FHIRCanonical($valueSet);
+        }
+        $this->_trackValueSet($this->valueSet, $valueSet);
+        $this->valueSet = $valueSet;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The codes for the code filter. If values are given, the filter will return only
+     * those data items for which the code-valued attribute specified by the path has a
+     * value that is one of the specified codes. If codes are specified in addition to
+     * a value set, the filter returns items matching a code in the value set or one of
+     * the specified codes.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[]
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The codes for the code filter. If values are given, the filter will return only
+     * those data items for which the code-valued attribute specified by the path has a
+     * value that is one of the specified codes. If codes are specified in addition to
+     * a value set, the filter returns items matching a code in the value set or one of
+     * the specified codes.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding $code
+     * @return static
+     */
+    public function addCode(FHIRCoding $code = null)
+    {
+        $this->_trackValueAdded();
+        $this->code[] = $code;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The codes for the code filter. If values are given, the filter will return only
+     * those data items for which the code-valued attribute specified by the path has a
+     * value that is one of the specified codes. If codes are specified in addition to
+     * a value set, the filter returns items matching a code in the value set or one of
+     * the specified codes.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[] $code
+     * @return static
+     */
+    public function setCode(array $code = [])
+    {
+        if ([] !== $this->code) {
+            $this->_trackValuesRemoved(count($this->code));
+            $this->code = [];
+        }
+        if ([] === $code) {
             return $this;
         }
-        if ($valueSet instanceof FHIRCanonical) {
-            $this->valueSet = $valueSet;
-            return $this;
+        foreach($code as $v) {
+            if ($v instanceof FHIRCoding) {
+                $this->addCode($v);
+            } else {
+                $this->addCode(new FHIRCoding($v));
+            }
         }
-        $this->valueSet = new FHIRCanonical($valueSet);
         return $this;
     }
 
@@ -514,13 +484,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getCode())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_CODE, $i)] = $fieldErrs;
-                }
-            }
-        }
         if (null !== ($v = $this->getPath())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_PATH] = $fieldErrs;
@@ -536,15 +499,10 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
                 $errs[self::FIELD_VALUE_SET] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CODE])) {
-            $v = $this->getCode();
-            foreach($validationRules[self::FIELD_CODE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DATA_REQUIREMENT_DOT_CODE_FILTER, self::FIELD_CODE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CODE])) {
-                        $errs[self::FIELD_CODE] = [];
-                    }
-                    $errs[self::FIELD_CODE][$rule] = $err;
+        if ([] !== ($vs = $this->getCode())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_CODE, $i)] = $fieldErrs;
                 }
             }
         }
@@ -584,6 +542,18 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_CODE])) {
+            $v = $this->getCode();
+            foreach($validationRules[self::FIELD_CODE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DATA_REQUIREMENT_DOT_CODE_FILTER, self::FIELD_CODE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CODE])) {
+                        $errs[self::FIELD_CODE] = [];
+                    }
+                    $errs[self::FIELD_CODE][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_EXTENSION])) {
             $v = $this->getExtension();
             foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
@@ -612,115 +582,139 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRDataRequirementCodeFilter::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRDataRequirementCodeFilter::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRDataRequirementCodeFilter::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRDataRequirementCodeFilter;
+            $type = new FHIRDataRequirementCodeFilter(null);
         } elseif (!is_object($type) || !($type instanceof FHIRDataRequirementCodeFilter)) {
             throw new \RuntimeException(sprintf(
                 'FHIRDataRequirementCodeFilter::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_PATH === $n->nodeName) {
+                $type->setPath(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_SEARCH_PARAM === $n->nodeName) {
+                $type->setSearchParam(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_SET === $n->nodeName) {
+                $type->setValueSet(FHIRCanonical::xmlUnserialize($n));
+            } elseif (self::FIELD_CODE === $n->nodeName) {
+                $type->addCode(FHIRCoding::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->code)) {
-            foreach($children->code as $child) {
-                $type->addCode(FHIRCoding::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->path)) {
-            $type->setPath(FHIRString::xmlUnserialize($children->path));
-        }
-        if (isset($attributes->path)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_PATH);
+        if (null !== $n) {
             $pt = $type->getPath();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->path);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setPath((string)$attributes->path);
+                $type->setPath($n->nodeValue);
             }
         }
-        if (isset($children->searchParam)) {
-            $type->setSearchParam(FHIRString::xmlUnserialize($children->searchParam));
-        }
-        if (isset($attributes->searchParam)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_SEARCH_PARAM);
+        if (null !== $n) {
             $pt = $type->getSearchParam();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->searchParam);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setSearchParam((string)$attributes->searchParam);
+                $type->setSearchParam($n->nodeValue);
             }
         }
-        if (isset($children->valueSet)) {
-            $type->setValueSet(FHIRCanonical::xmlUnserialize($children->valueSet));
-        }
-        if (isset($attributes->valueSet)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE_SET);
+        if (null !== $n) {
             $pt = $type->getValueSet();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueSet);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setValueSet((string)$attributes->valueSet);
+                $type->setValueSet($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getPath())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PATH);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getSearchParam())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SEARCH_PARAM);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueSet())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_SET);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if ([] !== ($vs = $this->getCode())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_CODE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getPath())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATH, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getSearchParam())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEARCH_PARAM, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueSet())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_SET, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -729,6 +723,36 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getPath())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PATH] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PATH_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getSearchParam())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SEARCH_PARAM] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_SEARCH_PARAM_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueSet())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_VALUE_SET] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRCanonical::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_VALUE_SET_EXT] = $ext;
+            }
+        }
         if ([] !== ($vs = $this->getCode())) {
             $a[self::FIELD_CODE] = [];
             foreach($vs as $v) {
@@ -737,36 +761,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
                 }
                 $a[self::FIELD_CODE][] = $v;
             }
-        }
-        if (null !== ($v = $this->getPath())) {
-            $a[self::FIELD_PATH] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_PATH_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getSearchParam())) {
-            $a[self::FIELD_SEARCH_PARAM] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_SEARCH_PARAM_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getValueSet())) {
-            $a[self::FIELD_VALUE_SET] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCanonical::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCanonical::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_SET_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

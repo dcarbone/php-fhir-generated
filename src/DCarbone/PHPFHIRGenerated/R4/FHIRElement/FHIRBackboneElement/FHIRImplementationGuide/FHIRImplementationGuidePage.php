@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,10 +63,12 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  */
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidePageGeneration;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -83,61 +85,39 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_PAGE;
-    const FIELD_GENERATION = 'generation';
-    const FIELD_GENERATION_EXT = '_generation';
-    const FIELD_NAME_REFERENCE = 'nameReference';
     const FIELD_NAME_URL = 'nameUrl';
     const FIELD_NAME_URL_EXT = '_nameUrl';
-    const FIELD_PAGE = 'page';
+    const FIELD_NAME_REFERENCE = 'nameReference';
     const FIELD_TITLE = 'title';
     const FIELD_TITLE_EXT = '_title';
+    const FIELD_GENERATION = 'generation';
+    const FIELD_GENERATION_EXT = '_generation';
+    const FIELD_PAGE = 'page';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A code that indicates how the page is generated.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A code that indicates how the page is generated.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidePageGeneration
-     */
-    protected $generation = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The source address for the page. (choose any one of name*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $nameReference = null;
+    private $_xmlns = '';
 
     /**
      * A URI that is a literal reference
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The source address for the page. (choose any one of name*, but only one)
+     * The source address for the page.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
     protected $nameUrl = null;
 
     /**
-     * A set of rules of how a particular interoperability or standards problem is
-     * solved - typically through the use of FHIR resources. This resource is used to
-     * gather all the parts of an implementation guide into a logical whole and to
-     * publish a computable definition of all the parts.
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Nested Pages/Sections under this page.
+     * The source address for the page.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    protected $page = [];
+    protected $nameReference = null;
 
     /**
      * A sequence of Unicode characters
@@ -150,6 +130,28 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected $title = null;
+
+    /**
+     * A code that indicates how the page is generated.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A code that indicates how the page is generated.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidePageGeneration
+     */
+    protected $generation = null;
+
+    /**
+     * A set of rules of how a particular interoperability or standards problem is
+     * solved - typically through the use of FHIR resources. This resource is used to
+     * gather all the parts of an implementation guide into a logical whole and to
+     * publish a computable definition of all the parts.
+     *
+     * Nested Pages/Sections under this page.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage[]
+     */
+    protected $page = [];
 
     /**
      * Validation map for fields in type ImplementationGuide.Page
@@ -173,27 +175,19 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_GENERATION]) || isset($data[self::FIELD_GENERATION_EXT])) {
-            if (isset($data[self::FIELD_GENERATION])) {
-                $value = $data[self::FIELD_GENERATION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_GENERATION_EXT]) && is_array($data[self::FIELD_GENERATION_EXT])) {
-                $ext = $data[self::FIELD_GENERATION_EXT];
-            } else {
-                $ext = [];
-            }
+        if (isset($data[self::FIELD_NAME_URL]) || isset($data[self::FIELD_NAME_URL_EXT])) {
+            $value = isset($data[self::FIELD_NAME_URL]) ? $data[self::FIELD_NAME_URL] : null;
+            $ext = (isset($data[self::FIELD_NAME_URL_EXT]) && is_array($data[self::FIELD_NAME_URL_EXT])) ? $ext = $data[self::FIELD_NAME_URL_EXT] : $ext = [];
             if (null !== $value) {
-                if ($value instanceof FHIRGuidePageGeneration) {
-                    $this->setGeneration($value);
+                if ($value instanceof FHIRUrl) {
+                    $this->setNameUrl($value);
                 } else if (is_array($value)) {
-                    $this->setGeneration(new FHIRGuidePageGeneration(array_merge($ext, $value)));
+                    $this->setNameUrl(new FHIRUrl(array_merge($ext, $value)));
                 } else {
-                    $this->setGeneration(new FHIRGuidePageGeneration([FHIRGuidePageGeneration::FIELD_VALUE => $value] + $ext));
+                    $this->setNameUrl(new FHIRUrl([FHIRUrl::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                $this->setGeneration(new FHIRGuidePageGeneration($ext));
+            } elseif ([] !== $ext) {
+                $this->setNameUrl(new FHIRUrl($ext));
             }
         }
         if (isset($data[self::FIELD_NAME_REFERENCE])) {
@@ -203,27 +197,34 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
                 $this->setNameReference(new FHIRReference($data[self::FIELD_NAME_REFERENCE]));
             }
         }
-        if (isset($data[self::FIELD_NAME_URL]) || isset($data[self::FIELD_NAME_URL_EXT])) {
-            if (isset($data[self::FIELD_NAME_URL])) {
-                $value = $data[self::FIELD_NAME_URL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_NAME_URL_EXT]) && is_array($data[self::FIELD_NAME_URL_EXT])) {
-                $ext = $data[self::FIELD_NAME_URL_EXT];
-            } else {
-                $ext = [];
-            }
+        if (isset($data[self::FIELD_TITLE]) || isset($data[self::FIELD_TITLE_EXT])) {
+            $value = isset($data[self::FIELD_TITLE]) ? $data[self::FIELD_TITLE] : null;
+            $ext = (isset($data[self::FIELD_TITLE_EXT]) && is_array($data[self::FIELD_TITLE_EXT])) ? $ext = $data[self::FIELD_TITLE_EXT] : $ext = [];
             if (null !== $value) {
-                if ($value instanceof FHIRUrl) {
-                    $this->setNameUrl($value);
+                if ($value instanceof FHIRString) {
+                    $this->setTitle($value);
                 } else if (is_array($value)) {
-                    $this->setNameUrl(new FHIRUrl(array_merge($ext, $value)));
+                    $this->setTitle(new FHIRString(array_merge($ext, $value)));
                 } else {
-                    $this->setNameUrl(new FHIRUrl([FHIRUrl::FIELD_VALUE => $value] + $ext));
+                    $this->setTitle(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                $this->setNameUrl(new FHIRUrl($ext));
+            } elseif ([] !== $ext) {
+                $this->setTitle(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_GENERATION]) || isset($data[self::FIELD_GENERATION_EXT])) {
+            $value = isset($data[self::FIELD_GENERATION]) ? $data[self::FIELD_GENERATION] : null;
+            $ext = (isset($data[self::FIELD_GENERATION_EXT]) && is_array($data[self::FIELD_GENERATION_EXT])) ? $ext = $data[self::FIELD_GENERATION_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRGuidePageGeneration) {
+                    $this->setGeneration($value);
+                } else if (is_array($value)) {
+                    $this->setGeneration(new FHIRGuidePageGeneration(array_merge($ext, $value)));
+                } else {
+                    $this->setGeneration(new FHIRGuidePageGeneration([FHIRGuidePageGeneration::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setGeneration(new FHIRGuidePageGeneration($ext));
             }
         }
         if (isset($data[self::FIELD_PAGE])) {
@@ -238,33 +239,10 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
                         $this->addPage(new FHIRImplementationGuidePage($v));
                     }
                 }
-            } else if ($data[self::FIELD_PAGE] instanceof FHIRImplementationGuidePage) {
+            } elseif ($data[self::FIELD_PAGE] instanceof FHIRImplementationGuidePage) {
                 $this->addPage($data[self::FIELD_PAGE]);
             } else {
                 $this->addPage(new FHIRImplementationGuidePage($data[self::FIELD_PAGE]));
-            }
-        }
-        if (isset($data[self::FIELD_TITLE]) || isset($data[self::FIELD_TITLE_EXT])) {
-            if (isset($data[self::FIELD_TITLE])) {
-                $value = $data[self::FIELD_TITLE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TITLE_EXT]) && is_array($data[self::FIELD_TITLE_EXT])) {
-                $ext = $data[self::FIELD_TITLE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setTitle($value);
-                } else if (is_array($value)) {
-                    $this->setTitle(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setTitle(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setTitle(new FHIRString($ext));
             }
         }
     }
@@ -283,68 +261,10 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ImplementationGuidePage{$xmlns}></ImplementationGuidePage>";
-    }
-
-    /**
-     * A code that indicates how the page is generated.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A code that indicates how the page is generated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidePageGeneration
-     */
-    public function getGeneration()
-    {
-        return $this->generation;
-    }
-
-    /**
-     * A code that indicates how the page is generated.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A code that indicates how the page is generated.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidePageGeneration $generation
-     * @return static
-     */
-    public function setGeneration(FHIRGuidePageGeneration $generation = null)
-    {
-        $this->generation = $generation;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The source address for the page. (choose any one of name*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getNameReference()
-    {
-        return $this->nameReference;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The source address for the page. (choose any one of name*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $nameReference
-     * @return static
-     */
-    public function setNameReference(FHIRReference $nameReference = null)
-    {
-        $this->nameReference = $nameReference;
-        return $this;
     }
 
     /**
@@ -352,7 +272,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The source address for the page. (choose any one of name*, but only one)
+     * The source address for the page.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
@@ -366,81 +286,49 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
-     * The source address for the page. (choose any one of name*, but only one)
+     * The source address for the page.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl $nameUrl
      * @return static
      */
     public function setNameUrl($nameUrl = null)
     {
-        if (null === $nameUrl) {
-            $this->nameUrl = null;
-            return $this;
+        if (null !== $nameUrl && !($nameUrl instanceof FHIRUrl)) {
+            $nameUrl = new FHIRUrl($nameUrl);
         }
-        if ($nameUrl instanceof FHIRUrl) {
-            $this->nameUrl = $nameUrl;
-            return $this;
-        }
-        $this->nameUrl = new FHIRUrl($nameUrl);
+        $this->_trackValueSet($this->nameUrl, $nameUrl);
+        $this->nameUrl = $nameUrl;
         return $this;
     }
 
     /**
-     * A set of rules of how a particular interoperability or standards problem is
-     * solved - typically through the use of FHIR resources. This resource is used to
-     * gather all the parts of an implementation guide into a logical whole and to
-     * publish a computable definition of all the parts.
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Nested Pages/Sections under this page.
+     * The source address for the page.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage[]
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    public function getPage()
+    public function getNameReference()
     {
-        return $this->page;
+        return $this->nameReference;
     }
 
     /**
-     * A set of rules of how a particular interoperability or standards problem is
-     * solved - typically through the use of FHIR resources. This resource is used to
-     * gather all the parts of an implementation guide into a logical whole and to
-     * publish a computable definition of all the parts.
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Nested Pages/Sections under this page.
+     * The source address for the page.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $page
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $nameReference
      * @return static
      */
-    public function addPage(FHIRImplementationGuidePage $page = null)
+    public function setNameReference(FHIRReference $nameReference = null)
     {
-        $this->page[] = $page;
-        return $this;
-    }
-
-    /**
-     * A set of rules of how a particular interoperability or standards problem is
-     * solved - typically through the use of FHIR resources. This resource is used to
-     * gather all the parts of an implementation guide into a logical whole and to
-     * publish a computable definition of all the parts.
-     *
-     * Nested Pages/Sections under this page.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage[] $page
-     * @return static
-     */
-    public function setPage(array $page = [])
-    {
-        $this->page = [];
-        if ([] === $page) {
-            return $this;
-        }
-        foreach($page as $v) {
-            if ($v instanceof FHIRImplementationGuidePage) {
-                $this->addPage($v);
-            } else {
-                $this->addPage(new FHIRImplementationGuidePage($v));
-            }
-        }
+        $this->_trackValueSet($this->nameReference, $nameReference);
+        $this->nameReference = $nameReference;
         return $this;
     }
 
@@ -472,15 +360,103 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      */
     public function setTitle($title = null)
     {
-        if (null === $title) {
-            $this->title = null;
+        if (null !== $title && !($title instanceof FHIRString)) {
+            $title = new FHIRString($title);
+        }
+        $this->_trackValueSet($this->title, $title);
+        $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * A code that indicates how the page is generated.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A code that indicates how the page is generated.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidePageGeneration
+     */
+    public function getGeneration()
+    {
+        return $this->generation;
+    }
+
+    /**
+     * A code that indicates how the page is generated.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A code that indicates how the page is generated.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidePageGeneration $generation
+     * @return static
+     */
+    public function setGeneration(FHIRGuidePageGeneration $generation = null)
+    {
+        $this->_trackValueSet($this->generation, $generation);
+        $this->generation = $generation;
+        return $this;
+    }
+
+    /**
+     * A set of rules of how a particular interoperability or standards problem is
+     * solved - typically through the use of FHIR resources. This resource is used to
+     * gather all the parts of an implementation guide into a logical whole and to
+     * publish a computable definition of all the parts.
+     *
+     * Nested Pages/Sections under this page.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage[]
+     */
+    public function getPage()
+    {
+        return $this->page;
+    }
+
+    /**
+     * A set of rules of how a particular interoperability or standards problem is
+     * solved - typically through the use of FHIR resources. This resource is used to
+     * gather all the parts of an implementation guide into a logical whole and to
+     * publish a computable definition of all the parts.
+     *
+     * Nested Pages/Sections under this page.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $page
+     * @return static
+     */
+    public function addPage(FHIRImplementationGuidePage $page = null)
+    {
+        $this->_trackValueAdded();
+        $this->page[] = $page;
+        return $this;
+    }
+
+    /**
+     * A set of rules of how a particular interoperability or standards problem is
+     * solved - typically through the use of FHIR resources. This resource is used to
+     * gather all the parts of an implementation guide into a logical whole and to
+     * publish a computable definition of all the parts.
+     *
+     * Nested Pages/Sections under this page.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage[] $page
+     * @return static
+     */
+    public function setPage(array $page = [])
+    {
+        if ([] !== $this->page) {
+            $this->_trackValuesRemoved(count($this->page));
+            $this->page = [];
+        }
+        if ([] === $page) {
             return $this;
         }
-        if ($title instanceof FHIRString) {
-            $this->title = $title;
-            return $this;
+        foreach($page as $v) {
+            if ($v instanceof FHIRImplementationGuidePage) {
+                $this->addPage($v);
+            } else {
+                $this->addPage(new FHIRImplementationGuidePage($v));
+            }
         }
-        $this->title = new FHIRString($title);
         return $this;
     }
 
@@ -505,9 +481,9 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getGeneration())) {
+        if (null !== ($v = $this->getNameUrl())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_GENERATION] = $fieldErrs;
+                $errs[self::FIELD_NAME_URL] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getNameReference())) {
@@ -515,44 +491,20 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
                 $errs[self::FIELD_NAME_REFERENCE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getNameUrl())) {
+        if (null !== ($v = $this->getTitle())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_NAME_URL] = $fieldErrs;
+                $errs[self::FIELD_TITLE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getGeneration())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_GENERATION] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getPage())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_PAGE, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getTitle())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TITLE] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_GENERATION])) {
-            $v = $this->getGeneration();
-            foreach($validationRules[self::FIELD_GENERATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_PAGE, self::FIELD_GENERATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_GENERATION])) {
-                        $errs[self::FIELD_GENERATION] = [];
-                    }
-                    $errs[self::FIELD_GENERATION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_NAME_REFERENCE])) {
-            $v = $this->getNameReference();
-            foreach($validationRules[self::FIELD_NAME_REFERENCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_PAGE, self::FIELD_NAME_REFERENCE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_NAME_REFERENCE])) {
-                        $errs[self::FIELD_NAME_REFERENCE] = [];
-                    }
-                    $errs[self::FIELD_NAME_REFERENCE][$rule] = $err;
                 }
             }
         }
@@ -568,15 +520,15 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PAGE])) {
-            $v = $this->getPage();
-            foreach($validationRules[self::FIELD_PAGE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_PAGE, self::FIELD_PAGE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_NAME_REFERENCE])) {
+            $v = $this->getNameReference();
+            foreach($validationRules[self::FIELD_NAME_REFERENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_PAGE, self::FIELD_NAME_REFERENCE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PAGE])) {
-                        $errs[self::FIELD_PAGE] = [];
+                    if (!isset($errs[self::FIELD_NAME_REFERENCE])) {
+                        $errs[self::FIELD_NAME_REFERENCE] = [];
                     }
-                    $errs[self::FIELD_PAGE][$rule] = $err;
+                    $errs[self::FIELD_NAME_REFERENCE][$rule] = $err;
                 }
             }
         }
@@ -589,6 +541,30 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
                         $errs[self::FIELD_TITLE] = [];
                     }
                     $errs[self::FIELD_TITLE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_GENERATION])) {
+            $v = $this->getGeneration();
+            foreach($validationRules[self::FIELD_GENERATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_PAGE, self::FIELD_GENERATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_GENERATION])) {
+                        $errs[self::FIELD_GENERATION] = [];
+                    }
+                    $errs[self::FIELD_GENERATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PAGE])) {
+            $v = $this->getPage();
+            foreach($validationRules[self::FIELD_PAGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_PAGE, self::FIELD_PAGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PAGE])) {
+                        $errs[self::FIELD_PAGE] = [];
+                    }
+                    $errs[self::FIELD_PAGE][$rule] = $err;
                 }
             }
         }
@@ -632,113 +608,139 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRImplementationGuidePage::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRImplementationGuidePage::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRImplementationGuidePage::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRImplementationGuidePage;
+            $type = new FHIRImplementationGuidePage(null);
         } elseif (!is_object($type) || !($type instanceof FHIRImplementationGuidePage)) {
             throw new \RuntimeException(sprintf(
                 'FHIRImplementationGuidePage::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_NAME_URL === $n->nodeName) {
+                $type->setNameUrl(FHIRUrl::xmlUnserialize($n));
+            } elseif (self::FIELD_NAME_REFERENCE === $n->nodeName) {
+                $type->setNameReference(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_TITLE === $n->nodeName) {
+                $type->setTitle(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_GENERATION === $n->nodeName) {
+                $type->setGeneration(FHIRGuidePageGeneration::xmlUnserialize($n));
+            } elseif (self::FIELD_PAGE === $n->nodeName) {
+                $type->addPage(FHIRImplementationGuidePage::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->generation)) {
-            $type->setGeneration(FHIRGuidePageGeneration::xmlUnserialize($children->generation));
-        }
-        if (isset($children->nameReference)) {
-            $type->setNameReference(FHIRReference::xmlUnserialize($children->nameReference));
-        }
-        if (isset($children->nameUrl)) {
-            $type->setNameUrl(FHIRUrl::xmlUnserialize($children->nameUrl));
-        }
-        if (isset($attributes->nameUrl)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_NAME_URL);
+        if (null !== $n) {
             $pt = $type->getNameUrl();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->nameUrl);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setNameUrl((string)$attributes->nameUrl);
+                $type->setNameUrl($n->nodeValue);
             }
         }
-        if (isset($children->page)) {
-            foreach($children->page as $child) {
-                $type->addPage(FHIRImplementationGuidePage::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->title)) {
-            $type->setTitle(FHIRString::xmlUnserialize($children->title));
-        }
-        if (isset($attributes->title)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_TITLE);
+        if (null !== $n) {
             $pt = $type->getTitle();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->title);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setTitle((string)$attributes->title);
+                $type->setTitle($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getGeneration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_GENERATION, null, $v->_getFHIRXMLNamespace()));
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getNameUrl())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_NAME_URL);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getNameReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_NAME_REFERENCE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getNameUrl())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME_URL, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getTitle())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TITLE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getGeneration())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_GENERATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getPage())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PAGE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PAGE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getTitle())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TITLE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -747,25 +749,37 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getGeneration())) {
-            $a[self::FIELD_GENERATION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRGuidePageGeneration::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRGuidePageGeneration::FIELD_VALUE]);
-                $a[self::FIELD_GENERATION_EXT] = $enc;
+        if (null !== ($v = $this->getNameUrl())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NAME_URL] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUrl::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_NAME_URL_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getNameReference())) {
             $a[self::FIELD_NAME_REFERENCE] = $v;
         }
-        if (null !== ($v = $this->getNameUrl())) {
-            $a[self::FIELD_NAME_URL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUrl::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUrl::FIELD_VALUE]);
-                $a[self::FIELD_NAME_URL_EXT] = $enc;
+        if (null !== ($v = $this->getTitle())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TITLE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_TITLE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getGeneration())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_GENERATION] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRGuidePageGeneration::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_GENERATION_EXT] = $ext;
             }
         }
         if ([] !== ($vs = $this->getPage())) {
@@ -776,18 +790,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
                 }
                 $a[self::FIELD_PAGE][] = $v;
             }
-        }
-        if (null !== ($v = $this->getTitle())) {
-            $a[self::FIELD_TITLE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_TITLE_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

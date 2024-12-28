@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,11 +63,13 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  */
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -85,40 +87,17 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_REQUEST_DOT_DISPENSE_REQUEST;
-    const FIELD_DISPENSE_INTERVAL = 'dispenseInterval';
-    const FIELD_EXPECTED_SUPPLY_DURATION = 'expectedSupplyDuration';
     const FIELD_INITIAL_FILL = 'initialFill';
+    const FIELD_DISPENSE_INTERVAL = 'dispenseInterval';
+    const FIELD_VALIDITY_PERIOD = 'validityPeriod';
     const FIELD_NUMBER_OF_REPEATS_ALLOWED = 'numberOfRepeatsAllowed';
     const FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT = '_numberOfRepeatsAllowed';
-    const FIELD_PERFORMER = 'performer';
     const FIELD_QUANTITY = 'quantity';
-    const FIELD_VALIDITY_PERIOD = 'validityPeriod';
+    const FIELD_EXPECTED_SUPPLY_DURATION = 'expectedSupplyDuration';
+    const FIELD_PERFORMER = 'performer';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The minimum period of time that must occur between dispenses of the medication.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
-     */
-    protected $dispenseInterval = null;
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies the period time over which the supplied product is expected to be
-     * used, or the length of time the dispense is expected to last.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
-     */
-    protected $expectedSupplyDuration = null;
+    private $_xmlns = '';
 
     /**
      * An order or request for both supply of the medication and the instructions for
@@ -132,6 +111,29 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestInitialFill
      */
     protected $initialFill = null;
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The minimum period of time that must occur between dispenses of the medication.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     */
+    protected $dispenseInterval = null;
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This indicates the validity period of a prescription (stale dating the
+     * Prescription).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     */
+    protected $validityPeriod = null;
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -151,17 +153,6 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     protected $numberOfRepeatsAllowed = null;
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the intended dispensing Organization specified by the prescriber.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $performer = null;
-
-    /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
@@ -175,16 +166,27 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     protected $quantity = null;
 
     /**
-     * A time period defined by a start and end date and optionally time.
+     * A length of time.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * This indicates the validity period of a prescription (stale dating the
-     * Prescription).
+     * Identifies the period time over which the supplied product is expected to be
+     * used, or the length of time the dispense is expected to last.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    protected $validityPeriod = null;
+    protected $expectedSupplyDuration = null;
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the intended dispensing Organization specified by the prescriber.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected $performer = null;
 
     /**
      * Validation map for fields in type MedicationRequest.DispenseRequest
@@ -208,20 +210,6 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_DISPENSE_INTERVAL])) {
-            if ($data[self::FIELD_DISPENSE_INTERVAL] instanceof FHIRDuration) {
-                $this->setDispenseInterval($data[self::FIELD_DISPENSE_INTERVAL]);
-            } else {
-                $this->setDispenseInterval(new FHIRDuration($data[self::FIELD_DISPENSE_INTERVAL]));
-            }
-        }
-        if (isset($data[self::FIELD_EXPECTED_SUPPLY_DURATION])) {
-            if ($data[self::FIELD_EXPECTED_SUPPLY_DURATION] instanceof FHIRDuration) {
-                $this->setExpectedSupplyDuration($data[self::FIELD_EXPECTED_SUPPLY_DURATION]);
-            } else {
-                $this->setExpectedSupplyDuration(new FHIRDuration($data[self::FIELD_EXPECTED_SUPPLY_DURATION]));
-            }
-        }
         if (isset($data[self::FIELD_INITIAL_FILL])) {
             if ($data[self::FIELD_INITIAL_FILL] instanceof FHIRMedicationRequestInitialFill) {
                 $this->setInitialFill($data[self::FIELD_INITIAL_FILL]);
@@ -229,17 +217,23 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
                 $this->setInitialFill(new FHIRMedicationRequestInitialFill($data[self::FIELD_INITIAL_FILL]));
             }
         }
+        if (isset($data[self::FIELD_DISPENSE_INTERVAL])) {
+            if ($data[self::FIELD_DISPENSE_INTERVAL] instanceof FHIRDuration) {
+                $this->setDispenseInterval($data[self::FIELD_DISPENSE_INTERVAL]);
+            } else {
+                $this->setDispenseInterval(new FHIRDuration($data[self::FIELD_DISPENSE_INTERVAL]));
+            }
+        }
+        if (isset($data[self::FIELD_VALIDITY_PERIOD])) {
+            if ($data[self::FIELD_VALIDITY_PERIOD] instanceof FHIRPeriod) {
+                $this->setValidityPeriod($data[self::FIELD_VALIDITY_PERIOD]);
+            } else {
+                $this->setValidityPeriod(new FHIRPeriod($data[self::FIELD_VALIDITY_PERIOD]));
+            }
+        }
         if (isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]) || isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT])) {
-            if (isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED])) {
-                $value = $data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT]) && is_array($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT])) {
-                $ext = $data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]) ? $data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED] : null;
+            $ext = (isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT]) && is_array($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT])) ? $ext = $data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRUnsignedInt) {
                     $this->setNumberOfRepeatsAllowed($value);
@@ -248,15 +242,8 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
                 } else {
                     $this->setNumberOfRepeatsAllowed(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setNumberOfRepeatsAllowed(new FHIRUnsignedInt($ext));
-            }
-        }
-        if (isset($data[self::FIELD_PERFORMER])) {
-            if ($data[self::FIELD_PERFORMER] instanceof FHIRReference) {
-                $this->setPerformer($data[self::FIELD_PERFORMER]);
-            } else {
-                $this->setPerformer(new FHIRReference($data[self::FIELD_PERFORMER]));
             }
         }
         if (isset($data[self::FIELD_QUANTITY])) {
@@ -266,11 +253,18 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
         }
-        if (isset($data[self::FIELD_VALIDITY_PERIOD])) {
-            if ($data[self::FIELD_VALIDITY_PERIOD] instanceof FHIRPeriod) {
-                $this->setValidityPeriod($data[self::FIELD_VALIDITY_PERIOD]);
+        if (isset($data[self::FIELD_EXPECTED_SUPPLY_DURATION])) {
+            if ($data[self::FIELD_EXPECTED_SUPPLY_DURATION] instanceof FHIRDuration) {
+                $this->setExpectedSupplyDuration($data[self::FIELD_EXPECTED_SUPPLY_DURATION]);
             } else {
-                $this->setValidityPeriod(new FHIRPeriod($data[self::FIELD_VALIDITY_PERIOD]));
+                $this->setExpectedSupplyDuration(new FHIRDuration($data[self::FIELD_EXPECTED_SUPPLY_DURATION]));
+            }
+        }
+        if (isset($data[self::FIELD_PERFORMER])) {
+            if ($data[self::FIELD_PERFORMER] instanceof FHIRReference) {
+                $this->setPerformer($data[self::FIELD_PERFORMER]);
+            } else {
+                $this->setPerformer(new FHIRReference($data[self::FIELD_PERFORMER]));
             }
         }
     }
@@ -289,72 +283,10 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<MedicationRequestDispenseRequest{$xmlns}></MedicationRequestDispenseRequest>";
-    }
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The minimum period of time that must occur between dispenses of the medication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
-     */
-    public function getDispenseInterval()
-    {
-        return $this->dispenseInterval;
-    }
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The minimum period of time that must occur between dispenses of the medication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $dispenseInterval
-     * @return static
-     */
-    public function setDispenseInterval(FHIRDuration $dispenseInterval = null)
-    {
-        $this->dispenseInterval = $dispenseInterval;
-        return $this;
-    }
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies the period time over which the supplied product is expected to be
-     * used, or the length of time the dispense is expected to last.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
-     */
-    public function getExpectedSupplyDuration()
-    {
-        return $this->expectedSupplyDuration;
-    }
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies the period time over which the supplied product is expected to be
-     * used, or the length of time the dispense is expected to last.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
-     * @return static
-     */
-    public function setExpectedSupplyDuration(FHIRDuration $expectedSupplyDuration = null)
-    {
-        $this->expectedSupplyDuration = $expectedSupplyDuration;
-        return $this;
     }
 
     /**
@@ -387,7 +319,72 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      */
     public function setInitialFill(FHIRMedicationRequestInitialFill $initialFill = null)
     {
+        $this->_trackValueSet($this->initialFill, $initialFill);
         $this->initialFill = $initialFill;
+        return $this;
+    }
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The minimum period of time that must occur between dispenses of the medication.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     */
+    public function getDispenseInterval()
+    {
+        return $this->dispenseInterval;
+    }
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The minimum period of time that must occur between dispenses of the medication.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $dispenseInterval
+     * @return static
+     */
+    public function setDispenseInterval(FHIRDuration $dispenseInterval = null)
+    {
+        $this->_trackValueSet($this->dispenseInterval, $dispenseInterval);
+        $this->dispenseInterval = $dispenseInterval;
+        return $this;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This indicates the validity period of a prescription (stale dating the
+     * Prescription).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     */
+    public function getValidityPeriod()
+    {
+        return $this->validityPeriod;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This indicates the validity period of a prescription (stale dating the
+     * Prescription).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $validityPeriod
+     * @return static
+     */
+    public function setValidityPeriod(FHIRPeriod $validityPeriod = null)
+    {
+        $this->_trackValueSet($this->validityPeriod, $validityPeriod);
+        $this->validityPeriod = $validityPeriod;
         return $this;
     }
 
@@ -429,45 +426,11 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      */
     public function setNumberOfRepeatsAllowed($numberOfRepeatsAllowed = null)
     {
-        if (null === $numberOfRepeatsAllowed) {
-            $this->numberOfRepeatsAllowed = null;
-            return $this;
+        if (null !== $numberOfRepeatsAllowed && !($numberOfRepeatsAllowed instanceof FHIRUnsignedInt)) {
+            $numberOfRepeatsAllowed = new FHIRUnsignedInt($numberOfRepeatsAllowed);
         }
-        if ($numberOfRepeatsAllowed instanceof FHIRUnsignedInt) {
-            $this->numberOfRepeatsAllowed = $numberOfRepeatsAllowed;
-            return $this;
-        }
-        $this->numberOfRepeatsAllowed = new FHIRUnsignedInt($numberOfRepeatsAllowed);
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the intended dispensing Organization specified by the prescriber.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getPerformer()
-    {
-        return $this->performer;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the intended dispensing Organization specified by the prescriber.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $performer
-     * @return static
-     */
-    public function setPerformer(FHIRReference $performer = null)
-    {
-        $this->performer = $performer;
+        $this->_trackValueSet($this->numberOfRepeatsAllowed, $numberOfRepeatsAllowed);
+        $this->numberOfRepeatsAllowed = $numberOfRepeatsAllowed;
         return $this;
     }
 
@@ -501,39 +464,72 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      */
     public function setQuantity(FHIRQuantity $quantity = null)
     {
+        $this->_trackValueSet($this->quantity, $quantity);
         $this->quantity = $quantity;
         return $this;
     }
 
     /**
-     * A time period defined by a start and end date and optionally time.
+     * A length of time.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * This indicates the validity period of a prescription (stale dating the
-     * Prescription).
+     * Identifies the period time over which the supplied product is expected to be
+     * used, or the length of time the dispense is expected to last.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
-    public function getValidityPeriod()
+    public function getExpectedSupplyDuration()
     {
-        return $this->validityPeriod;
+        return $this->expectedSupplyDuration;
     }
 
     /**
-     * A time period defined by a start and end date and optionally time.
+     * A length of time.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * This indicates the validity period of a prescription (stale dating the
-     * Prescription).
+     * Identifies the period time over which the supplied product is expected to be
+     * used, or the length of time the dispense is expected to last.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $validityPeriod
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $expectedSupplyDuration
      * @return static
      */
-    public function setValidityPeriod(FHIRPeriod $validityPeriod = null)
+    public function setExpectedSupplyDuration(FHIRDuration $expectedSupplyDuration = null)
     {
-        $this->validityPeriod = $validityPeriod;
+        $this->_trackValueSet($this->expectedSupplyDuration, $expectedSupplyDuration);
+        $this->expectedSupplyDuration = $expectedSupplyDuration;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the intended dispensing Organization specified by the prescriber.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getPerformer()
+    {
+        return $this->performer;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the intended dispensing Organization specified by the prescriber.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $performer
+     * @return static
+     */
+    public function setPerformer(FHIRReference $performer = null)
+    {
+        $this->_trackValueSet($this->performer, $performer);
+        $this->performer = $performer;
         return $this;
     }
 
@@ -558,19 +554,19 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getInitialFill())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INITIAL_FILL] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getDispenseInterval())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_DISPENSE_INTERVAL] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getExpectedSupplyDuration())) {
+        if (null !== ($v = $this->getValidityPeriod())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_EXPECTED_SUPPLY_DURATION] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getInitialFill())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_INITIAL_FILL] = $fieldErrs;
+                $errs[self::FIELD_VALIDITY_PERIOD] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getNumberOfRepeatsAllowed())) {
@@ -578,19 +574,31 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
                 $errs[self::FIELD_NUMBER_OF_REPEATS_ALLOWED] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getPerformer())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PERFORMER] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getQuantity())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_QUANTITY] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getValidityPeriod())) {
+        if (null !== ($v = $this->getExpectedSupplyDuration())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALIDITY_PERIOD] = $fieldErrs;
+                $errs[self::FIELD_EXPECTED_SUPPLY_DURATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPerformer())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PERFORMER] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_INITIAL_FILL])) {
+            $v = $this->getInitialFill();
+            foreach($validationRules[self::FIELD_INITIAL_FILL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_REQUEST_DOT_DISPENSE_REQUEST, self::FIELD_INITIAL_FILL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INITIAL_FILL])) {
+                        $errs[self::FIELD_INITIAL_FILL] = [];
+                    }
+                    $errs[self::FIELD_INITIAL_FILL][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_DISPENSE_INTERVAL])) {
@@ -605,27 +613,15 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_EXPECTED_SUPPLY_DURATION])) {
-            $v = $this->getExpectedSupplyDuration();
-            foreach($validationRules[self::FIELD_EXPECTED_SUPPLY_DURATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_REQUEST_DOT_DISPENSE_REQUEST, self::FIELD_EXPECTED_SUPPLY_DURATION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VALIDITY_PERIOD])) {
+            $v = $this->getValidityPeriod();
+            foreach($validationRules[self::FIELD_VALIDITY_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_REQUEST_DOT_DISPENSE_REQUEST, self::FIELD_VALIDITY_PERIOD, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EXPECTED_SUPPLY_DURATION])) {
-                        $errs[self::FIELD_EXPECTED_SUPPLY_DURATION] = [];
+                    if (!isset($errs[self::FIELD_VALIDITY_PERIOD])) {
+                        $errs[self::FIELD_VALIDITY_PERIOD] = [];
                     }
-                    $errs[self::FIELD_EXPECTED_SUPPLY_DURATION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_INITIAL_FILL])) {
-            $v = $this->getInitialFill();
-            foreach($validationRules[self::FIELD_INITIAL_FILL] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_REQUEST_DOT_DISPENSE_REQUEST, self::FIELD_INITIAL_FILL, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INITIAL_FILL])) {
-                        $errs[self::FIELD_INITIAL_FILL] = [];
-                    }
-                    $errs[self::FIELD_INITIAL_FILL][$rule] = $err;
+                    $errs[self::FIELD_VALIDITY_PERIOD][$rule] = $err;
                 }
             }
         }
@@ -641,18 +637,6 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PERFORMER])) {
-            $v = $this->getPerformer();
-            foreach($validationRules[self::FIELD_PERFORMER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_REQUEST_DOT_DISPENSE_REQUEST, self::FIELD_PERFORMER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PERFORMER])) {
-                        $errs[self::FIELD_PERFORMER] = [];
-                    }
-                    $errs[self::FIELD_PERFORMER][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_QUANTITY])) {
             $v = $this->getQuantity();
             foreach($validationRules[self::FIELD_QUANTITY] as $rule => $constraint) {
@@ -665,15 +649,27 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALIDITY_PERIOD])) {
-            $v = $this->getValidityPeriod();
-            foreach($validationRules[self::FIELD_VALIDITY_PERIOD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_REQUEST_DOT_DISPENSE_REQUEST, self::FIELD_VALIDITY_PERIOD, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_EXPECTED_SUPPLY_DURATION])) {
+            $v = $this->getExpectedSupplyDuration();
+            foreach($validationRules[self::FIELD_EXPECTED_SUPPLY_DURATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_REQUEST_DOT_DISPENSE_REQUEST, self::FIELD_EXPECTED_SUPPLY_DURATION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALIDITY_PERIOD])) {
-                        $errs[self::FIELD_VALIDITY_PERIOD] = [];
+                    if (!isset($errs[self::FIELD_EXPECTED_SUPPLY_DURATION])) {
+                        $errs[self::FIELD_EXPECTED_SUPPLY_DURATION] = [];
                     }
-                    $errs[self::FIELD_VALIDITY_PERIOD][$rule] = $err;
+                    $errs[self::FIELD_EXPECTED_SUPPLY_DURATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PERFORMER])) {
+            $v = $this->getPerformer();
+            foreach($validationRules[self::FIELD_PERFORMER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_REQUEST_DOT_DISPENSE_REQUEST, self::FIELD_PERFORMER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PERFORMER])) {
+                        $errs[self::FIELD_PERFORMER] = [];
+                    }
+                    $errs[self::FIELD_PERFORMER][$rule] = $err;
                 }
             }
         }
@@ -717,110 +713,139 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestDispenseRequest $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestDispenseRequest
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRMedicationRequestDispenseRequest::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMedicationRequestDispenseRequest::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRMedicationRequestDispenseRequest::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRMedicationRequestDispenseRequest;
+            $type = new FHIRMedicationRequestDispenseRequest(null);
         } elseif (!is_object($type) || !($type instanceof FHIRMedicationRequestDispenseRequest)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMedicationRequestDispenseRequest::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestDispenseRequest or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_INITIAL_FILL === $n->nodeName) {
+                $type->setInitialFill(FHIRMedicationRequestInitialFill::xmlUnserialize($n));
+            } elseif (self::FIELD_DISPENSE_INTERVAL === $n->nodeName) {
+                $type->setDispenseInterval(FHIRDuration::xmlUnserialize($n));
+            } elseif (self::FIELD_VALIDITY_PERIOD === $n->nodeName) {
+                $type->setValidityPeriod(FHIRPeriod::xmlUnserialize($n));
+            } elseif (self::FIELD_NUMBER_OF_REPEATS_ALLOWED === $n->nodeName) {
+                $type->setNumberOfRepeatsAllowed(FHIRUnsignedInt::xmlUnserialize($n));
+            } elseif (self::FIELD_QUANTITY === $n->nodeName) {
+                $type->setQuantity(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_EXPECTED_SUPPLY_DURATION === $n->nodeName) {
+                $type->setExpectedSupplyDuration(FHIRDuration::xmlUnserialize($n));
+            } elseif (self::FIELD_PERFORMER === $n->nodeName) {
+                $type->setPerformer(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->dispenseInterval)) {
-            $type->setDispenseInterval(FHIRDuration::xmlUnserialize($children->dispenseInterval));
-        }
-        if (isset($children->expectedSupplyDuration)) {
-            $type->setExpectedSupplyDuration(FHIRDuration::xmlUnserialize($children->expectedSupplyDuration));
-        }
-        if (isset($children->initialFill)) {
-            $type->setInitialFill(FHIRMedicationRequestInitialFill::xmlUnserialize($children->initialFill));
-        }
-        if (isset($children->numberOfRepeatsAllowed)) {
-            $type->setNumberOfRepeatsAllowed(FHIRUnsignedInt::xmlUnserialize($children->numberOfRepeatsAllowed));
-        }
-        if (isset($attributes->numberOfRepeatsAllowed)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_NUMBER_OF_REPEATS_ALLOWED);
+        if (null !== $n) {
             $pt = $type->getNumberOfRepeatsAllowed();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->numberOfRepeatsAllowed);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setNumberOfRepeatsAllowed((string)$attributes->numberOfRepeatsAllowed);
+                $type->setNumberOfRepeatsAllowed($n->nodeValue);
             }
         }
-        if (isset($children->performer)) {
-            $type->setPerformer(FHIRReference::xmlUnserialize($children->performer));
-        }
-        if (isset($children->quantity)) {
-            $type->setQuantity(FHIRQuantity::xmlUnserialize($children->quantity));
-        }
-        if (isset($children->validityPeriod)) {
-            $type->setValidityPeriod(FHIRPeriod::xmlUnserialize($children->validityPeriod));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getDispenseInterval())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DISPENSE_INTERVAL, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getExpectedSupplyDuration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXPECTED_SUPPLY_DURATION, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getInitialFill())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL_FILL, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_INITIAL_FILL);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getNumberOfRepeatsAllowed())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NUMBER_OF_REPEATS_ALLOWED, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPerformer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getDispenseInterval())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DISPENSE_INTERVAL);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getValidityPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDITY_PERIOD, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALIDITY_PERIOD);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getNumberOfRepeatsAllowed())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_NUMBER_OF_REPEATS_ALLOWED);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getQuantity())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_QUANTITY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getExpectedSupplyDuration())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_EXPECTED_SUPPLY_DURATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getPerformer())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PERFORMER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -829,35 +854,33 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getDispenseInterval())) {
-            $a[self::FIELD_DISPENSE_INTERVAL] = $v;
-        }
-        if (null !== ($v = $this->getExpectedSupplyDuration())) {
-            $a[self::FIELD_EXPECTED_SUPPLY_DURATION] = $v;
-        }
         if (null !== ($v = $this->getInitialFill())) {
             $a[self::FIELD_INITIAL_FILL] = $v;
         }
-        if (null !== ($v = $this->getNumberOfRepeatsAllowed())) {
-            $a[self::FIELD_NUMBER_OF_REPEATS_ALLOWED] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUnsignedInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUnsignedInt::FIELD_VALUE]);
-                $a[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getPerformer())) {
-            $a[self::FIELD_PERFORMER] = $v;
-        }
-        if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
+        if (null !== ($v = $this->getDispenseInterval())) {
+            $a[self::FIELD_DISPENSE_INTERVAL] = $v;
         }
         if (null !== ($v = $this->getValidityPeriod())) {
             $a[self::FIELD_VALIDITY_PERIOD] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getNumberOfRepeatsAllowed())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NUMBER_OF_REPEATS_ALLOWED] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUnsignedInt::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getQuantity())) {
+            $a[self::FIELD_QUANTITY] = $v;
+        }
+        if (null !== ($v = $this->getExpectedSupplyDuration())) {
+            $a[self::FIELD_EXPECTED_SUPPLY_DURATION] = $v;
+        }
+        if (null !== ($v = $this->getPerformer())) {
+            $a[self::FIELD_PERFORMER] = $v;
         }
         return $a;
     }

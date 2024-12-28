@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,18 +72,25 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimRespon
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseTotal;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRClaimProcessingCodes;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUse;
 use DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeMap;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim
@@ -97,42 +104,231 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE;
-    const FIELD_ADD_ITEM = 'addItem';
-    const FIELD_ADJUDICATION = 'adjudication';
-    const FIELD_COMMUNICATION_REQUEST = 'communicationRequest';
-    const FIELD_CREATED = 'created';
-    const FIELD_CREATED_EXT = '_created';
-    const FIELD_DISPOSITION = 'disposition';
-    const FIELD_DISPOSITION_EXT = '_disposition';
-    const FIELD_ERROR = 'error';
-    const FIELD_FORM = 'form';
-    const FIELD_FORM_CODE = 'formCode';
-    const FIELD_FUNDS_RESERVE = 'fundsReserve';
     const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_INSURANCE = 'insurance';
-    const FIELD_INSURER = 'insurer';
-    const FIELD_ITEM = 'item';
-    const FIELD_OUTCOME = 'outcome';
-    const FIELD_OUTCOME_EXT = '_outcome';
-    const FIELD_PATIENT = 'patient';
-    const FIELD_PAYEE_TYPE = 'payeeType';
-    const FIELD_PAYMENT = 'payment';
-    const FIELD_PRE_AUTH_PERIOD = 'preAuthPeriod';
-    const FIELD_PRE_AUTH_REF = 'preAuthRef';
-    const FIELD_PRE_AUTH_REF_EXT = '_preAuthRef';
-    const FIELD_PROCESS_NOTE = 'processNote';
-    const FIELD_REQUEST = 'request';
-    const FIELD_REQUESTOR = 'requestor';
     const FIELD_STATUS = 'status';
     const FIELD_STATUS_EXT = '_status';
-    const FIELD_SUB_TYPE = 'subType';
-    const FIELD_TOTAL = 'total';
     const FIELD_TYPE = 'type';
+    const FIELD_SUB_TYPE = 'subType';
     const FIELD_USE = 'use';
     const FIELD_USE_EXT = '_use';
+    const FIELD_PATIENT = 'patient';
+    const FIELD_CREATED = 'created';
+    const FIELD_CREATED_EXT = '_created';
+    const FIELD_INSURER = 'insurer';
+    const FIELD_REQUESTOR = 'requestor';
+    const FIELD_REQUEST = 'request';
+    const FIELD_OUTCOME = 'outcome';
+    const FIELD_OUTCOME_EXT = '_outcome';
+    const FIELD_DISPOSITION = 'disposition';
+    const FIELD_DISPOSITION_EXT = '_disposition';
+    const FIELD_PRE_AUTH_REF = 'preAuthRef';
+    const FIELD_PRE_AUTH_REF_EXT = '_preAuthRef';
+    const FIELD_PRE_AUTH_PERIOD = 'preAuthPeriod';
+    const FIELD_PAYEE_TYPE = 'payeeType';
+    const FIELD_ITEM = 'item';
+    const FIELD_ADD_ITEM = 'addItem';
+    const FIELD_ADJUDICATION = 'adjudication';
+    const FIELD_TOTAL = 'total';
+    const FIELD_PAYMENT = 'payment';
+    const FIELD_FUNDS_RESERVE = 'fundsReserve';
+    const FIELD_FORM_CODE = 'formCode';
+    const FIELD_FORM = 'form';
+    const FIELD_PROCESS_NOTE = 'processNote';
+    const FIELD_COMMUNICATION_REQUEST = 'communicationRequest';
+    const FIELD_INSURANCE = 'insurance';
+    const FIELD_ERROR = 'error';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A unique identifier assigned to this claim response.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
+     */
+    protected $identifier = [];
+
+    /**
+     * A code specifying the state of the resource instance.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The status of the resource instance.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     */
+    protected $status = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A finer grained suite of claim type codes which may convey additional
+     * information such as Inpatient vs Outpatient and/or a specialty service.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $type = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A finer grained suite of claim type codes which may convey additional
+     * information such as Inpatient vs Outpatient and/or a specialty service.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $subType = null;
+
+    /**
+     * The purpose of the Claim: predetermination, preauthorization, claim.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A code to indicate whether the nature of the request is: to request adjudication
+     * of products and services previously rendered; or requesting authorization and
+     * adjudication for provision in the future; or requesting the non-binding
+     * adjudication of the listed products and services which could be provided in the
+     * future.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUse
+     */
+    protected $use = null;
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The party to whom the professional services and/or products have been supplied
+     * or are being considered and for whom actual for facast reimbursement is sought.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected $patient = null;
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The date this resource was created.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
+     */
+    protected $created = null;
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The party responsible for authorization, adjudication and reimbursement.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected $insurer = null;
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The provider which is responsible for the claim, predetermination or
+     * preauthorization.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected $requestor = null;
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Original request resource reference.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected $request = null;
+
+    /**
+     * The result of the claim processing.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The outcome of the claim, predetermination, or preauthorization processing.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRClaimProcessingCodes
+     */
+    protected $outcome = null;
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A human readable description of the status of the adjudication.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected $disposition = null;
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Reference from the Insurer which is used in later communications which refers to
+     * this adjudication.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected $preAuthRef = null;
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The time frame during which this authorization is effective.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     */
+    protected $preAuthPeriod = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Type of Party to be reimbursed: subscriber, provider, other.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $payeeType = null;
+
+    /**
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
+     *
+     * A claim line. Either a simple (a product or service) or a 'group' of details
+     * which can also be a simple items or groups of sub-details.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem[]
+     */
+    protected $item = [];
 
     /**
      * This resource provides the adjudication details from the processing of a Claim
@@ -156,73 +352,24 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     protected $adjudication = [];
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
      *
-     * Request for additional supporting or authorizing information.
+     * Categorized monetary totals for the adjudication.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseTotal[]
      */
-    protected $communicationRequest = [];
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The date this resource was created.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
-     */
-    protected $created = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A human readable description of the status of the adjudication.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $disposition = null;
+    protected $total = [];
 
     /**
      * This resource provides the adjudication details from the processing of a Claim
      * resource.
      *
-     * Errors encountered during the processing of the adjudication.
+     * Payment details for the adjudication of the claim.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponsePayment
      */
-    protected $error = [];
-
-    /**
-     * For referring to data content defined in other formats.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The actual form, by reference or inclusion, for printing the content or an EOB.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
-     */
-    protected $form = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A code for the form to be used for printing the content.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $formCode = null;
+    protected $payment = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -238,116 +385,27 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     protected $fundsReserve = null;
 
     /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A unique identifier assigned to this claim response.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
-     */
-    protected $identifier = [];
-
-    /**
-     * This resource provides the adjudication details from the processing of a Claim
-     * resource.
-     *
-     * Financial instruments for reimbursement for the health care products and
-     * services specified on the claim.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseInsurance[]
-     */
-    protected $insurance = [];
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The party responsible for authorization, adjudication and reimbursement.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $insurer = null;
-
-    /**
-     * This resource provides the adjudication details from the processing of a Claim
-     * resource.
-     *
-     * A claim line. Either a simple (a product or service) or a 'group' of details
-     * which can also be a simple items or groups of sub-details.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem[]
-     */
-    protected $item = [];
-
-    /**
-     * The result of the claim processing.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The outcome of the claim, predetermination, or preauthorization processing.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRClaimProcessingCodes
-     */
-    protected $outcome = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The party to whom the professional services and/or products have been supplied
-     * or are being considered and for whom actual for facast reimbursement is sought.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $patient = null;
-
-    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Type of Party to be reimbursed: subscriber, provider, other.
+     * A code for the form to be used for printing the content.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $payeeType = null;
+    protected $formCode = null;
 
     /**
-     * This resource provides the adjudication details from the processing of a Claim
-     * resource.
-     *
-     * Payment details for the adjudication of the claim.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponsePayment
-     */
-    protected $payment = null;
-
-    /**
-     * A time period defined by a start and end date and optionally time.
+     * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The time frame during which this authorization is effective.
+     * The actual form, by reference or inclusion, for printing the content or an EOB.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
-    protected $preAuthPeriod = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Reference from the Insurer which is used in later communications which refers to
-     * this adjudication.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $preAuthRef = null;
+    protected $form = null;
 
     /**
      * This resource provides the adjudication details from the processing of a Claim
@@ -364,83 +422,32 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Original request resource reference.
+     * Request for additional supporting or authorizing information.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    protected $request = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The provider which is responsible for the claim, predetermination or
-     * preauthorization.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $requestor = null;
-
-    /**
-     * A code specifying the state of the resource instance.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The status of the resource instance.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes
-     */
-    protected $status = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A finer grained suite of claim type codes which may convey additional
-     * information such as Inpatient vs Outpatient and/or a specialty service.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $subType = null;
+    protected $communicationRequest = [];
 
     /**
      * This resource provides the adjudication details from the processing of a Claim
      * resource.
      *
-     * Categorized monetary totals for the adjudication.
+     * Financial instruments for reimbursement for the health care products and
+     * services specified on the claim.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseTotal[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseInsurance[]
      */
-    protected $total = [];
+    protected $insurance = [];
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
      *
-     * A finer grained suite of claim type codes which may convey additional
-     * information such as Inpatient vs Outpatient and/or a specialty service.
+     * Errors encountered during the processing of the adjudication.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError[]
      */
-    protected $type = null;
-
-    /**
-     * The purpose of the Claim: predetermination, preauthorization, claim.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A code to indicate whether the nature of the request is: to request adjudication
-     * of products and services previously rendered; or requesting authorization and
-     * adjudication for provision in the future; or requesting the non-binding
-     * adjudication of the listed products and services which could be provided in the
-     * future.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUse
-     */
-    protected $use = null;
+    protected $error = [];
 
     /**
      * Validation map for fields in type ClaimResponse
@@ -464,6 +471,188 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_IDENTIFIER])) {
+            if (is_array($data[self::FIELD_IDENTIFIER])) {
+                foreach($data[self::FIELD_IDENTIFIER] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRIdentifier) {
+                        $this->addIdentifier($v);
+                    } else {
+                        $this->addIdentifier(new FHIRIdentifier($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+                $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
+            } else {
+                $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
+            }
+        }
+        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
+            $value = isset($data[self::FIELD_STATUS]) ? $data[self::FIELD_STATUS] : null;
+            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) ? $ext = $data[self::FIELD_STATUS_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRFinancialResourceStatusCodes) {
+                    $this->setStatus($value);
+                } else if (is_array($value)) {
+                    $this->setStatus(new FHIRFinancialResourceStatusCodes(array_merge($ext, $value)));
+                } else {
+                    $this->setStatus(new FHIRFinancialResourceStatusCodes([FHIRFinancialResourceStatusCodes::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setStatus(new FHIRFinancialResourceStatusCodes($ext));
+            }
+        }
+        if (isset($data[self::FIELD_TYPE])) {
+            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setType($data[self::FIELD_TYPE]);
+            } else {
+                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
+            }
+        }
+        if (isset($data[self::FIELD_SUB_TYPE])) {
+            if ($data[self::FIELD_SUB_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setSubType($data[self::FIELD_SUB_TYPE]);
+            } else {
+                $this->setSubType(new FHIRCodeableConcept($data[self::FIELD_SUB_TYPE]));
+            }
+        }
+        if (isset($data[self::FIELD_USE]) || isset($data[self::FIELD_USE_EXT])) {
+            $value = isset($data[self::FIELD_USE]) ? $data[self::FIELD_USE] : null;
+            $ext = (isset($data[self::FIELD_USE_EXT]) && is_array($data[self::FIELD_USE_EXT])) ? $ext = $data[self::FIELD_USE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRUse) {
+                    $this->setUse($value);
+                } else if (is_array($value)) {
+                    $this->setUse(new FHIRUse(array_merge($ext, $value)));
+                } else {
+                    $this->setUse(new FHIRUse([FHIRUse::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setUse(new FHIRUse($ext));
+            }
+        }
+        if (isset($data[self::FIELD_PATIENT])) {
+            if ($data[self::FIELD_PATIENT] instanceof FHIRReference) {
+                $this->setPatient($data[self::FIELD_PATIENT]);
+            } else {
+                $this->setPatient(new FHIRReference($data[self::FIELD_PATIENT]));
+            }
+        }
+        if (isset($data[self::FIELD_CREATED]) || isset($data[self::FIELD_CREATED_EXT])) {
+            $value = isset($data[self::FIELD_CREATED]) ? $data[self::FIELD_CREATED] : null;
+            $ext = (isset($data[self::FIELD_CREATED_EXT]) && is_array($data[self::FIELD_CREATED_EXT])) ? $ext = $data[self::FIELD_CREATED_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setCreated($value);
+                } else if (is_array($value)) {
+                    $this->setCreated(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setCreated(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setCreated(new FHIRDateTime($ext));
+            }
+        }
+        if (isset($data[self::FIELD_INSURER])) {
+            if ($data[self::FIELD_INSURER] instanceof FHIRReference) {
+                $this->setInsurer($data[self::FIELD_INSURER]);
+            } else {
+                $this->setInsurer(new FHIRReference($data[self::FIELD_INSURER]));
+            }
+        }
+        if (isset($data[self::FIELD_REQUESTOR])) {
+            if ($data[self::FIELD_REQUESTOR] instanceof FHIRReference) {
+                $this->setRequestor($data[self::FIELD_REQUESTOR]);
+            } else {
+                $this->setRequestor(new FHIRReference($data[self::FIELD_REQUESTOR]));
+            }
+        }
+        if (isset($data[self::FIELD_REQUEST])) {
+            if ($data[self::FIELD_REQUEST] instanceof FHIRReference) {
+                $this->setRequest($data[self::FIELD_REQUEST]);
+            } else {
+                $this->setRequest(new FHIRReference($data[self::FIELD_REQUEST]));
+            }
+        }
+        if (isset($data[self::FIELD_OUTCOME]) || isset($data[self::FIELD_OUTCOME_EXT])) {
+            $value = isset($data[self::FIELD_OUTCOME]) ? $data[self::FIELD_OUTCOME] : null;
+            $ext = (isset($data[self::FIELD_OUTCOME_EXT]) && is_array($data[self::FIELD_OUTCOME_EXT])) ? $ext = $data[self::FIELD_OUTCOME_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRClaimProcessingCodes) {
+                    $this->setOutcome($value);
+                } else if (is_array($value)) {
+                    $this->setOutcome(new FHIRClaimProcessingCodes(array_merge($ext, $value)));
+                } else {
+                    $this->setOutcome(new FHIRClaimProcessingCodes([FHIRClaimProcessingCodes::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setOutcome(new FHIRClaimProcessingCodes($ext));
+            }
+        }
+        if (isset($data[self::FIELD_DISPOSITION]) || isset($data[self::FIELD_DISPOSITION_EXT])) {
+            $value = isset($data[self::FIELD_DISPOSITION]) ? $data[self::FIELD_DISPOSITION] : null;
+            $ext = (isset($data[self::FIELD_DISPOSITION_EXT]) && is_array($data[self::FIELD_DISPOSITION_EXT])) ? $ext = $data[self::FIELD_DISPOSITION_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDisposition($value);
+                } else if (is_array($value)) {
+                    $this->setDisposition(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDisposition(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDisposition(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_PRE_AUTH_REF]) || isset($data[self::FIELD_PRE_AUTH_REF_EXT])) {
+            $value = isset($data[self::FIELD_PRE_AUTH_REF]) ? $data[self::FIELD_PRE_AUTH_REF] : null;
+            $ext = (isset($data[self::FIELD_PRE_AUTH_REF_EXT]) && is_array($data[self::FIELD_PRE_AUTH_REF_EXT])) ? $ext = $data[self::FIELD_PRE_AUTH_REF_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setPreAuthRef($value);
+                } else if (is_array($value)) {
+                    $this->setPreAuthRef(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setPreAuthRef(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPreAuthRef(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_PRE_AUTH_PERIOD])) {
+            if ($data[self::FIELD_PRE_AUTH_PERIOD] instanceof FHIRPeriod) {
+                $this->setPreAuthPeriod($data[self::FIELD_PRE_AUTH_PERIOD]);
+            } else {
+                $this->setPreAuthPeriod(new FHIRPeriod($data[self::FIELD_PRE_AUTH_PERIOD]));
+            }
+        }
+        if (isset($data[self::FIELD_PAYEE_TYPE])) {
+            if ($data[self::FIELD_PAYEE_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setPayeeType($data[self::FIELD_PAYEE_TYPE]);
+            } else {
+                $this->setPayeeType(new FHIRCodeableConcept($data[self::FIELD_PAYEE_TYPE]));
+            }
+        }
+        if (isset($data[self::FIELD_ITEM])) {
+            if (is_array($data[self::FIELD_ITEM])) {
+                foreach($data[self::FIELD_ITEM] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRClaimResponseItem) {
+                        $this->addItem($v);
+                    } else {
+                        $this->addItem(new FHIRClaimResponseItem($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_ITEM] instanceof FHIRClaimResponseItem) {
+                $this->addItem($data[self::FIELD_ITEM]);
+            } else {
+                $this->addItem(new FHIRClaimResponseItem($data[self::FIELD_ITEM]));
+            }
+        }
         if (isset($data[self::FIELD_ADD_ITEM])) {
             if (is_array($data[self::FIELD_ADD_ITEM])) {
                 foreach($data[self::FIELD_ADD_ITEM] as $v) {
@@ -476,7 +665,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                         $this->addAddItem(new FHIRClaimResponseAddItem($v));
                     }
                 }
-            } else if ($data[self::FIELD_ADD_ITEM] instanceof FHIRClaimResponseAddItem) {
+            } elseif ($data[self::FIELD_ADD_ITEM] instanceof FHIRClaimResponseAddItem) {
                 $this->addAddItem($data[self::FIELD_ADD_ITEM]);
             } else {
                 $this->addAddItem(new FHIRClaimResponseAddItem($data[self::FIELD_ADD_ITEM]));
@@ -494,310 +683,10 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                         $this->addAdjudication(new FHIRClaimResponseAdjudication($v));
                     }
                 }
-            } else if ($data[self::FIELD_ADJUDICATION] instanceof FHIRClaimResponseAdjudication) {
+            } elseif ($data[self::FIELD_ADJUDICATION] instanceof FHIRClaimResponseAdjudication) {
                 $this->addAdjudication($data[self::FIELD_ADJUDICATION]);
             } else {
                 $this->addAdjudication(new FHIRClaimResponseAdjudication($data[self::FIELD_ADJUDICATION]));
-            }
-        }
-        if (isset($data[self::FIELD_COMMUNICATION_REQUEST])) {
-            if (is_array($data[self::FIELD_COMMUNICATION_REQUEST])) {
-                foreach($data[self::FIELD_COMMUNICATION_REQUEST] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRReference) {
-                        $this->addCommunicationRequest($v);
-                    } else {
-                        $this->addCommunicationRequest(new FHIRReference($v));
-                    }
-                }
-            } else if ($data[self::FIELD_COMMUNICATION_REQUEST] instanceof FHIRReference) {
-                $this->addCommunicationRequest($data[self::FIELD_COMMUNICATION_REQUEST]);
-            } else {
-                $this->addCommunicationRequest(new FHIRReference($data[self::FIELD_COMMUNICATION_REQUEST]));
-            }
-        }
-        if (isset($data[self::FIELD_CREATED]) || isset($data[self::FIELD_CREATED_EXT])) {
-            if (isset($data[self::FIELD_CREATED])) {
-                $value = $data[self::FIELD_CREATED];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CREATED_EXT]) && is_array($data[self::FIELD_CREATED_EXT])) {
-                $ext = $data[self::FIELD_CREATED_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $this->setCreated($value);
-                } else if (is_array($value)) {
-                    $this->setCreated(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $this->setCreated(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setCreated(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_DISPOSITION]) || isset($data[self::FIELD_DISPOSITION_EXT])) {
-            if (isset($data[self::FIELD_DISPOSITION])) {
-                $value = $data[self::FIELD_DISPOSITION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DISPOSITION_EXT]) && is_array($data[self::FIELD_DISPOSITION_EXT])) {
-                $ext = $data[self::FIELD_DISPOSITION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setDisposition($value);
-                } else if (is_array($value)) {
-                    $this->setDisposition(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setDisposition(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDisposition(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_ERROR])) {
-            if (is_array($data[self::FIELD_ERROR])) {
-                foreach($data[self::FIELD_ERROR] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRClaimResponseError) {
-                        $this->addError($v);
-                    } else {
-                        $this->addError(new FHIRClaimResponseError($v));
-                    }
-                }
-            } else if ($data[self::FIELD_ERROR] instanceof FHIRClaimResponseError) {
-                $this->addError($data[self::FIELD_ERROR]);
-            } else {
-                $this->addError(new FHIRClaimResponseError($data[self::FIELD_ERROR]));
-            }
-        }
-        if (isset($data[self::FIELD_FORM])) {
-            if ($data[self::FIELD_FORM] instanceof FHIRAttachment) {
-                $this->setForm($data[self::FIELD_FORM]);
-            } else {
-                $this->setForm(new FHIRAttachment($data[self::FIELD_FORM]));
-            }
-        }
-        if (isset($data[self::FIELD_FORM_CODE])) {
-            if ($data[self::FIELD_FORM_CODE] instanceof FHIRCodeableConcept) {
-                $this->setFormCode($data[self::FIELD_FORM_CODE]);
-            } else {
-                $this->setFormCode(new FHIRCodeableConcept($data[self::FIELD_FORM_CODE]));
-            }
-        }
-        if (isset($data[self::FIELD_FUNDS_RESERVE])) {
-            if ($data[self::FIELD_FUNDS_RESERVE] instanceof FHIRCodeableConcept) {
-                $this->setFundsReserve($data[self::FIELD_FUNDS_RESERVE]);
-            } else {
-                $this->setFundsReserve(new FHIRCodeableConcept($data[self::FIELD_FUNDS_RESERVE]));
-            }
-        }
-        if (isset($data[self::FIELD_IDENTIFIER])) {
-            if (is_array($data[self::FIELD_IDENTIFIER])) {
-                foreach($data[self::FIELD_IDENTIFIER] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRIdentifier) {
-                        $this->addIdentifier($v);
-                    } else {
-                        $this->addIdentifier(new FHIRIdentifier($v));
-                    }
-                }
-            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
-                $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
-            } else {
-                $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
-            }
-        }
-        if (isset($data[self::FIELD_INSURANCE])) {
-            if (is_array($data[self::FIELD_INSURANCE])) {
-                foreach($data[self::FIELD_INSURANCE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRClaimResponseInsurance) {
-                        $this->addInsurance($v);
-                    } else {
-                        $this->addInsurance(new FHIRClaimResponseInsurance($v));
-                    }
-                }
-            } else if ($data[self::FIELD_INSURANCE] instanceof FHIRClaimResponseInsurance) {
-                $this->addInsurance($data[self::FIELD_INSURANCE]);
-            } else {
-                $this->addInsurance(new FHIRClaimResponseInsurance($data[self::FIELD_INSURANCE]));
-            }
-        }
-        if (isset($data[self::FIELD_INSURER])) {
-            if ($data[self::FIELD_INSURER] instanceof FHIRReference) {
-                $this->setInsurer($data[self::FIELD_INSURER]);
-            } else {
-                $this->setInsurer(new FHIRReference($data[self::FIELD_INSURER]));
-            }
-        }
-        if (isset($data[self::FIELD_ITEM])) {
-            if (is_array($data[self::FIELD_ITEM])) {
-                foreach($data[self::FIELD_ITEM] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRClaimResponseItem) {
-                        $this->addItem($v);
-                    } else {
-                        $this->addItem(new FHIRClaimResponseItem($v));
-                    }
-                }
-            } else if ($data[self::FIELD_ITEM] instanceof FHIRClaimResponseItem) {
-                $this->addItem($data[self::FIELD_ITEM]);
-            } else {
-                $this->addItem(new FHIRClaimResponseItem($data[self::FIELD_ITEM]));
-            }
-        }
-        if (isset($data[self::FIELD_OUTCOME]) || isset($data[self::FIELD_OUTCOME_EXT])) {
-            if (isset($data[self::FIELD_OUTCOME])) {
-                $value = $data[self::FIELD_OUTCOME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_OUTCOME_EXT]) && is_array($data[self::FIELD_OUTCOME_EXT])) {
-                $ext = $data[self::FIELD_OUTCOME_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRClaimProcessingCodes) {
-                    $this->setOutcome($value);
-                } else if (is_array($value)) {
-                    $this->setOutcome(new FHIRClaimProcessingCodes(array_merge($ext, $value)));
-                } else {
-                    $this->setOutcome(new FHIRClaimProcessingCodes([FHIRClaimProcessingCodes::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setOutcome(new FHIRClaimProcessingCodes($ext));
-            }
-        }
-        if (isset($data[self::FIELD_PATIENT])) {
-            if ($data[self::FIELD_PATIENT] instanceof FHIRReference) {
-                $this->setPatient($data[self::FIELD_PATIENT]);
-            } else {
-                $this->setPatient(new FHIRReference($data[self::FIELD_PATIENT]));
-            }
-        }
-        if (isset($data[self::FIELD_PAYEE_TYPE])) {
-            if ($data[self::FIELD_PAYEE_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setPayeeType($data[self::FIELD_PAYEE_TYPE]);
-            } else {
-                $this->setPayeeType(new FHIRCodeableConcept($data[self::FIELD_PAYEE_TYPE]));
-            }
-        }
-        if (isset($data[self::FIELD_PAYMENT])) {
-            if ($data[self::FIELD_PAYMENT] instanceof FHIRClaimResponsePayment) {
-                $this->setPayment($data[self::FIELD_PAYMENT]);
-            } else {
-                $this->setPayment(new FHIRClaimResponsePayment($data[self::FIELD_PAYMENT]));
-            }
-        }
-        if (isset($data[self::FIELD_PRE_AUTH_PERIOD])) {
-            if ($data[self::FIELD_PRE_AUTH_PERIOD] instanceof FHIRPeriod) {
-                $this->setPreAuthPeriod($data[self::FIELD_PRE_AUTH_PERIOD]);
-            } else {
-                $this->setPreAuthPeriod(new FHIRPeriod($data[self::FIELD_PRE_AUTH_PERIOD]));
-            }
-        }
-        if (isset($data[self::FIELD_PRE_AUTH_REF]) || isset($data[self::FIELD_PRE_AUTH_REF_EXT])) {
-            if (isset($data[self::FIELD_PRE_AUTH_REF])) {
-                $value = $data[self::FIELD_PRE_AUTH_REF];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PRE_AUTH_REF_EXT]) && is_array($data[self::FIELD_PRE_AUTH_REF_EXT])) {
-                $ext = $data[self::FIELD_PRE_AUTH_REF_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setPreAuthRef($value);
-                } else if (is_array($value)) {
-                    $this->setPreAuthRef(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setPreAuthRef(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPreAuthRef(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_PROCESS_NOTE])) {
-            if (is_array($data[self::FIELD_PROCESS_NOTE])) {
-                foreach($data[self::FIELD_PROCESS_NOTE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRClaimResponseProcessNote) {
-                        $this->addProcessNote($v);
-                    } else {
-                        $this->addProcessNote(new FHIRClaimResponseProcessNote($v));
-                    }
-                }
-            } else if ($data[self::FIELD_PROCESS_NOTE] instanceof FHIRClaimResponseProcessNote) {
-                $this->addProcessNote($data[self::FIELD_PROCESS_NOTE]);
-            } else {
-                $this->addProcessNote(new FHIRClaimResponseProcessNote($data[self::FIELD_PROCESS_NOTE]));
-            }
-        }
-        if (isset($data[self::FIELD_REQUEST])) {
-            if ($data[self::FIELD_REQUEST] instanceof FHIRReference) {
-                $this->setRequest($data[self::FIELD_REQUEST]);
-            } else {
-                $this->setRequest(new FHIRReference($data[self::FIELD_REQUEST]));
-            }
-        }
-        if (isset($data[self::FIELD_REQUESTOR])) {
-            if ($data[self::FIELD_REQUESTOR] instanceof FHIRReference) {
-                $this->setRequestor($data[self::FIELD_REQUESTOR]);
-            } else {
-                $this->setRequestor(new FHIRReference($data[self::FIELD_REQUESTOR]));
-            }
-        }
-        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
-            if (isset($data[self::FIELD_STATUS])) {
-                $value = $data[self::FIELD_STATUS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
-                $ext = $data[self::FIELD_STATUS_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRFinancialResourceStatusCodes) {
-                    $this->setStatus($value);
-                } else if (is_array($value)) {
-                    $this->setStatus(new FHIRFinancialResourceStatusCodes(array_merge($ext, $value)));
-                } else {
-                    $this->setStatus(new FHIRFinancialResourceStatusCodes([FHIRFinancialResourceStatusCodes::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setStatus(new FHIRFinancialResourceStatusCodes($ext));
-            }
-        }
-        if (isset($data[self::FIELD_SUB_TYPE])) {
-            if ($data[self::FIELD_SUB_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setSubType($data[self::FIELD_SUB_TYPE]);
-            } else {
-                $this->setSubType(new FHIRCodeableConcept($data[self::FIELD_SUB_TYPE]));
             }
         }
         if (isset($data[self::FIELD_TOTAL])) {
@@ -812,40 +701,110 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                         $this->addTotal(new FHIRClaimResponseTotal($v));
                     }
                 }
-            } else if ($data[self::FIELD_TOTAL] instanceof FHIRClaimResponseTotal) {
+            } elseif ($data[self::FIELD_TOTAL] instanceof FHIRClaimResponseTotal) {
                 $this->addTotal($data[self::FIELD_TOTAL]);
             } else {
                 $this->addTotal(new FHIRClaimResponseTotal($data[self::FIELD_TOTAL]));
             }
         }
-        if (isset($data[self::FIELD_TYPE])) {
-            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setType($data[self::FIELD_TYPE]);
+        if (isset($data[self::FIELD_PAYMENT])) {
+            if ($data[self::FIELD_PAYMENT] instanceof FHIRClaimResponsePayment) {
+                $this->setPayment($data[self::FIELD_PAYMENT]);
             } else {
-                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
+                $this->setPayment(new FHIRClaimResponsePayment($data[self::FIELD_PAYMENT]));
             }
         }
-        if (isset($data[self::FIELD_USE]) || isset($data[self::FIELD_USE_EXT])) {
-            if (isset($data[self::FIELD_USE])) {
-                $value = $data[self::FIELD_USE];
+        if (isset($data[self::FIELD_FUNDS_RESERVE])) {
+            if ($data[self::FIELD_FUNDS_RESERVE] instanceof FHIRCodeableConcept) {
+                $this->setFundsReserve($data[self::FIELD_FUNDS_RESERVE]);
             } else {
-                $value = null;
+                $this->setFundsReserve(new FHIRCodeableConcept($data[self::FIELD_FUNDS_RESERVE]));
             }
-            if (isset($data[self::FIELD_USE_EXT]) && is_array($data[self::FIELD_USE_EXT])) {
-                $ext = $data[self::FIELD_USE_EXT];
+        }
+        if (isset($data[self::FIELD_FORM_CODE])) {
+            if ($data[self::FIELD_FORM_CODE] instanceof FHIRCodeableConcept) {
+                $this->setFormCode($data[self::FIELD_FORM_CODE]);
             } else {
-                $ext = [];
+                $this->setFormCode(new FHIRCodeableConcept($data[self::FIELD_FORM_CODE]));
             }
-            if (null !== $value) {
-                if ($value instanceof FHIRUse) {
-                    $this->setUse($value);
-                } else if (is_array($value)) {
-                    $this->setUse(new FHIRUse(array_merge($ext, $value)));
-                } else {
-                    $this->setUse(new FHIRUse([FHIRUse::FIELD_VALUE => $value] + $ext));
+        }
+        if (isset($data[self::FIELD_FORM])) {
+            if ($data[self::FIELD_FORM] instanceof FHIRAttachment) {
+                $this->setForm($data[self::FIELD_FORM]);
+            } else {
+                $this->setForm(new FHIRAttachment($data[self::FIELD_FORM]));
+            }
+        }
+        if (isset($data[self::FIELD_PROCESS_NOTE])) {
+            if (is_array($data[self::FIELD_PROCESS_NOTE])) {
+                foreach($data[self::FIELD_PROCESS_NOTE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRClaimResponseProcessNote) {
+                        $this->addProcessNote($v);
+                    } else {
+                        $this->addProcessNote(new FHIRClaimResponseProcessNote($v));
+                    }
                 }
-            } else if ([] !== $ext) {
-                $this->setUse(new FHIRUse($ext));
+            } elseif ($data[self::FIELD_PROCESS_NOTE] instanceof FHIRClaimResponseProcessNote) {
+                $this->addProcessNote($data[self::FIELD_PROCESS_NOTE]);
+            } else {
+                $this->addProcessNote(new FHIRClaimResponseProcessNote($data[self::FIELD_PROCESS_NOTE]));
+            }
+        }
+        if (isset($data[self::FIELD_COMMUNICATION_REQUEST])) {
+            if (is_array($data[self::FIELD_COMMUNICATION_REQUEST])) {
+                foreach($data[self::FIELD_COMMUNICATION_REQUEST] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRReference) {
+                        $this->addCommunicationRequest($v);
+                    } else {
+                        $this->addCommunicationRequest(new FHIRReference($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_COMMUNICATION_REQUEST] instanceof FHIRReference) {
+                $this->addCommunicationRequest($data[self::FIELD_COMMUNICATION_REQUEST]);
+            } else {
+                $this->addCommunicationRequest(new FHIRReference($data[self::FIELD_COMMUNICATION_REQUEST]));
+            }
+        }
+        if (isset($data[self::FIELD_INSURANCE])) {
+            if (is_array($data[self::FIELD_INSURANCE])) {
+                foreach($data[self::FIELD_INSURANCE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRClaimResponseInsurance) {
+                        $this->addInsurance($v);
+                    } else {
+                        $this->addInsurance(new FHIRClaimResponseInsurance($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_INSURANCE] instanceof FHIRClaimResponseInsurance) {
+                $this->addInsurance($data[self::FIELD_INSURANCE]);
+            } else {
+                $this->addInsurance(new FHIRClaimResponseInsurance($data[self::FIELD_INSURANCE]));
+            }
+        }
+        if (isset($data[self::FIELD_ERROR])) {
+            if (is_array($data[self::FIELD_ERROR])) {
+                foreach($data[self::FIELD_ERROR] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRClaimResponseError) {
+                        $this->addError($v);
+                    } else {
+                        $this->addError(new FHIRClaimResponseError($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_ERROR] instanceof FHIRClaimResponseError) {
+                $this->addError($data[self::FIELD_ERROR]);
+            } else {
+                $this->addError(new FHIRClaimResponseError($data[self::FIELD_ERROR]));
             }
         }
     }
@@ -864,7 +823,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ClaimResponse{$xmlns}></ClaimResponse>";
@@ -877,6 +836,596 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
         return static::FHIR_TYPE_NAME;
     }
 
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A unique identifier assigned to this claim response.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
+     */
+    public function getIdentifier()
+    {
+        return $this->identifier;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A unique identifier assigned to this claim response.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
+     * @return static
+     */
+    public function addIdentifier(FHIRIdentifier $identifier = null)
+    {
+        $this->_trackValueAdded();
+        $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A unique identifier assigned to this claim response.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
+     * @return static
+     */
+    public function setIdentifier(array $identifier = [])
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            if ($v instanceof FHIRIdentifier) {
+                $this->addIdentifier($v);
+            } else {
+                $this->addIdentifier(new FHIRIdentifier($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A code specifying the state of the resource instance.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The status of the resource instance.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * A code specifying the state of the resource instance.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The status of the resource instance.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
+     * @return static
+     */
+    public function setStatus(FHIRFinancialResourceStatusCodes $status = null)
+    {
+        $this->_trackValueSet($this->status, $status);
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A finer grained suite of claim type codes which may convey additional
+     * information such as Inpatient vs Outpatient and/or a specialty service.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A finer grained suite of claim type codes which may convey additional
+     * information such as Inpatient vs Outpatient and/or a specialty service.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
+     * @return static
+     */
+    public function setType(FHIRCodeableConcept $type = null)
+    {
+        $this->_trackValueSet($this->type, $type);
+        $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A finer grained suite of claim type codes which may convey additional
+     * information such as Inpatient vs Outpatient and/or a specialty service.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getSubType()
+    {
+        return $this->subType;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A finer grained suite of claim type codes which may convey additional
+     * information such as Inpatient vs Outpatient and/or a specialty service.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $subType
+     * @return static
+     */
+    public function setSubType(FHIRCodeableConcept $subType = null)
+    {
+        $this->_trackValueSet($this->subType, $subType);
+        $this->subType = $subType;
+        return $this;
+    }
+
+    /**
+     * The purpose of the Claim: predetermination, preauthorization, claim.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A code to indicate whether the nature of the request is: to request adjudication
+     * of products and services previously rendered; or requesting authorization and
+     * adjudication for provision in the future; or requesting the non-binding
+     * adjudication of the listed products and services which could be provided in the
+     * future.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUse
+     */
+    public function getUse()
+    {
+        return $this->use;
+    }
+
+    /**
+     * The purpose of the Claim: predetermination, preauthorization, claim.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A code to indicate whether the nature of the request is: to request adjudication
+     * of products and services previously rendered; or requesting authorization and
+     * adjudication for provision in the future; or requesting the non-binding
+     * adjudication of the listed products and services which could be provided in the
+     * future.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUse $use
+     * @return static
+     */
+    public function setUse(FHIRUse $use = null)
+    {
+        $this->_trackValueSet($this->use, $use);
+        $this->use = $use;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The party to whom the professional services and/or products have been supplied
+     * or are being considered and for whom actual for facast reimbursement is sought.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getPatient()
+    {
+        return $this->patient;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The party to whom the professional services and/or products have been supplied
+     * or are being considered and for whom actual for facast reimbursement is sought.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $patient
+     * @return static
+     */
+    public function setPatient(FHIRReference $patient = null)
+    {
+        $this->_trackValueSet($this->patient, $patient);
+        $this->patient = $patient;
+        return $this;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The date this resource was created.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The date this resource was created.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $created
+     * @return static
+     */
+    public function setCreated($created = null)
+    {
+        if (null !== $created && !($created instanceof FHIRDateTime)) {
+            $created = new FHIRDateTime($created);
+        }
+        $this->_trackValueSet($this->created, $created);
+        $this->created = $created;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The party responsible for authorization, adjudication and reimbursement.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getInsurer()
+    {
+        return $this->insurer;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The party responsible for authorization, adjudication and reimbursement.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $insurer
+     * @return static
+     */
+    public function setInsurer(FHIRReference $insurer = null)
+    {
+        $this->_trackValueSet($this->insurer, $insurer);
+        $this->insurer = $insurer;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The provider which is responsible for the claim, predetermination or
+     * preauthorization.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getRequestor()
+    {
+        return $this->requestor;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The provider which is responsible for the claim, predetermination or
+     * preauthorization.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $requestor
+     * @return static
+     */
+    public function setRequestor(FHIRReference $requestor = null)
+    {
+        $this->_trackValueSet($this->requestor, $requestor);
+        $this->requestor = $requestor;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Original request resource reference.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getRequest()
+    {
+        return $this->request;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Original request resource reference.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $request
+     * @return static
+     */
+    public function setRequest(FHIRReference $request = null)
+    {
+        $this->_trackValueSet($this->request, $request);
+        $this->request = $request;
+        return $this;
+    }
+
+    /**
+     * The result of the claim processing.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The outcome of the claim, predetermination, or preauthorization processing.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRClaimProcessingCodes
+     */
+    public function getOutcome()
+    {
+        return $this->outcome;
+    }
+
+    /**
+     * The result of the claim processing.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The outcome of the claim, predetermination, or preauthorization processing.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRClaimProcessingCodes $outcome
+     * @return static
+     */
+    public function setOutcome(FHIRClaimProcessingCodes $outcome = null)
+    {
+        $this->_trackValueSet($this->outcome, $outcome);
+        $this->outcome = $outcome;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A human readable description of the status of the adjudication.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getDisposition()
+    {
+        return $this->disposition;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A human readable description of the status of the adjudication.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $disposition
+     * @return static
+     */
+    public function setDisposition($disposition = null)
+    {
+        if (null !== $disposition && !($disposition instanceof FHIRString)) {
+            $disposition = new FHIRString($disposition);
+        }
+        $this->_trackValueSet($this->disposition, $disposition);
+        $this->disposition = $disposition;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Reference from the Insurer which is used in later communications which refers to
+     * this adjudication.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getPreAuthRef()
+    {
+        return $this->preAuthRef;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Reference from the Insurer which is used in later communications which refers to
+     * this adjudication.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $preAuthRef
+     * @return static
+     */
+    public function setPreAuthRef($preAuthRef = null)
+    {
+        if (null !== $preAuthRef && !($preAuthRef instanceof FHIRString)) {
+            $preAuthRef = new FHIRString($preAuthRef);
+        }
+        $this->_trackValueSet($this->preAuthRef, $preAuthRef);
+        $this->preAuthRef = $preAuthRef;
+        return $this;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The time frame during which this authorization is effective.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     */
+    public function getPreAuthPeriod()
+    {
+        return $this->preAuthPeriod;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The time frame during which this authorization is effective.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $preAuthPeriod
+     * @return static
+     */
+    public function setPreAuthPeriod(FHIRPeriod $preAuthPeriod = null)
+    {
+        $this->_trackValueSet($this->preAuthPeriod, $preAuthPeriod);
+        $this->preAuthPeriod = $preAuthPeriod;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Type of Party to be reimbursed: subscriber, provider, other.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getPayeeType()
+    {
+        return $this->payeeType;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Type of Party to be reimbursed: subscriber, provider, other.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $payeeType
+     * @return static
+     */
+    public function setPayeeType(FHIRCodeableConcept $payeeType = null)
+    {
+        $this->_trackValueSet($this->payeeType, $payeeType);
+        $this->payeeType = $payeeType;
+        return $this;
+    }
+
+    /**
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
+     *
+     * A claim line. Either a simple (a product or service) or a 'group' of details
+     * which can also be a simple items or groups of sub-details.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem[]
+     */
+    public function getItem()
+    {
+        return $this->item;
+    }
+
+    /**
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
+     *
+     * A claim line. Either a simple (a product or service) or a 'group' of details
+     * which can also be a simple items or groups of sub-details.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem $item
+     * @return static
+     */
+    public function addItem(FHIRClaimResponseItem $item = null)
+    {
+        $this->_trackValueAdded();
+        $this->item[] = $item;
+        return $this;
+    }
+
+    /**
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
+     *
+     * A claim line. Either a simple (a product or service) or a 'group' of details
+     * which can also be a simple items or groups of sub-details.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem[] $item
+     * @return static
+     */
+    public function setItem(array $item = [])
+    {
+        if ([] !== $this->item) {
+            $this->_trackValuesRemoved(count($this->item));
+            $this->item = [];
+        }
+        if ([] === $item) {
+            return $this;
+        }
+        foreach($item as $v) {
+            if ($v instanceof FHIRClaimResponseItem) {
+                $this->addItem($v);
+            } else {
+                $this->addItem(new FHIRClaimResponseItem($v));
+            }
+        }
+        return $this;
+    }
 
     /**
      * This resource provides the adjudication details from the processing of a Claim
@@ -902,6 +1451,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      */
     public function addAddItem(FHIRClaimResponseAddItem $addItem = null)
     {
+        $this->_trackValueAdded();
         $this->addItem[] = $addItem;
         return $this;
     }
@@ -917,7 +1467,10 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      */
     public function setAddItem(array $addItem = [])
     {
-        $this->addItem = [];
+        if ([] !== $this->addItem) {
+            $this->_trackValuesRemoved(count($this->addItem));
+            $this->addItem = [];
+        }
         if ([] === $addItem) {
             return $this;
         }
@@ -957,6 +1510,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      */
     public function addAdjudication(FHIRClaimResponseAdjudication $adjudication = null)
     {
+        $this->_trackValueAdded();
         $this->adjudication[] = $adjudication;
         return $this;
     }
@@ -973,7 +1527,10 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      */
     public function setAdjudication(array $adjudication = [])
     {
-        $this->adjudication = [];
+        if ([] !== $this->adjudication) {
+            $this->_trackValuesRemoved(count($this->adjudication));
+            $this->adjudication = [];
+        }
         if ([] === $adjudication) {
             return $this;
         }
@@ -988,255 +1545,88 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
      *
-     * Request for additional supporting or authorizing information.
+     * Categorized monetary totals for the adjudication.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseTotal[]
      */
-    public function getCommunicationRequest()
+    public function getTotal()
     {
-        return $this->communicationRequest;
+        return $this->total;
     }
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
      *
-     * Request for additional supporting or authorizing information.
+     * Categorized monetary totals for the adjudication.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $communicationRequest
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseTotal $total
      * @return static
      */
-    public function addCommunicationRequest(FHIRReference $communicationRequest = null)
+    public function addTotal(FHIRClaimResponseTotal $total = null)
     {
-        $this->communicationRequest[] = $communicationRequest;
+        $this->_trackValueAdded();
+        $this->total[] = $total;
         return $this;
     }
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
      *
-     * Request for additional supporting or authorizing information.
+     * Categorized monetary totals for the adjudication.
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $communicationRequest
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseTotal[] $total
      * @return static
      */
-    public function setCommunicationRequest(array $communicationRequest = [])
+    public function setTotal(array $total = [])
     {
-        $this->communicationRequest = [];
-        if ([] === $communicationRequest) {
+        if ([] !== $this->total) {
+            $this->_trackValuesRemoved(count($this->total));
+            $this->total = [];
+        }
+        if ([] === $total) {
             return $this;
         }
-        foreach($communicationRequest as $v) {
-            if ($v instanceof FHIRReference) {
-                $this->addCommunicationRequest($v);
+        foreach($total as $v) {
+            if ($v instanceof FHIRClaimResponseTotal) {
+                $this->addTotal($v);
             } else {
-                $this->addCommunicationRequest(new FHIRReference($v));
+                $this->addTotal(new FHIRClaimResponseTotal($v));
             }
         }
         return $this;
     }
 
     /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
      *
-     * The date this resource was created.
+     * Payment details for the adjudication of the claim.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponsePayment
      */
-    public function getCreated()
+    public function getPayment()
     {
-        return $this->created;
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The date this resource was created.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $created
-     * @return static
-     */
-    public function setCreated($created = null)
-    {
-        if (null === $created) {
-            $this->created = null;
-            return $this;
-        }
-        if ($created instanceof FHIRDateTime) {
-            $this->created = $created;
-            return $this;
-        }
-        $this->created = new FHIRDateTime($created);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A human readable description of the status of the adjudication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getDisposition()
-    {
-        return $this->disposition;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A human readable description of the status of the adjudication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $disposition
-     * @return static
-     */
-    public function setDisposition($disposition = null)
-    {
-        if (null === $disposition) {
-            $this->disposition = null;
-            return $this;
-        }
-        if ($disposition instanceof FHIRString) {
-            $this->disposition = $disposition;
-            return $this;
-        }
-        $this->disposition = new FHIRString($disposition);
-        return $this;
+        return $this->payment;
     }
 
     /**
      * This resource provides the adjudication details from the processing of a Claim
      * resource.
      *
-     * Errors encountered during the processing of the adjudication.
+     * Payment details for the adjudication of the claim.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError[]
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    /**
-     * This resource provides the adjudication details from the processing of a Claim
-     * resource.
-     *
-     * Errors encountered during the processing of the adjudication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError $error
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponsePayment $payment
      * @return static
      */
-    public function addError(FHIRClaimResponseError $error = null)
+    public function setPayment(FHIRClaimResponsePayment $payment = null)
     {
-        $this->error[] = $error;
-        return $this;
-    }
-
-    /**
-     * This resource provides the adjudication details from the processing of a Claim
-     * resource.
-     *
-     * Errors encountered during the processing of the adjudication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError[] $error
-     * @return static
-     */
-    public function setError(array $error = [])
-    {
-        $this->error = [];
-        if ([] === $error) {
-            return $this;
-        }
-        foreach($error as $v) {
-            if ($v instanceof FHIRClaimResponseError) {
-                $this->addError($v);
-            } else {
-                $this->addError(new FHIRClaimResponseError($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * For referring to data content defined in other formats.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The actual form, by reference or inclusion, for printing the content or an EOB.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
-     */
-    public function getForm()
-    {
-        return $this->form;
-    }
-
-    /**
-     * For referring to data content defined in other formats.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The actual form, by reference or inclusion, for printing the content or an EOB.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $form
-     * @return static
-     */
-    public function setForm(FHIRAttachment $form = null)
-    {
-        $this->form = $form;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A code for the form to be used for printing the content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getFormCode()
-    {
-        return $this->formCode;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A code for the form to be used for printing the content.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $formCode
-     * @return static
-     */
-    public function setFormCode(FHIRCodeableConcept $formCode = null)
-    {
-        $this->formCode = $formCode;
+        $this->_trackValueSet($this->payment, $payment);
+        $this->payment = $payment;
         return $this;
     }
 
@@ -1270,64 +1660,187 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      */
     public function setFundsReserve(FHIRCodeableConcept $fundsReserve = null)
     {
+        $this->_trackValueSet($this->fundsReserve, $fundsReserve);
         $this->fundsReserve = $fundsReserve;
         return $this;
     }
 
     /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A unique identifier assigned to this claim response.
+     * A code for the form to be used for printing the content.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    public function getIdentifier()
+    public function getFormCode()
     {
-        return $this->identifier;
+        return $this->formCode;
     }
 
     /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A unique identifier assigned to this claim response.
+     * A code for the form to be used for printing the content.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $formCode
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier = null)
+    public function setFormCode(FHIRCodeableConcept $formCode = null)
     {
-        $this->identifier[] = $identifier;
+        $this->_trackValueSet($this->formCode, $formCode);
+        $this->formCode = $formCode;
         return $this;
     }
 
     /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
+     * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A unique identifier assigned to this claim response.
+     * The actual form, by reference or inclusion, for printing the content or an EOB.
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
+     */
+    public function getForm()
+    {
+        return $this->form;
+    }
+
+    /**
+     * For referring to data content defined in other formats.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The actual form, by reference or inclusion, for printing the content or an EOB.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $form
      * @return static
      */
-    public function setIdentifier(array $identifier = [])
+    public function setForm(FHIRAttachment $form = null)
     {
-        $this->identifier = [];
-        if ([] === $identifier) {
+        $this->_trackValueSet($this->form, $form);
+        $this->form = $form;
+        return $this;
+    }
+
+    /**
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
+     *
+     * A note that describes or explains adjudication results in a human readable form.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote[]
+     */
+    public function getProcessNote()
+    {
+        return $this->processNote;
+    }
+
+    /**
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
+     *
+     * A note that describes or explains adjudication results in a human readable form.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote $processNote
+     * @return static
+     */
+    public function addProcessNote(FHIRClaimResponseProcessNote $processNote = null)
+    {
+        $this->_trackValueAdded();
+        $this->processNote[] = $processNote;
+        return $this;
+    }
+
+    /**
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
+     *
+     * A note that describes or explains adjudication results in a human readable form.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote[] $processNote
+     * @return static
+     */
+    public function setProcessNote(array $processNote = [])
+    {
+        if ([] !== $this->processNote) {
+            $this->_trackValuesRemoved(count($this->processNote));
+            $this->processNote = [];
+        }
+        if ([] === $processNote) {
             return $this;
         }
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->addIdentifier($v);
+        foreach($processNote as $v) {
+            if ($v instanceof FHIRClaimResponseProcessNote) {
+                $this->addProcessNote($v);
             } else {
-                $this->addIdentifier(new FHIRIdentifier($v));
+                $this->addProcessNote(new FHIRClaimResponseProcessNote($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Request for additional supporting or authorizing information.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
+     */
+    public function getCommunicationRequest()
+    {
+        return $this->communicationRequest;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Request for additional supporting or authorizing information.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $communicationRequest
+     * @return static
+     */
+    public function addCommunicationRequest(FHIRReference $communicationRequest = null)
+    {
+        $this->_trackValueAdded();
+        $this->communicationRequest[] = $communicationRequest;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Request for additional supporting or authorizing information.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $communicationRequest
+     * @return static
+     */
+    public function setCommunicationRequest(array $communicationRequest = [])
+    {
+        if ([] !== $this->communicationRequest) {
+            $this->_trackValuesRemoved(count($this->communicationRequest));
+            $this->communicationRequest = [];
+        }
+        if ([] === $communicationRequest) {
+            return $this;
+        }
+        foreach($communicationRequest as $v) {
+            if ($v instanceof FHIRReference) {
+                $this->addCommunicationRequest($v);
+            } else {
+                $this->addCommunicationRequest(new FHIRReference($v));
             }
         }
         return $this;
@@ -1359,6 +1872,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      */
     public function addInsurance(FHIRClaimResponseInsurance $insurance = null)
     {
+        $this->_trackValueAdded();
         $this->insurance[] = $insurance;
         return $this;
     }
@@ -1375,7 +1889,10 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      */
     public function setInsurance(array $insurance = [])
     {
-        $this->insurance = [];
+        if ([] !== $this->insurance) {
+            $this->_trackValuesRemoved(count($this->insurance));
+            $this->insurance = [];
+        }
         if ([] === $insurance) {
             return $this;
         }
@@ -1390,32 +1907,31 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
      *
-     * The party responsible for authorization, adjudication and reimbursement.
+     * Errors encountered during the processing of the adjudication.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError[]
      */
-    public function getInsurer()
+    public function getError()
     {
-        return $this->insurer;
+        return $this->error;
     }
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
      *
-     * The party responsible for authorization, adjudication and reimbursement.
+     * Errors encountered during the processing of the adjudication.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $insurer
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError $error
      * @return static
      */
-    public function setInsurer(FHIRReference $insurer = null)
+    public function addError(FHIRClaimResponseError $error = null)
     {
-        $this->insurer = $insurer;
+        $this->_trackValueAdded();
+        $this->error[] = $error;
         return $this;
     }
 
@@ -1423,545 +1939,27 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * This resource provides the adjudication details from the processing of a Claim
      * resource.
      *
-     * A claim line. Either a simple (a product or service) or a 'group' of details
-     * which can also be a simple items or groups of sub-details.
+     * Errors encountered during the processing of the adjudication.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem[]
-     */
-    public function getItem()
-    {
-        return $this->item;
-    }
-
-    /**
-     * This resource provides the adjudication details from the processing of a Claim
-     * resource.
-     *
-     * A claim line. Either a simple (a product or service) or a 'group' of details
-     * which can also be a simple items or groups of sub-details.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem $item
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError[] $error
      * @return static
      */
-    public function addItem(FHIRClaimResponseItem $item = null)
+    public function setError(array $error = [])
     {
-        $this->item[] = $item;
-        return $this;
-    }
-
-    /**
-     * This resource provides the adjudication details from the processing of a Claim
-     * resource.
-     *
-     * A claim line. Either a simple (a product or service) or a 'group' of details
-     * which can also be a simple items or groups of sub-details.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem[] $item
-     * @return static
-     */
-    public function setItem(array $item = [])
-    {
-        $this->item = [];
-        if ([] === $item) {
+        if ([] !== $this->error) {
+            $this->_trackValuesRemoved(count($this->error));
+            $this->error = [];
+        }
+        if ([] === $error) {
             return $this;
         }
-        foreach($item as $v) {
-            if ($v instanceof FHIRClaimResponseItem) {
-                $this->addItem($v);
+        foreach($error as $v) {
+            if ($v instanceof FHIRClaimResponseError) {
+                $this->addError($v);
             } else {
-                $this->addItem(new FHIRClaimResponseItem($v));
+                $this->addError(new FHIRClaimResponseError($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * The result of the claim processing.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The outcome of the claim, predetermination, or preauthorization processing.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRClaimProcessingCodes
-     */
-    public function getOutcome()
-    {
-        return $this->outcome;
-    }
-
-    /**
-     * The result of the claim processing.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The outcome of the claim, predetermination, or preauthorization processing.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRClaimProcessingCodes $outcome
-     * @return static
-     */
-    public function setOutcome(FHIRClaimProcessingCodes $outcome = null)
-    {
-        $this->outcome = $outcome;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The party to whom the professional services and/or products have been supplied
-     * or are being considered and for whom actual for facast reimbursement is sought.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getPatient()
-    {
-        return $this->patient;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The party to whom the professional services and/or products have been supplied
-     * or are being considered and for whom actual for facast reimbursement is sought.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $patient
-     * @return static
-     */
-    public function setPatient(FHIRReference $patient = null)
-    {
-        $this->patient = $patient;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Type of Party to be reimbursed: subscriber, provider, other.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getPayeeType()
-    {
-        return $this->payeeType;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Type of Party to be reimbursed: subscriber, provider, other.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $payeeType
-     * @return static
-     */
-    public function setPayeeType(FHIRCodeableConcept $payeeType = null)
-    {
-        $this->payeeType = $payeeType;
-        return $this;
-    }
-
-    /**
-     * This resource provides the adjudication details from the processing of a Claim
-     * resource.
-     *
-     * Payment details for the adjudication of the claim.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponsePayment
-     */
-    public function getPayment()
-    {
-        return $this->payment;
-    }
-
-    /**
-     * This resource provides the adjudication details from the processing of a Claim
-     * resource.
-     *
-     * Payment details for the adjudication of the claim.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponsePayment $payment
-     * @return static
-     */
-    public function setPayment(FHIRClaimResponsePayment $payment = null)
-    {
-        $this->payment = $payment;
-        return $this;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The time frame during which this authorization is effective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
-     */
-    public function getPreAuthPeriod()
-    {
-        return $this->preAuthPeriod;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The time frame during which this authorization is effective.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $preAuthPeriod
-     * @return static
-     */
-    public function setPreAuthPeriod(FHIRPeriod $preAuthPeriod = null)
-    {
-        $this->preAuthPeriod = $preAuthPeriod;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Reference from the Insurer which is used in later communications which refers to
-     * this adjudication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getPreAuthRef()
-    {
-        return $this->preAuthRef;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Reference from the Insurer which is used in later communications which refers to
-     * this adjudication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $preAuthRef
-     * @return static
-     */
-    public function setPreAuthRef($preAuthRef = null)
-    {
-        if (null === $preAuthRef) {
-            $this->preAuthRef = null;
-            return $this;
-        }
-        if ($preAuthRef instanceof FHIRString) {
-            $this->preAuthRef = $preAuthRef;
-            return $this;
-        }
-        $this->preAuthRef = new FHIRString($preAuthRef);
-        return $this;
-    }
-
-    /**
-     * This resource provides the adjudication details from the processing of a Claim
-     * resource.
-     *
-     * A note that describes or explains adjudication results in a human readable form.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote[]
-     */
-    public function getProcessNote()
-    {
-        return $this->processNote;
-    }
-
-    /**
-     * This resource provides the adjudication details from the processing of a Claim
-     * resource.
-     *
-     * A note that describes or explains adjudication results in a human readable form.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote $processNote
-     * @return static
-     */
-    public function addProcessNote(FHIRClaimResponseProcessNote $processNote = null)
-    {
-        $this->processNote[] = $processNote;
-        return $this;
-    }
-
-    /**
-     * This resource provides the adjudication details from the processing of a Claim
-     * resource.
-     *
-     * A note that describes or explains adjudication results in a human readable form.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote[] $processNote
-     * @return static
-     */
-    public function setProcessNote(array $processNote = [])
-    {
-        $this->processNote = [];
-        if ([] === $processNote) {
-            return $this;
-        }
-        foreach($processNote as $v) {
-            if ($v instanceof FHIRClaimResponseProcessNote) {
-                $this->addProcessNote($v);
-            } else {
-                $this->addProcessNote(new FHIRClaimResponseProcessNote($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Original request resource reference.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getRequest()
-    {
-        return $this->request;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Original request resource reference.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $request
-     * @return static
-     */
-    public function setRequest(FHIRReference $request = null)
-    {
-        $this->request = $request;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The provider which is responsible for the claim, predetermination or
-     * preauthorization.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getRequestor()
-    {
-        return $this->requestor;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The provider which is responsible for the claim, predetermination or
-     * preauthorization.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $requestor
-     * @return static
-     */
-    public function setRequestor(FHIRReference $requestor = null)
-    {
-        $this->requestor = $requestor;
-        return $this;
-    }
-
-    /**
-     * A code specifying the state of the resource instance.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The status of the resource instance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * A code specifying the state of the resource instance.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The status of the resource instance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
-     * @return static
-     */
-    public function setStatus(FHIRFinancialResourceStatusCodes $status = null)
-    {
-        $this->status = $status;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A finer grained suite of claim type codes which may convey additional
-     * information such as Inpatient vs Outpatient and/or a specialty service.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getSubType()
-    {
-        return $this->subType;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A finer grained suite of claim type codes which may convey additional
-     * information such as Inpatient vs Outpatient and/or a specialty service.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $subType
-     * @return static
-     */
-    public function setSubType(FHIRCodeableConcept $subType = null)
-    {
-        $this->subType = $subType;
-        return $this;
-    }
-
-    /**
-     * This resource provides the adjudication details from the processing of a Claim
-     * resource.
-     *
-     * Categorized monetary totals for the adjudication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseTotal[]
-     */
-    public function getTotal()
-    {
-        return $this->total;
-    }
-
-    /**
-     * This resource provides the adjudication details from the processing of a Claim
-     * resource.
-     *
-     * Categorized monetary totals for the adjudication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseTotal $total
-     * @return static
-     */
-    public function addTotal(FHIRClaimResponseTotal $total = null)
-    {
-        $this->total[] = $total;
-        return $this;
-    }
-
-    /**
-     * This resource provides the adjudication details from the processing of a Claim
-     * resource.
-     *
-     * Categorized monetary totals for the adjudication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseTotal[] $total
-     * @return static
-     */
-    public function setTotal(array $total = [])
-    {
-        $this->total = [];
-        if ([] === $total) {
-            return $this;
-        }
-        foreach($total as $v) {
-            if ($v instanceof FHIRClaimResponseTotal) {
-                $this->addTotal($v);
-            } else {
-                $this->addTotal(new FHIRClaimResponseTotal($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A finer grained suite of claim type codes which may convey additional
-     * information such as Inpatient vs Outpatient and/or a specialty service.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A finer grained suite of claim type codes which may convey additional
-     * information such as Inpatient vs Outpatient and/or a specialty service.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return static
-     */
-    public function setType(FHIRCodeableConcept $type = null)
-    {
-        $this->type = $type;
-        return $this;
-    }
-
-    /**
-     * The purpose of the Claim: predetermination, preauthorization, claim.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A code to indicate whether the nature of the request is: to request adjudication
-     * of products and services previously rendered; or requesting authorization and
-     * adjudication for provision in the future; or requesting the non-binding
-     * adjudication of the listed products and services which could be provided in the
-     * future.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUse
-     */
-    public function getUse()
-    {
-        return $this->use;
-    }
-
-    /**
-     * The purpose of the Claim: predetermination, preauthorization, claim.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A code to indicate whether the nature of the request is: to request adjudication
-     * of products and services previously rendered; or requesting authorization and
-     * adjudication for provision in the future; or requesting the non-binding
-     * adjudication of the listed products and services which could be provided in the
-     * future.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUse $use
-     * @return static
-     */
-    public function setUse(FHIRUse $use = null)
-    {
-        $this->use = $use;
         return $this;
     }
 
@@ -1986,6 +1984,90 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if ([] !== ($vs = $this->getIdentifier())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_IDENTIFIER, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_STATUS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSubType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUB_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getUse())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_USE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPatient())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PATIENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCreated())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CREATED] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getInsurer())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INSURER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getRequestor())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_REQUESTOR] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getRequest())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_REQUEST] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getOutcome())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_OUTCOME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDisposition())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DISPOSITION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPreAuthRef())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PRE_AUTH_REF] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPreAuthPeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PRE_AUTH_PERIOD] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPayeeType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PAYEE_TYPE] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getItem())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_ITEM, $i)] = $fieldErrs;
+                }
+            }
+        }
         if ([] !== ($vs = $this->getAddItem())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
@@ -2000,38 +2082,16 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                 }
             }
         }
-        if ([] !== ($vs = $this->getCommunicationRequest())) {
+        if ([] !== ($vs = $this->getTotal())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_COMMUNICATION_REQUEST, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_TOTAL, $i)] = $fieldErrs;
                 }
             }
         }
-        if (null !== ($v = $this->getCreated())) {
+        if (null !== ($v = $this->getPayment())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CREATED] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDisposition())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DISPOSITION] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getError())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_ERROR, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getForm())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_FORM] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getFormCode())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_FORM_CODE] = $fieldErrs;
+                $errs[self::FIELD_PAYMENT] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getFundsReserve())) {
@@ -2039,10 +2099,27 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                 $errs[self::FIELD_FUNDS_RESERVE] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getIdentifier())) {
+        if (null !== ($v = $this->getFormCode())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_FORM_CODE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getForm())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_FORM] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getProcessNote())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_IDENTIFIER, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_PROCESS_NOTE, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getCommunicationRequest())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_COMMUNICATION_REQUEST, $i)] = $fieldErrs;
                 }
             }
         }
@@ -2053,90 +2130,203 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                 }
             }
         }
-        if (null !== ($v = $this->getInsurer())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_INSURER] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getItem())) {
+        if ([] !== ($vs = $this->getError())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_ITEM, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_ERROR, $i)] = $fieldErrs;
                 }
             }
         }
-        if (null !== ($v = $this->getOutcome())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_OUTCOME] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPatient())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PATIENT] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPayeeType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PAYEE_TYPE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPayment())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PAYMENT] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPreAuthPeriod())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PRE_AUTH_PERIOD] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPreAuthRef())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PRE_AUTH_REF] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getProcessNote())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_PROCESS_NOTE, $i)] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_IDENTIFIER])) {
+            $v = $this->getIdentifier();
+            foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_IDENTIFIER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_IDENTIFIER])) {
+                        $errs[self::FIELD_IDENTIFIER] = [];
+                    }
+                    $errs[self::FIELD_IDENTIFIER][$rule] = $err;
                 }
             }
         }
-        if (null !== ($v = $this->getRequest())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_REQUEST] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getRequestor())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_REQUESTOR] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getStatus())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_STATUS] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getSubType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SUB_TYPE] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getTotal())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_TOTAL, $i)] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_STATUS])) {
+            $v = $this->getStatus();
+            foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_STATUS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_STATUS])) {
+                        $errs[self::FIELD_STATUS] = [];
+                    }
+                    $errs[self::FIELD_STATUS][$rule] = $err;
                 }
             }
         }
-        if (null !== ($v = $this->getType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TYPE] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
+                    }
+                    $errs[self::FIELD_TYPE][$rule] = $err;
+                }
             }
         }
-        if (null !== ($v = $this->getUse())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_USE] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_SUB_TYPE])) {
+            $v = $this->getSubType();
+            foreach($validationRules[self::FIELD_SUB_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_SUB_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUB_TYPE])) {
+                        $errs[self::FIELD_SUB_TYPE] = [];
+                    }
+                    $errs[self::FIELD_SUB_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_USE])) {
+            $v = $this->getUse();
+            foreach($validationRules[self::FIELD_USE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_USE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_USE])) {
+                        $errs[self::FIELD_USE] = [];
+                    }
+                    $errs[self::FIELD_USE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PATIENT])) {
+            $v = $this->getPatient();
+            foreach($validationRules[self::FIELD_PATIENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_PATIENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PATIENT])) {
+                        $errs[self::FIELD_PATIENT] = [];
+                    }
+                    $errs[self::FIELD_PATIENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CREATED])) {
+            $v = $this->getCreated();
+            foreach($validationRules[self::FIELD_CREATED] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_CREATED, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CREATED])) {
+                        $errs[self::FIELD_CREATED] = [];
+                    }
+                    $errs[self::FIELD_CREATED][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INSURER])) {
+            $v = $this->getInsurer();
+            foreach($validationRules[self::FIELD_INSURER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_INSURER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INSURER])) {
+                        $errs[self::FIELD_INSURER] = [];
+                    }
+                    $errs[self::FIELD_INSURER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_REQUESTOR])) {
+            $v = $this->getRequestor();
+            foreach($validationRules[self::FIELD_REQUESTOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_REQUESTOR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REQUESTOR])) {
+                        $errs[self::FIELD_REQUESTOR] = [];
+                    }
+                    $errs[self::FIELD_REQUESTOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_REQUEST])) {
+            $v = $this->getRequest();
+            foreach($validationRules[self::FIELD_REQUEST] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_REQUEST, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REQUEST])) {
+                        $errs[self::FIELD_REQUEST] = [];
+                    }
+                    $errs[self::FIELD_REQUEST][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_OUTCOME])) {
+            $v = $this->getOutcome();
+            foreach($validationRules[self::FIELD_OUTCOME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_OUTCOME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_OUTCOME])) {
+                        $errs[self::FIELD_OUTCOME] = [];
+                    }
+                    $errs[self::FIELD_OUTCOME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DISPOSITION])) {
+            $v = $this->getDisposition();
+            foreach($validationRules[self::FIELD_DISPOSITION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_DISPOSITION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DISPOSITION])) {
+                        $errs[self::FIELD_DISPOSITION] = [];
+                    }
+                    $errs[self::FIELD_DISPOSITION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PRE_AUTH_REF])) {
+            $v = $this->getPreAuthRef();
+            foreach($validationRules[self::FIELD_PRE_AUTH_REF] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_PRE_AUTH_REF, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PRE_AUTH_REF])) {
+                        $errs[self::FIELD_PRE_AUTH_REF] = [];
+                    }
+                    $errs[self::FIELD_PRE_AUTH_REF][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PRE_AUTH_PERIOD])) {
+            $v = $this->getPreAuthPeriod();
+            foreach($validationRules[self::FIELD_PRE_AUTH_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_PRE_AUTH_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PRE_AUTH_PERIOD])) {
+                        $errs[self::FIELD_PRE_AUTH_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_PRE_AUTH_PERIOD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PAYEE_TYPE])) {
+            $v = $this->getPayeeType();
+            foreach($validationRules[self::FIELD_PAYEE_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_PAYEE_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PAYEE_TYPE])) {
+                        $errs[self::FIELD_PAYEE_TYPE] = [];
+                    }
+                    $errs[self::FIELD_PAYEE_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ITEM])) {
+            $v = $this->getItem();
+            foreach($validationRules[self::FIELD_ITEM] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_ITEM, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ITEM])) {
+                        $errs[self::FIELD_ITEM] = [];
+                    }
+                    $errs[self::FIELD_ITEM][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_ADD_ITEM])) {
@@ -2163,171 +2353,15 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_COMMUNICATION_REQUEST])) {
-            $v = $this->getCommunicationRequest();
-            foreach($validationRules[self::FIELD_COMMUNICATION_REQUEST] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_COMMUNICATION_REQUEST, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_TOTAL])) {
+            $v = $this->getTotal();
+            foreach($validationRules[self::FIELD_TOTAL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_TOTAL, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COMMUNICATION_REQUEST])) {
-                        $errs[self::FIELD_COMMUNICATION_REQUEST] = [];
+                    if (!isset($errs[self::FIELD_TOTAL])) {
+                        $errs[self::FIELD_TOTAL] = [];
                     }
-                    $errs[self::FIELD_COMMUNICATION_REQUEST][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_CREATED])) {
-            $v = $this->getCreated();
-            foreach($validationRules[self::FIELD_CREATED] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_CREATED, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CREATED])) {
-                        $errs[self::FIELD_CREATED] = [];
-                    }
-                    $errs[self::FIELD_CREATED][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_DISPOSITION])) {
-            $v = $this->getDisposition();
-            foreach($validationRules[self::FIELD_DISPOSITION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_DISPOSITION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DISPOSITION])) {
-                        $errs[self::FIELD_DISPOSITION] = [];
-                    }
-                    $errs[self::FIELD_DISPOSITION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_ERROR])) {
-            $v = $this->getError();
-            foreach($validationRules[self::FIELD_ERROR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_ERROR, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ERROR])) {
-                        $errs[self::FIELD_ERROR] = [];
-                    }
-                    $errs[self::FIELD_ERROR][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_FORM])) {
-            $v = $this->getForm();
-            foreach($validationRules[self::FIELD_FORM] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_FORM, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FORM])) {
-                        $errs[self::FIELD_FORM] = [];
-                    }
-                    $errs[self::FIELD_FORM][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_FORM_CODE])) {
-            $v = $this->getFormCode();
-            foreach($validationRules[self::FIELD_FORM_CODE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_FORM_CODE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FORM_CODE])) {
-                        $errs[self::FIELD_FORM_CODE] = [];
-                    }
-                    $errs[self::FIELD_FORM_CODE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_FUNDS_RESERVE])) {
-            $v = $this->getFundsReserve();
-            foreach($validationRules[self::FIELD_FUNDS_RESERVE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_FUNDS_RESERVE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FUNDS_RESERVE])) {
-                        $errs[self::FIELD_FUNDS_RESERVE] = [];
-                    }
-                    $errs[self::FIELD_FUNDS_RESERVE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_IDENTIFIER])) {
-            $v = $this->getIdentifier();
-            foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_IDENTIFIER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_IDENTIFIER])) {
-                        $errs[self::FIELD_IDENTIFIER] = [];
-                    }
-                    $errs[self::FIELD_IDENTIFIER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_INSURANCE])) {
-            $v = $this->getInsurance();
-            foreach($validationRules[self::FIELD_INSURANCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_INSURANCE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INSURANCE])) {
-                        $errs[self::FIELD_INSURANCE] = [];
-                    }
-                    $errs[self::FIELD_INSURANCE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_INSURER])) {
-            $v = $this->getInsurer();
-            foreach($validationRules[self::FIELD_INSURER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_INSURER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INSURER])) {
-                        $errs[self::FIELD_INSURER] = [];
-                    }
-                    $errs[self::FIELD_INSURER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_ITEM])) {
-            $v = $this->getItem();
-            foreach($validationRules[self::FIELD_ITEM] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_ITEM, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ITEM])) {
-                        $errs[self::FIELD_ITEM] = [];
-                    }
-                    $errs[self::FIELD_ITEM][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_OUTCOME])) {
-            $v = $this->getOutcome();
-            foreach($validationRules[self::FIELD_OUTCOME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_OUTCOME, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_OUTCOME])) {
-                        $errs[self::FIELD_OUTCOME] = [];
-                    }
-                    $errs[self::FIELD_OUTCOME][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PATIENT])) {
-            $v = $this->getPatient();
-            foreach($validationRules[self::FIELD_PATIENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_PATIENT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PATIENT])) {
-                        $errs[self::FIELD_PATIENT] = [];
-                    }
-                    $errs[self::FIELD_PATIENT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PAYEE_TYPE])) {
-            $v = $this->getPayeeType();
-            foreach($validationRules[self::FIELD_PAYEE_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_PAYEE_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PAYEE_TYPE])) {
-                        $errs[self::FIELD_PAYEE_TYPE] = [];
-                    }
-                    $errs[self::FIELD_PAYEE_TYPE][$rule] = $err;
+                    $errs[self::FIELD_TOTAL][$rule] = $err;
                 }
             }
         }
@@ -2343,27 +2377,39 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PRE_AUTH_PERIOD])) {
-            $v = $this->getPreAuthPeriod();
-            foreach($validationRules[self::FIELD_PRE_AUTH_PERIOD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_PRE_AUTH_PERIOD, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_FUNDS_RESERVE])) {
+            $v = $this->getFundsReserve();
+            foreach($validationRules[self::FIELD_FUNDS_RESERVE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_FUNDS_RESERVE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PRE_AUTH_PERIOD])) {
-                        $errs[self::FIELD_PRE_AUTH_PERIOD] = [];
+                    if (!isset($errs[self::FIELD_FUNDS_RESERVE])) {
+                        $errs[self::FIELD_FUNDS_RESERVE] = [];
                     }
-                    $errs[self::FIELD_PRE_AUTH_PERIOD][$rule] = $err;
+                    $errs[self::FIELD_FUNDS_RESERVE][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PRE_AUTH_REF])) {
-            $v = $this->getPreAuthRef();
-            foreach($validationRules[self::FIELD_PRE_AUTH_REF] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_PRE_AUTH_REF, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_FORM_CODE])) {
+            $v = $this->getFormCode();
+            foreach($validationRules[self::FIELD_FORM_CODE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_FORM_CODE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PRE_AUTH_REF])) {
-                        $errs[self::FIELD_PRE_AUTH_REF] = [];
+                    if (!isset($errs[self::FIELD_FORM_CODE])) {
+                        $errs[self::FIELD_FORM_CODE] = [];
                     }
-                    $errs[self::FIELD_PRE_AUTH_REF][$rule] = $err;
+                    $errs[self::FIELD_FORM_CODE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_FORM])) {
+            $v = $this->getForm();
+            foreach($validationRules[self::FIELD_FORM] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_FORM, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FORM])) {
+                        $errs[self::FIELD_FORM] = [];
+                    }
+                    $errs[self::FIELD_FORM][$rule] = $err;
                 }
             }
         }
@@ -2379,87 +2425,51 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_REQUEST])) {
-            $v = $this->getRequest();
-            foreach($validationRules[self::FIELD_REQUEST] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_REQUEST, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_COMMUNICATION_REQUEST])) {
+            $v = $this->getCommunicationRequest();
+            foreach($validationRules[self::FIELD_COMMUNICATION_REQUEST] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_COMMUNICATION_REQUEST, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REQUEST])) {
-                        $errs[self::FIELD_REQUEST] = [];
+                    if (!isset($errs[self::FIELD_COMMUNICATION_REQUEST])) {
+                        $errs[self::FIELD_COMMUNICATION_REQUEST] = [];
                     }
-                    $errs[self::FIELD_REQUEST][$rule] = $err;
+                    $errs[self::FIELD_COMMUNICATION_REQUEST][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_REQUESTOR])) {
-            $v = $this->getRequestor();
-            foreach($validationRules[self::FIELD_REQUESTOR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_REQUESTOR, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_INSURANCE])) {
+            $v = $this->getInsurance();
+            foreach($validationRules[self::FIELD_INSURANCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_INSURANCE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REQUESTOR])) {
-                        $errs[self::FIELD_REQUESTOR] = [];
+                    if (!isset($errs[self::FIELD_INSURANCE])) {
+                        $errs[self::FIELD_INSURANCE] = [];
                     }
-                    $errs[self::FIELD_REQUESTOR][$rule] = $err;
+                    $errs[self::FIELD_INSURANCE][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_STATUS])) {
-            $v = $this->getStatus();
-            foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_STATUS, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_ERROR])) {
+            $v = $this->getError();
+            foreach($validationRules[self::FIELD_ERROR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_ERROR, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_STATUS])) {
-                        $errs[self::FIELD_STATUS] = [];
+                    if (!isset($errs[self::FIELD_ERROR])) {
+                        $errs[self::FIELD_ERROR] = [];
                     }
-                    $errs[self::FIELD_STATUS][$rule] = $err;
+                    $errs[self::FIELD_ERROR][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SUB_TYPE])) {
-            $v = $this->getSubType();
-            foreach($validationRules[self::FIELD_SUB_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_SUB_TYPE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SUB_TYPE])) {
-                        $errs[self::FIELD_SUB_TYPE] = [];
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
                     }
-                    $errs[self::FIELD_SUB_TYPE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_TOTAL])) {
-            $v = $this->getTotal();
-            foreach($validationRules[self::FIELD_TOTAL] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_TOTAL, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TOTAL])) {
-                        $errs[self::FIELD_TOTAL] = [];
-                    }
-                    $errs[self::FIELD_TOTAL][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_TYPE])) {
-            $v = $this->getType();
-            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TYPE])) {
-                        $errs[self::FIELD_TYPE] = [];
-                    }
-                    $errs[self::FIELD_TYPE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_USE])) {
-            $v = $this->getUse();
-            foreach($validationRules[self::FIELD_USE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE, self::FIELD_USE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_USE])) {
-                        $errs[self::FIELD_USE] = [];
-                    }
-                    $errs[self::FIELD_USE][$rule] = $err;
+                    $errs[self::FIELD_TEXT][$rule] = $err;
                 }
             }
         }
@@ -2499,18 +2509,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ID])) {
             $v = $this->getId();
             foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
@@ -2520,6 +2518,18 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                         $errs[self::FIELD_ID] = [];
                     }
                     $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
                 }
             }
         }
@@ -2547,204 +2557,296 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_META])) {
-            $v = $this->getMeta();
-            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_META])) {
-                        $errs[self::FIELD_META] = [];
-                    }
-                    $errs[self::FIELD_META][$rule] = $err;
-                }
-            }
-        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaimResponse $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaimResponse
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRClaimResponse::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRClaimResponse::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRClaimResponse::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRClaimResponse;
+            $type = new FHIRClaimResponse(null);
         } elseif (!is_object($type) || !($type instanceof FHIRClaimResponse)) {
             throw new \RuntimeException(sprintf(
                 'FHIRClaimResponse::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRClaimResponse or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRDomainResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_IDENTIFIER === $n->nodeName) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_STATUS === $n->nodeName) {
+                $type->setStatus(FHIRFinancialResourceStatusCodes::xmlUnserialize($n));
+            } elseif (self::FIELD_TYPE === $n->nodeName) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_SUB_TYPE === $n->nodeName) {
+                $type->setSubType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_USE === $n->nodeName) {
+                $type->setUse(FHIRUse::xmlUnserialize($n));
+            } elseif (self::FIELD_PATIENT === $n->nodeName) {
+                $type->setPatient(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_CREATED === $n->nodeName) {
+                $type->setCreated(FHIRDateTime::xmlUnserialize($n));
+            } elseif (self::FIELD_INSURER === $n->nodeName) {
+                $type->setInsurer(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_REQUESTOR === $n->nodeName) {
+                $type->setRequestor(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_REQUEST === $n->nodeName) {
+                $type->setRequest(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_OUTCOME === $n->nodeName) {
+                $type->setOutcome(FHIRClaimProcessingCodes::xmlUnserialize($n));
+            } elseif (self::FIELD_DISPOSITION === $n->nodeName) {
+                $type->setDisposition(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_PRE_AUTH_REF === $n->nodeName) {
+                $type->setPreAuthRef(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_PRE_AUTH_PERIOD === $n->nodeName) {
+                $type->setPreAuthPeriod(FHIRPeriod::xmlUnserialize($n));
+            } elseif (self::FIELD_PAYEE_TYPE === $n->nodeName) {
+                $type->setPayeeType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_ITEM === $n->nodeName) {
+                $type->addItem(FHIRClaimResponseItem::xmlUnserialize($n));
+            } elseif (self::FIELD_ADD_ITEM === $n->nodeName) {
+                $type->addAddItem(FHIRClaimResponseAddItem::xmlUnserialize($n));
+            } elseif (self::FIELD_ADJUDICATION === $n->nodeName) {
+                $type->addAdjudication(FHIRClaimResponseAdjudication::xmlUnserialize($n));
+            } elseif (self::FIELD_TOTAL === $n->nodeName) {
+                $type->addTotal(FHIRClaimResponseTotal::xmlUnserialize($n));
+            } elseif (self::FIELD_PAYMENT === $n->nodeName) {
+                $type->setPayment(FHIRClaimResponsePayment::xmlUnserialize($n));
+            } elseif (self::FIELD_FUNDS_RESERVE === $n->nodeName) {
+                $type->setFundsReserve(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_FORM_CODE === $n->nodeName) {
+                $type->setFormCode(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_FORM === $n->nodeName) {
+                $type->setForm(FHIRAttachment::xmlUnserialize($n));
+            } elseif (self::FIELD_PROCESS_NOTE === $n->nodeName) {
+                $type->addProcessNote(FHIRClaimResponseProcessNote::xmlUnserialize($n));
+            } elseif (self::FIELD_COMMUNICATION_REQUEST === $n->nodeName) {
+                $type->addCommunicationRequest(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_INSURANCE === $n->nodeName) {
+                $type->addInsurance(FHIRClaimResponseInsurance::xmlUnserialize($n));
+            } elseif (self::FIELD_ERROR === $n->nodeName) {
+                $type->addError(FHIRClaimResponseError::xmlUnserialize($n));
+            } elseif (self::FIELD_TEXT === $n->nodeName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n));
+            } elseif (self::FIELD_CONTAINED === $n->nodeName) {
+                for ($ni = 0; $ni < $n->childNodes->length; $ni++) {
+                    $nn = $n->childNodes->item($ni);
+                    if ($nn instanceof \DOMElement) {
+                        $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn));
+                    }
+                }
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRId::xmlUnserialize($n));
+            } elseif (self::FIELD_META === $n->nodeName) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($n));
+            } elseif (self::FIELD_IMPLICIT_RULES === $n->nodeName) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_LANGUAGE === $n->nodeName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->addItem)) {
-            foreach($children->addItem as $child) {
-                $type->addAddItem(FHIRClaimResponseAddItem::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->adjudication)) {
-            foreach($children->adjudication as $child) {
-                $type->addAdjudication(FHIRClaimResponseAdjudication::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->communicationRequest)) {
-            foreach($children->communicationRequest as $child) {
-                $type->addCommunicationRequest(FHIRReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->created)) {
-            $type->setCreated(FHIRDateTime::xmlUnserialize($children->created));
-        }
-        if (isset($attributes->created)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_CREATED);
+        if (null !== $n) {
             $pt = $type->getCreated();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->created);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setCreated((string)$attributes->created);
+                $type->setCreated($n->nodeValue);
             }
         }
-        if (isset($children->disposition)) {
-            $type->setDisposition(FHIRString::xmlUnserialize($children->disposition));
-        }
-        if (isset($attributes->disposition)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DISPOSITION);
+        if (null !== $n) {
             $pt = $type->getDisposition();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->disposition);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDisposition((string)$attributes->disposition);
+                $type->setDisposition($n->nodeValue);
             }
         }
-        if (isset($children->error)) {
-            foreach($children->error as $child) {
-                $type->addError(FHIRClaimResponseError::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->form)) {
-            $type->setForm(FHIRAttachment::xmlUnserialize($children->form));
-        }
-        if (isset($children->formCode)) {
-            $type->setFormCode(FHIRCodeableConcept::xmlUnserialize($children->formCode));
-        }
-        if (isset($children->fundsReserve)) {
-            $type->setFundsReserve(FHIRCodeableConcept::xmlUnserialize($children->fundsReserve));
-        }
-        if (isset($children->identifier)) {
-            foreach($children->identifier as $child) {
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->insurance)) {
-            foreach($children->insurance as $child) {
-                $type->addInsurance(FHIRClaimResponseInsurance::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->insurer)) {
-            $type->setInsurer(FHIRReference::xmlUnserialize($children->insurer));
-        }
-        if (isset($children->item)) {
-            foreach($children->item as $child) {
-                $type->addItem(FHIRClaimResponseItem::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->outcome)) {
-            $type->setOutcome(FHIRClaimProcessingCodes::xmlUnserialize($children->outcome));
-        }
-        if (isset($children->patient)) {
-            $type->setPatient(FHIRReference::xmlUnserialize($children->patient));
-        }
-        if (isset($children->payeeType)) {
-            $type->setPayeeType(FHIRCodeableConcept::xmlUnserialize($children->payeeType));
-        }
-        if (isset($children->payment)) {
-            $type->setPayment(FHIRClaimResponsePayment::xmlUnserialize($children->payment));
-        }
-        if (isset($children->preAuthPeriod)) {
-            $type->setPreAuthPeriod(FHIRPeriod::xmlUnserialize($children->preAuthPeriod));
-        }
-        if (isset($children->preAuthRef)) {
-            $type->setPreAuthRef(FHIRString::xmlUnserialize($children->preAuthRef));
-        }
-        if (isset($attributes->preAuthRef)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_PRE_AUTH_REF);
+        if (null !== $n) {
             $pt = $type->getPreAuthRef();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->preAuthRef);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setPreAuthRef((string)$attributes->preAuthRef);
+                $type->setPreAuthRef($n->nodeValue);
             }
         }
-        if (isset($children->processNote)) {
-            foreach($children->processNote as $child) {
-                $type->addProcessNote(FHIRClaimResponseProcessNote::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
-        if (isset($children->request)) {
-            $type->setRequest(FHIRReference::xmlUnserialize($children->request));
-        }
-        if (isset($children->requestor)) {
-            $type->setRequestor(FHIRReference::xmlUnserialize($children->requestor));
-        }
-        if (isset($children->status)) {
-            $type->setStatus(FHIRFinancialResourceStatusCodes::xmlUnserialize($children->status));
-        }
-        if (isset($children->subType)) {
-            $type->setSubType(FHIRCodeableConcept::xmlUnserialize($children->subType));
-        }
-        if (isset($children->total)) {
-            foreach($children->total as $child) {
-                $type->addTotal(FHIRClaimResponseTotal::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_IMPLICIT_RULES);
+        if (null !== $n) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setImplicitRules($n->nodeValue);
             }
         }
-        if (isset($children->type)) {
-            $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
-        }
-        if (isset($children->use)) {
-            $type->setUse(FHIRUse::xmlUnserialize($children->use));
+        $n = $element->attributes->getNamedItem(self::FIELD_LANGUAGE);
+        if (null !== $n) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setLanguage($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if ([] !== ($vs = $this->getIdentifier())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_IDENTIFIER);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_STATUS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getSubType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SUB_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getUse())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_USE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getPatient())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PATIENT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getCreated())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_CREATED);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getInsurer())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_INSURER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getRequestor())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_REQUESTOR);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getRequest())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_REQUEST);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getOutcome())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_OUTCOME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDisposition())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DISPOSITION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getPreAuthRef())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PRE_AUTH_REF);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getPreAuthPeriod())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PRE_AUTH_PERIOD);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getPayeeType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PAYEE_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getItem())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_ITEM);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
         if ([] !== ($vs = $this->getAddItem())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ADD_ITEM, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_ADD_ITEM);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getAdjudication())) {
@@ -2752,7 +2854,49 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ADJUDICATION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_ADJUDICATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if ([] !== ($vs = $this->getTotal())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_TOTAL);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if (null !== ($v = $this->getPayment())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PAYMENT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getFundsReserve())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_FUNDS_RESERVE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getFormCode())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_FORM_CODE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getForm())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_FORM);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getProcessNote())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_PROCESS_NOTE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getCommunicationRequest())) {
@@ -2760,38 +2904,9 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COMMUNICATION_REQUEST, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getCreated())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CREATED, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDisposition())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DISPOSITION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getError())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ERROR, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getForm())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FORM, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getFormCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FORM_CODE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getFundsReserve())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FUNDS_RESERVE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getIdentifier())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_COMMUNICATION_REQUEST);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getInsurance())) {
@@ -2799,73 +2914,22 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INSURANCE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_INSURANCE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getInsurer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INSURER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getItem())) {
+        if ([] !== ($vs = $this->getError())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_ERROR);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getOutcome())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPatient())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPayeeType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYEE_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPayment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPreAuthPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRE_AUTH_PERIOD, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPreAuthRef())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRE_AUTH_REF, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getProcessNote())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PROCESS_NOTE, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getRequest())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getRequestor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTOR, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getSubType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getTotal())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TOTAL, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getUse())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_USE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -2874,6 +2938,108 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if ([] !== ($vs = $this->getIdentifier())) {
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRFinancialResourceStatusCodes::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_STATUS_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            $a[self::FIELD_TYPE] = $v;
+        }
+        if (null !== ($v = $this->getSubType())) {
+            $a[self::FIELD_SUB_TYPE] = $v;
+        }
+        if (null !== ($v = $this->getUse())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_USE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUse::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_USE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getPatient())) {
+            $a[self::FIELD_PATIENT] = $v;
+        }
+        if (null !== ($v = $this->getCreated())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CREATED] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDateTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_CREATED_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getInsurer())) {
+            $a[self::FIELD_INSURER] = $v;
+        }
+        if (null !== ($v = $this->getRequestor())) {
+            $a[self::FIELD_REQUESTOR] = $v;
+        }
+        if (null !== ($v = $this->getRequest())) {
+            $a[self::FIELD_REQUEST] = $v;
+        }
+        if (null !== ($v = $this->getOutcome())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_OUTCOME] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRClaimProcessingCodes::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_OUTCOME_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getDisposition())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DISPOSITION] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DISPOSITION_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getPreAuthRef())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PRE_AUTH_REF] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PRE_AUTH_REF_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getPreAuthPeriod())) {
+            $a[self::FIELD_PRE_AUTH_PERIOD] = $v;
+        }
+        if (null !== ($v = $this->getPayeeType())) {
+            $a[self::FIELD_PAYEE_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->getItem())) {
+            $a[self::FIELD_ITEM] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ITEM][] = $v;
+            }
+        }
         if ([] !== ($vs = $this->getAddItem())) {
             $a[self::FIELD_ADD_ITEM] = [];
             foreach($vs as $v) {
@@ -2892,6 +3058,36 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                 $a[self::FIELD_ADJUDICATION][] = $v;
             }
         }
+        if ([] !== ($vs = $this->getTotal())) {
+            $a[self::FIELD_TOTAL] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_TOTAL][] = $v;
+            }
+        }
+        if (null !== ($v = $this->getPayment())) {
+            $a[self::FIELD_PAYMENT] = $v;
+        }
+        if (null !== ($v = $this->getFundsReserve())) {
+            $a[self::FIELD_FUNDS_RESERVE] = $v;
+        }
+        if (null !== ($v = $this->getFormCode())) {
+            $a[self::FIELD_FORM_CODE] = $v;
+        }
+        if (null !== ($v = $this->getForm())) {
+            $a[self::FIELD_FORM] = $v;
+        }
+        if ([] !== ($vs = $this->getProcessNote())) {
+            $a[self::FIELD_PROCESS_NOTE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PROCESS_NOTE][] = $v;
+            }
+        }
         if ([] !== ($vs = $this->getCommunicationRequest())) {
             $a[self::FIELD_COMMUNICATION_REQUEST] = [];
             foreach($vs as $v) {
@@ -2899,51 +3095,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                     continue;
                 }
                 $a[self::FIELD_COMMUNICATION_REQUEST][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getCreated())) {
-            $a[self::FIELD_CREATED] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_CREATED_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getDisposition())) {
-            $a[self::FIELD_DISPOSITION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DISPOSITION_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->getError())) {
-            $a[self::FIELD_ERROR] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_ERROR][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getForm())) {
-            $a[self::FIELD_FORM] = $v;
-        }
-        if (null !== ($v = $this->getFormCode())) {
-            $a[self::FIELD_FORM_CODE] = $v;
-        }
-        if (null !== ($v = $this->getFundsReserve())) {
-            $a[self::FIELD_FUNDS_RESERVE] = $v;
-        }
-        if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v;
             }
         }
         if ([] !== ($vs = $this->getInsurance())) {
@@ -2955,98 +3106,14 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
                 $a[self::FIELD_INSURANCE][] = $v;
             }
         }
-        if (null !== ($v = $this->getInsurer())) {
-            $a[self::FIELD_INSURER] = $v;
-        }
-        if ([] !== ($vs = $this->getItem())) {
-            $a[self::FIELD_ITEM] = [];
+        if ([] !== ($vs = $this->getError())) {
+            $a[self::FIELD_ERROR] = [];
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_ITEM][] = $v;
+                $a[self::FIELD_ERROR][] = $v;
             }
-        }
-        if (null !== ($v = $this->getOutcome())) {
-            $a[self::FIELD_OUTCOME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRClaimProcessingCodes::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRClaimProcessingCodes::FIELD_VALUE]);
-                $a[self::FIELD_OUTCOME_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getPatient())) {
-            $a[self::FIELD_PATIENT] = $v;
-        }
-        if (null !== ($v = $this->getPayeeType())) {
-            $a[self::FIELD_PAYEE_TYPE] = $v;
-        }
-        if (null !== ($v = $this->getPayment())) {
-            $a[self::FIELD_PAYMENT] = $v;
-        }
-        if (null !== ($v = $this->getPreAuthPeriod())) {
-            $a[self::FIELD_PRE_AUTH_PERIOD] = $v;
-        }
-        if (null !== ($v = $this->getPreAuthRef())) {
-            $a[self::FIELD_PRE_AUTH_REF] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_PRE_AUTH_REF_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->getProcessNote())) {
-            $a[self::FIELD_PROCESS_NOTE] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PROCESS_NOTE][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getRequest())) {
-            $a[self::FIELD_REQUEST] = $v;
-        }
-        if (null !== ($v = $this->getRequestor())) {
-            $a[self::FIELD_REQUESTOR] = $v;
-        }
-        if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRFinancialResourceStatusCodes::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRFinancialResourceStatusCodes::FIELD_VALUE]);
-                $a[self::FIELD_STATUS_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getSubType())) {
-            $a[self::FIELD_SUB_TYPE] = $v;
-        }
-        if ([] !== ($vs = $this->getTotal())) {
-            $a[self::FIELD_TOTAL] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_TOTAL][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
-        }
-        if (null !== ($v = $this->getUse())) {
-            $a[self::FIELD_USE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUse::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUse::FIELD_VALUE]);
-                $a[self::FIELD_USE_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

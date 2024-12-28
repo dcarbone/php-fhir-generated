@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,19 +61,18 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * Class FHIRBinary
  * @package \DCarbone\PHPFHIRGenerated\DSTU1
  */
-class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTypeInterface
+class FHIRBinary implements PHPFHIRContainedTypeInterface
 {
-    use PHPFHIRCommentContainerTrait;
     use PHPFHIRValidationAssertionsTrait;
+    use PHPFHIRChangeTrackingTrait;
 
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BINARY;
-
     const FIELD_CONTENT_TYPE = 'contentType';
     const FIELD_ID = 'id';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive
@@ -106,13 +105,6 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
                 gettype($data)
             ));
         }
-        if (isset($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
-            if (is_array($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
-                $this->_setFHIRComments($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS]);
-            } else if (is_string($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
-                $this->_addFHIRComment($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS]);
-            }
-        }
         if (isset($data[self::FIELD_CONTENT_TYPE])) {
             $this->setContentType($data[self::FIELD_CONTENT_TYPE]);
         }
@@ -130,11 +122,11 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
     }
 
     /**
-     * @return string|null
+     * @return string
      */
     public function _getFHIRXMLNamespace()
     {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
+        return $this->_xmlns;
     }
 
     /**
@@ -143,15 +135,10 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
+        $this->_xmlns = trim((string)$xmlNamespace);
+        return $this;
     }
+
 
     /**
      * @return string
@@ -159,7 +146,7 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<Binary{$xmlns}></Binary>";
@@ -187,15 +174,11 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
      */
     public function setContentType($contentType = null)
     {
-        if (null === $contentType) {
-            $this->contentType = null;
-            return $this;
+        if (null !== $contentType && !($contentType instanceof FHIRStringPrimitive)) {
+            $contentType = new FHIRStringPrimitive($contentType);
         }
-        if ($contentType instanceof FHIRStringPrimitive) {
-            $this->contentType = $contentType;
-            return $this;
-        }
-        $this->contentType = new FHIRStringPrimitive($contentType);
+        $this->_trackValueSet($this->contentType, $contentType);
+        $this->contentType = $contentType;
         return $this;
     }
 
@@ -213,15 +196,11 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
      */
     public function setId($id = null)
     {
-        if (null === $id) {
-            $this->id = null;
-            return $this;
+        if (null !== $id && !($id instanceof FHIRIdPrimitive)) {
+            $id = new FHIRIdPrimitive($id);
         }
-        if ($id instanceof FHIRIdPrimitive) {
-            $this->id = $id;
-            return $this;
-        }
-        $this->id = new FHIRIdPrimitive($id);
+        $this->_trackValueSet($this->id, $id);
+        $this->id = $id;
         return $this;
     }
 
@@ -260,86 +239,93 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRBinary $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRBinary
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRBinary::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRBinary::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRBinary::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRBinary;
+            $type = new FHIRBinary(null);
         } elseif (!is_object($type) || !($type instanceof FHIRBinary)) {
             throw new \RuntimeException(sprintf(
                 'FHIRBinary::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRBinary or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_CONTENT_TYPE === $n->nodeName) {
+                $type->setContentType(FHIRStringPrimitive::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->contentType)) {
-            $type->setContentType(FHIRStringPrimitive::xmlUnserialize($children->contentType));
-        }
-        if (isset($attributes->contentType)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_CONTENT_TYPE);
+        if (null !== $n) {
             $pt = $type->getContentType();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->contentType);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setContentType((string)$attributes->contentType);
+                $type->setContentType($n->nodeValue);
             }
         }
-        if (isset($children->id)) {
-            $type->setId(FHIRIdPrimitive::xmlUnserialize($children->id));
-        }
-        if (isset($attributes->id)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->id);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setId((string)$attributes->id);
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
         if (null !== ($v = $this->getContentType())) {
-            $sxe->addAttribute(self::FIELD_CONTENT_TYPE, (string)$v);
+            $element->setAttribute(self::FIELD_CONTENT_TYPE, (string)$v);
         }
         if (null !== ($v = $this->getId())) {
-            $sxe->addAttribute(self::FIELD_ID, (string)$v);
+            $element->setAttribute(self::FIELD_ID, (string)$v);
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -348,16 +334,12 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
     public function jsonSerialize()
     {
         $a = [];
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
         if (null !== ($v = $this->getContentType())) {
             $a[self::FIELD_CONTENT_TYPE] = $v;
         }
         if (null !== ($v = $this->getId())) {
             $a[self::FIELD_ID] = $v;
         }
-
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }
 

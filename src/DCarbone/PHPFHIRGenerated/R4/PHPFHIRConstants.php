@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -73,7 +73,7 @@ abstract class PHPFHIRConstants
     const SOURCE_GENERATION_DATE = 'Fri, Nov 1, 2019 09:29+1100';
 
     // PHPFHIR
-    const CODE_GENERATION_DATE = 'December 26th, 2019 15:44+0000';
+    const CODE_GENERATION_DATE = 'December 28th, 2024 17:13+0000';
 
     // Common
     const JSON_FIELD_RESOURCE_TYPE = 'resourceType';
@@ -924,6 +924,7 @@ abstract class PHPFHIRConstants
     const TYPE_NAME_QUESTIONNAIRE_RESPONSE_STATUS_HYPHEN_LIST = 'QuestionnaireResponseStatus-list';
     const TYPE_NAME_RANGE = 'Range';
     const TYPE_NAME_RATIO = 'Ratio';
+    const TYPE_NAME_RAW = 'raw';
     const TYPE_NAME_REFERENCE = 'Reference';
     const TYPE_NAME_REFERENCE_HANDLING_POLICY = 'ReferenceHandlingPolicy';
     const TYPE_NAME_REFERENCE_HANDLING_POLICY_HYPHEN_LIST = 'ReferenceHandlingPolicy-list';
@@ -2045,6 +2046,7 @@ abstract class PHPFHIRConstants
     const TYPE_CLASS_QUESTIONNAIRE_RESPONSE_STATUS_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRCodePrimitive\\FHIRQuestionnaireResponseStatusList';
     const TYPE_CLASS_RANGE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRRange';
     const TYPE_CLASS_RATIO = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRRatio';
+    const TYPE_CLASS_RAW = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRRaw';
     const TYPE_CLASS_REFERENCE = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRReference';
     const TYPE_CLASS_REFERENCE_HANDLING_POLICY = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRElement\\FHIRReferenceHandlingPolicy';
     const TYPE_CLASS_REFERENCE_HANDLING_POLICY_HYPHEN_LIST = '\\DCarbone\\PHPFHIRGenerated\\R4\\FHIRCodePrimitive\\FHIRReferenceHandlingPolicyList';

@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDev
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,9 +64,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDev
 
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUDIEntryType;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
@@ -86,50 +88,23 @@ class FHIRDeviceUdi extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DEVICE_DOT_UDI;
-    const FIELD_CARRIER_AIDC = 'carrierAIDC';
-    const FIELD_CARRIER_AIDC_EXT = '_carrierAIDC';
-    const FIELD_CARRIER_HRF = 'carrierHRF';
-    const FIELD_CARRIER_HRF_EXT = '_carrierHRF';
     const FIELD_DEVICE_IDENTIFIER = 'deviceIdentifier';
     const FIELD_DEVICE_IDENTIFIER_EXT = '_deviceIdentifier';
-    const FIELD_ENTRY_TYPE = 'entryType';
-    const FIELD_ENTRY_TYPE_EXT = '_entryType';
-    const FIELD_ISSUER = 'issuer';
-    const FIELD_ISSUER_EXT = '_issuer';
-    const FIELD_JURISDICTION = 'jurisdiction';
-    const FIELD_JURISDICTION_EXT = '_jurisdiction';
     const FIELD_NAME = 'name';
     const FIELD_NAME_EXT = '_name';
+    const FIELD_JURISDICTION = 'jurisdiction';
+    const FIELD_JURISDICTION_EXT = '_jurisdiction';
+    const FIELD_CARRIER_HRF = 'carrierHRF';
+    const FIELD_CARRIER_HRF_EXT = '_carrierHRF';
+    const FIELD_CARRIER_AIDC = 'carrierAIDC';
+    const FIELD_CARRIER_AIDC_EXT = '_carrierAIDC';
+    const FIELD_ISSUER = 'issuer';
+    const FIELD_ISSUER_EXT = '_issuer';
+    const FIELD_ENTRY_TYPE = 'entryType';
+    const FIELD_ENTRY_TYPE_EXT = '_entryType';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A stream of bytes
-     * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The full UDI carrier of the Automatic Identification and Data Capture (AIDC)
-     * technology representation of the barcode string as printed on the packaging of
-     * the device - E.g a barcode or RFID. Because of limitations on character sets in
-     * XML and the need to round-trip JSON data through XML, AIDC Formats *SHALL* be
-     * base64 encoded.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary
-     */
-    protected $carrierAIDC = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The full UDI carrier as the human readable form (HRF) representation of the
-     * barcode string as printed on the packaging of the device.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    protected $carrierHRF = null;
+    private $_xmlns = '';
 
     /**
      * A sequence of Unicode characters
@@ -144,29 +119,15 @@ class FHIRDeviceUdi extends FHIRBackboneElement
     protected $deviceIdentifier = null;
 
     /**
-     * Codes to identify how UDI data was entered
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A coded entry to indicate how the data was entered.
+     * Name of device as used in labeling or catalog.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUDIEntryType
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    protected $entryType = null;
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Organization that is charged with issuing UDIs for devices. For example, the US
-     * FDA issuers include : 1) GS1: http://hl7.org/fhir/NamingSystem/gs1-di, 2) HIBCC:
-     * http://hl7.org/fhir/NamingSystem/hibcc-dI, 3) ICCBBA for blood containers:
-     * http://hl7.org/fhir/NamingSystem/iccbba-blood-di, 4) ICCBA for other devices:
-     * http://hl7.org/fhir/NamingSystem/iccbba-other-di.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
-     */
-    protected $issuer = null;
+    protected $name = null;
 
     /**
      * String of characters used to identify a name or a resource
@@ -187,11 +148,52 @@ class FHIRDeviceUdi extends FHIRBackboneElement
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Name of device as used in labeling or catalog.
+     * The full UDI carrier as the human readable form (HRF) representation of the
+     * barcode string as printed on the packaging of the device.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    protected $name = null;
+    protected $carrierHRF = null;
+
+    /**
+     * A stream of bytes
+     * A stream of bytes, base64 encoded
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The full UDI carrier of the Automatic Identification and Data Capture (AIDC)
+     * technology representation of the barcode string as printed on the packaging of
+     * the device - E.g a barcode or RFID. Because of limitations on character sets in
+     * XML and the need to round-trip JSON data through XML, AIDC Formats *SHALL* be
+     * base64 encoded.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary
+     */
+    protected $carrierAIDC = null;
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Organization that is charged with issuing UDIs for devices. For example, the US
+     * FDA issuers include : 1) GS1: http://hl7.org/fhir/NamingSystem/gs1-di, 2) HIBCC:
+     * http://hl7.org/fhir/NamingSystem/hibcc-dI, 3) ICCBBA for blood containers:
+     * http://hl7.org/fhir/NamingSystem/iccbba-blood-di, 4) ICCBA for other devices:
+     * http://hl7.org/fhir/NamingSystem/iccbba-other-di.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
+     */
+    protected $issuer = null;
+
+    /**
+     * Codes to identify how UDI data was entered
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A coded entry to indicate how the data was entered.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUDIEntryType
+     */
+    protected $entryType = null;
 
     /**
      * Validation map for fields in type Device.Udi
@@ -215,63 +217,9 @@ class FHIRDeviceUdi extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CARRIER_AIDC]) || isset($data[self::FIELD_CARRIER_AIDC_EXT])) {
-            if (isset($data[self::FIELD_CARRIER_AIDC])) {
-                $value = $data[self::FIELD_CARRIER_AIDC];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CARRIER_AIDC_EXT]) && is_array($data[self::FIELD_CARRIER_AIDC_EXT])) {
-                $ext = $data[self::FIELD_CARRIER_AIDC_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBase64Binary) {
-                    $this->setCarrierAIDC($value);
-                } else if (is_array($value)) {
-                    $this->setCarrierAIDC(new FHIRBase64Binary(array_merge($ext, $value)));
-                } else {
-                    $this->setCarrierAIDC(new FHIRBase64Binary([FHIRBase64Binary::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setCarrierAIDC(new FHIRBase64Binary($ext));
-            }
-        }
-        if (isset($data[self::FIELD_CARRIER_HRF]) || isset($data[self::FIELD_CARRIER_HRF_EXT])) {
-            if (isset($data[self::FIELD_CARRIER_HRF])) {
-                $value = $data[self::FIELD_CARRIER_HRF];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CARRIER_HRF_EXT]) && is_array($data[self::FIELD_CARRIER_HRF_EXT])) {
-                $ext = $data[self::FIELD_CARRIER_HRF_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setCarrierHRF($value);
-                } else if (is_array($value)) {
-                    $this->setCarrierHRF(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setCarrierHRF(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setCarrierHRF(new FHIRString($ext));
-            }
-        }
         if (isset($data[self::FIELD_DEVICE_IDENTIFIER]) || isset($data[self::FIELD_DEVICE_IDENTIFIER_EXT])) {
-            if (isset($data[self::FIELD_DEVICE_IDENTIFIER])) {
-                $value = $data[self::FIELD_DEVICE_IDENTIFIER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DEVICE_IDENTIFIER_EXT]) && is_array($data[self::FIELD_DEVICE_IDENTIFIER_EXT])) {
-                $ext = $data[self::FIELD_DEVICE_IDENTIFIER_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_DEVICE_IDENTIFIER]) ? $data[self::FIELD_DEVICE_IDENTIFIER] : null;
+            $ext = (isset($data[self::FIELD_DEVICE_IDENTIFIER_EXT]) && is_array($data[self::FIELD_DEVICE_IDENTIFIER_EXT])) ? $ext = $data[self::FIELD_DEVICE_IDENTIFIER_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setDeviceIdentifier($value);
@@ -280,90 +228,13 @@ class FHIRDeviceUdi extends FHIRBackboneElement
                 } else {
                     $this->setDeviceIdentifier(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDeviceIdentifier(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_ENTRY_TYPE]) || isset($data[self::FIELD_ENTRY_TYPE_EXT])) {
-            if (isset($data[self::FIELD_ENTRY_TYPE])) {
-                $value = $data[self::FIELD_ENTRY_TYPE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ENTRY_TYPE_EXT]) && is_array($data[self::FIELD_ENTRY_TYPE_EXT])) {
-                $ext = $data[self::FIELD_ENTRY_TYPE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRUDIEntryType) {
-                    $this->setEntryType($value);
-                } else if (is_array($value)) {
-                    $this->setEntryType(new FHIRUDIEntryType(array_merge($ext, $value)));
-                } else {
-                    $this->setEntryType(new FHIRUDIEntryType([FHIRUDIEntryType::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setEntryType(new FHIRUDIEntryType($ext));
-            }
-        }
-        if (isset($data[self::FIELD_ISSUER]) || isset($data[self::FIELD_ISSUER_EXT])) {
-            if (isset($data[self::FIELD_ISSUER])) {
-                $value = $data[self::FIELD_ISSUER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ISSUER_EXT]) && is_array($data[self::FIELD_ISSUER_EXT])) {
-                $ext = $data[self::FIELD_ISSUER_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRUri) {
-                    $this->setIssuer($value);
-                } else if (is_array($value)) {
-                    $this->setIssuer(new FHIRUri(array_merge($ext, $value)));
-                } else {
-                    $this->setIssuer(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setIssuer(new FHIRUri($ext));
-            }
-        }
-        if (isset($data[self::FIELD_JURISDICTION]) || isset($data[self::FIELD_JURISDICTION_EXT])) {
-            if (isset($data[self::FIELD_JURISDICTION])) {
-                $value = $data[self::FIELD_JURISDICTION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_JURISDICTION_EXT]) && is_array($data[self::FIELD_JURISDICTION_EXT])) {
-                $ext = $data[self::FIELD_JURISDICTION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRUri) {
-                    $this->setJurisdiction($value);
-                } else if (is_array($value)) {
-                    $this->setJurisdiction(new FHIRUri(array_merge($ext, $value)));
-                } else {
-                    $this->setJurisdiction(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setJurisdiction(new FHIRUri($ext));
-            }
-        }
         if (isset($data[self::FIELD_NAME]) || isset($data[self::FIELD_NAME_EXT])) {
-            if (isset($data[self::FIELD_NAME])) {
-                $value = $data[self::FIELD_NAME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_NAME_EXT]) && is_array($data[self::FIELD_NAME_EXT])) {
-                $ext = $data[self::FIELD_NAME_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_NAME]) ? $data[self::FIELD_NAME] : null;
+            $ext = (isset($data[self::FIELD_NAME_EXT]) && is_array($data[self::FIELD_NAME_EXT])) ? $ext = $data[self::FIELD_NAME_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setName($value);
@@ -372,8 +243,83 @@ class FHIRDeviceUdi extends FHIRBackboneElement
                 } else {
                     $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setName(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_JURISDICTION]) || isset($data[self::FIELD_JURISDICTION_EXT])) {
+            $value = isset($data[self::FIELD_JURISDICTION]) ? $data[self::FIELD_JURISDICTION] : null;
+            $ext = (isset($data[self::FIELD_JURISDICTION_EXT]) && is_array($data[self::FIELD_JURISDICTION_EXT])) ? $ext = $data[self::FIELD_JURISDICTION_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setJurisdiction($value);
+                } else if (is_array($value)) {
+                    $this->setJurisdiction(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setJurisdiction(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setJurisdiction(new FHIRUri($ext));
+            }
+        }
+        if (isset($data[self::FIELD_CARRIER_HRF]) || isset($data[self::FIELD_CARRIER_HRF_EXT])) {
+            $value = isset($data[self::FIELD_CARRIER_HRF]) ? $data[self::FIELD_CARRIER_HRF] : null;
+            $ext = (isset($data[self::FIELD_CARRIER_HRF_EXT]) && is_array($data[self::FIELD_CARRIER_HRF_EXT])) ? $ext = $data[self::FIELD_CARRIER_HRF_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setCarrierHRF($value);
+                } else if (is_array($value)) {
+                    $this->setCarrierHRF(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setCarrierHRF(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setCarrierHRF(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_CARRIER_AIDC]) || isset($data[self::FIELD_CARRIER_AIDC_EXT])) {
+            $value = isset($data[self::FIELD_CARRIER_AIDC]) ? $data[self::FIELD_CARRIER_AIDC] : null;
+            $ext = (isset($data[self::FIELD_CARRIER_AIDC_EXT]) && is_array($data[self::FIELD_CARRIER_AIDC_EXT])) ? $ext = $data[self::FIELD_CARRIER_AIDC_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBase64Binary) {
+                    $this->setCarrierAIDC($value);
+                } else if (is_array($value)) {
+                    $this->setCarrierAIDC(new FHIRBase64Binary(array_merge($ext, $value)));
+                } else {
+                    $this->setCarrierAIDC(new FHIRBase64Binary([FHIRBase64Binary::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setCarrierAIDC(new FHIRBase64Binary($ext));
+            }
+        }
+        if (isset($data[self::FIELD_ISSUER]) || isset($data[self::FIELD_ISSUER_EXT])) {
+            $value = isset($data[self::FIELD_ISSUER]) ? $data[self::FIELD_ISSUER] : null;
+            $ext = (isset($data[self::FIELD_ISSUER_EXT]) && is_array($data[self::FIELD_ISSUER_EXT])) ? $ext = $data[self::FIELD_ISSUER_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setIssuer($value);
+                } else if (is_array($value)) {
+                    $this->setIssuer(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setIssuer(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setIssuer(new FHIRUri($ext));
+            }
+        }
+        if (isset($data[self::FIELD_ENTRY_TYPE]) || isset($data[self::FIELD_ENTRY_TYPE_EXT])) {
+            $value = isset($data[self::FIELD_ENTRY_TYPE]) ? $data[self::FIELD_ENTRY_TYPE] : null;
+            $ext = (isset($data[self::FIELD_ENTRY_TYPE_EXT]) && is_array($data[self::FIELD_ENTRY_TYPE_EXT])) ? $ext = $data[self::FIELD_ENTRY_TYPE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRUDIEntryType) {
+                    $this->setEntryType($value);
+                } else if (is_array($value)) {
+                    $this->setEntryType(new FHIRUDIEntryType(array_merge($ext, $value)));
+                } else {
+                    $this->setEntryType(new FHIRUDIEntryType([FHIRUDIEntryType::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setEntryType(new FHIRUDIEntryType($ext));
             }
         }
     }
@@ -392,10 +338,156 @@ class FHIRDeviceUdi extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<DeviceUdi{$xmlns}></DeviceUdi>";
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The device identifier (DI) is a mandatory, fixed portion of a UDI that
+     * identifies the labeler and the specific version or model of a device.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    public function getDeviceIdentifier()
+    {
+        return $this->deviceIdentifier;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The device identifier (DI) is a mandatory, fixed portion of a UDI that
+     * identifies the labeler and the specific version or model of a device.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $deviceIdentifier
+     * @return static
+     */
+    public function setDeviceIdentifier($deviceIdentifier = null)
+    {
+        if (null !== $deviceIdentifier && !($deviceIdentifier instanceof FHIRString)) {
+            $deviceIdentifier = new FHIRString($deviceIdentifier);
+        }
+        $this->_trackValueSet($this->deviceIdentifier, $deviceIdentifier);
+        $this->deviceIdentifier = $deviceIdentifier;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Name of device as used in labeling or catalog.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Name of device as used in labeling or catalog.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $name
+     * @return static
+     */
+    public function setName($name = null)
+    {
+        if (null !== $name && !($name instanceof FHIRString)) {
+            $name = new FHIRString($name);
+        }
+        $this->_trackValueSet($this->name, $name);
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The identity of the authoritative source for UDI generation within a
+     * jurisdiction. All UDIs are globally unique within a single namespace. with the
+     * appropriate repository uri as the system. For example, UDIs of devices managed
+     * in the U.S. by the FDA, the value is http://hl7.org/fhir/NamingSystem/fda-udi.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
+     */
+    public function getJurisdiction()
+    {
+        return $this->jurisdiction;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The identity of the authoritative source for UDI generation within a
+     * jurisdiction. All UDIs are globally unique within a single namespace. with the
+     * appropriate repository uri as the system. For example, UDIs of devices managed
+     * in the U.S. by the FDA, the value is http://hl7.org/fhir/NamingSystem/fda-udi.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $jurisdiction
+     * @return static
+     */
+    public function setJurisdiction($jurisdiction = null)
+    {
+        if (null !== $jurisdiction && !($jurisdiction instanceof FHIRUri)) {
+            $jurisdiction = new FHIRUri($jurisdiction);
+        }
+        $this->_trackValueSet($this->jurisdiction, $jurisdiction);
+        $this->jurisdiction = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The full UDI carrier as the human readable form (HRF) representation of the
+     * barcode string as printed on the packaging of the device.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    public function getCarrierHRF()
+    {
+        return $this->carrierHRF;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The full UDI carrier as the human readable form (HRF) representation of the
+     * barcode string as printed on the packaging of the device.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $carrierHRF
+     * @return static
+     */
+    public function setCarrierHRF($carrierHRF = null)
+    {
+        if (null !== $carrierHRF && !($carrierHRF instanceof FHIRString)) {
+            $carrierHRF = new FHIRString($carrierHRF);
+        }
+        $this->_trackValueSet($this->carrierHRF, $carrierHRF);
+        $this->carrierHRF = $carrierHRF;
+        return $this;
     }
 
     /**
@@ -432,123 +524,11 @@ class FHIRDeviceUdi extends FHIRBackboneElement
      */
     public function setCarrierAIDC($carrierAIDC = null)
     {
-        if (null === $carrierAIDC) {
-            $this->carrierAIDC = null;
-            return $this;
+        if (null !== $carrierAIDC && !($carrierAIDC instanceof FHIRBase64Binary)) {
+            $carrierAIDC = new FHIRBase64Binary($carrierAIDC);
         }
-        if ($carrierAIDC instanceof FHIRBase64Binary) {
-            $this->carrierAIDC = $carrierAIDC;
-            return $this;
-        }
-        $this->carrierAIDC = new FHIRBase64Binary($carrierAIDC);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The full UDI carrier as the human readable form (HRF) representation of the
-     * barcode string as printed on the packaging of the device.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getCarrierHRF()
-    {
-        return $this->carrierHRF;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The full UDI carrier as the human readable form (HRF) representation of the
-     * barcode string as printed on the packaging of the device.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $carrierHRF
-     * @return static
-     */
-    public function setCarrierHRF($carrierHRF = null)
-    {
-        if (null === $carrierHRF) {
-            $this->carrierHRF = null;
-            return $this;
-        }
-        if ($carrierHRF instanceof FHIRString) {
-            $this->carrierHRF = $carrierHRF;
-            return $this;
-        }
-        $this->carrierHRF = new FHIRString($carrierHRF);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The device identifier (DI) is a mandatory, fixed portion of a UDI that
-     * identifies the labeler and the specific version or model of a device.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getDeviceIdentifier()
-    {
-        return $this->deviceIdentifier;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The device identifier (DI) is a mandatory, fixed portion of a UDI that
-     * identifies the labeler and the specific version or model of a device.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $deviceIdentifier
-     * @return static
-     */
-    public function setDeviceIdentifier($deviceIdentifier = null)
-    {
-        if (null === $deviceIdentifier) {
-            $this->deviceIdentifier = null;
-            return $this;
-        }
-        if ($deviceIdentifier instanceof FHIRString) {
-            $this->deviceIdentifier = $deviceIdentifier;
-            return $this;
-        }
-        $this->deviceIdentifier = new FHIRString($deviceIdentifier);
-        return $this;
-    }
-
-    /**
-     * Codes to identify how UDI data was entered
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A coded entry to indicate how the data was entered.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUDIEntryType
-     */
-    public function getEntryType()
-    {
-        return $this->entryType;
-    }
-
-    /**
-     * Codes to identify how UDI data was entered
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A coded entry to indicate how the data was entered.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUDIEntryType $entryType
-     * @return static
-     */
-    public function setEntryType(FHIRUDIEntryType $entryType = null)
-    {
-        $this->entryType = $entryType;
+        $this->_trackValueSet($this->carrierAIDC, $carrierAIDC);
+        $this->carrierAIDC = $carrierAIDC;
         return $this;
     }
 
@@ -586,97 +566,40 @@ class FHIRDeviceUdi extends FHIRBackboneElement
      */
     public function setIssuer($issuer = null)
     {
-        if (null === $issuer) {
-            $this->issuer = null;
-            return $this;
+        if (null !== $issuer && !($issuer instanceof FHIRUri)) {
+            $issuer = new FHIRUri($issuer);
         }
-        if ($issuer instanceof FHIRUri) {
-            $this->issuer = $issuer;
-            return $this;
-        }
-        $this->issuer = new FHIRUri($issuer);
+        $this->_trackValueSet($this->issuer, $issuer);
+        $this->issuer = $issuer;
         return $this;
     }
 
     /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * Codes to identify how UDI data was entered
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The identity of the authoritative source for UDI generation within a
-     * jurisdiction. All UDIs are globally unique within a single namespace. with the
-     * appropriate repository uri as the system. For example, UDIs of devices managed
-     * in the U.S. by the FDA, the value is http://hl7.org/fhir/NamingSystem/fda-udi.
+     * A coded entry to indicate how the data was entered.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUDIEntryType
      */
-    public function getJurisdiction()
+    public function getEntryType()
     {
-        return $this->jurisdiction;
+        return $this->entryType;
     }
 
     /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * Codes to identify how UDI data was entered
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The identity of the authoritative source for UDI generation within a
-     * jurisdiction. All UDIs are globally unique within a single namespace. with the
-     * appropriate repository uri as the system. For example, UDIs of devices managed
-     * in the U.S. by the FDA, the value is http://hl7.org/fhir/NamingSystem/fda-udi.
+     * A coded entry to indicate how the data was entered.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $jurisdiction
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUDIEntryType $entryType
      * @return static
      */
-    public function setJurisdiction($jurisdiction = null)
+    public function setEntryType(FHIRUDIEntryType $entryType = null)
     {
-        if (null === $jurisdiction) {
-            $this->jurisdiction = null;
-            return $this;
-        }
-        if ($jurisdiction instanceof FHIRUri) {
-            $this->jurisdiction = $jurisdiction;
-            return $this;
-        }
-        $this->jurisdiction = new FHIRUri($jurisdiction);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Name of device as used in labeling or catalog.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Name of device as used in labeling or catalog.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $name
-     * @return static
-     */
-    public function setName($name = null)
-    {
-        if (null === $name) {
-            $this->name = null;
-            return $this;
-        }
-        if ($name instanceof FHIRString) {
-            $this->name = $name;
-            return $this;
-        }
-        $this->name = new FHIRString($name);
+        $this->_trackValueSet($this->entryType, $entryType);
+        $this->entryType = $entryType;
         return $this;
     }
 
@@ -701,34 +624,9 @@ class FHIRDeviceUdi extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getCarrierAIDC())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CARRIER_AIDC] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getCarrierHRF())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CARRIER_HRF] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getDeviceIdentifier())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_DEVICE_IDENTIFIER] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getEntryType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ENTRY_TYPE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getIssuer())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ISSUER] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getJurisdiction())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_JURISDICTION] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getName())) {
@@ -736,28 +634,29 @@ class FHIRDeviceUdi extends FHIRBackboneElement
                 $errs[self::FIELD_NAME] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CARRIER_AIDC])) {
-            $v = $this->getCarrierAIDC();
-            foreach($validationRules[self::FIELD_CARRIER_AIDC] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DEVICE_DOT_UDI, self::FIELD_CARRIER_AIDC, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CARRIER_AIDC])) {
-                        $errs[self::FIELD_CARRIER_AIDC] = [];
-                    }
-                    $errs[self::FIELD_CARRIER_AIDC][$rule] = $err;
-                }
+        if (null !== ($v = $this->getJurisdiction())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_JURISDICTION] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CARRIER_HRF])) {
-            $v = $this->getCarrierHRF();
-            foreach($validationRules[self::FIELD_CARRIER_HRF] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DEVICE_DOT_UDI, self::FIELD_CARRIER_HRF, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CARRIER_HRF])) {
-                        $errs[self::FIELD_CARRIER_HRF] = [];
-                    }
-                    $errs[self::FIELD_CARRIER_HRF][$rule] = $err;
-                }
+        if (null !== ($v = $this->getCarrierHRF())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CARRIER_HRF] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCarrierAIDC())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CARRIER_AIDC] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getIssuer())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ISSUER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getEntryType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ENTRY_TYPE] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_DEVICE_IDENTIFIER])) {
@@ -772,27 +671,15 @@ class FHIRDeviceUdi extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_ENTRY_TYPE])) {
-            $v = $this->getEntryType();
-            foreach($validationRules[self::FIELD_ENTRY_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DEVICE_DOT_UDI, self::FIELD_ENTRY_TYPE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_NAME])) {
+            $v = $this->getName();
+            foreach($validationRules[self::FIELD_NAME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DEVICE_DOT_UDI, self::FIELD_NAME, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ENTRY_TYPE])) {
-                        $errs[self::FIELD_ENTRY_TYPE] = [];
+                    if (!isset($errs[self::FIELD_NAME])) {
+                        $errs[self::FIELD_NAME] = [];
                     }
-                    $errs[self::FIELD_ENTRY_TYPE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_ISSUER])) {
-            $v = $this->getIssuer();
-            foreach($validationRules[self::FIELD_ISSUER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DEVICE_DOT_UDI, self::FIELD_ISSUER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ISSUER])) {
-                        $errs[self::FIELD_ISSUER] = [];
-                    }
-                    $errs[self::FIELD_ISSUER][$rule] = $err;
+                    $errs[self::FIELD_NAME][$rule] = $err;
                 }
             }
         }
@@ -808,15 +695,51 @@ class FHIRDeviceUdi extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_NAME])) {
-            $v = $this->getName();
-            foreach($validationRules[self::FIELD_NAME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DEVICE_DOT_UDI, self::FIELD_NAME, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_CARRIER_HRF])) {
+            $v = $this->getCarrierHRF();
+            foreach($validationRules[self::FIELD_CARRIER_HRF] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DEVICE_DOT_UDI, self::FIELD_CARRIER_HRF, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_NAME])) {
-                        $errs[self::FIELD_NAME] = [];
+                    if (!isset($errs[self::FIELD_CARRIER_HRF])) {
+                        $errs[self::FIELD_CARRIER_HRF] = [];
                     }
-                    $errs[self::FIELD_NAME][$rule] = $err;
+                    $errs[self::FIELD_CARRIER_HRF][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CARRIER_AIDC])) {
+            $v = $this->getCarrierAIDC();
+            foreach($validationRules[self::FIELD_CARRIER_AIDC] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DEVICE_DOT_UDI, self::FIELD_CARRIER_AIDC, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CARRIER_AIDC])) {
+                        $errs[self::FIELD_CARRIER_AIDC] = [];
+                    }
+                    $errs[self::FIELD_CARRIER_AIDC][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ISSUER])) {
+            $v = $this->getIssuer();
+            foreach($validationRules[self::FIELD_ISSUER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DEVICE_DOT_UDI, self::FIELD_ISSUER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ISSUER])) {
+                        $errs[self::FIELD_ISSUER] = [];
+                    }
+                    $errs[self::FIELD_ISSUER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ENTRY_TYPE])) {
+            $v = $this->getEntryType();
+            foreach($validationRules[self::FIELD_ENTRY_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DEVICE_DOT_UDI, self::FIELD_ENTRY_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ENTRY_TYPE])) {
+                        $errs[self::FIELD_ENTRY_TYPE] = [];
+                    }
+                    $errs[self::FIELD_ENTRY_TYPE][$rule] = $err;
                 }
             }
         }
@@ -860,150 +783,184 @@ class FHIRDeviceUdi extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdi $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdi
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRDeviceUdi::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRDeviceUdi::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRDeviceUdi::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRDeviceUdi;
+            $type = new FHIRDeviceUdi(null);
         } elseif (!is_object($type) || !($type instanceof FHIRDeviceUdi)) {
             throw new \RuntimeException(sprintf(
                 'FHIRDeviceUdi::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdi or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_DEVICE_IDENTIFIER === $n->nodeName) {
+                $type->setDeviceIdentifier(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_NAME === $n->nodeName) {
+                $type->setName(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_JURISDICTION === $n->nodeName) {
+                $type->setJurisdiction(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_CARRIER_HRF === $n->nodeName) {
+                $type->setCarrierHRF(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_CARRIER_AIDC === $n->nodeName) {
+                $type->setCarrierAIDC(FHIRBase64Binary::xmlUnserialize($n));
+            } elseif (self::FIELD_ISSUER === $n->nodeName) {
+                $type->setIssuer(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_ENTRY_TYPE === $n->nodeName) {
+                $type->setEntryType(FHIRUDIEntryType::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->carrierAIDC)) {
-            $type->setCarrierAIDC(FHIRBase64Binary::xmlUnserialize($children->carrierAIDC));
-        }
-        if (isset($attributes->carrierAIDC)) {
-            $pt = $type->getCarrierAIDC();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->carrierAIDC);
-            } else {
-                $type->setCarrierAIDC((string)$attributes->carrierAIDC);
-            }
-        }
-        if (isset($children->carrierHRF)) {
-            $type->setCarrierHRF(FHIRString::xmlUnserialize($children->carrierHRF));
-        }
-        if (isset($attributes->carrierHRF)) {
-            $pt = $type->getCarrierHRF();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->carrierHRF);
-            } else {
-                $type->setCarrierHRF((string)$attributes->carrierHRF);
-            }
-        }
-        if (isset($children->deviceIdentifier)) {
-            $type->setDeviceIdentifier(FHIRString::xmlUnserialize($children->deviceIdentifier));
-        }
-        if (isset($attributes->deviceIdentifier)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DEVICE_IDENTIFIER);
+        if (null !== $n) {
             $pt = $type->getDeviceIdentifier();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->deviceIdentifier);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDeviceIdentifier((string)$attributes->deviceIdentifier);
+                $type->setDeviceIdentifier($n->nodeValue);
             }
         }
-        if (isset($children->entryType)) {
-            $type->setEntryType(FHIRUDIEntryType::xmlUnserialize($children->entryType));
-        }
-        if (isset($children->issuer)) {
-            $type->setIssuer(FHIRUri::xmlUnserialize($children->issuer));
-        }
-        if (isset($attributes->issuer)) {
-            $pt = $type->getIssuer();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->issuer);
-            } else {
-                $type->setIssuer((string)$attributes->issuer);
-            }
-        }
-        if (isset($children->jurisdiction)) {
-            $type->setJurisdiction(FHIRUri::xmlUnserialize($children->jurisdiction));
-        }
-        if (isset($attributes->jurisdiction)) {
-            $pt = $type->getJurisdiction();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->jurisdiction);
-            } else {
-                $type->setJurisdiction((string)$attributes->jurisdiction);
-            }
-        }
-        if (isset($children->name)) {
-            $type->setName(FHIRString::xmlUnserialize($children->name));
-        }
-        if (isset($attributes->name)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_NAME);
+        if (null !== $n) {
             $pt = $type->getName();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->name);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setName((string)$attributes->name);
+                $type->setName($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_JURISDICTION);
+        if (null !== $n) {
+            $pt = $type->getJurisdiction();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setJurisdiction($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_CARRIER_HRF);
+        if (null !== $n) {
+            $pt = $type->getCarrierHRF();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setCarrierHRF($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_CARRIER_AIDC);
+        if (null !== $n) {
+            $pt = $type->getCarrierAIDC();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setCarrierAIDC($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ISSUER);
+        if (null !== $n) {
+            $pt = $type->getIssuer();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setIssuer($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getCarrierAIDC())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CARRIER_AIDC, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getCarrierHRF())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CARRIER_HRF, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getDeviceIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEVICE_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getEntryType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTRY_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getIssuer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ISSUER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getJurisdiction())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_JURISDICTION, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DEVICE_IDENTIFIER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_NAME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getJurisdiction())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_JURISDICTION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getCarrierHRF())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_CARRIER_HRF);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getCarrierAIDC())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_CARRIER_AIDC);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getIssuer())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_ISSUER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getEntryType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_ENTRY_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -1012,71 +969,75 @@ class FHIRDeviceUdi extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCarrierAIDC())) {
-            $a[self::FIELD_CARRIER_AIDC] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBase64Binary::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBase64Binary::FIELD_VALUE]);
-                $a[self::FIELD_CARRIER_AIDC_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getCarrierHRF())) {
-            $a[self::FIELD_CARRIER_HRF] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_CARRIER_HRF_EXT] = $enc;
-            }
-        }
         if (null !== ($v = $this->getDeviceIdentifier())) {
-            $a[self::FIELD_DEVICE_IDENTIFIER] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DEVICE_IDENTIFIER_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DEVICE_IDENTIFIER] = $val;
             }
-        }
-        if (null !== ($v = $this->getEntryType())) {
-            $a[self::FIELD_ENTRY_TYPE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUDIEntryType::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUDIEntryType::FIELD_VALUE]);
-                $a[self::FIELD_ENTRY_TYPE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getIssuer())) {
-            $a[self::FIELD_ISSUER] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_ISSUER_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getJurisdiction())) {
-            $a[self::FIELD_JURISDICTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_JURISDICTION_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DEVICE_IDENTIFIER_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_NAME_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NAME] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_NAME_EXT] = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getJurisdiction())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_JURISDICTION] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUri::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_JURISDICTION_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getCarrierHRF())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CARRIER_HRF] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_CARRIER_HRF_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getCarrierAIDC())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CARRIER_AIDC] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBase64Binary::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_CARRIER_AIDC_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getIssuer())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ISSUER] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUri::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_ISSUER_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getEntryType())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ENTRY_TYPE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUDIEntryType::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_ENTRY_TYPE_EXT] = $ext;
+            }
         }
         return $a;
     }

@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,13 +63,20 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  */
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeMap;
 
 /**
  * The manufactured item as contained in the packaged medicinal product.
@@ -82,27 +89,16 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_MANUFACTURED;
-    const FIELD_INGREDIENT = 'ingredient';
     const FIELD_MANUFACTURED_DOSE_FORM = 'manufacturedDoseForm';
-    const FIELD_MANUFACTURER = 'manufacturer';
-    const FIELD_OTHER_CHARACTERISTICS = 'otherCharacteristics';
-    const FIELD_PHYSICAL_CHARACTERISTICS = 'physicalCharacteristics';
-    const FIELD_QUANTITY = 'quantity';
     const FIELD_UNIT_OF_PRESENTATION = 'unitOfPresentation';
+    const FIELD_QUANTITY = 'quantity';
+    const FIELD_MANUFACTURER = 'manufacturer';
+    const FIELD_INGREDIENT = 'ingredient';
+    const FIELD_PHYSICAL_CHARACTERISTICS = 'physicalCharacteristics';
+    const FIELD_OTHER_CHARACTERISTICS = 'otherCharacteristics';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Ingredient.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
-     */
-    protected $ingredient = [];
+    private $_xmlns = '';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -118,40 +114,17 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     protected $manufacturedDoseForm = null;
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Manufacturer of the item (Note that this should be named "manufacturer" but it
-     * currently causes technical issues).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
-     */
-    protected $manufacturer = [];
-
-    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Other codeable characteristics.
+     * The “real world” units in which the quantity of the manufactured item is
+     * described.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $otherCharacteristics = [];
-
-    /**
-     * The marketing status describes the date when a medicinal product is actually put
-     * on the market or the date as of which it is no longer available.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Dimensions, color etc.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
-     */
-    protected $physicalCharacteristics = null;
+    protected $unitOfPresentation = null;
 
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -167,17 +140,51 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     protected $quantity = null;
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Manufacturer of the item (Note that this should be named "manufacturer" but it
+     * currently causes technical issues).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
+     */
+    protected $manufacturer = [];
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Ingredient.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
+     */
+    protected $ingredient = [];
+
+    /**
+     * The marketing status describes the date when a medicinal product is actually put
+     * on the market or the date as of which it is no longer available.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Dimensions, color etc.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     */
+    protected $physicalCharacteristics = null;
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The “real world” units in which the quantity of the manufactured item is
-     * described.
+     * Other codeable characteristics.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    protected $unitOfPresentation = null;
+    protected $otherCharacteristics = [];
 
     /**
      * Validation map for fields in type MedicinalProductManufactured
@@ -201,29 +208,25 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_INGREDIENT])) {
-            if (is_array($data[self::FIELD_INGREDIENT])) {
-                foreach($data[self::FIELD_INGREDIENT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRReference) {
-                        $this->addIngredient($v);
-                    } else {
-                        $this->addIngredient(new FHIRReference($v));
-                    }
-                }
-            } else if ($data[self::FIELD_INGREDIENT] instanceof FHIRReference) {
-                $this->addIngredient($data[self::FIELD_INGREDIENT]);
-            } else {
-                $this->addIngredient(new FHIRReference($data[self::FIELD_INGREDIENT]));
-            }
-        }
         if (isset($data[self::FIELD_MANUFACTURED_DOSE_FORM])) {
             if ($data[self::FIELD_MANUFACTURED_DOSE_FORM] instanceof FHIRCodeableConcept) {
                 $this->setManufacturedDoseForm($data[self::FIELD_MANUFACTURED_DOSE_FORM]);
             } else {
                 $this->setManufacturedDoseForm(new FHIRCodeableConcept($data[self::FIELD_MANUFACTURED_DOSE_FORM]));
+            }
+        }
+        if (isset($data[self::FIELD_UNIT_OF_PRESENTATION])) {
+            if ($data[self::FIELD_UNIT_OF_PRESENTATION] instanceof FHIRCodeableConcept) {
+                $this->setUnitOfPresentation($data[self::FIELD_UNIT_OF_PRESENTATION]);
+            } else {
+                $this->setUnitOfPresentation(new FHIRCodeableConcept($data[self::FIELD_UNIT_OF_PRESENTATION]));
+            }
+        }
+        if (isset($data[self::FIELD_QUANTITY])) {
+            if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
+                $this->setQuantity($data[self::FIELD_QUANTITY]);
+            } else {
+                $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
         }
         if (isset($data[self::FIELD_MANUFACTURER])) {
@@ -238,10 +241,35 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
                         $this->addManufacturer(new FHIRReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_MANUFACTURER] instanceof FHIRReference) {
+            } elseif ($data[self::FIELD_MANUFACTURER] instanceof FHIRReference) {
                 $this->addManufacturer($data[self::FIELD_MANUFACTURER]);
             } else {
                 $this->addManufacturer(new FHIRReference($data[self::FIELD_MANUFACTURER]));
+            }
+        }
+        if (isset($data[self::FIELD_INGREDIENT])) {
+            if (is_array($data[self::FIELD_INGREDIENT])) {
+                foreach($data[self::FIELD_INGREDIENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRReference) {
+                        $this->addIngredient($v);
+                    } else {
+                        $this->addIngredient(new FHIRReference($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_INGREDIENT] instanceof FHIRReference) {
+                $this->addIngredient($data[self::FIELD_INGREDIENT]);
+            } else {
+                $this->addIngredient(new FHIRReference($data[self::FIELD_INGREDIENT]));
+            }
+        }
+        if (isset($data[self::FIELD_PHYSICAL_CHARACTERISTICS])) {
+            if ($data[self::FIELD_PHYSICAL_CHARACTERISTICS] instanceof FHIRProdCharacteristic) {
+                $this->setPhysicalCharacteristics($data[self::FIELD_PHYSICAL_CHARACTERISTICS]);
+            } else {
+                $this->setPhysicalCharacteristics(new FHIRProdCharacteristic($data[self::FIELD_PHYSICAL_CHARACTERISTICS]));
             }
         }
         if (isset($data[self::FIELD_OTHER_CHARACTERISTICS])) {
@@ -256,31 +284,10 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
                         $this->addOtherCharacteristics(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_OTHER_CHARACTERISTICS] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_OTHER_CHARACTERISTICS] instanceof FHIRCodeableConcept) {
                 $this->addOtherCharacteristics($data[self::FIELD_OTHER_CHARACTERISTICS]);
             } else {
                 $this->addOtherCharacteristics(new FHIRCodeableConcept($data[self::FIELD_OTHER_CHARACTERISTICS]));
-            }
-        }
-        if (isset($data[self::FIELD_PHYSICAL_CHARACTERISTICS])) {
-            if ($data[self::FIELD_PHYSICAL_CHARACTERISTICS] instanceof FHIRProdCharacteristic) {
-                $this->setPhysicalCharacteristics($data[self::FIELD_PHYSICAL_CHARACTERISTICS]);
-            } else {
-                $this->setPhysicalCharacteristics(new FHIRProdCharacteristic($data[self::FIELD_PHYSICAL_CHARACTERISTICS]));
-            }
-        }
-        if (isset($data[self::FIELD_QUANTITY])) {
-            if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
-                $this->setQuantity($data[self::FIELD_QUANTITY]);
-            } else {
-                $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
-            }
-        }
-        if (isset($data[self::FIELD_UNIT_OF_PRESENTATION])) {
-            if ($data[self::FIELD_UNIT_OF_PRESENTATION] instanceof FHIRCodeableConcept) {
-                $this->setUnitOfPresentation($data[self::FIELD_UNIT_OF_PRESENTATION]);
-            } else {
-                $this->setUnitOfPresentation(new FHIRCodeableConcept($data[self::FIELD_UNIT_OF_PRESENTATION]));
             }
         }
     }
@@ -299,7 +306,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<MedicinalProductManufactured{$xmlns}></MedicinalProductManufactured>";
@@ -312,62 +319,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
         return static::FHIR_TYPE_NAME;
     }
 
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Ingredient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
-     */
-    public function getIngredient()
-    {
-        return $this->ingredient;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Ingredient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $ingredient
-     * @return static
-     */
-    public function addIngredient(FHIRReference $ingredient = null)
-    {
-        $this->ingredient[] = $ingredient;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Ingredient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $ingredient
-     * @return static
-     */
-    public function setIngredient(array $ingredient = [])
-    {
-        $this->ingredient = [];
-        if ([] === $ingredient) {
-            return $this;
-        }
-        foreach($ingredient as $v) {
-            if ($v instanceof FHIRReference) {
-                $this->addIngredient($v);
-            } else {
-                $this->addIngredient(new FHIRReference($v));
-            }
-        }
-        return $this;
-    }
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -399,191 +350,8 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      */
     public function setManufacturedDoseForm(FHIRCodeableConcept $manufacturedDoseForm = null)
     {
+        $this->_trackValueSet($this->manufacturedDoseForm, $manufacturedDoseForm);
         $this->manufacturedDoseForm = $manufacturedDoseForm;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Manufacturer of the item (Note that this should be named "manufacturer" but it
-     * currently causes technical issues).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
-     */
-    public function getManufacturer()
-    {
-        return $this->manufacturer;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Manufacturer of the item (Note that this should be named "manufacturer" but it
-     * currently causes technical issues).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $manufacturer
-     * @return static
-     */
-    public function addManufacturer(FHIRReference $manufacturer = null)
-    {
-        $this->manufacturer[] = $manufacturer;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Manufacturer of the item (Note that this should be named "manufacturer" but it
-     * currently causes technical issues).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $manufacturer
-     * @return static
-     */
-    public function setManufacturer(array $manufacturer = [])
-    {
-        $this->manufacturer = [];
-        if ([] === $manufacturer) {
-            return $this;
-        }
-        foreach($manufacturer as $v) {
-            if ($v instanceof FHIRReference) {
-                $this->addManufacturer($v);
-            } else {
-                $this->addManufacturer(new FHIRReference($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Other codeable characteristics.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getOtherCharacteristics()
-    {
-        return $this->otherCharacteristics;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Other codeable characteristics.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $otherCharacteristics
-     * @return static
-     */
-    public function addOtherCharacteristics(FHIRCodeableConcept $otherCharacteristics = null)
-    {
-        $this->otherCharacteristics[] = $otherCharacteristics;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Other codeable characteristics.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $otherCharacteristics
-     * @return static
-     */
-    public function setOtherCharacteristics(array $otherCharacteristics = [])
-    {
-        $this->otherCharacteristics = [];
-        if ([] === $otherCharacteristics) {
-            return $this;
-        }
-        foreach($otherCharacteristics as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addOtherCharacteristics($v);
-            } else {
-                $this->addOtherCharacteristics(new FHIRCodeableConcept($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * The marketing status describes the date when a medicinal product is actually put
-     * on the market or the date as of which it is no longer available.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Dimensions, color etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
-     */
-    public function getPhysicalCharacteristics()
-    {
-        return $this->physicalCharacteristics;
-    }
-
-    /**
-     * The marketing status describes the date when a medicinal product is actually put
-     * on the market or the date as of which it is no longer available.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Dimensions, color etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic $physicalCharacteristics
-     * @return static
-     */
-    public function setPhysicalCharacteristics(FHIRProdCharacteristic $physicalCharacteristics = null)
-    {
-        $this->physicalCharacteristics = $physicalCharacteristics;
-        return $this;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The quantity or "count number" of the manufactured item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    public function getQuantity()
-    {
-        return $this->quantity;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The quantity or "count number" of the manufactured item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $quantity
-     * @return static
-     */
-    public function setQuantity(FHIRQuantity $quantity = null)
-    {
-        $this->quantity = $quantity;
         return $this;
     }
 
@@ -617,7 +385,262 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      */
     public function setUnitOfPresentation(FHIRCodeableConcept $unitOfPresentation = null)
     {
+        $this->_trackValueSet($this->unitOfPresentation, $unitOfPresentation);
         $this->unitOfPresentation = $unitOfPresentation;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The quantity or "count number" of the manufactured item.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The quantity or "count number" of the manufactured item.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $quantity
+     * @return static
+     */
+    public function setQuantity(FHIRQuantity $quantity = null)
+    {
+        $this->_trackValueSet($this->quantity, $quantity);
+        $this->quantity = $quantity;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Manufacturer of the item (Note that this should be named "manufacturer" but it
+     * currently causes technical issues).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
+     */
+    public function getManufacturer()
+    {
+        return $this->manufacturer;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Manufacturer of the item (Note that this should be named "manufacturer" but it
+     * currently causes technical issues).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $manufacturer
+     * @return static
+     */
+    public function addManufacturer(FHIRReference $manufacturer = null)
+    {
+        $this->_trackValueAdded();
+        $this->manufacturer[] = $manufacturer;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Manufacturer of the item (Note that this should be named "manufacturer" but it
+     * currently causes technical issues).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $manufacturer
+     * @return static
+     */
+    public function setManufacturer(array $manufacturer = [])
+    {
+        if ([] !== $this->manufacturer) {
+            $this->_trackValuesRemoved(count($this->manufacturer));
+            $this->manufacturer = [];
+        }
+        if ([] === $manufacturer) {
+            return $this;
+        }
+        foreach($manufacturer as $v) {
+            if ($v instanceof FHIRReference) {
+                $this->addManufacturer($v);
+            } else {
+                $this->addManufacturer(new FHIRReference($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Ingredient.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
+     */
+    public function getIngredient()
+    {
+        return $this->ingredient;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Ingredient.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $ingredient
+     * @return static
+     */
+    public function addIngredient(FHIRReference $ingredient = null)
+    {
+        $this->_trackValueAdded();
+        $this->ingredient[] = $ingredient;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Ingredient.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $ingredient
+     * @return static
+     */
+    public function setIngredient(array $ingredient = [])
+    {
+        if ([] !== $this->ingredient) {
+            $this->_trackValuesRemoved(count($this->ingredient));
+            $this->ingredient = [];
+        }
+        if ([] === $ingredient) {
+            return $this;
+        }
+        foreach($ingredient as $v) {
+            if ($v instanceof FHIRReference) {
+                $this->addIngredient($v);
+            } else {
+                $this->addIngredient(new FHIRReference($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * The marketing status describes the date when a medicinal product is actually put
+     * on the market or the date as of which it is no longer available.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Dimensions, color etc.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
+     */
+    public function getPhysicalCharacteristics()
+    {
+        return $this->physicalCharacteristics;
+    }
+
+    /**
+     * The marketing status describes the date when a medicinal product is actually put
+     * on the market or the date as of which it is no longer available.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Dimensions, color etc.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic $physicalCharacteristics
+     * @return static
+     */
+    public function setPhysicalCharacteristics(FHIRProdCharacteristic $physicalCharacteristics = null)
+    {
+        $this->_trackValueSet($this->physicalCharacteristics, $physicalCharacteristics);
+        $this->physicalCharacteristics = $physicalCharacteristics;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Other codeable characteristics.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getOtherCharacteristics()
+    {
+        return $this->otherCharacteristics;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Other codeable characteristics.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $otherCharacteristics
+     * @return static
+     */
+    public function addOtherCharacteristics(FHIRCodeableConcept $otherCharacteristics = null)
+    {
+        $this->_trackValueAdded();
+        $this->otherCharacteristics[] = $otherCharacteristics;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Other codeable characteristics.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $otherCharacteristics
+     * @return static
+     */
+    public function setOtherCharacteristics(array $otherCharacteristics = [])
+    {
+        if ([] !== $this->otherCharacteristics) {
+            $this->_trackValuesRemoved(count($this->otherCharacteristics));
+            $this->otherCharacteristics = [];
+        }
+        if ([] === $otherCharacteristics) {
+            return $this;
+        }
+        foreach($otherCharacteristics as $v) {
+            if ($v instanceof FHIRCodeableConcept) {
+                $this->addOtherCharacteristics($v);
+            } else {
+                $this->addOtherCharacteristics(new FHIRCodeableConcept($v));
+            }
+        }
         return $this;
     }
 
@@ -642,16 +665,19 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getIngredient())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_INGREDIENT, $i)] = $fieldErrs;
-                }
-            }
-        }
         if (null !== ($v = $this->getManufacturedDoseForm())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_MANUFACTURED_DOSE_FORM] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getUnitOfPresentation())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_UNIT_OF_PRESENTATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getQuantity())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_QUANTITY] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getManufacturer())) {
@@ -661,10 +687,10 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
                 }
             }
         }
-        if ([] !== ($vs = $this->getOtherCharacteristics())) {
+        if ([] !== ($vs = $this->getIngredient())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_OTHER_CHARACTERISTICS, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_INGREDIENT, $i)] = $fieldErrs;
                 }
             }
         }
@@ -673,25 +699,10 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
                 $errs[self::FIELD_PHYSICAL_CHARACTERISTICS] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getQuantity())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_QUANTITY] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getUnitOfPresentation())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_UNIT_OF_PRESENTATION] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_INGREDIENT])) {
-            $v = $this->getIngredient();
-            foreach($validationRules[self::FIELD_INGREDIENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_MANUFACTURED, self::FIELD_INGREDIENT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INGREDIENT])) {
-                        $errs[self::FIELD_INGREDIENT] = [];
-                    }
-                    $errs[self::FIELD_INGREDIENT][$rule] = $err;
+        if ([] !== ($vs = $this->getOtherCharacteristics())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_OTHER_CHARACTERISTICS, $i)] = $fieldErrs;
                 }
             }
         }
@@ -707,39 +718,15 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_MANUFACTURER])) {
-            $v = $this->getManufacturer();
-            foreach($validationRules[self::FIELD_MANUFACTURER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_MANUFACTURED, self::FIELD_MANUFACTURER, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_UNIT_OF_PRESENTATION])) {
+            $v = $this->getUnitOfPresentation();
+            foreach($validationRules[self::FIELD_UNIT_OF_PRESENTATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_MANUFACTURED, self::FIELD_UNIT_OF_PRESENTATION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_MANUFACTURER])) {
-                        $errs[self::FIELD_MANUFACTURER] = [];
+                    if (!isset($errs[self::FIELD_UNIT_OF_PRESENTATION])) {
+                        $errs[self::FIELD_UNIT_OF_PRESENTATION] = [];
                     }
-                    $errs[self::FIELD_MANUFACTURER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_OTHER_CHARACTERISTICS])) {
-            $v = $this->getOtherCharacteristics();
-            foreach($validationRules[self::FIELD_OTHER_CHARACTERISTICS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_MANUFACTURED, self::FIELD_OTHER_CHARACTERISTICS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_OTHER_CHARACTERISTICS])) {
-                        $errs[self::FIELD_OTHER_CHARACTERISTICS] = [];
-                    }
-                    $errs[self::FIELD_OTHER_CHARACTERISTICS][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PHYSICAL_CHARACTERISTICS])) {
-            $v = $this->getPhysicalCharacteristics();
-            foreach($validationRules[self::FIELD_PHYSICAL_CHARACTERISTICS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_MANUFACTURED, self::FIELD_PHYSICAL_CHARACTERISTICS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PHYSICAL_CHARACTERISTICS])) {
-                        $errs[self::FIELD_PHYSICAL_CHARACTERISTICS] = [];
-                    }
-                    $errs[self::FIELD_PHYSICAL_CHARACTERISTICS][$rule] = $err;
+                    $errs[self::FIELD_UNIT_OF_PRESENTATION][$rule] = $err;
                 }
             }
         }
@@ -755,15 +742,63 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_UNIT_OF_PRESENTATION])) {
-            $v = $this->getUnitOfPresentation();
-            foreach($validationRules[self::FIELD_UNIT_OF_PRESENTATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_MANUFACTURED, self::FIELD_UNIT_OF_PRESENTATION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_MANUFACTURER])) {
+            $v = $this->getManufacturer();
+            foreach($validationRules[self::FIELD_MANUFACTURER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_MANUFACTURED, self::FIELD_MANUFACTURER, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_UNIT_OF_PRESENTATION])) {
-                        $errs[self::FIELD_UNIT_OF_PRESENTATION] = [];
+                    if (!isset($errs[self::FIELD_MANUFACTURER])) {
+                        $errs[self::FIELD_MANUFACTURER] = [];
                     }
-                    $errs[self::FIELD_UNIT_OF_PRESENTATION][$rule] = $err;
+                    $errs[self::FIELD_MANUFACTURER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INGREDIENT])) {
+            $v = $this->getIngredient();
+            foreach($validationRules[self::FIELD_INGREDIENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_MANUFACTURED, self::FIELD_INGREDIENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INGREDIENT])) {
+                        $errs[self::FIELD_INGREDIENT] = [];
+                    }
+                    $errs[self::FIELD_INGREDIENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PHYSICAL_CHARACTERISTICS])) {
+            $v = $this->getPhysicalCharacteristics();
+            foreach($validationRules[self::FIELD_PHYSICAL_CHARACTERISTICS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_MANUFACTURED, self::FIELD_PHYSICAL_CHARACTERISTICS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PHYSICAL_CHARACTERISTICS])) {
+                        $errs[self::FIELD_PHYSICAL_CHARACTERISTICS] = [];
+                    }
+                    $errs[self::FIELD_PHYSICAL_CHARACTERISTICS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_OTHER_CHARACTERISTICS])) {
+            $v = $this->getOtherCharacteristics();
+            foreach($validationRules[self::FIELD_OTHER_CHARACTERISTICS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_MANUFACTURED, self::FIELD_OTHER_CHARACTERISTICS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_OTHER_CHARACTERISTICS])) {
+                        $errs[self::FIELD_OTHER_CHARACTERISTICS] = [];
+                    }
+                    $errs[self::FIELD_OTHER_CHARACTERISTICS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
+                    }
+                    $errs[self::FIELD_TEXT][$rule] = $err;
                 }
             }
         }
@@ -803,18 +838,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ID])) {
             $v = $this->getId();
             foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
@@ -824,6 +847,18 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
                         $errs[self::FIELD_ID] = [];
                     }
                     $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
                 }
             }
         }
@@ -851,139 +886,182 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_META])) {
-            $v = $this->getMeta();
-            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_META])) {
-                        $errs[self::FIELD_META] = [];
-                    }
-                    $errs[self::FIELD_META][$rule] = $err;
-                }
-            }
-        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRMedicinalProductManufactured::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMedicinalProductManufactured::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRMedicinalProductManufactured::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRMedicinalProductManufactured;
+            $type = new FHIRMedicinalProductManufactured(null);
         } elseif (!is_object($type) || !($type instanceof FHIRMedicinalProductManufactured)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMedicinalProductManufactured::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductManufactured or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRDomainResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_MANUFACTURED_DOSE_FORM === $n->nodeName) {
+                $type->setManufacturedDoseForm(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_UNIT_OF_PRESENTATION === $n->nodeName) {
+                $type->setUnitOfPresentation(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_QUANTITY === $n->nodeName) {
+                $type->setQuantity(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_MANUFACTURER === $n->nodeName) {
+                $type->addManufacturer(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_INGREDIENT === $n->nodeName) {
+                $type->addIngredient(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_PHYSICAL_CHARACTERISTICS === $n->nodeName) {
+                $type->setPhysicalCharacteristics(FHIRProdCharacteristic::xmlUnserialize($n));
+            } elseif (self::FIELD_OTHER_CHARACTERISTICS === $n->nodeName) {
+                $type->addOtherCharacteristics(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_TEXT === $n->nodeName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n));
+            } elseif (self::FIELD_CONTAINED === $n->nodeName) {
+                for ($ni = 0; $ni < $n->childNodes->length; $ni++) {
+                    $nn = $n->childNodes->item($ni);
+                    if ($nn instanceof \DOMElement) {
+                        $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn));
+                    }
+                }
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRId::xmlUnserialize($n));
+            } elseif (self::FIELD_META === $n->nodeName) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($n));
+            } elseif (self::FIELD_IMPLICIT_RULES === $n->nodeName) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_LANGUAGE === $n->nodeName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->ingredient)) {
-            foreach($children->ingredient as $child) {
-                $type->addIngredient(FHIRReference::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
-        if (isset($children->manufacturedDoseForm)) {
-            $type->setManufacturedDoseForm(FHIRCodeableConcept::xmlUnserialize($children->manufacturedDoseForm));
-        }
-        if (isset($children->manufacturer)) {
-            foreach($children->manufacturer as $child) {
-                $type->addManufacturer(FHIRReference::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_IMPLICIT_RULES);
+        if (null !== $n) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setImplicitRules($n->nodeValue);
             }
         }
-        if (isset($children->otherCharacteristics)) {
-            foreach($children->otherCharacteristics as $child) {
-                $type->addOtherCharacteristics(FHIRCodeableConcept::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_LANGUAGE);
+        if (null !== $n) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setLanguage($n->nodeValue);
             }
-        }
-        if (isset($children->physicalCharacteristics)) {
-            $type->setPhysicalCharacteristics(FHIRProdCharacteristic::xmlUnserialize($children->physicalCharacteristics));
-        }
-        if (isset($children->quantity)) {
-            $type->setQuantity(FHIRQuantity::xmlUnserialize($children->quantity));
-        }
-        if (isset($children->unitOfPresentation)) {
-            $type->setUnitOfPresentation(FHIRCodeableConcept::xmlUnserialize($children->unitOfPresentation));
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getIngredient())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INGREDIENT, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getManufacturedDoseForm())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MANUFACTURED_DOSE_FORM, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_MANUFACTURED_DOSE_FORM);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getUnitOfPresentation())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_UNIT_OF_PRESENTATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getQuantity())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_QUANTITY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getManufacturer())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MANUFACTURER, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_MANUFACTURER);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
+        }
+        if ([] !== ($vs = $this->getIngredient())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_INGREDIENT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if (null !== ($v = $this->getPhysicalCharacteristics())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PHYSICAL_CHARACTERISTICS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getOtherCharacteristics())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_OTHER_CHARACTERISTICS, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_OTHER_CHARACTERISTICS);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getPhysicalCharacteristics())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PHYSICAL_CHARACTERISTICS, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getUnitOfPresentation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_OF_PRESENTATION, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -992,17 +1070,14 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getIngredient())) {
-            $a[self::FIELD_INGREDIENT] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_INGREDIENT][] = $v;
-            }
-        }
         if (null !== ($v = $this->getManufacturedDoseForm())) {
             $a[self::FIELD_MANUFACTURED_DOSE_FORM] = $v;
+        }
+        if (null !== ($v = $this->getUnitOfPresentation())) {
+            $a[self::FIELD_UNIT_OF_PRESENTATION] = $v;
+        }
+        if (null !== ($v = $this->getQuantity())) {
+            $a[self::FIELD_QUANTITY] = $v;
         }
         if ([] !== ($vs = $this->getManufacturer())) {
             $a[self::FIELD_MANUFACTURER] = [];
@@ -1013,6 +1088,18 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
                 $a[self::FIELD_MANUFACTURER][] = $v;
             }
         }
+        if ([] !== ($vs = $this->getIngredient())) {
+            $a[self::FIELD_INGREDIENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_INGREDIENT][] = $v;
+            }
+        }
+        if (null !== ($v = $this->getPhysicalCharacteristics())) {
+            $a[self::FIELD_PHYSICAL_CHARACTERISTICS] = $v;
+        }
         if ([] !== ($vs = $this->getOtherCharacteristics())) {
             $a[self::FIELD_OTHER_CHARACTERISTICS] = [];
             foreach($vs as $v) {
@@ -1021,18 +1108,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
                 }
                 $a[self::FIELD_OTHER_CHARACTERISTICS][] = $v;
             }
-        }
-        if (null !== ($v = $this->getPhysicalCharacteristics())) {
-            $a[self::FIELD_PHYSICAL_CHARACTERISTICS] = $v;
-        }
-        if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
-        }
-        if (null !== ($v = $this->getUnitOfPresentation())) {
-            $a[self::FIELD_UNIT_OF_PRESENTATION] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

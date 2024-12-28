@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,9 +66,11 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -82,21 +84,71 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PACKAGED_DOT_PACKAGE_ITEM;
+    const FIELD_IDENTIFIER = 'identifier';
+    const FIELD_TYPE = 'type';
+    const FIELD_QUANTITY = 'quantity';
+    const FIELD_MATERIAL = 'material';
     const FIELD_ALTERNATE_MATERIAL = 'alternateMaterial';
     const FIELD_DEVICE = 'device';
-    const FIELD_IDENTIFIER = 'identifier';
     const FIELD_MANUFACTURED_ITEM = 'manufacturedItem';
-    const FIELD_MANUFACTURER = 'manufacturer';
-    const FIELD_MATERIAL = 'material';
-    const FIELD_OTHER_CHARACTERISTICS = 'otherCharacteristics';
     const FIELD_PACKAGE_ITEM = 'packageItem';
     const FIELD_PHYSICAL_CHARACTERISTICS = 'physicalCharacteristics';
-    const FIELD_QUANTITY = 'quantity';
+    const FIELD_OTHER_CHARACTERISTICS = 'otherCharacteristics';
     const FIELD_SHELF_LIFE_STORAGE = 'shelfLifeStorage';
-    const FIELD_TYPE = 'type';
+    const FIELD_MANUFACTURER = 'manufacturer';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Including possibly Data Carrier Identifier.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
+     */
+    protected $identifier = [];
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The physical type of the container of the medicine.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $type = null;
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The quantity of this package in the medicinal product, at the current level of
+     * packaging. The outermost is always 1.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    protected $quantity = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Material type of the package item.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    protected $material = [];
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -122,18 +174,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
     protected $device = [];
 
     /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Including possibly Data Carrier Identifier.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
-     */
-    protected $identifier = [];
-
-    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -143,41 +183,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected $manufacturedItem = [];
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Manufacturer of this Package Item.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
-     */
-    protected $manufacturer = [];
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Material type of the package item.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    protected $material = [];
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Other codeable characteristics.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    protected $otherCharacteristics = [];
 
     /**
      * A medicinal product in a container or package.
@@ -201,18 +206,16 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
     protected $physicalCharacteristics = null;
 
     /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The quantity of this package in the medicinal product, at the current level of
-     * packaging. The outermost is always 1.
+     * Other codeable characteristics.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    protected $quantity = null;
+    protected $otherCharacteristics = [];
 
     /**
      * The shelf-life and storage information for a medicinal product item or container
@@ -227,16 +230,15 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
     protected $shelfLifeStorage = [];
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
+     * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The physical type of the container of the medicine.
+     * Manufacturer of this Package Item.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    protected $type = null;
+    protected $manufacturer = [];
 
     /**
      * Validation map for fields in type MedicinalProductPackaged.PackageItem
@@ -260,6 +262,56 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_IDENTIFIER])) {
+            if (is_array($data[self::FIELD_IDENTIFIER])) {
+                foreach($data[self::FIELD_IDENTIFIER] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRIdentifier) {
+                        $this->addIdentifier($v);
+                    } else {
+                        $this->addIdentifier(new FHIRIdentifier($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+                $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
+            } else {
+                $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
+            }
+        }
+        if (isset($data[self::FIELD_TYPE])) {
+            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setType($data[self::FIELD_TYPE]);
+            } else {
+                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
+            }
+        }
+        if (isset($data[self::FIELD_QUANTITY])) {
+            if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
+                $this->setQuantity($data[self::FIELD_QUANTITY]);
+            } else {
+                $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
+            }
+        }
+        if (isset($data[self::FIELD_MATERIAL])) {
+            if (is_array($data[self::FIELD_MATERIAL])) {
+                foreach($data[self::FIELD_MATERIAL] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addMaterial($v);
+                    } else {
+                        $this->addMaterial(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_MATERIAL] instanceof FHIRCodeableConcept) {
+                $this->addMaterial($data[self::FIELD_MATERIAL]);
+            } else {
+                $this->addMaterial(new FHIRCodeableConcept($data[self::FIELD_MATERIAL]));
+            }
+        }
         if (isset($data[self::FIELD_ALTERNATE_MATERIAL])) {
             if (is_array($data[self::FIELD_ALTERNATE_MATERIAL])) {
                 foreach($data[self::FIELD_ALTERNATE_MATERIAL] as $v) {
@@ -272,7 +324,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                         $this->addAlternateMaterial(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_ALTERNATE_MATERIAL] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_ALTERNATE_MATERIAL] instanceof FHIRCodeableConcept) {
                 $this->addAlternateMaterial($data[self::FIELD_ALTERNATE_MATERIAL]);
             } else {
                 $this->addAlternateMaterial(new FHIRCodeableConcept($data[self::FIELD_ALTERNATE_MATERIAL]));
@@ -290,28 +342,10 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                         $this->addDevice(new FHIRReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_DEVICE] instanceof FHIRReference) {
+            } elseif ($data[self::FIELD_DEVICE] instanceof FHIRReference) {
                 $this->addDevice($data[self::FIELD_DEVICE]);
             } else {
                 $this->addDevice(new FHIRReference($data[self::FIELD_DEVICE]));
-            }
-        }
-        if (isset($data[self::FIELD_IDENTIFIER])) {
-            if (is_array($data[self::FIELD_IDENTIFIER])) {
-                foreach($data[self::FIELD_IDENTIFIER] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRIdentifier) {
-                        $this->addIdentifier($v);
-                    } else {
-                        $this->addIdentifier(new FHIRIdentifier($v));
-                    }
-                }
-            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
-                $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
-            } else {
-                $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
         }
         if (isset($data[self::FIELD_MANUFACTURED_ITEM])) {
@@ -326,64 +360,10 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                         $this->addManufacturedItem(new FHIRReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_MANUFACTURED_ITEM] instanceof FHIRReference) {
+            } elseif ($data[self::FIELD_MANUFACTURED_ITEM] instanceof FHIRReference) {
                 $this->addManufacturedItem($data[self::FIELD_MANUFACTURED_ITEM]);
             } else {
                 $this->addManufacturedItem(new FHIRReference($data[self::FIELD_MANUFACTURED_ITEM]));
-            }
-        }
-        if (isset($data[self::FIELD_MANUFACTURER])) {
-            if (is_array($data[self::FIELD_MANUFACTURER])) {
-                foreach($data[self::FIELD_MANUFACTURER] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRReference) {
-                        $this->addManufacturer($v);
-                    } else {
-                        $this->addManufacturer(new FHIRReference($v));
-                    }
-                }
-            } else if ($data[self::FIELD_MANUFACTURER] instanceof FHIRReference) {
-                $this->addManufacturer($data[self::FIELD_MANUFACTURER]);
-            } else {
-                $this->addManufacturer(new FHIRReference($data[self::FIELD_MANUFACTURER]));
-            }
-        }
-        if (isset($data[self::FIELD_MATERIAL])) {
-            if (is_array($data[self::FIELD_MATERIAL])) {
-                foreach($data[self::FIELD_MATERIAL] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addMaterial($v);
-                    } else {
-                        $this->addMaterial(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_MATERIAL] instanceof FHIRCodeableConcept) {
-                $this->addMaterial($data[self::FIELD_MATERIAL]);
-            } else {
-                $this->addMaterial(new FHIRCodeableConcept($data[self::FIELD_MATERIAL]));
-            }
-        }
-        if (isset($data[self::FIELD_OTHER_CHARACTERISTICS])) {
-            if (is_array($data[self::FIELD_OTHER_CHARACTERISTICS])) {
-                foreach($data[self::FIELD_OTHER_CHARACTERISTICS] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addOtherCharacteristics($v);
-                    } else {
-                        $this->addOtherCharacteristics(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_OTHER_CHARACTERISTICS] instanceof FHIRCodeableConcept) {
-                $this->addOtherCharacteristics($data[self::FIELD_OTHER_CHARACTERISTICS]);
-            } else {
-                $this->addOtherCharacteristics(new FHIRCodeableConcept($data[self::FIELD_OTHER_CHARACTERISTICS]));
             }
         }
         if (isset($data[self::FIELD_PACKAGE_ITEM])) {
@@ -398,7 +378,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                         $this->addPackageItem(new FHIRMedicinalProductPackagedPackageItem($v));
                     }
                 }
-            } else if ($data[self::FIELD_PACKAGE_ITEM] instanceof FHIRMedicinalProductPackagedPackageItem) {
+            } elseif ($data[self::FIELD_PACKAGE_ITEM] instanceof FHIRMedicinalProductPackagedPackageItem) {
                 $this->addPackageItem($data[self::FIELD_PACKAGE_ITEM]);
             } else {
                 $this->addPackageItem(new FHIRMedicinalProductPackagedPackageItem($data[self::FIELD_PACKAGE_ITEM]));
@@ -411,11 +391,22 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                 $this->setPhysicalCharacteristics(new FHIRProdCharacteristic($data[self::FIELD_PHYSICAL_CHARACTERISTICS]));
             }
         }
-        if (isset($data[self::FIELD_QUANTITY])) {
-            if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
-                $this->setQuantity($data[self::FIELD_QUANTITY]);
+        if (isset($data[self::FIELD_OTHER_CHARACTERISTICS])) {
+            if (is_array($data[self::FIELD_OTHER_CHARACTERISTICS])) {
+                foreach($data[self::FIELD_OTHER_CHARACTERISTICS] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addOtherCharacteristics($v);
+                    } else {
+                        $this->addOtherCharacteristics(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_OTHER_CHARACTERISTICS] instanceof FHIRCodeableConcept) {
+                $this->addOtherCharacteristics($data[self::FIELD_OTHER_CHARACTERISTICS]);
             } else {
-                $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
+                $this->addOtherCharacteristics(new FHIRCodeableConcept($data[self::FIELD_OTHER_CHARACTERISTICS]));
             }
         }
         if (isset($data[self::FIELD_SHELF_LIFE_STORAGE])) {
@@ -430,17 +421,28 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                         $this->addShelfLifeStorage(new FHIRProductShelfLife($v));
                     }
                 }
-            } else if ($data[self::FIELD_SHELF_LIFE_STORAGE] instanceof FHIRProductShelfLife) {
+            } elseif ($data[self::FIELD_SHELF_LIFE_STORAGE] instanceof FHIRProductShelfLife) {
                 $this->addShelfLifeStorage($data[self::FIELD_SHELF_LIFE_STORAGE]);
             } else {
                 $this->addShelfLifeStorage(new FHIRProductShelfLife($data[self::FIELD_SHELF_LIFE_STORAGE]));
             }
         }
-        if (isset($data[self::FIELD_TYPE])) {
-            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setType($data[self::FIELD_TYPE]);
+        if (isset($data[self::FIELD_MANUFACTURER])) {
+            if (is_array($data[self::FIELD_MANUFACTURER])) {
+                foreach($data[self::FIELD_MANUFACTURER] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRReference) {
+                        $this->addManufacturer($v);
+                    } else {
+                        $this->addManufacturer(new FHIRReference($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_MANUFACTURER] instanceof FHIRReference) {
+                $this->addManufacturer($data[self::FIELD_MANUFACTURER]);
             } else {
-                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
+                $this->addManufacturer(new FHIRReference($data[self::FIELD_MANUFACTURER]));
             }
         }
     }
@@ -459,10 +461,206 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<MedicinalProductPackagedPackageItem{$xmlns}></MedicinalProductPackagedPackageItem>";
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Including possibly Data Carrier Identifier.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
+     */
+    public function getIdentifier()
+    {
+        return $this->identifier;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Including possibly Data Carrier Identifier.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
+     * @return static
+     */
+    public function addIdentifier(FHIRIdentifier $identifier = null)
+    {
+        $this->_trackValueAdded();
+        $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Including possibly Data Carrier Identifier.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
+     * @return static
+     */
+    public function setIdentifier(array $identifier = [])
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            if ($v instanceof FHIRIdentifier) {
+                $this->addIdentifier($v);
+            } else {
+                $this->addIdentifier(new FHIRIdentifier($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The physical type of the container of the medicine.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The physical type of the container of the medicine.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
+     * @return static
+     */
+    public function setType(FHIRCodeableConcept $type = null)
+    {
+        $this->_trackValueSet($this->type, $type);
+        $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The quantity of this package in the medicinal product, at the current level of
+     * packaging. The outermost is always 1.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The quantity of this package in the medicinal product, at the current level of
+     * packaging. The outermost is always 1.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $quantity
+     * @return static
+     */
+    public function setQuantity(FHIRQuantity $quantity = null)
+    {
+        $this->_trackValueSet($this->quantity, $quantity);
+        $this->quantity = $quantity;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Material type of the package item.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getMaterial()
+    {
+        return $this->material;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Material type of the package item.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $material
+     * @return static
+     */
+    public function addMaterial(FHIRCodeableConcept $material = null)
+    {
+        $this->_trackValueAdded();
+        $this->material[] = $material;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Material type of the package item.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $material
+     * @return static
+     */
+    public function setMaterial(array $material = [])
+    {
+        if ([] !== $this->material) {
+            $this->_trackValuesRemoved(count($this->material));
+            $this->material = [];
+        }
+        if ([] === $material) {
+            return $this;
+        }
+        foreach($material as $v) {
+            if ($v instanceof FHIRCodeableConcept) {
+                $this->addMaterial($v);
+            } else {
+                $this->addMaterial(new FHIRCodeableConcept($v));
+            }
+        }
+        return $this;
     }
 
     /**
@@ -493,6 +691,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      */
     public function addAlternateMaterial(FHIRCodeableConcept $alternateMaterial = null)
     {
+        $this->_trackValueAdded();
         $this->alternateMaterial[] = $alternateMaterial;
         return $this;
     }
@@ -510,7 +709,10 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      */
     public function setAlternateMaterial(array $alternateMaterial = [])
     {
-        $this->alternateMaterial = [];
+        if ([] !== $this->alternateMaterial) {
+            $this->_trackValuesRemoved(count($this->alternateMaterial));
+            $this->alternateMaterial = [];
+        }
         if ([] === $alternateMaterial) {
             return $this;
         }
@@ -550,6 +752,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      */
     public function addDevice(FHIRReference $device = null)
     {
+        $this->_trackValueAdded();
         $this->device[] = $device;
         return $this;
     }
@@ -566,7 +769,10 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      */
     public function setDevice(array $device = [])
     {
-        $this->device = [];
+        if ([] !== $this->device) {
+            $this->_trackValuesRemoved(count($this->device));
+            $this->device = [];
+        }
         if ([] === $device) {
             return $this;
         }
@@ -575,65 +781,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                 $this->addDevice($v);
             } else {
                 $this->addDevice(new FHIRReference($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Including possibly Data Carrier Identifier.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
-     */
-    public function getIdentifier()
-    {
-        return $this->identifier;
-    }
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Including possibly Data Carrier Identifier.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
-     * @return static
-     */
-    public function addIdentifier(FHIRIdentifier $identifier = null)
-    {
-        $this->identifier[] = $identifier;
-        return $this;
-    }
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Including possibly Data Carrier Identifier.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return static
-     */
-    public function setIdentifier(array $identifier = [])
-    {
-        $this->identifier = [];
-        if ([] === $identifier) {
-            return $this;
-        }
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->addIdentifier($v);
-            } else {
-                $this->addIdentifier(new FHIRIdentifier($v));
             }
         }
         return $this;
@@ -665,6 +812,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      */
     public function addManufacturedItem(FHIRReference $manufacturedItem = null)
     {
+        $this->_trackValueAdded();
         $this->manufacturedItem[] = $manufacturedItem;
         return $this;
     }
@@ -681,7 +829,10 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      */
     public function setManufacturedItem(array $manufacturedItem = [])
     {
-        $this->manufacturedItem = [];
+        if ([] !== $this->manufacturedItem) {
+            $this->_trackValuesRemoved(count($this->manufacturedItem));
+            $this->manufacturedItem = [];
+        }
         if ([] === $manufacturedItem) {
             return $this;
         }
@@ -690,180 +841,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                 $this->addManufacturedItem($v);
             } else {
                 $this->addManufacturedItem(new FHIRReference($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Manufacturer of this Package Item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
-     */
-    public function getManufacturer()
-    {
-        return $this->manufacturer;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Manufacturer of this Package Item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $manufacturer
-     * @return static
-     */
-    public function addManufacturer(FHIRReference $manufacturer = null)
-    {
-        $this->manufacturer[] = $manufacturer;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Manufacturer of this Package Item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $manufacturer
-     * @return static
-     */
-    public function setManufacturer(array $manufacturer = [])
-    {
-        $this->manufacturer = [];
-        if ([] === $manufacturer) {
-            return $this;
-        }
-        foreach($manufacturer as $v) {
-            if ($v instanceof FHIRReference) {
-                $this->addManufacturer($v);
-            } else {
-                $this->addManufacturer(new FHIRReference($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Material type of the package item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getMaterial()
-    {
-        return $this->material;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Material type of the package item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $material
-     * @return static
-     */
-    public function addMaterial(FHIRCodeableConcept $material = null)
-    {
-        $this->material[] = $material;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Material type of the package item.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $material
-     * @return static
-     */
-    public function setMaterial(array $material = [])
-    {
-        $this->material = [];
-        if ([] === $material) {
-            return $this;
-        }
-        foreach($material as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addMaterial($v);
-            } else {
-                $this->addMaterial(new FHIRCodeableConcept($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Other codeable characteristics.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getOtherCharacteristics()
-    {
-        return $this->otherCharacteristics;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Other codeable characteristics.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $otherCharacteristics
-     * @return static
-     */
-    public function addOtherCharacteristics(FHIRCodeableConcept $otherCharacteristics = null)
-    {
-        $this->otherCharacteristics[] = $otherCharacteristics;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Other codeable characteristics.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $otherCharacteristics
-     * @return static
-     */
-    public function setOtherCharacteristics(array $otherCharacteristics = [])
-    {
-        $this->otherCharacteristics = [];
-        if ([] === $otherCharacteristics) {
-            return $this;
-        }
-        foreach($otherCharacteristics as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addOtherCharacteristics($v);
-            } else {
-                $this->addOtherCharacteristics(new FHIRCodeableConcept($v));
             }
         }
         return $this;
@@ -891,6 +868,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      */
     public function addPackageItem(FHIRMedicinalProductPackagedPackageItem $packageItem = null)
     {
+        $this->_trackValueAdded();
         $this->packageItem[] = $packageItem;
         return $this;
     }
@@ -905,7 +883,10 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      */
     public function setPackageItem(array $packageItem = [])
     {
-        $this->packageItem = [];
+        if ([] !== $this->packageItem) {
+            $this->_trackValuesRemoved(count($this->packageItem));
+            $this->packageItem = [];
+        }
         if ([] === $packageItem) {
             return $this;
         }
@@ -947,43 +928,71 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      */
     public function setPhysicalCharacteristics(FHIRProdCharacteristic $physicalCharacteristics = null)
     {
+        $this->_trackValueSet($this->physicalCharacteristics, $physicalCharacteristics);
         $this->physicalCharacteristics = $physicalCharacteristics;
         return $this;
     }
 
     /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The quantity of this package in the medicinal product, at the current level of
-     * packaging. The outermost is always 1.
+     * Other codeable characteristics.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getQuantity()
+    public function getOtherCharacteristics()
     {
-        return $this->quantity;
+        return $this->otherCharacteristics;
     }
 
     /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The quantity of this package in the medicinal product, at the current level of
-     * packaging. The outermost is always 1.
+     * Other codeable characteristics.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $quantity
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $otherCharacteristics
      * @return static
      */
-    public function setQuantity(FHIRQuantity $quantity = null)
+    public function addOtherCharacteristics(FHIRCodeableConcept $otherCharacteristics = null)
     {
-        $this->quantity = $quantity;
+        $this->_trackValueAdded();
+        $this->otherCharacteristics[] = $otherCharacteristics;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Other codeable characteristics.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $otherCharacteristics
+     * @return static
+     */
+    public function setOtherCharacteristics(array $otherCharacteristics = [])
+    {
+        if ([] !== $this->otherCharacteristics) {
+            $this->_trackValuesRemoved(count($this->otherCharacteristics));
+            $this->otherCharacteristics = [];
+        }
+        if ([] === $otherCharacteristics) {
+            return $this;
+        }
+        foreach($otherCharacteristics as $v) {
+            if ($v instanceof FHIRCodeableConcept) {
+                $this->addOtherCharacteristics($v);
+            } else {
+                $this->addOtherCharacteristics(new FHIRCodeableConcept($v));
+            }
+        }
         return $this;
     }
 
@@ -1015,6 +1024,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      */
     public function addShelfLifeStorage(FHIRProductShelfLife $shelfLifeStorage = null)
     {
+        $this->_trackValueAdded();
         $this->shelfLifeStorage[] = $shelfLifeStorage;
         return $this;
     }
@@ -1032,7 +1042,10 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      */
     public function setShelfLifeStorage(array $shelfLifeStorage = [])
     {
-        $this->shelfLifeStorage = [];
+        if ([] !== $this->shelfLifeStorage) {
+            $this->_trackValuesRemoved(count($this->shelfLifeStorage));
+            $this->shelfLifeStorage = [];
+        }
         if ([] === $shelfLifeStorage) {
             return $this;
         }
@@ -1047,34 +1060,62 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
     }
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
+     * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The physical type of the container of the medicine.
+     * Manufacturer of this Package Item.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    public function getType()
+    public function getManufacturer()
     {
-        return $this->type;
+        return $this->manufacturer;
     }
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
+     * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The physical type of the container of the medicine.
+     * Manufacturer of this Package Item.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $manufacturer
      * @return static
      */
-    public function setType(FHIRCodeableConcept $type = null)
+    public function addManufacturer(FHIRReference $manufacturer = null)
     {
-        $this->type = $type;
+        $this->_trackValueAdded();
+        $this->manufacturer[] = $manufacturer;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Manufacturer of this Package Item.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $manufacturer
+     * @return static
+     */
+    public function setManufacturer(array $manufacturer = [])
+    {
+        if ([] !== $this->manufacturer) {
+            $this->_trackValuesRemoved(count($this->manufacturer));
+            $this->manufacturer = [];
+        }
+        if ([] === $manufacturer) {
+            return $this;
+        }
+        foreach($manufacturer as $v) {
+            if ($v instanceof FHIRReference) {
+                $this->addManufacturer($v);
+            } else {
+                $this->addManufacturer(new FHIRReference($v));
+            }
+        }
         return $this;
     }
 
@@ -1099,6 +1140,30 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if ([] !== ($vs = $this->getIdentifier())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_IDENTIFIER, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getQuantity())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_QUANTITY] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getMaterial())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_MATERIAL, $i)] = $fieldErrs;
+                }
+            }
+        }
         if ([] !== ($vs = $this->getAlternateMaterial())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
@@ -1113,38 +1178,10 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                 }
             }
         }
-        if ([] !== ($vs = $this->getIdentifier())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_IDENTIFIER, $i)] = $fieldErrs;
-                }
-            }
-        }
         if ([] !== ($vs = $this->getManufacturedItem())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_MANUFACTURED_ITEM, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getManufacturer())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_MANUFACTURER, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getMaterial())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_MATERIAL, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getOtherCharacteristics())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_OTHER_CHARACTERISTICS, $i)] = $fieldErrs;
                 }
             }
         }
@@ -1160,9 +1197,11 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                 $errs[self::FIELD_PHYSICAL_CHARACTERISTICS] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getQuantity())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_QUANTITY] = $fieldErrs;
+        if ([] !== ($vs = $this->getOtherCharacteristics())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_OTHER_CHARACTERISTICS, $i)] = $fieldErrs;
+                }
             }
         }
         if ([] !== ($vs = $this->getShelfLifeStorage())) {
@@ -1172,9 +1211,59 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TYPE] = $fieldErrs;
+        if ([] !== ($vs = $this->getManufacturer())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_MANUFACTURER, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_IDENTIFIER])) {
+            $v = $this->getIdentifier();
+            foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PACKAGED_DOT_PACKAGE_ITEM, self::FIELD_IDENTIFIER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_IDENTIFIER])) {
+                        $errs[self::FIELD_IDENTIFIER] = [];
+                    }
+                    $errs[self::FIELD_IDENTIFIER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PACKAGED_DOT_PACKAGE_ITEM, self::FIELD_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
+                    }
+                    $errs[self::FIELD_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_QUANTITY])) {
+            $v = $this->getQuantity();
+            foreach($validationRules[self::FIELD_QUANTITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PACKAGED_DOT_PACKAGE_ITEM, self::FIELD_QUANTITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_QUANTITY])) {
+                        $errs[self::FIELD_QUANTITY] = [];
+                    }
+                    $errs[self::FIELD_QUANTITY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MATERIAL])) {
+            $v = $this->getMaterial();
+            foreach($validationRules[self::FIELD_MATERIAL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PACKAGED_DOT_PACKAGE_ITEM, self::FIELD_MATERIAL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MATERIAL])) {
+                        $errs[self::FIELD_MATERIAL] = [];
+                    }
+                    $errs[self::FIELD_MATERIAL][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_ALTERNATE_MATERIAL])) {
@@ -1201,18 +1290,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_IDENTIFIER])) {
-            $v = $this->getIdentifier();
-            foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PACKAGED_DOT_PACKAGE_ITEM, self::FIELD_IDENTIFIER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_IDENTIFIER])) {
-                        $errs[self::FIELD_IDENTIFIER] = [];
-                    }
-                    $errs[self::FIELD_IDENTIFIER][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_MANUFACTURED_ITEM])) {
             $v = $this->getManufacturedItem();
             foreach($validationRules[self::FIELD_MANUFACTURED_ITEM] as $rule => $constraint) {
@@ -1222,42 +1299,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                         $errs[self::FIELD_MANUFACTURED_ITEM] = [];
                     }
                     $errs[self::FIELD_MANUFACTURED_ITEM][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_MANUFACTURER])) {
-            $v = $this->getManufacturer();
-            foreach($validationRules[self::FIELD_MANUFACTURER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PACKAGED_DOT_PACKAGE_ITEM, self::FIELD_MANUFACTURER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_MANUFACTURER])) {
-                        $errs[self::FIELD_MANUFACTURER] = [];
-                    }
-                    $errs[self::FIELD_MANUFACTURER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_MATERIAL])) {
-            $v = $this->getMaterial();
-            foreach($validationRules[self::FIELD_MATERIAL] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PACKAGED_DOT_PACKAGE_ITEM, self::FIELD_MATERIAL, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_MATERIAL])) {
-                        $errs[self::FIELD_MATERIAL] = [];
-                    }
-                    $errs[self::FIELD_MATERIAL][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_OTHER_CHARACTERISTICS])) {
-            $v = $this->getOtherCharacteristics();
-            foreach($validationRules[self::FIELD_OTHER_CHARACTERISTICS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PACKAGED_DOT_PACKAGE_ITEM, self::FIELD_OTHER_CHARACTERISTICS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_OTHER_CHARACTERISTICS])) {
-                        $errs[self::FIELD_OTHER_CHARACTERISTICS] = [];
-                    }
-                    $errs[self::FIELD_OTHER_CHARACTERISTICS][$rule] = $err;
                 }
             }
         }
@@ -1285,15 +1326,15 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_QUANTITY])) {
-            $v = $this->getQuantity();
-            foreach($validationRules[self::FIELD_QUANTITY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PACKAGED_DOT_PACKAGE_ITEM, self::FIELD_QUANTITY, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_OTHER_CHARACTERISTICS])) {
+            $v = $this->getOtherCharacteristics();
+            foreach($validationRules[self::FIELD_OTHER_CHARACTERISTICS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PACKAGED_DOT_PACKAGE_ITEM, self::FIELD_OTHER_CHARACTERISTICS, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_QUANTITY])) {
-                        $errs[self::FIELD_QUANTITY] = [];
+                    if (!isset($errs[self::FIELD_OTHER_CHARACTERISTICS])) {
+                        $errs[self::FIELD_OTHER_CHARACTERISTICS] = [];
                     }
-                    $errs[self::FIELD_QUANTITY][$rule] = $err;
+                    $errs[self::FIELD_OTHER_CHARACTERISTICS][$rule] = $err;
                 }
             }
         }
@@ -1309,15 +1350,15 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TYPE])) {
-            $v = $this->getType();
-            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PACKAGED_DOT_PACKAGE_ITEM, self::FIELD_TYPE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_MANUFACTURER])) {
+            $v = $this->getManufacturer();
+            foreach($validationRules[self::FIELD_MANUFACTURER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_PACKAGED_DOT_PACKAGE_ITEM, self::FIELD_MANUFACTURER, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TYPE])) {
-                        $errs[self::FIELD_TYPE] = [];
+                    if (!isset($errs[self::FIELD_MANUFACTURER])) {
+                        $errs[self::FIELD_MANUFACTURER] = [];
                     }
-                    $errs[self::FIELD_TYPE][$rule] = $err;
+                    $errs[self::FIELD_MANUFACTURER][$rule] = $err;
                 }
             }
         }
@@ -1361,119 +1402,142 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRMedicinalProductPackagedPackageItem::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMedicinalProductPackagedPackageItem::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRMedicinalProductPackagedPackageItem::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRMedicinalProductPackagedPackageItem;
+            $type = new FHIRMedicinalProductPackagedPackageItem(null);
         } elseif (!is_object($type) || !($type instanceof FHIRMedicinalProductPackagedPackageItem)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMedicinalProductPackagedPackageItem::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_IDENTIFIER === $n->nodeName) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_TYPE === $n->nodeName) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_QUANTITY === $n->nodeName) {
+                $type->setQuantity(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_MATERIAL === $n->nodeName) {
+                $type->addMaterial(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_ALTERNATE_MATERIAL === $n->nodeName) {
+                $type->addAlternateMaterial(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DEVICE === $n->nodeName) {
+                $type->addDevice(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_MANUFACTURED_ITEM === $n->nodeName) {
+                $type->addManufacturedItem(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_PACKAGE_ITEM === $n->nodeName) {
+                $type->addPackageItem(FHIRMedicinalProductPackagedPackageItem::xmlUnserialize($n));
+            } elseif (self::FIELD_PHYSICAL_CHARACTERISTICS === $n->nodeName) {
+                $type->setPhysicalCharacteristics(FHIRProdCharacteristic::xmlUnserialize($n));
+            } elseif (self::FIELD_OTHER_CHARACTERISTICS === $n->nodeName) {
+                $type->addOtherCharacteristics(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_SHELF_LIFE_STORAGE === $n->nodeName) {
+                $type->addShelfLifeStorage(FHIRProductShelfLife::xmlUnserialize($n));
+            } elseif (self::FIELD_MANUFACTURER === $n->nodeName) {
+                $type->addManufacturer(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->alternateMaterial)) {
-            foreach($children->alternateMaterial as $child) {
-                $type->addAlternateMaterial(FHIRCodeableConcept::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
-        }
-        if (isset($children->device)) {
-            foreach($children->device as $child) {
-                $type->addDevice(FHIRReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->identifier)) {
-            foreach($children->identifier as $child) {
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->manufacturedItem)) {
-            foreach($children->manufacturedItem as $child) {
-                $type->addManufacturedItem(FHIRReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->manufacturer)) {
-            foreach($children->manufacturer as $child) {
-                $type->addManufacturer(FHIRReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->material)) {
-            foreach($children->material as $child) {
-                $type->addMaterial(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->otherCharacteristics)) {
-            foreach($children->otherCharacteristics as $child) {
-                $type->addOtherCharacteristics(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->packageItem)) {
-            foreach($children->packageItem as $child) {
-                $type->addPackageItem(FHIRMedicinalProductPackagedPackageItem::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->physicalCharacteristics)) {
-            $type->setPhysicalCharacteristics(FHIRProdCharacteristic::xmlUnserialize($children->physicalCharacteristics));
-        }
-        if (isset($children->quantity)) {
-            $type->setQuantity(FHIRQuantity::xmlUnserialize($children->quantity));
-        }
-        if (isset($children->shelfLifeStorage)) {
-            foreach($children->shelfLifeStorage as $child) {
-                $type->addShelfLifeStorage(FHIRProductShelfLife::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->type)) {
-            $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if ([] !== ($vs = $this->getIdentifier())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_IDENTIFIER);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getQuantity())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_QUANTITY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getMaterial())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_MATERIAL);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
         if ([] !== ($vs = $this->getAlternateMaterial())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ALTERNATE_MATERIAL, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_ALTERNATE_MATERIAL);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getDevice())) {
@@ -1481,15 +1545,9 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEVICE, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if ([] !== ($vs = $this->getIdentifier())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_DEVICE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getManufacturedItem())) {
@@ -1497,31 +1555,9 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MANUFACTURED_ITEM, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if ([] !== ($vs = $this->getManufacturer())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MANUFACTURER, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if ([] !== ($vs = $this->getMaterial())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MATERIAL, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if ([] !== ($vs = $this->getOtherCharacteristics())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_OTHER_CHARACTERISTICS, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_MANUFACTURED_ITEM);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getPackageItem())) {
@@ -1529,27 +1565,47 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PACKAGE_ITEM, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PACKAGE_ITEM);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if (null !== ($v = $this->getPhysicalCharacteristics())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PHYSICAL_CHARACTERISTICS, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_PHYSICAL_CHARACTERISTICS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
+        if ([] !== ($vs = $this->getOtherCharacteristics())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_OTHER_CHARACTERISTICS);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
         }
         if ([] !== ($vs = $this->getShelfLifeStorage())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SHELF_LIFE_STORAGE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_SHELF_LIFE_STORAGE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
+        if ([] !== ($vs = $this->getManufacturer())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_MANUFACTURER);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -1558,6 +1614,30 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if ([] !== ($vs = $this->getIdentifier())) {
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            $a[self::FIELD_TYPE] = $v;
+        }
+        if (null !== ($v = $this->getQuantity())) {
+            $a[self::FIELD_QUANTITY] = $v;
+        }
+        if ([] !== ($vs = $this->getMaterial())) {
+            $a[self::FIELD_MATERIAL] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_MATERIAL][] = $v;
+            }
+        }
         if ([] !== ($vs = $this->getAlternateMaterial())) {
             $a[self::FIELD_ALTERNATE_MATERIAL] = [];
             foreach($vs as $v) {
@@ -1576,15 +1656,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                 $a[self::FIELD_DEVICE][] = $v;
             }
         }
-        if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v;
-            }
-        }
         if ([] !== ($vs = $this->getManufacturedItem())) {
             $a[self::FIELD_MANUFACTURED_ITEM] = [];
             foreach($vs as $v) {
@@ -1592,33 +1663,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_MANUFACTURED_ITEM][] = $v;
-            }
-        }
-        if ([] !== ($vs = $this->getManufacturer())) {
-            $a[self::FIELD_MANUFACTURER] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_MANUFACTURER][] = $v;
-            }
-        }
-        if ([] !== ($vs = $this->getMaterial())) {
-            $a[self::FIELD_MATERIAL] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_MATERIAL][] = $v;
-            }
-        }
-        if ([] !== ($vs = $this->getOtherCharacteristics())) {
-            $a[self::FIELD_OTHER_CHARACTERISTICS] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_OTHER_CHARACTERISTICS][] = $v;
             }
         }
         if ([] !== ($vs = $this->getPackageItem())) {
@@ -1633,8 +1677,14 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
         if (null !== ($v = $this->getPhysicalCharacteristics())) {
             $a[self::FIELD_PHYSICAL_CHARACTERISTICS] = $v;
         }
-        if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
+        if ([] !== ($vs = $this->getOtherCharacteristics())) {
+            $a[self::FIELD_OTHER_CHARACTERISTICS] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_OTHER_CHARACTERISTICS][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getShelfLifeStorage())) {
             $a[self::FIELD_SHELF_LIFE_STORAGE] = [];
@@ -1645,11 +1695,14 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
                 $a[self::FIELD_SHELF_LIFE_STORAGE][] = $v;
             }
         }
-        if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getManufacturer())) {
+            $a[self::FIELD_MANUFACTURER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_MANUFACTURER][] = $v;
+            }
         }
         return $a;
     }

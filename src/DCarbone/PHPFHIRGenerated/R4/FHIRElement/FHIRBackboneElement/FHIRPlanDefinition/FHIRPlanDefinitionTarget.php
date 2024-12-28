@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,9 +64,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanD
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -83,14 +85,14 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_TARGET;
-    const FIELD_DETAIL_CODEABLE_CONCEPT = 'detailCodeableConcept';
+    const FIELD_MEASURE = 'measure';
     const FIELD_DETAIL_QUANTITY = 'detailQuantity';
     const FIELD_DETAIL_RANGE = 'detailRange';
+    const FIELD_DETAIL_CODEABLE_CONCEPT = 'detailCodeableConcept';
     const FIELD_DUE = 'due';
-    const FIELD_MEASURE = 'measure';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -98,16 +100,12 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The target value of the measure to be achieved to signify fulfillment of the
-     * goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the
-     * range can be specified. When a low value is missing, it indicates that the goal
-     * is achieved at any value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any value at or
-     * above the low value. (choose any one of detail*, but only one)
+     * The parameter whose value is to be tracked, e.g. body weight, blood pressure, or
+     * hemoglobin A1c level.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $detailCodeableConcept = null;
+    protected $measure = null;
 
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -121,7 +119,7 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * range can be specified. When a low value is missing, it indicates that the goal
      * is achieved at any value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any value at or
-     * above the low value. (choose any one of detail*, but only one)
+     * above the low value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -137,11 +135,28 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * range can be specified. When a low value is missing, it indicates that the goal
      * is achieved at any value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any value at or
-     * above the low value. (choose any one of detail*, but only one)
+     * above the low value.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
     protected $detailRange = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the measure to be achieved to signify fulfillment of the
+     * goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the
+     * range can be specified. When a low value is missing, it indicates that the goal
+     * is achieved at any value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any value at or
+     * above the low value.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $detailCodeableConcept = null;
 
     /**
      * A length of time.
@@ -154,19 +169,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     protected $due = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The parameter whose value is to be tracked, e.g. body weight, blood pressure, or
-     * hemoglobin A1c level.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $measure = null;
 
     /**
      * Validation map for fields in type PlanDefinition.Target
@@ -190,11 +192,11 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_DETAIL_CODEABLE_CONCEPT])) {
-            if ($data[self::FIELD_DETAIL_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
-                $this->setDetailCodeableConcept($data[self::FIELD_DETAIL_CODEABLE_CONCEPT]);
+        if (isset($data[self::FIELD_MEASURE])) {
+            if ($data[self::FIELD_MEASURE] instanceof FHIRCodeableConcept) {
+                $this->setMeasure($data[self::FIELD_MEASURE]);
             } else {
-                $this->setDetailCodeableConcept(new FHIRCodeableConcept($data[self::FIELD_DETAIL_CODEABLE_CONCEPT]));
+                $this->setMeasure(new FHIRCodeableConcept($data[self::FIELD_MEASURE]));
             }
         }
         if (isset($data[self::FIELD_DETAIL_QUANTITY])) {
@@ -211,18 +213,18 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
                 $this->setDetailRange(new FHIRRange($data[self::FIELD_DETAIL_RANGE]));
             }
         }
+        if (isset($data[self::FIELD_DETAIL_CODEABLE_CONCEPT])) {
+            if ($data[self::FIELD_DETAIL_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
+                $this->setDetailCodeableConcept($data[self::FIELD_DETAIL_CODEABLE_CONCEPT]);
+            } else {
+                $this->setDetailCodeableConcept(new FHIRCodeableConcept($data[self::FIELD_DETAIL_CODEABLE_CONCEPT]));
+            }
+        }
         if (isset($data[self::FIELD_DUE])) {
             if ($data[self::FIELD_DUE] instanceof FHIRDuration) {
                 $this->setDue($data[self::FIELD_DUE]);
             } else {
                 $this->setDue(new FHIRDuration($data[self::FIELD_DUE]));
-            }
-        }
-        if (isset($data[self::FIELD_MEASURE])) {
-            if ($data[self::FIELD_MEASURE] instanceof FHIRCodeableConcept) {
-                $this->setMeasure($data[self::FIELD_MEASURE]);
-            } else {
-                $this->setMeasure(new FHIRCodeableConcept($data[self::FIELD_MEASURE]));
             }
         }
     }
@@ -241,168 +243,10 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<PlanDefinitionTarget{$xmlns}></PlanDefinitionTarget>";
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the measure to be achieved to signify fulfillment of the
-     * goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the
-     * range can be specified. When a low value is missing, it indicates that the goal
-     * is achieved at any value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any value at or
-     * above the low value. (choose any one of detail*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getDetailCodeableConcept()
-    {
-        return $this->detailCodeableConcept;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the measure to be achieved to signify fulfillment of the
-     * goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the
-     * range can be specified. When a low value is missing, it indicates that the goal
-     * is achieved at any value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any value at or
-     * above the low value. (choose any one of detail*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
-     * @return static
-     */
-    public function setDetailCodeableConcept(FHIRCodeableConcept $detailCodeableConcept = null)
-    {
-        $this->detailCodeableConcept = $detailCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the measure to be achieved to signify fulfillment of the
-     * goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the
-     * range can be specified. When a low value is missing, it indicates that the goal
-     * is achieved at any value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any value at or
-     * above the low value. (choose any one of detail*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    public function getDetailQuantity()
-    {
-        return $this->detailQuantity;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the measure to be achieved to signify fulfillment of the
-     * goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the
-     * range can be specified. When a low value is missing, it indicates that the goal
-     * is achieved at any value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any value at or
-     * above the low value. (choose any one of detail*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $detailQuantity
-     * @return static
-     */
-    public function setDetailQuantity(FHIRQuantity $detailQuantity = null)
-    {
-        $this->detailQuantity = $detailQuantity;
-        return $this;
-    }
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the measure to be achieved to signify fulfillment of the
-     * goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the
-     * range can be specified. When a low value is missing, it indicates that the goal
-     * is achieved at any value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any value at or
-     * above the low value. (choose any one of detail*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
-     */
-    public function getDetailRange()
-    {
-        return $this->detailRange;
-    }
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the measure to be achieved to signify fulfillment of the
-     * goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the
-     * range can be specified. When a low value is missing, it indicates that the goal
-     * is achieved at any value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any value at or
-     * above the low value. (choose any one of detail*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $detailRange
-     * @return static
-     */
-    public function setDetailRange(FHIRRange $detailRange = null)
-    {
-        $this->detailRange = $detailRange;
-        return $this;
-    }
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the timeframe after the start of the goal in which the goal should be
-     * met.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
-     */
-    public function getDue()
-    {
-        return $this->due;
-    }
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the timeframe after the start of the goal in which the goal should be
-     * met.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $due
-     * @return static
-     */
-    public function setDue(FHIRDuration $due = null)
-    {
-        $this->due = $due;
-        return $this;
     }
 
     /**
@@ -435,7 +279,170 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      */
     public function setMeasure(FHIRCodeableConcept $measure = null)
     {
+        $this->_trackValueSet($this->measure, $measure);
         $this->measure = $measure;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the measure to be achieved to signify fulfillment of the
+     * goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the
+     * range can be specified. When a low value is missing, it indicates that the goal
+     * is achieved at any value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any value at or
+     * above the low value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    public function getDetailQuantity()
+    {
+        return $this->detailQuantity;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the measure to be achieved to signify fulfillment of the
+     * goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the
+     * range can be specified. When a low value is missing, it indicates that the goal
+     * is achieved at any value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any value at or
+     * above the low value.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $detailQuantity
+     * @return static
+     */
+    public function setDetailQuantity(FHIRQuantity $detailQuantity = null)
+    {
+        $this->_trackValueSet($this->detailQuantity, $detailQuantity);
+        $this->detailQuantity = $detailQuantity;
+        return $this;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the measure to be achieved to signify fulfillment of the
+     * goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the
+     * range can be specified. When a low value is missing, it indicates that the goal
+     * is achieved at any value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any value at or
+     * above the low value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
+     */
+    public function getDetailRange()
+    {
+        return $this->detailRange;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the measure to be achieved to signify fulfillment of the
+     * goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the
+     * range can be specified. When a low value is missing, it indicates that the goal
+     * is achieved at any value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any value at or
+     * above the low value.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $detailRange
+     * @return static
+     */
+    public function setDetailRange(FHIRRange $detailRange = null)
+    {
+        $this->_trackValueSet($this->detailRange, $detailRange);
+        $this->detailRange = $detailRange;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the measure to be achieved to signify fulfillment of the
+     * goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the
+     * range can be specified. When a low value is missing, it indicates that the goal
+     * is achieved at any value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any value at or
+     * above the low value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getDetailCodeableConcept()
+    {
+        return $this->detailCodeableConcept;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the measure to be achieved to signify fulfillment of the
+     * goal, e.g. 150 pounds or 7.0%. Either the high or low or both values of the
+     * range can be specified. When a low value is missing, it indicates that the goal
+     * is achieved at any value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any value at or
+     * above the low value.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
+     * @return static
+     */
+    public function setDetailCodeableConcept(FHIRCodeableConcept $detailCodeableConcept = null)
+    {
+        $this->_trackValueSet($this->detailCodeableConcept, $detailCodeableConcept);
+        $this->detailCodeableConcept = $detailCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the timeframe after the start of the goal in which the goal should be
+     * met.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     */
+    public function getDue()
+    {
+        return $this->due;
+    }
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the timeframe after the start of the goal in which the goal should be
+     * met.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $due
+     * @return static
+     */
+    public function setDue(FHIRDuration $due = null)
+    {
+        $this->_trackValueSet($this->due, $due);
+        $this->due = $due;
         return $this;
     }
 
@@ -460,9 +467,9 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getDetailCodeableConcept())) {
+        if (null !== ($v = $this->getMeasure())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DETAIL_CODEABLE_CONCEPT] = $fieldErrs;
+                $errs[self::FIELD_MEASURE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDetailQuantity())) {
@@ -475,25 +482,25 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
                 $errs[self::FIELD_DETAIL_RANGE] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getDetailCodeableConcept())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DETAIL_CODEABLE_CONCEPT] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getDue())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_DUE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getMeasure())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_MEASURE] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_DETAIL_CODEABLE_CONCEPT])) {
-            $v = $this->getDetailCodeableConcept();
-            foreach($validationRules[self::FIELD_DETAIL_CODEABLE_CONCEPT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_TARGET, self::FIELD_DETAIL_CODEABLE_CONCEPT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_MEASURE])) {
+            $v = $this->getMeasure();
+            foreach($validationRules[self::FIELD_MEASURE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_TARGET, self::FIELD_MEASURE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DETAIL_CODEABLE_CONCEPT])) {
-                        $errs[self::FIELD_DETAIL_CODEABLE_CONCEPT] = [];
+                    if (!isset($errs[self::FIELD_MEASURE])) {
+                        $errs[self::FIELD_MEASURE] = [];
                     }
-                    $errs[self::FIELD_DETAIL_CODEABLE_CONCEPT][$rule] = $err;
+                    $errs[self::FIELD_MEASURE][$rule] = $err;
                 }
             }
         }
@@ -521,6 +528,18 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_DETAIL_CODEABLE_CONCEPT])) {
+            $v = $this->getDetailCodeableConcept();
+            foreach($validationRules[self::FIELD_DETAIL_CODEABLE_CONCEPT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_TARGET, self::FIELD_DETAIL_CODEABLE_CONCEPT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DETAIL_CODEABLE_CONCEPT])) {
+                        $errs[self::FIELD_DETAIL_CODEABLE_CONCEPT] = [];
+                    }
+                    $errs[self::FIELD_DETAIL_CODEABLE_CONCEPT][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_DUE])) {
             $v = $this->getDue();
             foreach($validationRules[self::FIELD_DUE] as $rule => $constraint) {
@@ -530,18 +549,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
                         $errs[self::FIELD_DUE] = [];
                     }
                     $errs[self::FIELD_DUE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_MEASURE])) {
-            $v = $this->getMeasure();
-            foreach($validationRules[self::FIELD_MEASURE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_TARGET, self::FIELD_MEASURE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_MEASURE])) {
-                        $errs[self::FIELD_MEASURE] = [];
-                    }
-                    $errs[self::FIELD_MEASURE][$rule] = $err;
                 }
             }
         }
@@ -585,90 +592,116 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionTarget $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionTarget
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRPlanDefinitionTarget::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRPlanDefinitionTarget::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRPlanDefinitionTarget::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRPlanDefinitionTarget;
+            $type = new FHIRPlanDefinitionTarget(null);
         } elseif (!is_object($type) || !($type instanceof FHIRPlanDefinitionTarget)) {
             throw new \RuntimeException(sprintf(
                 'FHIRPlanDefinitionTarget::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionTarget or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_MEASURE === $n->nodeName) {
+                $type->setMeasure(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DETAIL_QUANTITY === $n->nodeName) {
+                $type->setDetailQuantity(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_DETAIL_RANGE === $n->nodeName) {
+                $type->setDetailRange(FHIRRange::xmlUnserialize($n));
+            } elseif (self::FIELD_DETAIL_CODEABLE_CONCEPT === $n->nodeName) {
+                $type->setDetailCodeableConcept(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DUE === $n->nodeName) {
+                $type->setDue(FHIRDuration::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->detailCodeableConcept)) {
-            $type->setDetailCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->detailCodeableConcept));
-        }
-        if (isset($children->detailQuantity)) {
-            $type->setDetailQuantity(FHIRQuantity::xmlUnserialize($children->detailQuantity));
-        }
-        if (isset($children->detailRange)) {
-            $type->setDetailRange(FHIRRange::xmlUnserialize($children->detailRange));
-        }
-        if (isset($children->due)) {
-            $type->setDue(FHIRDuration::xmlUnserialize($children->due));
-        }
-        if (isset($children->measure)) {
-            $type->setMeasure(FHIRCodeableConcept::xmlUnserialize($children->measure));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getDetailCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getMeasure())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_MEASURE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getDetailQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_QUANTITY, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DETAIL_QUANTITY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getDetailRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_RANGE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DETAIL_RANGE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDetailCodeableConcept())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DETAIL_CODEABLE_CONCEPT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getDue())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DUE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DUE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getMeasure())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MEASURE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -677,8 +710,8 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getDetailCodeableConcept())) {
-            $a[self::FIELD_DETAIL_CODEABLE_CONCEPT] = $v;
+        if (null !== ($v = $this->getMeasure())) {
+            $a[self::FIELD_MEASURE] = $v;
         }
         if (null !== ($v = $this->getDetailQuantity())) {
             $a[self::FIELD_DETAIL_QUANTITY] = $v;
@@ -686,14 +719,11 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
         if (null !== ($v = $this->getDetailRange())) {
             $a[self::FIELD_DETAIL_RANGE] = $v;
         }
+        if (null !== ($v = $this->getDetailCodeableConcept())) {
+            $a[self::FIELD_DETAIL_CODEABLE_CONCEPT] = $v;
+        }
         if (null !== ($v = $this->getDue())) {
             $a[self::FIELD_DUE] = $v;
-        }
-        if (null !== ($v = $this->getMeasure())) {
-            $a[self::FIELD_MEASURE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

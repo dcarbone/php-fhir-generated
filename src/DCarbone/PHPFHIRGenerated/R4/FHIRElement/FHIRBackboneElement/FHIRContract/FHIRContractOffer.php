@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,10 +64,12 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -82,57 +84,22 @@ class FHIRContractOffer extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_OFFER;
-    const FIELD_ANSWER = 'answer';
-    const FIELD_DECISION = 'decision';
-    const FIELD_DECISION_MODE = 'decisionMode';
     const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_LINK_ID = 'linkId';
-    const FIELD_LINK_ID_EXT = '_linkId';
     const FIELD_PARTY = 'party';
-    const FIELD_SECURITY_LABEL_NUMBER = 'securityLabelNumber';
-    const FIELD_SECURITY_LABEL_NUMBER_EXT = '_securityLabelNumber';
-    const FIELD_TEXT = 'text';
-    const FIELD_TEXT_EXT = '_text';
     const FIELD_TOPIC = 'topic';
     const FIELD_TYPE = 'type';
+    const FIELD_DECISION = 'decision';
+    const FIELD_DECISION_MODE = 'decisionMode';
+    const FIELD_ANSWER = 'answer';
+    const FIELD_TEXT = 'text';
+    const FIELD_TEXT_EXT = '_text';
+    const FIELD_LINK_ID = 'linkId';
+    const FIELD_LINK_ID_EXT = '_linkId';
+    const FIELD_SECURITY_LABEL_NUMBER = 'securityLabelNumber';
+    const FIELD_SECURITY_LABEL_NUMBER_EXT = '_securityLabelNumber';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
-     * policy or agreement.
-     *
-     * Response to offer text.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer[]
-     */
-    protected $answer = [];
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Type of choice made by accepting party with respect to an offer made by an
-     * offeror/ grantee.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $decision = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * How the decision about a Contract was conveyed.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    protected $decisionMode = [];
+    private $_xmlns = '';
 
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -147,18 +114,6 @@ class FHIRContractOffer extends FHIRBackboneElement
     protected $identifier = [];
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The id of the clause or question text of the offer in the referenced
-     * questionnaire/response.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
-     */
-    protected $linkId = [];
-
-    /**
      * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
      * policy or agreement.
      *
@@ -167,28 +122,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractParty[]
      */
     protected $party = [];
-
-    /**
-     * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Security labels that protects the offer.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt[]
-     */
-    protected $securityLabelNumber = [];
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Human readable form of this Contract Offer.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $text = null;
 
     /**
      * A reference from one resource to another.
@@ -217,6 +150,75 @@ class FHIRContractOffer extends FHIRBackboneElement
     protected $type = null;
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Type of choice made by accepting party with respect to an offer made by an
+     * offeror/ grantee.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $decision = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * How the decision about a Contract was conveyed.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    protected $decisionMode = [];
+
+    /**
+     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
+     * policy or agreement.
+     *
+     * Response to offer text.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer[]
+     */
+    protected $answer = [];
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Human readable form of this Contract Offer.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected $text = null;
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The id of the clause or question text of the offer in the referenced
+     * questionnaire/response.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
+     */
+    protected $linkId = [];
+
+    /**
+     * An integer with a value that is not negative (e.g. >= 0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Security labels that protects the offer.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt[]
+     */
+    protected $securityLabelNumber = [];
+
+    /**
      * Validation map for fields in type Contract.Offer
      * @var array
      */
@@ -238,22 +240,54 @@ class FHIRContractOffer extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ANSWER])) {
-            if (is_array($data[self::FIELD_ANSWER])) {
-                foreach($data[self::FIELD_ANSWER] as $v) {
+        if (isset($data[self::FIELD_IDENTIFIER])) {
+            if (is_array($data[self::FIELD_IDENTIFIER])) {
+                foreach($data[self::FIELD_IDENTIFIER] as $v) {
                     if (null === $v) {
                         continue;
                     }
-                    if ($v instanceof FHIRContractAnswer) {
-                        $this->addAnswer($v);
+                    if ($v instanceof FHIRIdentifier) {
+                        $this->addIdentifier($v);
                     } else {
-                        $this->addAnswer(new FHIRContractAnswer($v));
+                        $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
-            } else if ($data[self::FIELD_ANSWER] instanceof FHIRContractAnswer) {
-                $this->addAnswer($data[self::FIELD_ANSWER]);
+            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+                $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
             } else {
-                $this->addAnswer(new FHIRContractAnswer($data[self::FIELD_ANSWER]));
+                $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
+            }
+        }
+        if (isset($data[self::FIELD_PARTY])) {
+            if (is_array($data[self::FIELD_PARTY])) {
+                foreach($data[self::FIELD_PARTY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRContractParty) {
+                        $this->addParty($v);
+                    } else {
+                        $this->addParty(new FHIRContractParty($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_PARTY] instanceof FHIRContractParty) {
+                $this->addParty($data[self::FIELD_PARTY]);
+            } else {
+                $this->addParty(new FHIRContractParty($data[self::FIELD_PARTY]));
+            }
+        }
+        if (isset($data[self::FIELD_TOPIC])) {
+            if ($data[self::FIELD_TOPIC] instanceof FHIRReference) {
+                $this->setTopic($data[self::FIELD_TOPIC]);
+            } else {
+                $this->setTopic(new FHIRReference($data[self::FIELD_TOPIC]));
+            }
+        }
+        if (isset($data[self::FIELD_TYPE])) {
+            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setType($data[self::FIELD_TYPE]);
+            } else {
+                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
             }
         }
         if (isset($data[self::FIELD_DECISION])) {
@@ -275,41 +309,48 @@ class FHIRContractOffer extends FHIRBackboneElement
                         $this->addDecisionMode(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_DECISION_MODE] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_DECISION_MODE] instanceof FHIRCodeableConcept) {
                 $this->addDecisionMode($data[self::FIELD_DECISION_MODE]);
             } else {
                 $this->addDecisionMode(new FHIRCodeableConcept($data[self::FIELD_DECISION_MODE]));
             }
         }
-        if (isset($data[self::FIELD_IDENTIFIER])) {
-            if (is_array($data[self::FIELD_IDENTIFIER])) {
-                foreach($data[self::FIELD_IDENTIFIER] as $v) {
+        if (isset($data[self::FIELD_ANSWER])) {
+            if (is_array($data[self::FIELD_ANSWER])) {
+                foreach($data[self::FIELD_ANSWER] as $v) {
                     if (null === $v) {
                         continue;
                     }
-                    if ($v instanceof FHIRIdentifier) {
-                        $this->addIdentifier($v);
+                    if ($v instanceof FHIRContractAnswer) {
+                        $this->addAnswer($v);
                     } else {
-                        $this->addIdentifier(new FHIRIdentifier($v));
+                        $this->addAnswer(new FHIRContractAnswer($v));
                     }
                 }
-            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
-                $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
+            } elseif ($data[self::FIELD_ANSWER] instanceof FHIRContractAnswer) {
+                $this->addAnswer($data[self::FIELD_ANSWER]);
             } else {
-                $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
+                $this->addAnswer(new FHIRContractAnswer($data[self::FIELD_ANSWER]));
+            }
+        }
+        if (isset($data[self::FIELD_TEXT]) || isset($data[self::FIELD_TEXT_EXT])) {
+            $value = isset($data[self::FIELD_TEXT]) ? $data[self::FIELD_TEXT] : null;
+            $ext = (isset($data[self::FIELD_TEXT_EXT]) && is_array($data[self::FIELD_TEXT_EXT])) ? $ext = $data[self::FIELD_TEXT_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setText($value);
+                } else if (is_array($value)) {
+                    $this->setText(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setText(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_LINK_ID]) || isset($data[self::FIELD_LINK_ID_EXT])) {
-            if (isset($data[self::FIELD_LINK_ID])) {
-                $value = $data[self::FIELD_LINK_ID];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_LINK_ID_EXT]) && is_array($data[self::FIELD_LINK_ID_EXT])) {
-                $ext = $data[self::FIELD_LINK_ID_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_LINK_ID]) ? $data[self::FIELD_LINK_ID] : null;
+            $ext = (isset($data[self::FIELD_LINK_ID_EXT]) && is_array($data[self::FIELD_LINK_ID_EXT])) ? $ext = $data[self::FIELD_LINK_ID_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->addLinkId($value);
@@ -331,41 +372,15 @@ class FHIRContractOffer extends FHIRBackboneElement
                 } else {
                     $this->addLinkId(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addLinkId(new FHIRString($iext));
                 }
             }
         }
-        if (isset($data[self::FIELD_PARTY])) {
-            if (is_array($data[self::FIELD_PARTY])) {
-                foreach($data[self::FIELD_PARTY] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRContractParty) {
-                        $this->addParty($v);
-                    } else {
-                        $this->addParty(new FHIRContractParty($v));
-                    }
-                }
-            } else if ($data[self::FIELD_PARTY] instanceof FHIRContractParty) {
-                $this->addParty($data[self::FIELD_PARTY]);
-            } else {
-                $this->addParty(new FHIRContractParty($data[self::FIELD_PARTY]));
-            }
-        }
         if (isset($data[self::FIELD_SECURITY_LABEL_NUMBER]) || isset($data[self::FIELD_SECURITY_LABEL_NUMBER_EXT])) {
-            if (isset($data[self::FIELD_SECURITY_LABEL_NUMBER])) {
-                $value = $data[self::FIELD_SECURITY_LABEL_NUMBER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SECURITY_LABEL_NUMBER_EXT]) && is_array($data[self::FIELD_SECURITY_LABEL_NUMBER_EXT])) {
-                $ext = $data[self::FIELD_SECURITY_LABEL_NUMBER_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_SECURITY_LABEL_NUMBER]) ? $data[self::FIELD_SECURITY_LABEL_NUMBER] : null;
+            $ext = (isset($data[self::FIELD_SECURITY_LABEL_NUMBER_EXT]) && is_array($data[self::FIELD_SECURITY_LABEL_NUMBER_EXT])) ? $ext = $data[self::FIELD_SECURITY_LABEL_NUMBER_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRUnsignedInt) {
                     $this->addSecurityLabelNumber($value);
@@ -387,47 +402,10 @@ class FHIRContractOffer extends FHIRBackboneElement
                 } else {
                     $this->addSecurityLabelNumber(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addSecurityLabelNumber(new FHIRUnsignedInt($iext));
                 }
-            }
-        }
-        if (isset($data[self::FIELD_TEXT]) || isset($data[self::FIELD_TEXT_EXT])) {
-            if (isset($data[self::FIELD_TEXT])) {
-                $value = $data[self::FIELD_TEXT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TEXT_EXT]) && is_array($data[self::FIELD_TEXT_EXT])) {
-                $ext = $data[self::FIELD_TEXT_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setText($value);
-                } else if (is_array($value)) {
-                    $this->setText(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setText(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_TOPIC])) {
-            if ($data[self::FIELD_TOPIC] instanceof FHIRReference) {
-                $this->setTopic($data[self::FIELD_TOPIC]);
-            } else {
-                $this->setTopic(new FHIRReference($data[self::FIELD_TOPIC]));
-            }
-        }
-        if (isset($data[self::FIELD_TYPE])) {
-            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setType($data[self::FIELD_TYPE]);
-            } else {
-                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
             }
         }
     }
@@ -446,156 +424,10 @@ class FHIRContractOffer extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ContractOffer{$xmlns}></ContractOffer>";
-    }
-
-    /**
-     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
-     * policy or agreement.
-     *
-     * Response to offer text.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer[]
-     */
-    public function getAnswer()
-    {
-        return $this->answer;
-    }
-
-    /**
-     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
-     * policy or agreement.
-     *
-     * Response to offer text.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer $answer
-     * @return static
-     */
-    public function addAnswer(FHIRContractAnswer $answer = null)
-    {
-        $this->answer[] = $answer;
-        return $this;
-    }
-
-    /**
-     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
-     * policy or agreement.
-     *
-     * Response to offer text.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer[] $answer
-     * @return static
-     */
-    public function setAnswer(array $answer = [])
-    {
-        $this->answer = [];
-        if ([] === $answer) {
-            return $this;
-        }
-        foreach($answer as $v) {
-            if ($v instanceof FHIRContractAnswer) {
-                $this->addAnswer($v);
-            } else {
-                $this->addAnswer(new FHIRContractAnswer($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Type of choice made by accepting party with respect to an offer made by an
-     * offeror/ grantee.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getDecision()
-    {
-        return $this->decision;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Type of choice made by accepting party with respect to an offer made by an
-     * offeror/ grantee.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $decision
-     * @return static
-     */
-    public function setDecision(FHIRCodeableConcept $decision = null)
-    {
-        $this->decision = $decision;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * How the decision about a Contract was conveyed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getDecisionMode()
-    {
-        return $this->decisionMode;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * How the decision about a Contract was conveyed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $decisionMode
-     * @return static
-     */
-    public function addDecisionMode(FHIRCodeableConcept $decisionMode = null)
-    {
-        $this->decisionMode[] = $decisionMode;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * How the decision about a Contract was conveyed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $decisionMode
-     * @return static
-     */
-    public function setDecisionMode(array $decisionMode = [])
-    {
-        $this->decisionMode = [];
-        if ([] === $decisionMode) {
-            return $this;
-        }
-        foreach($decisionMode as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addDecisionMode($v);
-            } else {
-                $this->addDecisionMode(new FHIRCodeableConcept($v));
-            }
-        }
-        return $this;
     }
 
     /**
@@ -626,6 +458,7 @@ class FHIRContractOffer extends FHIRBackboneElement
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
+        $this->_trackValueAdded();
         $this->identifier[] = $identifier;
         return $this;
     }
@@ -643,7 +476,10 @@ class FHIRContractOffer extends FHIRBackboneElement
      */
     public function setIdentifier(array $identifier = [])
     {
-        $this->identifier = [];
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
         if ([] === $identifier) {
             return $this;
         }
@@ -652,73 +488,6 @@ class FHIRContractOffer extends FHIRBackboneElement
                 $this->addIdentifier($v);
             } else {
                 $this->addIdentifier(new FHIRIdentifier($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The id of the clause or question text of the offer in the referenced
-     * questionnaire/response.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
-     */
-    public function getLinkId()
-    {
-        return $this->linkId;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The id of the clause or question text of the offer in the referenced
-     * questionnaire/response.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $linkId
-     * @return static
-     */
-    public function addLinkId($linkId = null)
-    {
-        if (null === $linkId) {
-            $this->linkId = [];
-            return $this;
-        }
-        if ($linkId instanceof FHIRString) {
-            $this->linkId[] = $linkId;
-            return $this;
-        }
-        $this->linkId[] = new FHIRString($linkId);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The id of the clause or question text of the offer in the referenced
-     * questionnaire/response.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $linkId
-     * @return static
-     */
-    public function setLinkId(array $linkId = [])
-    {
-        $this->linkId = [];
-        if ([] === $linkId) {
-            return $this;
-        }
-        foreach($linkId as $v) {
-            if ($v instanceof FHIRString) {
-                $this->addLinkId($v);
-            } else {
-                $this->addLinkId(new FHIRString($v));
             }
         }
         return $this;
@@ -748,6 +517,7 @@ class FHIRContractOffer extends FHIRBackboneElement
      */
     public function addParty(FHIRContractParty $party = null)
     {
+        $this->_trackValueAdded();
         $this->party[] = $party;
         return $this;
     }
@@ -763,7 +533,10 @@ class FHIRContractOffer extends FHIRBackboneElement
      */
     public function setParty(array $party = [])
     {
-        $this->party = [];
+        if ([] !== $this->party) {
+            $this->_trackValuesRemoved(count($this->party));
+            $this->party = [];
+        }
         if ([] === $party) {
             return $this;
         }
@@ -774,108 +547,6 @@ class FHIRContractOffer extends FHIRBackboneElement
                 $this->addParty(new FHIRContractParty($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Security labels that protects the offer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt[]
-     */
-    public function getSecurityLabelNumber()
-    {
-        return $this->securityLabelNumber;
-    }
-
-    /**
-     * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Security labels that protects the offer.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $securityLabelNumber
-     * @return static
-     */
-    public function addSecurityLabelNumber($securityLabelNumber = null)
-    {
-        if (null === $securityLabelNumber) {
-            $this->securityLabelNumber = [];
-            return $this;
-        }
-        if ($securityLabelNumber instanceof FHIRUnsignedInt) {
-            $this->securityLabelNumber[] = $securityLabelNumber;
-            return $this;
-        }
-        $this->securityLabelNumber[] = new FHIRUnsignedInt($securityLabelNumber);
-        return $this;
-    }
-
-    /**
-     * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Security labels that protects the offer.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt[] $securityLabelNumber
-     * @return static
-     */
-    public function setSecurityLabelNumber(array $securityLabelNumber = [])
-    {
-        $this->securityLabelNumber = [];
-        if ([] === $securityLabelNumber) {
-            return $this;
-        }
-        foreach($securityLabelNumber as $v) {
-            if ($v instanceof FHIRUnsignedInt) {
-                $this->addSecurityLabelNumber($v);
-            } else {
-                $this->addSecurityLabelNumber(new FHIRUnsignedInt($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Human readable form of this Contract Offer.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getText()
-    {
-        return $this->text;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Human readable form of this Contract Offer.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $text
-     * @return static
-     */
-    public function setText($text = null)
-    {
-        if (null === $text) {
-            $this->text = null;
-            return $this;
-        }
-        if ($text instanceof FHIRString) {
-            $this->text = $text;
-            return $this;
-        }
-        $this->text = new FHIRString($text);
         return $this;
     }
 
@@ -909,6 +580,7 @@ class FHIRContractOffer extends FHIRBackboneElement
      */
     public function setTopic(FHIRReference $topic = null)
     {
+        $this->_trackValueSet($this->topic, $topic);
         $this->topic = $topic;
         return $this;
     }
@@ -943,7 +615,326 @@ class FHIRContractOffer extends FHIRBackboneElement
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
+        $this->_trackValueSet($this->type, $type);
         $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Type of choice made by accepting party with respect to an offer made by an
+     * offeror/ grantee.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getDecision()
+    {
+        return $this->decision;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Type of choice made by accepting party with respect to an offer made by an
+     * offeror/ grantee.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $decision
+     * @return static
+     */
+    public function setDecision(FHIRCodeableConcept $decision = null)
+    {
+        $this->_trackValueSet($this->decision, $decision);
+        $this->decision = $decision;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * How the decision about a Contract was conveyed.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getDecisionMode()
+    {
+        return $this->decisionMode;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * How the decision about a Contract was conveyed.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $decisionMode
+     * @return static
+     */
+    public function addDecisionMode(FHIRCodeableConcept $decisionMode = null)
+    {
+        $this->_trackValueAdded();
+        $this->decisionMode[] = $decisionMode;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * How the decision about a Contract was conveyed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $decisionMode
+     * @return static
+     */
+    public function setDecisionMode(array $decisionMode = [])
+    {
+        if ([] !== $this->decisionMode) {
+            $this->_trackValuesRemoved(count($this->decisionMode));
+            $this->decisionMode = [];
+        }
+        if ([] === $decisionMode) {
+            return $this;
+        }
+        foreach($decisionMode as $v) {
+            if ($v instanceof FHIRCodeableConcept) {
+                $this->addDecisionMode($v);
+            } else {
+                $this->addDecisionMode(new FHIRCodeableConcept($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
+     * policy or agreement.
+     *
+     * Response to offer text.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer[]
+     */
+    public function getAnswer()
+    {
+        return $this->answer;
+    }
+
+    /**
+     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
+     * policy or agreement.
+     *
+     * Response to offer text.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer $answer
+     * @return static
+     */
+    public function addAnswer(FHIRContractAnswer $answer = null)
+    {
+        $this->_trackValueAdded();
+        $this->answer[] = $answer;
+        return $this;
+    }
+
+    /**
+     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
+     * policy or agreement.
+     *
+     * Response to offer text.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer[] $answer
+     * @return static
+     */
+    public function setAnswer(array $answer = [])
+    {
+        if ([] !== $this->answer) {
+            $this->_trackValuesRemoved(count($this->answer));
+            $this->answer = [];
+        }
+        if ([] === $answer) {
+            return $this;
+        }
+        foreach($answer as $v) {
+            if ($v instanceof FHIRContractAnswer) {
+                $this->addAnswer($v);
+            } else {
+                $this->addAnswer(new FHIRContractAnswer($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Human readable form of this Contract Offer.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getText()
+    {
+        return $this->text;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Human readable form of this Contract Offer.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $text
+     * @return static
+     */
+    public function setText($text = null)
+    {
+        if (null !== $text && !($text instanceof FHIRString)) {
+            $text = new FHIRString($text);
+        }
+        $this->_trackValueSet($this->text, $text);
+        $this->text = $text;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The id of the clause or question text of the offer in the referenced
+     * questionnaire/response.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
+     */
+    public function getLinkId()
+    {
+        return $this->linkId;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The id of the clause or question text of the offer in the referenced
+     * questionnaire/response.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $linkId
+     * @return static
+     */
+    public function addLinkId($linkId = null)
+    {
+        if (null !== $linkId && !($linkId instanceof FHIRString)) {
+            $linkId = new FHIRString($linkId);
+        }
+        $this->_trackValueAdded();
+        $this->linkId[] = $linkId;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The id of the clause or question text of the offer in the referenced
+     * questionnaire/response.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $linkId
+     * @return static
+     */
+    public function setLinkId(array $linkId = [])
+    {
+        if ([] !== $this->linkId) {
+            $this->_trackValuesRemoved(count($this->linkId));
+            $this->linkId = [];
+        }
+        if ([] === $linkId) {
+            return $this;
+        }
+        foreach($linkId as $v) {
+            if ($v instanceof FHIRString) {
+                $this->addLinkId($v);
+            } else {
+                $this->addLinkId(new FHIRString($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * An integer with a value that is not negative (e.g. >= 0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Security labels that protects the offer.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt[]
+     */
+    public function getSecurityLabelNumber()
+    {
+        return $this->securityLabelNumber;
+    }
+
+    /**
+     * An integer with a value that is not negative (e.g. >= 0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Security labels that protects the offer.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $securityLabelNumber
+     * @return static
+     */
+    public function addSecurityLabelNumber($securityLabelNumber = null)
+    {
+        if (null !== $securityLabelNumber && !($securityLabelNumber instanceof FHIRUnsignedInt)) {
+            $securityLabelNumber = new FHIRUnsignedInt($securityLabelNumber);
+        }
+        $this->_trackValueAdded();
+        $this->securityLabelNumber[] = $securityLabelNumber;
+        return $this;
+    }
+
+    /**
+     * An integer with a value that is not negative (e.g. >= 0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Security labels that protects the offer.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt[] $securityLabelNumber
+     * @return static
+     */
+    public function setSecurityLabelNumber(array $securityLabelNumber = [])
+    {
+        if ([] !== $this->securityLabelNumber) {
+            $this->_trackValuesRemoved(count($this->securityLabelNumber));
+            $this->securityLabelNumber = [];
+        }
+        if ([] === $securityLabelNumber) {
+            return $this;
+        }
+        foreach($securityLabelNumber as $v) {
+            if ($v instanceof FHIRUnsignedInt) {
+                $this->addSecurityLabelNumber($v);
+            } else {
+                $this->addSecurityLabelNumber(new FHIRUnsignedInt($v));
+            }
+        }
         return $this;
     }
 
@@ -968,11 +959,28 @@ class FHIRContractOffer extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getAnswer())) {
+        if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_ANSWER, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_IDENTIFIER, $i)] = $fieldErrs;
                 }
+            }
+        }
+        if ([] !== ($vs = $this->getParty())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_PARTY, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getTopic())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TOPIC] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TYPE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDecision())) {
@@ -987,24 +995,22 @@ class FHIRContractOffer extends FHIRBackboneElement
                 }
             }
         }
-        if ([] !== ($vs = $this->getIdentifier())) {
+        if ([] !== ($vs = $this->getAnswer())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_IDENTIFIER, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_ANSWER, $i)] = $fieldErrs;
                 }
+            }
+        }
+        if (null !== ($v = $this->getText())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TEXT] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getLinkId())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_LINK_ID, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getParty())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_PARTY, $i)] = $fieldErrs;
                 }
             }
         }
@@ -1015,30 +1021,51 @@ class FHIRContractOffer extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getText())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TEXT] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getTopic())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TOPIC] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TYPE] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_ANSWER])) {
-            $v = $this->getAnswer();
-            foreach($validationRules[self::FIELD_ANSWER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_OFFER, self::FIELD_ANSWER, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_IDENTIFIER])) {
+            $v = $this->getIdentifier();
+            foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_OFFER, self::FIELD_IDENTIFIER, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ANSWER])) {
-                        $errs[self::FIELD_ANSWER] = [];
+                    if (!isset($errs[self::FIELD_IDENTIFIER])) {
+                        $errs[self::FIELD_IDENTIFIER] = [];
                     }
-                    $errs[self::FIELD_ANSWER][$rule] = $err;
+                    $errs[self::FIELD_IDENTIFIER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PARTY])) {
+            $v = $this->getParty();
+            foreach($validationRules[self::FIELD_PARTY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_OFFER, self::FIELD_PARTY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PARTY])) {
+                        $errs[self::FIELD_PARTY] = [];
+                    }
+                    $errs[self::FIELD_PARTY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TOPIC])) {
+            $v = $this->getTopic();
+            foreach($validationRules[self::FIELD_TOPIC] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_OFFER, self::FIELD_TOPIC, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TOPIC])) {
+                        $errs[self::FIELD_TOPIC] = [];
+                    }
+                    $errs[self::FIELD_TOPIC][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_OFFER, self::FIELD_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
+                    }
+                    $errs[self::FIELD_TYPE][$rule] = $err;
                 }
             }
         }
@@ -1066,51 +1093,15 @@ class FHIRContractOffer extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_IDENTIFIER])) {
-            $v = $this->getIdentifier();
-            foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_OFFER, self::FIELD_IDENTIFIER, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_ANSWER])) {
+            $v = $this->getAnswer();
+            foreach($validationRules[self::FIELD_ANSWER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_OFFER, self::FIELD_ANSWER, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_IDENTIFIER])) {
-                        $errs[self::FIELD_IDENTIFIER] = [];
+                    if (!isset($errs[self::FIELD_ANSWER])) {
+                        $errs[self::FIELD_ANSWER] = [];
                     }
-                    $errs[self::FIELD_IDENTIFIER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_LINK_ID])) {
-            $v = $this->getLinkId();
-            foreach($validationRules[self::FIELD_LINK_ID] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_OFFER, self::FIELD_LINK_ID, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_LINK_ID])) {
-                        $errs[self::FIELD_LINK_ID] = [];
-                    }
-                    $errs[self::FIELD_LINK_ID][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PARTY])) {
-            $v = $this->getParty();
-            foreach($validationRules[self::FIELD_PARTY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_OFFER, self::FIELD_PARTY, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PARTY])) {
-                        $errs[self::FIELD_PARTY] = [];
-                    }
-                    $errs[self::FIELD_PARTY][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SECURITY_LABEL_NUMBER])) {
-            $v = $this->getSecurityLabelNumber();
-            foreach($validationRules[self::FIELD_SECURITY_LABEL_NUMBER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_OFFER, self::FIELD_SECURITY_LABEL_NUMBER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SECURITY_LABEL_NUMBER])) {
-                        $errs[self::FIELD_SECURITY_LABEL_NUMBER] = [];
-                    }
-                    $errs[self::FIELD_SECURITY_LABEL_NUMBER][$rule] = $err;
+                    $errs[self::FIELD_ANSWER][$rule] = $err;
                 }
             }
         }
@@ -1126,27 +1117,27 @@ class FHIRContractOffer extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TOPIC])) {
-            $v = $this->getTopic();
-            foreach($validationRules[self::FIELD_TOPIC] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_OFFER, self::FIELD_TOPIC, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_LINK_ID])) {
+            $v = $this->getLinkId();
+            foreach($validationRules[self::FIELD_LINK_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_OFFER, self::FIELD_LINK_ID, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TOPIC])) {
-                        $errs[self::FIELD_TOPIC] = [];
+                    if (!isset($errs[self::FIELD_LINK_ID])) {
+                        $errs[self::FIELD_LINK_ID] = [];
                     }
-                    $errs[self::FIELD_TOPIC][$rule] = $err;
+                    $errs[self::FIELD_LINK_ID][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TYPE])) {
-            $v = $this->getType();
-            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_OFFER, self::FIELD_TYPE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_SECURITY_LABEL_NUMBER])) {
+            $v = $this->getSecurityLabelNumber();
+            foreach($validationRules[self::FIELD_SECURITY_LABEL_NUMBER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_OFFER, self::FIELD_SECURITY_LABEL_NUMBER, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TYPE])) {
-                        $errs[self::FIELD_TYPE] = [];
+                    if (!isset($errs[self::FIELD_SECURITY_LABEL_NUMBER])) {
+                        $errs[self::FIELD_SECURITY_LABEL_NUMBER] = [];
                     }
-                    $errs[self::FIELD_TYPE][$rule] = $err;
+                    $errs[self::FIELD_SECURITY_LABEL_NUMBER][$rule] = $err;
                 }
             }
         }
@@ -1190,142 +1181,135 @@ class FHIRContractOffer extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractOffer $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractOffer
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRContractOffer::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRContractOffer::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRContractOffer::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRContractOffer;
+            $type = new FHIRContractOffer(null);
         } elseif (!is_object($type) || !($type instanceof FHIRContractOffer)) {
             throw new \RuntimeException(sprintf(
                 'FHIRContractOffer::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractOffer or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_IDENTIFIER === $n->nodeName) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_PARTY === $n->nodeName) {
+                $type->addParty(FHIRContractParty::xmlUnserialize($n));
+            } elseif (self::FIELD_TOPIC === $n->nodeName) {
+                $type->setTopic(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_TYPE === $n->nodeName) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DECISION === $n->nodeName) {
+                $type->setDecision(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DECISION_MODE === $n->nodeName) {
+                $type->addDecisionMode(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_ANSWER === $n->nodeName) {
+                $type->addAnswer(FHIRContractAnswer::xmlUnserialize($n));
+            } elseif (self::FIELD_TEXT === $n->nodeName) {
+                $type->setText(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_LINK_ID === $n->nodeName) {
+                $type->addLinkId(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_SECURITY_LABEL_NUMBER === $n->nodeName) {
+                $type->addSecurityLabelNumber(FHIRUnsignedInt::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->answer)) {
-            foreach($children->answer as $child) {
-                $type->addAnswer(FHIRContractAnswer::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->decision)) {
-            $type->setDecision(FHIRCodeableConcept::xmlUnserialize($children->decision));
-        }
-        if (isset($children->decisionMode)) {
-            foreach($children->decisionMode as $child) {
-                $type->addDecisionMode(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->identifier)) {
-            foreach($children->identifier as $child) {
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->linkId)) {
-            foreach($children->linkId as $child) {
-                $type->addLinkId(FHIRString::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->party)) {
-            foreach($children->party as $child) {
-                $type->addParty(FHIRContractParty::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->securityLabelNumber)) {
-            foreach($children->securityLabelNumber as $child) {
-                $type->addSecurityLabelNumber(FHIRUnsignedInt::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->text)) {
-            $type->setText(FHIRString::xmlUnserialize($children->text));
-        }
-        if (isset($attributes->text)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_TEXT);
+        if (null !== $n) {
             $pt = $type->getText();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->text);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setText((string)$attributes->text);
+                $type->setText($n->nodeValue);
             }
         }
-        if (isset($children->topic)) {
-            $type->setTopic(FHIRReference::xmlUnserialize($children->topic));
+        $n = $element->attributes->getNamedItem(self::FIELD_LINK_ID);
+        if (null !== $n) {
+            $pt = $type->getLinkId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->addLinkId($n->nodeValue);
+            }
         }
-        if (isset($children->type)) {
-            $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
+        $n = $element->attributes->getNamedItem(self::FIELD_SECURITY_LABEL_NUMBER);
+        if (null !== $n) {
+            $pt = $type->getSecurityLabelNumber();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->addSecurityLabelNumber($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getAnswer())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ANSWER, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getDecision())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DECISION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getDecisionMode())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DECISION_MODE, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
+        parent::xmlSerialize($element);
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if ([] !== ($vs = $this->getLinkId())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_LINK_ID, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_IDENTIFIER);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getParty())) {
@@ -1333,7 +1317,59 @@ class FHIRContractOffer extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PARTY, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PARTY);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if (null !== ($v = $this->getTopic())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TOPIC);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDecision())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DECISION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getDecisionMode())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_DECISION_MODE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if ([] !== ($vs = $this->getAnswer())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_ANSWER);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if (null !== ($v = $this->getText())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TEXT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getLinkId())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_LINK_ID);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getSecurityLabelNumber())) {
@@ -1341,19 +1377,12 @@ class FHIRContractOffer extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY_LABEL_NUMBER, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_SECURITY_LABEL_NUMBER);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getText())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getTopic())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TOPIC, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -1362,14 +1391,29 @@ class FHIRContractOffer extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getAnswer())) {
-            $a[self::FIELD_ANSWER] = [];
+        if ([] !== ($vs = $this->getIdentifier())) {
+            $a[self::FIELD_IDENTIFIER] = [];
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_ANSWER][] = $v;
+                $a[self::FIELD_IDENTIFIER][] = $v;
             }
+        }
+        if ([] !== ($vs = $this->getParty())) {
+            $a[self::FIELD_PARTY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PARTY][] = $v;
+            }
+        }
+        if (null !== ($v = $this->getTopic())) {
+            $a[self::FIELD_TOPIC] = $v;
+        }
+        if (null !== ($v = $this->getType())) {
+            $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getDecision())) {
             $a[self::FIELD_DECISION] = $v;
@@ -1383,87 +1427,72 @@ class FHIRContractOffer extends FHIRBackboneElement
                 $a[self::FIELD_DECISION_MODE][] = $v;
             }
         }
-        if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
+        if ([] !== ($vs = $this->getAnswer())) {
+            $a[self::FIELD_ANSWER] = [];
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_IDENTIFIER][] = $v;
-            }
-        }
-        if ([] !== ($vs = $this->getLinkId())) {
-            $a[self::FIELD_LINK_ID] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_LINK_ID][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRString::FIELD_VALUE]) || array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRString::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
-            }
-            if ($encValued) {
-                $a[self::FIELD_LINK_ID_EXT] = $encs;
-            }
-        }
-        if ([] !== ($vs = $this->getParty())) {
-            $a[self::FIELD_PARTY] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PARTY][] = $v;
-            }
-        }
-        if ([] !== ($vs = $this->getSecurityLabelNumber())) {
-            $a[self::FIELD_SECURITY_LABEL_NUMBER] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_SECURITY_LABEL_NUMBER][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRUnsignedInt::FIELD_VALUE]) || array_key_exists(FHIRUnsignedInt::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRUnsignedInt::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
-            }
-            if ($encValued) {
-                $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT] = $encs;
+                $a[self::FIELD_ANSWER][] = $v;
             }
         }
         if (null !== ($v = $this->getText())) {
-            $a[self::FIELD_TEXT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_TEXT_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TEXT] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_TEXT_EXT] = $ext;
             }
         }
-        if (null !== ($v = $this->getTopic())) {
-            $a[self::FIELD_TOPIC] = $v;
+        if ([] !== ($vs = $this->getLinkId())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext[FHIRString::FIELD_VALUE]);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $a[self::FIELD_LINK_ID] = $vals;
+            }
+            if ([] !== $exts) {
+                $a[self::FIELD_LINK_ID_EXT] = $exts;
+            }
         }
-        if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getSecurityLabelNumber())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext[FHIRUnsignedInt::FIELD_VALUE]);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $a[self::FIELD_SECURITY_LABEL_NUMBER] = $vals;
+            }
+            if ([] !== $exts) {
+                $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT] = $exts;
+            }
         }
         return $a;
     }

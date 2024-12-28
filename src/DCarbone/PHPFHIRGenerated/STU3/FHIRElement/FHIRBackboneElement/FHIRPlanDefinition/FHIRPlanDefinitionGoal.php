@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,9 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPla
 
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
@@ -81,29 +83,16 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_GOAL;
-    const FIELD_ADDRESSES = 'addresses';
     const FIELD_CATEGORY = 'category';
     const FIELD_DESCRIPTION = 'description';
-    const FIELD_DOCUMENTATION = 'documentation';
     const FIELD_PRIORITY = 'priority';
     const FIELD_START = 'start';
+    const FIELD_ADDRESSES = 'addresses';
+    const FIELD_DOCUMENTATION = 'documentation';
     const FIELD_TARGET = 'target';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies problems, conditions, issues, or concerns the goal is intended to
-     * address.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
-     */
-    protected $addresses = [];
+    private $_xmlns = '';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -132,20 +121,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
     protected $description = null;
 
     /**
-     * Related artifacts such as additional documentation, justification, or
-     * bibliographic references.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Didactic or other informational resources associated with the goal that provide
-     * further supporting information about the goal. Information resources can include
-     * inline text commentary and links to web resources.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact[]
-     */
-    protected $documentation = [];
-
-    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -169,6 +144,33 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected $start = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies problems, conditions, issues, or concerns the goal is intended to
+     * address.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
+     */
+    protected $addresses = [];
+
+    /**
+     * Related artifacts such as additional documentation, justification, or
+     * bibliographic references.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Didactic or other informational resources associated with the goal that provide
+     * further supporting information about the goal. Information resources can include
+     * inline text commentary and links to web resources.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact[]
+     */
+    protected $documentation = [];
 
     /**
      * This resource allows for the definition of various types of plans as a sharable,
@@ -204,24 +206,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ADDRESSES])) {
-            if (is_array($data[self::FIELD_ADDRESSES])) {
-                foreach($data[self::FIELD_ADDRESSES] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addAddresses($v);
-                    } else {
-                        $this->addAddresses(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_ADDRESSES] instanceof FHIRCodeableConcept) {
-                $this->addAddresses($data[self::FIELD_ADDRESSES]);
-            } else {
-                $this->addAddresses(new FHIRCodeableConcept($data[self::FIELD_ADDRESSES]));
-            }
-        }
         if (isset($data[self::FIELD_CATEGORY])) {
             if ($data[self::FIELD_CATEGORY] instanceof FHIRCodeableConcept) {
                 $this->setCategory($data[self::FIELD_CATEGORY]);
@@ -234,24 +218,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
                 $this->setDescription($data[self::FIELD_DESCRIPTION]);
             } else {
                 $this->setDescription(new FHIRCodeableConcept($data[self::FIELD_DESCRIPTION]));
-            }
-        }
-        if (isset($data[self::FIELD_DOCUMENTATION])) {
-            if (is_array($data[self::FIELD_DOCUMENTATION])) {
-                foreach($data[self::FIELD_DOCUMENTATION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRRelatedArtifact) {
-                        $this->addDocumentation($v);
-                    } else {
-                        $this->addDocumentation(new FHIRRelatedArtifact($v));
-                    }
-                }
-            } else if ($data[self::FIELD_DOCUMENTATION] instanceof FHIRRelatedArtifact) {
-                $this->addDocumentation($data[self::FIELD_DOCUMENTATION]);
-            } else {
-                $this->addDocumentation(new FHIRRelatedArtifact($data[self::FIELD_DOCUMENTATION]));
             }
         }
         if (isset($data[self::FIELD_PRIORITY])) {
@@ -268,6 +234,42 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
                 $this->setStart(new FHIRCodeableConcept($data[self::FIELD_START]));
             }
         }
+        if (isset($data[self::FIELD_ADDRESSES])) {
+            if (is_array($data[self::FIELD_ADDRESSES])) {
+                foreach($data[self::FIELD_ADDRESSES] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addAddresses($v);
+                    } else {
+                        $this->addAddresses(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_ADDRESSES] instanceof FHIRCodeableConcept) {
+                $this->addAddresses($data[self::FIELD_ADDRESSES]);
+            } else {
+                $this->addAddresses(new FHIRCodeableConcept($data[self::FIELD_ADDRESSES]));
+            }
+        }
+        if (isset($data[self::FIELD_DOCUMENTATION])) {
+            if (is_array($data[self::FIELD_DOCUMENTATION])) {
+                foreach($data[self::FIELD_DOCUMENTATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRRelatedArtifact) {
+                        $this->addDocumentation($v);
+                    } else {
+                        $this->addDocumentation(new FHIRRelatedArtifact($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_DOCUMENTATION] instanceof FHIRRelatedArtifact) {
+                $this->addDocumentation($data[self::FIELD_DOCUMENTATION]);
+            } else {
+                $this->addDocumentation(new FHIRRelatedArtifact($data[self::FIELD_DOCUMENTATION]));
+            }
+        }
         if (isset($data[self::FIELD_TARGET])) {
             if (is_array($data[self::FIELD_TARGET])) {
                 foreach($data[self::FIELD_TARGET] as $v) {
@@ -280,7 +282,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
                         $this->addTarget(new FHIRPlanDefinitionTarget($v));
                     }
                 }
-            } else if ($data[self::FIELD_TARGET] instanceof FHIRPlanDefinitionTarget) {
+            } elseif ($data[self::FIELD_TARGET] instanceof FHIRPlanDefinitionTarget) {
                 $this->addTarget($data[self::FIELD_TARGET]);
             } else {
                 $this->addTarget(new FHIRPlanDefinitionTarget($data[self::FIELD_TARGET]));
@@ -302,72 +304,10 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<PlanDefinitionGoal{$xmlns}></PlanDefinitionGoal>";
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies problems, conditions, issues, or concerns the goal is intended to
-     * address.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getAddresses()
-    {
-        return $this->addresses;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies problems, conditions, issues, or concerns the goal is intended to
-     * address.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $addresses
-     * @return static
-     */
-    public function addAddresses(FHIRCodeableConcept $addresses = null)
-    {
-        $this->addresses[] = $addresses;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies problems, conditions, issues, or concerns the goal is intended to
-     * address.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $addresses
-     * @return static
-     */
-    public function setAddresses(array $addresses = [])
-    {
-        $this->addresses = [];
-        if ([] === $addresses) {
-            return $this;
-        }
-        foreach($addresses as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addAddresses($v);
-            } else {
-                $this->addAddresses(new FHIRCodeableConcept($v));
-            }
-        }
-        return $this;
     }
 
     /**
@@ -398,6 +338,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      */
     public function setCategory(FHIRCodeableConcept $category = null)
     {
+        $this->_trackValueSet($this->category, $category);
         $this->category = $category;
         return $this;
     }
@@ -434,7 +375,142 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      */
     public function setDescription(FHIRCodeableConcept $description = null)
     {
+        $this->_trackValueSet($this->description, $description);
         $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the expected level of importance associated with reaching/sustaining
+     * the defined goal.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the expected level of importance associated with reaching/sustaining
+     * the defined goal.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $priority
+     * @return static
+     */
+    public function setPriority(FHIRCodeableConcept $priority = null)
+    {
+        $this->_trackValueSet($this->priority, $priority);
+        $this->priority = $priority;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The event after which the goal should begin being pursued.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    public function getStart()
+    {
+        return $this->start;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The event after which the goal should begin being pursued.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $start
+     * @return static
+     */
+    public function setStart(FHIRCodeableConcept $start = null)
+    {
+        $this->_trackValueSet($this->start, $start);
+        $this->start = $start;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies problems, conditions, issues, or concerns the goal is intended to
+     * address.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getAddresses()
+    {
+        return $this->addresses;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies problems, conditions, issues, or concerns the goal is intended to
+     * address.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $addresses
+     * @return static
+     */
+    public function addAddresses(FHIRCodeableConcept $addresses = null)
+    {
+        $this->_trackValueAdded();
+        $this->addresses[] = $addresses;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies problems, conditions, issues, or concerns the goal is intended to
+     * address.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $addresses
+     * @return static
+     */
+    public function setAddresses(array $addresses = [])
+    {
+        if ([] !== $this->addresses) {
+            $this->_trackValuesRemoved(count($this->addresses));
+            $this->addresses = [];
+        }
+        if ([] === $addresses) {
+            return $this;
+        }
+        foreach($addresses as $v) {
+            if ($v instanceof FHIRCodeableConcept) {
+                $this->addAddresses($v);
+            } else {
+                $this->addAddresses(new FHIRCodeableConcept($v));
+            }
+        }
         return $this;
     }
 
@@ -470,6 +546,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      */
     public function addDocumentation(FHIRRelatedArtifact $documentation = null)
     {
+        $this->_trackValueAdded();
         $this->documentation[] = $documentation;
         return $this;
     }
@@ -489,7 +566,10 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      */
     public function setDocumentation(array $documentation = [])
     {
-        $this->documentation = [];
+        if ([] !== $this->documentation) {
+            $this->_trackValuesRemoved(count($this->documentation));
+            $this->documentation = [];
+        }
         if ([] === $documentation) {
             return $this;
         }
@@ -500,72 +580,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
                 $this->addDocumentation(new FHIRRelatedArtifact($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies the expected level of importance associated with reaching/sustaining
-     * the defined goal.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    public function getPriority()
-    {
-        return $this->priority;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies the expected level of importance associated with reaching/sustaining
-     * the defined goal.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $priority
-     * @return static
-     */
-    public function setPriority(FHIRCodeableConcept $priority = null)
-    {
-        $this->priority = $priority;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The event after which the goal should begin being pursued.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    public function getStart()
-    {
-        return $this->start;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The event after which the goal should begin being pursued.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $start
-     * @return static
-     */
-    public function setStart(FHIRCodeableConcept $start = null)
-    {
-        $this->start = $start;
         return $this;
     }
 
@@ -597,6 +611,7 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      */
     public function addTarget(FHIRPlanDefinitionTarget $target = null)
     {
+        $this->_trackValueAdded();
         $this->target[] = $target;
         return $this;
     }
@@ -614,7 +629,10 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      */
     public function setTarget(array $target = [])
     {
-        $this->target = [];
+        if ([] !== $this->target) {
+            $this->_trackValuesRemoved(count($this->target));
+            $this->target = [];
+        }
         if ([] === $target) {
             return $this;
         }
@@ -649,13 +667,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getAddresses())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_ADDRESSES, $i)] = $fieldErrs;
-                }
-            }
-        }
         if (null !== ($v = $this->getCategory())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_CATEGORY] = $fieldErrs;
@@ -664,13 +675,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
         if (null !== ($v = $this->getDescription())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getDocumentation())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_DOCUMENTATION, $i)] = $fieldErrs;
-                }
             }
         }
         if (null !== ($v = $this->getPriority())) {
@@ -683,22 +687,24 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
                 $errs[self::FIELD_START] = $fieldErrs;
             }
         }
+        if ([] !== ($vs = $this->getAddresses())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_ADDRESSES, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getDocumentation())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_DOCUMENTATION, $i)] = $fieldErrs;
+                }
+            }
+        }
         if ([] !== ($vs = $this->getTarget())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_TARGET, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_ADDRESSES])) {
-            $v = $this->getAddresses();
-            foreach($validationRules[self::FIELD_ADDRESSES] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_GOAL, self::FIELD_ADDRESSES, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ADDRESSES])) {
-                        $errs[self::FIELD_ADDRESSES] = [];
-                    }
-                    $errs[self::FIELD_ADDRESSES][$rule] = $err;
                 }
             }
         }
@@ -726,18 +732,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DOCUMENTATION])) {
-            $v = $this->getDocumentation();
-            foreach($validationRules[self::FIELD_DOCUMENTATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_GOAL, self::FIELD_DOCUMENTATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DOCUMENTATION])) {
-                        $errs[self::FIELD_DOCUMENTATION] = [];
-                    }
-                    $errs[self::FIELD_DOCUMENTATION][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_PRIORITY])) {
             $v = $this->getPriority();
             foreach($validationRules[self::FIELD_PRIORITY] as $rule => $constraint) {
@@ -759,6 +753,30 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
                         $errs[self::FIELD_START] = [];
                     }
                     $errs[self::FIELD_START][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ADDRESSES])) {
+            $v = $this->getAddresses();
+            foreach($validationRules[self::FIELD_ADDRESSES] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_GOAL, self::FIELD_ADDRESSES, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ADDRESSES])) {
+                        $errs[self::FIELD_ADDRESSES] = [];
+                    }
+                    $errs[self::FIELD_ADDRESSES][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DOCUMENTATION])) {
+            $v = $this->getDocumentation();
+            foreach($validationRules[self::FIELD_DOCUMENTATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PLAN_DEFINITION_DOT_GOAL, self::FIELD_DOCUMENTATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DOCUMENTATION])) {
+                        $errs[self::FIELD_DOCUMENTATION] = [];
+                    }
+                    $errs[self::FIELD_DOCUMENTATION][$rule] = $err;
                 }
             }
         }
@@ -814,123 +832,145 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRPlanDefinitionGoal::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRPlanDefinitionGoal::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRPlanDefinitionGoal::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRPlanDefinitionGoal;
+            $type = new FHIRPlanDefinitionGoal(null);
         } elseif (!is_object($type) || !($type instanceof FHIRPlanDefinitionGoal)) {
             throw new \RuntimeException(sprintf(
                 'FHIRPlanDefinitionGoal::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_CATEGORY === $n->nodeName) {
+                $type->setCategory(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DESCRIPTION === $n->nodeName) {
+                $type->setDescription(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_PRIORITY === $n->nodeName) {
+                $type->setPriority(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_START === $n->nodeName) {
+                $type->setStart(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_ADDRESSES === $n->nodeName) {
+                $type->addAddresses(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DOCUMENTATION === $n->nodeName) {
+                $type->addDocumentation(FHIRRelatedArtifact::xmlUnserialize($n));
+            } elseif (self::FIELD_TARGET === $n->nodeName) {
+                $type->addTarget(FHIRPlanDefinitionTarget::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->addresses)) {
-            foreach($children->addresses as $child) {
-                $type->addAddresses(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->category)) {
-            $type->setCategory(FHIRCodeableConcept::xmlUnserialize($children->category));
-        }
-        if (isset($children->description)) {
-            $type->setDescription(FHIRCodeableConcept::xmlUnserialize($children->description));
-        }
-        if (isset($children->documentation)) {
-            foreach($children->documentation as $child) {
-                $type->addDocumentation(FHIRRelatedArtifact::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->priority)) {
-            $type->setPriority(FHIRCodeableConcept::xmlUnserialize($children->priority));
-        }
-        if (isset($children->start)) {
-            $type->setStart(FHIRCodeableConcept::xmlUnserialize($children->start));
-        }
-        if (isset($children->target)) {
-            foreach($children->target as $child) {
-                $type->addTarget(FHIRPlanDefinitionTarget::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getCategory())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_CATEGORY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DESCRIPTION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getPriority())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PRIORITY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getStart())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_START);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if ([] !== ($vs = $this->getAddresses())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ADDRESSES, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_ADDRESSES);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
-        }
-        if (null !== ($v = $this->getCategory())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CATEGORY, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getDocumentation())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_DOCUMENTATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
-        }
-        if (null !== ($v = $this->getPriority())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRIORITY, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getStart())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_START, null, $v->_getFHIRXMLNamespace()));
         }
         if ([] !== ($vs = $this->getTarget())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_TARGET);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -939,6 +979,18 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getCategory())) {
+            $a[self::FIELD_CATEGORY] = $v;
+        }
+        if (null !== ($v = $this->getDescription())) {
+            $a[self::FIELD_DESCRIPTION] = $v;
+        }
+        if (null !== ($v = $this->getPriority())) {
+            $a[self::FIELD_PRIORITY] = $v;
+        }
+        if (null !== ($v = $this->getStart())) {
+            $a[self::FIELD_START] = $v;
+        }
         if ([] !== ($vs = $this->getAddresses())) {
             $a[self::FIELD_ADDRESSES] = [];
             foreach($vs as $v) {
@@ -947,12 +999,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
                 }
                 $a[self::FIELD_ADDRESSES][] = $v;
             }
-        }
-        if (null !== ($v = $this->getCategory())) {
-            $a[self::FIELD_CATEGORY] = $v;
-        }
-        if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v;
         }
         if ([] !== ($vs = $this->getDocumentation())) {
             $a[self::FIELD_DOCUMENTATION] = [];
@@ -963,12 +1009,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
                 $a[self::FIELD_DOCUMENTATION][] = $v;
             }
         }
-        if (null !== ($v = $this->getPriority())) {
-            $a[self::FIELD_PRIORITY] = $v;
-        }
-        if (null !== ($v = $this->getStart())) {
-            $a[self::FIELD_START] = $v;
-        }
         if ([] !== ($vs = $this->getTarget())) {
             $a[self::FIELD_TARGET] = [];
             foreach($vs as $v) {
@@ -977,9 +1017,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
                 }
                 $a[self::FIELD_TARGET][] = $v;
             }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,6 +64,8 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -77,33 +79,23 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_STEP;
-    const FIELD_ALTERNATIVE = 'alternative';
-    const FIELD_OPERATION = 'operation';
+    const FIELD_PROCESS = 'process';
     const FIELD_PAUSE = 'pause';
     const FIELD_PAUSE_EXT = '_pause';
-    const FIELD_PROCESS = 'process';
+    const FIELD_OPERATION = 'operation';
+    const FIELD_ALTERNATIVE = 'alternative';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * Example of workflow instance.
      *
-     * Indicates an alternative step that can be taken instead of the operations on the
-     * base step in exceptional/atypical circumstances.
+     * Nested process.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioAlternative[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess[]
      */
-    protected $alternative = [];
-
-    /**
-     * Example of workflow instance.
-     *
-     * Each interaction or action.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioOperation
-     */
-    protected $operation = null;
+    protected $process = [];
 
     /**
      * Value of "true" or "false"
@@ -118,11 +110,21 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
     /**
      * Example of workflow instance.
      *
-     * Nested process.
+     * Each interaction or action.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioOperation
      */
-    protected $process = [];
+    protected $operation = null;
+
+    /**
+     * Example of workflow instance.
+     *
+     * Indicates an alternative step that can be taken instead of the operations on the
+     * base step in exceptional/atypical circumstances.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioAlternative[]
+     */
+    protected $alternative = [];
 
     /**
      * Validation map for fields in type ExampleScenario.Step
@@ -146,54 +148,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ALTERNATIVE])) {
-            if (is_array($data[self::FIELD_ALTERNATIVE])) {
-                foreach($data[self::FIELD_ALTERNATIVE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRExampleScenarioAlternative) {
-                        $this->addAlternative($v);
-                    } else {
-                        $this->addAlternative(new FHIRExampleScenarioAlternative($v));
-                    }
-                }
-            } else if ($data[self::FIELD_ALTERNATIVE] instanceof FHIRExampleScenarioAlternative) {
-                $this->addAlternative($data[self::FIELD_ALTERNATIVE]);
-            } else {
-                $this->addAlternative(new FHIRExampleScenarioAlternative($data[self::FIELD_ALTERNATIVE]));
-            }
-        }
-        if (isset($data[self::FIELD_OPERATION])) {
-            if ($data[self::FIELD_OPERATION] instanceof FHIRExampleScenarioOperation) {
-                $this->setOperation($data[self::FIELD_OPERATION]);
-            } else {
-                $this->setOperation(new FHIRExampleScenarioOperation($data[self::FIELD_OPERATION]));
-            }
-        }
-        if (isset($data[self::FIELD_PAUSE]) || isset($data[self::FIELD_PAUSE_EXT])) {
-            if (isset($data[self::FIELD_PAUSE])) {
-                $value = $data[self::FIELD_PAUSE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PAUSE_EXT]) && is_array($data[self::FIELD_PAUSE_EXT])) {
-                $ext = $data[self::FIELD_PAUSE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setPause($value);
-                } else if (is_array($value)) {
-                    $this->setPause(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setPause(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPause(new FHIRBoolean($ext));
-            }
-        }
         if (isset($data[self::FIELD_PROCESS])) {
             if (is_array($data[self::FIELD_PROCESS])) {
                 foreach($data[self::FIELD_PROCESS] as $v) {
@@ -206,10 +160,50 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
                         $this->addProcess(new FHIRExampleScenarioProcess($v));
                     }
                 }
-            } else if ($data[self::FIELD_PROCESS] instanceof FHIRExampleScenarioProcess) {
+            } elseif ($data[self::FIELD_PROCESS] instanceof FHIRExampleScenarioProcess) {
                 $this->addProcess($data[self::FIELD_PROCESS]);
             } else {
                 $this->addProcess(new FHIRExampleScenarioProcess($data[self::FIELD_PROCESS]));
+            }
+        }
+        if (isset($data[self::FIELD_PAUSE]) || isset($data[self::FIELD_PAUSE_EXT])) {
+            $value = isset($data[self::FIELD_PAUSE]) ? $data[self::FIELD_PAUSE] : null;
+            $ext = (isset($data[self::FIELD_PAUSE_EXT]) && is_array($data[self::FIELD_PAUSE_EXT])) ? $ext = $data[self::FIELD_PAUSE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setPause($value);
+                } else if (is_array($value)) {
+                    $this->setPause(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setPause(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPause(new FHIRBoolean($ext));
+            }
+        }
+        if (isset($data[self::FIELD_OPERATION])) {
+            if ($data[self::FIELD_OPERATION] instanceof FHIRExampleScenarioOperation) {
+                $this->setOperation($data[self::FIELD_OPERATION]);
+            } else {
+                $this->setOperation(new FHIRExampleScenarioOperation($data[self::FIELD_OPERATION]));
+            }
+        }
+        if (isset($data[self::FIELD_ALTERNATIVE])) {
+            if (is_array($data[self::FIELD_ALTERNATIVE])) {
+                foreach($data[self::FIELD_ALTERNATIVE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRExampleScenarioAlternative) {
+                        $this->addAlternative($v);
+                    } else {
+                        $this->addAlternative(new FHIRExampleScenarioAlternative($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_ALTERNATIVE] instanceof FHIRExampleScenarioAlternative) {
+                $this->addAlternative($data[self::FIELD_ALTERNATIVE]);
+            } else {
+                $this->addAlternative(new FHIRExampleScenarioAlternative($data[self::FIELD_ALTERNATIVE]));
             }
         }
     }
@@ -228,7 +222,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ExampleScenarioStep{$xmlns}></ExampleScenarioStep>";
@@ -237,79 +231,54 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
     /**
      * Example of workflow instance.
      *
-     * Indicates an alternative step that can be taken instead of the operations on the
-     * base step in exceptional/atypical circumstances.
+     * Nested process.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioAlternative[]
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess[]
      */
-    public function getAlternative()
+    public function getProcess()
     {
-        return $this->alternative;
+        return $this->process;
     }
 
     /**
      * Example of workflow instance.
      *
-     * Indicates an alternative step that can be taken instead of the operations on the
-     * base step in exceptional/atypical circumstances.
+     * Nested process.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioAlternative $alternative
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess $process
      * @return static
      */
-    public function addAlternative(FHIRExampleScenarioAlternative $alternative = null)
+    public function addProcess(FHIRExampleScenarioProcess $process = null)
     {
-        $this->alternative[] = $alternative;
+        $this->_trackValueAdded();
+        $this->process[] = $process;
         return $this;
     }
 
     /**
      * Example of workflow instance.
      *
-     * Indicates an alternative step that can be taken instead of the operations on the
-     * base step in exceptional/atypical circumstances.
+     * Nested process.
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioAlternative[] $alternative
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess[] $process
      * @return static
      */
-    public function setAlternative(array $alternative = [])
+    public function setProcess(array $process = [])
     {
-        $this->alternative = [];
-        if ([] === $alternative) {
+        if ([] !== $this->process) {
+            $this->_trackValuesRemoved(count($this->process));
+            $this->process = [];
+        }
+        if ([] === $process) {
             return $this;
         }
-        foreach($alternative as $v) {
-            if ($v instanceof FHIRExampleScenarioAlternative) {
-                $this->addAlternative($v);
+        foreach($process as $v) {
+            if ($v instanceof FHIRExampleScenarioProcess) {
+                $this->addProcess($v);
             } else {
-                $this->addAlternative(new FHIRExampleScenarioAlternative($v));
+                $this->addProcess(new FHIRExampleScenarioProcess($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * Example of workflow instance.
-     *
-     * Each interaction or action.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioOperation
-     */
-    public function getOperation()
-    {
-        return $this->operation;
-    }
-
-    /**
-     * Example of workflow instance.
-     *
-     * Each interaction or action.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioOperation $operation
-     * @return static
-     */
-    public function setOperation(FHIRExampleScenarioOperation $operation = null)
-    {
-        $this->operation = $operation;
         return $this;
     }
 
@@ -337,63 +306,93 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      */
     public function setPause($pause = null)
     {
-        if (null === $pause) {
-            $this->pause = null;
-            return $this;
+        if (null !== $pause && !($pause instanceof FHIRBoolean)) {
+            $pause = new FHIRBoolean($pause);
         }
-        if ($pause instanceof FHIRBoolean) {
-            $this->pause = $pause;
-            return $this;
-        }
-        $this->pause = new FHIRBoolean($pause);
+        $this->_trackValueSet($this->pause, $pause);
+        $this->pause = $pause;
         return $this;
     }
 
     /**
      * Example of workflow instance.
      *
-     * Nested process.
+     * Each interaction or action.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess[]
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioOperation
      */
-    public function getProcess()
+    public function getOperation()
     {
-        return $this->process;
+        return $this->operation;
     }
 
     /**
      * Example of workflow instance.
      *
-     * Nested process.
+     * Each interaction or action.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess $process
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioOperation $operation
      * @return static
      */
-    public function addProcess(FHIRExampleScenarioProcess $process = null)
+    public function setOperation(FHIRExampleScenarioOperation $operation = null)
     {
-        $this->process[] = $process;
+        $this->_trackValueSet($this->operation, $operation);
+        $this->operation = $operation;
         return $this;
     }
 
     /**
      * Example of workflow instance.
      *
-     * Nested process.
+     * Indicates an alternative step that can be taken instead of the operations on the
+     * base step in exceptional/atypical circumstances.
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess[] $process
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioAlternative[]
+     */
+    public function getAlternative()
+    {
+        return $this->alternative;
+    }
+
+    /**
+     * Example of workflow instance.
+     *
+     * Indicates an alternative step that can be taken instead of the operations on the
+     * base step in exceptional/atypical circumstances.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioAlternative $alternative
      * @return static
      */
-    public function setProcess(array $process = [])
+    public function addAlternative(FHIRExampleScenarioAlternative $alternative = null)
     {
-        $this->process = [];
-        if ([] === $process) {
+        $this->_trackValueAdded();
+        $this->alternative[] = $alternative;
+        return $this;
+    }
+
+    /**
+     * Example of workflow instance.
+     *
+     * Indicates an alternative step that can be taken instead of the operations on the
+     * base step in exceptional/atypical circumstances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioAlternative[] $alternative
+     * @return static
+     */
+    public function setAlternative(array $alternative = [])
+    {
+        if ([] !== $this->alternative) {
+            $this->_trackValuesRemoved(count($this->alternative));
+            $this->alternative = [];
+        }
+        if ([] === $alternative) {
             return $this;
         }
-        foreach($process as $v) {
-            if ($v instanceof FHIRExampleScenarioProcess) {
-                $this->addProcess($v);
+        foreach($alternative as $v) {
+            if ($v instanceof FHIRExampleScenarioAlternative) {
+                $this->addAlternative($v);
             } else {
-                $this->addProcess(new FHIRExampleScenarioProcess($v));
+                $this->addAlternative(new FHIRExampleScenarioAlternative($v));
             }
         }
         return $this;
@@ -420,23 +419,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getAlternative())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_ALTERNATIVE, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getOperation())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_OPERATION] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPause())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PAUSE] = $fieldErrs;
-            }
-        }
         if ([] !== ($vs = $this->getProcess())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
@@ -444,27 +426,32 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_ALTERNATIVE])) {
-            $v = $this->getAlternative();
-            foreach($validationRules[self::FIELD_ALTERNATIVE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_STEP, self::FIELD_ALTERNATIVE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ALTERNATIVE])) {
-                        $errs[self::FIELD_ALTERNATIVE] = [];
-                    }
-                    $errs[self::FIELD_ALTERNATIVE][$rule] = $err;
+        if (null !== ($v = $this->getPause())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PAUSE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getOperation())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_OPERATION] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getAlternative())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_ALTERNATIVE, $i)] = $fieldErrs;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_OPERATION])) {
-            $v = $this->getOperation();
-            foreach($validationRules[self::FIELD_OPERATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_STEP, self::FIELD_OPERATION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_PROCESS])) {
+            $v = $this->getProcess();
+            foreach($validationRules[self::FIELD_PROCESS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_STEP, self::FIELD_PROCESS, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_OPERATION])) {
-                        $errs[self::FIELD_OPERATION] = [];
+                    if (!isset($errs[self::FIELD_PROCESS])) {
+                        $errs[self::FIELD_PROCESS] = [];
                     }
-                    $errs[self::FIELD_OPERATION][$rule] = $err;
+                    $errs[self::FIELD_PROCESS][$rule] = $err;
                 }
             }
         }
@@ -480,15 +467,27 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PROCESS])) {
-            $v = $this->getProcess();
-            foreach($validationRules[self::FIELD_PROCESS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_STEP, self::FIELD_PROCESS, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_OPERATION])) {
+            $v = $this->getOperation();
+            foreach($validationRules[self::FIELD_OPERATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_STEP, self::FIELD_OPERATION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PROCESS])) {
-                        $errs[self::FIELD_PROCESS] = [];
+                    if (!isset($errs[self::FIELD_OPERATION])) {
+                        $errs[self::FIELD_OPERATION] = [];
                     }
-                    $errs[self::FIELD_PROCESS][$rule] = $err;
+                    $errs[self::FIELD_OPERATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ALTERNATIVE])) {
+            $v = $this->getAlternative();
+            foreach($validationRules[self::FIELD_ALTERNATIVE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EXAMPLE_SCENARIO_DOT_STEP, self::FIELD_ALTERNATIVE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ALTERNATIVE])) {
+                        $errs[self::FIELD_ALTERNATIVE] = [];
+                    }
+                    $errs[self::FIELD_ALTERNATIVE][$rule] = $err;
                 }
             }
         }
@@ -532,106 +531,128 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRExampleScenarioStep::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRExampleScenarioStep::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRExampleScenarioStep::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRExampleScenarioStep;
+            $type = new FHIRExampleScenarioStep(null);
         } elseif (!is_object($type) || !($type instanceof FHIRExampleScenarioStep)) {
             throw new \RuntimeException(sprintf(
                 'FHIRExampleScenarioStep::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_PROCESS === $n->nodeName) {
+                $type->addProcess(FHIRExampleScenarioProcess::xmlUnserialize($n));
+            } elseif (self::FIELD_PAUSE === $n->nodeName) {
+                $type->setPause(FHIRBoolean::xmlUnserialize($n));
+            } elseif (self::FIELD_OPERATION === $n->nodeName) {
+                $type->setOperation(FHIRExampleScenarioOperation::xmlUnserialize($n));
+            } elseif (self::FIELD_ALTERNATIVE === $n->nodeName) {
+                $type->addAlternative(FHIRExampleScenarioAlternative::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->alternative)) {
-            foreach($children->alternative as $child) {
-                $type->addAlternative(FHIRExampleScenarioAlternative::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->operation)) {
-            $type->setOperation(FHIRExampleScenarioOperation::xmlUnserialize($children->operation));
-        }
-        if (isset($children->pause)) {
-            $type->setPause(FHIRBoolean::xmlUnserialize($children->pause));
-        }
-        if (isset($attributes->pause)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_PAUSE);
+        if (null !== $n) {
             $pt = $type->getPause();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->pause);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setPause((string)$attributes->pause);
+                $type->setPause($n->nodeValue);
             }
         }
-        if (isset($children->process)) {
-            foreach($children->process as $child) {
-                $type->addProcess(FHIRExampleScenarioProcess::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getAlternative())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ALTERNATIVE, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getOperation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OPERATION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPause())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PAUSE, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if ([] !== ($vs = $this->getProcess())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PROCESS, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PROCESS);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        if (null !== ($v = $this->getPause())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PAUSE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getOperation())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_OPERATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getAlternative())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_ALTERNATIVE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        return $element;
     }
 
     /**
@@ -640,27 +661,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getAlternative())) {
-            $a[self::FIELD_ALTERNATIVE] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_ALTERNATIVE][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getOperation())) {
-            $a[self::FIELD_OPERATION] = $v;
-        }
-        if (null !== ($v = $this->getPause())) {
-            $a[self::FIELD_PAUSE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_PAUSE_EXT] = $enc;
-            }
-        }
         if ([] !== ($vs = $this->getProcess())) {
             $a[self::FIELD_PROCESS] = [];
             foreach($vs as $v) {
@@ -670,8 +670,27 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
                 $a[self::FIELD_PROCESS][] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getPause())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PAUSE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBoolean::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PAUSE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getOperation())) {
+            $a[self::FIELD_OPERATION] = $v;
+        }
+        if ([] !== ($vs = $this->getAlternative())) {
+            $a[self::FIELD_ALTERNATIVE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ALTERNATIVE][] = $v;
+            }
         }
         return $a;
     }

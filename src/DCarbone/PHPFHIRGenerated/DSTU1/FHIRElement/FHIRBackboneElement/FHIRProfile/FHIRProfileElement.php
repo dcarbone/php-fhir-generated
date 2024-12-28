@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,8 +58,10 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  */
 
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPropertyRepresentation;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
@@ -75,42 +77,17 @@ class FHIRProfileElement extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_ELEMENT;
-    const FIELD_DEFINITION = 'definition';
-    const FIELD_NAME = 'name';
-    const FIELD_NAME_EXT = '_name';
     const FIELD_PATH = 'path';
     const FIELD_PATH_EXT = '_path';
     const FIELD_REPRESENTATION = 'representation';
     const FIELD_REPRESENTATION_EXT = '_representation';
+    const FIELD_NAME = 'name';
+    const FIELD_NAME_EXT = '_name';
     const FIELD_SLICING = 'slicing';
+    const FIELD_DEFINITION = 'definition';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A Resource Profile - a statement of use of one or more FHIR Resources. It may
-     * include constraints on Resources and Data Types, Terminology Binding Statements
-     * and Extension Definitions.
-     *
-     * Definition of the content of the element to provide a more specific definition
-     * than that contained for the element in the base resource.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
-     */
-    protected $definition = null;
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of this element definition (to refer to it from other element
-     * definitions using Profile.structure.element.definition.nameReference). This is a
-     * unique name referring to a specific set of constraints applied to this element.
-     * One use of this is to provide a name to different slices of the same element.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
-     */
-    protected $name = null;
+    private $_xmlns = '';
 
     /**
      * A sequence of Unicode characters
@@ -135,6 +112,19 @@ class FHIRProfileElement extends FHIRBackboneElement
     protected $representation = [];
 
     /**
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of this element definition (to refer to it from other element
+     * definitions using Profile.structure.element.definition.nameReference). This is a
+     * unique name referring to a specific set of constraints applied to this element.
+     * One use of this is to provide a name to different slices of the same element.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
+     */
+    protected $name = null;
+
+    /**
      * A Resource Profile - a statement of use of one or more FHIR Resources. It may
      * include constraints on Resources and Data Types, Terminology Binding Statements
      * and Extension Definitions.
@@ -148,6 +138,18 @@ class FHIRProfileElement extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSlicing
      */
     protected $slicing = null;
+
+    /**
+     * A Resource Profile - a statement of use of one or more FHIR Resources. It may
+     * include constraints on Resources and Data Types, Terminology Binding Statements
+     * and Extension Definitions.
+     *
+     * Definition of the content of the element to provide a more specific definition
+     * than that contained for the element in the base resource.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     */
+    protected $definition = null;
 
     /**
      * Validation map for fields in type Profile.Element
@@ -171,47 +173,9 @@ class FHIRProfileElement extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_DEFINITION])) {
-            if ($data[self::FIELD_DEFINITION] instanceof FHIRProfileDefinition) {
-                $this->setDefinition($data[self::FIELD_DEFINITION]);
-            } else {
-                $this->setDefinition(new FHIRProfileDefinition($data[self::FIELD_DEFINITION]));
-            }
-        }
-        if (isset($data[self::FIELD_NAME]) || isset($data[self::FIELD_NAME_EXT])) {
-            if (isset($data[self::FIELD_NAME])) {
-                $value = $data[self::FIELD_NAME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_NAME_EXT]) && is_array($data[self::FIELD_NAME_EXT])) {
-                $ext = $data[self::FIELD_NAME_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setName($value);
-                } else if (is_array($value)) {
-                    $this->setName(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setName(new FHIRString($ext));
-            }
-        }
         if (isset($data[self::FIELD_PATH]) || isset($data[self::FIELD_PATH_EXT])) {
-            if (isset($data[self::FIELD_PATH])) {
-                $value = $data[self::FIELD_PATH];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PATH_EXT]) && is_array($data[self::FIELD_PATH_EXT])) {
-                $ext = $data[self::FIELD_PATH_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_PATH]) ? $data[self::FIELD_PATH] : null;
+            $ext = (isset($data[self::FIELD_PATH_EXT]) && is_array($data[self::FIELD_PATH_EXT])) ? $ext = $data[self::FIELD_PATH_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setPath($value);
@@ -220,21 +184,13 @@ class FHIRProfileElement extends FHIRBackboneElement
                 } else {
                     $this->setPath(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setPath(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_REPRESENTATION]) || isset($data[self::FIELD_REPRESENTATION_EXT])) {
-            if (isset($data[self::FIELD_REPRESENTATION])) {
-                $value = $data[self::FIELD_REPRESENTATION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_REPRESENTATION_EXT]) && is_array($data[self::FIELD_REPRESENTATION_EXT])) {
-                $ext = $data[self::FIELD_REPRESENTATION_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_REPRESENTATION]) ? $data[self::FIELD_REPRESENTATION] : null;
+            $ext = (isset($data[self::FIELD_REPRESENTATION_EXT]) && is_array($data[self::FIELD_REPRESENTATION_EXT])) ? $ext = $data[self::FIELD_REPRESENTATION_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRPropertyRepresentation) {
                     $this->addRepresentation($value);
@@ -256,10 +212,25 @@ class FHIRProfileElement extends FHIRBackboneElement
                 } else {
                     $this->addRepresentation(new FHIRPropertyRepresentation([FHIRPropertyRepresentation::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addRepresentation(new FHIRPropertyRepresentation($iext));
                 }
+            }
+        }
+        if (isset($data[self::FIELD_NAME]) || isset($data[self::FIELD_NAME_EXT])) {
+            $value = isset($data[self::FIELD_NAME]) ? $data[self::FIELD_NAME] : null;
+            $ext = (isset($data[self::FIELD_NAME_EXT]) && is_array($data[self::FIELD_NAME_EXT])) ? $ext = $data[self::FIELD_NAME_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setName($value);
+                } else if (is_array($value)) {
+                    $this->setName(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setName(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_SLICING])) {
@@ -267,6 +238,13 @@ class FHIRProfileElement extends FHIRBackboneElement
                 $this->setSlicing($data[self::FIELD_SLICING]);
             } else {
                 $this->setSlicing(new FHIRProfileSlicing($data[self::FIELD_SLICING]));
+            }
+        }
+        if (isset($data[self::FIELD_DEFINITION])) {
+            if ($data[self::FIELD_DEFINITION] instanceof FHIRProfileDefinition) {
+                $this->setDefinition($data[self::FIELD_DEFINITION]);
+            } else {
+                $this->setDefinition(new FHIRProfileDefinition($data[self::FIELD_DEFINITION]));
             }
         }
     }
@@ -285,41 +263,103 @@ class FHIRProfileElement extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ProfileElement{$xmlns}></ProfileElement>";
     }
 
     /**
-     * A Resource Profile - a statement of use of one or more FHIR Resources. It may
-     * include constraints on Resources and Data Types, Terminology Binding Statements
-     * and Extension Definitions.
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Definition of the content of the element to provide a more specific definition
-     * than that contained for the element in the base resource.
+     * The path identifies the element and is expressed as a "."-separated list of
+     * ancestor elements, beginning with the name of the resource.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    public function getDefinition()
+    public function getPath()
     {
-        return $this->definition;
+        return $this->path;
     }
 
     /**
-     * A Resource Profile - a statement of use of one or more FHIR Resources. It may
-     * include constraints on Resources and Data Types, Terminology Binding Statements
-     * and Extension Definitions.
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Definition of the content of the element to provide a more specific definition
-     * than that contained for the element in the base resource.
+     * The path identifies the element and is expressed as a "."-separated list of
+     * ancestor elements, beginning with the name of the resource.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition $definition
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $path
      * @return static
      */
-    public function setDefinition(FHIRProfileDefinition $definition = null)
+    public function setPath($path = null)
     {
-        $this->definition = $definition;
+        if (null !== $path && !($path instanceof FHIRString)) {
+            $path = new FHIRString($path);
+        }
+        $this->_trackValueSet($this->path, $path);
+        $this->path = $path;
+        return $this;
+    }
+
+    /**
+     * How a property is represented on the wire
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Codes that define how this element is represented in instances, when the
+     * deviation varies from the normal case.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPropertyRepresentation[]
+     */
+    public function getRepresentation()
+    {
+        return $this->representation;
+    }
+
+    /**
+     * How a property is represented on the wire
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Codes that define how this element is represented in instances, when the
+     * deviation varies from the normal case.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPropertyRepresentation $representation
+     * @return static
+     */
+    public function addRepresentation(FHIRPropertyRepresentation $representation = null)
+    {
+        $this->_trackValueAdded();
+        $this->representation[] = $representation;
+        return $this;
+    }
+
+    /**
+     * How a property is represented on the wire
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Codes that define how this element is represented in instances, when the
+     * deviation varies from the normal case.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPropertyRepresentation[] $representation
+     * @return static
+     */
+    public function setRepresentation(array $representation = [])
+    {
+        if ([] !== $this->representation) {
+            $this->_trackValuesRemoved(count($this->representation));
+            $this->representation = [];
+        }
+        if ([] === $representation) {
+            return $this;
+        }
+        foreach($representation as $v) {
+            if ($v instanceof FHIRPropertyRepresentation) {
+                $this->addRepresentation($v);
+            } else {
+                $this->addRepresentation(new FHIRPropertyRepresentation($v));
+            }
+        }
         return $this;
     }
 
@@ -353,109 +393,11 @@ class FHIRProfileElement extends FHIRBackboneElement
      */
     public function setName($name = null)
     {
-        if (null === $name) {
-            $this->name = null;
-            return $this;
+        if (null !== $name && !($name instanceof FHIRString)) {
+            $name = new FHIRString($name);
         }
-        if ($name instanceof FHIRString) {
-            $this->name = $name;
-            return $this;
-        }
-        $this->name = new FHIRString($name);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The path identifies the element and is expressed as a "."-separated list of
-     * ancestor elements, beginning with the name of the resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
-     */
-    public function getPath()
-    {
-        return $this->path;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The path identifies the element and is expressed as a "."-separated list of
-     * ancestor elements, beginning with the name of the resource.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $path
-     * @return static
-     */
-    public function setPath($path = null)
-    {
-        if (null === $path) {
-            $this->path = null;
-            return $this;
-        }
-        if ($path instanceof FHIRString) {
-            $this->path = $path;
-            return $this;
-        }
-        $this->path = new FHIRString($path);
-        return $this;
-    }
-
-    /**
-     * How a property is represented on the wire
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Codes that define how this element is represented in instances, when the
-     * deviation varies from the normal case.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPropertyRepresentation[]
-     */
-    public function getRepresentation()
-    {
-        return $this->representation;
-    }
-
-    /**
-     * How a property is represented on the wire
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Codes that define how this element is represented in instances, when the
-     * deviation varies from the normal case.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPropertyRepresentation $representation
-     * @return static
-     */
-    public function addRepresentation(FHIRPropertyRepresentation $representation = null)
-    {
-        $this->representation[] = $representation;
-        return $this;
-    }
-
-    /**
-     * How a property is represented on the wire
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Codes that define how this element is represented in instances, when the
-     * deviation varies from the normal case.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPropertyRepresentation[] $representation
-     * @return static
-     */
-    public function setRepresentation(array $representation = [])
-    {
-        $this->representation = [];
-        if ([] === $representation) {
-            return $this;
-        }
-        foreach($representation as $v) {
-            if ($v instanceof FHIRPropertyRepresentation) {
-                $this->addRepresentation($v);
-            } else {
-                $this->addRepresentation(new FHIRPropertyRepresentation($v));
-            }
-        }
+        $this->_trackValueSet($this->name, $name);
+        $this->name = $name;
         return $this;
     }
 
@@ -493,7 +435,41 @@ class FHIRProfileElement extends FHIRBackboneElement
      */
     public function setSlicing(FHIRProfileSlicing $slicing = null)
     {
+        $this->_trackValueSet($this->slicing, $slicing);
         $this->slicing = $slicing;
+        return $this;
+    }
+
+    /**
+     * A Resource Profile - a statement of use of one or more FHIR Resources. It may
+     * include constraints on Resources and Data Types, Terminology Binding Statements
+     * and Extension Definitions.
+     *
+     * Definition of the content of the element to provide a more specific definition
+     * than that contained for the element in the base resource.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
+     */
+    public function getDefinition()
+    {
+        return $this->definition;
+    }
+
+    /**
+     * A Resource Profile - a statement of use of one or more FHIR Resources. It may
+     * include constraints on Resources and Data Types, Terminology Binding Statements
+     * and Extension Definitions.
+     *
+     * Definition of the content of the element to provide a more specific definition
+     * than that contained for the element in the base resource.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition $definition
+     * @return static
+     */
+    public function setDefinition(FHIRProfileDefinition $definition = null)
+    {
+        $this->_trackValueSet($this->definition, $definition);
+        $this->definition = $definition;
         return $this;
     }
 
@@ -518,16 +494,6 @@ class FHIRProfileElement extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getDefinition())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DEFINITION] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getName())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_NAME] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getPath())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_PATH] = $fieldErrs;
@@ -540,33 +506,19 @@ class FHIRProfileElement extends FHIRBackboneElement
                 }
             }
         }
+        if (null !== ($v = $this->getName())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_NAME] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getSlicing())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_SLICING] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DEFINITION])) {
-            $v = $this->getDefinition();
-            foreach($validationRules[self::FIELD_DEFINITION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_ELEMENT, self::FIELD_DEFINITION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DEFINITION])) {
-                        $errs[self::FIELD_DEFINITION] = [];
-                    }
-                    $errs[self::FIELD_DEFINITION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_NAME])) {
-            $v = $this->getName();
-            foreach($validationRules[self::FIELD_NAME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_ELEMENT, self::FIELD_NAME, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_NAME])) {
-                        $errs[self::FIELD_NAME] = [];
-                    }
-                    $errs[self::FIELD_NAME][$rule] = $err;
-                }
+        if (null !== ($v = $this->getDefinition())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFINITION] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_PATH])) {
@@ -593,6 +545,18 @@ class FHIRProfileElement extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_NAME])) {
+            $v = $this->getName();
+            foreach($validationRules[self::FIELD_NAME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_ELEMENT, self::FIELD_NAME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NAME])) {
+                        $errs[self::FIELD_NAME] = [];
+                    }
+                    $errs[self::FIELD_NAME][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_SLICING])) {
             $v = $this->getSlicing();
             foreach($validationRules[self::FIELD_SLICING] as $rule => $constraint) {
@@ -602,6 +566,18 @@ class FHIRProfileElement extends FHIRBackboneElement
                         $errs[self::FIELD_SLICING] = [];
                     }
                     $errs[self::FIELD_SLICING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFINITION])) {
+            $v = $this->getDefinition();
+            foreach($validationRules[self::FIELD_DEFINITION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_ELEMENT, self::FIELD_DEFINITION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFINITION])) {
+                        $errs[self::FIELD_DEFINITION] = [];
+                    }
+                    $errs[self::FIELD_DEFINITION][$rule] = $err;
                 }
             }
         }
@@ -645,113 +621,139 @@ class FHIRProfileElement extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRProfileElement::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRProfileElement::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRProfileElement::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRProfileElement;
+            $type = new FHIRProfileElement(null);
         } elseif (!is_object($type) || !($type instanceof FHIRProfileElement)) {
             throw new \RuntimeException(sprintf(
                 'FHIRProfileElement::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_PATH === $n->nodeName) {
+                $type->setPath(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_REPRESENTATION === $n->nodeName) {
+                $type->addRepresentation(FHIRPropertyRepresentation::xmlUnserialize($n));
+            } elseif (self::FIELD_NAME === $n->nodeName) {
+                $type->setName(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_SLICING === $n->nodeName) {
+                $type->setSlicing(FHIRProfileSlicing::xmlUnserialize($n));
+            } elseif (self::FIELD_DEFINITION === $n->nodeName) {
+                $type->setDefinition(FHIRProfileDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->definition)) {
-            $type->setDefinition(FHIRProfileDefinition::xmlUnserialize($children->definition));
-        }
-        if (isset($children->name)) {
-            $type->setName(FHIRString::xmlUnserialize($children->name));
-        }
-        if (isset($attributes->name)) {
-            $pt = $type->getName();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->name);
-            } else {
-                $type->setName((string)$attributes->name);
-            }
-        }
-        if (isset($children->path)) {
-            $type->setPath(FHIRString::xmlUnserialize($children->path));
-        }
-        if (isset($attributes->path)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_PATH);
+        if (null !== $n) {
             $pt = $type->getPath();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->path);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setPath((string)$attributes->path);
+                $type->setPath($n->nodeValue);
             }
         }
-        if (isset($children->representation)) {
-            foreach($children->representation as $child) {
-                $type->addRepresentation(FHIRPropertyRepresentation::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_NAME);
+        if (null !== $n) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setName($n->nodeValue);
             }
         }
-        if (isset($children->slicing)) {
-            $type->setSlicing(FHIRProfileSlicing::xmlUnserialize($children->slicing));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getDefinition())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getPath())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATH, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_PATH);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getRepresentation())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REPRESENTATION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_REPRESENTATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getSlicing())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SLICING, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getName())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_NAME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getSlicing())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SLICING);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDefinition())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DEFINITION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -760,55 +762,55 @@ class FHIRProfileElement extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getDefinition())) {
-            $a[self::FIELD_DEFINITION] = $v;
-        }
-        if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_NAME_EXT] = $enc;
-            }
-        }
         if (null !== ($v = $this->getPath())) {
-            $a[self::FIELD_PATH] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_PATH_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PATH] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PATH_EXT] = $ext;
             }
         }
         if ([] !== ($vs = $this->getRepresentation())) {
-            $a[self::FIELD_REPRESENTATION] = [];
-            $encs = [];
-            $encValued = false;
+            $vals = [];
+            $exts = [];
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_REPRESENTATION][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRPropertyRepresentation::FIELD_VALUE]) || array_key_exists(FHIRPropertyRepresentation::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRPropertyRepresentation::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext[FHIRPropertyRepresentation::FIELD_VALUE]);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
                 }
             }
-            if ($encValued) {
-                $a[self::FIELD_REPRESENTATION_EXT] = $encs;
+            if ([] !== $vals) {
+                $a[self::FIELD_REPRESENTATION] = $vals;
+            }
+            if ([] !== $exts) {
+                $a[self::FIELD_REPRESENTATION_EXT] = $exts;
+            }
+        }
+        if (null !== ($v = $this->getName())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_NAME] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_NAME_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getSlicing())) {
             $a[self::FIELD_SLICING] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getDefinition())) {
+            $a[self::FIELD_DEFINITION] = $v;
         }
         return $a;
     }

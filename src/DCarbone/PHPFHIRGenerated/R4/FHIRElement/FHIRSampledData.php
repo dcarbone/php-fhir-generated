@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  */
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -79,70 +80,22 @@ class FHIRSampledData extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SAMPLED_DATA;
-    const FIELD_DATA = 'data';
-    const FIELD_DATA_EXT = '_data';
-    const FIELD_DIMENSIONS = 'dimensions';
-    const FIELD_DIMENSIONS_EXT = '_dimensions';
+    const FIELD_ORIGIN = 'origin';
+    const FIELD_PERIOD = 'period';
+    const FIELD_PERIOD_EXT = '_period';
     const FIELD_FACTOR = 'factor';
     const FIELD_FACTOR_EXT = '_factor';
     const FIELD_LOWER_LIMIT = 'lowerLimit';
     const FIELD_LOWER_LIMIT_EXT = '_lowerLimit';
-    const FIELD_ORIGIN = 'origin';
-    const FIELD_PERIOD = 'period';
-    const FIELD_PERIOD_EXT = '_period';
     const FIELD_UPPER_LIMIT = 'upperLimit';
     const FIELD_UPPER_LIMIT_EXT = '_upperLimit';
+    const FIELD_DIMENSIONS = 'dimensions';
+    const FIELD_DIMENSIONS_EXT = '_dimensions';
+    const FIELD_DATA = 'data';
+    const FIELD_DATA_EXT = '_data';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A series of data points which are decimal values separated by a single space
-     * (character u20). The special values "E" (error), "L" (below detection limit) and
-     * "U" (above detection limit) can also be used in place of a decimal value.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledDataDataType
-     */
-    protected $data = null;
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * The number of sample points at each time point. If this value is greater than
-     * one, then the dimensions will be interlaced - all the sample points for a point
-     * in time will be recorded at once.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
-     */
-    protected $dimensions = null;
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A correction factor that is applied to the sampled data points before they are
-     * added to the origin.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
-     */
-    protected $factor = null;
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The lower limit of detection of the measured points. This is needed if any of
-     * the data points have the value "L" (lower than detection limit).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
-     */
-    protected $lowerLimit = null;
+    private $_xmlns = '';
 
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -176,12 +129,60 @@ class FHIRSampledData extends FHIRElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
+     * A correction factor that is applied to the sampled data points before they are
+     * added to the origin.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
+     */
+    protected $factor = null;
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The lower limit of detection of the measured points. This is needed if any of
+     * the data points have the value "L" (lower than detection limit).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
+     */
+    protected $lowerLimit = null;
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
      * The upper limit of detection of the measured points. This is needed if any of
      * the data points have the value "U" (higher than detection limit).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected $upperLimit = null;
+
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * The number of sample points at each time point. If this value is greater than
+     * one, then the dimensions will be interlaced - all the sample points for a point
+     * in time will be recorded at once.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
+     */
+    protected $dimensions = null;
+
+    /**
+     * A series of data points which are decimal values separated by a single space
+     * (character u20). The special values "E" (error), "L" (below detection limit) and
+     * "U" (above detection limit) can also be used in place of a decimal value.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledDataDataType
+     */
+    protected $data = null;
 
     /**
      * Validation map for fields in type SampledData
@@ -205,98 +206,6 @@ class FHIRSampledData extends FHIRElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_DATA]) || isset($data[self::FIELD_DATA_EXT])) {
-            if (isset($data[self::FIELD_DATA])) {
-                $value = $data[self::FIELD_DATA];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DATA_EXT]) && is_array($data[self::FIELD_DATA_EXT])) {
-                $ext = $data[self::FIELD_DATA_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRSampledDataDataType) {
-                    $this->setData($value);
-                } else if (is_array($value)) {
-                    $this->setData(new FHIRSampledDataDataType(array_merge($ext, $value)));
-                } else {
-                    $this->setData(new FHIRSampledDataDataType([FHIRSampledDataDataType::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setData(new FHIRSampledDataDataType($ext));
-            }
-        }
-        if (isset($data[self::FIELD_DIMENSIONS]) || isset($data[self::FIELD_DIMENSIONS_EXT])) {
-            if (isset($data[self::FIELD_DIMENSIONS])) {
-                $value = $data[self::FIELD_DIMENSIONS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DIMENSIONS_EXT]) && is_array($data[self::FIELD_DIMENSIONS_EXT])) {
-                $ext = $data[self::FIELD_DIMENSIONS_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $this->setDimensions($value);
-                } else if (is_array($value)) {
-                    $this->setDimensions(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $this->setDimensions(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDimensions(new FHIRPositiveInt($ext));
-            }
-        }
-        if (isset($data[self::FIELD_FACTOR]) || isset($data[self::FIELD_FACTOR_EXT])) {
-            if (isset($data[self::FIELD_FACTOR])) {
-                $value = $data[self::FIELD_FACTOR];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_FACTOR_EXT]) && is_array($data[self::FIELD_FACTOR_EXT])) {
-                $ext = $data[self::FIELD_FACTOR_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->setFactor($value);
-                } else if (is_array($value)) {
-                    $this->setFactor(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->setFactor(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setFactor(new FHIRDecimal($ext));
-            }
-        }
-        if (isset($data[self::FIELD_LOWER_LIMIT]) || isset($data[self::FIELD_LOWER_LIMIT_EXT])) {
-            if (isset($data[self::FIELD_LOWER_LIMIT])) {
-                $value = $data[self::FIELD_LOWER_LIMIT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_LOWER_LIMIT_EXT]) && is_array($data[self::FIELD_LOWER_LIMIT_EXT])) {
-                $ext = $data[self::FIELD_LOWER_LIMIT_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->setLowerLimit($value);
-                } else if (is_array($value)) {
-                    $this->setLowerLimit(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->setLowerLimit(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setLowerLimit(new FHIRDecimal($ext));
-            }
-        }
         if (isset($data[self::FIELD_ORIGIN])) {
             if ($data[self::FIELD_ORIGIN] instanceof FHIRQuantity) {
                 $this->setOrigin($data[self::FIELD_ORIGIN]);
@@ -305,16 +214,8 @@ class FHIRSampledData extends FHIRElement
             }
         }
         if (isset($data[self::FIELD_PERIOD]) || isset($data[self::FIELD_PERIOD_EXT])) {
-            if (isset($data[self::FIELD_PERIOD])) {
-                $value = $data[self::FIELD_PERIOD];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PERIOD_EXT]) && is_array($data[self::FIELD_PERIOD_EXT])) {
-                $ext = $data[self::FIELD_PERIOD_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_PERIOD]) ? $data[self::FIELD_PERIOD] : null;
+            $ext = (isset($data[self::FIELD_PERIOD_EXT]) && is_array($data[self::FIELD_PERIOD_EXT])) ? $ext = $data[self::FIELD_PERIOD_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRDecimal) {
                     $this->setPeriod($value);
@@ -323,21 +224,43 @@ class FHIRSampledData extends FHIRElement
                 } else {
                     $this->setPeriod(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setPeriod(new FHIRDecimal($ext));
             }
         }
+        if (isset($data[self::FIELD_FACTOR]) || isset($data[self::FIELD_FACTOR_EXT])) {
+            $value = isset($data[self::FIELD_FACTOR]) ? $data[self::FIELD_FACTOR] : null;
+            $ext = (isset($data[self::FIELD_FACTOR_EXT]) && is_array($data[self::FIELD_FACTOR_EXT])) ? $ext = $data[self::FIELD_FACTOR_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setFactor($value);
+                } else if (is_array($value)) {
+                    $this->setFactor(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setFactor(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setFactor(new FHIRDecimal($ext));
+            }
+        }
+        if (isset($data[self::FIELD_LOWER_LIMIT]) || isset($data[self::FIELD_LOWER_LIMIT_EXT])) {
+            $value = isset($data[self::FIELD_LOWER_LIMIT]) ? $data[self::FIELD_LOWER_LIMIT] : null;
+            $ext = (isset($data[self::FIELD_LOWER_LIMIT_EXT]) && is_array($data[self::FIELD_LOWER_LIMIT_EXT])) ? $ext = $data[self::FIELD_LOWER_LIMIT_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setLowerLimit($value);
+                } else if (is_array($value)) {
+                    $this->setLowerLimit(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setLowerLimit(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setLowerLimit(new FHIRDecimal($ext));
+            }
+        }
         if (isset($data[self::FIELD_UPPER_LIMIT]) || isset($data[self::FIELD_UPPER_LIMIT_EXT])) {
-            if (isset($data[self::FIELD_UPPER_LIMIT])) {
-                $value = $data[self::FIELD_UPPER_LIMIT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_UPPER_LIMIT_EXT]) && is_array($data[self::FIELD_UPPER_LIMIT_EXT])) {
-                $ext = $data[self::FIELD_UPPER_LIMIT_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_UPPER_LIMIT]) ? $data[self::FIELD_UPPER_LIMIT] : null;
+            $ext = (isset($data[self::FIELD_UPPER_LIMIT_EXT]) && is_array($data[self::FIELD_UPPER_LIMIT_EXT])) ? $ext = $data[self::FIELD_UPPER_LIMIT_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRDecimal) {
                     $this->setUpperLimit($value);
@@ -346,8 +269,38 @@ class FHIRSampledData extends FHIRElement
                 } else {
                     $this->setUpperLimit(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setUpperLimit(new FHIRDecimal($ext));
+            }
+        }
+        if (isset($data[self::FIELD_DIMENSIONS]) || isset($data[self::FIELD_DIMENSIONS_EXT])) {
+            $value = isset($data[self::FIELD_DIMENSIONS]) ? $data[self::FIELD_DIMENSIONS] : null;
+            $ext = (isset($data[self::FIELD_DIMENSIONS_EXT]) && is_array($data[self::FIELD_DIMENSIONS_EXT])) ? $ext = $data[self::FIELD_DIMENSIONS_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setDimensions($value);
+                } else if (is_array($value)) {
+                    $this->setDimensions(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->setDimensions(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDimensions(new FHIRPositiveInt($ext));
+            }
+        }
+        if (isset($data[self::FIELD_DATA]) || isset($data[self::FIELD_DATA_EXT])) {
+            $value = isset($data[self::FIELD_DATA]) ? $data[self::FIELD_DATA] : null;
+            $ext = (isset($data[self::FIELD_DATA_EXT]) && is_array($data[self::FIELD_DATA_EXT])) ? $ext = $data[self::FIELD_DATA_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRSampledDataDataType) {
+                    $this->setData($value);
+                } else if (is_array($value)) {
+                    $this->setData(new FHIRSampledDataDataType(array_merge($ext, $value)));
+                } else {
+                    $this->setData(new FHIRSampledDataDataType([FHIRSampledDataDataType::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setData(new FHIRSampledDataDataType($ext));
             }
         }
     }
@@ -366,170 +319,10 @@ class FHIRSampledData extends FHIRElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<SampledData{$xmlns}></SampledData>";
-    }
-
-    /**
-     * A series of data points which are decimal values separated by a single space
-     * (character u20). The special values "E" (error), "L" (below detection limit) and
-     * "U" (above detection limit) can also be used in place of a decimal value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledDataDataType
-     */
-    public function getData()
-    {
-        return $this->data;
-    }
-
-    /**
-     * A series of data points which are decimal values separated by a single space
-     * (character u20). The special values "E" (error), "L" (below detection limit) and
-     * "U" (above detection limit) can also be used in place of a decimal value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledDataDataType $data
-     * @return static
-     */
-    public function setData($data = null)
-    {
-        if (null === $data) {
-            $this->data = null;
-            return $this;
-        }
-        if ($data instanceof FHIRSampledDataDataType) {
-            $this->data = $data;
-            return $this;
-        }
-        $this->data = new FHIRSampledDataDataType($data);
-        return $this;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * The number of sample points at each time point. If this value is greater than
-     * one, then the dimensions will be interlaced - all the sample points for a point
-     * in time will be recorded at once.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
-     */
-    public function getDimensions()
-    {
-        return $this->dimensions;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * The number of sample points at each time point. If this value is greater than
-     * one, then the dimensions will be interlaced - all the sample points for a point
-     * in time will be recorded at once.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $dimensions
-     * @return static
-     */
-    public function setDimensions($dimensions = null)
-    {
-        if (null === $dimensions) {
-            $this->dimensions = null;
-            return $this;
-        }
-        if ($dimensions instanceof FHIRPositiveInt) {
-            $this->dimensions = $dimensions;
-            return $this;
-        }
-        $this->dimensions = new FHIRPositiveInt($dimensions);
-        return $this;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A correction factor that is applied to the sampled data points before they are
-     * added to the origin.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
-     */
-    public function getFactor()
-    {
-        return $this->factor;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A correction factor that is applied to the sampled data points before they are
-     * added to the origin.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $factor
-     * @return static
-     */
-    public function setFactor($factor = null)
-    {
-        if (null === $factor) {
-            $this->factor = null;
-            return $this;
-        }
-        if ($factor instanceof FHIRDecimal) {
-            $this->factor = $factor;
-            return $this;
-        }
-        $this->factor = new FHIRDecimal($factor);
-        return $this;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The lower limit of detection of the measured points. This is needed if any of
-     * the data points have the value "L" (lower than detection limit).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
-     */
-    public function getLowerLimit()
-    {
-        return $this->lowerLimit;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The lower limit of detection of the measured points. This is needed if any of
-     * the data points have the value "L" (lower than detection limit).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $lowerLimit
-     * @return static
-     */
-    public function setLowerLimit($lowerLimit = null)
-    {
-        if (null === $lowerLimit) {
-            $this->lowerLimit = null;
-            return $this;
-        }
-        if ($lowerLimit instanceof FHIRDecimal) {
-            $this->lowerLimit = $lowerLimit;
-            return $this;
-        }
-        $this->lowerLimit = new FHIRDecimal($lowerLimit);
-        return $this;
     }
 
     /**
@@ -564,6 +357,7 @@ class FHIRSampledData extends FHIRElement
      */
     public function setOrigin(FHIRQuantity $origin = null)
     {
+        $this->_trackValueSet($this->origin, $origin);
         $this->origin = $origin;
         return $this;
     }
@@ -596,15 +390,87 @@ class FHIRSampledData extends FHIRElement
      */
     public function setPeriod($period = null)
     {
-        if (null === $period) {
-            $this->period = null;
-            return $this;
+        if (null !== $period && !($period instanceof FHIRDecimal)) {
+            $period = new FHIRDecimal($period);
         }
-        if ($period instanceof FHIRDecimal) {
-            $this->period = $period;
-            return $this;
+        $this->_trackValueSet($this->period, $period);
+        $this->period = $period;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A correction factor that is applied to the sampled data points before they are
+     * added to the origin.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
+     */
+    public function getFactor()
+    {
+        return $this->factor;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A correction factor that is applied to the sampled data points before they are
+     * added to the origin.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $factor
+     * @return static
+     */
+    public function setFactor($factor = null)
+    {
+        if (null !== $factor && !($factor instanceof FHIRDecimal)) {
+            $factor = new FHIRDecimal($factor);
         }
-        $this->period = new FHIRDecimal($period);
+        $this->_trackValueSet($this->factor, $factor);
+        $this->factor = $factor;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The lower limit of detection of the measured points. This is needed if any of
+     * the data points have the value "L" (lower than detection limit).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
+     */
+    public function getLowerLimit()
+    {
+        return $this->lowerLimit;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The lower limit of detection of the measured points. This is needed if any of
+     * the data points have the value "L" (lower than detection limit).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $lowerLimit
+     * @return static
+     */
+    public function setLowerLimit($lowerLimit = null)
+    {
+        if (null !== $lowerLimit && !($lowerLimit instanceof FHIRDecimal)) {
+            $lowerLimit = new FHIRDecimal($lowerLimit);
+        }
+        $this->_trackValueSet($this->lowerLimit, $lowerLimit);
+        $this->lowerLimit = $lowerLimit;
         return $this;
     }
 
@@ -638,15 +504,79 @@ class FHIRSampledData extends FHIRElement
      */
     public function setUpperLimit($upperLimit = null)
     {
-        if (null === $upperLimit) {
-            $this->upperLimit = null;
-            return $this;
+        if (null !== $upperLimit && !($upperLimit instanceof FHIRDecimal)) {
+            $upperLimit = new FHIRDecimal($upperLimit);
         }
-        if ($upperLimit instanceof FHIRDecimal) {
-            $this->upperLimit = $upperLimit;
-            return $this;
+        $this->_trackValueSet($this->upperLimit, $upperLimit);
+        $this->upperLimit = $upperLimit;
+        return $this;
+    }
+
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * The number of sample points at each time point. If this value is greater than
+     * one, then the dimensions will be interlaced - all the sample points for a point
+     * in time will be recorded at once.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
+     */
+    public function getDimensions()
+    {
+        return $this->dimensions;
+    }
+
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * The number of sample points at each time point. If this value is greater than
+     * one, then the dimensions will be interlaced - all the sample points for a point
+     * in time will be recorded at once.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $dimensions
+     * @return static
+     */
+    public function setDimensions($dimensions = null)
+    {
+        if (null !== $dimensions && !($dimensions instanceof FHIRPositiveInt)) {
+            $dimensions = new FHIRPositiveInt($dimensions);
         }
-        $this->upperLimit = new FHIRDecimal($upperLimit);
+        $this->_trackValueSet($this->dimensions, $dimensions);
+        $this->dimensions = $dimensions;
+        return $this;
+    }
+
+    /**
+     * A series of data points which are decimal values separated by a single space
+     * (character u20). The special values "E" (error), "L" (below detection limit) and
+     * "U" (above detection limit) can also be used in place of a decimal value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledDataDataType
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * A series of data points which are decimal values separated by a single space
+     * (character u20). The special values "E" (error), "L" (below detection limit) and
+     * "U" (above detection limit) can also be used in place of a decimal value.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledDataDataType $data
+     * @return static
+     */
+    public function setData($data = null)
+    {
+        if (null !== $data && !($data instanceof FHIRSampledDataDataType)) {
+            $data = new FHIRSampledDataDataType($data);
+        }
+        $this->_trackValueSet($this->data, $data);
+        $this->data = $data;
         return $this;
     }
 
@@ -671,14 +601,14 @@ class FHIRSampledData extends FHIRElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getData())) {
+        if (null !== ($v = $this->getOrigin())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DATA] = $fieldErrs;
+                $errs[self::FIELD_ORIGIN] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getDimensions())) {
+        if (null !== ($v = $this->getPeriod())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DIMENSIONS] = $fieldErrs;
+                $errs[self::FIELD_PERIOD] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getFactor())) {
@@ -691,42 +621,42 @@ class FHIRSampledData extends FHIRElement
                 $errs[self::FIELD_LOWER_LIMIT] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getOrigin())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ORIGIN] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPeriod())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PERIOD] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getUpperLimit())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_UPPER_LIMIT] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DATA])) {
-            $v = $this->getData();
-            foreach($validationRules[self::FIELD_DATA] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SAMPLED_DATA, self::FIELD_DATA, $rule, $constraint, $v);
+        if (null !== ($v = $this->getDimensions())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DIMENSIONS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getData())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DATA] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_ORIGIN])) {
+            $v = $this->getOrigin();
+            foreach($validationRules[self::FIELD_ORIGIN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SAMPLED_DATA, self::FIELD_ORIGIN, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DATA])) {
-                        $errs[self::FIELD_DATA] = [];
+                    if (!isset($errs[self::FIELD_ORIGIN])) {
+                        $errs[self::FIELD_ORIGIN] = [];
                     }
-                    $errs[self::FIELD_DATA][$rule] = $err;
+                    $errs[self::FIELD_ORIGIN][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DIMENSIONS])) {
-            $v = $this->getDimensions();
-            foreach($validationRules[self::FIELD_DIMENSIONS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SAMPLED_DATA, self::FIELD_DIMENSIONS, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_PERIOD])) {
+            $v = $this->getPeriod();
+            foreach($validationRules[self::FIELD_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SAMPLED_DATA, self::FIELD_PERIOD, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DIMENSIONS])) {
-                        $errs[self::FIELD_DIMENSIONS] = [];
+                    if (!isset($errs[self::FIELD_PERIOD])) {
+                        $errs[self::FIELD_PERIOD] = [];
                     }
-                    $errs[self::FIELD_DIMENSIONS][$rule] = $err;
+                    $errs[self::FIELD_PERIOD][$rule] = $err;
                 }
             }
         }
@@ -754,30 +684,6 @@ class FHIRSampledData extends FHIRElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_ORIGIN])) {
-            $v = $this->getOrigin();
-            foreach($validationRules[self::FIELD_ORIGIN] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SAMPLED_DATA, self::FIELD_ORIGIN, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ORIGIN])) {
-                        $errs[self::FIELD_ORIGIN] = [];
-                    }
-                    $errs[self::FIELD_ORIGIN][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PERIOD])) {
-            $v = $this->getPeriod();
-            foreach($validationRules[self::FIELD_PERIOD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SAMPLED_DATA, self::FIELD_PERIOD, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PERIOD])) {
-                        $errs[self::FIELD_PERIOD] = [];
-                    }
-                    $errs[self::FIELD_PERIOD][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_UPPER_LIMIT])) {
             $v = $this->getUpperLimit();
             foreach($validationRules[self::FIELD_UPPER_LIMIT] as $rule => $constraint) {
@@ -787,6 +693,30 @@ class FHIRSampledData extends FHIRElement
                         $errs[self::FIELD_UPPER_LIMIT] = [];
                     }
                     $errs[self::FIELD_UPPER_LIMIT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DIMENSIONS])) {
+            $v = $this->getDimensions();
+            foreach($validationRules[self::FIELD_DIMENSIONS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SAMPLED_DATA, self::FIELD_DIMENSIONS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DIMENSIONS])) {
+                        $errs[self::FIELD_DIMENSIONS] = [];
+                    }
+                    $errs[self::FIELD_DIMENSIONS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DATA])) {
+            $v = $this->getData();
+            foreach($validationRules[self::FIELD_DATA] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SAMPLED_DATA, self::FIELD_DATA, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DATA])) {
+                        $errs[self::FIELD_DATA] = [];
+                    }
+                    $errs[self::FIELD_DATA][$rule] = $err;
                 }
             }
         }
@@ -818,150 +748,182 @@ class FHIRSampledData extends FHIRElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRSampledData::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSampledData::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRSampledData::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRSampledData;
+            $type = new FHIRSampledData(null);
         } elseif (!is_object($type) || !($type instanceof FHIRSampledData)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSampledData::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_ORIGIN === $n->nodeName) {
+                $type->setOrigin(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_PERIOD === $n->nodeName) {
+                $type->setPeriod(FHIRDecimal::xmlUnserialize($n));
+            } elseif (self::FIELD_FACTOR === $n->nodeName) {
+                $type->setFactor(FHIRDecimal::xmlUnserialize($n));
+            } elseif (self::FIELD_LOWER_LIMIT === $n->nodeName) {
+                $type->setLowerLimit(FHIRDecimal::xmlUnserialize($n));
+            } elseif (self::FIELD_UPPER_LIMIT === $n->nodeName) {
+                $type->setUpperLimit(FHIRDecimal::xmlUnserialize($n));
+            } elseif (self::FIELD_DIMENSIONS === $n->nodeName) {
+                $type->setDimensions(FHIRPositiveInt::xmlUnserialize($n));
+            } elseif (self::FIELD_DATA === $n->nodeName) {
+                $type->setData(FHIRSampledDataDataType::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->data)) {
-            $type->setData(FHIRSampledDataDataType::xmlUnserialize($children->data));
-        }
-        if (isset($attributes->data)) {
-            $pt = $type->getData();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->data);
-            } else {
-                $type->setData((string)$attributes->data);
-            }
-        }
-        if (isset($children->dimensions)) {
-            $type->setDimensions(FHIRPositiveInt::xmlUnserialize($children->dimensions));
-        }
-        if (isset($attributes->dimensions)) {
-            $pt = $type->getDimensions();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->dimensions);
-            } else {
-                $type->setDimensions((string)$attributes->dimensions);
-            }
-        }
-        if (isset($children->factor)) {
-            $type->setFactor(FHIRDecimal::xmlUnserialize($children->factor));
-        }
-        if (isset($attributes->factor)) {
-            $pt = $type->getFactor();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->factor);
-            } else {
-                $type->setFactor((string)$attributes->factor);
-            }
-        }
-        if (isset($children->lowerLimit)) {
-            $type->setLowerLimit(FHIRDecimal::xmlUnserialize($children->lowerLimit));
-        }
-        if (isset($attributes->lowerLimit)) {
-            $pt = $type->getLowerLimit();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->lowerLimit);
-            } else {
-                $type->setLowerLimit((string)$attributes->lowerLimit);
-            }
-        }
-        if (isset($children->origin)) {
-            $type->setOrigin(FHIRQuantity::xmlUnserialize($children->origin));
-        }
-        if (isset($children->period)) {
-            $type->setPeriod(FHIRDecimal::xmlUnserialize($children->period));
-        }
-        if (isset($attributes->period)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_PERIOD);
+        if (null !== $n) {
             $pt = $type->getPeriod();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->period);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setPeriod((string)$attributes->period);
+                $type->setPeriod($n->nodeValue);
             }
         }
-        if (isset($children->upperLimit)) {
-            $type->setUpperLimit(FHIRDecimal::xmlUnserialize($children->upperLimit));
+        $n = $element->attributes->getNamedItem(self::FIELD_FACTOR);
+        if (null !== $n) {
+            $pt = $type->getFactor();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setFactor($n->nodeValue);
+            }
         }
-        if (isset($attributes->upperLimit)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_LOWER_LIMIT);
+        if (null !== $n) {
+            $pt = $type->getLowerLimit();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setLowerLimit($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_UPPER_LIMIT);
+        if (null !== $n) {
             $pt = $type->getUpperLimit();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->upperLimit);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setUpperLimit((string)$attributes->upperLimit);
+                $type->setUpperLimit($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_DIMENSIONS);
+        if (null !== $n) {
+            $pt = $type->getDimensions();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setDimensions($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_DATA);
+        if (null !== $n) {
+            $pt = $type->getData();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setData($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getData())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DATA, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDimensions())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DIMENSIONS, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getFactor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getLowerLimit())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LOWER_LIMIT, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getOrigin())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ORIGIN, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_ORIGIN);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_PERIOD);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getFactor())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_FACTOR);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getLowerLimit())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_LOWER_LIMIT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getUpperLimit())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_UPPER_LIMIT, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_UPPER_LIMIT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getDimensions())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DIMENSIONS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getData())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DATA);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -970,65 +932,68 @@ class FHIRSampledData extends FHIRElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getData())) {
-            $a[self::FIELD_DATA] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRSampledDataDataType::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRSampledDataDataType::FIELD_VALUE]);
-                $a[self::FIELD_DATA_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getDimensions())) {
-            $a[self::FIELD_DIMENSIONS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
-                $a[self::FIELD_DIMENSIONS_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getFactor())) {
-            $a[self::FIELD_FACTOR] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_FACTOR_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getLowerLimit())) {
-            $a[self::FIELD_LOWER_LIMIT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_LOWER_LIMIT_EXT] = $enc;
-            }
-        }
         if (null !== ($v = $this->getOrigin())) {
             $a[self::FIELD_ORIGIN] = $v;
         }
         if (null !== ($v = $this->getPeriod())) {
-            $a[self::FIELD_PERIOD] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_PERIOD_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PERIOD] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDecimal::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PERIOD_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getFactor())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FACTOR] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDecimal::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_FACTOR_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getLowerLimit())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LOWER_LIMIT] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDecimal::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_LOWER_LIMIT_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getUpperLimit())) {
-            $a[self::FIELD_UPPER_LIMIT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_UPPER_LIMIT_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_UPPER_LIMIT] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDecimal::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_UPPER_LIMIT_EXT] = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getDimensions())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DIMENSIONS] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRPositiveInt::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DIMENSIONS_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getData())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DATA] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRSampledDataDataType::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DATA_EXT] = $ext;
+            }
         }
         return $a;
     }

@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,13 +63,20 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  */
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeMap;
 
 /**
  * A kind of specimen with associated set of requirements.
@@ -82,28 +89,16 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SPECIMEN_DEFINITION;
-    const FIELD_COLLECTION = 'collection';
     const FIELD_IDENTIFIER = 'identifier';
+    const FIELD_TYPE_COLLECTED = 'typeCollected';
     const FIELD_PATIENT_PREPARATION = 'patientPreparation';
     const FIELD_TIME_ASPECT = 'timeAspect';
     const FIELD_TIME_ASPECT_EXT = '_timeAspect';
-    const FIELD_TYPE_COLLECTED = 'typeCollected';
+    const FIELD_COLLECTION = 'collection';
     const FIELD_TYPE_TESTED = 'typeTested';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The action to be performed for collecting the specimen.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    protected $collection = [];
+    private $_xmlns = '';
 
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -116,6 +111,18 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected $identifier = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The kind of material to be collected.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $typeCollected = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -146,11 +153,11 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The kind of material to be collected.
+     * The action to be performed for collecting the specimen.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    protected $typeCollected = null;
+    protected $collection = [];
 
     /**
      * A kind of specimen with associated set of requirements.
@@ -183,29 +190,18 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_COLLECTION])) {
-            if (is_array($data[self::FIELD_COLLECTION])) {
-                foreach($data[self::FIELD_COLLECTION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addCollection($v);
-                    } else {
-                        $this->addCollection(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_COLLECTION] instanceof FHIRCodeableConcept) {
-                $this->addCollection($data[self::FIELD_COLLECTION]);
-            } else {
-                $this->addCollection(new FHIRCodeableConcept($data[self::FIELD_COLLECTION]));
-            }
-        }
         if (isset($data[self::FIELD_IDENTIFIER])) {
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
+            }
+        }
+        if (isset($data[self::FIELD_TYPE_COLLECTED])) {
+            if ($data[self::FIELD_TYPE_COLLECTED] instanceof FHIRCodeableConcept) {
+                $this->setTypeCollected($data[self::FIELD_TYPE_COLLECTED]);
+            } else {
+                $this->setTypeCollected(new FHIRCodeableConcept($data[self::FIELD_TYPE_COLLECTED]));
             }
         }
         if (isset($data[self::FIELD_PATIENT_PREPARATION])) {
@@ -220,23 +216,15 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
                         $this->addPatientPreparation(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_PATIENT_PREPARATION] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_PATIENT_PREPARATION] instanceof FHIRCodeableConcept) {
                 $this->addPatientPreparation($data[self::FIELD_PATIENT_PREPARATION]);
             } else {
                 $this->addPatientPreparation(new FHIRCodeableConcept($data[self::FIELD_PATIENT_PREPARATION]));
             }
         }
         if (isset($data[self::FIELD_TIME_ASPECT]) || isset($data[self::FIELD_TIME_ASPECT_EXT])) {
-            if (isset($data[self::FIELD_TIME_ASPECT])) {
-                $value = $data[self::FIELD_TIME_ASPECT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TIME_ASPECT_EXT]) && is_array($data[self::FIELD_TIME_ASPECT_EXT])) {
-                $ext = $data[self::FIELD_TIME_ASPECT_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_TIME_ASPECT]) ? $data[self::FIELD_TIME_ASPECT] : null;
+            $ext = (isset($data[self::FIELD_TIME_ASPECT_EXT]) && is_array($data[self::FIELD_TIME_ASPECT_EXT])) ? $ext = $data[self::FIELD_TIME_ASPECT_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setTimeAspect($value);
@@ -245,15 +233,26 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
                 } else {
                     $this->setTimeAspect(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setTimeAspect(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_TYPE_COLLECTED])) {
-            if ($data[self::FIELD_TYPE_COLLECTED] instanceof FHIRCodeableConcept) {
-                $this->setTypeCollected($data[self::FIELD_TYPE_COLLECTED]);
+        if (isset($data[self::FIELD_COLLECTION])) {
+            if (is_array($data[self::FIELD_COLLECTION])) {
+                foreach($data[self::FIELD_COLLECTION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addCollection($v);
+                    } else {
+                        $this->addCollection(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_COLLECTION] instanceof FHIRCodeableConcept) {
+                $this->addCollection($data[self::FIELD_COLLECTION]);
             } else {
-                $this->setTypeCollected(new FHIRCodeableConcept($data[self::FIELD_TYPE_COLLECTED]));
+                $this->addCollection(new FHIRCodeableConcept($data[self::FIELD_COLLECTION]));
             }
         }
         if (isset($data[self::FIELD_TYPE_TESTED])) {
@@ -268,7 +267,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
                         $this->addTypeTested(new FHIRSpecimenDefinitionTypeTested($v));
                     }
                 }
-            } else if ($data[self::FIELD_TYPE_TESTED] instanceof FHIRSpecimenDefinitionTypeTested) {
+            } elseif ($data[self::FIELD_TYPE_TESTED] instanceof FHIRSpecimenDefinitionTypeTested) {
                 $this->addTypeTested($data[self::FIELD_TYPE_TESTED]);
             } else {
                 $this->addTypeTested(new FHIRSpecimenDefinitionTypeTested($data[self::FIELD_TYPE_TESTED]));
@@ -290,7 +289,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<SpecimenDefinition{$xmlns}></SpecimenDefinition>";
@@ -303,65 +302,6 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
         return static::FHIR_TYPE_NAME;
     }
 
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The action to be performed for collecting the specimen.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getCollection()
-    {
-        return $this->collection;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The action to be performed for collecting the specimen.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $collection
-     * @return static
-     */
-    public function addCollection(FHIRCodeableConcept $collection = null)
-    {
-        $this->collection[] = $collection;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The action to be performed for collecting the specimen.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $collection
-     * @return static
-     */
-    public function setCollection(array $collection = [])
-    {
-        $this->collection = [];
-        if ([] === $collection) {
-            return $this;
-        }
-        foreach($collection as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addCollection($v);
-            } else {
-                $this->addCollection(new FHIRCodeableConcept($v));
-            }
-        }
-        return $this;
-    }
 
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -391,7 +331,41 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
+        $this->_trackValueSet($this->identifier, $identifier);
         $this->identifier = $identifier;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The kind of material to be collected.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getTypeCollected()
+    {
+        return $this->typeCollected;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The kind of material to be collected.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $typeCollected
+     * @return static
+     */
+    public function setTypeCollected(FHIRCodeableConcept $typeCollected = null)
+    {
+        $this->_trackValueSet($this->typeCollected, $typeCollected);
+        $this->typeCollected = $typeCollected;
         return $this;
     }
 
@@ -423,6 +397,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
      */
     public function addPatientPreparation(FHIRCodeableConcept $patientPreparation = null)
     {
+        $this->_trackValueAdded();
         $this->patientPreparation[] = $patientPreparation;
         return $this;
     }
@@ -440,7 +415,10 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
      */
     public function setPatientPreparation(array $patientPreparation = [])
     {
-        $this->patientPreparation = [];
+        if ([] !== $this->patientPreparation) {
+            $this->_trackValuesRemoved(count($this->patientPreparation));
+            $this->patientPreparation = [];
+        }
         if ([] === $patientPreparation) {
             return $this;
         }
@@ -480,15 +458,11 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
      */
     public function setTimeAspect($timeAspect = null)
     {
-        if (null === $timeAspect) {
-            $this->timeAspect = null;
-            return $this;
+        if (null !== $timeAspect && !($timeAspect instanceof FHIRString)) {
+            $timeAspect = new FHIRString($timeAspect);
         }
-        if ($timeAspect instanceof FHIRString) {
-            $this->timeAspect = $timeAspect;
-            return $this;
-        }
-        $this->timeAspect = new FHIRString($timeAspect);
+        $this->_trackValueSet($this->timeAspect, $timeAspect);
+        $this->timeAspect = $timeAspect;
         return $this;
     }
 
@@ -498,13 +472,13 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The kind of material to be collected.
+     * The action to be performed for collecting the specimen.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getTypeCollected()
+    public function getCollection()
     {
-        return $this->typeCollected;
+        return $this->collection;
     }
 
     /**
@@ -513,14 +487,45 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The kind of material to be collected.
+     * The action to be performed for collecting the specimen.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $typeCollected
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $collection
      * @return static
      */
-    public function setTypeCollected(FHIRCodeableConcept $typeCollected = null)
+    public function addCollection(FHIRCodeableConcept $collection = null)
     {
-        $this->typeCollected = $typeCollected;
+        $this->_trackValueAdded();
+        $this->collection[] = $collection;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The action to be performed for collecting the specimen.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $collection
+     * @return static
+     */
+    public function setCollection(array $collection = [])
+    {
+        if ([] !== $this->collection) {
+            $this->_trackValuesRemoved(count($this->collection));
+            $this->collection = [];
+        }
+        if ([] === $collection) {
+            return $this;
+        }
+        foreach($collection as $v) {
+            if ($v instanceof FHIRCodeableConcept) {
+                $this->addCollection($v);
+            } else {
+                $this->addCollection(new FHIRCodeableConcept($v));
+            }
+        }
         return $this;
     }
 
@@ -546,6 +551,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
      */
     public function addTypeTested(FHIRSpecimenDefinitionTypeTested $typeTested = null)
     {
+        $this->_trackValueAdded();
         $this->typeTested[] = $typeTested;
         return $this;
     }
@@ -560,7 +566,10 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
      */
     public function setTypeTested(array $typeTested = [])
     {
-        $this->typeTested = [];
+        if ([] !== $this->typeTested) {
+            $this->_trackValuesRemoved(count($this->typeTested));
+            $this->typeTested = [];
+        }
         if ([] === $typeTested) {
             return $this;
         }
@@ -595,16 +604,14 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getCollection())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_COLLECTION, $i)] = $fieldErrs;
-                }
-            }
-        }
         if (null !== ($v = $this->getIdentifier())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_IDENTIFIER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getTypeCollected())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TYPE_COLLECTED] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getPatientPreparation())) {
@@ -619,27 +626,17 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
                 $errs[self::FIELD_TIME_ASPECT] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getTypeCollected())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TYPE_COLLECTED] = $fieldErrs;
+        if ([] !== ($vs = $this->getCollection())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_COLLECTION, $i)] = $fieldErrs;
+                }
             }
         }
         if ([] !== ($vs = $this->getTypeTested())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_TYPE_TESTED, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_COLLECTION])) {
-            $v = $this->getCollection();
-            foreach($validationRules[self::FIELD_COLLECTION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN_DEFINITION, self::FIELD_COLLECTION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COLLECTION])) {
-                        $errs[self::FIELD_COLLECTION] = [];
-                    }
-                    $errs[self::FIELD_COLLECTION][$rule] = $err;
                 }
             }
         }
@@ -652,6 +649,18 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
                         $errs[self::FIELD_IDENTIFIER] = [];
                     }
                     $errs[self::FIELD_IDENTIFIER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TYPE_COLLECTED])) {
+            $v = $this->getTypeCollected();
+            foreach($validationRules[self::FIELD_TYPE_COLLECTED] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN_DEFINITION, self::FIELD_TYPE_COLLECTED, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TYPE_COLLECTED])) {
+                        $errs[self::FIELD_TYPE_COLLECTED] = [];
+                    }
+                    $errs[self::FIELD_TYPE_COLLECTED][$rule] = $err;
                 }
             }
         }
@@ -679,15 +688,15 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TYPE_COLLECTED])) {
-            $v = $this->getTypeCollected();
-            foreach($validationRules[self::FIELD_TYPE_COLLECTED] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN_DEFINITION, self::FIELD_TYPE_COLLECTED, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_COLLECTION])) {
+            $v = $this->getCollection();
+            foreach($validationRules[self::FIELD_COLLECTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN_DEFINITION, self::FIELD_COLLECTION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TYPE_COLLECTED])) {
-                        $errs[self::FIELD_TYPE_COLLECTED] = [];
+                    if (!isset($errs[self::FIELD_COLLECTION])) {
+                        $errs[self::FIELD_COLLECTION] = [];
                     }
-                    $errs[self::FIELD_TYPE_COLLECTED][$rule] = $err;
+                    $errs[self::FIELD_COLLECTION][$rule] = $err;
                 }
             }
         }
@@ -700,6 +709,18 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
                         $errs[self::FIELD_TYPE_TESTED] = [];
                     }
                     $errs[self::FIELD_TYPE_TESTED][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
+                    }
+                    $errs[self::FIELD_TEXT][$rule] = $err;
                 }
             }
         }
@@ -739,18 +760,6 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ID])) {
             $v = $this->getId();
             foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
@@ -760,6 +769,18 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
                         $errs[self::FIELD_ID] = [];
                     }
                     $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
                 }
             }
         }
@@ -787,141 +808,184 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_META])) {
-            $v = $this->getMeta();
-            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_META])) {
-                        $errs[self::FIELD_META] = [];
-                    }
-                    $errs[self::FIELD_META][$rule] = $err;
-                }
-            }
-        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimenDefinition $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimenDefinition
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRSpecimenDefinition::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSpecimenDefinition::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRSpecimenDefinition::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRSpecimenDefinition;
+            $type = new FHIRSpecimenDefinition(null);
         } elseif (!is_object($type) || !($type instanceof FHIRSpecimenDefinition)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSpecimenDefinition::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSpecimenDefinition or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRDomainResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_IDENTIFIER === $n->nodeName) {
+                $type->setIdentifier(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_TYPE_COLLECTED === $n->nodeName) {
+                $type->setTypeCollected(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_PATIENT_PREPARATION === $n->nodeName) {
+                $type->addPatientPreparation(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_TIME_ASPECT === $n->nodeName) {
+                $type->setTimeAspect(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_COLLECTION === $n->nodeName) {
+                $type->addCollection(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_TYPE_TESTED === $n->nodeName) {
+                $type->addTypeTested(FHIRSpecimenDefinitionTypeTested::xmlUnserialize($n));
+            } elseif (self::FIELD_TEXT === $n->nodeName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n));
+            } elseif (self::FIELD_CONTAINED === $n->nodeName) {
+                for ($ni = 0; $ni < $n->childNodes->length; $ni++) {
+                    $nn = $n->childNodes->item($ni);
+                    if ($nn instanceof \DOMElement) {
+                        $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn));
+                    }
+                }
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRId::xmlUnserialize($n));
+            } elseif (self::FIELD_META === $n->nodeName) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($n));
+            } elseif (self::FIELD_IMPLICIT_RULES === $n->nodeName) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_LANGUAGE === $n->nodeName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->collection)) {
-            foreach($children->collection as $child) {
-                $type->addCollection(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->identifier)) {
-            $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
-        }
-        if (isset($children->patientPreparation)) {
-            foreach($children->patientPreparation as $child) {
-                $type->addPatientPreparation(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->timeAspect)) {
-            $type->setTimeAspect(FHIRString::xmlUnserialize($children->timeAspect));
-        }
-        if (isset($attributes->timeAspect)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_TIME_ASPECT);
+        if (null !== $n) {
             $pt = $type->getTimeAspect();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->timeAspect);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setTimeAspect((string)$attributes->timeAspect);
+                $type->setTimeAspect($n->nodeValue);
             }
         }
-        if (isset($children->typeCollected)) {
-            $type->setTypeCollected(FHIRCodeableConcept::xmlUnserialize($children->typeCollected));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
-        if (isset($children->typeTested)) {
-            foreach($children->typeTested as $child) {
-                $type->addTypeTested(FHIRSpecimenDefinitionTypeTested::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_IMPLICIT_RULES);
+        if (null !== $n) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setImplicitRules($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_LANGUAGE);
+        if (null !== $n) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setLanguage($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getCollection())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTION, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_IDENTIFIER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getTypeCollected())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TYPE_COLLECTED);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getPatientPreparation())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT_PREPARATION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PATIENT_PREPARATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if (null !== ($v = $this->getTimeAspect())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIME_ASPECT, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_TIME_ASPECT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getTypeCollected())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE_COLLECTED, null, $v->_getFHIRXMLNamespace()));
+        if ([] !== ($vs = $this->getCollection())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_COLLECTION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
         }
         if ([] !== ($vs = $this->getTypeTested())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE_TESTED, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_TYPE_TESTED);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -930,17 +994,11 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getCollection())) {
-            $a[self::FIELD_COLLECTION] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_COLLECTION][] = $v;
-            }
-        }
         if (null !== ($v = $this->getIdentifier())) {
             $a[self::FIELD_IDENTIFIER] = $v;
+        }
+        if (null !== ($v = $this->getTypeCollected())) {
+            $a[self::FIELD_TYPE_COLLECTED] = $v;
         }
         if ([] !== ($vs = $this->getPatientPreparation())) {
             $a[self::FIELD_PATIENT_PREPARATION] = [];
@@ -952,16 +1010,23 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
             }
         }
         if (null !== ($v = $this->getTimeAspect())) {
-            $a[self::FIELD_TIME_ASPECT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_TIME_ASPECT_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TIME_ASPECT] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_TIME_ASPECT_EXT] = $ext;
             }
         }
-        if (null !== ($v = $this->getTypeCollected())) {
-            $a[self::FIELD_TYPE_COLLECTED] = $v;
+        if ([] !== ($vs = $this->getCollection())) {
+            $a[self::FIELD_COLLECTION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_COLLECTION][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getTypeTested())) {
             $a[self::FIELD_TYPE_TESTED] = [];
@@ -971,9 +1036,6 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
                 }
                 $a[self::FIELD_TYPE_TESTED][] = $v;
             }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

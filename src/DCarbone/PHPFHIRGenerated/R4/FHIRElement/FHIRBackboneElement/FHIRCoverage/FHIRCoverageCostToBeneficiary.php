@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,8 +64,10 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -80,24 +82,13 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_COST_TO_BENEFICIARY;
-    const FIELD_EXCEPTION = 'exception';
     const FIELD_TYPE = 'type';
-    const FIELD_VALUE_MONEY = 'valueMoney';
     const FIELD_VALUE_QUANTITY = 'valueQuantity';
+    const FIELD_VALUE_MONEY = 'valueMoney';
+    const FIELD_EXCEPTION = 'exception';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Financial instrument which may be used to reimburse or pay for health care
-     * products and services. Includes both insurance and self-payment.
-     *
-     * A suite of codes indicating exceptions or reductions to patient costs and their
-     * effective periods.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageException[]
-     */
-    protected $exception = [];
+    private $_xmlns = '';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -112,30 +103,39 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
     protected $type = null;
 
     /**
-     * An amount of economic utility in some recognized currency.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The amount due from the patient for the cost category. (choose any one of
-     * value*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
-     */
-    protected $valueMoney = null;
-
-    /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The amount due from the patient for the cost category. (choose any one of
-     * value*, but only one)
+     * The amount due from the patient for the cost category.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected $valueQuantity = null;
+
+    /**
+     * An amount of economic utility in some recognized currency.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The amount due from the patient for the cost category.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
+     */
+    protected $valueMoney = null;
+
+    /**
+     * Financial instrument which may be used to reimburse or pay for health care
+     * products and services. Includes both insurance and self-payment.
+     *
+     * A suite of codes indicating exceptions or reductions to patient costs and their
+     * effective periods.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageException[]
+     */
+    protected $exception = [];
 
     /**
      * Validation map for fields in type Coverage.CostToBeneficiary
@@ -159,6 +159,27 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_TYPE])) {
+            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setType($data[self::FIELD_TYPE]);
+            } else {
+                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_QUANTITY])) {
+            if ($data[self::FIELD_VALUE_QUANTITY] instanceof FHIRQuantity) {
+                $this->setValueQuantity($data[self::FIELD_VALUE_QUANTITY]);
+            } else {
+                $this->setValueQuantity(new FHIRQuantity($data[self::FIELD_VALUE_QUANTITY]));
+            }
+        }
+        if (isset($data[self::FIELD_VALUE_MONEY])) {
+            if ($data[self::FIELD_VALUE_MONEY] instanceof FHIRMoney) {
+                $this->setValueMoney($data[self::FIELD_VALUE_MONEY]);
+            } else {
+                $this->setValueMoney(new FHIRMoney($data[self::FIELD_VALUE_MONEY]));
+            }
+        }
         if (isset($data[self::FIELD_EXCEPTION])) {
             if (is_array($data[self::FIELD_EXCEPTION])) {
                 foreach($data[self::FIELD_EXCEPTION] as $v) {
@@ -171,31 +192,10 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
                         $this->addException(new FHIRCoverageException($v));
                     }
                 }
-            } else if ($data[self::FIELD_EXCEPTION] instanceof FHIRCoverageException) {
+            } elseif ($data[self::FIELD_EXCEPTION] instanceof FHIRCoverageException) {
                 $this->addException($data[self::FIELD_EXCEPTION]);
             } else {
                 $this->addException(new FHIRCoverageException($data[self::FIELD_EXCEPTION]));
-            }
-        }
-        if (isset($data[self::FIELD_TYPE])) {
-            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setType($data[self::FIELD_TYPE]);
-            } else {
-                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_MONEY])) {
-            if ($data[self::FIELD_VALUE_MONEY] instanceof FHIRMoney) {
-                $this->setValueMoney($data[self::FIELD_VALUE_MONEY]);
-            } else {
-                $this->setValueMoney(new FHIRMoney($data[self::FIELD_VALUE_MONEY]));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_QUANTITY])) {
-            if ($data[self::FIELD_VALUE_QUANTITY] instanceof FHIRQuantity) {
-                $this->setValueQuantity($data[self::FIELD_VALUE_QUANTITY]);
-            } else {
-                $this->setValueQuantity(new FHIRQuantity($data[self::FIELD_VALUE_QUANTITY]));
             }
         }
     }
@@ -214,66 +214,10 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<CoverageCostToBeneficiary{$xmlns}></CoverageCostToBeneficiary>";
-    }
-
-    /**
-     * Financial instrument which may be used to reimburse or pay for health care
-     * products and services. Includes both insurance and self-payment.
-     *
-     * A suite of codes indicating exceptions or reductions to patient costs and their
-     * effective periods.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageException[]
-     */
-    public function getException()
-    {
-        return $this->exception;
-    }
-
-    /**
-     * Financial instrument which may be used to reimburse or pay for health care
-     * products and services. Includes both insurance and self-payment.
-     *
-     * A suite of codes indicating exceptions or reductions to patient costs and their
-     * effective periods.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageException $exception
-     * @return static
-     */
-    public function addException(FHIRCoverageException $exception = null)
-    {
-        $this->exception[] = $exception;
-        return $this;
-    }
-
-    /**
-     * Financial instrument which may be used to reimburse or pay for health care
-     * products and services. Includes both insurance and self-payment.
-     *
-     * A suite of codes indicating exceptions or reductions to patient costs and their
-     * effective periods.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageException[] $exception
-     * @return static
-     */
-    public function setException(array $exception = [])
-    {
-        $this->exception = [];
-        if ([] === $exception) {
-            return $this;
-        }
-        foreach($exception as $v) {
-            if ($v instanceof FHIRCoverageException) {
-                $this->addException($v);
-            } else {
-                $this->addException(new FHIRCoverageException($v));
-            }
-        }
-        return $this;
     }
 
     /**
@@ -304,39 +248,8 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
+        $this->_trackValueSet($this->type, $type);
         $this->type = $type;
-        return $this;
-    }
-
-    /**
-     * An amount of economic utility in some recognized currency.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The amount due from the patient for the cost category. (choose any one of
-     * value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
-     */
-    public function getValueMoney()
-    {
-        return $this->valueMoney;
-    }
-
-    /**
-     * An amount of economic utility in some recognized currency.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The amount due from the patient for the cost category. (choose any one of
-     * value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney $valueMoney
-     * @return static
-     */
-    public function setValueMoney(FHIRMoney $valueMoney = null)
-    {
-        $this->valueMoney = $valueMoney;
         return $this;
     }
 
@@ -347,8 +260,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The amount due from the patient for the cost category. (choose any one of
-     * value*, but only one)
+     * The amount due from the patient for the cost category.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
@@ -364,15 +276,106 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The amount due from the patient for the cost category. (choose any one of
-     * value*, but only one)
+     * The amount due from the patient for the cost category.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $valueQuantity
      * @return static
      */
     public function setValueQuantity(FHIRQuantity $valueQuantity = null)
     {
+        $this->_trackValueSet($this->valueQuantity, $valueQuantity);
         $this->valueQuantity = $valueQuantity;
+        return $this;
+    }
+
+    /**
+     * An amount of economic utility in some recognized currency.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The amount due from the patient for the cost category.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
+     */
+    public function getValueMoney()
+    {
+        return $this->valueMoney;
+    }
+
+    /**
+     * An amount of economic utility in some recognized currency.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The amount due from the patient for the cost category.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney $valueMoney
+     * @return static
+     */
+    public function setValueMoney(FHIRMoney $valueMoney = null)
+    {
+        $this->_trackValueSet($this->valueMoney, $valueMoney);
+        $this->valueMoney = $valueMoney;
+        return $this;
+    }
+
+    /**
+     * Financial instrument which may be used to reimburse or pay for health care
+     * products and services. Includes both insurance and self-payment.
+     *
+     * A suite of codes indicating exceptions or reductions to patient costs and their
+     * effective periods.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageException[]
+     */
+    public function getException()
+    {
+        return $this->exception;
+    }
+
+    /**
+     * Financial instrument which may be used to reimburse or pay for health care
+     * products and services. Includes both insurance and self-payment.
+     *
+     * A suite of codes indicating exceptions or reductions to patient costs and their
+     * effective periods.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageException $exception
+     * @return static
+     */
+    public function addException(FHIRCoverageException $exception = null)
+    {
+        $this->_trackValueAdded();
+        $this->exception[] = $exception;
+        return $this;
+    }
+
+    /**
+     * Financial instrument which may be used to reimburse or pay for health care
+     * products and services. Includes both insurance and self-payment.
+     *
+     * A suite of codes indicating exceptions or reductions to patient costs and their
+     * effective periods.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageException[] $exception
+     * @return static
+     */
+    public function setException(array $exception = [])
+    {
+        if ([] !== $this->exception) {
+            $this->_trackValuesRemoved(count($this->exception));
+            $this->exception = [];
+        }
+        if ([] === $exception) {
+            return $this;
+        }
+        foreach($exception as $v) {
+            if ($v instanceof FHIRCoverageException) {
+                $this->addException($v);
+            } else {
+                $this->addException(new FHIRCoverageException($v));
+            }
+        }
         return $this;
     }
 
@@ -397,21 +400,9 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getException())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_EXCEPTION, $i)] = $fieldErrs;
-                }
-            }
-        }
         if (null !== ($v = $this->getType())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_TYPE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getValueMoney())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_MONEY] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getValueQuantity())) {
@@ -419,15 +410,15 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
                 $errs[self::FIELD_VALUE_QUANTITY] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_EXCEPTION])) {
-            $v = $this->getException();
-            foreach($validationRules[self::FIELD_EXCEPTION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_COST_TO_BENEFICIARY, self::FIELD_EXCEPTION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EXCEPTION])) {
-                        $errs[self::FIELD_EXCEPTION] = [];
-                    }
-                    $errs[self::FIELD_EXCEPTION][$rule] = $err;
+        if (null !== ($v = $this->getValueMoney())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_MONEY] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getException())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_EXCEPTION, $i)] = $fieldErrs;
                 }
             }
         }
@@ -443,6 +434,18 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_VALUE_QUANTITY])) {
+            $v = $this->getValueQuantity();
+            foreach($validationRules[self::FIELD_VALUE_QUANTITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_COST_TO_BENEFICIARY, self::FIELD_VALUE_QUANTITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_QUANTITY])) {
+                        $errs[self::FIELD_VALUE_QUANTITY] = [];
+                    }
+                    $errs[self::FIELD_VALUE_QUANTITY][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_VALUE_MONEY])) {
             $v = $this->getValueMoney();
             foreach($validationRules[self::FIELD_VALUE_MONEY] as $rule => $constraint) {
@@ -455,15 +458,15 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_QUANTITY])) {
-            $v = $this->getValueQuantity();
-            foreach($validationRules[self::FIELD_VALUE_QUANTITY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_COST_TO_BENEFICIARY, self::FIELD_VALUE_QUANTITY, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_EXCEPTION])) {
+            $v = $this->getException();
+            foreach($validationRules[self::FIELD_EXCEPTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_COST_TO_BENEFICIARY, self::FIELD_EXCEPTION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_QUANTITY])) {
-                        $errs[self::FIELD_VALUE_QUANTITY] = [];
+                    if (!isset($errs[self::FIELD_EXCEPTION])) {
+                        $errs[self::FIELD_EXCEPTION] = [];
                     }
-                    $errs[self::FIELD_VALUE_QUANTITY][$rule] = $err;
+                    $errs[self::FIELD_EXCEPTION][$rule] = $err;
                 }
             }
         }
@@ -507,91 +510,114 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageCostToBeneficiary $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageCostToBeneficiary
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRCoverageCostToBeneficiary::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRCoverageCostToBeneficiary::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRCoverageCostToBeneficiary::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRCoverageCostToBeneficiary;
+            $type = new FHIRCoverageCostToBeneficiary(null);
         } elseif (!is_object($type) || !($type instanceof FHIRCoverageCostToBeneficiary)) {
             throw new \RuntimeException(sprintf(
                 'FHIRCoverageCostToBeneficiary::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageCostToBeneficiary or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_TYPE === $n->nodeName) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_QUANTITY === $n->nodeName) {
+                $type->setValueQuantity(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_VALUE_MONEY === $n->nodeName) {
+                $type->setValueMoney(FHIRMoney::xmlUnserialize($n));
+            } elseif (self::FIELD_EXCEPTION === $n->nodeName) {
+                $type->addException(FHIRCoverageException::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->exception)) {
-            foreach($children->exception as $child) {
-                $type->addException(FHIRCoverageException::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
-        }
-        if (isset($children->type)) {
-            $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
-        }
-        if (isset($children->valueMoney)) {
-            $type->setValueMoney(FHIRMoney::xmlUnserialize($children->valueMoney));
-        }
-        if (isset($children->valueQuantity)) {
-            $type->setValueQuantity(FHIRQuantity::xmlUnserialize($children->valueQuantity));
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueQuantity())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_QUANTITY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getValueMoney())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VALUE_MONEY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if ([] !== ($vs = $this->getException())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EXCEPTION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_EXCEPTION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueMoney())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_MONEY, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -600,6 +626,15 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getType())) {
+            $a[self::FIELD_TYPE] = $v;
+        }
+        if (null !== ($v = $this->getValueQuantity())) {
+            $a[self::FIELD_VALUE_QUANTITY] = $v;
+        }
+        if (null !== ($v = $this->getValueMoney())) {
+            $a[self::FIELD_VALUE_MONEY] = $v;
+        }
         if ([] !== ($vs = $this->getException())) {
             $a[self::FIELD_EXCEPTION] = [];
             foreach($vs as $v) {
@@ -608,18 +643,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
                 }
                 $a[self::FIELD_EXCEPTION][] = $v;
             }
-        }
-        if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
-        }
-        if (null !== ($v = $this->getValueMoney())) {
-            $a[self::FIELD_VALUE_MONEY] = $v;
-        }
-        if (null !== ($v = $this->getValueQuantity())) {
-            $a[self::FIELD_VALUE_QUANTITY] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

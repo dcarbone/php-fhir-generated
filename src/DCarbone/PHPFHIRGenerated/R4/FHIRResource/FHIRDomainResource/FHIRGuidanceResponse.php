@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,17 +64,23 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidanceResponseStatus;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeMap;
 
 /**
  * A guidance response is the formal response to a guidance request, including any
@@ -89,70 +95,44 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE;
-    const FIELD_DATA_REQUIREMENT = 'dataRequirement';
-    const FIELD_ENCOUNTER = 'encounter';
-    const FIELD_EVALUATION_MESSAGE = 'evaluationMessage';
+    const FIELD_REQUEST_IDENTIFIER = 'requestIdentifier';
     const FIELD_IDENTIFIER = 'identifier';
+    const FIELD_MODULE_URI = 'moduleUri';
+    const FIELD_MODULE_URI_EXT = '_moduleUri';
     const FIELD_MODULE_CANONICAL = 'moduleCanonical';
     const FIELD_MODULE_CANONICAL_EXT = '_moduleCanonical';
     const FIELD_MODULE_CODEABLE_CONCEPT = 'moduleCodeableConcept';
-    const FIELD_MODULE_URI = 'moduleUri';
-    const FIELD_MODULE_URI_EXT = '_moduleUri';
-    const FIELD_NOTE = 'note';
-    const FIELD_OCCURRENCE_DATE_TIME = 'occurrenceDateTime';
-    const FIELD_OCCURRENCE_DATE_TIME_EXT = '_occurrenceDateTime';
-    const FIELD_OUTPUT_PARAMETERS = 'outputParameters';
-    const FIELD_PERFORMER = 'performer';
-    const FIELD_REASON_CODE = 'reasonCode';
-    const FIELD_REASON_REFERENCE = 'reasonReference';
-    const FIELD_REQUEST_IDENTIFIER = 'requestIdentifier';
-    const FIELD_RESULT = 'result';
     const FIELD_STATUS = 'status';
     const FIELD_STATUS_EXT = '_status';
     const FIELD_SUBJECT = 'subject';
+    const FIELD_ENCOUNTER = 'encounter';
+    const FIELD_OCCURRENCE_DATE_TIME = 'occurrenceDateTime';
+    const FIELD_OCCURRENCE_DATE_TIME_EXT = '_occurrenceDateTime';
+    const FIELD_PERFORMER = 'performer';
+    const FIELD_REASON_CODE = 'reasonCode';
+    const FIELD_REASON_REFERENCE = 'reasonReference';
+    const FIELD_NOTE = 'note';
+    const FIELD_EVALUATION_MESSAGE = 'evaluationMessage';
+    const FIELD_OUTPUT_PARAMETERS = 'outputParameters';
+    const FIELD_RESULT = 'result';
+    const FIELD_DATA_REQUIREMENT = 'dataRequirement';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
-     * Describes a required data item for evaluation in terms of the type of data, and
-     * optional code or date-based filters of the data.
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * If the evaluation could not be completed due to lack of information, or
-     * additional information would potentially result in a more accurate response,
-     * this element will a description of the data required in order to proceed with
-     * the evaluation. A subsequent request to the service should include this data.
+     * The identifier of the request associated with this response. If an identifier
+     * was given as part of the request, it will be reproduced here to enable the
+     * requester to more easily identify the response in a multi-request scenario.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    protected $dataRequirement = [];
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The encounter during which this response was created or to which the creation of
-     * this record is tightly associated.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $encounter = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Messages resulting from the evaluation of the artifact or artifacts. As part of
-     * evaluating the request, the engine may produce informational or warning
-     * messages. These messages will be provided by this element.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
-     */
-    protected $evaluationMessage = [];
+    protected $requestIdentifier = null;
 
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -167,13 +147,25 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     protected $identifier = [];
 
     /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An identifier, CodeableConcept or canonical reference to the guidance that was
+     * requested.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
+     */
+    protected $moduleUri = null;
+
+    /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * requested.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -186,35 +178,51 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * requested.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected $moduleCodeableConcept = null;
 
     /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * The status of a guidance response.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * The status of the response. If the evaluation is completed successfully, the
+     * status will indicate success. However, in order to complete the evaluation, the
+     * engine may require more information. In this case, the status will be
+     * data-required, and the response will contain a description of the additional
+     * required information. If the evaluation completed successfully, but the engine
+     * determines that a potentially more accurate response could be provided if more
+     * data was available, the status will be data-requested, and the response will
+     * contain a description of the additional requested information.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidanceResponseStatus
      */
-    protected $moduleUri = null;
+    protected $status = null;
 
     /**
-     * A text note which also contains information about who made the statement and
-     * when.
+     * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Provides a mechanism to communicate additional information about the response.
+     * The patient for which the request was processed.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    protected $note = [];
+    protected $subject = null;
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The encounter during which this response was created or to which the creation of
+     * this record is tightly associated.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected $encounter = null;
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -229,21 +237,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected $occurrenceDateTime = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The output parameters of the evaluation, if any. Many modules will result in the
-     * return of specific resources such as procedure or communication requests that
-     * are returned as part of the operation result. However, modules may define
-     * specific outputs that would be returned as the result of the evaluation, and
-     * these would be returned in this element.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $outputParameters = null;
 
     /**
      * A reference from one resource to another.
@@ -283,18 +276,44 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     protected $reasonReference = [];
 
     /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
+     * A text note which also contains information about who made the statement and
+     * when.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The identifier of the request associated with this response. If an identifier
-     * was given as part of the request, it will be reproduced here to enable the
-     * requester to more easily identify the response in a multi-request scenario.
+     * Provides a mechanism to communicate additional information about the response.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
-    protected $requestIdentifier = null;
+    protected $note = [];
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Messages resulting from the evaluation of the artifact or artifacts. As part of
+     * evaluating the request, the engine may produce informational or warning
+     * messages. These messages will be provided by this element.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
+     */
+    protected $evaluationMessage = [];
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The output parameters of the evaluation, if any. Many modules will result in the
+     * return of specific resources such as procedure or communication requests that
+     * are returned as part of the operation result. However, modules may define
+     * specific outputs that would be returned as the result of the evaluation, and
+     * these would be returned in this element.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected $outputParameters = null;
 
     /**
      * A reference from one resource to another.
@@ -308,32 +327,19 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     protected $result = null;
 
     /**
-     * The status of a guidance response.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The status of the response. If the evaluation is completed successfully, the
-     * status will indicate success. However, in order to complete the evaluation, the
-     * engine may require more information. In this case, the status will be
-     * data-required, and the response will contain a description of the additional
-     * required information. If the evaluation completed successfully, but the engine
-     * determines that a potentially more accurate response could be provided if more
-     * data was available, the status will be data-requested, and the response will
-     * contain a description of the additional requested information.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidanceResponseStatus
-     */
-    protected $status = null;
-
-    /**
-     * A reference from one resource to another.
+     * Describes a required data item for evaluation in terms of the type of data, and
+     * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The patient for which the request was processed.
+     * If the evaluation could not be completed due to lack of information, or
+     * additional information would potentially result in a more accurate response,
+     * this element will a description of the data required in order to proceed with
+     * the evaluation. A subsequent request to the service should include this data.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement[]
      */
-    protected $subject = null;
+    protected $dataRequirement = [];
 
     /**
      * Validation map for fields in type GuidanceResponse
@@ -357,47 +363,11 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_DATA_REQUIREMENT])) {
-            if (is_array($data[self::FIELD_DATA_REQUIREMENT])) {
-                foreach($data[self::FIELD_DATA_REQUIREMENT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRDataRequirement) {
-                        $this->addDataRequirement($v);
-                    } else {
-                        $this->addDataRequirement(new FHIRDataRequirement($v));
-                    }
-                }
-            } else if ($data[self::FIELD_DATA_REQUIREMENT] instanceof FHIRDataRequirement) {
-                $this->addDataRequirement($data[self::FIELD_DATA_REQUIREMENT]);
+        if (isset($data[self::FIELD_REQUEST_IDENTIFIER])) {
+            if ($data[self::FIELD_REQUEST_IDENTIFIER] instanceof FHIRIdentifier) {
+                $this->setRequestIdentifier($data[self::FIELD_REQUEST_IDENTIFIER]);
             } else {
-                $this->addDataRequirement(new FHIRDataRequirement($data[self::FIELD_DATA_REQUIREMENT]));
-            }
-        }
-        if (isset($data[self::FIELD_ENCOUNTER])) {
-            if ($data[self::FIELD_ENCOUNTER] instanceof FHIRReference) {
-                $this->setEncounter($data[self::FIELD_ENCOUNTER]);
-            } else {
-                $this->setEncounter(new FHIRReference($data[self::FIELD_ENCOUNTER]));
-            }
-        }
-        if (isset($data[self::FIELD_EVALUATION_MESSAGE])) {
-            if (is_array($data[self::FIELD_EVALUATION_MESSAGE])) {
-                foreach($data[self::FIELD_EVALUATION_MESSAGE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRReference) {
-                        $this->addEvaluationMessage($v);
-                    } else {
-                        $this->addEvaluationMessage(new FHIRReference($v));
-                    }
-                }
-            } else if ($data[self::FIELD_EVALUATION_MESSAGE] instanceof FHIRReference) {
-                $this->addEvaluationMessage($data[self::FIELD_EVALUATION_MESSAGE]);
-            } else {
-                $this->addEvaluationMessage(new FHIRReference($data[self::FIELD_EVALUATION_MESSAGE]));
+                $this->setRequestIdentifier(new FHIRIdentifier($data[self::FIELD_REQUEST_IDENTIFIER]));
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
@@ -412,23 +382,30 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
-            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
         }
+        if (isset($data[self::FIELD_MODULE_URI]) || isset($data[self::FIELD_MODULE_URI_EXT])) {
+            $value = isset($data[self::FIELD_MODULE_URI]) ? $data[self::FIELD_MODULE_URI] : null;
+            $ext = (isset($data[self::FIELD_MODULE_URI_EXT]) && is_array($data[self::FIELD_MODULE_URI_EXT])) ? $ext = $data[self::FIELD_MODULE_URI_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setModuleUri($value);
+                } else if (is_array($value)) {
+                    $this->setModuleUri(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setModuleUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setModuleUri(new FHIRUri($ext));
+            }
+        }
         if (isset($data[self::FIELD_MODULE_CANONICAL]) || isset($data[self::FIELD_MODULE_CANONICAL_EXT])) {
-            if (isset($data[self::FIELD_MODULE_CANONICAL])) {
-                $value = $data[self::FIELD_MODULE_CANONICAL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_MODULE_CANONICAL_EXT]) && is_array($data[self::FIELD_MODULE_CANONICAL_EXT])) {
-                $ext = $data[self::FIELD_MODULE_CANONICAL_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_MODULE_CANONICAL]) ? $data[self::FIELD_MODULE_CANONICAL] : null;
+            $ext = (isset($data[self::FIELD_MODULE_CANONICAL_EXT]) && is_array($data[self::FIELD_MODULE_CANONICAL_EXT])) ? $ext = $data[self::FIELD_MODULE_CANONICAL_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRCanonical) {
                     $this->setModuleCanonical($value);
@@ -437,7 +414,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 } else {
                     $this->setModuleCanonical(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setModuleCanonical(new FHIRCanonical($ext));
             }
         }
@@ -448,58 +425,38 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 $this->setModuleCodeableConcept(new FHIRCodeableConcept($data[self::FIELD_MODULE_CODEABLE_CONCEPT]));
             }
         }
-        if (isset($data[self::FIELD_MODULE_URI]) || isset($data[self::FIELD_MODULE_URI_EXT])) {
-            if (isset($data[self::FIELD_MODULE_URI])) {
-                $value = $data[self::FIELD_MODULE_URI];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_MODULE_URI_EXT]) && is_array($data[self::FIELD_MODULE_URI_EXT])) {
-                $ext = $data[self::FIELD_MODULE_URI_EXT];
-            } else {
-                $ext = [];
-            }
+        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
+            $value = isset($data[self::FIELD_STATUS]) ? $data[self::FIELD_STATUS] : null;
+            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) ? $ext = $data[self::FIELD_STATUS_EXT] : $ext = [];
             if (null !== $value) {
-                if ($value instanceof FHIRUri) {
-                    $this->setModuleUri($value);
+                if ($value instanceof FHIRGuidanceResponseStatus) {
+                    $this->setStatus($value);
                 } else if (is_array($value)) {
-                    $this->setModuleUri(new FHIRUri(array_merge($ext, $value)));
+                    $this->setStatus(new FHIRGuidanceResponseStatus(array_merge($ext, $value)));
                 } else {
-                    $this->setModuleUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                    $this->setStatus(new FHIRGuidanceResponseStatus([FHIRGuidanceResponseStatus::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                $this->setModuleUri(new FHIRUri($ext));
+            } elseif ([] !== $ext) {
+                $this->setStatus(new FHIRGuidanceResponseStatus($ext));
             }
         }
-        if (isset($data[self::FIELD_NOTE])) {
-            if (is_array($data[self::FIELD_NOTE])) {
-                foreach($data[self::FIELD_NOTE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRAnnotation) {
-                        $this->addNote($v);
-                    } else {
-                        $this->addNote(new FHIRAnnotation($v));
-                    }
-                }
-            } else if ($data[self::FIELD_NOTE] instanceof FHIRAnnotation) {
-                $this->addNote($data[self::FIELD_NOTE]);
+        if (isset($data[self::FIELD_SUBJECT])) {
+            if ($data[self::FIELD_SUBJECT] instanceof FHIRReference) {
+                $this->setSubject($data[self::FIELD_SUBJECT]);
             } else {
-                $this->addNote(new FHIRAnnotation($data[self::FIELD_NOTE]));
+                $this->setSubject(new FHIRReference($data[self::FIELD_SUBJECT]));
+            }
+        }
+        if (isset($data[self::FIELD_ENCOUNTER])) {
+            if ($data[self::FIELD_ENCOUNTER] instanceof FHIRReference) {
+                $this->setEncounter($data[self::FIELD_ENCOUNTER]);
+            } else {
+                $this->setEncounter(new FHIRReference($data[self::FIELD_ENCOUNTER]));
             }
         }
         if (isset($data[self::FIELD_OCCURRENCE_DATE_TIME]) || isset($data[self::FIELD_OCCURRENCE_DATE_TIME_EXT])) {
-            if (isset($data[self::FIELD_OCCURRENCE_DATE_TIME])) {
-                $value = $data[self::FIELD_OCCURRENCE_DATE_TIME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_OCCURRENCE_DATE_TIME_EXT]) && is_array($data[self::FIELD_OCCURRENCE_DATE_TIME_EXT])) {
-                $ext = $data[self::FIELD_OCCURRENCE_DATE_TIME_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_OCCURRENCE_DATE_TIME]) ? $data[self::FIELD_OCCURRENCE_DATE_TIME] : null;
+            $ext = (isset($data[self::FIELD_OCCURRENCE_DATE_TIME_EXT]) && is_array($data[self::FIELD_OCCURRENCE_DATE_TIME_EXT])) ? $ext = $data[self::FIELD_OCCURRENCE_DATE_TIME_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRDateTime) {
                     $this->setOccurrenceDateTime($value);
@@ -508,15 +465,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 } else {
                     $this->setOccurrenceDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setOccurrenceDateTime(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_OUTPUT_PARAMETERS])) {
-            if ($data[self::FIELD_OUTPUT_PARAMETERS] instanceof FHIRReference) {
-                $this->setOutputParameters($data[self::FIELD_OUTPUT_PARAMETERS]);
-            } else {
-                $this->setOutputParameters(new FHIRReference($data[self::FIELD_OUTPUT_PARAMETERS]));
             }
         }
         if (isset($data[self::FIELD_PERFORMER])) {
@@ -538,7 +488,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                         $this->addReasonCode(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_REASON_CODE] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_REASON_CODE] instanceof FHIRCodeableConcept) {
                 $this->addReasonCode($data[self::FIELD_REASON_CODE]);
             } else {
                 $this->addReasonCode(new FHIRCodeableConcept($data[self::FIELD_REASON_CODE]));
@@ -556,17 +506,53 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                         $this->addReasonReference(new FHIRReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_REASON_REFERENCE] instanceof FHIRReference) {
+            } elseif ($data[self::FIELD_REASON_REFERENCE] instanceof FHIRReference) {
                 $this->addReasonReference($data[self::FIELD_REASON_REFERENCE]);
             } else {
                 $this->addReasonReference(new FHIRReference($data[self::FIELD_REASON_REFERENCE]));
             }
         }
-        if (isset($data[self::FIELD_REQUEST_IDENTIFIER])) {
-            if ($data[self::FIELD_REQUEST_IDENTIFIER] instanceof FHIRIdentifier) {
-                $this->setRequestIdentifier($data[self::FIELD_REQUEST_IDENTIFIER]);
+        if (isset($data[self::FIELD_NOTE])) {
+            if (is_array($data[self::FIELD_NOTE])) {
+                foreach($data[self::FIELD_NOTE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRAnnotation) {
+                        $this->addNote($v);
+                    } else {
+                        $this->addNote(new FHIRAnnotation($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_NOTE] instanceof FHIRAnnotation) {
+                $this->addNote($data[self::FIELD_NOTE]);
             } else {
-                $this->setRequestIdentifier(new FHIRIdentifier($data[self::FIELD_REQUEST_IDENTIFIER]));
+                $this->addNote(new FHIRAnnotation($data[self::FIELD_NOTE]));
+            }
+        }
+        if (isset($data[self::FIELD_EVALUATION_MESSAGE])) {
+            if (is_array($data[self::FIELD_EVALUATION_MESSAGE])) {
+                foreach($data[self::FIELD_EVALUATION_MESSAGE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRReference) {
+                        $this->addEvaluationMessage($v);
+                    } else {
+                        $this->addEvaluationMessage(new FHIRReference($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_EVALUATION_MESSAGE] instanceof FHIRReference) {
+                $this->addEvaluationMessage($data[self::FIELD_EVALUATION_MESSAGE]);
+            } else {
+                $this->addEvaluationMessage(new FHIRReference($data[self::FIELD_EVALUATION_MESSAGE]));
+            }
+        }
+        if (isset($data[self::FIELD_OUTPUT_PARAMETERS])) {
+            if ($data[self::FIELD_OUTPUT_PARAMETERS] instanceof FHIRReference) {
+                $this->setOutputParameters($data[self::FIELD_OUTPUT_PARAMETERS]);
+            } else {
+                $this->setOutputParameters(new FHIRReference($data[self::FIELD_OUTPUT_PARAMETERS]));
             }
         }
         if (isset($data[self::FIELD_RESULT])) {
@@ -576,34 +562,22 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 $this->setResult(new FHIRReference($data[self::FIELD_RESULT]));
             }
         }
-        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
-            if (isset($data[self::FIELD_STATUS])) {
-                $value = $data[self::FIELD_STATUS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
-                $ext = $data[self::FIELD_STATUS_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRGuidanceResponseStatus) {
-                    $this->setStatus($value);
-                } else if (is_array($value)) {
-                    $this->setStatus(new FHIRGuidanceResponseStatus(array_merge($ext, $value)));
-                } else {
-                    $this->setStatus(new FHIRGuidanceResponseStatus([FHIRGuidanceResponseStatus::FIELD_VALUE => $value] + $ext));
+        if (isset($data[self::FIELD_DATA_REQUIREMENT])) {
+            if (is_array($data[self::FIELD_DATA_REQUIREMENT])) {
+                foreach($data[self::FIELD_DATA_REQUIREMENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRDataRequirement) {
+                        $this->addDataRequirement($v);
+                    } else {
+                        $this->addDataRequirement(new FHIRDataRequirement($v));
+                    }
                 }
-            } else if ([] !== $ext) {
-                $this->setStatus(new FHIRGuidanceResponseStatus($ext));
-            }
-        }
-        if (isset($data[self::FIELD_SUBJECT])) {
-            if ($data[self::FIELD_SUBJECT] instanceof FHIRReference) {
-                $this->setSubject($data[self::FIELD_SUBJECT]);
+            } elseif ($data[self::FIELD_DATA_REQUIREMENT] instanceof FHIRDataRequirement) {
+                $this->addDataRequirement($data[self::FIELD_DATA_REQUIREMENT]);
             } else {
-                $this->setSubject(new FHIRReference($data[self::FIELD_SUBJECT]));
+                $this->addDataRequirement(new FHIRDataRequirement($data[self::FIELD_DATA_REQUIREMENT]));
             }
         }
     }
@@ -622,7 +596,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<GuidanceResponse{$xmlns}></GuidanceResponse>";
@@ -637,164 +611,39 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
 
 
     /**
-     * Describes a required data item for evaluation in terms of the type of data, and
-     * optional code or date-based filters of the data.
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * If the evaluation could not be completed due to lack of information, or
-     * additional information would potentially result in a more accurate response,
-     * this element will a description of the data required in order to proceed with
-     * the evaluation. A subsequent request to the service should include this data.
+     * The identifier of the request associated with this response. If an identifier
+     * was given as part of the request, it will be reproduced here to enable the
+     * requester to more easily identify the response in a multi-request scenario.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement[]
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    public function getDataRequirement()
+    public function getRequestIdentifier()
     {
-        return $this->dataRequirement;
+        return $this->requestIdentifier;
     }
 
     /**
-     * Describes a required data item for evaluation in terms of the type of data, and
-     * optional code or date-based filters of the data.
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * If the evaluation could not be completed due to lack of information, or
-     * additional information would potentially result in a more accurate response,
-     * this element will a description of the data required in order to proceed with
-     * the evaluation. A subsequent request to the service should include this data.
+     * The identifier of the request associated with this response. If an identifier
+     * was given as part of the request, it will be reproduced here to enable the
+     * requester to more easily identify the response in a multi-request scenario.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement $dataRequirement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $requestIdentifier
      * @return static
      */
-    public function addDataRequirement(FHIRDataRequirement $dataRequirement = null)
+    public function setRequestIdentifier(FHIRIdentifier $requestIdentifier = null)
     {
-        $this->dataRequirement[] = $dataRequirement;
-        return $this;
-    }
-
-    /**
-     * Describes a required data item for evaluation in terms of the type of data, and
-     * optional code or date-based filters of the data.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * If the evaluation could not be completed due to lack of information, or
-     * additional information would potentially result in a more accurate response,
-     * this element will a description of the data required in order to proceed with
-     * the evaluation. A subsequent request to the service should include this data.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement[] $dataRequirement
-     * @return static
-     */
-    public function setDataRequirement(array $dataRequirement = [])
-    {
-        $this->dataRequirement = [];
-        if ([] === $dataRequirement) {
-            return $this;
-        }
-        foreach($dataRequirement as $v) {
-            if ($v instanceof FHIRDataRequirement) {
-                $this->addDataRequirement($v);
-            } else {
-                $this->addDataRequirement(new FHIRDataRequirement($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The encounter during which this response was created or to which the creation of
-     * this record is tightly associated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getEncounter()
-    {
-        return $this->encounter;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The encounter during which this response was created or to which the creation of
-     * this record is tightly associated.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $encounter
-     * @return static
-     */
-    public function setEncounter(FHIRReference $encounter = null)
-    {
-        $this->encounter = $encounter;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Messages resulting from the evaluation of the artifact or artifacts. As part of
-     * evaluating the request, the engine may produce informational or warning
-     * messages. These messages will be provided by this element.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
-     */
-    public function getEvaluationMessage()
-    {
-        return $this->evaluationMessage;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Messages resulting from the evaluation of the artifact or artifacts. As part of
-     * evaluating the request, the engine may produce informational or warning
-     * messages. These messages will be provided by this element.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $evaluationMessage
-     * @return static
-     */
-    public function addEvaluationMessage(FHIRReference $evaluationMessage = null)
-    {
-        $this->evaluationMessage[] = $evaluationMessage;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Messages resulting from the evaluation of the artifact or artifacts. As part of
-     * evaluating the request, the engine may produce informational or warning
-     * messages. These messages will be provided by this element.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $evaluationMessage
-     * @return static
-     */
-    public function setEvaluationMessage(array $evaluationMessage = [])
-    {
-        $this->evaluationMessage = [];
-        if ([] === $evaluationMessage) {
-            return $this;
-        }
-        foreach($evaluationMessage as $v) {
-            if ($v instanceof FHIRReference) {
-                $this->addEvaluationMessage($v);
-            } else {
-                $this->addEvaluationMessage(new FHIRReference($v));
-            }
-        }
+        $this->_trackValueSet($this->requestIdentifier, $requestIdentifier);
+        $this->requestIdentifier = $requestIdentifier;
         return $this;
     }
 
@@ -826,6 +675,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      */
     public function addIdentifier(FHIRIdentifier $identifier = null)
     {
+        $this->_trackValueAdded();
         $this->identifier[] = $identifier;
         return $this;
     }
@@ -843,7 +693,10 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      */
     public function setIdentifier(array $identifier = [])
     {
-        $this->identifier = [];
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
         if ([] === $identifier) {
             return $this;
         }
@@ -858,13 +711,49 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An identifier, CodeableConcept or canonical reference to the guidance that was
+     * requested.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
+     */
+    public function getModuleUri()
+    {
+        return $this->moduleUri;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An identifier, CodeableConcept or canonical reference to the guidance that was
+     * requested.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $moduleUri
+     * @return static
+     */
+    public function setModuleUri($moduleUri = null)
+    {
+        if (null !== $moduleUri && !($moduleUri instanceof FHIRUri)) {
+            $moduleUri = new FHIRUri($moduleUri);
+        }
+        $this->_trackValueSet($this->moduleUri, $moduleUri);
+        $this->moduleUri = $moduleUri;
+        return $this;
+    }
+
+    /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * requested.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
@@ -880,22 +769,18 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * requested.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $moduleCanonical
      * @return static
      */
     public function setModuleCanonical($moduleCanonical = null)
     {
-        if (null === $moduleCanonical) {
-            $this->moduleCanonical = null;
-            return $this;
+        if (null !== $moduleCanonical && !($moduleCanonical instanceof FHIRCanonical)) {
+            $moduleCanonical = new FHIRCanonical($moduleCanonical);
         }
-        if ($moduleCanonical instanceof FHIRCanonical) {
-            $this->moduleCanonical = $moduleCanonical;
-            return $this;
-        }
-        $this->moduleCanonical = new FHIRCanonical($moduleCanonical);
+        $this->_trackValueSet($this->moduleCanonical, $moduleCanonical);
+        $this->moduleCanonical = $moduleCanonical;
         return $this;
     }
 
@@ -906,7 +791,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * requested.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -922,113 +807,122 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * requested.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $moduleCodeableConcept
      * @return static
      */
     public function setModuleCodeableConcept(FHIRCodeableConcept $moduleCodeableConcept = null)
     {
+        $this->_trackValueSet($this->moduleCodeableConcept, $moduleCodeableConcept);
         $this->moduleCodeableConcept = $moduleCodeableConcept;
         return $this;
     }
 
     /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * The status of a guidance response.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * The status of the response. If the evaluation is completed successfully, the
+     * status will indicate success. However, in order to complete the evaluation, the
+     * engine may require more information. In this case, the status will be
+     * data-required, and the response will contain a description of the additional
+     * required information. If the evaluation completed successfully, but the engine
+     * determines that a potentially more accurate response could be provided if more
+     * data was available, the status will be data-requested, and the response will
+     * contain a description of the additional requested information.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidanceResponseStatus
      */
-    public function getModuleUri()
+    public function getStatus()
     {
-        return $this->moduleUri;
+        return $this->status;
     }
 
     /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * The status of a guidance response.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * An identifier, CodeableConcept or canonical reference to the guidance that was
-     * requested. (choose any one of module*, but only one)
+     * The status of the response. If the evaluation is completed successfully, the
+     * status will indicate success. However, in order to complete the evaluation, the
+     * engine may require more information. In this case, the status will be
+     * data-required, and the response will contain a description of the additional
+     * required information. If the evaluation completed successfully, but the engine
+     * determines that a potentially more accurate response could be provided if more
+     * data was available, the status will be data-requested, and the response will
+     * contain a description of the additional requested information.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $moduleUri
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidanceResponseStatus $status
      * @return static
      */
-    public function setModuleUri($moduleUri = null)
+    public function setStatus(FHIRGuidanceResponseStatus $status = null)
     {
-        if (null === $moduleUri) {
-            $this->moduleUri = null;
-            return $this;
-        }
-        if ($moduleUri instanceof FHIRUri) {
-            $this->moduleUri = $moduleUri;
-            return $this;
-        }
-        $this->moduleUri = new FHIRUri($moduleUri);
+        $this->_trackValueSet($this->status, $status);
+        $this->status = $status;
         return $this;
     }
 
     /**
-     * A text note which also contains information about who made the statement and
-     * when.
+     * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Provides a mechanism to communicate additional information about the response.
+     * The patient for which the request was processed.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    public function getNote()
+    public function getSubject()
     {
-        return $this->note;
+        return $this->subject;
     }
 
     /**
-     * A text note which also contains information about who made the statement and
-     * when.
+     * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Provides a mechanism to communicate additional information about the response.
+     * The patient for which the request was processed.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation $note
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subject
      * @return static
      */
-    public function addNote(FHIRAnnotation $note = null)
+    public function setSubject(FHIRReference $subject = null)
     {
-        $this->note[] = $note;
+        $this->_trackValueSet($this->subject, $subject);
+        $this->subject = $subject;
         return $this;
     }
 
     /**
-     * A text note which also contains information about who made the statement and
-     * when.
+     * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Provides a mechanism to communicate additional information about the response.
+     * The encounter during which this response was created or to which the creation of
+     * this record is tightly associated.
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[] $note
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getEncounter()
+    {
+        return $this->encounter;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The encounter during which this response was created or to which the creation of
+     * this record is tightly associated.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $encounter
      * @return static
      */
-    public function setNote(array $note = [])
+    public function setEncounter(FHIRReference $encounter = null)
     {
-        $this->note = [];
-        if ([] === $note) {
-            return $this;
-        }
-        foreach($note as $v) {
-            if ($v instanceof FHIRAnnotation) {
-                $this->addNote($v);
-            } else {
-                $this->addNote(new FHIRAnnotation($v));
-            }
-        }
+        $this->_trackValueSet($this->encounter, $encounter);
+        $this->encounter = $encounter;
         return $this;
     }
 
@@ -1064,53 +958,11 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      */
     public function setOccurrenceDateTime($occurrenceDateTime = null)
     {
-        if (null === $occurrenceDateTime) {
-            $this->occurrenceDateTime = null;
-            return $this;
+        if (null !== $occurrenceDateTime && !($occurrenceDateTime instanceof FHIRDateTime)) {
+            $occurrenceDateTime = new FHIRDateTime($occurrenceDateTime);
         }
-        if ($occurrenceDateTime instanceof FHIRDateTime) {
-            $this->occurrenceDateTime = $occurrenceDateTime;
-            return $this;
-        }
-        $this->occurrenceDateTime = new FHIRDateTime($occurrenceDateTime);
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The output parameters of the evaluation, if any. Many modules will result in the
-     * return of specific resources such as procedure or communication requests that
-     * are returned as part of the operation result. However, modules may define
-     * specific outputs that would be returned as the result of the evaluation, and
-     * these would be returned in this element.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getOutputParameters()
-    {
-        return $this->outputParameters;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The output parameters of the evaluation, if any. Many modules will result in the
-     * return of specific resources such as procedure or communication requests that
-     * are returned as part of the operation result. However, modules may define
-     * specific outputs that would be returned as the result of the evaluation, and
-     * these would be returned in this element.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $outputParameters
-     * @return static
-     */
-    public function setOutputParameters(FHIRReference $outputParameters = null)
-    {
-        $this->outputParameters = $outputParameters;
+        $this->_trackValueSet($this->occurrenceDateTime, $occurrenceDateTime);
+        $this->occurrenceDateTime = $occurrenceDateTime;
         return $this;
     }
 
@@ -1140,6 +992,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      */
     public function setPerformer(FHIRReference $performer = null)
     {
+        $this->_trackValueSet($this->performer, $performer);
         $this->performer = $performer;
         return $this;
     }
@@ -1172,6 +1025,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      */
     public function addReasonCode(FHIRCodeableConcept $reasonCode = null)
     {
+        $this->_trackValueAdded();
         $this->reasonCode[] = $reasonCode;
         return $this;
     }
@@ -1189,7 +1043,10 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      */
     public function setReasonCode(array $reasonCode = [])
     {
-        $this->reasonCode = [];
+        if ([] !== $this->reasonCode) {
+            $this->_trackValuesRemoved(count($this->reasonCode));
+            $this->reasonCode = [];
+        }
         if ([] === $reasonCode) {
             return $this;
         }
@@ -1235,6 +1092,7 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      */
     public function addReasonReference(FHIRReference $reasonReference = null)
     {
+        $this->_trackValueAdded();
         $this->reasonReference[] = $reasonReference;
         return $this;
     }
@@ -1254,7 +1112,10 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      */
     public function setReasonReference(array $reasonReference = [])
     {
-        $this->reasonReference = [];
+        if ([] !== $this->reasonReference) {
+            $this->_trackValuesRemoved(count($this->reasonReference));
+            $this->reasonReference = [];
+        }
         if ([] === $reasonReference) {
             return $this;
         }
@@ -1269,38 +1130,170 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
+     * A text note which also contains information about who made the statement and
+     * when.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The identifier of the request associated with this response. If an identifier
-     * was given as part of the request, it will be reproduced here to enable the
-     * requester to more easily identify the response in a multi-request scenario.
+     * Provides a mechanism to communicate additional information about the response.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
-    public function getRequestIdentifier()
+    public function getNote()
     {
-        return $this->requestIdentifier;
+        return $this->note;
     }
 
     /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
+     * A text note which also contains information about who made the statement and
+     * when.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The identifier of the request associated with this response. If an identifier
-     * was given as part of the request, it will be reproduced here to enable the
-     * requester to more easily identify the response in a multi-request scenario.
+     * Provides a mechanism to communicate additional information about the response.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $requestIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation $note
      * @return static
      */
-    public function setRequestIdentifier(FHIRIdentifier $requestIdentifier = null)
+    public function addNote(FHIRAnnotation $note = null)
     {
-        $this->requestIdentifier = $requestIdentifier;
+        $this->_trackValueAdded();
+        $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Provides a mechanism to communicate additional information about the response.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[] $note
+     * @return static
+     */
+    public function setNote(array $note = [])
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            if ($v instanceof FHIRAnnotation) {
+                $this->addNote($v);
+            } else {
+                $this->addNote(new FHIRAnnotation($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Messages resulting from the evaluation of the artifact or artifacts. As part of
+     * evaluating the request, the engine may produce informational or warning
+     * messages. These messages will be provided by this element.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
+     */
+    public function getEvaluationMessage()
+    {
+        return $this->evaluationMessage;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Messages resulting from the evaluation of the artifact or artifacts. As part of
+     * evaluating the request, the engine may produce informational or warning
+     * messages. These messages will be provided by this element.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $evaluationMessage
+     * @return static
+     */
+    public function addEvaluationMessage(FHIRReference $evaluationMessage = null)
+    {
+        $this->_trackValueAdded();
+        $this->evaluationMessage[] = $evaluationMessage;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Messages resulting from the evaluation of the artifact or artifacts. As part of
+     * evaluating the request, the engine may produce informational or warning
+     * messages. These messages will be provided by this element.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $evaluationMessage
+     * @return static
+     */
+    public function setEvaluationMessage(array $evaluationMessage = [])
+    {
+        if ([] !== $this->evaluationMessage) {
+            $this->_trackValuesRemoved(count($this->evaluationMessage));
+            $this->evaluationMessage = [];
+        }
+        if ([] === $evaluationMessage) {
+            return $this;
+        }
+        foreach($evaluationMessage as $v) {
+            if ($v instanceof FHIRReference) {
+                $this->addEvaluationMessage($v);
+            } else {
+                $this->addEvaluationMessage(new FHIRReference($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The output parameters of the evaluation, if any. Many modules will result in the
+     * return of specific resources such as procedure or communication requests that
+     * are returned as part of the operation result. However, modules may define
+     * specific outputs that would be returned as the result of the evaluation, and
+     * these would be returned in this element.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getOutputParameters()
+    {
+        return $this->outputParameters;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The output parameters of the evaluation, if any. Many modules will result in the
+     * return of specific resources such as procedure or communication requests that
+     * are returned as part of the operation result. However, modules may define
+     * specific outputs that would be returned as the result of the evaluation, and
+     * these would be returned in this element.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $outputParameters
+     * @return static
+     */
+    public function setOutputParameters(FHIRReference $outputParameters = null)
+    {
+        $this->_trackValueSet($this->outputParameters, $outputParameters);
+        $this->outputParameters = $outputParameters;
         return $this;
     }
 
@@ -1330,79 +1323,80 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      */
     public function setResult(FHIRReference $result = null)
     {
+        $this->_trackValueSet($this->result, $result);
         $this->result = $result;
         return $this;
     }
 
     /**
-     * The status of a guidance response.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * Describes a required data item for evaluation in terms of the type of data, and
+     * optional code or date-based filters of the data.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The status of the response. If the evaluation is completed successfully, the
-     * status will indicate success. However, in order to complete the evaluation, the
-     * engine may require more information. In this case, the status will be
-     * data-required, and the response will contain a description of the additional
-     * required information. If the evaluation completed successfully, but the engine
-     * determines that a potentially more accurate response could be provided if more
-     * data was available, the status will be data-requested, and the response will
-     * contain a description of the additional requested information.
+     * If the evaluation could not be completed due to lack of information, or
+     * additional information would potentially result in a more accurate response,
+     * this element will a description of the data required in order to proceed with
+     * the evaluation. A subsequent request to the service should include this data.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidanceResponseStatus
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement[]
      */
-    public function getStatus()
+    public function getDataRequirement()
     {
-        return $this->status;
+        return $this->dataRequirement;
     }
 
     /**
-     * The status of a guidance response.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * Describes a required data item for evaluation in terms of the type of data, and
+     * optional code or date-based filters of the data.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The status of the response. If the evaluation is completed successfully, the
-     * status will indicate success. However, in order to complete the evaluation, the
-     * engine may require more information. In this case, the status will be
-     * data-required, and the response will contain a description of the additional
-     * required information. If the evaluation completed successfully, but the engine
-     * determines that a potentially more accurate response could be provided if more
-     * data was available, the status will be data-requested, and the response will
-     * contain a description of the additional requested information.
+     * If the evaluation could not be completed due to lack of information, or
+     * additional information would potentially result in a more accurate response,
+     * this element will a description of the data required in order to proceed with
+     * the evaluation. A subsequent request to the service should include this data.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidanceResponseStatus $status
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement $dataRequirement
      * @return static
      */
-    public function setStatus(FHIRGuidanceResponseStatus $status = null)
+    public function addDataRequirement(FHIRDataRequirement $dataRequirement = null)
     {
-        $this->status = $status;
+        $this->_trackValueAdded();
+        $this->dataRequirement[] = $dataRequirement;
         return $this;
     }
 
     /**
-     * A reference from one resource to another.
+     * Describes a required data item for evaluation in terms of the type of data, and
+     * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The patient for which the request was processed.
+     * If the evaluation could not be completed due to lack of information, or
+     * additional information would potentially result in a more accurate response,
+     * this element will a description of the data required in order to proceed with
+     * the evaluation. A subsequent request to the service should include this data.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getSubject()
-    {
-        return $this->subject;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The patient for which the request was processed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subject
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement[] $dataRequirement
      * @return static
      */
-    public function setSubject(FHIRReference $subject = null)
+    public function setDataRequirement(array $dataRequirement = [])
     {
-        $this->subject = $subject;
+        if ([] !== $this->dataRequirement) {
+            $this->_trackValuesRemoved(count($this->dataRequirement));
+            $this->dataRequirement = [];
+        }
+        if ([] === $dataRequirement) {
+            return $this;
+        }
+        foreach($dataRequirement as $v) {
+            if ($v instanceof FHIRDataRequirement) {
+                $this->addDataRequirement($v);
+            } else {
+                $this->addDataRequirement(new FHIRDataRequirement($v));
+            }
+        }
         return $this;
     }
 
@@ -1427,23 +1421,9 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getDataRequirement())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_DATA_REQUIREMENT, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getEncounter())) {
+        if (null !== ($v = $this->getRequestIdentifier())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ENCOUNTER] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getEvaluationMessage())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_EVALUATION_MESSAGE, $i)] = $fieldErrs;
-                }
+                $errs[self::FIELD_REQUEST_IDENTIFIER] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
@@ -1451,6 +1431,11 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_IDENTIFIER, $i)] = $fieldErrs;
                 }
+            }
+        }
+        if (null !== ($v = $this->getModuleUri())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MODULE_URI] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getModuleCanonical())) {
@@ -1463,26 +1448,24 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 $errs[self::FIELD_MODULE_CODEABLE_CONCEPT] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getModuleUri())) {
+        if (null !== ($v = $this->getStatus())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_MODULE_URI] = $fieldErrs;
+                $errs[self::FIELD_STATUS] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getNote())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_NOTE, $i)] = $fieldErrs;
-                }
+        if (null !== ($v = $this->getSubject())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUBJECT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getEncounter())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ENCOUNTER] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_OCCURRENCE_DATE_TIME] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getOutputParameters())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_OUTPUT_PARAMETERS] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getPerformer())) {
@@ -1504,9 +1487,23 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 }
             }
         }
-        if (null !== ($v = $this->getRequestIdentifier())) {
+        if ([] !== ($vs = $this->getNote())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_NOTE, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getEvaluationMessage())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_EVALUATION_MESSAGE, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getOutputParameters())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_REQUEST_IDENTIFIER] = $fieldErrs;
+                $errs[self::FIELD_OUTPUT_PARAMETERS] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getResult())) {
@@ -1514,49 +1511,22 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 $errs[self::FIELD_RESULT] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getStatus())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_STATUS] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getSubject())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SUBJECT] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_DATA_REQUIREMENT])) {
-            $v = $this->getDataRequirement();
-            foreach($validationRules[self::FIELD_DATA_REQUIREMENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_DATA_REQUIREMENT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DATA_REQUIREMENT])) {
-                        $errs[self::FIELD_DATA_REQUIREMENT] = [];
-                    }
-                    $errs[self::FIELD_DATA_REQUIREMENT][$rule] = $err;
+        if ([] !== ($vs = $this->getDataRequirement())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_DATA_REQUIREMENT, $i)] = $fieldErrs;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_ENCOUNTER])) {
-            $v = $this->getEncounter();
-            foreach($validationRules[self::FIELD_ENCOUNTER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_ENCOUNTER, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_REQUEST_IDENTIFIER])) {
+            $v = $this->getRequestIdentifier();
+            foreach($validationRules[self::FIELD_REQUEST_IDENTIFIER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_REQUEST_IDENTIFIER, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ENCOUNTER])) {
-                        $errs[self::FIELD_ENCOUNTER] = [];
+                    if (!isset($errs[self::FIELD_REQUEST_IDENTIFIER])) {
+                        $errs[self::FIELD_REQUEST_IDENTIFIER] = [];
                     }
-                    $errs[self::FIELD_ENCOUNTER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_EVALUATION_MESSAGE])) {
-            $v = $this->getEvaluationMessage();
-            foreach($validationRules[self::FIELD_EVALUATION_MESSAGE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_EVALUATION_MESSAGE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EVALUATION_MESSAGE])) {
-                        $errs[self::FIELD_EVALUATION_MESSAGE] = [];
-                    }
-                    $errs[self::FIELD_EVALUATION_MESSAGE][$rule] = $err;
+                    $errs[self::FIELD_REQUEST_IDENTIFIER][$rule] = $err;
                 }
             }
         }
@@ -1569,6 +1539,18 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                         $errs[self::FIELD_IDENTIFIER] = [];
                     }
                     $errs[self::FIELD_IDENTIFIER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODULE_URI])) {
+            $v = $this->getModuleUri();
+            foreach($validationRules[self::FIELD_MODULE_URI] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_MODULE_URI, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODULE_URI])) {
+                        $errs[self::FIELD_MODULE_URI] = [];
+                    }
+                    $errs[self::FIELD_MODULE_URI][$rule] = $err;
                 }
             }
         }
@@ -1596,27 +1578,39 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_MODULE_URI])) {
-            $v = $this->getModuleUri();
-            foreach($validationRules[self::FIELD_MODULE_URI] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_MODULE_URI, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_STATUS])) {
+            $v = $this->getStatus();
+            foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_STATUS, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_MODULE_URI])) {
-                        $errs[self::FIELD_MODULE_URI] = [];
+                    if (!isset($errs[self::FIELD_STATUS])) {
+                        $errs[self::FIELD_STATUS] = [];
                     }
-                    $errs[self::FIELD_MODULE_URI][$rule] = $err;
+                    $errs[self::FIELD_STATUS][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_NOTE])) {
-            $v = $this->getNote();
-            foreach($validationRules[self::FIELD_NOTE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_NOTE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_SUBJECT])) {
+            $v = $this->getSubject();
+            foreach($validationRules[self::FIELD_SUBJECT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_SUBJECT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_NOTE])) {
-                        $errs[self::FIELD_NOTE] = [];
+                    if (!isset($errs[self::FIELD_SUBJECT])) {
+                        $errs[self::FIELD_SUBJECT] = [];
                     }
-                    $errs[self::FIELD_NOTE][$rule] = $err;
+                    $errs[self::FIELD_SUBJECT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ENCOUNTER])) {
+            $v = $this->getEncounter();
+            foreach($validationRules[self::FIELD_ENCOUNTER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_ENCOUNTER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ENCOUNTER])) {
+                        $errs[self::FIELD_ENCOUNTER] = [];
+                    }
+                    $errs[self::FIELD_ENCOUNTER][$rule] = $err;
                 }
             }
         }
@@ -1629,18 +1623,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                         $errs[self::FIELD_OCCURRENCE_DATE_TIME] = [];
                     }
                     $errs[self::FIELD_OCCURRENCE_DATE_TIME][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_OUTPUT_PARAMETERS])) {
-            $v = $this->getOutputParameters();
-            foreach($validationRules[self::FIELD_OUTPUT_PARAMETERS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_OUTPUT_PARAMETERS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_OUTPUT_PARAMETERS])) {
-                        $errs[self::FIELD_OUTPUT_PARAMETERS] = [];
-                    }
-                    $errs[self::FIELD_OUTPUT_PARAMETERS][$rule] = $err;
                 }
             }
         }
@@ -1680,15 +1662,39 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_REQUEST_IDENTIFIER])) {
-            $v = $this->getRequestIdentifier();
-            foreach($validationRules[self::FIELD_REQUEST_IDENTIFIER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_REQUEST_IDENTIFIER, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_NOTE])) {
+            $v = $this->getNote();
+            foreach($validationRules[self::FIELD_NOTE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_NOTE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REQUEST_IDENTIFIER])) {
-                        $errs[self::FIELD_REQUEST_IDENTIFIER] = [];
+                    if (!isset($errs[self::FIELD_NOTE])) {
+                        $errs[self::FIELD_NOTE] = [];
                     }
-                    $errs[self::FIELD_REQUEST_IDENTIFIER][$rule] = $err;
+                    $errs[self::FIELD_NOTE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EVALUATION_MESSAGE])) {
+            $v = $this->getEvaluationMessage();
+            foreach($validationRules[self::FIELD_EVALUATION_MESSAGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_EVALUATION_MESSAGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EVALUATION_MESSAGE])) {
+                        $errs[self::FIELD_EVALUATION_MESSAGE] = [];
+                    }
+                    $errs[self::FIELD_EVALUATION_MESSAGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_OUTPUT_PARAMETERS])) {
+            $v = $this->getOutputParameters();
+            foreach($validationRules[self::FIELD_OUTPUT_PARAMETERS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_OUTPUT_PARAMETERS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_OUTPUT_PARAMETERS])) {
+                        $errs[self::FIELD_OUTPUT_PARAMETERS] = [];
+                    }
+                    $errs[self::FIELD_OUTPUT_PARAMETERS][$rule] = $err;
                 }
             }
         }
@@ -1704,27 +1710,27 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_STATUS])) {
-            $v = $this->getStatus();
-            foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_STATUS, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_DATA_REQUIREMENT])) {
+            $v = $this->getDataRequirement();
+            foreach($validationRules[self::FIELD_DATA_REQUIREMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_DATA_REQUIREMENT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_STATUS])) {
-                        $errs[self::FIELD_STATUS] = [];
+                    if (!isset($errs[self::FIELD_DATA_REQUIREMENT])) {
+                        $errs[self::FIELD_DATA_REQUIREMENT] = [];
                     }
-                    $errs[self::FIELD_STATUS][$rule] = $err;
+                    $errs[self::FIELD_DATA_REQUIREMENT][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SUBJECT])) {
-            $v = $this->getSubject();
-            foreach($validationRules[self::FIELD_SUBJECT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GUIDANCE_RESPONSE, self::FIELD_SUBJECT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SUBJECT])) {
-                        $errs[self::FIELD_SUBJECT] = [];
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
                     }
-                    $errs[self::FIELD_SUBJECT][$rule] = $err;
+                    $errs[self::FIELD_TEXT][$rule] = $err;
                 }
             }
         }
@@ -1764,18 +1770,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ID])) {
             $v = $this->getId();
             foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
@@ -1785,6 +1779,18 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                         $errs[self::FIELD_ID] = [];
                     }
                     $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
                 }
             }
         }
@@ -1812,221 +1818,241 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_META])) {
-            $v = $this->getMeta();
-            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_META])) {
-                        $errs[self::FIELD_META] = [];
-                    }
-                    $errs[self::FIELD_META][$rule] = $err;
-                }
-            }
-        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRGuidanceResponse::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRGuidanceResponse::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRGuidanceResponse::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRGuidanceResponse;
+            $type = new FHIRGuidanceResponse(null);
         } elseif (!is_object($type) || !($type instanceof FHIRGuidanceResponse)) {
             throw new \RuntimeException(sprintf(
                 'FHIRGuidanceResponse::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRGuidanceResponse or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRDomainResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_REQUEST_IDENTIFIER === $n->nodeName) {
+                $type->setRequestIdentifier(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_IDENTIFIER === $n->nodeName) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_MODULE_URI === $n->nodeName) {
+                $type->setModuleUri(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_MODULE_CANONICAL === $n->nodeName) {
+                $type->setModuleCanonical(FHIRCanonical::xmlUnserialize($n));
+            } elseif (self::FIELD_MODULE_CODEABLE_CONCEPT === $n->nodeName) {
+                $type->setModuleCodeableConcept(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_STATUS === $n->nodeName) {
+                $type->setStatus(FHIRGuidanceResponseStatus::xmlUnserialize($n));
+            } elseif (self::FIELD_SUBJECT === $n->nodeName) {
+                $type->setSubject(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_ENCOUNTER === $n->nodeName) {
+                $type->setEncounter(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_OCCURRENCE_DATE_TIME === $n->nodeName) {
+                $type->setOccurrenceDateTime(FHIRDateTime::xmlUnserialize($n));
+            } elseif (self::FIELD_PERFORMER === $n->nodeName) {
+                $type->setPerformer(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_REASON_CODE === $n->nodeName) {
+                $type->addReasonCode(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_REASON_REFERENCE === $n->nodeName) {
+                $type->addReasonReference(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_NOTE === $n->nodeName) {
+                $type->addNote(FHIRAnnotation::xmlUnserialize($n));
+            } elseif (self::FIELD_EVALUATION_MESSAGE === $n->nodeName) {
+                $type->addEvaluationMessage(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_OUTPUT_PARAMETERS === $n->nodeName) {
+                $type->setOutputParameters(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_RESULT === $n->nodeName) {
+                $type->setResult(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_DATA_REQUIREMENT === $n->nodeName) {
+                $type->addDataRequirement(FHIRDataRequirement::xmlUnserialize($n));
+            } elseif (self::FIELD_TEXT === $n->nodeName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n));
+            } elseif (self::FIELD_CONTAINED === $n->nodeName) {
+                for ($ni = 0; $ni < $n->childNodes->length; $ni++) {
+                    $nn = $n->childNodes->item($ni);
+                    if ($nn instanceof \DOMElement) {
+                        $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn));
+                    }
+                }
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRId::xmlUnserialize($n));
+            } elseif (self::FIELD_META === $n->nodeName) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($n));
+            } elseif (self::FIELD_IMPLICIT_RULES === $n->nodeName) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_LANGUAGE === $n->nodeName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->dataRequirement)) {
-            foreach($children->dataRequirement as $child) {
-                $type->addDataRequirement(FHIRDataRequirement::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->encounter)) {
-            $type->setEncounter(FHIRReference::xmlUnserialize($children->encounter));
-        }
-        if (isset($children->evaluationMessage)) {
-            foreach($children->evaluationMessage as $child) {
-                $type->addEvaluationMessage(FHIRReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->identifier)) {
-            foreach($children->identifier as $child) {
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->moduleCanonical)) {
-            $type->setModuleCanonical(FHIRCanonical::xmlUnserialize($children->moduleCanonical));
-        }
-        if (isset($attributes->moduleCanonical)) {
-            $pt = $type->getModuleCanonical();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->moduleCanonical);
-            } else {
-                $type->setModuleCanonical((string)$attributes->moduleCanonical);
-            }
-        }
-        if (isset($children->moduleCodeableConcept)) {
-            $type->setModuleCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->moduleCodeableConcept));
-        }
-        if (isset($children->moduleUri)) {
-            $type->setModuleUri(FHIRUri::xmlUnserialize($children->moduleUri));
-        }
-        if (isset($attributes->moduleUri)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_MODULE_URI);
+        if (null !== $n) {
             $pt = $type->getModuleUri();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->moduleUri);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setModuleUri((string)$attributes->moduleUri);
+                $type->setModuleUri($n->nodeValue);
             }
         }
-        if (isset($children->note)) {
-            foreach($children->note as $child) {
-                $type->addNote(FHIRAnnotation::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_MODULE_CANONICAL);
+        if (null !== $n) {
+            $pt = $type->getModuleCanonical();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setModuleCanonical($n->nodeValue);
             }
         }
-        if (isset($children->occurrenceDateTime)) {
-            $type->setOccurrenceDateTime(FHIRDateTime::xmlUnserialize($children->occurrenceDateTime));
-        }
-        if (isset($attributes->occurrenceDateTime)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_OCCURRENCE_DATE_TIME);
+        if (null !== $n) {
             $pt = $type->getOccurrenceDateTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->occurrenceDateTime);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setOccurrenceDateTime((string)$attributes->occurrenceDateTime);
+                $type->setOccurrenceDateTime($n->nodeValue);
             }
         }
-        if (isset($children->outputParameters)) {
-            $type->setOutputParameters(FHIRReference::xmlUnserialize($children->outputParameters));
-        }
-        if (isset($children->performer)) {
-            $type->setPerformer(FHIRReference::xmlUnserialize($children->performer));
-        }
-        if (isset($children->reasonCode)) {
-            foreach($children->reasonCode as $child) {
-                $type->addReasonCode(FHIRCodeableConcept::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
-        if (isset($children->reasonReference)) {
-            foreach($children->reasonReference as $child) {
-                $type->addReasonReference(FHIRReference::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_IMPLICIT_RULES);
+        if (null !== $n) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setImplicitRules($n->nodeValue);
             }
         }
-        if (isset($children->requestIdentifier)) {
-            $type->setRequestIdentifier(FHIRIdentifier::xmlUnserialize($children->requestIdentifier));
-        }
-        if (isset($children->result)) {
-            $type->setResult(FHIRReference::xmlUnserialize($children->result));
-        }
-        if (isset($children->status)) {
-            $type->setStatus(FHIRGuidanceResponseStatus::xmlUnserialize($children->status));
-        }
-        if (isset($children->subject)) {
-            $type->setSubject(FHIRReference::xmlUnserialize($children->subject));
+        $n = $element->attributes->getNamedItem(self::FIELD_LANGUAGE);
+        if (null !== $n) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setLanguage($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getDataRequirement())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DATA_REQUIREMENT, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getEncounter())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENCOUNTER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getEvaluationMessage())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EVALUATION_MESSAGE, null, $v->_getFHIRXMLNamespace()));
-            }
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getRequestIdentifier())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_REQUEST_IDENTIFIER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_IDENTIFIER);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
-        }
-        if (null !== ($v = $this->getModuleCanonical())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MODULE_CANONICAL, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getModuleCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MODULE_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
         }
         if (null !== ($v = $this->getModuleUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MODULE_URI, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_MODULE_URI);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if ([] !== ($vs = $this->getNote())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (null !== ($v = $this->getModuleCanonical())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_MODULE_CANONICAL);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getModuleCodeableConcept())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_MODULE_CODEABLE_CONCEPT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_STATUS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getSubject())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SUBJECT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getEncounter())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_ENCOUNTER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OCCURRENCE_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getOutputParameters())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTPUT_PARAMETERS, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_OCCURRENCE_DATE_TIME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getPerformer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERFORMER, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_PERFORMER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getReasonCode())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_CODE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_REASON_CODE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getReasonReference())) {
@@ -2034,22 +2060,52 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REASON_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_REASON_REFERENCE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getRequestIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
+        if ([] !== ($vs = $this->getNote())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_NOTE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if ([] !== ($vs = $this->getEvaluationMessage())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_EVALUATION_MESSAGE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if (null !== ($v = $this->getOutputParameters())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_OUTPUT_PARAMETERS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getResult())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESULT, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_RESULT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
+        if ([] !== ($vs = $this->getDataRequirement())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_DATA_REQUIREMENT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
         }
-        if (null !== ($v = $this->getSubject())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -2058,26 +2114,8 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getDataRequirement())) {
-            $a[self::FIELD_DATA_REQUIREMENT] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_DATA_REQUIREMENT][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getEncounter())) {
-            $a[self::FIELD_ENCOUNTER] = $v;
-        }
-        if ([] !== ($vs = $this->getEvaluationMessage())) {
-            $a[self::FIELD_EVALUATION_MESSAGE] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_EVALUATION_MESSAGE][] = $v;
-            }
+        if (null !== ($v = $this->getRequestIdentifier())) {
+            $a[self::FIELD_REQUEST_IDENTIFIER] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
             $a[self::FIELD_IDENTIFIER] = [];
@@ -2088,47 +2126,54 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 $a[self::FIELD_IDENTIFIER][] = $v;
             }
         }
+        if (null !== ($v = $this->getModuleUri())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MODULE_URI] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUri::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_MODULE_URI_EXT] = $ext;
+            }
+        }
         if (null !== ($v = $this->getModuleCanonical())) {
-            $a[self::FIELD_MODULE_CANONICAL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCanonical::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCanonical::FIELD_VALUE]);
-                $a[self::FIELD_MODULE_CANONICAL_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MODULE_CANONICAL] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRCanonical::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_MODULE_CANONICAL_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getModuleCodeableConcept())) {
             $a[self::FIELD_MODULE_CODEABLE_CONCEPT] = $v;
         }
-        if (null !== ($v = $this->getModuleUri())) {
-            $a[self::FIELD_MODULE_URI] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_MODULE_URI_EXT] = $enc;
+        if (null !== ($v = $this->getStatus())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_STATUS] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRGuidanceResponseStatus::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_STATUS_EXT] = $ext;
             }
         }
-        if ([] !== ($vs = $this->getNote())) {
-            $a[self::FIELD_NOTE] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_NOTE][] = $v;
-            }
+        if (null !== ($v = $this->getSubject())) {
+            $a[self::FIELD_SUBJECT] = $v;
+        }
+        if (null !== ($v = $this->getEncounter())) {
+            $a[self::FIELD_ENCOUNTER] = $v;
         }
         if (null !== ($v = $this->getOccurrenceDateTime())) {
-            $a[self::FIELD_OCCURRENCE_DATE_TIME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_OCCURRENCE_DATE_TIME] = $val;
             }
-        }
-        if (null !== ($v = $this->getOutputParameters())) {
-            $a[self::FIELD_OUTPUT_PARAMETERS] = $v;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDateTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_OCCURRENCE_DATE_TIME_EXT] = $ext;
+            }
         }
         if (null !== ($v = $this->getPerformer())) {
             $a[self::FIELD_PERFORMER] = $v;
@@ -2151,26 +2196,38 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
                 $a[self::FIELD_REASON_REFERENCE][] = $v;
             }
         }
-        if (null !== ($v = $this->getRequestIdentifier())) {
-            $a[self::FIELD_REQUEST_IDENTIFIER] = $v;
+        if ([] !== ($vs = $this->getNote())) {
+            $a[self::FIELD_NOTE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_NOTE][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->getEvaluationMessage())) {
+            $a[self::FIELD_EVALUATION_MESSAGE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_EVALUATION_MESSAGE][] = $v;
+            }
+        }
+        if (null !== ($v = $this->getOutputParameters())) {
+            $a[self::FIELD_OUTPUT_PARAMETERS] = $v;
         }
         if (null !== ($v = $this->getResult())) {
             $a[self::FIELD_RESULT] = $v;
         }
-        if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRGuidanceResponseStatus::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRGuidanceResponseStatus::FIELD_VALUE]);
-                $a[self::FIELD_STATUS_EXT] = $enc;
+        if ([] !== ($vs = $this->getDataRequirement())) {
+            $a[self::FIELD_DATA_REQUIREMENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_DATA_REQUIREMENT][] = $v;
             }
-        }
-        if (null !== ($v = $this->getSubject())) {
-            $a[self::FIELD_SUBJECT] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

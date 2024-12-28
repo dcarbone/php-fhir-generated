@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvide
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,6 +70,7 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGroupMeasure;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration;
@@ -77,6 +78,7 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -91,119 +93,29 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC;
+    const FIELD_DESCRIPTION = 'description';
+    const FIELD_DESCRIPTION_EXT = '_description';
+    const FIELD_DEFINITION_REFERENCE = 'definitionReference';
     const FIELD_DEFINITION_CANONICAL = 'definitionCanonical';
     const FIELD_DEFINITION_CANONICAL_EXT = '_definitionCanonical';
     const FIELD_DEFINITION_CODEABLE_CONCEPT = 'definitionCodeableConcept';
-    const FIELD_DEFINITION_DATA_REQUIREMENT = 'definitionDataRequirement';
     const FIELD_DEFINITION_EXPRESSION = 'definitionExpression';
-    const FIELD_DEFINITION_REFERENCE = 'definitionReference';
+    const FIELD_DEFINITION_DATA_REQUIREMENT = 'definitionDataRequirement';
     const FIELD_DEFINITION_TRIGGER_DEFINITION = 'definitionTriggerDefinition';
-    const FIELD_DESCRIPTION = 'description';
-    const FIELD_DESCRIPTION_EXT = '_description';
+    const FIELD_USAGE_CONTEXT = 'usageContext';
     const FIELD_EXCLUDE = 'exclude';
     const FIELD_EXCLUDE_EXT = '_exclude';
-    const FIELD_GROUP_MEASURE = 'groupMeasure';
-    const FIELD_GROUP_MEASURE_EXT = '_groupMeasure';
     const FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME = 'participantEffectiveDateTime';
     const FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT = '_participantEffectiveDateTime';
-    const FIELD_PARTICIPANT_EFFECTIVE_DURATION = 'participantEffectiveDuration';
     const FIELD_PARTICIPANT_EFFECTIVE_PERIOD = 'participantEffectivePeriod';
+    const FIELD_PARTICIPANT_EFFECTIVE_DURATION = 'participantEffectiveDuration';
     const FIELD_PARTICIPANT_EFFECTIVE_TIMING = 'participantEffectiveTiming';
     const FIELD_TIME_FROM_START = 'timeFromStart';
-    const FIELD_USAGE_CONTEXT = 'usageContext';
+    const FIELD_GROUP_MEASURE = 'groupMeasure';
+    const FIELD_GROUP_MEASURE_EXT = '_groupMeasure';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
-     */
-    protected $definitionCanonical = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $definitionCodeableConcept = null;
-
-    /**
-     * Describes a required data item for evaluation in terms of the type of data, and
-     * optional code or date-based filters of the data.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
-     */
-    protected $definitionDataRequirement = null;
-
-    /**
-     * A expression that is evaluated in a specified context and returns a value. The
-     * context of use of the expression must specify the context in which the
-     * expression is evaluated, and how the result of the expression is used.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
-     */
-    protected $definitionExpression = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $definitionReference = null;
-
-    /**
-     * A description of a triggering event. Triggering events can be named events, data
-     * events, or periodic, as determined by the type element.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
-     */
-    protected $definitionTriggerDefinition = null;
+    private $_xmlns = '';
 
     /**
      * A sequence of Unicode characters
@@ -218,6 +130,111 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     protected $description = null;
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected $definitionReference = null;
+
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
+     */
+    protected $definitionCanonical = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $definitionCodeableConcept = null;
+
+    /**
+     * A expression that is evaluated in a specified context and returns a value. The
+     * context of use of the expression must specify the context in which the
+     * expression is evaluated, and how the result of the expression is used.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
+     */
+    protected $definitionExpression = null;
+
+    /**
+     * Describes a required data item for evaluation in terms of the type of data, and
+     * optional code or date-based filters of the data.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
+     */
+    protected $definitionDataRequirement = null;
+
+    /**
+     * A description of a triggering event. Triggering events can be named events, data
+     * events, or periodic, as determined by the type element.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
+     */
+    protected $definitionTriggerDefinition = null;
+
+    /**
+     * Specifies clinical/business/etc. metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Use UsageContext to define the members of the population, such as Age Ranges,
+     * Genders, Settings.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
+     */
+    protected $usageContext = [];
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -228,16 +245,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     protected $exclude = null;
 
     /**
-     * Possible group measure aggregates (E.g. Mean, Median).
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Indicates how elements are aggregated within the study effective period.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGroupMeasure
-     */
-    protected $groupMeasure = null;
-
-    /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
@@ -245,36 +252,33 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Indicates what effective period the study covers. (choose any one of
-     * participantEffective*, but only one)
+     * Indicates what effective period the study covers.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected $participantEffectiveDateTime = null;
 
     /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates what effective period the study covers. (choose any one of
-     * participantEffective*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
-     */
-    protected $participantEffectiveDuration = null;
-
-    /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indicates what effective period the study covers. (choose any one of
-     * participantEffective*, but only one)
+     * Indicates what effective period the study covers.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected $participantEffectivePeriod = null;
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates what effective period the study covers.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     */
+    protected $participantEffectiveDuration = null;
 
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
@@ -285,8 +289,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indicates what effective period the study covers. (choose any one of
-     * participantEffective*, but only one)
+     * Indicates what effective period the study covers.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
@@ -304,19 +307,14 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     protected $timeFromStart = null;
 
     /**
-     * Specifies clinical/business/etc. metadata that can be used to retrieve, index
-     * and/or categorize an artifact. This metadata can either be specific to the
-     * applicable population (e.g., age category, DRG) or the specific context of care
-     * (e.g., venue, care setting, provider of care).
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * Possible group measure aggregates (E.g. Mean, Median).
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Use UsageContext to define the members of the population, such as Age Ranges,
-     * Genders, Settings.
+     * Indicates how elements are aggregated within the study effective period.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGroupMeasure
      */
-    protected $usageContext = [];
+    protected $groupMeasure = null;
 
     /**
      * Validation map for fields in type EvidenceVariable.Characteristic
@@ -340,17 +338,31 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
+            $value = isset($data[self::FIELD_DESCRIPTION]) ? $data[self::FIELD_DESCRIPTION] : null;
+            $ext = (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) ? $ext = $data[self::FIELD_DESCRIPTION_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDescription($value);
+                } else if (is_array($value)) {
+                    $this->setDescription(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDescription(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_DEFINITION_REFERENCE])) {
+            if ($data[self::FIELD_DEFINITION_REFERENCE] instanceof FHIRReference) {
+                $this->setDefinitionReference($data[self::FIELD_DEFINITION_REFERENCE]);
+            } else {
+                $this->setDefinitionReference(new FHIRReference($data[self::FIELD_DEFINITION_REFERENCE]));
+            }
+        }
         if (isset($data[self::FIELD_DEFINITION_CANONICAL]) || isset($data[self::FIELD_DEFINITION_CANONICAL_EXT])) {
-            if (isset($data[self::FIELD_DEFINITION_CANONICAL])) {
-                $value = $data[self::FIELD_DEFINITION_CANONICAL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DEFINITION_CANONICAL_EXT]) && is_array($data[self::FIELD_DEFINITION_CANONICAL_EXT])) {
-                $ext = $data[self::FIELD_DEFINITION_CANONICAL_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_DEFINITION_CANONICAL]) ? $data[self::FIELD_DEFINITION_CANONICAL] : null;
+            $ext = (isset($data[self::FIELD_DEFINITION_CANONICAL_EXT]) && is_array($data[self::FIELD_DEFINITION_CANONICAL_EXT])) ? $ext = $data[self::FIELD_DEFINITION_CANONICAL_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRCanonical) {
                     $this->setDefinitionCanonical($value);
@@ -359,7 +371,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 } else {
                     $this->setDefinitionCanonical(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDefinitionCanonical(new FHIRCanonical($ext));
             }
         }
@@ -370,13 +382,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 $this->setDefinitionCodeableConcept(new FHIRCodeableConcept($data[self::FIELD_DEFINITION_CODEABLE_CONCEPT]));
             }
         }
-        if (isset($data[self::FIELD_DEFINITION_DATA_REQUIREMENT])) {
-            if ($data[self::FIELD_DEFINITION_DATA_REQUIREMENT] instanceof FHIRDataRequirement) {
-                $this->setDefinitionDataRequirement($data[self::FIELD_DEFINITION_DATA_REQUIREMENT]);
-            } else {
-                $this->setDefinitionDataRequirement(new FHIRDataRequirement($data[self::FIELD_DEFINITION_DATA_REQUIREMENT]));
-            }
-        }
         if (isset($data[self::FIELD_DEFINITION_EXPRESSION])) {
             if ($data[self::FIELD_DEFINITION_EXPRESSION] instanceof FHIRExpression) {
                 $this->setDefinitionExpression($data[self::FIELD_DEFINITION_EXPRESSION]);
@@ -384,11 +389,11 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 $this->setDefinitionExpression(new FHIRExpression($data[self::FIELD_DEFINITION_EXPRESSION]));
             }
         }
-        if (isset($data[self::FIELD_DEFINITION_REFERENCE])) {
-            if ($data[self::FIELD_DEFINITION_REFERENCE] instanceof FHIRReference) {
-                $this->setDefinitionReference($data[self::FIELD_DEFINITION_REFERENCE]);
+        if (isset($data[self::FIELD_DEFINITION_DATA_REQUIREMENT])) {
+            if ($data[self::FIELD_DEFINITION_DATA_REQUIREMENT] instanceof FHIRDataRequirement) {
+                $this->setDefinitionDataRequirement($data[self::FIELD_DEFINITION_DATA_REQUIREMENT]);
             } else {
-                $this->setDefinitionReference(new FHIRReference($data[self::FIELD_DEFINITION_REFERENCE]));
+                $this->setDefinitionDataRequirement(new FHIRDataRequirement($data[self::FIELD_DEFINITION_DATA_REQUIREMENT]));
             }
         }
         if (isset($data[self::FIELD_DEFINITION_TRIGGER_DEFINITION])) {
@@ -398,40 +403,27 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 $this->setDefinitionTriggerDefinition(new FHIRTriggerDefinition($data[self::FIELD_DEFINITION_TRIGGER_DEFINITION]));
             }
         }
-        if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
-            if (isset($data[self::FIELD_DESCRIPTION])) {
-                $value = $data[self::FIELD_DESCRIPTION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) {
-                $ext = $data[self::FIELD_DESCRIPTION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setDescription($value);
-                } else if (is_array($value)) {
-                    $this->setDescription(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+        if (isset($data[self::FIELD_USAGE_CONTEXT])) {
+            if (is_array($data[self::FIELD_USAGE_CONTEXT])) {
+                foreach($data[self::FIELD_USAGE_CONTEXT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRUsageContext) {
+                        $this->addUsageContext($v);
+                    } else {
+                        $this->addUsageContext(new FHIRUsageContext($v));
+                    }
                 }
-            } else if ([] !== $ext) {
-                $this->setDescription(new FHIRString($ext));
+            } elseif ($data[self::FIELD_USAGE_CONTEXT] instanceof FHIRUsageContext) {
+                $this->addUsageContext($data[self::FIELD_USAGE_CONTEXT]);
+            } else {
+                $this->addUsageContext(new FHIRUsageContext($data[self::FIELD_USAGE_CONTEXT]));
             }
         }
         if (isset($data[self::FIELD_EXCLUDE]) || isset($data[self::FIELD_EXCLUDE_EXT])) {
-            if (isset($data[self::FIELD_EXCLUDE])) {
-                $value = $data[self::FIELD_EXCLUDE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_EXCLUDE_EXT]) && is_array($data[self::FIELD_EXCLUDE_EXT])) {
-                $ext = $data[self::FIELD_EXCLUDE_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_EXCLUDE]) ? $data[self::FIELD_EXCLUDE] : null;
+            $ext = (isset($data[self::FIELD_EXCLUDE_EXT]) && is_array($data[self::FIELD_EXCLUDE_EXT])) ? $ext = $data[self::FIELD_EXCLUDE_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setExclude($value);
@@ -440,44 +432,13 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 } else {
                     $this->setExclude(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setExclude(new FHIRBoolean($ext));
             }
         }
-        if (isset($data[self::FIELD_GROUP_MEASURE]) || isset($data[self::FIELD_GROUP_MEASURE_EXT])) {
-            if (isset($data[self::FIELD_GROUP_MEASURE])) {
-                $value = $data[self::FIELD_GROUP_MEASURE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_GROUP_MEASURE_EXT]) && is_array($data[self::FIELD_GROUP_MEASURE_EXT])) {
-                $ext = $data[self::FIELD_GROUP_MEASURE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRGroupMeasure) {
-                    $this->setGroupMeasure($value);
-                } else if (is_array($value)) {
-                    $this->setGroupMeasure(new FHIRGroupMeasure(array_merge($ext, $value)));
-                } else {
-                    $this->setGroupMeasure(new FHIRGroupMeasure([FHIRGroupMeasure::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setGroupMeasure(new FHIRGroupMeasure($ext));
-            }
-        }
         if (isset($data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME]) || isset($data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT])) {
-            if (isset($data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME])) {
-                $value = $data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT]) && is_array($data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT])) {
-                $ext = $data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME]) ? $data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] : null;
+            $ext = (isset($data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT]) && is_array($data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT])) ? $ext = $data[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRDateTime) {
                     $this->setParticipantEffectiveDateTime($value);
@@ -486,15 +447,8 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 } else {
                     $this->setParticipantEffectiveDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setParticipantEffectiveDateTime(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION])) {
-            if ($data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] instanceof FHIRDuration) {
-                $this->setParticipantEffectiveDuration($data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION]);
-            } else {
-                $this->setParticipantEffectiveDuration(new FHIRDuration($data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION]));
             }
         }
         if (isset($data[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD])) {
@@ -502,6 +456,13 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 $this->setParticipantEffectivePeriod($data[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD]);
             } else {
                 $this->setParticipantEffectivePeriod(new FHIRPeriod($data[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD]));
+            }
+        }
+        if (isset($data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION])) {
+            if ($data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] instanceof FHIRDuration) {
+                $this->setParticipantEffectiveDuration($data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION]);
+            } else {
+                $this->setParticipantEffectiveDuration(new FHIRDuration($data[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION]));
             }
         }
         if (isset($data[self::FIELD_PARTICIPANT_EFFECTIVE_TIMING])) {
@@ -518,22 +479,19 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 $this->setTimeFromStart(new FHIRDuration($data[self::FIELD_TIME_FROM_START]));
             }
         }
-        if (isset($data[self::FIELD_USAGE_CONTEXT])) {
-            if (is_array($data[self::FIELD_USAGE_CONTEXT])) {
-                foreach($data[self::FIELD_USAGE_CONTEXT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRUsageContext) {
-                        $this->addUsageContext($v);
-                    } else {
-                        $this->addUsageContext(new FHIRUsageContext($v));
-                    }
+        if (isset($data[self::FIELD_GROUP_MEASURE]) || isset($data[self::FIELD_GROUP_MEASURE_EXT])) {
+            $value = isset($data[self::FIELD_GROUP_MEASURE]) ? $data[self::FIELD_GROUP_MEASURE] : null;
+            $ext = (isset($data[self::FIELD_GROUP_MEASURE_EXT]) && is_array($data[self::FIELD_GROUP_MEASURE_EXT])) ? $ext = $data[self::FIELD_GROUP_MEASURE_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRGroupMeasure) {
+                    $this->setGroupMeasure($value);
+                } else if (is_array($value)) {
+                    $this->setGroupMeasure(new FHIRGroupMeasure(array_merge($ext, $value)));
+                } else {
+                    $this->setGroupMeasure(new FHIRGroupMeasure([FHIRGroupMeasure::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ($data[self::FIELD_USAGE_CONTEXT] instanceof FHIRUsageContext) {
-                $this->addUsageContext($data[self::FIELD_USAGE_CONTEXT]);
-            } else {
-                $this->addUsageContext(new FHIRUsageContext($data[self::FIELD_USAGE_CONTEXT]));
+            } elseif ([] !== $ext) {
+                $this->setGroupMeasure(new FHIRGroupMeasure($ext));
             }
         }
     }
@@ -552,246 +510,10 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<EvidenceVariableCharacteristic{$xmlns}></EvidenceVariableCharacteristic>";
-    }
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
-     */
-    public function getDefinitionCanonical()
-    {
-        return $this->definitionCanonical;
-    }
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $definitionCanonical
-     * @return static
-     */
-    public function setDefinitionCanonical($definitionCanonical = null)
-    {
-        if (null === $definitionCanonical) {
-            $this->definitionCanonical = null;
-            return $this;
-        }
-        if ($definitionCanonical instanceof FHIRCanonical) {
-            $this->definitionCanonical = $definitionCanonical;
-            return $this;
-        }
-        $this->definitionCanonical = new FHIRCanonical($definitionCanonical);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getDefinitionCodeableConcept()
-    {
-        return $this->definitionCodeableConcept;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $definitionCodeableConcept
-     * @return static
-     */
-    public function setDefinitionCodeableConcept(FHIRCodeableConcept $definitionCodeableConcept = null)
-    {
-        $this->definitionCodeableConcept = $definitionCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * Describes a required data item for evaluation in terms of the type of data, and
-     * optional code or date-based filters of the data.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
-     */
-    public function getDefinitionDataRequirement()
-    {
-        return $this->definitionDataRequirement;
-    }
-
-    /**
-     * Describes a required data item for evaluation in terms of the type of data, and
-     * optional code or date-based filters of the data.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement $definitionDataRequirement
-     * @return static
-     */
-    public function setDefinitionDataRequirement(FHIRDataRequirement $definitionDataRequirement = null)
-    {
-        $this->definitionDataRequirement = $definitionDataRequirement;
-        return $this;
-    }
-
-    /**
-     * A expression that is evaluated in a specified context and returns a value. The
-     * context of use of the expression must specify the context in which the
-     * expression is evaluated, and how the result of the expression is used.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
-     */
-    public function getDefinitionExpression()
-    {
-        return $this->definitionExpression;
-    }
-
-    /**
-     * A expression that is evaluated in a specified context and returns a value. The
-     * context of use of the expression must specify the context in which the
-     * expression is evaluated, and how the result of the expression is used.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression $definitionExpression
-     * @return static
-     */
-    public function setDefinitionExpression(FHIRExpression $definitionExpression = null)
-    {
-        $this->definitionExpression = $definitionExpression;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getDefinitionReference()
-    {
-        return $this->definitionReference;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $definitionReference
-     * @return static
-     */
-    public function setDefinitionReference(FHIRReference $definitionReference = null)
-    {
-        $this->definitionReference = $definitionReference;
-        return $this;
-    }
-
-    /**
-     * A description of a triggering event. Triggering events can be named events, data
-     * events, or periodic, as determined by the type element.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
-     */
-    public function getDefinitionTriggerDefinition()
-    {
-        return $this->definitionTriggerDefinition;
-    }
-
-    /**
-     * A description of a triggering event. Triggering events can be named events, data
-     * events, or periodic, as determined by the type element.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Define members of the evidence element using Codes (such as condition,
-     * medication, or observation), Expressions ( using an expression language such as
-     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
-     * last year). (choose any one of definition*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition $definitionTriggerDefinition
-     * @return static
-     */
-    public function setDefinitionTriggerDefinition(FHIRTriggerDefinition $definitionTriggerDefinition = null)
-    {
-        $this->definitionTriggerDefinition = $definitionTriggerDefinition;
-        return $this;
     }
 
     /**
@@ -822,259 +544,248 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      */
     public function setDescription($description = null)
     {
-        if (null === $description) {
-            $this->description = null;
-            return $this;
+        if (null !== $description && !($description instanceof FHIRString)) {
+            $description = new FHIRString($description);
         }
-        if ($description instanceof FHIRString) {
-            $this->description = $description;
-            return $this;
+        $this->_trackValueSet($this->description, $description);
+        $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getDefinitionReference()
+    {
+        return $this->definitionReference;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $definitionReference
+     * @return static
+     */
+    public function setDefinitionReference(FHIRReference $definitionReference = null)
+    {
+        $this->_trackValueSet($this->definitionReference, $definitionReference);
+        $this->definitionReference = $definitionReference;
+        return $this;
+    }
+
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
+     */
+    public function getDefinitionCanonical()
+    {
+        return $this->definitionCanonical;
+    }
+
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $definitionCanonical
+     * @return static
+     */
+    public function setDefinitionCanonical($definitionCanonical = null)
+    {
+        if (null !== $definitionCanonical && !($definitionCanonical instanceof FHIRCanonical)) {
+            $definitionCanonical = new FHIRCanonical($definitionCanonical);
         }
-        $this->description = new FHIRString($description);
+        $this->_trackValueSet($this->definitionCanonical, $definitionCanonical);
+        $this->definitionCanonical = $definitionCanonical;
         return $this;
     }
 
     /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When true, members with this characteristic are excluded from the element.
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    public function getExclude()
+    public function getDefinitionCodeableConcept()
     {
-        return $this->exclude;
+        return $this->definitionCodeableConcept;
     }
 
     /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When true, members with this characteristic are excluded from the element.
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $exclude
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $definitionCodeableConcept
      * @return static
      */
-    public function setExclude($exclude = null)
+    public function setDefinitionCodeableConcept(FHIRCodeableConcept $definitionCodeableConcept = null)
     {
-        if (null === $exclude) {
-            $this->exclude = null;
-            return $this;
-        }
-        if ($exclude instanceof FHIRBoolean) {
-            $this->exclude = $exclude;
-            return $this;
-        }
-        $this->exclude = new FHIRBoolean($exclude);
+        $this->_trackValueSet($this->definitionCodeableConcept, $definitionCodeableConcept);
+        $this->definitionCodeableConcept = $definitionCodeableConcept;
         return $this;
     }
 
     /**
-     * Possible group measure aggregates (E.g. Mean, Median).
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A expression that is evaluated in a specified context and returns a value. The
+     * context of use of the expression must specify the context in which the
+     * expression is evaluated, and how the result of the expression is used.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indicates how elements are aggregated within the study effective period.
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGroupMeasure
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
-    public function getGroupMeasure()
+    public function getDefinitionExpression()
     {
-        return $this->groupMeasure;
+        return $this->definitionExpression;
     }
 
     /**
-     * Possible group measure aggregates (E.g. Mean, Median).
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A expression that is evaluated in a specified context and returns a value. The
+     * context of use of the expression must specify the context in which the
+     * expression is evaluated, and how the result of the expression is used.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indicates how elements are aggregated within the study effective period.
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGroupMeasure $groupMeasure
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression $definitionExpression
      * @return static
      */
-    public function setGroupMeasure(FHIRGroupMeasure $groupMeasure = null)
+    public function setDefinitionExpression(FHIRExpression $definitionExpression = null)
     {
-        $this->groupMeasure = $groupMeasure;
+        $this->_trackValueSet($this->definitionExpression, $definitionExpression);
+        $this->definitionExpression = $definitionExpression;
         return $this;
     }
 
     /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * Describes a required data item for evaluation in terms of the type of data, and
+     * optional code or date-based filters of the data.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indicates what effective period the study covers. (choose any one of
-     * participantEffective*, but only one)
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
      */
-    public function getParticipantEffectiveDateTime()
+    public function getDefinitionDataRequirement()
     {
-        return $this->participantEffectiveDateTime;
+        return $this->definitionDataRequirement;
     }
 
     /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * Describes a required data item for evaluation in terms of the type of data, and
+     * optional code or date-based filters of the data.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indicates what effective period the study covers. (choose any one of
-     * participantEffective*, but only one)
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $participantEffectiveDateTime
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement $definitionDataRequirement
      * @return static
      */
-    public function setParticipantEffectiveDateTime($participantEffectiveDateTime = null)
+    public function setDefinitionDataRequirement(FHIRDataRequirement $definitionDataRequirement = null)
     {
-        if (null === $participantEffectiveDateTime) {
-            $this->participantEffectiveDateTime = null;
-            return $this;
-        }
-        if ($participantEffectiveDateTime instanceof FHIRDateTime) {
-            $this->participantEffectiveDateTime = $participantEffectiveDateTime;
-            return $this;
-        }
-        $this->participantEffectiveDateTime = new FHIRDateTime($participantEffectiveDateTime);
+        $this->_trackValueSet($this->definitionDataRequirement, $definitionDataRequirement);
+        $this->definitionDataRequirement = $definitionDataRequirement;
         return $this;
     }
 
     /**
-     * A length of time.
+     * A description of a triggering event. Triggering events can be named events, data
+     * events, or periodic, as determined by the type element.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indicates what effective period the study covers. (choose any one of
-     * participantEffective*, but only one)
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
      */
-    public function getParticipantEffectiveDuration()
+    public function getDefinitionTriggerDefinition()
     {
-        return $this->participantEffectiveDuration;
+        return $this->definitionTriggerDefinition;
     }
 
     /**
-     * A length of time.
+     * A description of a triggering event. Triggering events can be named events, data
+     * events, or periodic, as determined by the type element.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Indicates what effective period the study covers. (choose any one of
-     * participantEffective*, but only one)
+     * Define members of the evidence element using Codes (such as condition,
+     * medication, or observation), Expressions ( using an expression language such as
+     * FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the
+     * last year).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition $definitionTriggerDefinition
      * @return static
      */
-    public function setParticipantEffectiveDuration(FHIRDuration $participantEffectiveDuration = null)
+    public function setDefinitionTriggerDefinition(FHIRTriggerDefinition $definitionTriggerDefinition = null)
     {
-        $this->participantEffectiveDuration = $participantEffectiveDuration;
-        return $this;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates what effective period the study covers. (choose any one of
-     * participantEffective*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
-     */
-    public function getParticipantEffectivePeriod()
-    {
-        return $this->participantEffectivePeriod;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates what effective period the study covers. (choose any one of
-     * participantEffective*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $participantEffectivePeriod
-     * @return static
-     */
-    public function setParticipantEffectivePeriod(FHIRPeriod $participantEffectivePeriod = null)
-    {
-        $this->participantEffectivePeriod = $participantEffectivePeriod;
-        return $this;
-    }
-
-    /**
-     * Specifies an event that may occur multiple times. Timing schedules are used to
-     * record when things are planned, expected or requested to occur. The most common
-     * usage is in dosage instructions for medications. They are also used when
-     * planning care of various kinds, and may be used for reporting the schedule to
-     * which past regular activities were carried out.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates what effective period the study covers. (choose any one of
-     * participantEffective*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
-     */
-    public function getParticipantEffectiveTiming()
-    {
-        return $this->participantEffectiveTiming;
-    }
-
-    /**
-     * Specifies an event that may occur multiple times. Timing schedules are used to
-     * record when things are planned, expected or requested to occur. The most common
-     * usage is in dosage instructions for medications. They are also used when
-     * planning care of various kinds, and may be used for reporting the schedule to
-     * which past regular activities were carried out.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates what effective period the study covers. (choose any one of
-     * participantEffective*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $participantEffectiveTiming
-     * @return static
-     */
-    public function setParticipantEffectiveTiming(FHIRTiming $participantEffectiveTiming = null)
-    {
-        $this->participantEffectiveTiming = $participantEffectiveTiming;
-        return $this;
-    }
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates duration from the participant's study entry.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
-     */
-    public function getTimeFromStart()
-    {
-        return $this->timeFromStart;
-    }
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates duration from the participant's study entry.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $timeFromStart
-     * @return static
-     */
-    public function setTimeFromStart(FHIRDuration $timeFromStart = null)
-    {
-        $this->timeFromStart = $timeFromStart;
+        $this->_trackValueSet($this->definitionTriggerDefinition, $definitionTriggerDefinition);
+        $this->definitionTriggerDefinition = $definitionTriggerDefinition;
         return $this;
     }
 
@@ -1112,6 +823,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      */
     public function addUsageContext(FHIRUsageContext $usageContext = null)
     {
+        $this->_trackValueAdded();
         $this->usageContext[] = $usageContext;
         return $this;
     }
@@ -1132,7 +844,10 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      */
     public function setUsageContext(array $usageContext = [])
     {
-        $this->usageContext = [];
+        if ([] !== $this->usageContext) {
+            $this->_trackValuesRemoved(count($this->usageContext));
+            $this->usageContext = [];
+        }
         if ([] === $usageContext) {
             return $this;
         }
@@ -1143,6 +858,239 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 $this->addUsageContext(new FHIRUsageContext($v));
             }
         }
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * When true, members with this characteristic are excluded from the element.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    public function getExclude()
+    {
+        return $this->exclude;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * When true, members with this characteristic are excluded from the element.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $exclude
+     * @return static
+     */
+    public function setExclude($exclude = null)
+    {
+        if (null !== $exclude && !($exclude instanceof FHIRBoolean)) {
+            $exclude = new FHIRBoolean($exclude);
+        }
+        $this->_trackValueSet($this->exclude, $exclude);
+        $this->exclude = $exclude;
+        return $this;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicates what effective period the study covers.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
+     */
+    public function getParticipantEffectiveDateTime()
+    {
+        return $this->participantEffectiveDateTime;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicates what effective period the study covers.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $participantEffectiveDateTime
+     * @return static
+     */
+    public function setParticipantEffectiveDateTime($participantEffectiveDateTime = null)
+    {
+        if (null !== $participantEffectiveDateTime && !($participantEffectiveDateTime instanceof FHIRDateTime)) {
+            $participantEffectiveDateTime = new FHIRDateTime($participantEffectiveDateTime);
+        }
+        $this->_trackValueSet($this->participantEffectiveDateTime, $participantEffectiveDateTime);
+        $this->participantEffectiveDateTime = $participantEffectiveDateTime;
+        return $this;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates what effective period the study covers.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     */
+    public function getParticipantEffectivePeriod()
+    {
+        return $this->participantEffectivePeriod;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates what effective period the study covers.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $participantEffectivePeriod
+     * @return static
+     */
+    public function setParticipantEffectivePeriod(FHIRPeriod $participantEffectivePeriod = null)
+    {
+        $this->_trackValueSet($this->participantEffectivePeriod, $participantEffectivePeriod);
+        $this->participantEffectivePeriod = $participantEffectivePeriod;
+        return $this;
+    }
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates what effective period the study covers.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     */
+    public function getParticipantEffectiveDuration()
+    {
+        return $this->participantEffectiveDuration;
+    }
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates what effective period the study covers.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $participantEffectiveDuration
+     * @return static
+     */
+    public function setParticipantEffectiveDuration(FHIRDuration $participantEffectiveDuration = null)
+    {
+        $this->_trackValueSet($this->participantEffectiveDuration, $participantEffectiveDuration);
+        $this->participantEffectiveDuration = $participantEffectiveDuration;
+        return $this;
+    }
+
+    /**
+     * Specifies an event that may occur multiple times. Timing schedules are used to
+     * record when things are planned, expected or requested to occur. The most common
+     * usage is in dosage instructions for medications. They are also used when
+     * planning care of various kinds, and may be used for reporting the schedule to
+     * which past regular activities were carried out.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates what effective period the study covers.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
+     */
+    public function getParticipantEffectiveTiming()
+    {
+        return $this->participantEffectiveTiming;
+    }
+
+    /**
+     * Specifies an event that may occur multiple times. Timing schedules are used to
+     * record when things are planned, expected or requested to occur. The most common
+     * usage is in dosage instructions for medications. They are also used when
+     * planning care of various kinds, and may be used for reporting the schedule to
+     * which past regular activities were carried out.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates what effective period the study covers.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming $participantEffectiveTiming
+     * @return static
+     */
+    public function setParticipantEffectiveTiming(FHIRTiming $participantEffectiveTiming = null)
+    {
+        $this->_trackValueSet($this->participantEffectiveTiming, $participantEffectiveTiming);
+        $this->participantEffectiveTiming = $participantEffectiveTiming;
+        return $this;
+    }
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates duration from the participant's study entry.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     */
+    public function getTimeFromStart()
+    {
+        return $this->timeFromStart;
+    }
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates duration from the participant's study entry.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $timeFromStart
+     * @return static
+     */
+    public function setTimeFromStart(FHIRDuration $timeFromStart = null)
+    {
+        $this->_trackValueSet($this->timeFromStart, $timeFromStart);
+        $this->timeFromStart = $timeFromStart;
+        return $this;
+    }
+
+    /**
+     * Possible group measure aggregates (E.g. Mean, Median).
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicates how elements are aggregated within the study effective period.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGroupMeasure
+     */
+    public function getGroupMeasure()
+    {
+        return $this->groupMeasure;
+    }
+
+    /**
+     * Possible group measure aggregates (E.g. Mean, Median).
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicates how elements are aggregated within the study effective period.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGroupMeasure $groupMeasure
+     * @return static
+     */
+    public function setGroupMeasure(FHIRGroupMeasure $groupMeasure = null)
+    {
+        $this->_trackValueSet($this->groupMeasure, $groupMeasure);
+        $this->groupMeasure = $groupMeasure;
         return $this;
     }
 
@@ -1167,6 +1115,16 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getDescription())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefinitionReference())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFINITION_REFERENCE] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getDefinitionCanonical())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_DEFINITION_CANONICAL] = $fieldErrs;
@@ -1177,19 +1135,14 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 $errs[self::FIELD_DEFINITION_CODEABLE_CONCEPT] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getDefinitionDataRequirement())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DEFINITION_DATA_REQUIREMENT] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getDefinitionExpression())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_DEFINITION_EXPRESSION] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getDefinitionReference())) {
+        if (null !== ($v = $this->getDefinitionDataRequirement())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DEFINITION_REFERENCE] = $fieldErrs;
+                $errs[self::FIELD_DEFINITION_DATA_REQUIREMENT] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDefinitionTriggerDefinition())) {
@@ -1197,9 +1150,11 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 $errs[self::FIELD_DEFINITION_TRIGGER_DEFINITION] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getDescription())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
+        if ([] !== ($vs = $this->getUsageContext())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_USAGE_CONTEXT, $i)] = $fieldErrs;
+                }
             }
         }
         if (null !== ($v = $this->getExclude())) {
@@ -1207,24 +1162,19 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 $errs[self::FIELD_EXCLUDE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getGroupMeasure())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_GROUP_MEASURE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getParticipantEffectiveDateTime())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getParticipantEffectiveDuration())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getParticipantEffectivePeriod())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getParticipantEffectiveDuration())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getParticipantEffectiveTiming())) {
@@ -1237,10 +1187,32 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 $errs[self::FIELD_TIME_FROM_START] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getUsageContext())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_USAGE_CONTEXT, $i)] = $fieldErrs;
+        if (null !== ($v = $this->getGroupMeasure())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_GROUP_MEASURE] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_DESCRIPTION])) {
+            $v = $this->getDescription();
+            foreach($validationRules[self::FIELD_DESCRIPTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_DESCRIPTION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DESCRIPTION])) {
+                        $errs[self::FIELD_DESCRIPTION] = [];
+                    }
+                    $errs[self::FIELD_DESCRIPTION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFINITION_REFERENCE])) {
+            $v = $this->getDefinitionReference();
+            foreach($validationRules[self::FIELD_DEFINITION_REFERENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_DEFINITION_REFERENCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFINITION_REFERENCE])) {
+                        $errs[self::FIELD_DEFINITION_REFERENCE] = [];
+                    }
+                    $errs[self::FIELD_DEFINITION_REFERENCE][$rule] = $err;
                 }
             }
         }
@@ -1268,18 +1240,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DEFINITION_DATA_REQUIREMENT])) {
-            $v = $this->getDefinitionDataRequirement();
-            foreach($validationRules[self::FIELD_DEFINITION_DATA_REQUIREMENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_DEFINITION_DATA_REQUIREMENT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DEFINITION_DATA_REQUIREMENT])) {
-                        $errs[self::FIELD_DEFINITION_DATA_REQUIREMENT] = [];
-                    }
-                    $errs[self::FIELD_DEFINITION_DATA_REQUIREMENT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_DEFINITION_EXPRESSION])) {
             $v = $this->getDefinitionExpression();
             foreach($validationRules[self::FIELD_DEFINITION_EXPRESSION] as $rule => $constraint) {
@@ -1292,15 +1252,15 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DEFINITION_REFERENCE])) {
-            $v = $this->getDefinitionReference();
-            foreach($validationRules[self::FIELD_DEFINITION_REFERENCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_DEFINITION_REFERENCE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_DEFINITION_DATA_REQUIREMENT])) {
+            $v = $this->getDefinitionDataRequirement();
+            foreach($validationRules[self::FIELD_DEFINITION_DATA_REQUIREMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_DEFINITION_DATA_REQUIREMENT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DEFINITION_REFERENCE])) {
-                        $errs[self::FIELD_DEFINITION_REFERENCE] = [];
+                    if (!isset($errs[self::FIELD_DEFINITION_DATA_REQUIREMENT])) {
+                        $errs[self::FIELD_DEFINITION_DATA_REQUIREMENT] = [];
                     }
-                    $errs[self::FIELD_DEFINITION_REFERENCE][$rule] = $err;
+                    $errs[self::FIELD_DEFINITION_DATA_REQUIREMENT][$rule] = $err;
                 }
             }
         }
@@ -1316,15 +1276,15 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DESCRIPTION])) {
-            $v = $this->getDescription();
-            foreach($validationRules[self::FIELD_DESCRIPTION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_DESCRIPTION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_USAGE_CONTEXT])) {
+            $v = $this->getUsageContext();
+            foreach($validationRules[self::FIELD_USAGE_CONTEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_USAGE_CONTEXT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DESCRIPTION])) {
-                        $errs[self::FIELD_DESCRIPTION] = [];
+                    if (!isset($errs[self::FIELD_USAGE_CONTEXT])) {
+                        $errs[self::FIELD_USAGE_CONTEXT] = [];
                     }
-                    $errs[self::FIELD_DESCRIPTION][$rule] = $err;
+                    $errs[self::FIELD_USAGE_CONTEXT][$rule] = $err;
                 }
             }
         }
@@ -1340,18 +1300,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_GROUP_MEASURE])) {
-            $v = $this->getGroupMeasure();
-            foreach($validationRules[self::FIELD_GROUP_MEASURE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_GROUP_MEASURE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_GROUP_MEASURE])) {
-                        $errs[self::FIELD_GROUP_MEASURE] = [];
-                    }
-                    $errs[self::FIELD_GROUP_MEASURE][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME])) {
             $v = $this->getParticipantEffectiveDateTime();
             foreach($validationRules[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] as $rule => $constraint) {
@@ -1364,18 +1312,6 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION])) {
-            $v = $this->getParticipantEffectiveDuration();
-            foreach($validationRules[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_PARTICIPANT_EFFECTIVE_DURATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION])) {
-                        $errs[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] = [];
-                    }
-                    $errs[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD])) {
             $v = $this->getParticipantEffectivePeriod();
             foreach($validationRules[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD] as $rule => $constraint) {
@@ -1385,6 +1321,18 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                         $errs[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD] = [];
                     }
                     $errs[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION])) {
+            $v = $this->getParticipantEffectiveDuration();
+            foreach($validationRules[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_PARTICIPANT_EFFECTIVE_DURATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION])) {
+                        $errs[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] = [];
+                    }
+                    $errs[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION][$rule] = $err;
                 }
             }
         }
@@ -1412,15 +1360,15 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_USAGE_CONTEXT])) {
-            $v = $this->getUsageContext();
-            foreach($validationRules[self::FIELD_USAGE_CONTEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_USAGE_CONTEXT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_GROUP_MEASURE])) {
+            $v = $this->getGroupMeasure();
+            foreach($validationRules[self::FIELD_GROUP_MEASURE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_GROUP_MEASURE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_USAGE_CONTEXT])) {
-                        $errs[self::FIELD_USAGE_CONTEXT] = [];
+                    if (!isset($errs[self::FIELD_GROUP_MEASURE])) {
+                        $errs[self::FIELD_GROUP_MEASURE] = [];
                     }
-                    $errs[self::FIELD_USAGE_CONTEXT][$rule] = $err;
+                    $errs[self::FIELD_GROUP_MEASURE][$rule] = $err;
                 }
             }
         }
@@ -1464,189 +1412,227 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIREvidenceVariableCharacteristic::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIREvidenceVariableCharacteristic::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIREvidenceVariableCharacteristic::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIREvidenceVariableCharacteristic;
+            $type = new FHIREvidenceVariableCharacteristic(null);
         } elseif (!is_object($type) || !($type instanceof FHIREvidenceVariableCharacteristic)) {
             throw new \RuntimeException(sprintf(
                 'FHIREvidenceVariableCharacteristic::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_DESCRIPTION === $n->nodeName) {
+                $type->setDescription(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_DEFINITION_REFERENCE === $n->nodeName) {
+                $type->setDefinitionReference(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_DEFINITION_CANONICAL === $n->nodeName) {
+                $type->setDefinitionCanonical(FHIRCanonical::xmlUnserialize($n));
+            } elseif (self::FIELD_DEFINITION_CODEABLE_CONCEPT === $n->nodeName) {
+                $type->setDefinitionCodeableConcept(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DEFINITION_EXPRESSION === $n->nodeName) {
+                $type->setDefinitionExpression(FHIRExpression::xmlUnserialize($n));
+            } elseif (self::FIELD_DEFINITION_DATA_REQUIREMENT === $n->nodeName) {
+                $type->setDefinitionDataRequirement(FHIRDataRequirement::xmlUnserialize($n));
+            } elseif (self::FIELD_DEFINITION_TRIGGER_DEFINITION === $n->nodeName) {
+                $type->setDefinitionTriggerDefinition(FHIRTriggerDefinition::xmlUnserialize($n));
+            } elseif (self::FIELD_USAGE_CONTEXT === $n->nodeName) {
+                $type->addUsageContext(FHIRUsageContext::xmlUnserialize($n));
+            } elseif (self::FIELD_EXCLUDE === $n->nodeName) {
+                $type->setExclude(FHIRBoolean::xmlUnserialize($n));
+            } elseif (self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME === $n->nodeName) {
+                $type->setParticipantEffectiveDateTime(FHIRDateTime::xmlUnserialize($n));
+            } elseif (self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD === $n->nodeName) {
+                $type->setParticipantEffectivePeriod(FHIRPeriod::xmlUnserialize($n));
+            } elseif (self::FIELD_PARTICIPANT_EFFECTIVE_DURATION === $n->nodeName) {
+                $type->setParticipantEffectiveDuration(FHIRDuration::xmlUnserialize($n));
+            } elseif (self::FIELD_PARTICIPANT_EFFECTIVE_TIMING === $n->nodeName) {
+                $type->setParticipantEffectiveTiming(FHIRTiming::xmlUnserialize($n));
+            } elseif (self::FIELD_TIME_FROM_START === $n->nodeName) {
+                $type->setTimeFromStart(FHIRDuration::xmlUnserialize($n));
+            } elseif (self::FIELD_GROUP_MEASURE === $n->nodeName) {
+                $type->setGroupMeasure(FHIRGroupMeasure::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->definitionCanonical)) {
-            $type->setDefinitionCanonical(FHIRCanonical::xmlUnserialize($children->definitionCanonical));
-        }
-        if (isset($attributes->definitionCanonical)) {
-            $pt = $type->getDefinitionCanonical();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->definitionCanonical);
-            } else {
-                $type->setDefinitionCanonical((string)$attributes->definitionCanonical);
-            }
-        }
-        if (isset($children->definitionCodeableConcept)) {
-            $type->setDefinitionCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->definitionCodeableConcept));
-        }
-        if (isset($children->definitionDataRequirement)) {
-            $type->setDefinitionDataRequirement(FHIRDataRequirement::xmlUnserialize($children->definitionDataRequirement));
-        }
-        if (isset($children->definitionExpression)) {
-            $type->setDefinitionExpression(FHIRExpression::xmlUnserialize($children->definitionExpression));
-        }
-        if (isset($children->definitionReference)) {
-            $type->setDefinitionReference(FHIRReference::xmlUnserialize($children->definitionReference));
-        }
-        if (isset($children->definitionTriggerDefinition)) {
-            $type->setDefinitionTriggerDefinition(FHIRTriggerDefinition::xmlUnserialize($children->definitionTriggerDefinition));
-        }
-        if (isset($children->description)) {
-            $type->setDescription(FHIRString::xmlUnserialize($children->description));
-        }
-        if (isset($attributes->description)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DESCRIPTION);
+        if (null !== $n) {
             $pt = $type->getDescription();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->description);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDescription((string)$attributes->description);
+                $type->setDescription($n->nodeValue);
             }
         }
-        if (isset($children->exclude)) {
-            $type->setExclude(FHIRBoolean::xmlUnserialize($children->exclude));
+        $n = $element->attributes->getNamedItem(self::FIELD_DEFINITION_CANONICAL);
+        if (null !== $n) {
+            $pt = $type->getDefinitionCanonical();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setDefinitionCanonical($n->nodeValue);
+            }
         }
-        if (isset($attributes->exclude)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_EXCLUDE);
+        if (null !== $n) {
             $pt = $type->getExclude();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->exclude);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setExclude((string)$attributes->exclude);
+                $type->setExclude($n->nodeValue);
             }
         }
-        if (isset($children->groupMeasure)) {
-            $type->setGroupMeasure(FHIRGroupMeasure::xmlUnserialize($children->groupMeasure));
-        }
-        if (isset($children->participantEffectiveDateTime)) {
-            $type->setParticipantEffectiveDateTime(FHIRDateTime::xmlUnserialize($children->participantEffectiveDateTime));
-        }
-        if (isset($attributes->participantEffectiveDateTime)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME);
+        if (null !== $n) {
             $pt = $type->getParticipantEffectiveDateTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->participantEffectiveDateTime);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setParticipantEffectiveDateTime((string)$attributes->participantEffectiveDateTime);
+                $type->setParticipantEffectiveDateTime($n->nodeValue);
             }
         }
-        if (isset($children->participantEffectiveDuration)) {
-            $type->setParticipantEffectiveDuration(FHIRDuration::xmlUnserialize($children->participantEffectiveDuration));
-        }
-        if (isset($children->participantEffectivePeriod)) {
-            $type->setParticipantEffectivePeriod(FHIRPeriod::xmlUnserialize($children->participantEffectivePeriod));
-        }
-        if (isset($children->participantEffectiveTiming)) {
-            $type->setParticipantEffectiveTiming(FHIRTiming::xmlUnserialize($children->participantEffectiveTiming));
-        }
-        if (isset($children->timeFromStart)) {
-            $type->setTimeFromStart(FHIRDuration::xmlUnserialize($children->timeFromStart));
-        }
-        if (isset($children->usageContext)) {
-            foreach($children->usageContext as $child) {
-                $type->addUsageContext(FHIRUsageContext::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getDefinitionCanonical())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_CANONICAL, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDefinitionCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDefinitionDataRequirement())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_DATA_REQUIREMENT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDefinitionExpression())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_EXPRESSION, null, $v->_getFHIRXMLNamespace()));
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getDescription())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DESCRIPTION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getDefinitionReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DEFINITION_REFERENCE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDefinitionCanonical())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DEFINITION_CANONICAL);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDefinitionCodeableConcept())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DEFINITION_CODEABLE_CONCEPT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDefinitionExpression())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DEFINITION_EXPRESSION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDefinitionDataRequirement())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DEFINITION_DATA_REQUIREMENT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getDefinitionTriggerDefinition())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION_TRIGGER_DEFINITION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getExclude())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXCLUDE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getGroupMeasure())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_GROUP_MEASURE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getParticipantEffectiveDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getParticipantEffectiveDuration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_DURATION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getParticipantEffectivePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getParticipantEffectiveTiming())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PARTICIPANT_EFFECTIVE_TIMING, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getTimeFromStart())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIME_FROM_START, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DEFINITION_TRIGGER_DEFINITION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getUsageContext())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_USAGE_CONTEXT, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_USAGE_CONTEXT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        if (null !== ($v = $this->getExclude())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_EXCLUDE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getParticipantEffectiveDateTime())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getParticipantEffectivePeriod())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getParticipantEffectiveDuration())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PARTICIPANT_EFFECTIVE_DURATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getParticipantEffectiveTiming())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PARTICIPANT_EFFECTIVE_TIMING);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getTimeFromStart())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TIME_FROM_START);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getGroupMeasure())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_GROUP_MEASURE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -1655,77 +1641,40 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getDescription())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DESCRIPTION_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getDefinitionReference())) {
+            $a[self::FIELD_DEFINITION_REFERENCE] = $v;
+        }
         if (null !== ($v = $this->getDefinitionCanonical())) {
-            $a[self::FIELD_DEFINITION_CANONICAL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCanonical::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCanonical::FIELD_VALUE]);
-                $a[self::FIELD_DEFINITION_CANONICAL_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DEFINITION_CANONICAL] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRCanonical::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DEFINITION_CANONICAL_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getDefinitionCodeableConcept())) {
             $a[self::FIELD_DEFINITION_CODEABLE_CONCEPT] = $v;
         }
-        if (null !== ($v = $this->getDefinitionDataRequirement())) {
-            $a[self::FIELD_DEFINITION_DATA_REQUIREMENT] = $v;
-        }
         if (null !== ($v = $this->getDefinitionExpression())) {
             $a[self::FIELD_DEFINITION_EXPRESSION] = $v;
         }
-        if (null !== ($v = $this->getDefinitionReference())) {
-            $a[self::FIELD_DEFINITION_REFERENCE] = $v;
+        if (null !== ($v = $this->getDefinitionDataRequirement())) {
+            $a[self::FIELD_DEFINITION_DATA_REQUIREMENT] = $v;
         }
         if (null !== ($v = $this->getDefinitionTriggerDefinition())) {
             $a[self::FIELD_DEFINITION_TRIGGER_DEFINITION] = $v;
-        }
-        if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DESCRIPTION_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getExclude())) {
-            $a[self::FIELD_EXCLUDE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_EXCLUDE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getGroupMeasure())) {
-            $a[self::FIELD_GROUP_MEASURE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRGroupMeasure::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRGroupMeasure::FIELD_VALUE]);
-                $a[self::FIELD_GROUP_MEASURE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getParticipantEffectiveDateTime())) {
-            $a[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getParticipantEffectiveDuration())) {
-            $a[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] = $v;
-        }
-        if (null !== ($v = $this->getParticipantEffectivePeriod())) {
-            $a[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD] = $v;
-        }
-        if (null !== ($v = $this->getParticipantEffectiveTiming())) {
-            $a[self::FIELD_PARTICIPANT_EFFECTIVE_TIMING] = $v;
-        }
-        if (null !== ($v = $this->getTimeFromStart())) {
-            $a[self::FIELD_TIME_FROM_START] = $v;
         }
         if ([] !== ($vs = $this->getUsageContext())) {
             $a[self::FIELD_USAGE_CONTEXT] = [];
@@ -1736,8 +1685,47 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
                 $a[self::FIELD_USAGE_CONTEXT][] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getExclude())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_EXCLUDE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBoolean::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_EXCLUDE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getParticipantEffectiveDateTime())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDateTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getParticipantEffectivePeriod())) {
+            $a[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD] = $v;
+        }
+        if (null !== ($v = $this->getParticipantEffectiveDuration())) {
+            $a[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] = $v;
+        }
+        if (null !== ($v = $this->getParticipantEffectiveTiming())) {
+            $a[self::FIELD_PARTICIPANT_EFFECTIVE_TIMING] = $v;
+        }
+        if (null !== ($v = $this->getTimeFromStart())) {
+            $a[self::FIELD_TIME_FROM_START] = $v;
+        }
+        if (null !== ($v = $this->getGroupMeasure())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_GROUP_MEASURE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRGroupMeasure::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_GROUP_MEASURE_EXT] = $ext;
+            }
         }
         return $a;
     }

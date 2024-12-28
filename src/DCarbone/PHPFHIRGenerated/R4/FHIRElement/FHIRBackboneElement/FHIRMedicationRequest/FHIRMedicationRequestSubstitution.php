@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,8 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -88,14 +90,14 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
     const FIELD_REASON = 'reason';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
+     * prescribed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -108,7 +110,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
+     * prescribed.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -150,16 +152,8 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_ALLOWED_BOOLEAN]) || isset($data[self::FIELD_ALLOWED_BOOLEAN_EXT])) {
-            if (isset($data[self::FIELD_ALLOWED_BOOLEAN])) {
-                $value = $data[self::FIELD_ALLOWED_BOOLEAN];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ALLOWED_BOOLEAN_EXT]) && is_array($data[self::FIELD_ALLOWED_BOOLEAN_EXT])) {
-                $ext = $data[self::FIELD_ALLOWED_BOOLEAN_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_ALLOWED_BOOLEAN]) ? $data[self::FIELD_ALLOWED_BOOLEAN] : null;
+            $ext = (isset($data[self::FIELD_ALLOWED_BOOLEAN_EXT]) && is_array($data[self::FIELD_ALLOWED_BOOLEAN_EXT])) ? $ext = $data[self::FIELD_ALLOWED_BOOLEAN_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setAllowedBoolean($value);
@@ -168,7 +162,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
                 } else {
                     $this->setAllowedBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setAllowedBoolean(new FHIRBoolean($ext));
             }
         }
@@ -202,7 +196,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<MedicationRequestSubstitution{$xmlns}></MedicationRequestSubstitution>";
@@ -213,7 +207,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
+     * prescribed.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -227,22 +221,18 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
+     * prescribed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $allowedBoolean
      * @return static
      */
     public function setAllowedBoolean($allowedBoolean = null)
     {
-        if (null === $allowedBoolean) {
-            $this->allowedBoolean = null;
-            return $this;
+        if (null !== $allowedBoolean && !($allowedBoolean instanceof FHIRBoolean)) {
+            $allowedBoolean = new FHIRBoolean($allowedBoolean);
         }
-        if ($allowedBoolean instanceof FHIRBoolean) {
-            $this->allowedBoolean = $allowedBoolean;
-            return $this;
-        }
-        $this->allowedBoolean = new FHIRBoolean($allowedBoolean);
+        $this->_trackValueSet($this->allowedBoolean, $allowedBoolean);
+        $this->allowedBoolean = $allowedBoolean;
         return $this;
     }
 
@@ -253,7 +243,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
+     * prescribed.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
@@ -269,13 +259,14 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * True if the prescriber allows a different drug to be dispensed from what was
-     * prescribed. (choose any one of allowed*, but only one)
+     * prescribed.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $allowedCodeableConcept
      * @return static
      */
     public function setAllowedCodeableConcept(FHIRCodeableConcept $allowedCodeableConcept = null)
     {
+        $this->_trackValueSet($this->allowedCodeableConcept, $allowedCodeableConcept);
         $this->allowedCodeableConcept = $allowedCodeableConcept;
         return $this;
     }
@@ -310,6 +301,7 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
      */
     public function setReason(FHIRCodeableConcept $reason = null)
     {
+        $this->_trackValueSet($this->reason, $reason);
         $this->reason = $reason;
         return $this;
     }
@@ -426,86 +418,111 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestSubstitution $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestSubstitution
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRMedicationRequestSubstitution::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMedicationRequestSubstitution::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRMedicationRequestSubstitution::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRMedicationRequestSubstitution;
+            $type = new FHIRMedicationRequestSubstitution(null);
         } elseif (!is_object($type) || !($type instanceof FHIRMedicationRequestSubstitution)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMedicationRequestSubstitution::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestSubstitution or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_ALLOWED_BOOLEAN === $n->nodeName) {
+                $type->setAllowedBoolean(FHIRBoolean::xmlUnserialize($n));
+            } elseif (self::FIELD_ALLOWED_CODEABLE_CONCEPT === $n->nodeName) {
+                $type->setAllowedCodeableConcept(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_REASON === $n->nodeName) {
+                $type->setReason(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->allowedBoolean)) {
-            $type->setAllowedBoolean(FHIRBoolean::xmlUnserialize($children->allowedBoolean));
-        }
-        if (isset($attributes->allowedBoolean)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_ALLOWED_BOOLEAN);
+        if (null !== $n) {
             $pt = $type->getAllowedBoolean();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->allowedBoolean);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setAllowedBoolean((string)$attributes->allowedBoolean);
+                $type->setAllowedBoolean($n->nodeValue);
             }
         }
-        if (isset($children->allowedCodeableConcept)) {
-            $type->setAllowedCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->allowedCodeableConcept));
-        }
-        if (isset($children->reason)) {
-            $type->setReason(FHIRCodeableConcept::xmlUnserialize($children->reason));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getAllowedBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ALLOWED_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_ALLOWED_BOOLEAN);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getAllowedCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ALLOWED_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_ALLOWED_CODEABLE_CONCEPT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getReason())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_REASON);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -515,12 +532,13 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAllowedBoolean())) {
-            $a[self::FIELD_ALLOWED_BOOLEAN] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_ALLOWED_BOOLEAN_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ALLOWED_BOOLEAN] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBoolean::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_ALLOWED_BOOLEAN_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getAllowedCodeableConcept())) {
@@ -528,9 +546,6 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getReason())) {
             $a[self::FIELD_REASON] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

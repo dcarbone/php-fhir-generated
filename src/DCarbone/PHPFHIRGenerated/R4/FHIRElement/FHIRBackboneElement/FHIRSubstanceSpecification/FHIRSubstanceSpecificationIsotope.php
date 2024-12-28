@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,8 +64,10 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -80,27 +82,14 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_ISOTOPE;
-    const FIELD_HALF_LIFE = 'halfLife';
     const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_MOLECULAR_WEIGHT = 'molecularWeight';
     const FIELD_NAME = 'name';
     const FIELD_SUBSTITUTION = 'substitution';
+    const FIELD_HALF_LIFE = 'halfLife';
+    const FIELD_MOLECULAR_WEIGHT = 'molecularWeight';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Half life - for a non-natural nuclide.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    protected $halfLife = null;
+    private $_xmlns = '';
 
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -113,16 +102,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected $identifier = null;
-
-    /**
-     * The detailed description of a substance, typically at a level beyond what is
-     * used for prescribing.
-     *
-     * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
-     */
-    protected $molecularWeight = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -149,6 +128,29 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
     protected $substitution = null;
 
     /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Half life - for a non-natural nuclide.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    protected $halfLife = null;
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
+     * The molecular weight or weight range (for proteins, polymers or nucleic acids).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
+     */
+    protected $molecularWeight = null;
+
+    /**
      * Validation map for fields in type SubstanceSpecification.Isotope
      * @var array
      */
@@ -170,25 +172,11 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_HALF_LIFE])) {
-            if ($data[self::FIELD_HALF_LIFE] instanceof FHIRQuantity) {
-                $this->setHalfLife($data[self::FIELD_HALF_LIFE]);
-            } else {
-                $this->setHalfLife(new FHIRQuantity($data[self::FIELD_HALF_LIFE]));
-            }
-        }
         if (isset($data[self::FIELD_IDENTIFIER])) {
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
-            }
-        }
-        if (isset($data[self::FIELD_MOLECULAR_WEIGHT])) {
-            if ($data[self::FIELD_MOLECULAR_WEIGHT] instanceof FHIRSubstanceSpecificationMolecularWeight) {
-                $this->setMolecularWeight($data[self::FIELD_MOLECULAR_WEIGHT]);
-            } else {
-                $this->setMolecularWeight(new FHIRSubstanceSpecificationMolecularWeight($data[self::FIELD_MOLECULAR_WEIGHT]));
             }
         }
         if (isset($data[self::FIELD_NAME])) {
@@ -203,6 +191,20 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
                 $this->setSubstitution($data[self::FIELD_SUBSTITUTION]);
             } else {
                 $this->setSubstitution(new FHIRCodeableConcept($data[self::FIELD_SUBSTITUTION]));
+            }
+        }
+        if (isset($data[self::FIELD_HALF_LIFE])) {
+            if ($data[self::FIELD_HALF_LIFE] instanceof FHIRQuantity) {
+                $this->setHalfLife($data[self::FIELD_HALF_LIFE]);
+            } else {
+                $this->setHalfLife(new FHIRQuantity($data[self::FIELD_HALF_LIFE]));
+            }
+        }
+        if (isset($data[self::FIELD_MOLECULAR_WEIGHT])) {
+            if ($data[self::FIELD_MOLECULAR_WEIGHT] instanceof FHIRSubstanceSpecificationMolecularWeight) {
+                $this->setMolecularWeight($data[self::FIELD_MOLECULAR_WEIGHT]);
+            } else {
+                $this->setMolecularWeight(new FHIRSubstanceSpecificationMolecularWeight($data[self::FIELD_MOLECULAR_WEIGHT]));
             }
         }
     }
@@ -221,44 +223,10 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<SubstanceSpecificationIsotope{$xmlns}></SubstanceSpecificationIsotope>";
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Half life - for a non-natural nuclide.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    public function getHalfLife()
-    {
-        return $this->halfLife;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Half life - for a non-natural nuclide.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $halfLife
-     * @return static
-     */
-    public function setHalfLife(FHIRQuantity $halfLife = null)
-    {
-        $this->halfLife = $halfLife;
-        return $this;
     }
 
     /**
@@ -289,35 +257,8 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
+        $this->_trackValueSet($this->identifier, $identifier);
         $this->identifier = $identifier;
-        return $this;
-    }
-
-    /**
-     * The detailed description of a substance, typically at a level beyond what is
-     * used for prescribing.
-     *
-     * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
-     */
-    public function getMolecularWeight()
-    {
-        return $this->molecularWeight;
-    }
-
-    /**
-     * The detailed description of a substance, typically at a level beyond what is
-     * used for prescribing.
-     *
-     * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight $molecularWeight
-     * @return static
-     */
-    public function setMolecularWeight(FHIRSubstanceSpecificationMolecularWeight $molecularWeight = null)
-    {
-        $this->molecularWeight = $molecularWeight;
         return $this;
     }
 
@@ -349,6 +290,7 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      */
     public function setName(FHIRCodeableConcept $name = null)
     {
+        $this->_trackValueSet($this->name, $name);
         $this->name = $name;
         return $this;
     }
@@ -381,7 +323,72 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
      */
     public function setSubstitution(FHIRCodeableConcept $substitution = null)
     {
+        $this->_trackValueSet($this->substitution, $substitution);
         $this->substitution = $substitution;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Half life - for a non-natural nuclide.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    public function getHalfLife()
+    {
+        return $this->halfLife;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Half life - for a non-natural nuclide.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $halfLife
+     * @return static
+     */
+    public function setHalfLife(FHIRQuantity $halfLife = null)
+    {
+        $this->_trackValueSet($this->halfLife, $halfLife);
+        $this->halfLife = $halfLife;
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
+     * The molecular weight or weight range (for proteins, polymers or nucleic acids).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
+     */
+    public function getMolecularWeight()
+    {
+        return $this->molecularWeight;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
+     * The molecular weight or weight range (for proteins, polymers or nucleic acids).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight $molecularWeight
+     * @return static
+     */
+    public function setMolecularWeight(FHIRSubstanceSpecificationMolecularWeight $molecularWeight = null)
+    {
+        $this->_trackValueSet($this->molecularWeight, $molecularWeight);
+        $this->molecularWeight = $molecularWeight;
         return $this;
     }
 
@@ -406,19 +413,9 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getHalfLife())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_HALF_LIFE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getIdentifier())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_IDENTIFIER] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getMolecularWeight())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_MOLECULAR_WEIGHT] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getName())) {
@@ -431,16 +428,14 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
                 $errs[self::FIELD_SUBSTITUTION] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_HALF_LIFE])) {
-            $v = $this->getHalfLife();
-            foreach($validationRules[self::FIELD_HALF_LIFE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_ISOTOPE, self::FIELD_HALF_LIFE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_HALF_LIFE])) {
-                        $errs[self::FIELD_HALF_LIFE] = [];
-                    }
-                    $errs[self::FIELD_HALF_LIFE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getHalfLife())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_HALF_LIFE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMolecularWeight())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MOLECULAR_WEIGHT] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_IDENTIFIER])) {
@@ -452,18 +447,6 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
                         $errs[self::FIELD_IDENTIFIER] = [];
                     }
                     $errs[self::FIELD_IDENTIFIER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_MOLECULAR_WEIGHT])) {
-            $v = $this->getMolecularWeight();
-            foreach($validationRules[self::FIELD_MOLECULAR_WEIGHT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_ISOTOPE, self::FIELD_MOLECULAR_WEIGHT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_MOLECULAR_WEIGHT])) {
-                        $errs[self::FIELD_MOLECULAR_WEIGHT] = [];
-                    }
-                    $errs[self::FIELD_MOLECULAR_WEIGHT][$rule] = $err;
                 }
             }
         }
@@ -488,6 +471,30 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
                         $errs[self::FIELD_SUBSTITUTION] = [];
                     }
                     $errs[self::FIELD_SUBSTITUTION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_HALF_LIFE])) {
+            $v = $this->getHalfLife();
+            foreach($validationRules[self::FIELD_HALF_LIFE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_ISOTOPE, self::FIELD_HALF_LIFE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_HALF_LIFE])) {
+                        $errs[self::FIELD_HALF_LIFE] = [];
+                    }
+                    $errs[self::FIELD_HALF_LIFE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MOLECULAR_WEIGHT])) {
+            $v = $this->getMolecularWeight();
+            foreach($validationRules[self::FIELD_MOLECULAR_WEIGHT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_ISOTOPE, self::FIELD_MOLECULAR_WEIGHT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MOLECULAR_WEIGHT])) {
+                        $errs[self::FIELD_MOLECULAR_WEIGHT] = [];
+                    }
+                    $errs[self::FIELD_MOLECULAR_WEIGHT][$rule] = $err;
                 }
             }
         }
@@ -531,90 +538,116 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRSubstanceSpecificationIsotope::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSubstanceSpecificationIsotope::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRSubstanceSpecificationIsotope::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRSubstanceSpecificationIsotope;
+            $type = new FHIRSubstanceSpecificationIsotope(null);
         } elseif (!is_object($type) || !($type instanceof FHIRSubstanceSpecificationIsotope)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSubstanceSpecificationIsotope::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_IDENTIFIER === $n->nodeName) {
+                $type->setIdentifier(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_NAME === $n->nodeName) {
+                $type->setName(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_SUBSTITUTION === $n->nodeName) {
+                $type->setSubstitution(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_HALF_LIFE === $n->nodeName) {
+                $type->setHalfLife(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_MOLECULAR_WEIGHT === $n->nodeName) {
+                $type->setMolecularWeight(FHIRSubstanceSpecificationMolecularWeight::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->halfLife)) {
-            $type->setHalfLife(FHIRQuantity::xmlUnserialize($children->halfLife));
-        }
-        if (isset($children->identifier)) {
-            $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
-        }
-        if (isset($children->molecularWeight)) {
-            $type->setMolecularWeight(FHIRSubstanceSpecificationMolecularWeight::xmlUnserialize($children->molecularWeight));
-        }
-        if (isset($children->name)) {
-            $type->setName(FHIRCodeableConcept::xmlUnserialize($children->name));
-        }
-        if (isset($children->substitution)) {
-            $type->setSubstitution(FHIRCodeableConcept::xmlUnserialize($children->substitution));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getHalfLife())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_HALF_LIFE, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getMolecularWeight())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MOLECULAR_WEIGHT, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_IDENTIFIER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_NAME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getSubstitution())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSTITUTION, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_SUBSTITUTION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getHalfLife())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_HALF_LIFE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getMolecularWeight())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_MOLECULAR_WEIGHT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -623,14 +656,8 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getHalfLife())) {
-            $a[self::FIELD_HALF_LIFE] = $v;
-        }
         if (null !== ($v = $this->getIdentifier())) {
             $a[self::FIELD_IDENTIFIER] = $v;
-        }
-        if (null !== ($v = $this->getMolecularWeight())) {
-            $a[self::FIELD_MOLECULAR_WEIGHT] = $v;
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v;
@@ -638,8 +665,11 @@ class FHIRSubstanceSpecificationIsotope extends FHIRBackboneElement
         if (null !== ($v = $this->getSubstitution())) {
             $a[self::FIELD_SUBSTITUTION] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getHalfLife())) {
+            $a[self::FIELD_HALF_LIFE] = $v;
+        }
+        if (null !== ($v = $this->getMolecularWeight())) {
+            $a[self::FIELD_MOLECULAR_WEIGHT] = $v;
         }
         return $a;
     }

@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,8 +60,10 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRIm
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
 
@@ -78,17 +80,17 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION;
     const FIELD_DATE = 'date';
     const FIELD_DATE_EXT = '_date';
-    const FIELD_DATE_CRITERION = 'dateCriterion';
+    const FIELD_VACCINE_TYPE = 'vaccineType';
     const FIELD_DOSE_NUMBER = 'doseNumber';
     const FIELD_DOSE_NUMBER_EXT = '_doseNumber';
     const FIELD_FORECAST_STATUS = 'forecastStatus';
+    const FIELD_DATE_CRITERION = 'dateCriterion';
     const FIELD_PROTOCOL = 'protocol';
     const FIELD_SUPPORTING_IMMUNIZATION = 'supportingImmunization';
     const FIELD_SUPPORTING_PATIENT_INFORMATION = 'supportingPatientInformation';
-    const FIELD_VACCINE_TYPE = 'vaccineType';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -104,15 +106,16 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     protected $date = null;
 
     /**
-     * A patient's point-of-time immunization status and recommendation with optional
-     * supporting justification.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Vaccine date recommendations - e.g. earliest date to administer, latest date to
-     * administer, etc.
+     * Vaccine that pertains to the recommendation.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion[]
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    protected $dateCriterion = [];
+    protected $vaccineType = null;
 
     /**
      * A whole number
@@ -136,6 +139,17 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected $forecastStatus = null;
+
+    /**
+     * A patient's point-of-time immunization status and recommendation with optional
+     * supporting justification.
+     *
+     * Vaccine date recommendations - e.g. earliest date to administer, latest date to
+     * administer, etc.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion[]
+     */
+    protected $dateCriterion = [];
 
     /**
      * A patient's point-of-time immunization status and recommendation with optional
@@ -172,18 +186,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     protected $supportingPatientInformation = [];
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Vaccine that pertains to the recommendation.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
-     */
-    protected $vaccineType = null;
-
-    /**
      * Validation map for fields in type ImmunizationRecommendation.Recommendation
      * @var array
      */
@@ -206,16 +208,8 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_DATE]) || isset($data[self::FIELD_DATE_EXT])) {
-            if (isset($data[self::FIELD_DATE])) {
-                $value = $data[self::FIELD_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DATE_EXT]) && is_array($data[self::FIELD_DATE_EXT])) {
-                $ext = $data[self::FIELD_DATE_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_DATE]) ? $data[self::FIELD_DATE] : null;
+            $ext = (isset($data[self::FIELD_DATE_EXT]) && is_array($data[self::FIELD_DATE_EXT])) ? $ext = $data[self::FIELD_DATE_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRDateTime) {
                     $this->setDate($value);
@@ -224,8 +218,37 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 } else {
                     $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDate(new FHIRDateTime($ext));
+            }
+        }
+        if (isset($data[self::FIELD_VACCINE_TYPE])) {
+            if ($data[self::FIELD_VACCINE_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setVaccineType($data[self::FIELD_VACCINE_TYPE]);
+            } else {
+                $this->setVaccineType(new FHIRCodeableConcept($data[self::FIELD_VACCINE_TYPE]));
+            }
+        }
+        if (isset($data[self::FIELD_DOSE_NUMBER]) || isset($data[self::FIELD_DOSE_NUMBER_EXT])) {
+            $value = isset($data[self::FIELD_DOSE_NUMBER]) ? $data[self::FIELD_DOSE_NUMBER] : null;
+            $ext = (isset($data[self::FIELD_DOSE_NUMBER_EXT]) && is_array($data[self::FIELD_DOSE_NUMBER_EXT])) ? $ext = $data[self::FIELD_DOSE_NUMBER_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setDoseNumber($value);
+                } else if (is_array($value)) {
+                    $this->setDoseNumber(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setDoseNumber(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDoseNumber(new FHIRInteger($ext));
+            }
+        }
+        if (isset($data[self::FIELD_FORECAST_STATUS])) {
+            if ($data[self::FIELD_FORECAST_STATUS] instanceof FHIRCodeableConcept) {
+                $this->setForecastStatus($data[self::FIELD_FORECAST_STATUS]);
+            } else {
+                $this->setForecastStatus(new FHIRCodeableConcept($data[self::FIELD_FORECAST_STATUS]));
             }
         }
         if (isset($data[self::FIELD_DATE_CRITERION])) {
@@ -240,40 +263,10 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                         $this->addDateCriterion(new FHIRImmunizationRecommendationDateCriterion($v));
                     }
                 }
-            } else if ($data[self::FIELD_DATE_CRITERION] instanceof FHIRImmunizationRecommendationDateCriterion) {
+            } elseif ($data[self::FIELD_DATE_CRITERION] instanceof FHIRImmunizationRecommendationDateCriterion) {
                 $this->addDateCriterion($data[self::FIELD_DATE_CRITERION]);
             } else {
                 $this->addDateCriterion(new FHIRImmunizationRecommendationDateCriterion($data[self::FIELD_DATE_CRITERION]));
-            }
-        }
-        if (isset($data[self::FIELD_DOSE_NUMBER]) || isset($data[self::FIELD_DOSE_NUMBER_EXT])) {
-            if (isset($data[self::FIELD_DOSE_NUMBER])) {
-                $value = $data[self::FIELD_DOSE_NUMBER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DOSE_NUMBER_EXT]) && is_array($data[self::FIELD_DOSE_NUMBER_EXT])) {
-                $ext = $data[self::FIELD_DOSE_NUMBER_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->setDoseNumber($value);
-                } else if (is_array($value)) {
-                    $this->setDoseNumber(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->setDoseNumber(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDoseNumber(new FHIRInteger($ext));
-            }
-        }
-        if (isset($data[self::FIELD_FORECAST_STATUS])) {
-            if ($data[self::FIELD_FORECAST_STATUS] instanceof FHIRCodeableConcept) {
-                $this->setForecastStatus($data[self::FIELD_FORECAST_STATUS]);
-            } else {
-                $this->setForecastStatus(new FHIRCodeableConcept($data[self::FIELD_FORECAST_STATUS]));
             }
         }
         if (isset($data[self::FIELD_PROTOCOL])) {
@@ -295,7 +288,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                         $this->addSupportingImmunization(new FHIRResourceReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_SUPPORTING_IMMUNIZATION] instanceof FHIRResourceReference) {
+            } elseif ($data[self::FIELD_SUPPORTING_IMMUNIZATION] instanceof FHIRResourceReference) {
                 $this->addSupportingImmunization($data[self::FIELD_SUPPORTING_IMMUNIZATION]);
             } else {
                 $this->addSupportingImmunization(new FHIRResourceReference($data[self::FIELD_SUPPORTING_IMMUNIZATION]));
@@ -313,17 +306,10 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                         $this->addSupportingPatientInformation(new FHIRResourceReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_SUPPORTING_PATIENT_INFORMATION] instanceof FHIRResourceReference) {
+            } elseif ($data[self::FIELD_SUPPORTING_PATIENT_INFORMATION] instanceof FHIRResourceReference) {
                 $this->addSupportingPatientInformation($data[self::FIELD_SUPPORTING_PATIENT_INFORMATION]);
             } else {
                 $this->addSupportingPatientInformation(new FHIRResourceReference($data[self::FIELD_SUPPORTING_PATIENT_INFORMATION]));
-            }
-        }
-        if (isset($data[self::FIELD_VACCINE_TYPE])) {
-            if ($data[self::FIELD_VACCINE_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setVaccineType($data[self::FIELD_VACCINE_TYPE]);
-            } else {
-                $this->setVaccineType(new FHIRCodeableConcept($data[self::FIELD_VACCINE_TYPE]));
             }
         }
     }
@@ -342,7 +328,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ImmunizationRecommendationRecommendation{$xmlns}></ImmunizationRecommendationRecommendation>";
@@ -378,71 +364,44 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function setDate($date = null)
     {
-        if (null === $date) {
-            $this->date = null;
-            return $this;
+        if (null !== $date && !($date instanceof FHIRDateTime)) {
+            $date = new FHIRDateTime($date);
         }
-        if ($date instanceof FHIRDateTime) {
-            $this->date = $date;
-            return $this;
-        }
-        $this->date = new FHIRDateTime($date);
+        $this->_trackValueSet($this->date, $date);
+        $this->date = $date;
         return $this;
     }
 
     /**
-     * A patient's point-of-time immunization status and recommendation with optional
-     * supporting justification.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Vaccine date recommendations - e.g. earliest date to administer, latest date to
-     * administer, etc.
+     * Vaccine that pertains to the recommendation.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion[]
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    public function getDateCriterion()
+    public function getVaccineType()
     {
-        return $this->dateCriterion;
+        return $this->vaccineType;
     }
 
     /**
-     * A patient's point-of-time immunization status and recommendation with optional
-     * supporting justification.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Vaccine date recommendations - e.g. earliest date to administer, latest date to
-     * administer, etc.
+     * Vaccine that pertains to the recommendation.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion $dateCriterion
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $vaccineType
      * @return static
      */
-    public function addDateCriterion(FHIRImmunizationRecommendationDateCriterion $dateCriterion = null)
+    public function setVaccineType(FHIRCodeableConcept $vaccineType = null)
     {
-        $this->dateCriterion[] = $dateCriterion;
-        return $this;
-    }
-
-    /**
-     * A patient's point-of-time immunization status and recommendation with optional
-     * supporting justification.
-     *
-     * Vaccine date recommendations - e.g. earliest date to administer, latest date to
-     * administer, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion[] $dateCriterion
-     * @return static
-     */
-    public function setDateCriterion(array $dateCriterion = [])
-    {
-        $this->dateCriterion = [];
-        if ([] === $dateCriterion) {
-            return $this;
-        }
-        foreach($dateCriterion as $v) {
-            if ($v instanceof FHIRImmunizationRecommendationDateCriterion) {
-                $this->addDateCriterion($v);
-            } else {
-                $this->addDateCriterion(new FHIRImmunizationRecommendationDateCriterion($v));
-            }
-        }
+        $this->_trackValueSet($this->vaccineType, $vaccineType);
+        $this->vaccineType = $vaccineType;
         return $this;
     }
 
@@ -472,15 +431,11 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function setDoseNumber($doseNumber = null)
     {
-        if (null === $doseNumber) {
-            $this->doseNumber = null;
-            return $this;
+        if (null !== $doseNumber && !($doseNumber instanceof FHIRInteger)) {
+            $doseNumber = new FHIRInteger($doseNumber);
         }
-        if ($doseNumber instanceof FHIRInteger) {
-            $this->doseNumber = $doseNumber;
-            return $this;
-        }
-        $this->doseNumber = new FHIRInteger($doseNumber);
+        $this->_trackValueSet($this->doseNumber, $doseNumber);
+        $this->doseNumber = $doseNumber;
         return $this;
     }
 
@@ -512,7 +467,68 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function setForecastStatus(FHIRCodeableConcept $forecastStatus = null)
     {
+        $this->_trackValueSet($this->forecastStatus, $forecastStatus);
         $this->forecastStatus = $forecastStatus;
+        return $this;
+    }
+
+    /**
+     * A patient's point-of-time immunization status and recommendation with optional
+     * supporting justification.
+     *
+     * Vaccine date recommendations - e.g. earliest date to administer, latest date to
+     * administer, etc.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion[]
+     */
+    public function getDateCriterion()
+    {
+        return $this->dateCriterion;
+    }
+
+    /**
+     * A patient's point-of-time immunization status and recommendation with optional
+     * supporting justification.
+     *
+     * Vaccine date recommendations - e.g. earliest date to administer, latest date to
+     * administer, etc.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion $dateCriterion
+     * @return static
+     */
+    public function addDateCriterion(FHIRImmunizationRecommendationDateCriterion $dateCriterion = null)
+    {
+        $this->_trackValueAdded();
+        $this->dateCriterion[] = $dateCriterion;
+        return $this;
+    }
+
+    /**
+     * A patient's point-of-time immunization status and recommendation with optional
+     * supporting justification.
+     *
+     * Vaccine date recommendations - e.g. earliest date to administer, latest date to
+     * administer, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion[] $dateCriterion
+     * @return static
+     */
+    public function setDateCriterion(array $dateCriterion = [])
+    {
+        if ([] !== $this->dateCriterion) {
+            $this->_trackValuesRemoved(count($this->dateCriterion));
+            $this->dateCriterion = [];
+        }
+        if ([] === $dateCriterion) {
+            return $this;
+        }
+        foreach($dateCriterion as $v) {
+            if ($v instanceof FHIRImmunizationRecommendationDateCriterion) {
+                $this->addDateCriterion($v);
+            } else {
+                $this->addDateCriterion(new FHIRImmunizationRecommendationDateCriterion($v));
+            }
+        }
         return $this;
     }
 
@@ -542,6 +558,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function setProtocol(FHIRImmunizationRecommendationProtocol $protocol = null)
     {
+        $this->_trackValueSet($this->protocol, $protocol);
         $this->protocol = $protocol;
         return $this;
     }
@@ -572,6 +589,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function addSupportingImmunization(FHIRResourceReference $supportingImmunization = null)
     {
+        $this->_trackValueAdded();
         $this->supportingImmunization[] = $supportingImmunization;
         return $this;
     }
@@ -588,7 +606,10 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function setSupportingImmunization(array $supportingImmunization = [])
     {
-        $this->supportingImmunization = [];
+        if ([] !== $this->supportingImmunization) {
+            $this->_trackValuesRemoved(count($this->supportingImmunization));
+            $this->supportingImmunization = [];
+        }
         if ([] === $supportingImmunization) {
             return $this;
         }
@@ -630,6 +651,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function addSupportingPatientInformation(FHIRResourceReference $supportingPatientInformation = null)
     {
+        $this->_trackValueAdded();
         $this->supportingPatientInformation[] = $supportingPatientInformation;
         return $this;
     }
@@ -647,7 +669,10 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      */
     public function setSupportingPatientInformation(array $supportingPatientInformation = [])
     {
-        $this->supportingPatientInformation = [];
+        if ([] !== $this->supportingPatientInformation) {
+            $this->_trackValuesRemoved(count($this->supportingPatientInformation));
+            $this->supportingPatientInformation = [];
+        }
         if ([] === $supportingPatientInformation) {
             return $this;
         }
@@ -658,38 +683,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 $this->addSupportingPatientInformation(new FHIRResourceReference($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Vaccine that pertains to the recommendation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
-     */
-    public function getVaccineType()
-    {
-        return $this->vaccineType;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Vaccine that pertains to the recommendation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $vaccineType
-     * @return static
-     */
-    public function setVaccineType(FHIRCodeableConcept $vaccineType = null)
-    {
-        $this->vaccineType = $vaccineType;
         return $this;
     }
 
@@ -719,11 +712,9 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 $errs[self::FIELD_DATE] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getDateCriterion())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_DATE_CRITERION, $i)] = $fieldErrs;
-                }
+        if (null !== ($v = $this->getVaccineType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VACCINE_TYPE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDoseNumber())) {
@@ -734,6 +725,13 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         if (null !== ($v = $this->getForecastStatus())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_FORECAST_STATUS] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getDateCriterion())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_DATE_CRITERION, $i)] = $fieldErrs;
+                }
             }
         }
         if (null !== ($v = $this->getProtocol())) {
@@ -755,11 +753,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getVaccineType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VACCINE_TYPE] = $fieldErrs;
-            }
-        }
         if (isset($validationRules[self::FIELD_DATE])) {
             $v = $this->getDate();
             foreach($validationRules[self::FIELD_DATE] as $rule => $constraint) {
@@ -772,15 +765,15 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DATE_CRITERION])) {
-            $v = $this->getDateCriterion();
-            foreach($validationRules[self::FIELD_DATE_CRITERION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_DATE_CRITERION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VACCINE_TYPE])) {
+            $v = $this->getVaccineType();
+            foreach($validationRules[self::FIELD_VACCINE_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_VACCINE_TYPE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DATE_CRITERION])) {
-                        $errs[self::FIELD_DATE_CRITERION] = [];
+                    if (!isset($errs[self::FIELD_VACCINE_TYPE])) {
+                        $errs[self::FIELD_VACCINE_TYPE] = [];
                     }
-                    $errs[self::FIELD_DATE_CRITERION][$rule] = $err;
+                    $errs[self::FIELD_VACCINE_TYPE][$rule] = $err;
                 }
             }
         }
@@ -805,6 +798,18 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                         $errs[self::FIELD_FORECAST_STATUS] = [];
                     }
                     $errs[self::FIELD_FORECAST_STATUS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DATE_CRITERION])) {
+            $v = $this->getDateCriterion();
+            foreach($validationRules[self::FIELD_DATE_CRITERION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_DATE_CRITERION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DATE_CRITERION])) {
+                        $errs[self::FIELD_DATE_CRITERION] = [];
+                    }
+                    $errs[self::FIELD_DATE_CRITERION][$rule] = $err;
                 }
             }
         }
@@ -841,18 +846,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                         $errs[self::FIELD_SUPPORTING_PATIENT_INFORMATION] = [];
                     }
                     $errs[self::FIELD_SUPPORTING_PATIENT_INFORMATION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VACCINE_TYPE])) {
-            $v = $this->getVaccineType();
-            foreach($validationRules[self::FIELD_VACCINE_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_VACCINE_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VACCINE_TYPE])) {
-                        $errs[self::FIELD_VACCINE_TYPE] = [];
-                    }
-                    $errs[self::FIELD_VACCINE_TYPE][$rule] = $err;
                 }
             }
         }
@@ -896,131 +889,157 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRImmunizationRecommendationRecommendation::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRImmunizationRecommendationRecommendation::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRImmunizationRecommendationRecommendation::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRImmunizationRecommendationRecommendation;
+            $type = new FHIRImmunizationRecommendationRecommendation(null);
         } elseif (!is_object($type) || !($type instanceof FHIRImmunizationRecommendationRecommendation)) {
             throw new \RuntimeException(sprintf(
                 'FHIRImmunizationRecommendationRecommendation::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_DATE === $n->nodeName) {
+                $type->setDate(FHIRDateTime::xmlUnserialize($n));
+            } elseif (self::FIELD_VACCINE_TYPE === $n->nodeName) {
+                $type->setVaccineType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DOSE_NUMBER === $n->nodeName) {
+                $type->setDoseNumber(FHIRInteger::xmlUnserialize($n));
+            } elseif (self::FIELD_FORECAST_STATUS === $n->nodeName) {
+                $type->setForecastStatus(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DATE_CRITERION === $n->nodeName) {
+                $type->addDateCriterion(FHIRImmunizationRecommendationDateCriterion::xmlUnserialize($n));
+            } elseif (self::FIELD_PROTOCOL === $n->nodeName) {
+                $type->setProtocol(FHIRImmunizationRecommendationProtocol::xmlUnserialize($n));
+            } elseif (self::FIELD_SUPPORTING_IMMUNIZATION === $n->nodeName) {
+                $type->addSupportingImmunization(FHIRResourceReference::xmlUnserialize($n));
+            } elseif (self::FIELD_SUPPORTING_PATIENT_INFORMATION === $n->nodeName) {
+                $type->addSupportingPatientInformation(FHIRResourceReference::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->date)) {
-            $type->setDate(FHIRDateTime::xmlUnserialize($children->date));
-        }
-        if (isset($attributes->date)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DATE);
+        if (null !== $n) {
             $pt = $type->getDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->date);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDate((string)$attributes->date);
+                $type->setDate($n->nodeValue);
             }
         }
-        if (isset($children->dateCriterion)) {
-            foreach($children->dateCriterion as $child) {
-                $type->addDateCriterion(FHIRImmunizationRecommendationDateCriterion::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->doseNumber)) {
-            $type->setDoseNumber(FHIRInteger::xmlUnserialize($children->doseNumber));
-        }
-        if (isset($attributes->doseNumber)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DOSE_NUMBER);
+        if (null !== $n) {
             $pt = $type->getDoseNumber();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->doseNumber);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDoseNumber((string)$attributes->doseNumber);
+                $type->setDoseNumber($n->nodeValue);
             }
         }
-        if (isset($children->forecastStatus)) {
-            $type->setForecastStatus(FHIRCodeableConcept::xmlUnserialize($children->forecastStatus));
-        }
-        if (isset($children->protocol)) {
-            $type->setProtocol(FHIRImmunizationRecommendationProtocol::xmlUnserialize($children->protocol));
-        }
-        if (isset($children->supportingImmunization)) {
-            foreach($children->supportingImmunization as $child) {
-                $type->addSupportingImmunization(FHIRResourceReference::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
-        }
-        if (isset($children->supportingPatientInformation)) {
-            foreach($children->supportingPatientInformation as $child) {
-                $type->addSupportingPatientInformation(FHIRResourceReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->vaccineType)) {
-            $type->setVaccineType(FHIRCodeableConcept::xmlUnserialize($children->vaccineType));
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DATE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getVaccineType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_VACCINE_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDoseNumber())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DOSE_NUMBER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getForecastStatus())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_FORECAST_STATUS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getDateCriterion())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_CRITERION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_DATE_CRITERION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getDoseNumber())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_NUMBER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getForecastStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FORECAST_STATUS, null, $v->_getFHIRXMLNamespace()));
-        }
         if (null !== ($v = $this->getProtocol())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PROTOCOL, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_PROTOCOL);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getSupportingImmunization())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUPPORTING_IMMUNIZATION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_SUPPORTING_IMMUNIZATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getSupportingPatientInformation())) {
@@ -1028,13 +1047,12 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUPPORTING_PATIENT_INFORMATION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_SUPPORTING_PATIENT_INFORMATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getVaccineType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VACCINE_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -1044,13 +1062,30 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDate())) {
-            $a[self::FIELD_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_DATE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DATE] = $val;
             }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDateTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DATE_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getVaccineType())) {
+            $a[self::FIELD_VACCINE_TYPE] = $v;
+        }
+        if (null !== ($v = $this->getDoseNumber())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DOSE_NUMBER] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRInteger::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DOSE_NUMBER_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getForecastStatus())) {
+            $a[self::FIELD_FORECAST_STATUS] = $v;
         }
         if ([] !== ($vs = $this->getDateCriterion())) {
             $a[self::FIELD_DATE_CRITERION] = [];
@@ -1060,18 +1095,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 }
                 $a[self::FIELD_DATE_CRITERION][] = $v;
             }
-        }
-        if (null !== ($v = $this->getDoseNumber())) {
-            $a[self::FIELD_DOSE_NUMBER] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_DOSE_NUMBER_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getForecastStatus())) {
-            $a[self::FIELD_FORECAST_STATUS] = $v;
         }
         if (null !== ($v = $this->getProtocol())) {
             $a[self::FIELD_PROTOCOL] = $v;
@@ -1093,12 +1116,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
                 }
                 $a[self::FIELD_SUPPORTING_PATIENT_INFORMATION][] = $v;
             }
-        }
-        if (null !== ($v = $this->getVaccineType())) {
-            $a[self::FIELD_VACCINE_TYPE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

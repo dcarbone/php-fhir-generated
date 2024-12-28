@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,19 +111,25 @@ interface PHPFHIRTypeInterface extends \JsonSerializable {
     public function _getValidationErrors();
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * Must return true if any field on this type is set to a non-empty value
+     * @return bool
+     */
+    public function _isValued();
+
+    /**
+     * @param \DOMElement|string|null $element
      * @param null|static $type
      * @param null|int $libxmlOpts
      * @return null|static
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872);
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872);
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param \DOMElement|null $element
      * @param null|int $libxmlOpts
-     * @return string|\SimpleXMLElement
+     * @return string|\DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872);
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872);
 
     /**
      * @return string

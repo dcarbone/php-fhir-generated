@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREnc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,8 +64,10 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREnc
 
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
@@ -80,65 +82,29 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION;
-    const FIELD_ADMIT_SOURCE = 'admitSource';
-    const FIELD_DESTINATION = 'destination';
-    const FIELD_DIET_PREFERENCE = 'dietPreference';
-    const FIELD_DISCHARGE_DISPOSITION = 'dischargeDisposition';
-    const FIELD_ORIGIN = 'origin';
     const FIELD_PRE_ADMISSION_IDENTIFIER = 'preAdmissionIdentifier';
+    const FIELD_ORIGIN = 'origin';
+    const FIELD_ADMIT_SOURCE = 'admitSource';
     const FIELD_RE_ADMISSION = 'reAdmission';
-    const FIELD_SPECIAL_ARRANGEMENT = 'specialArrangement';
+    const FIELD_DIET_PREFERENCE = 'dietPreference';
     const FIELD_SPECIAL_COURTESY = 'specialCourtesy';
+    const FIELD_SPECIAL_ARRANGEMENT = 'specialArrangement';
+    const FIELD_DESTINATION = 'destination';
+    const FIELD_DISCHARGE_DISPOSITION = 'dischargeDisposition';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
+     * A technical identifier - identifies some entity uniquely and unambiguously.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * From where patient was admitted (physician referral, transfer).
+     * Pre-admission identifier.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    protected $admitSource = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Location to which the patient is discharged.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    protected $destination = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Diet preferences reported by the patient.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
-     */
-    protected $dietPreference = [];
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Category or kind of location after discharge.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    protected $dischargeDisposition = null;
+    protected $preAdmissionIdentifier = null;
 
     /**
      * A reference from one resource to another.
@@ -152,15 +118,16 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     protected $origin = null;
 
     /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Pre-admission identifier.
+     * From where patient was admitted (physician referral, transfer).
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    protected $preAdmissionIdentifier = null;
+    protected $admitSource = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -180,12 +147,11 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Any special requests that have been made for this hospitalization encounter,
-     * such as the provision of specific equipment or other things.
+     * Diet preferences reported by the patient.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    protected $specialArrangement = [];
+    protected $dietPreference = [];
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -198,6 +164,42 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected $specialCourtesy = [];
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Any special requests that have been made for this hospitalization encounter,
+     * such as the provision of specific equipment or other things.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
+     */
+    protected $specialArrangement = [];
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Location to which the patient is discharged.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    protected $destination = null;
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Category or kind of location after discharge.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    protected $dischargeDisposition = null;
 
     /**
      * Validation map for fields in type Encounter.Hospitalization
@@ -221,6 +223,20 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_PRE_ADMISSION_IDENTIFIER])) {
+            if ($data[self::FIELD_PRE_ADMISSION_IDENTIFIER] instanceof FHIRIdentifier) {
+                $this->setPreAdmissionIdentifier($data[self::FIELD_PRE_ADMISSION_IDENTIFIER]);
+            } else {
+                $this->setPreAdmissionIdentifier(new FHIRIdentifier($data[self::FIELD_PRE_ADMISSION_IDENTIFIER]));
+            }
+        }
+        if (isset($data[self::FIELD_ORIGIN])) {
+            if ($data[self::FIELD_ORIGIN] instanceof FHIRReference) {
+                $this->setOrigin($data[self::FIELD_ORIGIN]);
+            } else {
+                $this->setOrigin(new FHIRReference($data[self::FIELD_ORIGIN]));
+            }
+        }
         if (isset($data[self::FIELD_ADMIT_SOURCE])) {
             if ($data[self::FIELD_ADMIT_SOURCE] instanceof FHIRCodeableConcept) {
                 $this->setAdmitSource($data[self::FIELD_ADMIT_SOURCE]);
@@ -228,11 +244,11 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $this->setAdmitSource(new FHIRCodeableConcept($data[self::FIELD_ADMIT_SOURCE]));
             }
         }
-        if (isset($data[self::FIELD_DESTINATION])) {
-            if ($data[self::FIELD_DESTINATION] instanceof FHIRReference) {
-                $this->setDestination($data[self::FIELD_DESTINATION]);
+        if (isset($data[self::FIELD_RE_ADMISSION])) {
+            if ($data[self::FIELD_RE_ADMISSION] instanceof FHIRCodeableConcept) {
+                $this->setReAdmission($data[self::FIELD_RE_ADMISSION]);
             } else {
-                $this->setDestination(new FHIRReference($data[self::FIELD_DESTINATION]));
+                $this->setReAdmission(new FHIRCodeableConcept($data[self::FIELD_RE_ADMISSION]));
             }
         }
         if (isset($data[self::FIELD_DIET_PREFERENCE])) {
@@ -247,56 +263,10 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                         $this->addDietPreference(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_DIET_PREFERENCE] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_DIET_PREFERENCE] instanceof FHIRCodeableConcept) {
                 $this->addDietPreference($data[self::FIELD_DIET_PREFERENCE]);
             } else {
                 $this->addDietPreference(new FHIRCodeableConcept($data[self::FIELD_DIET_PREFERENCE]));
-            }
-        }
-        if (isset($data[self::FIELD_DISCHARGE_DISPOSITION])) {
-            if ($data[self::FIELD_DISCHARGE_DISPOSITION] instanceof FHIRCodeableConcept) {
-                $this->setDischargeDisposition($data[self::FIELD_DISCHARGE_DISPOSITION]);
-            } else {
-                $this->setDischargeDisposition(new FHIRCodeableConcept($data[self::FIELD_DISCHARGE_DISPOSITION]));
-            }
-        }
-        if (isset($data[self::FIELD_ORIGIN])) {
-            if ($data[self::FIELD_ORIGIN] instanceof FHIRReference) {
-                $this->setOrigin($data[self::FIELD_ORIGIN]);
-            } else {
-                $this->setOrigin(new FHIRReference($data[self::FIELD_ORIGIN]));
-            }
-        }
-        if (isset($data[self::FIELD_PRE_ADMISSION_IDENTIFIER])) {
-            if ($data[self::FIELD_PRE_ADMISSION_IDENTIFIER] instanceof FHIRIdentifier) {
-                $this->setPreAdmissionIdentifier($data[self::FIELD_PRE_ADMISSION_IDENTIFIER]);
-            } else {
-                $this->setPreAdmissionIdentifier(new FHIRIdentifier($data[self::FIELD_PRE_ADMISSION_IDENTIFIER]));
-            }
-        }
-        if (isset($data[self::FIELD_RE_ADMISSION])) {
-            if ($data[self::FIELD_RE_ADMISSION] instanceof FHIRCodeableConcept) {
-                $this->setReAdmission($data[self::FIELD_RE_ADMISSION]);
-            } else {
-                $this->setReAdmission(new FHIRCodeableConcept($data[self::FIELD_RE_ADMISSION]));
-            }
-        }
-        if (isset($data[self::FIELD_SPECIAL_ARRANGEMENT])) {
-            if (is_array($data[self::FIELD_SPECIAL_ARRANGEMENT])) {
-                foreach($data[self::FIELD_SPECIAL_ARRANGEMENT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addSpecialArrangement($v);
-                    } else {
-                        $this->addSpecialArrangement(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_SPECIAL_ARRANGEMENT] instanceof FHIRCodeableConcept) {
-                $this->addSpecialArrangement($data[self::FIELD_SPECIAL_ARRANGEMENT]);
-            } else {
-                $this->addSpecialArrangement(new FHIRCodeableConcept($data[self::FIELD_SPECIAL_ARRANGEMENT]));
             }
         }
         if (isset($data[self::FIELD_SPECIAL_COURTESY])) {
@@ -311,10 +281,42 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                         $this->addSpecialCourtesy(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_SPECIAL_COURTESY] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_SPECIAL_COURTESY] instanceof FHIRCodeableConcept) {
                 $this->addSpecialCourtesy($data[self::FIELD_SPECIAL_COURTESY]);
             } else {
                 $this->addSpecialCourtesy(new FHIRCodeableConcept($data[self::FIELD_SPECIAL_COURTESY]));
+            }
+        }
+        if (isset($data[self::FIELD_SPECIAL_ARRANGEMENT])) {
+            if (is_array($data[self::FIELD_SPECIAL_ARRANGEMENT])) {
+                foreach($data[self::FIELD_SPECIAL_ARRANGEMENT] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addSpecialArrangement($v);
+                    } else {
+                        $this->addSpecialArrangement(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_SPECIAL_ARRANGEMENT] instanceof FHIRCodeableConcept) {
+                $this->addSpecialArrangement($data[self::FIELD_SPECIAL_ARRANGEMENT]);
+            } else {
+                $this->addSpecialArrangement(new FHIRCodeableConcept($data[self::FIELD_SPECIAL_ARRANGEMENT]));
+            }
+        }
+        if (isset($data[self::FIELD_DESTINATION])) {
+            if ($data[self::FIELD_DESTINATION] instanceof FHIRReference) {
+                $this->setDestination($data[self::FIELD_DESTINATION]);
+            } else {
+                $this->setDestination(new FHIRReference($data[self::FIELD_DESTINATION]));
+            }
+        }
+        if (isset($data[self::FIELD_DISCHARGE_DISPOSITION])) {
+            if ($data[self::FIELD_DISCHARGE_DISPOSITION] instanceof FHIRCodeableConcept) {
+                $this->setDischargeDisposition($data[self::FIELD_DISCHARGE_DISPOSITION]);
+            } else {
+                $this->setDischargeDisposition(new FHIRCodeableConcept($data[self::FIELD_DISCHARGE_DISPOSITION]));
             }
         }
     }
@@ -333,10 +335,72 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<EncounterHospitalization{$xmlns}></EncounterHospitalization>";
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Pre-admission identifier.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
+     */
+    public function getPreAdmissionIdentifier()
+    {
+        return $this->preAdmissionIdentifier;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Pre-admission identifier.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $preAdmissionIdentifier
+     * @return static
+     */
+    public function setPreAdmissionIdentifier(FHIRIdentifier $preAdmissionIdentifier = null)
+    {
+        $this->_trackValueSet($this->preAdmissionIdentifier, $preAdmissionIdentifier);
+        $this->preAdmissionIdentifier = $preAdmissionIdentifier;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The location from which the patient came before admission.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    public function getOrigin()
+    {
+        return $this->origin;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The location from which the patient came before admission.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $origin
+     * @return static
+     */
+    public function setOrigin(FHIRReference $origin = null)
+    {
+        $this->_trackValueSet($this->origin, $origin);
+        $this->origin = $origin;
+        return $this;
     }
 
     /**
@@ -367,188 +431,8 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      */
     public function setAdmitSource(FHIRCodeableConcept $admitSource = null)
     {
+        $this->_trackValueSet($this->admitSource, $admitSource);
         $this->admitSource = $admitSource;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Location to which the patient is discharged.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    public function getDestination()
-    {
-        return $this->destination;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Location to which the patient is discharged.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $destination
-     * @return static
-     */
-    public function setDestination(FHIRReference $destination = null)
-    {
-        $this->destination = $destination;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Diet preferences reported by the patient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getDietPreference()
-    {
-        return $this->dietPreference;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Diet preferences reported by the patient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $dietPreference
-     * @return static
-     */
-    public function addDietPreference(FHIRCodeableConcept $dietPreference = null)
-    {
-        $this->dietPreference[] = $dietPreference;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Diet preferences reported by the patient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $dietPreference
-     * @return static
-     */
-    public function setDietPreference(array $dietPreference = [])
-    {
-        $this->dietPreference = [];
-        if ([] === $dietPreference) {
-            return $this;
-        }
-        foreach($dietPreference as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addDietPreference($v);
-            } else {
-                $this->addDietPreference(new FHIRCodeableConcept($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Category or kind of location after discharge.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    public function getDischargeDisposition()
-    {
-        return $this->dischargeDisposition;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Category or kind of location after discharge.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $dischargeDisposition
-     * @return static
-     */
-    public function setDischargeDisposition(FHIRCodeableConcept $dischargeDisposition = null)
-    {
-        $this->dischargeDisposition = $dischargeDisposition;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The location from which the patient came before admission.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    public function getOrigin()
-    {
-        return $this->origin;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The location from which the patient came before admission.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $origin
-     * @return static
-     */
-    public function setOrigin(FHIRReference $origin = null)
-    {
-        $this->origin = $origin;
-        return $this;
-    }
-
-    /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Pre-admission identifier.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
-     */
-    public function getPreAdmissionIdentifier()
-    {
-        return $this->preAdmissionIdentifier;
-    }
-
-    /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Pre-admission identifier.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $preAdmissionIdentifier
-     * @return static
-     */
-    public function setPreAdmissionIdentifier(FHIRIdentifier $preAdmissionIdentifier = null)
-    {
-        $this->preAdmissionIdentifier = $preAdmissionIdentifier;
         return $this;
     }
 
@@ -580,6 +464,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      */
     public function setReAdmission(FHIRCodeableConcept $reAdmission = null)
     {
+        $this->_trackValueSet($this->reAdmission, $reAdmission);
         $this->reAdmission = $reAdmission;
         return $this;
     }
@@ -590,14 +475,13 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Any special requests that have been made for this hospitalization encounter,
-     * such as the provision of specific equipment or other things.
+     * Diet preferences reported by the patient.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getSpecialArrangement()
+    public function getDietPreference()
     {
-        return $this->specialArrangement;
+        return $this->dietPreference;
     }
 
     /**
@@ -606,15 +490,15 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Any special requests that have been made for this hospitalization encounter,
-     * such as the provision of specific equipment or other things.
+     * Diet preferences reported by the patient.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $specialArrangement
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $dietPreference
      * @return static
      */
-    public function addSpecialArrangement(FHIRCodeableConcept $specialArrangement = null)
+    public function addDietPreference(FHIRCodeableConcept $dietPreference = null)
     {
-        $this->specialArrangement[] = $specialArrangement;
+        $this->_trackValueAdded();
+        $this->dietPreference[] = $dietPreference;
         return $this;
     }
 
@@ -624,23 +508,25 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Any special requests that have been made for this hospitalization encounter,
-     * such as the provision of specific equipment or other things.
+     * Diet preferences reported by the patient.
      *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $specialArrangement
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $dietPreference
      * @return static
      */
-    public function setSpecialArrangement(array $specialArrangement = [])
+    public function setDietPreference(array $dietPreference = [])
     {
-        $this->specialArrangement = [];
-        if ([] === $specialArrangement) {
+        if ([] !== $this->dietPreference) {
+            $this->_trackValuesRemoved(count($this->dietPreference));
+            $this->dietPreference = [];
+        }
+        if ([] === $dietPreference) {
             return $this;
         }
-        foreach($specialArrangement as $v) {
+        foreach($dietPreference as $v) {
             if ($v instanceof FHIRCodeableConcept) {
-                $this->addSpecialArrangement($v);
+                $this->addDietPreference($v);
             } else {
-                $this->addSpecialArrangement(new FHIRCodeableConcept($v));
+                $this->addDietPreference(new FHIRCodeableConcept($v));
             }
         }
         return $this;
@@ -674,6 +560,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      */
     public function addSpecialCourtesy(FHIRCodeableConcept $specialCourtesy = null)
     {
+        $this->_trackValueAdded();
         $this->specialCourtesy[] = $specialCourtesy;
         return $this;
     }
@@ -691,7 +578,10 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      */
     public function setSpecialCourtesy(array $specialCourtesy = [])
     {
-        $this->specialCourtesy = [];
+        if ([] !== $this->specialCourtesy) {
+            $this->_trackValuesRemoved(count($this->specialCourtesy));
+            $this->specialCourtesy = [];
+        }
         if ([] === $specialCourtesy) {
             return $this;
         }
@@ -702,6 +592,136 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $this->addSpecialCourtesy(new FHIRCodeableConcept($v));
             }
         }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Any special requests that have been made for this hospitalization encounter,
+     * such as the provision of specific equipment or other things.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getSpecialArrangement()
+    {
+        return $this->specialArrangement;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Any special requests that have been made for this hospitalization encounter,
+     * such as the provision of specific equipment or other things.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $specialArrangement
+     * @return static
+     */
+    public function addSpecialArrangement(FHIRCodeableConcept $specialArrangement = null)
+    {
+        $this->_trackValueAdded();
+        $this->specialArrangement[] = $specialArrangement;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Any special requests that have been made for this hospitalization encounter,
+     * such as the provision of specific equipment or other things.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $specialArrangement
+     * @return static
+     */
+    public function setSpecialArrangement(array $specialArrangement = [])
+    {
+        if ([] !== $this->specialArrangement) {
+            $this->_trackValuesRemoved(count($this->specialArrangement));
+            $this->specialArrangement = [];
+        }
+        if ([] === $specialArrangement) {
+            return $this;
+        }
+        foreach($specialArrangement as $v) {
+            if ($v instanceof FHIRCodeableConcept) {
+                $this->addSpecialArrangement($v);
+            } else {
+                $this->addSpecialArrangement(new FHIRCodeableConcept($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Location to which the patient is discharged.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    public function getDestination()
+    {
+        return $this->destination;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Location to which the patient is discharged.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $destination
+     * @return static
+     */
+    public function setDestination(FHIRReference $destination = null)
+    {
+        $this->_trackValueSet($this->destination, $destination);
+        $this->destination = $destination;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Category or kind of location after discharge.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    public function getDischargeDisposition()
+    {
+        return $this->dischargeDisposition;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Category or kind of location after discharge.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $dischargeDisposition
+     * @return static
+     */
+    public function setDischargeDisposition(FHIRCodeableConcept $dischargeDisposition = null)
+    {
+        $this->_trackValueSet($this->dischargeDisposition, $dischargeDisposition);
+        $this->dischargeDisposition = $dischargeDisposition;
         return $this;
     }
 
@@ -726,26 +746,9 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getAdmitSource())) {
+        if (null !== ($v = $this->getPreAdmissionIdentifier())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ADMIT_SOURCE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDestination())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DESTINATION] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getDietPreference())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_DIET_PREFERENCE, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getDischargeDisposition())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DISCHARGE_DISPOSITION] = $fieldErrs;
+                $errs[self::FIELD_PRE_ADMISSION_IDENTIFIER] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getOrigin())) {
@@ -753,9 +756,9 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $errs[self::FIELD_ORIGIN] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getPreAdmissionIdentifier())) {
+        if (null !== ($v = $this->getAdmitSource())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PRE_ADMISSION_IDENTIFIER] = $fieldErrs;
+                $errs[self::FIELD_ADMIT_SOURCE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getReAdmission())) {
@@ -763,10 +766,10 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $errs[self::FIELD_RE_ADMISSION] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getSpecialArrangement())) {
+        if ([] !== ($vs = $this->getDietPreference())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_SPECIAL_ARRANGEMENT, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_DIET_PREFERENCE, $i)] = $fieldErrs;
                 }
             }
         }
@@ -777,51 +780,32 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_ADMIT_SOURCE])) {
-            $v = $this->getAdmitSource();
-            foreach($validationRules[self::FIELD_ADMIT_SOURCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_ADMIT_SOURCE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ADMIT_SOURCE])) {
-                        $errs[self::FIELD_ADMIT_SOURCE] = [];
-                    }
-                    $errs[self::FIELD_ADMIT_SOURCE][$rule] = $err;
+        if ([] !== ($vs = $this->getSpecialArrangement())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_SPECIAL_ARRANGEMENT, $i)] = $fieldErrs;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DESTINATION])) {
-            $v = $this->getDestination();
-            foreach($validationRules[self::FIELD_DESTINATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_DESTINATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DESTINATION])) {
-                        $errs[self::FIELD_DESTINATION] = [];
-                    }
-                    $errs[self::FIELD_DESTINATION][$rule] = $err;
-                }
+        if (null !== ($v = $this->getDestination())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DESTINATION] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DIET_PREFERENCE])) {
-            $v = $this->getDietPreference();
-            foreach($validationRules[self::FIELD_DIET_PREFERENCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_DIET_PREFERENCE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DIET_PREFERENCE])) {
-                        $errs[self::FIELD_DIET_PREFERENCE] = [];
-                    }
-                    $errs[self::FIELD_DIET_PREFERENCE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getDischargeDisposition())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DISCHARGE_DISPOSITION] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DISCHARGE_DISPOSITION])) {
-            $v = $this->getDischargeDisposition();
-            foreach($validationRules[self::FIELD_DISCHARGE_DISPOSITION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_DISCHARGE_DISPOSITION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_PRE_ADMISSION_IDENTIFIER])) {
+            $v = $this->getPreAdmissionIdentifier();
+            foreach($validationRules[self::FIELD_PRE_ADMISSION_IDENTIFIER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_PRE_ADMISSION_IDENTIFIER, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DISCHARGE_DISPOSITION])) {
-                        $errs[self::FIELD_DISCHARGE_DISPOSITION] = [];
+                    if (!isset($errs[self::FIELD_PRE_ADMISSION_IDENTIFIER])) {
+                        $errs[self::FIELD_PRE_ADMISSION_IDENTIFIER] = [];
                     }
-                    $errs[self::FIELD_DISCHARGE_DISPOSITION][$rule] = $err;
+                    $errs[self::FIELD_PRE_ADMISSION_IDENTIFIER][$rule] = $err;
                 }
             }
         }
@@ -837,15 +821,15 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PRE_ADMISSION_IDENTIFIER])) {
-            $v = $this->getPreAdmissionIdentifier();
-            foreach($validationRules[self::FIELD_PRE_ADMISSION_IDENTIFIER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_PRE_ADMISSION_IDENTIFIER, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_ADMIT_SOURCE])) {
+            $v = $this->getAdmitSource();
+            foreach($validationRules[self::FIELD_ADMIT_SOURCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_ADMIT_SOURCE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PRE_ADMISSION_IDENTIFIER])) {
-                        $errs[self::FIELD_PRE_ADMISSION_IDENTIFIER] = [];
+                    if (!isset($errs[self::FIELD_ADMIT_SOURCE])) {
+                        $errs[self::FIELD_ADMIT_SOURCE] = [];
                     }
-                    $errs[self::FIELD_PRE_ADMISSION_IDENTIFIER][$rule] = $err;
+                    $errs[self::FIELD_ADMIT_SOURCE][$rule] = $err;
                 }
             }
         }
@@ -861,15 +845,15 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SPECIAL_ARRANGEMENT])) {
-            $v = $this->getSpecialArrangement();
-            foreach($validationRules[self::FIELD_SPECIAL_ARRANGEMENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_SPECIAL_ARRANGEMENT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_DIET_PREFERENCE])) {
+            $v = $this->getDietPreference();
+            foreach($validationRules[self::FIELD_DIET_PREFERENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_DIET_PREFERENCE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SPECIAL_ARRANGEMENT])) {
-                        $errs[self::FIELD_SPECIAL_ARRANGEMENT] = [];
+                    if (!isset($errs[self::FIELD_DIET_PREFERENCE])) {
+                        $errs[self::FIELD_DIET_PREFERENCE] = [];
                     }
-                    $errs[self::FIELD_SPECIAL_ARRANGEMENT][$rule] = $err;
+                    $errs[self::FIELD_DIET_PREFERENCE][$rule] = $err;
                 }
             }
         }
@@ -882,6 +866,42 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                         $errs[self::FIELD_SPECIAL_COURTESY] = [];
                     }
                     $errs[self::FIELD_SPECIAL_COURTESY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SPECIAL_ARRANGEMENT])) {
+            $v = $this->getSpecialArrangement();
+            foreach($validationRules[self::FIELD_SPECIAL_ARRANGEMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_SPECIAL_ARRANGEMENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SPECIAL_ARRANGEMENT])) {
+                        $errs[self::FIELD_SPECIAL_ARRANGEMENT] = [];
+                    }
+                    $errs[self::FIELD_SPECIAL_ARRANGEMENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DESTINATION])) {
+            $v = $this->getDestination();
+            foreach($validationRules[self::FIELD_DESTINATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_DESTINATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DESTINATION])) {
+                        $errs[self::FIELD_DESTINATION] = [];
+                    }
+                    $errs[self::FIELD_DESTINATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DISCHARGE_DISPOSITION])) {
+            $v = $this->getDischargeDisposition();
+            foreach($validationRules[self::FIELD_DISCHARGE_DISPOSITION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_DISCHARGE_DISPOSITION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DISCHARGE_DISPOSITION])) {
+                        $errs[self::FIELD_DISCHARGE_DISPOSITION] = [];
+                    }
+                    $errs[self::FIELD_DISCHARGE_DISPOSITION][$rule] = $err;
                 }
             }
         }
@@ -925,124 +945,126 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIREncounterHospitalization::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIREncounterHospitalization::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIREncounterHospitalization::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIREncounterHospitalization;
+            $type = new FHIREncounterHospitalization(null);
         } elseif (!is_object($type) || !($type instanceof FHIREncounterHospitalization)) {
             throw new \RuntimeException(sprintf(
                 'FHIREncounterHospitalization::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_PRE_ADMISSION_IDENTIFIER === $n->nodeName) {
+                $type->setPreAdmissionIdentifier(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_ORIGIN === $n->nodeName) {
+                $type->setOrigin(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_ADMIT_SOURCE === $n->nodeName) {
+                $type->setAdmitSource(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_RE_ADMISSION === $n->nodeName) {
+                $type->setReAdmission(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DIET_PREFERENCE === $n->nodeName) {
+                $type->addDietPreference(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_SPECIAL_COURTESY === $n->nodeName) {
+                $type->addSpecialCourtesy(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_SPECIAL_ARRANGEMENT === $n->nodeName) {
+                $type->addSpecialArrangement(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DESTINATION === $n->nodeName) {
+                $type->setDestination(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_DISCHARGE_DISPOSITION === $n->nodeName) {
+                $type->setDischargeDisposition(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->admitSource)) {
-            $type->setAdmitSource(FHIRCodeableConcept::xmlUnserialize($children->admitSource));
-        }
-        if (isset($children->destination)) {
-            $type->setDestination(FHIRReference::xmlUnserialize($children->destination));
-        }
-        if (isset($children->dietPreference)) {
-            foreach($children->dietPreference as $child) {
-                $type->addDietPreference(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->dischargeDisposition)) {
-            $type->setDischargeDisposition(FHIRCodeableConcept::xmlUnserialize($children->dischargeDisposition));
-        }
-        if (isset($children->origin)) {
-            $type->setOrigin(FHIRReference::xmlUnserialize($children->origin));
-        }
-        if (isset($children->preAdmissionIdentifier)) {
-            $type->setPreAdmissionIdentifier(FHIRIdentifier::xmlUnserialize($children->preAdmissionIdentifier));
-        }
-        if (isset($children->reAdmission)) {
-            $type->setReAdmission(FHIRCodeableConcept::xmlUnserialize($children->reAdmission));
-        }
-        if (isset($children->specialArrangement)) {
-            foreach($children->specialArrangement as $child) {
-                $type->addSpecialArrangement(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->specialCourtesy)) {
-            foreach($children->specialCourtesy as $child) {
-                $type->addSpecialCourtesy(FHIRCodeableConcept::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getPreAdmissionIdentifier())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_PRE_ADMISSION_IDENTIFIER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getOrigin())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_ORIGIN);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if (null !== ($v = $this->getAdmitSource())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ADMIT_SOURCE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_ADMIT_SOURCE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getDestination())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESTINATION, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getReAdmission())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_RE_ADMISSION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getDietPreference())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DIET_PREFERENCE, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getDischargeDisposition())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DISCHARGE_DISPOSITION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getOrigin())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ORIGIN, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPreAdmissionIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRE_ADMISSION_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getReAdmission())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RE_ADMISSION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getSpecialArrangement())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIAL_ARRANGEMENT, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_DIET_PREFERENCE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getSpecialCourtesy())) {
@@ -1050,10 +1072,32 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIAL_COURTESY, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_SPECIAL_COURTESY);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        if ([] !== ($vs = $this->getSpecialArrangement())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_SPECIAL_ARRANGEMENT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if (null !== ($v = $this->getDestination())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DESTINATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDischargeDisposition())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DISCHARGE_DISPOSITION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -1062,11 +1106,17 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getPreAdmissionIdentifier())) {
+            $a[self::FIELD_PRE_ADMISSION_IDENTIFIER] = $v;
+        }
+        if (null !== ($v = $this->getOrigin())) {
+            $a[self::FIELD_ORIGIN] = $v;
+        }
         if (null !== ($v = $this->getAdmitSource())) {
             $a[self::FIELD_ADMIT_SOURCE] = $v;
         }
-        if (null !== ($v = $this->getDestination())) {
-            $a[self::FIELD_DESTINATION] = $v;
+        if (null !== ($v = $this->getReAdmission())) {
+            $a[self::FIELD_RE_ADMISSION] = $v;
         }
         if ([] !== ($vs = $this->getDietPreference())) {
             $a[self::FIELD_DIET_PREFERENCE] = [];
@@ -1075,27 +1125,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                     continue;
                 }
                 $a[self::FIELD_DIET_PREFERENCE][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getDischargeDisposition())) {
-            $a[self::FIELD_DISCHARGE_DISPOSITION] = $v;
-        }
-        if (null !== ($v = $this->getOrigin())) {
-            $a[self::FIELD_ORIGIN] = $v;
-        }
-        if (null !== ($v = $this->getPreAdmissionIdentifier())) {
-            $a[self::FIELD_PRE_ADMISSION_IDENTIFIER] = $v;
-        }
-        if (null !== ($v = $this->getReAdmission())) {
-            $a[self::FIELD_RE_ADMISSION] = $v;
-        }
-        if ([] !== ($vs = $this->getSpecialArrangement())) {
-            $a[self::FIELD_SPECIAL_ARRANGEMENT] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_SPECIAL_ARRANGEMENT][] = $v;
             }
         }
         if ([] !== ($vs = $this->getSpecialCourtesy())) {
@@ -1107,8 +1136,20 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $a[self::FIELD_SPECIAL_COURTESY][] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getSpecialArrangement())) {
+            $a[self::FIELD_SPECIAL_ARRANGEMENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SPECIAL_ARRANGEMENT][] = $v;
+            }
+        }
+        if (null !== ($v = $this->getDestination())) {
+            $a[self::FIELD_DESTINATION] = $v;
+        }
+        if (null !== ($v = $this->getDischargeDisposition())) {
+            $a[self::FIELD_DISCHARGE_DISPOSITION] = $v;
         }
         return $a;
     }

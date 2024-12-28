@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,13 +64,14 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
 class FHIRSampledDataDataTypePrimitive implements PHPFHIRTypeInterface
 {
     use PHPFHIRValidationAssertionsTrait;
+    use PHPFHIRChangeTrackingTrait;
 
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SAMPLED_DATA_DATA_TYPE_HYPHEN_PRIMITIVE;
     const FIELD_VALUE = 'value';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * @var null|string
@@ -105,11 +106,11 @@ class FHIRSampledDataDataTypePrimitive implements PHPFHIRTypeInterface
     }
 
     /**
-     * @return string|null
+     * @return string
      */
     public function _getFHIRXMLNamespace()
     {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
+        return $this->_xmlns;
     }
 
     /**
@@ -118,15 +119,10 @@ class FHIRSampledDataDataTypePrimitive implements PHPFHIRTypeInterface
      */
     public function _setFHIRXMLNamespace($xmlNamespace)
     {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
+        $this->_xmlns = trim((string)$xmlNamespace);
+        return $this;
     }
+
 
     /**
      * @return string
@@ -134,7 +130,7 @@ class FHIRSampledDataDataTypePrimitive implements PHPFHIRTypeInterface
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<SampledDataDataType_primitive{$xmlns}></SampledDataDataType_primitive>";
@@ -156,7 +152,7 @@ class FHIRSampledDataDataTypePrimitive implements PHPFHIRTypeInterface
     {
         if (null === $value) {
             $this->value = null;
-        } else if (is_string($value)) {
+        } elseif (is_string($value)) {
             $this->value = $value;
         } else {
             throw new \InvalidArgumentException(sprintf('Value must be null or string, %s seen', gettype($value)));
@@ -200,66 +196,79 @@ class FHIRSampledDataDataTypePrimitive implements PHPFHIRTypeInterface
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRSampledDataDataTypePrimitive $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRSampledDataDataTypePrimitive
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRSampledDataDataTypePrimitive::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSampledDataDataTypePrimitive::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRSampledDataDataTypePrimitive::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRSampledDataDataTypePrimitive;
+            $type = new FHIRSampledDataDataTypePrimitive(null);
         } elseif (!is_object($type) || !($type instanceof FHIRSampledDataDataTypePrimitive)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSampledDataDataTypePrimitive::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRSampledDataDataTypePrimitive or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_VALUE === $n->nodeName) {
+                $valueAttr = $n->attributes->getNamedItem('value');
+                if (null !== $valueAttr) {
+                    $type->setValue($valueAttr->nodeValue);
+                } elseif ($n->hasChildNodes()) {
+                    $type->setValue($n->ownerDocument->saveXML($n));
+                } else {
+                    $type->setValue($n->textContent);
+                }
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($attributes->value)) {
-            $type->setValue((string)$attributes->value);
-        } elseif (isset($children->value)) {
-            $type->setValue((string)$children->value);
-        } elseif ('' !== ($v = (string)$sxe)) {
-            $type->setValue($v);
+        $n = $element->attributes->getNamedItem(self::FIELD_VALUE);
+        if (null !== $n) {
+            $type->setValue($n->nodeValue);
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        $sxe->addAttribute(self::FIELD_VALUE, (string)$this);
-        return $sxe;
+        $element->setAttribute(self::FIELD_VALUE, (string)$this);
+        return $element;
     }
 
     /**

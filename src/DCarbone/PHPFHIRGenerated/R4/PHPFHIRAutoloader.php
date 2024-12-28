@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -81,6 +81,9 @@ if (!trait_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRCommentContainerTrait', 
 }
 if (!trait_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRValidationAssertionsTrait', false)) {
     require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRValidationAssertionsTrait.php';
+}
+if (!trait_exists('\DCarbone\PHPFHIRGenerated\R4\PHPFHIRChangeTrackingTrait', false)) {
+    require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRChangeTrackingTrait.php';
 }
 
 // common classes
@@ -1073,6 +1076,7 @@ abstract class PHPFHIRAutoloader
         'DCarbone\PHPFHIRGenerated\R4\FHIRMarkdownPrimitive' => 'FHIRMarkdownPrimitive.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIROidPrimitive' => 'FHIROidPrimitive.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRPositiveIntPrimitive' => 'FHIRPositiveIntPrimitive.php',
+        'DCarbone\PHPFHIRGenerated\R4\FHIRRaw' => 'FHIRRaw.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource' => 'FHIRResource.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResourceContainer' => 'FHIRResourceContainer.php',
         'DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRBinary' => 'FHIRResource/FHIRBinary.php',
@@ -1240,7 +1244,7 @@ abstract class PHPFHIRAutoloader
         if (self::$_registered) {
             return self::$_registered;
         }
-        return self::$_registered = spl_autoload_register(array(__CLASS__, 'loadClass'), true);
+        return self::$_registered = spl_autoload_register([__CLASS__, 'loadClass'], true);
     }
 
     /**
@@ -1249,7 +1253,7 @@ abstract class PHPFHIRAutoloader
     public static function unregister()
     {
         if (self::$_registered) {
-            if (spl_autoload_unregister(array(__CLASS__, 'loadClass'))) {
+            if (spl_autoload_unregister([__CLASS__, 'loadClass'])) {
                 self::$_registered = false;
                 return true;
             }
@@ -1266,7 +1270,7 @@ abstract class PHPFHIRAutoloader
     public static function loadClass($class)
     {
         if (isset(self::$_classMap[$class])) {
-            return (bool)require sprintf('%s/%s', self::ROOT_DIR, self::$_classMap[$class]);
+            return (bool)require self::ROOT_DIR . '/' . self::$_classMap[$class];
         }
         return null;
     }

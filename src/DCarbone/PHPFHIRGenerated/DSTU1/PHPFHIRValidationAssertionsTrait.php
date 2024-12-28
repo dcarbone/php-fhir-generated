@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,16 +111,17 @@ trait PHPFHIRValidationAssertionsTrait
      */
     protected function _assertMinLength($typeName, $fieldName, $expected, $value)
     {
-        if (0 === $expected) {
+        if (0 >= $expected) {
             return null;
         }
         if (null === $value || !is_string($value) || '' === $value) {
             return sprintf('Field "%s" on type "%s" must be at least %d characters long, but it is empty', $fieldName, $typeName, $expected);
         }
-        if ($expected > ($cnt = strlen($value))) {
-            return sprintf('Field "%s" on type "%s" must be at least %d characters long, %d seen.', $fieldName, $typeName, $expected, $cnt);
+        $cnt = strlen($value);
+        if ($expected <= $cnt) {
+            return null;
         }
-        return null;
+        return sprintf('Field "%s" on type "%s" must be at least %d characters long, %d seen.', $fieldName, $typeName, $expected, $cnt);
     }
 
     /**
@@ -133,7 +134,11 @@ trait PHPFHIRValidationAssertionsTrait
      */
     protected function _assertMaxLength($typeName, $fieldName, $expected, $value)
     {
-        if (PHPFHIRConstants::UNLIMITED === $expected || null === $value || !is_string($value) || '' === $value || $expected <= ($cnt = strlen($value))) {
+        if (PHPFHIRConstants::UNLIMITED === $expected || null === $value || !is_string($value) || '' === $value) {
+            return null;
+        }
+        $cnt = strlen($value);
+        if ($expected >= $cnt) {
             return null;
         }
         return sprintf('Field "%s" on type "%s" must be no more than %d characters long, %d seen', $fieldName, $typeName, $expected, $cnt);

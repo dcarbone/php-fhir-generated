@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,6 +66,8 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -79,40 +81,14 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_POLYMER_DOT_STARTING_MATERIAL;
-    const FIELD_AMOUNT = 'amount';
-    const FIELD_IS_DEFINING = 'isDefining';
-    const FIELD_IS_DEFINING_EXT = '_isDefining';
     const FIELD_MATERIAL = 'material';
     const FIELD_TYPE = 'type';
+    const FIELD_IS_DEFINING = 'isDefining';
+    const FIELD_IS_DEFINING_EXT = '_isDefining';
+    const FIELD_AMOUNT = 'amount';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Chemical substances are a single substance type whose primary defining element
-     * is the molecular structure. Chemical substances shall be defined on the basis of
-     * their complete covalent molecular structure; the presence of a salt
-     * (counter-ion) and/or solvates (water, alcohols) is also captured. Purity, grade,
-     * physical form or particle size are not taken into account in the definition of a
-     * chemical substance or in the assignment of a Substance ID.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Todo.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
-     */
-    protected $amount = null;
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Todo.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    protected $isDefining = null;
+    private $_xmlns = '';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -139,6 +115,32 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
     protected $type = null;
 
     /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Todo.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    protected $isDefining = null;
+
+    /**
+     * Chemical substances are a single substance type whose primary defining element
+     * is the molecular structure. Chemical substances shall be defined on the basis of
+     * their complete covalent molecular structure; the presence of a salt
+     * (counter-ion) and/or solvates (water, alcohols) is also captured. Purity, grade,
+     * physical form or particle size are not taken into account in the definition of a
+     * chemical substance or in the assignment of a Substance ID.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Todo.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
+     */
+    protected $amount = null;
+
+    /**
      * Validation map for fields in type SubstancePolymer.StartingMaterial
      * @var array
      */
@@ -160,36 +162,6 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_AMOUNT])) {
-            if ($data[self::FIELD_AMOUNT] instanceof FHIRSubstanceAmount) {
-                $this->setAmount($data[self::FIELD_AMOUNT]);
-            } else {
-                $this->setAmount(new FHIRSubstanceAmount($data[self::FIELD_AMOUNT]));
-            }
-        }
-        if (isset($data[self::FIELD_IS_DEFINING]) || isset($data[self::FIELD_IS_DEFINING_EXT])) {
-            if (isset($data[self::FIELD_IS_DEFINING])) {
-                $value = $data[self::FIELD_IS_DEFINING];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_IS_DEFINING_EXT]) && is_array($data[self::FIELD_IS_DEFINING_EXT])) {
-                $ext = $data[self::FIELD_IS_DEFINING_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setIsDefining($value);
-                } else if (is_array($value)) {
-                    $this->setIsDefining(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setIsDefining(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setIsDefining(new FHIRBoolean($ext));
-            }
-        }
         if (isset($data[self::FIELD_MATERIAL])) {
             if ($data[self::FIELD_MATERIAL] instanceof FHIRCodeableConcept) {
                 $this->setMaterial($data[self::FIELD_MATERIAL]);
@@ -202,6 +174,28 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
                 $this->setType($data[self::FIELD_TYPE]);
             } else {
                 $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
+            }
+        }
+        if (isset($data[self::FIELD_IS_DEFINING]) || isset($data[self::FIELD_IS_DEFINING_EXT])) {
+            $value = isset($data[self::FIELD_IS_DEFINING]) ? $data[self::FIELD_IS_DEFINING] : null;
+            $ext = (isset($data[self::FIELD_IS_DEFINING_EXT]) && is_array($data[self::FIELD_IS_DEFINING_EXT])) ? $ext = $data[self::FIELD_IS_DEFINING_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setIsDefining($value);
+                } else if (is_array($value)) {
+                    $this->setIsDefining(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setIsDefining(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setIsDefining(new FHIRBoolean($ext));
+            }
+        }
+        if (isset($data[self::FIELD_AMOUNT])) {
+            if ($data[self::FIELD_AMOUNT] instanceof FHIRSubstanceAmount) {
+                $this->setAmount($data[self::FIELD_AMOUNT]);
+            } else {
+                $this->setAmount(new FHIRSubstanceAmount($data[self::FIELD_AMOUNT]));
             }
         }
     }
@@ -220,10 +214,108 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<SubstancePolymerStartingMaterial{$xmlns}></SubstancePolymerStartingMaterial>";
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Todo.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getMaterial()
+    {
+        return $this->material;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Todo.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $material
+     * @return static
+     */
+    public function setMaterial(FHIRCodeableConcept $material = null)
+    {
+        $this->_trackValueSet($this->material, $material);
+        $this->material = $material;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Todo.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Todo.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
+     * @return static
+     */
+    public function setType(FHIRCodeableConcept $type = null)
+    {
+        $this->_trackValueSet($this->type, $type);
+        $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Todo.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    public function getIsDefining()
+    {
+        return $this->isDefining;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Todo.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $isDefining
+     * @return static
+     */
+    public function setIsDefining($isDefining = null)
+    {
+        if (null !== $isDefining && !($isDefining instanceof FHIRBoolean)) {
+            $isDefining = new FHIRBoolean($isDefining);
+        }
+        $this->_trackValueSet($this->isDefining, $isDefining);
+        $this->isDefining = $isDefining;
+        return $this;
     }
 
     /**
@@ -262,107 +354,8 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
      */
     public function setAmount(FHIRSubstanceAmount $amount = null)
     {
+        $this->_trackValueSet($this->amount, $amount);
         $this->amount = $amount;
-        return $this;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    public function getIsDefining()
-    {
-        return $this->isDefining;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $isDefining
-     * @return static
-     */
-    public function setIsDefining($isDefining = null)
-    {
-        if (null === $isDefining) {
-            $this->isDefining = null;
-            return $this;
-        }
-        if ($isDefining instanceof FHIRBoolean) {
-            $this->isDefining = $isDefining;
-            return $this;
-        }
-        $this->isDefining = new FHIRBoolean($isDefining);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getMaterial()
-    {
-        return $this->material;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $material
-     * @return static
-     */
-    public function setMaterial(FHIRCodeableConcept $material = null)
-    {
-        $this->material = $material;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return static
-     */
-    public function setType(FHIRCodeableConcept $type = null)
-    {
-        $this->type = $type;
         return $this;
     }
 
@@ -387,16 +380,6 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getAmount())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_AMOUNT] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getIsDefining())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_IS_DEFINING] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getMaterial())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_MATERIAL] = $fieldErrs;
@@ -407,28 +390,14 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
                 $errs[self::FIELD_TYPE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_AMOUNT])) {
-            $v = $this->getAmount();
-            foreach($validationRules[self::FIELD_AMOUNT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_POLYMER_DOT_STARTING_MATERIAL, self::FIELD_AMOUNT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_AMOUNT])) {
-                        $errs[self::FIELD_AMOUNT] = [];
-                    }
-                    $errs[self::FIELD_AMOUNT][$rule] = $err;
-                }
+        if (null !== ($v = $this->getIsDefining())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_IS_DEFINING] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_IS_DEFINING])) {
-            $v = $this->getIsDefining();
-            foreach($validationRules[self::FIELD_IS_DEFINING] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_POLYMER_DOT_STARTING_MATERIAL, self::FIELD_IS_DEFINING, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_IS_DEFINING])) {
-                        $errs[self::FIELD_IS_DEFINING] = [];
-                    }
-                    $errs[self::FIELD_IS_DEFINING][$rule] = $err;
-                }
+        if (null !== ($v = $this->getAmount())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_AMOUNT] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_MATERIAL])) {
@@ -452,6 +421,30 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
                         $errs[self::FIELD_TYPE] = [];
                     }
                     $errs[self::FIELD_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_IS_DEFINING])) {
+            $v = $this->getIsDefining();
+            foreach($validationRules[self::FIELD_IS_DEFINING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_POLYMER_DOT_STARTING_MATERIAL, self::FIELD_IS_DEFINING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_IS_DEFINING])) {
+                        $errs[self::FIELD_IS_DEFINING] = [];
+                    }
+                    $errs[self::FIELD_IS_DEFINING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AMOUNT])) {
+            $v = $this->getAmount();
+            foreach($validationRules[self::FIELD_AMOUNT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_POLYMER_DOT_STARTING_MATERIAL, self::FIELD_AMOUNT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AMOUNT])) {
+                        $errs[self::FIELD_AMOUNT] = [];
+                    }
+                    $errs[self::FIELD_AMOUNT][$rule] = $err;
                 }
             }
         }
@@ -495,92 +488,118 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerStartingMaterial $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerStartingMaterial
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRSubstancePolymerStartingMaterial::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSubstancePolymerStartingMaterial::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRSubstancePolymerStartingMaterial::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRSubstancePolymerStartingMaterial;
+            $type = new FHIRSubstancePolymerStartingMaterial(null);
         } elseif (!is_object($type) || !($type instanceof FHIRSubstancePolymerStartingMaterial)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSubstancePolymerStartingMaterial::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerStartingMaterial or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_MATERIAL === $n->nodeName) {
+                $type->setMaterial(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_TYPE === $n->nodeName) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_IS_DEFINING === $n->nodeName) {
+                $type->setIsDefining(FHIRBoolean::xmlUnserialize($n));
+            } elseif (self::FIELD_AMOUNT === $n->nodeName) {
+                $type->setAmount(FHIRSubstanceAmount::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->amount)) {
-            $type->setAmount(FHIRSubstanceAmount::xmlUnserialize($children->amount));
-        }
-        if (isset($children->isDefining)) {
-            $type->setIsDefining(FHIRBoolean::xmlUnserialize($children->isDefining));
-        }
-        if (isset($attributes->isDefining)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_IS_DEFINING);
+        if (null !== $n) {
             $pt = $type->getIsDefining();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->isDefining);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setIsDefining((string)$attributes->isDefining);
+                $type->setIsDefining($n->nodeValue);
             }
         }
-        if (isset($children->material)) {
-            $type->setMaterial(FHIRCodeableConcept::xmlUnserialize($children->material));
-        }
-        if (isset($children->type)) {
-            $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getAmount())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AMOUNT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getIsDefining())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IS_DEFINING, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getMaterial())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MATERIAL, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_MATERIAL);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getIsDefining())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_IS_DEFINING);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getAmount())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_AMOUNT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -589,26 +608,24 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAmount())) {
-            $a[self::FIELD_AMOUNT] = $v;
-        }
-        if (null !== ($v = $this->getIsDefining())) {
-            $a[self::FIELD_IS_DEFINING] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_IS_DEFINING_EXT] = $enc;
-            }
-        }
         if (null !== ($v = $this->getMaterial())) {
             $a[self::FIELD_MATERIAL] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getIsDefining())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_IS_DEFINING] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBoolean::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_IS_DEFINING_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getAmount())) {
+            $a[self::FIELD_AMOUNT] = $v;
         }
         return $a;
     }

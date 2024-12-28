@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,8 +65,10 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -83,16 +85,27 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_RESOURCE_1;
+    const FIELD_REFERENCE = 'reference';
     const FIELD_EXAMPLE_BOOLEAN = 'exampleBoolean';
     const FIELD_EXAMPLE_BOOLEAN_EXT = '_exampleBoolean';
     const FIELD_EXAMPLE_CANONICAL = 'exampleCanonical';
     const FIELD_EXAMPLE_CANONICAL_EXT = '_exampleCanonical';
-    const FIELD_REFERENCE = 'reference';
     const FIELD_RELATIVE_PATH = 'relativePath';
     const FIELD_RELATIVE_PATH_EXT = '_relativePath';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where this resource is found.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected $reference = null;
 
     /**
      * Value of "true" or "false"
@@ -100,7 +113,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      *
      * If true or a reference, indicates the resource is an example instance. If a
      * reference is present, indicates that the example is an example of the specified
-     * profile. (choose any one of example*, but only one)
+     * profile.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
@@ -114,22 +127,11 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      *
      * If true or a reference, indicates the resource is an example instance. If a
      * reference is present, indicates that the example is an example of the specified
-     * profile. (choose any one of example*, but only one)
+     * profile.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
     protected $exampleCanonical = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Where this resource is found.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $reference = null;
 
     /**
      * A URI that is a literal reference
@@ -164,17 +166,16 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_REFERENCE])) {
+            if ($data[self::FIELD_REFERENCE] instanceof FHIRReference) {
+                $this->setReference($data[self::FIELD_REFERENCE]);
+            } else {
+                $this->setReference(new FHIRReference($data[self::FIELD_REFERENCE]));
+            }
+        }
         if (isset($data[self::FIELD_EXAMPLE_BOOLEAN]) || isset($data[self::FIELD_EXAMPLE_BOOLEAN_EXT])) {
-            if (isset($data[self::FIELD_EXAMPLE_BOOLEAN])) {
-                $value = $data[self::FIELD_EXAMPLE_BOOLEAN];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_EXAMPLE_BOOLEAN_EXT]) && is_array($data[self::FIELD_EXAMPLE_BOOLEAN_EXT])) {
-                $ext = $data[self::FIELD_EXAMPLE_BOOLEAN_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_EXAMPLE_BOOLEAN]) ? $data[self::FIELD_EXAMPLE_BOOLEAN] : null;
+            $ext = (isset($data[self::FIELD_EXAMPLE_BOOLEAN_EXT]) && is_array($data[self::FIELD_EXAMPLE_BOOLEAN_EXT])) ? $ext = $data[self::FIELD_EXAMPLE_BOOLEAN_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setExampleBoolean($value);
@@ -183,21 +184,13 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
                 } else {
                     $this->setExampleBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setExampleBoolean(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_EXAMPLE_CANONICAL]) || isset($data[self::FIELD_EXAMPLE_CANONICAL_EXT])) {
-            if (isset($data[self::FIELD_EXAMPLE_CANONICAL])) {
-                $value = $data[self::FIELD_EXAMPLE_CANONICAL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_EXAMPLE_CANONICAL_EXT]) && is_array($data[self::FIELD_EXAMPLE_CANONICAL_EXT])) {
-                $ext = $data[self::FIELD_EXAMPLE_CANONICAL_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_EXAMPLE_CANONICAL]) ? $data[self::FIELD_EXAMPLE_CANONICAL] : null;
+            $ext = (isset($data[self::FIELD_EXAMPLE_CANONICAL_EXT]) && is_array($data[self::FIELD_EXAMPLE_CANONICAL_EXT])) ? $ext = $data[self::FIELD_EXAMPLE_CANONICAL_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRCanonical) {
                     $this->setExampleCanonical($value);
@@ -206,28 +199,13 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
                 } else {
                     $this->setExampleCanonical(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setExampleCanonical(new FHIRCanonical($ext));
             }
         }
-        if (isset($data[self::FIELD_REFERENCE])) {
-            if ($data[self::FIELD_REFERENCE] instanceof FHIRReference) {
-                $this->setReference($data[self::FIELD_REFERENCE]);
-            } else {
-                $this->setReference(new FHIRReference($data[self::FIELD_REFERENCE]));
-            }
-        }
         if (isset($data[self::FIELD_RELATIVE_PATH]) || isset($data[self::FIELD_RELATIVE_PATH_EXT])) {
-            if (isset($data[self::FIELD_RELATIVE_PATH])) {
-                $value = $data[self::FIELD_RELATIVE_PATH];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_RELATIVE_PATH_EXT]) && is_array($data[self::FIELD_RELATIVE_PATH_EXT])) {
-                $ext = $data[self::FIELD_RELATIVE_PATH_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_RELATIVE_PATH]) ? $data[self::FIELD_RELATIVE_PATH] : null;
+            $ext = (isset($data[self::FIELD_RELATIVE_PATH_EXT]) && is_array($data[self::FIELD_RELATIVE_PATH_EXT])) ? $ext = $data[self::FIELD_RELATIVE_PATH_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRUrl) {
                     $this->setRelativePath($value);
@@ -236,7 +214,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
                 } else {
                     $this->setRelativePath(new FHIRUrl([FHIRUrl::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setRelativePath(new FHIRUrl($ext));
             }
         }
@@ -256,94 +234,10 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ImplementationGuideResource1{$xmlns}></ImplementationGuideResource1>";
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * If true or a reference, indicates the resource is an example instance. If a
-     * reference is present, indicates that the example is an example of the specified
-     * profile. (choose any one of example*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    public function getExampleBoolean()
-    {
-        return $this->exampleBoolean;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * If true or a reference, indicates the resource is an example instance. If a
-     * reference is present, indicates that the example is an example of the specified
-     * profile. (choose any one of example*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $exampleBoolean
-     * @return static
-     */
-    public function setExampleBoolean($exampleBoolean = null)
-    {
-        if (null === $exampleBoolean) {
-            $this->exampleBoolean = null;
-            return $this;
-        }
-        if ($exampleBoolean instanceof FHIRBoolean) {
-            $this->exampleBoolean = $exampleBoolean;
-            return $this;
-        }
-        $this->exampleBoolean = new FHIRBoolean($exampleBoolean);
-        return $this;
-    }
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * If true or a reference, indicates the resource is an example instance. If a
-     * reference is present, indicates that the example is an example of the specified
-     * profile. (choose any one of example*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
-     */
-    public function getExampleCanonical()
-    {
-        return $this->exampleCanonical;
-    }
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * If true or a reference, indicates the resource is an example instance. If a
-     * reference is present, indicates that the example is an example of the specified
-     * profile. (choose any one of example*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $exampleCanonical
-     * @return static
-     */
-    public function setExampleCanonical($exampleCanonical = null)
-    {
-        if (null === $exampleCanonical) {
-            $this->exampleCanonical = null;
-            return $this;
-        }
-        if ($exampleCanonical instanceof FHIRCanonical) {
-            $this->exampleCanonical = $exampleCanonical;
-            return $this;
-        }
-        $this->exampleCanonical = new FHIRCanonical($exampleCanonical);
-        return $this;
     }
 
     /**
@@ -372,7 +266,84 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      */
     public function setReference(FHIRReference $reference = null)
     {
+        $this->_trackValueSet($this->reference, $reference);
         $this->reference = $reference;
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If true or a reference, indicates the resource is an example instance. If a
+     * reference is present, indicates that the example is an example of the specified
+     * profile.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    public function getExampleBoolean()
+    {
+        return $this->exampleBoolean;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If true or a reference, indicates the resource is an example instance. If a
+     * reference is present, indicates that the example is an example of the specified
+     * profile.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $exampleBoolean
+     * @return static
+     */
+    public function setExampleBoolean($exampleBoolean = null)
+    {
+        if (null !== $exampleBoolean && !($exampleBoolean instanceof FHIRBoolean)) {
+            $exampleBoolean = new FHIRBoolean($exampleBoolean);
+        }
+        $this->_trackValueSet($this->exampleBoolean, $exampleBoolean);
+        $this->exampleBoolean = $exampleBoolean;
+        return $this;
+    }
+
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * If true or a reference, indicates the resource is an example instance. If a
+     * reference is present, indicates that the example is an example of the specified
+     * profile.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
+     */
+    public function getExampleCanonical()
+    {
+        return $this->exampleCanonical;
+    }
+
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * If true or a reference, indicates the resource is an example instance. If a
+     * reference is present, indicates that the example is an example of the specified
+     * profile.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $exampleCanonical
+     * @return static
+     */
+    public function setExampleCanonical($exampleCanonical = null)
+    {
+        if (null !== $exampleCanonical && !($exampleCanonical instanceof FHIRCanonical)) {
+            $exampleCanonical = new FHIRCanonical($exampleCanonical);
+        }
+        $this->_trackValueSet($this->exampleCanonical, $exampleCanonical);
+        $this->exampleCanonical = $exampleCanonical;
         return $this;
     }
 
@@ -402,15 +373,11 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      */
     public function setRelativePath($relativePath = null)
     {
-        if (null === $relativePath) {
-            $this->relativePath = null;
-            return $this;
+        if (null !== $relativePath && !($relativePath instanceof FHIRUrl)) {
+            $relativePath = new FHIRUrl($relativePath);
         }
-        if ($relativePath instanceof FHIRUrl) {
-            $this->relativePath = $relativePath;
-            return $this;
-        }
-        $this->relativePath = new FHIRUrl($relativePath);
+        $this->_trackValueSet($this->relativePath, $relativePath);
+        $this->relativePath = $relativePath;
         return $this;
     }
 
@@ -435,6 +402,11 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getReference())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_REFERENCE] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getExampleBoolean())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_EXAMPLE_BOOLEAN] = $fieldErrs;
@@ -445,14 +417,21 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
                 $errs[self::FIELD_EXAMPLE_CANONICAL] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getReference())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_REFERENCE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getRelativePath())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_RELATIVE_PATH] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_REFERENCE])) {
+            $v = $this->getReference();
+            foreach($validationRules[self::FIELD_REFERENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_RESOURCE_1, self::FIELD_REFERENCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REFERENCE])) {
+                        $errs[self::FIELD_REFERENCE] = [];
+                    }
+                    $errs[self::FIELD_REFERENCE][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_EXAMPLE_BOOLEAN])) {
@@ -476,18 +455,6 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
                         $errs[self::FIELD_EXAMPLE_CANONICAL] = [];
                     }
                     $errs[self::FIELD_EXAMPLE_CANONICAL][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_REFERENCE])) {
-            $v = $this->getReference();
-            foreach($validationRules[self::FIELD_REFERENCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMPLEMENTATION_GUIDE_DOT_RESOURCE_1, self::FIELD_REFERENCE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REFERENCE])) {
-                        $errs[self::FIELD_REFERENCE] = [];
-                    }
-                    $errs[self::FIELD_REFERENCE][$rule] = $err;
                 }
             }
         }
@@ -543,108 +510,136 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource1 $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource1
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRImplementationGuideResource1::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRImplementationGuideResource1::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRImplementationGuideResource1::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRImplementationGuideResource1;
+            $type = new FHIRImplementationGuideResource1(null);
         } elseif (!is_object($type) || !($type instanceof FHIRImplementationGuideResource1)) {
             throw new \RuntimeException(sprintf(
                 'FHIRImplementationGuideResource1::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource1 or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_REFERENCE === $n->nodeName) {
+                $type->setReference(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_EXAMPLE_BOOLEAN === $n->nodeName) {
+                $type->setExampleBoolean(FHIRBoolean::xmlUnserialize($n));
+            } elseif (self::FIELD_EXAMPLE_CANONICAL === $n->nodeName) {
+                $type->setExampleCanonical(FHIRCanonical::xmlUnserialize($n));
+            } elseif (self::FIELD_RELATIVE_PATH === $n->nodeName) {
+                $type->setRelativePath(FHIRUrl::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->exampleBoolean)) {
-            $type->setExampleBoolean(FHIRBoolean::xmlUnserialize($children->exampleBoolean));
-        }
-        if (isset($attributes->exampleBoolean)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_EXAMPLE_BOOLEAN);
+        if (null !== $n) {
             $pt = $type->getExampleBoolean();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->exampleBoolean);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setExampleBoolean((string)$attributes->exampleBoolean);
+                $type->setExampleBoolean($n->nodeValue);
             }
         }
-        if (isset($children->exampleCanonical)) {
-            $type->setExampleCanonical(FHIRCanonical::xmlUnserialize($children->exampleCanonical));
-        }
-        if (isset($attributes->exampleCanonical)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_EXAMPLE_CANONICAL);
+        if (null !== $n) {
             $pt = $type->getExampleCanonical();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->exampleCanonical);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setExampleCanonical((string)$attributes->exampleCanonical);
+                $type->setExampleCanonical($n->nodeValue);
             }
         }
-        if (isset($children->reference)) {
-            $type->setReference(FHIRReference::xmlUnserialize($children->reference));
-        }
-        if (isset($children->relativePath)) {
-            $type->setRelativePath(FHIRUrl::xmlUnserialize($children->relativePath));
-        }
-        if (isset($attributes->relativePath)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_RELATIVE_PATH);
+        if (null !== $n) {
             $pt = $type->getRelativePath();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->relativePath);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setRelativePath((string)$attributes->relativePath);
+                $type->setRelativePath($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getReference())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_REFERENCE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if (null !== ($v = $this->getExampleBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_EXAMPLE_BOOLEAN);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getExampleCanonical())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXAMPLE_CANONICAL, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_EXAMPLE_CANONICAL);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getRelativePath())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIVE_PATH, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_RELATIVE_PATH);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -653,38 +648,38 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getExampleBoolean())) {
-            $a[self::FIELD_EXAMPLE_BOOLEAN] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_EXAMPLE_BOOLEAN_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getExampleCanonical())) {
-            $a[self::FIELD_EXAMPLE_CANONICAL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCanonical::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCanonical::FIELD_VALUE]);
-                $a[self::FIELD_EXAMPLE_CANONICAL_EXT] = $enc;
-            }
-        }
         if (null !== ($v = $this->getReference())) {
             $a[self::FIELD_REFERENCE] = $v;
         }
-        if (null !== ($v = $this->getRelativePath())) {
-            $a[self::FIELD_RELATIVE_PATH] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUrl::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUrl::FIELD_VALUE]);
-                $a[self::FIELD_RELATIVE_PATH_EXT] = $enc;
+        if (null !== ($v = $this->getExampleBoolean())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_EXAMPLE_BOOLEAN] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBoolean::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_EXAMPLE_BOOLEAN_EXT] = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getExampleCanonical())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_EXAMPLE_CANONICAL] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRCanonical::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_EXAMPLE_CANONICAL_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getRelativePath())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_RELATIVE_PATH] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRUrl::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_RELATIVE_PATH_EXT] = $ext;
+            }
         }
         return $a;
     }

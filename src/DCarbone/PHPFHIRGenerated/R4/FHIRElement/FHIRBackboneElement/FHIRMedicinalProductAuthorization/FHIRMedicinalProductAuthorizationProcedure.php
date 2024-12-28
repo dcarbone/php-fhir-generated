@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,8 +65,10 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -80,49 +82,15 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_AUTHORIZATION_DOT_PROCEDURE;
-    const FIELD_APPLICATION = 'application';
-    const FIELD_DATE_DATE_TIME = 'dateDateTime';
-    const FIELD_DATE_DATE_TIME_EXT = '_dateDateTime';
-    const FIELD_DATE_PERIOD = 'datePeriod';
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_TYPE = 'type';
+    const FIELD_DATE_PERIOD = 'datePeriod';
+    const FIELD_DATE_DATE_TIME = 'dateDateTime';
+    const FIELD_DATE_DATE_TIME_EXT = '_dateDateTime';
+    const FIELD_APPLICATION = 'application';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * The regulatory authorization of a medicinal product.
-     *
-     * Applcations submitted to obtain a marketing authorization.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure[]
-     */
-    protected $application = [];
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Date of procedure. (choose any one of date*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
-     */
-    protected $dateDateTime = null;
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Date of procedure. (choose any one of date*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
-     */
-    protected $datePeriod = null;
+    private $_xmlns = '';
 
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -149,6 +117,40 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
     protected $type = null;
 
     /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Date of procedure.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     */
+    protected $datePeriod = null;
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Date of procedure.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
+     */
+    protected $dateDateTime = null;
+
+    /**
+     * The regulatory authorization of a medicinal product.
+     *
+     * Applcations submitted to obtain a marketing authorization.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure[]
+     */
+    protected $application = [];
+
+    /**
      * Validation map for fields in type MedicinalProductAuthorization.Procedure
      * @var array
      */
@@ -170,54 +172,6 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_APPLICATION])) {
-            if (is_array($data[self::FIELD_APPLICATION])) {
-                foreach($data[self::FIELD_APPLICATION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRMedicinalProductAuthorizationProcedure) {
-                        $this->addApplication($v);
-                    } else {
-                        $this->addApplication(new FHIRMedicinalProductAuthorizationProcedure($v));
-                    }
-                }
-            } else if ($data[self::FIELD_APPLICATION] instanceof FHIRMedicinalProductAuthorizationProcedure) {
-                $this->addApplication($data[self::FIELD_APPLICATION]);
-            } else {
-                $this->addApplication(new FHIRMedicinalProductAuthorizationProcedure($data[self::FIELD_APPLICATION]));
-            }
-        }
-        if (isset($data[self::FIELD_DATE_DATE_TIME]) || isset($data[self::FIELD_DATE_DATE_TIME_EXT])) {
-            if (isset($data[self::FIELD_DATE_DATE_TIME])) {
-                $value = $data[self::FIELD_DATE_DATE_TIME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DATE_DATE_TIME_EXT]) && is_array($data[self::FIELD_DATE_DATE_TIME_EXT])) {
-                $ext = $data[self::FIELD_DATE_DATE_TIME_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $this->setDateDateTime($value);
-                } else if (is_array($value)) {
-                    $this->setDateDateTime(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $this->setDateDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDateDateTime(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_DATE_PERIOD])) {
-            if ($data[self::FIELD_DATE_PERIOD] instanceof FHIRPeriod) {
-                $this->setDatePeriod($data[self::FIELD_DATE_PERIOD]);
-            } else {
-                $this->setDatePeriod(new FHIRPeriod($data[self::FIELD_DATE_PERIOD]));
-            }
-        }
         if (isset($data[self::FIELD_IDENTIFIER])) {
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
@@ -230,6 +184,46 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
                 $this->setType($data[self::FIELD_TYPE]);
             } else {
                 $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
+            }
+        }
+        if (isset($data[self::FIELD_DATE_PERIOD])) {
+            if ($data[self::FIELD_DATE_PERIOD] instanceof FHIRPeriod) {
+                $this->setDatePeriod($data[self::FIELD_DATE_PERIOD]);
+            } else {
+                $this->setDatePeriod(new FHIRPeriod($data[self::FIELD_DATE_PERIOD]));
+            }
+        }
+        if (isset($data[self::FIELD_DATE_DATE_TIME]) || isset($data[self::FIELD_DATE_DATE_TIME_EXT])) {
+            $value = isset($data[self::FIELD_DATE_DATE_TIME]) ? $data[self::FIELD_DATE_DATE_TIME] : null;
+            $ext = (isset($data[self::FIELD_DATE_DATE_TIME_EXT]) && is_array($data[self::FIELD_DATE_DATE_TIME_EXT])) ? $ext = $data[self::FIELD_DATE_DATE_TIME_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setDateDateTime($value);
+                } else if (is_array($value)) {
+                    $this->setDateDateTime(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setDateDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDateDateTime(new FHIRDateTime($ext));
+            }
+        }
+        if (isset($data[self::FIELD_APPLICATION])) {
+            if (is_array($data[self::FIELD_APPLICATION])) {
+                foreach($data[self::FIELD_APPLICATION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRMedicinalProductAuthorizationProcedure) {
+                        $this->addApplication($v);
+                    } else {
+                        $this->addApplication(new FHIRMedicinalProductAuthorizationProcedure($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_APPLICATION] instanceof FHIRMedicinalProductAuthorizationProcedure) {
+                $this->addApplication($data[self::FIELD_APPLICATION]);
+            } else {
+                $this->addApplication(new FHIRMedicinalProductAuthorizationProcedure($data[self::FIELD_APPLICATION]));
             }
         }
     }
@@ -248,134 +242,10 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<MedicinalProductAuthorizationProcedure{$xmlns}></MedicinalProductAuthorizationProcedure>";
-    }
-
-    /**
-     * The regulatory authorization of a medicinal product.
-     *
-     * Applcations submitted to obtain a marketing authorization.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure[]
-     */
-    public function getApplication()
-    {
-        return $this->application;
-    }
-
-    /**
-     * The regulatory authorization of a medicinal product.
-     *
-     * Applcations submitted to obtain a marketing authorization.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure $application
-     * @return static
-     */
-    public function addApplication(FHIRMedicinalProductAuthorizationProcedure $application = null)
-    {
-        $this->application[] = $application;
-        return $this;
-    }
-
-    /**
-     * The regulatory authorization of a medicinal product.
-     *
-     * Applcations submitted to obtain a marketing authorization.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure[] $application
-     * @return static
-     */
-    public function setApplication(array $application = [])
-    {
-        $this->application = [];
-        if ([] === $application) {
-            return $this;
-        }
-        foreach($application as $v) {
-            if ($v instanceof FHIRMedicinalProductAuthorizationProcedure) {
-                $this->addApplication($v);
-            } else {
-                $this->addApplication(new FHIRMedicinalProductAuthorizationProcedure($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Date of procedure. (choose any one of date*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
-     */
-    public function getDateDateTime()
-    {
-        return $this->dateDateTime;
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Date of procedure. (choose any one of date*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $dateDateTime
-     * @return static
-     */
-    public function setDateDateTime($dateDateTime = null)
-    {
-        if (null === $dateDateTime) {
-            $this->dateDateTime = null;
-            return $this;
-        }
-        if ($dateDateTime instanceof FHIRDateTime) {
-            $this->dateDateTime = $dateDateTime;
-            return $this;
-        }
-        $this->dateDateTime = new FHIRDateTime($dateDateTime);
-        return $this;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Date of procedure. (choose any one of date*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
-     */
-    public function getDatePeriod()
-    {
-        return $this->datePeriod;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Date of procedure. (choose any one of date*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $datePeriod
-     * @return static
-     */
-    public function setDatePeriod(FHIRPeriod $datePeriod = null)
-    {
-        $this->datePeriod = $datePeriod;
-        return $this;
     }
 
     /**
@@ -406,6 +276,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      */
     public function setIdentifier(FHIRIdentifier $identifier = null)
     {
+        $this->_trackValueSet($this->identifier, $identifier);
         $this->identifier = $identifier;
         return $this;
     }
@@ -438,7 +309,133 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
+        $this->_trackValueSet($this->type, $type);
         $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Date of procedure.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     */
+    public function getDatePeriod()
+    {
+        return $this->datePeriod;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Date of procedure.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $datePeriod
+     * @return static
+     */
+    public function setDatePeriod(FHIRPeriod $datePeriod = null)
+    {
+        $this->_trackValueSet($this->datePeriod, $datePeriod);
+        $this->datePeriod = $datePeriod;
+        return $this;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Date of procedure.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
+     */
+    public function getDateDateTime()
+    {
+        return $this->dateDateTime;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Date of procedure.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $dateDateTime
+     * @return static
+     */
+    public function setDateDateTime($dateDateTime = null)
+    {
+        if (null !== $dateDateTime && !($dateDateTime instanceof FHIRDateTime)) {
+            $dateDateTime = new FHIRDateTime($dateDateTime);
+        }
+        $this->_trackValueSet($this->dateDateTime, $dateDateTime);
+        $this->dateDateTime = $dateDateTime;
+        return $this;
+    }
+
+    /**
+     * The regulatory authorization of a medicinal product.
+     *
+     * Applcations submitted to obtain a marketing authorization.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure[]
+     */
+    public function getApplication()
+    {
+        return $this->application;
+    }
+
+    /**
+     * The regulatory authorization of a medicinal product.
+     *
+     * Applcations submitted to obtain a marketing authorization.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure $application
+     * @return static
+     */
+    public function addApplication(FHIRMedicinalProductAuthorizationProcedure $application = null)
+    {
+        $this->_trackValueAdded();
+        $this->application[] = $application;
+        return $this;
+    }
+
+    /**
+     * The regulatory authorization of a medicinal product.
+     *
+     * Applcations submitted to obtain a marketing authorization.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure[] $application
+     * @return static
+     */
+    public function setApplication(array $application = [])
+    {
+        if ([] !== $this->application) {
+            $this->_trackValuesRemoved(count($this->application));
+            $this->application = [];
+        }
+        if ([] === $application) {
+            return $this;
+        }
+        foreach($application as $v) {
+            if ($v instanceof FHIRMedicinalProductAuthorizationProcedure) {
+                $this->addApplication($v);
+            } else {
+                $this->addApplication(new FHIRMedicinalProductAuthorizationProcedure($v));
+            }
+        }
         return $this;
     }
 
@@ -463,23 +460,6 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getApplication())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_APPLICATION, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getDateDateTime())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DATE_DATE_TIME] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDatePeriod())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DATE_PERIOD] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getIdentifier())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_IDENTIFIER] = $fieldErrs;
@@ -490,39 +470,20 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
                 $errs[self::FIELD_TYPE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_APPLICATION])) {
-            $v = $this->getApplication();
-            foreach($validationRules[self::FIELD_APPLICATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_AUTHORIZATION_DOT_PROCEDURE, self::FIELD_APPLICATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_APPLICATION])) {
-                        $errs[self::FIELD_APPLICATION] = [];
-                    }
-                    $errs[self::FIELD_APPLICATION][$rule] = $err;
-                }
+        if (null !== ($v = $this->getDatePeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DATE_PERIOD] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DATE_DATE_TIME])) {
-            $v = $this->getDateDateTime();
-            foreach($validationRules[self::FIELD_DATE_DATE_TIME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_AUTHORIZATION_DOT_PROCEDURE, self::FIELD_DATE_DATE_TIME, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DATE_DATE_TIME])) {
-                        $errs[self::FIELD_DATE_DATE_TIME] = [];
-                    }
-                    $errs[self::FIELD_DATE_DATE_TIME][$rule] = $err;
-                }
+        if (null !== ($v = $this->getDateDateTime())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DATE_DATE_TIME] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DATE_PERIOD])) {
-            $v = $this->getDatePeriod();
-            foreach($validationRules[self::FIELD_DATE_PERIOD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_AUTHORIZATION_DOT_PROCEDURE, self::FIELD_DATE_PERIOD, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DATE_PERIOD])) {
-                        $errs[self::FIELD_DATE_PERIOD] = [];
-                    }
-                    $errs[self::FIELD_DATE_PERIOD][$rule] = $err;
+        if ([] !== ($vs = $this->getApplication())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_APPLICATION, $i)] = $fieldErrs;
                 }
             }
         }
@@ -547,6 +508,42 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
                         $errs[self::FIELD_TYPE] = [];
                     }
                     $errs[self::FIELD_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DATE_PERIOD])) {
+            $v = $this->getDatePeriod();
+            foreach($validationRules[self::FIELD_DATE_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_AUTHORIZATION_DOT_PROCEDURE, self::FIELD_DATE_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DATE_PERIOD])) {
+                        $errs[self::FIELD_DATE_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_DATE_PERIOD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DATE_DATE_TIME])) {
+            $v = $this->getDateDateTime();
+            foreach($validationRules[self::FIELD_DATE_DATE_TIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_AUTHORIZATION_DOT_PROCEDURE, self::FIELD_DATE_DATE_TIME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DATE_DATE_TIME])) {
+                        $errs[self::FIELD_DATE_DATE_TIME] = [];
+                    }
+                    $errs[self::FIELD_DATE_DATE_TIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_APPLICATION])) {
+            $v = $this->getApplication();
+            foreach($validationRules[self::FIELD_APPLICATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_AUTHORIZATION_DOT_PROCEDURE, self::FIELD_APPLICATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_APPLICATION])) {
+                        $errs[self::FIELD_APPLICATION] = [];
+                    }
+                    $errs[self::FIELD_APPLICATION][$rule] = $err;
                 }
             }
         }
@@ -590,105 +587,130 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRMedicinalProductAuthorizationProcedure::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMedicinalProductAuthorizationProcedure::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRMedicinalProductAuthorizationProcedure::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRMedicinalProductAuthorizationProcedure;
+            $type = new FHIRMedicinalProductAuthorizationProcedure(null);
         } elseif (!is_object($type) || !($type instanceof FHIRMedicinalProductAuthorizationProcedure)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMedicinalProductAuthorizationProcedure::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_IDENTIFIER === $n->nodeName) {
+                $type->setIdentifier(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_TYPE === $n->nodeName) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DATE_PERIOD === $n->nodeName) {
+                $type->setDatePeriod(FHIRPeriod::xmlUnserialize($n));
+            } elseif (self::FIELD_DATE_DATE_TIME === $n->nodeName) {
+                $type->setDateDateTime(FHIRDateTime::xmlUnserialize($n));
+            } elseif (self::FIELD_APPLICATION === $n->nodeName) {
+                $type->addApplication(FHIRMedicinalProductAuthorizationProcedure::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->application)) {
-            foreach($children->application as $child) {
-                $type->addApplication(FHIRMedicinalProductAuthorizationProcedure::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->dateDateTime)) {
-            $type->setDateDateTime(FHIRDateTime::xmlUnserialize($children->dateDateTime));
-        }
-        if (isset($attributes->dateDateTime)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DATE_DATE_TIME);
+        if (null !== $n) {
             $pt = $type->getDateDateTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->dateDateTime);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDateDateTime((string)$attributes->dateDateTime);
+                $type->setDateDateTime($n->nodeValue);
             }
         }
-        if (isset($children->datePeriod)) {
-            $type->setDatePeriod(FHIRPeriod::xmlUnserialize($children->datePeriod));
-        }
-        if (isset($children->identifier)) {
-            $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
-        }
-        if (isset($children->type)) {
-            $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getIdentifier())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_IDENTIFIER);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDatePeriod())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DATE_PERIOD);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getDateDateTime())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DATE_DATE_TIME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if ([] !== ($vs = $this->getApplication())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_APPLICATION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_APPLICATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getDateDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDatePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_PERIOD, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -697,6 +719,25 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getIdentifier())) {
+            $a[self::FIELD_IDENTIFIER] = $v;
+        }
+        if (null !== ($v = $this->getType())) {
+            $a[self::FIELD_TYPE] = $v;
+        }
+        if (null !== ($v = $this->getDatePeriod())) {
+            $a[self::FIELD_DATE_PERIOD] = $v;
+        }
+        if (null !== ($v = $this->getDateDateTime())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DATE_DATE_TIME] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDateTime::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DATE_DATE_TIME_EXT] = $ext;
+            }
+        }
         if ([] !== ($vs = $this->getApplication())) {
             $a[self::FIELD_APPLICATION] = [];
             foreach($vs as $v) {
@@ -705,27 +746,6 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
                 }
                 $a[self::FIELD_APPLICATION][] = $v;
             }
-        }
-        if (null !== ($v = $this->getDateDateTime())) {
-            $a[self::FIELD_DATE_DATE_TIME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_DATE_DATE_TIME_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getDatePeriod())) {
-            $a[self::FIELD_DATE_PERIOD] = $v;
-        }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
-        }
-        if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

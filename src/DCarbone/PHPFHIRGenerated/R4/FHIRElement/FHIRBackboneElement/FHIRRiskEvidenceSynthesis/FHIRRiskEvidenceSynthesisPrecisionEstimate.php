@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,8 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskE
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -80,28 +82,28 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RISK_EVIDENCE_SYNTHESIS_DOT_PRECISION_ESTIMATE;
-    const FIELD_FROM = 'from';
-    const FIELD_FROM_EXT = '_from';
+    const FIELD_TYPE = 'type';
     const FIELD_LEVEL = 'level';
     const FIELD_LEVEL_EXT = '_level';
+    const FIELD_FROM = 'from';
+    const FIELD_FROM_EXT = '_from';
     const FIELD_TO = 'to';
     const FIELD_TO_EXT = '_to';
-    const FIELD_TYPE = 'type';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Lower bound of confidence interval.
+     * Examples include confidence interval and interquartile range.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $from = null;
+    protected $type = null;
 
     /**
      * A rational number with implicit precision
@@ -121,23 +123,23 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
+     * Lower bound of confidence interval.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
+     */
+    protected $from = null;
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
      * Upper bound of confidence interval.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected $to = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Examples include confidence interval and interquartile range.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $type = null;
 
     /**
      * Validation map for fields in type RiskEvidenceSynthesis.PrecisionEstimate
@@ -161,40 +163,16 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_FROM]) || isset($data[self::FIELD_FROM_EXT])) {
-            if (isset($data[self::FIELD_FROM])) {
-                $value = $data[self::FIELD_FROM];
+        if (isset($data[self::FIELD_TYPE])) {
+            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setType($data[self::FIELD_TYPE]);
             } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_FROM_EXT]) && is_array($data[self::FIELD_FROM_EXT])) {
-                $ext = $data[self::FIELD_FROM_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->setFrom($value);
-                } else if (is_array($value)) {
-                    $this->setFrom(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->setFrom(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setFrom(new FHIRDecimal($ext));
+                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
             }
         }
         if (isset($data[self::FIELD_LEVEL]) || isset($data[self::FIELD_LEVEL_EXT])) {
-            if (isset($data[self::FIELD_LEVEL])) {
-                $value = $data[self::FIELD_LEVEL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_LEVEL_EXT]) && is_array($data[self::FIELD_LEVEL_EXT])) {
-                $ext = $data[self::FIELD_LEVEL_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_LEVEL]) ? $data[self::FIELD_LEVEL] : null;
+            $ext = (isset($data[self::FIELD_LEVEL_EXT]) && is_array($data[self::FIELD_LEVEL_EXT])) ? $ext = $data[self::FIELD_LEVEL_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRDecimal) {
                     $this->setLevel($value);
@@ -203,21 +181,28 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
                 } else {
                     $this->setLevel(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setLevel(new FHIRDecimal($ext));
             }
         }
+        if (isset($data[self::FIELD_FROM]) || isset($data[self::FIELD_FROM_EXT])) {
+            $value = isset($data[self::FIELD_FROM]) ? $data[self::FIELD_FROM] : null;
+            $ext = (isset($data[self::FIELD_FROM_EXT]) && is_array($data[self::FIELD_FROM_EXT])) ? $ext = $data[self::FIELD_FROM_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setFrom($value);
+                } else if (is_array($value)) {
+                    $this->setFrom(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setFrom(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setFrom(new FHIRDecimal($ext));
+            }
+        }
         if (isset($data[self::FIELD_TO]) || isset($data[self::FIELD_TO_EXT])) {
-            if (isset($data[self::FIELD_TO])) {
-                $value = $data[self::FIELD_TO];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TO_EXT]) && is_array($data[self::FIELD_TO_EXT])) {
-                $ext = $data[self::FIELD_TO_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_TO]) ? $data[self::FIELD_TO] : null;
+            $ext = (isset($data[self::FIELD_TO_EXT]) && is_array($data[self::FIELD_TO_EXT])) ? $ext = $data[self::FIELD_TO_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRDecimal) {
                     $this->setTo($value);
@@ -226,15 +211,8 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
                 } else {
                     $this->setTo(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setTo(new FHIRDecimal($ext));
-            }
-        }
-        if (isset($data[self::FIELD_TYPE])) {
-            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setType($data[self::FIELD_TYPE]);
-            } else {
-                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
             }
         }
     }
@@ -253,49 +231,42 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<RiskEvidenceSynthesisPrecisionEstimate{$xmlns}></RiskEvidenceSynthesisPrecisionEstimate>";
     }
 
     /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Lower bound of confidence interval.
+     * Examples include confidence interval and interquartile range.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    public function getFrom()
+    public function getType()
     {
-        return $this->from;
+        return $this->type;
     }
 
     /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Lower bound of confidence interval.
+     * Examples include confidence interval and interquartile range.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $from
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
      * @return static
      */
-    public function setFrom($from = null)
+    public function setType(FHIRCodeableConcept $type = null)
     {
-        if (null === $from) {
-            $this->from = null;
-            return $this;
-        }
-        if ($from instanceof FHIRDecimal) {
-            $this->from = $from;
-            return $this;
-        }
-        $this->from = new FHIRDecimal($from);
+        $this->_trackValueSet($this->type, $type);
+        $this->type = $type;
         return $this;
     }
 
@@ -327,15 +298,47 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      */
     public function setLevel($level = null)
     {
-        if (null === $level) {
-            $this->level = null;
-            return $this;
+        if (null !== $level && !($level instanceof FHIRDecimal)) {
+            $level = new FHIRDecimal($level);
         }
-        if ($level instanceof FHIRDecimal) {
-            $this->level = $level;
-            return $this;
+        $this->_trackValueSet($this->level, $level);
+        $this->level = $level;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Lower bound of confidence interval.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
+     */
+    public function getFrom()
+    {
+        return $this->from;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Lower bound of confidence interval.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $from
+     * @return static
+     */
+    public function setFrom($from = null)
+    {
+        if (null !== $from && !($from instanceof FHIRDecimal)) {
+            $from = new FHIRDecimal($from);
         }
-        $this->level = new FHIRDecimal($level);
+        $this->_trackValueSet($this->from, $from);
+        $this->from = $from;
         return $this;
     }
 
@@ -367,47 +370,11 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      */
     public function setTo($to = null)
     {
-        if (null === $to) {
-            $this->to = null;
-            return $this;
+        if (null !== $to && !($to instanceof FHIRDecimal)) {
+            $to = new FHIRDecimal($to);
         }
-        if ($to instanceof FHIRDecimal) {
-            $this->to = $to;
-            return $this;
-        }
-        $this->to = new FHIRDecimal($to);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Examples include confidence interval and interquartile range.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Examples include confidence interval and interquartile range.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return static
-     */
-    public function setType(FHIRCodeableConcept $type = null)
-    {
-        $this->type = $type;
+        $this->_trackValueSet($this->to, $to);
+        $this->to = $to;
         return $this;
     }
 
@@ -432,9 +399,9 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getFrom())) {
+        if (null !== ($v = $this->getType())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_FROM] = $fieldErrs;
+                $errs[self::FIELD_TYPE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getLevel())) {
@@ -442,25 +409,25 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
                 $errs[self::FIELD_LEVEL] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getFrom())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_FROM] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getTo())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_TO] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TYPE] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_FROM])) {
-            $v = $this->getFrom();
-            foreach($validationRules[self::FIELD_FROM] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_EVIDENCE_SYNTHESIS_DOT_PRECISION_ESTIMATE, self::FIELD_FROM, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_EVIDENCE_SYNTHESIS_DOT_PRECISION_ESTIMATE, self::FIELD_TYPE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FROM])) {
-                        $errs[self::FIELD_FROM] = [];
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
                     }
-                    $errs[self::FIELD_FROM][$rule] = $err;
+                    $errs[self::FIELD_TYPE][$rule] = $err;
                 }
             }
         }
@@ -476,6 +443,18 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_FROM])) {
+            $v = $this->getFrom();
+            foreach($validationRules[self::FIELD_FROM] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_EVIDENCE_SYNTHESIS_DOT_PRECISION_ESTIMATE, self::FIELD_FROM, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FROM])) {
+                        $errs[self::FIELD_FROM] = [];
+                    }
+                    $errs[self::FIELD_FROM][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_TO])) {
             $v = $this->getTo();
             foreach($validationRules[self::FIELD_TO] as $rule => $constraint) {
@@ -485,18 +464,6 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
                         $errs[self::FIELD_TO] = [];
                     }
                     $errs[self::FIELD_TO][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_TYPE])) {
-            $v = $this->getType();
-            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_EVIDENCE_SYNTHESIS_DOT_PRECISION_ESTIMATE, self::FIELD_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TYPE])) {
-                        $errs[self::FIELD_TYPE] = [];
-                    }
-                    $errs[self::FIELD_TYPE][$rule] = $err;
                 }
             }
         }
@@ -540,108 +507,136 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRRiskEvidenceSynthesisPrecisionEstimate::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRRiskEvidenceSynthesisPrecisionEstimate::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRRiskEvidenceSynthesisPrecisionEstimate::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRRiskEvidenceSynthesisPrecisionEstimate;
+            $type = new FHIRRiskEvidenceSynthesisPrecisionEstimate(null);
         } elseif (!is_object($type) || !($type instanceof FHIRRiskEvidenceSynthesisPrecisionEstimate)) {
             throw new \RuntimeException(sprintf(
                 'FHIRRiskEvidenceSynthesisPrecisionEstimate::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_TYPE === $n->nodeName) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_LEVEL === $n->nodeName) {
+                $type->setLevel(FHIRDecimal::xmlUnserialize($n));
+            } elseif (self::FIELD_FROM === $n->nodeName) {
+                $type->setFrom(FHIRDecimal::xmlUnserialize($n));
+            } elseif (self::FIELD_TO === $n->nodeName) {
+                $type->setTo(FHIRDecimal::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->from)) {
-            $type->setFrom(FHIRDecimal::xmlUnserialize($children->from));
-        }
-        if (isset($attributes->from)) {
-            $pt = $type->getFrom();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->from);
-            } else {
-                $type->setFrom((string)$attributes->from);
-            }
-        }
-        if (isset($children->level)) {
-            $type->setLevel(FHIRDecimal::xmlUnserialize($children->level));
-        }
-        if (isset($attributes->level)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_LEVEL);
+        if (null !== $n) {
             $pt = $type->getLevel();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->level);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setLevel((string)$attributes->level);
+                $type->setLevel($n->nodeValue);
             }
         }
-        if (isset($children->to)) {
-            $type->setTo(FHIRDecimal::xmlUnserialize($children->to));
+        $n = $element->attributes->getNamedItem(self::FIELD_FROM);
+        if (null !== $n) {
+            $pt = $type->getFrom();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setFrom($n->nodeValue);
+            }
         }
-        if (isset($attributes->to)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_TO);
+        if (null !== $n) {
             $pt = $type->getTo();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->to);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setTo((string)$attributes->to);
+                $type->setTo($n->nodeValue);
             }
         }
-        if (isset($children->type)) {
-            $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getFrom())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FROM, null, $v->_getFHIRXMLNamespace()));
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getLevel())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LEVEL, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_LEVEL);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if (null !== ($v = $this->getFrom())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_FROM);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getTo())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TO, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_TO);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -650,38 +645,38 @@ class FHIRRiskEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getFrom())) {
-            $a[self::FIELD_FROM] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_FROM_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getLevel())) {
-            $a[self::FIELD_LEVEL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_LEVEL_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getTo())) {
-            $a[self::FIELD_TO] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_TO_EXT] = $enc;
-            }
-        }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getLevel())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_LEVEL] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDecimal::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_LEVEL_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getFrom())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_FROM] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDecimal::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_FROM_EXT] = $ext;
+            }
+        }
+        if (null !== ($v = $this->getTo())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_TO] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRDecimal::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_TO_EXT] = $ext;
+            }
         }
         return $a;
     }

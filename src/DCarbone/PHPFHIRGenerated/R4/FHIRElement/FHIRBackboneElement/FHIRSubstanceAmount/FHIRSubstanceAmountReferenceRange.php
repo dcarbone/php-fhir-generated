@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  */
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -84,24 +86,11 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_AMOUNT_DOT_REFERENCE_RANGE;
-    const FIELD_HIGH_LIMIT = 'highLimit';
     const FIELD_LOW_LIMIT = 'lowLimit';
+    const FIELD_HIGH_LIMIT = 'highLimit';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Upper limit possible or expected.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    protected $highLimit = null;
+    private $_xmlns = '';
 
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -115,6 +104,19 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected $lowLimit = null;
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Upper limit possible or expected.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    protected $highLimit = null;
 
     /**
      * Validation map for fields in type SubstanceAmount.ReferenceRange
@@ -138,18 +140,18 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_HIGH_LIMIT])) {
-            if ($data[self::FIELD_HIGH_LIMIT] instanceof FHIRQuantity) {
-                $this->setHighLimit($data[self::FIELD_HIGH_LIMIT]);
-            } else {
-                $this->setHighLimit(new FHIRQuantity($data[self::FIELD_HIGH_LIMIT]));
-            }
-        }
         if (isset($data[self::FIELD_LOW_LIMIT])) {
             if ($data[self::FIELD_LOW_LIMIT] instanceof FHIRQuantity) {
                 $this->setLowLimit($data[self::FIELD_LOW_LIMIT]);
             } else {
                 $this->setLowLimit(new FHIRQuantity($data[self::FIELD_LOW_LIMIT]));
+            }
+        }
+        if (isset($data[self::FIELD_HIGH_LIMIT])) {
+            if ($data[self::FIELD_HIGH_LIMIT] instanceof FHIRQuantity) {
+                $this->setHighLimit($data[self::FIELD_HIGH_LIMIT]);
+            } else {
+                $this->setHighLimit(new FHIRQuantity($data[self::FIELD_HIGH_LIMIT]));
             }
         }
     }
@@ -168,44 +170,10 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<SubstanceAmountReferenceRange{$xmlns}></SubstanceAmountReferenceRange>";
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Upper limit possible or expected.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    public function getHighLimit()
-    {
-        return $this->highLimit;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Upper limit possible or expected.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $highLimit
-     * @return static
-     */
-    public function setHighLimit(FHIRQuantity $highLimit = null)
-    {
-        $this->highLimit = $highLimit;
-        return $this;
     }
 
     /**
@@ -238,7 +206,43 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement
      */
     public function setLowLimit(FHIRQuantity $lowLimit = null)
     {
+        $this->_trackValueSet($this->lowLimit, $lowLimit);
         $this->lowLimit = $lowLimit;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Upper limit possible or expected.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    public function getHighLimit()
+    {
+        return $this->highLimit;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Upper limit possible or expected.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $highLimit
+     * @return static
+     */
+    public function setHighLimit(FHIRQuantity $highLimit = null)
+    {
+        $this->_trackValueSet($this->highLimit, $highLimit);
+        $this->highLimit = $highLimit;
         return $this;
     }
 
@@ -263,26 +267,14 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getHighLimit())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_HIGH_LIMIT] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getLowLimit())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_LOW_LIMIT] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_HIGH_LIMIT])) {
-            $v = $this->getHighLimit();
-            foreach($validationRules[self::FIELD_HIGH_LIMIT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_AMOUNT_DOT_REFERENCE_RANGE, self::FIELD_HIGH_LIMIT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_HIGH_LIMIT])) {
-                        $errs[self::FIELD_HIGH_LIMIT] = [];
-                    }
-                    $errs[self::FIELD_HIGH_LIMIT][$rule] = $err;
-                }
+        if (null !== ($v = $this->getHighLimit())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_HIGH_LIMIT] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_LOW_LIMIT])) {
@@ -294,6 +286,18 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement
                         $errs[self::FIELD_LOW_LIMIT] = [];
                     }
                     $errs[self::FIELD_LOW_LIMIT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_HIGH_LIMIT])) {
+            $v = $this->getHighLimit();
+            foreach($validationRules[self::FIELD_HIGH_LIMIT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_AMOUNT_DOT_REFERENCE_RANGE, self::FIELD_HIGH_LIMIT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_HIGH_LIMIT])) {
+                        $errs[self::FIELD_HIGH_LIMIT] = [];
+                    }
+                    $errs[self::FIELD_HIGH_LIMIT][$rule] = $err;
                 }
             }
         }
@@ -337,72 +341,95 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRSubstanceAmountReferenceRange::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSubstanceAmountReferenceRange::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRSubstanceAmountReferenceRange::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRSubstanceAmountReferenceRange;
+            $type = new FHIRSubstanceAmountReferenceRange(null);
         } elseif (!is_object($type) || !($type instanceof FHIRSubstanceAmountReferenceRange)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSubstanceAmountReferenceRange::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_LOW_LIMIT === $n->nodeName) {
+                $type->setLowLimit(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_HIGH_LIMIT === $n->nodeName) {
+                $type->setHighLimit(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->highLimit)) {
-            $type->setHighLimit(FHIRQuantity::xmlUnserialize($children->highLimit));
-        }
-        if (isset($children->lowLimit)) {
-            $type->setLowLimit(FHIRQuantity::xmlUnserialize($children->lowLimit));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getHighLimit())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_HIGH_LIMIT, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getLowLimit())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LOW_LIMIT, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_LOW_LIMIT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getHighLimit())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_HIGH_LIMIT);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -411,14 +438,11 @@ class FHIRSubstanceAmountReferenceRange extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getHighLimit())) {
-            $a[self::FIELD_HIGH_LIMIT] = $v;
-        }
         if (null !== ($v = $this->getLowLimit())) {
             $a[self::FIELD_LOW_LIMIT] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getHighLimit())) {
+            $a[self::FIELD_HIGH_LIMIT] = $v;
         }
         return $a;
     }

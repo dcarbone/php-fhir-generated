@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,9 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
 
@@ -81,26 +83,15 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_SECURITY;
-    const FIELD_CERTIFICATE = 'certificate';
     const FIELD_CORS = 'cors';
     const FIELD_CORS_EXT = '_cors';
+    const FIELD_SERVICE = 'service';
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
-    const FIELD_SERVICE = 'service';
+    const FIELD_CERTIFICATE = 'certificate';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A conformance statement is a set of capabilities of a FHIR Server that may be
-     * used as a statement of actual server functionality or a statement of required or
-     * desired server implementation.
-     *
-     * Certificates associated with security profiles.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceCertificate[]
-     */
-    protected $certificate = [];
+    private $_xmlns = '';
 
     /**
      * Value of "true" or "false"
@@ -114,6 +105,18 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
     protected $cors = null;
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Types of security services are supported/required by the system.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
+     */
+    protected $service = [];
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -125,16 +128,15 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
     protected $description = null;
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A conformance statement is a set of capabilities of a FHIR Server that may be
+     * used as a statement of actual server functionality or a statement of required or
+     * desired server implementation.
      *
-     * Types of security services are supported/required by the system.
+     * Certificates associated with security profiles.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceCertificate[]
      */
-    protected $service = [];
+    protected $certificate = [];
 
     /**
      * Validation map for fields in type Conformance.Security
@@ -158,35 +160,9 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CERTIFICATE])) {
-            if (is_array($data[self::FIELD_CERTIFICATE])) {
-                foreach($data[self::FIELD_CERTIFICATE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRConformanceCertificate) {
-                        $this->addCertificate($v);
-                    } else {
-                        $this->addCertificate(new FHIRConformanceCertificate($v));
-                    }
-                }
-            } else if ($data[self::FIELD_CERTIFICATE] instanceof FHIRConformanceCertificate) {
-                $this->addCertificate($data[self::FIELD_CERTIFICATE]);
-            } else {
-                $this->addCertificate(new FHIRConformanceCertificate($data[self::FIELD_CERTIFICATE]));
-            }
-        }
         if (isset($data[self::FIELD_CORS]) || isset($data[self::FIELD_CORS_EXT])) {
-            if (isset($data[self::FIELD_CORS])) {
-                $value = $data[self::FIELD_CORS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CORS_EXT]) && is_array($data[self::FIELD_CORS_EXT])) {
-                $ext = $data[self::FIELD_CORS_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_CORS]) ? $data[self::FIELD_CORS] : null;
+            $ext = (isset($data[self::FIELD_CORS_EXT]) && is_array($data[self::FIELD_CORS_EXT])) ? $ext = $data[self::FIELD_CORS_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setCors($value);
@@ -195,31 +171,8 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
                 } else {
                     $this->setCors(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setCors(new FHIRBoolean($ext));
-            }
-        }
-        if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
-            if (isset($data[self::FIELD_DESCRIPTION])) {
-                $value = $data[self::FIELD_DESCRIPTION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) {
-                $ext = $data[self::FIELD_DESCRIPTION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setDescription($value);
-                } else if (is_array($value)) {
-                    $this->setDescription(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDescription(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_SERVICE])) {
@@ -234,10 +187,43 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
                         $this->addService(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_SERVICE] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_SERVICE] instanceof FHIRCodeableConcept) {
                 $this->addService($data[self::FIELD_SERVICE]);
             } else {
                 $this->addService(new FHIRCodeableConcept($data[self::FIELD_SERVICE]));
+            }
+        }
+        if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
+            $value = isset($data[self::FIELD_DESCRIPTION]) ? $data[self::FIELD_DESCRIPTION] : null;
+            $ext = (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) ? $ext = $data[self::FIELD_DESCRIPTION_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDescription($value);
+                } else if (is_array($value)) {
+                    $this->setDescription(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDescription(new FHIRString($ext));
+            }
+        }
+        if (isset($data[self::FIELD_CERTIFICATE])) {
+            if (is_array($data[self::FIELD_CERTIFICATE])) {
+                foreach($data[self::FIELD_CERTIFICATE] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRConformanceCertificate) {
+                        $this->addCertificate($v);
+                    } else {
+                        $this->addCertificate(new FHIRConformanceCertificate($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_CERTIFICATE] instanceof FHIRConformanceCertificate) {
+                $this->addCertificate($data[self::FIELD_CERTIFICATE]);
+            } else {
+                $this->addCertificate(new FHIRConformanceCertificate($data[self::FIELD_CERTIFICATE]));
             }
         }
     }
@@ -256,66 +242,10 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ConformanceSecurity{$xmlns}></ConformanceSecurity>";
-    }
-
-    /**
-     * A conformance statement is a set of capabilities of a FHIR Server that may be
-     * used as a statement of actual server functionality or a statement of required or
-     * desired server implementation.
-     *
-     * Certificates associated with security profiles.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceCertificate[]
-     */
-    public function getCertificate()
-    {
-        return $this->certificate;
-    }
-
-    /**
-     * A conformance statement is a set of capabilities of a FHIR Server that may be
-     * used as a statement of actual server functionality or a statement of required or
-     * desired server implementation.
-     *
-     * Certificates associated with security profiles.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceCertificate $certificate
-     * @return static
-     */
-    public function addCertificate(FHIRConformanceCertificate $certificate = null)
-    {
-        $this->certificate[] = $certificate;
-        return $this;
-    }
-
-    /**
-     * A conformance statement is a set of capabilities of a FHIR Server that may be
-     * used as a statement of actual server functionality or a statement of required or
-     * desired server implementation.
-     *
-     * Certificates associated with security profiles.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceCertificate[] $certificate
-     * @return static
-     */
-    public function setCertificate(array $certificate = [])
-    {
-        $this->certificate = [];
-        if ([] === $certificate) {
-            return $this;
-        }
-        foreach($certificate as $v) {
-            if ($v instanceof FHIRConformanceCertificate) {
-                $this->addCertificate($v);
-            } else {
-                $this->addCertificate(new FHIRConformanceCertificate($v));
-            }
-        }
-        return $this;
     }
 
     /**
@@ -344,53 +274,11 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
      */
     public function setCors($cors = null)
     {
-        if (null === $cors) {
-            $this->cors = null;
-            return $this;
+        if (null !== $cors && !($cors instanceof FHIRBoolean)) {
+            $cors = new FHIRBoolean($cors);
         }
-        if ($cors instanceof FHIRBoolean) {
-            $this->cors = $cors;
-            return $this;
-        }
-        $this->cors = new FHIRBoolean($cors);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * General description of how security works.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * General description of how security works.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $description
-     * @return static
-     */
-    public function setDescription($description = null)
-    {
-        if (null === $description) {
-            $this->description = null;
-            return $this;
-        }
-        if ($description instanceof FHIRString) {
-            $this->description = $description;
-            return $this;
-        }
-        $this->description = new FHIRString($description);
+        $this->_trackValueSet($this->cors, $cors);
+        $this->cors = $cors;
         return $this;
     }
 
@@ -422,6 +310,7 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
      */
     public function addService(FHIRCodeableConcept $service = null)
     {
+        $this->_trackValueAdded();
         $this->service[] = $service;
         return $this;
     }
@@ -439,7 +328,10 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
      */
     public function setService(array $service = [])
     {
-        $this->service = [];
+        if ([] !== $this->service) {
+            $this->_trackValuesRemoved(count($this->service));
+            $this->service = [];
+        }
         if ([] === $service) {
             return $this;
         }
@@ -448,6 +340,100 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
                 $this->addService($v);
             } else {
                 $this->addService(new FHIRCodeableConcept($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * General description of how security works.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * General description of how security works.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $description
+     * @return static
+     */
+    public function setDescription($description = null)
+    {
+        if (null !== $description && !($description instanceof FHIRString)) {
+            $description = new FHIRString($description);
+        }
+        $this->_trackValueSet($this->description, $description);
+        $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * A conformance statement is a set of capabilities of a FHIR Server that may be
+     * used as a statement of actual server functionality or a statement of required or
+     * desired server implementation.
+     *
+     * Certificates associated with security profiles.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceCertificate[]
+     */
+    public function getCertificate()
+    {
+        return $this->certificate;
+    }
+
+    /**
+     * A conformance statement is a set of capabilities of a FHIR Server that may be
+     * used as a statement of actual server functionality or a statement of required or
+     * desired server implementation.
+     *
+     * Certificates associated with security profiles.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceCertificate $certificate
+     * @return static
+     */
+    public function addCertificate(FHIRConformanceCertificate $certificate = null)
+    {
+        $this->_trackValueAdded();
+        $this->certificate[] = $certificate;
+        return $this;
+    }
+
+    /**
+     * A conformance statement is a set of capabilities of a FHIR Server that may be
+     * used as a statement of actual server functionality or a statement of required or
+     * desired server implementation.
+     *
+     * Certificates associated with security profiles.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceCertificate[] $certificate
+     * @return static
+     */
+    public function setCertificate(array $certificate = [])
+    {
+        if ([] !== $this->certificate) {
+            $this->_trackValuesRemoved(count($this->certificate));
+            $this->certificate = [];
+        }
+        if ([] === $certificate) {
+            return $this;
+        }
+        foreach($certificate as $v) {
+            if ($v instanceof FHIRConformanceCertificate) {
+                $this->addCertificate($v);
+            } else {
+                $this->addCertificate(new FHIRConformanceCertificate($v));
             }
         }
         return $this;
@@ -474,21 +460,9 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getCertificate())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_CERTIFICATE, $i)] = $fieldErrs;
-                }
-            }
-        }
         if (null !== ($v = $this->getCors())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_CORS] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDescription())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getService())) {
@@ -498,15 +472,15 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_CERTIFICATE])) {
-            $v = $this->getCertificate();
-            foreach($validationRules[self::FIELD_CERTIFICATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_SECURITY, self::FIELD_CERTIFICATE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CERTIFICATE])) {
-                        $errs[self::FIELD_CERTIFICATE] = [];
-                    }
-                    $errs[self::FIELD_CERTIFICATE][$rule] = $err;
+        if (null !== ($v = $this->getDescription())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getCertificate())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_CERTIFICATE, $i)] = $fieldErrs;
                 }
             }
         }
@@ -522,6 +496,18 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_SERVICE])) {
+            $v = $this->getService();
+            foreach($validationRules[self::FIELD_SERVICE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_SECURITY, self::FIELD_SERVICE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SERVICE])) {
+                        $errs[self::FIELD_SERVICE] = [];
+                    }
+                    $errs[self::FIELD_SERVICE][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_DESCRIPTION])) {
             $v = $this->getDescription();
             foreach($validationRules[self::FIELD_DESCRIPTION] as $rule => $constraint) {
@@ -534,15 +520,15 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SERVICE])) {
-            $v = $this->getService();
-            foreach($validationRules[self::FIELD_SERVICE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_SECURITY, self::FIELD_SERVICE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_CERTIFICATE])) {
+            $v = $this->getCertificate();
+            foreach($validationRules[self::FIELD_CERTIFICATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONFORMANCE_DOT_SECURITY, self::FIELD_CERTIFICATE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SERVICE])) {
-                        $errs[self::FIELD_SERVICE] = [];
+                    if (!isset($errs[self::FIELD_CERTIFICATE])) {
+                        $errs[self::FIELD_CERTIFICATE] = [];
                     }
-                    $errs[self::FIELD_SERVICE][$rule] = $err;
+                    $errs[self::FIELD_CERTIFICATE][$rule] = $err;
                 }
             }
         }
@@ -586,114 +572,137 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRConformanceSecurity::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRConformanceSecurity::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRConformanceSecurity::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRConformanceSecurity;
+            $type = new FHIRConformanceSecurity(null);
         } elseif (!is_object($type) || !($type instanceof FHIRConformanceSecurity)) {
             throw new \RuntimeException(sprintf(
                 'FHIRConformanceSecurity::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_CORS === $n->nodeName) {
+                $type->setCors(FHIRBoolean::xmlUnserialize($n));
+            } elseif (self::FIELD_SERVICE === $n->nodeName) {
+                $type->addService(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DESCRIPTION === $n->nodeName) {
+                $type->setDescription(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_CERTIFICATE === $n->nodeName) {
+                $type->addCertificate(FHIRConformanceCertificate::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->certificate)) {
-            foreach($children->certificate as $child) {
-                $type->addCertificate(FHIRConformanceCertificate::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->cors)) {
-            $type->setCors(FHIRBoolean::xmlUnserialize($children->cors));
-        }
-        if (isset($attributes->cors)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_CORS);
+        if (null !== $n) {
             $pt = $type->getCors();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->cors);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setCors((string)$attributes->cors);
+                $type->setCors($n->nodeValue);
             }
         }
-        if (isset($children->description)) {
-            $type->setDescription(FHIRString::xmlUnserialize($children->description));
-        }
-        if (isset($attributes->description)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_DESCRIPTION);
+        if (null !== $n) {
             $pt = $type->getDescription();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->description);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setDescription((string)$attributes->description);
+                $type->setDescription($n->nodeValue);
             }
         }
-        if (isset($children->service)) {
-            foreach($children->service as $child) {
-                $type->addService(FHIRCodeableConcept::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getCertificate())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CERTIFICATE, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getCors())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CORS, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_CORS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getService())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SERVICE, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_SERVICE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        if (null !== ($v = $this->getDescription())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DESCRIPTION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getCertificate())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_CERTIFICATE);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        return $element;
     }
 
     /**
@@ -702,31 +711,14 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getCertificate())) {
-            $a[self::FIELD_CERTIFICATE] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_CERTIFICATE][] = $v;
-            }
-        }
         if (null !== ($v = $this->getCors())) {
-            $a[self::FIELD_CORS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_CORS_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_CORS] = $val;
             }
-        }
-        if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRBoolean::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_CORS_EXT] = $ext;
             }
         }
         if ([] !== ($vs = $this->getService())) {
@@ -738,8 +730,24 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
                 $a[self::FIELD_SERVICE][] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getDescription())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_DESCRIPTION] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_DESCRIPTION_EXT] = $ext;
+            }
+        }
+        if ([] !== ($vs = $this->getCertificate())) {
+            $a[self::FIELD_CERTIFICATE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CERTIFICATE][] = $v;
+            }
         }
         return $a;
     }

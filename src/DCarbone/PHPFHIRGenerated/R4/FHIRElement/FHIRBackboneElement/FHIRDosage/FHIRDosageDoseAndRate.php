@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosag
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,9 +64,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosag
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -82,75 +84,15 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DOSAGE_DOT_DOSE_AND_RATE;
-    const FIELD_DOSE_QUANTITY = 'doseQuantity';
-    const FIELD_DOSE_RANGE = 'doseRange';
-    const FIELD_RATE_QUANTITY = 'rateQuantity';
-    const FIELD_RATE_RANGE = 'rateRange';
-    const FIELD_RATE_RATIO = 'rateRatio';
     const FIELD_TYPE = 'type';
+    const FIELD_DOSE_RANGE = 'doseRange';
+    const FIELD_DOSE_QUANTITY = 'doseQuantity';
+    const FIELD_RATE_RATIO = 'rateRatio';
+    const FIELD_RATE_RANGE = 'rateRange';
+    const FIELD_RATE_QUANTITY = 'rateQuantity';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Amount of medication per dose. (choose any one of dose*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    protected $doseQuantity = null;
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Amount of medication per dose. (choose any one of dose*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
-     */
-    protected $doseRange = null;
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    protected $rateQuantity = null;
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
-     */
-    protected $rateRange = null;
-
-    /**
-     * A relationship of two Quantity values - expressed as a numerator and a
-     * denominator.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
-     */
-    protected $rateRatio = null;
+    private $_xmlns = '';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -163,6 +105,66 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected $type = null;
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Amount of medication per dose.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
+     */
+    protected $doseRange = null;
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Amount of medication per dose.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    protected $doseQuantity = null;
+
+    /**
+     * A relationship of two Quantity values - expressed as a numerator and a
+     * denominator.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Amount of medication per unit of time.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
+     */
+    protected $rateRatio = null;
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Amount of medication per unit of time.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
+     */
+    protected $rateRange = null;
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Amount of medication per unit of time.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    protected $rateQuantity = null;
 
     /**
      * Validation map for fields in type Dosage.DoseAndRate
@@ -186,11 +188,11 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_DOSE_QUANTITY])) {
-            if ($data[self::FIELD_DOSE_QUANTITY] instanceof FHIRQuantity) {
-                $this->setDoseQuantity($data[self::FIELD_DOSE_QUANTITY]);
+        if (isset($data[self::FIELD_TYPE])) {
+            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setType($data[self::FIELD_TYPE]);
             } else {
-                $this->setDoseQuantity(new FHIRQuantity($data[self::FIELD_DOSE_QUANTITY]));
+                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
             }
         }
         if (isset($data[self::FIELD_DOSE_RANGE])) {
@@ -200,18 +202,11 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
                 $this->setDoseRange(new FHIRRange($data[self::FIELD_DOSE_RANGE]));
             }
         }
-        if (isset($data[self::FIELD_RATE_QUANTITY])) {
-            if ($data[self::FIELD_RATE_QUANTITY] instanceof FHIRQuantity) {
-                $this->setRateQuantity($data[self::FIELD_RATE_QUANTITY]);
+        if (isset($data[self::FIELD_DOSE_QUANTITY])) {
+            if ($data[self::FIELD_DOSE_QUANTITY] instanceof FHIRQuantity) {
+                $this->setDoseQuantity($data[self::FIELD_DOSE_QUANTITY]);
             } else {
-                $this->setRateQuantity(new FHIRQuantity($data[self::FIELD_RATE_QUANTITY]));
-            }
-        }
-        if (isset($data[self::FIELD_RATE_RANGE])) {
-            if ($data[self::FIELD_RATE_RANGE] instanceof FHIRRange) {
-                $this->setRateRange($data[self::FIELD_RATE_RANGE]);
-            } else {
-                $this->setRateRange(new FHIRRange($data[self::FIELD_RATE_RANGE]));
+                $this->setDoseQuantity(new FHIRQuantity($data[self::FIELD_DOSE_QUANTITY]));
             }
         }
         if (isset($data[self::FIELD_RATE_RATIO])) {
@@ -221,11 +216,18 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
                 $this->setRateRatio(new FHIRRatio($data[self::FIELD_RATE_RATIO]));
             }
         }
-        if (isset($data[self::FIELD_TYPE])) {
-            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setType($data[self::FIELD_TYPE]);
+        if (isset($data[self::FIELD_RATE_RANGE])) {
+            if ($data[self::FIELD_RATE_RANGE] instanceof FHIRRange) {
+                $this->setRateRange($data[self::FIELD_RATE_RANGE]);
             } else {
-                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
+                $this->setRateRange(new FHIRRange($data[self::FIELD_RATE_RANGE]));
+            }
+        }
+        if (isset($data[self::FIELD_RATE_QUANTITY])) {
+            if ($data[self::FIELD_RATE_QUANTITY] instanceof FHIRQuantity) {
+                $this->setRateQuantity($data[self::FIELD_RATE_QUANTITY]);
+            } else {
+                $this->setRateQuantity(new FHIRQuantity($data[self::FIELD_RATE_QUANTITY]));
             }
         }
     }
@@ -244,170 +246,10 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<DosageDoseAndRate{$xmlns}></DosageDoseAndRate>";
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Amount of medication per dose. (choose any one of dose*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    public function getDoseQuantity()
-    {
-        return $this->doseQuantity;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Amount of medication per dose. (choose any one of dose*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $doseQuantity
-     * @return static
-     */
-    public function setDoseQuantity(FHIRQuantity $doseQuantity = null)
-    {
-        $this->doseQuantity = $doseQuantity;
-        return $this;
-    }
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Amount of medication per dose. (choose any one of dose*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
-     */
-    public function getDoseRange()
-    {
-        return $this->doseRange;
-    }
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Amount of medication per dose. (choose any one of dose*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $doseRange
-     * @return static
-     */
-    public function setDoseRange(FHIRRange $doseRange = null)
-    {
-        $this->doseRange = $doseRange;
-        return $this;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    public function getRateQuantity()
-    {
-        return $this->rateQuantity;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $rateQuantity
-     * @return static
-     */
-    public function setRateQuantity(FHIRQuantity $rateQuantity = null)
-    {
-        $this->rateQuantity = $rateQuantity;
-        return $this;
-    }
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
-     */
-    public function getRateRange()
-    {
-        return $this->rateRange;
-    }
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $rateRange
-     * @return static
-     */
-    public function setRateRange(FHIRRange $rateRange = null)
-    {
-        $this->rateRange = $rateRange;
-        return $this;
-    }
-
-    /**
-     * A relationship of two Quantity values - expressed as a numerator and a
-     * denominator.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
-     */
-    public function getRateRatio()
-    {
-        return $this->rateRatio;
-    }
-
-    /**
-     * A relationship of two Quantity values - expressed as a numerator and a
-     * denominator.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Amount of medication per unit of time. (choose any one of rate*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $rateRatio
-     * @return static
-     */
-    public function setRateRatio(FHIRRatio $rateRatio = null)
-    {
-        $this->rateRatio = $rateRatio;
-        return $this;
     }
 
     /**
@@ -438,7 +280,173 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
      */
     public function setType(FHIRCodeableConcept $type = null)
     {
+        $this->_trackValueSet($this->type, $type);
         $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Amount of medication per dose.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
+     */
+    public function getDoseRange()
+    {
+        return $this->doseRange;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Amount of medication per dose.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $doseRange
+     * @return static
+     */
+    public function setDoseRange(FHIRRange $doseRange = null)
+    {
+        $this->_trackValueSet($this->doseRange, $doseRange);
+        $this->doseRange = $doseRange;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Amount of medication per dose.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    public function getDoseQuantity()
+    {
+        return $this->doseQuantity;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Amount of medication per dose.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $doseQuantity
+     * @return static
+     */
+    public function setDoseQuantity(FHIRQuantity $doseQuantity = null)
+    {
+        $this->_trackValueSet($this->doseQuantity, $doseQuantity);
+        $this->doseQuantity = $doseQuantity;
+        return $this;
+    }
+
+    /**
+     * A relationship of two Quantity values - expressed as a numerator and a
+     * denominator.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Amount of medication per unit of time.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
+     */
+    public function getRateRatio()
+    {
+        return $this->rateRatio;
+    }
+
+    /**
+     * A relationship of two Quantity values - expressed as a numerator and a
+     * denominator.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Amount of medication per unit of time.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $rateRatio
+     * @return static
+     */
+    public function setRateRatio(FHIRRatio $rateRatio = null)
+    {
+        $this->_trackValueSet($this->rateRatio, $rateRatio);
+        $this->rateRatio = $rateRatio;
+        return $this;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Amount of medication per unit of time.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
+     */
+    public function getRateRange()
+    {
+        return $this->rateRange;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Amount of medication per unit of time.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $rateRange
+     * @return static
+     */
+    public function setRateRange(FHIRRange $rateRange = null)
+    {
+        $this->_trackValueSet($this->rateRange, $rateRange);
+        $this->rateRange = $rateRange;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Amount of medication per unit of time.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    public function getRateQuantity()
+    {
+        return $this->rateQuantity;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Amount of medication per unit of time.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $rateQuantity
+     * @return static
+     */
+    public function setRateQuantity(FHIRQuantity $rateQuantity = null)
+    {
+        $this->_trackValueSet($this->rateQuantity, $rateQuantity);
+        $this->rateQuantity = $rateQuantity;
         return $this;
     }
 
@@ -463,9 +471,9 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getDoseQuantity())) {
+        if (null !== ($v = $this->getType())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DOSE_QUANTITY] = $fieldErrs;
+                $errs[self::FIELD_TYPE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDoseRange())) {
@@ -473,14 +481,9 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
                 $errs[self::FIELD_DOSE_RANGE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getRateQuantity())) {
+        if (null !== ($v = $this->getDoseQuantity())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_RATE_QUANTITY] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getRateRange())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_RATE_RANGE] = $fieldErrs;
+                $errs[self::FIELD_DOSE_QUANTITY] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getRateRatio())) {
@@ -488,20 +491,25 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
                 $errs[self::FIELD_RATE_RATIO] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getType())) {
+        if (null !== ($v = $this->getRateRange())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TYPE] = $fieldErrs;
+                $errs[self::FIELD_RATE_RANGE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DOSE_QUANTITY])) {
-            $v = $this->getDoseQuantity();
-            foreach($validationRules[self::FIELD_DOSE_QUANTITY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE_DOT_DOSE_AND_RATE, self::FIELD_DOSE_QUANTITY, $rule, $constraint, $v);
+        if (null !== ($v = $this->getRateQuantity())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_RATE_QUANTITY] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE_DOT_DOSE_AND_RATE, self::FIELD_TYPE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DOSE_QUANTITY])) {
-                        $errs[self::FIELD_DOSE_QUANTITY] = [];
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
                     }
-                    $errs[self::FIELD_DOSE_QUANTITY][$rule] = $err;
+                    $errs[self::FIELD_TYPE][$rule] = $err;
                 }
             }
         }
@@ -517,27 +525,15 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_RATE_QUANTITY])) {
-            $v = $this->getRateQuantity();
-            foreach($validationRules[self::FIELD_RATE_QUANTITY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE_DOT_DOSE_AND_RATE, self::FIELD_RATE_QUANTITY, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_DOSE_QUANTITY])) {
+            $v = $this->getDoseQuantity();
+            foreach($validationRules[self::FIELD_DOSE_QUANTITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE_DOT_DOSE_AND_RATE, self::FIELD_DOSE_QUANTITY, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RATE_QUANTITY])) {
-                        $errs[self::FIELD_RATE_QUANTITY] = [];
+                    if (!isset($errs[self::FIELD_DOSE_QUANTITY])) {
+                        $errs[self::FIELD_DOSE_QUANTITY] = [];
                     }
-                    $errs[self::FIELD_RATE_QUANTITY][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_RATE_RANGE])) {
-            $v = $this->getRateRange();
-            foreach($validationRules[self::FIELD_RATE_RANGE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE_DOT_DOSE_AND_RATE, self::FIELD_RATE_RANGE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RATE_RANGE])) {
-                        $errs[self::FIELD_RATE_RANGE] = [];
-                    }
-                    $errs[self::FIELD_RATE_RANGE][$rule] = $err;
+                    $errs[self::FIELD_DOSE_QUANTITY][$rule] = $err;
                 }
             }
         }
@@ -553,15 +549,27 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TYPE])) {
-            $v = $this->getType();
-            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE_DOT_DOSE_AND_RATE, self::FIELD_TYPE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_RATE_RANGE])) {
+            $v = $this->getRateRange();
+            foreach($validationRules[self::FIELD_RATE_RANGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE_DOT_DOSE_AND_RATE, self::FIELD_RATE_RANGE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TYPE])) {
-                        $errs[self::FIELD_TYPE] = [];
+                    if (!isset($errs[self::FIELD_RATE_RANGE])) {
+                        $errs[self::FIELD_RATE_RANGE] = [];
                     }
-                    $errs[self::FIELD_TYPE][$rule] = $err;
+                    $errs[self::FIELD_RATE_RANGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_RATE_QUANTITY])) {
+            $v = $this->getRateQuantity();
+            foreach($validationRules[self::FIELD_RATE_QUANTITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE_DOT_DOSE_AND_RATE, self::FIELD_RATE_QUANTITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RATE_QUANTITY])) {
+                        $errs[self::FIELD_RATE_QUANTITY] = [];
+                    }
+                    $errs[self::FIELD_RATE_QUANTITY][$rule] = $err;
                 }
             }
         }
@@ -605,96 +613,123 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage\FHIRDosageDoseAndRate $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage\FHIRDosageDoseAndRate
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRDosageDoseAndRate::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRDosageDoseAndRate::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRDosageDoseAndRate::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRDosageDoseAndRate;
+            $type = new FHIRDosageDoseAndRate(null);
         } elseif (!is_object($type) || !($type instanceof FHIRDosageDoseAndRate)) {
             throw new \RuntimeException(sprintf(
                 'FHIRDosageDoseAndRate::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage\FHIRDosageDoseAndRate or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_TYPE === $n->nodeName) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_DOSE_RANGE === $n->nodeName) {
+                $type->setDoseRange(FHIRRange::xmlUnserialize($n));
+            } elseif (self::FIELD_DOSE_QUANTITY === $n->nodeName) {
+                $type->setDoseQuantity(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_RATE_RATIO === $n->nodeName) {
+                $type->setRateRatio(FHIRRatio::xmlUnserialize($n));
+            } elseif (self::FIELD_RATE_RANGE === $n->nodeName) {
+                $type->setRateRange(FHIRRange::xmlUnserialize($n));
+            } elseif (self::FIELD_RATE_QUANTITY === $n->nodeName) {
+                $type->setRateQuantity(FHIRQuantity::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->doseQuantity)) {
-            $type->setDoseQuantity(FHIRQuantity::xmlUnserialize($children->doseQuantity));
-        }
-        if (isset($children->doseRange)) {
-            $type->setDoseRange(FHIRRange::xmlUnserialize($children->doseRange));
-        }
-        if (isset($children->rateQuantity)) {
-            $type->setRateQuantity(FHIRQuantity::xmlUnserialize($children->rateQuantity));
-        }
-        if (isset($children->rateRange)) {
-            $type->setRateRange(FHIRRange::xmlUnserialize($children->rateRange));
-        }
-        if (isset($children->rateRatio)) {
-            $type->setRateRatio(FHIRRatio::xmlUnserialize($children->rateRatio));
-        }
-        if (isset($children->type)) {
-            $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getDoseQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getDoseRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_RANGE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_DOSE_RANGE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getRateQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getRateRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_RANGE, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getDoseQuantity())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DOSE_QUANTITY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getRateRatio())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_RATIO, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_RATE_RATIO);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getRateRange())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_RATE_RANGE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getRateQuantity())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_RATE_QUANTITY);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -703,26 +738,23 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getDoseQuantity())) {
-            $a[self::FIELD_DOSE_QUANTITY] = $v;
+        if (null !== ($v = $this->getType())) {
+            $a[self::FIELD_TYPE] = $v;
         }
         if (null !== ($v = $this->getDoseRange())) {
             $a[self::FIELD_DOSE_RANGE] = $v;
         }
-        if (null !== ($v = $this->getRateQuantity())) {
-            $a[self::FIELD_RATE_QUANTITY] = $v;
-        }
-        if (null !== ($v = $this->getRateRange())) {
-            $a[self::FIELD_RATE_RANGE] = $v;
+        if (null !== ($v = $this->getDoseQuantity())) {
+            $a[self::FIELD_DOSE_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getRateRatio())) {
             $a[self::FIELD_RATE_RATIO] = $v;
         }
-        if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
+        if (null !== ($v = $this->getRateRange())) {
+            $a[self::FIELD_RATE_RANGE] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getRateQuantity())) {
+            $a[self::FIELD_RATE_QUANTITY] = $v;
         }
         return $a;
     }

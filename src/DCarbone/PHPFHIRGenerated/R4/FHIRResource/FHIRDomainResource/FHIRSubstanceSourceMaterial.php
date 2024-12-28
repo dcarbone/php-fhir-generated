@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,13 +65,20 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeMap;
 
 /**
  * Source material shall capture information on the taxonomic and anatomical
@@ -96,25 +103,25 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL;
-    const FIELD_COUNTRY_OF_ORIGIN = 'countryOfOrigin';
-    const FIELD_DEVELOPMENT_STAGE = 'developmentStage';
-    const FIELD_FRACTION_DESCRIPTION = 'fractionDescription';
-    const FIELD_GEOGRAPHICAL_LOCATION = 'geographicalLocation';
-    const FIELD_GEOGRAPHICAL_LOCATION_EXT = '_geographicalLocation';
-    const FIELD_ORGANISM = 'organism';
+    const FIELD_SOURCE_MATERIAL_CLASS = 'sourceMaterialClass';
+    const FIELD_SOURCE_MATERIAL_TYPE = 'sourceMaterialType';
+    const FIELD_SOURCE_MATERIAL_STATE = 'sourceMaterialState';
     const FIELD_ORGANISM_ID = 'organismId';
     const FIELD_ORGANISM_NAME = 'organismName';
     const FIELD_ORGANISM_NAME_EXT = '_organismName';
     const FIELD_PARENT_SUBSTANCE_ID = 'parentSubstanceId';
     const FIELD_PARENT_SUBSTANCE_NAME = 'parentSubstanceName';
     const FIELD_PARENT_SUBSTANCE_NAME_EXT = '_parentSubstanceName';
+    const FIELD_COUNTRY_OF_ORIGIN = 'countryOfOrigin';
+    const FIELD_GEOGRAPHICAL_LOCATION = 'geographicalLocation';
+    const FIELD_GEOGRAPHICAL_LOCATION_EXT = '_geographicalLocation';
+    const FIELD_DEVELOPMENT_STAGE = 'developmentStage';
+    const FIELD_FRACTION_DESCRIPTION = 'fractionDescription';
+    const FIELD_ORGANISM = 'organism';
     const FIELD_PART_DESCRIPTION = 'partDescription';
-    const FIELD_SOURCE_MATERIAL_CLASS = 'sourceMaterialClass';
-    const FIELD_SOURCE_MATERIAL_STATE = 'sourceMaterialState';
-    const FIELD_SOURCE_MATERIAL_TYPE = 'sourceMaterialType';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -122,93 +129,38 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The country where the plant material is harvested or the countries where the
-     * plasma is sourced from as laid down in accordance with the Plasma Master File.
-     * For “Plasma-derived substances” the attribute country of origin provides
-     * information about the countries used for the manufacturing of the Cryopoor plama
-     * or Crioprecipitate.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    protected $countryOfOrigin = [];
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Stage of life for animals, plants, insects and microorganisms. This information
-     * shall be provided only when the substance is significantly different in these
-     * stages (e.g. foetal bovine serum).
+     * General high level classification of the source material specific to the origin
+     * of the material.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $developmentStage = null;
+    protected $sourceMaterialClass = null;
 
     /**
-     * Source material shall capture information on the taxonomic and anatomical
-     * origins as well as the fraction of a material that can result in or can be
-     * modified to form a substance. This set of data elements shall be used to define
-     * polymer substances isolated from biological matrices. Taxonomic and anatomical
-     * origins shall be described using a controlled vocabulary as required. This
-     * information is captured for naturally derived polymers ( . starch) and
-     * structurally diverse substances. For Organisms belonging to the Kingdom Plantae
-     * the Substance level defines the fresh material of a single species or
-     * infraspecies, the Herbal Drug and the Herbal preparation. For Herbal
-     * preparations, the fraction information will be captured at the Substance
-     * information level and additional information for herbal extracts will be
-     * captured at the Specified Substance Group 1 information level. See for further
-     * explanation the Substance Class: Structurally Diverse and the herbal annex.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Many complex materials are fractions of parts of plants, animals, or minerals.
-     * Fraction elements are often necessary to define both Substances and Specified
-     * Group 1 Substances. For substances derived from Plants, fraction information
-     * will be captured at the Substance information level ( . Oils, Juices and
-     * Exudates). Additional information for Extracts, such as extraction solvent
-     * composition, will be captured at the Specified Substance Group 1 information
-     * level. For plasma-derived products fraction information will be captured at the
-     * Substance and the Specified Substance Group 1 levels.
+     * The type of the source material shall be specified based on a controlled
+     * vocabulary. For vaccines, this subclause refers to the class of infectious
+     * agent.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $fractionDescription = [];
+    protected $sourceMaterialType = null;
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The place/region where the plant is harvested or the places/regions where the
-     * animal source material has its habitat.
+     * The state of the source material when extracted.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $geographicalLocation = [];
-
-    /**
-     * Source material shall capture information on the taxonomic and anatomical
-     * origins as well as the fraction of a material that can result in or can be
-     * modified to form a substance. This set of data elements shall be used to define
-     * polymer substances isolated from biological matrices. Taxonomic and anatomical
-     * origins shall be described using a controlled vocabulary as required. This
-     * information is captured for naturally derived polymers ( . starch) and
-     * structurally diverse substances. For Organisms belonging to the Kingdom Plantae
-     * the Substance level defines the fresh material of a single species or
-     * infraspecies, the Herbal Drug and the Herbal preparation. For Herbal
-     * preparations, the fraction information will be captured at the Substance
-     * information level and additional information for herbal extracts will be
-     * captured at the Specified Substance Group 1 information level. See for further
-     * explanation the Substance Class: Structurally Diverse and the herbal annex.
-     *
-     * This subclause describes the organism which the substance is derived from. For
-     * vaccines, the parent organism shall be specified based on these subclause
-     * elements. As an example, full taxonomy will be described for the Substance Name:
-     * ., Leaf.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism
-     */
-    protected $organism = null;
+    protected $sourceMaterialState = null;
 
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -260,6 +212,100 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
     protected $parentSubstanceName = [];
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The country where the plant material is harvested or the countries where the
+     * plasma is sourced from as laid down in accordance with the Plasma Master File.
+     * For “Plasma-derived substances” the attribute country of origin provides
+     * information about the countries used for the manufacturing of the Cryopoor plama
+     * or Crioprecipitate.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    protected $countryOfOrigin = [];
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The place/region where the plant is harvested or the places/regions where the
+     * animal source material has its habitat.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
+     */
+    protected $geographicalLocation = [];
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Stage of life for animals, plants, insects and microorganisms. This information
+     * shall be provided only when the substance is significantly different in these
+     * stages (e.g. foetal bovine serum).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected $developmentStage = null;
+
+    /**
+     * Source material shall capture information on the taxonomic and anatomical
+     * origins as well as the fraction of a material that can result in or can be
+     * modified to form a substance. This set of data elements shall be used to define
+     * polymer substances isolated from biological matrices. Taxonomic and anatomical
+     * origins shall be described using a controlled vocabulary as required. This
+     * information is captured for naturally derived polymers ( . starch) and
+     * structurally diverse substances. For Organisms belonging to the Kingdom Plantae
+     * the Substance level defines the fresh material of a single species or
+     * infraspecies, the Herbal Drug and the Herbal preparation. For Herbal
+     * preparations, the fraction information will be captured at the Substance
+     * information level and additional information for herbal extracts will be
+     * captured at the Specified Substance Group 1 information level. See for further
+     * explanation the Substance Class: Structurally Diverse and the herbal annex.
+     *
+     * Many complex materials are fractions of parts of plants, animals, or minerals.
+     * Fraction elements are often necessary to define both Substances and Specified
+     * Group 1 Substances. For substances derived from Plants, fraction information
+     * will be captured at the Substance information level ( . Oils, Juices and
+     * Exudates). Additional information for Extracts, such as extraction solvent
+     * composition, will be captured at the Specified Substance Group 1 information
+     * level. For plasma-derived products fraction information will be captured at the
+     * Substance and the Specified Substance Group 1 levels.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription[]
+     */
+    protected $fractionDescription = [];
+
+    /**
+     * Source material shall capture information on the taxonomic and anatomical
+     * origins as well as the fraction of a material that can result in or can be
+     * modified to form a substance. This set of data elements shall be used to define
+     * polymer substances isolated from biological matrices. Taxonomic and anatomical
+     * origins shall be described using a controlled vocabulary as required. This
+     * information is captured for naturally derived polymers ( . starch) and
+     * structurally diverse substances. For Organisms belonging to the Kingdom Plantae
+     * the Substance level defines the fresh material of a single species or
+     * infraspecies, the Herbal Drug and the Herbal preparation. For Herbal
+     * preparations, the fraction information will be captured at the Substance
+     * information level and additional information for herbal extracts will be
+     * captured at the Specified Substance Group 1 information level. See for further
+     * explanation the Substance Class: Structurally Diverse and the herbal annex.
+     *
+     * This subclause describes the organism which the substance is derived from. For
+     * vaccines, the parent organism shall be specified based on these subclause
+     * elements. As an example, full taxonomy will be described for the Substance Name:
+     * ., Leaf.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism
+     */
+    protected $organism = null;
+
+    /**
      * Source material shall capture information on the taxonomic and anatomical
      * origins as well as the fraction of a material that can result in or can be
      * modified to form a substance. This set of data elements shall be used to define
@@ -279,45 +325,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription[]
      */
     protected $partDescription = [];
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * General high level classification of the source material specific to the origin
-     * of the material.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $sourceMaterialClass = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The state of the source material when extracted.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $sourceMaterialState = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The type of the source material shall be specified based on a controlled
-     * vocabulary. For vaccines, this subclause refers to the class of infectious
-     * agent.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $sourceMaterialType = null;
 
     /**
      * Validation map for fields in type SubstanceSourceMaterial
@@ -341,92 +348,25 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_COUNTRY_OF_ORIGIN])) {
-            if (is_array($data[self::FIELD_COUNTRY_OF_ORIGIN])) {
-                foreach($data[self::FIELD_COUNTRY_OF_ORIGIN] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addCountryOfOrigin($v);
-                    } else {
-                        $this->addCountryOfOrigin(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_COUNTRY_OF_ORIGIN] instanceof FHIRCodeableConcept) {
-                $this->addCountryOfOrigin($data[self::FIELD_COUNTRY_OF_ORIGIN]);
+        if (isset($data[self::FIELD_SOURCE_MATERIAL_CLASS])) {
+            if ($data[self::FIELD_SOURCE_MATERIAL_CLASS] instanceof FHIRCodeableConcept) {
+                $this->setSourceMaterialClass($data[self::FIELD_SOURCE_MATERIAL_CLASS]);
             } else {
-                $this->addCountryOfOrigin(new FHIRCodeableConcept($data[self::FIELD_COUNTRY_OF_ORIGIN]));
+                $this->setSourceMaterialClass(new FHIRCodeableConcept($data[self::FIELD_SOURCE_MATERIAL_CLASS]));
             }
         }
-        if (isset($data[self::FIELD_DEVELOPMENT_STAGE])) {
-            if ($data[self::FIELD_DEVELOPMENT_STAGE] instanceof FHIRCodeableConcept) {
-                $this->setDevelopmentStage($data[self::FIELD_DEVELOPMENT_STAGE]);
+        if (isset($data[self::FIELD_SOURCE_MATERIAL_TYPE])) {
+            if ($data[self::FIELD_SOURCE_MATERIAL_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setSourceMaterialType($data[self::FIELD_SOURCE_MATERIAL_TYPE]);
             } else {
-                $this->setDevelopmentStage(new FHIRCodeableConcept($data[self::FIELD_DEVELOPMENT_STAGE]));
+                $this->setSourceMaterialType(new FHIRCodeableConcept($data[self::FIELD_SOURCE_MATERIAL_TYPE]));
             }
         }
-        if (isset($data[self::FIELD_FRACTION_DESCRIPTION])) {
-            if (is_array($data[self::FIELD_FRACTION_DESCRIPTION])) {
-                foreach($data[self::FIELD_FRACTION_DESCRIPTION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRSubstanceSourceMaterialFractionDescription) {
-                        $this->addFractionDescription($v);
-                    } else {
-                        $this->addFractionDescription(new FHIRSubstanceSourceMaterialFractionDescription($v));
-                    }
-                }
-            } else if ($data[self::FIELD_FRACTION_DESCRIPTION] instanceof FHIRSubstanceSourceMaterialFractionDescription) {
-                $this->addFractionDescription($data[self::FIELD_FRACTION_DESCRIPTION]);
+        if (isset($data[self::FIELD_SOURCE_MATERIAL_STATE])) {
+            if ($data[self::FIELD_SOURCE_MATERIAL_STATE] instanceof FHIRCodeableConcept) {
+                $this->setSourceMaterialState($data[self::FIELD_SOURCE_MATERIAL_STATE]);
             } else {
-                $this->addFractionDescription(new FHIRSubstanceSourceMaterialFractionDescription($data[self::FIELD_FRACTION_DESCRIPTION]));
-            }
-        }
-        if (isset($data[self::FIELD_GEOGRAPHICAL_LOCATION]) || isset($data[self::FIELD_GEOGRAPHICAL_LOCATION_EXT])) {
-            if (isset($data[self::FIELD_GEOGRAPHICAL_LOCATION])) {
-                $value = $data[self::FIELD_GEOGRAPHICAL_LOCATION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_GEOGRAPHICAL_LOCATION_EXT]) && is_array($data[self::FIELD_GEOGRAPHICAL_LOCATION_EXT])) {
-                $ext = $data[self::FIELD_GEOGRAPHICAL_LOCATION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->addGeographicalLocation($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRString) {
-                            $this->addGeographicalLocation($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $this->addGeographicalLocation(new FHIRString(array_merge($v, $iext)));
-                            } else {
-                                $this->addGeographicalLocation(new FHIRString([FHIRString::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $this->addGeographicalLocation(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->addGeographicalLocation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $this->addGeographicalLocation(new FHIRString($iext));
-                }
-            }
-        }
-        if (isset($data[self::FIELD_ORGANISM])) {
-            if ($data[self::FIELD_ORGANISM] instanceof FHIRSubstanceSourceMaterialOrganism) {
-                $this->setOrganism($data[self::FIELD_ORGANISM]);
-            } else {
-                $this->setOrganism(new FHIRSubstanceSourceMaterialOrganism($data[self::FIELD_ORGANISM]));
+                $this->setSourceMaterialState(new FHIRCodeableConcept($data[self::FIELD_SOURCE_MATERIAL_STATE]));
             }
         }
         if (isset($data[self::FIELD_ORGANISM_ID])) {
@@ -437,16 +377,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
             }
         }
         if (isset($data[self::FIELD_ORGANISM_NAME]) || isset($data[self::FIELD_ORGANISM_NAME_EXT])) {
-            if (isset($data[self::FIELD_ORGANISM_NAME])) {
-                $value = $data[self::FIELD_ORGANISM_NAME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ORGANISM_NAME_EXT]) && is_array($data[self::FIELD_ORGANISM_NAME_EXT])) {
-                $ext = $data[self::FIELD_ORGANISM_NAME_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_ORGANISM_NAME]) ? $data[self::FIELD_ORGANISM_NAME] : null;
+            $ext = (isset($data[self::FIELD_ORGANISM_NAME_EXT]) && is_array($data[self::FIELD_ORGANISM_NAME_EXT])) ? $ext = $data[self::FIELD_ORGANISM_NAME_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setOrganismName($value);
@@ -455,7 +387,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                 } else {
                     $this->setOrganismName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setOrganismName(new FHIRString($ext));
             }
         }
@@ -471,23 +403,15 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                         $this->addParentSubstanceId(new FHIRIdentifier($v));
                     }
                 }
-            } else if ($data[self::FIELD_PARENT_SUBSTANCE_ID] instanceof FHIRIdentifier) {
+            } elseif ($data[self::FIELD_PARENT_SUBSTANCE_ID] instanceof FHIRIdentifier) {
                 $this->addParentSubstanceId($data[self::FIELD_PARENT_SUBSTANCE_ID]);
             } else {
                 $this->addParentSubstanceId(new FHIRIdentifier($data[self::FIELD_PARENT_SUBSTANCE_ID]));
             }
         }
         if (isset($data[self::FIELD_PARENT_SUBSTANCE_NAME]) || isset($data[self::FIELD_PARENT_SUBSTANCE_NAME_EXT])) {
-            if (isset($data[self::FIELD_PARENT_SUBSTANCE_NAME])) {
-                $value = $data[self::FIELD_PARENT_SUBSTANCE_NAME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PARENT_SUBSTANCE_NAME_EXT]) && is_array($data[self::FIELD_PARENT_SUBSTANCE_NAME_EXT])) {
-                $ext = $data[self::FIELD_PARENT_SUBSTANCE_NAME_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_PARENT_SUBSTANCE_NAME]) ? $data[self::FIELD_PARENT_SUBSTANCE_NAME] : null;
+            $ext = (isset($data[self::FIELD_PARENT_SUBSTANCE_NAME_EXT]) && is_array($data[self::FIELD_PARENT_SUBSTANCE_NAME_EXT])) ? $ext = $data[self::FIELD_PARENT_SUBSTANCE_NAME_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->addParentSubstanceName($value);
@@ -509,10 +433,90 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                 } else {
                     $this->addParentSubstanceName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addParentSubstanceName(new FHIRString($iext));
                 }
+            }
+        }
+        if (isset($data[self::FIELD_COUNTRY_OF_ORIGIN])) {
+            if (is_array($data[self::FIELD_COUNTRY_OF_ORIGIN])) {
+                foreach($data[self::FIELD_COUNTRY_OF_ORIGIN] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addCountryOfOrigin($v);
+                    } else {
+                        $this->addCountryOfOrigin(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_COUNTRY_OF_ORIGIN] instanceof FHIRCodeableConcept) {
+                $this->addCountryOfOrigin($data[self::FIELD_COUNTRY_OF_ORIGIN]);
+            } else {
+                $this->addCountryOfOrigin(new FHIRCodeableConcept($data[self::FIELD_COUNTRY_OF_ORIGIN]));
+            }
+        }
+        if (isset($data[self::FIELD_GEOGRAPHICAL_LOCATION]) || isset($data[self::FIELD_GEOGRAPHICAL_LOCATION_EXT])) {
+            $value = isset($data[self::FIELD_GEOGRAPHICAL_LOCATION]) ? $data[self::FIELD_GEOGRAPHICAL_LOCATION] : null;
+            $ext = (isset($data[self::FIELD_GEOGRAPHICAL_LOCATION_EXT]) && is_array($data[self::FIELD_GEOGRAPHICAL_LOCATION_EXT])) ? $ext = $data[self::FIELD_GEOGRAPHICAL_LOCATION_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->addGeographicalLocation($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRString) {
+                            $this->addGeographicalLocation($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addGeographicalLocation(new FHIRString(array_merge($v, $iext)));
+                            } else {
+                                $this->addGeographicalLocation(new FHIRString([FHIRString::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addGeographicalLocation(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->addGeographicalLocation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addGeographicalLocation(new FHIRString($iext));
+                }
+            }
+        }
+        if (isset($data[self::FIELD_DEVELOPMENT_STAGE])) {
+            if ($data[self::FIELD_DEVELOPMENT_STAGE] instanceof FHIRCodeableConcept) {
+                $this->setDevelopmentStage($data[self::FIELD_DEVELOPMENT_STAGE]);
+            } else {
+                $this->setDevelopmentStage(new FHIRCodeableConcept($data[self::FIELD_DEVELOPMENT_STAGE]));
+            }
+        }
+        if (isset($data[self::FIELD_FRACTION_DESCRIPTION])) {
+            if (is_array($data[self::FIELD_FRACTION_DESCRIPTION])) {
+                foreach($data[self::FIELD_FRACTION_DESCRIPTION] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRSubstanceSourceMaterialFractionDescription) {
+                        $this->addFractionDescription($v);
+                    } else {
+                        $this->addFractionDescription(new FHIRSubstanceSourceMaterialFractionDescription($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_FRACTION_DESCRIPTION] instanceof FHIRSubstanceSourceMaterialFractionDescription) {
+                $this->addFractionDescription($data[self::FIELD_FRACTION_DESCRIPTION]);
+            } else {
+                $this->addFractionDescription(new FHIRSubstanceSourceMaterialFractionDescription($data[self::FIELD_FRACTION_DESCRIPTION]));
+            }
+        }
+        if (isset($data[self::FIELD_ORGANISM])) {
+            if ($data[self::FIELD_ORGANISM] instanceof FHIRSubstanceSourceMaterialOrganism) {
+                $this->setOrganism($data[self::FIELD_ORGANISM]);
+            } else {
+                $this->setOrganism(new FHIRSubstanceSourceMaterialOrganism($data[self::FIELD_ORGANISM]));
             }
         }
         if (isset($data[self::FIELD_PART_DESCRIPTION])) {
@@ -527,31 +531,10 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                         $this->addPartDescription(new FHIRSubstanceSourceMaterialPartDescription($v));
                     }
                 }
-            } else if ($data[self::FIELD_PART_DESCRIPTION] instanceof FHIRSubstanceSourceMaterialPartDescription) {
+            } elseif ($data[self::FIELD_PART_DESCRIPTION] instanceof FHIRSubstanceSourceMaterialPartDescription) {
                 $this->addPartDescription($data[self::FIELD_PART_DESCRIPTION]);
             } else {
                 $this->addPartDescription(new FHIRSubstanceSourceMaterialPartDescription($data[self::FIELD_PART_DESCRIPTION]));
-            }
-        }
-        if (isset($data[self::FIELD_SOURCE_MATERIAL_CLASS])) {
-            if ($data[self::FIELD_SOURCE_MATERIAL_CLASS] instanceof FHIRCodeableConcept) {
-                $this->setSourceMaterialClass($data[self::FIELD_SOURCE_MATERIAL_CLASS]);
-            } else {
-                $this->setSourceMaterialClass(new FHIRCodeableConcept($data[self::FIELD_SOURCE_MATERIAL_CLASS]));
-            }
-        }
-        if (isset($data[self::FIELD_SOURCE_MATERIAL_STATE])) {
-            if ($data[self::FIELD_SOURCE_MATERIAL_STATE] instanceof FHIRCodeableConcept) {
-                $this->setSourceMaterialState($data[self::FIELD_SOURCE_MATERIAL_STATE]);
-            } else {
-                $this->setSourceMaterialState(new FHIRCodeableConcept($data[self::FIELD_SOURCE_MATERIAL_STATE]));
-            }
-        }
-        if (isset($data[self::FIELD_SOURCE_MATERIAL_TYPE])) {
-            if ($data[self::FIELD_SOURCE_MATERIAL_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setSourceMaterialType($data[self::FIELD_SOURCE_MATERIAL_TYPE]);
-            } else {
-                $this->setSourceMaterialType(new FHIRCodeableConcept($data[self::FIELD_SOURCE_MATERIAL_TYPE]));
             }
         }
     }
@@ -570,7 +553,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<SubstanceSourceMaterial{$xmlns}></SubstanceSourceMaterial>";
@@ -583,6 +566,311 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
         return static::FHIR_TYPE_NAME;
     }
 
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * General high level classification of the source material specific to the origin
+     * of the material.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getSourceMaterialClass()
+    {
+        return $this->sourceMaterialClass;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * General high level classification of the source material specific to the origin
+     * of the material.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $sourceMaterialClass
+     * @return static
+     */
+    public function setSourceMaterialClass(FHIRCodeableConcept $sourceMaterialClass = null)
+    {
+        $this->_trackValueSet($this->sourceMaterialClass, $sourceMaterialClass);
+        $this->sourceMaterialClass = $sourceMaterialClass;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of the source material shall be specified based on a controlled
+     * vocabulary. For vaccines, this subclause refers to the class of infectious
+     * agent.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getSourceMaterialType()
+    {
+        return $this->sourceMaterialType;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of the source material shall be specified based on a controlled
+     * vocabulary. For vaccines, this subclause refers to the class of infectious
+     * agent.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $sourceMaterialType
+     * @return static
+     */
+    public function setSourceMaterialType(FHIRCodeableConcept $sourceMaterialType = null)
+    {
+        $this->_trackValueSet($this->sourceMaterialType, $sourceMaterialType);
+        $this->sourceMaterialType = $sourceMaterialType;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The state of the source material when extracted.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getSourceMaterialState()
+    {
+        return $this->sourceMaterialState;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The state of the source material when extracted.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $sourceMaterialState
+     * @return static
+     */
+    public function setSourceMaterialState(FHIRCodeableConcept $sourceMaterialState = null)
+    {
+        $this->_trackValueSet($this->sourceMaterialState, $sourceMaterialState);
+        $this->sourceMaterialState = $sourceMaterialState;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The unique identifier associated with the source material parent organism shall
+     * be specified.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
+     */
+    public function getOrganismId()
+    {
+        return $this->organismId;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The unique identifier associated with the source material parent organism shall
+     * be specified.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $organismId
+     * @return static
+     */
+    public function setOrganismId(FHIRIdentifier $organismId = null)
+    {
+        $this->_trackValueSet($this->organismId, $organismId);
+        $this->organismId = $organismId;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The organism accepted Scientific name shall be provided based on the organism
+     * taxonomy.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getOrganismName()
+    {
+        return $this->organismName;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The organism accepted Scientific name shall be provided based on the organism
+     * taxonomy.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $organismName
+     * @return static
+     */
+    public function setOrganismName($organismName = null)
+    {
+        if (null !== $organismName && !($organismName instanceof FHIRString)) {
+            $organismName = new FHIRString($organismName);
+        }
+        $this->_trackValueSet($this->organismName, $organismName);
+        $this->organismName = $organismName;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
+     * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
+     */
+    public function getParentSubstanceId()
+    {
+        return $this->parentSubstanceId;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
+     * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $parentSubstanceId
+     * @return static
+     */
+    public function addParentSubstanceId(FHIRIdentifier $parentSubstanceId = null)
+    {
+        $this->_trackValueAdded();
+        $this->parentSubstanceId[] = $parentSubstanceId;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
+     * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $parentSubstanceId
+     * @return static
+     */
+    public function setParentSubstanceId(array $parentSubstanceId = [])
+    {
+        if ([] !== $this->parentSubstanceId) {
+            $this->_trackValuesRemoved(count($this->parentSubstanceId));
+            $this->parentSubstanceId = [];
+        }
+        if ([] === $parentSubstanceId) {
+            return $this;
+        }
+        foreach($parentSubstanceId as $v) {
+            if ($v instanceof FHIRIdentifier) {
+                $this->addParentSubstanceId($v);
+            } else {
+                $this->addParentSubstanceId(new FHIRIdentifier($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The parent substance of the Herbal Drug, or Herbal preparation.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
+     */
+    public function getParentSubstanceName()
+    {
+        return $this->parentSubstanceName;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The parent substance of the Herbal Drug, or Herbal preparation.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $parentSubstanceName
+     * @return static
+     */
+    public function addParentSubstanceName($parentSubstanceName = null)
+    {
+        if (null !== $parentSubstanceName && !($parentSubstanceName instanceof FHIRString)) {
+            $parentSubstanceName = new FHIRString($parentSubstanceName);
+        }
+        $this->_trackValueAdded();
+        $this->parentSubstanceName[] = $parentSubstanceName;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The parent substance of the Herbal Drug, or Herbal preparation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $parentSubstanceName
+     * @return static
+     */
+    public function setParentSubstanceName(array $parentSubstanceName = [])
+    {
+        if ([] !== $this->parentSubstanceName) {
+            $this->_trackValuesRemoved(count($this->parentSubstanceName));
+            $this->parentSubstanceName = [];
+        }
+        if ([] === $parentSubstanceName) {
+            return $this;
+        }
+        foreach($parentSubstanceName as $v) {
+            if ($v instanceof FHIRString) {
+                $this->addParentSubstanceName($v);
+            } else {
+                $this->addParentSubstanceName(new FHIRString($v));
+            }
+        }
+        return $this;
+    }
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -620,6 +908,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      */
     public function addCountryOfOrigin(FHIRCodeableConcept $countryOfOrigin = null)
     {
+        $this->_trackValueAdded();
         $this->countryOfOrigin[] = $countryOfOrigin;
         return $this;
     }
@@ -641,7 +930,10 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      */
     public function setCountryOfOrigin(array $countryOfOrigin = [])
     {
-        $this->countryOfOrigin = [];
+        if ([] !== $this->countryOfOrigin) {
+            $this->_trackValuesRemoved(count($this->countryOfOrigin));
+            $this->countryOfOrigin = [];
+        }
         if ([] === $countryOfOrigin) {
             return $this;
         }
@@ -650,6 +942,72 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                 $this->addCountryOfOrigin($v);
             } else {
                 $this->addCountryOfOrigin(new FHIRCodeableConcept($v));
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The place/region where the plant is harvested or the places/regions where the
+     * animal source material has its habitat.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
+     */
+    public function getGeographicalLocation()
+    {
+        return $this->geographicalLocation;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The place/region where the plant is harvested or the places/regions where the
+     * animal source material has its habitat.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $geographicalLocation
+     * @return static
+     */
+    public function addGeographicalLocation($geographicalLocation = null)
+    {
+        if (null !== $geographicalLocation && !($geographicalLocation instanceof FHIRString)) {
+            $geographicalLocation = new FHIRString($geographicalLocation);
+        }
+        $this->_trackValueAdded();
+        $this->geographicalLocation[] = $geographicalLocation;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The place/region where the plant is harvested or the places/regions where the
+     * animal source material has its habitat.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $geographicalLocation
+     * @return static
+     */
+    public function setGeographicalLocation(array $geographicalLocation = [])
+    {
+        if ([] !== $this->geographicalLocation) {
+            $this->_trackValuesRemoved(count($this->geographicalLocation));
+            $this->geographicalLocation = [];
+        }
+        if ([] === $geographicalLocation) {
+            return $this;
+        }
+        foreach($geographicalLocation as $v) {
+            if ($v instanceof FHIRString) {
+                $this->addGeographicalLocation($v);
+            } else {
+                $this->addGeographicalLocation(new FHIRString($v));
             }
         }
         return $this;
@@ -687,6 +1045,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      */
     public function setDevelopmentStage(FHIRCodeableConcept $developmentStage = null)
     {
+        $this->_trackValueSet($this->developmentStage, $developmentStage);
         $this->developmentStage = $developmentStage;
         return $this;
     }
@@ -751,6 +1110,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      */
     public function addFractionDescription(FHIRSubstanceSourceMaterialFractionDescription $fractionDescription = null)
     {
+        $this->_trackValueAdded();
         $this->fractionDescription[] = $fractionDescription;
         return $this;
     }
@@ -784,7 +1144,10 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      */
     public function setFractionDescription(array $fractionDescription = [])
     {
-        $this->fractionDescription = [];
+        if ([] !== $this->fractionDescription) {
+            $this->_trackValuesRemoved(count($this->fractionDescription));
+            $this->fractionDescription = [];
+        }
         if ([] === $fractionDescription) {
             return $this;
         }
@@ -793,73 +1156,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                 $this->addFractionDescription($v);
             } else {
                 $this->addFractionDescription(new FHIRSubstanceSourceMaterialFractionDescription($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The place/region where the plant is harvested or the places/regions where the
-     * animal source material has its habitat.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
-     */
-    public function getGeographicalLocation()
-    {
-        return $this->geographicalLocation;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The place/region where the plant is harvested or the places/regions where the
-     * animal source material has its habitat.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $geographicalLocation
-     * @return static
-     */
-    public function addGeographicalLocation($geographicalLocation = null)
-    {
-        if (null === $geographicalLocation) {
-            $this->geographicalLocation = [];
-            return $this;
-        }
-        if ($geographicalLocation instanceof FHIRString) {
-            $this->geographicalLocation[] = $geographicalLocation;
-            return $this;
-        }
-        $this->geographicalLocation[] = new FHIRString($geographicalLocation);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The place/region where the plant is harvested or the places/regions where the
-     * animal source material has its habitat.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $geographicalLocation
-     * @return static
-     */
-    public function setGeographicalLocation(array $geographicalLocation = [])
-    {
-        $this->geographicalLocation = [];
-        if ([] === $geographicalLocation) {
-            return $this;
-        }
-        foreach($geographicalLocation as $v) {
-            if ($v instanceof FHIRString) {
-                $this->addGeographicalLocation($v);
-            } else {
-                $this->addGeographicalLocation(new FHIRString($v));
             }
         }
         return $this;
@@ -917,207 +1213,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      */
     public function setOrganism(FHIRSubstanceSourceMaterialOrganism $organism = null)
     {
+        $this->_trackValueSet($this->organism, $organism);
         $this->organism = $organism;
-        return $this;
-    }
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The unique identifier associated with the source material parent organism shall
-     * be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
-     */
-    public function getOrganismId()
-    {
-        return $this->organismId;
-    }
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The unique identifier associated with the source material parent organism shall
-     * be specified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $organismId
-     * @return static
-     */
-    public function setOrganismId(FHIRIdentifier $organismId = null)
-    {
-        $this->organismId = $organismId;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The organism accepted Scientific name shall be provided based on the organism
-     * taxonomy.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getOrganismName()
-    {
-        return $this->organismName;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The organism accepted Scientific name shall be provided based on the organism
-     * taxonomy.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $organismName
-     * @return static
-     */
-    public function setOrganismName($organismName = null)
-    {
-        if (null === $organismName) {
-            $this->organismName = null;
-            return $this;
-        }
-        if ($organismName instanceof FHIRString) {
-            $this->organismName = $organismName;
-            return $this;
-        }
-        $this->organismName = new FHIRString($organismName);
-        return $this;
-    }
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
-     * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
-     */
-    public function getParentSubstanceId()
-    {
-        return $this->parentSubstanceId;
-    }
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
-     * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $parentSubstanceId
-     * @return static
-     */
-    public function addParentSubstanceId(FHIRIdentifier $parentSubstanceId = null)
-    {
-        $this->parentSubstanceId[] = $parentSubstanceId;
-        return $this;
-    }
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
-     * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $parentSubstanceId
-     * @return static
-     */
-    public function setParentSubstanceId(array $parentSubstanceId = [])
-    {
-        $this->parentSubstanceId = [];
-        if ([] === $parentSubstanceId) {
-            return $this;
-        }
-        foreach($parentSubstanceId as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->addParentSubstanceId($v);
-            } else {
-                $this->addParentSubstanceId(new FHIRIdentifier($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The parent substance of the Herbal Drug, or Herbal preparation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
-     */
-    public function getParentSubstanceName()
-    {
-        return $this->parentSubstanceName;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The parent substance of the Herbal Drug, or Herbal preparation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $parentSubstanceName
-     * @return static
-     */
-    public function addParentSubstanceName($parentSubstanceName = null)
-    {
-        if (null === $parentSubstanceName) {
-            $this->parentSubstanceName = [];
-            return $this;
-        }
-        if ($parentSubstanceName instanceof FHIRString) {
-            $this->parentSubstanceName[] = $parentSubstanceName;
-            return $this;
-        }
-        $this->parentSubstanceName[] = new FHIRString($parentSubstanceName);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The parent substance of the Herbal Drug, or Herbal preparation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $parentSubstanceName
-     * @return static
-     */
-    public function setParentSubstanceName(array $parentSubstanceName = [])
-    {
-        $this->parentSubstanceName = [];
-        if ([] === $parentSubstanceName) {
-            return $this;
-        }
-        foreach($parentSubstanceName as $v) {
-            if ($v instanceof FHIRString) {
-                $this->addParentSubstanceName($v);
-            } else {
-                $this->addParentSubstanceName(new FHIRString($v));
-            }
-        }
         return $this;
     }
 
@@ -1167,6 +1264,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      */
     public function addPartDescription(FHIRSubstanceSourceMaterialPartDescription $partDescription = null)
     {
+        $this->_trackValueAdded();
         $this->partDescription[] = $partDescription;
         return $this;
     }
@@ -1193,7 +1291,10 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      */
     public function setPartDescription(array $partDescription = [])
     {
-        $this->partDescription = [];
+        if ([] !== $this->partDescription) {
+            $this->_trackValuesRemoved(count($this->partDescription));
+            $this->partDescription = [];
+        }
         if ([] === $partDescription) {
             return $this;
         }
@@ -1204,108 +1305,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                 $this->addPartDescription(new FHIRSubstanceSourceMaterialPartDescription($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * General high level classification of the source material specific to the origin
-     * of the material.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getSourceMaterialClass()
-    {
-        return $this->sourceMaterialClass;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * General high level classification of the source material specific to the origin
-     * of the material.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $sourceMaterialClass
-     * @return static
-     */
-    public function setSourceMaterialClass(FHIRCodeableConcept $sourceMaterialClass = null)
-    {
-        $this->sourceMaterialClass = $sourceMaterialClass;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The state of the source material when extracted.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getSourceMaterialState()
-    {
-        return $this->sourceMaterialState;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The state of the source material when extracted.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $sourceMaterialState
-     * @return static
-     */
-    public function setSourceMaterialState(FHIRCodeableConcept $sourceMaterialState = null)
-    {
-        $this->sourceMaterialState = $sourceMaterialState;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The type of the source material shall be specified based on a controlled
-     * vocabulary. For vaccines, this subclause refers to the class of infectious
-     * agent.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getSourceMaterialType()
-    {
-        return $this->sourceMaterialType;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The type of the source material shall be specified based on a controlled
-     * vocabulary. For vaccines, this subclause refers to the class of infectious
-     * agent.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $sourceMaterialType
-     * @return static
-     */
-    public function setSourceMaterialType(FHIRCodeableConcept $sourceMaterialType = null)
-    {
-        $this->sourceMaterialType = $sourceMaterialType;
         return $this;
     }
 
@@ -1330,35 +1329,19 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getCountryOfOrigin())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_COUNTRY_OF_ORIGIN, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getDevelopmentStage())) {
+        if (null !== ($v = $this->getSourceMaterialClass())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DEVELOPMENT_STAGE] = $fieldErrs;
+                $errs[self::FIELD_SOURCE_MATERIAL_CLASS] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getFractionDescription())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_FRACTION_DESCRIPTION, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getGeographicalLocation())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_GEOGRAPHICAL_LOCATION, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getOrganism())) {
+        if (null !== ($v = $this->getSourceMaterialType())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ORGANISM] = $fieldErrs;
+                $errs[self::FIELD_SOURCE_MATERIAL_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSourceMaterialState())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SOURCE_MATERIAL_STATE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getOrganismId())) {
@@ -1385,6 +1368,37 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                 }
             }
         }
+        if ([] !== ($vs = $this->getCountryOfOrigin())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_COUNTRY_OF_ORIGIN, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getGeographicalLocation())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_GEOGRAPHICAL_LOCATION, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getDevelopmentStage())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEVELOPMENT_STAGE] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getFractionDescription())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_FRACTION_DESCRIPTION, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getOrganism())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ORGANISM] = $fieldErrs;
+            }
+        }
         if ([] !== ($vs = $this->getPartDescription())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
@@ -1392,78 +1406,39 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                 }
             }
         }
-        if (null !== ($v = $this->getSourceMaterialClass())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SOURCE_MATERIAL_CLASS] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getSourceMaterialState())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SOURCE_MATERIAL_STATE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getSourceMaterialType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SOURCE_MATERIAL_TYPE] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_COUNTRY_OF_ORIGIN])) {
-            $v = $this->getCountryOfOrigin();
-            foreach($validationRules[self::FIELD_COUNTRY_OF_ORIGIN] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL, self::FIELD_COUNTRY_OF_ORIGIN, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_SOURCE_MATERIAL_CLASS])) {
+            $v = $this->getSourceMaterialClass();
+            foreach($validationRules[self::FIELD_SOURCE_MATERIAL_CLASS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL, self::FIELD_SOURCE_MATERIAL_CLASS, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COUNTRY_OF_ORIGIN])) {
-                        $errs[self::FIELD_COUNTRY_OF_ORIGIN] = [];
+                    if (!isset($errs[self::FIELD_SOURCE_MATERIAL_CLASS])) {
+                        $errs[self::FIELD_SOURCE_MATERIAL_CLASS] = [];
                     }
-                    $errs[self::FIELD_COUNTRY_OF_ORIGIN][$rule] = $err;
+                    $errs[self::FIELD_SOURCE_MATERIAL_CLASS][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DEVELOPMENT_STAGE])) {
-            $v = $this->getDevelopmentStage();
-            foreach($validationRules[self::FIELD_DEVELOPMENT_STAGE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL, self::FIELD_DEVELOPMENT_STAGE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_SOURCE_MATERIAL_TYPE])) {
+            $v = $this->getSourceMaterialType();
+            foreach($validationRules[self::FIELD_SOURCE_MATERIAL_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL, self::FIELD_SOURCE_MATERIAL_TYPE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DEVELOPMENT_STAGE])) {
-                        $errs[self::FIELD_DEVELOPMENT_STAGE] = [];
+                    if (!isset($errs[self::FIELD_SOURCE_MATERIAL_TYPE])) {
+                        $errs[self::FIELD_SOURCE_MATERIAL_TYPE] = [];
                     }
-                    $errs[self::FIELD_DEVELOPMENT_STAGE][$rule] = $err;
+                    $errs[self::FIELD_SOURCE_MATERIAL_TYPE][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_FRACTION_DESCRIPTION])) {
-            $v = $this->getFractionDescription();
-            foreach($validationRules[self::FIELD_FRACTION_DESCRIPTION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL, self::FIELD_FRACTION_DESCRIPTION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_SOURCE_MATERIAL_STATE])) {
+            $v = $this->getSourceMaterialState();
+            foreach($validationRules[self::FIELD_SOURCE_MATERIAL_STATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL, self::FIELD_SOURCE_MATERIAL_STATE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FRACTION_DESCRIPTION])) {
-                        $errs[self::FIELD_FRACTION_DESCRIPTION] = [];
+                    if (!isset($errs[self::FIELD_SOURCE_MATERIAL_STATE])) {
+                        $errs[self::FIELD_SOURCE_MATERIAL_STATE] = [];
                     }
-                    $errs[self::FIELD_FRACTION_DESCRIPTION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_GEOGRAPHICAL_LOCATION])) {
-            $v = $this->getGeographicalLocation();
-            foreach($validationRules[self::FIELD_GEOGRAPHICAL_LOCATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL, self::FIELD_GEOGRAPHICAL_LOCATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_GEOGRAPHICAL_LOCATION])) {
-                        $errs[self::FIELD_GEOGRAPHICAL_LOCATION] = [];
-                    }
-                    $errs[self::FIELD_GEOGRAPHICAL_LOCATION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_ORGANISM])) {
-            $v = $this->getOrganism();
-            foreach($validationRules[self::FIELD_ORGANISM] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL, self::FIELD_ORGANISM, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ORGANISM])) {
-                        $errs[self::FIELD_ORGANISM] = [];
-                    }
-                    $errs[self::FIELD_ORGANISM][$rule] = $err;
+                    $errs[self::FIELD_SOURCE_MATERIAL_STATE][$rule] = $err;
                 }
             }
         }
@@ -1515,6 +1490,66 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_COUNTRY_OF_ORIGIN])) {
+            $v = $this->getCountryOfOrigin();
+            foreach($validationRules[self::FIELD_COUNTRY_OF_ORIGIN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL, self::FIELD_COUNTRY_OF_ORIGIN, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_COUNTRY_OF_ORIGIN])) {
+                        $errs[self::FIELD_COUNTRY_OF_ORIGIN] = [];
+                    }
+                    $errs[self::FIELD_COUNTRY_OF_ORIGIN][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_GEOGRAPHICAL_LOCATION])) {
+            $v = $this->getGeographicalLocation();
+            foreach($validationRules[self::FIELD_GEOGRAPHICAL_LOCATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL, self::FIELD_GEOGRAPHICAL_LOCATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_GEOGRAPHICAL_LOCATION])) {
+                        $errs[self::FIELD_GEOGRAPHICAL_LOCATION] = [];
+                    }
+                    $errs[self::FIELD_GEOGRAPHICAL_LOCATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEVELOPMENT_STAGE])) {
+            $v = $this->getDevelopmentStage();
+            foreach($validationRules[self::FIELD_DEVELOPMENT_STAGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL, self::FIELD_DEVELOPMENT_STAGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEVELOPMENT_STAGE])) {
+                        $errs[self::FIELD_DEVELOPMENT_STAGE] = [];
+                    }
+                    $errs[self::FIELD_DEVELOPMENT_STAGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_FRACTION_DESCRIPTION])) {
+            $v = $this->getFractionDescription();
+            foreach($validationRules[self::FIELD_FRACTION_DESCRIPTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL, self::FIELD_FRACTION_DESCRIPTION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FRACTION_DESCRIPTION])) {
+                        $errs[self::FIELD_FRACTION_DESCRIPTION] = [];
+                    }
+                    $errs[self::FIELD_FRACTION_DESCRIPTION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ORGANISM])) {
+            $v = $this->getOrganism();
+            foreach($validationRules[self::FIELD_ORGANISM] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL, self::FIELD_ORGANISM, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ORGANISM])) {
+                        $errs[self::FIELD_ORGANISM] = [];
+                    }
+                    $errs[self::FIELD_ORGANISM][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_PART_DESCRIPTION])) {
             $v = $this->getPartDescription();
             foreach($validationRules[self::FIELD_PART_DESCRIPTION] as $rule => $constraint) {
@@ -1527,39 +1562,15 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SOURCE_MATERIAL_CLASS])) {
-            $v = $this->getSourceMaterialClass();
-            foreach($validationRules[self::FIELD_SOURCE_MATERIAL_CLASS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL, self::FIELD_SOURCE_MATERIAL_CLASS, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SOURCE_MATERIAL_CLASS])) {
-                        $errs[self::FIELD_SOURCE_MATERIAL_CLASS] = [];
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
                     }
-                    $errs[self::FIELD_SOURCE_MATERIAL_CLASS][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SOURCE_MATERIAL_STATE])) {
-            $v = $this->getSourceMaterialState();
-            foreach($validationRules[self::FIELD_SOURCE_MATERIAL_STATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL, self::FIELD_SOURCE_MATERIAL_STATE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SOURCE_MATERIAL_STATE])) {
-                        $errs[self::FIELD_SOURCE_MATERIAL_STATE] = [];
-                    }
-                    $errs[self::FIELD_SOURCE_MATERIAL_STATE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SOURCE_MATERIAL_TYPE])) {
-            $v = $this->getSourceMaterialType();
-            foreach($validationRules[self::FIELD_SOURCE_MATERIAL_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL, self::FIELD_SOURCE_MATERIAL_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SOURCE_MATERIAL_TYPE])) {
-                        $errs[self::FIELD_SOURCE_MATERIAL_TYPE] = [];
-                    }
-                    $errs[self::FIELD_SOURCE_MATERIAL_TYPE][$rule] = $err;
+                    $errs[self::FIELD_TEXT][$rule] = $err;
                 }
             }
         }
@@ -1599,18 +1610,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ID])) {
             $v = $this->getId();
             foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
@@ -1620,6 +1619,18 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                         $errs[self::FIELD_ID] = [];
                     }
                     $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
                 }
             }
         }
@@ -1647,176 +1658,203 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_META])) {
-            $v = $this->getMeta();
-            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_META])) {
-                        $errs[self::FIELD_META] = [];
-                    }
-                    $errs[self::FIELD_META][$rule] = $err;
-                }
-            }
-        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRSubstanceSourceMaterial::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSubstanceSourceMaterial::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRSubstanceSourceMaterial::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRSubstanceSourceMaterial;
+            $type = new FHIRSubstanceSourceMaterial(null);
         } elseif (!is_object($type) || !($type instanceof FHIRSubstanceSourceMaterial)) {
             throw new \RuntimeException(sprintf(
                 'FHIRSubstanceSourceMaterial::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstanceSourceMaterial or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRDomainResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_SOURCE_MATERIAL_CLASS === $n->nodeName) {
+                $type->setSourceMaterialClass(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_SOURCE_MATERIAL_TYPE === $n->nodeName) {
+                $type->setSourceMaterialType(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_SOURCE_MATERIAL_STATE === $n->nodeName) {
+                $type->setSourceMaterialState(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_ORGANISM_ID === $n->nodeName) {
+                $type->setOrganismId(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_ORGANISM_NAME === $n->nodeName) {
+                $type->setOrganismName(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_PARENT_SUBSTANCE_ID === $n->nodeName) {
+                $type->addParentSubstanceId(FHIRIdentifier::xmlUnserialize($n));
+            } elseif (self::FIELD_PARENT_SUBSTANCE_NAME === $n->nodeName) {
+                $type->addParentSubstanceName(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_COUNTRY_OF_ORIGIN === $n->nodeName) {
+                $type->addCountryOfOrigin(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_GEOGRAPHICAL_LOCATION === $n->nodeName) {
+                $type->addGeographicalLocation(FHIRString::xmlUnserialize($n));
+            } elseif (self::FIELD_DEVELOPMENT_STAGE === $n->nodeName) {
+                $type->setDevelopmentStage(FHIRCodeableConcept::xmlUnserialize($n));
+            } elseif (self::FIELD_FRACTION_DESCRIPTION === $n->nodeName) {
+                $type->addFractionDescription(FHIRSubstanceSourceMaterialFractionDescription::xmlUnserialize($n));
+            } elseif (self::FIELD_ORGANISM === $n->nodeName) {
+                $type->setOrganism(FHIRSubstanceSourceMaterialOrganism::xmlUnserialize($n));
+            } elseif (self::FIELD_PART_DESCRIPTION === $n->nodeName) {
+                $type->addPartDescription(FHIRSubstanceSourceMaterialPartDescription::xmlUnserialize($n));
+            } elseif (self::FIELD_TEXT === $n->nodeName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n));
+            } elseif (self::FIELD_CONTAINED === $n->nodeName) {
+                for ($ni = 0; $ni < $n->childNodes->length; $ni++) {
+                    $nn = $n->childNodes->item($ni);
+                    if ($nn instanceof \DOMElement) {
+                        $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn));
+                    }
+                }
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRId::xmlUnserialize($n));
+            } elseif (self::FIELD_META === $n->nodeName) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($n));
+            } elseif (self::FIELD_IMPLICIT_RULES === $n->nodeName) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n));
+            } elseif (self::FIELD_LANGUAGE === $n->nodeName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->countryOfOrigin)) {
-            foreach($children->countryOfOrigin as $child) {
-                $type->addCountryOfOrigin(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->developmentStage)) {
-            $type->setDevelopmentStage(FHIRCodeableConcept::xmlUnserialize($children->developmentStage));
-        }
-        if (isset($children->fractionDescription)) {
-            foreach($children->fractionDescription as $child) {
-                $type->addFractionDescription(FHIRSubstanceSourceMaterialFractionDescription::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->geographicalLocation)) {
-            foreach($children->geographicalLocation as $child) {
-                $type->addGeographicalLocation(FHIRString::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->organism)) {
-            $type->setOrganism(FHIRSubstanceSourceMaterialOrganism::xmlUnserialize($children->organism));
-        }
-        if (isset($children->organismId)) {
-            $type->setOrganismId(FHIRIdentifier::xmlUnserialize($children->organismId));
-        }
-        if (isset($children->organismName)) {
-            $type->setOrganismName(FHIRString::xmlUnserialize($children->organismName));
-        }
-        if (isset($attributes->organismName)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_ORGANISM_NAME);
+        if (null !== $n) {
             $pt = $type->getOrganismName();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->organismName);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setOrganismName((string)$attributes->organismName);
+                $type->setOrganismName($n->nodeValue);
             }
         }
-        if (isset($children->parentSubstanceId)) {
-            foreach($children->parentSubstanceId as $child) {
-                $type->addParentSubstanceId(FHIRIdentifier::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_PARENT_SUBSTANCE_NAME);
+        if (null !== $n) {
+            $pt = $type->getParentSubstanceName();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->addParentSubstanceName($n->nodeValue);
             }
         }
-        if (isset($children->parentSubstanceName)) {
-            foreach($children->parentSubstanceName as $child) {
-                $type->addParentSubstanceName(FHIRString::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_GEOGRAPHICAL_LOCATION);
+        if (null !== $n) {
+            $pt = $type->getGeographicalLocation();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->addGeographicalLocation($n->nodeValue);
             }
         }
-        if (isset($children->partDescription)) {
-            foreach($children->partDescription as $child) {
-                $type->addPartDescription(FHIRSubstanceSourceMaterialPartDescription::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
-        if (isset($children->sourceMaterialClass)) {
-            $type->setSourceMaterialClass(FHIRCodeableConcept::xmlUnserialize($children->sourceMaterialClass));
+        $n = $element->attributes->getNamedItem(self::FIELD_IMPLICIT_RULES);
+        if (null !== $n) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setImplicitRules($n->nodeValue);
+            }
         }
-        if (isset($children->sourceMaterialState)) {
-            $type->setSourceMaterialState(FHIRCodeableConcept::xmlUnserialize($children->sourceMaterialState));
-        }
-        if (isset($children->sourceMaterialType)) {
-            $type->setSourceMaterialType(FHIRCodeableConcept::xmlUnserialize($children->sourceMaterialType));
+        $n = $element->attributes->getNamedItem(self::FIELD_LANGUAGE);
+        if (null !== $n) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setLanguage($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getCountryOfOrigin())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COUNTRY_OF_ORIGIN, null, $v->_getFHIRXMLNamespace()));
-            }
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getSourceMaterialClass())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SOURCE_MATERIAL_CLASS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if (null !== ($v = $this->getDevelopmentStage())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEVELOPMENT_STAGE, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getSourceMaterialType())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SOURCE_MATERIAL_TYPE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        if ([] !== ($vs = $this->getFractionDescription())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_FRACTION_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if ([] !== ($vs = $this->getGeographicalLocation())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_GEOGRAPHICAL_LOCATION, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getOrganism())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANISM, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getSourceMaterialState())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_SOURCE_MATERIAL_STATE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getOrganismId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANISM_ID, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_ORGANISM_ID);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getOrganismName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ORGANISM_NAME, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_ORGANISM_NAME);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getParentSubstanceId())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PARENT_SUBSTANCE_ID, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PARENT_SUBSTANCE_ID);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
         if ([] !== ($vs = $this->getParentSubstanceName())) {
@@ -1824,27 +1862,62 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PARENT_SUBSTANCE_NAME, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PARENT_SUBSTANCE_NAME);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
+        }
+        if ([] !== ($vs = $this->getCountryOfOrigin())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_COUNTRY_OF_ORIGIN);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if ([] !== ($vs = $this->getGeographicalLocation())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_GEOGRAPHICAL_LOCATION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if (null !== ($v = $this->getDevelopmentStage())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_DEVELOPMENT_STAGE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        if ([] !== ($vs = $this->getFractionDescription())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_FRACTION_DESCRIPTION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        if (null !== ($v = $this->getOrganism())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_ORGANISM);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getPartDescription())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PART_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_PART_DESCRIPTION);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getSourceMaterialClass())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_MATERIAL_CLASS, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getSourceMaterialState())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_MATERIAL_STATE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getSourceMaterialType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_MATERIAL_TYPE, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -1853,6 +1926,61 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getSourceMaterialClass())) {
+            $a[self::FIELD_SOURCE_MATERIAL_CLASS] = $v;
+        }
+        if (null !== ($v = $this->getSourceMaterialType())) {
+            $a[self::FIELD_SOURCE_MATERIAL_TYPE] = $v;
+        }
+        if (null !== ($v = $this->getSourceMaterialState())) {
+            $a[self::FIELD_SOURCE_MATERIAL_STATE] = $v;
+        }
+        if (null !== ($v = $this->getOrganismId())) {
+            $a[self::FIELD_ORGANISM_ID] = $v;
+        }
+        if (null !== ($v = $this->getOrganismName())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_ORGANISM_NAME] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRString::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_ORGANISM_NAME_EXT] = $ext;
+            }
+        }
+        if ([] !== ($vs = $this->getParentSubstanceId())) {
+            $a[self::FIELD_PARENT_SUBSTANCE_ID] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PARENT_SUBSTANCE_ID][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->getParentSubstanceName())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext[FHIRString::FIELD_VALUE]);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $a[self::FIELD_PARENT_SUBSTANCE_NAME] = $vals;
+            }
+            if ([] !== $exts) {
+                $a[self::FIELD_PARENT_SUBSTANCE_NAME_EXT] = $exts;
+            }
+        }
         if ([] !== ($vs = $this->getCountryOfOrigin())) {
             $a[self::FIELD_COUNTRY_OF_ORIGIN] = [];
             foreach($vs as $v) {
@@ -1860,6 +1988,30 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                     continue;
                 }
                 $a[self::FIELD_COUNTRY_OF_ORIGIN][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->getGeographicalLocation())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext[FHIRString::FIELD_VALUE]);
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $a[self::FIELD_GEOGRAPHICAL_LOCATION] = $vals;
+            }
+            if ([] !== $exts) {
+                $a[self::FIELD_GEOGRAPHICAL_LOCATION_EXT] = $exts;
             }
         }
         if (null !== ($v = $this->getDevelopmentStage())) {
@@ -1874,75 +2026,8 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                 $a[self::FIELD_FRACTION_DESCRIPTION][] = $v;
             }
         }
-        if ([] !== ($vs = $this->getGeographicalLocation())) {
-            $a[self::FIELD_GEOGRAPHICAL_LOCATION] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_GEOGRAPHICAL_LOCATION][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRString::FIELD_VALUE]) || array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRString::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
-            }
-            if ($encValued) {
-                $a[self::FIELD_GEOGRAPHICAL_LOCATION_EXT] = $encs;
-            }
-        }
         if (null !== ($v = $this->getOrganism())) {
             $a[self::FIELD_ORGANISM] = $v;
-        }
-        if (null !== ($v = $this->getOrganismId())) {
-            $a[self::FIELD_ORGANISM_ID] = $v;
-        }
-        if (null !== ($v = $this->getOrganismName())) {
-            $a[self::FIELD_ORGANISM_NAME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_ORGANISM_NAME_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->getParentSubstanceId())) {
-            $a[self::FIELD_PARENT_SUBSTANCE_ID] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PARENT_SUBSTANCE_ID][] = $v;
-            }
-        }
-        if ([] !== ($vs = $this->getParentSubstanceName())) {
-            $a[self::FIELD_PARENT_SUBSTANCE_NAME] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PARENT_SUBSTANCE_NAME][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRString::FIELD_VALUE]) || array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRString::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
-            }
-            if ($encValued) {
-                $a[self::FIELD_PARENT_SUBSTANCE_NAME_EXT] = $encs;
-            }
         }
         if ([] !== ($vs = $this->getPartDescription())) {
             $a[self::FIELD_PART_DESCRIPTION] = [];
@@ -1952,18 +2037,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
                 }
                 $a[self::FIELD_PART_DESCRIPTION][] = $v;
             }
-        }
-        if (null !== ($v = $this->getSourceMaterialClass())) {
-            $a[self::FIELD_SOURCE_MATERIAL_CLASS] = $v;
-        }
-        if (null !== ($v = $this->getSourceMaterialState())) {
-            $a[self::FIELD_SOURCE_MATERIAL_STATE] = $v;
-        }
-        if (null !== ($v = $this->getSourceMaterialType())) {
-            $a[self::FIELD_SOURCE_MATERIAL_TYPE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTas
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,9 +63,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTas
  */
 
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
@@ -79,13 +81,24 @@ class FHIRTaskRestriction extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TASK_DOT_RESTRICTION;
-    const FIELD_PERIOD = 'period';
-    const FIELD_RECIPIENT = 'recipient';
     const FIELD_REPETITIONS = 'repetitions';
     const FIELD_REPETITIONS_EXT = '_repetitions';
+    const FIELD_PERIOD = 'period';
+    const FIELD_RECIPIENT = 'recipient';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Indicates the number of times the requested action should occur.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
+     */
+    protected $repetitions = null;
 
     /**
      * A time period defined by a start and end date and optionally time.
@@ -111,17 +124,6 @@ class FHIRTaskRestriction extends FHIRBackboneElement
     protected $recipient = [];
 
     /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Indicates the number of times the requested action should occur.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
-     */
-    protected $repetitions = null;
-
-    /**
      * Validation map for fields in type Task.Restriction
      * @var array
      */
@@ -143,6 +145,21 @@ class FHIRTaskRestriction extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
+        if (isset($data[self::FIELD_REPETITIONS]) || isset($data[self::FIELD_REPETITIONS_EXT])) {
+            $value = isset($data[self::FIELD_REPETITIONS]) ? $data[self::FIELD_REPETITIONS] : null;
+            $ext = (isset($data[self::FIELD_REPETITIONS_EXT]) && is_array($data[self::FIELD_REPETITIONS_EXT])) ? $ext = $data[self::FIELD_REPETITIONS_EXT] : $ext = [];
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setRepetitions($value);
+                } else if (is_array($value)) {
+                    $this->setRepetitions(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->setRepetitions(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setRepetitions(new FHIRPositiveInt($ext));
+            }
+        }
         if (isset($data[self::FIELD_PERIOD])) {
             if ($data[self::FIELD_PERIOD] instanceof FHIRPeriod) {
                 $this->setPeriod($data[self::FIELD_PERIOD]);
@@ -162,33 +179,10 @@ class FHIRTaskRestriction extends FHIRBackboneElement
                         $this->addRecipient(new FHIRReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_RECIPIENT] instanceof FHIRReference) {
+            } elseif ($data[self::FIELD_RECIPIENT] instanceof FHIRReference) {
                 $this->addRecipient($data[self::FIELD_RECIPIENT]);
             } else {
                 $this->addRecipient(new FHIRReference($data[self::FIELD_RECIPIENT]));
-            }
-        }
-        if (isset($data[self::FIELD_REPETITIONS]) || isset($data[self::FIELD_REPETITIONS_EXT])) {
-            if (isset($data[self::FIELD_REPETITIONS])) {
-                $value = $data[self::FIELD_REPETITIONS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_REPETITIONS_EXT]) && is_array($data[self::FIELD_REPETITIONS_EXT])) {
-                $ext = $data[self::FIELD_REPETITIONS_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $this->setRepetitions($value);
-                } else if (is_array($value)) {
-                    $this->setRepetitions(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $this->setRepetitions(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setRepetitions(new FHIRPositiveInt($ext));
             }
         }
     }
@@ -207,10 +201,44 @@ class FHIRTaskRestriction extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<TaskRestriction{$xmlns}></TaskRestriction>";
+    }
+
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Indicates the number of times the requested action should occur.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
+     */
+    public function getRepetitions()
+    {
+        return $this->repetitions;
+    }
+
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Indicates the number of times the requested action should occur.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt $repetitions
+     * @return static
+     */
+    public function setRepetitions($repetitions = null)
+    {
+        if (null !== $repetitions && !($repetitions instanceof FHIRPositiveInt)) {
+            $repetitions = new FHIRPositiveInt($repetitions);
+        }
+        $this->_trackValueSet($this->repetitions, $repetitions);
+        $this->repetitions = $repetitions;
+        return $this;
     }
 
     /**
@@ -239,6 +267,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement
      */
     public function setPeriod(FHIRPeriod $period = null)
     {
+        $this->_trackValueSet($this->period, $period);
         $this->period = $period;
         return $this;
     }
@@ -271,6 +300,7 @@ class FHIRTaskRestriction extends FHIRBackboneElement
      */
     public function addRecipient(FHIRReference $recipient = null)
     {
+        $this->_trackValueAdded();
         $this->recipient[] = $recipient;
         return $this;
     }
@@ -288,7 +318,10 @@ class FHIRTaskRestriction extends FHIRBackboneElement
      */
     public function setRecipient(array $recipient = [])
     {
-        $this->recipient = [];
+        if ([] !== $this->recipient) {
+            $this->_trackValuesRemoved(count($this->recipient));
+            $this->recipient = [];
+        }
         if ([] === $recipient) {
             return $this;
         }
@@ -299,44 +332,6 @@ class FHIRTaskRestriction extends FHIRBackboneElement
                 $this->addRecipient(new FHIRReference($v));
             }
         }
-        return $this;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Indicates the number of times the requested action should occur.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
-     */
-    public function getRepetitions()
-    {
-        return $this->repetitions;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Indicates the number of times the requested action should occur.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt $repetitions
-     * @return static
-     */
-    public function setRepetitions($repetitions = null)
-    {
-        if (null === $repetitions) {
-            $this->repetitions = null;
-            return $this;
-        }
-        if ($repetitions instanceof FHIRPositiveInt) {
-            $this->repetitions = $repetitions;
-            return $this;
-        }
-        $this->repetitions = new FHIRPositiveInt($repetitions);
         return $this;
     }
 
@@ -361,6 +356,11 @@ class FHIRTaskRestriction extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getRepetitions())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_REPETITIONS] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getPeriod())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_PERIOD] = $fieldErrs;
@@ -373,9 +373,16 @@ class FHIRTaskRestriction extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getRepetitions())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_REPETITIONS] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_REPETITIONS])) {
+            $v = $this->getRepetitions();
+            foreach($validationRules[self::FIELD_REPETITIONS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TASK_DOT_RESTRICTION, self::FIELD_REPETITIONS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REPETITIONS])) {
+                        $errs[self::FIELD_REPETITIONS] = [];
+                    }
+                    $errs[self::FIELD_REPETITIONS][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_PERIOD])) {
@@ -399,18 +406,6 @@ class FHIRTaskRestriction extends FHIRBackboneElement
                         $errs[self::FIELD_RECIPIENT] = [];
                     }
                     $errs[self::FIELD_RECIPIENT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_REPETITIONS])) {
-            $v = $this->getRepetitions();
-            foreach($validationRules[self::FIELD_REPETITIONS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TASK_DOT_RESTRICTION, self::FIELD_REPETITIONS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REPETITIONS])) {
-                        $errs[self::FIELD_REPETITIONS] = [];
-                    }
-                    $errs[self::FIELD_REPETITIONS][$rule] = $err;
                 }
             }
         }
@@ -454,93 +449,116 @@ class FHIRTaskRestriction extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRTaskRestriction::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRTaskRestriction::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRTaskRestriction::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRTaskRestriction;
+            $type = new FHIRTaskRestriction(null);
         } elseif (!is_object($type) || !($type instanceof FHIRTaskRestriction)) {
             throw new \RuntimeException(sprintf(
                 'FHIRTaskRestriction::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_REPETITIONS === $n->nodeName) {
+                $type->setRepetitions(FHIRPositiveInt::xmlUnserialize($n));
+            } elseif (self::FIELD_PERIOD === $n->nodeName) {
+                $type->setPeriod(FHIRPeriod::xmlUnserialize($n));
+            } elseif (self::FIELD_RECIPIENT === $n->nodeName) {
+                $type->addRecipient(FHIRReference::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->period)) {
-            $type->setPeriod(FHIRPeriod::xmlUnserialize($children->period));
-        }
-        if (isset($children->recipient)) {
-            foreach($children->recipient as $child) {
-                $type->addRecipient(FHIRReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->repetitions)) {
-            $type->setRepetitions(FHIRPositiveInt::xmlUnserialize($children->repetitions));
-        }
-        if (isset($attributes->repetitions)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_REPETITIONS);
+        if (null !== $n) {
             $pt = $type->getRepetitions();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->repetitions);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setRepetitions((string)$attributes->repetitions);
+                $type->setRepetitions($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
+        if (null !== ($v = $this->getRepetitions())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_REPETITIONS);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
         if (null !== ($v = $this->getPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_PERIOD);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if ([] !== ($vs = $this->getRecipient())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_RECIPIENT, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_RECIPIENT);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        if (null !== ($v = $this->getRepetitions())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REPETITIONS, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -549,6 +567,16 @@ class FHIRTaskRestriction extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
+        if (null !== ($v = $this->getRepetitions())) {
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_REPETITIONS] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRPositiveInt::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_REPETITIONS_EXT] = $ext;
+            }
+        }
         if (null !== ($v = $this->getPeriod())) {
             $a[self::FIELD_PERIOD] = $v;
         }
@@ -560,18 +588,6 @@ class FHIRTaskRestriction extends FHIRBackboneElement
                 }
                 $a[self::FIELD_RECIPIENT][] = $v;
             }
-        }
-        if (null !== ($v = $this->getRepetitions())) {
-            $a[self::FIELD_REPETITIONS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
-                $a[self::FIELD_REPETITIONS_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

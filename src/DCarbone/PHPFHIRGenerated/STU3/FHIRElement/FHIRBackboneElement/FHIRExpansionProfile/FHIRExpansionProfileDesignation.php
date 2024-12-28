@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,8 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExp
  */
 
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
@@ -76,20 +78,11 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_EXPANSION_PROFILE_DOT_DESIGNATION;
-    const FIELD_EXCLUDE = 'exclude';
     const FIELD_INCLUDE = 'include';
+    const FIELD_EXCLUDE = 'exclude';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Resource to define constraints on the Expansion of a FHIR ValueSet.
-     *
-     * Designations to be excluded.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileExclude
-     */
-    protected $exclude = null;
+    private $_xmlns = '';
 
     /**
      * Resource to define constraints on the Expansion of a FHIR ValueSet.
@@ -99,6 +92,15 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileInclude
      */
     protected $include = null;
+
+    /**
+     * Resource to define constraints on the Expansion of a FHIR ValueSet.
+     *
+     * Designations to be excluded.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileExclude
+     */
+    protected $exclude = null;
 
     /**
      * Validation map for fields in type ExpansionProfile.Designation
@@ -122,18 +124,18 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_EXCLUDE])) {
-            if ($data[self::FIELD_EXCLUDE] instanceof FHIRExpansionProfileExclude) {
-                $this->setExclude($data[self::FIELD_EXCLUDE]);
-            } else {
-                $this->setExclude(new FHIRExpansionProfileExclude($data[self::FIELD_EXCLUDE]));
-            }
-        }
         if (isset($data[self::FIELD_INCLUDE])) {
             if ($data[self::FIELD_INCLUDE] instanceof FHIRExpansionProfileInclude) {
                 $this->setInclude($data[self::FIELD_INCLUDE]);
             } else {
                 $this->setInclude(new FHIRExpansionProfileInclude($data[self::FIELD_INCLUDE]));
+            }
+        }
+        if (isset($data[self::FIELD_EXCLUDE])) {
+            if ($data[self::FIELD_EXCLUDE] instanceof FHIRExpansionProfileExclude) {
+                $this->setExclude($data[self::FIELD_EXCLUDE]);
+            } else {
+                $this->setExclude(new FHIRExpansionProfileExclude($data[self::FIELD_EXCLUDE]));
             }
         }
     }
@@ -152,36 +154,10 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<ExpansionProfileDesignation{$xmlns}></ExpansionProfileDesignation>";
-    }
-
-    /**
-     * Resource to define constraints on the Expansion of a FHIR ValueSet.
-     *
-     * Designations to be excluded.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileExclude
-     */
-    public function getExclude()
-    {
-        return $this->exclude;
-    }
-
-    /**
-     * Resource to define constraints on the Expansion of a FHIR ValueSet.
-     *
-     * Designations to be excluded.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileExclude $exclude
-     * @return static
-     */
-    public function setExclude(FHIRExpansionProfileExclude $exclude = null)
-    {
-        $this->exclude = $exclude;
-        return $this;
     }
 
     /**
@@ -206,7 +182,35 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
      */
     public function setInclude(FHIRExpansionProfileInclude $include = null)
     {
+        $this->_trackValueSet($this->include, $include);
         $this->include = $include;
+        return $this;
+    }
+
+    /**
+     * Resource to define constraints on the Expansion of a FHIR ValueSet.
+     *
+     * Designations to be excluded.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileExclude
+     */
+    public function getExclude()
+    {
+        return $this->exclude;
+    }
+
+    /**
+     * Resource to define constraints on the Expansion of a FHIR ValueSet.
+     *
+     * Designations to be excluded.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileExclude $exclude
+     * @return static
+     */
+    public function setExclude(FHIRExpansionProfileExclude $exclude = null)
+    {
+        $this->_trackValueSet($this->exclude, $exclude);
+        $this->exclude = $exclude;
         return $this;
     }
 
@@ -231,26 +235,14 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getExclude())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_EXCLUDE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getInclude())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_INCLUDE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_EXCLUDE])) {
-            $v = $this->getExclude();
-            foreach($validationRules[self::FIELD_EXCLUDE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EXPANSION_PROFILE_DOT_DESIGNATION, self::FIELD_EXCLUDE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EXCLUDE])) {
-                        $errs[self::FIELD_EXCLUDE] = [];
-                    }
-                    $errs[self::FIELD_EXCLUDE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getExclude())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EXCLUDE] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_INCLUDE])) {
@@ -262,6 +254,18 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
                         $errs[self::FIELD_INCLUDE] = [];
                     }
                     $errs[self::FIELD_INCLUDE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXCLUDE])) {
+            $v = $this->getExclude();
+            foreach($validationRules[self::FIELD_EXCLUDE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EXPANSION_PROFILE_DOT_DESIGNATION, self::FIELD_EXCLUDE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXCLUDE])) {
+                        $errs[self::FIELD_EXCLUDE] = [];
+                    }
+                    $errs[self::FIELD_EXCLUDE][$rule] = $err;
                 }
             }
         }
@@ -305,72 +309,95 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileDesignation $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileDesignation
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRExpansionProfileDesignation::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRExpansionProfileDesignation::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRExpansionProfileDesignation::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRExpansionProfileDesignation;
+            $type = new FHIRExpansionProfileDesignation(null);
         } elseif (!is_object($type) || !($type instanceof FHIRExpansionProfileDesignation)) {
             throw new \RuntimeException(sprintf(
                 'FHIRExpansionProfileDesignation::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExpansionProfile\FHIRExpansionProfileDesignation or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_INCLUDE === $n->nodeName) {
+                $type->setInclude(FHIRExpansionProfileInclude::xmlUnserialize($n));
+            } elseif (self::FIELD_EXCLUDE === $n->nodeName) {
+                $type->setExclude(FHIRExpansionProfileExclude::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->exclude)) {
-            $type->setExclude(FHIRExpansionProfileExclude::xmlUnserialize($children->exclude));
-        }
-        if (isset($children->include)) {
-            $type->setInclude(FHIRExpansionProfileInclude::xmlUnserialize($children->include));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getExclude())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXCLUDE, null, $v->_getFHIRXMLNamespace()));
-        }
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getInclude())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INCLUDE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_INCLUDE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        if (null !== ($v = $this->getExclude())) {
+            $telement = $element->ownerDocument->createElement(self::FIELD_EXCLUDE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
+        }
+        return $element;
     }
 
     /**
@@ -379,14 +406,11 @@ class FHIRExpansionProfileDesignation extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getExclude())) {
-            $a[self::FIELD_EXCLUDE] = $v;
-        }
         if (null !== ($v = $this->getInclude())) {
             $a[self::FIELD_INCLUDE] = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getExclude())) {
+            $a[self::FIELD_EXCLUDE] = $v;
         }
         return $a;
     }

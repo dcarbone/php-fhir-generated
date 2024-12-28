@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMessa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,9 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMessa
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
 
@@ -86,7 +88,7 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
     const FIELD_SITUATION_EXT = '_situation';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
 
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
@@ -140,16 +142,8 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
         }
         parent::__construct($data);
         if (isset($data[self::FIELD_MESSAGE]) || isset($data[self::FIELD_MESSAGE_EXT])) {
-            if (isset($data[self::FIELD_MESSAGE])) {
-                $value = $data[self::FIELD_MESSAGE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_MESSAGE_EXT]) && is_array($data[self::FIELD_MESSAGE_EXT])) {
-                $ext = $data[self::FIELD_MESSAGE_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_MESSAGE]) ? $data[self::FIELD_MESSAGE] : null;
+            $ext = (isset($data[self::FIELD_MESSAGE_EXT]) && is_array($data[self::FIELD_MESSAGE_EXT])) ? $ext = $data[self::FIELD_MESSAGE_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRCanonical) {
                     $this->setMessage($value);
@@ -158,21 +152,13 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
                 } else {
                     $this->setMessage(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setMessage(new FHIRCanonical($ext));
             }
         }
         if (isset($data[self::FIELD_SITUATION]) || isset($data[self::FIELD_SITUATION_EXT])) {
-            if (isset($data[self::FIELD_SITUATION])) {
-                $value = $data[self::FIELD_SITUATION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SITUATION_EXT]) && is_array($data[self::FIELD_SITUATION_EXT])) {
-                $ext = $data[self::FIELD_SITUATION_EXT];
-            } else {
-                $ext = [];
-            }
+            $value = isset($data[self::FIELD_SITUATION]) ? $data[self::FIELD_SITUATION] : null;
+            $ext = (isset($data[self::FIELD_SITUATION_EXT]) && is_array($data[self::FIELD_SITUATION_EXT])) ? $ext = $data[self::FIELD_SITUATION_EXT] : $ext = [];
             if (null !== $value) {
                 if ($value instanceof FHIRMarkdown) {
                     $this->setSituation($value);
@@ -181,7 +167,7 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
                 } else {
                     $this->setSituation(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setSituation(new FHIRMarkdown($ext));
             }
         }
@@ -201,7 +187,7 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<MessageDefinitionAllowedResponse{$xmlns}></MessageDefinitionAllowedResponse>";
@@ -237,15 +223,11 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
      */
     public function setMessage($message = null)
     {
-        if (null === $message) {
-            $this->message = null;
-            return $this;
+        if (null !== $message && !($message instanceof FHIRCanonical)) {
+            $message = new FHIRCanonical($message);
         }
-        if ($message instanceof FHIRCanonical) {
-            $this->message = $message;
-            return $this;
-        }
-        $this->message = new FHIRCanonical($message);
+        $this->_trackValueSet($this->message, $message);
+        $this->message = $message;
         return $this;
     }
 
@@ -285,15 +267,11 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
      */
     public function setSituation($situation = null)
     {
-        if (null === $situation) {
-            $this->situation = null;
-            return $this;
+        if (null !== $situation && !($situation instanceof FHIRMarkdown)) {
+            $situation = new FHIRMarkdown($situation);
         }
-        if ($situation instanceof FHIRMarkdown) {
-            $this->situation = $situation;
-            return $this;
-        }
-        $this->situation = new FHIRMarkdown($situation);
+        $this->_trackValueSet($this->situation, $situation);
+        $this->situation = $situation;
         return $this;
     }
 
@@ -392,88 +370,113 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRMessageDefinitionAllowedResponse::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMessageDefinitionAllowedResponse::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRMessageDefinitionAllowedResponse::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRMessageDefinitionAllowedResponse;
+            $type = new FHIRMessageDefinitionAllowedResponse(null);
         } elseif (!is_object($type) || !($type instanceof FHIRMessageDefinitionAllowedResponse)) {
             throw new \RuntimeException(sprintf(
                 'FHIRMessageDefinitionAllowedResponse::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_MESSAGE === $n->nodeName) {
+                $type->setMessage(FHIRCanonical::xmlUnserialize($n));
+            } elseif (self::FIELD_SITUATION === $n->nodeName) {
+                $type->setSituation(FHIRMarkdown::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->message)) {
-            $type->setMessage(FHIRCanonical::xmlUnserialize($children->message));
-        }
-        if (isset($attributes->message)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_MESSAGE);
+        if (null !== $n) {
             $pt = $type->getMessage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->message);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setMessage((string)$attributes->message);
+                $type->setMessage($n->nodeValue);
             }
         }
-        if (isset($children->situation)) {
-            $type->setSituation(FHIRMarkdown::xmlUnserialize($children->situation));
-        }
-        if (isset($attributes->situation)) {
+        $n = $element->attributes->getNamedItem(self::FIELD_SITUATION);
+        if (null !== $n) {
             $pt = $type->getSituation();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->situation);
+                $pt->setValue($n->nodeValue);
             } else {
-                $type->setSituation((string)$attributes->situation);
+                $type->setSituation($n->nodeValue);
+            }
+        }
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
+        parent::xmlSerialize($element);
         if (null !== ($v = $this->getMessage())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MESSAGE, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_MESSAGE);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
         if (null !== ($v = $this->getSituation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SITUATION, null, $v->_getFHIRXMLNamespace()));
+            $telement = $element->ownerDocument->createElement(self::FIELD_SITUATION);
+            $element->appendChild($telement);
+            $v->xmlSerialize($telement);
         }
-        return $sxe;
+        return $element;
     }
 
     /**
@@ -483,25 +486,24 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getMessage())) {
-            $a[self::FIELD_MESSAGE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCanonical::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCanonical::FIELD_VALUE]);
-                $a[self::FIELD_MESSAGE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_MESSAGE] = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRCanonical::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_MESSAGE_EXT] = $ext;
             }
         }
         if (null !== ($v = $this->getSituation())) {
-            $a[self::FIELD_SITUATION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMarkdown::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRMarkdown::FIELD_VALUE]);
-                $a[self::FIELD_SITUATION_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $a[self::FIELD_SITUATION] = $val;
             }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+            $ext = $v->jsonSerialize();
+            unset($ext[FHIRMarkdown::FIELD_VALUE]);
+            if ([] !== $ext) {
+                $a[self::FIELD_SITUATION_EXT] = $ext;
+            }
         }
         return $a;
     }

@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: December 28th, 2024 17:13+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,6 +63,8 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  */
 
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
 
@@ -77,11 +79,21 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_METADATA;
-    const FIELD_CAPABILITY = 'capability';
     const FIELD_LINK = 'link';
+    const FIELD_CAPABILITY = 'capability';
 
     /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = '';
+
+    /**
+     * A structured set of tests against a FHIR server implementation to determine
+     * compliance against the FHIR specification.
+     *
+     * A link to the FHIR specification that this test is covering.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptLink[]
+     */
+    protected $link = [];
 
     /**
      * A structured set of tests against a FHIR server implementation to determine
@@ -93,16 +105,6 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptCapability[]
      */
     protected $capability = [];
-
-    /**
-     * A structured set of tests against a FHIR server implementation to determine
-     * compliance against the FHIR specification.
-     *
-     * A link to the FHIR specification that this test is covering.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptLink[]
-     */
-    protected $link = [];
 
     /**
      * Validation map for fields in type TestScript.Metadata
@@ -130,24 +132,6 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CAPABILITY])) {
-            if (is_array($data[self::FIELD_CAPABILITY])) {
-                foreach($data[self::FIELD_CAPABILITY] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRTestScriptCapability) {
-                        $this->addCapability($v);
-                    } else {
-                        $this->addCapability(new FHIRTestScriptCapability($v));
-                    }
-                }
-            } else if ($data[self::FIELD_CAPABILITY] instanceof FHIRTestScriptCapability) {
-                $this->addCapability($data[self::FIELD_CAPABILITY]);
-            } else {
-                $this->addCapability(new FHIRTestScriptCapability($data[self::FIELD_CAPABILITY]));
-            }
-        }
         if (isset($data[self::FIELD_LINK])) {
             if (is_array($data[self::FIELD_LINK])) {
                 foreach($data[self::FIELD_LINK] as $v) {
@@ -160,10 +144,28 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
                         $this->addLink(new FHIRTestScriptLink($v));
                     }
                 }
-            } else if ($data[self::FIELD_LINK] instanceof FHIRTestScriptLink) {
+            } elseif ($data[self::FIELD_LINK] instanceof FHIRTestScriptLink) {
                 $this->addLink($data[self::FIELD_LINK]);
             } else {
                 $this->addLink(new FHIRTestScriptLink($data[self::FIELD_LINK]));
+            }
+        }
+        if (isset($data[self::FIELD_CAPABILITY])) {
+            if (is_array($data[self::FIELD_CAPABILITY])) {
+                foreach($data[self::FIELD_CAPABILITY] as $v) {
+                    if (null === $v) {
+                        continue;
+                    }
+                    if ($v instanceof FHIRTestScriptCapability) {
+                        $this->addCapability($v);
+                    } else {
+                        $this->addCapability(new FHIRTestScriptCapability($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_CAPABILITY] instanceof FHIRTestScriptCapability) {
+                $this->addCapability($data[self::FIELD_CAPABILITY]);
+            } else {
+                $this->addCapability(new FHIRTestScriptCapability($data[self::FIELD_CAPABILITY]));
             }
         }
     }
@@ -182,10 +184,67 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
     public function _getFHIRXMLElementDefinition()
     {
         $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
+        if ('' !==  $xmlns) {
             $xmlns = " xmlns=\"{$xmlns}\"";
         }
         return "<TestScriptMetadata{$xmlns}></TestScriptMetadata>";
+    }
+
+    /**
+     * A structured set of tests against a FHIR server implementation to determine
+     * compliance against the FHIR specification.
+     *
+     * A link to the FHIR specification that this test is covering.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptLink[]
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    /**
+     * A structured set of tests against a FHIR server implementation to determine
+     * compliance against the FHIR specification.
+     *
+     * A link to the FHIR specification that this test is covering.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptLink $link
+     * @return static
+     */
+    public function addLink(FHIRTestScriptLink $link = null)
+    {
+        $this->_trackValueAdded();
+        $this->link[] = $link;
+        return $this;
+    }
+
+    /**
+     * A structured set of tests against a FHIR server implementation to determine
+     * compliance against the FHIR specification.
+     *
+     * A link to the FHIR specification that this test is covering.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptLink[] $link
+     * @return static
+     */
+    public function setLink(array $link = [])
+    {
+        if ([] !== $this->link) {
+            $this->_trackValuesRemoved(count($this->link));
+            $this->link = [];
+        }
+        if ([] === $link) {
+            return $this;
+        }
+        foreach($link as $v) {
+            if ($v instanceof FHIRTestScriptLink) {
+                $this->addLink($v);
+            } else {
+                $this->addLink(new FHIRTestScriptLink($v));
+            }
+        }
+        return $this;
     }
 
     /**
@@ -214,6 +273,7 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
      */
     public function addCapability(FHIRTestScriptCapability $capability = null)
     {
+        $this->_trackValueAdded();
         $this->capability[] = $capability;
         return $this;
     }
@@ -230,7 +290,10 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
      */
     public function setCapability(array $capability = [])
     {
-        $this->capability = [];
+        if ([] !== $this->capability) {
+            $this->_trackValuesRemoved(count($this->capability));
+            $this->capability = [];
+        }
         if ([] === $capability) {
             return $this;
         }
@@ -239,59 +302,6 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
                 $this->addCapability($v);
             } else {
                 $this->addCapability(new FHIRTestScriptCapability($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A structured set of tests against a FHIR server implementation to determine
-     * compliance against the FHIR specification.
-     *
-     * A link to the FHIR specification that this test is covering.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptLink[]
-     */
-    public function getLink()
-    {
-        return $this->link;
-    }
-
-    /**
-     * A structured set of tests against a FHIR server implementation to determine
-     * compliance against the FHIR specification.
-     *
-     * A link to the FHIR specification that this test is covering.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptLink $link
-     * @return static
-     */
-    public function addLink(FHIRTestScriptLink $link = null)
-    {
-        $this->link[] = $link;
-        return $this;
-    }
-
-    /**
-     * A structured set of tests against a FHIR server implementation to determine
-     * compliance against the FHIR specification.
-     *
-     * A link to the FHIR specification that this test is covering.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptLink[] $link
-     * @return static
-     */
-    public function setLink(array $link = [])
-    {
-        $this->link = [];
-        if ([] === $link) {
-            return $this;
-        }
-        foreach($link as $v) {
-            if ($v instanceof FHIRTestScriptLink) {
-                $this->addLink($v);
-            } else {
-                $this->addLink(new FHIRTestScriptLink($v));
             }
         }
         return $this;
@@ -318,13 +328,6 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getCapability())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_CAPABILITY, $i)] = $fieldErrs;
-                }
-            }
-        }
         if ([] !== ($vs = $this->getLink())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
@@ -332,15 +335,10 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_CAPABILITY])) {
-            $v = $this->getCapability();
-            foreach($validationRules[self::FIELD_CAPABILITY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_METADATA, self::FIELD_CAPABILITY, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CAPABILITY])) {
-                        $errs[self::FIELD_CAPABILITY] = [];
-                    }
-                    $errs[self::FIELD_CAPABILITY][$rule] = $err;
+        if ([] !== ($vs = $this->getCapability())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_CAPABILITY, $i)] = $fieldErrs;
                 }
             }
         }
@@ -353,6 +351,18 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
                         $errs[self::FIELD_LINK] = [];
                     }
                     $errs[self::FIELD_LINK][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CAPABILITY])) {
+            $v = $this->getCapability();
+            foreach($validationRules[self::FIELD_CAPABILITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_METADATA, self::FIELD_CAPABILITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CAPABILITY])) {
+                        $errs[self::FIELD_CAPABILITY] = [];
+                    }
+                    $errs[self::FIELD_CAPABILITY][$rule] = $err;
                 }
             }
         }
@@ -396,86 +406,105 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\DOMElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptMetadata $type
      * @param null|int $libxmlOpts
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptMetadata
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize($element = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
+        if (is_string($element)) {
             libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($element, $libxmlOpts);
+            if (false === $dom) {
                 throw new \DomainException(sprintf('FHIRTestScriptMetadata::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
             }
             libxml_use_internal_errors(false);
+            $element = $dom->documentElement;
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRTestScriptMetadata::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (!($element instanceof \DOMElement)) {
+            throw new \InvalidArgumentException(sprintf('FHIRTestScriptMetadata::xmlUnserialize - $node value must be null, \\DOMElement, or valid XML string, %s seen', is_object($element) ? get_class($element) : gettype($element)));
         }
         if (null === $type) {
-            $type = new FHIRTestScriptMetadata;
+            $type = new FHIRTestScriptMetadata(null);
         } elseif (!is_object($type) || !($type instanceof FHIRTestScriptMetadata)) {
             throw new \RuntimeException(sprintf(
                 'FHIRTestScriptMetadata::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptMetadata or null, %s seen.',
                 is_object($type) ? get_class($type) : gettype($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if ('' === $type->_getFHIRXMLNamespace() && (null === $element->parentNode || $element->namespaceURI !== $element->parentNode->namespaceURI)) {
+            $type->_setFHIRXMLNamespace($element->namespaceURI);
+        }
+        for($i = 0; $i < $element->childNodes->length; $i++) {
+            $n = $element->childNodes->item($i);
+            if (!($n instanceof \DOMElement)) {
+                continue;
+            }
+            if (self::FIELD_LINK === $n->nodeName) {
+                $type->addLink(FHIRTestScriptLink::xmlUnserialize($n));
+            } elseif (self::FIELD_CAPABILITY === $n->nodeName) {
+                $type->addCapability(FHIRTestScriptCapability::xmlUnserialize($n));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $n->nodeName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_EXTENSION === $n->nodeName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n));
+            } elseif (self::FIELD_ID === $n->nodeName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n));
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->capability)) {
-            foreach($children->capability as $child) {
-                $type->addCapability(FHIRTestScriptCapability::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->link)) {
-            foreach($children->link as $child) {
-                $type->addLink(FHIRTestScriptLink::xmlUnserialize($child));
+        $n = $element->attributes->getNamedItem(self::FIELD_ID);
+        if (null !== $n) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue($n->nodeValue);
+            } else {
+                $type->setId($n->nodeValue);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
+     * @param null|\DOMElement $element
      * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @return \DOMElement
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(\DOMElement $element = null, $libxmlOpts = 591872)
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (null === $element) {
+            $dom = new \DOMDocument();
+            $dom->loadXML($this->_getFHIRXMLElementDefinition(), $libxmlOpts);
+            $element = $dom->documentElement;
+        } elseif (null === $element->namespaceURI && '' !== ($xmlns = $this->_getFHIRXMLNamespace())) {
+            $element->setAttribute('xmlns', $xmlns);
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getCapability())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CAPABILITY, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
+        parent::xmlSerialize($element);
         if ([] !== ($vs = $this->getLink())) {
             foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_LINK, null, $v->_getFHIRXMLNamespace()));
+                $telement = $element->ownerDocument->createElement(self::FIELD_LINK);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
             }
         }
-        return $sxe;
+        if ([] !== ($vs = $this->getCapability())) {
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $telement = $element->ownerDocument->createElement(self::FIELD_CAPABILITY);
+                $element->appendChild($telement);
+                $v->xmlSerialize($telement);
+            }
+        }
+        return $element;
     }
 
     /**
@@ -484,15 +513,6 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
     public function jsonSerialize()
     {
         $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getCapability())) {
-            $a[self::FIELD_CAPABILITY] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_CAPABILITY][] = $v;
-            }
-        }
         if ([] !== ($vs = $this->getLink())) {
             $a[self::FIELD_LINK] = [];
             foreach($vs as $v) {
@@ -502,8 +522,14 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
                 $a[self::FIELD_LINK][] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getCapability())) {
+            $a[self::FIELD_CAPABILITY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CAPABILITY][] = $v;
+            }
         }
         return $a;
     }
