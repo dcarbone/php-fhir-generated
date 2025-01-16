@@ -1,0 +1,910 @@
+<?php declare(strict_types=1);
+
+namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscription;
+
+/*!
+ * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
+ * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
+ * 
+ * Class creation date: January 16th, 2025 01:05+0000
+ * 
+ * PHPFHIR Copyright:
+ * 
+ * Copyright 2016-2025 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ *
+ * FHIR Copyright Notice:
+ *
+ *  * #%L
+ *  * org.hl7.fhir.r5
+ *  * %%
+ *  * Copyright (C) 2014 - 2019 Health Level 7
+ *  * %%
+ *  * Licensed under the Apache License, Version 2.0 (the "License");
+ *  * you may not use this file except in compliance with the License.
+ *  * You may obtain a copy of the License at
+ *  *
+ *  *      http://www.apache.org/licenses/LICENSE-2.0
+ *  *
+ *  * Unless required by applicable law or agreed to in writing, software
+ *  * distributed under the License is distributed on an "AS IS" BASIS,
+ *  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  * See the License for the specific language governing permissions and
+ *  * limitations under the License.
+ *  * #L%
+ *  
+ * 
+ * 
+ *   Copyright (c) 2011+, HL7, Inc.
+ *   All rights reserved.
+ * 
+ *   Redistribution and use in source and binary forms, with or without modification,
+ *   are permitted provided that the following conditions are met:
+ * 
+ *    * Redistributions of source code must retain the above copyright notice, this
+ *      list of conditions and the following disclaimer.
+ *    * Redistributions in binary form must reproduce the above copyright notice,
+ *      this list of conditions and the following disclaimer in the documentation
+ *      and/or other materials provided with the distribution.
+ *    * Neither the name of HL7 nor the names of its contributors may be used to
+ *      endorse or promote products derived from this software without specific
+ *      prior written permission.
+ * 
+ *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ *   IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ *   INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ *   NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ *   PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ *   POSSIBILITY OF SUCH DAMAGE.
+ * 
+ * 
+ *   Generated on Sun, Mar 26, 2023 15:21+1100 for FHIR v5.0.0
+ * 
+ *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
+ *   valid. Implementers will still need to be familiar with the content of the specification and with
+ *   any profiles that apply to the resources in order to make a conformant implementation.
+ * 
+ */
+
+use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
+use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
+use DCarbone\PHPFHIRGenerated\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchComparator;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchModifierCode;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
+use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
+
+/**
+ * The subscription resource describes a particular client's request to be notified
+ * about a SubscriptionTopic.
+ */
+class FHIRSubscriptionFilterBy extends FHIRBackboneElement
+{
+
+    // name of FHIR type this class describes
+    public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSCRIPTION_DOT_FILTER_BY;
+
+
+    public const FIELD_RESOURCE_TYPE = 'resourceType';
+    public const FIELD_RESOURCE_TYPE_EXT = '_resourceType';
+    public const FIELD_FILTER_PARAMETER = 'filterParameter';
+    public const FIELD_FILTER_PARAMETER_EXT = '_filterParameter';
+    public const FIELD_COMPARATOR = 'comparator';
+    public const FIELD_COMPARATOR_EXT = '_comparator';
+    public const FIELD_MODIFIER = 'modifier';
+    public const FIELD_MODIFIER_EXT = '_modifier';
+    public const FIELD_VALUE = 'value';
+    public const FIELD_VALUE_EXT = '_value';
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A resource listed in the `SubscriptionTopic` this `Subscription` references
+     * (`SubscriptionTopic.canFilterBy.resource`). This element can be used to
+     * differentiate filters for topics that include more than one resource type.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri 
+     */
+    protected FHIRUri $resourceType;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The filter as defined in the `SubscriptionTopic.canFilterBy.filterParameter`
+     * element.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     */
+    protected FHIRString $filterParameter;
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Comparator applied to this filter parameter.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchComparator 
+     */
+    protected FHIRSearchComparator $comparator;
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Modifier applied to this filter parameter.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchModifierCode 
+     */
+    protected FHIRSearchModifierCode $modifier;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The literal value or resource path as is legal in search - for example,
+     * `Patient/123` or `le1950`.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     */
+    protected FHIRString $value;
+
+    /** Default validation map for fields in type Subscription.FilterBy */
+    private const _DEFAULT_VALIDATION_RULES = [
+        self::FIELD_FILTER_PARAMETER => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VALUE => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
+
+    /**
+     * FHIRSubscriptionFilterBy Constructor
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $resourceType
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $filterParameter
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchComparator $comparator
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchModifierCode $modifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
+     * @param null|string[] $fhirComments
+     */
+    public function __construct(null|iterable $extension = null,
+                                null|string|FHIRStringPrimitive $id = null,
+                                null|iterable $modifierExtension = null,
+                                null|string|FHIRUriPrimitive|FHIRUri $resourceType = null,
+                                null|string|FHIRStringPrimitive|FHIRString $filterParameter = null,
+                                null|FHIRSearchComparator $comparator = null,
+                                null|FHIRSearchModifierCode $modifier = null,
+                                null|string|FHIRString|FHIRStringPrimitive $value = null,
+                                null|iterable $fhirComments = null)
+    {
+        parent::__construct(extension: $extension,
+                            id: $id,
+                            modifierExtension: $modifierExtension,
+                            fhirComments: $fhirComments);
+        if (null !== $resourceType) {
+            $this->setResourceType($resourceType);
+        }
+        if (null !== $filterParameter) {
+            $this->setFilterParameter($filterParameter);
+        }
+        if (null !== $comparator) {
+            $this->setComparator($comparator);
+        }
+        if (null !== $modifier) {
+            $this->setModifier($modifier);
+        }
+        if (null !== $value) {
+            $this->setValue($value);
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function _getFHIRTypeName(): string
+    {
+        return self::FHIR_TYPE_NAME;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A resource listed in the `SubscriptionTopic` this `Subscription` references
+     * (`SubscriptionTopic.canFilterBy.resource`). This element can be used to
+     * differentiate filters for topics that include more than one resource type.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri
+     */
+    public function getResourceType(): null|FHIRUri
+    {
+        return $this->resourceType ?? null;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A resource listed in the `SubscriptionTopic` this `Subscription` references
+     * (`SubscriptionTopic.canFilterBy.resource`). This element can be used to
+     * differentiate filters for topics that include more than one resource type.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $resourceType
+     * @return static
+     */
+    public function setResourceType(null|string|FHIRUriPrimitive|FHIRUri $resourceType): self
+    {
+        if (null === $resourceType) {
+            unset($this->resourceType);
+            return $this;
+        }
+        if (!($resourceType instanceof FHIRUri)) {
+            $resourceType = new FHIRUri(value: $resourceType);
+        }
+        $this->resourceType = $resourceType;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The filter as defined in the `SubscriptionTopic.canFilterBy.filterParameter`
+     * element.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     */
+    public function getFilterParameter(): null|FHIRString
+    {
+        return $this->filterParameter ?? null;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The filter as defined in the `SubscriptionTopic.canFilterBy.filterParameter`
+     * element.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $filterParameter
+     * @return static
+     */
+    public function setFilterParameter(null|string|FHIRStringPrimitive|FHIRString $filterParameter): self
+    {
+        if (null === $filterParameter) {
+            unset($this->filterParameter);
+            return $this;
+        }
+        if (!($filterParameter instanceof FHIRString)) {
+            $filterParameter = new FHIRString(value: $filterParameter);
+        }
+        $this->filterParameter = $filterParameter;
+        return $this;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Comparator applied to this filter parameter.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchComparator
+     */
+    public function getComparator(): null|FHIRSearchComparator
+    {
+        return $this->comparator ?? null;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Comparator applied to this filter parameter.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchComparator $comparator
+     * @return static
+     */
+    public function setComparator(null|FHIRSearchComparator $comparator): self
+    {
+        if (null === $comparator) {
+            unset($this->comparator);
+            return $this;
+        }
+        $this->comparator = $comparator;
+        return $this;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Modifier applied to this filter parameter.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchModifierCode
+     */
+    public function getModifier(): null|FHIRSearchModifierCode
+    {
+        return $this->modifier ?? null;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Modifier applied to this filter parameter.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchModifierCode $modifier
+     * @return static
+     */
+    public function setModifier(null|FHIRSearchModifierCode $modifier): self
+    {
+        if (null === $modifier) {
+            unset($this->modifier);
+            return $this;
+        }
+        $this->modifier = $modifier;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The literal value or resource path as is legal in search - for example,
+     * `Patient/123` or `le1950`.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     */
+    public function getValue(): null|FHIRString
+    {
+        return $this->value ?? null;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The literal value or resource path as is legal in search - for example,
+     * `Patient/123` or `le1950`.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
+     * @return static
+     */
+    public function setValue(null|string|FHIRString|FHIRStringPrimitive $value): self
+    {
+        if (null === $value) {
+            unset($this->value);
+            return $this;
+        }
+        if (!($value instanceof FHIRString)) {
+            $value = new FHIRString(value: $value);
+        }
+        $this->value = $value;
+        return $this;
+    }
+
+    /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
+     * @return array
+     */
+    public function _getValidationRules(): array
+    {
+        return self::_DEFAULT_VALIDATION_RULES;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by the FHIR specification this type
+     * was generated from.
+     *
+     * An empty array indicates no validation errors occurred.
+     *
+     * @return array
+     */
+    public function _getValidationErrors(): array
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getFilterParameter())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_FILTER_PARAMETER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getValue())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_RESOURCE_TYPE])) {
+            $v = $this->getResourceType();
+            foreach($validationRules[self::FIELD_RESOURCE_TYPE] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_RESOURCE_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RESOURCE_TYPE])) {
+                        $errs[self::FIELD_RESOURCE_TYPE] = [];
+                    }
+                    $errs[self::FIELD_RESOURCE_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_FILTER_PARAMETER])) {
+            $v = $this->getFilterParameter();
+            foreach($validationRules[self::FIELD_FILTER_PARAMETER] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_FILTER_PARAMETER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FILTER_PARAMETER])) {
+                        $errs[self::FIELD_FILTER_PARAMETER] = [];
+                    }
+                    $errs[self::FIELD_FILTER_PARAMETER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_COMPARATOR])) {
+            $v = $this->getComparator();
+            foreach($validationRules[self::FIELD_COMPARATOR] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_COMPARATOR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_COMPARATOR])) {
+                        $errs[self::FIELD_COMPARATOR] = [];
+                    }
+                    $errs[self::FIELD_COMPARATOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER])) {
+            $v = $this->getModifier();
+            foreach($validationRules[self::FIELD_MODIFIER] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_MODIFIER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER])) {
+                        $errs[self::FIELD_MODIFIER] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE])) {
+            $v = $this->getValue();
+            foreach($validationRules[self::FIELD_VALUE] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_VALUE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE])) {
+                        $errs[self::FIELD_VALUE] = [];
+                    }
+                    $errs[self::FIELD_VALUE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
+    }
+
+    /**
+     * @param string|\SimpleXMLElement $element
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionFilterBy $type
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionFilterBy
+     * @throws \Exception
+     */
+    public static function xmlUnserialize(string|\SimpleXMLElement $element,
+                                          null|TypeInterface $type = null,
+                                          null|UnserializeConfig $config = null): self
+    {
+        if (null === $type) {
+            $type = new static();
+        } else if (!($type instanceof FHIRSubscriptionFilterBy)) {
+            throw new \RuntimeException(sprintf(
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getUnserializeConfig();
+        }
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
+        }
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXMLNS((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_EXTENSION === $childName) {
+                $v = new FHIRExtension();
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_ID === $childName) {
+                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $v = new FHIRExtension();
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_RESOURCE_TYPE === $childName) {
+                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setResourceType(FHIRUri::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_FILTER_PARAMETER === $childName) {
+                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setFilterParameter(FHIRString::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_COMPARATOR === $childName) {
+                $v = new FHIRSearchComparator(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setComparator(FHIRSearchComparator::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_MODIFIER === $childName) {
+                $v = new FHIRSearchModifierCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setModifier(FHIRSearchModifierCode::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_VALUE === $childName) {
+                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setValue(FHIRString::xmlUnserialize($n, $v, $config));
+            }
+        }
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId(new FHIRStringPrimitive(
+                    value: (string)$attributes[self::FIELD_ID],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        if (isset($attributes[self::FIELD_RESOURCE_TYPE])) {
+            $pt = $type->getResourceType();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_RESOURCE_TYPE]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setResourceType(new FHIRUri(
+                    value: (string)$attributes[self::FIELD_RESOURCE_TYPE],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        if (isset($attributes[self::FIELD_FILTER_PARAMETER])) {
+            $pt = $type->getFilterParameter();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_FILTER_PARAMETER]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setFilterParameter(new FHIRString(
+                    value: (string)$attributes[self::FIELD_FILTER_PARAMETER],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        if (isset($attributes[self::FIELD_VALUE])) {
+            $pt = $type->getValue();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_VALUE]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setValue(new FHIRString(
+                    value: (string)$attributes[self::FIELD_VALUE],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        return $type;
+    }
+
+    /**
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     */
+    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    {
+        if (null === $xw) {
+            $xw = new XMLWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getSerializeConfig();
+        }
+        if (!$xw->isRootOpen()) {
+            $rootOpened = true;
+            $xw->openRootNode($config, 'SubscriptionFilterBy', $this->_getSourceXMLNS());
+        }
+        if (isset($this->resourceType) && $this->resourceType->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_RESOURCE_TYPE, $this->resourceType->getValue()?->getFormattedValue());
+        }
+        if (isset($this->filterParameter) && $this->filterParameter->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_FILTER_PARAMETER, $this->filterParameter->getValue()?->getFormattedValue());
+        }
+        if (isset($this->value) && $this->value->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VALUE, $this->value->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (isset($this->resourceType) && $this->resourceType->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+            $xw->startElement(self::FIELD_RESOURCE_TYPE);
+            $this->resourceType->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->filterParameter) && $this->filterParameter->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+            $xw->startElement(self::FIELD_FILTER_PARAMETER);
+            $this->filterParameter->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->comparator)) {
+            $xw->startElement(self::FIELD_COMPARATOR);
+            $this->comparator->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->modifier)) {
+            $xw->startElement(self::FIELD_MODIFIER);
+            $this->modifier->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->value) && $this->value->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+            $xw->startElement(self::FIELD_VALUE);
+            $this->value->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($rootOpened) && $rootOpened) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
+    }
+
+    /**
+     * @param string|array|\stdClass $json
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionFilterBy $type
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionFilterBy
+     * @throws \Exception
+     */
+    public static function jsonUnserialize(string|array|\stdClass $json,
+                                           null|TypeInterface $type = null,
+                                           null|UnserializeConfig $config = null): self
+    {
+        if (null === $type) {
+            $type = new static();
+        } else if (!($type instanceof FHIRSubscriptionFilterBy)) {
+            throw new \RuntimeException(sprintf(
+                '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getUnserializeConfig();
+        }
+        if (is_string($json)) {
+            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
+        } else if (is_object($json)) {
+            $json = (array)$json;
+        }
+        parent::jsonUnserialize($json, $type, $config);
+        if (isset($json[self::FIELD_RESOURCE_TYPE]) || isset($json[self::FIELD_RESOURCE_TYPE_EXT]) || array_key_exists(self::FIELD_RESOURCE_TYPE, $json) || array_key_exists(self::FIELD_RESOURCE_TYPE_EXT, $json)) {
+            $value = $json[self::FIELD_RESOURCE_TYPE] ?? null;
+            $ext = (isset($json[self::FIELD_RESOURCE_TYPE_EXT]) && is_array($json[self::FIELD_RESOURCE_TYPE_EXT])) ? $json[self::FIELD_RESOURCE_TYPE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $type->setResourceType($value);
+                } else if (is_array($value)) {
+                    $type->setResourceType(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $type->setResourceType(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $type->setResourceType(new FHIRUri($ext));
+            } else {
+                $type->setResourceType(new FHIRUri(null));
+            }
+        }
+        if (isset($json[self::FIELD_FILTER_PARAMETER]) || isset($json[self::FIELD_FILTER_PARAMETER_EXT]) || array_key_exists(self::FIELD_FILTER_PARAMETER, $json) || array_key_exists(self::FIELD_FILTER_PARAMETER_EXT, $json)) {
+            $value = $json[self::FIELD_FILTER_PARAMETER] ?? null;
+            $ext = (isset($json[self::FIELD_FILTER_PARAMETER_EXT]) && is_array($json[self::FIELD_FILTER_PARAMETER_EXT])) ? $json[self::FIELD_FILTER_PARAMETER_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $type->setFilterParameter($value);
+                } else if (is_array($value)) {
+                    $type->setFilterParameter(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $type->setFilterParameter(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $type->setFilterParameter(new FHIRString($ext));
+            } else {
+                $type->setFilterParameter(new FHIRString(null));
+            }
+        }
+        if (isset($json[self::FIELD_COMPARATOR]) || isset($json[self::FIELD_COMPARATOR_EXT]) || array_key_exists(self::FIELD_COMPARATOR, $json) || array_key_exists(self::FIELD_COMPARATOR_EXT, $json)) {
+            $value = $json[self::FIELD_COMPARATOR] ?? null;
+            $ext = (isset($json[self::FIELD_COMPARATOR_EXT]) && is_array($json[self::FIELD_COMPARATOR_EXT])) ? $json[self::FIELD_COMPARATOR_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRSearchComparator) {
+                    $type->setComparator($value);
+                } else if (is_array($value)) {
+                    $type->setComparator(new FHIRSearchComparator(array_merge($ext, $value)));
+                } else {
+                    $type->setComparator(new FHIRSearchComparator([FHIRSearchComparator::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $type->setComparator(new FHIRSearchComparator($ext));
+            } else {
+                $type->setComparator(new FHIRSearchComparator(null));
+            }
+        }
+        if (isset($json[self::FIELD_MODIFIER]) || isset($json[self::FIELD_MODIFIER_EXT]) || array_key_exists(self::FIELD_MODIFIER, $json) || array_key_exists(self::FIELD_MODIFIER_EXT, $json)) {
+            $value = $json[self::FIELD_MODIFIER] ?? null;
+            $ext = (isset($json[self::FIELD_MODIFIER_EXT]) && is_array($json[self::FIELD_MODIFIER_EXT])) ? $json[self::FIELD_MODIFIER_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRSearchModifierCode) {
+                    $type->setModifier($value);
+                } else if (is_array($value)) {
+                    $type->setModifier(new FHIRSearchModifierCode(array_merge($ext, $value)));
+                } else {
+                    $type->setModifier(new FHIRSearchModifierCode([FHIRSearchModifierCode::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $type->setModifier(new FHIRSearchModifierCode($ext));
+            } else {
+                $type->setModifier(new FHIRSearchModifierCode(null));
+            }
+        }
+        if (isset($json[self::FIELD_VALUE]) || isset($json[self::FIELD_VALUE_EXT]) || array_key_exists(self::FIELD_VALUE, $json) || array_key_exists(self::FIELD_VALUE_EXT, $json)) {
+            $value = $json[self::FIELD_VALUE] ?? null;
+            $ext = (isset($json[self::FIELD_VALUE_EXT]) && is_array($json[self::FIELD_VALUE_EXT])) ? $json[self::FIELD_VALUE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $type->setValue($value);
+                } else if (is_array($value)) {
+                    $type->setValue(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $type->setValue(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $type->setValue(new FHIRString($ext));
+            } else {
+                $type->setValue(new FHIRString(null));
+            }
+        }
+        return $type;
+    }
+
+    /**
+     * @return \stdClass
+     */
+    public function jsonSerialize(): mixed
+    {
+        $out = parent::jsonSerialize();
+        if (isset($this->resourceType)) {
+            if (null !== ($val = $this->resourceType->getValue())) {
+                $out->resourceType = $val;
+            }
+            $ext = $this->resourceType->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_resourceType = $ext;
+            }
+        }
+        if (isset($this->filterParameter)) {
+            if (null !== ($val = $this->filterParameter->getValue())) {
+                $out->filterParameter = $val;
+            }
+            $ext = $this->filterParameter->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_filterParameter = $ext;
+            }
+        }
+        if (isset($this->comparator)) {
+            if (null !== ($val = $this->comparator->getValue())) {
+                $out->comparator = $val;
+            }
+            $ext = $this->comparator->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_comparator = $ext;
+            }
+        }
+        if (isset($this->modifier)) {
+            if (null !== ($val = $this->modifier->getValue())) {
+                $out->modifier = $val;
+            }
+            $ext = $this->modifier->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_modifier = $ext;
+            }
+        }
+        if (isset($this->value)) {
+            if (null !== ($val = $this->value->getValue())) {
+                $out->value = $val;
+            }
+            $ext = $this->value->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_value = $ext;
+            }
+        }
+        return $out;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return self::FHIR_TYPE_NAME;
+    }
+}

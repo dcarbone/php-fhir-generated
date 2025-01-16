@@ -1,0 +1,946 @@
+<?php declare(strict_types=1);
+
+namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
+
+/*!
+ * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
+ * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
+ * 
+ * Class creation date: January 16th, 2025 01:05+0000
+ * 
+ * PHPFHIR Copyright:
+ * 
+ * Copyright 2016-2025 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ *
+ * FHIR Copyright Notice:
+ *
+ *   Copyright (c) 2011+, HL7, Inc.
+ *   All rights reserved.
+ * 
+ *   Redistribution and use in source and binary forms, with or without modification,
+ *   are permitted provided that the following conditions are met:
+ * 
+ *    * Redistributions of source code must retain the above copyright notice, this
+ *      list of conditions and the following disclaimer.
+ *    * Redistributions in binary form must reproduce the above copyright notice,
+ *      this list of conditions and the following disclaimer in the documentation
+ *      and/or other materials provided with the distribution.
+ *    * Neither the name of HL7 nor the names of its contributors may be used to
+ *      endorse or promote products derived from this software without specific
+ *      prior written permission.
+ * 
+ *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ *   IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ *   INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ *   NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ *   PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ *   POSSIBILITY OF SUCH DAMAGE.
+ * 
+ * 
+ *   Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1
+ * 
+ *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
+ *   valid. Implementers will still need to be familiar with the content of the specification and with
+ *   any profiles that apply to the resources in order to make a conformant implementation.
+ * 
+ */
+
+use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
+use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
+use DCarbone\PHPFHIRGenerated\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
+use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
+
+/**
+ * Chemical substances are a single substance type whose primary defining element
+ * is the molecular structure. Chemical substances shall be defined on the basis of
+ * their complete covalent molecular structure; the presence of a salt
+ * (counter-ion) and/or solvates (water, alcohols) is also captured. Purity, grade,
+ * physical form or particle size are not taken into account in the definition of a
+ * chemical substance or in the assignment of a Substance ID.
+ * If the element is present, it must have a value for at least one of the defined
+ * elements, an \@id referenced from the Narrative, or extensions
+ */
+class FHIRSubstanceAmount extends FHIRBackboneElement
+{
+
+    // name of FHIR type this class describes
+    public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_AMOUNT;
+
+
+    public const FIELD_AMOUNT_QUANTITY = 'amountQuantity';
+    public const FIELD_AMOUNT_RANGE = 'amountRange';
+    public const FIELD_AMOUNT_STRING = 'amountString';
+    public const FIELD_AMOUNT_STRING_EXT = '_amountString';
+    public const FIELD_AMOUNT_TYPE = 'amountType';
+    public const FIELD_AMOUNT_TEXT = 'amountText';
+    public const FIELD_AMOUNT_TEXT_EXT = '_amountText';
+    public const FIELD_REFERENCE_RANGE = 'referenceRange';
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Used to capture quantitative values for a variety of elements. If only limits
+     * are given, the arithmetic mean would be the average. If only a single definite
+     * value for a given element is given, it would be captured in this field.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity 
+     */
+    protected FHIRQuantity $amountQuantity;
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Used to capture quantitative values for a variety of elements. If only limits
+     * are given, the arithmetic mean would be the average. If only a single definite
+     * value for a given element is given, it would be captured in this field.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange 
+     */
+    protected FHIRRange $amountRange;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Used to capture quantitative values for a variety of elements. If only limits
+     * are given, the arithmetic mean would be the average. If only a single definite
+     * value for a given element is given, it would be captured in this field.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
+     */
+    protected FHIRString $amountString;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Most elements that require a quantitative value will also have a field called
+     * amount type. Amount type should always be specified because the actual value of
+     * the amount is often dependent on it. EXAMPLE: In capturing the actual relative
+     * amounts of substances or molecular fragments it is essential to indicate whether
+     * the amount refers to a mole ratio or weight ratio. For any given element an
+     * effort should be made to use same the amount type for all related definitional
+     * elements.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
+     */
+    protected FHIRCodeableConcept $amountType;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A textual comment on a numeric value.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString 
+     */
+    protected FHIRString $amountText;
+    /**
+     * Chemical substances are a single substance type whose primary defining element
+     * is the molecular structure. Chemical substances shall be defined on the basis of
+     * their complete covalent molecular structure; the presence of a salt
+     * (counter-ion) and/or solvates (water, alcohols) is also captured. Purity, grade,
+     * physical form or particle size are not taken into account in the definition of a
+     * chemical substance or in the assignment of a Substance ID.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reference range of possible or expected values.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange 
+     */
+    protected FHIRSubstanceAmountReferenceRange $referenceRange;
+
+    /** Default validation map for fields in type SubstanceAmount */
+    private const _DEFAULT_VALIDATION_RULES = [];
+
+    /**
+     * FHIRSubstanceAmount Constructor
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $amountQuantity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $amountRange
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $amountString
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $amountType
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $amountText
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange $referenceRange
+     * @param null|string[] $fhirComments
+     */
+    public function __construct(null|iterable $extension = null,
+                                null|string|FHIRStringPrimitive $id = null,
+                                null|iterable $modifierExtension = null,
+                                null|FHIRQuantity $amountQuantity = null,
+                                null|FHIRRange $amountRange = null,
+                                null|string|FHIRStringPrimitive|FHIRString $amountString = null,
+                                null|FHIRCodeableConcept $amountType = null,
+                                null|string|FHIRStringPrimitive|FHIRString $amountText = null,
+                                null|FHIRSubstanceAmountReferenceRange $referenceRange = null,
+                                null|iterable $fhirComments = null)
+    {
+        parent::__construct(extension: $extension,
+                            id: $id,
+                            modifierExtension: $modifierExtension,
+                            fhirComments: $fhirComments);
+        if (null !== $amountQuantity) {
+            $this->setAmountQuantity($amountQuantity);
+        }
+        if (null !== $amountRange) {
+            $this->setAmountRange($amountRange);
+        }
+        if (null !== $amountString) {
+            $this->setAmountString($amountString);
+        }
+        if (null !== $amountType) {
+            $this->setAmountType($amountType);
+        }
+        if (null !== $amountText) {
+            $this->setAmountText($amountText);
+        }
+        if (null !== $referenceRange) {
+            $this->setReferenceRange($referenceRange);
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function _getFHIRTypeName(): string
+    {
+        return self::FHIR_TYPE_NAME;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Used to capture quantitative values for a variety of elements. If only limits
+     * are given, the arithmetic mean would be the average. If only a single definite
+     * value for a given element is given, it would be captured in this field.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity
+     */
+    public function getAmountQuantity(): null|FHIRQuantity
+    {
+        return $this->amountQuantity ?? null;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Used to capture quantitative values for a variety of elements. If only limits
+     * are given, the arithmetic mean would be the average. If only a single definite
+     * value for a given element is given, it would be captured in this field.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $amountQuantity
+     * @return static
+     */
+    public function setAmountQuantity(null|FHIRQuantity $amountQuantity): self
+    {
+        if (null === $amountQuantity) {
+            unset($this->amountQuantity);
+            return $this;
+        }
+        $this->amountQuantity = $amountQuantity;
+        return $this;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Used to capture quantitative values for a variety of elements. If only limits
+     * are given, the arithmetic mean would be the average. If only a single definite
+     * value for a given element is given, it would be captured in this field.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange
+     */
+    public function getAmountRange(): null|FHIRRange
+    {
+        return $this->amountRange ?? null;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Used to capture quantitative values for a variety of elements. If only limits
+     * are given, the arithmetic mean would be the average. If only a single definite
+     * value for a given element is given, it would be captured in this field.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $amountRange
+     * @return static
+     */
+    public function setAmountRange(null|FHIRRange $amountRange): self
+    {
+        if (null === $amountRange) {
+            unset($this->amountRange);
+            return $this;
+        }
+        $this->amountRange = $amountRange;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Used to capture quantitative values for a variety of elements. If only limits
+     * are given, the arithmetic mean would be the average. If only a single definite
+     * value for a given element is given, it would be captured in this field.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
+     */
+    public function getAmountString(): null|FHIRString
+    {
+        return $this->amountString ?? null;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Used to capture quantitative values for a variety of elements. If only limits
+     * are given, the arithmetic mean would be the average. If only a single definite
+     * value for a given element is given, it would be captured in this field.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $amountString
+     * @return static
+     */
+    public function setAmountString(null|string|FHIRStringPrimitive|FHIRString $amountString): self
+    {
+        if (null === $amountString) {
+            unset($this->amountString);
+            return $this;
+        }
+        if (!($amountString instanceof FHIRString)) {
+            $amountString = new FHIRString(value: $amountString);
+        }
+        $this->amountString = $amountString;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Most elements that require a quantitative value will also have a field called
+     * amount type. Amount type should always be specified because the actual value of
+     * the amount is often dependent on it. EXAMPLE: In capturing the actual relative
+     * amounts of substances or molecular fragments it is essential to indicate whether
+     * the amount refers to a mole ratio or weight ratio. For any given element an
+     * effort should be made to use same the amount type for all related definitional
+     * elements.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
+     */
+    public function getAmountType(): null|FHIRCodeableConcept
+    {
+        return $this->amountType ?? null;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Most elements that require a quantitative value will also have a field called
+     * amount type. Amount type should always be specified because the actual value of
+     * the amount is often dependent on it. EXAMPLE: In capturing the actual relative
+     * amounts of substances or molecular fragments it is essential to indicate whether
+     * the amount refers to a mole ratio or weight ratio. For any given element an
+     * effort should be made to use same the amount type for all related definitional
+     * elements.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $amountType
+     * @return static
+     */
+    public function setAmountType(null|FHIRCodeableConcept $amountType): self
+    {
+        if (null === $amountType) {
+            unset($this->amountType);
+            return $this;
+        }
+        $this->amountType = $amountType;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A textual comment on a numeric value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString
+     */
+    public function getAmountText(): null|FHIRString
+    {
+        return $this->amountText ?? null;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A textual comment on a numeric value.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $amountText
+     * @return static
+     */
+    public function setAmountText(null|string|FHIRStringPrimitive|FHIRString $amountText): self
+    {
+        if (null === $amountText) {
+            unset($this->amountText);
+            return $this;
+        }
+        if (!($amountText instanceof FHIRString)) {
+            $amountText = new FHIRString(value: $amountText);
+        }
+        $this->amountText = $amountText;
+        return $this;
+    }
+
+    /**
+     * Chemical substances are a single substance type whose primary defining element
+     * is the molecular structure. Chemical substances shall be defined on the basis of
+     * their complete covalent molecular structure; the presence of a salt
+     * (counter-ion) and/or solvates (water, alcohols) is also captured. Purity, grade,
+     * physical form or particle size are not taken into account in the definition of a
+     * chemical substance or in the assignment of a Substance ID.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reference range of possible or expected values.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange
+     */
+    public function getReferenceRange(): null|FHIRSubstanceAmountReferenceRange
+    {
+        return $this->referenceRange ?? null;
+    }
+
+    /**
+     * Chemical substances are a single substance type whose primary defining element
+     * is the molecular structure. Chemical substances shall be defined on the basis of
+     * their complete covalent molecular structure; the presence of a salt
+     * (counter-ion) and/or solvates (water, alcohols) is also captured. Purity, grade,
+     * physical form or particle size are not taken into account in the definition of a
+     * chemical substance or in the assignment of a Substance ID.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reference range of possible or expected values.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange $referenceRange
+     * @return static
+     */
+    public function setReferenceRange(null|FHIRSubstanceAmountReferenceRange $referenceRange): self
+    {
+        if (null === $referenceRange) {
+            unset($this->referenceRange);
+            return $this;
+        }
+        $this->referenceRange = $referenceRange;
+        return $this;
+    }
+
+    /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
+     * @return array
+     */
+    public function _getValidationRules(): array
+    {
+        return self::_DEFAULT_VALIDATION_RULES;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by the FHIR specification this type
+     * was generated from.
+     *
+     * An empty array indicates no validation errors occurred.
+     *
+     * @return array
+     */
+    public function _getValidationErrors(): array
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (isset($validationRules[self::FIELD_AMOUNT_QUANTITY])) {
+            $v = $this->getAmountQuantity();
+            foreach($validationRules[self::FIELD_AMOUNT_QUANTITY] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_AMOUNT_QUANTITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AMOUNT_QUANTITY])) {
+                        $errs[self::FIELD_AMOUNT_QUANTITY] = [];
+                    }
+                    $errs[self::FIELD_AMOUNT_QUANTITY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AMOUNT_RANGE])) {
+            $v = $this->getAmountRange();
+            foreach($validationRules[self::FIELD_AMOUNT_RANGE] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_AMOUNT_RANGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AMOUNT_RANGE])) {
+                        $errs[self::FIELD_AMOUNT_RANGE] = [];
+                    }
+                    $errs[self::FIELD_AMOUNT_RANGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AMOUNT_STRING])) {
+            $v = $this->getAmountString();
+            foreach($validationRules[self::FIELD_AMOUNT_STRING] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_AMOUNT_STRING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AMOUNT_STRING])) {
+                        $errs[self::FIELD_AMOUNT_STRING] = [];
+                    }
+                    $errs[self::FIELD_AMOUNT_STRING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AMOUNT_TYPE])) {
+            $v = $this->getAmountType();
+            foreach($validationRules[self::FIELD_AMOUNT_TYPE] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_AMOUNT_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AMOUNT_TYPE])) {
+                        $errs[self::FIELD_AMOUNT_TYPE] = [];
+                    }
+                    $errs[self::FIELD_AMOUNT_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AMOUNT_TEXT])) {
+            $v = $this->getAmountText();
+            foreach($validationRules[self::FIELD_AMOUNT_TEXT] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_AMOUNT_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AMOUNT_TEXT])) {
+                        $errs[self::FIELD_AMOUNT_TEXT] = [];
+                    }
+                    $errs[self::FIELD_AMOUNT_TEXT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_REFERENCE_RANGE])) {
+            $v = $this->getReferenceRange();
+            foreach($validationRules[self::FIELD_REFERENCE_RANGE] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_REFERENCE_RANGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REFERENCE_RANGE])) {
+                        $errs[self::FIELD_REFERENCE_RANGE] = [];
+                    }
+                    $errs[self::FIELD_REFERENCE_RANGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
+    }
+
+    /**
+     * @param string|\SimpleXMLElement $element
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount $type
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
+     * @throws \Exception
+     */
+    public static function xmlUnserialize(string|\SimpleXMLElement $element,
+                                          null|TypeInterface $type = null,
+                                          null|UnserializeConfig $config = null): self
+    {
+        if (null === $type) {
+            $type = new static();
+        } else if (!($type instanceof FHIRSubstanceAmount)) {
+            throw new \RuntimeException(sprintf(
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getUnserializeConfig();
+        }
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
+        }
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXMLNS((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_EXTENSION === $childName) {
+                $v = new FHIRExtension();
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_ID === $childName) {
+                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $v = new FHIRExtension();
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_AMOUNT_QUANTITY === $childName) {
+                $v = new FHIRQuantity();
+                $type->setAmountQuantity(FHIRQuantity::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_AMOUNT_RANGE === $childName) {
+                $v = new FHIRRange();
+                $type->setAmountRange(FHIRRange::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_AMOUNT_STRING === $childName) {
+                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setAmountString(FHIRString::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_AMOUNT_TYPE === $childName) {
+                $v = new FHIRCodeableConcept();
+                $type->setAmountType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_AMOUNT_TEXT === $childName) {
+                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setAmountText(FHIRString::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_REFERENCE_RANGE === $childName) {
+                $v = new FHIRSubstanceAmountReferenceRange();
+                $type->setReferenceRange(FHIRSubstanceAmountReferenceRange::xmlUnserialize($n, $v, $config));
+            }
+        }
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId(new FHIRStringPrimitive(
+                    value: (string)$attributes[self::FIELD_ID],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        if (isset($attributes[self::FIELD_AMOUNT_STRING])) {
+            $pt = $type->getAmountString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_AMOUNT_STRING]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setAmountString(new FHIRString(
+                    value: (string)$attributes[self::FIELD_AMOUNT_STRING],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        if (isset($attributes[self::FIELD_AMOUNT_TEXT])) {
+            $pt = $type->getAmountText();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_AMOUNT_TEXT]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setAmountText(new FHIRString(
+                    value: (string)$attributes[self::FIELD_AMOUNT_TEXT],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        return $type;
+    }
+
+    /**
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     */
+    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    {
+        if (null === $xw) {
+            $xw = new XMLWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getSerializeConfig();
+        }
+        if (!$xw->isRootOpen()) {
+            $rootOpened = true;
+            $xw->openRootNode($config, 'SubstanceAmount', $this->_getSourceXMLNS());
+        }
+        if (isset($this->amountString) && $this->amountString->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_AMOUNT_STRING, $this->amountString->getValue()?->getFormattedValue());
+        }
+        if (isset($this->amountText) && $this->amountText->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_AMOUNT_TEXT, $this->amountText->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (isset($this->amountQuantity)) {
+            $xw->startElement(self::FIELD_AMOUNT_QUANTITY);
+            $this->amountQuantity->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->amountRange)) {
+            $xw->startElement(self::FIELD_AMOUNT_RANGE);
+            $this->amountRange->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->amountString) && $this->amountString->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+            $xw->startElement(self::FIELD_AMOUNT_STRING);
+            $this->amountString->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->amountType)) {
+            $xw->startElement(self::FIELD_AMOUNT_TYPE);
+            $this->amountType->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->amountText) && $this->amountText->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+            $xw->startElement(self::FIELD_AMOUNT_TEXT);
+            $this->amountText->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->referenceRange)) {
+            $xw->startElement(self::FIELD_REFERENCE_RANGE);
+            $this->referenceRange->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($rootOpened) && $rootOpened) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
+    }
+
+    /**
+     * @param string|array|\stdClass $json
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount $type
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount
+     * @throws \Exception
+     */
+    public static function jsonUnserialize(string|array|\stdClass $json,
+                                           null|TypeInterface $type = null,
+                                           null|UnserializeConfig $config = null): self
+    {
+        if (null === $type) {
+            $type = new static();
+        } else if (!($type instanceof FHIRSubstanceAmount)) {
+            throw new \RuntimeException(sprintf(
+                '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getUnserializeConfig();
+        }
+        if (is_string($json)) {
+            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
+        } else if (is_object($json)) {
+            $json = (array)$json;
+        }
+        parent::jsonUnserialize($json, $type, $config);
+        if (isset($json[self::FIELD_AMOUNT_QUANTITY]) || array_key_exists(self::FIELD_AMOUNT_QUANTITY, $json)) {
+            if ($json[self::FIELD_AMOUNT_QUANTITY] instanceof FHIRQuantity) {
+                $type->setAmountQuantity($json[self::FIELD_AMOUNT_QUANTITY]);
+            } else {
+                $type->setAmountQuantity(new FHIRQuantity($json[self::FIELD_AMOUNT_QUANTITY]));
+            }
+        }
+        if (isset($json[self::FIELD_AMOUNT_RANGE]) || array_key_exists(self::FIELD_AMOUNT_RANGE, $json)) {
+            if ($json[self::FIELD_AMOUNT_RANGE] instanceof FHIRRange) {
+                $type->setAmountRange($json[self::FIELD_AMOUNT_RANGE]);
+            } else {
+                $type->setAmountRange(new FHIRRange($json[self::FIELD_AMOUNT_RANGE]));
+            }
+        }
+        if (isset($json[self::FIELD_AMOUNT_STRING]) || isset($json[self::FIELD_AMOUNT_STRING_EXT]) || array_key_exists(self::FIELD_AMOUNT_STRING, $json) || array_key_exists(self::FIELD_AMOUNT_STRING_EXT, $json)) {
+            $value = $json[self::FIELD_AMOUNT_STRING] ?? null;
+            $ext = (isset($json[self::FIELD_AMOUNT_STRING_EXT]) && is_array($json[self::FIELD_AMOUNT_STRING_EXT])) ? $json[self::FIELD_AMOUNT_STRING_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $type->setAmountString($value);
+                } else if (is_array($value)) {
+                    $type->setAmountString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $type->setAmountString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $type->setAmountString(new FHIRString($ext));
+            } else {
+                $type->setAmountString(new FHIRString(null));
+            }
+        }
+        if (isset($json[self::FIELD_AMOUNT_TYPE]) || array_key_exists(self::FIELD_AMOUNT_TYPE, $json)) {
+            if ($json[self::FIELD_AMOUNT_TYPE] instanceof FHIRCodeableConcept) {
+                $type->setAmountType($json[self::FIELD_AMOUNT_TYPE]);
+            } else {
+                $type->setAmountType(new FHIRCodeableConcept($json[self::FIELD_AMOUNT_TYPE]));
+            }
+        }
+        if (isset($json[self::FIELD_AMOUNT_TEXT]) || isset($json[self::FIELD_AMOUNT_TEXT_EXT]) || array_key_exists(self::FIELD_AMOUNT_TEXT, $json) || array_key_exists(self::FIELD_AMOUNT_TEXT_EXT, $json)) {
+            $value = $json[self::FIELD_AMOUNT_TEXT] ?? null;
+            $ext = (isset($json[self::FIELD_AMOUNT_TEXT_EXT]) && is_array($json[self::FIELD_AMOUNT_TEXT_EXT])) ? $json[self::FIELD_AMOUNT_TEXT_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $type->setAmountText($value);
+                } else if (is_array($value)) {
+                    $type->setAmountText(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $type->setAmountText(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $type->setAmountText(new FHIRString($ext));
+            } else {
+                $type->setAmountText(new FHIRString(null));
+            }
+        }
+        if (isset($json[self::FIELD_REFERENCE_RANGE]) || array_key_exists(self::FIELD_REFERENCE_RANGE, $json)) {
+            if ($json[self::FIELD_REFERENCE_RANGE] instanceof FHIRSubstanceAmountReferenceRange) {
+                $type->setReferenceRange($json[self::FIELD_REFERENCE_RANGE]);
+            } else {
+                $type->setReferenceRange(new FHIRSubstanceAmountReferenceRange($json[self::FIELD_REFERENCE_RANGE]));
+            }
+        }
+        return $type;
+    }
+
+    /**
+     * @return \stdClass
+     */
+    public function jsonSerialize(): mixed
+    {
+        $out = parent::jsonSerialize();
+        if (isset($this->amountQuantity)) {
+            $out->amountQuantity = $this->amountQuantity;
+        }
+        if (isset($this->amountRange)) {
+            $out->amountRange = $this->amountRange;
+        }
+        if (isset($this->amountString)) {
+            if (null !== ($val = $this->amountString->getValue())) {
+                $out->amountString = $val;
+            }
+            $ext = $this->amountString->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_amountString = $ext;
+            }
+        }
+        if (isset($this->amountType)) {
+            $out->amountType = $this->amountType;
+        }
+        if (isset($this->amountText)) {
+            if (null !== ($val = $this->amountText->getValue())) {
+                $out->amountText = $val;
+            }
+            $ext = $this->amountText->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_amountText = $ext;
+            }
+        }
+        if (isset($this->referenceRange)) {
+            $out->referenceRange = $this->referenceRange;
+        }
+        return $out;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return self::FHIR_TYPE_NAME;
+    }
+}

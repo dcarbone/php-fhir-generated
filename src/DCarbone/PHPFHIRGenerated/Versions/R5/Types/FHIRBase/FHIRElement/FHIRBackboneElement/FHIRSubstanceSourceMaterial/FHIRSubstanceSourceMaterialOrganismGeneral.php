@@ -1,0 +1,687 @@
+<?php declare(strict_types=1);
+
+namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial;
+
+/*!
+ * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
+ * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
+ * 
+ * Class creation date: January 16th, 2025 01:05+0000
+ * 
+ * PHPFHIR Copyright:
+ * 
+ * Copyright 2016-2025 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ *
+ * FHIR Copyright Notice:
+ *
+ *  * #%L
+ *  * org.hl7.fhir.r5
+ *  * %%
+ *  * Copyright (C) 2014 - 2019 Health Level 7
+ *  * %%
+ *  * Licensed under the Apache License, Version 2.0 (the "License");
+ *  * you may not use this file except in compliance with the License.
+ *  * You may obtain a copy of the License at
+ *  *
+ *  *      http://www.apache.org/licenses/LICENSE-2.0
+ *  *
+ *  * Unless required by applicable law or agreed to in writing, software
+ *  * distributed under the License is distributed on an "AS IS" BASIS,
+ *  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  * See the License for the specific language governing permissions and
+ *  * limitations under the License.
+ *  * #L%
+ *  
+ * 
+ * 
+ *   Copyright (c) 2011+, HL7, Inc.
+ *   All rights reserved.
+ * 
+ *   Redistribution and use in source and binary forms, with or without modification,
+ *   are permitted provided that the following conditions are met:
+ * 
+ *    * Redistributions of source code must retain the above copyright notice, this
+ *      list of conditions and the following disclaimer.
+ *    * Redistributions in binary form must reproduce the above copyright notice,
+ *      this list of conditions and the following disclaimer in the documentation
+ *      and/or other materials provided with the distribution.
+ *    * Neither the name of HL7 nor the names of its contributors may be used to
+ *      endorse or promote products derived from this software without specific
+ *      prior written permission.
+ * 
+ *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ *   IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ *   INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ *   NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ *   PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ *   POSSIBILITY OF SUCH DAMAGE.
+ * 
+ * 
+ *   Generated on Sun, Mar 26, 2023 15:21+1100 for FHIR v5.0.0
+ * 
+ *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
+ *   valid. Implementers will still need to be familiar with the content of the specification and with
+ *   any profiles that apply to the resources in order to make a conformant implementation.
+ * 
+ */
+
+use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
+use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
+use DCarbone\PHPFHIRGenerated\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
+use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
+
+/**
+ * Source material shall capture information on the taxonomic and anatomical
+ * origins as well as the fraction of a material that can result in or can be
+ * modified to form a substance. This set of data elements shall be used to define
+ * polymer substances isolated from biological matrices. Taxonomic and anatomical
+ * origins shall be described using a controlled vocabulary as required. This
+ * information is captured for naturally derived polymers ( . starch) and
+ * structurally diverse substances. For Organisms belonging to the Kingdom Plantae
+ * the Substance level defines the fresh material of a single species or
+ * infraspecies, the Herbal Drug and the Herbal preparation. For Herbal
+ * preparations, the fraction information will be captured at the Substance
+ * information level and additional information for herbal extracts will be
+ * captured at the Specified Substance Group 1 information level. See for further
+ * explanation the Substance Class: Structurally Diverse and the herbal annex.
+ */
+class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
+{
+
+    // name of FHIR type this class describes
+    public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_ORGANISM_GENERAL;
+
+
+    public const FIELD_KINGDOM = 'kingdom';
+    public const FIELD_PHYLUM = 'phylum';
+    public const FIELD_CLASS = 'class';
+    public const FIELD_ORDER = 'order';
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The kingdom of an organism shall be specified.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
+     */
+    protected FHIRCodeableConcept $kingdom;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The phylum of an organism shall be specified.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
+     */
+    protected FHIRCodeableConcept $phylum;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The class of an organism shall be specified.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
+     */
+    protected FHIRCodeableConcept $class;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The order of an organism shall be specified,.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept 
+     */
+    protected FHIRCodeableConcept $order;
+
+    /** Default validation map for fields in type SubstanceSourceMaterial.OrganismGeneral */
+    private const _DEFAULT_VALIDATION_RULES = [];
+
+    /**
+     * FHIRSubstanceSourceMaterialOrganismGeneral Constructor
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $kingdom
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $phylum
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $class
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $order
+     * @param null|string[] $fhirComments
+     */
+    public function __construct(null|iterable $extension = null,
+                                null|string|FHIRStringPrimitive $id = null,
+                                null|iterable $modifierExtension = null,
+                                null|FHIRCodeableConcept $kingdom = null,
+                                null|FHIRCodeableConcept $phylum = null,
+                                null|FHIRCodeableConcept $class = null,
+                                null|FHIRCodeableConcept $order = null,
+                                null|iterable $fhirComments = null)
+    {
+        parent::__construct(extension: $extension,
+                            id: $id,
+                            modifierExtension: $modifierExtension,
+                            fhirComments: $fhirComments);
+        if (null !== $kingdom) {
+            $this->setKingdom($kingdom);
+        }
+        if (null !== $phylum) {
+            $this->setPhylum($phylum);
+        }
+        if (null !== $class) {
+            $this->setClass($class);
+        }
+        if (null !== $order) {
+            $this->setOrder($order);
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function _getFHIRTypeName(): string
+    {
+        return self::FHIR_TYPE_NAME;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The kingdom of an organism shall be specified.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     */
+    public function getKingdom(): null|FHIRCodeableConcept
+    {
+        return $this->kingdom ?? null;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The kingdom of an organism shall be specified.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $kingdom
+     * @return static
+     */
+    public function setKingdom(null|FHIRCodeableConcept $kingdom): self
+    {
+        if (null === $kingdom) {
+            unset($this->kingdom);
+            return $this;
+        }
+        $this->kingdom = $kingdom;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The phylum of an organism shall be specified.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     */
+    public function getPhylum(): null|FHIRCodeableConcept
+    {
+        return $this->phylum ?? null;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The phylum of an organism shall be specified.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $phylum
+     * @return static
+     */
+    public function setPhylum(null|FHIRCodeableConcept $phylum): self
+    {
+        if (null === $phylum) {
+            unset($this->phylum);
+            return $this;
+        }
+        $this->phylum = $phylum;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The class of an organism shall be specified.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     */
+    public function getClass(): null|FHIRCodeableConcept
+    {
+        return $this->class ?? null;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The class of an organism shall be specified.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $class
+     * @return static
+     */
+    public function setClass(null|FHIRCodeableConcept $class): self
+    {
+        if (null === $class) {
+            unset($this->class);
+            return $this;
+        }
+        $this->class = $class;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The order of an organism shall be specified,.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
+     */
+    public function getOrder(): null|FHIRCodeableConcept
+    {
+        return $this->order ?? null;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The order of an organism shall be specified,.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $order
+     * @return static
+     */
+    public function setOrder(null|FHIRCodeableConcept $order): self
+    {
+        if (null === $order) {
+            unset($this->order);
+            return $this;
+        }
+        $this->order = $order;
+        return $this;
+    }
+
+    /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
+     * @return array
+     */
+    public function _getValidationRules(): array
+    {
+        return self::_DEFAULT_VALIDATION_RULES;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by the FHIR specification this type
+     * was generated from.
+     *
+     * An empty array indicates no validation errors occurred.
+     *
+     * @return array
+     */
+    public function _getValidationErrors(): array
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (isset($validationRules[self::FIELD_KINGDOM])) {
+            $v = $this->getKingdom();
+            foreach($validationRules[self::FIELD_KINGDOM] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_KINGDOM, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_KINGDOM])) {
+                        $errs[self::FIELD_KINGDOM] = [];
+                    }
+                    $errs[self::FIELD_KINGDOM][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PHYLUM])) {
+            $v = $this->getPhylum();
+            foreach($validationRules[self::FIELD_PHYLUM] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_PHYLUM, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PHYLUM])) {
+                        $errs[self::FIELD_PHYLUM] = [];
+                    }
+                    $errs[self::FIELD_PHYLUM][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CLASS])) {
+            $v = $this->getClass();
+            foreach($validationRules[self::FIELD_CLASS] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_CLASS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CLASS])) {
+                        $errs[self::FIELD_CLASS] = [];
+                    }
+                    $errs[self::FIELD_CLASS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ORDER])) {
+            $v = $this->getOrder();
+            foreach($validationRules[self::FIELD_ORDER] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_ORDER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ORDER])) {
+                        $errs[self::FIELD_ORDER] = [];
+                    }
+                    $errs[self::FIELD_ORDER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
+    }
+
+    /**
+     * @param string|\SimpleXMLElement $element
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral $type
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral
+     * @throws \Exception
+     */
+    public static function xmlUnserialize(string|\SimpleXMLElement $element,
+                                          null|TypeInterface $type = null,
+                                          null|UnserializeConfig $config = null): self
+    {
+        if (null === $type) {
+            $type = new static();
+        } else if (!($type instanceof FHIRSubstanceSourceMaterialOrganismGeneral)) {
+            throw new \RuntimeException(sprintf(
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getUnserializeConfig();
+        }
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
+        }
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXMLNS((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_EXTENSION === $childName) {
+                $v = new FHIRExtension();
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_ID === $childName) {
+                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $v = new FHIRExtension();
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_KINGDOM === $childName) {
+                $v = new FHIRCodeableConcept();
+                $type->setKingdom(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_PHYLUM === $childName) {
+                $v = new FHIRCodeableConcept();
+                $type->setPhylum(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_CLASS === $childName) {
+                $v = new FHIRCodeableConcept();
+                $type->setClass(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_ORDER === $childName) {
+                $v = new FHIRCodeableConcept();
+                $type->setOrder(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
+            }
+        }
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId(new FHIRStringPrimitive(
+                    value: (string)$attributes[self::FIELD_ID],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        return $type;
+    }
+
+    /**
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     */
+    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    {
+        if (null === $xw) {
+            $xw = new XMLWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getSerializeConfig();
+        }
+        if (!$xw->isRootOpen()) {
+            $rootOpened = true;
+            $xw->openRootNode($config, 'SubstanceSourceMaterialOrganismGeneral', $this->_getSourceXMLNS());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (isset($this->kingdom)) {
+            $xw->startElement(self::FIELD_KINGDOM);
+            $this->kingdom->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->phylum)) {
+            $xw->startElement(self::FIELD_PHYLUM);
+            $this->phylum->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->class)) {
+            $xw->startElement(self::FIELD_CLASS);
+            $this->class->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->order)) {
+            $xw->startElement(self::FIELD_ORDER);
+            $this->order->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($rootOpened) && $rootOpened) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
+    }
+
+    /**
+     * @param string|array|\stdClass $json
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral $type
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganismGeneral
+     * @throws \Exception
+     */
+    public static function jsonUnserialize(string|array|\stdClass $json,
+                                           null|TypeInterface $type = null,
+                                           null|UnserializeConfig $config = null): self
+    {
+        if (null === $type) {
+            $type = new static();
+        } else if (!($type instanceof FHIRSubstanceSourceMaterialOrganismGeneral)) {
+            throw new \RuntimeException(sprintf(
+                '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getUnserializeConfig();
+        }
+        if (is_string($json)) {
+            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
+        } else if (is_object($json)) {
+            $json = (array)$json;
+        }
+        parent::jsonUnserialize($json, $type, $config);
+        if (isset($json[self::FIELD_KINGDOM]) || array_key_exists(self::FIELD_KINGDOM, $json)) {
+            if ($json[self::FIELD_KINGDOM] instanceof FHIRCodeableConcept) {
+                $type->setKingdom($json[self::FIELD_KINGDOM]);
+            } else {
+                $type->setKingdom(new FHIRCodeableConcept($json[self::FIELD_KINGDOM]));
+            }
+        }
+        if (isset($json[self::FIELD_PHYLUM]) || array_key_exists(self::FIELD_PHYLUM, $json)) {
+            if ($json[self::FIELD_PHYLUM] instanceof FHIRCodeableConcept) {
+                $type->setPhylum($json[self::FIELD_PHYLUM]);
+            } else {
+                $type->setPhylum(new FHIRCodeableConcept($json[self::FIELD_PHYLUM]));
+            }
+        }
+        if (isset($json[self::FIELD_CLASS]) || array_key_exists(self::FIELD_CLASS, $json)) {
+            if ($json[self::FIELD_CLASS] instanceof FHIRCodeableConcept) {
+                $type->setClass($json[self::FIELD_CLASS]);
+            } else {
+                $type->setClass(new FHIRCodeableConcept($json[self::FIELD_CLASS]));
+            }
+        }
+        if (isset($json[self::FIELD_ORDER]) || array_key_exists(self::FIELD_ORDER, $json)) {
+            if ($json[self::FIELD_ORDER] instanceof FHIRCodeableConcept) {
+                $type->setOrder($json[self::FIELD_ORDER]);
+            } else {
+                $type->setOrder(new FHIRCodeableConcept($json[self::FIELD_ORDER]));
+            }
+        }
+        return $type;
+    }
+
+    /**
+     * @return \stdClass
+     */
+    public function jsonSerialize(): mixed
+    {
+        $out = parent::jsonSerialize();
+        if (isset($this->kingdom)) {
+            $out->kingdom = $this->kingdom;
+        }
+        if (isset($this->phylum)) {
+            $out->phylum = $this->phylum;
+        }
+        if (isset($this->class)) {
+            $out->class = $this->class;
+        }
+        if (isset($this->order)) {
+            $out->order = $this->order;
+        }
+        return $out;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return self::FHIR_TYPE_NAME;
+    }
+}

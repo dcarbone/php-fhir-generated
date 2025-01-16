@@ -1,0 +1,1805 @@
+<?php declare(strict_types=1);
+
+namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource;
+
+/*!
+ * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
+ * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
+ * 
+ * Class creation date: January 16th, 2025 01:05+0000
+ * 
+ * PHPFHIR Copyright:
+ * 
+ * Copyright 2016-2025 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ *
+ * FHIR Copyright Notice:
+ *
+ *  * #%L
+ *  * org.hl7.fhir.r5
+ *  * %%
+ *  * Copyright (C) 2014 - 2019 Health Level 7
+ *  * %%
+ *  * Licensed under the Apache License, Version 2.0 (the "License");
+ *  * you may not use this file except in compliance with the License.
+ *  * You may obtain a copy of the License at
+ *  *
+ *  *      http://www.apache.org/licenses/LICENSE-2.0
+ *  *
+ *  * Unless required by applicable law or agreed to in writing, software
+ *  * distributed under the License is distributed on an "AS IS" BASIS,
+ *  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  * See the License for the specific language governing permissions and
+ *  * limitations under the License.
+ *  * #L%
+ *  
+ * 
+ * 
+ *   Copyright (c) 2011+, HL7, Inc.
+ *   All rights reserved.
+ * 
+ *   Redistribution and use in source and binary forms, with or without modification,
+ *   are permitted provided that the following conditions are met:
+ * 
+ *    * Redistributions of source code must retain the above copyright notice, this
+ *      list of conditions and the following disclaimer.
+ *    * Redistributions in binary form must reproduce the above copyright notice,
+ *      this list of conditions and the following disclaimer in the documentation
+ *      and/or other materials provided with the distribution.
+ *    * Neither the name of HL7 nor the names of its contributors may be used to
+ *      endorse or promote products derived from this software without specific
+ *      prior written permission.
+ * 
+ *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ *   IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ *   INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ *   NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ *   PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ *   POSSIBILITY OF SUCH DAMAGE.
+ * 
+ * 
+ *   Generated on Sun, Mar 26, 2023 15:21+1100 for FHIR v5.0.0
+ * 
+ *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
+ *   valid. Implementers will still need to be familiar with the content of the specification and with
+ *   any profiles that apply to the resources in order to make a conformant implementation.
+ * 
+ */
+
+use DCarbone\PHPFHIRGenerated\Constants;
+use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
+use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
+use DCarbone\PHPFHIRGenerated\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSlotStatus;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
+use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
+use DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface;
+use DCarbone\PHPFHIRGenerated\Versions\R5\VersionTypeMap;
+
+/**
+ * A slot of time on a schedule that may be available for booking appointments.
+ * If the element is present, it must have either a \@value, an \@id, or extensions
+ */
+class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterface
+{
+
+    // name of FHIR type this class describes
+    public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_SLOT;
+
+
+    public const FIELD_IDENTIFIER = 'identifier';
+    public const FIELD_SERVICE_CATEGORY = 'serviceCategory';
+    public const FIELD_SERVICE_TYPE = 'serviceType';
+    public const FIELD_SPECIALTY = 'specialty';
+    public const FIELD_APPOINTMENT_TYPE = 'appointmentType';
+    public const FIELD_SCHEDULE = 'schedule';
+    public const FIELD_STATUS = 'status';
+    public const FIELD_STATUS_EXT = '_status';
+    public const FIELD_START = 'start';
+    public const FIELD_START_EXT = '_start';
+    public const FIELD_END = 'end';
+    public const FIELD_END_EXT = '_end';
+    public const FIELD_OVERBOOKED = 'overbooked';
+    public const FIELD_OVERBOOKED_EXT = '_overbooked';
+    public const FIELD_COMMENT = 'comment';
+    public const FIELD_COMMENT_EXT = '_comment';
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * External Ids for this item.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] 
+     */
+    protected array $identifier;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A broad categorization of the service that is to be performed during this
+     * appointment.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] 
+     */
+    protected array $serviceCategory;
+    /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of appointments that can be booked into this slot (ideally this would
+     * be an identifiable service - which is at a location, rather than the location
+     * itself). If provided then this overrides the value provided on the Schedule
+     * resource.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[] 
+     */
+    protected array $serviceType;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The specialty of a practitioner that would be required to perform the service
+     * requested in this appointment.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] 
+     */
+    protected array $specialty;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The style of appointment or patient that may be booked in the slot (not service
+     * type).
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] 
+     */
+    protected array $appointmentType;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The schedule resource that this slot defines an interval of status information.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference 
+     */
+    protected FHIRReference $schedule;
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * busy | free | busy-unavailable | busy-tentative | entered-in-error.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSlotStatus 
+     */
+    protected FHIRSlotStatus $status;
+    /**
+     * An instant in time - known at least to the second
+     * Note: This is intended for where precisely observed times are required,
+     * typically system logs etc., and not human-reported times - for them, see date
+     * and dateTime (which can be as precise as instant, but is not required to be)
+     * below. UTC offset is always required
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Date/Time that the slot is to begin.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant 
+     */
+    protected FHIRInstant $start;
+    /**
+     * An instant in time - known at least to the second
+     * Note: This is intended for where precisely observed times are required,
+     * typically system logs etc., and not human-reported times - for them, see date
+     * and dateTime (which can be as precise as instant, but is not required to be)
+     * below. UTC offset is always required
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Date/Time that the slot is to conclude.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant 
+     */
+    protected FHIRInstant $end;
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * This slot has already been overbooked, appointments are unlikely to be accepted
+     * for this time.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean 
+     */
+    protected FHIRBoolean $overbooked;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Comments on the slot to describe any extended information. Such as custom
+     * constraints on the slot.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString 
+     */
+    protected FHIRString $comment;
+
+    /** Default validation map for fields in type Slot */
+    private const _DEFAULT_VALIDATION_RULES = [
+        self::FIELD_SCHEDULE => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_START => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_END => [
+            Constants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
+
+    /**
+     * FHIRSlot Constructor
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $id
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta $meta
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $implicitRules
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $language
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $serviceCategory
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[] $serviceType
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $specialty
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $appointmentType
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $schedule
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSlotStatus $status
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $start
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $end
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $overbooked
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $comment
+     * @param null|string[] $fhirComments
+     */
+    public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
+                                null|FHIRMeta $meta = null,
+                                null|string|FHIRUriPrimitive|FHIRUri $implicitRules = null,
+                                null|string|FHIRCodePrimitive|FHIRCode $language = null,
+                                null|FHIRNarrative $text = null,
+                                null|iterable $contained = null,
+                                null|iterable $extension = null,
+                                null|iterable $modifierExtension = null,
+                                null|iterable $identifier = null,
+                                null|iterable $serviceCategory = null,
+                                null|iterable $serviceType = null,
+                                null|iterable $specialty = null,
+                                null|iterable $appointmentType = null,
+                                null|FHIRReference $schedule = null,
+                                null|FHIRSlotStatus $status = null,
+                                null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $start = null,
+                                null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end = null,
+                                null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $overbooked = null,
+                                null|string|FHIRStringPrimitive|FHIRString $comment = null,
+                                null|iterable $fhirComments = null)
+    {
+        parent::__construct(id: $id,
+                            meta: $meta,
+                            implicitRules: $implicitRules,
+                            language: $language,
+                            text: $text,
+                            contained: $contained,
+                            extension: $extension,
+                            modifierExtension: $modifierExtension,
+                            fhirComments: $fhirComments);
+        if (null !== $identifier) {
+            $this->setIdentifier(...$identifier);
+        }
+        if (null !== $serviceCategory) {
+            $this->setServiceCategory(...$serviceCategory);
+        }
+        if (null !== $serviceType) {
+            $this->setServiceType(...$serviceType);
+        }
+        if (null !== $specialty) {
+            $this->setSpecialty(...$specialty);
+        }
+        if (null !== $appointmentType) {
+            $this->setAppointmentType(...$appointmentType);
+        }
+        if (null !== $schedule) {
+            $this->setSchedule($schedule);
+        }
+        if (null !== $status) {
+            $this->setStatus($status);
+        }
+        if (null !== $start) {
+            $this->setStart($start);
+        }
+        if (null !== $end) {
+            $this->setEnd($end);
+        }
+        if (null !== $overbooked) {
+            $this->setOverbooked($overbooked);
+        }
+        if (null !== $comment) {
+            $this->setComment($comment);
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function _getFHIRTypeName(): string
+    {
+        return self::FHIR_TYPE_NAME;
+    }
+
+    /**
+     * @return string
+     */
+    public function _getResourceType(): string
+    {
+        return static::FHIR_TYPE_NAME;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * External Ids for this item.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
+     */
+    public function getIdentifier(): array
+    {
+        return $this->identifier ?? [];
+    }
+
+    /**
+     * @return \ArrayIterator<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier>
+     */
+    public function getIdentifierIterator(): iterable
+    {
+        if (!isset($this->identifier) || [] === $this->identifier) {
+            return new \EmptyIterator();
+        }
+        return new \ArrayIterator($this->identifier);
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * External Ids for this item.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
+     * @return static
+     */
+    public function addIdentifier(FHIRIdentifier $identifier): self
+    {
+        if (!isset($this->identifier)) {
+            $this->identifier = [];
+        }
+        $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * External Ids for this item.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        $this->identifier = $identifier;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A broad categorization of the service that is to be performed during this
+     * appointment.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
+     */
+    public function getServiceCategory(): array
+    {
+        return $this->serviceCategory ?? [];
+    }
+
+    /**
+     * @return \ArrayIterator<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept>
+     */
+    public function getServiceCategoryIterator(): iterable
+    {
+        if (!isset($this->serviceCategory) || [] === $this->serviceCategory) {
+            return new \EmptyIterator();
+        }
+        return new \ArrayIterator($this->serviceCategory);
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A broad categorization of the service that is to be performed during this
+     * appointment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $serviceCategory
+     * @return static
+     */
+    public function addServiceCategory(FHIRCodeableConcept $serviceCategory): self
+    {
+        if (!isset($this->serviceCategory)) {
+            $this->serviceCategory = [];
+        }
+        $this->serviceCategory[] = $serviceCategory;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A broad categorization of the service that is to be performed during this
+     * appointment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$serviceCategory
+     * @return static
+     */
+    public function setServiceCategory(FHIRCodeableConcept ...$serviceCategory): self
+    {
+        $this->serviceCategory = $serviceCategory;
+        return $this;
+    }
+
+    /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of appointments that can be booked into this slot (ideally this would
+     * be an identifiable service - which is at a location, rather than the location
+     * itself). If provided then this overrides the value provided on the Schedule
+     * resource.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
+     */
+    public function getServiceType(): array
+    {
+        return $this->serviceType ?? [];
+    }
+
+    /**
+     * @return \ArrayIterator<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference>
+     */
+    public function getServiceTypeIterator(): iterable
+    {
+        if (!isset($this->serviceType) || [] === $this->serviceType) {
+            return new \EmptyIterator();
+        }
+        return new \ArrayIterator($this->serviceType);
+    }
+
+    /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of appointments that can be booked into this slot (ideally this would
+     * be an identifiable service - which is at a location, rather than the location
+     * itself). If provided then this overrides the value provided on the Schedule
+     * resource.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference $serviceType
+     * @return static
+     */
+    public function addServiceType(FHIRCodeableReference $serviceType): self
+    {
+        if (!isset($this->serviceType)) {
+            $this->serviceType = [];
+        }
+        $this->serviceType[] = $serviceType;
+        return $this;
+    }
+
+    /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of appointments that can be booked into this slot (ideally this would
+     * be an identifiable service - which is at a location, rather than the location
+     * itself). If provided then this overrides the value provided on the Schedule
+     * resource.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$serviceType
+     * @return static
+     */
+    public function setServiceType(FHIRCodeableReference ...$serviceType): self
+    {
+        $this->serviceType = $serviceType;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The specialty of a practitioner that would be required to perform the service
+     * requested in this appointment.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
+     */
+    public function getSpecialty(): array
+    {
+        return $this->specialty ?? [];
+    }
+
+    /**
+     * @return \ArrayIterator<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept>
+     */
+    public function getSpecialtyIterator(): iterable
+    {
+        if (!isset($this->specialty) || [] === $this->specialty) {
+            return new \EmptyIterator();
+        }
+        return new \ArrayIterator($this->specialty);
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The specialty of a practitioner that would be required to perform the service
+     * requested in this appointment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $specialty
+     * @return static
+     */
+    public function addSpecialty(FHIRCodeableConcept $specialty): self
+    {
+        if (!isset($this->specialty)) {
+            $this->specialty = [];
+        }
+        $this->specialty[] = $specialty;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The specialty of a practitioner that would be required to perform the service
+     * requested in this appointment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$specialty
+     * @return static
+     */
+    public function setSpecialty(FHIRCodeableConcept ...$specialty): self
+    {
+        $this->specialty = $specialty;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The style of appointment or patient that may be booked in the slot (not service
+     * type).
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
+     */
+    public function getAppointmentType(): array
+    {
+        return $this->appointmentType ?? [];
+    }
+
+    /**
+     * @return \ArrayIterator<\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept>
+     */
+    public function getAppointmentTypeIterator(): iterable
+    {
+        if (!isset($this->appointmentType) || [] === $this->appointmentType) {
+            return new \EmptyIterator();
+        }
+        return new \ArrayIterator($this->appointmentType);
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The style of appointment or patient that may be booked in the slot (not service
+     * type).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $appointmentType
+     * @return static
+     */
+    public function addAppointmentType(FHIRCodeableConcept $appointmentType): self
+    {
+        if (!isset($this->appointmentType)) {
+            $this->appointmentType = [];
+        }
+        $this->appointmentType[] = $appointmentType;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The style of appointment or patient that may be booked in the slot (not service
+     * type).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$appointmentType
+     * @return static
+     */
+    public function setAppointmentType(FHIRCodeableConcept ...$appointmentType): self
+    {
+        $this->appointmentType = $appointmentType;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The schedule resource that this slot defines an interval of status information.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
+     */
+    public function getSchedule(): null|FHIRReference
+    {
+        return $this->schedule ?? null;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The schedule resource that this slot defines an interval of status information.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $schedule
+     * @return static
+     */
+    public function setSchedule(null|FHIRReference $schedule): self
+    {
+        if (null === $schedule) {
+            unset($this->schedule);
+            return $this;
+        }
+        $this->schedule = $schedule;
+        return $this;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * busy | free | busy-unavailable | busy-tentative | entered-in-error.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSlotStatus
+     */
+    public function getStatus(): null|FHIRSlotStatus
+    {
+        return $this->status ?? null;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * busy | free | busy-unavailable | busy-tentative | entered-in-error.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSlotStatus $status
+     * @return static
+     */
+    public function setStatus(null|FHIRSlotStatus $status): self
+    {
+        if (null === $status) {
+            unset($this->status);
+            return $this;
+        }
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * An instant in time - known at least to the second
+     * Note: This is intended for where precisely observed times are required,
+     * typically system logs etc., and not human-reported times - for them, see date
+     * and dateTime (which can be as precise as instant, but is not required to be)
+     * below. UTC offset is always required
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Date/Time that the slot is to begin.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
+     */
+    public function getStart(): null|FHIRInstant
+    {
+        return $this->start ?? null;
+    }
+
+    /**
+     * An instant in time - known at least to the second
+     * Note: This is intended for where precisely observed times are required,
+     * typically system logs etc., and not human-reported times - for them, see date
+     * and dateTime (which can be as precise as instant, but is not required to be)
+     * below. UTC offset is always required
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Date/Time that the slot is to begin.
+     *
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $start
+     * @return static
+     */
+    public function setStart(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $start): self
+    {
+        if (null === $start) {
+            unset($this->start);
+            return $this;
+        }
+        if (!($start instanceof FHIRInstant)) {
+            $start = new FHIRInstant(value: $start);
+        }
+        $this->start = $start;
+        return $this;
+    }
+
+    /**
+     * An instant in time - known at least to the second
+     * Note: This is intended for where precisely observed times are required,
+     * typically system logs etc., and not human-reported times - for them, see date
+     * and dateTime (which can be as precise as instant, but is not required to be)
+     * below. UTC offset is always required
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Date/Time that the slot is to conclude.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant
+     */
+    public function getEnd(): null|FHIRInstant
+    {
+        return $this->end ?? null;
+    }
+
+    /**
+     * An instant in time - known at least to the second
+     * Note: This is intended for where precisely observed times are required,
+     * typically system logs etc., and not human-reported times - for them, see date
+     * and dateTime (which can be as precise as instant, but is not required to be)
+     * below. UTC offset is always required
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Date/Time that the slot is to conclude.
+     *
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $end
+     * @return static
+     */
+    public function setEnd(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end): self
+    {
+        if (null === $end) {
+            unset($this->end);
+            return $this;
+        }
+        if (!($end instanceof FHIRInstant)) {
+            $end = new FHIRInstant(value: $end);
+        }
+        $this->end = $end;
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * This slot has already been overbooked, appointments are unlikely to be accepted
+     * for this time.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean
+     */
+    public function getOverbooked(): null|FHIRBoolean
+    {
+        return $this->overbooked ?? null;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * This slot has already been overbooked, appointments are unlikely to be accepted
+     * for this time.
+     *
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $overbooked
+     * @return static
+     */
+    public function setOverbooked(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $overbooked): self
+    {
+        if (null === $overbooked) {
+            unset($this->overbooked);
+            return $this;
+        }
+        if (!($overbooked instanceof FHIRBoolean)) {
+            $overbooked = new FHIRBoolean(value: $overbooked);
+        }
+        $this->overbooked = $overbooked;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Comments on the slot to describe any extended information. Such as custom
+     * constraints on the slot.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString
+     */
+    public function getComment(): null|FHIRString
+    {
+        return $this->comment ?? null;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Comments on the slot to describe any extended information. Such as custom
+     * constraints on the slot.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $comment
+     * @return static
+     */
+    public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment): self
+    {
+        if (null === $comment) {
+            unset($this->comment);
+            return $this;
+        }
+        if (!($comment instanceof FHIRString)) {
+            $comment = new FHIRString(value: $comment);
+        }
+        $this->comment = $comment;
+        return $this;
+    }
+
+    /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
+     * @return array
+     */
+    public function _getValidationRules(): array
+    {
+        return self::_DEFAULT_VALIDATION_RULES;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by the FHIR specification this type
+     * was generated from.
+     *
+     * An empty array indicates no validation errors occurred.
+     *
+     * @return array
+     */
+    public function _getValidationErrors(): array
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getSchedule())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SCHEDULE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_STATUS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getStart())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_START] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getEnd())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_END] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_IDENTIFIER])) {
+            $v = $this->getIdentifier();
+            foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_IDENTIFIER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_IDENTIFIER])) {
+                        $errs[self::FIELD_IDENTIFIER] = [];
+                    }
+                    $errs[self::FIELD_IDENTIFIER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SERVICE_CATEGORY])) {
+            $v = $this->getServiceCategory();
+            foreach($validationRules[self::FIELD_SERVICE_CATEGORY] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_SERVICE_CATEGORY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SERVICE_CATEGORY])) {
+                        $errs[self::FIELD_SERVICE_CATEGORY] = [];
+                    }
+                    $errs[self::FIELD_SERVICE_CATEGORY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SERVICE_TYPE])) {
+            $v = $this->getServiceType();
+            foreach($validationRules[self::FIELD_SERVICE_TYPE] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_SERVICE_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SERVICE_TYPE])) {
+                        $errs[self::FIELD_SERVICE_TYPE] = [];
+                    }
+                    $errs[self::FIELD_SERVICE_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SPECIALTY])) {
+            $v = $this->getSpecialty();
+            foreach($validationRules[self::FIELD_SPECIALTY] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_SPECIALTY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SPECIALTY])) {
+                        $errs[self::FIELD_SPECIALTY] = [];
+                    }
+                    $errs[self::FIELD_SPECIALTY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_APPOINTMENT_TYPE])) {
+            $v = $this->getAppointmentType();
+            foreach($validationRules[self::FIELD_APPOINTMENT_TYPE] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_APPOINTMENT_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_APPOINTMENT_TYPE])) {
+                        $errs[self::FIELD_APPOINTMENT_TYPE] = [];
+                    }
+                    $errs[self::FIELD_APPOINTMENT_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SCHEDULE])) {
+            $v = $this->getSchedule();
+            foreach($validationRules[self::FIELD_SCHEDULE] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_SCHEDULE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SCHEDULE])) {
+                        $errs[self::FIELD_SCHEDULE] = [];
+                    }
+                    $errs[self::FIELD_SCHEDULE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_STATUS])) {
+            $v = $this->getStatus();
+            foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_STATUS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_STATUS])) {
+                        $errs[self::FIELD_STATUS] = [];
+                    }
+                    $errs[self::FIELD_STATUS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_START])) {
+            $v = $this->getStart();
+            foreach($validationRules[self::FIELD_START] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_START, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_START])) {
+                        $errs[self::FIELD_START] = [];
+                    }
+                    $errs[self::FIELD_START][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_END])) {
+            $v = $this->getEnd();
+            foreach($validationRules[self::FIELD_END] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_END, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_END])) {
+                        $errs[self::FIELD_END] = [];
+                    }
+                    $errs[self::FIELD_END][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_OVERBOOKED])) {
+            $v = $this->getOverbooked();
+            foreach($validationRules[self::FIELD_OVERBOOKED] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_OVERBOOKED, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_OVERBOOKED])) {
+                        $errs[self::FIELD_OVERBOOKED] = [];
+                    }
+                    $errs[self::FIELD_OVERBOOKED][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_COMMENT])) {
+            $v = $this->getComment();
+            foreach($validationRules[self::FIELD_COMMENT] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_COMMENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_COMMENT])) {
+                        $errs[self::FIELD_COMMENT] = [];
+                    }
+                    $errs[self::FIELD_COMMENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
+                    }
+                    $errs[self::FIELD_TEXT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONTAINED])) {
+            $v = $this->getContained();
+            foreach($validationRules[self::FIELD_CONTAINED] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_CONTAINED, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONTAINED])) {
+                        $errs[self::FIELD_CONTAINED] = [];
+                    }
+                    $errs[self::FIELD_CONTAINED][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_IMPLICIT_RULES])) {
+            $v = $this->getImplicitRules();
+            foreach($validationRules[self::FIELD_IMPLICIT_RULES] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_IMPLICIT_RULES, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_IMPLICIT_RULES])) {
+                        $errs[self::FIELD_IMPLICIT_RULES] = [];
+                    }
+                    $errs[self::FIELD_IMPLICIT_RULES][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_LANGUAGE])) {
+            $v = $this->getLanguage();
+            foreach($validationRules[self::FIELD_LANGUAGE] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_LANGUAGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_LANGUAGE])) {
+                        $errs[self::FIELD_LANGUAGE] = [];
+                    }
+                    $errs[self::FIELD_LANGUAGE][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
+    }
+
+    /**
+     * @param string|\SimpleXMLElement $element
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSlot $type
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSlot
+     * @throws \Exception
+     */
+    public static function xmlUnserialize(string|\SimpleXMLElement $element,
+                                          null|TypeInterface $type = null,
+                                          null|UnserializeConfig $config = null): self
+    {
+        if (null === $type) {
+            $type = new static();
+        } else if (!($type instanceof FHIRSlot)) {
+            throw new \RuntimeException(sprintf(
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getUnserializeConfig();
+        }
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
+        }
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXMLNS((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_ID === $childName) {
+                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_META === $childName) {
+                $v = new FHIRMeta();
+                $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_IMPLICIT_RULES === $childName) {
+                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_LANGUAGE === $childName) {
+                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_TEXT === $childName) {
+                $v = new FHIRNarrative();
+                $type->setText(FHIRNarrative::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_CONTAINED === $childName) {
+                foreach ($n->children() as $nn) {
+                    /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface $cn */
+                    $cn = VersionTypeMap::getContainedTypeClassNameFromXML($nn);
+                    $type->addContained($cn::xmlUnserialize($nn, null, $config));
+                }
+            } else if (self::FIELD_EXTENSION === $childName) {
+                $v = new FHIRExtension();
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $v = new FHIRExtension();
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_IDENTIFIER === $childName) {
+                $v = new FHIRIdentifier();
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_SERVICE_CATEGORY === $childName) {
+                $v = new FHIRCodeableConcept();
+                $type->addServiceCategory(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_SERVICE_TYPE === $childName) {
+                $v = new FHIRCodeableReference();
+                $type->addServiceType(FHIRCodeableReference::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_SPECIALTY === $childName) {
+                $v = new FHIRCodeableConcept();
+                $type->addSpecialty(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_APPOINTMENT_TYPE === $childName) {
+                $v = new FHIRCodeableConcept();
+                $type->addAppointmentType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_SCHEDULE === $childName) {
+                $v = new FHIRReference();
+                $type->setSchedule(FHIRReference::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_STATUS === $childName) {
+                $v = new FHIRSlotStatus(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setStatus(FHIRSlotStatus::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_START === $childName) {
+                $v = new FHIRInstant(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setStart(FHIRInstant::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_END === $childName) {
+                $v = new FHIRInstant(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setEnd(FHIRInstant::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_OVERBOOKED === $childName) {
+                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setOverbooked(FHIRBoolean::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_COMMENT === $childName) {
+                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setComment(FHIRString::xmlUnserialize($n, $v, $config));
+            }
+        }
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId(new FHIRId(
+                    value: (string)$attributes[self::FIELD_ID],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setImplicitRules(new FHIRUri(
+                    value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        if (isset($attributes[self::FIELD_LANGUAGE])) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setLanguage(new FHIRCode(
+                    value: (string)$attributes[self::FIELD_LANGUAGE],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        if (isset($attributes[self::FIELD_START])) {
+            $pt = $type->getStart();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_START]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setStart(new FHIRInstant(
+                    value: (string)$attributes[self::FIELD_START],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        if (isset($attributes[self::FIELD_END])) {
+            $pt = $type->getEnd();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_END]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setEnd(new FHIRInstant(
+                    value: (string)$attributes[self::FIELD_END],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        if (isset($attributes[self::FIELD_OVERBOOKED])) {
+            $pt = $type->getOverbooked();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_OVERBOOKED]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setOverbooked(new FHIRBoolean(
+                    value: (string)$attributes[self::FIELD_OVERBOOKED],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        if (isset($attributes[self::FIELD_COMMENT])) {
+            $pt = $type->getComment();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_COMMENT]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setComment(new FHIRString(
+                    value: (string)$attributes[self::FIELD_COMMENT],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        return $type;
+    }
+
+    /**
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     */
+    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    {
+        if (null === $xw) {
+            $xw = new XMLWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getSerializeConfig();
+        }
+        if (!$xw->isRootOpen()) {
+            $rootOpened = true;
+            $xw->openRootNode($config, 'Slot', $this->_getSourceXMLNS());
+        }
+        if (isset($this->start) && $this->start->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_START, $this->start->getValue()?->getFormattedValue());
+        }
+        if (isset($this->end) && $this->end->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_END, $this->end->getValue()?->getFormattedValue());
+        }
+        if (isset($this->overbooked) && $this->overbooked->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_OVERBOOKED, $this->overbooked->getValue()?->getFormattedValue());
+        }
+        if (isset($this->comment) && $this->comment->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_COMMENT, $this->comment->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (isset($this->identifier)) {
+            foreach ($this->identifier as $v) {
+                $xw->startElement(self::FIELD_IDENTIFIER);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
+            }
+        }
+        if (isset($this->serviceCategory)) {
+            foreach ($this->serviceCategory as $v) {
+                $xw->startElement(self::FIELD_SERVICE_CATEGORY);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
+            }
+        }
+        if (isset($this->serviceType)) {
+            foreach ($this->serviceType as $v) {
+                $xw->startElement(self::FIELD_SERVICE_TYPE);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
+            }
+        }
+        if (isset($this->specialty)) {
+            foreach ($this->specialty as $v) {
+                $xw->startElement(self::FIELD_SPECIALTY);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
+            }
+        }
+        if (isset($this->appointmentType)) {
+            foreach ($this->appointmentType as $v) {
+                $xw->startElement(self::FIELD_APPOINTMENT_TYPE);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
+            }
+        }
+        if (isset($this->schedule)) {
+            $xw->startElement(self::FIELD_SCHEDULE);
+            $this->schedule->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->status)) {
+            $xw->startElement(self::FIELD_STATUS);
+            $this->status->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->start) && $this->start->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+            $xw->startElement(self::FIELD_START);
+            $this->start->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->end) && $this->end->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+            $xw->startElement(self::FIELD_END);
+            $this->end->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->overbooked) && $this->overbooked->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+            $xw->startElement(self::FIELD_OVERBOOKED);
+            $this->overbooked->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->comment) && $this->comment->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+            $xw->startElement(self::FIELD_COMMENT);
+            $this->comment->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($rootOpened) && $rootOpened) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
+    }
+
+    /**
+     * @param string|array|\stdClass $json
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSlot $type
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRSlot
+     * @throws \Exception
+     */
+    public static function jsonUnserialize(string|array|\stdClass $json,
+                                           null|TypeInterface $type = null,
+                                           null|UnserializeConfig $config = null): self
+    {
+        if (null === $type) {
+            $type = new static();
+        } else if (!($type instanceof FHIRSlot)) {
+            throw new \RuntimeException(sprintf(
+                '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getUnserializeConfig();
+        }
+        if (is_string($json)) {
+            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
+        } else if (is_object($json)) {
+            $json = (array)$json;
+        }
+        parent::jsonUnserialize($json, $type, $config);
+        if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
+            if (is_array($json[self::FIELD_IDENTIFIER])) {
+                foreach($json[self::FIELD_IDENTIFIER] as $v) {
+                    if ($v instanceof FHIRIdentifier) {
+                        $type->addIdentifier($v);
+                    } else {
+                        $type->addIdentifier(new FHIRIdentifier($v));
+                    }
+                }
+            } elseif ($json[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+                $type->addIdentifier($json[self::FIELD_IDENTIFIER]);
+            } else {
+                $type->addIdentifier(new FHIRIdentifier($json[self::FIELD_IDENTIFIER]));
+            }
+        }
+        if (isset($json[self::FIELD_SERVICE_CATEGORY]) || array_key_exists(self::FIELD_SERVICE_CATEGORY, $json)) {
+            if (is_array($json[self::FIELD_SERVICE_CATEGORY])) {
+                foreach($json[self::FIELD_SERVICE_CATEGORY] as $v) {
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $type->addServiceCategory($v);
+                    } else {
+                        $type->addServiceCategory(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($json[self::FIELD_SERVICE_CATEGORY] instanceof FHIRCodeableConcept) {
+                $type->addServiceCategory($json[self::FIELD_SERVICE_CATEGORY]);
+            } else {
+                $type->addServiceCategory(new FHIRCodeableConcept($json[self::FIELD_SERVICE_CATEGORY]));
+            }
+        }
+        if (isset($json[self::FIELD_SERVICE_TYPE]) || array_key_exists(self::FIELD_SERVICE_TYPE, $json)) {
+            if (is_array($json[self::FIELD_SERVICE_TYPE])) {
+                foreach($json[self::FIELD_SERVICE_TYPE] as $v) {
+                    if ($v instanceof FHIRCodeableReference) {
+                        $type->addServiceType($v);
+                    } else {
+                        $type->addServiceType(new FHIRCodeableReference($v));
+                    }
+                }
+            } elseif ($json[self::FIELD_SERVICE_TYPE] instanceof FHIRCodeableReference) {
+                $type->addServiceType($json[self::FIELD_SERVICE_TYPE]);
+            } else {
+                $type->addServiceType(new FHIRCodeableReference($json[self::FIELD_SERVICE_TYPE]));
+            }
+        }
+        if (isset($json[self::FIELD_SPECIALTY]) || array_key_exists(self::FIELD_SPECIALTY, $json)) {
+            if (is_array($json[self::FIELD_SPECIALTY])) {
+                foreach($json[self::FIELD_SPECIALTY] as $v) {
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $type->addSpecialty($v);
+                    } else {
+                        $type->addSpecialty(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($json[self::FIELD_SPECIALTY] instanceof FHIRCodeableConcept) {
+                $type->addSpecialty($json[self::FIELD_SPECIALTY]);
+            } else {
+                $type->addSpecialty(new FHIRCodeableConcept($json[self::FIELD_SPECIALTY]));
+            }
+        }
+        if (isset($json[self::FIELD_APPOINTMENT_TYPE]) || array_key_exists(self::FIELD_APPOINTMENT_TYPE, $json)) {
+            if (is_array($json[self::FIELD_APPOINTMENT_TYPE])) {
+                foreach($json[self::FIELD_APPOINTMENT_TYPE] as $v) {
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $type->addAppointmentType($v);
+                    } else {
+                        $type->addAppointmentType(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($json[self::FIELD_APPOINTMENT_TYPE] instanceof FHIRCodeableConcept) {
+                $type->addAppointmentType($json[self::FIELD_APPOINTMENT_TYPE]);
+            } else {
+                $type->addAppointmentType(new FHIRCodeableConcept($json[self::FIELD_APPOINTMENT_TYPE]));
+            }
+        }
+        if (isset($json[self::FIELD_SCHEDULE]) || array_key_exists(self::FIELD_SCHEDULE, $json)) {
+            if ($json[self::FIELD_SCHEDULE] instanceof FHIRReference) {
+                $type->setSchedule($json[self::FIELD_SCHEDULE]);
+            } else {
+                $type->setSchedule(new FHIRReference($json[self::FIELD_SCHEDULE]));
+            }
+        }
+        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+            $value = $json[self::FIELD_STATUS] ?? null;
+            $ext = (isset($json[self::FIELD_STATUS_EXT]) && is_array($json[self::FIELD_STATUS_EXT])) ? $json[self::FIELD_STATUS_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRSlotStatus) {
+                    $type->setStatus($value);
+                } else if (is_array($value)) {
+                    $type->setStatus(new FHIRSlotStatus(array_merge($ext, $value)));
+                } else {
+                    $type->setStatus(new FHIRSlotStatus([FHIRSlotStatus::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $type->setStatus(new FHIRSlotStatus($ext));
+            } else {
+                $type->setStatus(new FHIRSlotStatus(null));
+            }
+        }
+        if (isset($json[self::FIELD_START]) || isset($json[self::FIELD_START_EXT]) || array_key_exists(self::FIELD_START, $json) || array_key_exists(self::FIELD_START_EXT, $json)) {
+            $value = $json[self::FIELD_START] ?? null;
+            $ext = (isset($json[self::FIELD_START_EXT]) && is_array($json[self::FIELD_START_EXT])) ? $json[self::FIELD_START_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInstant) {
+                    $type->setStart($value);
+                } else if (is_array($value)) {
+                    $type->setStart(new FHIRInstant(array_merge($ext, $value)));
+                } else {
+                    $type->setStart(new FHIRInstant([FHIRInstant::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $type->setStart(new FHIRInstant($ext));
+            } else {
+                $type->setStart(new FHIRInstant(null));
+            }
+        }
+        if (isset($json[self::FIELD_END]) || isset($json[self::FIELD_END_EXT]) || array_key_exists(self::FIELD_END, $json) || array_key_exists(self::FIELD_END_EXT, $json)) {
+            $value = $json[self::FIELD_END] ?? null;
+            $ext = (isset($json[self::FIELD_END_EXT]) && is_array($json[self::FIELD_END_EXT])) ? $json[self::FIELD_END_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInstant) {
+                    $type->setEnd($value);
+                } else if (is_array($value)) {
+                    $type->setEnd(new FHIRInstant(array_merge($ext, $value)));
+                } else {
+                    $type->setEnd(new FHIRInstant([FHIRInstant::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $type->setEnd(new FHIRInstant($ext));
+            } else {
+                $type->setEnd(new FHIRInstant(null));
+            }
+        }
+        if (isset($json[self::FIELD_OVERBOOKED]) || isset($json[self::FIELD_OVERBOOKED_EXT]) || array_key_exists(self::FIELD_OVERBOOKED, $json) || array_key_exists(self::FIELD_OVERBOOKED_EXT, $json)) {
+            $value = $json[self::FIELD_OVERBOOKED] ?? null;
+            $ext = (isset($json[self::FIELD_OVERBOOKED_EXT]) && is_array($json[self::FIELD_OVERBOOKED_EXT])) ? $json[self::FIELD_OVERBOOKED_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $type->setOverbooked($value);
+                } else if (is_array($value)) {
+                    $type->setOverbooked(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $type->setOverbooked(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $type->setOverbooked(new FHIRBoolean($ext));
+            } else {
+                $type->setOverbooked(new FHIRBoolean(null));
+            }
+        }
+        if (isset($json[self::FIELD_COMMENT]) || isset($json[self::FIELD_COMMENT_EXT]) || array_key_exists(self::FIELD_COMMENT, $json) || array_key_exists(self::FIELD_COMMENT_EXT, $json)) {
+            $value = $json[self::FIELD_COMMENT] ?? null;
+            $ext = (isset($json[self::FIELD_COMMENT_EXT]) && is_array($json[self::FIELD_COMMENT_EXT])) ? $json[self::FIELD_COMMENT_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $type->setComment($value);
+                } else if (is_array($value)) {
+                    $type->setComment(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $type->setComment(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $type->setComment(new FHIRString($ext));
+            } else {
+                $type->setComment(new FHIRString(null));
+            }
+        }
+        return $type;
+    }
+
+    /**
+     * @return \stdClass
+     */
+    public function jsonSerialize(): mixed
+    {
+        $out = parent::jsonSerialize();
+        if (isset($this->identifier) && [] !== $this->identifier) {
+            $out->identifier = $this->identifier;
+        }
+        if (isset($this->serviceCategory) && [] !== $this->serviceCategory) {
+            $out->serviceCategory = $this->serviceCategory;
+        }
+        if (isset($this->serviceType) && [] !== $this->serviceType) {
+            $out->serviceType = $this->serviceType;
+        }
+        if (isset($this->specialty) && [] !== $this->specialty) {
+            $out->specialty = $this->specialty;
+        }
+        if (isset($this->appointmentType) && [] !== $this->appointmentType) {
+            $out->appointmentType = $this->appointmentType;
+        }
+        if (isset($this->schedule)) {
+            $out->schedule = $this->schedule;
+        }
+        if (isset($this->status)) {
+            if (null !== ($val = $this->status->getValue())) {
+                $out->status = $val;
+            }
+            $ext = $this->status->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_status = $ext;
+            }
+        }
+        if (isset($this->start)) {
+            if (null !== ($val = $this->start->getValue())) {
+                $out->start = $val;
+            }
+            $ext = $this->start->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_start = $ext;
+            }
+        }
+        if (isset($this->end)) {
+            if (null !== ($val = $this->end->getValue())) {
+                $out->end = $val;
+            }
+            $ext = $this->end->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_end = $ext;
+            }
+        }
+        if (isset($this->overbooked)) {
+            if (null !== ($val = $this->overbooked->getValue())) {
+                $out->overbooked = $val;
+            }
+            $ext = $this->overbooked->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_overbooked = $ext;
+            }
+        }
+        if (isset($this->comment)) {
+            if (null !== ($val = $this->comment->getValue())) {
+                $out->comment = $val;
+            }
+            $ext = $this->comment->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_comment = $ext;
+            }
+        }
+        $out->resourceType = $this->_getResourceType();
+        return $out;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return self::FHIR_TYPE_NAME;
+    }
+}

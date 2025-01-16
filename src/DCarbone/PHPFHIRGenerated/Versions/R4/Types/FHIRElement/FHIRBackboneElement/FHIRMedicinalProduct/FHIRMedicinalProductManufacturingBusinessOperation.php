@@ -1,0 +1,898 @@
+<?php declare(strict_types=1);
+
+namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct;
+
+/*!
+ * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
+ * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
+ * 
+ * Class creation date: January 16th, 2025 01:05+0000
+ * 
+ * PHPFHIR Copyright:
+ * 
+ * Copyright 2016-2025 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ *
+ * FHIR Copyright Notice:
+ *
+ *   Copyright (c) 2011+, HL7, Inc.
+ *   All rights reserved.
+ * 
+ *   Redistribution and use in source and binary forms, with or without modification,
+ *   are permitted provided that the following conditions are met:
+ * 
+ *    * Redistributions of source code must retain the above copyright notice, this
+ *      list of conditions and the following disclaimer.
+ *    * Redistributions in binary form must reproduce the above copyright notice,
+ *      this list of conditions and the following disclaimer in the documentation
+ *      and/or other materials provided with the distribution.
+ *    * Neither the name of HL7 nor the names of its contributors may be used to
+ *      endorse or promote products derived from this software without specific
+ *      prior written permission.
+ * 
+ *   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ *   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ *   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ *   IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ *   INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ *   NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ *   PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ *   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ *   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ *   POSSIBILITY OF SUCH DAMAGE.
+ * 
+ * 
+ *   Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1
+ * 
+ *   Note: the schemas & schematrons do not contain all of the rules about what makes resources
+ *   valid. Implementers will still need to be familiar with the content of the specification and with
+ *   any profiles that apply to the resources in order to make a conformant implementation.
+ * 
+ */
+
+use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
+use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
+use DCarbone\PHPFHIRGenerated\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
+use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
+
+/**
+ * Detailed definition of a medicinal product, typically for uses other than direct
+ * patient care (e.g. regulatory use).
+ */
+class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneElement
+{
+
+    // name of FHIR type this class describes
+    public const FHIR_TYPE_NAME = VersionConstants::TYPE_NAME_MEDICINAL_PRODUCT_DOT_MANUFACTURING_BUSINESS_OPERATION;
+
+
+    public const FIELD_OPERATION_TYPE = 'operationType';
+    public const FIELD_AUTHORISATION_REFERENCE_NUMBER = 'authorisationReferenceNumber';
+    public const FIELD_EFFECTIVE_DATE = 'effectiveDate';
+    public const FIELD_EFFECTIVE_DATE_EXT = '_effectiveDate';
+    public const FIELD_CONFIDENTIALITY_INDICATOR = 'confidentialityIndicator';
+    public const FIELD_MANUFACTURER = 'manufacturer';
+    public const FIELD_REGULATOR = 'regulator';
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of manufacturing operation.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
+     */
+    protected FHIRCodeableConcept $operationType;
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Regulatory authorization reference number.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier 
+     */
+    protected FHIRIdentifier $authorisationReferenceNumber;
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Regulatory authorization date.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime 
+     */
+    protected FHIRDateTime $effectiveDate;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To indicate if this proces is commercially confidential.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept 
+     */
+    protected FHIRCodeableConcept $confidentialityIndicator;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The manufacturer or establishment associated with the process.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[] 
+     */
+    protected array $manufacturer;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A regulator which oversees the operation.
+     *
+     * @var \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference 
+     */
+    protected FHIRReference $regulator;
+
+    /** Default validation map for fields in type MedicinalProduct.ManufacturingBusinessOperation */
+    private const _DEFAULT_VALIDATION_RULES = [];
+
+    /**
+     * FHIRMedicinalProductManufacturingBusinessOperation Constructor
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $operationType
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $authorisationReferenceNumber
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $effectiveDate
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $confidentialityIndicator
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[] $manufacturer
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $regulator
+     * @param null|string[] $fhirComments
+     */
+    public function __construct(null|iterable $extension = null,
+                                null|string|FHIRStringPrimitive $id = null,
+                                null|iterable $modifierExtension = null,
+                                null|FHIRCodeableConcept $operationType = null,
+                                null|FHIRIdentifier $authorisationReferenceNumber = null,
+                                null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveDate = null,
+                                null|FHIRCodeableConcept $confidentialityIndicator = null,
+                                null|iterable $manufacturer = null,
+                                null|FHIRReference $regulator = null,
+                                null|iterable $fhirComments = null)
+    {
+        parent::__construct(extension: $extension,
+                            id: $id,
+                            modifierExtension: $modifierExtension,
+                            fhirComments: $fhirComments);
+        if (null !== $operationType) {
+            $this->setOperationType($operationType);
+        }
+        if (null !== $authorisationReferenceNumber) {
+            $this->setAuthorisationReferenceNumber($authorisationReferenceNumber);
+        }
+        if (null !== $effectiveDate) {
+            $this->setEffectiveDate($effectiveDate);
+        }
+        if (null !== $confidentialityIndicator) {
+            $this->setConfidentialityIndicator($confidentialityIndicator);
+        }
+        if (null !== $manufacturer) {
+            $this->setManufacturer(...$manufacturer);
+        }
+        if (null !== $regulator) {
+            $this->setRegulator($regulator);
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function _getFHIRTypeName(): string
+    {
+        return self::FHIR_TYPE_NAME;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of manufacturing operation.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
+     */
+    public function getOperationType(): null|FHIRCodeableConcept
+    {
+        return $this->operationType ?? null;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of manufacturing operation.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $operationType
+     * @return static
+     */
+    public function setOperationType(null|FHIRCodeableConcept $operationType): self
+    {
+        if (null === $operationType) {
+            unset($this->operationType);
+            return $this;
+        }
+        $this->operationType = $operationType;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Regulatory authorization reference number.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier
+     */
+    public function getAuthorisationReferenceNumber(): null|FHIRIdentifier
+    {
+        return $this->authorisationReferenceNumber ?? null;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Regulatory authorization reference number.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $authorisationReferenceNumber
+     * @return static
+     */
+    public function setAuthorisationReferenceNumber(null|FHIRIdentifier $authorisationReferenceNumber): self
+    {
+        if (null === $authorisationReferenceNumber) {
+            unset($this->authorisationReferenceNumber);
+            return $this;
+        }
+        $this->authorisationReferenceNumber = $authorisationReferenceNumber;
+        return $this;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Regulatory authorization date.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime
+     */
+    public function getEffectiveDate(): null|FHIRDateTime
+    {
+        return $this->effectiveDate ?? null;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Regulatory authorization date.
+     *
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $effectiveDate
+     * @return static
+     */
+    public function setEffectiveDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveDate): self
+    {
+        if (null === $effectiveDate) {
+            unset($this->effectiveDate);
+            return $this;
+        }
+        if (!($effectiveDate instanceof FHIRDateTime)) {
+            $effectiveDate = new FHIRDateTime(value: $effectiveDate);
+        }
+        $this->effectiveDate = $effectiveDate;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To indicate if this proces is commercially confidential.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept
+     */
+    public function getConfidentialityIndicator(): null|FHIRCodeableConcept
+    {
+        return $this->confidentialityIndicator ?? null;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To indicate if this proces is commercially confidential.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $confidentialityIndicator
+     * @return static
+     */
+    public function setConfidentialityIndicator(null|FHIRCodeableConcept $confidentialityIndicator): self
+    {
+        if (null === $confidentialityIndicator) {
+            unset($this->confidentialityIndicator);
+            return $this;
+        }
+        $this->confidentialityIndicator = $confidentialityIndicator;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The manufacturer or establishment associated with the process.
+     *
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference[]
+     */
+    public function getManufacturer(): array
+    {
+        return $this->manufacturer ?? [];
+    }
+
+    /**
+     * @return \ArrayIterator<\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference>
+     */
+    public function getManufacturerIterator(): iterable
+    {
+        if (!isset($this->manufacturer) || [] === $this->manufacturer) {
+            return new \EmptyIterator();
+        }
+        return new \ArrayIterator($this->manufacturer);
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The manufacturer or establishment associated with the process.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $manufacturer
+     * @return static
+     */
+    public function addManufacturer(FHIRReference $manufacturer): self
+    {
+        if (!isset($this->manufacturer)) {
+            $this->manufacturer = [];
+        }
+        $this->manufacturer[] = $manufacturer;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The manufacturer or establishment associated with the process.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference ...$manufacturer
+     * @return static
+     */
+    public function setManufacturer(FHIRReference ...$manufacturer): self
+    {
+        $this->manufacturer = $manufacturer;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A regulator which oversees the operation.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference
+     */
+    public function getRegulator(): null|FHIRReference
+    {
+        return $this->regulator ?? null;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A regulator which oversees the operation.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $regulator
+     * @return static
+     */
+    public function setRegulator(null|FHIRReference $regulator): self
+    {
+        if (null === $regulator) {
+            unset($this->regulator);
+            return $this;
+        }
+        $this->regulator = $regulator;
+        return $this;
+    }
+
+    /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
+     * @return array
+     */
+    public function _getValidationRules(): array
+    {
+        return self::_DEFAULT_VALIDATION_RULES;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by the FHIR specification this type
+     * was generated from.
+     *
+     * An empty array indicates no validation errors occurred.
+     *
+     * @return array
+     */
+    public function _getValidationErrors(): array
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (isset($validationRules[self::FIELD_OPERATION_TYPE])) {
+            $v = $this->getOperationType();
+            foreach($validationRules[self::FIELD_OPERATION_TYPE] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_OPERATION_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_OPERATION_TYPE])) {
+                        $errs[self::FIELD_OPERATION_TYPE] = [];
+                    }
+                    $errs[self::FIELD_OPERATION_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AUTHORISATION_REFERENCE_NUMBER])) {
+            $v = $this->getAuthorisationReferenceNumber();
+            foreach($validationRules[self::FIELD_AUTHORISATION_REFERENCE_NUMBER] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_AUTHORISATION_REFERENCE_NUMBER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AUTHORISATION_REFERENCE_NUMBER])) {
+                        $errs[self::FIELD_AUTHORISATION_REFERENCE_NUMBER] = [];
+                    }
+                    $errs[self::FIELD_AUTHORISATION_REFERENCE_NUMBER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EFFECTIVE_DATE])) {
+            $v = $this->getEffectiveDate();
+            foreach($validationRules[self::FIELD_EFFECTIVE_DATE] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_EFFECTIVE_DATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EFFECTIVE_DATE])) {
+                        $errs[self::FIELD_EFFECTIVE_DATE] = [];
+                    }
+                    $errs[self::FIELD_EFFECTIVE_DATE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONFIDENTIALITY_INDICATOR])) {
+            $v = $this->getConfidentialityIndicator();
+            foreach($validationRules[self::FIELD_CONFIDENTIALITY_INDICATOR] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_CONFIDENTIALITY_INDICATOR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONFIDENTIALITY_INDICATOR])) {
+                        $errs[self::FIELD_CONFIDENTIALITY_INDICATOR] = [];
+                    }
+                    $errs[self::FIELD_CONFIDENTIALITY_INDICATOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MANUFACTURER])) {
+            $v = $this->getManufacturer();
+            foreach($validationRules[self::FIELD_MANUFACTURER] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_MANUFACTURER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MANUFACTURER])) {
+                        $errs[self::FIELD_MANUFACTURER] = [];
+                    }
+                    $errs[self::FIELD_MANUFACTURER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_REGULATOR])) {
+            $v = $this->getRegulator();
+            foreach($validationRules[self::FIELD_REGULATOR] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_REGULATOR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REGULATOR])) {
+                        $errs[self::FIELD_REGULATOR] = [];
+                    }
+                    $errs[self::FIELD_REGULATOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
+    }
+
+    /**
+     * @param string|\SimpleXMLElement $element
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation $type
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation
+     * @throws \Exception
+     */
+    public static function xmlUnserialize(string|\SimpleXMLElement $element,
+                                          null|TypeInterface $type = null,
+                                          null|UnserializeConfig $config = null): self
+    {
+        if (null === $type) {
+            $type = new static();
+        } else if (!($type instanceof FHIRMedicinalProductManufacturingBusinessOperation)) {
+            throw new \RuntimeException(sprintf(
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getUnserializeConfig();
+        }
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
+        }
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXMLNS((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_EXTENSION === $childName) {
+                $v = new FHIRExtension();
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_ID === $childName) {
+                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $v = new FHIRExtension();
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_OPERATION_TYPE === $childName) {
+                $v = new FHIRCodeableConcept();
+                $type->setOperationType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_AUTHORISATION_REFERENCE_NUMBER === $childName) {
+                $v = new FHIRIdentifier();
+                $type->setAuthorisationReferenceNumber(FHIRIdentifier::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_EFFECTIVE_DATE === $childName) {
+                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $type->setEffectiveDate(FHIRDateTime::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_CONFIDENTIALITY_INDICATOR === $childName) {
+                $v = new FHIRCodeableConcept();
+                $type->setConfidentialityIndicator(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_MANUFACTURER === $childName) {
+                $v = new FHIRReference();
+                $type->addManufacturer(FHIRReference::xmlUnserialize($n, $v, $config));
+            } else if (self::FIELD_REGULATOR === $childName) {
+                $v = new FHIRReference();
+                $type->setRegulator(FHIRReference::xmlUnserialize($n, $v, $config));
+            }
+        }
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId(new FHIRStringPrimitive(
+                    value: (string)$attributes[self::FIELD_ID],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        if (isset($attributes[self::FIELD_EFFECTIVE_DATE])) {
+            $pt = $type->getEffectiveDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_EFFECTIVE_DATE]);
+                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setEffectiveDate(new FHIRDateTime(
+                    value: (string)$attributes[self::FIELD_EFFECTIVE_DATE],
+                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                ));
+            }
+        }
+        return $type;
+    }
+
+    /**
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
+     */
+    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
+    {
+        if (null === $xw) {
+            $xw = new XMLWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getSerializeConfig();
+        }
+        if (!$xw->isRootOpen()) {
+            $rootOpened = true;
+            $xw->openRootNode($config, 'MedicinalProductManufacturingBusinessOperation', $this->_getSourceXMLNS());
+        }
+        if (isset($this->effectiveDate) && $this->effectiveDate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_EFFECTIVE_DATE, $this->effectiveDate->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (isset($this->operationType)) {
+            $xw->startElement(self::FIELD_OPERATION_TYPE);
+            $this->operationType->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->authorisationReferenceNumber)) {
+            $xw->startElement(self::FIELD_AUTHORISATION_REFERENCE_NUMBER);
+            $this->authorisationReferenceNumber->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->effectiveDate) && $this->effectiveDate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+            $xw->startElement(self::FIELD_EFFECTIVE_DATE);
+            $this->effectiveDate->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->confidentialityIndicator)) {
+            $xw->startElement(self::FIELD_CONFIDENTIALITY_INDICATOR);
+            $this->confidentialityIndicator->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($this->manufacturer)) {
+            foreach ($this->manufacturer as $v) {
+                $xw->startElement(self::FIELD_MANUFACTURER);
+                $v->xmlSerialize($xw, $config);
+                $xw->endElement();
+            }
+        }
+        if (isset($this->regulator)) {
+            $xw->startElement(self::FIELD_REGULATOR);
+            $this->regulator->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($rootOpened) && $rootOpened) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
+    }
+
+    /**
+     * @param string|array|\stdClass $json
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation $type
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
+     * @return \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductManufacturingBusinessOperation
+     * @throws \Exception
+     */
+    public static function jsonUnserialize(string|array|\stdClass $json,
+                                           null|TypeInterface $type = null,
+                                           null|UnserializeConfig $config = null): self
+    {
+        if (null === $type) {
+            $type = new static();
+        } else if (!($type instanceof FHIRMedicinalProductManufacturingBusinessOperation)) {
+            throw new \RuntimeException(sprintf(
+                '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
+            ));
+        }
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getUnserializeConfig();
+        }
+        if (is_string($json)) {
+            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
+        } else if (is_object($json)) {
+            $json = (array)$json;
+        }
+        parent::jsonUnserialize($json, $type, $config);
+        if (isset($json[self::FIELD_OPERATION_TYPE]) || array_key_exists(self::FIELD_OPERATION_TYPE, $json)) {
+            if ($json[self::FIELD_OPERATION_TYPE] instanceof FHIRCodeableConcept) {
+                $type->setOperationType($json[self::FIELD_OPERATION_TYPE]);
+            } else {
+                $type->setOperationType(new FHIRCodeableConcept($json[self::FIELD_OPERATION_TYPE]));
+            }
+        }
+        if (isset($json[self::FIELD_AUTHORISATION_REFERENCE_NUMBER]) || array_key_exists(self::FIELD_AUTHORISATION_REFERENCE_NUMBER, $json)) {
+            if ($json[self::FIELD_AUTHORISATION_REFERENCE_NUMBER] instanceof FHIRIdentifier) {
+                $type->setAuthorisationReferenceNumber($json[self::FIELD_AUTHORISATION_REFERENCE_NUMBER]);
+            } else {
+                $type->setAuthorisationReferenceNumber(new FHIRIdentifier($json[self::FIELD_AUTHORISATION_REFERENCE_NUMBER]));
+            }
+        }
+        if (isset($json[self::FIELD_EFFECTIVE_DATE]) || isset($json[self::FIELD_EFFECTIVE_DATE_EXT]) || array_key_exists(self::FIELD_EFFECTIVE_DATE, $json) || array_key_exists(self::FIELD_EFFECTIVE_DATE_EXT, $json)) {
+            $value = $json[self::FIELD_EFFECTIVE_DATE] ?? null;
+            $ext = (isset($json[self::FIELD_EFFECTIVE_DATE_EXT]) && is_array($json[self::FIELD_EFFECTIVE_DATE_EXT])) ? $json[self::FIELD_EFFECTIVE_DATE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $type->setEffectiveDate($value);
+                } else if (is_array($value)) {
+                    $type->setEffectiveDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $type->setEffectiveDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $type->setEffectiveDate(new FHIRDateTime($ext));
+            } else {
+                $type->setEffectiveDate(new FHIRDateTime(null));
+            }
+        }
+        if (isset($json[self::FIELD_CONFIDENTIALITY_INDICATOR]) || array_key_exists(self::FIELD_CONFIDENTIALITY_INDICATOR, $json)) {
+            if ($json[self::FIELD_CONFIDENTIALITY_INDICATOR] instanceof FHIRCodeableConcept) {
+                $type->setConfidentialityIndicator($json[self::FIELD_CONFIDENTIALITY_INDICATOR]);
+            } else {
+                $type->setConfidentialityIndicator(new FHIRCodeableConcept($json[self::FIELD_CONFIDENTIALITY_INDICATOR]));
+            }
+        }
+        if (isset($json[self::FIELD_MANUFACTURER]) || array_key_exists(self::FIELD_MANUFACTURER, $json)) {
+            if (is_array($json[self::FIELD_MANUFACTURER])) {
+                foreach($json[self::FIELD_MANUFACTURER] as $v) {
+                    if ($v instanceof FHIRReference) {
+                        $type->addManufacturer($v);
+                    } else {
+                        $type->addManufacturer(new FHIRReference($v));
+                    }
+                }
+            } elseif ($json[self::FIELD_MANUFACTURER] instanceof FHIRReference) {
+                $type->addManufacturer($json[self::FIELD_MANUFACTURER]);
+            } else {
+                $type->addManufacturer(new FHIRReference($json[self::FIELD_MANUFACTURER]));
+            }
+        }
+        if (isset($json[self::FIELD_REGULATOR]) || array_key_exists(self::FIELD_REGULATOR, $json)) {
+            if ($json[self::FIELD_REGULATOR] instanceof FHIRReference) {
+                $type->setRegulator($json[self::FIELD_REGULATOR]);
+            } else {
+                $type->setRegulator(new FHIRReference($json[self::FIELD_REGULATOR]));
+            }
+        }
+        return $type;
+    }
+
+    /**
+     * @return \stdClass
+     */
+    public function jsonSerialize(): mixed
+    {
+        $out = parent::jsonSerialize();
+        if (isset($this->operationType)) {
+            $out->operationType = $this->operationType;
+        }
+        if (isset($this->authorisationReferenceNumber)) {
+            $out->authorisationReferenceNumber = $this->authorisationReferenceNumber;
+        }
+        if (isset($this->effectiveDate)) {
+            if (null !== ($val = $this->effectiveDate->getValue())) {
+                $out->effectiveDate = $val;
+            }
+            $ext = $this->effectiveDate->jsonSerialize();
+            unset($ext->value);
+            if (count((array)$ext) > 0) {
+                $out->_effectiveDate = $ext;
+            }
+        }
+        if (isset($this->confidentialityIndicator)) {
+            $out->confidentialityIndicator = $this->confidentialityIndicator;
+        }
+        if (isset($this->manufacturer) && [] !== $this->manufacturer) {
+            $out->manufacturer = $this->manufacturer;
+        }
+        if (isset($this->regulator)) {
+            $out->regulator = $this->regulator;
+        }
+        return $out;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return self::FHIR_TYPE_NAME;
+    }
+}
