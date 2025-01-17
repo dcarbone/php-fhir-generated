@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Tests\Encoding;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 16th, 2025 01:05+0000
+ * Class creation date: January 17th, 2025 00:27+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -30,14 +30,14 @@ use PHPUnit\Framework\TestCase;
 
 class UnserializeConfigTest extends TestCase
 {
-    public function testEmptyConstruct()
+    public function testCanConstructWithoutParams()
     {
         $uc = new UnserializeConfig();
         $this->assertEquals(4728838, $uc->getLibxmlOpts());
         $this->assertEquals(512, $uc->getJSONDecodeMaxDepth());
     }
 
-    public function testValuedConstruct()
+    public function testCanConstructWithValidValues()
     {
         $uc = new UnserializeConfig(libxmlOpts: 123, jsonDecodeMaxDepth: 456);
         $this->assertEquals(123, $uc->getLibxmlOpts());

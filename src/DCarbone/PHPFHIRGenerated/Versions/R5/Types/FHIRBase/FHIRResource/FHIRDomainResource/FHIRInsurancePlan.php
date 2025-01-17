@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 16th, 2025 01:05+0000
+ * Class creation date: January 17th, 2025 00:27+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1609,8 +1609,11 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
      */
     public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
     {
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getSerializeConfig();
+        }
         if (null === $xw) {
-            $xw = new XMLWriter();
+            $xw = new XMLWriter($config);
         }
         if (!$xw->isOpen()) {
             $xw->openMemory();
@@ -1619,12 +1622,9 @@ class FHIRInsurancePlan extends FHIRDomainResource implements VersionContainedTy
             $docStarted = true;
             $xw->startDocument();
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
-        }
         if (!$xw->isRootOpen()) {
             $rootOpened = true;
-            $xw->openRootNode($config, 'InsurancePlan', $this->_getSourceXMLNS());
+            $xw->openRootNode('InsurancePlan', $this->_getSourceXMLNS());
         }
         if (isset($this->name) && $this->name->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
             $xw->writeAttribute(self::FIELD_NAME, $this->name->getValue()?->getFormattedValue());

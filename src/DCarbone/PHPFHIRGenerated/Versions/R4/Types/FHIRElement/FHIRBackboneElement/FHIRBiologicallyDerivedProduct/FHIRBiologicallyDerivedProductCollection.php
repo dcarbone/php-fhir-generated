@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 16th, 2025 01:05+0000
+ * Class creation date: January 17th, 2025 00:27+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -536,8 +536,11 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      */
     public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
     {
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getSerializeConfig();
+        }
         if (null === $xw) {
-            $xw = new XMLWriter();
+            $xw = new XMLWriter($config);
         }
         if (!$xw->isOpen()) {
             $xw->openMemory();
@@ -546,12 +549,9 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
             $docStarted = true;
             $xw->startDocument();
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
-        }
         if (!$xw->isRootOpen()) {
             $rootOpened = true;
-            $xw->openRootNode($config, 'BiologicallyDerivedProductCollection', $this->_getSourceXMLNS());
+            $xw->openRootNode('BiologicallyDerivedProductCollection', $this->_getSourceXMLNS());
         }
         if (isset($this->collectedDateTime) && $this->collectedDateTime->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
             $xw->writeAttribute(self::FIELD_COLLECTED_DATE_TIME, $this->collectedDateTime->getValue()?->getFormattedValue());

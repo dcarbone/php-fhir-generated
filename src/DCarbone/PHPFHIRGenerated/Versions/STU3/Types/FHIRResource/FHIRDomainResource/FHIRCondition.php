@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 16th, 2025 01:05+0000
+ * Class creation date: January 17th, 2025 00:27+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2387,8 +2387,11 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      */
     public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
     {
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getSerializeConfig();
+        }
         if (null === $xw) {
-            $xw = new XMLWriter();
+            $xw = new XMLWriter($config);
         }
         if (!$xw->isOpen()) {
             $xw->openMemory();
@@ -2397,12 +2400,9 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
             $docStarted = true;
             $xw->startDocument();
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
-        }
         if (!$xw->isRootOpen()) {
             $rootOpened = true;
-            $xw->openRootNode($config, 'Condition', $this->_getSourceXMLNS());
+            $xw->openRootNode('Condition', $this->_getSourceXMLNS());
         }
         if (isset($this->onsetDateTime) && $this->onsetDateTime->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
             $xw->writeAttribute(self::FIELD_ONSET_DATE_TIME, $this->onsetDateTime->getValue()?->getFormattedValue());

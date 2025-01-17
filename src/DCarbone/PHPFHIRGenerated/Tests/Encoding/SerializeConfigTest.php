@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Tests\Encoding;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 16th, 2025 01:05+0000
+ * Class creation date: January 17th, 2025 00:27+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -31,7 +31,7 @@ use PHPUnit\Framework\TestCase;
 
 class SerializeConfigTest extends TestCase
 {
-    public function testEmptyConstruct()
+    public function testCanConstructWithoutParams()
     {
         $sc = new SerializeConfig();
         $this->assertFalse($sc->getOverrideSourceXMLNS());
@@ -39,7 +39,7 @@ class SerializeConfigTest extends TestCase
         $this->assertEquals(4728838, $sc->getXHTMLLibxmlOpts());
     }
 
-    public function testValuedConstruct()
+    public function testCanConstructWithValidValues()
     {
         $sc = new SerializeConfig(overrideSourceXMLNS: true, rootXMLNS: 'urn:foo:bar', xhtmlLibxmlOpts: 123);
         $this->assertTrue($sc->getOverrideSourceXMLNS());

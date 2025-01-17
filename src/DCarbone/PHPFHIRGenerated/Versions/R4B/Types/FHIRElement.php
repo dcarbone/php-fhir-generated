@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 16th, 2025 01:05+0000
+ * Class creation date: January 17th, 2025 00:27+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -349,8 +349,11 @@ class FHIRElement implements CommentContainerInterface, TypeInterface
      */
     public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
     {
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getSerializeConfig();
+        }
         if (null === $xw) {
-            $xw = new XMLWriter();
+            $xw = new XMLWriter($config);
         }
         if (!$xw->isOpen()) {
             $xw->openMemory();
@@ -359,12 +362,9 @@ class FHIRElement implements CommentContainerInterface, TypeInterface
             $docStarted = true;
             $xw->startDocument();
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
-        }
         if (!$xw->isRootOpen()) {
             $rootOpened = true;
-            $xw->openRootNode($config, 'Element', $this->_getSourceXMLNS());
+            $xw->openRootNode('Element', $this->_getSourceXMLNS());
         }
         if (isset($this->id) && $this->id->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
             $xw->writeAttribute(self::FIELD_ID, $this->id->getFormattedValue());
@@ -420,7 +420,7 @@ class FHIRElement implements CommentContainerInterface, TypeInterface
             $json = (array)$json;
         }
         if (isset($data[Constants::JSON_FIELD_FHIR_COMMENTS])) {
-            $this->_setFHIRComments((array)$data[Constants::JSON_FIELD_FHIR_COMMENTS]);
+            $type->_setFHIRComments((array)$data[Constants::JSON_FIELD_FHIR_COMMENTS]);
         }
 
         if (isset($json[self::FIELD_EXTENSION]) || array_key_exists(self::FIELD_EXTENSION, $json)) {

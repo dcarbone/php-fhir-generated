@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 16th, 2025 01:05+0000
+ * Class creation date: January 17th, 2025 00:27+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -57,7 +57,6 @@ class Config
     public function __construct(string $address,
                                 null|ResponseFormatEnum $defaultFormat = null,
                                 array $queryParams = [],
-                                array $requestHeaders = [],
                                 array $curlOpts = [],
                                 bool $parseResponseHeaders = false)
     {
@@ -103,7 +102,7 @@ class Config
     /**
      * @return bool
      */
-    public function getParseHeaders(): bool
+    public function getParseResponseHeaders(): bool
     {
         return $this->_parseResponseHeaders;
     }

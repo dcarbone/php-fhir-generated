@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 16th, 2025 01:05+0000
+ * Class creation date: January 17th, 2025 00:27+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -396,8 +396,11 @@ class FHIRResourceReference extends FHIRElement
      */
     public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
     {
+        if (null === $config) {
+            $config = (new Version())->getConfig()->getSerializeConfig();
+        }
         if (null === $xw) {
-            $xw = new XMLWriter();
+            $xw = new XMLWriter($config);
         }
         if (!$xw->isOpen()) {
             $xw->openMemory();
@@ -406,12 +409,9 @@ class FHIRResourceReference extends FHIRElement
             $docStarted = true;
             $xw->startDocument();
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
-        }
         if (!$xw->isRootOpen()) {
             $rootOpened = true;
-            $xw->openRootNode($config, 'ResourceReference', $this->_getSourceXMLNS());
+            $xw->openRootNode('ResourceReference', $this->_getSourceXMLNS());
         }
         if (isset($this->reference) && $this->reference->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
             $xw->writeAttribute(self::FIELD_REFERENCE, $this->reference->getValue()?->getFormattedValue());

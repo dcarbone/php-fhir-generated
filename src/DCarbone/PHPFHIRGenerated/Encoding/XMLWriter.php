@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Encoding;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 16th, 2025 01:05+0000
+ * Class creation date: January 17th, 2025 00:27+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -36,12 +36,20 @@ final class XMLWriter extends \XMLWriter
 {
     private const _MEM = 'memory';
 
-    /** @var bool */
+    private SerializeConfig $_config;
     private bool $_docStarted = false;
-    /** @var bool */
     private bool $_rootOpen = false;
-    /** @var null|string */
     private null|string $_open = null;
+
+    /**
+     * XMLWriter constructor.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
+     */
+    public function __construct(SerializeConfig $config)
+    {
+        $this->_config = $config;
+    }
 
     /**
      * @see https://www.php.net/manual/en/xmlwriter.openmemory.php
@@ -127,23 +135,24 @@ final class XMLWriter extends \XMLWriter
     }
 
     /**
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
      * @param string $name
      * @param string|null $sourceXMLNS
      * @return bool
      */
-    public function openRootNode(SerializeConfig $config, string $name, null|string $sourceXMLNS): bool
+    public function openRootNode(string $name, null|string $sourceXMLNS): bool
     {
         if (null === $this->_open) {
             throw new \LogicException('Must open write destination before writing root node');
         } else if (!$this->_docStarted) {
             throw new \LogicException('Document must be started before writing root node');
+        } else if ($this->_rootOpen) {
+            throw new \LogicException('Root node is already open');
         }
         if (!$this->startElement($name)) {
             return false;
         }
-        if ($config->getOverrideSourceXMLNS() || null === $sourceXMLNS) {
-            $ns = (string)$config->getRootXMLNS();
+        if ($this->_config->getOverrideSourceXMLNS() || null === $sourceXMLNS) {
+            $ns = (string)$this->_config->getRootXMLNS();
         } else {
             $ns = $sourceXMLNS;
         }
