@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -666,9 +666,11 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * The date and time this imaging selection was created.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $issued
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIssued(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $issued): self
+    public function setIssued(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $issued,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $issued) {
             unset($this->issued);
@@ -676,6 +678,11 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
         }
         if (!($issued instanceof FHIRInstant)) {
             $issued = new FHIRInstant(value: $issued);
+        }
+        if (null !== $valueXMLLocation) {
+            $issued->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $issued->_getValueXMLLocation()) {
+            $issued->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->issued = $issued;
         return $this;
@@ -934,9 +941,11 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * The Study Instance UID for the DICOM Study from which the images were selected.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $studyUid
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStudyUid(null|string|FHIRIdPrimitive|FHIRId $studyUid): self
+    public function setStudyUid(null|string|FHIRIdPrimitive|FHIRId $studyUid,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $studyUid) {
             unset($this->studyUid);
@@ -944,6 +953,11 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
         }
         if (!($studyUid instanceof FHIRId)) {
             $studyUid = new FHIRId(value: $studyUid);
+        }
+        if (null !== $valueXMLLocation) {
+            $studyUid->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $studyUid->_getValueXMLLocation()) {
+            $studyUid->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->studyUid = $studyUid;
         return $this;
@@ -1102,9 +1116,11 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * selected.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $seriesUid
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSeriesUid(null|string|FHIRIdPrimitive|FHIRId $seriesUid): self
+    public function setSeriesUid(null|string|FHIRIdPrimitive|FHIRId $seriesUid,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $seriesUid) {
             unset($this->seriesUid);
@@ -1112,6 +1128,11 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
         }
         if (!($seriesUid instanceof FHIRId)) {
             $seriesUid = new FHIRId(value: $seriesUid);
+        }
+        if (null !== $valueXMLLocation) {
+            $seriesUid->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $seriesUid->_getValueXMLLocation()) {
+            $seriesUid->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->seriesUid = $seriesUid;
         return $this;
@@ -1139,9 +1160,11 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * The Series Number for the DICOM Series from which the images were selected.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $seriesNumber
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSeriesNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $seriesNumber): self
+    public function setSeriesNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $seriesNumber,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $seriesNumber) {
             unset($this->seriesNumber);
@@ -1149,6 +1172,11 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
         }
         if (!($seriesNumber instanceof FHIRUnsignedInt)) {
             $seriesNumber = new FHIRUnsignedInt(value: $seriesNumber);
+        }
+        if (null !== $valueXMLLocation) {
+            $seriesNumber->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $seriesNumber->_getValueXMLLocation()) {
+            $seriesNumber->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->seriesNumber = $seriesNumber;
         return $this;
@@ -1184,9 +1212,11 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
      * spatial and/or temporal information for the selected images or frames.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $frameOfReferenceUid
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setFrameOfReferenceUid(null|string|FHIRIdPrimitive|FHIRId $frameOfReferenceUid): self
+    public function setFrameOfReferenceUid(null|string|FHIRIdPrimitive|FHIRId $frameOfReferenceUid,
+                                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $frameOfReferenceUid) {
             unset($this->frameOfReferenceUid);
@@ -1194,6 +1224,11 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
         }
         if (!($frameOfReferenceUid instanceof FHIRId)) {
             $frameOfReferenceUid = new FHIRId(value: $frameOfReferenceUid);
+        }
+        if (null !== $valueXMLLocation) {
+            $frameOfReferenceUid->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $frameOfReferenceUid->_getValueXMLLocation()) {
+            $frameOfReferenceUid->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->frameOfReferenceUid = $frameOfReferenceUid;
         return $this;
@@ -1755,16 +1790,16 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
         foreach ($element->children() as $n) {
             $childName = $n->getName();
             if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_META === $childName) {
                 $v = new FHIRMeta();
                 $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -1785,13 +1820,13 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
                 $v = new FHIRIdentifier();
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STATUS === $childName) {
-                $v = new FHIRImagingSelectionStatus(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRImagingSelectionStatus(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStatus(FHIRImagingSelectionStatus::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SUBJECT === $childName) {
                 $v = new FHIRReference();
                 $type->setSubject(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ISSUED === $childName) {
-                $v = new FHIRInstant(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInstant(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setIssued(FHIRInstant::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PERFORMER === $childName) {
                 $v = new FHIRImagingSelectionPerformer();
@@ -1806,7 +1841,7 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
                 $v = new FHIRCodeableConcept();
                 $type->setCode(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STUDY_UID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStudyUid(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DERIVED_FROM === $childName) {
                 $v = new FHIRReference();
@@ -1815,13 +1850,13 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
                 $v = new FHIRReference();
                 $type->addEndpoint(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SERIES_UID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSeriesUid(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SERIES_NUMBER === $childName) {
-                $v = new FHIRUnsignedInt(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUnsignedInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSeriesNumber(FHIRUnsignedInt::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_FRAME_OF_REFERENCE_UID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setFrameOfReferenceUid(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_BODY_SITE === $childName) {
                 $v = new FHIRCodeableReference();
@@ -1838,96 +1873,96 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRId(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             $pt = $type->getImplicitRules();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setImplicitRules(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_ISSUED])) {
             $pt = $type->getIssued();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ISSUED]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ISSUED]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setIssued(new FHIRInstant(
                     value: (string)$attributes[self::FIELD_ISSUED],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_STUDY_UID])) {
             $pt = $type->getStudyUid();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_STUDY_UID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_STUDY_UID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setStudyUid(new FHIRId(
                     value: (string)$attributes[self::FIELD_STUDY_UID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SERIES_UID])) {
             $pt = $type->getSeriesUid();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SERIES_UID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SERIES_UID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSeriesUid(new FHIRId(
                     value: (string)$attributes[self::FIELD_SERIES_UID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SERIES_NUMBER])) {
             $pt = $type->getSeriesNumber();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SERIES_NUMBER]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SERIES_NUMBER]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSeriesNumber(new FHIRUnsignedInt(
                     value: (string)$attributes[self::FIELD_SERIES_NUMBER],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_FRAME_OF_REFERENCE_UID])) {
             $pt = $type->getFrameOfReferenceUid();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_FRAME_OF_REFERENCE_UID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_FRAME_OF_REFERENCE_UID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setFrameOfReferenceUid(new FHIRId(
                     value: (string)$attributes[self::FIELD_FRAME_OF_REFERENCE_UID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1958,20 +1993,20 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
             $rootOpened = true;
             $xw->openRootNode('ImagingSelection', $this->_getSourceXMLNS());
         }
-        if (isset($this->issued) && $this->issued->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ISSUED, $this->issued->getValue()?->getFormattedValue());
+        if (isset($this->issued) && $this->issued->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_ISSUED, $this->issued->getValue()?->_getFormattedValue());
         }
-        if (isset($this->studyUid) && $this->studyUid->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_STUDY_UID, $this->studyUid->getValue()?->getFormattedValue());
+        if (isset($this->studyUid) && $this->studyUid->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_STUDY_UID, $this->studyUid->getValue()?->_getFormattedValue());
         }
-        if (isset($this->seriesUid) && $this->seriesUid->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SERIES_UID, $this->seriesUid->getValue()?->getFormattedValue());
+        if (isset($this->seriesUid) && $this->seriesUid->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SERIES_UID, $this->seriesUid->getValue()?->_getFormattedValue());
         }
-        if (isset($this->seriesNumber) && $this->seriesNumber->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SERIES_NUMBER, $this->seriesNumber->getValue()?->getFormattedValue());
+        if (isset($this->seriesNumber) && $this->seriesNumber->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SERIES_NUMBER, $this->seriesNumber->getValue()?->_getFormattedValue());
         }
-        if (isset($this->frameOfReferenceUid) && $this->frameOfReferenceUid->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_FRAME_OF_REFERENCE_UID, $this->frameOfReferenceUid->getValue()?->getFormattedValue());
+        if (isset($this->frameOfReferenceUid) && $this->frameOfReferenceUid->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_FRAME_OF_REFERENCE_UID, $this->frameOfReferenceUid->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1991,7 +2026,7 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
             $this->subject->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->issued) && $this->issued->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->issued) && $this->issued->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_ISSUED);
             $this->issued->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -2022,7 +2057,7 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
             $this->code->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->studyUid) && $this->studyUid->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->studyUid) && $this->studyUid->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_STUDY_UID);
             $this->studyUid->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -2041,17 +2076,17 @@ class FHIRImagingSelection extends FHIRDomainResource implements VersionContaine
                 $xw->endElement();
             }
         }
-        if (isset($this->seriesUid) && $this->seriesUid->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->seriesUid) && $this->seriesUid->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SERIES_UID);
             $this->seriesUid->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->seriesNumber) && $this->seriesNumber->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->seriesNumber) && $this->seriesNumber->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SERIES_NUMBER);
             $this->seriesNumber->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->frameOfReferenceUid) && $this->frameOfReferenceUid->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->frameOfReferenceUid) && $this->frameOfReferenceUid->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_FRAME_OF_REFERENCE_UID);
             $this->frameOfReferenceUid->xmlSerialize($xw, $config);
             $xw->endElement();

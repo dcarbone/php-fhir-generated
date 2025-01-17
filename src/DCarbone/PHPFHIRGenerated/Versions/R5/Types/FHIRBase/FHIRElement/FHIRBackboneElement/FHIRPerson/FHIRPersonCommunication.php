@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -245,9 +245,11 @@ class FHIRPersonCommunication extends FHIRBackboneElement
      * he masters up a certain level).
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $preferred
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPreferred(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $preferred): self
+    public function setPreferred(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $preferred,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $preferred) {
             unset($this->preferred);
@@ -255,6 +257,11 @@ class FHIRPersonCommunication extends FHIRBackboneElement
         }
         if (!($preferred instanceof FHIRBoolean)) {
             $preferred = new FHIRBoolean(value: $preferred);
+        }
+        if (null !== $valueXMLLocation) {
+            $preferred->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $preferred->_getValueXMLLocation()) {
+            $preferred->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->preferred = $preferred;
         return $this;
@@ -387,8 +394,15 @@ class FHIRPersonCommunication extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -396,7 +410,7 @@ class FHIRPersonCommunication extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->setLanguage(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PREFERRED === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPreferred(FHIRBoolean::xmlUnserialize($n, $v, $config));
             }
         }
@@ -404,24 +418,24 @@ class FHIRPersonCommunication extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PREFERRED])) {
             $pt = $type->getPreferred();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PREFERRED]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PREFERRED]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setPreferred(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_PREFERRED],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -452,8 +466,8 @@ class FHIRPersonCommunication extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('PersonCommunication', $this->_getSourceXMLNS());
         }
-        if (isset($this->preferred) && $this->preferred->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PREFERRED, $this->preferred->getValue()?->getFormattedValue());
+        if (isset($this->preferred) && $this->preferred->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PREFERRED, $this->preferred->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->language)) {
@@ -461,7 +475,7 @@ class FHIRPersonCommunication extends FHIRBackboneElement
             $this->language->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->preferred) && $this->preferred->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->preferred) && $this->preferred->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PREFERRED);
             $this->preferred->xmlSerialize($xw, $config);
             $xw->endElement();

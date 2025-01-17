@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -189,6 +189,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $value
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $unitOfMeasure
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $denominatorCount
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $numeratorCount
@@ -201,6 +202,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive|FHIRString $description = null,
                                 null|FHIRCodeableConcept $type = null,
                                 null|string|float|int|FHIRDecimal|FHIRDecimalPrimitive $value = null,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null,
                                 null|FHIRCodeableConcept $unitOfMeasure = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $denominatorCount = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numeratorCount = null,
@@ -264,9 +266,11 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * Human-readable summary of risk estimate.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
+    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $description) {
             unset($this->description);
@@ -274,6 +278,11 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
         }
         if (!($description instanceof FHIRString)) {
             $description = new FHIRString(value: $description);
+        }
+        if (null !== $valueXMLLocation) {
+            $description->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $description->_getValueXMLLocation()) {
+            $description->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->description = $description;
         return $this;
@@ -339,9 +348,11 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * The point estimate of the risk estimate.
      *
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $value
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValue(null|string|float|int|FHIRDecimal|FHIRDecimalPrimitive $value): self
+    public function setValue(null|string|float|int|FHIRDecimal|FHIRDecimalPrimitive $value,
+                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $value) {
             unset($this->value);
@@ -349,6 +360,11 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
         }
         if (!($value instanceof FHIRDecimal)) {
             $value = new FHIRDecimal(value: $value);
+        }
+        if (null !== $valueXMLLocation) {
+            $value->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $value->_getValueXMLLocation()) {
+            $value->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->value = $value;
         return $this;
@@ -412,9 +428,11 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * The sample size for the group that was measured for this risk estimate.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $denominatorCount
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDenominatorCount(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $denominatorCount): self
+    public function setDenominatorCount(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $denominatorCount,
+                                        null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $denominatorCount) {
             unset($this->denominatorCount);
@@ -422,6 +440,11 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
         }
         if (!($denominatorCount instanceof FHIRInteger)) {
             $denominatorCount = new FHIRInteger(value: $denominatorCount);
+        }
+        if (null !== $valueXMLLocation) {
+            $denominatorCount->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $denominatorCount->_getValueXMLLocation()) {
+            $denominatorCount->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->denominatorCount = $denominatorCount;
         return $this;
@@ -449,9 +472,11 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * The number of group members with the outcome of interest.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $numeratorCount
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setNumeratorCount(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numeratorCount): self
+    public function setNumeratorCount(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numeratorCount,
+                                      null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $numeratorCount) {
             unset($this->numeratorCount);
@@ -459,6 +484,11 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
         }
         if (!($numeratorCount instanceof FHIRInteger)) {
             $numeratorCount = new FHIRInteger(value: $numeratorCount);
+        }
+        if (null !== $valueXMLLocation) {
+            $numeratorCount->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $numeratorCount->_getValueXMLLocation()) {
+            $numeratorCount->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->numeratorCount = $numeratorCount;
         return $this;
@@ -706,28 +736,35 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DESCRIPTION === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDescription(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TYPE === $childName) {
                 $v = new FHIRCodeableConcept();
                 $type->setType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VALUE === $childName) {
-                $v = new FHIRDecimal(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDecimal(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setValue(FHIRDecimal::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_UNIT_OF_MEASURE === $childName) {
                 $v = new FHIRCodeableConcept();
                 $type->setUnitOfMeasure(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DENOMINATOR_COUNT === $childName) {
-                $v = new FHIRInteger(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDenominatorCount(FHIRInteger::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NUMERATOR_COUNT === $childName) {
-                $v = new FHIRInteger(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setNumeratorCount(FHIRInteger::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PRECISION_ESTIMATE === $childName) {
                 $v = new FHIRRiskEvidenceSynthesisPrecisionEstimate();
@@ -738,60 +775,60 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
             $pt = $type->getDescription();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DESCRIPTION]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDescription(new FHIRString(
                     value: (string)$attributes[self::FIELD_DESCRIPTION],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_VALUE])) {
             $pt = $type->getValue();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_VALUE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_VALUE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setValue(new FHIRDecimal(
                     value: (string)$attributes[self::FIELD_VALUE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DENOMINATOR_COUNT])) {
             $pt = $type->getDenominatorCount();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DENOMINATOR_COUNT]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DENOMINATOR_COUNT]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDenominatorCount(new FHIRInteger(
                     value: (string)$attributes[self::FIELD_DENOMINATOR_COUNT],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_NUMERATOR_COUNT])) {
             $pt = $type->getNumeratorCount();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_NUMERATOR_COUNT]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_NUMERATOR_COUNT]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setNumeratorCount(new FHIRInteger(
                     value: (string)$attributes[self::FIELD_NUMERATOR_COUNT],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -822,20 +859,20 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('RiskEvidenceSynthesisRiskEstimate', $this->_getSourceXMLNS());
         }
-        if (isset($this->description) && $this->description->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->getValue()?->getFormattedValue());
+        if (isset($this->description) && $this->description->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->getValue()?->_getFormattedValue());
         }
-        if (isset($this->value) && $this->value->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VALUE, $this->value->getValue()?->getFormattedValue());
+        if (isset($this->value) && $this->value->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VALUE, $this->value->getValue()?->_getFormattedValue());
         }
-        if (isset($this->denominatorCount) && $this->denominatorCount->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DENOMINATOR_COUNT, $this->denominatorCount->getValue()?->getFormattedValue());
+        if (isset($this->denominatorCount) && $this->denominatorCount->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DENOMINATOR_COUNT, $this->denominatorCount->getValue()?->_getFormattedValue());
         }
-        if (isset($this->numeratorCount) && $this->numeratorCount->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_NUMERATOR_COUNT, $this->numeratorCount->getValue()?->getFormattedValue());
+        if (isset($this->numeratorCount) && $this->numeratorCount->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_NUMERATOR_COUNT, $this->numeratorCount->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->description) && $this->description->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->description) && $this->description->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DESCRIPTION);
             $this->description->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -845,7 +882,7 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
             $this->type->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->value) && $this->value->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->value) && $this->value->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_VALUE);
             $this->value->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -855,12 +892,12 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
             $this->unitOfMeasure->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->denominatorCount) && $this->denominatorCount->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->denominatorCount) && $this->denominatorCount->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DENOMINATOR_COUNT);
             $this->denominatorCount->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->numeratorCount) && $this->numeratorCount->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->numeratorCount) && $this->numeratorCount->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_NUMERATOR_COUNT);
             $this->numeratorCount->xmlSerialize($xw, $config);
             $xw->endElement();

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement;
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -344,9 +344,11 @@ class FHIRSignature extends FHIRElement
      * When the digital signature was signed.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $when
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setWhen(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $when): self
+    public function setWhen(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $when,
+                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $when) {
             unset($this->when);
@@ -354,6 +356,11 @@ class FHIRSignature extends FHIRElement
         }
         if (!($when instanceof FHIRInstant)) {
             $when = new FHIRInstant(value: $when);
+        }
+        if (null !== $valueXMLLocation) {
+            $when->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $when->_getValueXMLLocation()) {
+            $when->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->when = $when;
         return $this;
@@ -383,9 +390,11 @@ class FHIRSignature extends FHIRElement
      * certificate (e.g. the signature used their private key).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $whoUri
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setWhoUri(null|string|FHIRUriPrimitive|FHIRUri $whoUri): self
+    public function setWhoUri(null|string|FHIRUriPrimitive|FHIRUri $whoUri,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $whoUri) {
             unset($this->whoUri);
@@ -393,6 +402,11 @@ class FHIRSignature extends FHIRElement
         }
         if (!($whoUri instanceof FHIRUri)) {
             $whoUri = new FHIRUri(value: $whoUri);
+        }
+        if (null !== $valueXMLLocation) {
+            $whoUri->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $whoUri->_getValueXMLLocation()) {
+            $whoUri->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->whoUri = $whoUri;
         return $this;
@@ -462,9 +476,11 @@ class FHIRSignature extends FHIRElement
      * and image/* for a graphical image of a signature.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $contentType
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType): self
+    public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $contentType) {
             unset($this->contentType);
@@ -472,6 +488,11 @@ class FHIRSignature extends FHIRElement
         }
         if (!($contentType instanceof FHIRCode)) {
             $contentType = new FHIRCode(value: $contentType);
+        }
+        if (null !== $valueXMLLocation) {
+            $contentType->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $contentType->_getValueXMLLocation()) {
+            $contentType->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->contentType = $contentType;
         return $this;
@@ -499,9 +520,11 @@ class FHIRSignature extends FHIRElement
      * The base64 encoding of the Signature content.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBase64Binary $blob
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setBlob(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $blob): self
+    public function setBlob(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $blob,
+                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $blob) {
             unset($this->blob);
@@ -509,6 +532,11 @@ class FHIRSignature extends FHIRElement
         }
         if (!($blob instanceof FHIRBase64Binary)) {
             $blob = new FHIRBase64Binary(value: $blob);
+        }
+        if (null !== $valueXMLLocation) {
+            $blob->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $blob->_getValueXMLLocation()) {
+            $blob->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->blob = $blob;
         return $this;
@@ -704,25 +732,32 @@ class FHIRSignature extends FHIRElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRIdPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_TYPE === $childName) {
                 $v = new FHIRCoding();
                 $type->addType(FHIRCoding::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_WHEN === $childName) {
-                $v = new FHIRInstant(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInstant(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setWhen(FHIRInstant::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_WHO_URI === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setWhoUri(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_WHO_REFERENCE === $childName) {
                 $v = new FHIRReference();
                 $type->setWhoReference(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CONTENT_TYPE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setContentType(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_BLOB === $childName) {
-                $v = new FHIRBase64Binary(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBase64Binary(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setBlob(FHIRBase64Binary::xmlUnserialize($n, $v, $config));
             }
         }
@@ -730,60 +765,60 @@ class FHIRSignature extends FHIRElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRIdPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_WHEN])) {
             $pt = $type->getWhen();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_WHEN]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_WHEN]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setWhen(new FHIRInstant(
                     value: (string)$attributes[self::FIELD_WHEN],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_WHO_URI])) {
             $pt = $type->getWhoUri();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_WHO_URI]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_WHO_URI]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setWhoUri(new FHIRUri(
                     value: (string)$attributes[self::FIELD_WHO_URI],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_CONTENT_TYPE])) {
             $pt = $type->getContentType();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_CONTENT_TYPE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_CONTENT_TYPE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setContentType(new FHIRCode(
                     value: (string)$attributes[self::FIELD_CONTENT_TYPE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_BLOB])) {
             $pt = $type->getBlob();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_BLOB]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_BLOB]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setBlob(new FHIRBase64Binary(
                     value: (string)$attributes[self::FIELD_BLOB],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -814,17 +849,17 @@ class FHIRSignature extends FHIRElement
             $rootOpened = true;
             $xw->openRootNode('Signature', $this->_getSourceXMLNS());
         }
-        if (isset($this->when) && $this->when->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_WHEN, $this->when->getValue()?->getFormattedValue());
+        if (isset($this->when) && $this->when->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_WHEN, $this->when->getValue()?->_getFormattedValue());
         }
-        if (isset($this->whoUri) && $this->whoUri->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_WHO_URI, $this->whoUri->getValue()?->getFormattedValue());
+        if (isset($this->whoUri) && $this->whoUri->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_WHO_URI, $this->whoUri->getValue()?->_getFormattedValue());
         }
-        if (isset($this->contentType) && $this->contentType->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_CONTENT_TYPE, $this->contentType->getValue()?->getFormattedValue());
+        if (isset($this->contentType) && $this->contentType->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_CONTENT_TYPE, $this->contentType->getValue()?->_getFormattedValue());
         }
-        if (isset($this->blob) && $this->blob->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_BLOB, $this->blob->getValue()?->getFormattedValue());
+        if (isset($this->blob) && $this->blob->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_BLOB, $this->blob->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -834,12 +869,12 @@ class FHIRSignature extends FHIRElement
                 $xw->endElement();
             }
         }
-        if (isset($this->when) && $this->when->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->when) && $this->when->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_WHEN);
             $this->when->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->whoUri) && $this->whoUri->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->whoUri) && $this->whoUri->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_WHO_URI);
             $this->whoUri->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -849,12 +884,12 @@ class FHIRSignature extends FHIRElement
             $this->whoReference->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->contentType) && $this->contentType->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->contentType) && $this->contentType->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_CONTENT_TYPE);
             $this->contentType->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->blob) && $this->blob->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->blob) && $this->blob->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_BLOB);
             $this->blob->xmlSerialize($xw, $config);
             $xw->endElement();

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -337,9 +337,11 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
      * possible that the number of subunits can be variable.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $numberOfSubunits
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setNumberOfSubunits(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numberOfSubunits): self
+    public function setNumberOfSubunits(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numberOfSubunits,
+                                        null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $numberOfSubunits) {
             unset($this->numberOfSubunits);
@@ -347,6 +349,11 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
         }
         if (!($numberOfSubunits instanceof FHIRInteger)) {
             $numberOfSubunits = new FHIRInteger(value: $numberOfSubunits);
+        }
+        if (null !== $valueXMLLocation) {
+            $numberOfSubunits->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $numberOfSubunits->_getValueXMLLocation()) {
+            $numberOfSubunits->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->numberOfSubunits = $numberOfSubunits;
         return $this;
@@ -736,16 +743,16 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
         foreach ($element->children() as $n) {
             $childName = $n->getName();
             if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_META === $childName) {
                 $v = new FHIRMeta();
                 $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -766,10 +773,10 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
                 $v = new FHIRCodeableConcept();
                 $type->setSequenceType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NUMBER_OF_SUBUNITS === $childName) {
-                $v = new FHIRInteger(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setNumberOfSubunits(FHIRInteger::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DISULFIDE_LINKAGE === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addDisulfideLinkage(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SUBUNIT === $childName) {
                 $v = new FHIRSubstanceProteinSubunit();
@@ -780,54 +787,54 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRId(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             $pt = $type->getImplicitRules();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setImplicitRules(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_NUMBER_OF_SUBUNITS])) {
             $pt = $type->getNumberOfSubunits();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_NUMBER_OF_SUBUNITS]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_NUMBER_OF_SUBUNITS]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setNumberOfSubunits(new FHIRInteger(
                     value: (string)$attributes[self::FIELD_NUMBER_OF_SUBUNITS],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DISULFIDE_LINKAGE])) {
             $v = new FHIRString(value: (string)$attributes[self::FIELD_DISULFIDE_LINKAGE],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addDisulfideLinkage($v);
         }
         return $type;
@@ -857,13 +864,13 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
             $rootOpened = true;
             $xw->openRootNode('SubstanceProtein', $this->_getSourceXMLNS());
         }
-        if (isset($this->numberOfSubunits) && $this->numberOfSubunits->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_NUMBER_OF_SUBUNITS, $this->numberOfSubunits->getValue()?->getFormattedValue());
+        if (isset($this->numberOfSubunits) && $this->numberOfSubunits->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_NUMBER_OF_SUBUNITS, $this->numberOfSubunits->getValue()?->_getFormattedValue());
         }
         if (isset($this->disulfideLinkage)) {
            foreach($this->disulfideLinkage as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_DISULFIDE_LINKAGE, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_DISULFIDE_LINKAGE, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
@@ -874,14 +881,14 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
             $this->sequenceType->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->numberOfSubunits) && $this->numberOfSubunits->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->numberOfSubunits) && $this->numberOfSubunits->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_NUMBER_OF_SUBUNITS);
             $this->numberOfSubunits->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->disulfideLinkage)) {
             foreach($this->disulfideLinkage as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_DISULFIDE_LINKAGE);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();

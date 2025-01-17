@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -60,7 +60,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -820,9 +820,11 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * was performed?.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $outcome
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOutcome(null|string|FHIRStringPrimitive|FHIRString $outcome): self
+    public function setOutcome(null|string|FHIRStringPrimitive|FHIRString $outcome,
+                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $outcome) {
             unset($this->outcome);
@@ -830,6 +832,11 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
         }
         if (!($outcome instanceof FHIRString)) {
             $outcome = new FHIRString(value: $outcome);
+        }
+        if (null !== $valueXMLLocation) {
+            $outcome->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $outcome->_getValueXMLLocation()) {
+            $outcome->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->outcome = $outcome;
         return $this;
@@ -994,9 +1001,11 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * complex in which case the CarePlan resource can be used.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $followUp
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setFollowUp(null|string|FHIRStringPrimitive|FHIRString $followUp): self
+    public function setFollowUp(null|string|FHIRStringPrimitive|FHIRString $followUp,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $followUp) {
             unset($this->followUp);
@@ -1004,6 +1013,11 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
         }
         if (!($followUp instanceof FHIRString)) {
             $followUp = new FHIRString(value: $followUp);
+        }
+        if (null !== $valueXMLLocation) {
+            $followUp->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $followUp->_getValueXMLLocation()) {
+            $followUp->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->followUp = $followUp;
         return $this;
@@ -1089,9 +1103,11 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
      * Any other notes about the procedure - e.g. the operative notes.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $notes
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setNotes(null|string|FHIRStringPrimitive|FHIRString $notes): self
+    public function setNotes(null|string|FHIRStringPrimitive|FHIRString $notes,
+                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $notes) {
             unset($this->notes);
@@ -1099,6 +1115,11 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
         }
         if (!($notes instanceof FHIRString)) {
             $notes = new FHIRString(value: $notes);
+        }
+        if (null !== $valueXMLLocation) {
+            $notes->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $notes->_getValueXMLLocation()) {
+            $notes->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->notes = $notes;
         return $this;
@@ -1416,13 +1437,20 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRIdPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -1458,7 +1486,7 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
                 $v = new FHIRResourceReference();
                 $type->setEncounter(FHIRResourceReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_OUTCOME === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setOutcome(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_REPORT === $childName) {
                 $v = new FHIRResourceReference();
@@ -1467,13 +1495,13 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
                 $v = new FHIRCodeableConcept();
                 $type->addComplication(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_FOLLOW_UP === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setFollowUp(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_RELATED_ITEM === $childName) {
                 $v = new FHIRProcedureRelatedItem();
                 $type->addRelatedItem(FHIRProcedureRelatedItem::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NOTES === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setNotes(FHIRString::xmlUnserialize($n, $v, $config));
             }
         }
@@ -1481,60 +1509,60 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRIdPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_OUTCOME])) {
             $pt = $type->getOutcome();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_OUTCOME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_OUTCOME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setOutcome(new FHIRString(
                     value: (string)$attributes[self::FIELD_OUTCOME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_FOLLOW_UP])) {
             $pt = $type->getFollowUp();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_FOLLOW_UP]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_FOLLOW_UP]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setFollowUp(new FHIRString(
                     value: (string)$attributes[self::FIELD_FOLLOW_UP],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_NOTES])) {
             $pt = $type->getNotes();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_NOTES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_NOTES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setNotes(new FHIRString(
                     value: (string)$attributes[self::FIELD_NOTES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1565,14 +1593,14 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
             $rootOpened = true;
             $xw->openRootNode('Procedure', $this->_getSourceXMLNS());
         }
-        if (isset($this->outcome) && $this->outcome->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_OUTCOME, $this->outcome->getValue()?->getFormattedValue());
+        if (isset($this->outcome) && $this->outcome->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_OUTCOME, $this->outcome->getValue()?->_getFormattedValue());
         }
-        if (isset($this->followUp) && $this->followUp->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_FOLLOW_UP, $this->followUp->getValue()?->getFormattedValue());
+        if (isset($this->followUp) && $this->followUp->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_FOLLOW_UP, $this->followUp->getValue()?->_getFormattedValue());
         }
-        if (isset($this->notes) && $this->notes->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_NOTES, $this->notes->getValue()?->getFormattedValue());
+        if (isset($this->notes) && $this->notes->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_NOTES, $this->notes->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1623,7 +1651,7 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
             $this->encounter->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->outcome) && $this->outcome->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->outcome) && $this->outcome->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_OUTCOME);
             $this->outcome->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1642,7 +1670,7 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
                 $xw->endElement();
             }
         }
-        if (isset($this->followUp) && $this->followUp->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->followUp) && $this->followUp->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_FOLLOW_UP);
             $this->followUp->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1654,7 +1682,7 @@ class FHIRProcedure extends FHIRResource implements VersionContainedTypeInterfac
                 $xw->endElement();
             }
         }
-        if (isset($this->notes) && $this->notes->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->notes) && $this->notes->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_NOTES);
             $this->notes->xmlSerialize($xw, $config);
             $xw->endElement();

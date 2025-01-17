@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -446,9 +446,11 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      * configuration or setting change.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $lastSystemChange
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLastSystemChange(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $lastSystemChange): self
+    public function setLastSystemChange(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $lastSystemChange,
+                                        null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $lastSystemChange) {
             unset($this->lastSystemChange);
@@ -456,6 +458,11 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
         }
         if (!($lastSystemChange instanceof FHIRInstant)) {
             $lastSystemChange = new FHIRInstant(value: $lastSystemChange);
+        }
+        if (null !== $valueXMLLocation) {
+            $lastSystemChange->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $lastSystemChange->_getValueXMLLocation()) {
+            $lastSystemChange->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->lastSystemChange = $lastSystemChange;
         return $this;
@@ -1059,16 +1066,16 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
         foreach ($element->children() as $n) {
             $childName = $n->getName();
             if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_META === $childName) {
                 $v = new FHIRMeta();
                 $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -1092,7 +1099,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
                 $v = new FHIRIdentifier();
                 $type->setIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LAST_SYSTEM_CHANGE === $childName) {
-                $v = new FHIRInstant(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInstant(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLastSystemChange(FHIRInstant::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SOURCE === $childName) {
                 $v = new FHIRReference();
@@ -1107,7 +1114,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
                 $v = new FHIRCodeableConcept();
                 $type->setParameterGroup(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_MEASUREMENT_PRINCIPLE === $childName) {
-                $v = new FHIRMeasmnt_Principle(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRMeasmnt_Principle(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setMeasurementPrinciple(FHIRMeasmnt_Principle::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PRODUCTION_SPECIFICATION === $childName) {
                 $v = new FHIRDeviceComponentProductionSpecification();
@@ -1121,48 +1128,48 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRId(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             $pt = $type->getImplicitRules();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setImplicitRules(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LAST_SYSTEM_CHANGE])) {
             $pt = $type->getLastSystemChange();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LAST_SYSTEM_CHANGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LAST_SYSTEM_CHANGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLastSystemChange(new FHIRInstant(
                     value: (string)$attributes[self::FIELD_LAST_SYSTEM_CHANGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1193,8 +1200,8 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
             $rootOpened = true;
             $xw->openRootNode('DeviceComponent', $this->_getSourceXMLNS());
         }
-        if (isset($this->lastSystemChange) && $this->lastSystemChange->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_LAST_SYSTEM_CHANGE, $this->lastSystemChange->getValue()?->getFormattedValue());
+        if (isset($this->lastSystemChange) && $this->lastSystemChange->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_LAST_SYSTEM_CHANGE, $this->lastSystemChange->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -1207,7 +1214,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
             $this->identifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->lastSystemChange) && $this->lastSystemChange->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->lastSystemChange) && $this->lastSystemChange->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_LAST_SYSTEM_CHANGE);
             $this->lastSystemChange->xmlSerialize($xw, $config);
             $xw->endElement();

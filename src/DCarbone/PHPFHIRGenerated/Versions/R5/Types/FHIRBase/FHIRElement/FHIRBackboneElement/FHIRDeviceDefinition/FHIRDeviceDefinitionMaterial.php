@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -255,9 +255,11 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
      * Indicates an alternative material of the device.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $alternate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAlternate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $alternate): self
+    public function setAlternate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $alternate,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $alternate) {
             unset($this->alternate);
@@ -265,6 +267,11 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
         }
         if (!($alternate instanceof FHIRBoolean)) {
             $alternate = new FHIRBoolean(value: $alternate);
+        }
+        if (null !== $valueXMLLocation) {
+            $alternate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $alternate->_getValueXMLLocation()) {
+            $alternate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->alternate = $alternate;
         return $this;
@@ -290,9 +297,11 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
      * Whether the substance is a known or suspected allergen.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $allergenicIndicator
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAllergenicIndicator(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allergenicIndicator): self
+    public function setAllergenicIndicator(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allergenicIndicator,
+                                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $allergenicIndicator) {
             unset($this->allergenicIndicator);
@@ -300,6 +309,11 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
         }
         if (!($allergenicIndicator instanceof FHIRBoolean)) {
             $allergenicIndicator = new FHIRBoolean(value: $allergenicIndicator);
+        }
+        if (null !== $valueXMLLocation) {
+            $allergenicIndicator->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $allergenicIndicator->_getValueXMLLocation()) {
+            $allergenicIndicator->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->allergenicIndicator = $allergenicIndicator;
         return $this;
@@ -444,8 +458,15 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -453,10 +474,10 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->setSubstance(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ALTERNATE === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setAlternate(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ALLERGENIC_INDICATOR === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setAllergenicIndicator(FHIRBoolean::xmlUnserialize($n, $v, $config));
             }
         }
@@ -464,36 +485,36 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_ALTERNATE])) {
             $pt = $type->getAlternate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ALTERNATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ALTERNATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setAlternate(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_ALTERNATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_ALLERGENIC_INDICATOR])) {
             $pt = $type->getAllergenicIndicator();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ALLERGENIC_INDICATOR]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ALLERGENIC_INDICATOR]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setAllergenicIndicator(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_ALLERGENIC_INDICATOR],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -524,11 +545,11 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('DeviceDefinitionMaterial', $this->_getSourceXMLNS());
         }
-        if (isset($this->alternate) && $this->alternate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ALTERNATE, $this->alternate->getValue()?->getFormattedValue());
+        if (isset($this->alternate) && $this->alternate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_ALTERNATE, $this->alternate->getValue()?->_getFormattedValue());
         }
-        if (isset($this->allergenicIndicator) && $this->allergenicIndicator->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ALLERGENIC_INDICATOR, $this->allergenicIndicator->getValue()?->getFormattedValue());
+        if (isset($this->allergenicIndicator) && $this->allergenicIndicator->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_ALLERGENIC_INDICATOR, $this->allergenicIndicator->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->substance)) {
@@ -536,12 +557,12 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
             $this->substance->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->alternate) && $this->alternate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->alternate) && $this->alternate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_ALTERNATE);
             $this->alternate->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->allergenicIndicator) && $this->allergenicIndicator->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->allergenicIndicator) && $this->allergenicIndicator->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_ALLERGENIC_INDICATOR);
             $this->allergenicIndicator->xmlSerialize($xw, $config);
             $xw->endElement();

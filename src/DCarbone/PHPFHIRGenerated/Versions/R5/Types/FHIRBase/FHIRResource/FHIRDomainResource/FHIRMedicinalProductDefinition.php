@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -922,9 +922,11 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * commonly used to support revisions to an existing product.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version): self
+    public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version,
+                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $version) {
             unset($this->version);
@@ -932,6 +934,11 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
         }
         if (!($version instanceof FHIRString)) {
             $version = new FHIRString(value: $version);
+        }
+        if (null !== $valueXMLLocation) {
+            $version->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $version->_getValueXMLLocation()) {
+            $version->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->version = $version;
         return $this;
@@ -1007,9 +1014,11 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * The date at which the given status became applicable.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $statusDate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate): self
+    public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $statusDate) {
             unset($this->statusDate);
@@ -1017,6 +1026,11 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
         }
         if (!($statusDate instanceof FHIRDateTime)) {
             $statusDate = new FHIRDateTime(value: $statusDate);
+        }
+        if (null !== $valueXMLLocation) {
+            $statusDate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $statusDate->_getValueXMLLocation()) {
+            $statusDate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->statusDate = $statusDate;
         return $this;
@@ -1052,9 +1066,11 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * General description of this product.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description): self
+    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $description) {
             unset($this->description);
@@ -1062,6 +1078,11 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
         }
         if (!($description instanceof FHIRMarkdown)) {
             $description = new FHIRMarkdown(value: $description);
+        }
+        if (null !== $valueXMLLocation) {
+            $description->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $description->_getValueXMLLocation()) {
+            $description->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->description = $description;
         return $this;
@@ -1220,9 +1241,11 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
      * situation for which using the product is appropriate.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $indication
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIndication(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $indication): self
+    public function setIndication(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $indication,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $indication) {
             unset($this->indication);
@@ -1230,6 +1253,11 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
         }
         if (!($indication instanceof FHIRMarkdown)) {
             $indication = new FHIRMarkdown(value: $indication);
+        }
+        if (null !== $valueXMLLocation) {
+            $indication->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $indication->_getValueXMLLocation()) {
+            $indication->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->indication = $indication;
         return $this;
@@ -2958,16 +2986,16 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
         foreach ($element->children() as $n) {
             $childName = $n->getName();
             if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_META === $childName) {
                 $v = new FHIRMeta();
                 $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -2994,16 +3022,16 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
                 $v = new FHIRCodeableConcept();
                 $type->setDomain(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VERSION === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setVersion(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STATUS === $childName) {
                 $v = new FHIRCodeableConcept();
                 $type->setStatus(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STATUS_DATE === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStatusDate(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DESCRIPTION === $childName) {
-                $v = new FHIRMarkdown(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRMarkdown(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDescription(FHIRMarkdown::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_COMBINED_PHARMACEUTICAL_DOSE_FORM === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -3012,7 +3040,7 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
                 $v = new FHIRCodeableConcept();
                 $type->addRoute(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_INDICATION === $childName) {
-                $v = new FHIRMarkdown(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRMarkdown(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setIndication(FHIRMarkdown::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LEGAL_STATUS_OF_SUPPLY === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -3077,84 +3105,84 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRId(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             $pt = $type->getImplicitRules();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setImplicitRules(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_VERSION])) {
             $pt = $type->getVersion();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_VERSION]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_VERSION]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setVersion(new FHIRString(
                     value: (string)$attributes[self::FIELD_VERSION],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_STATUS_DATE])) {
             $pt = $type->getStatusDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_STATUS_DATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_STATUS_DATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setStatusDate(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_STATUS_DATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
             $pt = $type->getDescription();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DESCRIPTION]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDescription(new FHIRMarkdown(
                     value: (string)$attributes[self::FIELD_DESCRIPTION],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_INDICATION])) {
             $pt = $type->getIndication();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_INDICATION]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_INDICATION]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setIndication(new FHIRMarkdown(
                     value: (string)$attributes[self::FIELD_INDICATION],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -3185,17 +3213,17 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
             $rootOpened = true;
             $xw->openRootNode('MedicinalProductDefinition', $this->_getSourceXMLNS());
         }
-        if (isset($this->version) && $this->version->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VERSION, $this->version->getValue()?->getFormattedValue());
+        if (isset($this->version) && $this->version->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VERSION, $this->version->getValue()?->_getFormattedValue());
         }
-        if (isset($this->statusDate) && $this->statusDate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_STATUS_DATE, $this->statusDate->getValue()?->getFormattedValue());
+        if (isset($this->statusDate) && $this->statusDate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_STATUS_DATE, $this->statusDate->getValue()?->_getFormattedValue());
         }
-        if (isset($this->description) && $this->description->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->getValue()?->getFormattedValue());
+        if (isset($this->description) && $this->description->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->getValue()?->_getFormattedValue());
         }
-        if (isset($this->indication) && $this->indication->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_INDICATION, $this->indication->getValue()?->getFormattedValue());
+        if (isset($this->indication) && $this->indication->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_INDICATION, $this->indication->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -3215,7 +3243,7 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
             $this->domain->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->version) && $this->version->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->version) && $this->version->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_VERSION);
             $this->version->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -3225,12 +3253,12 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
             $this->status->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->statusDate) && $this->statusDate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->statusDate) && $this->statusDate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_STATUS_DATE);
             $this->statusDate->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->description) && $this->description->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->description) && $this->description->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DESCRIPTION);
             $this->description->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -3247,7 +3275,7 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements Versi
                 $xw->endElement();
             }
         }
-        if (isset($this->indication) && $this->indication->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->indication) && $this->indication->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_INDICATION);
             $this->indication->xmlSerialize($xw, $config);
             $xw->endElement();

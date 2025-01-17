@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -734,9 +734,11 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * Date/Time that the slot is to begin.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant $start
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStart(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $start): self
+    public function setStart(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $start,
+                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $start) {
             unset($this->start);
@@ -744,6 +746,11 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
         }
         if (!($start instanceof FHIRInstant)) {
             $start = new FHIRInstant(value: $start);
+        }
+        if (null !== $valueXMLLocation) {
+            $start->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $start->_getValueXMLLocation()) {
+            $start->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->start = $start;
         return $this;
@@ -775,9 +782,11 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * Date/Time that the slot is to conclude.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant $end
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEnd(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end): self
+    public function setEnd(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end,
+                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $end) {
             unset($this->end);
@@ -785,6 +794,11 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
         }
         if (!($end instanceof FHIRInstant)) {
             $end = new FHIRInstant(value: $end);
+        }
+        if (null !== $valueXMLLocation) {
+            $end->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $end->_getValueXMLLocation()) {
+            $end->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->end = $end;
         return $this;
@@ -812,9 +826,11 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * for this time.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $overbooked
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOverbooked(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $overbooked): self
+    public function setOverbooked(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $overbooked,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $overbooked) {
             unset($this->overbooked);
@@ -822,6 +838,11 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
         }
         if (!($overbooked instanceof FHIRBoolean)) {
             $overbooked = new FHIRBoolean(value: $overbooked);
+        }
+        if (null !== $valueXMLLocation) {
+            $overbooked->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $overbooked->_getValueXMLLocation()) {
+            $overbooked->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->overbooked = $overbooked;
         return $this;
@@ -851,9 +872,11 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
      * constraints on the slot.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $comment
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment): self
+    public function setComment(null|string|FHIRStringPrimitive|FHIRString $comment,
+                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $comment) {
             unset($this->comment);
@@ -861,6 +884,11 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
         }
         if (!($comment instanceof FHIRString)) {
             $comment = new FHIRString(value: $comment);
+        }
+        if (null !== $valueXMLLocation) {
+            $comment->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $comment->_getValueXMLLocation()) {
+            $comment->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->comment = $comment;
         return $this;
@@ -1173,16 +1201,16 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
         foreach ($element->children() as $n) {
             $childName = $n->getName();
             if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_META === $childName) {
                 $v = new FHIRMeta();
                 $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -1218,19 +1246,19 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
                 $v = new FHIRReference();
                 $type->setSchedule(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STATUS === $childName) {
-                $v = new FHIRSlotStatus(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRSlotStatus(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStatus(FHIRSlotStatus::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_START === $childName) {
-                $v = new FHIRInstant(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInstant(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStart(FHIRInstant::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_END === $childName) {
-                $v = new FHIRInstant(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInstant(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setEnd(FHIRInstant::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_OVERBOOKED === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setOverbooked(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_COMMENT === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setComment(FHIRString::xmlUnserialize($n, $v, $config));
             }
         }
@@ -1238,84 +1266,84 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRId(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             $pt = $type->getImplicitRules();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setImplicitRules(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_START])) {
             $pt = $type->getStart();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_START]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_START]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setStart(new FHIRInstant(
                     value: (string)$attributes[self::FIELD_START],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_END])) {
             $pt = $type->getEnd();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_END]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_END]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setEnd(new FHIRInstant(
                     value: (string)$attributes[self::FIELD_END],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_OVERBOOKED])) {
             $pt = $type->getOverbooked();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_OVERBOOKED]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_OVERBOOKED]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setOverbooked(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_OVERBOOKED],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_COMMENT])) {
             $pt = $type->getComment();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_COMMENT]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_COMMENT]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setComment(new FHIRString(
                     value: (string)$attributes[self::FIELD_COMMENT],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1346,17 +1374,17 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
             $rootOpened = true;
             $xw->openRootNode('Slot', $this->_getSourceXMLNS());
         }
-        if (isset($this->start) && $this->start->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_START, $this->start->getValue()?->getFormattedValue());
+        if (isset($this->start) && $this->start->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_START, $this->start->getValue()?->_getFormattedValue());
         }
-        if (isset($this->end) && $this->end->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_END, $this->end->getValue()?->getFormattedValue());
+        if (isset($this->end) && $this->end->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_END, $this->end->getValue()?->_getFormattedValue());
         }
-        if (isset($this->overbooked) && $this->overbooked->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_OVERBOOKED, $this->overbooked->getValue()?->getFormattedValue());
+        if (isset($this->overbooked) && $this->overbooked->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_OVERBOOKED, $this->overbooked->getValue()?->_getFormattedValue());
         }
-        if (isset($this->comment) && $this->comment->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_COMMENT, $this->comment->getValue()?->getFormattedValue());
+        if (isset($this->comment) && $this->comment->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_COMMENT, $this->comment->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1400,22 +1428,22 @@ class FHIRSlot extends FHIRDomainResource implements VersionContainedTypeInterfa
             $this->status->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->start) && $this->start->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->start) && $this->start->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_START);
             $this->start->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->end) && $this->end->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->end) && $this->end->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_END);
             $this->end->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->overbooked) && $this->overbooked->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->overbooked) && $this->overbooked->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_OVERBOOKED);
             $this->overbooked->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->comment) && $this->comment->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->comment) && $this->comment->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_COMMENT);
             $this->comment->xmlSerialize($xw, $config);
             $xw->endElement();

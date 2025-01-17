@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -444,9 +444,11 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * for each stratum within the stratifier is unique.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
+    public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $valueBoolean) {
             unset($this->valueBoolean);
@@ -454,6 +456,11 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
         }
         if (!($valueBoolean instanceof FHIRBoolean)) {
             $valueBoolean = new FHIRBoolean(value: $valueBoolean);
+        }
+        if (null !== $valueXMLLocation) {
+            $valueBoolean->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $valueBoolean->_getValueXMLLocation()) {
+            $valueBoolean->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->valueBoolean = $valueBoolean;
         return $this;
@@ -766,9 +773,11 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * type and scoring method, and based on only the members of this stratum.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $measureScoreDateTime
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMeasureScoreDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $measureScoreDateTime): self
+    public function setMeasureScoreDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $measureScoreDateTime,
+                                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $measureScoreDateTime) {
             unset($this->measureScoreDateTime);
@@ -776,6 +785,11 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
         }
         if (!($measureScoreDateTime instanceof FHIRDateTime)) {
             $measureScoreDateTime = new FHIRDateTime(value: $measureScoreDateTime);
+        }
+        if (null !== $valueXMLLocation) {
+            $measureScoreDateTime->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $measureScoreDateTime->_getValueXMLLocation()) {
+            $measureScoreDateTime->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->measureScoreDateTime = $measureScoreDateTime;
         return $this;
@@ -1181,8 +1195,15 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -1190,7 +1211,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->setValueCodeableConcept(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VALUE_BOOLEAN === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setValueBoolean(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VALUE_QUANTITY === $childName) {
                 $v = new FHIRQuantity();
@@ -1211,7 +1232,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
                 $v = new FHIRQuantity();
                 $type->setMeasureScoreQuantity(FHIRQuantity::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_MEASURE_SCORE_DATE_TIME === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setMeasureScoreDateTime(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_MEASURE_SCORE_CODEABLE_CONCEPT === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -1231,36 +1252,36 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_VALUE_BOOLEAN])) {
             $pt = $type->getValueBoolean();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_VALUE_BOOLEAN]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_VALUE_BOOLEAN]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setValueBoolean(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_VALUE_BOOLEAN],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_MEASURE_SCORE_DATE_TIME])) {
             $pt = $type->getMeasureScoreDateTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_MEASURE_SCORE_DATE_TIME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_MEASURE_SCORE_DATE_TIME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setMeasureScoreDateTime(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_MEASURE_SCORE_DATE_TIME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1291,11 +1312,11 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('MeasureReportStratum', $this->_getSourceXMLNS());
         }
-        if (isset($this->valueBoolean) && $this->valueBoolean->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VALUE_BOOLEAN, $this->valueBoolean->getValue()?->getFormattedValue());
+        if (isset($this->valueBoolean) && $this->valueBoolean->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VALUE_BOOLEAN, $this->valueBoolean->getValue()?->_getFormattedValue());
         }
-        if (isset($this->measureScoreDateTime) && $this->measureScoreDateTime->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_MEASURE_SCORE_DATE_TIME, $this->measureScoreDateTime->getValue()?->getFormattedValue());
+        if (isset($this->measureScoreDateTime) && $this->measureScoreDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_MEASURE_SCORE_DATE_TIME, $this->measureScoreDateTime->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->valueCodeableConcept)) {
@@ -1303,7 +1324,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
             $this->valueCodeableConcept->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->valueBoolean) && $this->valueBoolean->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->valueBoolean) && $this->valueBoolean->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_VALUE_BOOLEAN);
             $this->valueBoolean->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1342,7 +1363,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
             $this->measureScoreQuantity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->measureScoreDateTime) && $this->measureScoreDateTime->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->measureScoreDateTime) && $this->measureScoreDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_MEASURE_SCORE_DATE_TIME);
             $this->measureScoreDateTime->xmlSerialize($xw, $config);
             $xw->endElement();

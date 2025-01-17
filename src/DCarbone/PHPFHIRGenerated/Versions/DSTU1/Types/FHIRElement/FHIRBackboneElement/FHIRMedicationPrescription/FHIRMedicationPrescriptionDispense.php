@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -59,7 +59,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -329,9 +329,11 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      * the initial standard fill.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $numberOfRepeatsAllowed
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setNumberOfRepeatsAllowed(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numberOfRepeatsAllowed): self
+    public function setNumberOfRepeatsAllowed(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numberOfRepeatsAllowed,
+                                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $numberOfRepeatsAllowed) {
             unset($this->numberOfRepeatsAllowed);
@@ -339,6 +341,11 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
         }
         if (!($numberOfRepeatsAllowed instanceof FHIRInteger)) {
             $numberOfRepeatsAllowed = new FHIRInteger(value: $numberOfRepeatsAllowed);
+        }
+        if (null !== $valueXMLLocation) {
+            $numberOfRepeatsAllowed->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $numberOfRepeatsAllowed->_getValueXMLLocation()) {
+            $numberOfRepeatsAllowed->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->numberOfRepeatsAllowed = $numberOfRepeatsAllowed;
         return $this;
@@ -580,8 +587,15 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRIdPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -592,7 +606,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
                 $v = new FHIRPeriod();
                 $type->setValidityPeriod(FHIRPeriod::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NUMBER_OF_REPEATS_ALLOWED === $childName) {
-                $v = new FHIRInteger(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setNumberOfRepeatsAllowed(FHIRInteger::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_QUANTITY === $childName) {
                 $v = new FHIRQuantity();
@@ -606,24 +620,24 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRIdPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_NUMBER_OF_REPEATS_ALLOWED])) {
             $pt = $type->getNumberOfRepeatsAllowed();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setNumberOfRepeatsAllowed(new FHIRInteger(
                     value: (string)$attributes[self::FIELD_NUMBER_OF_REPEATS_ALLOWED],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -654,8 +668,8 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('MedicationPrescriptionDispense', $this->_getSourceXMLNS());
         }
-        if (isset($this->numberOfRepeatsAllowed) && $this->numberOfRepeatsAllowed->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_NUMBER_OF_REPEATS_ALLOWED, $this->numberOfRepeatsAllowed->getValue()?->getFormattedValue());
+        if (isset($this->numberOfRepeatsAllowed) && $this->numberOfRepeatsAllowed->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_NUMBER_OF_REPEATS_ALLOWED, $this->numberOfRepeatsAllowed->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->medication)) {
@@ -668,7 +682,7 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
             $this->validityPeriod->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->numberOfRepeatsAllowed) && $this->numberOfRepeatsAllowed->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->numberOfRepeatsAllowed) && $this->numberOfRepeatsAllowed->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_NUMBER_OF_REPEATS_ALLOWED);
             $this->numberOfRepeatsAllowed->xmlSerialize($xw, $config);
             $xw->endElement();

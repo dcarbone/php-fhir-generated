@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -276,9 +276,11 @@ class FHIRExplanationOfBenefitEvent extends FHIRBackboneElement
      * expectd to occur.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $whenDateTime
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setWhenDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenDateTime): self
+    public function setWhenDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $whenDateTime,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $whenDateTime) {
             unset($this->whenDateTime);
@@ -286,6 +288,11 @@ class FHIRExplanationOfBenefitEvent extends FHIRBackboneElement
         }
         if (!($whenDateTime instanceof FHIRDateTime)) {
             $whenDateTime = new FHIRDateTime(value: $whenDateTime);
+        }
+        if (null !== $valueXMLLocation) {
+            $whenDateTime->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $whenDateTime->_getValueXMLLocation()) {
+            $whenDateTime->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->whenDateTime = $whenDateTime;
         return $this;
@@ -476,8 +483,15 @@ class FHIRExplanationOfBenefitEvent extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -485,7 +499,7 @@ class FHIRExplanationOfBenefitEvent extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->setType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_WHEN_DATE_TIME === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setWhenDateTime(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_WHEN_PERIOD === $childName) {
                 $v = new FHIRPeriod();
@@ -496,24 +510,24 @@ class FHIRExplanationOfBenefitEvent extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_WHEN_DATE_TIME])) {
             $pt = $type->getWhenDateTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_WHEN_DATE_TIME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_WHEN_DATE_TIME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setWhenDateTime(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_WHEN_DATE_TIME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -544,8 +558,8 @@ class FHIRExplanationOfBenefitEvent extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ExplanationOfBenefitEvent', $this->_getSourceXMLNS());
         }
-        if (isset($this->whenDateTime) && $this->whenDateTime->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_WHEN_DATE_TIME, $this->whenDateTime->getValue()?->getFormattedValue());
+        if (isset($this->whenDateTime) && $this->whenDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_WHEN_DATE_TIME, $this->whenDateTime->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -553,7 +567,7 @@ class FHIRExplanationOfBenefitEvent extends FHIRBackboneElement
             $this->type->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->whenDateTime) && $this->whenDateTime->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->whenDateTime) && $this->whenDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_WHEN_DATE_TIME);
             $this->whenDateTime->xmlSerialize($xw, $config);
             $xw->endElement();

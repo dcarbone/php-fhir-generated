@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -60,7 +60,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -507,9 +507,11 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
      * requested.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $clinicalNotes
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setClinicalNotes(null|string|FHIRStringPrimitive|FHIRString $clinicalNotes): self
+    public function setClinicalNotes(null|string|FHIRStringPrimitive|FHIRString $clinicalNotes,
+                                     null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $clinicalNotes) {
             unset($this->clinicalNotes);
@@ -517,6 +519,11 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
         }
         if (!($clinicalNotes instanceof FHIRString)) {
             $clinicalNotes = new FHIRString(value: $clinicalNotes);
+        }
+        if (null !== $valueXMLLocation) {
+            $clinicalNotes->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $clinicalNotes->_getValueXMLLocation()) {
+            $clinicalNotes->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->clinicalNotes = $clinicalNotes;
         return $this;
@@ -1025,13 +1032,20 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRIdPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -1055,16 +1069,16 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
                 $v = new FHIRResourceReference();
                 $type->setEncounter(FHIRResourceReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CLINICAL_NOTES === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setClinicalNotes(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SPECIMEN === $childName) {
                 $v = new FHIRResourceReference();
                 $type->addSpecimen(FHIRResourceReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STATUS === $childName) {
-                $v = new FHIRDiagnosticOrderStatus(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDiagnosticOrderStatus(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStatus(FHIRDiagnosticOrderStatus::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PRIORITY === $childName) {
-                $v = new FHIRDiagnosticOrderPriority(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDiagnosticOrderPriority(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPriority(FHIRDiagnosticOrderPriority::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_EVENT === $childName) {
                 $v = new FHIRDiagnosticOrderEvent();
@@ -1078,36 +1092,36 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRIdPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_CLINICAL_NOTES])) {
             $pt = $type->getClinicalNotes();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_CLINICAL_NOTES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_CLINICAL_NOTES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setClinicalNotes(new FHIRString(
                     value: (string)$attributes[self::FIELD_CLINICAL_NOTES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1138,8 +1152,8 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
             $rootOpened = true;
             $xw->openRootNode('DiagnosticOrder', $this->_getSourceXMLNS());
         }
-        if (isset($this->clinicalNotes) && $this->clinicalNotes->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_CLINICAL_NOTES, $this->clinicalNotes->getValue()?->getFormattedValue());
+        if (isset($this->clinicalNotes) && $this->clinicalNotes->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_CLINICAL_NOTES, $this->clinicalNotes->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->subject)) {
@@ -1164,7 +1178,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements VersionContainedTypeIn
             $this->encounter->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->clinicalNotes) && $this->clinicalNotes->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->clinicalNotes) && $this->clinicalNotes->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_CLINICAL_NOTES);
             $this->clinicalNotes->xmlSerialize($xw, $config);
             $xw->endElement();

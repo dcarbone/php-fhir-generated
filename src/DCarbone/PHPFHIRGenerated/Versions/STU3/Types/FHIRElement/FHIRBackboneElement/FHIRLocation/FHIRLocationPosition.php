@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -210,9 +210,11 @@ class FHIRLocationPosition extends FHIRBackboneElement
      * of the longitude element in KML (see notes below).
      *
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $longitude
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLongitude(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $longitude): self
+    public function setLongitude(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $longitude,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $longitude) {
             unset($this->longitude);
@@ -220,6 +222,11 @@ class FHIRLocationPosition extends FHIRBackboneElement
         }
         if (!($longitude instanceof FHIRDecimal)) {
             $longitude = new FHIRDecimal(value: $longitude);
+        }
+        if (null !== $valueXMLLocation) {
+            $longitude->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $longitude->_getValueXMLLocation()) {
+            $longitude->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->longitude = $longitude;
         return $this;
@@ -251,9 +258,11 @@ class FHIRLocationPosition extends FHIRBackboneElement
      * of the latitude element in KML (see notes below).
      *
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $latitude
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLatitude(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $latitude): self
+    public function setLatitude(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $latitude,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $latitude) {
             unset($this->latitude);
@@ -261,6 +270,11 @@ class FHIRLocationPosition extends FHIRBackboneElement
         }
         if (!($latitude instanceof FHIRDecimal)) {
             $latitude = new FHIRDecimal(value: $latitude);
+        }
+        if (null !== $valueXMLLocation) {
+            $latitude->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $latitude->_getValueXMLLocation()) {
+            $latitude->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->latitude = $latitude;
         return $this;
@@ -292,9 +306,11 @@ class FHIRLocationPosition extends FHIRBackboneElement
      * of the altitude element in KML (see notes below).
      *
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $altitude
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAltitude(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $altitude): self
+    public function setAltitude(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $altitude,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $altitude) {
             unset($this->altitude);
@@ -302,6 +318,11 @@ class FHIRLocationPosition extends FHIRBackboneElement
         }
         if (!($altitude instanceof FHIRDecimal)) {
             $altitude = new FHIRDecimal(value: $altitude);
+        }
+        if (null !== $valueXMLLocation) {
+            $altitude->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $altitude->_getValueXMLLocation()) {
+            $altitude->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->altitude = $altitude;
         return $this;
@@ -451,19 +472,26 @@ class FHIRLocationPosition extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LONGITUDE === $childName) {
-                $v = new FHIRDecimal(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDecimal(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLongitude(FHIRDecimal::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LATITUDE === $childName) {
-                $v = new FHIRDecimal(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDecimal(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLatitude(FHIRDecimal::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ALTITUDE === $childName) {
-                $v = new FHIRDecimal(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDecimal(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setAltitude(FHIRDecimal::xmlUnserialize($n, $v, $config));
             }
         }
@@ -471,48 +499,48 @@ class FHIRLocationPosition extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LONGITUDE])) {
             $pt = $type->getLongitude();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LONGITUDE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LONGITUDE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLongitude(new FHIRDecimal(
                     value: (string)$attributes[self::FIELD_LONGITUDE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LATITUDE])) {
             $pt = $type->getLatitude();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LATITUDE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LATITUDE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLatitude(new FHIRDecimal(
                     value: (string)$attributes[self::FIELD_LATITUDE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_ALTITUDE])) {
             $pt = $type->getAltitude();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ALTITUDE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ALTITUDE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setAltitude(new FHIRDecimal(
                     value: (string)$attributes[self::FIELD_ALTITUDE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -543,27 +571,27 @@ class FHIRLocationPosition extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('LocationPosition', $this->_getSourceXMLNS());
         }
-        if (isset($this->longitude) && $this->longitude->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_LONGITUDE, $this->longitude->getValue()?->getFormattedValue());
+        if (isset($this->longitude) && $this->longitude->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_LONGITUDE, $this->longitude->getValue()?->_getFormattedValue());
         }
-        if (isset($this->latitude) && $this->latitude->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_LATITUDE, $this->latitude->getValue()?->getFormattedValue());
+        if (isset($this->latitude) && $this->latitude->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_LATITUDE, $this->latitude->getValue()?->_getFormattedValue());
         }
-        if (isset($this->altitude) && $this->altitude->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ALTITUDE, $this->altitude->getValue()?->getFormattedValue());
+        if (isset($this->altitude) && $this->altitude->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_ALTITUDE, $this->altitude->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->longitude) && $this->longitude->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->longitude) && $this->longitude->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_LONGITUDE);
             $this->longitude->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->latitude) && $this->latitude->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->latitude) && $this->latitude->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_LATITUDE);
             $this->latitude->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->altitude) && $this->altitude->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->altitude) && $this->altitude->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_ALTITUDE);
             $this->altitude->xmlSerialize($xw, $config);
             $xw->endElement();

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -327,9 +327,11 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * returned for this element.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $criteria
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCriteria(null|string|FHIRStringPrimitive|FHIRString $criteria): self
+    public function setCriteria(null|string|FHIRStringPrimitive|FHIRString $criteria,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $criteria) {
             unset($this->criteria);
@@ -337,6 +339,11 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
         }
         if (!($criteria instanceof FHIRString)) {
             $criteria = new FHIRString(value: $criteria);
+        }
+        if (null !== $valueXMLLocation) {
+            $criteria->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $criteria->_getValueXMLLocation()) {
+            $criteria->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->criteria = $criteria;
         return $this;
@@ -366,9 +373,11 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
      * as a valid FHIR Resource Path.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $path
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
+    public function setPath(null|string|FHIRStringPrimitive|FHIRString $path,
+                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $path) {
             unset($this->path);
@@ -376,6 +385,11 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
         }
         if (!($path instanceof FHIRString)) {
             $path = new FHIRString(value: $path);
+        }
+        if (null !== $valueXMLLocation) {
+            $path->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $path->_getValueXMLLocation()) {
+            $path->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->path = $path;
         return $this;
@@ -527,8 +541,15 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -539,10 +560,10 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->addUsage(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CRITERIA === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setCriteria(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PATH === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPath(FHIRString::xmlUnserialize($n, $v, $config));
             }
         }
@@ -550,36 +571,36 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_CRITERIA])) {
             $pt = $type->getCriteria();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_CRITERIA]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_CRITERIA]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setCriteria(new FHIRString(
                     value: (string)$attributes[self::FIELD_CRITERIA],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PATH])) {
             $pt = $type->getPath();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PATH]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PATH]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setPath(new FHIRString(
                     value: (string)$attributes[self::FIELD_PATH],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -610,11 +631,11 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('MeasureSupplementalData', $this->_getSourceXMLNS());
         }
-        if (isset($this->criteria) && $this->criteria->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_CRITERIA, $this->criteria->getValue()?->getFormattedValue());
+        if (isset($this->criteria) && $this->criteria->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_CRITERIA, $this->criteria->getValue()?->_getFormattedValue());
         }
-        if (isset($this->path) && $this->path->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PATH, $this->path->getValue()?->getFormattedValue());
+        if (isset($this->path) && $this->path->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PATH, $this->path->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -629,12 +650,12 @@ class FHIRMeasureSupplementalData extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->criteria) && $this->criteria->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->criteria) && $this->criteria->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_CRITERIA);
             $this->criteria->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->path) && $this->path->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->path) && $this->path->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PATH);
             $this->path->xmlSerialize($xw, $config);
             $xw->endElement();

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -60,7 +60,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -350,9 +350,11 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * in when following the plan.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $prohibited
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setProhibited(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $prohibited): self
+    public function setProhibited(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $prohibited,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $prohibited) {
             unset($this->prohibited);
@@ -360,6 +362,11 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         }
         if (!($prohibited instanceof FHIRBoolean)) {
             $prohibited = new FHIRBoolean(value: $prohibited);
+        }
+        if (null !== $valueXMLLocation) {
+            $prohibited->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $prohibited->_getValueXMLLocation()) {
+            $prohibited->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->prohibited = $prohibited;
         return $this;
@@ -448,9 +455,11 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * Notes about the execution of the activity.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $notes
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setNotes(null|string|FHIRStringPrimitive|FHIRString $notes): self
+    public function setNotes(null|string|FHIRStringPrimitive|FHIRString $notes,
+                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $notes) {
             unset($this->notes);
@@ -458,6 +467,11 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         }
         if (!($notes instanceof FHIRString)) {
             $notes = new FHIRString(value: $notes);
+        }
+        if (null !== $valueXMLLocation) {
+            $notes->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $notes->_getValueXMLLocation()) {
+            $notes->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->notes = $notes;
         return $this;
@@ -727,25 +741,39 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRIdPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_GOAL === $childName) {
-                $v = new FHIRXmlIdRef(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->addGoal(FHIRXmlIdRef::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRXmlIdRef::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->addGoal($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_STATUS === $childName) {
-                $v = new FHIRCarePlanActivityStatus(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCarePlanActivityStatus(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStatus(FHIRCarePlanActivityStatus::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PROHIBITED === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setProhibited(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ACTION_RESULTING === $childName) {
                 $v = new FHIRResourceReference();
                 $type->addActionResulting(FHIRResourceReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NOTES === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setNotes(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DETAIL === $childName) {
                 $v = new FHIRResourceReference();
@@ -759,41 +787,41 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRIdPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_GOAL])) {
             $v = new FHIRXmlIdRef(value: (string)$attributes[self::FIELD_GOAL],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addGoal($v);
         }
         if (isset($attributes[self::FIELD_PROHIBITED])) {
             $pt = $type->getProhibited();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PROHIBITED]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PROHIBITED]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setProhibited(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_PROHIBITED],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_NOTES])) {
             $pt = $type->getNotes();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_NOTES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_NOTES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setNotes(new FHIRString(
                     value: (string)$attributes[self::FIELD_NOTES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -826,24 +854,24 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         }
         if (isset($this->goal)) {
             foreach($this->goal as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_GOAL, $v->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_GOAL, $v->_getFormattedValue());
                     break;
                 }
             }
         }
-        if (isset($this->prohibited) && $this->prohibited->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PROHIBITED, $this->prohibited->getValue()?->getFormattedValue());
+        if (isset($this->prohibited) && $this->prohibited->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PROHIBITED, $this->prohibited->getValue()?->_getFormattedValue());
         }
-        if (isset($this->notes) && $this->notes->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_NOTES, $this->notes->getValue()?->getFormattedValue());
+        if (isset($this->notes) && $this->notes->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_NOTES, $this->notes->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->goal)) {
             foreach($this->goal as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_GOAL);
-                    $v->xmlSerialize($xw, $config);
+                    $xw->writeAttribute($v::FIELD_VALUE, $v->_getFormattedValue());
                     $xw->endElement();
                 }
             }
@@ -853,7 +881,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
             $this->status->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->prohibited) && $this->prohibited->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->prohibited) && $this->prohibited->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PROHIBITED);
             $this->prohibited->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -865,7 +893,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->notes) && $this->notes->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->notes) && $this->notes->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_NOTES);
             $this->notes->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -919,18 +947,25 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
             $json = (array)$json;
         }
         parent::jsonUnserialize($json, $type, $config);
+        if (!is_array($json)) {
+            $type->setValue($json);
+            return $type;
+        }
+        if ([] === $json) {
+            return $type;
+        }
         if (isset($json[self::FIELD_GOAL]) || array_key_exists(self::FIELD_GOAL, $json)) {
             if (is_array($json[self::FIELD_GOAL])) {
                 foreach($json[self::FIELD_GOAL] as $v) {
                     if (!($v instanceof FHIRXmlIdRef)) {
-                        $v = new FHIRXmlIdRef($v);
+                        $v = FHIRXmlIdRef::jsonUnserialize($v);
                     }
                     $type->addGoal($v);
                 }
             } else if ($json[self::FIELD_GOAL] instanceof FHIRXmlIdRef) {
                 $type->addGoal($json[self::FIELD_GOAL]);
             } else {
-                $type->addGoal(new FHIRXmlIdRef($json[self::FIELD_GOAL]));
+                $type->addGoal(FHIRXmlIdRef::jsonUnserialize($json[self::FIELD_GOAL]));
             }
         }
         if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {

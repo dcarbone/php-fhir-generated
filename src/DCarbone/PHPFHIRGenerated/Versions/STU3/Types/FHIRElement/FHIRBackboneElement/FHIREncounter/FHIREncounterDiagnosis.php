@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -279,9 +279,11 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      * Ranking of the diagnosis (for each role type).
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $rank
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRank(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $rank): self
+    public function setRank(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $rank,
+                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $rank) {
             unset($this->rank);
@@ -289,6 +291,11 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
         }
         if (!($rank instanceof FHIRPositiveInt)) {
             $rank = new FHIRPositiveInt(value: $rank);
+        }
+        if (null !== $valueXMLLocation) {
+            $rank->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $rank->_getValueXMLLocation()) {
+            $rank->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->rank = $rank;
         return $this;
@@ -433,8 +440,15 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -445,7 +459,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->setRole(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_RANK === $childName) {
-                $v = new FHIRPositiveInt(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRPositiveInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setRank(FHIRPositiveInt::xmlUnserialize($n, $v, $config));
             }
         }
@@ -453,24 +467,24 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_RANK])) {
             $pt = $type->getRank();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_RANK]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_RANK]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setRank(new FHIRPositiveInt(
                     value: (string)$attributes[self::FIELD_RANK],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -501,8 +515,8 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('EncounterDiagnosis', $this->_getSourceXMLNS());
         }
-        if (isset($this->rank) && $this->rank->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_RANK, $this->rank->getValue()?->getFormattedValue());
+        if (isset($this->rank) && $this->rank->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_RANK, $this->rank->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->condition)) {
@@ -515,7 +529,7 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
             $this->role->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->rank) && $this->rank->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->rank) && $this->rank->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_RANK);
             $this->rank->xmlSerialize($xw, $config);
             $xw->endElement();

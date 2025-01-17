@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -746,9 +746,11 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * The time at which the statement was made/recorded.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $recordedOn
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRecordedOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recordedOn): self
+    public function setRecordedOn(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recordedOn,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $recordedOn) {
             unset($this->recordedOn);
@@ -756,6 +758,11 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
         }
         if (!($recordedOn instanceof FHIRDateTime)) {
             $recordedOn = new FHIRDateTime(value: $recordedOn);
+        }
+        if (null !== $valueXMLLocation) {
+            $recordedOn->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $recordedOn->_getValueXMLLocation()) {
+            $recordedOn->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->recordedOn = $recordedOn;
         return $this;
@@ -897,9 +904,11 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
      * How often the device was used.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $timingDateTime
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime): self
+    public function setTimingDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timingDateTime,
+                                      null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $timingDateTime) {
             unset($this->timingDateTime);
@@ -907,6 +916,11 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
         }
         if (!($timingDateTime instanceof FHIRDateTime)) {
             $timingDateTime = new FHIRDateTime(value: $timingDateTime);
+        }
+        if (null !== $valueXMLLocation) {
+            $timingDateTime->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $timingDateTime->_getValueXMLLocation()) {
+            $timingDateTime->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->timingDateTime = $timingDateTime;
         return $this;
@@ -1221,16 +1235,16 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
         foreach ($element->children() as $n) {
             $childName = $n->getName();
             if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_META === $childName) {
                 $v = new FHIRMeta();
                 $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -1266,10 +1280,10 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
                 $v = new FHIRCodeableConcept();
                 $type->addIndication(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NOTES === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addNotes(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_RECORDED_ON === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setRecordedOn(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SUBJECT === $childName) {
                 $v = new FHIRReference();
@@ -1281,7 +1295,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
                 $v = new FHIRPeriod();
                 $type->setTimingPeriod(FHIRPeriod::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TIMING_DATE_TIME === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setTimingDateTime(FHIRDateTime::xmlUnserialize($n, $v, $config));
             }
         }
@@ -1289,65 +1303,65 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRId(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             $pt = $type->getImplicitRules();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setImplicitRules(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_NOTES])) {
             $v = new FHIRString(value: (string)$attributes[self::FIELD_NOTES],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addNotes($v);
         }
         if (isset($attributes[self::FIELD_RECORDED_ON])) {
             $pt = $type->getRecordedOn();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_RECORDED_ON]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_RECORDED_ON]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setRecordedOn(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_RECORDED_ON],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_TIMING_DATE_TIME])) {
             $pt = $type->getTimingDateTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_TIMING_DATE_TIME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_TIMING_DATE_TIME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setTimingDateTime(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_TIMING_DATE_TIME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1380,17 +1394,17 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
         }
         if (isset($this->notes)) {
            foreach($this->notes as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_NOTES, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_NOTES, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
         }
-        if (isset($this->recordedOn) && $this->recordedOn->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_RECORDED_ON, $this->recordedOn->getValue()?->getFormattedValue());
+        if (isset($this->recordedOn) && $this->recordedOn->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_RECORDED_ON, $this->recordedOn->getValue()?->_getFormattedValue());
         }
-        if (isset($this->timingDateTime) && $this->timingDateTime->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_TIMING_DATE_TIME, $this->timingDateTime->getValue()?->getFormattedValue());
+        if (isset($this->timingDateTime) && $this->timingDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_TIMING_DATE_TIME, $this->timingDateTime->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->bodySiteCodeableConcept)) {
@@ -1429,14 +1443,14 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
         }
         if (isset($this->notes)) {
             foreach($this->notes as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_NOTES);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();
                 }
             }
         }
-        if (isset($this->recordedOn) && $this->recordedOn->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->recordedOn) && $this->recordedOn->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_RECORDED_ON);
             $this->recordedOn->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1456,7 +1470,7 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements VersionContai
             $this->timingPeriod->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->timingDateTime) && $this->timingDateTime->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->timingDateTime) && $this->timingDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_TIMING_DATE_TIME);
             $this->timingDateTime->xmlSerialize($xw, $config);
             $xw->endElement();

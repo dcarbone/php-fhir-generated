@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -256,9 +256,11 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * context of an authority.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $series
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSeries(null|string|FHIRStringPrimitive|FHIRString $series): self
+    public function setSeries(null|string|FHIRStringPrimitive|FHIRString $series,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $series) {
             unset($this->series);
@@ -266,6 +268,11 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
         }
         if (!($series instanceof FHIRString)) {
             $series = new FHIRString(value: $series);
+        }
+        if (null !== $valueXMLLocation) {
+            $series->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $series->_getValueXMLLocation()) {
+            $series->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->series = $series;
         return $this;
@@ -394,9 +401,11 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * dose.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $doseNumber
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDoseNumber(null|string|FHIRStringPrimitive|FHIRString $doseNumber): self
+    public function setDoseNumber(null|string|FHIRStringPrimitive|FHIRString $doseNumber,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $doseNumber) {
             unset($this->doseNumber);
@@ -404,6 +413,11 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
         }
         if (!($doseNumber instanceof FHIRString)) {
             $doseNumber = new FHIRString(value: $doseNumber);
+        }
+        if (null !== $valueXMLLocation) {
+            $doseNumber->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $doseNumber->_getValueXMLLocation()) {
+            $doseNumber->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->doseNumber = $doseNumber;
         return $this;
@@ -433,9 +447,11 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * practitioner administering the dose.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $seriesDoses
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSeriesDoses(null|string|FHIRStringPrimitive|FHIRString $seriesDoses): self
+    public function setSeriesDoses(null|string|FHIRStringPrimitive|FHIRString $seriesDoses,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $seriesDoses) {
             unset($this->seriesDoses);
@@ -443,6 +459,11 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
         }
         if (!($seriesDoses instanceof FHIRString)) {
             $seriesDoses = new FHIRString(value: $seriesDoses);
+        }
+        if (null !== $valueXMLLocation) {
+            $seriesDoses->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $seriesDoses->_getValueXMLLocation()) {
+            $seriesDoses->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->seriesDoses = $seriesDoses;
         return $this;
@@ -611,13 +632,20 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SERIES === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSeries(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_AUTHORITY === $childName) {
                 $v = new FHIRReference();
@@ -626,10 +654,10 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->addTargetDisease(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DOSE_NUMBER === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDoseNumber(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SERIES_DOSES === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSeriesDoses(FHIRString::xmlUnserialize($n, $v, $config));
             }
         }
@@ -637,48 +665,48 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SERIES])) {
             $pt = $type->getSeries();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SERIES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SERIES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSeries(new FHIRString(
                     value: (string)$attributes[self::FIELD_SERIES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DOSE_NUMBER])) {
             $pt = $type->getDoseNumber();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DOSE_NUMBER]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DOSE_NUMBER]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDoseNumber(new FHIRString(
                     value: (string)$attributes[self::FIELD_DOSE_NUMBER],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SERIES_DOSES])) {
             $pt = $type->getSeriesDoses();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SERIES_DOSES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SERIES_DOSES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSeriesDoses(new FHIRString(
                     value: (string)$attributes[self::FIELD_SERIES_DOSES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -709,17 +737,17 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ImmunizationProtocolApplied', $this->_getSourceXMLNS());
         }
-        if (isset($this->series) && $this->series->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SERIES, $this->series->getValue()?->getFormattedValue());
+        if (isset($this->series) && $this->series->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SERIES, $this->series->getValue()?->_getFormattedValue());
         }
-        if (isset($this->doseNumber) && $this->doseNumber->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DOSE_NUMBER, $this->doseNumber->getValue()?->getFormattedValue());
+        if (isset($this->doseNumber) && $this->doseNumber->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DOSE_NUMBER, $this->doseNumber->getValue()?->_getFormattedValue());
         }
-        if (isset($this->seriesDoses) && $this->seriesDoses->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SERIES_DOSES, $this->seriesDoses->getValue()?->getFormattedValue());
+        if (isset($this->seriesDoses) && $this->seriesDoses->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SERIES_DOSES, $this->seriesDoses->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->series) && $this->series->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->series) && $this->series->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SERIES);
             $this->series->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -736,12 +764,12 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->doseNumber) && $this->doseNumber->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->doseNumber) && $this->doseNumber->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DOSE_NUMBER);
             $this->doseNumber->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->seriesDoses) && $this->seriesDoses->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->seriesDoses) && $this->seriesDoses->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SERIES_DOSES);
             $this->seriesDoses->xmlSerialize($xw, $config);
             $xw->endElement();

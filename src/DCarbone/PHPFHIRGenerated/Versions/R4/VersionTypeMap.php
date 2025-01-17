@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4;
 
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
-use DCarbone\PHPFHIRGenerated\VersionTypeMapInterface;
+use DCarbone\PHPFHIRGenerated\Versions\VersionTypeMapInterface;
 
 class VersionTypeMap implements VersionTypeMapInterface
 {

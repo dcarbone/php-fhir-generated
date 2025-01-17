@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -317,9 +317,11 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * drug.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $isActive
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIsActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isActive): self
+    public function setIsActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isActive,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $isActive) {
             unset($this->isActive);
@@ -327,6 +329,11 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
         }
         if (!($isActive instanceof FHIRBoolean)) {
             $isActive = new FHIRBoolean(value: $isActive);
+        }
+        if (null !== $valueXMLLocation) {
+            $isActive->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $isActive->_getValueXMLLocation()) {
+            $isActive->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->isActive = $isActive;
         return $this;
@@ -528,8 +535,15 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -540,7 +554,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
                 $v = new FHIRReference();
                 $type->setItemReference(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IS_ACTIVE === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setIsActive(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STRENGTH === $childName) {
                 $v = new FHIRRatio();
@@ -551,24 +565,24 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IS_ACTIVE])) {
             $pt = $type->getIsActive();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IS_ACTIVE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IS_ACTIVE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setIsActive(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_IS_ACTIVE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -599,8 +613,8 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('MedicationIngredient', $this->_getSourceXMLNS());
         }
-        if (isset($this->isActive) && $this->isActive->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_IS_ACTIVE, $this->isActive->getValue()?->getFormattedValue());
+        if (isset($this->isActive) && $this->isActive->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_IS_ACTIVE, $this->isActive->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->itemCodeableConcept)) {
@@ -613,7 +627,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
             $this->itemReference->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->isActive) && $this->isActive->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->isActive) && $this->isActive->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_IS_ACTIVE);
             $this->isActive->xmlSerialize($xw, $config);
             $xw->endElement();

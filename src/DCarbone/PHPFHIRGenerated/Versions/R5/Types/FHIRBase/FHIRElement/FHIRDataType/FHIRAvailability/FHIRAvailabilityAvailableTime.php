@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
@@ -302,9 +302,11 @@ class FHIRAvailabilityAvailableTime extends FHIRDataType
      * Always available? i.e. 24 hour service.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $allDay
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAllDay(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allDay): self
+    public function setAllDay(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allDay,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $allDay) {
             unset($this->allDay);
@@ -312,6 +314,11 @@ class FHIRAvailabilityAvailableTime extends FHIRDataType
         }
         if (!($allDay instanceof FHIRBoolean)) {
             $allDay = new FHIRBoolean(value: $allDay);
+        }
+        if (null !== $valueXMLLocation) {
+            $allDay->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $allDay->_getValueXMLLocation()) {
+            $allDay->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->allDay = $allDay;
         return $this;
@@ -337,9 +344,11 @@ class FHIRAvailabilityAvailableTime extends FHIRDataType
      * Opening time of day (ignored if allDay = true).
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime $availableStartTime
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAvailableStartTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $availableStartTime): self
+    public function setAvailableStartTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $availableStartTime,
+                                          null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $availableStartTime) {
             unset($this->availableStartTime);
@@ -347,6 +356,11 @@ class FHIRAvailabilityAvailableTime extends FHIRDataType
         }
         if (!($availableStartTime instanceof FHIRTime)) {
             $availableStartTime = new FHIRTime(value: $availableStartTime);
+        }
+        if (null !== $valueXMLLocation) {
+            $availableStartTime->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $availableStartTime->_getValueXMLLocation()) {
+            $availableStartTime->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->availableStartTime = $availableStartTime;
         return $this;
@@ -372,9 +386,11 @@ class FHIRAvailabilityAvailableTime extends FHIRDataType
      * Closing time of day (ignored if allDay = true).
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTime $availableEndTime
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAvailableEndTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $availableEndTime): self
+    public function setAvailableEndTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $availableEndTime,
+                                        null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $availableEndTime) {
             unset($this->availableEndTime);
@@ -382,6 +398,11 @@ class FHIRAvailabilityAvailableTime extends FHIRDataType
         }
         if (!($availableEndTime instanceof FHIRTime)) {
             $availableEndTime = new FHIRTime(value: $availableEndTime);
+        }
+        if (null !== $valueXMLLocation) {
+            $availableEndTime->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $availableEndTime->_getValueXMLLocation()) {
+            $availableEndTime->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->availableEndTime = $availableEndTime;
         return $this;
@@ -521,19 +542,26 @@ class FHIRAvailabilityAvailableTime extends FHIRDataType
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_DAYS_OF_WEEK === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addDaysOfWeek(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ALL_DAY === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setAllDay(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_AVAILABLE_START_TIME === $childName) {
-                $v = new FHIRTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setAvailableStartTime(FHIRTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_AVAILABLE_END_TIME === $childName) {
-                $v = new FHIRTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setAvailableEndTime(FHIRTime::xmlUnserialize($n, $v, $config));
             }
         }
@@ -541,53 +569,53 @@ class FHIRAvailabilityAvailableTime extends FHIRDataType
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DAYS_OF_WEEK])) {
             $v = new FHIRCode(value: (string)$attributes[self::FIELD_DAYS_OF_WEEK],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addDaysOfWeek($v);
         }
         if (isset($attributes[self::FIELD_ALL_DAY])) {
             $pt = $type->getAllDay();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ALL_DAY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ALL_DAY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setAllDay(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_ALL_DAY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_AVAILABLE_START_TIME])) {
             $pt = $type->getAvailableStartTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_AVAILABLE_START_TIME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_AVAILABLE_START_TIME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setAvailableStartTime(new FHIRTime(
                     value: (string)$attributes[self::FIELD_AVAILABLE_START_TIME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_AVAILABLE_END_TIME])) {
             $pt = $type->getAvailableEndTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_AVAILABLE_END_TIME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_AVAILABLE_END_TIME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setAvailableEndTime(new FHIRTime(
                     value: (string)$attributes[self::FIELD_AVAILABLE_END_TIME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -620,42 +648,42 @@ class FHIRAvailabilityAvailableTime extends FHIRDataType
         }
         if (isset($this->daysOfWeek)) {
            foreach($this->daysOfWeek as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_DAYS_OF_WEEK, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_DAYS_OF_WEEK, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
         }
-        if (isset($this->allDay) && $this->allDay->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ALL_DAY, $this->allDay->getValue()?->getFormattedValue());
+        if (isset($this->allDay) && $this->allDay->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_ALL_DAY, $this->allDay->getValue()?->_getFormattedValue());
         }
-        if (isset($this->availableStartTime) && $this->availableStartTime->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_AVAILABLE_START_TIME, $this->availableStartTime->getValue()?->getFormattedValue());
+        if (isset($this->availableStartTime) && $this->availableStartTime->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_AVAILABLE_START_TIME, $this->availableStartTime->getValue()?->_getFormattedValue());
         }
-        if (isset($this->availableEndTime) && $this->availableEndTime->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_AVAILABLE_END_TIME, $this->availableEndTime->getValue()?->getFormattedValue());
+        if (isset($this->availableEndTime) && $this->availableEndTime->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_AVAILABLE_END_TIME, $this->availableEndTime->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->daysOfWeek)) {
             foreach($this->daysOfWeek as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_DAYS_OF_WEEK);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();
                 }
             }
         }
-        if (isset($this->allDay) && $this->allDay->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->allDay) && $this->allDay->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_ALL_DAY);
             $this->allDay->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->availableStartTime) && $this->availableStartTime->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->availableStartTime) && $this->availableStartTime->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_AVAILABLE_START_TIME);
             $this->availableStartTime->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->availableEndTime) && $this->availableEndTime->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->availableEndTime) && $this->availableEndTime->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_AVAILABLE_END_TIME);
             $this->availableEndTime->xmlSerialize($xw, $config);
             $xw->endElement();

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -590,9 +590,11 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * The birth date for the person.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDate $birthDate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setBirthDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $birthDate): self
+    public function setBirthDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $birthDate,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $birthDate) {
             unset($this->birthDate);
@@ -600,6 +602,11 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
         }
         if (!($birthDate instanceof FHIRDate)) {
             $birthDate = new FHIRDate(value: $birthDate);
+        }
+        if (null !== $valueXMLLocation) {
+            $birthDate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $birthDate->_getValueXMLLocation()) {
+            $birthDate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->birthDate = $birthDate;
         return $this;
@@ -767,9 +774,11 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
      * Whether this person's record is in active use.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $active
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active): self
+    public function setActive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $active,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $active) {
             unset($this->active);
@@ -777,6 +786,11 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
         }
         if (!($active instanceof FHIRBoolean)) {
             $active = new FHIRBoolean(value: $active);
+        }
+        if (null !== $valueXMLLocation) {
+            $active->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $active->_getValueXMLLocation()) {
+            $active->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->active = $active;
         return $this;
@@ -1114,16 +1128,16 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
         foreach ($element->children() as $n) {
             $childName = $n->getName();
             if (self::FIELD_ID === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setId(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_META === $childName) {
                 $v = new FHIRMeta();
                 $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -1150,10 +1164,10 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
                 $v = new FHIRContactPoint();
                 $type->addTelecom(FHIRContactPoint::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_GENDER === $childName) {
-                $v = new FHIRAdministrativeGender(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRAdministrativeGender(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setGender(FHIRAdministrativeGender::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_BIRTH_DATE === $childName) {
-                $v = new FHIRDate(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDate(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setBirthDate(FHIRDate::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ADDRESS === $childName) {
                 $v = new FHIRAddress();
@@ -1165,7 +1179,7 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
                 $v = new FHIRReference();
                 $type->setManagingOrganization(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ACTIVE === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setActive(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LINK === $childName) {
                 $v = new FHIRPersonLink();
@@ -1176,60 +1190,60 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRString(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             $pt = $type->getImplicitRules();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setImplicitRules(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_BIRTH_DATE])) {
             $pt = $type->getBirthDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_BIRTH_DATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_BIRTH_DATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setBirthDate(new FHIRDate(
                     value: (string)$attributes[self::FIELD_BIRTH_DATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_ACTIVE])) {
             $pt = $type->getActive();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ACTIVE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ACTIVE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setActive(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_ACTIVE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1260,11 +1274,11 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
             $rootOpened = true;
             $xw->openRootNode('Person', $this->_getSourceXMLNS());
         }
-        if (isset($this->birthDate) && $this->birthDate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_BIRTH_DATE, $this->birthDate->getValue()?->getFormattedValue());
+        if (isset($this->birthDate) && $this->birthDate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_BIRTH_DATE, $this->birthDate->getValue()?->_getFormattedValue());
         }
-        if (isset($this->active) && $this->active->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ACTIVE, $this->active->getValue()?->getFormattedValue());
+        if (isset($this->active) && $this->active->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_ACTIVE, $this->active->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1293,7 +1307,7 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
             $this->gender->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->birthDate) && $this->birthDate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->birthDate) && $this->birthDate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_BIRTH_DATE);
             $this->birthDate->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1315,7 +1329,7 @@ class FHIRPerson extends FHIRDomainResource implements VersionContainedTypeInter
             $this->managingOrganization->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->active) && $this->active->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->active) && $this->active->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_ACTIVE);
             $this->active->xmlSerialize($xw, $config);
             $xw->endElement();

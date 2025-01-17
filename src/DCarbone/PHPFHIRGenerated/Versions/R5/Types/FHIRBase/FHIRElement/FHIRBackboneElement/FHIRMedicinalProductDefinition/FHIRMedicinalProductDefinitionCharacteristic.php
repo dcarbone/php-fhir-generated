@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -398,9 +398,11 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * A value for the characteristic.text.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $valueMarkdown
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $valueMarkdown): self
+    public function setValueMarkdown(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $valueMarkdown,
+                                     null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $valueMarkdown) {
             unset($this->valueMarkdown);
@@ -408,6 +410,11 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
         }
         if (!($valueMarkdown instanceof FHIRMarkdown)) {
             $valueMarkdown = new FHIRMarkdown(value: $valueMarkdown);
+        }
+        if (null !== $valueXMLLocation) {
+            $valueMarkdown->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $valueMarkdown->_getValueXMLLocation()) {
+            $valueMarkdown->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->valueMarkdown = $valueMarkdown;
         return $this;
@@ -473,9 +480,11 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * A value for the characteristic.text.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $valueInteger
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueInteger(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger): self
+    public function setValueInteger(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $valueInteger) {
             unset($this->valueInteger);
@@ -483,6 +492,11 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
         }
         if (!($valueInteger instanceof FHIRInteger)) {
             $valueInteger = new FHIRInteger(value: $valueInteger);
+        }
+        if (null !== $valueXMLLocation) {
+            $valueInteger->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $valueInteger->_getValueXMLLocation()) {
+            $valueInteger->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->valueInteger = $valueInteger;
         return $this;
@@ -512,9 +526,11 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * A value for the characteristic.text.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $valueDate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate): self
+    public function setValueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $valueDate,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $valueDate) {
             unset($this->valueDate);
@@ -522,6 +538,11 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
         }
         if (!($valueDate instanceof FHIRDate)) {
             $valueDate = new FHIRDate(value: $valueDate);
+        }
+        if (null !== $valueXMLLocation) {
+            $valueDate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $valueDate->_getValueXMLLocation()) {
+            $valueDate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->valueDate = $valueDate;
         return $this;
@@ -547,9 +568,11 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
      * A value for the characteristic.text.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $valueBoolean
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean): self
+    public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $valueBoolean) {
             unset($this->valueBoolean);
@@ -557,6 +580,11 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
         }
         if (!($valueBoolean instanceof FHIRBoolean)) {
             $valueBoolean = new FHIRBoolean(value: $valueBoolean);
+        }
+        if (null !== $valueXMLLocation) {
+            $valueBoolean->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $valueBoolean->_getValueXMLLocation()) {
+            $valueBoolean->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->valueBoolean = $valueBoolean;
         return $this;
@@ -795,8 +823,15 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -807,19 +842,19 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->setValueCodeableConcept(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VALUE_MARKDOWN === $childName) {
-                $v = new FHIRMarkdown(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRMarkdown(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setValueMarkdown(FHIRMarkdown::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VALUE_QUANTITY === $childName) {
                 $v = new FHIRQuantity();
                 $type->setValueQuantity(FHIRQuantity::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VALUE_INTEGER === $childName) {
-                $v = new FHIRInteger(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setValueInteger(FHIRInteger::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VALUE_DATE === $childName) {
-                $v = new FHIRDate(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDate(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setValueDate(FHIRDate::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VALUE_BOOLEAN === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setValueBoolean(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VALUE_ATTACHMENT === $childName) {
                 $v = new FHIRAttachment();
@@ -830,60 +865,60 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_VALUE_MARKDOWN])) {
             $pt = $type->getValueMarkdown();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_VALUE_MARKDOWN]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_VALUE_MARKDOWN]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setValueMarkdown(new FHIRMarkdown(
                     value: (string)$attributes[self::FIELD_VALUE_MARKDOWN],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_VALUE_INTEGER])) {
             $pt = $type->getValueInteger();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_VALUE_INTEGER]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_VALUE_INTEGER]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setValueInteger(new FHIRInteger(
                     value: (string)$attributes[self::FIELD_VALUE_INTEGER],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_VALUE_DATE])) {
             $pt = $type->getValueDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_VALUE_DATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_VALUE_DATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setValueDate(new FHIRDate(
                     value: (string)$attributes[self::FIELD_VALUE_DATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_VALUE_BOOLEAN])) {
             $pt = $type->getValueBoolean();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_VALUE_BOOLEAN]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_VALUE_BOOLEAN]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setValueBoolean(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_VALUE_BOOLEAN],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -914,17 +949,17 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('MedicinalProductDefinitionCharacteristic', $this->_getSourceXMLNS());
         }
-        if (isset($this->valueMarkdown) && $this->valueMarkdown->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VALUE_MARKDOWN, $this->valueMarkdown->getValue()?->getFormattedValue());
+        if (isset($this->valueMarkdown) && $this->valueMarkdown->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VALUE_MARKDOWN, $this->valueMarkdown->getValue()?->_getFormattedValue());
         }
-        if (isset($this->valueInteger) && $this->valueInteger->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VALUE_INTEGER, $this->valueInteger->getValue()?->getFormattedValue());
+        if (isset($this->valueInteger) && $this->valueInteger->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VALUE_INTEGER, $this->valueInteger->getValue()?->_getFormattedValue());
         }
-        if (isset($this->valueDate) && $this->valueDate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VALUE_DATE, $this->valueDate->getValue()?->getFormattedValue());
+        if (isset($this->valueDate) && $this->valueDate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VALUE_DATE, $this->valueDate->getValue()?->_getFormattedValue());
         }
-        if (isset($this->valueBoolean) && $this->valueBoolean->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VALUE_BOOLEAN, $this->valueBoolean->getValue()?->getFormattedValue());
+        if (isset($this->valueBoolean) && $this->valueBoolean->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VALUE_BOOLEAN, $this->valueBoolean->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -937,7 +972,7 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
             $this->valueCodeableConcept->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->valueMarkdown) && $this->valueMarkdown->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->valueMarkdown) && $this->valueMarkdown->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_VALUE_MARKDOWN);
             $this->valueMarkdown->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -947,17 +982,17 @@ class FHIRMedicinalProductDefinitionCharacteristic extends FHIRBackboneElement
             $this->valueQuantity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->valueInteger) && $this->valueInteger->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->valueInteger) && $this->valueInteger->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_VALUE_INTEGER);
             $this->valueInteger->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->valueDate) && $this->valueDate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->valueDate) && $this->valueDate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_VALUE_DATE);
             $this->valueDate->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->valueBoolean) && $this->valueBoolean->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->valueBoolean) && $this->valueBoolean->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_VALUE_BOOLEAN);
             $this->valueBoolean->xmlSerialize($xw, $config);
             $xw->endElement();

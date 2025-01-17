@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
@@ -262,9 +262,11 @@ class FHIRDataRequirementCodeFilter extends FHIRDataType
      * CodeableConcept.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $path
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
+    public function setPath(null|string|FHIRStringPrimitive|FHIRString $path,
+                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $path) {
             unset($this->path);
@@ -272,6 +274,11 @@ class FHIRDataRequirementCodeFilter extends FHIRDataType
         }
         if (!($path instanceof FHIRString)) {
             $path = new FHIRString(value: $path);
+        }
+        if (null !== $valueXMLLocation) {
+            $path->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $path->_getValueXMLLocation()) {
+            $path->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->path = $path;
         return $this;
@@ -303,9 +310,11 @@ class FHIRDataRequirementCodeFilter extends FHIRDataType
      * Coding, or CodeableConcept.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $searchParam
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSearchParam(null|string|FHIRStringPrimitive|FHIRString $searchParam): self
+    public function setSearchParam(null|string|FHIRStringPrimitive|FHIRString $searchParam,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $searchParam) {
             unset($this->searchParam);
@@ -313,6 +322,11 @@ class FHIRDataRequirementCodeFilter extends FHIRDataType
         }
         if (!($searchParam instanceof FHIRString)) {
             $searchParam = new FHIRString(value: $searchParam);
+        }
+        if (null !== $valueXMLLocation) {
+            $searchParam->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $searchParam->_getValueXMLLocation()) {
+            $searchParam->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->searchParam = $searchParam;
         return $this;
@@ -348,9 +362,11 @@ class FHIRDataRequirementCodeFilter extends FHIRDataType
      * specified valueset.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $valueSet
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueSet): self
+    public function setValueSet(null|string|FHIRCanonicalPrimitive|FHIRCanonical $valueSet,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $valueSet) {
             unset($this->valueSet);
@@ -358,6 +374,11 @@ class FHIRDataRequirementCodeFilter extends FHIRDataType
         }
         if (!($valueSet instanceof FHIRCanonical)) {
             $valueSet = new FHIRCanonical(value: $valueSet);
+        }
+        if (null !== $valueXMLLocation) {
+            $valueSet->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $valueSet->_getValueXMLLocation()) {
+            $valueSet->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->valueSet = $valueSet;
         return $this;
@@ -569,16 +590,23 @@ class FHIRDataRequirementCodeFilter extends FHIRDataType
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_PATH === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPath(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SEARCH_PARAM === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSearchParam(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VALUE_SET === $childName) {
-                $v = new FHIRCanonical(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCanonical(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setValueSet(FHIRCanonical::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CODE === $childName) {
                 $v = new FHIRCoding();
@@ -589,48 +617,48 @@ class FHIRDataRequirementCodeFilter extends FHIRDataType
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PATH])) {
             $pt = $type->getPath();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PATH]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PATH]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setPath(new FHIRString(
                     value: (string)$attributes[self::FIELD_PATH],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SEARCH_PARAM])) {
             $pt = $type->getSearchParam();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SEARCH_PARAM]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SEARCH_PARAM]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSearchParam(new FHIRString(
                     value: (string)$attributes[self::FIELD_SEARCH_PARAM],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_VALUE_SET])) {
             $pt = $type->getValueSet();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_VALUE_SET]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_VALUE_SET]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setValueSet(new FHIRCanonical(
                     value: (string)$attributes[self::FIELD_VALUE_SET],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -661,27 +689,27 @@ class FHIRDataRequirementCodeFilter extends FHIRDataType
             $rootOpened = true;
             $xw->openRootNode('DataRequirementCodeFilter', $this->_getSourceXMLNS());
         }
-        if (isset($this->path) && $this->path->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PATH, $this->path->getValue()?->getFormattedValue());
+        if (isset($this->path) && $this->path->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PATH, $this->path->getValue()?->_getFormattedValue());
         }
-        if (isset($this->searchParam) && $this->searchParam->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SEARCH_PARAM, $this->searchParam->getValue()?->getFormattedValue());
+        if (isset($this->searchParam) && $this->searchParam->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SEARCH_PARAM, $this->searchParam->getValue()?->_getFormattedValue());
         }
-        if (isset($this->valueSet) && $this->valueSet->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VALUE_SET, $this->valueSet->getValue()?->getFormattedValue());
+        if (isset($this->valueSet) && $this->valueSet->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VALUE_SET, $this->valueSet->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->path) && $this->path->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->path) && $this->path->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PATH);
             $this->path->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->searchParam) && $this->searchParam->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->searchParam) && $this->searchParam->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SEARCH_PARAM);
             $this->searchParam->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->valueSet) && $this->valueSet->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->valueSet) && $this->valueSet->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_VALUE_SET);
             $this->valueSet->xmlSerialize($xw, $config);
             $xw->endElement();

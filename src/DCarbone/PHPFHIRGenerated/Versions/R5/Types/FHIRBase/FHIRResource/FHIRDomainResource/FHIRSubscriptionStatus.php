@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -395,9 +395,11 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * handshake and heartbeat notifications.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInteger64Primitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger64 $eventsSinceSubscriptionStart
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEventsSinceSubscriptionStart(null|string|int|float|FHIRInteger64Primitive|FHIRInteger64 $eventsSinceSubscriptionStart): self
+    public function setEventsSinceSubscriptionStart(null|string|int|float|FHIRInteger64Primitive|FHIRInteger64 $eventsSinceSubscriptionStart,
+                                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $eventsSinceSubscriptionStart) {
             unset($this->eventsSinceSubscriptionStart);
@@ -405,6 +407,11 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
         }
         if (!($eventsSinceSubscriptionStart instanceof FHIRInteger64)) {
             $eventsSinceSubscriptionStart = new FHIRInteger64(value: $eventsSinceSubscriptionStart);
+        }
+        if (null !== $valueXMLLocation) {
+            $eventsSinceSubscriptionStart->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $eventsSinceSubscriptionStart->_getValueXMLLocation()) {
+            $eventsSinceSubscriptionStart->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->eventsSinceSubscriptionStart = $eventsSinceSubscriptionStart;
         return $this;
@@ -527,9 +534,11 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * notification.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $topic
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTopic(null|string|FHIRCanonicalPrimitive|FHIRCanonical $topic): self
+    public function setTopic(null|string|FHIRCanonicalPrimitive|FHIRCanonical $topic,
+                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $topic) {
             unset($this->topic);
@@ -537,6 +546,11 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
         }
         if (!($topic instanceof FHIRCanonical)) {
             $topic = new FHIRCanonical(value: $topic);
+        }
+        if (null !== $valueXMLLocation) {
+            $topic->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $topic->_getValueXMLLocation()) {
+            $topic->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->topic = $topic;
         return $this;
@@ -854,16 +868,16 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
         foreach ($element->children() as $n) {
             $childName = $n->getName();
             if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_META === $childName) {
                 $v = new FHIRMeta();
                 $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -881,13 +895,13 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STATUS === $childName) {
-                $v = new FHIRSubscriptionStatusCodes(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRSubscriptionStatusCodes(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStatus(FHIRSubscriptionStatusCodes::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TYPE === $childName) {
-                $v = new FHIRSubscriptionNotificationType(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRSubscriptionNotificationType(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setType(FHIRSubscriptionNotificationType::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START === $childName) {
-                $v = new FHIRInteger64(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInteger64(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setEventsSinceSubscriptionStart(FHIRInteger64::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NOTIFICATION_EVENT === $childName) {
                 $v = new FHIRSubscriptionStatusNotificationEvent();
@@ -896,7 +910,7 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
                 $v = new FHIRReference();
                 $type->setSubscription(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TOPIC === $childName) {
-                $v = new FHIRCanonical(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCanonical(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setTopic(FHIRCanonical::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ERROR === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -907,60 +921,60 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRId(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             $pt = $type->getImplicitRules();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setImplicitRules(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START])) {
             $pt = $type->getEventsSinceSubscriptionStart();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setEventsSinceSubscriptionStart(new FHIRInteger64(
                     value: (string)$attributes[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_TOPIC])) {
             $pt = $type->getTopic();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_TOPIC]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_TOPIC]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setTopic(new FHIRCanonical(
                     value: (string)$attributes[self::FIELD_TOPIC],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -991,11 +1005,11 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
             $rootOpened = true;
             $xw->openRootNode('SubscriptionStatus', $this->_getSourceXMLNS());
         }
-        if (isset($this->eventsSinceSubscriptionStart) && $this->eventsSinceSubscriptionStart->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START, $this->eventsSinceSubscriptionStart->getValue()?->getFormattedValue());
+        if (isset($this->eventsSinceSubscriptionStart) && $this->eventsSinceSubscriptionStart->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START, $this->eventsSinceSubscriptionStart->getValue()?->_getFormattedValue());
         }
-        if (isset($this->topic) && $this->topic->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_TOPIC, $this->topic->getValue()?->getFormattedValue());
+        if (isset($this->topic) && $this->topic->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_TOPIC, $this->topic->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->status)) {
@@ -1008,7 +1022,7 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
             $this->type->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->eventsSinceSubscriptionStart) && $this->eventsSinceSubscriptionStart->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->eventsSinceSubscriptionStart) && $this->eventsSinceSubscriptionStart->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START);
             $this->eventsSinceSubscriptionStart->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1025,7 +1039,7 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
             $this->subscription->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->topic) && $this->topic->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->topic) && $this->topic->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_TOPIC);
             $this->topic->xmlSerialize($xw, $config);
             $xw->endElement();

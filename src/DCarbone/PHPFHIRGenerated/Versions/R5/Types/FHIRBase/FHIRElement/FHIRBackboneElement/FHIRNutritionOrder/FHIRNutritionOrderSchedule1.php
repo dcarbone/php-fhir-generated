@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -297,9 +297,11 @@ class FHIRNutritionOrderSchedule1 extends FHIRBackboneElement
      * dosing schedule.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $asNeeded
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAsNeeded(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $asNeeded): self
+    public function setAsNeeded(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $asNeeded,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $asNeeded) {
             unset($this->asNeeded);
@@ -307,6 +309,11 @@ class FHIRNutritionOrderSchedule1 extends FHIRBackboneElement
         }
         if (!($asNeeded instanceof FHIRBoolean)) {
             $asNeeded = new FHIRBoolean(value: $asNeeded);
+        }
+        if (null !== $valueXMLLocation) {
+            $asNeeded->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $asNeeded->_getValueXMLLocation()) {
+            $asNeeded->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->asNeeded = $asNeeded;
         return $this;
@@ -484,8 +491,15 @@ class FHIRNutritionOrderSchedule1 extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -493,7 +507,7 @@ class FHIRNutritionOrderSchedule1 extends FHIRBackboneElement
                 $v = new FHIRTiming();
                 $type->addTiming(FHIRTiming::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_AS_NEEDED === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setAsNeeded(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_AS_NEEDED_FOR === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -504,24 +518,24 @@ class FHIRNutritionOrderSchedule1 extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_AS_NEEDED])) {
             $pt = $type->getAsNeeded();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_AS_NEEDED]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_AS_NEEDED]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setAsNeeded(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_AS_NEEDED],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -552,8 +566,8 @@ class FHIRNutritionOrderSchedule1 extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('NutritionOrderSchedule1', $this->_getSourceXMLNS());
         }
-        if (isset($this->asNeeded) && $this->asNeeded->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_AS_NEEDED, $this->asNeeded->getValue()?->getFormattedValue());
+        if (isset($this->asNeeded) && $this->asNeeded->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_AS_NEEDED, $this->asNeeded->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->timing)) {
@@ -563,7 +577,7 @@ class FHIRNutritionOrderSchedule1 extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->asNeeded) && $this->asNeeded->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->asNeeded) && $this->asNeeded->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_AS_NEEDED);
             $this->asNeeded->xmlSerialize($xw, $config);
             $xw->endElement();

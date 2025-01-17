@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -332,9 +332,11 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
      * and the symbol identifier shall be used.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $periodString
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPeriodString(null|string|FHIRStringPrimitive|FHIRString $periodString): self
+    public function setPeriodString(null|string|FHIRStringPrimitive|FHIRString $periodString,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $periodString) {
             unset($this->periodString);
@@ -342,6 +344,11 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
         }
         if (!($periodString instanceof FHIRString)) {
             $periodString = new FHIRString(value: $periodString);
+        }
+        if (null !== $valueXMLLocation) {
+            $periodString->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $periodString->_getValueXMLLocation()) {
+            $periodString->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->periodString = $periodString;
         return $this;
@@ -562,8 +569,15 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -574,7 +588,7 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
                 $v = new FHIRDuration();
                 $type->setPeriodDuration(FHIRDuration::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PERIOD_STRING === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPeriodString(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -585,24 +599,24 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PERIOD_STRING])) {
             $pt = $type->getPeriodString();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PERIOD_STRING]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PERIOD_STRING]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setPeriodString(new FHIRString(
                     value: (string)$attributes[self::FIELD_PERIOD_STRING],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -633,8 +647,8 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('PackagedProductDefinitionShelfLifeStorage', $this->_getSourceXMLNS());
         }
-        if (isset($this->periodString) && $this->periodString->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PERIOD_STRING, $this->periodString->getValue()?->getFormattedValue());
+        if (isset($this->periodString) && $this->periodString->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PERIOD_STRING, $this->periodString->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -647,7 +661,7 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
             $this->periodDuration->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->periodString) && $this->periodString->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->periodString) && $this->periodString->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PERIOD_STRING);
             $this->periodString->xmlSerialize($xw, $config);
             $xw->endElement();

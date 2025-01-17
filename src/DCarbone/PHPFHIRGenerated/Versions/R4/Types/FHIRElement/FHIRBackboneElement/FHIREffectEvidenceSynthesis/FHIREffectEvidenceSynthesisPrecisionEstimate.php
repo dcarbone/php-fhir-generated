@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -251,9 +251,11 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * Use 95 for a 95% confidence interval.
      *
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $level
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLevel(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $level): self
+    public function setLevel(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $level,
+                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $level) {
             unset($this->level);
@@ -261,6 +263,11 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
         }
         if (!($level instanceof FHIRDecimal)) {
             $level = new FHIRDecimal(value: $level);
+        }
+        if (null !== $valueXMLLocation) {
+            $level->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $level->_getValueXMLLocation()) {
+            $level->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->level = $level;
         return $this;
@@ -290,9 +297,11 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * Lower bound of confidence interval.
      *
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $from
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setFrom(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $from): self
+    public function setFrom(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $from,
+                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $from) {
             unset($this->from);
@@ -300,6 +309,11 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
         }
         if (!($from instanceof FHIRDecimal)) {
             $from = new FHIRDecimal(value: $from);
+        }
+        if (null !== $valueXMLLocation) {
+            $from->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $from->_getValueXMLLocation()) {
+            $from->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->from = $from;
         return $this;
@@ -329,9 +343,11 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
      * Upper bound of confidence interval.
      *
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $to
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTo(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $to): self
+    public function setTo(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $to,
+                          null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $to) {
             unset($this->to);
@@ -339,6 +355,11 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
         }
         if (!($to instanceof FHIRDecimal)) {
             $to = new FHIRDecimal(value: $to);
+        }
+        if (null !== $valueXMLLocation) {
+            $to->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $to->_getValueXMLLocation()) {
+            $to->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->to = $to;
         return $this;
@@ -490,8 +511,15 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -499,13 +527,13 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->setType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LEVEL === $childName) {
-                $v = new FHIRDecimal(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDecimal(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLevel(FHIRDecimal::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_FROM === $childName) {
-                $v = new FHIRDecimal(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDecimal(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setFrom(FHIRDecimal::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TO === $childName) {
-                $v = new FHIRDecimal(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDecimal(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setTo(FHIRDecimal::xmlUnserialize($n, $v, $config));
             }
         }
@@ -513,48 +541,48 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LEVEL])) {
             $pt = $type->getLevel();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LEVEL]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LEVEL]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLevel(new FHIRDecimal(
                     value: (string)$attributes[self::FIELD_LEVEL],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_FROM])) {
             $pt = $type->getFrom();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_FROM]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_FROM]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setFrom(new FHIRDecimal(
                     value: (string)$attributes[self::FIELD_FROM],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_TO])) {
             $pt = $type->getTo();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_TO]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_TO]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setTo(new FHIRDecimal(
                     value: (string)$attributes[self::FIELD_TO],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -585,14 +613,14 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('EffectEvidenceSynthesisPrecisionEstimate', $this->_getSourceXMLNS());
         }
-        if (isset($this->level) && $this->level->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_LEVEL, $this->level->getValue()?->getFormattedValue());
+        if (isset($this->level) && $this->level->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_LEVEL, $this->level->getValue()?->_getFormattedValue());
         }
-        if (isset($this->from) && $this->from->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_FROM, $this->from->getValue()?->getFormattedValue());
+        if (isset($this->from) && $this->from->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_FROM, $this->from->getValue()?->_getFormattedValue());
         }
-        if (isset($this->to) && $this->to->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_TO, $this->to->getValue()?->getFormattedValue());
+        if (isset($this->to) && $this->to->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_TO, $this->to->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -600,17 +628,17 @@ class FHIREffectEvidenceSynthesisPrecisionEstimate extends FHIRBackboneElement
             $this->type->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->level) && $this->level->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->level) && $this->level->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_LEVEL);
             $this->level->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->from) && $this->from->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->from) && $this->from->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_FROM);
             $this->from->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->to) && $this->to->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->to) && $this->to->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_TO);
             $this->to->xmlSerialize($xw, $config);
             $xw->endElement();

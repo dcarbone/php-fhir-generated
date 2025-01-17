@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -371,9 +371,11 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * A type of resource exposed via the restful interface.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $type
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|string|FHIRCodePrimitive|FHIRCode $type): self
+    public function setType(null|string|FHIRCodePrimitive|FHIRCode $type,
+                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $type) {
             unset($this->type);
@@ -381,6 +383,11 @@ class FHIRConformanceResource extends FHIRBackboneElement
         }
         if (!($type instanceof FHIRCode)) {
             $type = new FHIRCode(value: $type);
+        }
+        if (null !== $valueXMLLocation) {
+            $type->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $type->_getValueXMLLocation()) {
+            $type->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->type = $type;
         return $this;
@@ -550,9 +557,11 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * vRead operation.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $readHistory
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setReadHistory(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $readHistory): self
+    public function setReadHistory(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $readHistory,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $readHistory) {
             unset($this->readHistory);
@@ -560,6 +569,11 @@ class FHIRConformanceResource extends FHIRBackboneElement
         }
         if (!($readHistory instanceof FHIRBoolean)) {
             $readHistory = new FHIRBoolean(value: $readHistory);
+        }
+        if (null !== $valueXMLLocation) {
+            $readHistory->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $readHistory->_getValueXMLLocation()) {
+            $readHistory->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->readHistory = $readHistory;
         return $this;
@@ -591,9 +605,11 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * allows the client to create new identities on the server.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $updateCreate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUpdateCreate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $updateCreate): self
+    public function setUpdateCreate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $updateCreate,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $updateCreate) {
             unset($this->updateCreate);
@@ -601,6 +617,11 @@ class FHIRConformanceResource extends FHIRBackboneElement
         }
         if (!($updateCreate instanceof FHIRBoolean)) {
             $updateCreate = new FHIRBoolean(value: $updateCreate);
+        }
+        if (null !== $valueXMLLocation) {
+            $updateCreate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $updateCreate->_getValueXMLLocation()) {
+            $updateCreate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->updateCreate = $updateCreate;
         return $this;
@@ -626,9 +647,11 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * A flag that indicates that the server supports conditional create.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $conditionalCreate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setConditionalCreate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $conditionalCreate): self
+    public function setConditionalCreate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $conditionalCreate,
+                                         null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $conditionalCreate) {
             unset($this->conditionalCreate);
@@ -636,6 +659,11 @@ class FHIRConformanceResource extends FHIRBackboneElement
         }
         if (!($conditionalCreate instanceof FHIRBoolean)) {
             $conditionalCreate = new FHIRBoolean(value: $conditionalCreate);
+        }
+        if (null !== $valueXMLLocation) {
+            $conditionalCreate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $conditionalCreate->_getValueXMLLocation()) {
+            $conditionalCreate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->conditionalCreate = $conditionalCreate;
         return $this;
@@ -661,9 +689,11 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * A flag that indicates that the server supports conditional update.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $conditionalUpdate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setConditionalUpdate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $conditionalUpdate): self
+    public function setConditionalUpdate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $conditionalUpdate,
+                                         null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $conditionalUpdate) {
             unset($this->conditionalUpdate);
@@ -671,6 +701,11 @@ class FHIRConformanceResource extends FHIRBackboneElement
         }
         if (!($conditionalUpdate instanceof FHIRBoolean)) {
             $conditionalUpdate = new FHIRBoolean(value: $conditionalUpdate);
+        }
+        if (null !== $valueXMLLocation) {
+            $conditionalUpdate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $conditionalUpdate->_getValueXMLLocation()) {
+            $conditionalUpdate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->conditionalUpdate = $conditionalUpdate;
         return $this;
@@ -1168,13 +1203,20 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRIdPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TYPE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setType(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PROFILE === $childName) {
                 $v = new FHIRReference();
@@ -1183,28 +1225,28 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 $v = new FHIRConformanceInteraction();
                 $type->addInteraction(FHIRConformanceInteraction::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VERSIONING === $childName) {
-                $v = new FHIRResourceVersionPolicy(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRResourceVersionPolicy(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setVersioning(FHIRResourceVersionPolicy::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_READ_HISTORY === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setReadHistory(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_UPDATE_CREATE === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setUpdateCreate(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CONDITIONAL_CREATE === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setConditionalCreate(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CONDITIONAL_UPDATE === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setConditionalUpdate(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CONDITIONAL_DELETE === $childName) {
-                $v = new FHIRConditionalDeleteStatus(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRConditionalDeleteStatus(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setConditionalDelete(FHIRConditionalDeleteStatus::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SEARCH_INCLUDE === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addSearchInclude(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SEARCH_REV_INCLUDE === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addSearchRevInclude(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SEARCH_PARAM === $childName) {
                 $v = new FHIRConformanceSearchParam();
@@ -1215,83 +1257,83 @@ class FHIRConformanceResource extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRIdPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_TYPE])) {
             $pt = $type->getType();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_TYPE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_TYPE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setType(new FHIRCode(
                     value: (string)$attributes[self::FIELD_TYPE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_READ_HISTORY])) {
             $pt = $type->getReadHistory();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_READ_HISTORY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_READ_HISTORY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setReadHistory(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_READ_HISTORY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_UPDATE_CREATE])) {
             $pt = $type->getUpdateCreate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_UPDATE_CREATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_UPDATE_CREATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setUpdateCreate(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_UPDATE_CREATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_CONDITIONAL_CREATE])) {
             $pt = $type->getConditionalCreate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_CONDITIONAL_CREATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_CONDITIONAL_CREATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setConditionalCreate(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_CONDITIONAL_CREATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_CONDITIONAL_UPDATE])) {
             $pt = $type->getConditionalUpdate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_CONDITIONAL_UPDATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_CONDITIONAL_UPDATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setConditionalUpdate(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_CONDITIONAL_UPDATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SEARCH_INCLUDE])) {
             $v = new FHIRString(value: (string)$attributes[self::FIELD_SEARCH_INCLUDE],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addSearchInclude($v);
         }
         if (isset($attributes[self::FIELD_SEARCH_REV_INCLUDE])) {
             $v = new FHIRString(value: (string)$attributes[self::FIELD_SEARCH_REV_INCLUDE],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addSearchRevInclude($v);
         }
         return $type;
@@ -1321,39 +1363,39 @@ class FHIRConformanceResource extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ConformanceResource', $this->_getSourceXMLNS());
         }
-        if (isset($this->type) && $this->type->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_TYPE, $this->type->getValue()?->getFormattedValue());
+        if (isset($this->type) && $this->type->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_TYPE, $this->type->getValue()?->_getFormattedValue());
         }
-        if (isset($this->readHistory) && $this->readHistory->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_READ_HISTORY, $this->readHistory->getValue()?->getFormattedValue());
+        if (isset($this->readHistory) && $this->readHistory->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_READ_HISTORY, $this->readHistory->getValue()?->_getFormattedValue());
         }
-        if (isset($this->updateCreate) && $this->updateCreate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_UPDATE_CREATE, $this->updateCreate->getValue()?->getFormattedValue());
+        if (isset($this->updateCreate) && $this->updateCreate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_UPDATE_CREATE, $this->updateCreate->getValue()?->_getFormattedValue());
         }
-        if (isset($this->conditionalCreate) && $this->conditionalCreate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_CONDITIONAL_CREATE, $this->conditionalCreate->getValue()?->getFormattedValue());
+        if (isset($this->conditionalCreate) && $this->conditionalCreate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_CONDITIONAL_CREATE, $this->conditionalCreate->getValue()?->_getFormattedValue());
         }
-        if (isset($this->conditionalUpdate) && $this->conditionalUpdate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_CONDITIONAL_UPDATE, $this->conditionalUpdate->getValue()?->getFormattedValue());
+        if (isset($this->conditionalUpdate) && $this->conditionalUpdate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_CONDITIONAL_UPDATE, $this->conditionalUpdate->getValue()?->_getFormattedValue());
         }
         if (isset($this->searchInclude)) {
            foreach($this->searchInclude as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_SEARCH_INCLUDE, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_SEARCH_INCLUDE, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
         }
         if (isset($this->searchRevInclude)) {
            foreach($this->searchRevInclude as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_SEARCH_REV_INCLUDE, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_SEARCH_REV_INCLUDE, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->type) && $this->type->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->type) && $this->type->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_TYPE);
             $this->type->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1375,22 +1417,22 @@ class FHIRConformanceResource extends FHIRBackboneElement
             $this->versioning->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->readHistory) && $this->readHistory->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->readHistory) && $this->readHistory->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_READ_HISTORY);
             $this->readHistory->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->updateCreate) && $this->updateCreate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->updateCreate) && $this->updateCreate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_UPDATE_CREATE);
             $this->updateCreate->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->conditionalCreate) && $this->conditionalCreate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->conditionalCreate) && $this->conditionalCreate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_CONDITIONAL_CREATE);
             $this->conditionalCreate->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->conditionalUpdate) && $this->conditionalUpdate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->conditionalUpdate) && $this->conditionalUpdate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_CONDITIONAL_UPDATE);
             $this->conditionalUpdate->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1402,7 +1444,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
         }
         if (isset($this->searchInclude)) {
             foreach($this->searchInclude as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_SEARCH_INCLUDE);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();
@@ -1411,7 +1453,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
         }
         if (isset($this->searchRevInclude)) {
             foreach($this->searchRevInclude as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_SEARCH_REV_INCLUDE);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();

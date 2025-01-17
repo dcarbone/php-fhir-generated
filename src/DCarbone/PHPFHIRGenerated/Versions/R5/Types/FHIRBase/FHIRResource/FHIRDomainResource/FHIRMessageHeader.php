@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -452,9 +452,11 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * implementation. Alternatively a canonical uri to the EventDefinition.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $eventCanonical
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEventCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $eventCanonical): self
+    public function setEventCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $eventCanonical,
+                                      null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $eventCanonical) {
             unset($this->eventCanonical);
@@ -462,6 +464,11 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         }
         if (!($eventCanonical instanceof FHIRCanonical)) {
             $eventCanonical = new FHIRCanonical(value: $eventCanonical);
+        }
+        if (null !== $valueXMLLocation) {
+            $eventCanonical->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $eventCanonical->_getValueXMLLocation()) {
+            $eventCanonical->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->eventCanonical = $eventCanonical;
         return $this;
@@ -839,9 +846,11 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
      * Permanent link to the MessageDefinition for this message.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $definition
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDefinition(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definition): self
+    public function setDefinition(null|string|FHIRCanonicalPrimitive|FHIRCanonical $definition,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $definition) {
             unset($this->definition);
@@ -849,6 +858,11 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         }
         if (!($definition instanceof FHIRCanonical)) {
             $definition = new FHIRCanonical(value: $definition);
+        }
+        if (null !== $valueXMLLocation) {
+            $definition->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $definition->_getValueXMLLocation()) {
+            $definition->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->definition = $definition;
         return $this;
@@ -1156,16 +1170,16 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         foreach ($element->children() as $n) {
             $childName = $n->getName();
             if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_META === $childName) {
                 $v = new FHIRMeta();
                 $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -1186,7 +1200,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
                 $v = new FHIRCoding();
                 $type->setEventCoding(FHIRCoding::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_EVENT_CANONICAL === $childName) {
-                $v = new FHIRCanonical(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCanonical(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setEventCanonical(FHIRCanonical::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DESTINATION === $childName) {
                 $v = new FHIRMessageHeaderDestination();
@@ -1213,7 +1227,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
                 $v = new FHIRReference();
                 $type->addFocus(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DEFINITION === $childName) {
-                $v = new FHIRCanonical(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCanonical(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDefinition(FHIRCanonical::xmlUnserialize($n, $v, $config));
             }
         }
@@ -1221,60 +1235,60 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRId(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             $pt = $type->getImplicitRules();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setImplicitRules(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_EVENT_CANONICAL])) {
             $pt = $type->getEventCanonical();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_EVENT_CANONICAL]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_EVENT_CANONICAL]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setEventCanonical(new FHIRCanonical(
                     value: (string)$attributes[self::FIELD_EVENT_CANONICAL],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DEFINITION])) {
             $pt = $type->getDefinition();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DEFINITION]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DEFINITION]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDefinition(new FHIRCanonical(
                     value: (string)$attributes[self::FIELD_DEFINITION],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1305,11 +1319,11 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             $rootOpened = true;
             $xw->openRootNode('MessageHeader', $this->_getSourceXMLNS());
         }
-        if (isset($this->eventCanonical) && $this->eventCanonical->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_EVENT_CANONICAL, $this->eventCanonical->getValue()?->getFormattedValue());
+        if (isset($this->eventCanonical) && $this->eventCanonical->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_EVENT_CANONICAL, $this->eventCanonical->getValue()?->_getFormattedValue());
         }
-        if (isset($this->definition) && $this->definition->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DEFINITION, $this->definition->getValue()?->getFormattedValue());
+        if (isset($this->definition) && $this->definition->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DEFINITION, $this->definition->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->eventCoding)) {
@@ -1317,7 +1331,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
             $this->eventCoding->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->eventCanonical) && $this->eventCanonical->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->eventCanonical) && $this->eventCanonical->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_EVENT_CANONICAL);
             $this->eventCanonical->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1366,7 +1380,7 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
                 $xw->endElement();
             }
         }
-        if (isset($this->definition) && $this->definition->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->definition) && $this->definition->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DEFINITION);
             $this->definition->xmlSerialize($xw, $config);
             $xw->endElement();

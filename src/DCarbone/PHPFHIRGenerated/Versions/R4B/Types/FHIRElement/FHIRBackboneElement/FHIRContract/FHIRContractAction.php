@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -579,9 +579,11 @@ class FHIRContractAction extends FHIRBackboneElement
      * True if the term prohibits the action.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $doNotPerform
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDoNotPerform(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $doNotPerform): self
+    public function setDoNotPerform(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $doNotPerform,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $doNotPerform) {
             unset($this->doNotPerform);
@@ -589,6 +591,11 @@ class FHIRContractAction extends FHIRBackboneElement
         }
         if (!($doNotPerform instanceof FHIRBoolean)) {
             $doNotPerform = new FHIRBoolean(value: $doNotPerform);
+        }
+        if (null !== $valueXMLLocation) {
+            $doNotPerform->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $doNotPerform->_getValueXMLLocation()) {
+            $doNotPerform->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->doNotPerform = $doNotPerform;
         return $this;
@@ -969,9 +976,11 @@ class FHIRContractAction extends FHIRBackboneElement
      * When action happens.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $occurrenceDateTime
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
+    public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime,
+                                          null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $occurrenceDateTime) {
             unset($this->occurrenceDateTime);
@@ -979,6 +988,11 @@ class FHIRContractAction extends FHIRBackboneElement
         }
         if (!($occurrenceDateTime instanceof FHIRDateTime)) {
             $occurrenceDateTime = new FHIRDateTime(value: $occurrenceDateTime);
+        }
+        if (null !== $valueXMLLocation) {
+            $occurrenceDateTime->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $occurrenceDateTime->_getValueXMLLocation()) {
+            $occurrenceDateTime->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->occurrenceDateTime = $occurrenceDateTime;
         return $this;
@@ -2201,13 +2215,20 @@ class FHIRContractAction extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DO_NOT_PERFORM === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDoNotPerform(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TYPE === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -2219,7 +2240,7 @@ class FHIRContractAction extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->setIntent(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LINK_ID === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addLinkId(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STATUS === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -2228,10 +2249,10 @@ class FHIRContractAction extends FHIRBackboneElement
                 $v = new FHIRReference();
                 $type->setContext(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CONTEXT_LINK_ID === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addContextLinkId(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_OCCURRENCE_DATE_TIME === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setOccurrenceDateTime(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_OCCURRENCE_PERIOD === $childName) {
                 $v = new FHIRPeriod();
@@ -2243,7 +2264,7 @@ class FHIRContractAction extends FHIRBackboneElement
                 $v = new FHIRReference();
                 $type->addRequester(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_REQUESTER_LINK_ID === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addRequesterLinkId(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PERFORMER_TYPE === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -2255,7 +2276,7 @@ class FHIRContractAction extends FHIRBackboneElement
                 $v = new FHIRReference();
                 $type->setPerformer(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PERFORMER_LINK_ID === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addPerformerLinkId(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_REASON_CODE === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -2264,16 +2285,16 @@ class FHIRContractAction extends FHIRBackboneElement
                 $v = new FHIRReference();
                 $type->addReasonReference(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_REASON === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addReason(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_REASON_LINK_ID === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addReasonLinkId(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NOTE === $childName) {
                 $v = new FHIRAnnotation();
                 $type->addNote(FHIRAnnotation::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SECURITY_LABEL_NUMBER === $childName) {
-                $v = new FHIRUnsignedInt(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUnsignedInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addSecurityLabelNumber(FHIRUnsignedInt::xmlUnserialize($n, $v, $config));
             }
         }
@@ -2281,72 +2302,72 @@ class FHIRContractAction extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DO_NOT_PERFORM])) {
             $pt = $type->getDoNotPerform();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DO_NOT_PERFORM]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DO_NOT_PERFORM]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDoNotPerform(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_DO_NOT_PERFORM],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LINK_ID])) {
             $v = new FHIRString(value: (string)$attributes[self::FIELD_LINK_ID],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addLinkId($v);
         }
         if (isset($attributes[self::FIELD_CONTEXT_LINK_ID])) {
             $v = new FHIRString(value: (string)$attributes[self::FIELD_CONTEXT_LINK_ID],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addContextLinkId($v);
         }
         if (isset($attributes[self::FIELD_OCCURRENCE_DATE_TIME])) {
             $pt = $type->getOccurrenceDateTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_OCCURRENCE_DATE_TIME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_OCCURRENCE_DATE_TIME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setOccurrenceDateTime(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_OCCURRENCE_DATE_TIME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_REQUESTER_LINK_ID])) {
             $v = new FHIRString(value: (string)$attributes[self::FIELD_REQUESTER_LINK_ID],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addRequesterLinkId($v);
         }
         if (isset($attributes[self::FIELD_PERFORMER_LINK_ID])) {
             $v = new FHIRString(value: (string)$attributes[self::FIELD_PERFORMER_LINK_ID],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addPerformerLinkId($v);
         }
         if (isset($attributes[self::FIELD_REASON])) {
             $v = new FHIRString(value: (string)$attributes[self::FIELD_REASON],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addReason($v);
         }
         if (isset($attributes[self::FIELD_REASON_LINK_ID])) {
             $v = new FHIRString(value: (string)$attributes[self::FIELD_REASON_LINK_ID],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addReasonLinkId($v);
         }
         if (isset($attributes[self::FIELD_SECURITY_LABEL_NUMBER])) {
             $v = new FHIRUnsignedInt(value: (string)$attributes[self::FIELD_SECURITY_LABEL_NUMBER],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addSecurityLabelNumber($v);
         }
         return $type;
@@ -2376,70 +2397,70 @@ class FHIRContractAction extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ContractAction', $this->_getSourceXMLNS());
         }
-        if (isset($this->doNotPerform) && $this->doNotPerform->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DO_NOT_PERFORM, $this->doNotPerform->getValue()?->getFormattedValue());
+        if (isset($this->doNotPerform) && $this->doNotPerform->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DO_NOT_PERFORM, $this->doNotPerform->getValue()?->_getFormattedValue());
         }
         if (isset($this->linkId)) {
            foreach($this->linkId as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_LINK_ID, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_LINK_ID, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
         }
         if (isset($this->contextLinkId)) {
            foreach($this->contextLinkId as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_CONTEXT_LINK_ID, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_CONTEXT_LINK_ID, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
         }
-        if (isset($this->occurrenceDateTime) && $this->occurrenceDateTime->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_OCCURRENCE_DATE_TIME, $this->occurrenceDateTime->getValue()?->getFormattedValue());
+        if (isset($this->occurrenceDateTime) && $this->occurrenceDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_OCCURRENCE_DATE_TIME, $this->occurrenceDateTime->getValue()?->_getFormattedValue());
         }
         if (isset($this->requesterLinkId)) {
            foreach($this->requesterLinkId as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_REQUESTER_LINK_ID, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_REQUESTER_LINK_ID, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
         }
         if (isset($this->performerLinkId)) {
            foreach($this->performerLinkId as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_PERFORMER_LINK_ID, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_PERFORMER_LINK_ID, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
         }
         if (isset($this->reason)) {
            foreach($this->reason as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_REASON, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_REASON, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
         }
         if (isset($this->reasonLinkId)) {
            foreach($this->reasonLinkId as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_REASON_LINK_ID, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_REASON_LINK_ID, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
         }
         if (isset($this->securityLabelNumber)) {
            foreach($this->securityLabelNumber as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_SECURITY_LABEL_NUMBER, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_SECURITY_LABEL_NUMBER, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->doNotPerform) && $this->doNotPerform->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->doNotPerform) && $this->doNotPerform->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DO_NOT_PERFORM);
             $this->doNotPerform->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -2463,7 +2484,7 @@ class FHIRContractAction extends FHIRBackboneElement
         }
         if (isset($this->linkId)) {
             foreach($this->linkId as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_LINK_ID);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();
@@ -2482,14 +2503,14 @@ class FHIRContractAction extends FHIRBackboneElement
         }
         if (isset($this->contextLinkId)) {
             foreach($this->contextLinkId as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_CONTEXT_LINK_ID);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();
                 }
             }
         }
-        if (isset($this->occurrenceDateTime) && $this->occurrenceDateTime->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->occurrenceDateTime) && $this->occurrenceDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_OCCURRENCE_DATE_TIME);
             $this->occurrenceDateTime->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -2513,7 +2534,7 @@ class FHIRContractAction extends FHIRBackboneElement
         }
         if (isset($this->requesterLinkId)) {
             foreach($this->requesterLinkId as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_REQUESTER_LINK_ID);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();
@@ -2539,7 +2560,7 @@ class FHIRContractAction extends FHIRBackboneElement
         }
         if (isset($this->performerLinkId)) {
             foreach($this->performerLinkId as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_PERFORMER_LINK_ID);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();
@@ -2562,7 +2583,7 @@ class FHIRContractAction extends FHIRBackboneElement
         }
         if (isset($this->reason)) {
             foreach($this->reason as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_REASON);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();
@@ -2571,7 +2592,7 @@ class FHIRContractAction extends FHIRBackboneElement
         }
         if (isset($this->reasonLinkId)) {
             foreach($this->reasonLinkId as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_REASON_LINK_ID);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();
@@ -2587,7 +2608,7 @@ class FHIRContractAction extends FHIRBackboneElement
         }
         if (isset($this->securityLabelNumber)) {
             foreach($this->securityLabelNumber as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_SECURITY_LABEL_NUMBER);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();

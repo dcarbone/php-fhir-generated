@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -624,9 +624,11 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * vocabulary shall be used The term and the term identifier shall be used.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $shape
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setShape(null|string|FHIRStringPrimitive|FHIRString $shape): self
+    public function setShape(null|string|FHIRStringPrimitive|FHIRString $shape,
+                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $shape) {
             unset($this->shape);
@@ -634,6 +636,11 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
         }
         if (!($shape instanceof FHIRString)) {
             $shape = new FHIRString(value: $shape);
+        }
+        if (null !== $valueXMLLocation) {
+            $shape->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $shape->_getValueXMLLocation()) {
+            $shape->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->shape = $shape;
         return $this;
@@ -1113,8 +1120,15 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -1137,13 +1151,13 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 $v = new FHIRQuantity();
                 $type->setExternalDiameter(FHIRQuantity::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SHAPE === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setShape(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_COLOR === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addColor(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPRINT === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addImprint(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMAGE === $childName) {
                 $v = new FHIRAttachment();
@@ -1157,35 +1171,35 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SHAPE])) {
             $pt = $type->getShape();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SHAPE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SHAPE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setShape(new FHIRString(
                     value: (string)$attributes[self::FIELD_SHAPE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_COLOR])) {
             $v = new FHIRString(value: (string)$attributes[self::FIELD_COLOR],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addColor($v);
         }
         if (isset($attributes[self::FIELD_IMPRINT])) {
             $v = new FHIRString(value: (string)$attributes[self::FIELD_IMPRINT],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addImprint($v);
         }
         return $type;
@@ -1215,21 +1229,21 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ProdCharacteristic', $this->_getSourceXMLNS());
         }
-        if (isset($this->shape) && $this->shape->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SHAPE, $this->shape->getValue()?->getFormattedValue());
+        if (isset($this->shape) && $this->shape->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SHAPE, $this->shape->getValue()?->_getFormattedValue());
         }
         if (isset($this->color)) {
            foreach($this->color as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_COLOR, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_COLOR, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
         }
         if (isset($this->imprint)) {
            foreach($this->imprint as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_IMPRINT, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_IMPRINT, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
@@ -1265,14 +1279,14 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
             $this->externalDiameter->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->shape) && $this->shape->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->shape) && $this->shape->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SHAPE);
             $this->shape->xmlSerialize($xw, $config);
             $xw->endElement();
         }
         if (isset($this->color)) {
             foreach($this->color as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_COLOR);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();
@@ -1281,7 +1295,7 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
         }
         if (isset($this->imprint)) {
             foreach($this->imprint as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_IMPRINT);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();

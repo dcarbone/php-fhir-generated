@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -286,9 +286,11 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      * how long the cache length on the receiver should be (if a sender).
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnsignedInt $reliableCache
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setReliableCache(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $reliableCache): self
+    public function setReliableCache(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $reliableCache,
+                                     null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $reliableCache) {
             unset($this->reliableCache);
@@ -296,6 +298,11 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
         }
         if (!($reliableCache instanceof FHIRUnsignedInt)) {
             $reliableCache = new FHIRUnsignedInt(value: $reliableCache);
+        }
+        if (null !== $valueXMLLocation) {
+            $reliableCache->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $reliableCache->_getValueXMLLocation()) {
+            $reliableCache->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->reliableCache = $reliableCache;
         return $this;
@@ -327,9 +334,11 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
      * becoming an authorized messaging exchange partner.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $documentation
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation): self
+    public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation,
+                                     null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $documentation) {
             unset($this->documentation);
@@ -337,6 +346,11 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
         }
         if (!($documentation instanceof FHIRString)) {
             $documentation = new FHIRString(value: $documentation);
+        }
+        if (null !== $valueXMLLocation) {
+            $documentation->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $documentation->_getValueXMLLocation()) {
+            $documentation->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->documentation = $documentation;
         return $this;
@@ -555,8 +569,15 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRIdPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -564,10 +585,10 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
                 $v = new FHIRConformanceEndpoint();
                 $type->addEndpoint(FHIRConformanceEndpoint::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_RELIABLE_CACHE === $childName) {
-                $v = new FHIRUnsignedInt(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUnsignedInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setReliableCache(FHIRUnsignedInt::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DOCUMENTATION === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDocumentation(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_EVENT === $childName) {
                 $v = new FHIRConformanceEvent();
@@ -578,36 +599,36 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRIdPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_RELIABLE_CACHE])) {
             $pt = $type->getReliableCache();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_RELIABLE_CACHE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_RELIABLE_CACHE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setReliableCache(new FHIRUnsignedInt(
                     value: (string)$attributes[self::FIELD_RELIABLE_CACHE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DOCUMENTATION])) {
             $pt = $type->getDocumentation();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DOCUMENTATION]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DOCUMENTATION]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDocumentation(new FHIRString(
                     value: (string)$attributes[self::FIELD_DOCUMENTATION],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -638,11 +659,11 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ConformanceMessaging', $this->_getSourceXMLNS());
         }
-        if (isset($this->reliableCache) && $this->reliableCache->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_RELIABLE_CACHE, $this->reliableCache->getValue()?->getFormattedValue());
+        if (isset($this->reliableCache) && $this->reliableCache->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_RELIABLE_CACHE, $this->reliableCache->getValue()?->_getFormattedValue());
         }
-        if (isset($this->documentation) && $this->documentation->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DOCUMENTATION, $this->documentation->getValue()?->getFormattedValue());
+        if (isset($this->documentation) && $this->documentation->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DOCUMENTATION, $this->documentation->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->endpoint)) {
@@ -652,12 +673,12 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->reliableCache) && $this->reliableCache->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->reliableCache) && $this->reliableCache->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_RELIABLE_CACHE);
             $this->reliableCache->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->documentation) && $this->documentation->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->documentation) && $this->documentation->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DOCUMENTATION);
             $this->documentation->xmlSerialize($xw, $config);
             $xw->endElement();

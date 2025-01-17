@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -331,9 +331,11 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * same, but are not required to do so. This is a business identifier.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIdentifier(null|string|FHIRUriPrimitive|FHIRUri $identifier): self
+    public function setIdentifier(null|string|FHIRUriPrimitive|FHIRUri $identifier,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $identifier) {
             unset($this->identifier);
@@ -341,6 +343,11 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
         }
         if (!($identifier instanceof FHIRUri)) {
             $identifier = new FHIRUri(value: $identifier);
+        }
+        if (null !== $valueXMLLocation) {
+            $identifier->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $identifier->_getValueXMLLocation()) {
+            $identifier->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->identifier = $identifier;
         return $this;
@@ -370,9 +377,11 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * dictated structure, and only the server understands them.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $next
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setNext(null|string|FHIRUriPrimitive|FHIRUri $next): self
+    public function setNext(null|string|FHIRUriPrimitive|FHIRUri $next,
+                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $next) {
             unset($this->next);
@@ -380,6 +389,11 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
         }
         if (!($next instanceof FHIRUri)) {
             $next = new FHIRUri(value: $next);
+        }
+        if (null !== $valueXMLLocation) {
+            $next->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $next->_getValueXMLLocation()) {
+            $next->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->next = $next;
         return $this;
@@ -415,9 +429,11 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * The time at which the expansion was produced by the expanding system.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $timestamp
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTimestamp(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timestamp): self
+    public function setTimestamp(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timestamp,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $timestamp) {
             unset($this->timestamp);
@@ -425,6 +441,11 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
         }
         if (!($timestamp instanceof FHIRDateTime)) {
             $timestamp = new FHIRDateTime(value: $timestamp);
+        }
+        if (null !== $valueXMLLocation) {
+            $timestamp->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $timestamp->_getValueXMLLocation()) {
+            $timestamp->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->timestamp = $timestamp;
         return $this;
@@ -456,9 +477,11 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * using the offset parameter.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $total
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTotal(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $total): self
+    public function setTotal(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $total,
+                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $total) {
             unset($this->total);
@@ -466,6 +489,11 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
         }
         if (!($total instanceof FHIRInteger)) {
             $total = new FHIRInteger(value: $total);
+        }
+        if (null !== $valueXMLLocation) {
+            $total->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $total->_getValueXMLLocation()) {
+            $total->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->total = $total;
         return $this;
@@ -497,9 +525,11 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * element SHALL NOT be present.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $offset
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOffset(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $offset): self
+    public function setOffset(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $offset,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $offset) {
             unset($this->offset);
@@ -507,6 +537,11 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
         }
         if (!($offset instanceof FHIRInteger)) {
             $offset = new FHIRInteger(value: $offset);
+        }
+        if (null !== $valueXMLLocation) {
+            $offset->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $offset->_getValueXMLLocation()) {
+            $offset->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->offset = $offset;
         return $this;
@@ -909,25 +944,32 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IDENTIFIER === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setIdentifier(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NEXT === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setNext(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TIMESTAMP === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setTimestamp(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TOTAL === $childName) {
-                $v = new FHIRInteger(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setTotal(FHIRInteger::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_OFFSET === $childName) {
-                $v = new FHIRInteger(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setOffset(FHIRInteger::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PARAMETER === $childName) {
                 $v = new FHIRValueSetParameter();
@@ -944,72 +986,72 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IDENTIFIER])) {
             $pt = $type->getIdentifier();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IDENTIFIER]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IDENTIFIER]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setIdentifier(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IDENTIFIER],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_NEXT])) {
             $pt = $type->getNext();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_NEXT]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_NEXT]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setNext(new FHIRUri(
                     value: (string)$attributes[self::FIELD_NEXT],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_TIMESTAMP])) {
             $pt = $type->getTimestamp();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_TIMESTAMP]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_TIMESTAMP]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setTimestamp(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_TIMESTAMP],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_TOTAL])) {
             $pt = $type->getTotal();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_TOTAL]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_TOTAL]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setTotal(new FHIRInteger(
                     value: (string)$attributes[self::FIELD_TOTAL],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_OFFSET])) {
             $pt = $type->getOffset();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_OFFSET]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_OFFSET]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setOffset(new FHIRInteger(
                     value: (string)$attributes[self::FIELD_OFFSET],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1040,43 +1082,43 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ValueSetExpansion', $this->_getSourceXMLNS());
         }
-        if (isset($this->identifier) && $this->identifier->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_IDENTIFIER, $this->identifier->getValue()?->getFormattedValue());
+        if (isset($this->identifier) && $this->identifier->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_IDENTIFIER, $this->identifier->getValue()?->_getFormattedValue());
         }
-        if (isset($this->next) && $this->next->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_NEXT, $this->next->getValue()?->getFormattedValue());
+        if (isset($this->next) && $this->next->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_NEXT, $this->next->getValue()?->_getFormattedValue());
         }
-        if (isset($this->timestamp) && $this->timestamp->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_TIMESTAMP, $this->timestamp->getValue()?->getFormattedValue());
+        if (isset($this->timestamp) && $this->timestamp->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_TIMESTAMP, $this->timestamp->getValue()?->_getFormattedValue());
         }
-        if (isset($this->total) && $this->total->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_TOTAL, $this->total->getValue()?->getFormattedValue());
+        if (isset($this->total) && $this->total->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_TOTAL, $this->total->getValue()?->_getFormattedValue());
         }
-        if (isset($this->offset) && $this->offset->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_OFFSET, $this->offset->getValue()?->getFormattedValue());
+        if (isset($this->offset) && $this->offset->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_OFFSET, $this->offset->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identifier) && $this->identifier->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->identifier) && $this->identifier->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_IDENTIFIER);
             $this->identifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->next) && $this->next->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->next) && $this->next->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_NEXT);
             $this->next->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->timestamp) && $this->timestamp->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->timestamp) && $this->timestamp->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_TIMESTAMP);
             $this->timestamp->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->total) && $this->total->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->total) && $this->total->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_TOTAL);
             $this->total->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->offset) && $this->offset->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->offset) && $this->offset->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_OFFSET);
             $this->offset->xmlSerialize($xw, $config);
             $xw->endElement();

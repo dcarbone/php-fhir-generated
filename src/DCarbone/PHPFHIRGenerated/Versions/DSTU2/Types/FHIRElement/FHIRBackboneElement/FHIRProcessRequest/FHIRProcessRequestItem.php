@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -165,9 +165,11 @@ class FHIRProcessRequestItem extends FHIRBackboneElement
      * A service line number.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInteger $sequenceLinkId
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSequenceLinkId(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $sequenceLinkId): self
+    public function setSequenceLinkId(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $sequenceLinkId,
+                                      null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $sequenceLinkId) {
             unset($this->sequenceLinkId);
@@ -175,6 +177,11 @@ class FHIRProcessRequestItem extends FHIRBackboneElement
         }
         if (!($sequenceLinkId instanceof FHIRInteger)) {
             $sequenceLinkId = new FHIRInteger(value: $sequenceLinkId);
+        }
+        if (null !== $valueXMLLocation) {
+            $sequenceLinkId->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $sequenceLinkId->_getValueXMLLocation()) {
+            $sequenceLinkId->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->sequenceLinkId = $sequenceLinkId;
         return $this;
@@ -295,13 +302,20 @@ class FHIRProcessRequestItem extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRIdPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SEQUENCE_LINK_ID === $childName) {
-                $v = new FHIRInteger(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSequenceLinkId(FHIRInteger::xmlUnserialize($n, $v, $config));
             }
         }
@@ -309,24 +323,24 @@ class FHIRProcessRequestItem extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRIdPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SEQUENCE_LINK_ID])) {
             $pt = $type->getSequenceLinkId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SEQUENCE_LINK_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SEQUENCE_LINK_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSequenceLinkId(new FHIRInteger(
                     value: (string)$attributes[self::FIELD_SEQUENCE_LINK_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -357,11 +371,11 @@ class FHIRProcessRequestItem extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ProcessRequestItem', $this->_getSourceXMLNS());
         }
-        if (isset($this->sequenceLinkId) && $this->sequenceLinkId->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SEQUENCE_LINK_ID, $this->sequenceLinkId->getValue()?->getFormattedValue());
+        if (isset($this->sequenceLinkId) && $this->sequenceLinkId->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SEQUENCE_LINK_ID, $this->sequenceLinkId->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->sequenceLinkId) && $this->sequenceLinkId->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->sequenceLinkId) && $this->sequenceLinkId->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SEQUENCE_LINK_ID);
             $this->sequenceLinkId->xmlSerialize($xw, $config);
             $xw->endElement();

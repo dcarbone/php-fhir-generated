@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -272,9 +272,11 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
      * estimate.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDate $extractionDate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExtractionDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $extractionDate): self
+    public function setExtractionDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $extractionDate,
+                                      null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $extractionDate) {
             unset($this->extractionDate);
@@ -282,6 +284,11 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
         }
         if (!($extractionDate instanceof FHIRDate)) {
             $extractionDate = new FHIRDate(value: $extractionDate);
+        }
+        if (null !== $valueXMLLocation) {
+            $extractionDate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $extractionDate->_getValueXMLLocation()) {
+            $extractionDate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->extractionDate = $extractionDate;
         return $this;
@@ -426,8 +433,15 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRIdPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -438,7 +452,7 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
                 $v = new FHIRCoding();
                 $type->setReason(FHIRCoding::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_EXTRACTION_DATE === $childName) {
-                $v = new FHIRDate(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDate(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setExtractionDate(FHIRDate::xmlUnserialize($n, $v, $config));
             }
         }
@@ -446,24 +460,24 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRIdPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_EXTRACTION_DATE])) {
             $pt = $type->getExtractionDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_EXTRACTION_DATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_EXTRACTION_DATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setExtractionDate(new FHIRDate(
                     value: (string)$attributes[self::FIELD_EXTRACTION_DATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -494,8 +508,8 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ClaimMissingTeeth', $this->_getSourceXMLNS());
         }
-        if (isset($this->extractionDate) && $this->extractionDate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_EXTRACTION_DATE, $this->extractionDate->getValue()?->getFormattedValue());
+        if (isset($this->extractionDate) && $this->extractionDate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_EXTRACTION_DATE, $this->extractionDate->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->tooth)) {
@@ -508,7 +522,7 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
             $this->reason->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->extractionDate) && $this->extractionDate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->extractionDate) && $this->extractionDate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_EXTRACTION_DATE);
             $this->extractionDate->xmlSerialize($xw, $config);
             $xw->endElement();

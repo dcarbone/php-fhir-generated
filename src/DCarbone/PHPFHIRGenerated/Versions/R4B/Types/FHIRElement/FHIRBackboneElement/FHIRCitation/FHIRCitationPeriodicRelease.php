@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -266,9 +266,11 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * Volume number of journal in which the article is published.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $volume
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setVolume(null|string|FHIRStringPrimitive|FHIRString $volume): self
+    public function setVolume(null|string|FHIRStringPrimitive|FHIRString $volume,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $volume) {
             unset($this->volume);
@@ -276,6 +278,11 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
         }
         if (!($volume instanceof FHIRString)) {
             $volume = new FHIRString(value: $volume);
+        }
+        if (null !== $valueXMLLocation) {
+            $volume->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $volume->_getValueXMLLocation()) {
+            $volume->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->volume = $volume;
         return $this;
@@ -303,9 +310,11 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
      * Issue, part or supplement of journal in which the article is published.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $issue
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIssue(null|string|FHIRStringPrimitive|FHIRString $issue): self
+    public function setIssue(null|string|FHIRStringPrimitive|FHIRString $issue,
+                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $issue) {
             unset($this->issue);
@@ -313,6 +322,11 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
         }
         if (!($issue instanceof FHIRString)) {
             $issue = new FHIRString(value: $issue);
+        }
+        if (null !== $valueXMLLocation) {
+            $issue->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $issue->_getValueXMLLocation()) {
+            $issue->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->issue = $issue;
         return $this;
@@ -500,8 +514,15 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -509,10 +530,10 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->setCitedMedium(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VOLUME === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setVolume(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ISSUE === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setIssue(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DATE_OF_PUBLICATION === $childName) {
                 $v = new FHIRCitationDateOfPublication();
@@ -523,36 +544,36 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_VOLUME])) {
             $pt = $type->getVolume();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_VOLUME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_VOLUME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setVolume(new FHIRString(
                     value: (string)$attributes[self::FIELD_VOLUME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_ISSUE])) {
             $pt = $type->getIssue();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ISSUE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ISSUE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setIssue(new FHIRString(
                     value: (string)$attributes[self::FIELD_ISSUE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -583,11 +604,11 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('CitationPeriodicRelease', $this->_getSourceXMLNS());
         }
-        if (isset($this->volume) && $this->volume->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VOLUME, $this->volume->getValue()?->getFormattedValue());
+        if (isset($this->volume) && $this->volume->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VOLUME, $this->volume->getValue()?->_getFormattedValue());
         }
-        if (isset($this->issue) && $this->issue->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ISSUE, $this->issue->getValue()?->getFormattedValue());
+        if (isset($this->issue) && $this->issue->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_ISSUE, $this->issue->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->citedMedium)) {
@@ -595,12 +616,12 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
             $this->citedMedium->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->volume) && $this->volume->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->volume) && $this->volume->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_VOLUME);
             $this->volume->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->issue) && $this->issue->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->issue) && $this->issue->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_ISSUE);
             $this->issue->xmlSerialize($xw, $config);
             $xw->endElement();

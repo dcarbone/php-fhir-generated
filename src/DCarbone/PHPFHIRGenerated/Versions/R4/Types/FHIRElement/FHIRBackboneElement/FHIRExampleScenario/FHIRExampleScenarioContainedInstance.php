@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -177,9 +177,11 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
      * Each resource contained in the instance.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $resourceId
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setResourceId(null|string|FHIRStringPrimitive|FHIRString $resourceId): self
+    public function setResourceId(null|string|FHIRStringPrimitive|FHIRString $resourceId,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $resourceId) {
             unset($this->resourceId);
@@ -187,6 +189,11 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
         }
         if (!($resourceId instanceof FHIRString)) {
             $resourceId = new FHIRString(value: $resourceId);
+        }
+        if (null !== $valueXMLLocation) {
+            $resourceId->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $resourceId->_getValueXMLLocation()) {
+            $resourceId->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->resourceId = $resourceId;
         return $this;
@@ -214,9 +221,11 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
      * A specific version of a resource contained in the instance.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $versionId
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setVersionId(null|string|FHIRStringPrimitive|FHIRString $versionId): self
+    public function setVersionId(null|string|FHIRStringPrimitive|FHIRString $versionId,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $versionId) {
             unset($this->versionId);
@@ -224,6 +233,11 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
         }
         if (!($versionId instanceof FHIRString)) {
             $versionId = new FHIRString(value: $versionId);
+        }
+        if (null !== $valueXMLLocation) {
+            $versionId->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $versionId->_getValueXMLLocation()) {
+            $versionId->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->versionId = $versionId;
         return $this;
@@ -356,16 +370,23 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_RESOURCE_ID === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setResourceId(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VERSION_ID === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setVersionId(FHIRString::xmlUnserialize($n, $v, $config));
             }
         }
@@ -373,36 +394,36 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_RESOURCE_ID])) {
             $pt = $type->getResourceId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_RESOURCE_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_RESOURCE_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setResourceId(new FHIRString(
                     value: (string)$attributes[self::FIELD_RESOURCE_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_VERSION_ID])) {
             $pt = $type->getVersionId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_VERSION_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_VERSION_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setVersionId(new FHIRString(
                     value: (string)$attributes[self::FIELD_VERSION_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -433,19 +454,19 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ExampleScenarioContainedInstance', $this->_getSourceXMLNS());
         }
-        if (isset($this->resourceId) && $this->resourceId->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_RESOURCE_ID, $this->resourceId->getValue()?->getFormattedValue());
+        if (isset($this->resourceId) && $this->resourceId->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_RESOURCE_ID, $this->resourceId->getValue()?->_getFormattedValue());
         }
-        if (isset($this->versionId) && $this->versionId->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VERSION_ID, $this->versionId->getValue()?->getFormattedValue());
+        if (isset($this->versionId) && $this->versionId->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VERSION_ID, $this->versionId->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->resourceId) && $this->resourceId->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->resourceId) && $this->resourceId->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_RESOURCE_ID);
             $this->resourceId->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->versionId) && $this->versionId->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->versionId) && $this->versionId->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_VERSION_ID);
             $this->versionId->xmlSerialize($xw, $config);
             $xw->endElement();

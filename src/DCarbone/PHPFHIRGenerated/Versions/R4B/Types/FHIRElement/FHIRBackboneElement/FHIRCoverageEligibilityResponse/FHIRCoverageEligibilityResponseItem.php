@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -580,9 +580,11 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * False indicates the product or service is included in the coverage.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $excluded
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExcluded(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $excluded): self
+    public function setExcluded(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $excluded,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $excluded) {
             unset($this->excluded);
@@ -590,6 +592,11 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
         }
         if (!($excluded instanceof FHIRBoolean)) {
             $excluded = new FHIRBoolean(value: $excluded);
+        }
+        if (null !== $valueXMLLocation) {
+            $excluded->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $excluded->_getValueXMLLocation()) {
+            $excluded->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->excluded = $excluded;
         return $this;
@@ -617,9 +624,11 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * A short name or tag for the benefit.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name,
+                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $name) {
             unset($this->name);
@@ -627,6 +636,11 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
         }
         if (!($name instanceof FHIRString)) {
             $name = new FHIRString(value: $name);
+        }
+        if (null !== $valueXMLLocation) {
+            $name->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $name->_getValueXMLLocation()) {
+            $name->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->name = $name;
         return $this;
@@ -654,9 +668,11 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * A richer description of the benefit or services covered.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $description
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
+    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $description) {
             unset($this->description);
@@ -664,6 +680,11 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
         }
         if (!($description instanceof FHIRString)) {
             $description = new FHIRString(value: $description);
+        }
+        if (null !== $valueXMLLocation) {
+            $description->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $description->_getValueXMLLocation()) {
+            $description->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->description = $description;
         return $this;
@@ -860,9 +881,11 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * service delivery.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $authorizationRequired
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAuthorizationRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $authorizationRequired): self
+    public function setAuthorizationRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $authorizationRequired,
+                                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $authorizationRequired) {
             unset($this->authorizationRequired);
@@ -870,6 +893,11 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
         }
         if (!($authorizationRequired instanceof FHIRBoolean)) {
             $authorizationRequired = new FHIRBoolean(value: $authorizationRequired);
+        }
+        if (null !== $valueXMLLocation) {
+            $authorizationRequired->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $authorizationRequired->_getValueXMLLocation()) {
+            $authorizationRequired->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->authorizationRequired = $authorizationRequired;
         return $this;
@@ -965,9 +993,11 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * the preauthorization.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $authorizationUrl
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAuthorizationUrl(null|string|FHIRUriPrimitive|FHIRUri $authorizationUrl): self
+    public function setAuthorizationUrl(null|string|FHIRUriPrimitive|FHIRUri $authorizationUrl,
+                                        null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $authorizationUrl) {
             unset($this->authorizationUrl);
@@ -975,6 +1005,11 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
         }
         if (!($authorizationUrl instanceof FHIRUri)) {
             $authorizationUrl = new FHIRUri(value: $authorizationUrl);
+        }
+        if (null !== $valueXMLLocation) {
+            $authorizationUrl->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $authorizationUrl->_getValueXMLLocation()) {
+            $authorizationUrl->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->authorizationUrl = $authorizationUrl;
         return $this;
@@ -1246,8 +1281,15 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -1264,13 +1306,13 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
                 $v = new FHIRReference();
                 $type->setProvider(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_EXCLUDED === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setExcluded(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NAME === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setName(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DESCRIPTION === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDescription(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NETWORK === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -1285,13 +1327,13 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
                 $v = new FHIRCoverageEligibilityResponseBenefit();
                 $type->addBenefit(FHIRCoverageEligibilityResponseBenefit::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_AUTHORIZATION_REQUIRED === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setAuthorizationRequired(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_AUTHORIZATION_SUPPORTING === $childName) {
                 $v = new FHIRCodeableConcept();
                 $type->addAuthorizationSupporting(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_AUTHORIZATION_URL === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setAuthorizationUrl(FHIRUri::xmlUnserialize($n, $v, $config));
             }
         }
@@ -1299,72 +1341,72 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_EXCLUDED])) {
             $pt = $type->getExcluded();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_EXCLUDED]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_EXCLUDED]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setExcluded(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_EXCLUDED],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_NAME])) {
             $pt = $type->getName();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_NAME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_NAME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setName(new FHIRString(
                     value: (string)$attributes[self::FIELD_NAME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
             $pt = $type->getDescription();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DESCRIPTION]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDescription(new FHIRString(
                     value: (string)$attributes[self::FIELD_DESCRIPTION],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_AUTHORIZATION_REQUIRED])) {
             $pt = $type->getAuthorizationRequired();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_AUTHORIZATION_REQUIRED]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_AUTHORIZATION_REQUIRED]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setAuthorizationRequired(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_AUTHORIZATION_REQUIRED],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_AUTHORIZATION_URL])) {
             $pt = $type->getAuthorizationUrl();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_AUTHORIZATION_URL]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_AUTHORIZATION_URL]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setAuthorizationUrl(new FHIRUri(
                     value: (string)$attributes[self::FIELD_AUTHORIZATION_URL],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1395,20 +1437,20 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('CoverageEligibilityResponseItem', $this->_getSourceXMLNS());
         }
-        if (isset($this->excluded) && $this->excluded->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_EXCLUDED, $this->excluded->getValue()?->getFormattedValue());
+        if (isset($this->excluded) && $this->excluded->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_EXCLUDED, $this->excluded->getValue()?->_getFormattedValue());
         }
-        if (isset($this->name) && $this->name->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_NAME, $this->name->getValue()?->getFormattedValue());
+        if (isset($this->name) && $this->name->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_NAME, $this->name->getValue()?->_getFormattedValue());
         }
-        if (isset($this->description) && $this->description->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->getValue()?->getFormattedValue());
+        if (isset($this->description) && $this->description->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->getValue()?->_getFormattedValue());
         }
-        if (isset($this->authorizationRequired) && $this->authorizationRequired->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_AUTHORIZATION_REQUIRED, $this->authorizationRequired->getValue()?->getFormattedValue());
+        if (isset($this->authorizationRequired) && $this->authorizationRequired->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_AUTHORIZATION_REQUIRED, $this->authorizationRequired->getValue()?->_getFormattedValue());
         }
-        if (isset($this->authorizationUrl) && $this->authorizationUrl->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_AUTHORIZATION_URL, $this->authorizationUrl->getValue()?->getFormattedValue());
+        if (isset($this->authorizationUrl) && $this->authorizationUrl->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_AUTHORIZATION_URL, $this->authorizationUrl->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->category)) {
@@ -1433,17 +1475,17 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
             $this->provider->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->excluded) && $this->excluded->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->excluded) && $this->excluded->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_EXCLUDED);
             $this->excluded->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->name) && $this->name->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->name) && $this->name->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_NAME);
             $this->name->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->description) && $this->description->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->description) && $this->description->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DESCRIPTION);
             $this->description->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1470,7 +1512,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->authorizationRequired) && $this->authorizationRequired->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->authorizationRequired) && $this->authorizationRequired->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_AUTHORIZATION_REQUIRED);
             $this->authorizationRequired->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1482,7 +1524,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->authorizationUrl) && $this->authorizationUrl->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->authorizationUrl) && $this->authorizationUrl->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_AUTHORIZATION_URL);
             $this->authorizationUrl->xmlSerialize($xw, $config);
             $xw->endElement();

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -60,7 +60,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -385,9 +385,11 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
      * The time when the event occurred on the source.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInstant $dateTime
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDateTime(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $dateTime): self
+    public function setDateTime(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $dateTime,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $dateTime) {
             unset($this->dateTime);
@@ -395,6 +397,11 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
         }
         if (!($dateTime instanceof FHIRInstant)) {
             $dateTime = new FHIRInstant(value: $dateTime);
+        }
+        if (null !== $valueXMLLocation) {
+            $dateTime->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $dateTime->_getValueXMLLocation()) {
+            $dateTime->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->dateTime = $dateTime;
         return $this;
@@ -452,9 +459,11 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
      * A free text description of the outcome of the event.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $outcomeDesc
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOutcomeDesc(null|string|FHIRStringPrimitive|FHIRString $outcomeDesc): self
+    public function setOutcomeDesc(null|string|FHIRStringPrimitive|FHIRString $outcomeDesc,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $outcomeDesc) {
             unset($this->outcomeDesc);
@@ -462,6 +471,11 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
         }
         if (!($outcomeDesc instanceof FHIRString)) {
             $outcomeDesc = new FHIRString(value: $outcomeDesc);
+        }
+        if (null !== $valueXMLLocation) {
+            $outcomeDesc->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $outcomeDesc->_getValueXMLLocation()) {
+            $outcomeDesc->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->outcomeDesc = $outcomeDesc;
         return $this;
@@ -647,8 +661,15 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRIdPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -659,16 +680,16 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->addSubtype(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ACTION === $childName) {
-                $v = new FHIRSecurityEventAction(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRSecurityEventAction(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setAction(FHIRSecurityEventAction::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DATE_TIME === $childName) {
-                $v = new FHIRInstant(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInstant(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDateTime(FHIRInstant::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_OUTCOME === $childName) {
-                $v = new FHIRSecurityEventOutcome(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRSecurityEventOutcome(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setOutcome(FHIRSecurityEventOutcome::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_OUTCOME_DESC === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setOutcomeDesc(FHIRString::xmlUnserialize($n, $v, $config));
             }
         }
@@ -676,36 +697,36 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRIdPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DATE_TIME])) {
             $pt = $type->getDateTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DATE_TIME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DATE_TIME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDateTime(new FHIRInstant(
                     value: (string)$attributes[self::FIELD_DATE_TIME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_OUTCOME_DESC])) {
             $pt = $type->getOutcomeDesc();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_OUTCOME_DESC]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_OUTCOME_DESC]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setOutcomeDesc(new FHIRString(
                     value: (string)$attributes[self::FIELD_OUTCOME_DESC],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -736,11 +757,11 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('SecurityEventEvent', $this->_getSourceXMLNS());
         }
-        if (isset($this->dateTime) && $this->dateTime->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DATE_TIME, $this->dateTime->getValue()?->getFormattedValue());
+        if (isset($this->dateTime) && $this->dateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DATE_TIME, $this->dateTime->getValue()?->_getFormattedValue());
         }
-        if (isset($this->outcomeDesc) && $this->outcomeDesc->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_OUTCOME_DESC, $this->outcomeDesc->getValue()?->getFormattedValue());
+        if (isset($this->outcomeDesc) && $this->outcomeDesc->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_OUTCOME_DESC, $this->outcomeDesc->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -760,7 +781,7 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
             $this->action->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->dateTime) && $this->dateTime->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->dateTime) && $this->dateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DATE_TIME);
             $this->dateTime->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -770,7 +791,7 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
             $this->outcome->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->outcomeDesc) && $this->outcomeDesc->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->outcomeDesc) && $this->outcomeDesc->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_OUTCOME_DESC);
             $this->outcomeDesc->xmlSerialize($xw, $config);
             $xw->endElement();

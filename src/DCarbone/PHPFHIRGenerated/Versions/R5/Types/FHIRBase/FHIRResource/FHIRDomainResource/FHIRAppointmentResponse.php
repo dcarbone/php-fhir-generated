@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -543,9 +543,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * properties.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $proposedNewTime
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setProposedNewTime(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $proposedNewTime): self
+    public function setProposedNewTime(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $proposedNewTime,
+                                       null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $proposedNewTime) {
             unset($this->proposedNewTime);
@@ -553,6 +555,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
         }
         if (!($proposedNewTime instanceof FHIRBoolean)) {
             $proposedNewTime = new FHIRBoolean(value: $proposedNewTime);
+        }
+        if (null !== $valueXMLLocation) {
+            $proposedNewTime->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $proposedNewTime->_getValueXMLLocation()) {
+            $proposedNewTime->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->proposedNewTime = $proposedNewTime;
         return $this;
@@ -586,9 +593,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * Date/Time that the appointment is to take place, or requested new start time.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $start
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStart(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $start): self
+    public function setStart(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $start,
+                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $start) {
             unset($this->start);
@@ -596,6 +605,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
         }
         if (!($start instanceof FHIRInstant)) {
             $start = new FHIRInstant(value: $start);
+        }
+        if (null !== $valueXMLLocation) {
+            $start->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $start->_getValueXMLLocation()) {
+            $start->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->start = $start;
         return $this;
@@ -633,9 +647,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * end time.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInstant $end
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEnd(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end): self
+    public function setEnd(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end,
+                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $end) {
             unset($this->end);
@@ -643,6 +659,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
         }
         if (!($end instanceof FHIRInstant)) {
             $end = new FHIRInstant(value: $end);
+        }
+        if (null !== $valueXMLLocation) {
+            $end->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $end->_getValueXMLLocation()) {
+            $end->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->end = $end;
         return $this;
@@ -815,9 +836,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * Additional comments about the appointment.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $comment
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setComment(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $comment): self
+    public function setComment(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $comment,
+                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $comment) {
             unset($this->comment);
@@ -825,6 +848,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
         }
         if (!($comment instanceof FHIRMarkdown)) {
             $comment = new FHIRMarkdown(value: $comment);
+        }
+        if (null !== $valueXMLLocation) {
+            $comment->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $comment->_getValueXMLLocation()) {
+            $comment->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->comment = $comment;
         return $this;
@@ -852,9 +880,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * recurring request.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $recurring
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRecurring(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $recurring): self
+    public function setRecurring(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $recurring,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $recurring) {
             unset($this->recurring);
@@ -862,6 +892,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
         }
         if (!($recurring instanceof FHIRBoolean)) {
             $recurring = new FHIRBoolean(value: $recurring);
+        }
+        if (null !== $valueXMLLocation) {
+            $recurring->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $recurring->_getValueXMLLocation()) {
+            $recurring->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->recurring = $recurring;
         return $this;
@@ -895,9 +930,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * simple list of dates in `Appointment.occurrenceDate`).
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $occurrenceDate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOccurrenceDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $occurrenceDate): self
+    public function setOccurrenceDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $occurrenceDate,
+                                      null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $occurrenceDate) {
             unset($this->occurrenceDate);
@@ -905,6 +942,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
         }
         if (!($occurrenceDate instanceof FHIRDate)) {
             $occurrenceDate = new FHIRDate(value: $occurrenceDate);
+        }
+        if (null !== $valueXMLLocation) {
+            $occurrenceDate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $occurrenceDate->_getValueXMLLocation()) {
+            $occurrenceDate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->occurrenceDate = $occurrenceDate;
         return $this;
@@ -934,9 +976,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
      * to a recurring request.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $recurrenceId
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRecurrenceId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $recurrenceId): self
+    public function setRecurrenceId(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $recurrenceId,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $recurrenceId) {
             unset($this->recurrenceId);
@@ -944,6 +988,11 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
         }
         if (!($recurrenceId instanceof FHIRPositiveInt)) {
             $recurrenceId = new FHIRPositiveInt(value: $recurrenceId);
+        }
+        if (null !== $valueXMLLocation) {
+            $recurrenceId->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $recurrenceId->_getValueXMLLocation()) {
+            $recurrenceId->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->recurrenceId = $recurrenceId;
         return $this;
@@ -1258,16 +1307,16 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
         foreach ($element->children() as $n) {
             $childName = $n->getName();
             if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_META === $childName) {
                 $v = new FHIRMeta();
                 $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -1291,13 +1340,13 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
                 $v = new FHIRReference();
                 $type->setAppointment(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PROPOSED_NEW_TIME === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setProposedNewTime(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_START === $childName) {
-                $v = new FHIRInstant(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInstant(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStart(FHIRInstant::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_END === $childName) {
-                $v = new FHIRInstant(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInstant(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setEnd(FHIRInstant::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PARTICIPANT_TYPE === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -1306,19 +1355,19 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
                 $v = new FHIRReference();
                 $type->setActor(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PARTICIPANT_STATUS === $childName) {
-                $v = new FHIRAppointmentResponseStatus(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRAppointmentResponseStatus(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setParticipantStatus(FHIRAppointmentResponseStatus::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_COMMENT === $childName) {
-                $v = new FHIRMarkdown(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRMarkdown(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setComment(FHIRMarkdown::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_RECURRING === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setRecurring(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_OCCURRENCE_DATE === $childName) {
-                $v = new FHIRDate(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDate(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setOccurrenceDate(FHIRDate::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_RECURRENCE_ID === $childName) {
-                $v = new FHIRPositiveInt(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRPositiveInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setRecurrenceId(FHIRPositiveInt::xmlUnserialize($n, $v, $config));
             }
         }
@@ -1326,120 +1375,120 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRId(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             $pt = $type->getImplicitRules();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setImplicitRules(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PROPOSED_NEW_TIME])) {
             $pt = $type->getProposedNewTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PROPOSED_NEW_TIME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PROPOSED_NEW_TIME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setProposedNewTime(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_PROPOSED_NEW_TIME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_START])) {
             $pt = $type->getStart();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_START]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_START]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setStart(new FHIRInstant(
                     value: (string)$attributes[self::FIELD_START],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_END])) {
             $pt = $type->getEnd();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_END]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_END]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setEnd(new FHIRInstant(
                     value: (string)$attributes[self::FIELD_END],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_COMMENT])) {
             $pt = $type->getComment();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_COMMENT]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_COMMENT]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setComment(new FHIRMarkdown(
                     value: (string)$attributes[self::FIELD_COMMENT],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_RECURRING])) {
             $pt = $type->getRecurring();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_RECURRING]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_RECURRING]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setRecurring(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_RECURRING],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_OCCURRENCE_DATE])) {
             $pt = $type->getOccurrenceDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_OCCURRENCE_DATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_OCCURRENCE_DATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setOccurrenceDate(new FHIRDate(
                     value: (string)$attributes[self::FIELD_OCCURRENCE_DATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_RECURRENCE_ID])) {
             $pt = $type->getRecurrenceId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_RECURRENCE_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_RECURRENCE_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setRecurrenceId(new FHIRPositiveInt(
                     value: (string)$attributes[self::FIELD_RECURRENCE_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1470,26 +1519,26 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             $rootOpened = true;
             $xw->openRootNode('AppointmentResponse', $this->_getSourceXMLNS());
         }
-        if (isset($this->proposedNewTime) && $this->proposedNewTime->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PROPOSED_NEW_TIME, $this->proposedNewTime->getValue()?->getFormattedValue());
+        if (isset($this->proposedNewTime) && $this->proposedNewTime->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PROPOSED_NEW_TIME, $this->proposedNewTime->getValue()?->_getFormattedValue());
         }
-        if (isset($this->start) && $this->start->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_START, $this->start->getValue()?->getFormattedValue());
+        if (isset($this->start) && $this->start->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_START, $this->start->getValue()?->_getFormattedValue());
         }
-        if (isset($this->end) && $this->end->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_END, $this->end->getValue()?->getFormattedValue());
+        if (isset($this->end) && $this->end->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_END, $this->end->getValue()?->_getFormattedValue());
         }
-        if (isset($this->comment) && $this->comment->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_COMMENT, $this->comment->getValue()?->getFormattedValue());
+        if (isset($this->comment) && $this->comment->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_COMMENT, $this->comment->getValue()?->_getFormattedValue());
         }
-        if (isset($this->recurring) && $this->recurring->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_RECURRING, $this->recurring->getValue()?->getFormattedValue());
+        if (isset($this->recurring) && $this->recurring->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_RECURRING, $this->recurring->getValue()?->_getFormattedValue());
         }
-        if (isset($this->occurrenceDate) && $this->occurrenceDate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_OCCURRENCE_DATE, $this->occurrenceDate->getValue()?->getFormattedValue());
+        if (isset($this->occurrenceDate) && $this->occurrenceDate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_OCCURRENCE_DATE, $this->occurrenceDate->getValue()?->_getFormattedValue());
         }
-        if (isset($this->recurrenceId) && $this->recurrenceId->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_RECURRENCE_ID, $this->recurrenceId->getValue()?->getFormattedValue());
+        if (isset($this->recurrenceId) && $this->recurrenceId->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_RECURRENCE_ID, $this->recurrenceId->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1504,17 +1553,17 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             $this->appointment->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->proposedNewTime) && $this->proposedNewTime->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->proposedNewTime) && $this->proposedNewTime->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PROPOSED_NEW_TIME);
             $this->proposedNewTime->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->start) && $this->start->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->start) && $this->start->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_START);
             $this->start->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->end) && $this->end->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->end) && $this->end->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_END);
             $this->end->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1536,22 +1585,22 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements VersionConta
             $this->participantStatus->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->comment) && $this->comment->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->comment) && $this->comment->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_COMMENT);
             $this->comment->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->recurring) && $this->recurring->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->recurring) && $this->recurring->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_RECURRING);
             $this->recurring->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->occurrenceDate) && $this->occurrenceDate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->occurrenceDate) && $this->occurrenceDate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_OCCURRENCE_DATE);
             $this->occurrenceDate->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->recurrenceId) && $this->recurrenceId->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->recurrenceId) && $this->recurrenceId->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_RECURRENCE_ID);
             $this->recurrenceId->xmlSerialize($xw, $config);
             $xw->endElement();

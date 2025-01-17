@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,8 +65,8 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types;
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationTrait;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\PrimitiveTypeInterface;
 use DCarbone\PHPFHIRGenerated\SourceXMLNamespaceTrait;
@@ -78,7 +78,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
 class FHIRDateTimePrimitive implements PrimitiveTypeInterface
 {
     use SourceXMLNamespaceTrait,
-        XMLLocationTrait;
+        ValueXMLLocationTrait;
 
 
     // name of FHIR type this class describes
@@ -87,7 +87,7 @@ class FHIRDateTimePrimitive implements PrimitiveTypeInterface
 
     public const FIELD_VALUE = 'value';
 
-    /** @var null|string */
+    /** @var string */
     protected string $value;
 
     /** Default validation map for fields in type dateTime-primitive */
@@ -100,13 +100,13 @@ class FHIRDateTimePrimitive implements PrimitiveTypeInterface
     /**
      * FHIRDateTimePrimitive Constructor
      * @param null|string|\DateTimeInterface $value
-     * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum $xmlLocation
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      */
     public function __construct(null|string|\DateTimeInterface $value = null,
-                                XMLLocationEnum $xmlLocation = XMLLocationEnum::ATTRIBUTE)
+                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::ATTRIBUTE)
     {
         $this->setValue(value: $value);
-        $this->_setXMLLocation($xmlLocation);
+        $this->_setValueXMLLocation($valueXMLLocation);
     }
 
     /**
@@ -122,7 +122,7 @@ class FHIRDateTimePrimitive implements PrimitiveTypeInterface
      */
     public function getValue(): null|string
     {
-        return $this->value;
+        return $this->value ?? null;
     }
 
     /**
@@ -186,7 +186,7 @@ class FHIRDateTimePrimitive implements PrimitiveTypeInterface
     /**
      * @return string
      */
-    public function getFormattedValue(): string
+    public function _getFormattedValue(): string
     {
         return (string)$this->getValue();
     }
@@ -216,7 +216,7 @@ class FHIRDateTimePrimitive implements PrimitiveTypeInterface
         $validationRules = $this->_getValidationRules();
         if (isset($validationRules[self::FIELD_VALUE]) && null !== $this->value) {
             foreach($validationRules[self::FIELD_VALUE] as $rule => $constraint) {
-                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_VALUE, $rule, $constraint, $this->getFormattedValue());
+                $err = Validator::validateField(self::FHIR_TYPE_NAME, self::FIELD_VALUE, $rule, $constraint, $this->_getFormattedValue());
                 if (null !== $err) {
                     if (!isset($errs[self::FIELD_VALUE])) {
                         $errs[self::FIELD_VALUE] = [];
@@ -229,134 +229,10 @@ class FHIRDateTimePrimitive implements PrimitiveTypeInterface
     }
 
     /**
-     * @param string|\SimpleXMLElement $element
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive
-     * @throws \Exception
-     */
-    public static function xmlUnserialize(string|\SimpleXMLElement $element,
-                                          null|TypeInterface $type = null,
-                                          null|UnserializeConfig $config = null): self
-    {
-        if (null === $type) {
-            $type = new static();
-        } else if (!($type instanceof FHIRDateTimePrimitive)) {
-            throw new \RuntimeException(sprintf(
-                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
-                static::class,
-                get_class($type)
-            ));
-        }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($element)) {
-            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
-        }
-        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
-            $type->_setSourceXMLNS((string)$ns);
-        }
-        foreach ($element->children() as $n) {
-            $childName = $n->getName();
-            $valueAttr = $n->attributes()[self::FIELD_VALUE] ?? null;
-             if (null !== $valueAttr) {
-                $type->setValue((string)$valueAttr);
-            } else if ($n->hasChildren()) {
-                $type->setValue($n->saveXML());
-            } else {
-                $type->setValue((string)$n);
-            }
-        }
-        $attributes = $element->attributes();
-        if (isset($attributes[self::FIELD_VALUE])) {
-            $type->setValue((string)$attributes[self::FIELD_VALUE]);
-        }
-        return $type;
-    }
-
-    /**
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\XMLWriter $xw
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Encoding\XMLWriter
-     */
-    public function xmlSerialize(null|XMLWriter $xw = null, null|SerializeConfig $config = null): XMLWriter
-    {
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getSerializeConfig();
-        }
-        if (null === $xw) {
-            $xw = new XMLWriter($config);
-        }
-        if (!$xw->isOpen()) {
-            $xw->openMemory();
-        }
-        if (!$xw->isDocStarted()) {
-            $docStarted = true;
-            $xw->startDocument();
-        }
-        if (!$xw->isRootOpen()) {
-            $rootOpened = true;
-            $xw->openRootNode('dateTime_primitive', $this->_getSourceXMLNS());
-        }
-        $xw->writeAttribute(self::FIELD_VALUE, $this->getFormattedValue());
-        if (isset($rootOpened) && $rootOpened) {
-            $xw->endElement();
-        }
-        if (isset($docStarted) && $docStarted) {
-            $xw->endDocument();
-        }
-        return $xw;
-    }
-
-    /**
-     * @param string|array|\stdClass $json
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig $config
-     * @return \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive
-     * @throws \Exception
-     */
-    public static function jsonUnserialize(string|array|\stdClass $json,
-                                           null|TypeInterface $type = null,
-                                           null|UnserializeConfig $config = null): self
-    {
-        if (null === $type) {
-            $type = new static();
-        } else if (!($type instanceof FHIRDateTimePrimitive)) {
-            throw new \RuntimeException(sprintf(
-                '%s::jsonUnserialize - $type must be instance of \\%s or null, %s seen.',
-                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
-                static::class,
-                get_class($type)
-            ));
-        }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-
-
-        return $type;
-    }
-
-    /**
-     * @return null|string
-     */
-    public function jsonSerialize(): mixed
-    {
-        return $this->getValue();
-    }
-
-    /**
      * @return string
      */
     public function __toString(): string
     {
-        return $this->getFormattedValue();
+        return $this->_getFormattedValue();
     }
 }

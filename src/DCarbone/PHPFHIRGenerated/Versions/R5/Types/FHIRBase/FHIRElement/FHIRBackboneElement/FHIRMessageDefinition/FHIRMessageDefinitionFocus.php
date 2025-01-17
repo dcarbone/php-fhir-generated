@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -277,9 +277,11 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      * related resources).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $profile
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setProfile(null|string|FHIRCanonicalPrimitive|FHIRCanonical $profile): self
+    public function setProfile(null|string|FHIRCanonicalPrimitive|FHIRCanonical $profile,
+                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $profile) {
             unset($this->profile);
@@ -287,6 +289,11 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
         }
         if (!($profile instanceof FHIRCanonical)) {
             $profile = new FHIRCanonical(value: $profile);
+        }
+        if (null !== $valueXMLLocation) {
+            $profile->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $profile->_getValueXMLLocation()) {
+            $profile->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->profile = $profile;
         return $this;
@@ -316,9 +323,11 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      * by a message in order for it to be valid against this MessageDefinition.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $min
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMin(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $min): self
+    public function setMin(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $min,
+                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $min) {
             unset($this->min);
@@ -326,6 +335,11 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
         }
         if (!($min instanceof FHIRUnsignedInt)) {
             $min = new FHIRUnsignedInt(value: $min);
+        }
+        if (null !== $valueXMLLocation) {
+            $min->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $min->_getValueXMLLocation()) {
+            $min->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->min = $min;
         return $this;
@@ -355,9 +369,11 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      * by a message in order for it to be valid against this MessageDefinition.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $max
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMax(null|string|FHIRStringPrimitive|FHIRString $max): self
+    public function setMax(null|string|FHIRStringPrimitive|FHIRString $max,
+                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $max) {
             unset($this->max);
@@ -365,6 +381,11 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
         }
         if (!($max instanceof FHIRString)) {
             $max = new FHIRString(value: $max);
+        }
+        if (null !== $valueXMLLocation) {
+            $max->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $max->_getValueXMLLocation()) {
+            $max->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->max = $max;
         return $this;
@@ -526,22 +547,29 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CODE === $childName) {
-                $v = new FHIRResourceType(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRResourceType(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setCode(FHIRResourceType::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PROFILE === $childName) {
-                $v = new FHIRCanonical(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCanonical(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setProfile(FHIRCanonical::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_MIN === $childName) {
-                $v = new FHIRUnsignedInt(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUnsignedInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setMin(FHIRUnsignedInt::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_MAX === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setMax(FHIRString::xmlUnserialize($n, $v, $config));
             }
         }
@@ -549,48 +577,48 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PROFILE])) {
             $pt = $type->getProfile();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PROFILE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PROFILE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setProfile(new FHIRCanonical(
                     value: (string)$attributes[self::FIELD_PROFILE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_MIN])) {
             $pt = $type->getMin();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_MIN]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_MIN]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setMin(new FHIRUnsignedInt(
                     value: (string)$attributes[self::FIELD_MIN],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_MAX])) {
             $pt = $type->getMax();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_MAX]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_MAX]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setMax(new FHIRString(
                     value: (string)$attributes[self::FIELD_MAX],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -621,14 +649,14 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('MessageDefinitionFocus', $this->_getSourceXMLNS());
         }
-        if (isset($this->profile) && $this->profile->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PROFILE, $this->profile->getValue()?->getFormattedValue());
+        if (isset($this->profile) && $this->profile->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PROFILE, $this->profile->getValue()?->_getFormattedValue());
         }
-        if (isset($this->min) && $this->min->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_MIN, $this->min->getValue()?->getFormattedValue());
+        if (isset($this->min) && $this->min->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_MIN, $this->min->getValue()?->_getFormattedValue());
         }
-        if (isset($this->max) && $this->max->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_MAX, $this->max->getValue()?->getFormattedValue());
+        if (isset($this->max) && $this->max->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_MAX, $this->max->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->code)) {
@@ -636,17 +664,17 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
             $this->code->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->profile) && $this->profile->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->profile) && $this->profile->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PROFILE);
             $this->profile->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->min) && $this->min->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->min) && $this->min->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_MIN);
             $this->min->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->max) && $this->max->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->max) && $this->max->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_MAX);
             $this->max->xmlSerialize($xw, $config);
             $xw->endElement();

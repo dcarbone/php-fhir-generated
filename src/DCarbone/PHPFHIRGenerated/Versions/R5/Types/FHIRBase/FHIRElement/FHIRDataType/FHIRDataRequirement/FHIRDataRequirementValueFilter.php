@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
@@ -295,9 +295,11 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * comparable to the valueFilter.value[x] element for the filter.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $path
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPath(null|string|FHIRStringPrimitive|FHIRString $path): self
+    public function setPath(null|string|FHIRStringPrimitive|FHIRString $path,
+                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $path) {
             unset($this->path);
@@ -305,6 +307,11 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
         }
         if (!($path instanceof FHIRString)) {
             $path = new FHIRString(value: $path);
+        }
+        if (null !== $valueXMLLocation) {
+            $path->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $path->_getValueXMLLocation()) {
+            $path->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->path = $path;
         return $this;
@@ -336,9 +343,11 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * valueFilter.value[x] for the filter.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $searchParam
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSearchParam(null|string|FHIRStringPrimitive|FHIRString $searchParam): self
+    public function setSearchParam(null|string|FHIRStringPrimitive|FHIRString $searchParam,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $searchParam) {
             unset($this->searchParam);
@@ -346,6 +355,11 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
         }
         if (!($searchParam instanceof FHIRString)) {
             $searchParam = new FHIRString(value: $searchParam);
+        }
+        if (null !== $valueXMLLocation) {
+            $searchParam->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $searchParam->_getValueXMLLocation()) {
+            $searchParam->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->searchParam = $searchParam;
         return $this;
@@ -375,9 +389,11 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * The comparator to be used to determine whether the value is matching.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $comparator
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setComparator(null|string|FHIRCodePrimitive|FHIRCode $comparator): self
+    public function setComparator(null|string|FHIRCodePrimitive|FHIRCode $comparator,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $comparator) {
             unset($this->comparator);
@@ -385,6 +401,11 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
         }
         if (!($comparator instanceof FHIRCode)) {
             $comparator = new FHIRCode(value: $comparator);
+        }
+        if (null !== $valueXMLLocation) {
+            $comparator->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $comparator->_getValueXMLLocation()) {
+            $comparator->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->comparator = $comparator;
         return $this;
@@ -420,9 +441,11 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * The value of the filter.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $valueDateTime
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime): self
+    public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime,
+                                     null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $valueDateTime) {
             unset($this->valueDateTime);
@@ -430,6 +453,11 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
         }
         if (!($valueDateTime instanceof FHIRDateTime)) {
             $valueDateTime = new FHIRDateTime(value: $valueDateTime);
+        }
+        if (null !== $valueXMLLocation) {
+            $valueDateTime->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $valueDateTime->_getValueXMLLocation()) {
+            $valueDateTime->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->valueDateTime = $valueDateTime;
         return $this;
@@ -661,19 +689,26 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_PATH === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPath(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SEARCH_PARAM === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSearchParam(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_COMPARATOR === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setComparator(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VALUE_DATE_TIME === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setValueDateTime(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VALUE_PERIOD === $childName) {
                 $v = new FHIRPeriod();
@@ -687,60 +722,60 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PATH])) {
             $pt = $type->getPath();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PATH]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PATH]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setPath(new FHIRString(
                     value: (string)$attributes[self::FIELD_PATH],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SEARCH_PARAM])) {
             $pt = $type->getSearchParam();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SEARCH_PARAM]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SEARCH_PARAM]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSearchParam(new FHIRString(
                     value: (string)$attributes[self::FIELD_SEARCH_PARAM],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_COMPARATOR])) {
             $pt = $type->getComparator();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_COMPARATOR]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_COMPARATOR]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setComparator(new FHIRCode(
                     value: (string)$attributes[self::FIELD_COMPARATOR],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_VALUE_DATE_TIME])) {
             $pt = $type->getValueDateTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_VALUE_DATE_TIME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_VALUE_DATE_TIME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setValueDateTime(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_VALUE_DATE_TIME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -771,35 +806,35 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
             $rootOpened = true;
             $xw->openRootNode('DataRequirementValueFilter', $this->_getSourceXMLNS());
         }
-        if (isset($this->path) && $this->path->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PATH, $this->path->getValue()?->getFormattedValue());
+        if (isset($this->path) && $this->path->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PATH, $this->path->getValue()?->_getFormattedValue());
         }
-        if (isset($this->searchParam) && $this->searchParam->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SEARCH_PARAM, $this->searchParam->getValue()?->getFormattedValue());
+        if (isset($this->searchParam) && $this->searchParam->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SEARCH_PARAM, $this->searchParam->getValue()?->_getFormattedValue());
         }
-        if (isset($this->comparator) && $this->comparator->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_COMPARATOR, $this->comparator->getValue()?->getFormattedValue());
+        if (isset($this->comparator) && $this->comparator->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_COMPARATOR, $this->comparator->getValue()?->_getFormattedValue());
         }
-        if (isset($this->valueDateTime) && $this->valueDateTime->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VALUE_DATE_TIME, $this->valueDateTime->getValue()?->getFormattedValue());
+        if (isset($this->valueDateTime) && $this->valueDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VALUE_DATE_TIME, $this->valueDateTime->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->path) && $this->path->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->path) && $this->path->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PATH);
             $this->path->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->searchParam) && $this->searchParam->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->searchParam) && $this->searchParam->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SEARCH_PARAM);
             $this->searchParam->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->comparator) && $this->comparator->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->comparator) && $this->comparator->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_COMPARATOR);
             $this->comparator->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->valueDateTime) && $this->valueDateTime->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->valueDateTime) && $this->valueDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_VALUE_DATE_TIME);
             $this->valueDateTime->xmlSerialize($xw, $config);
             $xw->endElement();

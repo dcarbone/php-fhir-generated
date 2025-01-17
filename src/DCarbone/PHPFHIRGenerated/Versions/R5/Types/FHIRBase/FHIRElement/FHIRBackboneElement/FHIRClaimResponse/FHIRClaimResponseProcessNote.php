@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -235,9 +235,11 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
      * A number to uniquely identify a note entry.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $number
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setNumber(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $number): self
+    public function setNumber(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $number,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $number) {
             unset($this->number);
@@ -245,6 +247,11 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
         }
         if (!($number instanceof FHIRPositiveInt)) {
             $number = new FHIRPositiveInt(value: $number);
+        }
+        if (null !== $valueXMLLocation) {
+            $number->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $number->_getValueXMLLocation()) {
+            $number->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->number = $number;
         return $this;
@@ -308,9 +315,11 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
      * The explanation or description associated with the processing.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $text
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setText(null|string|FHIRStringPrimitive|FHIRString $text): self
+    public function setText(null|string|FHIRStringPrimitive|FHIRString $text,
+                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $text) {
             unset($this->text);
@@ -318,6 +327,11 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
         }
         if (!($text instanceof FHIRString)) {
             $text = new FHIRString(value: $text);
+        }
+        if (null !== $valueXMLLocation) {
+            $text->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $text->_getValueXMLLocation()) {
+            $text->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->text = $text;
         return $this;
@@ -510,19 +524,26 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NUMBER === $childName) {
-                $v = new FHIRPositiveInt(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRPositiveInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setNumber(FHIRPositiveInt::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TYPE === $childName) {
                 $v = new FHIRCodeableConcept();
                 $type->setType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setText(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -533,36 +554,36 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_NUMBER])) {
             $pt = $type->getNumber();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_NUMBER]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_NUMBER]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setNumber(new FHIRPositiveInt(
                     value: (string)$attributes[self::FIELD_NUMBER],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_TEXT])) {
             $pt = $type->getText();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_TEXT]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_TEXT]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setText(new FHIRString(
                     value: (string)$attributes[self::FIELD_TEXT],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -593,14 +614,14 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ClaimResponseProcessNote', $this->_getSourceXMLNS());
         }
-        if (isset($this->number) && $this->number->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_NUMBER, $this->number->getValue()?->getFormattedValue());
+        if (isset($this->number) && $this->number->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_NUMBER, $this->number->getValue()?->_getFormattedValue());
         }
-        if (isset($this->text) && $this->text->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_TEXT, $this->text->getValue()?->getFormattedValue());
+        if (isset($this->text) && $this->text->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_TEXT, $this->text->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->number) && $this->number->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->number) && $this->number->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_NUMBER);
             $this->number->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -610,7 +631,7 @@ class FHIRClaimResponseProcessNote extends FHIRBackboneElement
             $this->type->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->text) && $this->text->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->text) && $this->text->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_TEXT);
             $this->text->xmlSerialize($xw, $config);
             $xw->endElement();

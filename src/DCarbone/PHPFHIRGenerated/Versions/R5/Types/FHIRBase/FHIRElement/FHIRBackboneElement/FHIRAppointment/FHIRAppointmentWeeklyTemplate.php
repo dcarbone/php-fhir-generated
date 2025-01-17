@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -293,9 +293,11 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * Indicates that recurring appointments should occur on Mondays.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $monday
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMonday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $monday): self
+    public function setMonday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $monday,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $monday) {
             unset($this->monday);
@@ -303,6 +305,11 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
         }
         if (!($monday instanceof FHIRBoolean)) {
             $monday = new FHIRBoolean(value: $monday);
+        }
+        if (null !== $valueXMLLocation) {
+            $monday->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $monday->_getValueXMLLocation()) {
+            $monday->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->monday = $monday;
         return $this;
@@ -328,9 +335,11 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * Indicates that recurring appointments should occur on Tuesdays.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $tuesday
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTuesday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $tuesday): self
+    public function setTuesday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $tuesday,
+                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $tuesday) {
             unset($this->tuesday);
@@ -338,6 +347,11 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
         }
         if (!($tuesday instanceof FHIRBoolean)) {
             $tuesday = new FHIRBoolean(value: $tuesday);
+        }
+        if (null !== $valueXMLLocation) {
+            $tuesday->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $tuesday->_getValueXMLLocation()) {
+            $tuesday->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->tuesday = $tuesday;
         return $this;
@@ -363,9 +377,11 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * Indicates that recurring appointments should occur on Wednesdays.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $wednesday
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setWednesday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $wednesday): self
+    public function setWednesday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $wednesday,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $wednesday) {
             unset($this->wednesday);
@@ -373,6 +389,11 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
         }
         if (!($wednesday instanceof FHIRBoolean)) {
             $wednesday = new FHIRBoolean(value: $wednesday);
+        }
+        if (null !== $valueXMLLocation) {
+            $wednesday->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $wednesday->_getValueXMLLocation()) {
+            $wednesday->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->wednesday = $wednesday;
         return $this;
@@ -398,9 +419,11 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * Indicates that recurring appointments should occur on Thursdays.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $thursday
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setThursday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $thursday): self
+    public function setThursday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $thursday,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $thursday) {
             unset($this->thursday);
@@ -408,6 +431,11 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
         }
         if (!($thursday instanceof FHIRBoolean)) {
             $thursday = new FHIRBoolean(value: $thursday);
+        }
+        if (null !== $valueXMLLocation) {
+            $thursday->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $thursday->_getValueXMLLocation()) {
+            $thursday->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->thursday = $thursday;
         return $this;
@@ -433,9 +461,11 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * Indicates that recurring appointments should occur on Fridays.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $friday
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setFriday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $friday): self
+    public function setFriday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $friday,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $friday) {
             unset($this->friday);
@@ -443,6 +473,11 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
         }
         if (!($friday instanceof FHIRBoolean)) {
             $friday = new FHIRBoolean(value: $friday);
+        }
+        if (null !== $valueXMLLocation) {
+            $friday->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $friday->_getValueXMLLocation()) {
+            $friday->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->friday = $friday;
         return $this;
@@ -468,9 +503,11 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * Indicates that recurring appointments should occur on Saturdays.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $saturday
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSaturday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $saturday): self
+    public function setSaturday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $saturday,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $saturday) {
             unset($this->saturday);
@@ -478,6 +515,11 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
         }
         if (!($saturday instanceof FHIRBoolean)) {
             $saturday = new FHIRBoolean(value: $saturday);
+        }
+        if (null !== $valueXMLLocation) {
+            $saturday->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $saturday->_getValueXMLLocation()) {
+            $saturday->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->saturday = $saturday;
         return $this;
@@ -503,9 +545,11 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * Indicates that recurring appointments should occur on Sundays.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $sunday
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSunday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $sunday): self
+    public function setSunday(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $sunday,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $sunday) {
             unset($this->sunday);
@@ -513,6 +557,11 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
         }
         if (!($sunday instanceof FHIRBoolean)) {
             $sunday = new FHIRBoolean(value: $sunday);
+        }
+        if (null !== $valueXMLLocation) {
+            $sunday->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $sunday->_getValueXMLLocation()) {
+            $sunday->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->sunday = $sunday;
         return $this;
@@ -546,9 +595,11 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
      * would be 3.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $weekInterval
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setWeekInterval(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $weekInterval): self
+    public function setWeekInterval(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $weekInterval,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $weekInterval) {
             unset($this->weekInterval);
@@ -556,6 +607,11 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
         }
         if (!($weekInterval instanceof FHIRPositiveInt)) {
             $weekInterval = new FHIRPositiveInt(value: $weekInterval);
+        }
+        if (null !== $valueXMLLocation) {
+            $weekInterval->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $weekInterval->_getValueXMLLocation()) {
+            $weekInterval->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->weekInterval = $weekInterval;
         return $this;
@@ -755,34 +811,41 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_MONDAY === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setMonday(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TUESDAY === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setTuesday(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_WEDNESDAY === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setWednesday(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_THURSDAY === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setThursday(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_FRIDAY === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setFriday(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SATURDAY === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSaturday(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SUNDAY === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSunday(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_WEEK_INTERVAL === $childName) {
-                $v = new FHIRPositiveInt(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRPositiveInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setWeekInterval(FHIRPositiveInt::xmlUnserialize($n, $v, $config));
             }
         }
@@ -790,108 +853,108 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_MONDAY])) {
             $pt = $type->getMonday();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_MONDAY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_MONDAY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setMonday(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_MONDAY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_TUESDAY])) {
             $pt = $type->getTuesday();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_TUESDAY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_TUESDAY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setTuesday(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_TUESDAY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_WEDNESDAY])) {
             $pt = $type->getWednesday();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_WEDNESDAY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_WEDNESDAY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setWednesday(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_WEDNESDAY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_THURSDAY])) {
             $pt = $type->getThursday();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_THURSDAY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_THURSDAY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setThursday(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_THURSDAY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_FRIDAY])) {
             $pt = $type->getFriday();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_FRIDAY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_FRIDAY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setFriday(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_FRIDAY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SATURDAY])) {
             $pt = $type->getSaturday();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SATURDAY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SATURDAY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSaturday(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_SATURDAY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SUNDAY])) {
             $pt = $type->getSunday();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SUNDAY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SUNDAY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSunday(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_SUNDAY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_WEEK_INTERVAL])) {
             $pt = $type->getWeekInterval();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_WEEK_INTERVAL]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_WEEK_INTERVAL]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setWeekInterval(new FHIRPositiveInt(
                     value: (string)$attributes[self::FIELD_WEEK_INTERVAL],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -922,67 +985,67 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('AppointmentWeeklyTemplate', $this->_getSourceXMLNS());
         }
-        if (isset($this->monday) && $this->monday->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_MONDAY, $this->monday->getValue()?->getFormattedValue());
+        if (isset($this->monday) && $this->monday->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_MONDAY, $this->monday->getValue()?->_getFormattedValue());
         }
-        if (isset($this->tuesday) && $this->tuesday->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_TUESDAY, $this->tuesday->getValue()?->getFormattedValue());
+        if (isset($this->tuesday) && $this->tuesday->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_TUESDAY, $this->tuesday->getValue()?->_getFormattedValue());
         }
-        if (isset($this->wednesday) && $this->wednesday->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_WEDNESDAY, $this->wednesday->getValue()?->getFormattedValue());
+        if (isset($this->wednesday) && $this->wednesday->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_WEDNESDAY, $this->wednesday->getValue()?->_getFormattedValue());
         }
-        if (isset($this->thursday) && $this->thursday->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_THURSDAY, $this->thursday->getValue()?->getFormattedValue());
+        if (isset($this->thursday) && $this->thursday->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_THURSDAY, $this->thursday->getValue()?->_getFormattedValue());
         }
-        if (isset($this->friday) && $this->friday->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_FRIDAY, $this->friday->getValue()?->getFormattedValue());
+        if (isset($this->friday) && $this->friday->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_FRIDAY, $this->friday->getValue()?->_getFormattedValue());
         }
-        if (isset($this->saturday) && $this->saturday->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SATURDAY, $this->saturday->getValue()?->getFormattedValue());
+        if (isset($this->saturday) && $this->saturday->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SATURDAY, $this->saturday->getValue()?->_getFormattedValue());
         }
-        if (isset($this->sunday) && $this->sunday->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SUNDAY, $this->sunday->getValue()?->getFormattedValue());
+        if (isset($this->sunday) && $this->sunday->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SUNDAY, $this->sunday->getValue()?->_getFormattedValue());
         }
-        if (isset($this->weekInterval) && $this->weekInterval->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_WEEK_INTERVAL, $this->weekInterval->getValue()?->getFormattedValue());
+        if (isset($this->weekInterval) && $this->weekInterval->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_WEEK_INTERVAL, $this->weekInterval->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->monday) && $this->monday->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->monday) && $this->monday->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_MONDAY);
             $this->monday->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->tuesday) && $this->tuesday->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->tuesday) && $this->tuesday->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_TUESDAY);
             $this->tuesday->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->wednesday) && $this->wednesday->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->wednesday) && $this->wednesday->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_WEDNESDAY);
             $this->wednesday->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->thursday) && $this->thursday->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->thursday) && $this->thursday->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_THURSDAY);
             $this->thursday->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->friday) && $this->friday->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->friday) && $this->friday->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_FRIDAY);
             $this->friday->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->saturday) && $this->saturday->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->saturday) && $this->saturday->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SATURDAY);
             $this->saturday->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->sunday) && $this->sunday->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->sunday) && $this->sunday->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SUNDAY);
             $this->sunday->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->weekInterval) && $this->weekInterval->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->weekInterval) && $this->weekInterval->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_WEEK_INTERVAL);
             $this->weekInterval->xmlSerialize($xw, $config);
             $xw->endElement();

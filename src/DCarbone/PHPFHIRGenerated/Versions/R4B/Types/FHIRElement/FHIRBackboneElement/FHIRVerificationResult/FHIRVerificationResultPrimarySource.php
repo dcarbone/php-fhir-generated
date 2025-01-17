@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -497,9 +497,11 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * When the target was validated against the primary source.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $validationDate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValidationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $validationDate): self
+    public function setValidationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $validationDate,
+                                      null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $validationDate) {
             unset($this->validationDate);
@@ -507,6 +509,11 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
         }
         if (!($validationDate instanceof FHIRDateTime)) {
             $validationDate = new FHIRDateTime(value: $validationDate);
+        }
+        if (null !== $valueXMLLocation) {
+            $validationDate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $validationDate->_getValueXMLLocation()) {
+            $validationDate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->validationDate = $validationDate;
         return $this;
@@ -796,8 +803,15 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -814,7 +828,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->setValidationStatus(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VALIDATION_DATE === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setValidationDate(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CAN_PUSH_UPDATES === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -828,24 +842,24 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_VALIDATION_DATE])) {
             $pt = $type->getValidationDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_VALIDATION_DATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_VALIDATION_DATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setValidationDate(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_VALIDATION_DATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -876,8 +890,8 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('VerificationResultPrimarySource', $this->_getSourceXMLNS());
         }
-        if (isset($this->validationDate) && $this->validationDate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VALIDATION_DATE, $this->validationDate->getValue()?->getFormattedValue());
+        if (isset($this->validationDate) && $this->validationDate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VALIDATION_DATE, $this->validationDate->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->who)) {
@@ -904,7 +918,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
             $this->validationStatus->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->validationDate) && $this->validationDate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->validationDate) && $this->validationDate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_VALIDATION_DATE);
             $this->validationDate->xmlSerialize($xw, $config);
             $xw->endElement();

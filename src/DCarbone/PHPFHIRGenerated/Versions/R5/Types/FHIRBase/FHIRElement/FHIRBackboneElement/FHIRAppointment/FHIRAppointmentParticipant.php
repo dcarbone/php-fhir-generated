@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -382,9 +382,11 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * participant is optional.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $required
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $required): self
+    public function setRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $required,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $required) {
             unset($this->required);
@@ -392,6 +394,11 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
         }
         if (!($required instanceof FHIRBoolean)) {
             $required = new FHIRBoolean(value: $required);
+        }
+        if (null !== $valueXMLLocation) {
+            $required->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $required->_getValueXMLLocation()) {
+            $required->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->required = $required;
         return $this;
@@ -590,8 +597,15 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -605,10 +619,10 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
                 $v = new FHIRReference();
                 $type->setActor(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_REQUIRED === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setRequired(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STATUS === $childName) {
-                $v = new FHIRParticipationStatus(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRParticipationStatus(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStatus(FHIRParticipationStatus::xmlUnserialize($n, $v, $config));
             }
         }
@@ -616,24 +630,24 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_REQUIRED])) {
             $pt = $type->getRequired();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_REQUIRED]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_REQUIRED]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setRequired(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_REQUIRED],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -664,8 +678,8 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('AppointmentParticipant', $this->_getSourceXMLNS());
         }
-        if (isset($this->required) && $this->required->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_REQUIRED, $this->required->getValue()?->getFormattedValue());
+        if (isset($this->required) && $this->required->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_REQUIRED, $this->required->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -685,7 +699,7 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
             $this->actor->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->required) && $this->required->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->required) && $this->required->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_REQUIRED);
             $this->required->xmlSerialize($xw, $config);
             $xw->endElement();

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -218,9 +218,11 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      * Identifier of the material presented to the patient.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $documentType
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDocumentType(null|string|FHIRStringPrimitive|FHIRString $documentType): self
+    public function setDocumentType(null|string|FHIRStringPrimitive|FHIRString $documentType,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $documentType) {
             unset($this->documentType);
@@ -228,6 +230,11 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
         }
         if (!($documentType instanceof FHIRString)) {
             $documentType = new FHIRString(value: $documentType);
+        }
+        if (null !== $valueXMLLocation) {
+            $documentType->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $documentType->_getValueXMLLocation()) {
+            $documentType->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->documentType = $documentType;
         return $this;
@@ -257,9 +264,11 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      * information was on line.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri $reference
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setReference(null|string|FHIRUriPrimitive|FHIRUri $reference): self
+    public function setReference(null|string|FHIRUriPrimitive|FHIRUri $reference,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $reference) {
             unset($this->reference);
@@ -267,6 +276,11 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
         }
         if (!($reference instanceof FHIRUri)) {
             $reference = new FHIRUri(value: $reference);
+        }
+        if (null !== $valueXMLLocation) {
+            $reference->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $reference->_getValueXMLLocation()) {
+            $reference->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->reference = $reference;
         return $this;
@@ -300,9 +314,11 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      * Date the educational material was published.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $publicationDate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPublicationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $publicationDate): self
+    public function setPublicationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $publicationDate,
+                                       null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $publicationDate) {
             unset($this->publicationDate);
@@ -310,6 +326,11 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
         }
         if (!($publicationDate instanceof FHIRDateTime)) {
             $publicationDate = new FHIRDateTime(value: $publicationDate);
+        }
+        if (null !== $valueXMLLocation) {
+            $publicationDate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $publicationDate->_getValueXMLLocation()) {
+            $publicationDate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->publicationDate = $publicationDate;
         return $this;
@@ -343,9 +364,11 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      * Date the educational material was given to the patient.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $presentationDate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPresentationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $presentationDate): self
+    public function setPresentationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $presentationDate,
+                                        null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $presentationDate) {
             unset($this->presentationDate);
@@ -353,6 +376,11 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
         }
         if (!($presentationDate instanceof FHIRDateTime)) {
             $presentationDate = new FHIRDateTime(value: $presentationDate);
+        }
+        if (null !== $valueXMLLocation) {
+            $presentationDate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $presentationDate->_getValueXMLLocation()) {
+            $presentationDate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->presentationDate = $presentationDate;
         return $this;
@@ -504,22 +532,29 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DOCUMENT_TYPE === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDocumentType(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_REFERENCE === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setReference(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PUBLICATION_DATE === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPublicationDate(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PRESENTATION_DATE === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPresentationDate(FHIRDateTime::xmlUnserialize($n, $v, $config));
             }
         }
@@ -527,60 +562,60 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DOCUMENT_TYPE])) {
             $pt = $type->getDocumentType();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DOCUMENT_TYPE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DOCUMENT_TYPE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDocumentType(new FHIRString(
                     value: (string)$attributes[self::FIELD_DOCUMENT_TYPE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_REFERENCE])) {
             $pt = $type->getReference();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_REFERENCE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_REFERENCE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setReference(new FHIRUri(
                     value: (string)$attributes[self::FIELD_REFERENCE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PUBLICATION_DATE])) {
             $pt = $type->getPublicationDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PUBLICATION_DATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PUBLICATION_DATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setPublicationDate(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_PUBLICATION_DATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PRESENTATION_DATE])) {
             $pt = $type->getPresentationDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PRESENTATION_DATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PRESENTATION_DATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setPresentationDate(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_PRESENTATION_DATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -611,35 +646,35 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ImmunizationEducation', $this->_getSourceXMLNS());
         }
-        if (isset($this->documentType) && $this->documentType->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DOCUMENT_TYPE, $this->documentType->getValue()?->getFormattedValue());
+        if (isset($this->documentType) && $this->documentType->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DOCUMENT_TYPE, $this->documentType->getValue()?->_getFormattedValue());
         }
-        if (isset($this->reference) && $this->reference->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_REFERENCE, $this->reference->getValue()?->getFormattedValue());
+        if (isset($this->reference) && $this->reference->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_REFERENCE, $this->reference->getValue()?->_getFormattedValue());
         }
-        if (isset($this->publicationDate) && $this->publicationDate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PUBLICATION_DATE, $this->publicationDate->getValue()?->getFormattedValue());
+        if (isset($this->publicationDate) && $this->publicationDate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PUBLICATION_DATE, $this->publicationDate->getValue()?->_getFormattedValue());
         }
-        if (isset($this->presentationDate) && $this->presentationDate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PRESENTATION_DATE, $this->presentationDate->getValue()?->getFormattedValue());
+        if (isset($this->presentationDate) && $this->presentationDate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PRESENTATION_DATE, $this->presentationDate->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->documentType) && $this->documentType->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->documentType) && $this->documentType->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DOCUMENT_TYPE);
             $this->documentType->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->reference) && $this->reference->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->reference) && $this->reference->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_REFERENCE);
             $this->reference->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->publicationDate) && $this->publicationDate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->publicationDate) && $this->publicationDate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PUBLICATION_DATE);
             $this->publicationDate->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->presentationDate) && $this->presentationDate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->presentationDate) && $this->presentationDate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PRESENTATION_DATE);
             $this->presentationDate->xmlSerialize($xw, $config);
             $xw->endElement();

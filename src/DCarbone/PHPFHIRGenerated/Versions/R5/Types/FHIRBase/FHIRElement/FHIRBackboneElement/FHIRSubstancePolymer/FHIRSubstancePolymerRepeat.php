@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -208,9 +208,11 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
      * A representation of an (average) molecular formula from a polymer.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $averageMolecularFormula
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAverageMolecularFormula(null|string|FHIRStringPrimitive|FHIRString $averageMolecularFormula): self
+    public function setAverageMolecularFormula(null|string|FHIRStringPrimitive|FHIRString $averageMolecularFormula,
+                                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $averageMolecularFormula) {
             unset($this->averageMolecularFormula);
@@ -218,6 +220,11 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
         }
         if (!($averageMolecularFormula instanceof FHIRString)) {
             $averageMolecularFormula = new FHIRString(value: $averageMolecularFormula);
+        }
+        if (null !== $valueXMLLocation) {
+            $averageMolecularFormula->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $averageMolecularFormula->_getValueXMLLocation()) {
+            $averageMolecularFormula->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->averageMolecularFormula = $averageMolecularFormula;
         return $this;
@@ -449,13 +456,20 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_AVERAGE_MOLECULAR_FORMULA === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setAverageMolecularFormula(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_REPEAT_UNIT_AMOUNT_TYPE === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -469,24 +483,24 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_AVERAGE_MOLECULAR_FORMULA])) {
             $pt = $type->getAverageMolecularFormula();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_AVERAGE_MOLECULAR_FORMULA]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_AVERAGE_MOLECULAR_FORMULA]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setAverageMolecularFormula(new FHIRString(
                     value: (string)$attributes[self::FIELD_AVERAGE_MOLECULAR_FORMULA],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -517,11 +531,11 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('SubstancePolymerRepeat', $this->_getSourceXMLNS());
         }
-        if (isset($this->averageMolecularFormula) && $this->averageMolecularFormula->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_AVERAGE_MOLECULAR_FORMULA, $this->averageMolecularFormula->getValue()?->getFormattedValue());
+        if (isset($this->averageMolecularFormula) && $this->averageMolecularFormula->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_AVERAGE_MOLECULAR_FORMULA, $this->averageMolecularFormula->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->averageMolecularFormula) && $this->averageMolecularFormula->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->averageMolecularFormula) && $this->averageMolecularFormula->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_AVERAGE_MOLECULAR_FORMULA);
             $this->averageMolecularFormula->xmlSerialize($xw, $config);
             $xw->endElement();

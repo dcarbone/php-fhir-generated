@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -224,9 +224,11 @@ class FHIRClinicalImpressionRuledOut extends FHIRBackboneElement
      * Grounds for elimination.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $reason
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setReason(null|string|FHIRStringPrimitive|FHIRString $reason): self
+    public function setReason(null|string|FHIRStringPrimitive|FHIRString $reason,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $reason) {
             unset($this->reason);
@@ -234,6 +236,11 @@ class FHIRClinicalImpressionRuledOut extends FHIRBackboneElement
         }
         if (!($reason instanceof FHIRString)) {
             $reason = new FHIRString(value: $reason);
+        }
+        if (null !== $valueXMLLocation) {
+            $reason->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $reason->_getValueXMLLocation()) {
+            $reason->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->reason = $reason;
         return $this;
@@ -366,8 +373,15 @@ class FHIRClinicalImpressionRuledOut extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRIdPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -375,7 +389,7 @@ class FHIRClinicalImpressionRuledOut extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->setItem(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_REASON === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setReason(FHIRString::xmlUnserialize($n, $v, $config));
             }
         }
@@ -383,24 +397,24 @@ class FHIRClinicalImpressionRuledOut extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRIdPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_REASON])) {
             $pt = $type->getReason();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_REASON]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_REASON]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setReason(new FHIRString(
                     value: (string)$attributes[self::FIELD_REASON],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -431,8 +445,8 @@ class FHIRClinicalImpressionRuledOut extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ClinicalImpressionRuledOut', $this->_getSourceXMLNS());
         }
-        if (isset($this->reason) && $this->reason->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_REASON, $this->reason->getValue()?->getFormattedValue());
+        if (isset($this->reason) && $this->reason->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_REASON, $this->reason->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->item)) {
@@ -440,7 +454,7 @@ class FHIRClinicalImpressionRuledOut extends FHIRBackboneElement
             $this->item->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->reason) && $this->reason->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->reason) && $this->reason->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_REASON);
             $this->reason->xmlSerialize($xw, $config);
             $xw->endElement();

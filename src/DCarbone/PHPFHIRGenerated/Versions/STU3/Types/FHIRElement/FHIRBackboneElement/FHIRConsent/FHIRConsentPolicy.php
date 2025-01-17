@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -179,9 +179,11 @@ class FHIRConsentPolicy extends FHIRBackboneElement
      *  enforcing policies pertaining to Consent Directives.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $authority
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAuthority(null|string|FHIRUriPrimitive|FHIRUri $authority): self
+    public function setAuthority(null|string|FHIRUriPrimitive|FHIRUri $authority,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $authority) {
             unset($this->authority);
@@ -189,6 +191,11 @@ class FHIRConsentPolicy extends FHIRBackboneElement
         }
         if (!($authority instanceof FHIRUri)) {
             $authority = new FHIRUri(value: $authority);
+        }
+        if (null !== $valueXMLLocation) {
+            $authority->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $authority->_getValueXMLLocation()) {
+            $authority->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->authority = $authority;
         return $this;
@@ -218,9 +225,11 @@ class FHIRConsentPolicy extends FHIRBackboneElement
      * may be organizational, but are often defined jurisdictionally, or in law.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $uri
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUri(null|string|FHIRUriPrimitive|FHIRUri $uri): self
+    public function setUri(null|string|FHIRUriPrimitive|FHIRUri $uri,
+                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $uri) {
             unset($this->uri);
@@ -228,6 +237,11 @@ class FHIRConsentPolicy extends FHIRBackboneElement
         }
         if (!($uri instanceof FHIRUri)) {
             $uri = new FHIRUri(value: $uri);
+        }
+        if (null !== $valueXMLLocation) {
+            $uri->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $uri->_getValueXMLLocation()) {
+            $uri->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->uri = $uri;
         return $this;
@@ -355,16 +369,23 @@ class FHIRConsentPolicy extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_AUTHORITY === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setAuthority(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_URI === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setUri(FHIRUri::xmlUnserialize($n, $v, $config));
             }
         }
@@ -372,36 +393,36 @@ class FHIRConsentPolicy extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_AUTHORITY])) {
             $pt = $type->getAuthority();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_AUTHORITY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_AUTHORITY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setAuthority(new FHIRUri(
                     value: (string)$attributes[self::FIELD_AUTHORITY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_URI])) {
             $pt = $type->getUri();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_URI]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_URI]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setUri(new FHIRUri(
                     value: (string)$attributes[self::FIELD_URI],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -432,19 +453,19 @@ class FHIRConsentPolicy extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ConsentPolicy', $this->_getSourceXMLNS());
         }
-        if (isset($this->authority) && $this->authority->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_AUTHORITY, $this->authority->getValue()?->getFormattedValue());
+        if (isset($this->authority) && $this->authority->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_AUTHORITY, $this->authority->getValue()?->_getFormattedValue());
         }
-        if (isset($this->uri) && $this->uri->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_URI, $this->uri->getValue()?->getFormattedValue());
+        if (isset($this->uri) && $this->uri->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_URI, $this->uri->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->authority) && $this->authority->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->authority) && $this->authority->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_AUTHORITY);
             $this->authority->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->uri) && $this->uri->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->uri) && $this->uri->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_URI);
             $this->uri->xmlSerialize($xw, $config);
             $xw->endElement();

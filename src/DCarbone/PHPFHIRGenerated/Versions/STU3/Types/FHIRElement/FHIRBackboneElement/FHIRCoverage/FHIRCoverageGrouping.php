@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -358,9 +358,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Policy or Group ID.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $group
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setGroup(null|string|FHIRStringPrimitive|FHIRString $group): self
+    public function setGroup(null|string|FHIRStringPrimitive|FHIRString $group,
+                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $group) {
             unset($this->group);
@@ -368,6 +370,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         }
         if (!($group instanceof FHIRString)) {
             $group = new FHIRString(value: $group);
+        }
+        if (null !== $valueXMLLocation) {
+            $group->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $group->_getValueXMLLocation()) {
+            $group->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->group = $group;
         return $this;
@@ -395,9 +402,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * A short description for the group.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $groupDisplay
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setGroupDisplay(null|string|FHIRStringPrimitive|FHIRString $groupDisplay): self
+    public function setGroupDisplay(null|string|FHIRStringPrimitive|FHIRString $groupDisplay,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $groupDisplay) {
             unset($this->groupDisplay);
@@ -405,6 +414,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         }
         if (!($groupDisplay instanceof FHIRString)) {
             $groupDisplay = new FHIRString(value: $groupDisplay);
+        }
+        if (null !== $valueXMLLocation) {
+            $groupDisplay->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $groupDisplay->_getValueXMLLocation()) {
+            $groupDisplay->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->groupDisplay = $groupDisplay;
         return $this;
@@ -434,9 +448,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * example may be used to identify a subset of an employer group.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subGroup
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSubGroup(null|string|FHIRStringPrimitive|FHIRString $subGroup): self
+    public function setSubGroup(null|string|FHIRStringPrimitive|FHIRString $subGroup,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $subGroup) {
             unset($this->subGroup);
@@ -444,6 +460,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         }
         if (!($subGroup instanceof FHIRString)) {
             $subGroup = new FHIRString(value: $subGroup);
+        }
+        if (null !== $valueXMLLocation) {
+            $subGroup->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $subGroup->_getValueXMLLocation()) {
+            $subGroup->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->subGroup = $subGroup;
         return $this;
@@ -471,9 +492,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * A short description for the subgroup.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subGroupDisplay
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSubGroupDisplay(null|string|FHIRStringPrimitive|FHIRString $subGroupDisplay): self
+    public function setSubGroupDisplay(null|string|FHIRStringPrimitive|FHIRString $subGroupDisplay,
+                                       null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $subGroupDisplay) {
             unset($this->subGroupDisplay);
@@ -481,6 +504,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         }
         if (!($subGroupDisplay instanceof FHIRString)) {
             $subGroupDisplay = new FHIRString(value: $subGroupDisplay);
+        }
+        if (null !== $valueXMLLocation) {
+            $subGroupDisplay->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $subGroupDisplay->_getValueXMLLocation()) {
+            $subGroupDisplay->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->subGroupDisplay = $subGroupDisplay;
         return $this;
@@ -512,9 +540,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * May be referred to as a Section or Division ID.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $plan
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPlan(null|string|FHIRStringPrimitive|FHIRString $plan): self
+    public function setPlan(null|string|FHIRStringPrimitive|FHIRString $plan,
+                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $plan) {
             unset($this->plan);
@@ -522,6 +552,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         }
         if (!($plan instanceof FHIRString)) {
             $plan = new FHIRString(value: $plan);
+        }
+        if (null !== $valueXMLLocation) {
+            $plan->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $plan->_getValueXMLLocation()) {
+            $plan->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->plan = $plan;
         return $this;
@@ -549,9 +584,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * A short description for the plan.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $planDisplay
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPlanDisplay(null|string|FHIRStringPrimitive|FHIRString $planDisplay): self
+    public function setPlanDisplay(null|string|FHIRStringPrimitive|FHIRString $planDisplay,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $planDisplay) {
             unset($this->planDisplay);
@@ -559,6 +596,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         }
         if (!($planDisplay instanceof FHIRString)) {
             $planDisplay = new FHIRString(value: $planDisplay);
+        }
+        if (null !== $valueXMLLocation) {
+            $planDisplay->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $planDisplay->_getValueXMLLocation()) {
+            $planDisplay->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->planDisplay = $planDisplay;
         return $this;
@@ -590,9 +632,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * provided to employees.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subPlan
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSubPlan(null|string|FHIRStringPrimitive|FHIRString $subPlan): self
+    public function setSubPlan(null|string|FHIRStringPrimitive|FHIRString $subPlan,
+                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $subPlan) {
             unset($this->subPlan);
@@ -600,6 +644,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         }
         if (!($subPlan instanceof FHIRString)) {
             $subPlan = new FHIRString(value: $subPlan);
+        }
+        if (null !== $valueXMLLocation) {
+            $subPlan->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $subPlan->_getValueXMLLocation()) {
+            $subPlan->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->subPlan = $subPlan;
         return $this;
@@ -627,9 +676,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * A short description for the subplan.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subPlanDisplay
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSubPlanDisplay(null|string|FHIRStringPrimitive|FHIRString $subPlanDisplay): self
+    public function setSubPlanDisplay(null|string|FHIRStringPrimitive|FHIRString $subPlanDisplay,
+                                      null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $subPlanDisplay) {
             unset($this->subPlanDisplay);
@@ -637,6 +688,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         }
         if (!($subPlanDisplay instanceof FHIRString)) {
             $subPlanDisplay = new FHIRString(value: $subPlanDisplay);
+        }
+        if (null !== $valueXMLLocation) {
+            $subPlanDisplay->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $subPlanDisplay->_getValueXMLLocation()) {
+            $subPlanDisplay->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->subPlanDisplay = $subPlanDisplay;
         return $this;
@@ -668,9 +724,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * deductables or co-payment.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $class
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setClass(null|string|FHIRStringPrimitive|FHIRString $class): self
+    public function setClass(null|string|FHIRStringPrimitive|FHIRString $class,
+                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $class) {
             unset($this->class);
@@ -678,6 +736,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         }
         if (!($class instanceof FHIRString)) {
             $class = new FHIRString(value: $class);
+        }
+        if (null !== $valueXMLLocation) {
+            $class->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $class->_getValueXMLLocation()) {
+            $class->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->class = $class;
         return $this;
@@ -705,9 +768,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * A short description for the class.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $classDisplay
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setClassDisplay(null|string|FHIRStringPrimitive|FHIRString $classDisplay): self
+    public function setClassDisplay(null|string|FHIRStringPrimitive|FHIRString $classDisplay,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $classDisplay) {
             unset($this->classDisplay);
@@ -715,6 +780,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         }
         if (!($classDisplay instanceof FHIRString)) {
             $classDisplay = new FHIRString(value: $classDisplay);
+        }
+        if (null !== $valueXMLLocation) {
+            $classDisplay->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $classDisplay->_getValueXMLLocation()) {
+            $classDisplay->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->classDisplay = $classDisplay;
         return $this;
@@ -746,9 +816,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * of deductables or co-payment.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subClass
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSubClass(null|string|FHIRStringPrimitive|FHIRString $subClass): self
+    public function setSubClass(null|string|FHIRStringPrimitive|FHIRString $subClass,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $subClass) {
             unset($this->subClass);
@@ -756,6 +828,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         }
         if (!($subClass instanceof FHIRString)) {
             $subClass = new FHIRString(value: $subClass);
+        }
+        if (null !== $valueXMLLocation) {
+            $subClass->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $subClass->_getValueXMLLocation()) {
+            $subClass->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->subClass = $subClass;
         return $this;
@@ -783,9 +860,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * A short description for the subclass.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $subClassDisplay
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSubClassDisplay(null|string|FHIRStringPrimitive|FHIRString $subClassDisplay): self
+    public function setSubClassDisplay(null|string|FHIRStringPrimitive|FHIRString $subClassDisplay,
+                                       null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $subClassDisplay) {
             unset($this->subClassDisplay);
@@ -793,6 +872,11 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         }
         if (!($subClassDisplay instanceof FHIRString)) {
             $subClassDisplay = new FHIRString(value: $subClassDisplay);
+        }
+        if (null !== $valueXMLLocation) {
+            $subClassDisplay->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $subClassDisplay->_getValueXMLLocation()) {
+            $subClassDisplay->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->subClassDisplay = $subClassDisplay;
         return $this;
@@ -1040,46 +1124,53 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_GROUP === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setGroup(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_GROUP_DISPLAY === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setGroupDisplay(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SUB_GROUP === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSubGroup(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SUB_GROUP_DISPLAY === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSubGroupDisplay(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PLAN === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPlan(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PLAN_DISPLAY === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPlanDisplay(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SUB_PLAN === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSubPlan(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SUB_PLAN_DISPLAY === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSubPlanDisplay(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CLASS === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setClass(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CLASS_DISPLAY === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setClassDisplay(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SUB_CLASS === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSubClass(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SUB_CLASS_DISPLAY === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSubClassDisplay(FHIRString::xmlUnserialize($n, $v, $config));
             }
         }
@@ -1087,156 +1178,156 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_GROUP])) {
             $pt = $type->getGroup();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_GROUP]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_GROUP]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setGroup(new FHIRString(
                     value: (string)$attributes[self::FIELD_GROUP],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_GROUP_DISPLAY])) {
             $pt = $type->getGroupDisplay();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_GROUP_DISPLAY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_GROUP_DISPLAY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setGroupDisplay(new FHIRString(
                     value: (string)$attributes[self::FIELD_GROUP_DISPLAY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SUB_GROUP])) {
             $pt = $type->getSubGroup();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SUB_GROUP]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SUB_GROUP]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSubGroup(new FHIRString(
                     value: (string)$attributes[self::FIELD_SUB_GROUP],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SUB_GROUP_DISPLAY])) {
             $pt = $type->getSubGroupDisplay();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SUB_GROUP_DISPLAY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SUB_GROUP_DISPLAY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSubGroupDisplay(new FHIRString(
                     value: (string)$attributes[self::FIELD_SUB_GROUP_DISPLAY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PLAN])) {
             $pt = $type->getPlan();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PLAN]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PLAN]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setPlan(new FHIRString(
                     value: (string)$attributes[self::FIELD_PLAN],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PLAN_DISPLAY])) {
             $pt = $type->getPlanDisplay();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PLAN_DISPLAY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PLAN_DISPLAY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setPlanDisplay(new FHIRString(
                     value: (string)$attributes[self::FIELD_PLAN_DISPLAY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SUB_PLAN])) {
             $pt = $type->getSubPlan();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SUB_PLAN]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SUB_PLAN]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSubPlan(new FHIRString(
                     value: (string)$attributes[self::FIELD_SUB_PLAN],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SUB_PLAN_DISPLAY])) {
             $pt = $type->getSubPlanDisplay();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SUB_PLAN_DISPLAY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SUB_PLAN_DISPLAY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSubPlanDisplay(new FHIRString(
                     value: (string)$attributes[self::FIELD_SUB_PLAN_DISPLAY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_CLASS])) {
             $pt = $type->getClass();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_CLASS]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_CLASS]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setClass(new FHIRString(
                     value: (string)$attributes[self::FIELD_CLASS],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_CLASS_DISPLAY])) {
             $pt = $type->getClassDisplay();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_CLASS_DISPLAY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_CLASS_DISPLAY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setClassDisplay(new FHIRString(
                     value: (string)$attributes[self::FIELD_CLASS_DISPLAY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SUB_CLASS])) {
             $pt = $type->getSubClass();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SUB_CLASS]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SUB_CLASS]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSubClass(new FHIRString(
                     value: (string)$attributes[self::FIELD_SUB_CLASS],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SUB_CLASS_DISPLAY])) {
             $pt = $type->getSubClassDisplay();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SUB_CLASS_DISPLAY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SUB_CLASS_DISPLAY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSubClassDisplay(new FHIRString(
                     value: (string)$attributes[self::FIELD_SUB_CLASS_DISPLAY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1267,99 +1358,99 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('CoverageGrouping', $this->_getSourceXMLNS());
         }
-        if (isset($this->group) && $this->group->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_GROUP, $this->group->getValue()?->getFormattedValue());
+        if (isset($this->group) && $this->group->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_GROUP, $this->group->getValue()?->_getFormattedValue());
         }
-        if (isset($this->groupDisplay) && $this->groupDisplay->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_GROUP_DISPLAY, $this->groupDisplay->getValue()?->getFormattedValue());
+        if (isset($this->groupDisplay) && $this->groupDisplay->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_GROUP_DISPLAY, $this->groupDisplay->getValue()?->_getFormattedValue());
         }
-        if (isset($this->subGroup) && $this->subGroup->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SUB_GROUP, $this->subGroup->getValue()?->getFormattedValue());
+        if (isset($this->subGroup) && $this->subGroup->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SUB_GROUP, $this->subGroup->getValue()?->_getFormattedValue());
         }
-        if (isset($this->subGroupDisplay) && $this->subGroupDisplay->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SUB_GROUP_DISPLAY, $this->subGroupDisplay->getValue()?->getFormattedValue());
+        if (isset($this->subGroupDisplay) && $this->subGroupDisplay->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SUB_GROUP_DISPLAY, $this->subGroupDisplay->getValue()?->_getFormattedValue());
         }
-        if (isset($this->plan) && $this->plan->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PLAN, $this->plan->getValue()?->getFormattedValue());
+        if (isset($this->plan) && $this->plan->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PLAN, $this->plan->getValue()?->_getFormattedValue());
         }
-        if (isset($this->planDisplay) && $this->planDisplay->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PLAN_DISPLAY, $this->planDisplay->getValue()?->getFormattedValue());
+        if (isset($this->planDisplay) && $this->planDisplay->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PLAN_DISPLAY, $this->planDisplay->getValue()?->_getFormattedValue());
         }
-        if (isset($this->subPlan) && $this->subPlan->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SUB_PLAN, $this->subPlan->getValue()?->getFormattedValue());
+        if (isset($this->subPlan) && $this->subPlan->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SUB_PLAN, $this->subPlan->getValue()?->_getFormattedValue());
         }
-        if (isset($this->subPlanDisplay) && $this->subPlanDisplay->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SUB_PLAN_DISPLAY, $this->subPlanDisplay->getValue()?->getFormattedValue());
+        if (isset($this->subPlanDisplay) && $this->subPlanDisplay->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SUB_PLAN_DISPLAY, $this->subPlanDisplay->getValue()?->_getFormattedValue());
         }
-        if (isset($this->class) && $this->class->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_CLASS, $this->class->getValue()?->getFormattedValue());
+        if (isset($this->class) && $this->class->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_CLASS, $this->class->getValue()?->_getFormattedValue());
         }
-        if (isset($this->classDisplay) && $this->classDisplay->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_CLASS_DISPLAY, $this->classDisplay->getValue()?->getFormattedValue());
+        if (isset($this->classDisplay) && $this->classDisplay->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_CLASS_DISPLAY, $this->classDisplay->getValue()?->_getFormattedValue());
         }
-        if (isset($this->subClass) && $this->subClass->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SUB_CLASS, $this->subClass->getValue()?->getFormattedValue());
+        if (isset($this->subClass) && $this->subClass->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SUB_CLASS, $this->subClass->getValue()?->_getFormattedValue());
         }
-        if (isset($this->subClassDisplay) && $this->subClassDisplay->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SUB_CLASS_DISPLAY, $this->subClassDisplay->getValue()?->getFormattedValue());
+        if (isset($this->subClassDisplay) && $this->subClassDisplay->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SUB_CLASS_DISPLAY, $this->subClassDisplay->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->group) && $this->group->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->group) && $this->group->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_GROUP);
             $this->group->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->groupDisplay) && $this->groupDisplay->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->groupDisplay) && $this->groupDisplay->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_GROUP_DISPLAY);
             $this->groupDisplay->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->subGroup) && $this->subGroup->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->subGroup) && $this->subGroup->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SUB_GROUP);
             $this->subGroup->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->subGroupDisplay) && $this->subGroupDisplay->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->subGroupDisplay) && $this->subGroupDisplay->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SUB_GROUP_DISPLAY);
             $this->subGroupDisplay->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->plan) && $this->plan->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->plan) && $this->plan->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PLAN);
             $this->plan->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->planDisplay) && $this->planDisplay->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->planDisplay) && $this->planDisplay->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PLAN_DISPLAY);
             $this->planDisplay->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->subPlan) && $this->subPlan->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->subPlan) && $this->subPlan->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SUB_PLAN);
             $this->subPlan->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->subPlanDisplay) && $this->subPlanDisplay->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->subPlanDisplay) && $this->subPlanDisplay->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SUB_PLAN_DISPLAY);
             $this->subPlanDisplay->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->class) && $this->class->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->class) && $this->class->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_CLASS);
             $this->class->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->classDisplay) && $this->classDisplay->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->classDisplay) && $this->classDisplay->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_CLASS_DISPLAY);
             $this->classDisplay->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->subClass) && $this->subClass->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->subClass) && $this->subClass->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SUB_CLASS);
             $this->subClass->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->subClassDisplay) && $this->subClassDisplay->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->subClassDisplay) && $this->subClassDisplay->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SUB_CLASS_DISPLAY);
             $this->subClassDisplay->xmlSerialize($xw, $config);
             $xw->endElement();

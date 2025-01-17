@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -253,9 +253,11 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
      * A digital identity certificate associated with the validator.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $identityCertificate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIdentityCertificate(null|string|FHIRStringPrimitive|FHIRString $identityCertificate): self
+    public function setIdentityCertificate(null|string|FHIRStringPrimitive|FHIRString $identityCertificate,
+                                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $identityCertificate) {
             unset($this->identityCertificate);
@@ -263,6 +265,11 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
         }
         if (!($identityCertificate instanceof FHIRString)) {
             $identityCertificate = new FHIRString(value: $identityCertificate);
+        }
+        if (null !== $valueXMLLocation) {
+            $identityCertificate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $identityCertificate->_getValueXMLLocation()) {
+            $identityCertificate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->identityCertificate = $identityCertificate;
         return $this;
@@ -449,8 +456,15 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -458,7 +472,7 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
                 $v = new FHIRReference();
                 $type->setOrganization(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IDENTITY_CERTIFICATE === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setIdentityCertificate(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ATTESTATION_SIGNATURE === $childName) {
                 $v = new FHIRSignature();
@@ -469,24 +483,24 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IDENTITY_CERTIFICATE])) {
             $pt = $type->getIdentityCertificate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IDENTITY_CERTIFICATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IDENTITY_CERTIFICATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setIdentityCertificate(new FHIRString(
                     value: (string)$attributes[self::FIELD_IDENTITY_CERTIFICATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -517,8 +531,8 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('VerificationResultValidator', $this->_getSourceXMLNS());
         }
-        if (isset($this->identityCertificate) && $this->identityCertificate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_IDENTITY_CERTIFICATE, $this->identityCertificate->getValue()?->getFormattedValue());
+        if (isset($this->identityCertificate) && $this->identityCertificate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_IDENTITY_CERTIFICATE, $this->identityCertificate->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->organization)) {
@@ -526,7 +540,7 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
             $this->organization->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->identityCertificate) && $this->identityCertificate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->identityCertificate) && $this->identityCertificate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_IDENTITY_CERTIFICATE);
             $this->identityCertificate->xmlSerialize($xw, $config);
             $xw->endElement();

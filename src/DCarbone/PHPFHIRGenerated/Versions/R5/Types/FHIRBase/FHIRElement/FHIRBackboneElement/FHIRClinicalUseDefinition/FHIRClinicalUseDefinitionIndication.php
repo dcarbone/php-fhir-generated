@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -542,9 +542,11 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * less than 6 months).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $durationString
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDurationString(null|string|FHIRStringPrimitive|FHIRString $durationString): self
+    public function setDurationString(null|string|FHIRStringPrimitive|FHIRString $durationString,
+                                      null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $durationString) {
             unset($this->durationString);
@@ -552,6 +554,11 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
         }
         if (!($durationString instanceof FHIRString)) {
             $durationString = new FHIRString(value: $durationString);
+        }
+        if (null !== $valueXMLLocation) {
+            $durationString->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $durationString->_getValueXMLLocation()) {
+            $durationString->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->durationString = $durationString;
         return $this;
@@ -926,8 +933,15 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -947,7 +961,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
                 $v = new FHIRRange();
                 $type->setDurationRange(FHIRRange::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DURATION_STRING === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDurationString(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_UNDESIRABLE_EFFECT === $childName) {
                 $v = new FHIRReference();
@@ -964,24 +978,24 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DURATION_STRING])) {
             $pt = $type->getDurationString();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DURATION_STRING]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DURATION_STRING]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDurationString(new FHIRString(
                     value: (string)$attributes[self::FIELD_DURATION_STRING],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1012,8 +1026,8 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ClinicalUseDefinitionIndication', $this->_getSourceXMLNS());
         }
-        if (isset($this->durationString) && $this->durationString->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DURATION_STRING, $this->durationString->getValue()?->getFormattedValue());
+        if (isset($this->durationString) && $this->durationString->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DURATION_STRING, $this->durationString->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->diseaseSymptomProcedure)) {
@@ -1043,7 +1057,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
             $this->durationRange->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->durationString) && $this->durationString->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->durationString) && $this->durationString->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DURATION_STRING);
             $this->durationString->xmlSerialize($xw, $config);
             $xw->endElement();

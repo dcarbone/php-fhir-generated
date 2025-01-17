@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedul
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -60,7 +60,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedul
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -248,9 +248,11 @@ class FHIRScheduleRepeat extends FHIRElement
      * Indicates how often the event should occur.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $frequency
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setFrequency(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $frequency): self
+    public function setFrequency(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $frequency,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $frequency) {
             unset($this->frequency);
@@ -258,6 +260,11 @@ class FHIRScheduleRepeat extends FHIRElement
         }
         if (!($frequency instanceof FHIRInteger)) {
             $frequency = new FHIRInteger(value: $frequency);
+        }
+        if (null !== $valueXMLLocation) {
+            $frequency->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $frequency->_getValueXMLLocation()) {
+            $frequency->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->frequency = $frequency;
         return $this;
@@ -315,9 +322,11 @@ class FHIRScheduleRepeat extends FHIRElement
      * How long each repetition should last.
      *
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $duration
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDuration(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $duration): self
+    public function setDuration(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $duration,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $duration) {
             unset($this->duration);
@@ -325,6 +334,11 @@ class FHIRScheduleRepeat extends FHIRElement
         }
         if (!($duration instanceof FHIRDecimal)) {
             $duration = new FHIRDecimal(value: $duration);
+        }
+        if (null !== $valueXMLLocation) {
+            $duration->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $duration->_getValueXMLLocation()) {
+            $duration->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->duration = $duration;
         return $this;
@@ -382,9 +396,11 @@ class FHIRScheduleRepeat extends FHIRElement
      * A total count of the desired number of repetitions.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $count
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCount(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $count): self
+    public function setCount(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $count,
+                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $count) {
             unset($this->count);
@@ -392,6 +408,11 @@ class FHIRScheduleRepeat extends FHIRElement
         }
         if (!($count instanceof FHIRInteger)) {
             $count = new FHIRInteger(value: $count);
+        }
+        if (null !== $valueXMLLocation) {
+            $count->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $count->_getValueXMLLocation()) {
+            $count->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->count = $count;
         return $this;
@@ -423,9 +444,11 @@ class FHIRScheduleRepeat extends FHIRElement
      * When to stop repeating the schedule.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $end
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEnd(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $end): self
+    public function setEnd(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $end,
+                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $end) {
             unset($this->end);
@@ -433,6 +456,11 @@ class FHIRScheduleRepeat extends FHIRElement
         }
         if (!($end instanceof FHIRDateTime)) {
             $end = new FHIRDateTime(value: $end);
+        }
+        if (null !== $valueXMLLocation) {
+            $end->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $end->_getValueXMLLocation()) {
+            $end->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->end = $end;
         return $this;
@@ -606,25 +634,32 @@ class FHIRScheduleRepeat extends FHIRElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRIdPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_FREQUENCY === $childName) {
-                $v = new FHIRInteger(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setFrequency(FHIRInteger::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_WHEN === $childName) {
-                $v = new FHIREventTiming(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIREventTiming(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setWhen(FHIREventTiming::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DURATION === $childName) {
-                $v = new FHIRDecimal(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDecimal(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDuration(FHIRDecimal::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_UNITS === $childName) {
-                $v = new FHIRUnitsOfTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUnitsOfTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setUnits(FHIRUnitsOfTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_COUNT === $childName) {
-                $v = new FHIRInteger(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setCount(FHIRInteger::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_END === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setEnd(FHIRDateTime::xmlUnserialize($n, $v, $config));
             }
         }
@@ -632,60 +667,60 @@ class FHIRScheduleRepeat extends FHIRElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRIdPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_FREQUENCY])) {
             $pt = $type->getFrequency();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_FREQUENCY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_FREQUENCY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setFrequency(new FHIRInteger(
                     value: (string)$attributes[self::FIELD_FREQUENCY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DURATION])) {
             $pt = $type->getDuration();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DURATION]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DURATION]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDuration(new FHIRDecimal(
                     value: (string)$attributes[self::FIELD_DURATION],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_COUNT])) {
             $pt = $type->getCount();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_COUNT]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_COUNT]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setCount(new FHIRInteger(
                     value: (string)$attributes[self::FIELD_COUNT],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_END])) {
             $pt = $type->getEnd();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_END]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_END]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setEnd(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_END],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -716,20 +751,20 @@ class FHIRScheduleRepeat extends FHIRElement
             $rootOpened = true;
             $xw->openRootNode('ScheduleRepeat', $this->_getSourceXMLNS());
         }
-        if (isset($this->frequency) && $this->frequency->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_FREQUENCY, $this->frequency->getValue()?->getFormattedValue());
+        if (isset($this->frequency) && $this->frequency->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_FREQUENCY, $this->frequency->getValue()?->_getFormattedValue());
         }
-        if (isset($this->duration) && $this->duration->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DURATION, $this->duration->getValue()?->getFormattedValue());
+        if (isset($this->duration) && $this->duration->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DURATION, $this->duration->getValue()?->_getFormattedValue());
         }
-        if (isset($this->count) && $this->count->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_COUNT, $this->count->getValue()?->getFormattedValue());
+        if (isset($this->count) && $this->count->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_COUNT, $this->count->getValue()?->_getFormattedValue());
         }
-        if (isset($this->end) && $this->end->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_END, $this->end->getValue()?->getFormattedValue());
+        if (isset($this->end) && $this->end->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_END, $this->end->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->frequency) && $this->frequency->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->frequency) && $this->frequency->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_FREQUENCY);
             $this->frequency->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -739,7 +774,7 @@ class FHIRScheduleRepeat extends FHIRElement
             $this->when->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->duration) && $this->duration->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->duration) && $this->duration->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DURATION);
             $this->duration->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -749,12 +784,12 @@ class FHIRScheduleRepeat extends FHIRElement
             $this->units->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->count) && $this->count->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->count) && $this->count->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_COUNT);
             $this->count->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->end) && $this->end->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->end) && $this->end->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_END);
             $this->end->xmlSerialize($xw, $config);
             $xw->endElement();

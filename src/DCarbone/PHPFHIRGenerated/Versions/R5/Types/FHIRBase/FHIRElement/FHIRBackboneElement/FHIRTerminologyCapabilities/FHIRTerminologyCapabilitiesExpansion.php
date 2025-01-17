@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -246,9 +246,11 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * Whether the server can return nested value sets.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $hierarchical
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setHierarchical(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $hierarchical): self
+    public function setHierarchical(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $hierarchical,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $hierarchical) {
             unset($this->hierarchical);
@@ -256,6 +258,11 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
         }
         if (!($hierarchical instanceof FHIRBoolean)) {
             $hierarchical = new FHIRBoolean(value: $hierarchical);
+        }
+        if (null !== $valueXMLLocation) {
+            $hierarchical->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $hierarchical->_getValueXMLLocation()) {
+            $hierarchical->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->hierarchical = $hierarchical;
         return $this;
@@ -281,9 +288,11 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * Whether the server supports paging on expansion.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $paging
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPaging(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $paging): self
+    public function setPaging(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $paging,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $paging) {
             unset($this->paging);
@@ -291,6 +300,11 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
         }
         if (!($paging instanceof FHIRBoolean)) {
             $paging = new FHIRBoolean(value: $paging);
+        }
+        if (null !== $valueXMLLocation) {
+            $paging->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $paging->_getValueXMLLocation()) {
+            $paging->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->paging = $paging;
         return $this;
@@ -316,9 +330,11 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * True if requests for incomplete expansions are allowed.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $incomplete
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIncomplete(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $incomplete): self
+    public function setIncomplete(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $incomplete,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $incomplete) {
             unset($this->incomplete);
@@ -326,6 +342,11 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
         }
         if (!($incomplete instanceof FHIRBoolean)) {
             $incomplete = new FHIRBoolean(value: $incomplete);
+        }
+        if (null !== $valueXMLLocation) {
+            $incomplete->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $incomplete->_getValueXMLLocation()) {
+            $incomplete->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->incomplete = $incomplete;
         return $this;
@@ -421,9 +442,11 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * Documentation about text searching works.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $textFilter
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTextFilter(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $textFilter): self
+    public function setTextFilter(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $textFilter,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $textFilter) {
             unset($this->textFilter);
@@ -431,6 +454,11 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
         }
         if (!($textFilter instanceof FHIRMarkdown)) {
             $textFilter = new FHIRMarkdown(value: $textFilter);
+        }
+        if (null !== $valueXMLLocation) {
+            $textFilter->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $textFilter->_getValueXMLLocation()) {
+            $textFilter->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->textFilter = $textFilter;
         return $this;
@@ -594,25 +622,32 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_HIERARCHICAL === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setHierarchical(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PAGING === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPaging(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_INCOMPLETE === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setIncomplete(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PARAMETER === $childName) {
                 $v = new FHIRTerminologyCapabilitiesParameter();
                 $type->addParameter(FHIRTerminologyCapabilitiesParameter::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT_FILTER === $childName) {
-                $v = new FHIRMarkdown(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRMarkdown(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setTextFilter(FHIRMarkdown::xmlUnserialize($n, $v, $config));
             }
         }
@@ -620,60 +655,60 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_HIERARCHICAL])) {
             $pt = $type->getHierarchical();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_HIERARCHICAL]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_HIERARCHICAL]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setHierarchical(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_HIERARCHICAL],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PAGING])) {
             $pt = $type->getPaging();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PAGING]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PAGING]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setPaging(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_PAGING],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_INCOMPLETE])) {
             $pt = $type->getIncomplete();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_INCOMPLETE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_INCOMPLETE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setIncomplete(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_INCOMPLETE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_TEXT_FILTER])) {
             $pt = $type->getTextFilter();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_TEXT_FILTER]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_TEXT_FILTER]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setTextFilter(new FHIRMarkdown(
                     value: (string)$attributes[self::FIELD_TEXT_FILTER],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -704,30 +739,30 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('TerminologyCapabilitiesExpansion', $this->_getSourceXMLNS());
         }
-        if (isset($this->hierarchical) && $this->hierarchical->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_HIERARCHICAL, $this->hierarchical->getValue()?->getFormattedValue());
+        if (isset($this->hierarchical) && $this->hierarchical->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_HIERARCHICAL, $this->hierarchical->getValue()?->_getFormattedValue());
         }
-        if (isset($this->paging) && $this->paging->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PAGING, $this->paging->getValue()?->getFormattedValue());
+        if (isset($this->paging) && $this->paging->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PAGING, $this->paging->getValue()?->_getFormattedValue());
         }
-        if (isset($this->incomplete) && $this->incomplete->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_INCOMPLETE, $this->incomplete->getValue()?->getFormattedValue());
+        if (isset($this->incomplete) && $this->incomplete->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_INCOMPLETE, $this->incomplete->getValue()?->_getFormattedValue());
         }
-        if (isset($this->textFilter) && $this->textFilter->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_TEXT_FILTER, $this->textFilter->getValue()?->getFormattedValue());
+        if (isset($this->textFilter) && $this->textFilter->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_TEXT_FILTER, $this->textFilter->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->hierarchical) && $this->hierarchical->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->hierarchical) && $this->hierarchical->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_HIERARCHICAL);
             $this->hierarchical->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->paging) && $this->paging->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->paging) && $this->paging->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PAGING);
             $this->paging->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->incomplete) && $this->incomplete->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->incomplete) && $this->incomplete->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_INCOMPLETE);
             $this->incomplete->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -739,7 +774,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->textFilter) && $this->textFilter->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->textFilter) && $this->textFilter->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_TEXT_FILTER);
             $this->textFilter->xmlSerialize($xw, $config);
             $xw->endElement();

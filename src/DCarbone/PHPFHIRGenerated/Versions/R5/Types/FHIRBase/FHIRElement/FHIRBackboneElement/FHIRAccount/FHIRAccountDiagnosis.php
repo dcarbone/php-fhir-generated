@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -278,9 +278,11 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      * Ranking of the diagnosis (for each type).
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $sequence
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSequence(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
+    public function setSequence(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $sequence) {
             unset($this->sequence);
@@ -288,6 +290,11 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
         }
         if (!($sequence instanceof FHIRPositiveInt)) {
             $sequence = new FHIRPositiveInt(value: $sequence);
+        }
+        if (null !== $valueXMLLocation) {
+            $sequence->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $sequence->_getValueXMLLocation()) {
+            $sequence->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->sequence = $sequence;
         return $this;
@@ -359,9 +366,11 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      * Ranking of the diagnosis (for each type).
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $dateOfDiagnosis
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDateOfDiagnosis(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateOfDiagnosis): self
+    public function setDateOfDiagnosis(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateOfDiagnosis,
+                                       null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $dateOfDiagnosis) {
             unset($this->dateOfDiagnosis);
@@ -369,6 +378,11 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
         }
         if (!($dateOfDiagnosis instanceof FHIRDateTime)) {
             $dateOfDiagnosis = new FHIRDateTime(value: $dateOfDiagnosis);
+        }
+        if (null !== $valueXMLLocation) {
+            $dateOfDiagnosis->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $dateOfDiagnosis->_getValueXMLLocation()) {
+            $dateOfDiagnosis->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->dateOfDiagnosis = $dateOfDiagnosis;
         return $this;
@@ -460,9 +474,11 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      * Was the Diagnosis present on Admission in the related Encounter.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $onAdmission
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOnAdmission(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $onAdmission): self
+    public function setOnAdmission(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $onAdmission,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $onAdmission) {
             unset($this->onAdmission);
@@ -470,6 +486,11 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
         }
         if (!($onAdmission instanceof FHIRBoolean)) {
             $onAdmission = new FHIRBoolean(value: $onAdmission);
+        }
+        if (null !== $valueXMLLocation) {
+            $onAdmission->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $onAdmission->_getValueXMLLocation()) {
+            $onAdmission->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->onAdmission = $onAdmission;
         return $this;
@@ -716,25 +737,32 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SEQUENCE === $childName) {
-                $v = new FHIRPositiveInt(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRPositiveInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSequence(FHIRPositiveInt::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CONDITION === $childName) {
                 $v = new FHIRCodeableReference();
                 $type->setCondition(FHIRCodeableReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DATE_OF_DIAGNOSIS === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDateOfDiagnosis(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TYPE === $childName) {
                 $v = new FHIRCodeableConcept();
                 $type->addType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ON_ADMISSION === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setOnAdmission(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PACKAGE_CODE === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -745,48 +773,48 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SEQUENCE])) {
             $pt = $type->getSequence();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SEQUENCE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SEQUENCE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSequence(new FHIRPositiveInt(
                     value: (string)$attributes[self::FIELD_SEQUENCE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DATE_OF_DIAGNOSIS])) {
             $pt = $type->getDateOfDiagnosis();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DATE_OF_DIAGNOSIS]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DATE_OF_DIAGNOSIS]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDateOfDiagnosis(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_DATE_OF_DIAGNOSIS],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_ON_ADMISSION])) {
             $pt = $type->getOnAdmission();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ON_ADMISSION]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ON_ADMISSION]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setOnAdmission(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_ON_ADMISSION],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -817,17 +845,17 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('AccountDiagnosis', $this->_getSourceXMLNS());
         }
-        if (isset($this->sequence) && $this->sequence->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SEQUENCE, $this->sequence->getValue()?->getFormattedValue());
+        if (isset($this->sequence) && $this->sequence->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SEQUENCE, $this->sequence->getValue()?->_getFormattedValue());
         }
-        if (isset($this->dateOfDiagnosis) && $this->dateOfDiagnosis->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DATE_OF_DIAGNOSIS, $this->dateOfDiagnosis->getValue()?->getFormattedValue());
+        if (isset($this->dateOfDiagnosis) && $this->dateOfDiagnosis->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DATE_OF_DIAGNOSIS, $this->dateOfDiagnosis->getValue()?->_getFormattedValue());
         }
-        if (isset($this->onAdmission) && $this->onAdmission->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ON_ADMISSION, $this->onAdmission->getValue()?->getFormattedValue());
+        if (isset($this->onAdmission) && $this->onAdmission->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_ON_ADMISSION, $this->onAdmission->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->sequence) && $this->sequence->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->sequence) && $this->sequence->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SEQUENCE);
             $this->sequence->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -837,7 +865,7 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
             $this->condition->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->dateOfDiagnosis) && $this->dateOfDiagnosis->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->dateOfDiagnosis) && $this->dateOfDiagnosis->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DATE_OF_DIAGNOSIS);
             $this->dateOfDiagnosis->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -849,7 +877,7 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->onAdmission) && $this->onAdmission->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->onAdmission) && $this->onAdmission->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_ON_ADMISSION);
             $this->onAdmission->xmlSerialize($xw, $config);
             $xw->endElement();

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -220,9 +220,11 @@ class FHIRBundleSearch extends FHIRBackboneElement
      * When searching, the server's search ranking score for the entry.
      *
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $score
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setScore(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $score): self
+    public function setScore(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $score,
+                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $score) {
             unset($this->score);
@@ -230,6 +232,11 @@ class FHIRBundleSearch extends FHIRBackboneElement
         }
         if (!($score instanceof FHIRDecimal)) {
             $score = new FHIRDecimal(value: $score);
+        }
+        if (null !== $valueXMLLocation) {
+            $score->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $score->_getValueXMLLocation()) {
+            $score->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->score = $score;
         return $this;
@@ -357,16 +364,23 @@ class FHIRBundleSearch extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_MODE === $childName) {
-                $v = new FHIRSearchEntryMode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRSearchEntryMode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setMode(FHIRSearchEntryMode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SCORE === $childName) {
-                $v = new FHIRDecimal(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDecimal(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setScore(FHIRDecimal::xmlUnserialize($n, $v, $config));
             }
         }
@@ -374,24 +388,24 @@ class FHIRBundleSearch extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SCORE])) {
             $pt = $type->getScore();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SCORE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SCORE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setScore(new FHIRDecimal(
                     value: (string)$attributes[self::FIELD_SCORE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -422,8 +436,8 @@ class FHIRBundleSearch extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('BundleSearch', $this->_getSourceXMLNS());
         }
-        if (isset($this->score) && $this->score->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SCORE, $this->score->getValue()?->getFormattedValue());
+        if (isset($this->score) && $this->score->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SCORE, $this->score->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->mode)) {
@@ -431,7 +445,7 @@ class FHIRBundleSearch extends FHIRBackboneElement
             $this->mode->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->score) && $this->score->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->score) && $this->score->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SCORE);
             $this->score->xmlSerialize($xw, $config);
             $xw->endElement();

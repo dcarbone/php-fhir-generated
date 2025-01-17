@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -344,9 +344,11 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * Molecular formula.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $molecularFormula
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMolecularFormula(null|string|FHIRStringPrimitive|FHIRString $molecularFormula): self
+    public function setMolecularFormula(null|string|FHIRStringPrimitive|FHIRString $molecularFormula,
+                                        null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $molecularFormula) {
             unset($this->molecularFormula);
@@ -354,6 +356,11 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
         }
         if (!($molecularFormula instanceof FHIRString)) {
             $molecularFormula = new FHIRString(value: $molecularFormula);
+        }
+        if (null !== $valueXMLLocation) {
+            $molecularFormula->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $molecularFormula->_getValueXMLLocation()) {
+            $molecularFormula->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->molecularFormula = $molecularFormula;
         return $this;
@@ -383,9 +390,11 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * alphabetical, each moiety separated by a dot.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $molecularFormulaByMoiety
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMolecularFormulaByMoiety(null|string|FHIRStringPrimitive|FHIRString $molecularFormulaByMoiety): self
+    public function setMolecularFormulaByMoiety(null|string|FHIRStringPrimitive|FHIRString $molecularFormulaByMoiety,
+                                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $molecularFormulaByMoiety) {
             unset($this->molecularFormulaByMoiety);
@@ -393,6 +402,11 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
         }
         if (!($molecularFormulaByMoiety instanceof FHIRString)) {
             $molecularFormulaByMoiety = new FHIRString(value: $molecularFormulaByMoiety);
+        }
+        if (null !== $valueXMLLocation) {
+            $molecularFormulaByMoiety->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $molecularFormulaByMoiety->_getValueXMLLocation()) {
+            $molecularFormulaByMoiety->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->molecularFormulaByMoiety = $molecularFormulaByMoiety;
         return $this;
@@ -801,8 +815,15 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -813,10 +834,10 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->setOpticalActivity(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_MOLECULAR_FORMULA === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setMolecularFormula(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_MOLECULAR_FORMULA_BY_MOIETY === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setMolecularFormulaByMoiety(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ISOTOPE === $childName) {
                 $v = new FHIRSubstanceSpecificationIsotope();
@@ -836,36 +857,36 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_MOLECULAR_FORMULA])) {
             $pt = $type->getMolecularFormula();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_MOLECULAR_FORMULA]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_MOLECULAR_FORMULA]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setMolecularFormula(new FHIRString(
                     value: (string)$attributes[self::FIELD_MOLECULAR_FORMULA],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY])) {
             $pt = $type->getMolecularFormulaByMoiety();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setMolecularFormulaByMoiety(new FHIRString(
                     value: (string)$attributes[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -896,11 +917,11 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('SubstanceSpecificationStructure', $this->_getSourceXMLNS());
         }
-        if (isset($this->molecularFormula) && $this->molecularFormula->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_MOLECULAR_FORMULA, $this->molecularFormula->getValue()?->getFormattedValue());
+        if (isset($this->molecularFormula) && $this->molecularFormula->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_MOLECULAR_FORMULA, $this->molecularFormula->getValue()?->_getFormattedValue());
         }
-        if (isset($this->molecularFormulaByMoiety) && $this->molecularFormulaByMoiety->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_MOLECULAR_FORMULA_BY_MOIETY, $this->molecularFormulaByMoiety->getValue()?->getFormattedValue());
+        if (isset($this->molecularFormulaByMoiety) && $this->molecularFormulaByMoiety->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_MOLECULAR_FORMULA_BY_MOIETY, $this->molecularFormulaByMoiety->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->stereochemistry)) {
@@ -913,12 +934,12 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
             $this->opticalActivity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->molecularFormula) && $this->molecularFormula->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->molecularFormula) && $this->molecularFormula->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_MOLECULAR_FORMULA);
             $this->molecularFormula->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->molecularFormulaByMoiety) && $this->molecularFormulaByMoiety->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->molecularFormulaByMoiety) && $this->molecularFormulaByMoiety->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_MOLECULAR_FORMULA_BY_MOIETY);
             $this->molecularFormulaByMoiety->xmlSerialize($xw, $config);
             $xw->endElement();

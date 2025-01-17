@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElement
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRElement
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -213,9 +213,11 @@ class FHIRElementDefinitionMapping extends FHIRElement
      * An internal reference to the definition of a mapping.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId $identity
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIdentity(null|string|FHIRIdPrimitive|FHIRId $identity): self
+    public function setIdentity(null|string|FHIRIdPrimitive|FHIRId $identity,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $identity) {
             unset($this->identity);
@@ -223,6 +225,11 @@ class FHIRElementDefinitionMapping extends FHIRElement
         }
         if (!($identity instanceof FHIRId)) {
             $identity = new FHIRId(value: $identity);
+        }
+        if (null !== $valueXMLLocation) {
+            $identity->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $identity->_getValueXMLLocation()) {
+            $identity->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->identity = $identity;
         return $this;
@@ -252,9 +259,11 @@ class FHIRElementDefinitionMapping extends FHIRElement
      * Identifies the computable language in which mapping.map is expressed.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language): self
+    public function setLanguage(null|string|FHIRCodePrimitive|FHIRCode $language,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $language) {
             unset($this->language);
@@ -262,6 +271,11 @@ class FHIRElementDefinitionMapping extends FHIRElement
         }
         if (!($language instanceof FHIRCode)) {
             $language = new FHIRCode(value: $language);
+        }
+        if (null !== $valueXMLLocation) {
+            $language->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $language->_getValueXMLLocation()) {
+            $language->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->language = $language;
         return $this;
@@ -289,9 +303,11 @@ class FHIRElementDefinitionMapping extends FHIRElement
      * Expresses what part of the target specification corresponds to this element.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $map
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMap(null|string|FHIRStringPrimitive|FHIRString $map): self
+    public function setMap(null|string|FHIRStringPrimitive|FHIRString $map,
+                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $map) {
             unset($this->map);
@@ -299,6 +315,11 @@ class FHIRElementDefinitionMapping extends FHIRElement
         }
         if (!($map instanceof FHIRString)) {
             $map = new FHIRString(value: $map);
+        }
+        if (null !== $valueXMLLocation) {
+            $map->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $map->_getValueXMLLocation()) {
+            $map->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->map = $map;
         return $this;
@@ -436,16 +457,23 @@ class FHIRElementDefinitionMapping extends FHIRElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRIdPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_IDENTITY === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setIdentity(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_MAP === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setMap(FHIRString::xmlUnserialize($n, $v, $config));
             }
         }
@@ -453,48 +481,48 @@ class FHIRElementDefinitionMapping extends FHIRElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRIdPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IDENTITY])) {
             $pt = $type->getIdentity();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IDENTITY]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IDENTITY]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setIdentity(new FHIRId(
                     value: (string)$attributes[self::FIELD_IDENTITY],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_MAP])) {
             $pt = $type->getMap();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_MAP]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_MAP]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setMap(new FHIRString(
                     value: (string)$attributes[self::FIELD_MAP],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -525,27 +553,27 @@ class FHIRElementDefinitionMapping extends FHIRElement
             $rootOpened = true;
             $xw->openRootNode('ElementDefinitionMapping', $this->_getSourceXMLNS());
         }
-        if (isset($this->identity) && $this->identity->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_IDENTITY, $this->identity->getValue()?->getFormattedValue());
+        if (isset($this->identity) && $this->identity->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_IDENTITY, $this->identity->getValue()?->_getFormattedValue());
         }
-        if (isset($this->language) && $this->language->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_LANGUAGE, $this->language->getValue()?->getFormattedValue());
+        if (isset($this->language) && $this->language->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_LANGUAGE, $this->language->getValue()?->_getFormattedValue());
         }
-        if (isset($this->map) && $this->map->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_MAP, $this->map->getValue()?->getFormattedValue());
+        if (isset($this->map) && $this->map->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_MAP, $this->map->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->identity) && $this->identity->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->identity) && $this->identity->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_IDENTITY);
             $this->identity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->language) && $this->language->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->language) && $this->language->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_LANGUAGE);
             $this->language->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->map) && $this->map->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->map) && $this->map->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_MAP);
             $this->map->xmlSerialize($xw, $config);
             $xw->endElement();

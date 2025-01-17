@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Encoding;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,8 +26,25 @@ namespace DCarbone\PHPFHIRGenerated\Encoding;
  * 
  */
 
-enum XMLLocationEnum : string
+trait ValueXMLLocationTrait
 {
-    case ATTRIBUTE = 'attribute';
-    case ELEMENT = 'element';
+    private ValueXMLLocationEnum $_valueLoc;
+
+    /**
+     * Set the XML location of this element's value when serializing
+     *
+     * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
+     */
+    public function _setValueXMLLocation(ValueXMLLocationEnum $valueXMLLocation): void
+    {
+        $this->_valueLoc = $valueXMLLocation;
+    }
+
+    /**
+     * @return null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum
+     */
+    public function _getValueXMLLocation(): null|ValueXMLLocationEnum
+    {
+        return $this->_valueLoc ?? null;
+    }
 }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -238,9 +238,11 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
      * Sequence of careteam which serves to order and provide a link.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPositiveInt $sequence
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSequence(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence): self
+    public function setSequence(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $sequence) {
             unset($this->sequence);
@@ -248,6 +250,11 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
         }
         if (!($sequence instanceof FHIRPositiveInt)) {
             $sequence = new FHIRPositiveInt(value: $sequence);
+        }
+        if (null !== $valueXMLLocation) {
+            $sequence->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $sequence->_getValueXMLLocation()) {
+            $sequence->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->sequence = $sequence;
         return $this;
@@ -309,9 +316,11 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
      * rendered to the patient.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $responsible
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setResponsible(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $responsible): self
+    public function setResponsible(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $responsible,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $responsible) {
             unset($this->responsible);
@@ -319,6 +328,11 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
         }
         if (!($responsible instanceof FHIRBoolean)) {
             $responsible = new FHIRBoolean(value: $responsible);
+        }
+        if (null !== $valueXMLLocation) {
+            $responsible->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $responsible->_getValueXMLLocation()) {
+            $responsible->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->responsible = $responsible;
         return $this;
@@ -566,19 +580,26 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SEQUENCE === $childName) {
-                $v = new FHIRPositiveInt(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRPositiveInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSequence(FHIRPositiveInt::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PROVIDER === $childName) {
                 $v = new FHIRReference();
                 $type->setProvider(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_RESPONSIBLE === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setResponsible(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ROLE === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -592,36 +613,36 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SEQUENCE])) {
             $pt = $type->getSequence();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SEQUENCE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SEQUENCE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSequence(new FHIRPositiveInt(
                     value: (string)$attributes[self::FIELD_SEQUENCE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_RESPONSIBLE])) {
             $pt = $type->getResponsible();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_RESPONSIBLE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_RESPONSIBLE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setResponsible(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_RESPONSIBLE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -652,14 +673,14 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ExplanationOfBenefitCareTeam', $this->_getSourceXMLNS());
         }
-        if (isset($this->sequence) && $this->sequence->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SEQUENCE, $this->sequence->getValue()?->getFormattedValue());
+        if (isset($this->sequence) && $this->sequence->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SEQUENCE, $this->sequence->getValue()?->_getFormattedValue());
         }
-        if (isset($this->responsible) && $this->responsible->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_RESPONSIBLE, $this->responsible->getValue()?->getFormattedValue());
+        if (isset($this->responsible) && $this->responsible->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_RESPONSIBLE, $this->responsible->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->sequence) && $this->sequence->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->sequence) && $this->sequence->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SEQUENCE);
             $this->sequence->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -669,7 +690,7 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
             $this->provider->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->responsible) && $this->responsible->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->responsible) && $this->responsible->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_RESPONSIBLE);
             $this->responsible->xmlSerialize($xw, $config);
             $xw->endElement();

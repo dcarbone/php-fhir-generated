@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -412,9 +412,11 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
      * effective.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $effectiveTime
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEffectiveTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveTime): self
+    public function setEffectiveTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveTime,
+                                     null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $effectiveTime) {
             unset($this->effectiveTime);
@@ -422,6 +424,11 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
         }
         if (!($effectiveTime instanceof FHIRDateTime)) {
             $effectiveTime = new FHIRDateTime(value: $effectiveTime);
+        }
+        if (null !== $valueXMLLocation) {
+            $effectiveTime->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $effectiveTime->_getValueXMLLocation()) {
+            $effectiveTime->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->effectiveTime = $effectiveTime;
         return $this;
@@ -511,9 +518,11 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
      * for a discount or surcharge multiplier to be applied to a monetary amount.
      *
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal $factor
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setFactor(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor): self
+    public function setFactor(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $factor) {
             unset($this->factor);
@@ -521,6 +530,11 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
         }
         if (!($factor instanceof FHIRDecimal)) {
             $factor = new FHIRDecimal(value: $factor);
+        }
+        if (null !== $valueXMLLocation) {
+            $factor->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $factor->_getValueXMLLocation()) {
+            $factor->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->factor = $factor;
         return $this;
@@ -558,9 +572,11 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
      * each point.
      *
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal $points
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPoints(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $points): self
+    public function setPoints(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $points,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $points) {
             unset($this->points);
@@ -568,6 +584,11 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
         }
         if (!($points instanceof FHIRDecimal)) {
             $points = new FHIRDecimal(value: $points);
+        }
+        if (null !== $valueXMLLocation) {
+            $points->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $points->_getValueXMLLocation()) {
+            $points->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->points = $points;
         return $this;
@@ -811,8 +832,15 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRIdPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -826,7 +854,7 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
                 $v = new FHIRIdentifier();
                 $type->setIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_EFFECTIVE_TIME === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setEffectiveTime(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_QUANTITY === $childName) {
                 $v = new FHIRSimpleQuantity();
@@ -835,10 +863,10 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
                 $v = new FHIRMoney();
                 $type->setUnitPrice(FHIRMoney::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_FACTOR === $childName) {
-                $v = new FHIRDecimal(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDecimal(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setFactor(FHIRDecimal::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_POINTS === $childName) {
-                $v = new FHIRDecimal(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDecimal(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPoints(FHIRDecimal::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NET === $childName) {
                 $v = new FHIRMoney();
@@ -849,48 +877,48 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRIdPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_EFFECTIVE_TIME])) {
             $pt = $type->getEffectiveTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_EFFECTIVE_TIME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_EFFECTIVE_TIME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setEffectiveTime(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_EFFECTIVE_TIME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_FACTOR])) {
             $pt = $type->getFactor();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_FACTOR]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_FACTOR]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setFactor(new FHIRDecimal(
                     value: (string)$attributes[self::FIELD_FACTOR],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_POINTS])) {
             $pt = $type->getPoints();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_POINTS]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_POINTS]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setPoints(new FHIRDecimal(
                     value: (string)$attributes[self::FIELD_POINTS],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -921,14 +949,14 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ContractValuedItem1', $this->_getSourceXMLNS());
         }
-        if (isset($this->effectiveTime) && $this->effectiveTime->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_EFFECTIVE_TIME, $this->effectiveTime->getValue()?->getFormattedValue());
+        if (isset($this->effectiveTime) && $this->effectiveTime->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_EFFECTIVE_TIME, $this->effectiveTime->getValue()?->_getFormattedValue());
         }
-        if (isset($this->factor) && $this->factor->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_FACTOR, $this->factor->getValue()?->getFormattedValue());
+        if (isset($this->factor) && $this->factor->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_FACTOR, $this->factor->getValue()?->_getFormattedValue());
         }
-        if (isset($this->points) && $this->points->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_POINTS, $this->points->getValue()?->getFormattedValue());
+        if (isset($this->points) && $this->points->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_POINTS, $this->points->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->entityCodeableConcept)) {
@@ -946,7 +974,7 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
             $this->identifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->effectiveTime) && $this->effectiveTime->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->effectiveTime) && $this->effectiveTime->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_EFFECTIVE_TIME);
             $this->effectiveTime->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -961,12 +989,12 @@ class FHIRContractValuedItem1 extends FHIRBackboneElement
             $this->unitPrice->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->factor) && $this->factor->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->factor) && $this->factor->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_FACTOR);
             $this->factor->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->points) && $this->points->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->points) && $this->points->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_POINTS);
             $this->points->xmlSerialize($xw, $config);
             $xw->endElement();

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -305,9 +305,11 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
      * data.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url): self
+    public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url,
+                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $url) {
             unset($this->url);
@@ -315,6 +317,11 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
         }
         if (!($url instanceof FHIRUri)) {
             $url = new FHIRUri(value: $url);
+        }
+        if (null !== $valueXMLLocation) {
+            $url->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $url->_getValueXMLLocation()) {
+            $url->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->url = $url;
         return $this;
@@ -344,9 +351,11 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
      * data.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setName(null|string|FHIRStringPrimitive|FHIRString $name): self
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name,
+                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $name) {
             unset($this->name);
@@ -354,6 +363,11 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
         }
         if (!($name instanceof FHIRString)) {
             $name = new FHIRString(value: $name);
+        }
+        if (null !== $valueXMLLocation) {
+            $name->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $name->_getValueXMLLocation()) {
+            $name->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->name = $name;
         return $this;
@@ -383,9 +397,11 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
      * use this id to call for more info about datasets in external repository.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $datasetId
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDatasetId(null|string|FHIRStringPrimitive|FHIRString $datasetId): self
+    public function setDatasetId(null|string|FHIRStringPrimitive|FHIRString $datasetId,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $datasetId) {
             unset($this->datasetId);
@@ -393,6 +409,11 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
         }
         if (!($datasetId instanceof FHIRString)) {
             $datasetId = new FHIRString(value: $datasetId);
+        }
+        if (null !== $valueXMLLocation) {
+            $datasetId->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $datasetId->_getValueXMLLocation()) {
+            $datasetId->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->datasetId = $datasetId;
         return $this;
@@ -422,9 +443,11 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
      * to use this id to call for more info about variantsets in external repository.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $variantsetId
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setVariantsetId(null|string|FHIRStringPrimitive|FHIRString $variantsetId): self
+    public function setVariantsetId(null|string|FHIRStringPrimitive|FHIRString $variantsetId,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $variantsetId) {
             unset($this->variantsetId);
@@ -432,6 +455,11 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
         }
         if (!($variantsetId instanceof FHIRString)) {
             $variantsetId = new FHIRString(value: $variantsetId);
+        }
+        if (null !== $valueXMLLocation) {
+            $variantsetId->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $variantsetId->_getValueXMLLocation()) {
+            $variantsetId->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->variantsetId = $variantsetId;
         return $this;
@@ -459,9 +487,11 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
      * Id of the read in this external repository.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $readsetId
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setReadsetId(null|string|FHIRStringPrimitive|FHIRString $readsetId): self
+    public function setReadsetId(null|string|FHIRStringPrimitive|FHIRString $readsetId,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $readsetId) {
             unset($this->readsetId);
@@ -469,6 +499,11 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
         }
         if (!($readsetId instanceof FHIRString)) {
             $readsetId = new FHIRString(value: $readsetId);
+        }
+        if (null !== $valueXMLLocation) {
+            $readsetId->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $readsetId->_getValueXMLLocation()) {
+            $readsetId->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->readsetId = $readsetId;
         return $this;
@@ -649,28 +684,35 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TYPE === $childName) {
-                $v = new FHIRRepositoryType(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRRepositoryType(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setType(FHIRRepositoryType::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_URL === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setUrl(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NAME === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setName(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DATASET_ID === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDatasetId(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VARIANTSET_ID === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setVariantsetId(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_READSET_ID === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setReadsetId(FHIRString::xmlUnserialize($n, $v, $config));
             }
         }
@@ -678,72 +720,72 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_URL])) {
             $pt = $type->getUrl();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_URL]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_URL]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setUrl(new FHIRUri(
                     value: (string)$attributes[self::FIELD_URL],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_NAME])) {
             $pt = $type->getName();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_NAME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_NAME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setName(new FHIRString(
                     value: (string)$attributes[self::FIELD_NAME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DATASET_ID])) {
             $pt = $type->getDatasetId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DATASET_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DATASET_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDatasetId(new FHIRString(
                     value: (string)$attributes[self::FIELD_DATASET_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_VARIANTSET_ID])) {
             $pt = $type->getVariantsetId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_VARIANTSET_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_VARIANTSET_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setVariantsetId(new FHIRString(
                     value: (string)$attributes[self::FIELD_VARIANTSET_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_READSET_ID])) {
             $pt = $type->getReadsetId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_READSET_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_READSET_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setReadsetId(new FHIRString(
                     value: (string)$attributes[self::FIELD_READSET_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -774,20 +816,20 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('MolecularSequenceRepository', $this->_getSourceXMLNS());
         }
-        if (isset($this->url) && $this->url->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_URL, $this->url->getValue()?->getFormattedValue());
+        if (isset($this->url) && $this->url->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_URL, $this->url->getValue()?->_getFormattedValue());
         }
-        if (isset($this->name) && $this->name->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_NAME, $this->name->getValue()?->getFormattedValue());
+        if (isset($this->name) && $this->name->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_NAME, $this->name->getValue()?->_getFormattedValue());
         }
-        if (isset($this->datasetId) && $this->datasetId->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DATASET_ID, $this->datasetId->getValue()?->getFormattedValue());
+        if (isset($this->datasetId) && $this->datasetId->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DATASET_ID, $this->datasetId->getValue()?->_getFormattedValue());
         }
-        if (isset($this->variantsetId) && $this->variantsetId->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VARIANTSET_ID, $this->variantsetId->getValue()?->getFormattedValue());
+        if (isset($this->variantsetId) && $this->variantsetId->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VARIANTSET_ID, $this->variantsetId->getValue()?->_getFormattedValue());
         }
-        if (isset($this->readsetId) && $this->readsetId->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_READSET_ID, $this->readsetId->getValue()?->getFormattedValue());
+        if (isset($this->readsetId) && $this->readsetId->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_READSET_ID, $this->readsetId->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -795,27 +837,27 @@ class FHIRMolecularSequenceRepository extends FHIRBackboneElement
             $this->type->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->url) && $this->url->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->url) && $this->url->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_URL);
             $this->url->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->name) && $this->name->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->name) && $this->name->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_NAME);
             $this->name->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->datasetId) && $this->datasetId->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->datasetId) && $this->datasetId->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DATASET_ID);
             $this->datasetId->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->variantsetId) && $this->variantsetId->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->variantsetId) && $this->variantsetId->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_VARIANTSET_ID);
             $this->variantsetId->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->readsetId) && $this->readsetId->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->readsetId) && $this->readsetId->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_READSET_ID);
             $this->readsetId->xmlSerialize($xw, $config);
             $xw->endElement();

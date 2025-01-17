@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -213,9 +213,11 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
      * response.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $message
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMessage(null|string|FHIRCanonicalPrimitive|FHIRCanonical $message): self
+    public function setMessage(null|string|FHIRCanonicalPrimitive|FHIRCanonical $message,
+                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $message) {
             unset($this->message);
@@ -223,6 +225,11 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
         }
         if (!($message instanceof FHIRCanonical)) {
             $message = new FHIRCanonical(value: $message);
+        }
+        if (null !== $valueXMLLocation) {
+            $message->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $message->_getValueXMLLocation()) {
+            $message->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->message = $message;
         return $this;
@@ -260,9 +267,11 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
      * used (as opposed to one of the alternative responses).
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $situation
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSituation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $situation): self
+    public function setSituation(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $situation,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $situation) {
             unset($this->situation);
@@ -270,6 +279,11 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
         }
         if (!($situation instanceof FHIRMarkdown)) {
             $situation = new FHIRMarkdown(value: $situation);
+        }
+        if (null !== $valueXMLLocation) {
+            $situation->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $situation->_getValueXMLLocation()) {
+            $situation->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->situation = $situation;
         return $this;
@@ -402,16 +416,23 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_MESSAGE === $childName) {
-                $v = new FHIRCanonical(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCanonical(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setMessage(FHIRCanonical::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SITUATION === $childName) {
-                $v = new FHIRMarkdown(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRMarkdown(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setSituation(FHIRMarkdown::xmlUnserialize($n, $v, $config));
             }
         }
@@ -419,36 +440,36 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_MESSAGE])) {
             $pt = $type->getMessage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_MESSAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_MESSAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setMessage(new FHIRCanonical(
                     value: (string)$attributes[self::FIELD_MESSAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SITUATION])) {
             $pt = $type->getSituation();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SITUATION]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SITUATION]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setSituation(new FHIRMarkdown(
                     value: (string)$attributes[self::FIELD_SITUATION],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -479,19 +500,19 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('MessageDefinitionAllowedResponse', $this->_getSourceXMLNS());
         }
-        if (isset($this->message) && $this->message->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_MESSAGE, $this->message->getValue()?->getFormattedValue());
+        if (isset($this->message) && $this->message->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_MESSAGE, $this->message->getValue()?->_getFormattedValue());
         }
-        if (isset($this->situation) && $this->situation->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SITUATION, $this->situation->getValue()?->getFormattedValue());
+        if (isset($this->situation) && $this->situation->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SITUATION, $this->situation->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->message) && $this->message->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->message) && $this->message->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_MESSAGE);
             $this->message->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->situation) && $this->situation->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->situation) && $this->situation->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SITUATION);
             $this->situation->xmlSerialize($xw, $config);
             $xw->endElement();

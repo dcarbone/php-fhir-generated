@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -418,9 +418,11 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      * contributedToDeath is not populated, then it is unknown.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $contributedToDeath
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setContributedToDeath(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $contributedToDeath): self
+    public function setContributedToDeath(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $contributedToDeath,
+                                          null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $contributedToDeath) {
             unset($this->contributedToDeath);
@@ -428,6 +430,11 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
         }
         if (!($contributedToDeath instanceof FHIRBoolean)) {
             $contributedToDeath = new FHIRBoolean(value: $contributedToDeath);
+        }
+        if (null !== $valueXMLLocation) {
+            $contributedToDeath->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $contributedToDeath->_getValueXMLLocation()) {
+            $contributedToDeath->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->contributedToDeath = $contributedToDeath;
         return $this;
@@ -573,9 +580,11 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      * date, and also allows for the length of the procedure to be captured.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $performedString
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPerformedString(null|string|FHIRStringPrimitive|FHIRString $performedString): self
+    public function setPerformedString(null|string|FHIRStringPrimitive|FHIRString $performedString,
+                                       null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $performedString) {
             unset($this->performedString);
@@ -583,6 +592,11 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
         }
         if (!($performedString instanceof FHIRString)) {
             $performedString = new FHIRString(value: $performedString);
+        }
+        if (null !== $valueXMLLocation) {
+            $performedString->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $performedString->_getValueXMLLocation()) {
+            $performedString->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->performedString = $performedString;
         return $this;
@@ -622,9 +636,11 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
      * date, and also allows for the length of the procedure to be captured.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $performedDateTime
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPerformedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $performedDateTime): self
+    public function setPerformedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $performedDateTime,
+                                         null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $performedDateTime) {
             unset($this->performedDateTime);
@@ -632,6 +648,11 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
         }
         if (!($performedDateTime instanceof FHIRDateTime)) {
             $performedDateTime = new FHIRDateTime(value: $performedDateTime);
+        }
+        if (null !== $valueXMLLocation) {
+            $performedDateTime->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $performedDateTime->_getValueXMLLocation()) {
+            $performedDateTime->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->performedDateTime = $performedDateTime;
         return $this;
@@ -911,8 +932,15 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -923,7 +951,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->setOutcome(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CONTRIBUTED_TO_DEATH === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setContributedToDeath(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PERFORMED_AGE === $childName) {
                 $v = new FHIRAge();
@@ -935,10 +963,10 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
                 $v = new FHIRPeriod();
                 $type->setPerformedPeriod(FHIRPeriod::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PERFORMED_STRING === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPerformedString(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PERFORMED_DATE_TIME === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPerformedDateTime(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NOTE === $childName) {
                 $v = new FHIRAnnotation();
@@ -949,48 +977,48 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_CONTRIBUTED_TO_DEATH])) {
             $pt = $type->getContributedToDeath();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_CONTRIBUTED_TO_DEATH]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_CONTRIBUTED_TO_DEATH]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setContributedToDeath(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_CONTRIBUTED_TO_DEATH],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PERFORMED_STRING])) {
             $pt = $type->getPerformedString();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PERFORMED_STRING]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PERFORMED_STRING]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setPerformedString(new FHIRString(
                     value: (string)$attributes[self::FIELD_PERFORMED_STRING],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PERFORMED_DATE_TIME])) {
             $pt = $type->getPerformedDateTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PERFORMED_DATE_TIME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PERFORMED_DATE_TIME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setPerformedDateTime(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_PERFORMED_DATE_TIME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1021,14 +1049,14 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('FamilyMemberHistoryProcedure', $this->_getSourceXMLNS());
         }
-        if (isset($this->contributedToDeath) && $this->contributedToDeath->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_CONTRIBUTED_TO_DEATH, $this->contributedToDeath->getValue()?->getFormattedValue());
+        if (isset($this->contributedToDeath) && $this->contributedToDeath->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_CONTRIBUTED_TO_DEATH, $this->contributedToDeath->getValue()?->_getFormattedValue());
         }
-        if (isset($this->performedString) && $this->performedString->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PERFORMED_STRING, $this->performedString->getValue()?->getFormattedValue());
+        if (isset($this->performedString) && $this->performedString->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PERFORMED_STRING, $this->performedString->getValue()?->_getFormattedValue());
         }
-        if (isset($this->performedDateTime) && $this->performedDateTime->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PERFORMED_DATE_TIME, $this->performedDateTime->getValue()?->getFormattedValue());
+        if (isset($this->performedDateTime) && $this->performedDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PERFORMED_DATE_TIME, $this->performedDateTime->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->code)) {
@@ -1041,7 +1069,7 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
             $this->outcome->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->contributedToDeath) && $this->contributedToDeath->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->contributedToDeath) && $this->contributedToDeath->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_CONTRIBUTED_TO_DEATH);
             $this->contributedToDeath->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1061,12 +1089,12 @@ class FHIRFamilyMemberHistoryProcedure extends FHIRBackboneElement
             $this->performedPeriod->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->performedString) && $this->performedString->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->performedString) && $this->performedString->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PERFORMED_STRING);
             $this->performedString->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->performedDateTime) && $this->performedDateTime->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->performedDateTime) && $this->performedDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PERFORMED_DATE_TIME);
             $this->performedDateTime->xmlSerialize($xw, $config);
             $xw->endElement();

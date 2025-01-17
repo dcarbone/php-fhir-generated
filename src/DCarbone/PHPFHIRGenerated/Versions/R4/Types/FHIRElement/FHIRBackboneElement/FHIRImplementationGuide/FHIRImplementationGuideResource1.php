@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -259,9 +259,11 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      * profile.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $exampleBoolean
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExampleBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exampleBoolean): self
+    public function setExampleBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exampleBoolean,
+                                      null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $exampleBoolean) {
             unset($this->exampleBoolean);
@@ -269,6 +271,11 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
         }
         if (!($exampleBoolean instanceof FHIRBoolean)) {
             $exampleBoolean = new FHIRBoolean(value: $exampleBoolean);
+        }
+        if (null !== $valueXMLLocation) {
+            $exampleBoolean->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $exampleBoolean->_getValueXMLLocation()) {
+            $exampleBoolean->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->exampleBoolean = $exampleBoolean;
         return $this;
@@ -302,9 +309,11 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      * profile.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical $exampleCanonical
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExampleCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $exampleCanonical): self
+    public function setExampleCanonical(null|string|FHIRCanonicalPrimitive|FHIRCanonical $exampleCanonical,
+                                        null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $exampleCanonical) {
             unset($this->exampleCanonical);
@@ -312,6 +321,11 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
         }
         if (!($exampleCanonical instanceof FHIRCanonical)) {
             $exampleCanonical = new FHIRCanonical(value: $exampleCanonical);
+        }
+        if (null !== $valueXMLLocation) {
+            $exampleCanonical->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $exampleCanonical->_getValueXMLLocation()) {
+            $exampleCanonical->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->exampleCanonical = $exampleCanonical;
         return $this;
@@ -339,9 +353,11 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      * The relative path for primary page for this resource within the IG.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUrl $relativePath
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRelativePath(null|string|FHIRUrlPrimitive|FHIRUrl $relativePath): self
+    public function setRelativePath(null|string|FHIRUrlPrimitive|FHIRUrl $relativePath,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $relativePath) {
             unset($this->relativePath);
@@ -349,6 +365,11 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
         }
         if (!($relativePath instanceof FHIRUrl)) {
             $relativePath = new FHIRUrl(value: $relativePath);
+        }
+        if (null !== $valueXMLLocation) {
+            $relativePath->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $relativePath->_getValueXMLLocation()) {
+            $relativePath->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->relativePath = $relativePath;
         return $this;
@@ -505,8 +526,15 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -514,13 +542,13 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
                 $v = new FHIRReference();
                 $type->setReference(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_EXAMPLE_BOOLEAN === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setExampleBoolean(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_EXAMPLE_CANONICAL === $childName) {
-                $v = new FHIRCanonical(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCanonical(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setExampleCanonical(FHIRCanonical::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_RELATIVE_PATH === $childName) {
-                $v = new FHIRUrl(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUrl(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setRelativePath(FHIRUrl::xmlUnserialize($n, $v, $config));
             }
         }
@@ -528,48 +556,48 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_EXAMPLE_BOOLEAN])) {
             $pt = $type->getExampleBoolean();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_EXAMPLE_BOOLEAN]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_EXAMPLE_BOOLEAN]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setExampleBoolean(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_EXAMPLE_BOOLEAN],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_EXAMPLE_CANONICAL])) {
             $pt = $type->getExampleCanonical();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_EXAMPLE_CANONICAL]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_EXAMPLE_CANONICAL]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setExampleCanonical(new FHIRCanonical(
                     value: (string)$attributes[self::FIELD_EXAMPLE_CANONICAL],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_RELATIVE_PATH])) {
             $pt = $type->getRelativePath();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_RELATIVE_PATH]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_RELATIVE_PATH]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setRelativePath(new FHIRUrl(
                     value: (string)$attributes[self::FIELD_RELATIVE_PATH],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -600,14 +628,14 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ImplementationGuideResource1', $this->_getSourceXMLNS());
         }
-        if (isset($this->exampleBoolean) && $this->exampleBoolean->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_EXAMPLE_BOOLEAN, $this->exampleBoolean->getValue()?->getFormattedValue());
+        if (isset($this->exampleBoolean) && $this->exampleBoolean->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_EXAMPLE_BOOLEAN, $this->exampleBoolean->getValue()?->_getFormattedValue());
         }
-        if (isset($this->exampleCanonical) && $this->exampleCanonical->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_EXAMPLE_CANONICAL, $this->exampleCanonical->getValue()?->getFormattedValue());
+        if (isset($this->exampleCanonical) && $this->exampleCanonical->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_EXAMPLE_CANONICAL, $this->exampleCanonical->getValue()?->_getFormattedValue());
         }
-        if (isset($this->relativePath) && $this->relativePath->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_RELATIVE_PATH, $this->relativePath->getValue()?->getFormattedValue());
+        if (isset($this->relativePath) && $this->relativePath->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_RELATIVE_PATH, $this->relativePath->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->reference)) {
@@ -615,17 +643,17 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
             $this->reference->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->exampleBoolean) && $this->exampleBoolean->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->exampleBoolean) && $this->exampleBoolean->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_EXAMPLE_BOOLEAN);
             $this->exampleBoolean->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->exampleCanonical) && $this->exampleCanonical->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->exampleCanonical) && $this->exampleCanonical->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_EXAMPLE_CANONICAL);
             $this->exampleCanonical->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->relativePath) && $this->relativePath->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->relativePath) && $this->relativePath->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_RELATIVE_PATH);
             $this->relativePath->xmlSerialize($xw, $config);
             $xw->endElement();

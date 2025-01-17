@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -724,9 +724,11 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * The date at which the given status has become applicable.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $statusDate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate): self
+    public function setStatusDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $statusDate,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $statusDate) {
             unset($this->statusDate);
@@ -734,6 +736,11 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
         }
         if (!($statusDate instanceof FHIRDateTime)) {
             $statusDate = new FHIRDateTime(value: $statusDate);
+        }
+        if (null !== $valueXMLLocation) {
+            $statusDate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $statusDate->_getValueXMLLocation()) {
+            $statusDate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->statusDate = $statusDate;
         return $this;
@@ -769,9 +776,11 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * product is anticipated to be restored.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $restoreDate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRestoreDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $restoreDate): self
+    public function setRestoreDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $restoreDate,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $restoreDate) {
             unset($this->restoreDate);
@@ -779,6 +788,11 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
         }
         if (!($restoreDate instanceof FHIRDateTime)) {
             $restoreDate = new FHIRDateTime(value: $restoreDate);
+        }
+        if (null !== $valueXMLLocation) {
+            $restoreDate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $restoreDate->_getValueXMLLocation()) {
+            $restoreDate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->restoreDate = $restoreDate;
         return $this;
@@ -888,9 +902,11 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * Agency.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $dateOfFirstAuthorization
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDateOfFirstAuthorization(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateOfFirstAuthorization): self
+    public function setDateOfFirstAuthorization(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateOfFirstAuthorization,
+                                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $dateOfFirstAuthorization) {
             unset($this->dateOfFirstAuthorization);
@@ -898,6 +914,11 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
         }
         if (!($dateOfFirstAuthorization instanceof FHIRDateTime)) {
             $dateOfFirstAuthorization = new FHIRDateTime(value: $dateOfFirstAuthorization);
+        }
+        if (null !== $valueXMLLocation) {
+            $dateOfFirstAuthorization->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $dateOfFirstAuthorization->_getValueXMLLocation()) {
+            $dateOfFirstAuthorization->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->dateOfFirstAuthorization = $dateOfFirstAuthorization;
         return $this;
@@ -933,9 +954,11 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * any country in the World.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $internationalBirthDate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setInternationalBirthDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $internationalBirthDate): self
+    public function setInternationalBirthDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $internationalBirthDate,
+                                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $internationalBirthDate) {
             unset($this->internationalBirthDate);
@@ -943,6 +966,11 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
         }
         if (!($internationalBirthDate instanceof FHIRDateTime)) {
             $internationalBirthDate = new FHIRDateTime(value: $internationalBirthDate);
+        }
+        if (null !== $valueXMLLocation) {
+            $internationalBirthDate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $internationalBirthDate->_getValueXMLLocation()) {
+            $internationalBirthDate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->internationalBirthDate = $internationalBirthDate;
         return $this;
@@ -1483,16 +1511,16 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
         foreach ($element->children() as $n) {
             $childName = $n->getName();
             if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_META === $childName) {
                 $v = new FHIRMeta();
                 $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -1525,10 +1553,10 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
                 $v = new FHIRCodeableConcept();
                 $type->setStatus(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STATUS_DATE === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStatusDate(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_RESTORE_DATE === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setRestoreDate(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VALIDITY_PERIOD === $childName) {
                 $v = new FHIRPeriod();
@@ -1537,10 +1565,10 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
                 $v = new FHIRPeriod();
                 $type->setDataExclusivityPeriod(FHIRPeriod::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DATE_OF_FIRST_AUTHORIZATION === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDateOfFirstAuthorization(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_INTERNATIONAL_BIRTH_DATE === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setInternationalBirthDate(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LEGAL_BASIS === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -1563,84 +1591,84 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRId(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             $pt = $type->getImplicitRules();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setImplicitRules(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_STATUS_DATE])) {
             $pt = $type->getStatusDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_STATUS_DATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_STATUS_DATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setStatusDate(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_STATUS_DATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_RESTORE_DATE])) {
             $pt = $type->getRestoreDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_RESTORE_DATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_RESTORE_DATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setRestoreDate(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_RESTORE_DATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DATE_OF_FIRST_AUTHORIZATION])) {
             $pt = $type->getDateOfFirstAuthorization();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DATE_OF_FIRST_AUTHORIZATION]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DATE_OF_FIRST_AUTHORIZATION]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDateOfFirstAuthorization(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_DATE_OF_FIRST_AUTHORIZATION],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_INTERNATIONAL_BIRTH_DATE])) {
             $pt = $type->getInternationalBirthDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_INTERNATIONAL_BIRTH_DATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_INTERNATIONAL_BIRTH_DATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setInternationalBirthDate(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_INTERNATIONAL_BIRTH_DATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1671,17 +1699,17 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
             $rootOpened = true;
             $xw->openRootNode('MedicinalProductAuthorization', $this->_getSourceXMLNS());
         }
-        if (isset($this->statusDate) && $this->statusDate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_STATUS_DATE, $this->statusDate->getValue()?->getFormattedValue());
+        if (isset($this->statusDate) && $this->statusDate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_STATUS_DATE, $this->statusDate->getValue()?->_getFormattedValue());
         }
-        if (isset($this->restoreDate) && $this->restoreDate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_RESTORE_DATE, $this->restoreDate->getValue()?->getFormattedValue());
+        if (isset($this->restoreDate) && $this->restoreDate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_RESTORE_DATE, $this->restoreDate->getValue()?->_getFormattedValue());
         }
-        if (isset($this->dateOfFirstAuthorization) && $this->dateOfFirstAuthorization->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DATE_OF_FIRST_AUTHORIZATION, $this->dateOfFirstAuthorization->getValue()?->getFormattedValue());
+        if (isset($this->dateOfFirstAuthorization) && $this->dateOfFirstAuthorization->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DATE_OF_FIRST_AUTHORIZATION, $this->dateOfFirstAuthorization->getValue()?->_getFormattedValue());
         }
-        if (isset($this->internationalBirthDate) && $this->internationalBirthDate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_INTERNATIONAL_BIRTH_DATE, $this->internationalBirthDate->getValue()?->getFormattedValue());
+        if (isset($this->internationalBirthDate) && $this->internationalBirthDate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_INTERNATIONAL_BIRTH_DATE, $this->internationalBirthDate->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1715,12 +1743,12 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
             $this->status->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->statusDate) && $this->statusDate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->statusDate) && $this->statusDate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_STATUS_DATE);
             $this->statusDate->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->restoreDate) && $this->restoreDate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->restoreDate) && $this->restoreDate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_RESTORE_DATE);
             $this->restoreDate->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1735,12 +1763,12 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
             $this->dataExclusivityPeriod->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->dateOfFirstAuthorization) && $this->dateOfFirstAuthorization->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->dateOfFirstAuthorization) && $this->dateOfFirstAuthorization->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DATE_OF_FIRST_AUTHORIZATION);
             $this->dateOfFirstAuthorization->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->internationalBirthDate) && $this->internationalBirthDate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->internationalBirthDate) && $this->internationalBirthDate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_INTERNATIONAL_BIRTH_DATE);
             $this->internationalBirthDate->xmlSerialize($xw, $config);
             $xw->endElement();

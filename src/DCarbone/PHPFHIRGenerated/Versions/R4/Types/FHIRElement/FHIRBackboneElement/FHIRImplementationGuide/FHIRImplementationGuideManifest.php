@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -241,9 +241,11 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * guide.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUrl $rendering
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRendering(null|string|FHIRUrlPrimitive|FHIRUrl $rendering): self
+    public function setRendering(null|string|FHIRUrlPrimitive|FHIRUrl $rendering,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $rendering) {
             unset($this->rendering);
@@ -251,6 +253,11 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
         }
         if (!($rendering instanceof FHIRUrl)) {
             $rendering = new FHIRUrl(value: $rendering);
+        }
+        if (null !== $valueXMLLocation) {
+            $rendering->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $rendering->_getValueXMLLocation()) {
+            $rendering->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->rendering = $rendering;
         return $this;
@@ -702,13 +709,20 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_RENDERING === $childName) {
-                $v = new FHIRUrl(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUrl(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setRendering(FHIRUrl::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_RESOURCE === $childName) {
                 $v = new FHIRImplementationGuideResource1();
@@ -717,10 +731,10 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
                 $v = new FHIRImplementationGuidePage1();
                 $type->addPage(FHIRImplementationGuidePage1::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMAGE === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addImage(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_OTHER === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addOther(FHIRString::xmlUnserialize($n, $v, $config));
             }
         }
@@ -728,35 +742,35 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_RENDERING])) {
             $pt = $type->getRendering();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_RENDERING]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_RENDERING]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setRendering(new FHIRUrl(
                     value: (string)$attributes[self::FIELD_RENDERING],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMAGE])) {
             $v = new FHIRString(value: (string)$attributes[self::FIELD_IMAGE],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addImage($v);
         }
         if (isset($attributes[self::FIELD_OTHER])) {
             $v = new FHIRString(value: (string)$attributes[self::FIELD_OTHER],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addOther($v);
         }
         return $type;
@@ -786,27 +800,27 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ImplementationGuideManifest', $this->_getSourceXMLNS());
         }
-        if (isset($this->rendering) && $this->rendering->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_RENDERING, $this->rendering->getValue()?->getFormattedValue());
+        if (isset($this->rendering) && $this->rendering->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_RENDERING, $this->rendering->getValue()?->_getFormattedValue());
         }
         if (isset($this->image)) {
            foreach($this->image as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_IMAGE, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_IMAGE, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
         }
         if (isset($this->other)) {
            foreach($this->other as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_OTHER, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_OTHER, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->rendering) && $this->rendering->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->rendering) && $this->rendering->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_RENDERING);
             $this->rendering->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -827,7 +841,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
         }
         if (isset($this->image)) {
             foreach($this->image as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_IMAGE);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();
@@ -836,7 +850,7 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
         }
         if (isset($this->other)) {
             foreach($this->other as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_OTHER);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();

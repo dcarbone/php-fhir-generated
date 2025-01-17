@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,8 +84,8 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement;
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationTrait;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationTrait;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -101,7 +101,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
  */
 class FHIRParticipantResourceTypes extends FHIRElement
 {
-    use XMLLocationTrait;
+    use ValueXMLLocationTrait;
 
 
     // name of FHIR type this class describes
@@ -121,21 +121,20 @@ class FHIRParticipantResourceTypes extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRParticipantResourceTypesEnum $value
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @param null|string[] $fhirComments
-    * @param \DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum $xmlLocation
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|string|FHIRParticipantResourceTypesEnum $value = null,
-                                null|iterable $fhirComments = null,
-                                XMLLocationEnum $xmlLocation = XMLLocationEnum::ELEMENT)
+                                null|ValueXMLLocationEnum $valueXMLLocation = null,
+                                null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
                             id: $id,
                             fhirComments: $fhirComments);
-        $this->_setXMLLocation($xmlLocation);
         if (null !== $value) {
-            $this->setValue($value);
+            $this->setValue($value, valueXMLLocation: $valueXMLLocation);
         }
     }
 
@@ -157,9 +156,11 @@ class FHIRParticipantResourceTypes extends FHIRElement
 
     /**
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRParticipantResourceTypesEnum $value
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValue(null|string|FHIRParticipantResourceTypesEnum $value): self
+    public function setValue(null|string|FHIRParticipantResourceTypesEnum $value,
+                             null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $value) {
             unset($this->value);
@@ -167,6 +168,11 @@ class FHIRParticipantResourceTypes extends FHIRElement
         }
         if (!($value instanceof FHIRParticipantResourceTypesEnum)) {
             $value = new FHIRParticipantResourceTypesEnum(value: $value);
+        }
+        if (null !== $valueXMLLocation) {
+            $value->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $value->_getValueXMLLocation()) {
+            $value->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
         }
         $this->value = $value;
         return $this;
@@ -270,35 +276,49 @@ class FHIRParticipantResourceTypes extends FHIRElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_VALUE === $childName) {
-                $v = new FHIRParticipantResourceTypesEnum(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setValue(FHIRParticipantResourceTypesEnum::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRParticipantResourceTypesEnum::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setValue($value, ValueXMLLocationEnum::ELEMENT);
             }
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_VALUE])) {
             $pt = $type->getValue();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_VALUE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_VALUE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setValue(new FHIRParticipantResourceTypesEnum(
                     value: (string)$attributes[self::FIELD_VALUE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -329,13 +349,13 @@ class FHIRParticipantResourceTypes extends FHIRElement
             $rootOpened = true;
             $xw->openRootNode('ParticipantResourceTypes', $this->_getSourceXMLNS());
         }
-        if (isset($this->value) && $this->value->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VALUE, $this->value->getFormattedValue());
+        if (isset($this->value) && $this->value->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VALUE, $this->value->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->value) && $this->value->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->value) && $this->value->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_VALUE);
-            $this->value->xmlSerialize($xw, $config);
+            $xw->writeAttribute($this->value::FIELD_VALUE, $this->value->_getFormattedValue());
             $xw->endElement();
         }
         if (isset($rootOpened) && $rootOpened) {
@@ -377,11 +397,18 @@ class FHIRParticipantResourceTypes extends FHIRElement
             $json = (array)$json;
         }
         parent::jsonUnserialize($json, $type, $config);
+        if (!is_array($json)) {
+            $type->setValue($json);
+            return $type;
+        }
+        if ([] === $json) {
+            return $type;
+        }
         if (isset($json[self::FIELD_VALUE]) || array_key_exists(self::FIELD_VALUE, $json)) {
             if ($json[self::FIELD_VALUE] instanceof FHIRParticipantResourceTypesEnum) {
                 $type->setValue($json[self::FIELD_VALUE]);
             } else {
-                $type->setValue(new FHIRParticipantResourceTypesEnum($json[self::FIELD_VALUE]));
+                $type->setValue(FHIRParticipantResourceTypesEnum::jsonUnserialize($json[self::FIELD_VALUE]));
             }
         }
         return $type;

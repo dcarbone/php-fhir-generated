@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -512,9 +512,11 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      * Whether the entry represents an orderable item.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $orderable
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOrderable(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $orderable): self
+    public function setOrderable(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $orderable,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $orderable) {
             unset($this->orderable);
@@ -522,6 +524,11 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
         }
         if (!($orderable instanceof FHIRBoolean)) {
             $orderable = new FHIRBoolean(value: $orderable);
+        }
+        if (null !== $valueXMLLocation) {
+            $orderable->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $orderable->_getValueXMLLocation()) {
+            $orderable->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->orderable = $orderable;
         return $this;
@@ -781,9 +788,11 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      * The date until which this catalog entry is expected to be active.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $validTo
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValidTo(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $validTo): self
+    public function setValidTo(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $validTo,
+                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $validTo) {
             unset($this->validTo);
@@ -791,6 +800,11 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
         }
         if (!($validTo instanceof FHIRDateTime)) {
             $validTo = new FHIRDateTime(value: $validTo);
+        }
+        if (null !== $valueXMLLocation) {
+            $validTo->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $validTo->_getValueXMLLocation()) {
+            $validTo->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->validTo = $validTo;
         return $this;
@@ -826,9 +840,11 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
      * can be used to see when an item was last updated.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $lastUpdated
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLastUpdated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $lastUpdated): self
+    public function setLastUpdated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $lastUpdated,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $lastUpdated) {
             unset($this->lastUpdated);
@@ -836,6 +852,11 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
         }
         if (!($lastUpdated instanceof FHIRDateTime)) {
             $lastUpdated = new FHIRDateTime(value: $lastUpdated);
+        }
+        if (null !== $valueXMLLocation) {
+            $lastUpdated->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $lastUpdated->_getValueXMLLocation()) {
+            $lastUpdated->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->lastUpdated = $lastUpdated;
         return $this;
@@ -1345,16 +1366,16 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
         foreach ($element->children() as $n) {
             $childName = $n->getName();
             if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_META === $childName) {
                 $v = new FHIRMeta();
                 $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -1378,7 +1399,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
                 $v = new FHIRCodeableConcept();
                 $type->setType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ORDERABLE === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setOrderable(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_REFERENCED_ITEM === $childName) {
                 $v = new FHIRReference();
@@ -1390,16 +1411,16 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
                 $v = new FHIRCodeableConcept();
                 $type->addClassification(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STATUS === $childName) {
-                $v = new FHIRPublicationStatus(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRPublicationStatus(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStatus(FHIRPublicationStatus::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VALIDITY_PERIOD === $childName) {
                 $v = new FHIRPeriod();
                 $type->setValidityPeriod(FHIRPeriod::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VALID_TO === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setValidTo(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LAST_UPDATED === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLastUpdated(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ADDITIONAL_CHARACTERISTIC === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -1416,72 +1437,72 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRId(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             $pt = $type->getImplicitRules();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setImplicitRules(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_ORDERABLE])) {
             $pt = $type->getOrderable();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ORDERABLE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ORDERABLE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setOrderable(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_ORDERABLE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_VALID_TO])) {
             $pt = $type->getValidTo();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_VALID_TO]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_VALID_TO]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setValidTo(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_VALID_TO],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LAST_UPDATED])) {
             $pt = $type->getLastUpdated();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LAST_UPDATED]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LAST_UPDATED]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLastUpdated(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_LAST_UPDATED],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1512,14 +1533,14 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
             $rootOpened = true;
             $xw->openRootNode('CatalogEntry', $this->_getSourceXMLNS());
         }
-        if (isset($this->orderable) && $this->orderable->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ORDERABLE, $this->orderable->getValue()?->getFormattedValue());
+        if (isset($this->orderable) && $this->orderable->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_ORDERABLE, $this->orderable->getValue()?->_getFormattedValue());
         }
-        if (isset($this->validTo) && $this->validTo->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VALID_TO, $this->validTo->getValue()?->getFormattedValue());
+        if (isset($this->validTo) && $this->validTo->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VALID_TO, $this->validTo->getValue()?->_getFormattedValue());
         }
-        if (isset($this->lastUpdated) && $this->lastUpdated->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_LAST_UPDATED, $this->lastUpdated->getValue()?->getFormattedValue());
+        if (isset($this->lastUpdated) && $this->lastUpdated->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_LAST_UPDATED, $this->lastUpdated->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1534,7 +1555,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
             $this->type->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->orderable) && $this->orderable->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->orderable) && $this->orderable->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_ORDERABLE);
             $this->orderable->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1568,12 +1589,12 @@ class FHIRCatalogEntry extends FHIRDomainResource implements VersionContainedTyp
             $this->validityPeriod->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->validTo) && $this->validTo->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->validTo) && $this->validTo->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_VALID_TO);
             $this->validTo->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->lastUpdated) && $this->lastUpdated->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->lastUpdated) && $this->lastUpdated->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_LAST_UPDATED);
             $this->lastUpdated->xmlSerialize($xw, $config);
             $xw->endElement();

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -498,9 +498,11 @@ class FHIREligibilityResponse extends FHIRDomainResource implements VersionConta
      * The date when the enclosed suite of services were performed or completed.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $created
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created): self
+    public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created,
+                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $created) {
             unset($this->created);
@@ -508,6 +510,11 @@ class FHIREligibilityResponse extends FHIRDomainResource implements VersionConta
         }
         if (!($created instanceof FHIRDateTime)) {
             $created = new FHIRDateTime(value: $created);
+        }
+        if (null !== $valueXMLLocation) {
+            $created->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $created->_getValueXMLLocation()) {
+            $created->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->created = $created;
         return $this;
@@ -673,9 +680,11 @@ class FHIREligibilityResponse extends FHIRDomainResource implements VersionConta
      * A description of the status of the adjudication.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $disposition
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDisposition(null|string|FHIRStringPrimitive|FHIRString $disposition): self
+    public function setDisposition(null|string|FHIRStringPrimitive|FHIRString $disposition,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $disposition) {
             unset($this->disposition);
@@ -683,6 +692,11 @@ class FHIREligibilityResponse extends FHIRDomainResource implements VersionConta
         }
         if (!($disposition instanceof FHIRString)) {
             $disposition = new FHIRString(value: $disposition);
+        }
+        if (null !== $valueXMLLocation) {
+            $disposition->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $disposition->_getValueXMLLocation()) {
+            $disposition->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->disposition = $disposition;
         return $this;
@@ -744,9 +758,11 @@ class FHIREligibilityResponse extends FHIRDomainResource implements VersionConta
      * date(s) specified or for the whole duration of the service dates.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $inforce
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setInforce(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $inforce): self
+    public function setInforce(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $inforce,
+                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $inforce) {
             unset($this->inforce);
@@ -754,6 +770,11 @@ class FHIREligibilityResponse extends FHIRDomainResource implements VersionConta
         }
         if (!($inforce instanceof FHIRBoolean)) {
             $inforce = new FHIRBoolean(value: $inforce);
+        }
+        if (null !== $valueXMLLocation) {
+            $inforce->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $inforce->_getValueXMLLocation()) {
+            $inforce->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->inforce = $inforce;
         return $this;
@@ -1223,16 +1244,16 @@ class FHIREligibilityResponse extends FHIRDomainResource implements VersionConta
         foreach ($element->children() as $n) {
             $childName = $n->getName();
             if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_META === $childName) {
                 $v = new FHIRMeta();
                 $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -1253,10 +1274,10 @@ class FHIREligibilityResponse extends FHIRDomainResource implements VersionConta
                 $v = new FHIRIdentifier();
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STATUS === $childName) {
-                $v = new FHIRFinancialResourceStatusCodes(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRFinancialResourceStatusCodes(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStatus(FHIRFinancialResourceStatusCodes::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CREATED === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setCreated(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_REQUEST_PROVIDER === $childName) {
                 $v = new FHIRReference();
@@ -1271,13 +1292,13 @@ class FHIREligibilityResponse extends FHIRDomainResource implements VersionConta
                 $v = new FHIRCodeableConcept();
                 $type->setOutcome(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DISPOSITION === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDisposition(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_INSURER === $childName) {
                 $v = new FHIRReference();
                 $type->setInsurer(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_INFORCE === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setInforce(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_INSURANCE === $childName) {
                 $v = new FHIREligibilityResponseInsurance();
@@ -1294,72 +1315,72 @@ class FHIREligibilityResponse extends FHIRDomainResource implements VersionConta
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRId(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             $pt = $type->getImplicitRules();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setImplicitRules(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_CREATED])) {
             $pt = $type->getCreated();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_CREATED]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_CREATED]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setCreated(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_CREATED],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DISPOSITION])) {
             $pt = $type->getDisposition();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DISPOSITION]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DISPOSITION]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDisposition(new FHIRString(
                     value: (string)$attributes[self::FIELD_DISPOSITION],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_INFORCE])) {
             $pt = $type->getInforce();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_INFORCE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_INFORCE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setInforce(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_INFORCE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1390,14 +1411,14 @@ class FHIREligibilityResponse extends FHIRDomainResource implements VersionConta
             $rootOpened = true;
             $xw->openRootNode('EligibilityResponse', $this->_getSourceXMLNS());
         }
-        if (isset($this->created) && $this->created->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_CREATED, $this->created->getValue()?->getFormattedValue());
+        if (isset($this->created) && $this->created->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_CREATED, $this->created->getValue()?->_getFormattedValue());
         }
-        if (isset($this->disposition) && $this->disposition->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DISPOSITION, $this->disposition->getValue()?->getFormattedValue());
+        if (isset($this->disposition) && $this->disposition->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DISPOSITION, $this->disposition->getValue()?->_getFormattedValue());
         }
-        if (isset($this->inforce) && $this->inforce->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_INFORCE, $this->inforce->getValue()?->getFormattedValue());
+        if (isset($this->inforce) && $this->inforce->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_INFORCE, $this->inforce->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -1412,7 +1433,7 @@ class FHIREligibilityResponse extends FHIRDomainResource implements VersionConta
             $this->status->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->created) && $this->created->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->created) && $this->created->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_CREATED);
             $this->created->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1437,7 +1458,7 @@ class FHIREligibilityResponse extends FHIRDomainResource implements VersionConta
             $this->outcome->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->disposition) && $this->disposition->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->disposition) && $this->disposition->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DISPOSITION);
             $this->disposition->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1447,7 +1468,7 @@ class FHIREligibilityResponse extends FHIRDomainResource implements VersionConta
             $this->insurer->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->inforce) && $this->inforce->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->inforce) && $this->inforce->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_INFORCE);
             $this->inforce->xmlSerialize($xw, $config);
             $xw->endElement();

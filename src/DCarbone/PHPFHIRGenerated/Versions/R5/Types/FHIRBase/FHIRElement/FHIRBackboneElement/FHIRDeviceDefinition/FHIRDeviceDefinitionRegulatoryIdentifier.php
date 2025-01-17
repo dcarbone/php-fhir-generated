@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -272,9 +272,11 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
      * The identifier itself.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $deviceIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDeviceIdentifier(null|string|FHIRStringPrimitive|FHIRString $deviceIdentifier): self
+    public function setDeviceIdentifier(null|string|FHIRStringPrimitive|FHIRString $deviceIdentifier,
+                                        null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $deviceIdentifier) {
             unset($this->deviceIdentifier);
@@ -282,6 +284,11 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
         }
         if (!($deviceIdentifier instanceof FHIRString)) {
             $deviceIdentifier = new FHIRString(value: $deviceIdentifier);
+        }
+        if (null !== $valueXMLLocation) {
+            $deviceIdentifier->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $deviceIdentifier->_getValueXMLLocation()) {
+            $deviceIdentifier->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->deviceIdentifier = $deviceIdentifier;
         return $this;
@@ -309,9 +316,11 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
      * The organization that issued this identifier.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $issuer
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIssuer(null|string|FHIRUriPrimitive|FHIRUri $issuer): self
+    public function setIssuer(null|string|FHIRUriPrimitive|FHIRUri $issuer,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $issuer) {
             unset($this->issuer);
@@ -319,6 +328,11 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
         }
         if (!($issuer instanceof FHIRUri)) {
             $issuer = new FHIRUri(value: $issuer);
+        }
+        if (null !== $valueXMLLocation) {
+            $issuer->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $issuer->_getValueXMLLocation()) {
+            $issuer->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->issuer = $issuer;
         return $this;
@@ -346,9 +360,11 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
      * The jurisdiction to which the deviceIdentifier applies.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $jurisdiction
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setJurisdiction(null|string|FHIRUriPrimitive|FHIRUri $jurisdiction): self
+    public function setJurisdiction(null|string|FHIRUriPrimitive|FHIRUri $jurisdiction,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $jurisdiction) {
             unset($this->jurisdiction);
@@ -356,6 +372,11 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
         }
         if (!($jurisdiction instanceof FHIRUri)) {
             $jurisdiction = new FHIRUri(value: $jurisdiction);
+        }
+        if (null !== $valueXMLLocation) {
+            $jurisdiction->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $jurisdiction->_getValueXMLLocation()) {
+            $jurisdiction->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->jurisdiction = $jurisdiction;
         return $this;
@@ -527,22 +548,29 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TYPE === $childName) {
-                $v = new FHIRDeviceDefinitionRegulatoryIdentifierType(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDeviceDefinitionRegulatoryIdentifierType(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setType(FHIRDeviceDefinitionRegulatoryIdentifierType::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DEVICE_IDENTIFIER === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDeviceIdentifier(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ISSUER === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setIssuer(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_JURISDICTION === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setJurisdiction(FHIRUri::xmlUnserialize($n, $v, $config));
             }
         }
@@ -550,48 +578,48 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DEVICE_IDENTIFIER])) {
             $pt = $type->getDeviceIdentifier();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DEVICE_IDENTIFIER]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DEVICE_IDENTIFIER]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDeviceIdentifier(new FHIRString(
                     value: (string)$attributes[self::FIELD_DEVICE_IDENTIFIER],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_ISSUER])) {
             $pt = $type->getIssuer();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ISSUER]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ISSUER]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setIssuer(new FHIRUri(
                     value: (string)$attributes[self::FIELD_ISSUER],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_JURISDICTION])) {
             $pt = $type->getJurisdiction();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_JURISDICTION]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_JURISDICTION]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setJurisdiction(new FHIRUri(
                     value: (string)$attributes[self::FIELD_JURISDICTION],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -622,14 +650,14 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('DeviceDefinitionRegulatoryIdentifier', $this->_getSourceXMLNS());
         }
-        if (isset($this->deviceIdentifier) && $this->deviceIdentifier->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DEVICE_IDENTIFIER, $this->deviceIdentifier->getValue()?->getFormattedValue());
+        if (isset($this->deviceIdentifier) && $this->deviceIdentifier->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DEVICE_IDENTIFIER, $this->deviceIdentifier->getValue()?->_getFormattedValue());
         }
-        if (isset($this->issuer) && $this->issuer->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ISSUER, $this->issuer->getValue()?->getFormattedValue());
+        if (isset($this->issuer) && $this->issuer->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_ISSUER, $this->issuer->getValue()?->_getFormattedValue());
         }
-        if (isset($this->jurisdiction) && $this->jurisdiction->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_JURISDICTION, $this->jurisdiction->getValue()?->getFormattedValue());
+        if (isset($this->jurisdiction) && $this->jurisdiction->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_JURISDICTION, $this->jurisdiction->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->type)) {
@@ -637,17 +665,17 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
             $this->type->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->deviceIdentifier) && $this->deviceIdentifier->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->deviceIdentifier) && $this->deviceIdentifier->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DEVICE_IDENTIFIER);
             $this->deviceIdentifier->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->issuer) && $this->issuer->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->issuer) && $this->issuer->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_ISSUER);
             $this->issuer->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->jurisdiction) && $this->jurisdiction->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->jurisdiction) && $this->jurisdiction->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_JURISDICTION);
             $this->jurisdiction->xmlSerialize($xw, $config);
             $xw->endElement();

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -269,9 +269,11 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      * which is paternal.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $maternalOrganismId
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMaternalOrganismId(null|string|FHIRStringPrimitive|FHIRString $maternalOrganismId): self
+    public function setMaternalOrganismId(null|string|FHIRStringPrimitive|FHIRString $maternalOrganismId,
+                                          null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $maternalOrganismId) {
             unset($this->maternalOrganismId);
@@ -279,6 +281,11 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
         }
         if (!($maternalOrganismId instanceof FHIRString)) {
             $maternalOrganismId = new FHIRString(value: $maternalOrganismId);
+        }
+        if (null !== $valueXMLLocation) {
+            $maternalOrganismId->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $maternalOrganismId->_getValueXMLLocation()) {
+            $maternalOrganismId->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->maternalOrganismId = $maternalOrganismId;
         return $this;
@@ -310,9 +317,11 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      * that it will be known which is maternal and which is paternal.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $maternalOrganismName
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMaternalOrganismName(null|string|FHIRStringPrimitive|FHIRString $maternalOrganismName): self
+    public function setMaternalOrganismName(null|string|FHIRStringPrimitive|FHIRString $maternalOrganismName,
+                                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $maternalOrganismName) {
             unset($this->maternalOrganismName);
@@ -320,6 +329,11 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
         }
         if (!($maternalOrganismName instanceof FHIRString)) {
             $maternalOrganismName = new FHIRString(value: $maternalOrganismName);
+        }
+        if (null !== $valueXMLLocation) {
+            $maternalOrganismName->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $maternalOrganismName->_getValueXMLLocation()) {
+            $maternalOrganismName->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->maternalOrganismName = $maternalOrganismName;
         return $this;
@@ -349,9 +363,11 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      * specified based on a controlled vocabulary.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $paternalOrganismId
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPaternalOrganismId(null|string|FHIRStringPrimitive|FHIRString $paternalOrganismId): self
+    public function setPaternalOrganismId(null|string|FHIRStringPrimitive|FHIRString $paternalOrganismId,
+                                          null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $paternalOrganismId) {
             unset($this->paternalOrganismId);
@@ -359,6 +375,11 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
         }
         if (!($paternalOrganismId instanceof FHIRString)) {
             $paternalOrganismId = new FHIRString(value: $paternalOrganismId);
+        }
+        if (null !== $valueXMLLocation) {
+            $paternalOrganismId->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $paternalOrganismId->_getValueXMLLocation()) {
+            $paternalOrganismId->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->paternalOrganismId = $paternalOrganismId;
         return $this;
@@ -388,9 +409,11 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      * specified.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $paternalOrganismName
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPaternalOrganismName(null|string|FHIRStringPrimitive|FHIRString $paternalOrganismName): self
+    public function setPaternalOrganismName(null|string|FHIRStringPrimitive|FHIRString $paternalOrganismName,
+                                            null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $paternalOrganismName) {
             unset($this->paternalOrganismName);
@@ -398,6 +421,11 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
         }
         if (!($paternalOrganismName instanceof FHIRString)) {
             $paternalOrganismName = new FHIRString(value: $paternalOrganismName);
+        }
+        if (null !== $valueXMLLocation) {
+            $paternalOrganismName->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $paternalOrganismName->_getValueXMLLocation()) {
+            $paternalOrganismName->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->paternalOrganismName = $paternalOrganismName;
         return $this;
@@ -597,22 +625,29 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_MATERNAL_ORGANISM_ID === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setMaternalOrganismId(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_MATERNAL_ORGANISM_NAME === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setMaternalOrganismName(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PATERNAL_ORGANISM_ID === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPaternalOrganismId(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PATERNAL_ORGANISM_NAME === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPaternalOrganismName(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_HYBRID_TYPE === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -623,60 +658,60 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_MATERNAL_ORGANISM_ID])) {
             $pt = $type->getMaternalOrganismId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_MATERNAL_ORGANISM_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_MATERNAL_ORGANISM_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setMaternalOrganismId(new FHIRString(
                     value: (string)$attributes[self::FIELD_MATERNAL_ORGANISM_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_MATERNAL_ORGANISM_NAME])) {
             $pt = $type->getMaternalOrganismName();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_MATERNAL_ORGANISM_NAME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_MATERNAL_ORGANISM_NAME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setMaternalOrganismName(new FHIRString(
                     value: (string)$attributes[self::FIELD_MATERNAL_ORGANISM_NAME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PATERNAL_ORGANISM_ID])) {
             $pt = $type->getPaternalOrganismId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PATERNAL_ORGANISM_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PATERNAL_ORGANISM_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setPaternalOrganismId(new FHIRString(
                     value: (string)$attributes[self::FIELD_PATERNAL_ORGANISM_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PATERNAL_ORGANISM_NAME])) {
             $pt = $type->getPaternalOrganismName();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PATERNAL_ORGANISM_NAME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PATERNAL_ORGANISM_NAME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setPaternalOrganismName(new FHIRString(
                     value: (string)$attributes[self::FIELD_PATERNAL_ORGANISM_NAME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -707,35 +742,35 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('SubstanceSourceMaterialHybrid', $this->_getSourceXMLNS());
         }
-        if (isset($this->maternalOrganismId) && $this->maternalOrganismId->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_MATERNAL_ORGANISM_ID, $this->maternalOrganismId->getValue()?->getFormattedValue());
+        if (isset($this->maternalOrganismId) && $this->maternalOrganismId->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_MATERNAL_ORGANISM_ID, $this->maternalOrganismId->getValue()?->_getFormattedValue());
         }
-        if (isset($this->maternalOrganismName) && $this->maternalOrganismName->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_MATERNAL_ORGANISM_NAME, $this->maternalOrganismName->getValue()?->getFormattedValue());
+        if (isset($this->maternalOrganismName) && $this->maternalOrganismName->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_MATERNAL_ORGANISM_NAME, $this->maternalOrganismName->getValue()?->_getFormattedValue());
         }
-        if (isset($this->paternalOrganismId) && $this->paternalOrganismId->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PATERNAL_ORGANISM_ID, $this->paternalOrganismId->getValue()?->getFormattedValue());
+        if (isset($this->paternalOrganismId) && $this->paternalOrganismId->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PATERNAL_ORGANISM_ID, $this->paternalOrganismId->getValue()?->_getFormattedValue());
         }
-        if (isset($this->paternalOrganismName) && $this->paternalOrganismName->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PATERNAL_ORGANISM_NAME, $this->paternalOrganismName->getValue()?->getFormattedValue());
+        if (isset($this->paternalOrganismName) && $this->paternalOrganismName->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PATERNAL_ORGANISM_NAME, $this->paternalOrganismName->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->maternalOrganismId) && $this->maternalOrganismId->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->maternalOrganismId) && $this->maternalOrganismId->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_MATERNAL_ORGANISM_ID);
             $this->maternalOrganismId->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->maternalOrganismName) && $this->maternalOrganismName->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->maternalOrganismName) && $this->maternalOrganismName->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_MATERNAL_ORGANISM_NAME);
             $this->maternalOrganismName->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->paternalOrganismId) && $this->paternalOrganismId->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->paternalOrganismId) && $this->paternalOrganismId->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PATERNAL_ORGANISM_ID);
             $this->paternalOrganismId->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->paternalOrganismName) && $this->paternalOrganismName->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->paternalOrganismName) && $this->paternalOrganismName->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PATERNAL_ORGANISM_NAME);
             $this->paternalOrganismName->xmlSerialize($xw, $config);
             $xw->endElement();

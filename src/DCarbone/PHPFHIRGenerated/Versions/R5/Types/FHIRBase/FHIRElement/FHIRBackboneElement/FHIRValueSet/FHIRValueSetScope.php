@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -195,9 +195,11 @@ class FHIRValueSetScope extends FHIRBackboneElement
      * Criteria describing which concepts or codes should be included and why.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $inclusionCriteria
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setInclusionCriteria(null|string|FHIRStringPrimitive|FHIRString $inclusionCriteria): self
+    public function setInclusionCriteria(null|string|FHIRStringPrimitive|FHIRString $inclusionCriteria,
+                                         null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $inclusionCriteria) {
             unset($this->inclusionCriteria);
@@ -205,6 +207,11 @@ class FHIRValueSetScope extends FHIRBackboneElement
         }
         if (!($inclusionCriteria instanceof FHIRString)) {
             $inclusionCriteria = new FHIRString(value: $inclusionCriteria);
+        }
+        if (null !== $valueXMLLocation) {
+            $inclusionCriteria->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $inclusionCriteria->_getValueXMLLocation()) {
+            $inclusionCriteria->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->inclusionCriteria = $inclusionCriteria;
         return $this;
@@ -232,9 +239,11 @@ class FHIRValueSetScope extends FHIRBackboneElement
      * Criteria describing which concepts or codes should be excluded and why.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $exclusionCriteria
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExclusionCriteria(null|string|FHIRStringPrimitive|FHIRString $exclusionCriteria): self
+    public function setExclusionCriteria(null|string|FHIRStringPrimitive|FHIRString $exclusionCriteria,
+                                         null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $exclusionCriteria) {
             unset($this->exclusionCriteria);
@@ -242,6 +251,11 @@ class FHIRValueSetScope extends FHIRBackboneElement
         }
         if (!($exclusionCriteria instanceof FHIRString)) {
             $exclusionCriteria = new FHIRString(value: $exclusionCriteria);
+        }
+        if (null !== $valueXMLLocation) {
+            $exclusionCriteria->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $exclusionCriteria->_getValueXMLLocation()) {
+            $exclusionCriteria->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->exclusionCriteria = $exclusionCriteria;
         return $this;
@@ -369,16 +383,23 @@ class FHIRValueSetScope extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_INCLUSION_CRITERIA === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setInclusionCriteria(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_EXCLUSION_CRITERIA === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setExclusionCriteria(FHIRString::xmlUnserialize($n, $v, $config));
             }
         }
@@ -386,36 +407,36 @@ class FHIRValueSetScope extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_INCLUSION_CRITERIA])) {
             $pt = $type->getInclusionCriteria();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_INCLUSION_CRITERIA]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_INCLUSION_CRITERIA]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setInclusionCriteria(new FHIRString(
                     value: (string)$attributes[self::FIELD_INCLUSION_CRITERIA],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_EXCLUSION_CRITERIA])) {
             $pt = $type->getExclusionCriteria();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_EXCLUSION_CRITERIA]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_EXCLUSION_CRITERIA]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setExclusionCriteria(new FHIRString(
                     value: (string)$attributes[self::FIELD_EXCLUSION_CRITERIA],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -446,19 +467,19 @@ class FHIRValueSetScope extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ValueSetScope', $this->_getSourceXMLNS());
         }
-        if (isset($this->inclusionCriteria) && $this->inclusionCriteria->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_INCLUSION_CRITERIA, $this->inclusionCriteria->getValue()?->getFormattedValue());
+        if (isset($this->inclusionCriteria) && $this->inclusionCriteria->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_INCLUSION_CRITERIA, $this->inclusionCriteria->getValue()?->_getFormattedValue());
         }
-        if (isset($this->exclusionCriteria) && $this->exclusionCriteria->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_EXCLUSION_CRITERIA, $this->exclusionCriteria->getValue()?->getFormattedValue());
+        if (isset($this->exclusionCriteria) && $this->exclusionCriteria->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_EXCLUSION_CRITERIA, $this->exclusionCriteria->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->inclusionCriteria) && $this->inclusionCriteria->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->inclusionCriteria) && $this->inclusionCriteria->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_INCLUSION_CRITERIA);
             $this->inclusionCriteria->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->exclusionCriteria) && $this->exclusionCriteria->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->exclusionCriteria) && $this->exclusionCriteria->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_EXCLUSION_CRITERIA);
             $this->exclusionCriteria->xmlSerialize($xw, $config);
             $xw->endElement();

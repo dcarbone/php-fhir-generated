@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -356,9 +356,11 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * was used.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $genomeBuild
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setGenomeBuild(null|string|FHIRStringPrimitive|FHIRString $genomeBuild): self
+    public function setGenomeBuild(null|string|FHIRStringPrimitive|FHIRString $genomeBuild,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $genomeBuild) {
             unset($this->genomeBuild);
@@ -366,6 +368,11 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
         }
         if (!($genomeBuild instanceof FHIRString)) {
             $genomeBuild = new FHIRString(value: $genomeBuild);
+        }
+        if (null !== $valueXMLLocation) {
+            $genomeBuild->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $genomeBuild->_getValueXMLLocation()) {
+            $genomeBuild->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->genomeBuild = $genomeBuild;
         return $this;
@@ -505,9 +512,11 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * A string like "ACGT".
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $referenceSeqString
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setReferenceSeqString(null|string|FHIRStringPrimitive|FHIRString $referenceSeqString): self
+    public function setReferenceSeqString(null|string|FHIRStringPrimitive|FHIRString $referenceSeqString,
+                                          null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $referenceSeqString) {
             unset($this->referenceSeqString);
@@ -515,6 +524,11 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
         }
         if (!($referenceSeqString instanceof FHIRString)) {
             $referenceSeqString = new FHIRString(value: $referenceSeqString);
+        }
+        if (null !== $valueXMLLocation) {
+            $referenceSeqString->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $referenceSeqString->_getValueXMLLocation()) {
+            $referenceSeqString->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->referenceSeqString = $referenceSeqString;
         return $this;
@@ -580,9 +594,11 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * is either 0-based or 1-based, then start position is inclusive.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $windowStart
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setWindowStart(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $windowStart): self
+    public function setWindowStart(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $windowStart,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $windowStart) {
             unset($this->windowStart);
@@ -590,6 +606,11 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
         }
         if (!($windowStart instanceof FHIRInteger)) {
             $windowStart = new FHIRInteger(value: $windowStart);
+        }
+        if (null !== $valueXMLLocation) {
+            $windowStart->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $windowStart->_getValueXMLLocation()) {
+            $windowStart->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->windowStart = $windowStart;
         return $this;
@@ -623,9 +644,11 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * position.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRInteger $windowEnd
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setWindowEnd(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $windowEnd): self
+    public function setWindowEnd(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $windowEnd,
+                                 null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $windowEnd) {
             unset($this->windowEnd);
@@ -633,6 +656,11 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
         }
         if (!($windowEnd instanceof FHIRInteger)) {
             $windowEnd = new FHIRInteger(value: $windowEnd);
+        }
+        if (null !== $valueXMLLocation) {
+            $windowEnd->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $windowEnd->_getValueXMLLocation()) {
+            $windowEnd->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->windowEnd = $windowEnd;
         return $this;
@@ -844,8 +872,15 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -853,10 +888,10 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->setChromosome(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_GENOME_BUILD === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setGenomeBuild(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ORIENTATION === $childName) {
-                $v = new FHIROrientationType(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIROrientationType(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setOrientation(FHIROrientationType::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_REFERENCE_SEQ_ID === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -865,16 +900,16 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
                 $v = new FHIRReference();
                 $type->setReferenceSeqPointer(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_REFERENCE_SEQ_STRING === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setReferenceSeqString(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STRAND === $childName) {
-                $v = new FHIRStrandType(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRStrandType(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStrand(FHIRStrandType::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_WINDOW_START === $childName) {
-                $v = new FHIRInteger(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setWindowStart(FHIRInteger::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_WINDOW_END === $childName) {
-                $v = new FHIRInteger(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setWindowEnd(FHIRInteger::xmlUnserialize($n, $v, $config));
             }
         }
@@ -882,60 +917,60 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_GENOME_BUILD])) {
             $pt = $type->getGenomeBuild();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_GENOME_BUILD]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_GENOME_BUILD]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setGenomeBuild(new FHIRString(
                     value: (string)$attributes[self::FIELD_GENOME_BUILD],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_REFERENCE_SEQ_STRING])) {
             $pt = $type->getReferenceSeqString();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_REFERENCE_SEQ_STRING]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_REFERENCE_SEQ_STRING]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setReferenceSeqString(new FHIRString(
                     value: (string)$attributes[self::FIELD_REFERENCE_SEQ_STRING],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_WINDOW_START])) {
             $pt = $type->getWindowStart();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_WINDOW_START]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_WINDOW_START]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setWindowStart(new FHIRInteger(
                     value: (string)$attributes[self::FIELD_WINDOW_START],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_WINDOW_END])) {
             $pt = $type->getWindowEnd();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_WINDOW_END]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_WINDOW_END]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setWindowEnd(new FHIRInteger(
                     value: (string)$attributes[self::FIELD_WINDOW_END],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -966,17 +1001,17 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('MolecularSequenceReferenceSeq', $this->_getSourceXMLNS());
         }
-        if (isset($this->genomeBuild) && $this->genomeBuild->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_GENOME_BUILD, $this->genomeBuild->getValue()?->getFormattedValue());
+        if (isset($this->genomeBuild) && $this->genomeBuild->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_GENOME_BUILD, $this->genomeBuild->getValue()?->_getFormattedValue());
         }
-        if (isset($this->referenceSeqString) && $this->referenceSeqString->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_REFERENCE_SEQ_STRING, $this->referenceSeqString->getValue()?->getFormattedValue());
+        if (isset($this->referenceSeqString) && $this->referenceSeqString->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_REFERENCE_SEQ_STRING, $this->referenceSeqString->getValue()?->_getFormattedValue());
         }
-        if (isset($this->windowStart) && $this->windowStart->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_WINDOW_START, $this->windowStart->getValue()?->getFormattedValue());
+        if (isset($this->windowStart) && $this->windowStart->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_WINDOW_START, $this->windowStart->getValue()?->_getFormattedValue());
         }
-        if (isset($this->windowEnd) && $this->windowEnd->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_WINDOW_END, $this->windowEnd->getValue()?->getFormattedValue());
+        if (isset($this->windowEnd) && $this->windowEnd->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_WINDOW_END, $this->windowEnd->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->chromosome)) {
@@ -984,7 +1019,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
             $this->chromosome->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->genomeBuild) && $this->genomeBuild->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->genomeBuild) && $this->genomeBuild->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_GENOME_BUILD);
             $this->genomeBuild->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1004,7 +1039,7 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
             $this->referenceSeqPointer->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->referenceSeqString) && $this->referenceSeqString->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->referenceSeqString) && $this->referenceSeqString->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_REFERENCE_SEQ_STRING);
             $this->referenceSeqString->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1014,12 +1049,12 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
             $this->strand->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->windowStart) && $this->windowStart->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->windowStart) && $this->windowStart->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_WINDOW_START);
             $this->windowStart->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->windowEnd) && $this->windowEnd->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->windowEnd) && $this->windowEnd->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_WINDOW_END);
             $this->windowEnd->xmlSerialize($xw, $config);
             $xw->endElement();

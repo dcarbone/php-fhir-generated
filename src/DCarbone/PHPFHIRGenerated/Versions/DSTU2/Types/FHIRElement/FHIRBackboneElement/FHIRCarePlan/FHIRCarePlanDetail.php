@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -796,9 +796,11 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * in when following the plan.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $prohibited
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setProhibited(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $prohibited): self
+    public function setProhibited(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $prohibited,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $prohibited) {
             unset($this->prohibited);
@@ -806,6 +808,11 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         }
         if (!($prohibited instanceof FHIRBoolean)) {
             $prohibited = new FHIRBoolean(value: $prohibited);
+        }
+        if (null !== $valueXMLLocation) {
+            $prohibited->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $prohibited->_getValueXMLLocation()) {
+            $prohibited->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->prohibited = $prohibited;
         return $this;
@@ -907,9 +914,11 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * The period, timing or frequency upon which the described activity is to occur.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $scheduledString
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setScheduledString(null|string|FHIRStringPrimitive|FHIRString $scheduledString): self
+    public function setScheduledString(null|string|FHIRStringPrimitive|FHIRString $scheduledString,
+                                       null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $scheduledString) {
             unset($this->scheduledString);
@@ -917,6 +926,11 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         }
         if (!($scheduledString instanceof FHIRString)) {
             $scheduledString = new FHIRString(value: $scheduledString);
+        }
+        if (null !== $valueXMLLocation) {
+            $scheduledString->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $scheduledString->_getValueXMLLocation()) {
+            $scheduledString->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->scheduledString = $scheduledString;
         return $this;
@@ -1174,9 +1188,11 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
      * about the activity such as body site, method, route, etc.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description): self
+    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $description) {
             unset($this->description);
@@ -1184,6 +1200,11 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         }
         if (!($description instanceof FHIRString)) {
             $description = new FHIRString(value: $description);
+        }
+        if (null !== $valueXMLLocation) {
+            $description->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $description->_getValueXMLLocation()) {
+            $description->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->description = $description;
         return $this;
@@ -1508,8 +1529,15 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRIdPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRIdPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -1529,13 +1557,13 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
                 $v = new FHIRReference();
                 $type->addGoal(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STATUS === $childName) {
-                $v = new FHIRCarePlanActivityStatus(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCarePlanActivityStatus(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStatus(FHIRCarePlanActivityStatus::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STATUS_REASON === $childName) {
                 $v = new FHIRCodeableConcept();
                 $type->setStatusReason(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PROHIBITED === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setProhibited(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SCHEDULED_TIMING === $childName) {
                 $v = new FHIRTiming();
@@ -1544,7 +1572,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
                 $v = new FHIRPeriod();
                 $type->setScheduledPeriod(FHIRPeriod::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SCHEDULED_STRING === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setScheduledString(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LOCATION === $childName) {
                 $v = new FHIRReference();
@@ -1565,7 +1593,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
                 $v = new FHIRSimpleQuantity();
                 $type->setQuantity(FHIRSimpleQuantity::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DESCRIPTION === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDescription(FHIRString::xmlUnserialize($n, $v, $config));
             }
         }
@@ -1573,48 +1601,48 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRIdPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_PROHIBITED])) {
             $pt = $type->getProhibited();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_PROHIBITED]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_PROHIBITED]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setProhibited(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_PROHIBITED],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_SCHEDULED_STRING])) {
             $pt = $type->getScheduledString();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_SCHEDULED_STRING]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_SCHEDULED_STRING]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setScheduledString(new FHIRString(
                     value: (string)$attributes[self::FIELD_SCHEDULED_STRING],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DESCRIPTION])) {
             $pt = $type->getDescription();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DESCRIPTION]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DESCRIPTION]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDescription(new FHIRString(
                     value: (string)$attributes[self::FIELD_DESCRIPTION],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -1645,14 +1673,14 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('CarePlanDetail', $this->_getSourceXMLNS());
         }
-        if (isset($this->prohibited) && $this->prohibited->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_PROHIBITED, $this->prohibited->getValue()?->getFormattedValue());
+        if (isset($this->prohibited) && $this->prohibited->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_PROHIBITED, $this->prohibited->getValue()?->_getFormattedValue());
         }
-        if (isset($this->scheduledString) && $this->scheduledString->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_SCHEDULED_STRING, $this->scheduledString->getValue()?->getFormattedValue());
+        if (isset($this->scheduledString) && $this->scheduledString->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_SCHEDULED_STRING, $this->scheduledString->getValue()?->_getFormattedValue());
         }
-        if (isset($this->description) && $this->description->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->getValue()?->getFormattedValue());
+        if (isset($this->description) && $this->description->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $this->description->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->category)) {
@@ -1696,7 +1724,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             $this->statusReason->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->prohibited) && $this->prohibited->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->prohibited) && $this->prohibited->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_PROHIBITED);
             $this->prohibited->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1711,7 +1739,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             $this->scheduledPeriod->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->scheduledString) && $this->scheduledString->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->scheduledString) && $this->scheduledString->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_SCHEDULED_STRING);
             $this->scheduledString->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -1748,7 +1776,7 @@ class FHIRCarePlanDetail extends FHIRBackboneElement
             $this->quantity->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->description) && $this->description->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->description) && $this->description->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DESCRIPTION);
             $this->description->xmlSerialize($xw, $config);
             $xw->endElement();

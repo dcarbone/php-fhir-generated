@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,10 +82,10 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5;
  * 
  */
 
-use DCarbone\PHPFHIRGenerated\VersionInterface;
-use DCarbone\PHPFHIRGenerated\VersionConfig;
-use DCarbone\PHPFHIRGenerated\VersionConfigInterface;
-use DCarbone\PHPFHIRGenerated\VersionTypeMapInterface;
+use DCarbone\PHPFHIRGenerated\Versions\VersionInterface;
+use DCarbone\PHPFHIRGenerated\Versions\VersionConfig;
+use DCarbone\PHPFHIRGenerated\Versions\VersionConfigInterface;
+use DCarbone\PHPFHIRGenerated\Versions\VersionTypeMapInterface;
 
 class Version implements VersionInterface
 {
@@ -95,7 +95,7 @@ class Version implements VersionInterface
 
     private const _GENERATED_CONFIG = [];
 
-    /** @var \DCarbone\PHPFHIRGenerated\VersionConfigInterface */
+    /** @var \DCarbone\PHPFHIRGenerated\Versions\VersionConfigInterface */
     private VersionConfigInterface $_config;
 
     /** @var \DCarbone\PHPFHIRGenerated\Versions\R5\VersionTypeMap */
@@ -103,7 +103,7 @@ class Version implements VersionInterface
 
     /**
      * Version Constructor
-     * @param null|array|\DCarbone\PHPFHIRGenerated\VersionConfigInterface $config
+     * @param null|array|\DCarbone\PHPFHIRGenerated\Versions\VersionConfigInterface $config
      */
     public function __construct(null|array|VersionConfigInterface $config = null)
     {
@@ -144,7 +144,7 @@ class Version implements VersionInterface
     }
 
     /**
-     * @return \DCarbone\PHPFHIRGenerated\VersionConfigInterface
+     * @return \DCarbone\PHPFHIRGenerated\Versions\VersionConfigInterface
      */
     public function getConfig(): VersionConfigInterface
     {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -238,9 +238,11 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      * on a specific day of the month.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $dayOfMonth
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDayOfMonth(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $dayOfMonth): self
+    public function setDayOfMonth(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $dayOfMonth,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $dayOfMonth) {
             unset($this->dayOfMonth);
@@ -248,6 +250,11 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
         }
         if (!($dayOfMonth instanceof FHIRPositiveInt)) {
             $dayOfMonth = new FHIRPositiveInt(value: $dayOfMonth);
+        }
+        if (null !== $valueXMLLocation) {
+            $dayOfMonth->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $dayOfMonth->_getValueXMLLocation()) {
+            $dayOfMonth->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->dayOfMonth = $dayOfMonth;
         return $this;
@@ -347,9 +354,11 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      * Indicates that recurring appointments should occur every nth month.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $monthInterval
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMonthInterval(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $monthInterval): self
+    public function setMonthInterval(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $monthInterval,
+                                     null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $monthInterval) {
             unset($this->monthInterval);
@@ -357,6 +366,11 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
         }
         if (!($monthInterval instanceof FHIRPositiveInt)) {
             $monthInterval = new FHIRPositiveInt(value: $monthInterval);
+        }
+        if (null !== $valueXMLLocation) {
+            $monthInterval->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $monthInterval->_getValueXMLLocation()) {
+            $monthInterval->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->monthInterval = $monthInterval;
         return $this;
@@ -513,13 +527,20 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DAY_OF_MONTH === $childName) {
-                $v = new FHIRPositiveInt(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRPositiveInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDayOfMonth(FHIRPositiveInt::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NTH_WEEK_OF_MONTH === $childName) {
                 $v = new FHIRCoding();
@@ -528,7 +549,7 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
                 $v = new FHIRCoding();
                 $type->setDayOfWeek(FHIRCoding::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_MONTH_INTERVAL === $childName) {
-                $v = new FHIRPositiveInt(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRPositiveInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setMonthInterval(FHIRPositiveInt::xmlUnserialize($n, $v, $config));
             }
         }
@@ -536,36 +557,36 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DAY_OF_MONTH])) {
             $pt = $type->getDayOfMonth();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DAY_OF_MONTH]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DAY_OF_MONTH]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDayOfMonth(new FHIRPositiveInt(
                     value: (string)$attributes[self::FIELD_DAY_OF_MONTH],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_MONTH_INTERVAL])) {
             $pt = $type->getMonthInterval();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_MONTH_INTERVAL]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_MONTH_INTERVAL]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setMonthInterval(new FHIRPositiveInt(
                     value: (string)$attributes[self::FIELD_MONTH_INTERVAL],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -596,14 +617,14 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('AppointmentMonthlyTemplate', $this->_getSourceXMLNS());
         }
-        if (isset($this->dayOfMonth) && $this->dayOfMonth->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DAY_OF_MONTH, $this->dayOfMonth->getValue()?->getFormattedValue());
+        if (isset($this->dayOfMonth) && $this->dayOfMonth->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DAY_OF_MONTH, $this->dayOfMonth->getValue()?->_getFormattedValue());
         }
-        if (isset($this->monthInterval) && $this->monthInterval->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_MONTH_INTERVAL, $this->monthInterval->getValue()?->getFormattedValue());
+        if (isset($this->monthInterval) && $this->monthInterval->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_MONTH_INTERVAL, $this->monthInterval->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->dayOfMonth) && $this->dayOfMonth->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->dayOfMonth) && $this->dayOfMonth->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DAY_OF_MONTH);
             $this->dayOfMonth->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -618,7 +639,7 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
             $this->dayOfWeek->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->monthInterval) && $this->monthInterval->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->monthInterval) && $this->monthInterval->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_MONTH_INTERVAL);
             $this->monthInterval->xmlSerialize($xw, $config);
             $xw->endElement();

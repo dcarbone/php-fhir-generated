@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -748,9 +748,11 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * When this Consent was issued / created / indexed.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $dateTime
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateTime): self
+    public function setDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateTime,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $dateTime) {
             unset($this->dateTime);
@@ -758,6 +760,11 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
         }
         if (!($dateTime instanceof FHIRDateTime)) {
             $dateTime = new FHIRDateTime(value: $dateTime);
+        }
+        if (null !== $valueXMLLocation) {
+            $dateTime->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $dateTime->_getValueXMLLocation()) {
+            $dateTime->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->dateTime = $dateTime;
         return $this;
@@ -1226,9 +1233,11 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * A referece to the specific computable policy.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $policyRule
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPolicyRule(null|string|FHIRUriPrimitive|FHIRUri $policyRule): self
+    public function setPolicyRule(null|string|FHIRUriPrimitive|FHIRUri $policyRule,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $policyRule) {
             unset($this->policyRule);
@@ -1236,6 +1245,11 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
         }
         if (!($policyRule instanceof FHIRUri)) {
             $policyRule = new FHIRUri(value: $policyRule);
+        }
+        if (null !== $valueXMLLocation) {
+            $policyRule->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $policyRule->_getValueXMLLocation()) {
+            $policyRule->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->policyRule = $policyRule;
         return $this;
@@ -1934,16 +1948,16 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
         foreach ($element->children() as $n) {
             $childName = $n->getName();
             if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_META === $childName) {
                 $v = new FHIRMeta();
                 $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -1964,7 +1978,7 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
                 $v = new FHIRIdentifier();
                 $type->setIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STATUS === $childName) {
-                $v = new FHIRConsentState(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRConsentState(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStatus(FHIRConsentState::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CATEGORY === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -1976,7 +1990,7 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
                 $v = new FHIRPeriod();
                 $type->setPeriod(FHIRPeriod::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DATE_TIME === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDateTime(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CONSENTING_PARTY === $childName) {
                 $v = new FHIRReference();
@@ -2003,7 +2017,7 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
                 $v = new FHIRConsentPolicy();
                 $type->addPolicy(FHIRConsentPolicy::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_POLICY_RULE === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setPolicyRule(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_SECURITY_LABEL === $childName) {
                 $v = new FHIRCoding();
@@ -2026,60 +2040,60 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRId(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             $pt = $type->getImplicitRules();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setImplicitRules(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DATE_TIME])) {
             $pt = $type->getDateTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DATE_TIME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DATE_TIME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDateTime(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_DATE_TIME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_POLICY_RULE])) {
             $pt = $type->getPolicyRule();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_POLICY_RULE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_POLICY_RULE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setPolicyRule(new FHIRUri(
                     value: (string)$attributes[self::FIELD_POLICY_RULE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -2110,11 +2124,11 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
             $rootOpened = true;
             $xw->openRootNode('Consent', $this->_getSourceXMLNS());
         }
-        if (isset($this->dateTime) && $this->dateTime->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DATE_TIME, $this->dateTime->getValue()?->getFormattedValue());
+        if (isset($this->dateTime) && $this->dateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DATE_TIME, $this->dateTime->getValue()?->_getFormattedValue());
         }
-        if (isset($this->policyRule) && $this->policyRule->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_POLICY_RULE, $this->policyRule->getValue()?->getFormattedValue());
+        if (isset($this->policyRule) && $this->policyRule->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_POLICY_RULE, $this->policyRule->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -2144,7 +2158,7 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
             $this->period->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->dateTime) && $this->dateTime->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->dateTime) && $this->dateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DATE_TIME);
             $this->dateTime->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -2199,7 +2213,7 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
                 $xw->endElement();
             }
         }
-        if (isset($this->policyRule) && $this->policyRule->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->policyRule) && $this->policyRule->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_POLICY_RULE);
             $this->policyRule->xmlSerialize($xw, $config);
             $xw->endElement();

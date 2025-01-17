@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -64,7 +64,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -259,9 +259,11 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * Todo.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $repeatUnit
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRepeatUnit(null|string|FHIRStringPrimitive|FHIRString $repeatUnit): self
+    public function setRepeatUnit(null|string|FHIRStringPrimitive|FHIRString $repeatUnit,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $repeatUnit) {
             unset($this->repeatUnit);
@@ -269,6 +271,11 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
         }
         if (!($repeatUnit instanceof FHIRString)) {
             $repeatUnit = new FHIRString(value: $repeatUnit);
+        }
+        if (null !== $valueXMLLocation) {
+            $repeatUnit->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $repeatUnit->_getValueXMLLocation()) {
+            $repeatUnit->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->repeatUnit = $repeatUnit;
         return $this;
@@ -584,8 +591,15 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -593,7 +607,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->setOrientationOfPolymerisation(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_REPEAT_UNIT === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setRepeatUnit(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_AMOUNT === $childName) {
                 $v = new FHIRSubstanceAmount();
@@ -610,24 +624,24 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_REPEAT_UNIT])) {
             $pt = $type->getRepeatUnit();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_REPEAT_UNIT]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_REPEAT_UNIT]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setRepeatUnit(new FHIRString(
                     value: (string)$attributes[self::FIELD_REPEAT_UNIT],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -658,8 +672,8 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('SubstancePolymerRepeatUnit', $this->_getSourceXMLNS());
         }
-        if (isset($this->repeatUnit) && $this->repeatUnit->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_REPEAT_UNIT, $this->repeatUnit->getValue()?->getFormattedValue());
+        if (isset($this->repeatUnit) && $this->repeatUnit->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_REPEAT_UNIT, $this->repeatUnit->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->orientationOfPolymerisation)) {
@@ -667,7 +681,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
             $this->orientationOfPolymerisation->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->repeatUnit) && $this->repeatUnit->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->repeatUnit) && $this->repeatUnit->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_REPEAT_UNIT);
             $this->repeatUnit->xmlSerialize($xw, $config);
             $xw->endElement();

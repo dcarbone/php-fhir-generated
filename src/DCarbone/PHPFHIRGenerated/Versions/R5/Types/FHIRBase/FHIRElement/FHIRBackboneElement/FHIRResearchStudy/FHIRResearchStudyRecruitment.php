@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -230,9 +230,11 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * Estimated total number of participants to be enrolled.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $targetNumber
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTargetNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $targetNumber): self
+    public function setTargetNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $targetNumber,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $targetNumber) {
             unset($this->targetNumber);
@@ -240,6 +242,11 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
         }
         if (!($targetNumber instanceof FHIRUnsignedInt)) {
             $targetNumber = new FHIRUnsignedInt(value: $targetNumber);
+        }
+        if (null !== $valueXMLLocation) {
+            $targetNumber->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $targetNumber->_getValueXMLLocation()) {
+            $targetNumber->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->targetNumber = $targetNumber;
         return $this;
@@ -267,9 +274,11 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * Actual total number of participants enrolled in study.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $actualNumber
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setActualNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $actualNumber): self
+    public function setActualNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $actualNumber,
+                                    null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $actualNumber) {
             unset($this->actualNumber);
@@ -277,6 +286,11 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
         }
         if (!($actualNumber instanceof FHIRUnsignedInt)) {
             $actualNumber = new FHIRUnsignedInt(value: $actualNumber);
+        }
+        if (null !== $valueXMLLocation) {
+            $actualNumber->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $actualNumber->_getValueXMLLocation()) {
+            $actualNumber->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->actualNumber = $actualNumber;
         return $this;
@@ -496,16 +510,23 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TARGET_NUMBER === $childName) {
-                $v = new FHIRUnsignedInt(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUnsignedInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setTargetNumber(FHIRUnsignedInt::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ACTUAL_NUMBER === $childName) {
-                $v = new FHIRUnsignedInt(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUnsignedInt(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setActualNumber(FHIRUnsignedInt::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ELIGIBILITY === $childName) {
                 $v = new FHIRReference();
@@ -519,36 +540,36 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_TARGET_NUMBER])) {
             $pt = $type->getTargetNumber();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_TARGET_NUMBER]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_TARGET_NUMBER]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setTargetNumber(new FHIRUnsignedInt(
                     value: (string)$attributes[self::FIELD_TARGET_NUMBER],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_ACTUAL_NUMBER])) {
             $pt = $type->getActualNumber();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ACTUAL_NUMBER]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ACTUAL_NUMBER]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setActualNumber(new FHIRUnsignedInt(
                     value: (string)$attributes[self::FIELD_ACTUAL_NUMBER],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -579,19 +600,19 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('ResearchStudyRecruitment', $this->_getSourceXMLNS());
         }
-        if (isset($this->targetNumber) && $this->targetNumber->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_TARGET_NUMBER, $this->targetNumber->getValue()?->getFormattedValue());
+        if (isset($this->targetNumber) && $this->targetNumber->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_TARGET_NUMBER, $this->targetNumber->getValue()?->_getFormattedValue());
         }
-        if (isset($this->actualNumber) && $this->actualNumber->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ACTUAL_NUMBER, $this->actualNumber->getValue()?->getFormattedValue());
+        if (isset($this->actualNumber) && $this->actualNumber->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_ACTUAL_NUMBER, $this->actualNumber->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->targetNumber) && $this->targetNumber->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->targetNumber) && $this->targetNumber->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_TARGET_NUMBER);
             $this->targetNumber->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->actualNumber) && $this->actualNumber->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->actualNumber) && $this->actualNumber->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_ACTUAL_NUMBER);
             $this->actualNumber->xmlSerialize($xw, $config);
             $xw->endElement();

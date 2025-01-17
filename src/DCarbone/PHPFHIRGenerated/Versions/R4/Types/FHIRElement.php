@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -67,7 +67,7 @@ use DCarbone\PHPFHIRGenerated\CommentContainerTrait;
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\SourceXMLNamespaceTrait;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
@@ -225,9 +225,11 @@ class FHIRElement implements CommentContainerInterface, TypeInterface
 
     /**
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setId(null|string|FHIRStringPrimitive $id): self
+    public function setId(null|string|FHIRStringPrimitive $id,
+                          null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $id) {
             unset($this->id);
@@ -235,6 +237,11 @@ class FHIRElement implements CommentContainerInterface, TypeInterface
         }
         if (!($id instanceof FHIRStringPrimitive)) {
             $id = new FHIRStringPrimitive(value: $id);
+        }
+        if (null !== $valueXMLLocation) {
+            $id->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $id->_getValueXMLLocation()) {
+            $id->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
         }
         $this->id = $id;
         return $this;
@@ -302,20 +309,27 @@ class FHIRElement implements CommentContainerInterface, TypeInterface
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             }
         }
         $attributes = $element->attributes();
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -346,8 +360,8 @@ class FHIRElement implements CommentContainerInterface, TypeInterface
             $rootOpened = true;
             $xw->openRootNode('Element', $this->_getSourceXMLNS());
         }
-        if (isset($this->id) && $this->id->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ID, $this->id->getFormattedValue());
+        if (isset($this->id) && $this->id->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_ID, $this->id->_getFormattedValue());
         }
         if (isset($this->extension)) {
             foreach ($this->extension as $v) {
@@ -356,9 +370,9 @@ class FHIRElement implements CommentContainerInterface, TypeInterface
                 $xw->endElement();
             }
         }
-        if (isset($this->id) && $this->id->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->id) && $this->id->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_ID);
-            $this->id->xmlSerialize($xw, $config);
+            $xw->writeAttribute($this->id::FIELD_VALUE, $this->id->_getFormattedValue());
             $xw->endElement();
         }
         if (isset($rootOpened) && $rootOpened) {
@@ -418,11 +432,18 @@ class FHIRElement implements CommentContainerInterface, TypeInterface
                 $type->addExtension(new FHIRExtension($json[self::FIELD_EXTENSION]));
             }
         }
+        if (!is_array($json)) {
+            $type->setValue($json);
+            return $type;
+        }
+        if ([] === $json) {
+            return $type;
+        }
         if (isset($json[self::FIELD_ID]) || array_key_exists(self::FIELD_ID, $json)) {
             if ($json[self::FIELD_ID] instanceof FHIRStringPrimitive) {
                 $type->setId($json[self::FIELD_ID]);
             } else {
-                $type->setId(new FHIRStringPrimitive($json[self::FIELD_ID]));
+                $type->setId(FHIRStringPrimitive::jsonUnserialize($json[self::FIELD_ID]));
             }
         }
         return $type;

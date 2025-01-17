@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -336,9 +336,11 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * specified in the reference source, the assumption is that there is 1 subunit.
      *
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $numberOfSubunits
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setNumberOfSubunits(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numberOfSubunits): self
+    public function setNumberOfSubunits(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numberOfSubunits,
+                                        null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $numberOfSubunits) {
             unset($this->numberOfSubunits);
@@ -346,6 +348,11 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
         }
         if (!($numberOfSubunits instanceof FHIRInteger)) {
             $numberOfSubunits = new FHIRInteger(value: $numberOfSubunits);
+        }
+        if (null !== $valueXMLLocation) {
+            $numberOfSubunits->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $numberOfSubunits->_getValueXMLLocation()) {
+            $numberOfSubunits->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->numberOfSubunits = $numberOfSubunits;
         return $this;
@@ -379,9 +386,11 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
      * “” shall be used as separator as follows: “Subunitnumber Residue”.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $areaOfHybridisation
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAreaOfHybridisation(null|string|FHIRStringPrimitive|FHIRString $areaOfHybridisation): self
+    public function setAreaOfHybridisation(null|string|FHIRStringPrimitive|FHIRString $areaOfHybridisation,
+                                           null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $areaOfHybridisation) {
             unset($this->areaOfHybridisation);
@@ -389,6 +398,11 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
         }
         if (!($areaOfHybridisation instanceof FHIRString)) {
             $areaOfHybridisation = new FHIRString(value: $areaOfHybridisation);
+        }
+        if (null !== $valueXMLLocation) {
+            $areaOfHybridisation->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $areaOfHybridisation->_getValueXMLLocation()) {
+            $areaOfHybridisation->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->areaOfHybridisation = $areaOfHybridisation;
         return $this;
@@ -714,16 +728,16 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
         foreach ($element->children() as $n) {
             $childName = $n->getName();
             if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_META === $childName) {
                 $v = new FHIRMeta();
                 $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -744,10 +758,10 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
                 $v = new FHIRCodeableConcept();
                 $type->setSequenceType(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_NUMBER_OF_SUBUNITS === $childName) {
-                $v = new FHIRInteger(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRInteger(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setNumberOfSubunits(FHIRInteger::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_AREA_OF_HYBRIDISATION === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setAreaOfHybridisation(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_OLIGO_NUCLEOTIDE_TYPE === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -761,60 +775,60 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRId(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             $pt = $type->getImplicitRules();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setImplicitRules(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_NUMBER_OF_SUBUNITS])) {
             $pt = $type->getNumberOfSubunits();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_NUMBER_OF_SUBUNITS]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_NUMBER_OF_SUBUNITS]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setNumberOfSubunits(new FHIRInteger(
                     value: (string)$attributes[self::FIELD_NUMBER_OF_SUBUNITS],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_AREA_OF_HYBRIDISATION])) {
             $pt = $type->getAreaOfHybridisation();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_AREA_OF_HYBRIDISATION]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_AREA_OF_HYBRIDISATION]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setAreaOfHybridisation(new FHIRString(
                     value: (string)$attributes[self::FIELD_AREA_OF_HYBRIDISATION],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -845,11 +859,11 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
             $rootOpened = true;
             $xw->openRootNode('SubstanceNucleicAcid', $this->_getSourceXMLNS());
         }
-        if (isset($this->numberOfSubunits) && $this->numberOfSubunits->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_NUMBER_OF_SUBUNITS, $this->numberOfSubunits->getValue()?->getFormattedValue());
+        if (isset($this->numberOfSubunits) && $this->numberOfSubunits->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_NUMBER_OF_SUBUNITS, $this->numberOfSubunits->getValue()?->_getFormattedValue());
         }
-        if (isset($this->areaOfHybridisation) && $this->areaOfHybridisation->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_AREA_OF_HYBRIDISATION, $this->areaOfHybridisation->getValue()?->getFormattedValue());
+        if (isset($this->areaOfHybridisation) && $this->areaOfHybridisation->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_AREA_OF_HYBRIDISATION, $this->areaOfHybridisation->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->sequenceType)) {
@@ -857,12 +871,12 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
             $this->sequenceType->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->numberOfSubunits) && $this->numberOfSubunits->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->numberOfSubunits) && $this->numberOfSubunits->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_NUMBER_OF_SUBUNITS);
             $this->numberOfSubunits->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->areaOfHybridisation) && $this->areaOfHybridisation->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->areaOfHybridisation) && $this->areaOfHybridisation->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_AREA_OF_HYBRIDISATION);
             $this->areaOfHybridisation->xmlSerialize($xw, $config);
             $xw->endElement();

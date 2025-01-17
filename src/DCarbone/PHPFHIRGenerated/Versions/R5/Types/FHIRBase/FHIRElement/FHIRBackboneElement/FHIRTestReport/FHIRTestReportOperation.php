@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -261,9 +261,11 @@ class FHIRTestReportOperation extends FHIRBackboneElement
      * An explanatory message associated with the result.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $message
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMessage(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $message): self
+    public function setMessage(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $message,
+                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $message) {
             unset($this->message);
@@ -271,6 +273,11 @@ class FHIRTestReportOperation extends FHIRBackboneElement
         }
         if (!($message instanceof FHIRMarkdown)) {
             $message = new FHIRMarkdown(value: $message);
+        }
+        if (null !== $valueXMLLocation) {
+            $message->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $message->_getValueXMLLocation()) {
+            $message->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->message = $message;
         return $this;
@@ -298,9 +305,11 @@ class FHIRTestReportOperation extends FHIRBackboneElement
      * A link to further details on the result.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $detail
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDetail(null|string|FHIRUriPrimitive|FHIRUri $detail): self
+    public function setDetail(null|string|FHIRUriPrimitive|FHIRUri $detail,
+                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $detail) {
             unset($this->detail);
@@ -308,6 +317,11 @@ class FHIRTestReportOperation extends FHIRBackboneElement
         }
         if (!($detail instanceof FHIRUri)) {
             $detail = new FHIRUri(value: $detail);
+        }
+        if (null !== $valueXMLLocation) {
+            $detail->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $detail->_getValueXMLLocation()) {
+            $detail->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->detail = $detail;
         return $this;
@@ -452,19 +466,26 @@ class FHIRTestReportOperation extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_RESULT === $childName) {
-                $v = new FHIRTestReportActionResult(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRTestReportActionResult(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setResult(FHIRTestReportActionResult::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_MESSAGE === $childName) {
-                $v = new FHIRMarkdown(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRMarkdown(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setMessage(FHIRMarkdown::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DETAIL === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setDetail(FHIRUri::xmlUnserialize($n, $v, $config));
             }
         }
@@ -472,36 +493,36 @@ class FHIRTestReportOperation extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_MESSAGE])) {
             $pt = $type->getMessage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_MESSAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_MESSAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setMessage(new FHIRMarkdown(
                     value: (string)$attributes[self::FIELD_MESSAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DETAIL])) {
             $pt = $type->getDetail();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_DETAIL]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_DETAIL]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setDetail(new FHIRUri(
                     value: (string)$attributes[self::FIELD_DETAIL],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -532,11 +553,11 @@ class FHIRTestReportOperation extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('TestReportOperation', $this->_getSourceXMLNS());
         }
-        if (isset($this->message) && $this->message->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_MESSAGE, $this->message->getValue()?->getFormattedValue());
+        if (isset($this->message) && $this->message->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_MESSAGE, $this->message->getValue()?->_getFormattedValue());
         }
-        if (isset($this->detail) && $this->detail->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_DETAIL, $this->detail->getValue()?->getFormattedValue());
+        if (isset($this->detail) && $this->detail->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_DETAIL, $this->detail->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->result)) {
@@ -544,12 +565,12 @@ class FHIRTestReportOperation extends FHIRBackboneElement
             $this->result->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->message) && $this->message->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->message) && $this->message->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_MESSAGE);
             $this->message->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->detail) && $this->detail->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->detail) && $this->detail->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_DETAIL);
             $this->detail->xmlSerialize($xw, $config);
             $xw->endElement();

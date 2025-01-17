@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -302,9 +302,11 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
      * unique identification of the polymer.
      *
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $isDefining
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIsDefining(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isDefining): self
+    public function setIsDefining(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isDefining,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $isDefining) {
             unset($this->isDefining);
@@ -312,6 +314,11 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
         }
         if (!($isDefining instanceof FHIRBoolean)) {
             $isDefining = new FHIRBoolean(value: $isDefining);
+        }
+        if (null !== $valueXMLLocation) {
+            $isDefining->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $isDefining->_getValueXMLLocation()) {
+            $isDefining->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->isDefining = $isDefining;
         return $this;
@@ -501,8 +508,15 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
@@ -513,7 +527,7 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
                 $v = new FHIRCodeableConcept();
                 $type->setCategory(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IS_DEFINING === $childName) {
-                $v = new FHIRBoolean(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRBoolean(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setIsDefining(FHIRBoolean::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_AMOUNT === $childName) {
                 $v = new FHIRQuantity();
@@ -524,24 +538,24 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IS_DEFINING])) {
             $pt = $type->getIsDefining();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IS_DEFINING]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IS_DEFINING]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setIsDefining(new FHIRBoolean(
                     value: (string)$attributes[self::FIELD_IS_DEFINING],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -572,8 +586,8 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('SubstancePolymerStartingMaterial', $this->_getSourceXMLNS());
         }
-        if (isset($this->isDefining) && $this->isDefining->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_IS_DEFINING, $this->isDefining->getValue()?->getFormattedValue());
+        if (isset($this->isDefining) && $this->isDefining->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_IS_DEFINING, $this->isDefining->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->code)) {
@@ -586,7 +600,7 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
             $this->category->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->isDefining) && $this->isDefining->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->isDefining) && $this->isDefining->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_IS_DEFINING);
             $this->isDefining->xmlSerialize($xw, $config);
             $xw->endElement();

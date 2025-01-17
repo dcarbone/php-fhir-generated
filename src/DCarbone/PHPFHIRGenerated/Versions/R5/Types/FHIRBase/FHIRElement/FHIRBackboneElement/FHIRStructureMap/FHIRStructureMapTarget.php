@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
 
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -280,9 +280,11 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * Variable this rule applies to.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $context
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setContext(null|string|FHIRStringPrimitive|FHIRString $context): self
+    public function setContext(null|string|FHIRStringPrimitive|FHIRString $context,
+                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $context) {
             unset($this->context);
@@ -290,6 +292,11 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         }
         if (!($context instanceof FHIRString)) {
             $context = new FHIRString(value: $context);
+        }
+        if (null !== $valueXMLLocation) {
+            $context->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $context->_getValueXMLLocation()) {
+            $context->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->context = $context;
         return $this;
@@ -317,9 +324,11 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * Field to create in the context.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $element
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setElement(null|string|FHIRStringPrimitive|FHIRString $element): self
+    public function setElement(null|string|FHIRStringPrimitive|FHIRString $element,
+                               null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $element) {
             unset($this->element);
@@ -327,6 +336,11 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         }
         if (!($element instanceof FHIRString)) {
             $element = new FHIRString(value: $element);
+        }
+        if (null !== $valueXMLLocation) {
+            $element->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $element->_getValueXMLLocation()) {
+            $element->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->element = $element;
         return $this;
@@ -360,9 +374,11 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * Named context for field, if desired, and a field is specified.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $variable
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setVariable(null|string|FHIRIdPrimitive|FHIRId $variable): self
+    public function setVariable(null|string|FHIRIdPrimitive|FHIRId $variable,
+                                null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $variable) {
             unset($this->variable);
@@ -370,6 +386,11 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         }
         if (!($variable instanceof FHIRId)) {
             $variable = new FHIRId(value: $variable);
+        }
+        if (null !== $valueXMLLocation) {
+            $variable->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $variable->_getValueXMLLocation()) {
+            $variable->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->variable = $variable;
         return $this;
@@ -464,9 +485,11 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * Internal rule reference for shared list items.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $listRuleId
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setListRuleId(null|string|FHIRIdPrimitive|FHIRId $listRuleId): self
+    public function setListRuleId(null|string|FHIRIdPrimitive|FHIRId $listRuleId,
+                                  null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $listRuleId) {
             unset($this->listRuleId);
@@ -474,6 +497,11 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         }
         if (!($listRuleId instanceof FHIRId)) {
             $listRuleId = new FHIRId(value: $listRuleId);
+        }
+        if (null !== $valueXMLLocation) {
+            $listRuleId->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $listRuleId->_getValueXMLLocation()) {
+            $listRuleId->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->listRuleId = $listRuleId;
         return $this;
@@ -745,28 +773,35 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
                 $v = new FHIRExtension();
                 $type->addExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ID === $childName) {
-                $v = new FHIRStringPrimitive(xmlLocation: XMLLocationEnum::ELEMENT);
-                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, $v, $config));
+                $valueAttr = $n->attributes()[FHIRStringPrimitive::FIELD_VALUE] ?? null;
+                 if (null !== $valueAttr) {
+                    $value = (string)$valueAttr;
+                } else if ($n->hasChildren()) {
+                    $value = $n->saveXML();
+                } else {
+                    $value = (string)$n;
+                }
+                $type->setId($value, ValueXMLLocationEnum::ELEMENT);
             } else if (self::FIELD_MODIFIER_EXTENSION === $childName) {
                 $v = new FHIRExtension();
                 $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_CONTEXT === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setContext(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ELEMENT === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setElement(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_VARIABLE === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setVariable(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LIST_MODE === $childName) {
-                $v = new FHIRStructureMapTargetListMode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRStructureMapTargetListMode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addListMode(FHIRStructureMapTargetListMode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LIST_RULE_ID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setListRuleId(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TRANSFORM === $childName) {
-                $v = new FHIRStructureMapTransform(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRStructureMapTransform(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setTransform(FHIRStructureMapTransform::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PARAMETER === $childName) {
                 $v = new FHIRStructureMapParameter();
@@ -777,60 +812,60 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRStringPrimitive(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_CONTEXT])) {
             $pt = $type->getContext();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_CONTEXT]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_CONTEXT]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setContext(new FHIRString(
                     value: (string)$attributes[self::FIELD_CONTEXT],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_ELEMENT])) {
             $pt = $type->getElement();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ELEMENT]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ELEMENT]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setElement(new FHIRString(
                     value: (string)$attributes[self::FIELD_ELEMENT],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_VARIABLE])) {
             $pt = $type->getVariable();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_VARIABLE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_VARIABLE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setVariable(new FHIRId(
                     value: (string)$attributes[self::FIELD_VARIABLE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LIST_RULE_ID])) {
             $pt = $type->getListRuleId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LIST_RULE_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LIST_RULE_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setListRuleId(new FHIRId(
                     value: (string)$attributes[self::FIELD_LIST_RULE_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -861,30 +896,30 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
             $rootOpened = true;
             $xw->openRootNode('StructureMapTarget', $this->_getSourceXMLNS());
         }
-        if (isset($this->context) && $this->context->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_CONTEXT, $this->context->getValue()?->getFormattedValue());
+        if (isset($this->context) && $this->context->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_CONTEXT, $this->context->getValue()?->_getFormattedValue());
         }
-        if (isset($this->element) && $this->element->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ELEMENT, $this->element->getValue()?->getFormattedValue());
+        if (isset($this->element) && $this->element->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_ELEMENT, $this->element->getValue()?->_getFormattedValue());
         }
-        if (isset($this->variable) && $this->variable->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VARIABLE, $this->variable->getValue()?->getFormattedValue());
+        if (isset($this->variable) && $this->variable->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VARIABLE, $this->variable->getValue()?->_getFormattedValue());
         }
-        if (isset($this->listRuleId) && $this->listRuleId->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_LIST_RULE_ID, $this->listRuleId->getValue()?->getFormattedValue());
+        if (isset($this->listRuleId) && $this->listRuleId->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_LIST_RULE_ID, $this->listRuleId->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
-        if (isset($this->context) && $this->context->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->context) && $this->context->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_CONTEXT);
             $this->context->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->element) && $this->element->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->element) && $this->element->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_ELEMENT);
             $this->element->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->variable) && $this->variable->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->variable) && $this->variable->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_VARIABLE);
             $this->variable->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -896,7 +931,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
                 $xw->endElement();
             }
         }
-        if (isset($this->listRuleId) && $this->listRuleId->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->listRuleId) && $this->listRuleId->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_LIST_RULE_ID);
             $this->listRuleId->xmlSerialize($xw, $config);
             $xw->endElement();

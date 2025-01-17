@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 00:27+0000
+ * Class creation date: January 17th, 2025 18:09+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -65,7 +65,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
-use DCarbone\PHPFHIRGenerated\Encoding\XMLLocationEnum;
+use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
@@ -1116,9 +1116,11 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * Date/time(s) or duration when the charged service was applied.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $occurrenceDateTime
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime): self
+    public function setOccurrenceDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $occurrenceDateTime,
+                                          null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $occurrenceDateTime) {
             unset($this->occurrenceDateTime);
@@ -1126,6 +1128,11 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
         }
         if (!($occurrenceDateTime instanceof FHIRDateTime)) {
             $occurrenceDateTime = new FHIRDateTime(value: $occurrenceDateTime);
+        }
+        if (null !== $valueXMLLocation) {
+            $occurrenceDateTime->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $occurrenceDateTime->_getValueXMLLocation()) {
+            $occurrenceDateTime->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->occurrenceDateTime = $occurrenceDateTime;
         return $this;
@@ -1500,9 +1507,11 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * Factor overriding the factor determined by the rules associated with the code.
      *
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $factorOverride
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setFactorOverride(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factorOverride): self
+    public function setFactorOverride(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factorOverride,
+                                      null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $factorOverride) {
             unset($this->factorOverride);
@@ -1510,6 +1519,11 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
         }
         if (!($factorOverride instanceof FHIRDecimal)) {
             $factorOverride = new FHIRDecimal(value: $factorOverride);
+        }
+        if (null !== $valueXMLLocation) {
+            $factorOverride->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $factorOverride->_getValueXMLLocation()) {
+            $factorOverride->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->factorOverride = $factorOverride;
         return $this;
@@ -1575,9 +1589,11 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * action.
      *
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $overrideReason
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOverrideReason(null|string|FHIRStringPrimitive|FHIRString $overrideReason): self
+    public function setOverrideReason(null|string|FHIRStringPrimitive|FHIRString $overrideReason,
+                                      null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $overrideReason) {
             unset($this->overrideReason);
@@ -1585,6 +1601,11 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
         }
         if (!($overrideReason instanceof FHIRString)) {
             $overrideReason = new FHIRString(value: $overrideReason);
+        }
+        if (null !== $valueXMLLocation) {
+            $overrideReason->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $overrideReason->_getValueXMLLocation()) {
+            $overrideReason->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->overrideReason = $overrideReason;
         return $this;
@@ -1652,9 +1673,11 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
      * Date the charge item was entered.
      *
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDateTime $enteredDate
+     * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEnteredDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $enteredDate): self
+    public function setEnteredDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $enteredDate,
+                                   null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $enteredDate) {
             unset($this->enteredDate);
@@ -1662,6 +1685,11 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
         }
         if (!($enteredDate instanceof FHIRDateTime)) {
             $enteredDate = new FHIRDateTime(value: $enteredDate);
+        }
+        if (null !== $valueXMLLocation) {
+            $enteredDate->_setValueXMLLocation($valueXMLLocation);
+        } else if (null === $enteredDate->_getValueXMLLocation()) {
+            $enteredDate->_setValueXMLLocation(ValueXMLLocationEnum::ELEMENT);
         }
         $this->enteredDate = $enteredDate;
         return $this;
@@ -2565,16 +2593,16 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
         foreach ($element->children() as $n) {
             $childName = $n->getName();
             if (self::FIELD_ID === $childName) {
-                $v = new FHIRId(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRId(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setId(FHIRId::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_META === $childName) {
                 $v = new FHIRMeta();
                 $type->setMeta(FHIRMeta::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_IMPLICIT_RULES === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setImplicitRules(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_LANGUAGE === $childName) {
-                $v = new FHIRCode(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCode(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setLanguage(FHIRCode::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_TEXT === $childName) {
                 $v = new FHIRNarrative();
@@ -2595,13 +2623,13 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
                 $v = new FHIRIdentifier();
                 $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DEFINITION_URI === $childName) {
-                $v = new FHIRUri(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRUri(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addDefinitionUri(FHIRUri::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_DEFINITION_CANONICAL === $childName) {
-                $v = new FHIRCanonical(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRCanonical(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->addDefinitionCanonical(FHIRCanonical::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_STATUS === $childName) {
-                $v = new FHIRChargeItemStatus(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRChargeItemStatus(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setStatus(FHIRChargeItemStatus::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PART_OF === $childName) {
                 $v = new FHIRReference();
@@ -2616,7 +2644,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
                 $v = new FHIRReference();
                 $type->setContext(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_OCCURRENCE_DATE_TIME === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setOccurrenceDateTime(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_OCCURRENCE_PERIOD === $childName) {
                 $v = new FHIRPeriod();
@@ -2643,19 +2671,19 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
                 $v = new FHIRCodeableConcept();
                 $type->addBodysite(FHIRCodeableConcept::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_FACTOR_OVERRIDE === $childName) {
-                $v = new FHIRDecimal(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDecimal(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setFactorOverride(FHIRDecimal::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_PRICE_OVERRIDE === $childName) {
                 $v = new FHIRMoney();
                 $type->setPriceOverride(FHIRMoney::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_OVERRIDE_REASON === $childName) {
-                $v = new FHIRString(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRString(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setOverrideReason(FHIRString::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ENTERER === $childName) {
                 $v = new FHIRReference();
                 $type->setEnterer(FHIRReference::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_ENTERED_DATE === $childName) {
-                $v = new FHIRDateTime(xmlLocation: XMLLocationEnum::ELEMENT);
+                $v = new FHIRDateTime(valueXMLLocation: ValueXMLLocationEnum::ELEMENT);
                 $type->setEnteredDate(FHIRDateTime::xmlUnserialize($n, $v, $config));
             } else if (self::FIELD_REASON === $childName) {
                 $v = new FHIRCodeableConcept();
@@ -2684,94 +2712,94 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
         if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ID]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ID]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setId(new FHIRId(
                     value: (string)$attributes[self::FIELD_ID],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
             $pt = $type->getImplicitRules();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_IMPLICIT_RULES]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setImplicitRules(new FHIRUri(
                     value: (string)$attributes[self::FIELD_IMPLICIT_RULES],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_LANGUAGE])) {
             $pt = $type->getLanguage();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_LANGUAGE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setLanguage(new FHIRCode(
                     value: (string)$attributes[self::FIELD_LANGUAGE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_DEFINITION_URI])) {
             $v = new FHIRUri(value: (string)$attributes[self::FIELD_DEFINITION_URI],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addDefinitionUri($v);
         }
         if (isset($attributes[self::FIELD_DEFINITION_CANONICAL])) {
             $v = new FHIRCanonical(value: (string)$attributes[self::FIELD_DEFINITION_CANONICAL],
-                                                       xmlLocation: XMLLocationEnum::ATTRIBUTE);
+                                                       valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE);
             $type->addDefinitionCanonical($v);
         }
         if (isset($attributes[self::FIELD_OCCURRENCE_DATE_TIME])) {
             $pt = $type->getOccurrenceDateTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_OCCURRENCE_DATE_TIME]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_OCCURRENCE_DATE_TIME]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setOccurrenceDateTime(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_OCCURRENCE_DATE_TIME],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_FACTOR_OVERRIDE])) {
             $pt = $type->getFactorOverride();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_FACTOR_OVERRIDE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_FACTOR_OVERRIDE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setFactorOverride(new FHIRDecimal(
                     value: (string)$attributes[self::FIELD_FACTOR_OVERRIDE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_OVERRIDE_REASON])) {
             $pt = $type->getOverrideReason();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_OVERRIDE_REASON]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_OVERRIDE_REASON]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setOverrideReason(new FHIRString(
                     value: (string)$attributes[self::FIELD_OVERRIDE_REASON],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
         if (isset($attributes[self::FIELD_ENTERED_DATE])) {
             $pt = $type->getEnteredDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes[self::FIELD_ENTERED_DATE]);
-                $pt->_setXMLLocation(XMLLocationEnum::ATTRIBUTE);
+                $pt->setValue(value:(string)$attributes[self::FIELD_ENTERED_DATE]);
+                $pt->_setValueXMLLocation(ValueXMLLocationEnum::ATTRIBUTE);
             } else {
                 $type->setEnteredDate(new FHIRDateTime(
                     value: (string)$attributes[self::FIELD_ENTERED_DATE],
-                    xmlLocation: XMLLocationEnum::ATTRIBUTE,
+                    valueXMLLocation: ValueXMLLocationEnum::ATTRIBUTE,
                 ));
             }
         }
@@ -2804,31 +2832,31 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
         }
         if (isset($this->definitionUri)) {
            foreach($this->definitionUri as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_DEFINITION_URI, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_DEFINITION_URI, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
         }
         if (isset($this->definitionCanonical)) {
            foreach($this->definitionCanonical as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-                    $xw->writeAttribute(self::FIELD_DEFINITION_CANONICAL, $v->getValue()?->getFormattedValue());
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+                    $xw->writeAttribute(self::FIELD_DEFINITION_CANONICAL, $v->getValue()?->_getFormattedValue());
                     break;
                 }
             }
         }
-        if (isset($this->occurrenceDateTime) && $this->occurrenceDateTime->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_OCCURRENCE_DATE_TIME, $this->occurrenceDateTime->getValue()?->getFormattedValue());
+        if (isset($this->occurrenceDateTime) && $this->occurrenceDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_OCCURRENCE_DATE_TIME, $this->occurrenceDateTime->getValue()?->_getFormattedValue());
         }
-        if (isset($this->factorOverride) && $this->factorOverride->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_FACTOR_OVERRIDE, $this->factorOverride->getValue()?->getFormattedValue());
+        if (isset($this->factorOverride) && $this->factorOverride->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_FACTOR_OVERRIDE, $this->factorOverride->getValue()?->_getFormattedValue());
         }
-        if (isset($this->overrideReason) && $this->overrideReason->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_OVERRIDE_REASON, $this->overrideReason->getValue()?->getFormattedValue());
+        if (isset($this->overrideReason) && $this->overrideReason->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_OVERRIDE_REASON, $this->overrideReason->getValue()?->_getFormattedValue());
         }
-        if (isset($this->enteredDate) && $this->enteredDate->_getXMLLocation() === XMLLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_ENTERED_DATE, $this->enteredDate->getValue()?->getFormattedValue());
+        if (isset($this->enteredDate) && $this->enteredDate->_getValueXMLLocation() === ValueXMLLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_ENTERED_DATE, $this->enteredDate->getValue()?->_getFormattedValue());
         }
         parent::xmlSerialize($xw, $config);
         if (isset($this->identifier)) {
@@ -2840,7 +2868,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
         }
         if (isset($this->definitionUri)) {
             foreach($this->definitionUri as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_DEFINITION_URI);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();
@@ -2849,7 +2877,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
         }
         if (isset($this->definitionCanonical)) {
             foreach($this->definitionCanonical as $v) {
-                if ($v->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+                if ($v->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
                     $xw->startElement(self::FIELD_DEFINITION_CANONICAL);
                     $v->xmlSerialize($xw, $config);
                     $xw->endElement();
@@ -2883,7 +2911,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
             $this->context->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->occurrenceDateTime) && $this->occurrenceDateTime->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->occurrenceDateTime) && $this->occurrenceDateTime->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_OCCURRENCE_DATE_TIME);
             $this->occurrenceDateTime->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -2932,7 +2960,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
                 $xw->endElement();
             }
         }
-        if (isset($this->factorOverride) && $this->factorOverride->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->factorOverride) && $this->factorOverride->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_FACTOR_OVERRIDE);
             $this->factorOverride->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -2942,7 +2970,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
             $this->priceOverride->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->overrideReason) && $this->overrideReason->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->overrideReason) && $this->overrideReason->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_OVERRIDE_REASON);
             $this->overrideReason->xmlSerialize($xw, $config);
             $xw->endElement();
@@ -2952,7 +2980,7 @@ class FHIRChargeItem extends FHIRDomainResource implements VersionContainedTypeI
             $this->enterer->xmlSerialize($xw, $config);
             $xw->endElement();
         }
-        if (isset($this->enteredDate) && $this->enteredDate->_getXMLLocation() === XMLLocationEnum::ELEMENT) {
+        if (isset($this->enteredDate) && $this->enteredDate->_getValueXMLLocation() === ValueXMLLocationEnum::ELEMENT) {
             $xw->startElement(self::FIELD_ENTERED_DATE);
             $this->enteredDate->xmlSerialize($xw, $config);
             $xw->endElement();
