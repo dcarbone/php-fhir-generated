@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -534,33 +534,27 @@ class FHIRPermissionJustification extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_BASIS]) || array_key_exists(self::FIELD_BASIS, $json)) {
-            if (is_array($json[self::FIELD_BASIS])) {
-                foreach($json[self::FIELD_BASIS] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addBasis($v);
-                    } else {
-                        $type->addBasis(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_BASIS] instanceof FHIRCodeableConcept) {
-                $type->addBasis($json[self::FIELD_BASIS]);
-            } else {
-                $type->addBasis(new FHIRCodeableConcept($json[self::FIELD_BASIS]));
+            $vs = $json[self::FIELD_BASIS];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addBasis(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_EVIDENCE]) || array_key_exists(self::FIELD_EVIDENCE, $json)) {
-            if (is_array($json[self::FIELD_EVIDENCE])) {
-                foreach($json[self::FIELD_EVIDENCE] as $v) {
-                    if ($v instanceof FHIRReference) {
-                        $type->addEvidence($v);
-                    } else {
-                        $type->addEvidence(new FHIRReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_EVIDENCE] instanceof FHIRReference) {
-                $type->addEvidence($json[self::FIELD_EVIDENCE]);
-            } else {
-                $type->addEvidence(new FHIRReference($json[self::FIELD_EVIDENCE]));
+            $vs = $json[self::FIELD_EVIDENCE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addEvidence(FHIRReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

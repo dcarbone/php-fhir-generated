@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -671,52 +671,32 @@ class FHIRCitationPeriodicRelease extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_CITED_MEDIUM]) || array_key_exists(self::FIELD_CITED_MEDIUM, $json)) {
-            if ($json[self::FIELD_CITED_MEDIUM] instanceof FHIRCodeableConcept) {
-                $type->setCitedMedium($json[self::FIELD_CITED_MEDIUM]);
-            } else {
-                $type->setCitedMedium(new FHIRCodeableConcept($json[self::FIELD_CITED_MEDIUM]));
-            }
+            $type->setCitedMedium(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_CITED_MEDIUM],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_VOLUME]) || isset($json[self::FIELD_VOLUME_EXT]) || array_key_exists(self::FIELD_VOLUME, $json) || array_key_exists(self::FIELD_VOLUME_EXT, $json)) {
             $value = $json[self::FIELD_VOLUME] ?? null;
-            $ext = (isset($json[self::FIELD_VOLUME_EXT]) && is_array($json[self::FIELD_VOLUME_EXT])) ? $json[self::FIELD_VOLUME_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setVolume($value);
-                } else if (is_array($value)) {
-                    $type->setVolume(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setVolume(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setVolume(new FHIRString($ext));
-            } else {
-                $type->setVolume(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_VOLUME_EXT] ?? []);
+            $type->setVolume(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ISSUE]) || isset($json[self::FIELD_ISSUE_EXT]) || array_key_exists(self::FIELD_ISSUE, $json) || array_key_exists(self::FIELD_ISSUE_EXT, $json)) {
             $value = $json[self::FIELD_ISSUE] ?? null;
-            $ext = (isset($json[self::FIELD_ISSUE_EXT]) && is_array($json[self::FIELD_ISSUE_EXT])) ? $json[self::FIELD_ISSUE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setIssue($value);
-                } else if (is_array($value)) {
-                    $type->setIssue(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setIssue(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setIssue(new FHIRString($ext));
-            } else {
-                $type->setIssue(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_ISSUE_EXT] ?? []);
+            $type->setIssue(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_DATE_OF_PUBLICATION]) || array_key_exists(self::FIELD_DATE_OF_PUBLICATION, $json)) {
-            if ($json[self::FIELD_DATE_OF_PUBLICATION] instanceof FHIRCitationDateOfPublication) {
-                $type->setDateOfPublication($json[self::FIELD_DATE_OF_PUBLICATION]);
-            } else {
-                $type->setDateOfPublication(new FHIRCitationDateOfPublication($json[self::FIELD_DATE_OF_PUBLICATION]));
-            }
+            $type->setDateOfPublication(FHIRCitationDateOfPublication::jsonUnserialize(
+                json: $json[self::FIELD_DATE_OF_PUBLICATION],
+                config: $config,
+            ));
         }
         return $type;
     }

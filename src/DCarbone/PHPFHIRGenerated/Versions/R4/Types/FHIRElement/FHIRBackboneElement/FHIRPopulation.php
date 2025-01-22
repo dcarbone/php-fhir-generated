@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -677,39 +677,34 @@ class FHIRPopulation extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_AGE_RANGE]) || array_key_exists(self::FIELD_AGE_RANGE, $json)) {
-            if ($json[self::FIELD_AGE_RANGE] instanceof FHIRRange) {
-                $type->setAgeRange($json[self::FIELD_AGE_RANGE]);
-            } else {
-                $type->setAgeRange(new FHIRRange($json[self::FIELD_AGE_RANGE]));
-            }
+            $type->setAgeRange(FHIRRange::jsonUnserialize(
+                json: $json[self::FIELD_AGE_RANGE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_AGE_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_AGE_CODEABLE_CONCEPT, $json)) {
-            if ($json[self::FIELD_AGE_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
-                $type->setAgeCodeableConcept($json[self::FIELD_AGE_CODEABLE_CONCEPT]);
-            } else {
-                $type->setAgeCodeableConcept(new FHIRCodeableConcept($json[self::FIELD_AGE_CODEABLE_CONCEPT]));
-            }
+            $type->setAgeCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_AGE_CODEABLE_CONCEPT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_GENDER]) || array_key_exists(self::FIELD_GENDER, $json)) {
-            if ($json[self::FIELD_GENDER] instanceof FHIRCodeableConcept) {
-                $type->setGender($json[self::FIELD_GENDER]);
-            } else {
-                $type->setGender(new FHIRCodeableConcept($json[self::FIELD_GENDER]));
-            }
+            $type->setGender(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_GENDER],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_RACE]) || array_key_exists(self::FIELD_RACE, $json)) {
-            if ($json[self::FIELD_RACE] instanceof FHIRCodeableConcept) {
-                $type->setRace($json[self::FIELD_RACE]);
-            } else {
-                $type->setRace(new FHIRCodeableConcept($json[self::FIELD_RACE]));
-            }
+            $type->setRace(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_RACE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PHYSIOLOGICAL_CONDITION]) || array_key_exists(self::FIELD_PHYSIOLOGICAL_CONDITION, $json)) {
-            if ($json[self::FIELD_PHYSIOLOGICAL_CONDITION] instanceof FHIRCodeableConcept) {
-                $type->setPhysiologicalCondition($json[self::FIELD_PHYSIOLOGICAL_CONDITION]);
-            } else {
-                $type->setPhysiologicalCondition(new FHIRCodeableConcept($json[self::FIELD_PHYSIOLOGICAL_CONDITION]));
-            }
+            $type->setPhysiologicalCondition(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_PHYSIOLOGICAL_CONDITION],
+                config: $config,
+            ));
         }
         return $type;
     }

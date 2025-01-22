@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -512,33 +512,27 @@ class FHIRAvailability extends FHIRDataType
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_AVAILABLE_TIME]) || array_key_exists(self::FIELD_AVAILABLE_TIME, $json)) {
-            if (is_array($json[self::FIELD_AVAILABLE_TIME])) {
-                foreach($json[self::FIELD_AVAILABLE_TIME] as $v) {
-                    if ($v instanceof FHIRAvailabilityAvailableTime) {
-                        $type->addAvailableTime($v);
-                    } else {
-                        $type->addAvailableTime(new FHIRAvailabilityAvailableTime($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_AVAILABLE_TIME] instanceof FHIRAvailabilityAvailableTime) {
-                $type->addAvailableTime($json[self::FIELD_AVAILABLE_TIME]);
-            } else {
-                $type->addAvailableTime(new FHIRAvailabilityAvailableTime($json[self::FIELD_AVAILABLE_TIME]));
+            $vs = $json[self::FIELD_AVAILABLE_TIME];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addAvailableTime(FHIRAvailabilityAvailableTime::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_NOT_AVAILABLE_TIME]) || array_key_exists(self::FIELD_NOT_AVAILABLE_TIME, $json)) {
-            if (is_array($json[self::FIELD_NOT_AVAILABLE_TIME])) {
-                foreach($json[self::FIELD_NOT_AVAILABLE_TIME] as $v) {
-                    if ($v instanceof FHIRAvailabilityNotAvailableTime) {
-                        $type->addNotAvailableTime($v);
-                    } else {
-                        $type->addNotAvailableTime(new FHIRAvailabilityNotAvailableTime($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_NOT_AVAILABLE_TIME] instanceof FHIRAvailabilityNotAvailableTime) {
-                $type->addNotAvailableTime($json[self::FIELD_NOT_AVAILABLE_TIME]);
-            } else {
-                $type->addNotAvailableTime(new FHIRAvailabilityNotAvailableTime($json[self::FIELD_NOT_AVAILABLE_TIME]));
+            $vs = $json[self::FIELD_NOT_AVAILABLE_TIME];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addNotAvailableTime(FHIRAvailabilityNotAvailableTime::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

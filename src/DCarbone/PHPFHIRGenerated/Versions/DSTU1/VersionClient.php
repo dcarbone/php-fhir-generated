@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,28 +94,26 @@ class VersionClient
      *
      * @see https://www.hl7.org/fhir/http.html#read
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionTypesEnum $resourceType
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionTypesEnum $resourceType
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $resourceID
      * @param null|int $count
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Client\SortDirectionEnum $sort
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum $format
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Client\SortDirectionEnum $sort May be a string value if your server supports non-standard sorting methods
+     * @param null|\DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum $format
      * @param null|array $queryParams
      * @param null|bool $parseResponseHeaders
      * @return \DCarbone\PHPFHIRGenerated\Client\Response
      * @throws \Exception
      */
-    public function readRaw(string|VersionTypesEnum $resourceType,
+    public function readRaw(VersionTypesEnum $resourceType,
                             null|string|FHIRId|FHIRIdPrimitive $resourceID = null,
                             null|int $count = null,
                             null|string|SortDirectionEnum $sort = null,
-                            null|string|ResponseFormatEnum $format = null,
+                            null|ResponseFormatEnum $format = null,
                             null|array $queryParams = null,
                             null|bool $parseResponseHeaders = null): Response
     {
-        if (!is_string($resourceType)) {
-            $resourceType = $resourceType->value;
-        }
-        $path = "/{$resourceType}";
+
+        $path = "/{$resourceType->value}";
         if (null !== $resourceID) {
             $resourceID = trim((string)$resourceID);
             if ('' === $resourceID) {
@@ -131,10 +129,10 @@ class VersionClient
             $req->count = $count;
         }
         if (null !== $sort) {
-            $req->sort = (string)$sort;
+            $req->sort = is_string($sort) ? $sort : $sort->value;
         }
         if (null !== $format) {
-            $req->format = (string)$format;
+            $req->format = $format->value;
         }
         if (null !== $parseResponseHeaders) {
             $req->parseResponseHeaders = $parseResponseHeaders;
@@ -150,21 +148,21 @@ class VersionClient
      *
      * @see https://www.hl7.org/fhir/http.html#read
      *
-     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionTypesEnum $resourceType
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionTypesEnum $resourceType
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRId|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $resourceID
      * @param null|int $count
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Client\SortDirectionEnum $sort
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum $format
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Client\SortDirectionEnum $sort May be a string value if your server supports non-standard sorting methods
+     * @param null|\DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum $format
      * @param null|array $queryParams
      * @param null|bool $parseResponseHeaders
      * @return null|\DCarbone\PHPFHIRGenerated\TypeInterface
      * @throws \Exception
      */
-    public function read(string|VersionTypesEnum $resourceType,
+    public function read(VersionTypesEnum $resourceType,
                          null|string|FHIRId|FHIRIdPrimitive $resourceID = null,
                          null|int $count = null,
                          null|string|SortDirectionEnum $sort = null,
-                         null|string|ResponseFormatEnum $format = null,
+                         null|ResponseFormatEnum $format = null,
                          null|array $queryParams = null,
                          null|bool $parseResponseHeaders = null): null|TypeInterface
     {

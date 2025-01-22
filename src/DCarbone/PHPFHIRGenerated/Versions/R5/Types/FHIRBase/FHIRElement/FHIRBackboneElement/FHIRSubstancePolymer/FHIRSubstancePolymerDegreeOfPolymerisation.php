@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -695,62 +695,34 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_AVERAGE]) || isset($json[self::FIELD_AVERAGE_EXT]) || array_key_exists(self::FIELD_AVERAGE, $json) || array_key_exists(self::FIELD_AVERAGE_EXT, $json)) {
             $value = $json[self::FIELD_AVERAGE] ?? null;
-            $ext = (isset($json[self::FIELD_AVERAGE_EXT]) && is_array($json[self::FIELD_AVERAGE_EXT])) ? $json[self::FIELD_AVERAGE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $type->setAverage($value);
-                } else if (is_array($value)) {
-                    $type->setAverage(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $type->setAverage(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setAverage(new FHIRInteger($ext));
-            } else {
-                $type->setAverage(new FHIRInteger(null));
-            }
+            $ext = (array)($json[self::FIELD_AVERAGE_EXT] ?? []);
+            $type->setAverage(FHIRInteger::jsonUnserialize(
+                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_LOW]) || isset($json[self::FIELD_LOW_EXT]) || array_key_exists(self::FIELD_LOW, $json) || array_key_exists(self::FIELD_LOW_EXT, $json)) {
             $value = $json[self::FIELD_LOW] ?? null;
-            $ext = (isset($json[self::FIELD_LOW_EXT]) && is_array($json[self::FIELD_LOW_EXT])) ? $json[self::FIELD_LOW_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $type->setLow($value);
-                } else if (is_array($value)) {
-                    $type->setLow(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $type->setLow(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setLow(new FHIRInteger($ext));
-            } else {
-                $type->setLow(new FHIRInteger(null));
-            }
+            $ext = (array)($json[self::FIELD_LOW_EXT] ?? []);
+            $type->setLow(FHIRInteger::jsonUnserialize(
+                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_HIGH]) || isset($json[self::FIELD_HIGH_EXT]) || array_key_exists(self::FIELD_HIGH, $json) || array_key_exists(self::FIELD_HIGH_EXT, $json)) {
             $value = $json[self::FIELD_HIGH] ?? null;
-            $ext = (isset($json[self::FIELD_HIGH_EXT]) && is_array($json[self::FIELD_HIGH_EXT])) ? $json[self::FIELD_HIGH_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $type->setHigh($value);
-                } else if (is_array($value)) {
-                    $type->setHigh(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $type->setHigh(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setHigh(new FHIRInteger($ext));
-            } else {
-                $type->setHigh(new FHIRInteger(null));
-            }
+            $ext = (array)($json[self::FIELD_HIGH_EXT] ?? []);
+            $type->setHigh(FHIRInteger::jsonUnserialize(
+                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

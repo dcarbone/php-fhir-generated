@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -577,51 +577,30 @@ class FHIRContributor extends FHIRElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (isset($json[self::FIELD_TYPE_EXT]) && is_array($json[self::FIELD_TYPE_EXT])) ? $json[self::FIELD_TYPE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRContributorType) {
-                    $type->setType($value);
-                } else if (is_array($value)) {
-                    $type->setType(new FHIRContributorType(array_merge($ext, $value)));
-                } else {
-                    $type->setType(new FHIRContributorType([FHIRContributorType::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setType(new FHIRContributorType($ext));
-            } else {
-                $type->setType(new FHIRContributorType(null));
-            }
+            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
+            $type->setType(FHIRContributorType::jsonUnserialize(
+                json: [FHIRContributorType::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (isset($json[self::FIELD_NAME_EXT]) && is_array($json[self::FIELD_NAME_EXT])) ? $json[self::FIELD_NAME_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setName($value);
-                } else if (is_array($value)) {
-                    $type->setName(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setName(new FHIRString($ext));
-            } else {
-                $type->setName(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
+            $type->setName(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_CONTACT]) || array_key_exists(self::FIELD_CONTACT, $json)) {
-            if (is_array($json[self::FIELD_CONTACT])) {
-                foreach($json[self::FIELD_CONTACT] as $v) {
-                    if ($v instanceof FHIRContactDetail) {
-                        $type->addContact($v);
-                    } else {
-                        $type->addContact(new FHIRContactDetail($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_CONTACT] instanceof FHIRContactDetail) {
-                $type->addContact($json[self::FIELD_CONTACT]);
-            } else {
-                $type->addContact(new FHIRContactDetail($json[self::FIELD_CONTACT]));
+            $vs = $json[self::FIELD_CONTACT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addContact(FHIRContactDetail::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -484,37 +484,19 @@ class FHIRAuditEventNetwork extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_ADDRESS]) || isset($json[self::FIELD_ADDRESS_EXT]) || array_key_exists(self::FIELD_ADDRESS, $json) || array_key_exists(self::FIELD_ADDRESS_EXT, $json)) {
             $value = $json[self::FIELD_ADDRESS] ?? null;
-            $ext = (isset($json[self::FIELD_ADDRESS_EXT]) && is_array($json[self::FIELD_ADDRESS_EXT])) ? $json[self::FIELD_ADDRESS_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setAddress($value);
-                } else if (is_array($value)) {
-                    $type->setAddress(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setAddress(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setAddress(new FHIRString($ext));
-            } else {
-                $type->setAddress(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_ADDRESS_EXT] ?? []);
+            $type->setAddress(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (isset($json[self::FIELD_TYPE_EXT]) && is_array($json[self::FIELD_TYPE_EXT])) ? $json[self::FIELD_TYPE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRAuditEventParticipantNetworkType) {
-                    $type->setType($value);
-                } else if (is_array($value)) {
-                    $type->setType(new FHIRAuditEventParticipantNetworkType(array_merge($ext, $value)));
-                } else {
-                    $type->setType(new FHIRAuditEventParticipantNetworkType([FHIRAuditEventParticipantNetworkType::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setType(new FHIRAuditEventParticipantNetworkType($ext));
-            } else {
-                $type->setType(new FHIRAuditEventParticipantNetworkType(null));
-            }
+            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
+            $type->setType(FHIRAuditEventParticipantNetworkType::jsonUnserialize(
+                json: [FHIRAuditEventParticipantNetworkType::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

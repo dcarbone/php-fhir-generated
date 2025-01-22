@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -683,49 +683,35 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_COVERAGE]) || array_key_exists(self::FIELD_COVERAGE, $json)) {
-            if ($json[self::FIELD_COVERAGE] instanceof FHIRReference) {
-                $type->setCoverage($json[self::FIELD_COVERAGE]);
-            } else {
-                $type->setCoverage(new FHIRReference($json[self::FIELD_COVERAGE]));
-            }
+            $type->setCoverage(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_COVERAGE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_INFORCE]) || isset($json[self::FIELD_INFORCE_EXT]) || array_key_exists(self::FIELD_INFORCE, $json) || array_key_exists(self::FIELD_INFORCE_EXT, $json)) {
             $value = $json[self::FIELD_INFORCE] ?? null;
-            $ext = (isset($json[self::FIELD_INFORCE_EXT]) && is_array($json[self::FIELD_INFORCE_EXT])) ? $json[self::FIELD_INFORCE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $type->setInforce($value);
-                } else if (is_array($value)) {
-                    $type->setInforce(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $type->setInforce(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setInforce(new FHIRBoolean($ext));
-            } else {
-                $type->setInforce(new FHIRBoolean(null));
-            }
+            $ext = (array)($json[self::FIELD_INFORCE_EXT] ?? []);
+            $type->setInforce(FHIRBoolean::jsonUnserialize(
+                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_BENEFIT_PERIOD]) || array_key_exists(self::FIELD_BENEFIT_PERIOD, $json)) {
-            if ($json[self::FIELD_BENEFIT_PERIOD] instanceof FHIRPeriod) {
-                $type->setBenefitPeriod($json[self::FIELD_BENEFIT_PERIOD]);
-            } else {
-                $type->setBenefitPeriod(new FHIRPeriod($json[self::FIELD_BENEFIT_PERIOD]));
-            }
+            $type->setBenefitPeriod(FHIRPeriod::jsonUnserialize(
+                json: $json[self::FIELD_BENEFIT_PERIOD],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ITEM]) || array_key_exists(self::FIELD_ITEM, $json)) {
-            if (is_array($json[self::FIELD_ITEM])) {
-                foreach($json[self::FIELD_ITEM] as $v) {
-                    if ($v instanceof FHIRCoverageEligibilityResponseItem) {
-                        $type->addItem($v);
-                    } else {
-                        $type->addItem(new FHIRCoverageEligibilityResponseItem($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_ITEM] instanceof FHIRCoverageEligibilityResponseItem) {
-                $type->addItem($json[self::FIELD_ITEM]);
-            } else {
-                $type->addItem(new FHIRCoverageEligibilityResponseItem($json[self::FIELD_ITEM]));
+            $vs = $json[self::FIELD_ITEM];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addItem(FHIRCoverageEligibilityResponseItem::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

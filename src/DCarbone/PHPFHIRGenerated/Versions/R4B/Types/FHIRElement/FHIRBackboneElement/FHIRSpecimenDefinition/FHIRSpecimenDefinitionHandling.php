@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -650,42 +650,30 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TEMPERATURE_QUALIFIER]) || array_key_exists(self::FIELD_TEMPERATURE_QUALIFIER, $json)) {
-            if ($json[self::FIELD_TEMPERATURE_QUALIFIER] instanceof FHIRCodeableConcept) {
-                $type->setTemperatureQualifier($json[self::FIELD_TEMPERATURE_QUALIFIER]);
-            } else {
-                $type->setTemperatureQualifier(new FHIRCodeableConcept($json[self::FIELD_TEMPERATURE_QUALIFIER]));
-            }
+            $type->setTemperatureQualifier(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TEMPERATURE_QUALIFIER],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_TEMPERATURE_RANGE]) || array_key_exists(self::FIELD_TEMPERATURE_RANGE, $json)) {
-            if ($json[self::FIELD_TEMPERATURE_RANGE] instanceof FHIRRange) {
-                $type->setTemperatureRange($json[self::FIELD_TEMPERATURE_RANGE]);
-            } else {
-                $type->setTemperatureRange(new FHIRRange($json[self::FIELD_TEMPERATURE_RANGE]));
-            }
+            $type->setTemperatureRange(FHIRRange::jsonUnserialize(
+                json: $json[self::FIELD_TEMPERATURE_RANGE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_MAX_DURATION]) || array_key_exists(self::FIELD_MAX_DURATION, $json)) {
-            if ($json[self::FIELD_MAX_DURATION] instanceof FHIRDuration) {
-                $type->setMaxDuration($json[self::FIELD_MAX_DURATION]);
-            } else {
-                $type->setMaxDuration(new FHIRDuration($json[self::FIELD_MAX_DURATION]));
-            }
+            $type->setMaxDuration(FHIRDuration::jsonUnserialize(
+                json: $json[self::FIELD_MAX_DURATION],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_INSTRUCTION]) || isset($json[self::FIELD_INSTRUCTION_EXT]) || array_key_exists(self::FIELD_INSTRUCTION, $json) || array_key_exists(self::FIELD_INSTRUCTION_EXT, $json)) {
             $value = $json[self::FIELD_INSTRUCTION] ?? null;
-            $ext = (isset($json[self::FIELD_INSTRUCTION_EXT]) && is_array($json[self::FIELD_INSTRUCTION_EXT])) ? $json[self::FIELD_INSTRUCTION_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setInstruction($value);
-                } else if (is_array($value)) {
-                    $type->setInstruction(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setInstruction(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setInstruction(new FHIRString($ext));
-            } else {
-                $type->setInstruction(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_INSTRUCTION_EXT] ?? []);
+            $type->setInstruction(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1225,226 +1225,128 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_SCORE]) || isset($json[self::FIELD_SCORE_EXT]) || array_key_exists(self::FIELD_SCORE, $json) || array_key_exists(self::FIELD_SCORE_EXT, $json)) {
             $value = $json[self::FIELD_SCORE] ?? null;
-            $ext = (isset($json[self::FIELD_SCORE_EXT]) && is_array($json[self::FIELD_SCORE_EXT])) ? $json[self::FIELD_SCORE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $type->addScore($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRInteger) {
-                            $type->addScore($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $type->addScore(new FHIRInteger(array_merge($v, $iext)));
-                            } else {
-                                $type->addScore(new FHIRInteger([FHIRInteger::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $type->addScore(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $type->addScore(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $type->addScore(new FHIRInteger($iext));
-                }
-            } else {
-                $type->addScore(new FHIRInteger(null));
+            $ext = (array)($json[self::FIELD_SCORE_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
+                $type->addScore(FHIRInteger::jsonUnserialize(
+                    json: [FHIRInteger::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_NUM_TP]) || isset($json[self::FIELD_NUM_TP_EXT]) || array_key_exists(self::FIELD_NUM_TP, $json) || array_key_exists(self::FIELD_NUM_TP_EXT, $json)) {
             $value = $json[self::FIELD_NUM_TP] ?? null;
-            $ext = (isset($json[self::FIELD_NUM_TP_EXT]) && is_array($json[self::FIELD_NUM_TP_EXT])) ? $json[self::FIELD_NUM_TP_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $type->addNumTP($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRInteger) {
-                            $type->addNumTP($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $type->addNumTP(new FHIRInteger(array_merge($v, $iext)));
-                            } else {
-                                $type->addNumTP(new FHIRInteger([FHIRInteger::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $type->addNumTP(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $type->addNumTP(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $type->addNumTP(new FHIRInteger($iext));
-                }
-            } else {
-                $type->addNumTP(new FHIRInteger(null));
+            $ext = (array)($json[self::FIELD_NUM_TP_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
+                $type->addNumTP(FHIRInteger::jsonUnserialize(
+                    json: [FHIRInteger::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_NUM_FP]) || isset($json[self::FIELD_NUM_FP_EXT]) || array_key_exists(self::FIELD_NUM_FP, $json) || array_key_exists(self::FIELD_NUM_FP_EXT, $json)) {
             $value = $json[self::FIELD_NUM_FP] ?? null;
-            $ext = (isset($json[self::FIELD_NUM_FP_EXT]) && is_array($json[self::FIELD_NUM_FP_EXT])) ? $json[self::FIELD_NUM_FP_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $type->addNumFP($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRInteger) {
-                            $type->addNumFP($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $type->addNumFP(new FHIRInteger(array_merge($v, $iext)));
-                            } else {
-                                $type->addNumFP(new FHIRInteger([FHIRInteger::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $type->addNumFP(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $type->addNumFP(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $type->addNumFP(new FHIRInteger($iext));
-                }
-            } else {
-                $type->addNumFP(new FHIRInteger(null));
+            $ext = (array)($json[self::FIELD_NUM_FP_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
+                $type->addNumFP(FHIRInteger::jsonUnserialize(
+                    json: [FHIRInteger::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_NUM_FN]) || isset($json[self::FIELD_NUM_FN_EXT]) || array_key_exists(self::FIELD_NUM_FN, $json) || array_key_exists(self::FIELD_NUM_FN_EXT, $json)) {
             $value = $json[self::FIELD_NUM_FN] ?? null;
-            $ext = (isset($json[self::FIELD_NUM_FN_EXT]) && is_array($json[self::FIELD_NUM_FN_EXT])) ? $json[self::FIELD_NUM_FN_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $type->addNumFN($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRInteger) {
-                            $type->addNumFN($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $type->addNumFN(new FHIRInteger(array_merge($v, $iext)));
-                            } else {
-                                $type->addNumFN(new FHIRInteger([FHIRInteger::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $type->addNumFN(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $type->addNumFN(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $type->addNumFN(new FHIRInteger($iext));
-                }
-            } else {
-                $type->addNumFN(new FHIRInteger(null));
+            $ext = (array)($json[self::FIELD_NUM_FN_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
+                $type->addNumFN(FHIRInteger::jsonUnserialize(
+                    json: [FHIRInteger::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_PRECISION]) || isset($json[self::FIELD_PRECISION_EXT]) || array_key_exists(self::FIELD_PRECISION, $json) || array_key_exists(self::FIELD_PRECISION_EXT, $json)) {
             $value = $json[self::FIELD_PRECISION] ?? null;
-            $ext = (isset($json[self::FIELD_PRECISION_EXT]) && is_array($json[self::FIELD_PRECISION_EXT])) ? $json[self::FIELD_PRECISION_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $type->addPrecision($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRDecimal) {
-                            $type->addPrecision($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $type->addPrecision(new FHIRDecimal(array_merge($v, $iext)));
-                            } else {
-                                $type->addPrecision(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $type->addPrecision(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $type->addPrecision(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $type->addPrecision(new FHIRDecimal($iext));
-                }
-            } else {
-                $type->addPrecision(new FHIRDecimal(null));
+            $ext = (array)($json[self::FIELD_PRECISION_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
+                $type->addPrecision(FHIRDecimal::jsonUnserialize(
+                    json: [FHIRDecimal::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_SENSITIVITY]) || isset($json[self::FIELD_SENSITIVITY_EXT]) || array_key_exists(self::FIELD_SENSITIVITY, $json) || array_key_exists(self::FIELD_SENSITIVITY_EXT, $json)) {
             $value = $json[self::FIELD_SENSITIVITY] ?? null;
-            $ext = (isset($json[self::FIELD_SENSITIVITY_EXT]) && is_array($json[self::FIELD_SENSITIVITY_EXT])) ? $json[self::FIELD_SENSITIVITY_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $type->addSensitivity($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRDecimal) {
-                            $type->addSensitivity($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $type->addSensitivity(new FHIRDecimal(array_merge($v, $iext)));
-                            } else {
-                                $type->addSensitivity(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $type->addSensitivity(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $type->addSensitivity(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $type->addSensitivity(new FHIRDecimal($iext));
-                }
-            } else {
-                $type->addSensitivity(new FHIRDecimal(null));
+            $ext = (array)($json[self::FIELD_SENSITIVITY_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
+                $type->addSensitivity(FHIRDecimal::jsonUnserialize(
+                    json: [FHIRDecimal::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_F_MEASURE]) || isset($json[self::FIELD_F_MEASURE_EXT]) || array_key_exists(self::FIELD_F_MEASURE, $json) || array_key_exists(self::FIELD_F_MEASURE_EXT, $json)) {
             $value = $json[self::FIELD_F_MEASURE] ?? null;
-            $ext = (isset($json[self::FIELD_F_MEASURE_EXT]) && is_array($json[self::FIELD_F_MEASURE_EXT])) ? $json[self::FIELD_F_MEASURE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $type->addFMeasure($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRDecimal) {
-                            $type->addFMeasure($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $type->addFMeasure(new FHIRDecimal(array_merge($v, $iext)));
-                            } else {
-                                $type->addFMeasure(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $type->addFMeasure(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $type->addFMeasure(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $type->addFMeasure(new FHIRDecimal($iext));
-                }
-            } else {
-                $type->addFMeasure(new FHIRDecimal(null));
+            $ext = (array)($json[self::FIELD_F_MEASURE_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
+                $type->addFMeasure(FHIRDecimal::jsonUnserialize(
+                    json: [FHIRDecimal::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
+                    config: $config,
+                ));
             }
         }
         return $type;

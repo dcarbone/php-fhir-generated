@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -498,37 +498,19 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_AMOUNT]) || isset($json[self::FIELD_AMOUNT_EXT]) || array_key_exists(self::FIELD_AMOUNT, $json) || array_key_exists(self::FIELD_AMOUNT_EXT, $json)) {
             $value = $json[self::FIELD_AMOUNT] ?? null;
-            $ext = (isset($json[self::FIELD_AMOUNT_EXT]) && is_array($json[self::FIELD_AMOUNT_EXT])) ? $json[self::FIELD_AMOUNT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $type->setAmount($value);
-                } else if (is_array($value)) {
-                    $type->setAmount(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $type->setAmount(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setAmount(new FHIRDecimal($ext));
-            } else {
-                $type->setAmount(new FHIRDecimal(null));
-            }
+            $ext = (array)($json[self::FIELD_AMOUNT_EXT] ?? []);
+            $type->setAmount(FHIRDecimal::jsonUnserialize(
+                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_BASE]) || isset($json[self::FIELD_BASE_EXT]) || array_key_exists(self::FIELD_BASE, $json) || array_key_exists(self::FIELD_BASE_EXT, $json)) {
             $value = $json[self::FIELD_BASE] ?? null;
-            $ext = (isset($json[self::FIELD_BASE_EXT]) && is_array($json[self::FIELD_BASE_EXT])) ? $json[self::FIELD_BASE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRVisionBase) {
-                    $type->setBase($value);
-                } else if (is_array($value)) {
-                    $type->setBase(new FHIRVisionBase(array_merge($ext, $value)));
-                } else {
-                    $type->setBase(new FHIRVisionBase([FHIRVisionBase::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setBase(new FHIRVisionBase($ext));
-            } else {
-                $type->setBase(new FHIRVisionBase(null));
-            }
+            $ext = (array)($json[self::FIELD_BASE_EXT] ?? []);
+            $type->setBase(FHIRVisionBase::jsonUnserialize(
+                json: [FHIRVisionBase::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

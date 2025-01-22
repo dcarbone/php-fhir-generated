@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -857,79 +857,59 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            if ($json[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
-                $type->setIdentifier($json[self::FIELD_IDENTIFIER]);
-            } else {
-                $type->setIdentifier(new FHIRIdentifier($json[self::FIELD_IDENTIFIER]));
-            }
+            $type->setIdentifier(FHIRIdentifier::jsonUnserialize(
+                json: $json[self::FIELD_IDENTIFIER],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_COUNT]) || isset($json[self::FIELD_COUNT_EXT]) || array_key_exists(self::FIELD_COUNT, $json) || array_key_exists(self::FIELD_COUNT_EXT, $json)) {
             $value = $json[self::FIELD_COUNT] ?? null;
-            $ext = (isset($json[self::FIELD_COUNT_EXT]) && is_array($json[self::FIELD_COUNT_EXT])) ? $json[self::FIELD_COUNT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $type->setCount($value);
-                } else if (is_array($value)) {
-                    $type->setCount(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $type->setCount(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setCount(new FHIRInteger($ext));
-            } else {
-                $type->setCount(new FHIRInteger(null));
-            }
+            $ext = (array)($json[self::FIELD_COUNT_EXT] ?? []);
+            $type->setCount(FHIRInteger::jsonUnserialize(
+                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_DISTRIBUTOR]) || array_key_exists(self::FIELD_DISTRIBUTOR, $json)) {
-            if (is_array($json[self::FIELD_DISTRIBUTOR])) {
-                foreach($json[self::FIELD_DISTRIBUTOR] as $v) {
-                    if ($v instanceof FHIRDeviceDefinitionDistributor) {
-                        $type->addDistributor($v);
-                    } else {
-                        $type->addDistributor(new FHIRDeviceDefinitionDistributor($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_DISTRIBUTOR] instanceof FHIRDeviceDefinitionDistributor) {
-                $type->addDistributor($json[self::FIELD_DISTRIBUTOR]);
-            } else {
-                $type->addDistributor(new FHIRDeviceDefinitionDistributor($json[self::FIELD_DISTRIBUTOR]));
+            $vs = $json[self::FIELD_DISTRIBUTOR];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addDistributor(FHIRDeviceDefinitionDistributor::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_UDI_DEVICE_IDENTIFIER]) || array_key_exists(self::FIELD_UDI_DEVICE_IDENTIFIER, $json)) {
-            if (is_array($json[self::FIELD_UDI_DEVICE_IDENTIFIER])) {
-                foreach($json[self::FIELD_UDI_DEVICE_IDENTIFIER] as $v) {
-                    if ($v instanceof FHIRDeviceDefinitionUdiDeviceIdentifier) {
-                        $type->addUdiDeviceIdentifier($v);
-                    } else {
-                        $type->addUdiDeviceIdentifier(new FHIRDeviceDefinitionUdiDeviceIdentifier($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_UDI_DEVICE_IDENTIFIER] instanceof FHIRDeviceDefinitionUdiDeviceIdentifier) {
-                $type->addUdiDeviceIdentifier($json[self::FIELD_UDI_DEVICE_IDENTIFIER]);
-            } else {
-                $type->addUdiDeviceIdentifier(new FHIRDeviceDefinitionUdiDeviceIdentifier($json[self::FIELD_UDI_DEVICE_IDENTIFIER]));
+            $vs = $json[self::FIELD_UDI_DEVICE_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addUdiDeviceIdentifier(FHIRDeviceDefinitionUdiDeviceIdentifier::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_PACKAGING]) || array_key_exists(self::FIELD_PACKAGING, $json)) {
-            if (is_array($json[self::FIELD_PACKAGING])) {
-                foreach($json[self::FIELD_PACKAGING] as $v) {
-                    if ($v instanceof FHIRDeviceDefinitionPackaging) {
-                        $type->addPackaging($v);
-                    } else {
-                        $type->addPackaging(new FHIRDeviceDefinitionPackaging($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_PACKAGING] instanceof FHIRDeviceDefinitionPackaging) {
-                $type->addPackaging($json[self::FIELD_PACKAGING]);
-            } else {
-                $type->addPackaging(new FHIRDeviceDefinitionPackaging($json[self::FIELD_PACKAGING]));
+            $vs = $json[self::FIELD_PACKAGING];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addPackaging(FHIRDeviceDefinitionPackaging::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -508,33 +508,27 @@ class FHIRImmunizationExplanation extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_REASON]) || array_key_exists(self::FIELD_REASON, $json)) {
-            if (is_array($json[self::FIELD_REASON])) {
-                foreach($json[self::FIELD_REASON] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addReason($v);
-                    } else {
-                        $type->addReason(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_REASON] instanceof FHIRCodeableConcept) {
-                $type->addReason($json[self::FIELD_REASON]);
-            } else {
-                $type->addReason(new FHIRCodeableConcept($json[self::FIELD_REASON]));
+            $vs = $json[self::FIELD_REASON];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addReason(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_REFUSAL_REASON]) || array_key_exists(self::FIELD_REFUSAL_REASON, $json)) {
-            if (is_array($json[self::FIELD_REFUSAL_REASON])) {
-                foreach($json[self::FIELD_REFUSAL_REASON] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addRefusalReason($v);
-                    } else {
-                        $type->addRefusalReason(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_REFUSAL_REASON] instanceof FHIRCodeableConcept) {
-                $type->addRefusalReason($json[self::FIELD_REFUSAL_REASON]);
-            } else {
-                $type->addRefusalReason(new FHIRCodeableConcept($json[self::FIELD_REFUSAL_REASON]));
+            $vs = $json[self::FIELD_REFUSAL_REASON];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addRefusalReason(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

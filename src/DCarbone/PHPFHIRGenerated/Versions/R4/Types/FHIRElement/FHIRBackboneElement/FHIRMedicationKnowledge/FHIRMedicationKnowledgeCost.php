@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -571,35 +571,24 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SOURCE]) || isset($json[self::FIELD_SOURCE_EXT]) || array_key_exists(self::FIELD_SOURCE, $json) || array_key_exists(self::FIELD_SOURCE_EXT, $json)) {
             $value = $json[self::FIELD_SOURCE] ?? null;
-            $ext = (isset($json[self::FIELD_SOURCE_EXT]) && is_array($json[self::FIELD_SOURCE_EXT])) ? $json[self::FIELD_SOURCE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setSource($value);
-                } else if (is_array($value)) {
-                    $type->setSource(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setSource(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setSource(new FHIRString($ext));
-            } else {
-                $type->setSource(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_SOURCE_EXT] ?? []);
+            $type->setSource(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_COST]) || array_key_exists(self::FIELD_COST, $json)) {
-            if ($json[self::FIELD_COST] instanceof FHIRMoney) {
-                $type->setCost($json[self::FIELD_COST]);
-            } else {
-                $type->setCost(new FHIRMoney($json[self::FIELD_COST]));
-            }
+            $type->setCost(FHIRMoney::jsonUnserialize(
+                json: $json[self::FIELD_COST],
+                config: $config,
+            ));
         }
         return $type;
     }

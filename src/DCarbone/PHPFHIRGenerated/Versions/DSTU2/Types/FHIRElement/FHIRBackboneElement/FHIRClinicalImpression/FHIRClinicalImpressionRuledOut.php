@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -499,28 +499,18 @@ class FHIRClinicalImpressionRuledOut extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_ITEM]) || array_key_exists(self::FIELD_ITEM, $json)) {
-            if ($json[self::FIELD_ITEM] instanceof FHIRCodeableConcept) {
-                $type->setItem($json[self::FIELD_ITEM]);
-            } else {
-                $type->setItem(new FHIRCodeableConcept($json[self::FIELD_ITEM]));
-            }
+            $type->setItem(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_ITEM],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_REASON]) || isset($json[self::FIELD_REASON_EXT]) || array_key_exists(self::FIELD_REASON, $json) || array_key_exists(self::FIELD_REASON_EXT, $json)) {
             $value = $json[self::FIELD_REASON] ?? null;
-            $ext = (isset($json[self::FIELD_REASON_EXT]) && is_array($json[self::FIELD_REASON_EXT])) ? $json[self::FIELD_REASON_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setReason($value);
-                } else if (is_array($value)) {
-                    $type->setReason(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setReason(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setReason(new FHIRString($ext));
-            } else {
-                $type->setReason(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_REASON_EXT] ?? []);
+            $type->setReason(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

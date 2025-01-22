@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -665,61 +665,33 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_CODE]) || isset($json[self::FIELD_CODE_EXT]) || array_key_exists(self::FIELD_CODE, $json) || array_key_exists(self::FIELD_CODE_EXT, $json)) {
             $value = $json[self::FIELD_CODE] ?? null;
-            $ext = (isset($json[self::FIELD_CODE_EXT]) && is_array($json[self::FIELD_CODE_EXT])) ? $json[self::FIELD_CODE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRResourceType) {
-                    $type->setCode($value);
-                } else if (is_array($value)) {
-                    $type->setCode(new FHIRResourceType(array_merge($ext, $value)));
-                } else {
-                    $type->setCode(new FHIRResourceType([FHIRResourceType::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setCode(new FHIRResourceType($ext));
-            } else {
-                $type->setCode(new FHIRResourceType(null));
-            }
+            $ext = (array)($json[self::FIELD_CODE_EXT] ?? []);
+            $type->setCode(FHIRResourceType::jsonUnserialize(
+                json: [FHIRResourceType::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PROFILE]) || array_key_exists(self::FIELD_PROFILE, $json)) {
-            if ($json[self::FIELD_PROFILE] instanceof FHIRReference) {
-                $type->setProfile($json[self::FIELD_PROFILE]);
-            } else {
-                $type->setProfile(new FHIRReference($json[self::FIELD_PROFILE]));
-            }
+            $type->setProfile(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_PROFILE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_MIN]) || isset($json[self::FIELD_MIN_EXT]) || array_key_exists(self::FIELD_MIN, $json) || array_key_exists(self::FIELD_MIN_EXT, $json)) {
             $value = $json[self::FIELD_MIN] ?? null;
-            $ext = (isset($json[self::FIELD_MIN_EXT]) && is_array($json[self::FIELD_MIN_EXT])) ? $json[self::FIELD_MIN_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRUnsignedInt) {
-                    $type->setMin($value);
-                } else if (is_array($value)) {
-                    $type->setMin(new FHIRUnsignedInt(array_merge($ext, $value)));
-                } else {
-                    $type->setMin(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setMin(new FHIRUnsignedInt($ext));
-            } else {
-                $type->setMin(new FHIRUnsignedInt(null));
-            }
+            $ext = (array)($json[self::FIELD_MIN_EXT] ?? []);
+            $type->setMin(FHIRUnsignedInt::jsonUnserialize(
+                json: [FHIRUnsignedInt::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_MAX]) || isset($json[self::FIELD_MAX_EXT]) || array_key_exists(self::FIELD_MAX, $json) || array_key_exists(self::FIELD_MAX_EXT, $json)) {
             $value = $json[self::FIELD_MAX] ?? null;
-            $ext = (isset($json[self::FIELD_MAX_EXT]) && is_array($json[self::FIELD_MAX_EXT])) ? $json[self::FIELD_MAX_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setMax($value);
-                } else if (is_array($value)) {
-                    $type->setMax(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setMax(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setMax(new FHIRString($ext));
-            } else {
-                $type->setMax(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_MAX_EXT] ?? []);
+            $type->setMax(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

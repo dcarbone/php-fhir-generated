@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -584,45 +584,26 @@ class FHIRObservationTriggeredBy extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_OBSERVATION]) || array_key_exists(self::FIELD_OBSERVATION, $json)) {
-            if ($json[self::FIELD_OBSERVATION] instanceof FHIRReference) {
-                $type->setObservation($json[self::FIELD_OBSERVATION]);
-            } else {
-                $type->setObservation(new FHIRReference($json[self::FIELD_OBSERVATION]));
-            }
+            $type->setObservation(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_OBSERVATION],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (isset($json[self::FIELD_TYPE_EXT]) && is_array($json[self::FIELD_TYPE_EXT])) ? $json[self::FIELD_TYPE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRTriggeredBytype) {
-                    $type->setType($value);
-                } else if (is_array($value)) {
-                    $type->setType(new FHIRTriggeredBytype(array_merge($ext, $value)));
-                } else {
-                    $type->setType(new FHIRTriggeredBytype([FHIRTriggeredBytype::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setType(new FHIRTriggeredBytype($ext));
-            } else {
-                $type->setType(new FHIRTriggeredBytype(null));
-            }
+            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
+            $type->setType(FHIRTriggeredBytype::jsonUnserialize(
+                json: [FHIRTriggeredBytype::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_REASON]) || isset($json[self::FIELD_REASON_EXT]) || array_key_exists(self::FIELD_REASON, $json) || array_key_exists(self::FIELD_REASON_EXT, $json)) {
             $value = $json[self::FIELD_REASON] ?? null;
-            $ext = (isset($json[self::FIELD_REASON_EXT]) && is_array($json[self::FIELD_REASON_EXT])) ? $json[self::FIELD_REASON_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setReason($value);
-                } else if (is_array($value)) {
-                    $type->setReason(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setReason(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setReason(new FHIRString($ext));
-            } else {
-                $type->setReason(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_REASON_EXT] ?? []);
+            $type->setReason(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -693,57 +693,41 @@ class FHIRMeasureGroup extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            if ($json[self::FIELD_CODE] instanceof FHIRCodeableConcept) {
-                $type->setCode($json[self::FIELD_CODE]);
-            } else {
-                $type->setCode(new FHIRCodeableConcept($json[self::FIELD_CODE]));
-            }
+            $type->setCode(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_CODE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (isset($json[self::FIELD_DESCRIPTION_EXT]) && is_array($json[self::FIELD_DESCRIPTION_EXT])) ? $json[self::FIELD_DESCRIPTION_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setDescription($value);
-                } else if (is_array($value)) {
-                    $type->setDescription(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setDescription(new FHIRString($ext));
-            } else {
-                $type->setDescription(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
+            $type->setDescription(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_POPULATION]) || array_key_exists(self::FIELD_POPULATION, $json)) {
-            if (is_array($json[self::FIELD_POPULATION])) {
-                foreach($json[self::FIELD_POPULATION] as $v) {
-                    if ($v instanceof FHIRMeasurePopulation) {
-                        $type->addPopulation($v);
-                    } else {
-                        $type->addPopulation(new FHIRMeasurePopulation($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_POPULATION] instanceof FHIRMeasurePopulation) {
-                $type->addPopulation($json[self::FIELD_POPULATION]);
-            } else {
-                $type->addPopulation(new FHIRMeasurePopulation($json[self::FIELD_POPULATION]));
+            $vs = $json[self::FIELD_POPULATION];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addPopulation(FHIRMeasurePopulation::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_STRATIFIER]) || array_key_exists(self::FIELD_STRATIFIER, $json)) {
-            if (is_array($json[self::FIELD_STRATIFIER])) {
-                foreach($json[self::FIELD_STRATIFIER] as $v) {
-                    if ($v instanceof FHIRMeasureStratifier) {
-                        $type->addStratifier($v);
-                    } else {
-                        $type->addStratifier(new FHIRMeasureStratifier($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_STRATIFIER] instanceof FHIRMeasureStratifier) {
-                $type->addStratifier($json[self::FIELD_STRATIFIER]);
-            } else {
-                $type->addStratifier(new FHIRMeasureStratifier($json[self::FIELD_STRATIFIER]));
+            $vs = $json[self::FIELD_STRATIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addStratifier(FHIRMeasureStratifier::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

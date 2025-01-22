@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -592,25 +592,22 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_ASSOCIATION_TYPE]) || array_key_exists(self::FIELD_ASSOCIATION_TYPE, $json)) {
-            if ($json[self::FIELD_ASSOCIATION_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setAssociationType($json[self::FIELD_ASSOCIATION_TYPE]);
-            } else {
-                $type->setAssociationType(new FHIRCodeableConcept($json[self::FIELD_ASSOCIATION_TYPE]));
-            }
+            $type->setAssociationType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_ASSOCIATION_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_RELATED_ITEM]) || array_key_exists(self::FIELD_RELATED_ITEM, $json)) {
-            if ($json[self::FIELD_RELATED_ITEM] instanceof FHIRReference) {
-                $type->setRelatedItem($json[self::FIELD_RELATED_ITEM]);
-            } else {
-                $type->setRelatedItem(new FHIRReference($json[self::FIELD_RELATED_ITEM]));
-            }
+            $type->setRelatedItem(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_RELATED_ITEM],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            if ($json[self::FIELD_QUANTITY] instanceof FHIRRatio) {
-                $type->setQuantity($json[self::FIELD_QUANTITY]);
-            } else {
-                $type->setQuantity(new FHIRRatio($json[self::FIELD_QUANTITY]));
-            }
+            $type->setQuantity(FHIRRatio::jsonUnserialize(
+                json: $json[self::FIELD_QUANTITY],
+                config: $config,
+            ));
         }
         return $type;
     }

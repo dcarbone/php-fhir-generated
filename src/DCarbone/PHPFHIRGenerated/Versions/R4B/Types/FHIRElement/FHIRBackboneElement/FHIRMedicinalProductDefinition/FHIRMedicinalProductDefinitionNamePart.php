@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -523,27 +523,17 @@ class FHIRMedicinalProductDefinitionNamePart extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_PART]) || isset($json[self::FIELD_PART_EXT]) || array_key_exists(self::FIELD_PART, $json) || array_key_exists(self::FIELD_PART_EXT, $json)) {
             $value = $json[self::FIELD_PART] ?? null;
-            $ext = (isset($json[self::FIELD_PART_EXT]) && is_array($json[self::FIELD_PART_EXT])) ? $json[self::FIELD_PART_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setPart($value);
-                } else if (is_array($value)) {
-                    $type->setPart(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setPart(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setPart(new FHIRString($ext));
-            } else {
-                $type->setPart(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_PART_EXT] ?? []);
+            $type->setPart(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         return $type;
     }

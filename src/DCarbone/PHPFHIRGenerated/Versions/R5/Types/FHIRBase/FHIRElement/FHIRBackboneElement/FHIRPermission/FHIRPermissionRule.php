@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -686,64 +686,46 @@ class FHIRPermissionRule extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (isset($json[self::FIELD_TYPE_EXT]) && is_array($json[self::FIELD_TYPE_EXT])) ? $json[self::FIELD_TYPE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRConsentProvisionType) {
-                    $type->setType($value);
-                } else if (is_array($value)) {
-                    $type->setType(new FHIRConsentProvisionType(array_merge($ext, $value)));
-                } else {
-                    $type->setType(new FHIRConsentProvisionType([FHIRConsentProvisionType::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setType(new FHIRConsentProvisionType($ext));
-            } else {
-                $type->setType(new FHIRConsentProvisionType(null));
-            }
+            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
+            $type->setType(FHIRConsentProvisionType::jsonUnserialize(
+                json: [FHIRConsentProvisionType::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_DATA]) || array_key_exists(self::FIELD_DATA, $json)) {
-            if (is_array($json[self::FIELD_DATA])) {
-                foreach($json[self::FIELD_DATA] as $v) {
-                    if ($v instanceof FHIRPermissionData) {
-                        $type->addData($v);
-                    } else {
-                        $type->addData(new FHIRPermissionData($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_DATA] instanceof FHIRPermissionData) {
-                $type->addData($json[self::FIELD_DATA]);
-            } else {
-                $type->addData(new FHIRPermissionData($json[self::FIELD_DATA]));
+            $vs = $json[self::FIELD_DATA];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addData(FHIRPermissionData::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_ACTIVITY]) || array_key_exists(self::FIELD_ACTIVITY, $json)) {
-            if (is_array($json[self::FIELD_ACTIVITY])) {
-                foreach($json[self::FIELD_ACTIVITY] as $v) {
-                    if ($v instanceof FHIRPermissionActivity) {
-                        $type->addActivity($v);
-                    } else {
-                        $type->addActivity(new FHIRPermissionActivity($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_ACTIVITY] instanceof FHIRPermissionActivity) {
-                $type->addActivity($json[self::FIELD_ACTIVITY]);
-            } else {
-                $type->addActivity(new FHIRPermissionActivity($json[self::FIELD_ACTIVITY]));
+            $vs = $json[self::FIELD_ACTIVITY];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addActivity(FHIRPermissionActivity::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_LIMIT]) || array_key_exists(self::FIELD_LIMIT, $json)) {
-            if (is_array($json[self::FIELD_LIMIT])) {
-                foreach($json[self::FIELD_LIMIT] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addLimit($v);
-                    } else {
-                        $type->addLimit(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_LIMIT] instanceof FHIRCodeableConcept) {
-                $type->addLimit($json[self::FIELD_LIMIT]);
-            } else {
-                $type->addLimit(new FHIRCodeableConcept($json[self::FIELD_LIMIT]));
+            $vs = $json[self::FIELD_LIMIT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addLimit(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

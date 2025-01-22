@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -575,35 +575,24 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            if ($json[self::FIELD_CODE] instanceof FHIRCodeableConcept) {
-                $type->setCode($json[self::FIELD_CODE]);
-            } else {
-                $type->setCode(new FHIRCodeableConcept($json[self::FIELD_CODE]));
-            }
+            $type->setCode(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_CODE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_COUNT]) || isset($json[self::FIELD_COUNT_EXT]) || array_key_exists(self::FIELD_COUNT, $json) || array_key_exists(self::FIELD_COUNT_EXT, $json)) {
             $value = $json[self::FIELD_COUNT] ?? null;
-            $ext = (isset($json[self::FIELD_COUNT_EXT]) && is_array($json[self::FIELD_COUNT_EXT])) ? $json[self::FIELD_COUNT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $type->setCount($value);
-                } else if (is_array($value)) {
-                    $type->setCount(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $type->setCount(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setCount(new FHIRInteger($ext));
-            } else {
-                $type->setCount(new FHIRInteger(null));
-            }
+            $ext = (array)($json[self::FIELD_COUNT_EXT] ?? []);
+            $type->setCount(FHIRInteger::jsonUnserialize(
+                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SUBJECT_RESULTS]) || array_key_exists(self::FIELD_SUBJECT_RESULTS, $json)) {
-            if ($json[self::FIELD_SUBJECT_RESULTS] instanceof FHIRReference) {
-                $type->setSubjectResults($json[self::FIELD_SUBJECT_RESULTS]);
-            } else {
-                $type->setSubjectResults(new FHIRReference($json[self::FIELD_SUBJECT_RESULTS]));
-            }
+            $type->setSubjectResults(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_SUBJECT_RESULTS],
+                config: $config,
+            ));
         }
         return $type;
     }

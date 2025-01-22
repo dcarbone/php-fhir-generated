@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -895,60 +895,51 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            if ($json[self::FIELD_CODE] instanceof FHIRCodeableConcept) {
-                $type->setCode($json[self::FIELD_CODE]);
-            } else {
-                $type->setCode(new FHIRCodeableConcept($json[self::FIELD_CODE]));
-            }
+            $type->setCode(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_CODE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_FIRST_DOSE]) || array_key_exists(self::FIELD_FIRST_DOSE, $json)) {
-            if ($json[self::FIELD_FIRST_DOSE] instanceof FHIRQuantity) {
-                $type->setFirstDose($json[self::FIELD_FIRST_DOSE]);
-            } else {
-                $type->setFirstDose(new FHIRQuantity($json[self::FIELD_FIRST_DOSE]));
-            }
+            $type->setFirstDose(FHIRQuantity::jsonUnserialize(
+                json: $json[self::FIELD_FIRST_DOSE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_MAX_SINGLE_DOSE]) || array_key_exists(self::FIELD_MAX_SINGLE_DOSE, $json)) {
-            if ($json[self::FIELD_MAX_SINGLE_DOSE] instanceof FHIRQuantity) {
-                $type->setMaxSingleDose($json[self::FIELD_MAX_SINGLE_DOSE]);
-            } else {
-                $type->setMaxSingleDose(new FHIRQuantity($json[self::FIELD_MAX_SINGLE_DOSE]));
-            }
+            $type->setMaxSingleDose(FHIRQuantity::jsonUnserialize(
+                json: $json[self::FIELD_MAX_SINGLE_DOSE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_MAX_DOSE_PER_DAY]) || array_key_exists(self::FIELD_MAX_DOSE_PER_DAY, $json)) {
-            if ($json[self::FIELD_MAX_DOSE_PER_DAY] instanceof FHIRQuantity) {
-                $type->setMaxDosePerDay($json[self::FIELD_MAX_DOSE_PER_DAY]);
-            } else {
-                $type->setMaxDosePerDay(new FHIRQuantity($json[self::FIELD_MAX_DOSE_PER_DAY]));
-            }
+            $type->setMaxDosePerDay(FHIRQuantity::jsonUnserialize(
+                json: $json[self::FIELD_MAX_DOSE_PER_DAY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_MAX_DOSE_PER_TREATMENT_PERIOD]) || array_key_exists(self::FIELD_MAX_DOSE_PER_TREATMENT_PERIOD, $json)) {
-            if ($json[self::FIELD_MAX_DOSE_PER_TREATMENT_PERIOD] instanceof FHIRRatio) {
-                $type->setMaxDosePerTreatmentPeriod($json[self::FIELD_MAX_DOSE_PER_TREATMENT_PERIOD]);
-            } else {
-                $type->setMaxDosePerTreatmentPeriod(new FHIRRatio($json[self::FIELD_MAX_DOSE_PER_TREATMENT_PERIOD]));
-            }
+            $type->setMaxDosePerTreatmentPeriod(FHIRRatio::jsonUnserialize(
+                json: $json[self::FIELD_MAX_DOSE_PER_TREATMENT_PERIOD],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_MAX_TREATMENT_PERIOD]) || array_key_exists(self::FIELD_MAX_TREATMENT_PERIOD, $json)) {
-            if ($json[self::FIELD_MAX_TREATMENT_PERIOD] instanceof FHIRDuration) {
-                $type->setMaxTreatmentPeriod($json[self::FIELD_MAX_TREATMENT_PERIOD]);
-            } else {
-                $type->setMaxTreatmentPeriod(new FHIRDuration($json[self::FIELD_MAX_TREATMENT_PERIOD]));
-            }
+            $type->setMaxTreatmentPeriod(FHIRDuration::jsonUnserialize(
+                json: $json[self::FIELD_MAX_TREATMENT_PERIOD],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_TARGET_SPECIES]) || array_key_exists(self::FIELD_TARGET_SPECIES, $json)) {
-            if (is_array($json[self::FIELD_TARGET_SPECIES])) {
-                foreach($json[self::FIELD_TARGET_SPECIES] as $v) {
-                    if ($v instanceof FHIRAdministrableProductDefinitionTargetSpecies) {
-                        $type->addTargetSpecies($v);
-                    } else {
-                        $type->addTargetSpecies(new FHIRAdministrableProductDefinitionTargetSpecies($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_TARGET_SPECIES] instanceof FHIRAdministrableProductDefinitionTargetSpecies) {
-                $type->addTargetSpecies($json[self::FIELD_TARGET_SPECIES]);
-            } else {
-                $type->addTargetSpecies(new FHIRAdministrableProductDefinitionTargetSpecies($json[self::FIELD_TARGET_SPECIES]));
+            $vs = $json[self::FIELD_TARGET_SPECIES];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addTargetSpecies(FHIRAdministrableProductDefinitionTargetSpecies::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

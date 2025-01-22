@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -713,49 +713,35 @@ class FHIRPackagedProductDefinitionShelfLifeStorage extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PERIOD_DURATION]) || array_key_exists(self::FIELD_PERIOD_DURATION, $json)) {
-            if ($json[self::FIELD_PERIOD_DURATION] instanceof FHIRDuration) {
-                $type->setPeriodDuration($json[self::FIELD_PERIOD_DURATION]);
-            } else {
-                $type->setPeriodDuration(new FHIRDuration($json[self::FIELD_PERIOD_DURATION]));
-            }
+            $type->setPeriodDuration(FHIRDuration::jsonUnserialize(
+                json: $json[self::FIELD_PERIOD_DURATION],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PERIOD_STRING]) || isset($json[self::FIELD_PERIOD_STRING_EXT]) || array_key_exists(self::FIELD_PERIOD_STRING, $json) || array_key_exists(self::FIELD_PERIOD_STRING_EXT, $json)) {
             $value = $json[self::FIELD_PERIOD_STRING] ?? null;
-            $ext = (isset($json[self::FIELD_PERIOD_STRING_EXT]) && is_array($json[self::FIELD_PERIOD_STRING_EXT])) ? $json[self::FIELD_PERIOD_STRING_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setPeriodString($value);
-                } else if (is_array($value)) {
-                    $type->setPeriodString(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setPeriodString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setPeriodString(new FHIRString($ext));
-            } else {
-                $type->setPeriodString(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_PERIOD_STRING_EXT] ?? []);
+            $type->setPeriodString(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE]) || array_key_exists(self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE, $json)) {
-            if (is_array($json[self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE])) {
-                foreach($json[self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addSpecialPrecautionsForStorage($v);
-                    } else {
-                        $type->addSpecialPrecautionsForStorage(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE] instanceof FHIRCodeableConcept) {
-                $type->addSpecialPrecautionsForStorage($json[self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE]);
-            } else {
-                $type->addSpecialPrecautionsForStorage(new FHIRCodeableConcept($json[self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE]));
+            $vs = $json[self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addSpecialPrecautionsForStorage(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

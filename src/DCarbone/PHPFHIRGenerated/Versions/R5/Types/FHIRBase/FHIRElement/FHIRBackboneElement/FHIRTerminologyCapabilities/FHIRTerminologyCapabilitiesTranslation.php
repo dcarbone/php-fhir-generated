@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -436,20 +436,11 @@ class FHIRTerminologyCapabilitiesTranslation extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_NEEDS_MAP]) || isset($json[self::FIELD_NEEDS_MAP_EXT]) || array_key_exists(self::FIELD_NEEDS_MAP, $json) || array_key_exists(self::FIELD_NEEDS_MAP_EXT, $json)) {
             $value = $json[self::FIELD_NEEDS_MAP] ?? null;
-            $ext = (isset($json[self::FIELD_NEEDS_MAP_EXT]) && is_array($json[self::FIELD_NEEDS_MAP_EXT])) ? $json[self::FIELD_NEEDS_MAP_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $type->setNeedsMap($value);
-                } else if (is_array($value)) {
-                    $type->setNeedsMap(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $type->setNeedsMap(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setNeedsMap(new FHIRBoolean($ext));
-            } else {
-                $type->setNeedsMap(new FHIRBoolean(null));
-            }
+            $ext = (array)($json[self::FIELD_NEEDS_MAP_EXT] ?? []);
+            $type->setNeedsMap(FHIRBoolean::jsonUnserialize(
+                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

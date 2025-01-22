@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -525,33 +525,27 @@ class FHIRMedicationKnowledgeIndicationGuideline extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_INDICATION]) || array_key_exists(self::FIELD_INDICATION, $json)) {
-            if (is_array($json[self::FIELD_INDICATION])) {
-                foreach($json[self::FIELD_INDICATION] as $v) {
-                    if ($v instanceof FHIRCodeableReference) {
-                        $type->addIndication($v);
-                    } else {
-                        $type->addIndication(new FHIRCodeableReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_INDICATION] instanceof FHIRCodeableReference) {
-                $type->addIndication($json[self::FIELD_INDICATION]);
-            } else {
-                $type->addIndication(new FHIRCodeableReference($json[self::FIELD_INDICATION]));
+            $vs = $json[self::FIELD_INDICATION];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addIndication(FHIRCodeableReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_DOSING_GUIDELINE]) || array_key_exists(self::FIELD_DOSING_GUIDELINE, $json)) {
-            if (is_array($json[self::FIELD_DOSING_GUIDELINE])) {
-                foreach($json[self::FIELD_DOSING_GUIDELINE] as $v) {
-                    if ($v instanceof FHIRMedicationKnowledgeDosingGuideline) {
-                        $type->addDosingGuideline($v);
-                    } else {
-                        $type->addDosingGuideline(new FHIRMedicationKnowledgeDosingGuideline($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_DOSING_GUIDELINE] instanceof FHIRMedicationKnowledgeDosingGuideline) {
-                $type->addDosingGuideline($json[self::FIELD_DOSING_GUIDELINE]);
-            } else {
-                $type->addDosingGuideline(new FHIRMedicationKnowledgeDosingGuideline($json[self::FIELD_DOSING_GUIDELINE]));
+            $vs = $json[self::FIELD_DOSING_GUIDELINE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addDosingGuideline(FHIRMedicationKnowledgeDosingGuideline::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

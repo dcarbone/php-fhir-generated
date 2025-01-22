@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -627,43 +627,30 @@ class FHIRNutritionOrderSchedule extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TIMING]) || array_key_exists(self::FIELD_TIMING, $json)) {
-            if (is_array($json[self::FIELD_TIMING])) {
-                foreach($json[self::FIELD_TIMING] as $v) {
-                    if ($v instanceof FHIRTiming) {
-                        $type->addTiming($v);
-                    } else {
-                        $type->addTiming(new FHIRTiming($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_TIMING] instanceof FHIRTiming) {
-                $type->addTiming($json[self::FIELD_TIMING]);
-            } else {
-                $type->addTiming(new FHIRTiming($json[self::FIELD_TIMING]));
+            $vs = $json[self::FIELD_TIMING];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addTiming(FHIRTiming::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_AS_NEEDED]) || isset($json[self::FIELD_AS_NEEDED_EXT]) || array_key_exists(self::FIELD_AS_NEEDED, $json) || array_key_exists(self::FIELD_AS_NEEDED_EXT, $json)) {
             $value = $json[self::FIELD_AS_NEEDED] ?? null;
-            $ext = (isset($json[self::FIELD_AS_NEEDED_EXT]) && is_array($json[self::FIELD_AS_NEEDED_EXT])) ? $json[self::FIELD_AS_NEEDED_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $type->setAsNeeded($value);
-                } else if (is_array($value)) {
-                    $type->setAsNeeded(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $type->setAsNeeded(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setAsNeeded(new FHIRBoolean($ext));
-            } else {
-                $type->setAsNeeded(new FHIRBoolean(null));
-            }
+            $ext = (array)($json[self::FIELD_AS_NEEDED_EXT] ?? []);
+            $type->setAsNeeded(FHIRBoolean::jsonUnserialize(
+                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_AS_NEEDED_FOR]) || array_key_exists(self::FIELD_AS_NEEDED_FOR, $json)) {
-            if ($json[self::FIELD_AS_NEEDED_FOR] instanceof FHIRCodeableConcept) {
-                $type->setAsNeededFor($json[self::FIELD_AS_NEEDED_FOR]);
-            } else {
-                $type->setAsNeededFor(new FHIRCodeableConcept($json[self::FIELD_AS_NEEDED_FOR]));
-            }
+            $type->setAsNeededFor(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_AS_NEEDED_FOR],
+                config: $config,
+            ));
         }
         return $type;
     }

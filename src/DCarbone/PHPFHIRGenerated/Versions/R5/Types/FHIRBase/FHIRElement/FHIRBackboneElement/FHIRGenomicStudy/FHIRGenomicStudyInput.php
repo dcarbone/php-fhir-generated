@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -618,32 +618,28 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_FILE]) || array_key_exists(self::FIELD_FILE, $json)) {
-            if ($json[self::FIELD_FILE] instanceof FHIRReference) {
-                $type->setFile($json[self::FIELD_FILE]);
-            } else {
-                $type->setFile(new FHIRReference($json[self::FIELD_FILE]));
-            }
+            $type->setFile(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_FILE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_GENERATED_BY_IDENTIFIER]) || array_key_exists(self::FIELD_GENERATED_BY_IDENTIFIER, $json)) {
-            if ($json[self::FIELD_GENERATED_BY_IDENTIFIER] instanceof FHIRIdentifier) {
-                $type->setGeneratedByIdentifier($json[self::FIELD_GENERATED_BY_IDENTIFIER]);
-            } else {
-                $type->setGeneratedByIdentifier(new FHIRIdentifier($json[self::FIELD_GENERATED_BY_IDENTIFIER]));
-            }
+            $type->setGeneratedByIdentifier(FHIRIdentifier::jsonUnserialize(
+                json: $json[self::FIELD_GENERATED_BY_IDENTIFIER],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_GENERATED_BY_REFERENCE]) || array_key_exists(self::FIELD_GENERATED_BY_REFERENCE, $json)) {
-            if ($json[self::FIELD_GENERATED_BY_REFERENCE] instanceof FHIRReference) {
-                $type->setGeneratedByReference($json[self::FIELD_GENERATED_BY_REFERENCE]);
-            } else {
-                $type->setGeneratedByReference(new FHIRReference($json[self::FIELD_GENERATED_BY_REFERENCE]));
-            }
+            $type->setGeneratedByReference(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_GENERATED_BY_REFERENCE],
+                config: $config,
+            ));
         }
         return $type;
     }

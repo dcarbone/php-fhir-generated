@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -806,64 +806,48 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_OPERATION_TYPE]) || array_key_exists(self::FIELD_OPERATION_TYPE, $json)) {
-            if ($json[self::FIELD_OPERATION_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setOperationType($json[self::FIELD_OPERATION_TYPE]);
-            } else {
-                $type->setOperationType(new FHIRCodeableConcept($json[self::FIELD_OPERATION_TYPE]));
-            }
+            $type->setOperationType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_OPERATION_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_AUTHORISATION_REFERENCE_NUMBER]) || array_key_exists(self::FIELD_AUTHORISATION_REFERENCE_NUMBER, $json)) {
-            if ($json[self::FIELD_AUTHORISATION_REFERENCE_NUMBER] instanceof FHIRIdentifier) {
-                $type->setAuthorisationReferenceNumber($json[self::FIELD_AUTHORISATION_REFERENCE_NUMBER]);
-            } else {
-                $type->setAuthorisationReferenceNumber(new FHIRIdentifier($json[self::FIELD_AUTHORISATION_REFERENCE_NUMBER]));
-            }
+            $type->setAuthorisationReferenceNumber(FHIRIdentifier::jsonUnserialize(
+                json: $json[self::FIELD_AUTHORISATION_REFERENCE_NUMBER],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_EFFECTIVE_DATE]) || isset($json[self::FIELD_EFFECTIVE_DATE_EXT]) || array_key_exists(self::FIELD_EFFECTIVE_DATE, $json) || array_key_exists(self::FIELD_EFFECTIVE_DATE_EXT, $json)) {
             $value = $json[self::FIELD_EFFECTIVE_DATE] ?? null;
-            $ext = (isset($json[self::FIELD_EFFECTIVE_DATE_EXT]) && is_array($json[self::FIELD_EFFECTIVE_DATE_EXT])) ? $json[self::FIELD_EFFECTIVE_DATE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $type->setEffectiveDate($value);
-                } else if (is_array($value)) {
-                    $type->setEffectiveDate(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $type->setEffectiveDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setEffectiveDate(new FHIRDateTime($ext));
-            } else {
-                $type->setEffectiveDate(new FHIRDateTime(null));
-            }
+            $ext = (array)($json[self::FIELD_EFFECTIVE_DATE_EXT] ?? []);
+            $type->setEffectiveDate(FHIRDateTime::jsonUnserialize(
+                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_CONFIDENTIALITY_INDICATOR]) || array_key_exists(self::FIELD_CONFIDENTIALITY_INDICATOR, $json)) {
-            if ($json[self::FIELD_CONFIDENTIALITY_INDICATOR] instanceof FHIRCodeableConcept) {
-                $type->setConfidentialityIndicator($json[self::FIELD_CONFIDENTIALITY_INDICATOR]);
-            } else {
-                $type->setConfidentialityIndicator(new FHIRCodeableConcept($json[self::FIELD_CONFIDENTIALITY_INDICATOR]));
-            }
+            $type->setConfidentialityIndicator(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_CONFIDENTIALITY_INDICATOR],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_MANUFACTURER]) || array_key_exists(self::FIELD_MANUFACTURER, $json)) {
-            if (is_array($json[self::FIELD_MANUFACTURER])) {
-                foreach($json[self::FIELD_MANUFACTURER] as $v) {
-                    if ($v instanceof FHIRReference) {
-                        $type->addManufacturer($v);
-                    } else {
-                        $type->addManufacturer(new FHIRReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_MANUFACTURER] instanceof FHIRReference) {
-                $type->addManufacturer($json[self::FIELD_MANUFACTURER]);
-            } else {
-                $type->addManufacturer(new FHIRReference($json[self::FIELD_MANUFACTURER]));
+            $vs = $json[self::FIELD_MANUFACTURER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addManufacturer(FHIRReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_REGULATOR]) || array_key_exists(self::FIELD_REGULATOR, $json)) {
-            if ($json[self::FIELD_REGULATOR] instanceof FHIRReference) {
-                $type->setRegulator($json[self::FIELD_REGULATOR]);
-            } else {
-                $type->setRegulator(new FHIRReference($json[self::FIELD_REGULATOR]));
-            }
+            $type->setRegulator(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_REGULATOR],
+                config: $config,
+            ));
         }
         return $type;
     }

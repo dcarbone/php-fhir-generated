@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -941,93 +941,54 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ALLOWED_UNSIGNED_INT]) || isset($json[self::FIELD_ALLOWED_UNSIGNED_INT_EXT]) || array_key_exists(self::FIELD_ALLOWED_UNSIGNED_INT, $json) || array_key_exists(self::FIELD_ALLOWED_UNSIGNED_INT_EXT, $json)) {
             $value = $json[self::FIELD_ALLOWED_UNSIGNED_INT] ?? null;
-            $ext = (isset($json[self::FIELD_ALLOWED_UNSIGNED_INT_EXT]) && is_array($json[self::FIELD_ALLOWED_UNSIGNED_INT_EXT])) ? $json[self::FIELD_ALLOWED_UNSIGNED_INT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRUnsignedInt) {
-                    $type->setAllowedUnsignedInt($value);
-                } else if (is_array($value)) {
-                    $type->setAllowedUnsignedInt(new FHIRUnsignedInt(array_merge($ext, $value)));
-                } else {
-                    $type->setAllowedUnsignedInt(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setAllowedUnsignedInt(new FHIRUnsignedInt($ext));
-            } else {
-                $type->setAllowedUnsignedInt(new FHIRUnsignedInt(null));
-            }
+            $ext = (array)($json[self::FIELD_ALLOWED_UNSIGNED_INT_EXT] ?? []);
+            $type->setAllowedUnsignedInt(FHIRUnsignedInt::jsonUnserialize(
+                json: [FHIRUnsignedInt::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ALLOWED_STRING]) || isset($json[self::FIELD_ALLOWED_STRING_EXT]) || array_key_exists(self::FIELD_ALLOWED_STRING, $json) || array_key_exists(self::FIELD_ALLOWED_STRING_EXT, $json)) {
             $value = $json[self::FIELD_ALLOWED_STRING] ?? null;
-            $ext = (isset($json[self::FIELD_ALLOWED_STRING_EXT]) && is_array($json[self::FIELD_ALLOWED_STRING_EXT])) ? $json[self::FIELD_ALLOWED_STRING_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setAllowedString($value);
-                } else if (is_array($value)) {
-                    $type->setAllowedString(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setAllowedString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setAllowedString(new FHIRString($ext));
-            } else {
-                $type->setAllowedString(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_ALLOWED_STRING_EXT] ?? []);
+            $type->setAllowedString(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ALLOWED_MONEY]) || array_key_exists(self::FIELD_ALLOWED_MONEY, $json)) {
-            if ($json[self::FIELD_ALLOWED_MONEY] instanceof FHIRMoney) {
-                $type->setAllowedMoney($json[self::FIELD_ALLOWED_MONEY]);
-            } else {
-                $type->setAllowedMoney(new FHIRMoney($json[self::FIELD_ALLOWED_MONEY]));
-            }
+            $type->setAllowedMoney(FHIRMoney::jsonUnserialize(
+                json: $json[self::FIELD_ALLOWED_MONEY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_USED_UNSIGNED_INT]) || isset($json[self::FIELD_USED_UNSIGNED_INT_EXT]) || array_key_exists(self::FIELD_USED_UNSIGNED_INT, $json) || array_key_exists(self::FIELD_USED_UNSIGNED_INT_EXT, $json)) {
             $value = $json[self::FIELD_USED_UNSIGNED_INT] ?? null;
-            $ext = (isset($json[self::FIELD_USED_UNSIGNED_INT_EXT]) && is_array($json[self::FIELD_USED_UNSIGNED_INT_EXT])) ? $json[self::FIELD_USED_UNSIGNED_INT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRUnsignedInt) {
-                    $type->setUsedUnsignedInt($value);
-                } else if (is_array($value)) {
-                    $type->setUsedUnsignedInt(new FHIRUnsignedInt(array_merge($ext, $value)));
-                } else {
-                    $type->setUsedUnsignedInt(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setUsedUnsignedInt(new FHIRUnsignedInt($ext));
-            } else {
-                $type->setUsedUnsignedInt(new FHIRUnsignedInt(null));
-            }
+            $ext = (array)($json[self::FIELD_USED_UNSIGNED_INT_EXT] ?? []);
+            $type->setUsedUnsignedInt(FHIRUnsignedInt::jsonUnserialize(
+                json: [FHIRUnsignedInt::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_USED_STRING]) || isset($json[self::FIELD_USED_STRING_EXT]) || array_key_exists(self::FIELD_USED_STRING, $json) || array_key_exists(self::FIELD_USED_STRING_EXT, $json)) {
             $value = $json[self::FIELD_USED_STRING] ?? null;
-            $ext = (isset($json[self::FIELD_USED_STRING_EXT]) && is_array($json[self::FIELD_USED_STRING_EXT])) ? $json[self::FIELD_USED_STRING_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setUsedString($value);
-                } else if (is_array($value)) {
-                    $type->setUsedString(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setUsedString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setUsedString(new FHIRString($ext));
-            } else {
-                $type->setUsedString(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_USED_STRING_EXT] ?? []);
+            $type->setUsedString(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_USED_MONEY]) || array_key_exists(self::FIELD_USED_MONEY, $json)) {
-            if ($json[self::FIELD_USED_MONEY] instanceof FHIRMoney) {
-                $type->setUsedMoney($json[self::FIELD_USED_MONEY]);
-            } else {
-                $type->setUsedMoney(new FHIRMoney($json[self::FIELD_USED_MONEY]));
-            }
+            $type->setUsedMoney(FHIRMoney::jsonUnserialize(
+                json: $json[self::FIELD_USED_MONEY],
+                config: $config,
+            ));
         }
         return $type;
     }

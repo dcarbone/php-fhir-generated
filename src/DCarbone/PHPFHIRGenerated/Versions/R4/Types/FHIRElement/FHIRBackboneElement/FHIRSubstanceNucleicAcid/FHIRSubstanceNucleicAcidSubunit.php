@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1055,104 +1055,68 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_SUBUNIT]) || isset($json[self::FIELD_SUBUNIT_EXT]) || array_key_exists(self::FIELD_SUBUNIT, $json) || array_key_exists(self::FIELD_SUBUNIT_EXT, $json)) {
             $value = $json[self::FIELD_SUBUNIT] ?? null;
-            $ext = (isset($json[self::FIELD_SUBUNIT_EXT]) && is_array($json[self::FIELD_SUBUNIT_EXT])) ? $json[self::FIELD_SUBUNIT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $type->setSubunit($value);
-                } else if (is_array($value)) {
-                    $type->setSubunit(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $type->setSubunit(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setSubunit(new FHIRInteger($ext));
-            } else {
-                $type->setSubunit(new FHIRInteger(null));
-            }
+            $ext = (array)($json[self::FIELD_SUBUNIT_EXT] ?? []);
+            $type->setSubunit(FHIRInteger::jsonUnserialize(
+                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SEQUENCE]) || isset($json[self::FIELD_SEQUENCE_EXT]) || array_key_exists(self::FIELD_SEQUENCE, $json) || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
             $value = $json[self::FIELD_SEQUENCE] ?? null;
-            $ext = (isset($json[self::FIELD_SEQUENCE_EXT]) && is_array($json[self::FIELD_SEQUENCE_EXT])) ? $json[self::FIELD_SEQUENCE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setSequence($value);
-                } else if (is_array($value)) {
-                    $type->setSequence(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setSequence(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setSequence(new FHIRString($ext));
-            } else {
-                $type->setSequence(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_SEQUENCE_EXT] ?? []);
+            $type->setSequence(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_LENGTH]) || isset($json[self::FIELD_LENGTH_EXT]) || array_key_exists(self::FIELD_LENGTH, $json) || array_key_exists(self::FIELD_LENGTH_EXT, $json)) {
             $value = $json[self::FIELD_LENGTH] ?? null;
-            $ext = (isset($json[self::FIELD_LENGTH_EXT]) && is_array($json[self::FIELD_LENGTH_EXT])) ? $json[self::FIELD_LENGTH_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $type->setLength($value);
-                } else if (is_array($value)) {
-                    $type->setLength(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $type->setLength(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setLength(new FHIRInteger($ext));
-            } else {
-                $type->setLength(new FHIRInteger(null));
-            }
+            $ext = (array)($json[self::FIELD_LENGTH_EXT] ?? []);
+            $type->setLength(FHIRInteger::jsonUnserialize(
+                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SEQUENCE_ATTACHMENT]) || array_key_exists(self::FIELD_SEQUENCE_ATTACHMENT, $json)) {
-            if ($json[self::FIELD_SEQUENCE_ATTACHMENT] instanceof FHIRAttachment) {
-                $type->setSequenceAttachment($json[self::FIELD_SEQUENCE_ATTACHMENT]);
-            } else {
-                $type->setSequenceAttachment(new FHIRAttachment($json[self::FIELD_SEQUENCE_ATTACHMENT]));
-            }
+            $type->setSequenceAttachment(FHIRAttachment::jsonUnserialize(
+                json: $json[self::FIELD_SEQUENCE_ATTACHMENT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_FIVE_PRIME]) || array_key_exists(self::FIELD_FIVE_PRIME, $json)) {
-            if ($json[self::FIELD_FIVE_PRIME] instanceof FHIRCodeableConcept) {
-                $type->setFivePrime($json[self::FIELD_FIVE_PRIME]);
-            } else {
-                $type->setFivePrime(new FHIRCodeableConcept($json[self::FIELD_FIVE_PRIME]));
-            }
+            $type->setFivePrime(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_FIVE_PRIME],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_THREE_PRIME]) || array_key_exists(self::FIELD_THREE_PRIME, $json)) {
-            if ($json[self::FIELD_THREE_PRIME] instanceof FHIRCodeableConcept) {
-                $type->setThreePrime($json[self::FIELD_THREE_PRIME]);
-            } else {
-                $type->setThreePrime(new FHIRCodeableConcept($json[self::FIELD_THREE_PRIME]));
-            }
+            $type->setThreePrime(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_THREE_PRIME],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_LINKAGE]) || array_key_exists(self::FIELD_LINKAGE, $json)) {
-            if (is_array($json[self::FIELD_LINKAGE])) {
-                foreach($json[self::FIELD_LINKAGE] as $v) {
-                    if ($v instanceof FHIRSubstanceNucleicAcidLinkage) {
-                        $type->addLinkage($v);
-                    } else {
-                        $type->addLinkage(new FHIRSubstanceNucleicAcidLinkage($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_LINKAGE] instanceof FHIRSubstanceNucleicAcidLinkage) {
-                $type->addLinkage($json[self::FIELD_LINKAGE]);
-            } else {
-                $type->addLinkage(new FHIRSubstanceNucleicAcidLinkage($json[self::FIELD_LINKAGE]));
+            $vs = $json[self::FIELD_LINKAGE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addLinkage(FHIRSubstanceNucleicAcidLinkage::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_SUGAR]) || array_key_exists(self::FIELD_SUGAR, $json)) {
-            if (is_array($json[self::FIELD_SUGAR])) {
-                foreach($json[self::FIELD_SUGAR] as $v) {
-                    if ($v instanceof FHIRSubstanceNucleicAcidSugar) {
-                        $type->addSugar($v);
-                    } else {
-                        $type->addSugar(new FHIRSubstanceNucleicAcidSugar($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_SUGAR] instanceof FHIRSubstanceNucleicAcidSugar) {
-                $type->addSugar($json[self::FIELD_SUGAR]);
-            } else {
-                $type->addSugar(new FHIRSubstanceNucleicAcidSugar($json[self::FIELD_SUGAR]));
+            $vs = $json[self::FIELD_SUGAR];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addSugar(FHIRSubstanceNucleicAcidSugar::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -516,25 +516,21 @@ class FHIRAdministrableProductDefinitionTargetSpecies extends FHIRBackboneElemen
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            if ($json[self::FIELD_CODE] instanceof FHIRCodeableConcept) {
-                $type->setCode($json[self::FIELD_CODE]);
-            } else {
-                $type->setCode(new FHIRCodeableConcept($json[self::FIELD_CODE]));
-            }
+            $type->setCode(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_CODE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_WITHDRAWAL_PERIOD]) || array_key_exists(self::FIELD_WITHDRAWAL_PERIOD, $json)) {
-            if (is_array($json[self::FIELD_WITHDRAWAL_PERIOD])) {
-                foreach($json[self::FIELD_WITHDRAWAL_PERIOD] as $v) {
-                    if ($v instanceof FHIRAdministrableProductDefinitionWithdrawalPeriod) {
-                        $type->addWithdrawalPeriod($v);
-                    } else {
-                        $type->addWithdrawalPeriod(new FHIRAdministrableProductDefinitionWithdrawalPeriod($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_WITHDRAWAL_PERIOD] instanceof FHIRAdministrableProductDefinitionWithdrawalPeriod) {
-                $type->addWithdrawalPeriod($json[self::FIELD_WITHDRAWAL_PERIOD]);
-            } else {
-                $type->addWithdrawalPeriod(new FHIRAdministrableProductDefinitionWithdrawalPeriod($json[self::FIELD_WITHDRAWAL_PERIOD]));
+            $vs = $json[self::FIELD_WITHDRAWAL_PERIOD];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addWithdrawalPeriod(FHIRAdministrableProductDefinitionWithdrawalPeriod::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

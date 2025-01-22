@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -582,45 +582,30 @@ class FHIRResource extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_LANGUAGE]) || isset($json[self::FIELD_LANGUAGE_EXT]) || array_key_exists(self::FIELD_LANGUAGE, $json) || array_key_exists(self::FIELD_LANGUAGE_EXT, $json)) {
             $value = $json[self::FIELD_LANGUAGE] ?? null;
-            $ext = (isset($json[self::FIELD_LANGUAGE_EXT]) && is_array($json[self::FIELD_LANGUAGE_EXT])) ? $json[self::FIELD_LANGUAGE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRCode) {
-                    $type->setLanguage($value);
-                } else if (is_array($value)) {
-                    $type->setLanguage(new FHIRCode(array_merge($ext, $value)));
-                } else {
-                    $type->setLanguage(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setLanguage(new FHIRCode($ext));
-            } else {
-                $type->setLanguage(new FHIRCode(null));
-            }
+            $ext = (array)($json[self::FIELD_LANGUAGE_EXT] ?? []);
+            $type->setLanguage(FHIRCode::jsonUnserialize(
+                json: [FHIRCode::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_TEXT]) || array_key_exists(self::FIELD_TEXT, $json)) {
-            if ($json[self::FIELD_TEXT] instanceof FHIRNarrative) {
-                $type->setText($json[self::FIELD_TEXT]);
-            } else {
-                $type->setText(new FHIRNarrative($json[self::FIELD_TEXT]));
-            }
+            $type->setText(FHIRNarrative::jsonUnserialize(
+                json: $json[self::FIELD_TEXT],
+                config: $config,
+            ));
         }
-        if (isset($data[self::FIELD_CONTAINED])) {
-            if (is_array($data[self::FIELD_CONTAINED])) {
-                if (is_int(key($data[self::FIELD_CONTAINED]))) {
-                    $type->addContained($data[self::FIELD_CONTAINED]);
-                } else {
-                    $typeClassName = VersionTypeMap::getContainedTypeClassNameFromArray($data[self::FIELD_CONTAINED]);
-                    $d = $data[self::FIELD_CONTAINED];
-                    unset($d[Constants::JSON_FIELD_RESOURCE_TYPE]);
-                    $type->addContained(new $typeClassName($d));
-                }
-            } elseif (!is_object($data[self::FIELD_CONTAINED]) || !($data[self::FIELD_CONTAINED] instanceof VersionContainedTypeInterface)) {
-                throw new \InvalidArgumentException(sprintf(
-                    'FHIRResourceInline - Field "contained" must be an array of objects implementing \DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface, value of type %s seen',
-                    is_object($data[self::FIELD_CONTAINED]) ? get_class($data[self::FIELD_CONTAINED]) : gettype($data[self::FIELD_CONTAINED])
+        if (isset($json[self::FIELD_CONTAINED])) {
+            $d = $json[self::FIELD_CONTAINED];
+            if (!is_int(key($d))) {
+                $d = [$d];
+            }
+            foreach($d as $v) {
+                $typeClassName = VersionTypeMap::getContainedTypeClassNameFromArray($v);
+                unset($v[Constants::JSON_FIELD_RESOURCE_TYPE]);
+                $type->addContained($typeClassName::jsonUnserialize(
+                    json: $v,
+                    config: $config,
                 ));
-            } else {
-                $type->addContained($data[self::FIELD_CONTAINED]);
             }
         }
         return $type;

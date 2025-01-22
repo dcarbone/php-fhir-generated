@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -618,44 +618,25 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_FOCAL]) || isset($json[self::FIELD_FOCAL_EXT]) || array_key_exists(self::FIELD_FOCAL, $json) || array_key_exists(self::FIELD_FOCAL_EXT, $json)) {
             $value = $json[self::FIELD_FOCAL] ?? null;
-            $ext = (isset($json[self::FIELD_FOCAL_EXT]) && is_array($json[self::FIELD_FOCAL_EXT])) ? $json[self::FIELD_FOCAL_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $type->setFocal($value);
-                } else if (is_array($value)) {
-                    $type->setFocal(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $type->setFocal(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setFocal(new FHIRBoolean($ext));
-            } else {
-                $type->setFocal(new FHIRBoolean(null));
-            }
+            $ext = (array)($json[self::FIELD_FOCAL_EXT] ?? []);
+            $type->setFocal(FHIRBoolean::jsonUnserialize(
+                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_COVERAGE]) || array_key_exists(self::FIELD_COVERAGE, $json)) {
-            if ($json[self::FIELD_COVERAGE] instanceof FHIRReference) {
-                $type->setCoverage($json[self::FIELD_COVERAGE]);
-            } else {
-                $type->setCoverage(new FHIRReference($json[self::FIELD_COVERAGE]));
-            }
+            $type->setCoverage(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_COVERAGE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_BUSINESS_ARRANGEMENT]) || isset($json[self::FIELD_BUSINESS_ARRANGEMENT_EXT]) || array_key_exists(self::FIELD_BUSINESS_ARRANGEMENT, $json) || array_key_exists(self::FIELD_BUSINESS_ARRANGEMENT_EXT, $json)) {
             $value = $json[self::FIELD_BUSINESS_ARRANGEMENT] ?? null;
-            $ext = (isset($json[self::FIELD_BUSINESS_ARRANGEMENT_EXT]) && is_array($json[self::FIELD_BUSINESS_ARRANGEMENT_EXT])) ? $json[self::FIELD_BUSINESS_ARRANGEMENT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setBusinessArrangement($value);
-                } else if (is_array($value)) {
-                    $type->setBusinessArrangement(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setBusinessArrangement(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setBusinessArrangement(new FHIRString($ext));
-            } else {
-                $type->setBusinessArrangement(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_BUSINESS_ARRANGEMENT_EXT] ?? []);
+            $type->setBusinessArrangement(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

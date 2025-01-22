@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -498,27 +498,17 @@ class FHIRMedicationRequestSubstitution extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_ALLOWED]) || isset($json[self::FIELD_ALLOWED_EXT]) || array_key_exists(self::FIELD_ALLOWED, $json) || array_key_exists(self::FIELD_ALLOWED_EXT, $json)) {
             $value = $json[self::FIELD_ALLOWED] ?? null;
-            $ext = (isset($json[self::FIELD_ALLOWED_EXT]) && is_array($json[self::FIELD_ALLOWED_EXT])) ? $json[self::FIELD_ALLOWED_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $type->setAllowed($value);
-                } else if (is_array($value)) {
-                    $type->setAllowed(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $type->setAllowed(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setAllowed(new FHIRBoolean($ext));
-            } else {
-                $type->setAllowed(new FHIRBoolean(null));
-            }
+            $ext = (array)($json[self::FIELD_ALLOWED_EXT] ?? []);
+            $type->setAllowed(FHIRBoolean::jsonUnserialize(
+                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_REASON]) || array_key_exists(self::FIELD_REASON, $json)) {
-            if ($json[self::FIELD_REASON] instanceof FHIRCodeableConcept) {
-                $type->setReason($json[self::FIELD_REASON]);
-            } else {
-                $type->setReason(new FHIRCodeableConcept($json[self::FIELD_REASON]));
-            }
+            $type->setReason(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_REASON],
+                config: $config,
+            ));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -672,51 +672,31 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_ACTION_ID]) || isset($json[self::FIELD_ACTION_ID_EXT]) || array_key_exists(self::FIELD_ACTION_ID, $json) || array_key_exists(self::FIELD_ACTION_ID_EXT, $json)) {
             $value = $json[self::FIELD_ACTION_ID] ?? null;
-            $ext = (isset($json[self::FIELD_ACTION_ID_EXT]) && is_array($json[self::FIELD_ACTION_ID_EXT])) ? $json[self::FIELD_ACTION_ID_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRId) {
-                    $type->setActionId($value);
-                } else if (is_array($value)) {
-                    $type->setActionId(new FHIRId(array_merge($ext, $value)));
-                } else {
-                    $type->setActionId(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setActionId(new FHIRId($ext));
-            } else {
-                $type->setActionId(new FHIRId(null));
-            }
+            $ext = (array)($json[self::FIELD_ACTION_ID_EXT] ?? []);
+            $type->setActionId(FHIRId::jsonUnserialize(
+                json: [FHIRId::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_RELATIONSHIP]) || isset($json[self::FIELD_RELATIONSHIP_EXT]) || array_key_exists(self::FIELD_RELATIONSHIP, $json) || array_key_exists(self::FIELD_RELATIONSHIP_EXT, $json)) {
             $value = $json[self::FIELD_RELATIONSHIP] ?? null;
-            $ext = (isset($json[self::FIELD_RELATIONSHIP_EXT]) && is_array($json[self::FIELD_RELATIONSHIP_EXT])) ? $json[self::FIELD_RELATIONSHIP_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRActionRelationshipType) {
-                    $type->setRelationship($value);
-                } else if (is_array($value)) {
-                    $type->setRelationship(new FHIRActionRelationshipType(array_merge($ext, $value)));
-                } else {
-                    $type->setRelationship(new FHIRActionRelationshipType([FHIRActionRelationshipType::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setRelationship(new FHIRActionRelationshipType($ext));
-            } else {
-                $type->setRelationship(new FHIRActionRelationshipType(null));
-            }
+            $ext = (array)($json[self::FIELD_RELATIONSHIP_EXT] ?? []);
+            $type->setRelationship(FHIRActionRelationshipType::jsonUnserialize(
+                json: [FHIRActionRelationshipType::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_OFFSET_DURATION]) || array_key_exists(self::FIELD_OFFSET_DURATION, $json)) {
-            if ($json[self::FIELD_OFFSET_DURATION] instanceof FHIRDuration) {
-                $type->setOffsetDuration($json[self::FIELD_OFFSET_DURATION]);
-            } else {
-                $type->setOffsetDuration(new FHIRDuration($json[self::FIELD_OFFSET_DURATION]));
-            }
+            $type->setOffsetDuration(FHIRDuration::jsonUnserialize(
+                json: $json[self::FIELD_OFFSET_DURATION],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_OFFSET_RANGE]) || array_key_exists(self::FIELD_OFFSET_RANGE, $json)) {
-            if ($json[self::FIELD_OFFSET_RANGE] instanceof FHIRRange) {
-                $type->setOffsetRange($json[self::FIELD_OFFSET_RANGE]);
-            } else {
-                $type->setOffsetRange(new FHIRRange($json[self::FIELD_OFFSET_RANGE]));
-            }
+            $type->setOffsetRange(FHIRRange::jsonUnserialize(
+                json: $json[self::FIELD_OFFSET_RANGE],
+                config: $config,
+            ));
         }
         return $type;
     }

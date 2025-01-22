@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -702,61 +702,33 @@ class FHIRClaimResponseError extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_SEQUENCE_LINK_ID]) || isset($json[self::FIELD_SEQUENCE_LINK_ID_EXT]) || array_key_exists(self::FIELD_SEQUENCE_LINK_ID, $json) || array_key_exists(self::FIELD_SEQUENCE_LINK_ID_EXT, $json)) {
             $value = $json[self::FIELD_SEQUENCE_LINK_ID] ?? null;
-            $ext = (isset($json[self::FIELD_SEQUENCE_LINK_ID_EXT]) && is_array($json[self::FIELD_SEQUENCE_LINK_ID_EXT])) ? $json[self::FIELD_SEQUENCE_LINK_ID_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $type->setSequenceLinkId($value);
-                } else if (is_array($value)) {
-                    $type->setSequenceLinkId(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $type->setSequenceLinkId(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setSequenceLinkId(new FHIRPositiveInt($ext));
-            } else {
-                $type->setSequenceLinkId(new FHIRPositiveInt(null));
-            }
+            $ext = (array)($json[self::FIELD_SEQUENCE_LINK_ID_EXT] ?? []);
+            $type->setSequenceLinkId(FHIRPositiveInt::jsonUnserialize(
+                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_DETAIL_SEQUENCE_LINK_ID]) || isset($json[self::FIELD_DETAIL_SEQUENCE_LINK_ID_EXT]) || array_key_exists(self::FIELD_DETAIL_SEQUENCE_LINK_ID, $json) || array_key_exists(self::FIELD_DETAIL_SEQUENCE_LINK_ID_EXT, $json)) {
             $value = $json[self::FIELD_DETAIL_SEQUENCE_LINK_ID] ?? null;
-            $ext = (isset($json[self::FIELD_DETAIL_SEQUENCE_LINK_ID_EXT]) && is_array($json[self::FIELD_DETAIL_SEQUENCE_LINK_ID_EXT])) ? $json[self::FIELD_DETAIL_SEQUENCE_LINK_ID_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $type->setDetailSequenceLinkId($value);
-                } else if (is_array($value)) {
-                    $type->setDetailSequenceLinkId(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $type->setDetailSequenceLinkId(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setDetailSequenceLinkId(new FHIRPositiveInt($ext));
-            } else {
-                $type->setDetailSequenceLinkId(new FHIRPositiveInt(null));
-            }
+            $ext = (array)($json[self::FIELD_DETAIL_SEQUENCE_LINK_ID_EXT] ?? []);
+            $type->setDetailSequenceLinkId(FHIRPositiveInt::jsonUnserialize(
+                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID]) || isset($json[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID_EXT]) || array_key_exists(self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID, $json) || array_key_exists(self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID_EXT, $json)) {
             $value = $json[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID] ?? null;
-            $ext = (isset($json[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID_EXT]) && is_array($json[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID_EXT])) ? $json[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $type->setSubdetailSequenceLinkId($value);
-                } else if (is_array($value)) {
-                    $type->setSubdetailSequenceLinkId(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $type->setSubdetailSequenceLinkId(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setSubdetailSequenceLinkId(new FHIRPositiveInt($ext));
-            } else {
-                $type->setSubdetailSequenceLinkId(new FHIRPositiveInt(null));
-            }
+            $ext = (array)($json[self::FIELD_SUBDETAIL_SEQUENCE_LINK_ID_EXT] ?? []);
+            $type->setSubdetailSequenceLinkId(FHIRPositiveInt::jsonUnserialize(
+                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            if ($json[self::FIELD_CODE] instanceof FHIRCodeableConcept) {
-                $type->setCode($json[self::FIELD_CODE]);
-            } else {
-                $type->setCode(new FHIRCodeableConcept($json[self::FIELD_CODE]));
-            }
+            $type->setCode(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_CODE],
+                config: $config,
+            ));
         }
         return $type;
     }

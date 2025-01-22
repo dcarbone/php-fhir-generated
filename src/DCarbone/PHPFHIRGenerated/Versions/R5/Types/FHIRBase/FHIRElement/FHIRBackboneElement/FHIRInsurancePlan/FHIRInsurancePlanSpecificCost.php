@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -505,25 +505,21 @@ class FHIRInsurancePlanSpecificCost extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
-            if ($json[self::FIELD_CATEGORY] instanceof FHIRCodeableConcept) {
-                $type->setCategory($json[self::FIELD_CATEGORY]);
-            } else {
-                $type->setCategory(new FHIRCodeableConcept($json[self::FIELD_CATEGORY]));
-            }
+            $type->setCategory(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_CATEGORY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_BENEFIT]) || array_key_exists(self::FIELD_BENEFIT, $json)) {
-            if (is_array($json[self::FIELD_BENEFIT])) {
-                foreach($json[self::FIELD_BENEFIT] as $v) {
-                    if ($v instanceof FHIRInsurancePlanBenefit1) {
-                        $type->addBenefit($v);
-                    } else {
-                        $type->addBenefit(new FHIRInsurancePlanBenefit1($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_BENEFIT] instanceof FHIRInsurancePlanBenefit1) {
-                $type->addBenefit($json[self::FIELD_BENEFIT]);
-            } else {
-                $type->addBenefit(new FHIRInsurancePlanBenefit1($json[self::FIELD_BENEFIT]));
+            $vs = $json[self::FIELD_BENEFIT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addBenefit(FHIRInsurancePlanBenefit1::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

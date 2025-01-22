@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -602,54 +602,27 @@ class FHIREffectEvidenceSynthesisSampleSize extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (isset($json[self::FIELD_DESCRIPTION_EXT]) && is_array($json[self::FIELD_DESCRIPTION_EXT])) ? $json[self::FIELD_DESCRIPTION_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setDescription($value);
-                } else if (is_array($value)) {
-                    $type->setDescription(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setDescription(new FHIRString($ext));
-            } else {
-                $type->setDescription(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
+            $type->setDescription(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_NUMBER_OF_STUDIES]) || isset($json[self::FIELD_NUMBER_OF_STUDIES_EXT]) || array_key_exists(self::FIELD_NUMBER_OF_STUDIES, $json) || array_key_exists(self::FIELD_NUMBER_OF_STUDIES_EXT, $json)) {
             $value = $json[self::FIELD_NUMBER_OF_STUDIES] ?? null;
-            $ext = (isset($json[self::FIELD_NUMBER_OF_STUDIES_EXT]) && is_array($json[self::FIELD_NUMBER_OF_STUDIES_EXT])) ? $json[self::FIELD_NUMBER_OF_STUDIES_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $type->setNumberOfStudies($value);
-                } else if (is_array($value)) {
-                    $type->setNumberOfStudies(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $type->setNumberOfStudies(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setNumberOfStudies(new FHIRInteger($ext));
-            } else {
-                $type->setNumberOfStudies(new FHIRInteger(null));
-            }
+            $ext = (array)($json[self::FIELD_NUMBER_OF_STUDIES_EXT] ?? []);
+            $type->setNumberOfStudies(FHIRInteger::jsonUnserialize(
+                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_NUMBER_OF_PARTICIPANTS]) || isset($json[self::FIELD_NUMBER_OF_PARTICIPANTS_EXT]) || array_key_exists(self::FIELD_NUMBER_OF_PARTICIPANTS, $json) || array_key_exists(self::FIELD_NUMBER_OF_PARTICIPANTS_EXT, $json)) {
             $value = $json[self::FIELD_NUMBER_OF_PARTICIPANTS] ?? null;
-            $ext = (isset($json[self::FIELD_NUMBER_OF_PARTICIPANTS_EXT]) && is_array($json[self::FIELD_NUMBER_OF_PARTICIPANTS_EXT])) ? $json[self::FIELD_NUMBER_OF_PARTICIPANTS_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $type->setNumberOfParticipants($value);
-                } else if (is_array($value)) {
-                    $type->setNumberOfParticipants(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $type->setNumberOfParticipants(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setNumberOfParticipants(new FHIRInteger($ext));
-            } else {
-                $type->setNumberOfParticipants(new FHIRInteger(null));
-            }
+            $ext = (array)($json[self::FIELD_NUMBER_OF_PARTICIPANTS_EXT] ?? []);
+            $type->setNumberOfParticipants(FHIRInteger::jsonUnserialize(
+                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

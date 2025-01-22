@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -532,37 +532,19 @@ class FHIRExampleScenarioContainedInstance extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_INSTANCE_REFERENCE]) || isset($json[self::FIELD_INSTANCE_REFERENCE_EXT]) || array_key_exists(self::FIELD_INSTANCE_REFERENCE, $json) || array_key_exists(self::FIELD_INSTANCE_REFERENCE_EXT, $json)) {
             $value = $json[self::FIELD_INSTANCE_REFERENCE] ?? null;
-            $ext = (isset($json[self::FIELD_INSTANCE_REFERENCE_EXT]) && is_array($json[self::FIELD_INSTANCE_REFERENCE_EXT])) ? $json[self::FIELD_INSTANCE_REFERENCE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setInstanceReference($value);
-                } else if (is_array($value)) {
-                    $type->setInstanceReference(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setInstanceReference(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setInstanceReference(new FHIRString($ext));
-            } else {
-                $type->setInstanceReference(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_INSTANCE_REFERENCE_EXT] ?? []);
+            $type->setInstanceReference(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_VERSION_REFERENCE]) || isset($json[self::FIELD_VERSION_REFERENCE_EXT]) || array_key_exists(self::FIELD_VERSION_REFERENCE, $json) || array_key_exists(self::FIELD_VERSION_REFERENCE_EXT, $json)) {
             $value = $json[self::FIELD_VERSION_REFERENCE] ?? null;
-            $ext = (isset($json[self::FIELD_VERSION_REFERENCE_EXT]) && is_array($json[self::FIELD_VERSION_REFERENCE_EXT])) ? $json[self::FIELD_VERSION_REFERENCE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setVersionReference($value);
-                } else if (is_array($value)) {
-                    $type->setVersionReference(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setVersionReference(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setVersionReference(new FHIRString($ext));
-            } else {
-                $type->setVersionReference(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_VERSION_REFERENCE_EXT] ?? []);
+            $type->setVersionReference(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

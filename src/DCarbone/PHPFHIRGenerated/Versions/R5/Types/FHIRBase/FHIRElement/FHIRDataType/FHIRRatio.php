@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -467,18 +467,16 @@ class FHIRRatio extends FHIRDataType
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_NUMERATOR]) || array_key_exists(self::FIELD_NUMERATOR, $json)) {
-            if ($json[self::FIELD_NUMERATOR] instanceof FHIRQuantity) {
-                $type->setNumerator($json[self::FIELD_NUMERATOR]);
-            } else {
-                $type->setNumerator(new FHIRQuantity($json[self::FIELD_NUMERATOR]));
-            }
+            $type->setNumerator(FHIRQuantity::jsonUnserialize(
+                json: $json[self::FIELD_NUMERATOR],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_DENOMINATOR]) || array_key_exists(self::FIELD_DENOMINATOR, $json)) {
-            if ($json[self::FIELD_DENOMINATOR] instanceof FHIRQuantity) {
-                $type->setDenominator($json[self::FIELD_DENOMINATOR]);
-            } else {
-                $type->setDenominator(new FHIRQuantity($json[self::FIELD_DENOMINATOR]));
-            }
+            $type->setDenominator(FHIRQuantity::jsonUnserialize(
+                json: $json[self::FIELD_DENOMINATOR],
+                config: $config,
+            ));
         }
         return $type;
     }

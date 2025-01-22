@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -760,47 +760,39 @@ class FHIRSecurityEvent extends FHIRResource implements VersionContainedTypeInte
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_EVENT]) || array_key_exists(self::FIELD_EVENT, $json)) {
-            if ($json[self::FIELD_EVENT] instanceof FHIRSecurityEventEvent) {
-                $type->setEvent($json[self::FIELD_EVENT]);
-            } else {
-                $type->setEvent(new FHIRSecurityEventEvent($json[self::FIELD_EVENT]));
-            }
+            $type->setEvent(FHIRSecurityEventEvent::jsonUnserialize(
+                json: $json[self::FIELD_EVENT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PARTICIPANT]) || array_key_exists(self::FIELD_PARTICIPANT, $json)) {
-            if (is_array($json[self::FIELD_PARTICIPANT])) {
-                foreach($json[self::FIELD_PARTICIPANT] as $v) {
-                    if ($v instanceof FHIRSecurityEventParticipant) {
-                        $type->addParticipant($v);
-                    } else {
-                        $type->addParticipant(new FHIRSecurityEventParticipant($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_PARTICIPANT] instanceof FHIRSecurityEventParticipant) {
-                $type->addParticipant($json[self::FIELD_PARTICIPANT]);
-            } else {
-                $type->addParticipant(new FHIRSecurityEventParticipant($json[self::FIELD_PARTICIPANT]));
+            $vs = $json[self::FIELD_PARTICIPANT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addParticipant(FHIRSecurityEventParticipant::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
-            if ($json[self::FIELD_SOURCE] instanceof FHIRSecurityEventSource) {
-                $type->setSource($json[self::FIELD_SOURCE]);
-            } else {
-                $type->setSource(new FHIRSecurityEventSource($json[self::FIELD_SOURCE]));
-            }
+            $type->setSource(FHIRSecurityEventSource::jsonUnserialize(
+                json: $json[self::FIELD_SOURCE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_OBJECT]) || array_key_exists(self::FIELD_OBJECT, $json)) {
-            if (is_array($json[self::FIELD_OBJECT])) {
-                foreach($json[self::FIELD_OBJECT] as $v) {
-                    if ($v instanceof FHIRSecurityEventObject) {
-                        $type->addObject($v);
-                    } else {
-                        $type->addObject(new FHIRSecurityEventObject($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_OBJECT] instanceof FHIRSecurityEventObject) {
-                $type->addObject($json[self::FIELD_OBJECT]);
-            } else {
-                $type->addObject(new FHIRSecurityEventObject($json[self::FIELD_OBJECT]));
+            $vs = $json[self::FIELD_OBJECT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addObject(FHIRSecurityEventObject::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

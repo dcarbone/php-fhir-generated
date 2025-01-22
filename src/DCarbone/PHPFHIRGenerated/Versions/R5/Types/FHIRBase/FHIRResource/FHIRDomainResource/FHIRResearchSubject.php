@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1278,120 +1278,81 @@ class FHIRResearchSubject extends FHIRDomainResource implements VersionContained
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            if (is_array($json[self::FIELD_IDENTIFIER])) {
-                foreach($json[self::FIELD_IDENTIFIER] as $v) {
-                    if ($v instanceof FHIRIdentifier) {
-                        $type->addIdentifier($v);
-                    } else {
-                        $type->addIdentifier(new FHIRIdentifier($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
-                $type->addIdentifier($json[self::FIELD_IDENTIFIER]);
-            } else {
-                $type->addIdentifier(new FHIRIdentifier($json[self::FIELD_IDENTIFIER]));
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (isset($json[self::FIELD_STATUS_EXT]) && is_array($json[self::FIELD_STATUS_EXT])) ? $json[self::FIELD_STATUS_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRPublicationStatus) {
-                    $type->setStatus($value);
-                } else if (is_array($value)) {
-                    $type->setStatus(new FHIRPublicationStatus(array_merge($ext, $value)));
-                } else {
-                    $type->setStatus(new FHIRPublicationStatus([FHIRPublicationStatus::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setStatus(new FHIRPublicationStatus($ext));
-            } else {
-                $type->setStatus(new FHIRPublicationStatus(null));
-            }
+            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
+            $type->setStatus(FHIRPublicationStatus::jsonUnserialize(
+                json: [FHIRPublicationStatus::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PROGRESS]) || array_key_exists(self::FIELD_PROGRESS, $json)) {
-            if (is_array($json[self::FIELD_PROGRESS])) {
-                foreach($json[self::FIELD_PROGRESS] as $v) {
-                    if ($v instanceof FHIRResearchSubjectProgress) {
-                        $type->addProgress($v);
-                    } else {
-                        $type->addProgress(new FHIRResearchSubjectProgress($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_PROGRESS] instanceof FHIRResearchSubjectProgress) {
-                $type->addProgress($json[self::FIELD_PROGRESS]);
-            } else {
-                $type->addProgress(new FHIRResearchSubjectProgress($json[self::FIELD_PROGRESS]));
+            $vs = $json[self::FIELD_PROGRESS];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addProgress(FHIRResearchSubjectProgress::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            if ($json[self::FIELD_PERIOD] instanceof FHIRPeriod) {
-                $type->setPeriod($json[self::FIELD_PERIOD]);
-            } else {
-                $type->setPeriod(new FHIRPeriod($json[self::FIELD_PERIOD]));
-            }
+            $type->setPeriod(FHIRPeriod::jsonUnserialize(
+                json: $json[self::FIELD_PERIOD],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_STUDY]) || array_key_exists(self::FIELD_STUDY, $json)) {
-            if ($json[self::FIELD_STUDY] instanceof FHIRReference) {
-                $type->setStudy($json[self::FIELD_STUDY]);
-            } else {
-                $type->setStudy(new FHIRReference($json[self::FIELD_STUDY]));
-            }
+            $type->setStudy(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_STUDY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            if ($json[self::FIELD_SUBJECT] instanceof FHIRReference) {
-                $type->setSubject($json[self::FIELD_SUBJECT]);
-            } else {
-                $type->setSubject(new FHIRReference($json[self::FIELD_SUBJECT]));
-            }
+            $type->setSubject(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_SUBJECT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ASSIGNED_COMPARISON_GROUP]) || isset($json[self::FIELD_ASSIGNED_COMPARISON_GROUP_EXT]) || array_key_exists(self::FIELD_ASSIGNED_COMPARISON_GROUP, $json) || array_key_exists(self::FIELD_ASSIGNED_COMPARISON_GROUP_EXT, $json)) {
             $value = $json[self::FIELD_ASSIGNED_COMPARISON_GROUP] ?? null;
-            $ext = (isset($json[self::FIELD_ASSIGNED_COMPARISON_GROUP_EXT]) && is_array($json[self::FIELD_ASSIGNED_COMPARISON_GROUP_EXT])) ? $json[self::FIELD_ASSIGNED_COMPARISON_GROUP_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRId) {
-                    $type->setAssignedComparisonGroup($value);
-                } else if (is_array($value)) {
-                    $type->setAssignedComparisonGroup(new FHIRId(array_merge($ext, $value)));
-                } else {
-                    $type->setAssignedComparisonGroup(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setAssignedComparisonGroup(new FHIRId($ext));
-            } else {
-                $type->setAssignedComparisonGroup(new FHIRId(null));
-            }
+            $ext = (array)($json[self::FIELD_ASSIGNED_COMPARISON_GROUP_EXT] ?? []);
+            $type->setAssignedComparisonGroup(FHIRId::jsonUnserialize(
+                json: [FHIRId::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ACTUAL_COMPARISON_GROUP]) || isset($json[self::FIELD_ACTUAL_COMPARISON_GROUP_EXT]) || array_key_exists(self::FIELD_ACTUAL_COMPARISON_GROUP, $json) || array_key_exists(self::FIELD_ACTUAL_COMPARISON_GROUP_EXT, $json)) {
             $value = $json[self::FIELD_ACTUAL_COMPARISON_GROUP] ?? null;
-            $ext = (isset($json[self::FIELD_ACTUAL_COMPARISON_GROUP_EXT]) && is_array($json[self::FIELD_ACTUAL_COMPARISON_GROUP_EXT])) ? $json[self::FIELD_ACTUAL_COMPARISON_GROUP_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRId) {
-                    $type->setActualComparisonGroup($value);
-                } else if (is_array($value)) {
-                    $type->setActualComparisonGroup(new FHIRId(array_merge($ext, $value)));
-                } else {
-                    $type->setActualComparisonGroup(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setActualComparisonGroup(new FHIRId($ext));
-            } else {
-                $type->setActualComparisonGroup(new FHIRId(null));
-            }
+            $ext = (array)($json[self::FIELD_ACTUAL_COMPARISON_GROUP_EXT] ?? []);
+            $type->setActualComparisonGroup(FHIRId::jsonUnserialize(
+                json: [FHIRId::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_CONSENT]) || array_key_exists(self::FIELD_CONSENT, $json)) {
-            if (is_array($json[self::FIELD_CONSENT])) {
-                foreach($json[self::FIELD_CONSENT] as $v) {
-                    if ($v instanceof FHIRReference) {
-                        $type->addConsent($v);
-                    } else {
-                        $type->addConsent(new FHIRReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_CONSENT] instanceof FHIRReference) {
-                $type->addConsent($json[self::FIELD_CONSENT]);
-            } else {
-                $type->addConsent(new FHIRReference($json[self::FIELD_CONSENT]));
+            $vs = $json[self::FIELD_CONSENT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addConsent(FHIRReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

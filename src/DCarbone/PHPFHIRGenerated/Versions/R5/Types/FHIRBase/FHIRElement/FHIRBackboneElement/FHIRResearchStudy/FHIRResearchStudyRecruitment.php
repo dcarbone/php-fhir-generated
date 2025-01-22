@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -668,51 +668,31 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TARGET_NUMBER]) || isset($json[self::FIELD_TARGET_NUMBER_EXT]) || array_key_exists(self::FIELD_TARGET_NUMBER, $json) || array_key_exists(self::FIELD_TARGET_NUMBER_EXT, $json)) {
             $value = $json[self::FIELD_TARGET_NUMBER] ?? null;
-            $ext = (isset($json[self::FIELD_TARGET_NUMBER_EXT]) && is_array($json[self::FIELD_TARGET_NUMBER_EXT])) ? $json[self::FIELD_TARGET_NUMBER_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRUnsignedInt) {
-                    $type->setTargetNumber($value);
-                } else if (is_array($value)) {
-                    $type->setTargetNumber(new FHIRUnsignedInt(array_merge($ext, $value)));
-                } else {
-                    $type->setTargetNumber(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setTargetNumber(new FHIRUnsignedInt($ext));
-            } else {
-                $type->setTargetNumber(new FHIRUnsignedInt(null));
-            }
+            $ext = (array)($json[self::FIELD_TARGET_NUMBER_EXT] ?? []);
+            $type->setTargetNumber(FHIRUnsignedInt::jsonUnserialize(
+                json: [FHIRUnsignedInt::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ACTUAL_NUMBER]) || isset($json[self::FIELD_ACTUAL_NUMBER_EXT]) || array_key_exists(self::FIELD_ACTUAL_NUMBER, $json) || array_key_exists(self::FIELD_ACTUAL_NUMBER_EXT, $json)) {
             $value = $json[self::FIELD_ACTUAL_NUMBER] ?? null;
-            $ext = (isset($json[self::FIELD_ACTUAL_NUMBER_EXT]) && is_array($json[self::FIELD_ACTUAL_NUMBER_EXT])) ? $json[self::FIELD_ACTUAL_NUMBER_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRUnsignedInt) {
-                    $type->setActualNumber($value);
-                } else if (is_array($value)) {
-                    $type->setActualNumber(new FHIRUnsignedInt(array_merge($ext, $value)));
-                } else {
-                    $type->setActualNumber(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setActualNumber(new FHIRUnsignedInt($ext));
-            } else {
-                $type->setActualNumber(new FHIRUnsignedInt(null));
-            }
+            $ext = (array)($json[self::FIELD_ACTUAL_NUMBER_EXT] ?? []);
+            $type->setActualNumber(FHIRUnsignedInt::jsonUnserialize(
+                json: [FHIRUnsignedInt::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ELIGIBILITY]) || array_key_exists(self::FIELD_ELIGIBILITY, $json)) {
-            if ($json[self::FIELD_ELIGIBILITY] instanceof FHIRReference) {
-                $type->setEligibility($json[self::FIELD_ELIGIBILITY]);
-            } else {
-                $type->setEligibility(new FHIRReference($json[self::FIELD_ELIGIBILITY]));
-            }
+            $type->setEligibility(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_ELIGIBILITY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ACTUAL_GROUP]) || array_key_exists(self::FIELD_ACTUAL_GROUP, $json)) {
-            if ($json[self::FIELD_ACTUAL_GROUP] instanceof FHIRReference) {
-                $type->setActualGroup($json[self::FIELD_ACTUAL_GROUP]);
-            } else {
-                $type->setActualGroup(new FHIRReference($json[self::FIELD_ACTUAL_GROUP]));
-            }
+            $type->setActualGroup(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_ACTUAL_GROUP],
+                config: $config,
+            ));
         }
         return $type;
     }

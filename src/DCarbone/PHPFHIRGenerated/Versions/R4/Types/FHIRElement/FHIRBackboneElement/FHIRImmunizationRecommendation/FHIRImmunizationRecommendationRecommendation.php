@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1669,209 +1669,135 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_VACCINE_CODE]) || array_key_exists(self::FIELD_VACCINE_CODE, $json)) {
-            if (is_array($json[self::FIELD_VACCINE_CODE])) {
-                foreach($json[self::FIELD_VACCINE_CODE] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addVaccineCode($v);
-                    } else {
-                        $type->addVaccineCode(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_VACCINE_CODE] instanceof FHIRCodeableConcept) {
-                $type->addVaccineCode($json[self::FIELD_VACCINE_CODE]);
-            } else {
-                $type->addVaccineCode(new FHIRCodeableConcept($json[self::FIELD_VACCINE_CODE]));
+            $vs = $json[self::FIELD_VACCINE_CODE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addVaccineCode(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_TARGET_DISEASE]) || array_key_exists(self::FIELD_TARGET_DISEASE, $json)) {
-            if ($json[self::FIELD_TARGET_DISEASE] instanceof FHIRCodeableConcept) {
-                $type->setTargetDisease($json[self::FIELD_TARGET_DISEASE]);
-            } else {
-                $type->setTargetDisease(new FHIRCodeableConcept($json[self::FIELD_TARGET_DISEASE]));
-            }
+            $type->setTargetDisease(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TARGET_DISEASE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_CONTRAINDICATED_VACCINE_CODE]) || array_key_exists(self::FIELD_CONTRAINDICATED_VACCINE_CODE, $json)) {
-            if (is_array($json[self::FIELD_CONTRAINDICATED_VACCINE_CODE])) {
-                foreach($json[self::FIELD_CONTRAINDICATED_VACCINE_CODE] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addContraindicatedVaccineCode($v);
-                    } else {
-                        $type->addContraindicatedVaccineCode(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_CONTRAINDICATED_VACCINE_CODE] instanceof FHIRCodeableConcept) {
-                $type->addContraindicatedVaccineCode($json[self::FIELD_CONTRAINDICATED_VACCINE_CODE]);
-            } else {
-                $type->addContraindicatedVaccineCode(new FHIRCodeableConcept($json[self::FIELD_CONTRAINDICATED_VACCINE_CODE]));
+            $vs = $json[self::FIELD_CONTRAINDICATED_VACCINE_CODE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addContraindicatedVaccineCode(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_FORECAST_STATUS]) || array_key_exists(self::FIELD_FORECAST_STATUS, $json)) {
-            if ($json[self::FIELD_FORECAST_STATUS] instanceof FHIRCodeableConcept) {
-                $type->setForecastStatus($json[self::FIELD_FORECAST_STATUS]);
-            } else {
-                $type->setForecastStatus(new FHIRCodeableConcept($json[self::FIELD_FORECAST_STATUS]));
-            }
+            $type->setForecastStatus(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_FORECAST_STATUS],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_FORECAST_REASON]) || array_key_exists(self::FIELD_FORECAST_REASON, $json)) {
-            if (is_array($json[self::FIELD_FORECAST_REASON])) {
-                foreach($json[self::FIELD_FORECAST_REASON] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addForecastReason($v);
-                    } else {
-                        $type->addForecastReason(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_FORECAST_REASON] instanceof FHIRCodeableConcept) {
-                $type->addForecastReason($json[self::FIELD_FORECAST_REASON]);
-            } else {
-                $type->addForecastReason(new FHIRCodeableConcept($json[self::FIELD_FORECAST_REASON]));
+            $vs = $json[self::FIELD_FORECAST_REASON];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addForecastReason(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_DATE_CRITERION]) || array_key_exists(self::FIELD_DATE_CRITERION, $json)) {
-            if (is_array($json[self::FIELD_DATE_CRITERION])) {
-                foreach($json[self::FIELD_DATE_CRITERION] as $v) {
-                    if ($v instanceof FHIRImmunizationRecommendationDateCriterion) {
-                        $type->addDateCriterion($v);
-                    } else {
-                        $type->addDateCriterion(new FHIRImmunizationRecommendationDateCriterion($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_DATE_CRITERION] instanceof FHIRImmunizationRecommendationDateCriterion) {
-                $type->addDateCriterion($json[self::FIELD_DATE_CRITERION]);
-            } else {
-                $type->addDateCriterion(new FHIRImmunizationRecommendationDateCriterion($json[self::FIELD_DATE_CRITERION]));
+            $vs = $json[self::FIELD_DATE_CRITERION];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addDateCriterion(FHIRImmunizationRecommendationDateCriterion::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (isset($json[self::FIELD_DESCRIPTION_EXT]) && is_array($json[self::FIELD_DESCRIPTION_EXT])) ? $json[self::FIELD_DESCRIPTION_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setDescription($value);
-                } else if (is_array($value)) {
-                    $type->setDescription(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setDescription(new FHIRString($ext));
-            } else {
-                $type->setDescription(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
+            $type->setDescription(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SERIES]) || isset($json[self::FIELD_SERIES_EXT]) || array_key_exists(self::FIELD_SERIES, $json) || array_key_exists(self::FIELD_SERIES_EXT, $json)) {
             $value = $json[self::FIELD_SERIES] ?? null;
-            $ext = (isset($json[self::FIELD_SERIES_EXT]) && is_array($json[self::FIELD_SERIES_EXT])) ? $json[self::FIELD_SERIES_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setSeries($value);
-                } else if (is_array($value)) {
-                    $type->setSeries(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setSeries(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setSeries(new FHIRString($ext));
-            } else {
-                $type->setSeries(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_SERIES_EXT] ?? []);
+            $type->setSeries(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_DOSE_NUMBER_POSITIVE_INT]) || isset($json[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT]) || array_key_exists(self::FIELD_DOSE_NUMBER_POSITIVE_INT, $json) || array_key_exists(self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT, $json)) {
             $value = $json[self::FIELD_DOSE_NUMBER_POSITIVE_INT] ?? null;
-            $ext = (isset($json[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT]) && is_array($json[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT])) ? $json[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $type->setDoseNumberPositiveInt($value);
-                } else if (is_array($value)) {
-                    $type->setDoseNumberPositiveInt(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $type->setDoseNumberPositiveInt(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setDoseNumberPositiveInt(new FHIRPositiveInt($ext));
-            } else {
-                $type->setDoseNumberPositiveInt(new FHIRPositiveInt(null));
-            }
+            $ext = (array)($json[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT] ?? []);
+            $type->setDoseNumberPositiveInt(FHIRPositiveInt::jsonUnserialize(
+                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_DOSE_NUMBER_STRING]) || isset($json[self::FIELD_DOSE_NUMBER_STRING_EXT]) || array_key_exists(self::FIELD_DOSE_NUMBER_STRING, $json) || array_key_exists(self::FIELD_DOSE_NUMBER_STRING_EXT, $json)) {
             $value = $json[self::FIELD_DOSE_NUMBER_STRING] ?? null;
-            $ext = (isset($json[self::FIELD_DOSE_NUMBER_STRING_EXT]) && is_array($json[self::FIELD_DOSE_NUMBER_STRING_EXT])) ? $json[self::FIELD_DOSE_NUMBER_STRING_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setDoseNumberString($value);
-                } else if (is_array($value)) {
-                    $type->setDoseNumberString(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setDoseNumberString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setDoseNumberString(new FHIRString($ext));
-            } else {
-                $type->setDoseNumberString(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_DOSE_NUMBER_STRING_EXT] ?? []);
+            $type->setDoseNumberString(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SERIES_DOSES_POSITIVE_INT]) || isset($json[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT]) || array_key_exists(self::FIELD_SERIES_DOSES_POSITIVE_INT, $json) || array_key_exists(self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT, $json)) {
             $value = $json[self::FIELD_SERIES_DOSES_POSITIVE_INT] ?? null;
-            $ext = (isset($json[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT]) && is_array($json[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT])) ? $json[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $type->setSeriesDosesPositiveInt($value);
-                } else if (is_array($value)) {
-                    $type->setSeriesDosesPositiveInt(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $type->setSeriesDosesPositiveInt(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setSeriesDosesPositiveInt(new FHIRPositiveInt($ext));
-            } else {
-                $type->setSeriesDosesPositiveInt(new FHIRPositiveInt(null));
-            }
+            $ext = (array)($json[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT] ?? []);
+            $type->setSeriesDosesPositiveInt(FHIRPositiveInt::jsonUnserialize(
+                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SERIES_DOSES_STRING]) || isset($json[self::FIELD_SERIES_DOSES_STRING_EXT]) || array_key_exists(self::FIELD_SERIES_DOSES_STRING, $json) || array_key_exists(self::FIELD_SERIES_DOSES_STRING_EXT, $json)) {
             $value = $json[self::FIELD_SERIES_DOSES_STRING] ?? null;
-            $ext = (isset($json[self::FIELD_SERIES_DOSES_STRING_EXT]) && is_array($json[self::FIELD_SERIES_DOSES_STRING_EXT])) ? $json[self::FIELD_SERIES_DOSES_STRING_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setSeriesDosesString($value);
-                } else if (is_array($value)) {
-                    $type->setSeriesDosesString(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setSeriesDosesString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setSeriesDosesString(new FHIRString($ext));
-            } else {
-                $type->setSeriesDosesString(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_SERIES_DOSES_STRING_EXT] ?? []);
+            $type->setSeriesDosesString(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SUPPORTING_IMMUNIZATION]) || array_key_exists(self::FIELD_SUPPORTING_IMMUNIZATION, $json)) {
-            if (is_array($json[self::FIELD_SUPPORTING_IMMUNIZATION])) {
-                foreach($json[self::FIELD_SUPPORTING_IMMUNIZATION] as $v) {
-                    if ($v instanceof FHIRReference) {
-                        $type->addSupportingImmunization($v);
-                    } else {
-                        $type->addSupportingImmunization(new FHIRReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_SUPPORTING_IMMUNIZATION] instanceof FHIRReference) {
-                $type->addSupportingImmunization($json[self::FIELD_SUPPORTING_IMMUNIZATION]);
-            } else {
-                $type->addSupportingImmunization(new FHIRReference($json[self::FIELD_SUPPORTING_IMMUNIZATION]));
+            $vs = $json[self::FIELD_SUPPORTING_IMMUNIZATION];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addSupportingImmunization(FHIRReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_SUPPORTING_PATIENT_INFORMATION]) || array_key_exists(self::FIELD_SUPPORTING_PATIENT_INFORMATION, $json)) {
-            if (is_array($json[self::FIELD_SUPPORTING_PATIENT_INFORMATION])) {
-                foreach($json[self::FIELD_SUPPORTING_PATIENT_INFORMATION] as $v) {
-                    if ($v instanceof FHIRReference) {
-                        $type->addSupportingPatientInformation($v);
-                    } else {
-                        $type->addSupportingPatientInformation(new FHIRReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_SUPPORTING_PATIENT_INFORMATION] instanceof FHIRReference) {
-                $type->addSupportingPatientInformation($json[self::FIELD_SUPPORTING_PATIENT_INFORMATION]);
-            } else {
-                $type->addSupportingPatientInformation(new FHIRReference($json[self::FIELD_SUPPORTING_PATIENT_INFORMATION]));
+            $vs = $json[self::FIELD_SUPPORTING_PATIENT_INFORMATION];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addSupportingPatientInformation(FHIRReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

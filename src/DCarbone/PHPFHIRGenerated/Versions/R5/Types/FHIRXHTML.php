@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -156,6 +156,10 @@ class FHIRXHTML implements TypeInterface
      */
     public function setXHTML(null|string|\DOMNode|\SimpleXMLElement $xhtml): self
     {
+        if (null === $xhtml) {
+            unset($this->_xhtml);
+            return $this;
+        }
         if ($xhtml instanceof \DOMDocument) {
             $xhtml = $xhtml->saveXML($xhtml->documentElement);
         } else if ($xhtml instanceof \DOMNode) {
@@ -311,6 +315,9 @@ class FHIRXHTML implements TypeInterface
             $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
         } else if (is_object($json)) {
             $json = (array)$json;
+        }
+        if (null === $json) {
+            return $type;
         }
         if ([] !== $json) {
             $v = reset($json);

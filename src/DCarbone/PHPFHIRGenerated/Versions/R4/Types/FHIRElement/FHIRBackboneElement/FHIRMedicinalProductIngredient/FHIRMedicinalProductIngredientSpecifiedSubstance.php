@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -640,39 +640,33 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            if ($json[self::FIELD_CODE] instanceof FHIRCodeableConcept) {
-                $type->setCode($json[self::FIELD_CODE]);
-            } else {
-                $type->setCode(new FHIRCodeableConcept($json[self::FIELD_CODE]));
-            }
+            $type->setCode(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_CODE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_GROUP]) || array_key_exists(self::FIELD_GROUP, $json)) {
-            if ($json[self::FIELD_GROUP] instanceof FHIRCodeableConcept) {
-                $type->setGroup($json[self::FIELD_GROUP]);
-            } else {
-                $type->setGroup(new FHIRCodeableConcept($json[self::FIELD_GROUP]));
-            }
+            $type->setGroup(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_GROUP],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_CONFIDENTIALITY]) || array_key_exists(self::FIELD_CONFIDENTIALITY, $json)) {
-            if ($json[self::FIELD_CONFIDENTIALITY] instanceof FHIRCodeableConcept) {
-                $type->setConfidentiality($json[self::FIELD_CONFIDENTIALITY]);
-            } else {
-                $type->setConfidentiality(new FHIRCodeableConcept($json[self::FIELD_CONFIDENTIALITY]));
-            }
+            $type->setConfidentiality(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_CONFIDENTIALITY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_STRENGTH]) || array_key_exists(self::FIELD_STRENGTH, $json)) {
-            if (is_array($json[self::FIELD_STRENGTH])) {
-                foreach($json[self::FIELD_STRENGTH] as $v) {
-                    if ($v instanceof FHIRMedicinalProductIngredientStrength) {
-                        $type->addStrength($v);
-                    } else {
-                        $type->addStrength(new FHIRMedicinalProductIngredientStrength($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_STRENGTH] instanceof FHIRMedicinalProductIngredientStrength) {
-                $type->addStrength($json[self::FIELD_STRENGTH]);
-            } else {
-                $type->addStrength(new FHIRMedicinalProductIngredientStrength($json[self::FIELD_STRENGTH]));
+            $vs = $json[self::FIELD_STRENGTH];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addStrength(FHIRMedicinalProductIngredientStrength::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

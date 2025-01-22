@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -657,48 +657,40 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_REGULATORY_AUTHORITY]) || array_key_exists(self::FIELD_REGULATORY_AUTHORITY, $json)) {
-            if ($json[self::FIELD_REGULATORY_AUTHORITY] instanceof FHIRReference) {
-                $type->setRegulatoryAuthority($json[self::FIELD_REGULATORY_AUTHORITY]);
-            } else {
-                $type->setRegulatoryAuthority(new FHIRReference($json[self::FIELD_REGULATORY_AUTHORITY]));
-            }
+            $type->setRegulatoryAuthority(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_REGULATORY_AUTHORITY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SUBSTITUTION]) || array_key_exists(self::FIELD_SUBSTITUTION, $json)) {
-            if (is_array($json[self::FIELD_SUBSTITUTION])) {
-                foreach($json[self::FIELD_SUBSTITUTION] as $v) {
-                    if ($v instanceof FHIRMedicationKnowledgeSubstitution) {
-                        $type->addSubstitution($v);
-                    } else {
-                        $type->addSubstitution(new FHIRMedicationKnowledgeSubstitution($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_SUBSTITUTION] instanceof FHIRMedicationKnowledgeSubstitution) {
-                $type->addSubstitution($json[self::FIELD_SUBSTITUTION]);
-            } else {
-                $type->addSubstitution(new FHIRMedicationKnowledgeSubstitution($json[self::FIELD_SUBSTITUTION]));
+            $vs = $json[self::FIELD_SUBSTITUTION];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addSubstitution(FHIRMedicationKnowledgeSubstitution::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_SCHEDULE]) || array_key_exists(self::FIELD_SCHEDULE, $json)) {
-            if (is_array($json[self::FIELD_SCHEDULE])) {
-                foreach($json[self::FIELD_SCHEDULE] as $v) {
-                    if ($v instanceof FHIRMedicationKnowledgeSchedule) {
-                        $type->addSchedule($v);
-                    } else {
-                        $type->addSchedule(new FHIRMedicationKnowledgeSchedule($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_SCHEDULE] instanceof FHIRMedicationKnowledgeSchedule) {
-                $type->addSchedule($json[self::FIELD_SCHEDULE]);
-            } else {
-                $type->addSchedule(new FHIRMedicationKnowledgeSchedule($json[self::FIELD_SCHEDULE]));
+            $vs = $json[self::FIELD_SCHEDULE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addSchedule(FHIRMedicationKnowledgeSchedule::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_MAX_DISPENSE]) || array_key_exists(self::FIELD_MAX_DISPENSE, $json)) {
-            if ($json[self::FIELD_MAX_DISPENSE] instanceof FHIRMedicationKnowledgeMaxDispense) {
-                $type->setMaxDispense($json[self::FIELD_MAX_DISPENSE]);
-            } else {
-                $type->setMaxDispense(new FHIRMedicationKnowledgeMaxDispense($json[self::FIELD_MAX_DISPENSE]));
-            }
+            $type->setMaxDispense(FHIRMedicationKnowledgeMaxDispense::jsonUnserialize(
+                json: $json[self::FIELD_MAX_DISPENSE],
+                config: $config,
+            ));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1703,208 +1703,127 @@ class FHIRContractValuedItem extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_ENTITY_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_ENTITY_CODEABLE_CONCEPT, $json)) {
-            if ($json[self::FIELD_ENTITY_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
-                $type->setEntityCodeableConcept($json[self::FIELD_ENTITY_CODEABLE_CONCEPT]);
-            } else {
-                $type->setEntityCodeableConcept(new FHIRCodeableConcept($json[self::FIELD_ENTITY_CODEABLE_CONCEPT]));
-            }
+            $type->setEntityCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_ENTITY_CODEABLE_CONCEPT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ENTITY_REFERENCE]) || array_key_exists(self::FIELD_ENTITY_REFERENCE, $json)) {
-            if ($json[self::FIELD_ENTITY_REFERENCE] instanceof FHIRReference) {
-                $type->setEntityReference($json[self::FIELD_ENTITY_REFERENCE]);
-            } else {
-                $type->setEntityReference(new FHIRReference($json[self::FIELD_ENTITY_REFERENCE]));
-            }
+            $type->setEntityReference(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_ENTITY_REFERENCE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            if ($json[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
-                $type->setIdentifier($json[self::FIELD_IDENTIFIER]);
-            } else {
-                $type->setIdentifier(new FHIRIdentifier($json[self::FIELD_IDENTIFIER]));
-            }
+            $type->setIdentifier(FHIRIdentifier::jsonUnserialize(
+                json: $json[self::FIELD_IDENTIFIER],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_EFFECTIVE_TIME]) || isset($json[self::FIELD_EFFECTIVE_TIME_EXT]) || array_key_exists(self::FIELD_EFFECTIVE_TIME, $json) || array_key_exists(self::FIELD_EFFECTIVE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_EFFECTIVE_TIME] ?? null;
-            $ext = (isset($json[self::FIELD_EFFECTIVE_TIME_EXT]) && is_array($json[self::FIELD_EFFECTIVE_TIME_EXT])) ? $json[self::FIELD_EFFECTIVE_TIME_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $type->setEffectiveTime($value);
-                } else if (is_array($value)) {
-                    $type->setEffectiveTime(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $type->setEffectiveTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setEffectiveTime(new FHIRDateTime($ext));
-            } else {
-                $type->setEffectiveTime(new FHIRDateTime(null));
-            }
+            $ext = (array)($json[self::FIELD_EFFECTIVE_TIME_EXT] ?? []);
+            $type->setEffectiveTime(FHIRDateTime::jsonUnserialize(
+                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            if ($json[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
-                $type->setQuantity($json[self::FIELD_QUANTITY]);
-            } else {
-                $type->setQuantity(new FHIRQuantity($json[self::FIELD_QUANTITY]));
-            }
+            $type->setQuantity(FHIRQuantity::jsonUnserialize(
+                json: $json[self::FIELD_QUANTITY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_UNIT_PRICE]) || array_key_exists(self::FIELD_UNIT_PRICE, $json)) {
-            if ($json[self::FIELD_UNIT_PRICE] instanceof FHIRMoney) {
-                $type->setUnitPrice($json[self::FIELD_UNIT_PRICE]);
-            } else {
-                $type->setUnitPrice(new FHIRMoney($json[self::FIELD_UNIT_PRICE]));
-            }
+            $type->setUnitPrice(FHIRMoney::jsonUnserialize(
+                json: $json[self::FIELD_UNIT_PRICE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_FACTOR]) || isset($json[self::FIELD_FACTOR_EXT]) || array_key_exists(self::FIELD_FACTOR, $json) || array_key_exists(self::FIELD_FACTOR_EXT, $json)) {
             $value = $json[self::FIELD_FACTOR] ?? null;
-            $ext = (isset($json[self::FIELD_FACTOR_EXT]) && is_array($json[self::FIELD_FACTOR_EXT])) ? $json[self::FIELD_FACTOR_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $type->setFactor($value);
-                } else if (is_array($value)) {
-                    $type->setFactor(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $type->setFactor(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setFactor(new FHIRDecimal($ext));
-            } else {
-                $type->setFactor(new FHIRDecimal(null));
-            }
+            $ext = (array)($json[self::FIELD_FACTOR_EXT] ?? []);
+            $type->setFactor(FHIRDecimal::jsonUnserialize(
+                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_POINTS]) || isset($json[self::FIELD_POINTS_EXT]) || array_key_exists(self::FIELD_POINTS, $json) || array_key_exists(self::FIELD_POINTS_EXT, $json)) {
             $value = $json[self::FIELD_POINTS] ?? null;
-            $ext = (isset($json[self::FIELD_POINTS_EXT]) && is_array($json[self::FIELD_POINTS_EXT])) ? $json[self::FIELD_POINTS_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $type->setPoints($value);
-                } else if (is_array($value)) {
-                    $type->setPoints(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $type->setPoints(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setPoints(new FHIRDecimal($ext));
-            } else {
-                $type->setPoints(new FHIRDecimal(null));
-            }
+            $ext = (array)($json[self::FIELD_POINTS_EXT] ?? []);
+            $type->setPoints(FHIRDecimal::jsonUnserialize(
+                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_NET]) || array_key_exists(self::FIELD_NET, $json)) {
-            if ($json[self::FIELD_NET] instanceof FHIRMoney) {
-                $type->setNet($json[self::FIELD_NET]);
-            } else {
-                $type->setNet(new FHIRMoney($json[self::FIELD_NET]));
-            }
+            $type->setNet(FHIRMoney::jsonUnserialize(
+                json: $json[self::FIELD_NET],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PAYMENT]) || isset($json[self::FIELD_PAYMENT_EXT]) || array_key_exists(self::FIELD_PAYMENT, $json) || array_key_exists(self::FIELD_PAYMENT_EXT, $json)) {
             $value = $json[self::FIELD_PAYMENT] ?? null;
-            $ext = (isset($json[self::FIELD_PAYMENT_EXT]) && is_array($json[self::FIELD_PAYMENT_EXT])) ? $json[self::FIELD_PAYMENT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setPayment($value);
-                } else if (is_array($value)) {
-                    $type->setPayment(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setPayment(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setPayment(new FHIRString($ext));
-            } else {
-                $type->setPayment(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_PAYMENT_EXT] ?? []);
+            $type->setPayment(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PAYMENT_DATE]) || isset($json[self::FIELD_PAYMENT_DATE_EXT]) || array_key_exists(self::FIELD_PAYMENT_DATE, $json) || array_key_exists(self::FIELD_PAYMENT_DATE_EXT, $json)) {
             $value = $json[self::FIELD_PAYMENT_DATE] ?? null;
-            $ext = (isset($json[self::FIELD_PAYMENT_DATE_EXT]) && is_array($json[self::FIELD_PAYMENT_DATE_EXT])) ? $json[self::FIELD_PAYMENT_DATE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $type->setPaymentDate($value);
-                } else if (is_array($value)) {
-                    $type->setPaymentDate(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $type->setPaymentDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setPaymentDate(new FHIRDateTime($ext));
-            } else {
-                $type->setPaymentDate(new FHIRDateTime(null));
-            }
+            $ext = (array)($json[self::FIELD_PAYMENT_DATE_EXT] ?? []);
+            $type->setPaymentDate(FHIRDateTime::jsonUnserialize(
+                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_RESPONSIBLE]) || array_key_exists(self::FIELD_RESPONSIBLE, $json)) {
-            if ($json[self::FIELD_RESPONSIBLE] instanceof FHIRReference) {
-                $type->setResponsible($json[self::FIELD_RESPONSIBLE]);
-            } else {
-                $type->setResponsible(new FHIRReference($json[self::FIELD_RESPONSIBLE]));
-            }
+            $type->setResponsible(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_RESPONSIBLE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_RECIPIENT]) || array_key_exists(self::FIELD_RECIPIENT, $json)) {
-            if ($json[self::FIELD_RECIPIENT] instanceof FHIRReference) {
-                $type->setRecipient($json[self::FIELD_RECIPIENT]);
-            } else {
-                $type->setRecipient(new FHIRReference($json[self::FIELD_RECIPIENT]));
-            }
+            $type->setRecipient(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_RECIPIENT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_LINK_ID]) || isset($json[self::FIELD_LINK_ID_EXT]) || array_key_exists(self::FIELD_LINK_ID, $json) || array_key_exists(self::FIELD_LINK_ID_EXT, $json)) {
             $value = $json[self::FIELD_LINK_ID] ?? null;
-            $ext = (isset($json[self::FIELD_LINK_ID_EXT]) && is_array($json[self::FIELD_LINK_ID_EXT])) ? $json[self::FIELD_LINK_ID_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->addLinkId($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRString) {
-                            $type->addLinkId($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $type->addLinkId(new FHIRString(array_merge($v, $iext)));
-                            } else {
-                                $type->addLinkId(new FHIRString([FHIRString::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $type->addLinkId(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->addLinkId(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $type->addLinkId(new FHIRString($iext));
-                }
-            } else {
-                $type->addLinkId(new FHIRString(null));
+            $ext = (array)($json[self::FIELD_LINK_ID_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
+                $type->addLinkId(FHIRString::jsonUnserialize(
+                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_SECURITY_LABEL_NUMBER]) || isset($json[self::FIELD_SECURITY_LABEL_NUMBER_EXT]) || array_key_exists(self::FIELD_SECURITY_LABEL_NUMBER, $json) || array_key_exists(self::FIELD_SECURITY_LABEL_NUMBER_EXT, $json)) {
             $value = $json[self::FIELD_SECURITY_LABEL_NUMBER] ?? null;
-            $ext = (isset($json[self::FIELD_SECURITY_LABEL_NUMBER_EXT]) && is_array($json[self::FIELD_SECURITY_LABEL_NUMBER_EXT])) ? $json[self::FIELD_SECURITY_LABEL_NUMBER_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRUnsignedInt) {
-                    $type->addSecurityLabelNumber($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRUnsignedInt) {
-                            $type->addSecurityLabelNumber($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $type->addSecurityLabelNumber(new FHIRUnsignedInt(array_merge($v, $iext)));
-                            } else {
-                                $type->addSecurityLabelNumber(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $type->addSecurityLabelNumber(new FHIRUnsignedInt(array_merge($ext, $value)));
-                } else {
-                    $type->addSecurityLabelNumber(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $type->addSecurityLabelNumber(new FHIRUnsignedInt($iext));
-                }
-            } else {
-                $type->addSecurityLabelNumber(new FHIRUnsignedInt(null));
+            $ext = (array)($json[self::FIELD_SECURITY_LABEL_NUMBER_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
+                $type->addSecurityLabelNumber(FHIRUnsignedInt::jsonUnserialize(
+                    json: [FHIRUnsignedInt::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
+                    config: $config,
+                ));
             }
         }
         return $type;

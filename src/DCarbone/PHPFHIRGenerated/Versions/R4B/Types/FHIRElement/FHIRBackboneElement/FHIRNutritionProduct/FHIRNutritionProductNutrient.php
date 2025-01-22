@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -509,25 +509,21 @@ class FHIRNutritionProductNutrient extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_ITEM]) || array_key_exists(self::FIELD_ITEM, $json)) {
-            if ($json[self::FIELD_ITEM] instanceof FHIRCodeableReference) {
-                $type->setItem($json[self::FIELD_ITEM]);
-            } else {
-                $type->setItem(new FHIRCodeableReference($json[self::FIELD_ITEM]));
-            }
+            $type->setItem(FHIRCodeableReference::jsonUnserialize(
+                json: $json[self::FIELD_ITEM],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_AMOUNT]) || array_key_exists(self::FIELD_AMOUNT, $json)) {
-            if (is_array($json[self::FIELD_AMOUNT])) {
-                foreach($json[self::FIELD_AMOUNT] as $v) {
-                    if ($v instanceof FHIRRatio) {
-                        $type->addAmount($v);
-                    } else {
-                        $type->addAmount(new FHIRRatio($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_AMOUNT] instanceof FHIRRatio) {
-                $type->addAmount($json[self::FIELD_AMOUNT]);
-            } else {
-                $type->addAmount(new FHIRRatio($json[self::FIELD_AMOUNT]));
+            $vs = $json[self::FIELD_AMOUNT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addAmount(FHIRRatio::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -722,59 +722,37 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SOURCE_STRING]) || isset($json[self::FIELD_SOURCE_STRING_EXT]) || array_key_exists(self::FIELD_SOURCE_STRING, $json) || array_key_exists(self::FIELD_SOURCE_STRING_EXT, $json)) {
             $value = $json[self::FIELD_SOURCE_STRING] ?? null;
-            $ext = (isset($json[self::FIELD_SOURCE_STRING_EXT]) && is_array($json[self::FIELD_SOURCE_STRING_EXT])) ? $json[self::FIELD_SOURCE_STRING_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setSourceString($value);
-                } else if (is_array($value)) {
-                    $type->setSourceString(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setSourceString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setSourceString(new FHIRString($ext));
-            } else {
-                $type->setSourceString(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_SOURCE_STRING_EXT] ?? []);
+            $type->setSourceString(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SOURCE_URI]) || isset($json[self::FIELD_SOURCE_URI_EXT]) || array_key_exists(self::FIELD_SOURCE_URI, $json) || array_key_exists(self::FIELD_SOURCE_URI_EXT, $json)) {
             $value = $json[self::FIELD_SOURCE_URI] ?? null;
-            $ext = (isset($json[self::FIELD_SOURCE_URI_EXT]) && is_array($json[self::FIELD_SOURCE_URI_EXT])) ? $json[self::FIELD_SOURCE_URI_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRUri) {
-                    $type->setSourceUri($value);
-                } else if (is_array($value)) {
-                    $type->setSourceUri(new FHIRUri(array_merge($ext, $value)));
-                } else {
-                    $type->setSourceUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setSourceUri(new FHIRUri($ext));
-            } else {
-                $type->setSourceUri(new FHIRUri(null));
-            }
+            $ext = (array)($json[self::FIELD_SOURCE_URI_EXT] ?? []);
+            $type->setSourceUri(FHIRUri::jsonUnserialize(
+                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_CLASSIFICATION]) || array_key_exists(self::FIELD_CLASSIFICATION, $json)) {
-            if (is_array($json[self::FIELD_CLASSIFICATION])) {
-                foreach($json[self::FIELD_CLASSIFICATION] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addClassification($v);
-                    } else {
-                        $type->addClassification(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_CLASSIFICATION] instanceof FHIRCodeableConcept) {
-                $type->addClassification($json[self::FIELD_CLASSIFICATION]);
-            } else {
-                $type->addClassification(new FHIRCodeableConcept($json[self::FIELD_CLASSIFICATION]));
+            $vs = $json[self::FIELD_CLASSIFICATION];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addClassification(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

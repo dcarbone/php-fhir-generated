@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -604,32 +604,28 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_ROLE]) || array_key_exists(self::FIELD_ROLE, $json)) {
-            if ($json[self::FIELD_ROLE] instanceof FHIRCodeableConcept) {
-                $type->setRole($json[self::FIELD_ROLE]);
-            } else {
-                $type->setRole(new FHIRCodeableConcept($json[self::FIELD_ROLE]));
-            }
+            $type->setRole(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_ROLE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_MEMBER]) || array_key_exists(self::FIELD_MEMBER, $json)) {
-            if ($json[self::FIELD_MEMBER] instanceof FHIRReference) {
-                $type->setMember($json[self::FIELD_MEMBER]);
-            } else {
-                $type->setMember(new FHIRReference($json[self::FIELD_MEMBER]));
-            }
+            $type->setMember(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_MEMBER],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ON_BEHALF_OF]) || array_key_exists(self::FIELD_ON_BEHALF_OF, $json)) {
-            if ($json[self::FIELD_ON_BEHALF_OF] instanceof FHIRReference) {
-                $type->setOnBehalfOf($json[self::FIELD_ON_BEHALF_OF]);
-            } else {
-                $type->setOnBehalfOf(new FHIRReference($json[self::FIELD_ON_BEHALF_OF]));
-            }
+            $type->setOnBehalfOf(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_ON_BEHALF_OF],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            if ($json[self::FIELD_PERIOD] instanceof FHIRPeriod) {
-                $type->setPeriod($json[self::FIELD_PERIOD]);
-            } else {
-                $type->setPeriod(new FHIRPeriod($json[self::FIELD_PERIOD]));
-            }
+            $type->setPeriod(FHIRPeriod::jsonUnserialize(
+                json: $json[self::FIELD_PERIOD],
+                config: $config,
+            ));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -995,94 +995,69 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_CLASS]) || array_key_exists(self::FIELD_CLASS, $json)) {
-            if ($json[self::FIELD_CLASS] instanceof FHIRCodeableConcept) {
-                $type->setClass($json[self::FIELD_CLASS]);
-            } else {
-                $type->setClass(new FHIRCodeableConcept($json[self::FIELD_CLASS]));
-            }
+            $type->setClass(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_CLASS],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_GEOMETRY]) || array_key_exists(self::FIELD_GEOMETRY, $json)) {
-            if ($json[self::FIELD_GEOMETRY] instanceof FHIRCodeableConcept) {
-                $type->setGeometry($json[self::FIELD_GEOMETRY]);
-            } else {
-                $type->setGeometry(new FHIRCodeableConcept($json[self::FIELD_GEOMETRY]));
-            }
+            $type->setGeometry(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_GEOMETRY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_COPOLYMER_CONNECTIVITY]) || array_key_exists(self::FIELD_COPOLYMER_CONNECTIVITY, $json)) {
-            if (is_array($json[self::FIELD_COPOLYMER_CONNECTIVITY])) {
-                foreach($json[self::FIELD_COPOLYMER_CONNECTIVITY] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addCopolymerConnectivity($v);
-                    } else {
-                        $type->addCopolymerConnectivity(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_COPOLYMER_CONNECTIVITY] instanceof FHIRCodeableConcept) {
-                $type->addCopolymerConnectivity($json[self::FIELD_COPOLYMER_CONNECTIVITY]);
-            } else {
-                $type->addCopolymerConnectivity(new FHIRCodeableConcept($json[self::FIELD_COPOLYMER_CONNECTIVITY]));
+            $vs = $json[self::FIELD_COPOLYMER_CONNECTIVITY];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addCopolymerConnectivity(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_MODIFICATION]) || isset($json[self::FIELD_MODIFICATION_EXT]) || array_key_exists(self::FIELD_MODIFICATION, $json) || array_key_exists(self::FIELD_MODIFICATION_EXT, $json)) {
             $value = $json[self::FIELD_MODIFICATION] ?? null;
-            $ext = (isset($json[self::FIELD_MODIFICATION_EXT]) && is_array($json[self::FIELD_MODIFICATION_EXT])) ? $json[self::FIELD_MODIFICATION_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->addModification($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRString) {
-                            $type->addModification($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $type->addModification(new FHIRString(array_merge($v, $iext)));
-                            } else {
-                                $type->addModification(new FHIRString([FHIRString::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $type->addModification(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->addModification(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $type->addModification(new FHIRString($iext));
-                }
-            } else {
-                $type->addModification(new FHIRString(null));
+            $ext = (array)($json[self::FIELD_MODIFICATION_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
+                $type->addModification(FHIRString::jsonUnserialize(
+                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_MONOMER_SET]) || array_key_exists(self::FIELD_MONOMER_SET, $json)) {
-            if (is_array($json[self::FIELD_MONOMER_SET])) {
-                foreach($json[self::FIELD_MONOMER_SET] as $v) {
-                    if ($v instanceof FHIRSubstancePolymerMonomerSet) {
-                        $type->addMonomerSet($v);
-                    } else {
-                        $type->addMonomerSet(new FHIRSubstancePolymerMonomerSet($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_MONOMER_SET] instanceof FHIRSubstancePolymerMonomerSet) {
-                $type->addMonomerSet($json[self::FIELD_MONOMER_SET]);
-            } else {
-                $type->addMonomerSet(new FHIRSubstancePolymerMonomerSet($json[self::FIELD_MONOMER_SET]));
+            $vs = $json[self::FIELD_MONOMER_SET];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addMonomerSet(FHIRSubstancePolymerMonomerSet::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_REPEAT]) || array_key_exists(self::FIELD_REPEAT, $json)) {
-            if (is_array($json[self::FIELD_REPEAT])) {
-                foreach($json[self::FIELD_REPEAT] as $v) {
-                    if ($v instanceof FHIRSubstancePolymerRepeat) {
-                        $type->addRepeat($v);
-                    } else {
-                        $type->addRepeat(new FHIRSubstancePolymerRepeat($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_REPEAT] instanceof FHIRSubstancePolymerRepeat) {
-                $type->addRepeat($json[self::FIELD_REPEAT]);
-            } else {
-                $type->addRepeat(new FHIRSubstancePolymerRepeat($json[self::FIELD_REPEAT]));
+            $vs = $json[self::FIELD_REPEAT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addRepeat(FHIRSubstancePolymerRepeat::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

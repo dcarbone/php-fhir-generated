@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -472,25 +472,21 @@ class FHIRMedicationProduct extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_FORM]) || array_key_exists(self::FIELD_FORM, $json)) {
-            if ($json[self::FIELD_FORM] instanceof FHIRCodeableConcept) {
-                $type->setForm($json[self::FIELD_FORM]);
-            } else {
-                $type->setForm(new FHIRCodeableConcept($json[self::FIELD_FORM]));
-            }
+            $type->setForm(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_FORM],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_INGREDIENT]) || array_key_exists(self::FIELD_INGREDIENT, $json)) {
-            if (is_array($json[self::FIELD_INGREDIENT])) {
-                foreach($json[self::FIELD_INGREDIENT] as $v) {
-                    if ($v instanceof FHIRMedicationIngredient) {
-                        $type->addIngredient($v);
-                    } else {
-                        $type->addIngredient(new FHIRMedicationIngredient($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_INGREDIENT] instanceof FHIRMedicationIngredient) {
-                $type->addIngredient($json[self::FIELD_INGREDIENT]);
-            } else {
-                $type->addIngredient(new FHIRMedicationIngredient($json[self::FIELD_INGREDIENT]));
+            $vs = $json[self::FIELD_INGREDIENT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addIngredient(FHIRMedicationIngredient::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

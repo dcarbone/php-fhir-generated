@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -581,41 +581,28 @@ class FHIRTaskRestriction extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_REPETITIONS]) || isset($json[self::FIELD_REPETITIONS_EXT]) || array_key_exists(self::FIELD_REPETITIONS, $json) || array_key_exists(self::FIELD_REPETITIONS_EXT, $json)) {
             $value = $json[self::FIELD_REPETITIONS] ?? null;
-            $ext = (isset($json[self::FIELD_REPETITIONS_EXT]) && is_array($json[self::FIELD_REPETITIONS_EXT])) ? $json[self::FIELD_REPETITIONS_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $type->setRepetitions($value);
-                } else if (is_array($value)) {
-                    $type->setRepetitions(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $type->setRepetitions(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setRepetitions(new FHIRPositiveInt($ext));
-            } else {
-                $type->setRepetitions(new FHIRPositiveInt(null));
-            }
+            $ext = (array)($json[self::FIELD_REPETITIONS_EXT] ?? []);
+            $type->setRepetitions(FHIRPositiveInt::jsonUnserialize(
+                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            if ($json[self::FIELD_PERIOD] instanceof FHIRPeriod) {
-                $type->setPeriod($json[self::FIELD_PERIOD]);
-            } else {
-                $type->setPeriod(new FHIRPeriod($json[self::FIELD_PERIOD]));
-            }
+            $type->setPeriod(FHIRPeriod::jsonUnserialize(
+                json: $json[self::FIELD_PERIOD],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_RECIPIENT]) || array_key_exists(self::FIELD_RECIPIENT, $json)) {
-            if (is_array($json[self::FIELD_RECIPIENT])) {
-                foreach($json[self::FIELD_RECIPIENT] as $v) {
-                    if ($v instanceof FHIRReference) {
-                        $type->addRecipient($v);
-                    } else {
-                        $type->addRecipient(new FHIRReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_RECIPIENT] instanceof FHIRReference) {
-                $type->addRecipient($json[self::FIELD_RECIPIENT]);
-            } else {
-                $type->addRecipient(new FHIRReference($json[self::FIELD_RECIPIENT]));
+            $vs = $json[self::FIELD_RECIPIENT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addRecipient(FHIRReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

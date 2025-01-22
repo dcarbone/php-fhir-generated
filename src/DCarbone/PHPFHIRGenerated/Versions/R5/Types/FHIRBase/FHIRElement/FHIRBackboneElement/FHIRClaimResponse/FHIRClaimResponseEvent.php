@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -616,35 +616,24 @@ class FHIRClaimResponseEvent extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_WHEN_DATE_TIME]) || isset($json[self::FIELD_WHEN_DATE_TIME_EXT]) || array_key_exists(self::FIELD_WHEN_DATE_TIME, $json) || array_key_exists(self::FIELD_WHEN_DATE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_WHEN_DATE_TIME] ?? null;
-            $ext = (isset($json[self::FIELD_WHEN_DATE_TIME_EXT]) && is_array($json[self::FIELD_WHEN_DATE_TIME_EXT])) ? $json[self::FIELD_WHEN_DATE_TIME_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $type->setWhenDateTime($value);
-                } else if (is_array($value)) {
-                    $type->setWhenDateTime(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $type->setWhenDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setWhenDateTime(new FHIRDateTime($ext));
-            } else {
-                $type->setWhenDateTime(new FHIRDateTime(null));
-            }
+            $ext = (array)($json[self::FIELD_WHEN_DATE_TIME_EXT] ?? []);
+            $type->setWhenDateTime(FHIRDateTime::jsonUnserialize(
+                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_WHEN_PERIOD]) || array_key_exists(self::FIELD_WHEN_PERIOD, $json)) {
-            if ($json[self::FIELD_WHEN_PERIOD] instanceof FHIRPeriod) {
-                $type->setWhenPeriod($json[self::FIELD_WHEN_PERIOD]);
-            } else {
-                $type->setWhenPeriod(new FHIRPeriod($json[self::FIELD_WHEN_PERIOD]));
-            }
+            $type->setWhenPeriod(FHIRPeriod::jsonUnserialize(
+                json: $json[self::FIELD_WHEN_PERIOD],
+                config: $config,
+            ));
         }
         return $type;
     }

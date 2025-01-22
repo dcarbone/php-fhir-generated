@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -744,58 +744,36 @@ class FHIRImagingObjectSelectionStudy extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_UID]) || isset($json[self::FIELD_UID_EXT]) || array_key_exists(self::FIELD_UID, $json) || array_key_exists(self::FIELD_UID_EXT, $json)) {
             $value = $json[self::FIELD_UID] ?? null;
-            $ext = (isset($json[self::FIELD_UID_EXT]) && is_array($json[self::FIELD_UID_EXT])) ? $json[self::FIELD_UID_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIROid) {
-                    $type->setUid($value);
-                } else if (is_array($value)) {
-                    $type->setUid(new FHIROid(array_merge($ext, $value)));
-                } else {
-                    $type->setUid(new FHIROid([FHIROid::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setUid(new FHIROid($ext));
-            } else {
-                $type->setUid(new FHIROid(null));
-            }
+            $ext = (array)($json[self::FIELD_UID_EXT] ?? []);
+            $type->setUid(FHIROid::jsonUnserialize(
+                json: [FHIROid::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_URL]) || isset($json[self::FIELD_URL_EXT]) || array_key_exists(self::FIELD_URL, $json) || array_key_exists(self::FIELD_URL_EXT, $json)) {
             $value = $json[self::FIELD_URL] ?? null;
-            $ext = (isset($json[self::FIELD_URL_EXT]) && is_array($json[self::FIELD_URL_EXT])) ? $json[self::FIELD_URL_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRUri) {
-                    $type->setUrl($value);
-                } else if (is_array($value)) {
-                    $type->setUrl(new FHIRUri(array_merge($ext, $value)));
-                } else {
-                    $type->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setUrl(new FHIRUri($ext));
-            } else {
-                $type->setUrl(new FHIRUri(null));
-            }
+            $ext = (array)($json[self::FIELD_URL_EXT] ?? []);
+            $type->setUrl(FHIRUri::jsonUnserialize(
+                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_IMAGING_STUDY]) || array_key_exists(self::FIELD_IMAGING_STUDY, $json)) {
-            if ($json[self::FIELD_IMAGING_STUDY] instanceof FHIRReference) {
-                $type->setImagingStudy($json[self::FIELD_IMAGING_STUDY]);
-            } else {
-                $type->setImagingStudy(new FHIRReference($json[self::FIELD_IMAGING_STUDY]));
-            }
+            $type->setImagingStudy(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_IMAGING_STUDY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SERIES]) || array_key_exists(self::FIELD_SERIES, $json)) {
-            if (is_array($json[self::FIELD_SERIES])) {
-                foreach($json[self::FIELD_SERIES] as $v) {
-                    if ($v instanceof FHIRImagingObjectSelectionSeries) {
-                        $type->addSeries($v);
-                    } else {
-                        $type->addSeries(new FHIRImagingObjectSelectionSeries($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_SERIES] instanceof FHIRImagingObjectSelectionSeries) {
-                $type->addSeries($json[self::FIELD_SERIES]);
-            } else {
-                $type->addSeries(new FHIRImagingObjectSelectionSeries($json[self::FIELD_SERIES]));
+            $vs = $json[self::FIELD_SERIES];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addSeries(FHIRImagingObjectSelectionSeries::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

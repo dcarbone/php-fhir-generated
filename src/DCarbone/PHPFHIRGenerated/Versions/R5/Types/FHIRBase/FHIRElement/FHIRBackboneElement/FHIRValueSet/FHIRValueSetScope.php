@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -525,37 +525,19 @@ class FHIRValueSetScope extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_INCLUSION_CRITERIA]) || isset($json[self::FIELD_INCLUSION_CRITERIA_EXT]) || array_key_exists(self::FIELD_INCLUSION_CRITERIA, $json) || array_key_exists(self::FIELD_INCLUSION_CRITERIA_EXT, $json)) {
             $value = $json[self::FIELD_INCLUSION_CRITERIA] ?? null;
-            $ext = (isset($json[self::FIELD_INCLUSION_CRITERIA_EXT]) && is_array($json[self::FIELD_INCLUSION_CRITERIA_EXT])) ? $json[self::FIELD_INCLUSION_CRITERIA_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setInclusionCriteria($value);
-                } else if (is_array($value)) {
-                    $type->setInclusionCriteria(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setInclusionCriteria(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setInclusionCriteria(new FHIRString($ext));
-            } else {
-                $type->setInclusionCriteria(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_INCLUSION_CRITERIA_EXT] ?? []);
+            $type->setInclusionCriteria(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_EXCLUSION_CRITERIA]) || isset($json[self::FIELD_EXCLUSION_CRITERIA_EXT]) || array_key_exists(self::FIELD_EXCLUSION_CRITERIA, $json) || array_key_exists(self::FIELD_EXCLUSION_CRITERIA_EXT, $json)) {
             $value = $json[self::FIELD_EXCLUSION_CRITERIA] ?? null;
-            $ext = (isset($json[self::FIELD_EXCLUSION_CRITERIA_EXT]) && is_array($json[self::FIELD_EXCLUSION_CRITERIA_EXT])) ? $json[self::FIELD_EXCLUSION_CRITERIA_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setExclusionCriteria($value);
-                } else if (is_array($value)) {
-                    $type->setExclusionCriteria(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setExclusionCriteria(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setExclusionCriteria(new FHIRString($ext));
-            } else {
-                $type->setExclusionCriteria(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_EXCLUSION_CRITERIA_EXT] ?? []);
+            $type->setExclusionCriteria(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

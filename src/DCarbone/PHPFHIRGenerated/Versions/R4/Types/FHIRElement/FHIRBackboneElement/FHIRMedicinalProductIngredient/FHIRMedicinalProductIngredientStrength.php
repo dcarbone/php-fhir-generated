@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -913,78 +913,59 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_PRESENTATION]) || array_key_exists(self::FIELD_PRESENTATION, $json)) {
-            if ($json[self::FIELD_PRESENTATION] instanceof FHIRRatio) {
-                $type->setPresentation($json[self::FIELD_PRESENTATION]);
-            } else {
-                $type->setPresentation(new FHIRRatio($json[self::FIELD_PRESENTATION]));
-            }
+            $type->setPresentation(FHIRRatio::jsonUnserialize(
+                json: $json[self::FIELD_PRESENTATION],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PRESENTATION_LOW_LIMIT]) || array_key_exists(self::FIELD_PRESENTATION_LOW_LIMIT, $json)) {
-            if ($json[self::FIELD_PRESENTATION_LOW_LIMIT] instanceof FHIRRatio) {
-                $type->setPresentationLowLimit($json[self::FIELD_PRESENTATION_LOW_LIMIT]);
-            } else {
-                $type->setPresentationLowLimit(new FHIRRatio($json[self::FIELD_PRESENTATION_LOW_LIMIT]));
-            }
+            $type->setPresentationLowLimit(FHIRRatio::jsonUnserialize(
+                json: $json[self::FIELD_PRESENTATION_LOW_LIMIT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_CONCENTRATION]) || array_key_exists(self::FIELD_CONCENTRATION, $json)) {
-            if ($json[self::FIELD_CONCENTRATION] instanceof FHIRRatio) {
-                $type->setConcentration($json[self::FIELD_CONCENTRATION]);
-            } else {
-                $type->setConcentration(new FHIRRatio($json[self::FIELD_CONCENTRATION]));
-            }
+            $type->setConcentration(FHIRRatio::jsonUnserialize(
+                json: $json[self::FIELD_CONCENTRATION],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_CONCENTRATION_LOW_LIMIT]) || array_key_exists(self::FIELD_CONCENTRATION_LOW_LIMIT, $json)) {
-            if ($json[self::FIELD_CONCENTRATION_LOW_LIMIT] instanceof FHIRRatio) {
-                $type->setConcentrationLowLimit($json[self::FIELD_CONCENTRATION_LOW_LIMIT]);
-            } else {
-                $type->setConcentrationLowLimit(new FHIRRatio($json[self::FIELD_CONCENTRATION_LOW_LIMIT]));
-            }
+            $type->setConcentrationLowLimit(FHIRRatio::jsonUnserialize(
+                json: $json[self::FIELD_CONCENTRATION_LOW_LIMIT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_MEASUREMENT_POINT]) || isset($json[self::FIELD_MEASUREMENT_POINT_EXT]) || array_key_exists(self::FIELD_MEASUREMENT_POINT, $json) || array_key_exists(self::FIELD_MEASUREMENT_POINT_EXT, $json)) {
             $value = $json[self::FIELD_MEASUREMENT_POINT] ?? null;
-            $ext = (isset($json[self::FIELD_MEASUREMENT_POINT_EXT]) && is_array($json[self::FIELD_MEASUREMENT_POINT_EXT])) ? $json[self::FIELD_MEASUREMENT_POINT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setMeasurementPoint($value);
-                } else if (is_array($value)) {
-                    $type->setMeasurementPoint(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setMeasurementPoint(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setMeasurementPoint(new FHIRString($ext));
-            } else {
-                $type->setMeasurementPoint(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_MEASUREMENT_POINT_EXT] ?? []);
+            $type->setMeasurementPoint(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_COUNTRY]) || array_key_exists(self::FIELD_COUNTRY, $json)) {
-            if (is_array($json[self::FIELD_COUNTRY])) {
-                foreach($json[self::FIELD_COUNTRY] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addCountry($v);
-                    } else {
-                        $type->addCountry(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_COUNTRY] instanceof FHIRCodeableConcept) {
-                $type->addCountry($json[self::FIELD_COUNTRY]);
-            } else {
-                $type->addCountry(new FHIRCodeableConcept($json[self::FIELD_COUNTRY]));
+            $vs = $json[self::FIELD_COUNTRY];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addCountry(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_REFERENCE_STRENGTH]) || array_key_exists(self::FIELD_REFERENCE_STRENGTH, $json)) {
-            if (is_array($json[self::FIELD_REFERENCE_STRENGTH])) {
-                foreach($json[self::FIELD_REFERENCE_STRENGTH] as $v) {
-                    if ($v instanceof FHIRMedicinalProductIngredientReferenceStrength) {
-                        $type->addReferenceStrength($v);
-                    } else {
-                        $type->addReferenceStrength(new FHIRMedicinalProductIngredientReferenceStrength($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_REFERENCE_STRENGTH] instanceof FHIRMedicinalProductIngredientReferenceStrength) {
-                $type->addReferenceStrength($json[self::FIELD_REFERENCE_STRENGTH]);
-            } else {
-                $type->addReferenceStrength(new FHIRMedicinalProductIngredientReferenceStrength($json[self::FIELD_REFERENCE_STRENGTH]));
+            $vs = $json[self::FIELD_REFERENCE_STRENGTH];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addReferenceStrength(FHIRMedicinalProductIngredientReferenceStrength::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

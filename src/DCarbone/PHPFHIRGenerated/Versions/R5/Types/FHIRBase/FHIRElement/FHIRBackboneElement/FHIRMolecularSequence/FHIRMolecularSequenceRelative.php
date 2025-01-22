@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -750,56 +750,41 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_COORDINATE_SYSTEM]) || array_key_exists(self::FIELD_COORDINATE_SYSTEM, $json)) {
-            if ($json[self::FIELD_COORDINATE_SYSTEM] instanceof FHIRCodeableConcept) {
-                $type->setCoordinateSystem($json[self::FIELD_COORDINATE_SYSTEM]);
-            } else {
-                $type->setCoordinateSystem(new FHIRCodeableConcept($json[self::FIELD_COORDINATE_SYSTEM]));
-            }
+            $type->setCoordinateSystem(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_COORDINATE_SYSTEM],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ORDINAL_POSITION]) || isset($json[self::FIELD_ORDINAL_POSITION_EXT]) || array_key_exists(self::FIELD_ORDINAL_POSITION, $json) || array_key_exists(self::FIELD_ORDINAL_POSITION_EXT, $json)) {
             $value = $json[self::FIELD_ORDINAL_POSITION] ?? null;
-            $ext = (isset($json[self::FIELD_ORDINAL_POSITION_EXT]) && is_array($json[self::FIELD_ORDINAL_POSITION_EXT])) ? $json[self::FIELD_ORDINAL_POSITION_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $type->setOrdinalPosition($value);
-                } else if (is_array($value)) {
-                    $type->setOrdinalPosition(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $type->setOrdinalPosition(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setOrdinalPosition(new FHIRInteger($ext));
-            } else {
-                $type->setOrdinalPosition(new FHIRInteger(null));
-            }
+            $ext = (array)($json[self::FIELD_ORDINAL_POSITION_EXT] ?? []);
+            $type->setOrdinalPosition(FHIRInteger::jsonUnserialize(
+                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SEQUENCE_RANGE]) || array_key_exists(self::FIELD_SEQUENCE_RANGE, $json)) {
-            if ($json[self::FIELD_SEQUENCE_RANGE] instanceof FHIRRange) {
-                $type->setSequenceRange($json[self::FIELD_SEQUENCE_RANGE]);
-            } else {
-                $type->setSequenceRange(new FHIRRange($json[self::FIELD_SEQUENCE_RANGE]));
-            }
+            $type->setSequenceRange(FHIRRange::jsonUnserialize(
+                json: $json[self::FIELD_SEQUENCE_RANGE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_STARTING_SEQUENCE]) || array_key_exists(self::FIELD_STARTING_SEQUENCE, $json)) {
-            if ($json[self::FIELD_STARTING_SEQUENCE] instanceof FHIRMolecularSequenceStartingSequence) {
-                $type->setStartingSequence($json[self::FIELD_STARTING_SEQUENCE]);
-            } else {
-                $type->setStartingSequence(new FHIRMolecularSequenceStartingSequence($json[self::FIELD_STARTING_SEQUENCE]));
-            }
+            $type->setStartingSequence(FHIRMolecularSequenceStartingSequence::jsonUnserialize(
+                json: $json[self::FIELD_STARTING_SEQUENCE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_EDIT]) || array_key_exists(self::FIELD_EDIT, $json)) {
-            if (is_array($json[self::FIELD_EDIT])) {
-                foreach($json[self::FIELD_EDIT] as $v) {
-                    if ($v instanceof FHIRMolecularSequenceEdit) {
-                        $type->addEdit($v);
-                    } else {
-                        $type->addEdit(new FHIRMolecularSequenceEdit($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_EDIT] instanceof FHIRMolecularSequenceEdit) {
-                $type->addEdit($json[self::FIELD_EDIT]);
-            } else {
-                $type->addEdit(new FHIRMolecularSequenceEdit($json[self::FIELD_EDIT]));
+            $vs = $json[self::FIELD_EDIT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addEdit(FHIRMolecularSequenceEdit::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

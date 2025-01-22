@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -546,34 +546,22 @@ class FHIRStructureMapDependent extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (isset($json[self::FIELD_NAME_EXT]) && is_array($json[self::FIELD_NAME_EXT])) ? $json[self::FIELD_NAME_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRId) {
-                    $type->setName($value);
-                } else if (is_array($value)) {
-                    $type->setName(new FHIRId(array_merge($ext, $value)));
-                } else {
-                    $type->setName(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setName(new FHIRId($ext));
-            } else {
-                $type->setName(new FHIRId(null));
-            }
+            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
+            $type->setName(FHIRId::jsonUnserialize(
+                json: [FHIRId::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PARAMETER]) || array_key_exists(self::FIELD_PARAMETER, $json)) {
-            if (is_array($json[self::FIELD_PARAMETER])) {
-                foreach($json[self::FIELD_PARAMETER] as $v) {
-                    if ($v instanceof FHIRStructureMapParameter) {
-                        $type->addParameter($v);
-                    } else {
-                        $type->addParameter(new FHIRStructureMapParameter($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_PARAMETER] instanceof FHIRStructureMapParameter) {
-                $type->addParameter($json[self::FIELD_PARAMETER]);
-            } else {
-                $type->addParameter(new FHIRStructureMapParameter($json[self::FIELD_PARAMETER]));
+            $vs = $json[self::FIELD_PARAMETER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addParameter(FHIRStructureMapParameter::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -533,33 +533,27 @@ class FHIRTestScriptMetadata extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_LINK]) || array_key_exists(self::FIELD_LINK, $json)) {
-            if (is_array($json[self::FIELD_LINK])) {
-                foreach($json[self::FIELD_LINK] as $v) {
-                    if ($v instanceof FHIRTestScriptLink) {
-                        $type->addLink($v);
-                    } else {
-                        $type->addLink(new FHIRTestScriptLink($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_LINK] instanceof FHIRTestScriptLink) {
-                $type->addLink($json[self::FIELD_LINK]);
-            } else {
-                $type->addLink(new FHIRTestScriptLink($json[self::FIELD_LINK]));
+            $vs = $json[self::FIELD_LINK];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addLink(FHIRTestScriptLink::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_CAPABILITY]) || array_key_exists(self::FIELD_CAPABILITY, $json)) {
-            if (is_array($json[self::FIELD_CAPABILITY])) {
-                foreach($json[self::FIELD_CAPABILITY] as $v) {
-                    if ($v instanceof FHIRTestScriptCapability) {
-                        $type->addCapability($v);
-                    } else {
-                        $type->addCapability(new FHIRTestScriptCapability($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_CAPABILITY] instanceof FHIRTestScriptCapability) {
-                $type->addCapability($json[self::FIELD_CAPABILITY]);
-            } else {
-                $type->addCapability(new FHIRTestScriptCapability($json[self::FIELD_CAPABILITY]));
+            $vs = $json[self::FIELD_CAPABILITY];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addCapability(FHIRTestScriptCapability::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

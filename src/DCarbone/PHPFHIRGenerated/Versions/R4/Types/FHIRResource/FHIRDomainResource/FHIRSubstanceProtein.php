@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -922,74 +922,47 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_SEQUENCE_TYPE]) || array_key_exists(self::FIELD_SEQUENCE_TYPE, $json)) {
-            if ($json[self::FIELD_SEQUENCE_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setSequenceType($json[self::FIELD_SEQUENCE_TYPE]);
-            } else {
-                $type->setSequenceType(new FHIRCodeableConcept($json[self::FIELD_SEQUENCE_TYPE]));
-            }
+            $type->setSequenceType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_SEQUENCE_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_NUMBER_OF_SUBUNITS]) || isset($json[self::FIELD_NUMBER_OF_SUBUNITS_EXT]) || array_key_exists(self::FIELD_NUMBER_OF_SUBUNITS, $json) || array_key_exists(self::FIELD_NUMBER_OF_SUBUNITS_EXT, $json)) {
             $value = $json[self::FIELD_NUMBER_OF_SUBUNITS] ?? null;
-            $ext = (isset($json[self::FIELD_NUMBER_OF_SUBUNITS_EXT]) && is_array($json[self::FIELD_NUMBER_OF_SUBUNITS_EXT])) ? $json[self::FIELD_NUMBER_OF_SUBUNITS_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $type->setNumberOfSubunits($value);
-                } else if (is_array($value)) {
-                    $type->setNumberOfSubunits(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $type->setNumberOfSubunits(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setNumberOfSubunits(new FHIRInteger($ext));
-            } else {
-                $type->setNumberOfSubunits(new FHIRInteger(null));
-            }
+            $ext = (array)($json[self::FIELD_NUMBER_OF_SUBUNITS_EXT] ?? []);
+            $type->setNumberOfSubunits(FHIRInteger::jsonUnserialize(
+                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_DISULFIDE_LINKAGE]) || isset($json[self::FIELD_DISULFIDE_LINKAGE_EXT]) || array_key_exists(self::FIELD_DISULFIDE_LINKAGE, $json) || array_key_exists(self::FIELD_DISULFIDE_LINKAGE_EXT, $json)) {
             $value = $json[self::FIELD_DISULFIDE_LINKAGE] ?? null;
-            $ext = (isset($json[self::FIELD_DISULFIDE_LINKAGE_EXT]) && is_array($json[self::FIELD_DISULFIDE_LINKAGE_EXT])) ? $json[self::FIELD_DISULFIDE_LINKAGE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->addDisulfideLinkage($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRString) {
-                            $type->addDisulfideLinkage($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $type->addDisulfideLinkage(new FHIRString(array_merge($v, $iext)));
-                            } else {
-                                $type->addDisulfideLinkage(new FHIRString([FHIRString::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $type->addDisulfideLinkage(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->addDisulfideLinkage(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $type->addDisulfideLinkage(new FHIRString($iext));
-                }
-            } else {
-                $type->addDisulfideLinkage(new FHIRString(null));
+            $ext = (array)($json[self::FIELD_DISULFIDE_LINKAGE_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
+                $type->addDisulfideLinkage(FHIRString::jsonUnserialize(
+                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_SUBUNIT]) || array_key_exists(self::FIELD_SUBUNIT, $json)) {
-            if (is_array($json[self::FIELD_SUBUNIT])) {
-                foreach($json[self::FIELD_SUBUNIT] as $v) {
-                    if ($v instanceof FHIRSubstanceProteinSubunit) {
-                        $type->addSubunit($v);
-                    } else {
-                        $type->addSubunit(new FHIRSubstanceProteinSubunit($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_SUBUNIT] instanceof FHIRSubstanceProteinSubunit) {
-                $type->addSubunit($json[self::FIELD_SUBUNIT]);
-            } else {
-                $type->addSubunit(new FHIRSubstanceProteinSubunit($json[self::FIELD_SUBUNIT]));
+            $vs = $json[self::FIELD_SUBUNIT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addSubunit(FHIRSubstanceProteinSubunit::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

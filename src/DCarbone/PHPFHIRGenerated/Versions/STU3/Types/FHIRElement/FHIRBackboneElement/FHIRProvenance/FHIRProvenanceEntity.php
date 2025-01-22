@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -803,65 +803,42 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_ROLE]) || isset($json[self::FIELD_ROLE_EXT]) || array_key_exists(self::FIELD_ROLE, $json) || array_key_exists(self::FIELD_ROLE_EXT, $json)) {
             $value = $json[self::FIELD_ROLE] ?? null;
-            $ext = (isset($json[self::FIELD_ROLE_EXT]) && is_array($json[self::FIELD_ROLE_EXT])) ? $json[self::FIELD_ROLE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRProvenanceEntityRole) {
-                    $type->setRole($value);
-                } else if (is_array($value)) {
-                    $type->setRole(new FHIRProvenanceEntityRole(array_merge($ext, $value)));
-                } else {
-                    $type->setRole(new FHIRProvenanceEntityRole([FHIRProvenanceEntityRole::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setRole(new FHIRProvenanceEntityRole($ext));
-            } else {
-                $type->setRole(new FHIRProvenanceEntityRole(null));
-            }
+            $ext = (array)($json[self::FIELD_ROLE_EXT] ?? []);
+            $type->setRole(FHIRProvenanceEntityRole::jsonUnserialize(
+                json: [FHIRProvenanceEntityRole::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_WHAT_URI]) || isset($json[self::FIELD_WHAT_URI_EXT]) || array_key_exists(self::FIELD_WHAT_URI, $json) || array_key_exists(self::FIELD_WHAT_URI_EXT, $json)) {
             $value = $json[self::FIELD_WHAT_URI] ?? null;
-            $ext = (isset($json[self::FIELD_WHAT_URI_EXT]) && is_array($json[self::FIELD_WHAT_URI_EXT])) ? $json[self::FIELD_WHAT_URI_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRUri) {
-                    $type->setWhatUri($value);
-                } else if (is_array($value)) {
-                    $type->setWhatUri(new FHIRUri(array_merge($ext, $value)));
-                } else {
-                    $type->setWhatUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setWhatUri(new FHIRUri($ext));
-            } else {
-                $type->setWhatUri(new FHIRUri(null));
-            }
+            $ext = (array)($json[self::FIELD_WHAT_URI_EXT] ?? []);
+            $type->setWhatUri(FHIRUri::jsonUnserialize(
+                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_WHAT_REFERENCE]) || array_key_exists(self::FIELD_WHAT_REFERENCE, $json)) {
-            if ($json[self::FIELD_WHAT_REFERENCE] instanceof FHIRReference) {
-                $type->setWhatReference($json[self::FIELD_WHAT_REFERENCE]);
-            } else {
-                $type->setWhatReference(new FHIRReference($json[self::FIELD_WHAT_REFERENCE]));
-            }
+            $type->setWhatReference(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_WHAT_REFERENCE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_WHAT_IDENTIFIER]) || array_key_exists(self::FIELD_WHAT_IDENTIFIER, $json)) {
-            if ($json[self::FIELD_WHAT_IDENTIFIER] instanceof FHIRIdentifier) {
-                $type->setWhatIdentifier($json[self::FIELD_WHAT_IDENTIFIER]);
-            } else {
-                $type->setWhatIdentifier(new FHIRIdentifier($json[self::FIELD_WHAT_IDENTIFIER]));
-            }
+            $type->setWhatIdentifier(FHIRIdentifier::jsonUnserialize(
+                json: $json[self::FIELD_WHAT_IDENTIFIER],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_AGENT]) || array_key_exists(self::FIELD_AGENT, $json)) {
-            if (is_array($json[self::FIELD_AGENT])) {
-                foreach($json[self::FIELD_AGENT] as $v) {
-                    if ($v instanceof FHIRProvenanceAgent) {
-                        $type->addAgent($v);
-                    } else {
-                        $type->addAgent(new FHIRProvenanceAgent($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_AGENT] instanceof FHIRProvenanceAgent) {
-                $type->addAgent($json[self::FIELD_AGENT]);
-            } else {
-                $type->addAgent(new FHIRProvenanceAgent($json[self::FIELD_AGENT]));
+            $vs = $json[self::FIELD_AGENT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addAgent(FHIRProvenanceAgent::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

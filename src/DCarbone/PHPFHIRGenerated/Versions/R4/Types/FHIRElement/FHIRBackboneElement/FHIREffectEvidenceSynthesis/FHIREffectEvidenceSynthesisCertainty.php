@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -614,48 +614,39 @@ class FHIREffectEvidenceSynthesisCertainty extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_RATING]) || array_key_exists(self::FIELD_RATING, $json)) {
-            if (is_array($json[self::FIELD_RATING])) {
-                foreach($json[self::FIELD_RATING] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addRating($v);
-                    } else {
-                        $type->addRating(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_RATING] instanceof FHIRCodeableConcept) {
-                $type->addRating($json[self::FIELD_RATING]);
-            } else {
-                $type->addRating(new FHIRCodeableConcept($json[self::FIELD_RATING]));
+            $vs = $json[self::FIELD_RATING];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addRating(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
-            if (is_array($json[self::FIELD_NOTE])) {
-                foreach($json[self::FIELD_NOTE] as $v) {
-                    if ($v instanceof FHIRAnnotation) {
-                        $type->addNote($v);
-                    } else {
-                        $type->addNote(new FHIRAnnotation($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_NOTE] instanceof FHIRAnnotation) {
-                $type->addNote($json[self::FIELD_NOTE]);
-            } else {
-                $type->addNote(new FHIRAnnotation($json[self::FIELD_NOTE]));
+            $vs = $json[self::FIELD_NOTE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addNote(FHIRAnnotation::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_CERTAINTY_SUBCOMPONENT]) || array_key_exists(self::FIELD_CERTAINTY_SUBCOMPONENT, $json)) {
-            if (is_array($json[self::FIELD_CERTAINTY_SUBCOMPONENT])) {
-                foreach($json[self::FIELD_CERTAINTY_SUBCOMPONENT] as $v) {
-                    if ($v instanceof FHIREffectEvidenceSynthesisCertaintySubcomponent) {
-                        $type->addCertaintySubcomponent($v);
-                    } else {
-                        $type->addCertaintySubcomponent(new FHIREffectEvidenceSynthesisCertaintySubcomponent($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_CERTAINTY_SUBCOMPONENT] instanceof FHIREffectEvidenceSynthesisCertaintySubcomponent) {
-                $type->addCertaintySubcomponent($json[self::FIELD_CERTAINTY_SUBCOMPONENT]);
-            } else {
-                $type->addCertaintySubcomponent(new FHIREffectEvidenceSynthesisCertaintySubcomponent($json[self::FIELD_CERTAINTY_SUBCOMPONENT]));
+            $vs = $json[self::FIELD_CERTAINTY_SUBCOMPONENT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addCertaintySubcomponent(FHIREffectEvidenceSynthesisCertaintySubcomponent::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

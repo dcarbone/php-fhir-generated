@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -635,51 +635,31 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (isset($json[self::FIELD_DESCRIPTION_EXT]) && is_array($json[self::FIELD_DESCRIPTION_EXT])) ? $json[self::FIELD_DESCRIPTION_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setDescription($value);
-                } else if (is_array($value)) {
-                    $type->setDescription(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setDescription(new FHIRString($ext));
-            } else {
-                $type->setDescription(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
+            $type->setDescription(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_EXPOSURE_STATE]) || isset($json[self::FIELD_EXPOSURE_STATE_EXT]) || array_key_exists(self::FIELD_EXPOSURE_STATE, $json) || array_key_exists(self::FIELD_EXPOSURE_STATE_EXT, $json)) {
             $value = $json[self::FIELD_EXPOSURE_STATE] ?? null;
-            $ext = (isset($json[self::FIELD_EXPOSURE_STATE_EXT]) && is_array($json[self::FIELD_EXPOSURE_STATE_EXT])) ? $json[self::FIELD_EXPOSURE_STATE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRExposureState) {
-                    $type->setExposureState($value);
-                } else if (is_array($value)) {
-                    $type->setExposureState(new FHIRExposureState(array_merge($ext, $value)));
-                } else {
-                    $type->setExposureState(new FHIRExposureState([FHIRExposureState::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setExposureState(new FHIRExposureState($ext));
-            } else {
-                $type->setExposureState(new FHIRExposureState(null));
-            }
+            $ext = (array)($json[self::FIELD_EXPOSURE_STATE_EXT] ?? []);
+            $type->setExposureState(FHIRExposureState::jsonUnserialize(
+                json: [FHIRExposureState::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_VARIANT_STATE]) || array_key_exists(self::FIELD_VARIANT_STATE, $json)) {
-            if ($json[self::FIELD_VARIANT_STATE] instanceof FHIRCodeableConcept) {
-                $type->setVariantState($json[self::FIELD_VARIANT_STATE]);
-            } else {
-                $type->setVariantState(new FHIRCodeableConcept($json[self::FIELD_VARIANT_STATE]));
-            }
+            $type->setVariantState(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_VARIANT_STATE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_RISK_EVIDENCE_SYNTHESIS]) || array_key_exists(self::FIELD_RISK_EVIDENCE_SYNTHESIS, $json)) {
-            if ($json[self::FIELD_RISK_EVIDENCE_SYNTHESIS] instanceof FHIRReference) {
-                $type->setRiskEvidenceSynthesis($json[self::FIELD_RISK_EVIDENCE_SYNTHESIS]);
-            } else {
-                $type->setRiskEvidenceSynthesis(new FHIRReference($json[self::FIELD_RISK_EVIDENCE_SYNTHESIS]));
-            }
+            $type->setRiskEvidenceSynthesis(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_RISK_EVIDENCE_SYNTHESIS],
+                config: $config,
+            ));
         }
         return $type;
     }

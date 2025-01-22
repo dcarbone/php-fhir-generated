@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -521,28 +521,18 @@ class FHIRRelatedPersonCommunication extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_LANGUAGE]) || array_key_exists(self::FIELD_LANGUAGE, $json)) {
-            if ($json[self::FIELD_LANGUAGE] instanceof FHIRCodeableConcept) {
-                $type->setLanguage($json[self::FIELD_LANGUAGE]);
-            } else {
-                $type->setLanguage(new FHIRCodeableConcept($json[self::FIELD_LANGUAGE]));
-            }
+            $type->setLanguage(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_LANGUAGE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PREFERRED]) || isset($json[self::FIELD_PREFERRED_EXT]) || array_key_exists(self::FIELD_PREFERRED, $json) || array_key_exists(self::FIELD_PREFERRED_EXT, $json)) {
             $value = $json[self::FIELD_PREFERRED] ?? null;
-            $ext = (isset($json[self::FIELD_PREFERRED_EXT]) && is_array($json[self::FIELD_PREFERRED_EXT])) ? $json[self::FIELD_PREFERRED_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $type->setPreferred($value);
-                } else if (is_array($value)) {
-                    $type->setPreferred(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $type->setPreferred(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setPreferred(new FHIRBoolean($ext));
-            } else {
-                $type->setPreferred(new FHIRBoolean(null));
-            }
+            $ext = (array)($json[self::FIELD_PREFERRED_EXT] ?? []);
+            $type->setPreferred(FHIRBoolean::jsonUnserialize(
+                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

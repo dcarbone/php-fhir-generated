@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -525,37 +525,19 @@ class FHIRProfileMapping1 extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_IDENTITY]) || isset($json[self::FIELD_IDENTITY_EXT]) || array_key_exists(self::FIELD_IDENTITY, $json) || array_key_exists(self::FIELD_IDENTITY_EXT, $json)) {
             $value = $json[self::FIELD_IDENTITY] ?? null;
-            $ext = (isset($json[self::FIELD_IDENTITY_EXT]) && is_array($json[self::FIELD_IDENTITY_EXT])) ? $json[self::FIELD_IDENTITY_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRId) {
-                    $type->setIdentity($value);
-                } else if (is_array($value)) {
-                    $type->setIdentity(new FHIRId(array_merge($ext, $value)));
-                } else {
-                    $type->setIdentity(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setIdentity(new FHIRId($ext));
-            } else {
-                $type->setIdentity(new FHIRId(null));
-            }
+            $ext = (array)($json[self::FIELD_IDENTITY_EXT] ?? []);
+            $type->setIdentity(FHIRId::jsonUnserialize(
+                json: [FHIRId::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_MAP]) || isset($json[self::FIELD_MAP_EXT]) || array_key_exists(self::FIELD_MAP, $json) || array_key_exists(self::FIELD_MAP_EXT, $json)) {
             $value = $json[self::FIELD_MAP] ?? null;
-            $ext = (isset($json[self::FIELD_MAP_EXT]) && is_array($json[self::FIELD_MAP_EXT])) ? $json[self::FIELD_MAP_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setMap($value);
-                } else if (is_array($value)) {
-                    $type->setMap(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setMap(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setMap(new FHIRString($ext));
-            } else {
-                $type->setMap(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_MAP_EXT] ?? []);
+            $type->setMap(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

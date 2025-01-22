@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1090,92 +1090,75 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements V
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            if (is_array($json[self::FIELD_IDENTIFIER])) {
-                foreach($json[self::FIELD_IDENTIFIER] as $v) {
-                    if ($v instanceof FHIRIdentifier) {
-                        $type->addIdentifier($v);
-                    } else {
-                        $type->addIdentifier(new FHIRIdentifier($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
-                $type->addIdentifier($json[self::FIELD_IDENTIFIER]);
-            } else {
-                $type->addIdentifier(new FHIRIdentifier($json[self::FIELD_IDENTIFIER]));
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_ADMINISTRABLE_DOSE_FORM]) || array_key_exists(self::FIELD_ADMINISTRABLE_DOSE_FORM, $json)) {
-            if ($json[self::FIELD_ADMINISTRABLE_DOSE_FORM] instanceof FHIRCodeableConcept) {
-                $type->setAdministrableDoseForm($json[self::FIELD_ADMINISTRABLE_DOSE_FORM]);
-            } else {
-                $type->setAdministrableDoseForm(new FHIRCodeableConcept($json[self::FIELD_ADMINISTRABLE_DOSE_FORM]));
-            }
+            $type->setAdministrableDoseForm(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_ADMINISTRABLE_DOSE_FORM],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_UNIT_OF_PRESENTATION]) || array_key_exists(self::FIELD_UNIT_OF_PRESENTATION, $json)) {
-            if ($json[self::FIELD_UNIT_OF_PRESENTATION] instanceof FHIRCodeableConcept) {
-                $type->setUnitOfPresentation($json[self::FIELD_UNIT_OF_PRESENTATION]);
-            } else {
-                $type->setUnitOfPresentation(new FHIRCodeableConcept($json[self::FIELD_UNIT_OF_PRESENTATION]));
-            }
+            $type->setUnitOfPresentation(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_UNIT_OF_PRESENTATION],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_INGREDIENT]) || array_key_exists(self::FIELD_INGREDIENT, $json)) {
-            if (is_array($json[self::FIELD_INGREDIENT])) {
-                foreach($json[self::FIELD_INGREDIENT] as $v) {
-                    if ($v instanceof FHIRReference) {
-                        $type->addIngredient($v);
-                    } else {
-                        $type->addIngredient(new FHIRReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_INGREDIENT] instanceof FHIRReference) {
-                $type->addIngredient($json[self::FIELD_INGREDIENT]);
-            } else {
-                $type->addIngredient(new FHIRReference($json[self::FIELD_INGREDIENT]));
+            $vs = $json[self::FIELD_INGREDIENT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addIngredient(FHIRReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_DEVICE]) || array_key_exists(self::FIELD_DEVICE, $json)) {
-            if (is_array($json[self::FIELD_DEVICE])) {
-                foreach($json[self::FIELD_DEVICE] as $v) {
-                    if ($v instanceof FHIRReference) {
-                        $type->addDevice($v);
-                    } else {
-                        $type->addDevice(new FHIRReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_DEVICE] instanceof FHIRReference) {
-                $type->addDevice($json[self::FIELD_DEVICE]);
-            } else {
-                $type->addDevice(new FHIRReference($json[self::FIELD_DEVICE]));
+            $vs = $json[self::FIELD_DEVICE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addDevice(FHIRReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_CHARACTERISTICS]) || array_key_exists(self::FIELD_CHARACTERISTICS, $json)) {
-            if (is_array($json[self::FIELD_CHARACTERISTICS])) {
-                foreach($json[self::FIELD_CHARACTERISTICS] as $v) {
-                    if ($v instanceof FHIRMedicinalProductPharmaceuticalCharacteristics) {
-                        $type->addCharacteristics($v);
-                    } else {
-                        $type->addCharacteristics(new FHIRMedicinalProductPharmaceuticalCharacteristics($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_CHARACTERISTICS] instanceof FHIRMedicinalProductPharmaceuticalCharacteristics) {
-                $type->addCharacteristics($json[self::FIELD_CHARACTERISTICS]);
-            } else {
-                $type->addCharacteristics(new FHIRMedicinalProductPharmaceuticalCharacteristics($json[self::FIELD_CHARACTERISTICS]));
+            $vs = $json[self::FIELD_CHARACTERISTICS];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addCharacteristics(FHIRMedicinalProductPharmaceuticalCharacteristics::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_ROUTE_OF_ADMINISTRATION]) || array_key_exists(self::FIELD_ROUTE_OF_ADMINISTRATION, $json)) {
-            if (is_array($json[self::FIELD_ROUTE_OF_ADMINISTRATION])) {
-                foreach($json[self::FIELD_ROUTE_OF_ADMINISTRATION] as $v) {
-                    if ($v instanceof FHIRMedicinalProductPharmaceuticalRouteOfAdministration) {
-                        $type->addRouteOfAdministration($v);
-                    } else {
-                        $type->addRouteOfAdministration(new FHIRMedicinalProductPharmaceuticalRouteOfAdministration($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_ROUTE_OF_ADMINISTRATION] instanceof FHIRMedicinalProductPharmaceuticalRouteOfAdministration) {
-                $type->addRouteOfAdministration($json[self::FIELD_ROUTE_OF_ADMINISTRATION]);
-            } else {
-                $type->addRouteOfAdministration(new FHIRMedicinalProductPharmaceuticalRouteOfAdministration($json[self::FIELD_ROUTE_OF_ADMINISTRATION]));
+            $vs = $json[self::FIELD_ROUTE_OF_ADMINISTRATION];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addRouteOfAdministration(FHIRMedicinalProductPharmaceuticalRouteOfAdministration::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

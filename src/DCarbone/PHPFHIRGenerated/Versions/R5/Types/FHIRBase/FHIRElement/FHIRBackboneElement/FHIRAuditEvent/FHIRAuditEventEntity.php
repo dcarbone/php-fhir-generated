@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -881,79 +881,59 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_WHAT]) || array_key_exists(self::FIELD_WHAT, $json)) {
-            if ($json[self::FIELD_WHAT] instanceof FHIRReference) {
-                $type->setWhat($json[self::FIELD_WHAT]);
-            } else {
-                $type->setWhat(new FHIRReference($json[self::FIELD_WHAT]));
-            }
+            $type->setWhat(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_WHAT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ROLE]) || array_key_exists(self::FIELD_ROLE, $json)) {
-            if ($json[self::FIELD_ROLE] instanceof FHIRCodeableConcept) {
-                $type->setRole($json[self::FIELD_ROLE]);
-            } else {
-                $type->setRole(new FHIRCodeableConcept($json[self::FIELD_ROLE]));
-            }
+            $type->setRole(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_ROLE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SECURITY_LABEL]) || array_key_exists(self::FIELD_SECURITY_LABEL, $json)) {
-            if (is_array($json[self::FIELD_SECURITY_LABEL])) {
-                foreach($json[self::FIELD_SECURITY_LABEL] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addSecurityLabel($v);
-                    } else {
-                        $type->addSecurityLabel(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_SECURITY_LABEL] instanceof FHIRCodeableConcept) {
-                $type->addSecurityLabel($json[self::FIELD_SECURITY_LABEL]);
-            } else {
-                $type->addSecurityLabel(new FHIRCodeableConcept($json[self::FIELD_SECURITY_LABEL]));
+            $vs = $json[self::FIELD_SECURITY_LABEL];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addSecurityLabel(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_QUERY]) || isset($json[self::FIELD_QUERY_EXT]) || array_key_exists(self::FIELD_QUERY, $json) || array_key_exists(self::FIELD_QUERY_EXT, $json)) {
             $value = $json[self::FIELD_QUERY] ?? null;
-            $ext = (isset($json[self::FIELD_QUERY_EXT]) && is_array($json[self::FIELD_QUERY_EXT])) ? $json[self::FIELD_QUERY_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBase64Binary) {
-                    $type->setQuery($value);
-                } else if (is_array($value)) {
-                    $type->setQuery(new FHIRBase64Binary(array_merge($ext, $value)));
-                } else {
-                    $type->setQuery(new FHIRBase64Binary([FHIRBase64Binary::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setQuery(new FHIRBase64Binary($ext));
-            } else {
-                $type->setQuery(new FHIRBase64Binary(null));
-            }
+            $ext = (array)($json[self::FIELD_QUERY_EXT] ?? []);
+            $type->setQuery(FHIRBase64Binary::jsonUnserialize(
+                json: [FHIRBase64Binary::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_DETAIL]) || array_key_exists(self::FIELD_DETAIL, $json)) {
-            if (is_array($json[self::FIELD_DETAIL])) {
-                foreach($json[self::FIELD_DETAIL] as $v) {
-                    if ($v instanceof FHIRAuditEventDetail) {
-                        $type->addDetail($v);
-                    } else {
-                        $type->addDetail(new FHIRAuditEventDetail($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_DETAIL] instanceof FHIRAuditEventDetail) {
-                $type->addDetail($json[self::FIELD_DETAIL]);
-            } else {
-                $type->addDetail(new FHIRAuditEventDetail($json[self::FIELD_DETAIL]));
+            $vs = $json[self::FIELD_DETAIL];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addDetail(FHIRAuditEventDetail::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_AGENT]) || array_key_exists(self::FIELD_AGENT, $json)) {
-            if (is_array($json[self::FIELD_AGENT])) {
-                foreach($json[self::FIELD_AGENT] as $v) {
-                    if ($v instanceof FHIRAuditEventAgent) {
-                        $type->addAgent($v);
-                    } else {
-                        $type->addAgent(new FHIRAuditEventAgent($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_AGENT] instanceof FHIRAuditEventAgent) {
-                $type->addAgent($json[self::FIELD_AGENT]);
-            } else {
-                $type->addAgent(new FHIRAuditEventAgent($json[self::FIELD_AGENT]));
+            $vs = $json[self::FIELD_AGENT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addAgent(FHIRAuditEventAgent::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

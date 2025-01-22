@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -584,35 +584,24 @@ class FHIRGroupMember extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_ENTITY]) || array_key_exists(self::FIELD_ENTITY, $json)) {
-            if ($json[self::FIELD_ENTITY] instanceof FHIRReference) {
-                $type->setEntity($json[self::FIELD_ENTITY]);
-            } else {
-                $type->setEntity(new FHIRReference($json[self::FIELD_ENTITY]));
-            }
+            $type->setEntity(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_ENTITY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            if ($json[self::FIELD_PERIOD] instanceof FHIRPeriod) {
-                $type->setPeriod($json[self::FIELD_PERIOD]);
-            } else {
-                $type->setPeriod(new FHIRPeriod($json[self::FIELD_PERIOD]));
-            }
+            $type->setPeriod(FHIRPeriod::jsonUnserialize(
+                json: $json[self::FIELD_PERIOD],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_INACTIVE]) || isset($json[self::FIELD_INACTIVE_EXT]) || array_key_exists(self::FIELD_INACTIVE, $json) || array_key_exists(self::FIELD_INACTIVE_EXT, $json)) {
             $value = $json[self::FIELD_INACTIVE] ?? null;
-            $ext = (isset($json[self::FIELD_INACTIVE_EXT]) && is_array($json[self::FIELD_INACTIVE_EXT])) ? $json[self::FIELD_INACTIVE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $type->setInactive($value);
-                } else if (is_array($value)) {
-                    $type->setInactive(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $type->setInactive(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setInactive(new FHIRBoolean($ext));
-            } else {
-                $type->setInactive(new FHIRBoolean(null));
-            }
+            $ext = (array)($json[self::FIELD_INACTIVE_EXT] ?? []);
+            $type->setInactive(FHIRBoolean::jsonUnserialize(
+                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

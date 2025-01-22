@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -729,86 +729,45 @@ class FHIRAvailabilityAvailableTime extends FHIRDataType
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_DAYS_OF_WEEK]) || isset($json[self::FIELD_DAYS_OF_WEEK_EXT]) || array_key_exists(self::FIELD_DAYS_OF_WEEK, $json) || array_key_exists(self::FIELD_DAYS_OF_WEEK_EXT, $json)) {
             $value = $json[self::FIELD_DAYS_OF_WEEK] ?? null;
-            $ext = (isset($json[self::FIELD_DAYS_OF_WEEK_EXT]) && is_array($json[self::FIELD_DAYS_OF_WEEK_EXT])) ? $json[self::FIELD_DAYS_OF_WEEK_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRCode) {
-                    $type->addDaysOfWeek($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRCode) {
-                            $type->addDaysOfWeek($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $type->addDaysOfWeek(new FHIRCode(array_merge($v, $iext)));
-                            } else {
-                                $type->addDaysOfWeek(new FHIRCode([FHIRCode::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $type->addDaysOfWeek(new FHIRCode(array_merge($ext, $value)));
-                } else {
-                    $type->addDaysOfWeek(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $type->addDaysOfWeek(new FHIRCode($iext));
-                }
-            } else {
-                $type->addDaysOfWeek(new FHIRCode(null));
+            $ext = (array)($json[self::FIELD_DAYS_OF_WEEK_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
+                $type->addDaysOfWeek(FHIRCode::jsonUnserialize(
+                    json: [FHIRCode::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_ALL_DAY]) || isset($json[self::FIELD_ALL_DAY_EXT]) || array_key_exists(self::FIELD_ALL_DAY, $json) || array_key_exists(self::FIELD_ALL_DAY_EXT, $json)) {
             $value = $json[self::FIELD_ALL_DAY] ?? null;
-            $ext = (isset($json[self::FIELD_ALL_DAY_EXT]) && is_array($json[self::FIELD_ALL_DAY_EXT])) ? $json[self::FIELD_ALL_DAY_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $type->setAllDay($value);
-                } else if (is_array($value)) {
-                    $type->setAllDay(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $type->setAllDay(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setAllDay(new FHIRBoolean($ext));
-            } else {
-                $type->setAllDay(new FHIRBoolean(null));
-            }
+            $ext = (array)($json[self::FIELD_ALL_DAY_EXT] ?? []);
+            $type->setAllDay(FHIRBoolean::jsonUnserialize(
+                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_AVAILABLE_START_TIME]) || isset($json[self::FIELD_AVAILABLE_START_TIME_EXT]) || array_key_exists(self::FIELD_AVAILABLE_START_TIME, $json) || array_key_exists(self::FIELD_AVAILABLE_START_TIME_EXT, $json)) {
             $value = $json[self::FIELD_AVAILABLE_START_TIME] ?? null;
-            $ext = (isset($json[self::FIELD_AVAILABLE_START_TIME_EXT]) && is_array($json[self::FIELD_AVAILABLE_START_TIME_EXT])) ? $json[self::FIELD_AVAILABLE_START_TIME_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRTime) {
-                    $type->setAvailableStartTime($value);
-                } else if (is_array($value)) {
-                    $type->setAvailableStartTime(new FHIRTime(array_merge($ext, $value)));
-                } else {
-                    $type->setAvailableStartTime(new FHIRTime([FHIRTime::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setAvailableStartTime(new FHIRTime($ext));
-            } else {
-                $type->setAvailableStartTime(new FHIRTime(null));
-            }
+            $ext = (array)($json[self::FIELD_AVAILABLE_START_TIME_EXT] ?? []);
+            $type->setAvailableStartTime(FHIRTime::jsonUnserialize(
+                json: [FHIRTime::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_AVAILABLE_END_TIME]) || isset($json[self::FIELD_AVAILABLE_END_TIME_EXT]) || array_key_exists(self::FIELD_AVAILABLE_END_TIME, $json) || array_key_exists(self::FIELD_AVAILABLE_END_TIME_EXT, $json)) {
             $value = $json[self::FIELD_AVAILABLE_END_TIME] ?? null;
-            $ext = (isset($json[self::FIELD_AVAILABLE_END_TIME_EXT]) && is_array($json[self::FIELD_AVAILABLE_END_TIME_EXT])) ? $json[self::FIELD_AVAILABLE_END_TIME_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRTime) {
-                    $type->setAvailableEndTime($value);
-                } else if (is_array($value)) {
-                    $type->setAvailableEndTime(new FHIRTime(array_merge($ext, $value)));
-                } else {
-                    $type->setAvailableEndTime(new FHIRTime([FHIRTime::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setAvailableEndTime(new FHIRTime($ext));
-            } else {
-                $type->setAvailableEndTime(new FHIRTime(null));
-            }
+            $ext = (array)($json[self::FIELD_AVAILABLE_END_TIME_EXT] ?? []);
+            $type->setAvailableEndTime(FHIRTime::jsonUnserialize(
+                json: [FHIRTime::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

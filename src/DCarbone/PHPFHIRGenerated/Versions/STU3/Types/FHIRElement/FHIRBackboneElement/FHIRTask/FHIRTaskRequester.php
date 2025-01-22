@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -462,18 +462,16 @@ class FHIRTaskRequester extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_AGENT]) || array_key_exists(self::FIELD_AGENT, $json)) {
-            if ($json[self::FIELD_AGENT] instanceof FHIRReference) {
-                $type->setAgent($json[self::FIELD_AGENT]);
-            } else {
-                $type->setAgent(new FHIRReference($json[self::FIELD_AGENT]));
-            }
+            $type->setAgent(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_AGENT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ON_BEHALF_OF]) || array_key_exists(self::FIELD_ON_BEHALF_OF, $json)) {
-            if ($json[self::FIELD_ON_BEHALF_OF] instanceof FHIRReference) {
-                $type->setOnBehalfOf($json[self::FIELD_ON_BEHALF_OF]);
-            } else {
-                $type->setOnBehalfOf(new FHIRReference($json[self::FIELD_ON_BEHALF_OF]));
-            }
+            $type->setOnBehalfOf(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_ON_BEHALF_OF],
+                config: $config,
+            ));
         }
         return $type;
     }

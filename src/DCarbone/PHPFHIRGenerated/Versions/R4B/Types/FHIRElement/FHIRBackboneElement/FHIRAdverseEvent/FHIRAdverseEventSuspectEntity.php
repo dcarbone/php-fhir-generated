@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -520,25 +520,21 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_INSTANCE]) || array_key_exists(self::FIELD_INSTANCE, $json)) {
-            if ($json[self::FIELD_INSTANCE] instanceof FHIRReference) {
-                $type->setInstance($json[self::FIELD_INSTANCE]);
-            } else {
-                $type->setInstance(new FHIRReference($json[self::FIELD_INSTANCE]));
-            }
+            $type->setInstance(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_INSTANCE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_CAUSALITY]) || array_key_exists(self::FIELD_CAUSALITY, $json)) {
-            if (is_array($json[self::FIELD_CAUSALITY])) {
-                foreach($json[self::FIELD_CAUSALITY] as $v) {
-                    if ($v instanceof FHIRAdverseEventCausality) {
-                        $type->addCausality($v);
-                    } else {
-                        $type->addCausality(new FHIRAdverseEventCausality($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_CAUSALITY] instanceof FHIRAdverseEventCausality) {
-                $type->addCausality($json[self::FIELD_CAUSALITY]);
-            } else {
-                $type->addCausality(new FHIRAdverseEventCausality($json[self::FIELD_CAUSALITY]));
+            $vs = $json[self::FIELD_CAUSALITY];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addCausality(FHIRAdverseEventCausality::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

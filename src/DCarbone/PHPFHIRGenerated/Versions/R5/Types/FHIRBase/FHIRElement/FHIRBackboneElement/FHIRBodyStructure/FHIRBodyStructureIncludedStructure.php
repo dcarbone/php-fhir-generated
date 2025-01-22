@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -785,62 +785,51 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_STRUCTURE]) || array_key_exists(self::FIELD_STRUCTURE, $json)) {
-            if ($json[self::FIELD_STRUCTURE] instanceof FHIRCodeableConcept) {
-                $type->setStructure($json[self::FIELD_STRUCTURE]);
-            } else {
-                $type->setStructure(new FHIRCodeableConcept($json[self::FIELD_STRUCTURE]));
-            }
+            $type->setStructure(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_STRUCTURE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_LATERALITY]) || array_key_exists(self::FIELD_LATERALITY, $json)) {
-            if ($json[self::FIELD_LATERALITY] instanceof FHIRCodeableConcept) {
-                $type->setLaterality($json[self::FIELD_LATERALITY]);
-            } else {
-                $type->setLaterality(new FHIRCodeableConcept($json[self::FIELD_LATERALITY]));
-            }
+            $type->setLaterality(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_LATERALITY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_BODY_LANDMARK_ORIENTATION]) || array_key_exists(self::FIELD_BODY_LANDMARK_ORIENTATION, $json)) {
-            if (is_array($json[self::FIELD_BODY_LANDMARK_ORIENTATION])) {
-                foreach($json[self::FIELD_BODY_LANDMARK_ORIENTATION] as $v) {
-                    if ($v instanceof FHIRBodyStructureBodyLandmarkOrientation) {
-                        $type->addBodyLandmarkOrientation($v);
-                    } else {
-                        $type->addBodyLandmarkOrientation(new FHIRBodyStructureBodyLandmarkOrientation($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_BODY_LANDMARK_ORIENTATION] instanceof FHIRBodyStructureBodyLandmarkOrientation) {
-                $type->addBodyLandmarkOrientation($json[self::FIELD_BODY_LANDMARK_ORIENTATION]);
-            } else {
-                $type->addBodyLandmarkOrientation(new FHIRBodyStructureBodyLandmarkOrientation($json[self::FIELD_BODY_LANDMARK_ORIENTATION]));
+            $vs = $json[self::FIELD_BODY_LANDMARK_ORIENTATION];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addBodyLandmarkOrientation(FHIRBodyStructureBodyLandmarkOrientation::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_SPATIAL_REFERENCE]) || array_key_exists(self::FIELD_SPATIAL_REFERENCE, $json)) {
-            if (is_array($json[self::FIELD_SPATIAL_REFERENCE])) {
-                foreach($json[self::FIELD_SPATIAL_REFERENCE] as $v) {
-                    if ($v instanceof FHIRReference) {
-                        $type->addSpatialReference($v);
-                    } else {
-                        $type->addSpatialReference(new FHIRReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_SPATIAL_REFERENCE] instanceof FHIRReference) {
-                $type->addSpatialReference($json[self::FIELD_SPATIAL_REFERENCE]);
-            } else {
-                $type->addSpatialReference(new FHIRReference($json[self::FIELD_SPATIAL_REFERENCE]));
+            $vs = $json[self::FIELD_SPATIAL_REFERENCE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addSpatialReference(FHIRReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_QUALIFIER]) || array_key_exists(self::FIELD_QUALIFIER, $json)) {
-            if (is_array($json[self::FIELD_QUALIFIER])) {
-                foreach($json[self::FIELD_QUALIFIER] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addQualifier($v);
-                    } else {
-                        $type->addQualifier(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_QUALIFIER] instanceof FHIRCodeableConcept) {
-                $type->addQualifier($json[self::FIELD_QUALIFIER]);
-            } else {
-                $type->addQualifier(new FHIRCodeableConcept($json[self::FIELD_QUALIFIER]));
+            $vs = $json[self::FIELD_QUALIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addQualifier(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

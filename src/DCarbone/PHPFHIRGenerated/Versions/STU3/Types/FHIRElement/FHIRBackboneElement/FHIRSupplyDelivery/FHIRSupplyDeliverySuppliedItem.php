@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -542,25 +542,22 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            if ($json[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
-                $type->setQuantity($json[self::FIELD_QUANTITY]);
-            } else {
-                $type->setQuantity(new FHIRQuantity($json[self::FIELD_QUANTITY]));
-            }
+            $type->setQuantity(FHIRQuantity::jsonUnserialize(
+                json: $json[self::FIELD_QUANTITY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ITEM_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_ITEM_CODEABLE_CONCEPT, $json)) {
-            if ($json[self::FIELD_ITEM_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
-                $type->setItemCodeableConcept($json[self::FIELD_ITEM_CODEABLE_CONCEPT]);
-            } else {
-                $type->setItemCodeableConcept(new FHIRCodeableConcept($json[self::FIELD_ITEM_CODEABLE_CONCEPT]));
-            }
+            $type->setItemCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_ITEM_CODEABLE_CONCEPT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ITEM_REFERENCE]) || array_key_exists(self::FIELD_ITEM_REFERENCE, $json)) {
-            if ($json[self::FIELD_ITEM_REFERENCE] instanceof FHIRReference) {
-                $type->setItemReference($json[self::FIELD_ITEM_REFERENCE]);
-            } else {
-                $type->setItemReference(new FHIRReference($json[self::FIELD_ITEM_REFERENCE]));
-            }
+            $type->setItemReference(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_ITEM_REFERENCE],
+                config: $config,
+            ));
         }
         return $type;
     }

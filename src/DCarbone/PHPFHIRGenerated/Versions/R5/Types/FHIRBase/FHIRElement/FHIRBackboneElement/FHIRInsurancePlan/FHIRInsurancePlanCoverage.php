@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -614,40 +614,33 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_NETWORK]) || array_key_exists(self::FIELD_NETWORK, $json)) {
-            if (is_array($json[self::FIELD_NETWORK])) {
-                foreach($json[self::FIELD_NETWORK] as $v) {
-                    if ($v instanceof FHIRReference) {
-                        $type->addNetwork($v);
-                    } else {
-                        $type->addNetwork(new FHIRReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_NETWORK] instanceof FHIRReference) {
-                $type->addNetwork($json[self::FIELD_NETWORK]);
-            } else {
-                $type->addNetwork(new FHIRReference($json[self::FIELD_NETWORK]));
+            $vs = $json[self::FIELD_NETWORK];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addNetwork(FHIRReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_BENEFIT]) || array_key_exists(self::FIELD_BENEFIT, $json)) {
-            if (is_array($json[self::FIELD_BENEFIT])) {
-                foreach($json[self::FIELD_BENEFIT] as $v) {
-                    if ($v instanceof FHIRInsurancePlanBenefit) {
-                        $type->addBenefit($v);
-                    } else {
-                        $type->addBenefit(new FHIRInsurancePlanBenefit($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_BENEFIT] instanceof FHIRInsurancePlanBenefit) {
-                $type->addBenefit($json[self::FIELD_BENEFIT]);
-            } else {
-                $type->addBenefit(new FHIRInsurancePlanBenefit($json[self::FIELD_BENEFIT]));
+            $vs = $json[self::FIELD_BENEFIT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addBenefit(FHIRInsurancePlanBenefit::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -548,33 +548,27 @@ class FHIRExplanationOfBenefitBodySite extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_SITE]) || array_key_exists(self::FIELD_SITE, $json)) {
-            if (is_array($json[self::FIELD_SITE])) {
-                foreach($json[self::FIELD_SITE] as $v) {
-                    if ($v instanceof FHIRCodeableReference) {
-                        $type->addSite($v);
-                    } else {
-                        $type->addSite(new FHIRCodeableReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_SITE] instanceof FHIRCodeableReference) {
-                $type->addSite($json[self::FIELD_SITE]);
-            } else {
-                $type->addSite(new FHIRCodeableReference($json[self::FIELD_SITE]));
+            $vs = $json[self::FIELD_SITE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addSite(FHIRCodeableReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_SUB_SITE]) || array_key_exists(self::FIELD_SUB_SITE, $json)) {
-            if (is_array($json[self::FIELD_SUB_SITE])) {
-                foreach($json[self::FIELD_SUB_SITE] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addSubSite($v);
-                    } else {
-                        $type->addSubSite(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_SUB_SITE] instanceof FHIRCodeableConcept) {
-                $type->addSubSite($json[self::FIELD_SUB_SITE]);
-            } else {
-                $type->addSubSite(new FHIRCodeableConcept($json[self::FIELD_SUB_SITE]));
+            $vs = $json[self::FIELD_SUB_SITE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addSubSite(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Client;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -41,7 +41,7 @@ class Client implements ClientInterface
     private const _BASE_CURL_OPTS = [
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_USERAGENT => 'php-fhir client (build: January 17th, 2025 18:09+0000;)',
+        CURLOPT_USERAGENT => 'php-fhir client (build: January 22nd, 2025 19:32+0000;)',
     ];
 
     protected Config $_config;
@@ -74,10 +74,10 @@ class Client implements ClientInterface
 
         $format = $request->format ?? $this->_config->getDefaultFormat();
         if (null !== $format) {
-            $queryParams[self::_PARAM_FORMAT] = $format->value;
+            $queryParams[self::_PARAM_FORMAT] = $format;
         }
         if (isset($request->sort)) {
-            $queryParams[self::_PARAM_SORT] = $request->sort->value;
+            $queryParams[self::_PARAM_SORT] = $request->sort;
         }
         if (isset($request->count)) {
             $queryParams[self::_PARAM_COUNT] = $request->count;
@@ -132,45 +132,5 @@ class Client implements ClientInterface
         }
 
         return $rc;
-    }
-
-    private function _exec(string|HTTPMethodEnum $method, string $path, array $queryParams = [], array $curlOpts = []): Response
-    {
-        $req = new Request();
-        $req->method = (string)$method;
-        $req->path = $path;
-        $req->queryParams = $queryParams;
-        $req->options = $curlOpts;
-        return $this->exec($req);
-    }
-
-    public function get(string $path, array $queryParams = [], array $curlOpts = []): Response
-    {
-        return $this->_exec(HTTPMethodEnum::GET, $path, $queryParams, $curlOpts);
-    }
-
-    public function put(string $path, array $queryParams = [], array $curlOpts = []): Response
-    {
-        return $this->_exec(HTTPMethodEnum::PUT, $path, $queryParams, $curlOpts);
-    }
-
-    public function post(string $path, array $queryParams = [], array $curlOpts = []): Response
-    {
-        return $this->_exec(HTTPMethodEnum::POST, $path, $queryParams, $curlOpts);
-    }
-
-    public function patch(string $path, array $queryParams = [], array $curlOpts = []): Response
-    {
-        return $this->_exec(HTTPMethodEnum::PATCH, $path, $queryParams, $curlOpts);
-    }
-
-    public function delete(string $path, array $queryParams = [], array $curlOpts = []): Response
-    {
-        return $this->_exec(HTTPMethodEnum::DELETE, $path, $queryParams, $curlOpts);
-    }
-
-    public function head(string $path, array $queryParams = [], array $curlOpts = []): Response
-    {
-        return $this->_exec(HTTPMethodEnum::HEAD, $path, $queryParams, $curlOpts);
     }
 }

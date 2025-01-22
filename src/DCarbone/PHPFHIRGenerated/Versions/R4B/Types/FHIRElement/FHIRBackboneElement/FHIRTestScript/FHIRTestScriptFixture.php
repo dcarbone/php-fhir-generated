@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -628,44 +628,25 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_AUTOCREATE]) || isset($json[self::FIELD_AUTOCREATE_EXT]) || array_key_exists(self::FIELD_AUTOCREATE, $json) || array_key_exists(self::FIELD_AUTOCREATE_EXT, $json)) {
             $value = $json[self::FIELD_AUTOCREATE] ?? null;
-            $ext = (isset($json[self::FIELD_AUTOCREATE_EXT]) && is_array($json[self::FIELD_AUTOCREATE_EXT])) ? $json[self::FIELD_AUTOCREATE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $type->setAutocreate($value);
-                } else if (is_array($value)) {
-                    $type->setAutocreate(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $type->setAutocreate(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setAutocreate(new FHIRBoolean($ext));
-            } else {
-                $type->setAutocreate(new FHIRBoolean(null));
-            }
+            $ext = (array)($json[self::FIELD_AUTOCREATE_EXT] ?? []);
+            $type->setAutocreate(FHIRBoolean::jsonUnserialize(
+                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_AUTODELETE]) || isset($json[self::FIELD_AUTODELETE_EXT]) || array_key_exists(self::FIELD_AUTODELETE, $json) || array_key_exists(self::FIELD_AUTODELETE_EXT, $json)) {
             $value = $json[self::FIELD_AUTODELETE] ?? null;
-            $ext = (isset($json[self::FIELD_AUTODELETE_EXT]) && is_array($json[self::FIELD_AUTODELETE_EXT])) ? $json[self::FIELD_AUTODELETE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $type->setAutodelete($value);
-                } else if (is_array($value)) {
-                    $type->setAutodelete(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $type->setAutodelete(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setAutodelete(new FHIRBoolean($ext));
-            } else {
-                $type->setAutodelete(new FHIRBoolean(null));
-            }
+            $ext = (array)($json[self::FIELD_AUTODELETE_EXT] ?? []);
+            $type->setAutodelete(FHIRBoolean::jsonUnserialize(
+                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_RESOURCE]) || array_key_exists(self::FIELD_RESOURCE, $json)) {
-            if ($json[self::FIELD_RESOURCE] instanceof FHIRReference) {
-                $type->setResource($json[self::FIELD_RESOURCE]);
-            } else {
-                $type->setResource(new FHIRReference($json[self::FIELD_RESOURCE]));
-            }
+            $type->setResource(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_RESOURCE],
+                config: $config,
+            ));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -513,28 +513,18 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_MESSAGE]) || array_key_exists(self::FIELD_MESSAGE, $json)) {
-            if ($json[self::FIELD_MESSAGE] instanceof FHIRReference) {
-                $type->setMessage($json[self::FIELD_MESSAGE]);
-            } else {
-                $type->setMessage(new FHIRReference($json[self::FIELD_MESSAGE]));
-            }
+            $type->setMessage(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_MESSAGE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SITUATION]) || isset($json[self::FIELD_SITUATION_EXT]) || array_key_exists(self::FIELD_SITUATION, $json) || array_key_exists(self::FIELD_SITUATION_EXT, $json)) {
             $value = $json[self::FIELD_SITUATION] ?? null;
-            $ext = (isset($json[self::FIELD_SITUATION_EXT]) && is_array($json[self::FIELD_SITUATION_EXT])) ? $json[self::FIELD_SITUATION_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRMarkdown) {
-                    $type->setSituation($value);
-                } else if (is_array($value)) {
-                    $type->setSituation(new FHIRMarkdown(array_merge($ext, $value)));
-                } else {
-                    $type->setSituation(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setSituation(new FHIRMarkdown($ext));
-            } else {
-                $type->setSituation(new FHIRMarkdown(null));
-            }
+            $ext = (array)($json[self::FIELD_SITUATION_EXT] ?? []);
+            $type->setSituation(FHIRMarkdown::jsonUnserialize(
+                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -421,18 +421,15 @@ class FHIRStructureDefinitionDifferential extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_ELEMENT]) || array_key_exists(self::FIELD_ELEMENT, $json)) {
-            if (is_array($json[self::FIELD_ELEMENT])) {
-                foreach($json[self::FIELD_ELEMENT] as $v) {
-                    if ($v instanceof FHIRElementDefinition) {
-                        $type->addElement($v);
-                    } else {
-                        $type->addElement(new FHIRElementDefinition($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_ELEMENT] instanceof FHIRElementDefinition) {
-                $type->addElement($json[self::FIELD_ELEMENT]);
-            } else {
-                $type->addElement(new FHIRElementDefinition($json[self::FIELD_ELEMENT]));
+            $vs = $json[self::FIELD_ELEMENT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addElement(FHIRElementDefinition::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

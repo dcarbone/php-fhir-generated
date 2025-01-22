@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -639,54 +639,27 @@ class FHIRValueSetFilter extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_PROPERTY]) || isset($json[self::FIELD_PROPERTY_EXT]) || array_key_exists(self::FIELD_PROPERTY, $json) || array_key_exists(self::FIELD_PROPERTY_EXT, $json)) {
             $value = $json[self::FIELD_PROPERTY] ?? null;
-            $ext = (isset($json[self::FIELD_PROPERTY_EXT]) && is_array($json[self::FIELD_PROPERTY_EXT])) ? $json[self::FIELD_PROPERTY_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRCode) {
-                    $type->setProperty($value);
-                } else if (is_array($value)) {
-                    $type->setProperty(new FHIRCode(array_merge($ext, $value)));
-                } else {
-                    $type->setProperty(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setProperty(new FHIRCode($ext));
-            } else {
-                $type->setProperty(new FHIRCode(null));
-            }
+            $ext = (array)($json[self::FIELD_PROPERTY_EXT] ?? []);
+            $type->setProperty(FHIRCode::jsonUnserialize(
+                json: [FHIRCode::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_OP]) || isset($json[self::FIELD_OP_EXT]) || array_key_exists(self::FIELD_OP, $json) || array_key_exists(self::FIELD_OP_EXT, $json)) {
             $value = $json[self::FIELD_OP] ?? null;
-            $ext = (isset($json[self::FIELD_OP_EXT]) && is_array($json[self::FIELD_OP_EXT])) ? $json[self::FIELD_OP_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRFilterOperator) {
-                    $type->setOp($value);
-                } else if (is_array($value)) {
-                    $type->setOp(new FHIRFilterOperator(array_merge($ext, $value)));
-                } else {
-                    $type->setOp(new FHIRFilterOperator([FHIRFilterOperator::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setOp(new FHIRFilterOperator($ext));
-            } else {
-                $type->setOp(new FHIRFilterOperator(null));
-            }
+            $ext = (array)($json[self::FIELD_OP_EXT] ?? []);
+            $type->setOp(FHIRFilterOperator::jsonUnserialize(
+                json: [FHIRFilterOperator::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_VALUE]) || isset($json[self::FIELD_VALUE_EXT]) || array_key_exists(self::FIELD_VALUE, $json) || array_key_exists(self::FIELD_VALUE_EXT, $json)) {
             $value = $json[self::FIELD_VALUE] ?? null;
-            $ext = (isset($json[self::FIELD_VALUE_EXT]) && is_array($json[self::FIELD_VALUE_EXT])) ? $json[self::FIELD_VALUE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setValue($value);
-                } else if (is_array($value)) {
-                    $type->setValue(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setValue(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setValue(new FHIRString($ext));
-            } else {
-                $type->setValue(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_VALUE_EXT] ?? []);
+            $type->setValue(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

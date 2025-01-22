@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -650,42 +650,30 @@ class FHIRSubstancePolymerStartingMaterial extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            if ($json[self::FIELD_CODE] instanceof FHIRCodeableConcept) {
-                $type->setCode($json[self::FIELD_CODE]);
-            } else {
-                $type->setCode(new FHIRCodeableConcept($json[self::FIELD_CODE]));
-            }
+            $type->setCode(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_CODE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
-            if ($json[self::FIELD_CATEGORY] instanceof FHIRCodeableConcept) {
-                $type->setCategory($json[self::FIELD_CATEGORY]);
-            } else {
-                $type->setCategory(new FHIRCodeableConcept($json[self::FIELD_CATEGORY]));
-            }
+            $type->setCategory(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_CATEGORY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_IS_DEFINING]) || isset($json[self::FIELD_IS_DEFINING_EXT]) || array_key_exists(self::FIELD_IS_DEFINING, $json) || array_key_exists(self::FIELD_IS_DEFINING_EXT, $json)) {
             $value = $json[self::FIELD_IS_DEFINING] ?? null;
-            $ext = (isset($json[self::FIELD_IS_DEFINING_EXT]) && is_array($json[self::FIELD_IS_DEFINING_EXT])) ? $json[self::FIELD_IS_DEFINING_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $type->setIsDefining($value);
-                } else if (is_array($value)) {
-                    $type->setIsDefining(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $type->setIsDefining(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setIsDefining(new FHIRBoolean($ext));
-            } else {
-                $type->setIsDefining(new FHIRBoolean(null));
-            }
+            $ext = (array)($json[self::FIELD_IS_DEFINING_EXT] ?? []);
+            $type->setIsDefining(FHIRBoolean::jsonUnserialize(
+                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_AMOUNT]) || array_key_exists(self::FIELD_AMOUNT, $json)) {
-            if ($json[self::FIELD_AMOUNT] instanceof FHIRQuantity) {
-                $type->setAmount($json[self::FIELD_AMOUNT]);
-            } else {
-                $type->setAmount(new FHIRQuantity($json[self::FIELD_AMOUNT]));
-            }
+            $type->setAmount(FHIRQuantity::jsonUnserialize(
+                json: $json[self::FIELD_AMOUNT],
+                config: $config,
+            ));
         }
         return $type;
     }

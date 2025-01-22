@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -579,35 +579,24 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_PARTY]) || array_key_exists(self::FIELD_PARTY, $json)) {
-            if ($json[self::FIELD_PARTY] instanceof FHIRReference) {
-                $type->setParty($json[self::FIELD_PARTY]);
-            } else {
-                $type->setParty(new FHIRReference($json[self::FIELD_PARTY]));
-            }
+            $type->setParty(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_PARTY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ON_HOLD]) || isset($json[self::FIELD_ON_HOLD_EXT]) || array_key_exists(self::FIELD_ON_HOLD, $json) || array_key_exists(self::FIELD_ON_HOLD_EXT, $json)) {
             $value = $json[self::FIELD_ON_HOLD] ?? null;
-            $ext = (isset($json[self::FIELD_ON_HOLD_EXT]) && is_array($json[self::FIELD_ON_HOLD_EXT])) ? $json[self::FIELD_ON_HOLD_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $type->setOnHold($value);
-                } else if (is_array($value)) {
-                    $type->setOnHold(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $type->setOnHold(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setOnHold(new FHIRBoolean($ext));
-            } else {
-                $type->setOnHold(new FHIRBoolean(null));
-            }
+            $ext = (array)($json[self::FIELD_ON_HOLD_EXT] ?? []);
+            $type->setOnHold(FHIRBoolean::jsonUnserialize(
+                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            if ($json[self::FIELD_PERIOD] instanceof FHIRPeriod) {
-                $type->setPeriod($json[self::FIELD_PERIOD]);
-            } else {
-                $type->setPeriod(new FHIRPeriod($json[self::FIELD_PERIOD]));
-            }
+            $type->setPeriod(FHIRPeriod::jsonUnserialize(
+                json: $json[self::FIELD_PERIOD],
+                config: $config,
+            ));
         }
         return $type;
     }

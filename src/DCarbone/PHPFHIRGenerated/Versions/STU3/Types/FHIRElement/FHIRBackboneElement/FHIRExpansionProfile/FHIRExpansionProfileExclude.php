@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -398,18 +398,15 @@ class FHIRExpansionProfileExclude extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_DESIGNATION]) || array_key_exists(self::FIELD_DESIGNATION, $json)) {
-            if (is_array($json[self::FIELD_DESIGNATION])) {
-                foreach($json[self::FIELD_DESIGNATION] as $v) {
-                    if ($v instanceof FHIRExpansionProfileDesignation2) {
-                        $type->addDesignation($v);
-                    } else {
-                        $type->addDesignation(new FHIRExpansionProfileDesignation2($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_DESIGNATION] instanceof FHIRExpansionProfileDesignation2) {
-                $type->addDesignation($json[self::FIELD_DESIGNATION]);
-            } else {
-                $type->addDesignation(new FHIRExpansionProfileDesignation2($json[self::FIELD_DESIGNATION]));
+            $vs = $json[self::FIELD_DESIGNATION];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addDesignation(FHIRExpansionProfileDesignation2::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

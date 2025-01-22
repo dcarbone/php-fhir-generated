@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -930,63 +930,48 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_NUTRITION_PRODUCT]) || array_key_exists(self::FIELD_NUTRITION_PRODUCT, $json)) {
-            if ($json[self::FIELD_NUTRITION_PRODUCT] instanceof FHIRCodeableReference) {
-                $type->setNutritionProduct($json[self::FIELD_NUTRITION_PRODUCT]);
-            } else {
-                $type->setNutritionProduct(new FHIRCodeableReference($json[self::FIELD_NUTRITION_PRODUCT]));
-            }
+            $type->setNutritionProduct(FHIRCodeableReference::jsonUnserialize(
+                json: $json[self::FIELD_NUTRITION_PRODUCT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SCHEDULE]) || array_key_exists(self::FIELD_SCHEDULE, $json)) {
-            if ($json[self::FIELD_SCHEDULE] instanceof FHIRTiming) {
-                $type->setSchedule($json[self::FIELD_SCHEDULE]);
-            } else {
-                $type->setSchedule(new FHIRTiming($json[self::FIELD_SCHEDULE]));
-            }
+            $type->setSchedule(FHIRTiming::jsonUnserialize(
+                json: $json[self::FIELD_SCHEDULE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_AMOUNT]) || array_key_exists(self::FIELD_AMOUNT, $json)) {
-            if ($json[self::FIELD_AMOUNT] instanceof FHIRQuantity) {
-                $type->setAmount($json[self::FIELD_AMOUNT]);
-            } else {
-                $type->setAmount(new FHIRQuantity($json[self::FIELD_AMOUNT]));
-            }
+            $type->setAmount(FHIRQuantity::jsonUnserialize(
+                json: $json[self::FIELD_AMOUNT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_RATE]) || array_key_exists(self::FIELD_RATE, $json)) {
-            if ($json[self::FIELD_RATE] instanceof FHIRQuantity) {
-                $type->setRate($json[self::FIELD_RATE]);
-            } else {
-                $type->setRate(new FHIRQuantity($json[self::FIELD_RATE]));
-            }
+            $type->setRate(FHIRQuantity::jsonUnserialize(
+                json: $json[self::FIELD_RATE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_NOT_CONSUMED]) || isset($json[self::FIELD_NOT_CONSUMED_EXT]) || array_key_exists(self::FIELD_NOT_CONSUMED, $json) || array_key_exists(self::FIELD_NOT_CONSUMED_EXT, $json)) {
             $value = $json[self::FIELD_NOT_CONSUMED] ?? null;
-            $ext = (isset($json[self::FIELD_NOT_CONSUMED_EXT]) && is_array($json[self::FIELD_NOT_CONSUMED_EXT])) ? $json[self::FIELD_NOT_CONSUMED_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $type->setNotConsumed($value);
-                } else if (is_array($value)) {
-                    $type->setNotConsumed(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $type->setNotConsumed(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setNotConsumed(new FHIRBoolean($ext));
-            } else {
-                $type->setNotConsumed(new FHIRBoolean(null));
-            }
+            $ext = (array)($json[self::FIELD_NOT_CONSUMED_EXT] ?? []);
+            $type->setNotConsumed(FHIRBoolean::jsonUnserialize(
+                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_NOT_CONSUMED_REASON]) || array_key_exists(self::FIELD_NOT_CONSUMED_REASON, $json)) {
-            if ($json[self::FIELD_NOT_CONSUMED_REASON] instanceof FHIRCodeableConcept) {
-                $type->setNotConsumedReason($json[self::FIELD_NOT_CONSUMED_REASON]);
-            } else {
-                $type->setNotConsumedReason(new FHIRCodeableConcept($json[self::FIELD_NOT_CONSUMED_REASON]));
-            }
+            $type->setNotConsumedReason(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_NOT_CONSUMED_REASON],
+                config: $config,
+            ));
         }
         return $type;
     }

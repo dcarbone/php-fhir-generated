@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1066,78 +1066,60 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_FAMILY]) || array_key_exists(self::FIELD_FAMILY, $json)) {
-            if ($json[self::FIELD_FAMILY] instanceof FHIRCodeableConcept) {
-                $type->setFamily($json[self::FIELD_FAMILY]);
-            } else {
-                $type->setFamily(new FHIRCodeableConcept($json[self::FIELD_FAMILY]));
-            }
+            $type->setFamily(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_FAMILY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_GENUS]) || array_key_exists(self::FIELD_GENUS, $json)) {
-            if ($json[self::FIELD_GENUS] instanceof FHIRCodeableConcept) {
-                $type->setGenus($json[self::FIELD_GENUS]);
-            } else {
-                $type->setGenus(new FHIRCodeableConcept($json[self::FIELD_GENUS]));
-            }
+            $type->setGenus(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_GENUS],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SPECIES]) || array_key_exists(self::FIELD_SPECIES, $json)) {
-            if ($json[self::FIELD_SPECIES] instanceof FHIRCodeableConcept) {
-                $type->setSpecies($json[self::FIELD_SPECIES]);
-            } else {
-                $type->setSpecies(new FHIRCodeableConcept($json[self::FIELD_SPECIES]));
-            }
+            $type->setSpecies(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_SPECIES],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_INTRASPECIFIC_TYPE]) || array_key_exists(self::FIELD_INTRASPECIFIC_TYPE, $json)) {
-            if ($json[self::FIELD_INTRASPECIFIC_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setIntraspecificType($json[self::FIELD_INTRASPECIFIC_TYPE]);
-            } else {
-                $type->setIntraspecificType(new FHIRCodeableConcept($json[self::FIELD_INTRASPECIFIC_TYPE]));
-            }
+            $type->setIntraspecificType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_INTRASPECIFIC_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_INTRASPECIFIC_DESCRIPTION]) || isset($json[self::FIELD_INTRASPECIFIC_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_INTRASPECIFIC_DESCRIPTION, $json) || array_key_exists(self::FIELD_INTRASPECIFIC_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_INTRASPECIFIC_DESCRIPTION] ?? null;
-            $ext = (isset($json[self::FIELD_INTRASPECIFIC_DESCRIPTION_EXT]) && is_array($json[self::FIELD_INTRASPECIFIC_DESCRIPTION_EXT])) ? $json[self::FIELD_INTRASPECIFIC_DESCRIPTION_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setIntraspecificDescription($value);
-                } else if (is_array($value)) {
-                    $type->setIntraspecificDescription(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setIntraspecificDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setIntraspecificDescription(new FHIRString($ext));
-            } else {
-                $type->setIntraspecificDescription(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_INTRASPECIFIC_DESCRIPTION_EXT] ?? []);
+            $type->setIntraspecificDescription(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_AUTHOR]) || array_key_exists(self::FIELD_AUTHOR, $json)) {
-            if (is_array($json[self::FIELD_AUTHOR])) {
-                foreach($json[self::FIELD_AUTHOR] as $v) {
-                    if ($v instanceof FHIRSubstanceSourceMaterialAuthor) {
-                        $type->addAuthor($v);
-                    } else {
-                        $type->addAuthor(new FHIRSubstanceSourceMaterialAuthor($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_AUTHOR] instanceof FHIRSubstanceSourceMaterialAuthor) {
-                $type->addAuthor($json[self::FIELD_AUTHOR]);
-            } else {
-                $type->addAuthor(new FHIRSubstanceSourceMaterialAuthor($json[self::FIELD_AUTHOR]));
+            $vs = $json[self::FIELD_AUTHOR];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addAuthor(FHIRSubstanceSourceMaterialAuthor::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_HYBRID]) || array_key_exists(self::FIELD_HYBRID, $json)) {
-            if ($json[self::FIELD_HYBRID] instanceof FHIRSubstanceSourceMaterialHybrid) {
-                $type->setHybrid($json[self::FIELD_HYBRID]);
-            } else {
-                $type->setHybrid(new FHIRSubstanceSourceMaterialHybrid($json[self::FIELD_HYBRID]));
-            }
+            $type->setHybrid(FHIRSubstanceSourceMaterialHybrid::jsonUnserialize(
+                json: $json[self::FIELD_HYBRID],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ORGANISM_GENERAL]) || array_key_exists(self::FIELD_ORGANISM_GENERAL, $json)) {
-            if ($json[self::FIELD_ORGANISM_GENERAL] instanceof FHIRSubstanceSourceMaterialOrganismGeneral) {
-                $type->setOrganismGeneral($json[self::FIELD_ORGANISM_GENERAL]);
-            } else {
-                $type->setOrganismGeneral(new FHIRSubstanceSourceMaterialOrganismGeneral($json[self::FIELD_ORGANISM_GENERAL]));
-            }
+            $type->setOrganismGeneral(FHIRSubstanceSourceMaterialOrganismGeneral::jsonUnserialize(
+                json: $json[self::FIELD_ORGANISM_GENERAL],
+                config: $config,
+            ));
         }
         return $type;
     }

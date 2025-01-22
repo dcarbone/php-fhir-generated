@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -623,52 +623,31 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_CORS]) || isset($json[self::FIELD_CORS_EXT]) || array_key_exists(self::FIELD_CORS, $json) || array_key_exists(self::FIELD_CORS_EXT, $json)) {
             $value = $json[self::FIELD_CORS] ?? null;
-            $ext = (isset($json[self::FIELD_CORS_EXT]) && is_array($json[self::FIELD_CORS_EXT])) ? $json[self::FIELD_CORS_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $type->setCors($value);
-                } else if (is_array($value)) {
-                    $type->setCors(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $type->setCors(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setCors(new FHIRBoolean($ext));
-            } else {
-                $type->setCors(new FHIRBoolean(null));
-            }
+            $ext = (array)($json[self::FIELD_CORS_EXT] ?? []);
+            $type->setCors(FHIRBoolean::jsonUnserialize(
+                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SERVICE]) || array_key_exists(self::FIELD_SERVICE, $json)) {
-            if (is_array($json[self::FIELD_SERVICE])) {
-                foreach($json[self::FIELD_SERVICE] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addService($v);
-                    } else {
-                        $type->addService(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_SERVICE] instanceof FHIRCodeableConcept) {
-                $type->addService($json[self::FIELD_SERVICE]);
-            } else {
-                $type->addService(new FHIRCodeableConcept($json[self::FIELD_SERVICE]));
+            $vs = $json[self::FIELD_SERVICE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addService(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (isset($json[self::FIELD_DESCRIPTION_EXT]) && is_array($json[self::FIELD_DESCRIPTION_EXT])) ? $json[self::FIELD_DESCRIPTION_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRMarkdown) {
-                    $type->setDescription($value);
-                } else if (is_array($value)) {
-                    $type->setDescription(new FHIRMarkdown(array_merge($ext, $value)));
-                } else {
-                    $type->setDescription(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setDescription(new FHIRMarkdown($ext));
-            } else {
-                $type->setDescription(new FHIRMarkdown(null));
-            }
+            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
+            $type->setDescription(FHIRMarkdown::jsonUnserialize(
+                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

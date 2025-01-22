@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -997,90 +997,58 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_OUTCOME]) || array_key_exists(self::FIELD_OUTCOME, $json)) {
-            if ($json[self::FIELD_OUTCOME] instanceof FHIRCodeableConcept) {
-                $type->setOutcome($json[self::FIELD_OUTCOME]);
-            } else {
-                $type->setOutcome(new FHIRCodeableConcept($json[self::FIELD_OUTCOME]));
-            }
+            $type->setOutcome(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_OUTCOME],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PROBABILITY_DECIMAL]) || isset($json[self::FIELD_PROBABILITY_DECIMAL_EXT]) || array_key_exists(self::FIELD_PROBABILITY_DECIMAL, $json) || array_key_exists(self::FIELD_PROBABILITY_DECIMAL_EXT, $json)) {
             $value = $json[self::FIELD_PROBABILITY_DECIMAL] ?? null;
-            $ext = (isset($json[self::FIELD_PROBABILITY_DECIMAL_EXT]) && is_array($json[self::FIELD_PROBABILITY_DECIMAL_EXT])) ? $json[self::FIELD_PROBABILITY_DECIMAL_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $type->setProbabilityDecimal($value);
-                } else if (is_array($value)) {
-                    $type->setProbabilityDecimal(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $type->setProbabilityDecimal(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setProbabilityDecimal(new FHIRDecimal($ext));
-            } else {
-                $type->setProbabilityDecimal(new FHIRDecimal(null));
-            }
+            $ext = (array)($json[self::FIELD_PROBABILITY_DECIMAL_EXT] ?? []);
+            $type->setProbabilityDecimal(FHIRDecimal::jsonUnserialize(
+                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PROBABILITY_RANGE]) || array_key_exists(self::FIELD_PROBABILITY_RANGE, $json)) {
-            if ($json[self::FIELD_PROBABILITY_RANGE] instanceof FHIRRange) {
-                $type->setProbabilityRange($json[self::FIELD_PROBABILITY_RANGE]);
-            } else {
-                $type->setProbabilityRange(new FHIRRange($json[self::FIELD_PROBABILITY_RANGE]));
-            }
+            $type->setProbabilityRange(FHIRRange::jsonUnserialize(
+                json: $json[self::FIELD_PROBABILITY_RANGE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PROBABILITY_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_PROBABILITY_CODEABLE_CONCEPT, $json)) {
-            if ($json[self::FIELD_PROBABILITY_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
-                $type->setProbabilityCodeableConcept($json[self::FIELD_PROBABILITY_CODEABLE_CONCEPT]);
-            } else {
-                $type->setProbabilityCodeableConcept(new FHIRCodeableConcept($json[self::FIELD_PROBABILITY_CODEABLE_CONCEPT]));
-            }
+            $type->setProbabilityCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_PROBABILITY_CODEABLE_CONCEPT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_RELATIVE_RISK]) || isset($json[self::FIELD_RELATIVE_RISK_EXT]) || array_key_exists(self::FIELD_RELATIVE_RISK, $json) || array_key_exists(self::FIELD_RELATIVE_RISK_EXT, $json)) {
             $value = $json[self::FIELD_RELATIVE_RISK] ?? null;
-            $ext = (isset($json[self::FIELD_RELATIVE_RISK_EXT]) && is_array($json[self::FIELD_RELATIVE_RISK_EXT])) ? $json[self::FIELD_RELATIVE_RISK_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $type->setRelativeRisk($value);
-                } else if (is_array($value)) {
-                    $type->setRelativeRisk(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $type->setRelativeRisk(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setRelativeRisk(new FHIRDecimal($ext));
-            } else {
-                $type->setRelativeRisk(new FHIRDecimal(null));
-            }
+            $ext = (array)($json[self::FIELD_RELATIVE_RISK_EXT] ?? []);
+            $type->setRelativeRisk(FHIRDecimal::jsonUnserialize(
+                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_WHEN_PERIOD]) || array_key_exists(self::FIELD_WHEN_PERIOD, $json)) {
-            if ($json[self::FIELD_WHEN_PERIOD] instanceof FHIRPeriod) {
-                $type->setWhenPeriod($json[self::FIELD_WHEN_PERIOD]);
-            } else {
-                $type->setWhenPeriod(new FHIRPeriod($json[self::FIELD_WHEN_PERIOD]));
-            }
+            $type->setWhenPeriod(FHIRPeriod::jsonUnserialize(
+                json: $json[self::FIELD_WHEN_PERIOD],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_WHEN_RANGE]) || array_key_exists(self::FIELD_WHEN_RANGE, $json)) {
-            if ($json[self::FIELD_WHEN_RANGE] instanceof FHIRRange) {
-                $type->setWhenRange($json[self::FIELD_WHEN_RANGE]);
-            } else {
-                $type->setWhenRange(new FHIRRange($json[self::FIELD_WHEN_RANGE]));
-            }
+            $type->setWhenRange(FHIRRange::jsonUnserialize(
+                json: $json[self::FIELD_WHEN_RANGE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_RATIONALE]) || isset($json[self::FIELD_RATIONALE_EXT]) || array_key_exists(self::FIELD_RATIONALE, $json) || array_key_exists(self::FIELD_RATIONALE_EXT, $json)) {
             $value = $json[self::FIELD_RATIONALE] ?? null;
-            $ext = (isset($json[self::FIELD_RATIONALE_EXT]) && is_array($json[self::FIELD_RATIONALE_EXT])) ? $json[self::FIELD_RATIONALE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setRationale($value);
-                } else if (is_array($value)) {
-                    $type->setRationale(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setRationale(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setRationale(new FHIRString($ext));
-            } else {
-                $type->setRationale(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_RATIONALE_EXT] ?? []);
+            $type->setRationale(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

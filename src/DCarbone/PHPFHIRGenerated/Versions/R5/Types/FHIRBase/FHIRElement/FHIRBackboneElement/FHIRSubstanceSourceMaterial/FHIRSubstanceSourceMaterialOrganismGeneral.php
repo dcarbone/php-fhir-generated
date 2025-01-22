@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -633,32 +633,28 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_KINGDOM]) || array_key_exists(self::FIELD_KINGDOM, $json)) {
-            if ($json[self::FIELD_KINGDOM] instanceof FHIRCodeableConcept) {
-                $type->setKingdom($json[self::FIELD_KINGDOM]);
-            } else {
-                $type->setKingdom(new FHIRCodeableConcept($json[self::FIELD_KINGDOM]));
-            }
+            $type->setKingdom(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_KINGDOM],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PHYLUM]) || array_key_exists(self::FIELD_PHYLUM, $json)) {
-            if ($json[self::FIELD_PHYLUM] instanceof FHIRCodeableConcept) {
-                $type->setPhylum($json[self::FIELD_PHYLUM]);
-            } else {
-                $type->setPhylum(new FHIRCodeableConcept($json[self::FIELD_PHYLUM]));
-            }
+            $type->setPhylum(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_PHYLUM],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_CLASS]) || array_key_exists(self::FIELD_CLASS, $json)) {
-            if ($json[self::FIELD_CLASS] instanceof FHIRCodeableConcept) {
-                $type->setClass($json[self::FIELD_CLASS]);
-            } else {
-                $type->setClass(new FHIRCodeableConcept($json[self::FIELD_CLASS]));
-            }
+            $type->setClass(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_CLASS],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ORDER]) || array_key_exists(self::FIELD_ORDER, $json)) {
-            if ($json[self::FIELD_ORDER] instanceof FHIRCodeableConcept) {
-                $type->setOrder($json[self::FIELD_ORDER]);
-            } else {
-                $type->setOrder(new FHIRCodeableConcept($json[self::FIELD_ORDER]));
-            }
+            $type->setOrder(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_ORDER],
+                config: $config,
+            ));
         }
         return $type;
     }

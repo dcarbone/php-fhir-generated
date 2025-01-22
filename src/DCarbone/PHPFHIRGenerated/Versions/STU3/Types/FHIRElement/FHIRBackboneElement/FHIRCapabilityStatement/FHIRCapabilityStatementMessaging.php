@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -812,82 +812,55 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_ENDPOINT]) || array_key_exists(self::FIELD_ENDPOINT, $json)) {
-            if (is_array($json[self::FIELD_ENDPOINT])) {
-                foreach($json[self::FIELD_ENDPOINT] as $v) {
-                    if ($v instanceof FHIRCapabilityStatementEndpoint) {
-                        $type->addEndpoint($v);
-                    } else {
-                        $type->addEndpoint(new FHIRCapabilityStatementEndpoint($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_ENDPOINT] instanceof FHIRCapabilityStatementEndpoint) {
-                $type->addEndpoint($json[self::FIELD_ENDPOINT]);
-            } else {
-                $type->addEndpoint(new FHIRCapabilityStatementEndpoint($json[self::FIELD_ENDPOINT]));
+            $vs = $json[self::FIELD_ENDPOINT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addEndpoint(FHIRCapabilityStatementEndpoint::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_RELIABLE_CACHE]) || isset($json[self::FIELD_RELIABLE_CACHE_EXT]) || array_key_exists(self::FIELD_RELIABLE_CACHE, $json) || array_key_exists(self::FIELD_RELIABLE_CACHE_EXT, $json)) {
             $value = $json[self::FIELD_RELIABLE_CACHE] ?? null;
-            $ext = (isset($json[self::FIELD_RELIABLE_CACHE_EXT]) && is_array($json[self::FIELD_RELIABLE_CACHE_EXT])) ? $json[self::FIELD_RELIABLE_CACHE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRUnsignedInt) {
-                    $type->setReliableCache($value);
-                } else if (is_array($value)) {
-                    $type->setReliableCache(new FHIRUnsignedInt(array_merge($ext, $value)));
-                } else {
-                    $type->setReliableCache(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setReliableCache(new FHIRUnsignedInt($ext));
-            } else {
-                $type->setReliableCache(new FHIRUnsignedInt(null));
-            }
+            $ext = (array)($json[self::FIELD_RELIABLE_CACHE_EXT] ?? []);
+            $type->setReliableCache(FHIRUnsignedInt::jsonUnserialize(
+                json: [FHIRUnsignedInt::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_DOCUMENTATION]) || isset($json[self::FIELD_DOCUMENTATION_EXT]) || array_key_exists(self::FIELD_DOCUMENTATION, $json) || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $json)) {
             $value = $json[self::FIELD_DOCUMENTATION] ?? null;
-            $ext = (isset($json[self::FIELD_DOCUMENTATION_EXT]) && is_array($json[self::FIELD_DOCUMENTATION_EXT])) ? $json[self::FIELD_DOCUMENTATION_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setDocumentation($value);
-                } else if (is_array($value)) {
-                    $type->setDocumentation(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setDocumentation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setDocumentation(new FHIRString($ext));
-            } else {
-                $type->setDocumentation(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_DOCUMENTATION_EXT] ?? []);
+            $type->setDocumentation(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SUPPORTED_MESSAGE]) || array_key_exists(self::FIELD_SUPPORTED_MESSAGE, $json)) {
-            if (is_array($json[self::FIELD_SUPPORTED_MESSAGE])) {
-                foreach($json[self::FIELD_SUPPORTED_MESSAGE] as $v) {
-                    if ($v instanceof FHIRCapabilityStatementSupportedMessage) {
-                        $type->addSupportedMessage($v);
-                    } else {
-                        $type->addSupportedMessage(new FHIRCapabilityStatementSupportedMessage($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_SUPPORTED_MESSAGE] instanceof FHIRCapabilityStatementSupportedMessage) {
-                $type->addSupportedMessage($json[self::FIELD_SUPPORTED_MESSAGE]);
-            } else {
-                $type->addSupportedMessage(new FHIRCapabilityStatementSupportedMessage($json[self::FIELD_SUPPORTED_MESSAGE]));
+            $vs = $json[self::FIELD_SUPPORTED_MESSAGE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addSupportedMessage(FHIRCapabilityStatementSupportedMessage::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_EVENT]) || array_key_exists(self::FIELD_EVENT, $json)) {
-            if (is_array($json[self::FIELD_EVENT])) {
-                foreach($json[self::FIELD_EVENT] as $v) {
-                    if ($v instanceof FHIRCapabilityStatementEvent) {
-                        $type->addEvent($v);
-                    } else {
-                        $type->addEvent(new FHIRCapabilityStatementEvent($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_EVENT] instanceof FHIRCapabilityStatementEvent) {
-                $type->addEvent($json[self::FIELD_EVENT]);
-            } else {
-                $type->addEvent(new FHIRCapabilityStatementEvent($json[self::FIELD_EVENT]));
+            $vs = $json[self::FIELD_EVENT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addEvent(FHIRCapabilityStatementEvent::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

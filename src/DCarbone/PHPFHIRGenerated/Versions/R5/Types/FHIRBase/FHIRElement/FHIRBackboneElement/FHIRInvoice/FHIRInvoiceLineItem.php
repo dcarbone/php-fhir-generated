@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -894,72 +894,48 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_SEQUENCE]) || isset($json[self::FIELD_SEQUENCE_EXT]) || array_key_exists(self::FIELD_SEQUENCE, $json) || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
             $value = $json[self::FIELD_SEQUENCE] ?? null;
-            $ext = (isset($json[self::FIELD_SEQUENCE_EXT]) && is_array($json[self::FIELD_SEQUENCE_EXT])) ? $json[self::FIELD_SEQUENCE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $type->setSequence($value);
-                } else if (is_array($value)) {
-                    $type->setSequence(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $type->setSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setSequence(new FHIRPositiveInt($ext));
-            } else {
-                $type->setSequence(new FHIRPositiveInt(null));
-            }
+            $ext = (array)($json[self::FIELD_SEQUENCE_EXT] ?? []);
+            $type->setSequence(FHIRPositiveInt::jsonUnserialize(
+                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SERVICED_DATE]) || isset($json[self::FIELD_SERVICED_DATE_EXT]) || array_key_exists(self::FIELD_SERVICED_DATE, $json) || array_key_exists(self::FIELD_SERVICED_DATE_EXT, $json)) {
             $value = $json[self::FIELD_SERVICED_DATE] ?? null;
-            $ext = (isset($json[self::FIELD_SERVICED_DATE_EXT]) && is_array($json[self::FIELD_SERVICED_DATE_EXT])) ? $json[self::FIELD_SERVICED_DATE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDate) {
-                    $type->setServicedDate($value);
-                } else if (is_array($value)) {
-                    $type->setServicedDate(new FHIRDate(array_merge($ext, $value)));
-                } else {
-                    $type->setServicedDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setServicedDate(new FHIRDate($ext));
-            } else {
-                $type->setServicedDate(new FHIRDate(null));
-            }
+            $ext = (array)($json[self::FIELD_SERVICED_DATE_EXT] ?? []);
+            $type->setServicedDate(FHIRDate::jsonUnserialize(
+                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SERVICED_PERIOD]) || array_key_exists(self::FIELD_SERVICED_PERIOD, $json)) {
-            if ($json[self::FIELD_SERVICED_PERIOD] instanceof FHIRPeriod) {
-                $type->setServicedPeriod($json[self::FIELD_SERVICED_PERIOD]);
-            } else {
-                $type->setServicedPeriod(new FHIRPeriod($json[self::FIELD_SERVICED_PERIOD]));
-            }
+            $type->setServicedPeriod(FHIRPeriod::jsonUnserialize(
+                json: $json[self::FIELD_SERVICED_PERIOD],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_CHARGE_ITEM_REFERENCE]) || array_key_exists(self::FIELD_CHARGE_ITEM_REFERENCE, $json)) {
-            if ($json[self::FIELD_CHARGE_ITEM_REFERENCE] instanceof FHIRReference) {
-                $type->setChargeItemReference($json[self::FIELD_CHARGE_ITEM_REFERENCE]);
-            } else {
-                $type->setChargeItemReference(new FHIRReference($json[self::FIELD_CHARGE_ITEM_REFERENCE]));
-            }
+            $type->setChargeItemReference(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_CHARGE_ITEM_REFERENCE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT, $json)) {
-            if ($json[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
-                $type->setChargeItemCodeableConcept($json[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT]);
-            } else {
-                $type->setChargeItemCodeableConcept(new FHIRCodeableConcept($json[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT]));
-            }
+            $type->setChargeItemCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PRICE_COMPONENT]) || array_key_exists(self::FIELD_PRICE_COMPONENT, $json)) {
-            if (is_array($json[self::FIELD_PRICE_COMPONENT])) {
-                foreach($json[self::FIELD_PRICE_COMPONENT] as $v) {
-                    if ($v instanceof FHIRMonetaryComponent) {
-                        $type->addPriceComponent($v);
-                    } else {
-                        $type->addPriceComponent(new FHIRMonetaryComponent($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_PRICE_COMPONENT] instanceof FHIRMonetaryComponent) {
-                $type->addPriceComponent($json[self::FIELD_PRICE_COMPONENT]);
-            } else {
-                $type->addPriceComponent(new FHIRMonetaryComponent($json[self::FIELD_PRICE_COMPONENT]));
+            $vs = $json[self::FIELD_PRICE_COMPONENT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addPriceComponent(FHIRMonetaryComponent::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -576,35 +576,24 @@ class FHIRTestPlanScript extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_LANGUAGE]) || array_key_exists(self::FIELD_LANGUAGE, $json)) {
-            if ($json[self::FIELD_LANGUAGE] instanceof FHIRCodeableConcept) {
-                $type->setLanguage($json[self::FIELD_LANGUAGE]);
-            } else {
-                $type->setLanguage(new FHIRCodeableConcept($json[self::FIELD_LANGUAGE]));
-            }
+            $type->setLanguage(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_LANGUAGE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SOURCE_STRING]) || isset($json[self::FIELD_SOURCE_STRING_EXT]) || array_key_exists(self::FIELD_SOURCE_STRING, $json) || array_key_exists(self::FIELD_SOURCE_STRING_EXT, $json)) {
             $value = $json[self::FIELD_SOURCE_STRING] ?? null;
-            $ext = (isset($json[self::FIELD_SOURCE_STRING_EXT]) && is_array($json[self::FIELD_SOURCE_STRING_EXT])) ? $json[self::FIELD_SOURCE_STRING_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setSourceString($value);
-                } else if (is_array($value)) {
-                    $type->setSourceString(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setSourceString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setSourceString(new FHIRString($ext));
-            } else {
-                $type->setSourceString(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_SOURCE_STRING_EXT] ?? []);
+            $type->setSourceString(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SOURCE_REFERENCE]) || array_key_exists(self::FIELD_SOURCE_REFERENCE, $json)) {
-            if ($json[self::FIELD_SOURCE_REFERENCE] instanceof FHIRReference) {
-                $type->setSourceReference($json[self::FIELD_SOURCE_REFERENCE]);
-            } else {
-                $type->setSourceReference(new FHIRReference($json[self::FIELD_SOURCE_REFERENCE]));
-            }
+            $type->setSourceReference(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_SOURCE_REFERENCE],
+                config: $config,
+            ));
         }
         return $type;
     }

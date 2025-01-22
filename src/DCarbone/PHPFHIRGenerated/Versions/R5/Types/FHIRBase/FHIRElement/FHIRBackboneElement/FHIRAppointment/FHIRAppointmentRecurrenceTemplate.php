@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1276,168 +1276,103 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TIMEZONE]) || array_key_exists(self::FIELD_TIMEZONE, $json)) {
-            if ($json[self::FIELD_TIMEZONE] instanceof FHIRCodeableConcept) {
-                $type->setTimezone($json[self::FIELD_TIMEZONE]);
-            } else {
-                $type->setTimezone(new FHIRCodeableConcept($json[self::FIELD_TIMEZONE]));
-            }
+            $type->setTimezone(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TIMEZONE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_RECURRENCE_TYPE]) || array_key_exists(self::FIELD_RECURRENCE_TYPE, $json)) {
-            if ($json[self::FIELD_RECURRENCE_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setRecurrenceType($json[self::FIELD_RECURRENCE_TYPE]);
-            } else {
-                $type->setRecurrenceType(new FHIRCodeableConcept($json[self::FIELD_RECURRENCE_TYPE]));
-            }
+            $type->setRecurrenceType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_RECURRENCE_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_LAST_OCCURRENCE_DATE]) || isset($json[self::FIELD_LAST_OCCURRENCE_DATE_EXT]) || array_key_exists(self::FIELD_LAST_OCCURRENCE_DATE, $json) || array_key_exists(self::FIELD_LAST_OCCURRENCE_DATE_EXT, $json)) {
             $value = $json[self::FIELD_LAST_OCCURRENCE_DATE] ?? null;
-            $ext = (isset($json[self::FIELD_LAST_OCCURRENCE_DATE_EXT]) && is_array($json[self::FIELD_LAST_OCCURRENCE_DATE_EXT])) ? $json[self::FIELD_LAST_OCCURRENCE_DATE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDate) {
-                    $type->setLastOccurrenceDate($value);
-                } else if (is_array($value)) {
-                    $type->setLastOccurrenceDate(new FHIRDate(array_merge($ext, $value)));
-                } else {
-                    $type->setLastOccurrenceDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setLastOccurrenceDate(new FHIRDate($ext));
-            } else {
-                $type->setLastOccurrenceDate(new FHIRDate(null));
-            }
+            $ext = (array)($json[self::FIELD_LAST_OCCURRENCE_DATE_EXT] ?? []);
+            $type->setLastOccurrenceDate(FHIRDate::jsonUnserialize(
+                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_OCCURRENCE_COUNT]) || isset($json[self::FIELD_OCCURRENCE_COUNT_EXT]) || array_key_exists(self::FIELD_OCCURRENCE_COUNT, $json) || array_key_exists(self::FIELD_OCCURRENCE_COUNT_EXT, $json)) {
             $value = $json[self::FIELD_OCCURRENCE_COUNT] ?? null;
-            $ext = (isset($json[self::FIELD_OCCURRENCE_COUNT_EXT]) && is_array($json[self::FIELD_OCCURRENCE_COUNT_EXT])) ? $json[self::FIELD_OCCURRENCE_COUNT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $type->setOccurrenceCount($value);
-                } else if (is_array($value)) {
-                    $type->setOccurrenceCount(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $type->setOccurrenceCount(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setOccurrenceCount(new FHIRPositiveInt($ext));
-            } else {
-                $type->setOccurrenceCount(new FHIRPositiveInt(null));
-            }
+            $ext = (array)($json[self::FIELD_OCCURRENCE_COUNT_EXT] ?? []);
+            $type->setOccurrenceCount(FHIRPositiveInt::jsonUnserialize(
+                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_OCCURRENCE_DATE]) || isset($json[self::FIELD_OCCURRENCE_DATE_EXT]) || array_key_exists(self::FIELD_OCCURRENCE_DATE, $json) || array_key_exists(self::FIELD_OCCURRENCE_DATE_EXT, $json)) {
             $value = $json[self::FIELD_OCCURRENCE_DATE] ?? null;
-            $ext = (isset($json[self::FIELD_OCCURRENCE_DATE_EXT]) && is_array($json[self::FIELD_OCCURRENCE_DATE_EXT])) ? $json[self::FIELD_OCCURRENCE_DATE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDate) {
-                    $type->addOccurrenceDate($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRDate) {
-                            $type->addOccurrenceDate($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $type->addOccurrenceDate(new FHIRDate(array_merge($v, $iext)));
-                            } else {
-                                $type->addOccurrenceDate(new FHIRDate([FHIRDate::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $type->addOccurrenceDate(new FHIRDate(array_merge($ext, $value)));
-                } else {
-                    $type->addOccurrenceDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $type->addOccurrenceDate(new FHIRDate($iext));
-                }
-            } else {
-                $type->addOccurrenceDate(new FHIRDate(null));
+            $ext = (array)($json[self::FIELD_OCCURRENCE_DATE_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
+                $type->addOccurrenceDate(FHIRDate::jsonUnserialize(
+                    json: [FHIRDate::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_WEEKLY_TEMPLATE]) || array_key_exists(self::FIELD_WEEKLY_TEMPLATE, $json)) {
-            if ($json[self::FIELD_WEEKLY_TEMPLATE] instanceof FHIRAppointmentWeeklyTemplate) {
-                $type->setWeeklyTemplate($json[self::FIELD_WEEKLY_TEMPLATE]);
-            } else {
-                $type->setWeeklyTemplate(new FHIRAppointmentWeeklyTemplate($json[self::FIELD_WEEKLY_TEMPLATE]));
-            }
+            $type->setWeeklyTemplate(FHIRAppointmentWeeklyTemplate::jsonUnserialize(
+                json: $json[self::FIELD_WEEKLY_TEMPLATE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_MONTHLY_TEMPLATE]) || array_key_exists(self::FIELD_MONTHLY_TEMPLATE, $json)) {
-            if ($json[self::FIELD_MONTHLY_TEMPLATE] instanceof FHIRAppointmentMonthlyTemplate) {
-                $type->setMonthlyTemplate($json[self::FIELD_MONTHLY_TEMPLATE]);
-            } else {
-                $type->setMonthlyTemplate(new FHIRAppointmentMonthlyTemplate($json[self::FIELD_MONTHLY_TEMPLATE]));
-            }
+            $type->setMonthlyTemplate(FHIRAppointmentMonthlyTemplate::jsonUnserialize(
+                json: $json[self::FIELD_MONTHLY_TEMPLATE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_YEARLY_TEMPLATE]) || array_key_exists(self::FIELD_YEARLY_TEMPLATE, $json)) {
-            if ($json[self::FIELD_YEARLY_TEMPLATE] instanceof FHIRAppointmentYearlyTemplate) {
-                $type->setYearlyTemplate($json[self::FIELD_YEARLY_TEMPLATE]);
-            } else {
-                $type->setYearlyTemplate(new FHIRAppointmentYearlyTemplate($json[self::FIELD_YEARLY_TEMPLATE]));
-            }
+            $type->setYearlyTemplate(FHIRAppointmentYearlyTemplate::jsonUnserialize(
+                json: $json[self::FIELD_YEARLY_TEMPLATE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_EXCLUDING_DATE]) || isset($json[self::FIELD_EXCLUDING_DATE_EXT]) || array_key_exists(self::FIELD_EXCLUDING_DATE, $json) || array_key_exists(self::FIELD_EXCLUDING_DATE_EXT, $json)) {
             $value = $json[self::FIELD_EXCLUDING_DATE] ?? null;
-            $ext = (isset($json[self::FIELD_EXCLUDING_DATE_EXT]) && is_array($json[self::FIELD_EXCLUDING_DATE_EXT])) ? $json[self::FIELD_EXCLUDING_DATE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDate) {
-                    $type->addExcludingDate($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRDate) {
-                            $type->addExcludingDate($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $type->addExcludingDate(new FHIRDate(array_merge($v, $iext)));
-                            } else {
-                                $type->addExcludingDate(new FHIRDate([FHIRDate::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $type->addExcludingDate(new FHIRDate(array_merge($ext, $value)));
-                } else {
-                    $type->addExcludingDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $type->addExcludingDate(new FHIRDate($iext));
-                }
-            } else {
-                $type->addExcludingDate(new FHIRDate(null));
+            $ext = (array)($json[self::FIELD_EXCLUDING_DATE_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
+                $type->addExcludingDate(FHIRDate::jsonUnserialize(
+                    json: [FHIRDate::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_EXCLUDING_RECURRENCE_ID]) || isset($json[self::FIELD_EXCLUDING_RECURRENCE_ID_EXT]) || array_key_exists(self::FIELD_EXCLUDING_RECURRENCE_ID, $json) || array_key_exists(self::FIELD_EXCLUDING_RECURRENCE_ID_EXT, $json)) {
             $value = $json[self::FIELD_EXCLUDING_RECURRENCE_ID] ?? null;
-            $ext = (isset($json[self::FIELD_EXCLUDING_RECURRENCE_ID_EXT]) && is_array($json[self::FIELD_EXCLUDING_RECURRENCE_ID_EXT])) ? $json[self::FIELD_EXCLUDING_RECURRENCE_ID_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $type->addExcludingRecurrenceId($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRPositiveInt) {
-                            $type->addExcludingRecurrenceId($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $type->addExcludingRecurrenceId(new FHIRPositiveInt(array_merge($v, $iext)));
-                            } else {
-                                $type->addExcludingRecurrenceId(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $type->addExcludingRecurrenceId(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $type->addExcludingRecurrenceId(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $type->addExcludingRecurrenceId(new FHIRPositiveInt($iext));
-                }
-            } else {
-                $type->addExcludingRecurrenceId(new FHIRPositiveInt(null));
+            $ext = (array)($json[self::FIELD_EXCLUDING_RECURRENCE_ID_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
+                $type->addExcludingRecurrenceId(FHIRPositiveInt::jsonUnserialize(
+                    json: [FHIRPositiveInt::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
+                    config: $config,
+                ));
             }
         }
         return $type;

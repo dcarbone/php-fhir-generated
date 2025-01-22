@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -979,79 +979,59 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements VersionContai
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            if ($json[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
-                $type->setIdentifier($json[self::FIELD_IDENTIFIER]);
-            } else {
-                $type->setIdentifier(new FHIRIdentifier($json[self::FIELD_IDENTIFIER]));
-            }
+            $type->setIdentifier(FHIRIdentifier::jsonUnserialize(
+                json: $json[self::FIELD_IDENTIFIER],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_TYPE_COLLECTED]) || array_key_exists(self::FIELD_TYPE_COLLECTED, $json)) {
-            if ($json[self::FIELD_TYPE_COLLECTED] instanceof FHIRCodeableConcept) {
-                $type->setTypeCollected($json[self::FIELD_TYPE_COLLECTED]);
-            } else {
-                $type->setTypeCollected(new FHIRCodeableConcept($json[self::FIELD_TYPE_COLLECTED]));
-            }
+            $type->setTypeCollected(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE_COLLECTED],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PATIENT_PREPARATION]) || array_key_exists(self::FIELD_PATIENT_PREPARATION, $json)) {
-            if (is_array($json[self::FIELD_PATIENT_PREPARATION])) {
-                foreach($json[self::FIELD_PATIENT_PREPARATION] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addPatientPreparation($v);
-                    } else {
-                        $type->addPatientPreparation(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_PATIENT_PREPARATION] instanceof FHIRCodeableConcept) {
-                $type->addPatientPreparation($json[self::FIELD_PATIENT_PREPARATION]);
-            } else {
-                $type->addPatientPreparation(new FHIRCodeableConcept($json[self::FIELD_PATIENT_PREPARATION]));
+            $vs = $json[self::FIELD_PATIENT_PREPARATION];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addPatientPreparation(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_TIME_ASPECT]) || isset($json[self::FIELD_TIME_ASPECT_EXT]) || array_key_exists(self::FIELD_TIME_ASPECT, $json) || array_key_exists(self::FIELD_TIME_ASPECT_EXT, $json)) {
             $value = $json[self::FIELD_TIME_ASPECT] ?? null;
-            $ext = (isset($json[self::FIELD_TIME_ASPECT_EXT]) && is_array($json[self::FIELD_TIME_ASPECT_EXT])) ? $json[self::FIELD_TIME_ASPECT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setTimeAspect($value);
-                } else if (is_array($value)) {
-                    $type->setTimeAspect(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setTimeAspect(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setTimeAspect(new FHIRString($ext));
-            } else {
-                $type->setTimeAspect(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_TIME_ASPECT_EXT] ?? []);
+            $type->setTimeAspect(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_COLLECTION]) || array_key_exists(self::FIELD_COLLECTION, $json)) {
-            if (is_array($json[self::FIELD_COLLECTION])) {
-                foreach($json[self::FIELD_COLLECTION] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addCollection($v);
-                    } else {
-                        $type->addCollection(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_COLLECTION] instanceof FHIRCodeableConcept) {
-                $type->addCollection($json[self::FIELD_COLLECTION]);
-            } else {
-                $type->addCollection(new FHIRCodeableConcept($json[self::FIELD_COLLECTION]));
+            $vs = $json[self::FIELD_COLLECTION];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addCollection(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_TYPE_TESTED]) || array_key_exists(self::FIELD_TYPE_TESTED, $json)) {
-            if (is_array($json[self::FIELD_TYPE_TESTED])) {
-                foreach($json[self::FIELD_TYPE_TESTED] as $v) {
-                    if ($v instanceof FHIRSpecimenDefinitionTypeTested) {
-                        $type->addTypeTested($v);
-                    } else {
-                        $type->addTypeTested(new FHIRSpecimenDefinitionTypeTested($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_TYPE_TESTED] instanceof FHIRSpecimenDefinitionTypeTested) {
-                $type->addTypeTested($json[self::FIELD_TYPE_TESTED]);
-            } else {
-                $type->addTypeTested(new FHIRSpecimenDefinitionTypeTested($json[self::FIELD_TYPE_TESTED]));
+            $vs = $json[self::FIELD_TYPE_TESTED];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addTypeTested(FHIRSpecimenDefinitionTypeTested::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

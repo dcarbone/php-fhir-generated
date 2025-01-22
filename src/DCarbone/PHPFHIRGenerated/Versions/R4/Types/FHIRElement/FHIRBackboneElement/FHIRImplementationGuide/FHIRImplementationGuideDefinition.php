@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -819,70 +819,57 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_GROUPING]) || array_key_exists(self::FIELD_GROUPING, $json)) {
-            if (is_array($json[self::FIELD_GROUPING])) {
-                foreach($json[self::FIELD_GROUPING] as $v) {
-                    if ($v instanceof FHIRImplementationGuideGrouping) {
-                        $type->addGrouping($v);
-                    } else {
-                        $type->addGrouping(new FHIRImplementationGuideGrouping($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_GROUPING] instanceof FHIRImplementationGuideGrouping) {
-                $type->addGrouping($json[self::FIELD_GROUPING]);
-            } else {
-                $type->addGrouping(new FHIRImplementationGuideGrouping($json[self::FIELD_GROUPING]));
+            $vs = $json[self::FIELD_GROUPING];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addGrouping(FHIRImplementationGuideGrouping::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_RESOURCE]) || array_key_exists(self::FIELD_RESOURCE, $json)) {
-            if (is_array($json[self::FIELD_RESOURCE])) {
-                foreach($json[self::FIELD_RESOURCE] as $v) {
-                    if ($v instanceof FHIRImplementationGuideResource) {
-                        $type->addResource($v);
-                    } else {
-                        $type->addResource(new FHIRImplementationGuideResource($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_RESOURCE] instanceof FHIRImplementationGuideResource) {
-                $type->addResource($json[self::FIELD_RESOURCE]);
-            } else {
-                $type->addResource(new FHIRImplementationGuideResource($json[self::FIELD_RESOURCE]));
+            $vs = $json[self::FIELD_RESOURCE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addResource(FHIRImplementationGuideResource::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_PAGE]) || array_key_exists(self::FIELD_PAGE, $json)) {
-            if ($json[self::FIELD_PAGE] instanceof FHIRImplementationGuidePage) {
-                $type->setPage($json[self::FIELD_PAGE]);
-            } else {
-                $type->setPage(new FHIRImplementationGuidePage($json[self::FIELD_PAGE]));
-            }
+            $type->setPage(FHIRImplementationGuidePage::jsonUnserialize(
+                json: $json[self::FIELD_PAGE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PARAMETER]) || array_key_exists(self::FIELD_PARAMETER, $json)) {
-            if (is_array($json[self::FIELD_PARAMETER])) {
-                foreach($json[self::FIELD_PARAMETER] as $v) {
-                    if ($v instanceof FHIRImplementationGuideParameter) {
-                        $type->addParameter($v);
-                    } else {
-                        $type->addParameter(new FHIRImplementationGuideParameter($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_PARAMETER] instanceof FHIRImplementationGuideParameter) {
-                $type->addParameter($json[self::FIELD_PARAMETER]);
-            } else {
-                $type->addParameter(new FHIRImplementationGuideParameter($json[self::FIELD_PARAMETER]));
+            $vs = $json[self::FIELD_PARAMETER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addParameter(FHIRImplementationGuideParameter::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_TEMPLATE]) || array_key_exists(self::FIELD_TEMPLATE, $json)) {
-            if (is_array($json[self::FIELD_TEMPLATE])) {
-                foreach($json[self::FIELD_TEMPLATE] as $v) {
-                    if ($v instanceof FHIRImplementationGuideTemplate) {
-                        $type->addTemplate($v);
-                    } else {
-                        $type->addTemplate(new FHIRImplementationGuideTemplate($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_TEMPLATE] instanceof FHIRImplementationGuideTemplate) {
-                $type->addTemplate($json[self::FIELD_TEMPLATE]);
-            } else {
-                $type->addTemplate(new FHIRImplementationGuideTemplate($json[self::FIELD_TEMPLATE]));
+            $vs = $json[self::FIELD_TEMPLATE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addTemplate(FHIRImplementationGuideTemplate::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

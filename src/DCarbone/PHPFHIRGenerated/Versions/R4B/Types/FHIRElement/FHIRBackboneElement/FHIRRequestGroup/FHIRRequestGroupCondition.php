@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -486,27 +486,17 @@ class FHIRRequestGroupCondition extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_KIND]) || isset($json[self::FIELD_KIND_EXT]) || array_key_exists(self::FIELD_KIND, $json) || array_key_exists(self::FIELD_KIND_EXT, $json)) {
             $value = $json[self::FIELD_KIND] ?? null;
-            $ext = (isset($json[self::FIELD_KIND_EXT]) && is_array($json[self::FIELD_KIND_EXT])) ? $json[self::FIELD_KIND_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRActionConditionKind) {
-                    $type->setKind($value);
-                } else if (is_array($value)) {
-                    $type->setKind(new FHIRActionConditionKind(array_merge($ext, $value)));
-                } else {
-                    $type->setKind(new FHIRActionConditionKind([FHIRActionConditionKind::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setKind(new FHIRActionConditionKind($ext));
-            } else {
-                $type->setKind(new FHIRActionConditionKind(null));
-            }
+            $ext = (array)($json[self::FIELD_KIND_EXT] ?? []);
+            $type->setKind(FHIRActionConditionKind::jsonUnserialize(
+                json: [FHIRActionConditionKind::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_EXPRESSION]) || array_key_exists(self::FIELD_EXPRESSION, $json)) {
-            if ($json[self::FIELD_EXPRESSION] instanceof FHIRExpression) {
-                $type->setExpression($json[self::FIELD_EXPRESSION]);
-            } else {
-                $type->setExpression(new FHIRExpression($json[self::FIELD_EXPRESSION]));
-            }
+            $type->setExpression(FHIRExpression::jsonUnserialize(
+                json: $json[self::FIELD_EXPRESSION],
+                config: $config,
+            ));
         }
         return $type;
     }

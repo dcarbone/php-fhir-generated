@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -468,18 +468,16 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_DEGREE]) || array_key_exists(self::FIELD_DEGREE, $json)) {
-            if ($json[self::FIELD_DEGREE] instanceof FHIRCodeableConcept) {
-                $type->setDegree($json[self::FIELD_DEGREE]);
-            } else {
-                $type->setDegree(new FHIRCodeableConcept($json[self::FIELD_DEGREE]));
-            }
+            $type->setDegree(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_DEGREE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_AMOUNT]) || array_key_exists(self::FIELD_AMOUNT, $json)) {
-            if ($json[self::FIELD_AMOUNT] instanceof FHIRSubstanceAmount) {
-                $type->setAmount($json[self::FIELD_AMOUNT]);
-            } else {
-                $type->setAmount(new FHIRSubstanceAmount($json[self::FIELD_AMOUNT]));
-            }
+            $type->setAmount(FHIRSubstanceAmount::jsonUnserialize(
+                json: $json[self::FIELD_AMOUNT],
+                config: $config,
+            ));
         }
         return $type;
     }

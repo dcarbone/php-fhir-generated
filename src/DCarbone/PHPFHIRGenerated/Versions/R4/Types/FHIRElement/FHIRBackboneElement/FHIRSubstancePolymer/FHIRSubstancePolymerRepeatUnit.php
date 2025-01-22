@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -745,64 +745,47 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_ORIENTATION_OF_POLYMERISATION]) || array_key_exists(self::FIELD_ORIENTATION_OF_POLYMERISATION, $json)) {
-            if ($json[self::FIELD_ORIENTATION_OF_POLYMERISATION] instanceof FHIRCodeableConcept) {
-                $type->setOrientationOfPolymerisation($json[self::FIELD_ORIENTATION_OF_POLYMERISATION]);
-            } else {
-                $type->setOrientationOfPolymerisation(new FHIRCodeableConcept($json[self::FIELD_ORIENTATION_OF_POLYMERISATION]));
-            }
+            $type->setOrientationOfPolymerisation(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_ORIENTATION_OF_POLYMERISATION],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_REPEAT_UNIT]) || isset($json[self::FIELD_REPEAT_UNIT_EXT]) || array_key_exists(self::FIELD_REPEAT_UNIT, $json) || array_key_exists(self::FIELD_REPEAT_UNIT_EXT, $json)) {
             $value = $json[self::FIELD_REPEAT_UNIT] ?? null;
-            $ext = (isset($json[self::FIELD_REPEAT_UNIT_EXT]) && is_array($json[self::FIELD_REPEAT_UNIT_EXT])) ? $json[self::FIELD_REPEAT_UNIT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setRepeatUnit($value);
-                } else if (is_array($value)) {
-                    $type->setRepeatUnit(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setRepeatUnit(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setRepeatUnit(new FHIRString($ext));
-            } else {
-                $type->setRepeatUnit(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_REPEAT_UNIT_EXT] ?? []);
+            $type->setRepeatUnit(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_AMOUNT]) || array_key_exists(self::FIELD_AMOUNT, $json)) {
-            if ($json[self::FIELD_AMOUNT] instanceof FHIRSubstanceAmount) {
-                $type->setAmount($json[self::FIELD_AMOUNT]);
-            } else {
-                $type->setAmount(new FHIRSubstanceAmount($json[self::FIELD_AMOUNT]));
-            }
+            $type->setAmount(FHIRSubstanceAmount::jsonUnserialize(
+                json: $json[self::FIELD_AMOUNT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_DEGREE_OF_POLYMERISATION]) || array_key_exists(self::FIELD_DEGREE_OF_POLYMERISATION, $json)) {
-            if (is_array($json[self::FIELD_DEGREE_OF_POLYMERISATION])) {
-                foreach($json[self::FIELD_DEGREE_OF_POLYMERISATION] as $v) {
-                    if ($v instanceof FHIRSubstancePolymerDegreeOfPolymerisation) {
-                        $type->addDegreeOfPolymerisation($v);
-                    } else {
-                        $type->addDegreeOfPolymerisation(new FHIRSubstancePolymerDegreeOfPolymerisation($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_DEGREE_OF_POLYMERISATION] instanceof FHIRSubstancePolymerDegreeOfPolymerisation) {
-                $type->addDegreeOfPolymerisation($json[self::FIELD_DEGREE_OF_POLYMERISATION]);
-            } else {
-                $type->addDegreeOfPolymerisation(new FHIRSubstancePolymerDegreeOfPolymerisation($json[self::FIELD_DEGREE_OF_POLYMERISATION]));
+            $vs = $json[self::FIELD_DEGREE_OF_POLYMERISATION];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addDegreeOfPolymerisation(FHIRSubstancePolymerDegreeOfPolymerisation::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_STRUCTURAL_REPRESENTATION]) || array_key_exists(self::FIELD_STRUCTURAL_REPRESENTATION, $json)) {
-            if (is_array($json[self::FIELD_STRUCTURAL_REPRESENTATION])) {
-                foreach($json[self::FIELD_STRUCTURAL_REPRESENTATION] as $v) {
-                    if ($v instanceof FHIRSubstancePolymerStructuralRepresentation) {
-                        $type->addStructuralRepresentation($v);
-                    } else {
-                        $type->addStructuralRepresentation(new FHIRSubstancePolymerStructuralRepresentation($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_STRUCTURAL_REPRESENTATION] instanceof FHIRSubstancePolymerStructuralRepresentation) {
-                $type->addStructuralRepresentation($json[self::FIELD_STRUCTURAL_REPRESENTATION]);
-            } else {
-                $type->addStructuralRepresentation(new FHIRSubstancePolymerStructuralRepresentation($json[self::FIELD_STRUCTURAL_REPRESENTATION]));
+            $vs = $json[self::FIELD_STRUCTURAL_REPRESENTATION];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addStructuralRepresentation(FHIRSubstancePolymerStructuralRepresentation::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

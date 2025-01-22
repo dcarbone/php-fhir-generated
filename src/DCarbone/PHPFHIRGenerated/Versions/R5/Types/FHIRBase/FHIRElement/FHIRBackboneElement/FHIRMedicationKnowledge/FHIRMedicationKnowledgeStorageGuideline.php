@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -702,56 +702,40 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_REFERENCE]) || isset($json[self::FIELD_REFERENCE_EXT]) || array_key_exists(self::FIELD_REFERENCE, $json) || array_key_exists(self::FIELD_REFERENCE_EXT, $json)) {
             $value = $json[self::FIELD_REFERENCE] ?? null;
-            $ext = (isset($json[self::FIELD_REFERENCE_EXT]) && is_array($json[self::FIELD_REFERENCE_EXT])) ? $json[self::FIELD_REFERENCE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRUri) {
-                    $type->setReference($value);
-                } else if (is_array($value)) {
-                    $type->setReference(new FHIRUri(array_merge($ext, $value)));
-                } else {
-                    $type->setReference(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setReference(new FHIRUri($ext));
-            } else {
-                $type->setReference(new FHIRUri(null));
-            }
+            $ext = (array)($json[self::FIELD_REFERENCE_EXT] ?? []);
+            $type->setReference(FHIRUri::jsonUnserialize(
+                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
-            if (is_array($json[self::FIELD_NOTE])) {
-                foreach($json[self::FIELD_NOTE] as $v) {
-                    if ($v instanceof FHIRAnnotation) {
-                        $type->addNote($v);
-                    } else {
-                        $type->addNote(new FHIRAnnotation($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_NOTE] instanceof FHIRAnnotation) {
-                $type->addNote($json[self::FIELD_NOTE]);
-            } else {
-                $type->addNote(new FHIRAnnotation($json[self::FIELD_NOTE]));
+            $vs = $json[self::FIELD_NOTE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addNote(FHIRAnnotation::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_STABILITY_DURATION]) || array_key_exists(self::FIELD_STABILITY_DURATION, $json)) {
-            if ($json[self::FIELD_STABILITY_DURATION] instanceof FHIRDuration) {
-                $type->setStabilityDuration($json[self::FIELD_STABILITY_DURATION]);
-            } else {
-                $type->setStabilityDuration(new FHIRDuration($json[self::FIELD_STABILITY_DURATION]));
-            }
+            $type->setStabilityDuration(FHIRDuration::jsonUnserialize(
+                json: $json[self::FIELD_STABILITY_DURATION],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ENVIRONMENTAL_SETTING]) || array_key_exists(self::FIELD_ENVIRONMENTAL_SETTING, $json)) {
-            if (is_array($json[self::FIELD_ENVIRONMENTAL_SETTING])) {
-                foreach($json[self::FIELD_ENVIRONMENTAL_SETTING] as $v) {
-                    if ($v instanceof FHIRMedicationKnowledgeEnvironmentalSetting) {
-                        $type->addEnvironmentalSetting($v);
-                    } else {
-                        $type->addEnvironmentalSetting(new FHIRMedicationKnowledgeEnvironmentalSetting($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_ENVIRONMENTAL_SETTING] instanceof FHIRMedicationKnowledgeEnvironmentalSetting) {
-                $type->addEnvironmentalSetting($json[self::FIELD_ENVIRONMENTAL_SETTING]);
-            } else {
-                $type->addEnvironmentalSetting(new FHIRMedicationKnowledgeEnvironmentalSetting($json[self::FIELD_ENVIRONMENTAL_SETTING]));
+            $vs = $json[self::FIELD_ENVIRONMENTAL_SETTING];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addEnvironmentalSetting(FHIRMedicationKnowledgeEnvironmentalSetting::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

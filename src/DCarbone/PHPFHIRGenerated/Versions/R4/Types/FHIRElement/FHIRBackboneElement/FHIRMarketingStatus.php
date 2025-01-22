@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -780,49 +780,36 @@ class FHIRMarketingStatus extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_COUNTRY]) || array_key_exists(self::FIELD_COUNTRY, $json)) {
-            if ($json[self::FIELD_COUNTRY] instanceof FHIRCodeableConcept) {
-                $type->setCountry($json[self::FIELD_COUNTRY]);
-            } else {
-                $type->setCountry(new FHIRCodeableConcept($json[self::FIELD_COUNTRY]));
-            }
+            $type->setCountry(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_COUNTRY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_JURISDICTION]) || array_key_exists(self::FIELD_JURISDICTION, $json)) {
-            if ($json[self::FIELD_JURISDICTION] instanceof FHIRCodeableConcept) {
-                $type->setJurisdiction($json[self::FIELD_JURISDICTION]);
-            } else {
-                $type->setJurisdiction(new FHIRCodeableConcept($json[self::FIELD_JURISDICTION]));
-            }
+            $type->setJurisdiction(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_JURISDICTION],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_STATUS]) || array_key_exists(self::FIELD_STATUS, $json)) {
-            if ($json[self::FIELD_STATUS] instanceof FHIRCodeableConcept) {
-                $type->setStatus($json[self::FIELD_STATUS]);
-            } else {
-                $type->setStatus(new FHIRCodeableConcept($json[self::FIELD_STATUS]));
-            }
+            $type->setStatus(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_STATUS],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_DATE_RANGE]) || array_key_exists(self::FIELD_DATE_RANGE, $json)) {
-            if ($json[self::FIELD_DATE_RANGE] instanceof FHIRPeriod) {
-                $type->setDateRange($json[self::FIELD_DATE_RANGE]);
-            } else {
-                $type->setDateRange(new FHIRPeriod($json[self::FIELD_DATE_RANGE]));
-            }
+            $type->setDateRange(FHIRPeriod::jsonUnserialize(
+                json: $json[self::FIELD_DATE_RANGE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_RESTORE_DATE]) || isset($json[self::FIELD_RESTORE_DATE_EXT]) || array_key_exists(self::FIELD_RESTORE_DATE, $json) || array_key_exists(self::FIELD_RESTORE_DATE_EXT, $json)) {
             $value = $json[self::FIELD_RESTORE_DATE] ?? null;
-            $ext = (isset($json[self::FIELD_RESTORE_DATE_EXT]) && is_array($json[self::FIELD_RESTORE_DATE_EXT])) ? $json[self::FIELD_RESTORE_DATE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $type->setRestoreDate($value);
-                } else if (is_array($value)) {
-                    $type->setRestoreDate(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $type->setRestoreDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setRestoreDate(new FHIRDateTime($ext));
-            } else {
-                $type->setRestoreDate(new FHIRDateTime(null));
-            }
+            $ext = (array)($json[self::FIELD_RESTORE_DATE_EXT] ?? []);
+            $type->setRestoreDate(FHIRDateTime::jsonUnserialize(
+                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

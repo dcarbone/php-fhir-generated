@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -640,48 +640,39 @@ class FHIRTestPlanAssertion extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if (is_array($json[self::FIELD_TYPE])) {
-                foreach($json[self::FIELD_TYPE] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addType($v);
-                    } else {
-                        $type->addType(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->addType($json[self::FIELD_TYPE]);
-            } else {
-                $type->addType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
+            $vs = $json[self::FIELD_TYPE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addType(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_OBJECT]) || array_key_exists(self::FIELD_OBJECT, $json)) {
-            if (is_array($json[self::FIELD_OBJECT])) {
-                foreach($json[self::FIELD_OBJECT] as $v) {
-                    if ($v instanceof FHIRCodeableReference) {
-                        $type->addObject($v);
-                    } else {
-                        $type->addObject(new FHIRCodeableReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_OBJECT] instanceof FHIRCodeableReference) {
-                $type->addObject($json[self::FIELD_OBJECT]);
-            } else {
-                $type->addObject(new FHIRCodeableReference($json[self::FIELD_OBJECT]));
+            $vs = $json[self::FIELD_OBJECT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addObject(FHIRCodeableReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_RESULT]) || array_key_exists(self::FIELD_RESULT, $json)) {
-            if (is_array($json[self::FIELD_RESULT])) {
-                foreach($json[self::FIELD_RESULT] as $v) {
-                    if ($v instanceof FHIRCodeableReference) {
-                        $type->addResult($v);
-                    } else {
-                        $type->addResult(new FHIRCodeableReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_RESULT] instanceof FHIRCodeableReference) {
-                $type->addResult($json[self::FIELD_RESULT]);
-            } else {
-                $type->addResult(new FHIRCodeableReference($json[self::FIELD_RESULT]));
+            $vs = $json[self::FIELD_RESULT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addResult(FHIRCodeableReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

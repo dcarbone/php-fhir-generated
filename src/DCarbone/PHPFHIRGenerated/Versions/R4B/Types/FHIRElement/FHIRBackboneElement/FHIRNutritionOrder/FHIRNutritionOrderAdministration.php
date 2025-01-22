@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -651,32 +651,28 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_SCHEDULE]) || array_key_exists(self::FIELD_SCHEDULE, $json)) {
-            if ($json[self::FIELD_SCHEDULE] instanceof FHIRTiming) {
-                $type->setSchedule($json[self::FIELD_SCHEDULE]);
-            } else {
-                $type->setSchedule(new FHIRTiming($json[self::FIELD_SCHEDULE]));
-            }
+            $type->setSchedule(FHIRTiming::jsonUnserialize(
+                json: $json[self::FIELD_SCHEDULE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            if ($json[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
-                $type->setQuantity($json[self::FIELD_QUANTITY]);
-            } else {
-                $type->setQuantity(new FHIRQuantity($json[self::FIELD_QUANTITY]));
-            }
+            $type->setQuantity(FHIRQuantity::jsonUnserialize(
+                json: $json[self::FIELD_QUANTITY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_RATE_QUANTITY]) || array_key_exists(self::FIELD_RATE_QUANTITY, $json)) {
-            if ($json[self::FIELD_RATE_QUANTITY] instanceof FHIRQuantity) {
-                $type->setRateQuantity($json[self::FIELD_RATE_QUANTITY]);
-            } else {
-                $type->setRateQuantity(new FHIRQuantity($json[self::FIELD_RATE_QUANTITY]));
-            }
+            $type->setRateQuantity(FHIRQuantity::jsonUnserialize(
+                json: $json[self::FIELD_RATE_QUANTITY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_RATE_RATIO]) || array_key_exists(self::FIELD_RATE_RATIO, $json)) {
-            if ($json[self::FIELD_RATE_RATIO] instanceof FHIRRatio) {
-                $type->setRateRatio($json[self::FIELD_RATE_RATIO]);
-            } else {
-                $type->setRateRatio(new FHIRRatio($json[self::FIELD_RATE_RATIO]));
-            }
+            $type->setRateRatio(FHIRRatio::jsonUnserialize(
+                json: $json[self::FIELD_RATE_RATIO],
+                config: $config,
+            ));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -554,54 +554,27 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (isset($json[self::FIELD_TYPE_EXT]) && is_array($json[self::FIELD_TYPE_EXT])) ? $json[self::FIELD_TYPE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDeviceMetricCalibrationType) {
-                    $type->setType($value);
-                } else if (is_array($value)) {
-                    $type->setType(new FHIRDeviceMetricCalibrationType(array_merge($ext, $value)));
-                } else {
-                    $type->setType(new FHIRDeviceMetricCalibrationType([FHIRDeviceMetricCalibrationType::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setType(new FHIRDeviceMetricCalibrationType($ext));
-            } else {
-                $type->setType(new FHIRDeviceMetricCalibrationType(null));
-            }
+            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
+            $type->setType(FHIRDeviceMetricCalibrationType::jsonUnserialize(
+                json: [FHIRDeviceMetricCalibrationType::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_STATE]) || isset($json[self::FIELD_STATE_EXT]) || array_key_exists(self::FIELD_STATE, $json) || array_key_exists(self::FIELD_STATE_EXT, $json)) {
             $value = $json[self::FIELD_STATE] ?? null;
-            $ext = (isset($json[self::FIELD_STATE_EXT]) && is_array($json[self::FIELD_STATE_EXT])) ? $json[self::FIELD_STATE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDeviceMetricCalibrationState) {
-                    $type->setState($value);
-                } else if (is_array($value)) {
-                    $type->setState(new FHIRDeviceMetricCalibrationState(array_merge($ext, $value)));
-                } else {
-                    $type->setState(new FHIRDeviceMetricCalibrationState([FHIRDeviceMetricCalibrationState::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setState(new FHIRDeviceMetricCalibrationState($ext));
-            } else {
-                $type->setState(new FHIRDeviceMetricCalibrationState(null));
-            }
+            $ext = (array)($json[self::FIELD_STATE_EXT] ?? []);
+            $type->setState(FHIRDeviceMetricCalibrationState::jsonUnserialize(
+                json: [FHIRDeviceMetricCalibrationState::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_TIME]) || isset($json[self::FIELD_TIME_EXT]) || array_key_exists(self::FIELD_TIME, $json) || array_key_exists(self::FIELD_TIME_EXT, $json)) {
             $value = $json[self::FIELD_TIME] ?? null;
-            $ext = (isset($json[self::FIELD_TIME_EXT]) && is_array($json[self::FIELD_TIME_EXT])) ? $json[self::FIELD_TIME_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInstant) {
-                    $type->setTime($value);
-                } else if (is_array($value)) {
-                    $type->setTime(new FHIRInstant(array_merge($ext, $value)));
-                } else {
-                    $type->setTime(new FHIRInstant([FHIRInstant::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setTime(new FHIRInstant($ext));
-            } else {
-                $type->setTime(new FHIRInstant(null));
-            }
+            $ext = (array)($json[self::FIELD_TIME_EXT] ?? []);
+            $type->setTime(FHIRInstant::jsonUnserialize(
+                json: [FHIRInstant::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

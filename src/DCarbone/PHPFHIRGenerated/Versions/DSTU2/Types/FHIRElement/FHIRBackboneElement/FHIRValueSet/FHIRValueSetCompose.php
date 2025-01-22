@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -619,64 +619,44 @@ class FHIRValueSetCompose extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_IMPORT]) || isset($json[self::FIELD_IMPORT_EXT]) || array_key_exists(self::FIELD_IMPORT, $json) || array_key_exists(self::FIELD_IMPORT_EXT, $json)) {
             $value = $json[self::FIELD_IMPORT] ?? null;
-            $ext = (isset($json[self::FIELD_IMPORT_EXT]) && is_array($json[self::FIELD_IMPORT_EXT])) ? $json[self::FIELD_IMPORT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRUri) {
-                    $type->addImport($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRUri) {
-                            $type->addImport($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $type->addImport(new FHIRUri(array_merge($v, $iext)));
-                            } else {
-                                $type->addImport(new FHIRUri([FHIRUri::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $type->addImport(new FHIRUri(array_merge($ext, $value)));
-                } else {
-                    $type->addImport(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $type->addImport(new FHIRUri($iext));
-                }
-            } else {
-                $type->addImport(new FHIRUri(null));
+            $ext = (array)($json[self::FIELD_IMPORT_EXT] ?? []);
+            if (!is_array($value)) {
+                $value = [$value];
+            }
+            $cnt = count($value);
+            $extCnt = count($ext);
+            if ($extCnt > $cnt) {
+                $cnt = $extCnt;
+            }
+            for ($i = 0; $i < $cnt; $i++) {
+                $type->addImport(FHIRUri::jsonUnserialize(
+                    json: [FHIRUri::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_INCLUDE]) || array_key_exists(self::FIELD_INCLUDE, $json)) {
-            if (is_array($json[self::FIELD_INCLUDE])) {
-                foreach($json[self::FIELD_INCLUDE] as $v) {
-                    if ($v instanceof FHIRValueSetInclude) {
-                        $type->addInclude($v);
-                    } else {
-                        $type->addInclude(new FHIRValueSetInclude($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_INCLUDE] instanceof FHIRValueSetInclude) {
-                $type->addInclude($json[self::FIELD_INCLUDE]);
-            } else {
-                $type->addInclude(new FHIRValueSetInclude($json[self::FIELD_INCLUDE]));
+            $vs = $json[self::FIELD_INCLUDE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addInclude(FHIRValueSetInclude::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_EXCLUDE]) || array_key_exists(self::FIELD_EXCLUDE, $json)) {
-            if (is_array($json[self::FIELD_EXCLUDE])) {
-                foreach($json[self::FIELD_EXCLUDE] as $v) {
-                    if ($v instanceof FHIRValueSetInclude) {
-                        $type->addExclude($v);
-                    } else {
-                        $type->addExclude(new FHIRValueSetInclude($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_EXCLUDE] instanceof FHIRValueSetInclude) {
-                $type->addExclude($json[self::FIELD_EXCLUDE]);
-            } else {
-                $type->addExclude(new FHIRValueSetInclude($json[self::FIELD_EXCLUDE]));
+            $vs = $json[self::FIELD_EXCLUDE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addExclude(FHIRValueSetInclude::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

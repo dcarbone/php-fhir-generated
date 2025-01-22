@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -722,56 +722,40 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_WAS_SUBSTITUTED]) || isset($json[self::FIELD_WAS_SUBSTITUTED_EXT]) || array_key_exists(self::FIELD_WAS_SUBSTITUTED, $json) || array_key_exists(self::FIELD_WAS_SUBSTITUTED_EXT, $json)) {
             $value = $json[self::FIELD_WAS_SUBSTITUTED] ?? null;
-            $ext = (isset($json[self::FIELD_WAS_SUBSTITUTED_EXT]) && is_array($json[self::FIELD_WAS_SUBSTITUTED_EXT])) ? $json[self::FIELD_WAS_SUBSTITUTED_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $type->setWasSubstituted($value);
-                } else if (is_array($value)) {
-                    $type->setWasSubstituted(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $type->setWasSubstituted(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setWasSubstituted(new FHIRBoolean($ext));
-            } else {
-                $type->setWasSubstituted(new FHIRBoolean(null));
-            }
+            $ext = (array)($json[self::FIELD_WAS_SUBSTITUTED_EXT] ?? []);
+            $type->setWasSubstituted(FHIRBoolean::jsonUnserialize(
+                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_REASON]) || array_key_exists(self::FIELD_REASON, $json)) {
-            if (is_array($json[self::FIELD_REASON])) {
-                foreach($json[self::FIELD_REASON] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addReason($v);
-                    } else {
-                        $type->addReason(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_REASON] instanceof FHIRCodeableConcept) {
-                $type->addReason($json[self::FIELD_REASON]);
-            } else {
-                $type->addReason(new FHIRCodeableConcept($json[self::FIELD_REASON]));
+            $vs = $json[self::FIELD_REASON];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addReason(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_RESPONSIBLE_PARTY]) || array_key_exists(self::FIELD_RESPONSIBLE_PARTY, $json)) {
-            if (is_array($json[self::FIELD_RESPONSIBLE_PARTY])) {
-                foreach($json[self::FIELD_RESPONSIBLE_PARTY] as $v) {
-                    if ($v instanceof FHIRReference) {
-                        $type->addResponsibleParty($v);
-                    } else {
-                        $type->addResponsibleParty(new FHIRReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_RESPONSIBLE_PARTY] instanceof FHIRReference) {
-                $type->addResponsibleParty($json[self::FIELD_RESPONSIBLE_PARTY]);
-            } else {
-                $type->addResponsibleParty(new FHIRReference($json[self::FIELD_RESPONSIBLE_PARTY]));
+            $vs = $json[self::FIELD_RESPONSIBLE_PARTY];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addResponsibleParty(FHIRReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

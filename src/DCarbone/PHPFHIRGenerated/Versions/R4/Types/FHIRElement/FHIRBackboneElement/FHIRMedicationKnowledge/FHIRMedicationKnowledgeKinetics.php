@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -595,41 +595,34 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_AREA_UNDER_CURVE]) || array_key_exists(self::FIELD_AREA_UNDER_CURVE, $json)) {
-            if (is_array($json[self::FIELD_AREA_UNDER_CURVE])) {
-                foreach($json[self::FIELD_AREA_UNDER_CURVE] as $v) {
-                    if ($v instanceof FHIRQuantity) {
-                        $type->addAreaUnderCurve($v);
-                    } else {
-                        $type->addAreaUnderCurve(new FHIRQuantity($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_AREA_UNDER_CURVE] instanceof FHIRQuantity) {
-                $type->addAreaUnderCurve($json[self::FIELD_AREA_UNDER_CURVE]);
-            } else {
-                $type->addAreaUnderCurve(new FHIRQuantity($json[self::FIELD_AREA_UNDER_CURVE]));
+            $vs = $json[self::FIELD_AREA_UNDER_CURVE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addAreaUnderCurve(FHIRQuantity::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_LETHAL_DOSE_50]) || array_key_exists(self::FIELD_LETHAL_DOSE_50, $json)) {
-            if (is_array($json[self::FIELD_LETHAL_DOSE_50])) {
-                foreach($json[self::FIELD_LETHAL_DOSE_50] as $v) {
-                    if ($v instanceof FHIRQuantity) {
-                        $type->addLethalDose50($v);
-                    } else {
-                        $type->addLethalDose50(new FHIRQuantity($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_LETHAL_DOSE_50] instanceof FHIRQuantity) {
-                $type->addLethalDose50($json[self::FIELD_LETHAL_DOSE_50]);
-            } else {
-                $type->addLethalDose50(new FHIRQuantity($json[self::FIELD_LETHAL_DOSE_50]));
+            $vs = $json[self::FIELD_LETHAL_DOSE_50];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addLethalDose50(FHIRQuantity::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_HALF_LIFE_PERIOD]) || array_key_exists(self::FIELD_HALF_LIFE_PERIOD, $json)) {
-            if ($json[self::FIELD_HALF_LIFE_PERIOD] instanceof FHIRDuration) {
-                $type->setHalfLifePeriod($json[self::FIELD_HALF_LIFE_PERIOD]);
-            } else {
-                $type->setHalfLifePeriod(new FHIRDuration($json[self::FIELD_HALF_LIFE_PERIOD]));
-            }
+            $type->setHalfLifePeriod(FHIRDuration::jsonUnserialize(
+                json: $json[self::FIELD_HALF_LIFE_PERIOD],
+                config: $config,
+            ));
         }
         return $type;
     }

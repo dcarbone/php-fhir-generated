@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -611,25 +611,22 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_INSTANCE_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_INSTANCE_CODEABLE_CONCEPT, $json)) {
-            if ($json[self::FIELD_INSTANCE_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
-                $type->setInstanceCodeableConcept($json[self::FIELD_INSTANCE_CODEABLE_CONCEPT]);
-            } else {
-                $type->setInstanceCodeableConcept(new FHIRCodeableConcept($json[self::FIELD_INSTANCE_CODEABLE_CONCEPT]));
-            }
+            $type->setInstanceCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_INSTANCE_CODEABLE_CONCEPT],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_INSTANCE_REFERENCE]) || array_key_exists(self::FIELD_INSTANCE_REFERENCE, $json)) {
-            if ($json[self::FIELD_INSTANCE_REFERENCE] instanceof FHIRReference) {
-                $type->setInstanceReference($json[self::FIELD_INSTANCE_REFERENCE]);
-            } else {
-                $type->setInstanceReference(new FHIRReference($json[self::FIELD_INSTANCE_REFERENCE]));
-            }
+            $type->setInstanceReference(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_INSTANCE_REFERENCE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_CAUSALITY]) || array_key_exists(self::FIELD_CAUSALITY, $json)) {
-            if ($json[self::FIELD_CAUSALITY] instanceof FHIRAdverseEventCausality) {
-                $type->setCausality($json[self::FIELD_CAUSALITY]);
-            } else {
-                $type->setCausality(new FHIRAdverseEventCausality($json[self::FIELD_CAUSALITY]));
-            }
+            $type->setCausality(FHIRAdverseEventCausality::jsonUnserialize(
+                json: $json[self::FIELD_CAUSALITY],
+                config: $config,
+            ));
         }
         return $type;
     }

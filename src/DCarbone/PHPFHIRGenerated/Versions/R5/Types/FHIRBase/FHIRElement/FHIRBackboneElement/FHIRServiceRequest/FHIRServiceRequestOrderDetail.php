@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -509,25 +509,21 @@ class FHIRServiceRequestOrderDetail extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_PARAMETER_FOCUS]) || array_key_exists(self::FIELD_PARAMETER_FOCUS, $json)) {
-            if ($json[self::FIELD_PARAMETER_FOCUS] instanceof FHIRCodeableReference) {
-                $type->setParameterFocus($json[self::FIELD_PARAMETER_FOCUS]);
-            } else {
-                $type->setParameterFocus(new FHIRCodeableReference($json[self::FIELD_PARAMETER_FOCUS]));
-            }
+            $type->setParameterFocus(FHIRCodeableReference::jsonUnserialize(
+                json: $json[self::FIELD_PARAMETER_FOCUS],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PARAMETER]) || array_key_exists(self::FIELD_PARAMETER, $json)) {
-            if (is_array($json[self::FIELD_PARAMETER])) {
-                foreach($json[self::FIELD_PARAMETER] as $v) {
-                    if ($v instanceof FHIRServiceRequestParameter) {
-                        $type->addParameter($v);
-                    } else {
-                        $type->addParameter(new FHIRServiceRequestParameter($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_PARAMETER] instanceof FHIRServiceRequestParameter) {
-                $type->addParameter($json[self::FIELD_PARAMETER]);
-            } else {
-                $type->addParameter(new FHIRServiceRequestParameter($json[self::FIELD_PARAMETER]));
+            $vs = $json[self::FIELD_PARAMETER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addParameter(FHIRServiceRequestParameter::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

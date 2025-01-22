@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -521,25 +521,21 @@ class FHIRMedicationKnowledgeRelatedMedicationKnowledge extends FHIRBackboneElem
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_REFERENCE]) || array_key_exists(self::FIELD_REFERENCE, $json)) {
-            if (is_array($json[self::FIELD_REFERENCE])) {
-                foreach($json[self::FIELD_REFERENCE] as $v) {
-                    if ($v instanceof FHIRReference) {
-                        $type->addReference($v);
-                    } else {
-                        $type->addReference(new FHIRReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_REFERENCE] instanceof FHIRReference) {
-                $type->addReference($json[self::FIELD_REFERENCE]);
-            } else {
-                $type->addReference(new FHIRReference($json[self::FIELD_REFERENCE]));
+            $vs = $json[self::FIELD_REFERENCE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addReference(FHIRReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

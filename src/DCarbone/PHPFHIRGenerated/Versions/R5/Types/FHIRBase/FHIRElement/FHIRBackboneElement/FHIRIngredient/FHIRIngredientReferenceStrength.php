@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -858,63 +858,47 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_SUBSTANCE]) || array_key_exists(self::FIELD_SUBSTANCE, $json)) {
-            if ($json[self::FIELD_SUBSTANCE] instanceof FHIRCodeableReference) {
-                $type->setSubstance($json[self::FIELD_SUBSTANCE]);
-            } else {
-                $type->setSubstance(new FHIRCodeableReference($json[self::FIELD_SUBSTANCE]));
-            }
+            $type->setSubstance(FHIRCodeableReference::jsonUnserialize(
+                json: $json[self::FIELD_SUBSTANCE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_STRENGTH_RATIO]) || array_key_exists(self::FIELD_STRENGTH_RATIO, $json)) {
-            if ($json[self::FIELD_STRENGTH_RATIO] instanceof FHIRRatio) {
-                $type->setStrengthRatio($json[self::FIELD_STRENGTH_RATIO]);
-            } else {
-                $type->setStrengthRatio(new FHIRRatio($json[self::FIELD_STRENGTH_RATIO]));
-            }
+            $type->setStrengthRatio(FHIRRatio::jsonUnserialize(
+                json: $json[self::FIELD_STRENGTH_RATIO],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_STRENGTH_RATIO_RANGE]) || array_key_exists(self::FIELD_STRENGTH_RATIO_RANGE, $json)) {
-            if ($json[self::FIELD_STRENGTH_RATIO_RANGE] instanceof FHIRRatioRange) {
-                $type->setStrengthRatioRange($json[self::FIELD_STRENGTH_RATIO_RANGE]);
-            } else {
-                $type->setStrengthRatioRange(new FHIRRatioRange($json[self::FIELD_STRENGTH_RATIO_RANGE]));
-            }
+            $type->setStrengthRatioRange(FHIRRatioRange::jsonUnserialize(
+                json: $json[self::FIELD_STRENGTH_RATIO_RANGE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_STRENGTH_QUANTITY]) || array_key_exists(self::FIELD_STRENGTH_QUANTITY, $json)) {
-            if ($json[self::FIELD_STRENGTH_QUANTITY] instanceof FHIRQuantity) {
-                $type->setStrengthQuantity($json[self::FIELD_STRENGTH_QUANTITY]);
-            } else {
-                $type->setStrengthQuantity(new FHIRQuantity($json[self::FIELD_STRENGTH_QUANTITY]));
-            }
+            $type->setStrengthQuantity(FHIRQuantity::jsonUnserialize(
+                json: $json[self::FIELD_STRENGTH_QUANTITY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_MEASUREMENT_POINT]) || isset($json[self::FIELD_MEASUREMENT_POINT_EXT]) || array_key_exists(self::FIELD_MEASUREMENT_POINT, $json) || array_key_exists(self::FIELD_MEASUREMENT_POINT_EXT, $json)) {
             $value = $json[self::FIELD_MEASUREMENT_POINT] ?? null;
-            $ext = (isset($json[self::FIELD_MEASUREMENT_POINT_EXT]) && is_array($json[self::FIELD_MEASUREMENT_POINT_EXT])) ? $json[self::FIELD_MEASUREMENT_POINT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setMeasurementPoint($value);
-                } else if (is_array($value)) {
-                    $type->setMeasurementPoint(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setMeasurementPoint(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setMeasurementPoint(new FHIRString($ext));
-            } else {
-                $type->setMeasurementPoint(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_MEASUREMENT_POINT_EXT] ?? []);
+            $type->setMeasurementPoint(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_COUNTRY]) || array_key_exists(self::FIELD_COUNTRY, $json)) {
-            if (is_array($json[self::FIELD_COUNTRY])) {
-                foreach($json[self::FIELD_COUNTRY] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addCountry($v);
-                    } else {
-                        $type->addCountry(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_COUNTRY] instanceof FHIRCodeableConcept) {
-                $type->addCountry($json[self::FIELD_COUNTRY]);
-            } else {
-                $type->addCountry(new FHIRCodeableConcept($json[self::FIELD_COUNTRY]));
+            $vs = $json[self::FIELD_COUNTRY];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addCountry(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -777,57 +777,42 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_EFFECTIVE_DATE]) || array_key_exists(self::FIELD_EFFECTIVE_DATE, $json)) {
-            if (is_array($json[self::FIELD_EFFECTIVE_DATE])) {
-                foreach($json[self::FIELD_EFFECTIVE_DATE] as $v) {
-                    if ($v instanceof FHIRPeriod) {
-                        $type->addEffectiveDate($v);
-                    } else {
-                        $type->addEffectiveDate(new FHIRPeriod($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_EFFECTIVE_DATE] instanceof FHIRPeriod) {
-                $type->addEffectiveDate($json[self::FIELD_EFFECTIVE_DATE]);
-            } else {
-                $type->addEffectiveDate(new FHIRPeriod($json[self::FIELD_EFFECTIVE_DATE]));
+            $vs = $json[self::FIELD_EFFECTIVE_DATE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addEffectiveDate(FHIRPeriod::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SOURCE]) || isset($json[self::FIELD_SOURCE_EXT]) || array_key_exists(self::FIELD_SOURCE, $json) || array_key_exists(self::FIELD_SOURCE_EXT, $json)) {
             $value = $json[self::FIELD_SOURCE] ?? null;
-            $ext = (isset($json[self::FIELD_SOURCE_EXT]) && is_array($json[self::FIELD_SOURCE_EXT])) ? $json[self::FIELD_SOURCE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setSource($value);
-                } else if (is_array($value)) {
-                    $type->setSource(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setSource(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setSource(new FHIRString($ext));
-            } else {
-                $type->setSource(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_SOURCE_EXT] ?? []);
+            $type->setSource(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_COST_MONEY]) || array_key_exists(self::FIELD_COST_MONEY, $json)) {
-            if ($json[self::FIELD_COST_MONEY] instanceof FHIRMoney) {
-                $type->setCostMoney($json[self::FIELD_COST_MONEY]);
-            } else {
-                $type->setCostMoney(new FHIRMoney($json[self::FIELD_COST_MONEY]));
-            }
+            $type->setCostMoney(FHIRMoney::jsonUnserialize(
+                json: $json[self::FIELD_COST_MONEY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_COST_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_COST_CODEABLE_CONCEPT, $json)) {
-            if ($json[self::FIELD_COST_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
-                $type->setCostCodeableConcept($json[self::FIELD_COST_CODEABLE_CONCEPT]);
-            } else {
-                $type->setCostCodeableConcept(new FHIRCodeableConcept($json[self::FIELD_COST_CODEABLE_CONCEPT]));
-            }
+            $type->setCostCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_COST_CODEABLE_CONCEPT],
+                config: $config,
+            ));
         }
         return $type;
     }

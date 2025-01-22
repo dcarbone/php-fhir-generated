@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -492,26 +492,22 @@ class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_COST]) || array_key_exists(self::FIELD_COST, $json)) {
-            if (is_array($json[self::FIELD_COST])) {
-                foreach($json[self::FIELD_COST] as $v) {
-                    if ($v instanceof FHIRMedicationKnowledgeCost) {
-                        $type->addCost($v);
-                    } else {
-                        $type->addCost(new FHIRMedicationKnowledgeCost($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_COST] instanceof FHIRMedicationKnowledgeCost) {
-                $type->addCost($json[self::FIELD_COST]);
-            } else {
-                $type->addCost(new FHIRMedicationKnowledgeCost($json[self::FIELD_COST]));
+            $vs = $json[self::FIELD_COST];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addCost(FHIRMedicationKnowledgeCost::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_PACKAGED_PRODUCT]) || array_key_exists(self::FIELD_PACKAGED_PRODUCT, $json)) {
-            if ($json[self::FIELD_PACKAGED_PRODUCT] instanceof FHIRReference) {
-                $type->setPackagedProduct($json[self::FIELD_PACKAGED_PRODUCT]);
-            } else {
-                $type->setPackagedProduct(new FHIRReference($json[self::FIELD_PACKAGED_PRODUCT]));
-            }
+            $type->setPackagedProduct(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_PACKAGED_PRODUCT],
+                config: $config,
+            ));
         }
         return $type;
     }

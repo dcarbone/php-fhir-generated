@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -887,82 +887,51 @@ class FHIRRequestOrchestrationParticipant extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (isset($json[self::FIELD_TYPE_EXT]) && is_array($json[self::FIELD_TYPE_EXT])) ? $json[self::FIELD_TYPE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRActionParticipantType) {
-                    $type->setType($value);
-                } else if (is_array($value)) {
-                    $type->setType(new FHIRActionParticipantType(array_merge($ext, $value)));
-                } else {
-                    $type->setType(new FHIRActionParticipantType([FHIRActionParticipantType::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setType(new FHIRActionParticipantType($ext));
-            } else {
-                $type->setType(new FHIRActionParticipantType(null));
-            }
+            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
+            $type->setType(FHIRActionParticipantType::jsonUnserialize(
+                json: [FHIRActionParticipantType::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_TYPE_CANONICAL]) || isset($json[self::FIELD_TYPE_CANONICAL_EXT]) || array_key_exists(self::FIELD_TYPE_CANONICAL, $json) || array_key_exists(self::FIELD_TYPE_CANONICAL_EXT, $json)) {
             $value = $json[self::FIELD_TYPE_CANONICAL] ?? null;
-            $ext = (isset($json[self::FIELD_TYPE_CANONICAL_EXT]) && is_array($json[self::FIELD_TYPE_CANONICAL_EXT])) ? $json[self::FIELD_TYPE_CANONICAL_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRCanonical) {
-                    $type->setTypeCanonical($value);
-                } else if (is_array($value)) {
-                    $type->setTypeCanonical(new FHIRCanonical(array_merge($ext, $value)));
-                } else {
-                    $type->setTypeCanonical(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setTypeCanonical(new FHIRCanonical($ext));
-            } else {
-                $type->setTypeCanonical(new FHIRCanonical(null));
-            }
+            $ext = (array)($json[self::FIELD_TYPE_CANONICAL_EXT] ?? []);
+            $type->setTypeCanonical(FHIRCanonical::jsonUnserialize(
+                json: [FHIRCanonical::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_TYPE_REFERENCE]) || array_key_exists(self::FIELD_TYPE_REFERENCE, $json)) {
-            if ($json[self::FIELD_TYPE_REFERENCE] instanceof FHIRReference) {
-                $type->setTypeReference($json[self::FIELD_TYPE_REFERENCE]);
-            } else {
-                $type->setTypeReference(new FHIRReference($json[self::FIELD_TYPE_REFERENCE]));
-            }
+            $type->setTypeReference(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_TYPE_REFERENCE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ROLE]) || array_key_exists(self::FIELD_ROLE, $json)) {
-            if ($json[self::FIELD_ROLE] instanceof FHIRCodeableConcept) {
-                $type->setRole($json[self::FIELD_ROLE]);
-            } else {
-                $type->setRole(new FHIRCodeableConcept($json[self::FIELD_ROLE]));
-            }
+            $type->setRole(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_ROLE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_FUNCTION]) || array_key_exists(self::FIELD_FUNCTION, $json)) {
-            if ($json[self::FIELD_FUNCTION] instanceof FHIRCodeableConcept) {
-                $type->setFunction($json[self::FIELD_FUNCTION]);
-            } else {
-                $type->setFunction(new FHIRCodeableConcept($json[self::FIELD_FUNCTION]));
-            }
+            $type->setFunction(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_FUNCTION],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ACTOR_CANONICAL]) || isset($json[self::FIELD_ACTOR_CANONICAL_EXT]) || array_key_exists(self::FIELD_ACTOR_CANONICAL, $json) || array_key_exists(self::FIELD_ACTOR_CANONICAL_EXT, $json)) {
             $value = $json[self::FIELD_ACTOR_CANONICAL] ?? null;
-            $ext = (isset($json[self::FIELD_ACTOR_CANONICAL_EXT]) && is_array($json[self::FIELD_ACTOR_CANONICAL_EXT])) ? $json[self::FIELD_ACTOR_CANONICAL_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRCanonical) {
-                    $type->setActorCanonical($value);
-                } else if (is_array($value)) {
-                    $type->setActorCanonical(new FHIRCanonical(array_merge($ext, $value)));
-                } else {
-                    $type->setActorCanonical(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setActorCanonical(new FHIRCanonical($ext));
-            } else {
-                $type->setActorCanonical(new FHIRCanonical(null));
-            }
+            $ext = (array)($json[self::FIELD_ACTOR_CANONICAL_EXT] ?? []);
+            $type->setActorCanonical(FHIRCanonical::jsonUnserialize(
+                json: [FHIRCanonical::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ACTOR_REFERENCE]) || array_key_exists(self::FIELD_ACTOR_REFERENCE, $json)) {
-            if ($json[self::FIELD_ACTOR_REFERENCE] instanceof FHIRReference) {
-                $type->setActorReference($json[self::FIELD_ACTOR_REFERENCE]);
-            } else {
-                $type->setActorReference(new FHIRReference($json[self::FIELD_ACTOR_REFERENCE]));
-            }
+            $type->setActorReference(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_ACTOR_REFERENCE],
+                config: $config,
+            ));
         }
         return $type;
     }

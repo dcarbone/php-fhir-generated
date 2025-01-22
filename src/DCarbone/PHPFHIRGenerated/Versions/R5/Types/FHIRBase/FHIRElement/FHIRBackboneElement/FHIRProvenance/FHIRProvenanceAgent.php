@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -670,40 +670,34 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ROLE]) || array_key_exists(self::FIELD_ROLE, $json)) {
-            if (is_array($json[self::FIELD_ROLE])) {
-                foreach($json[self::FIELD_ROLE] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addRole($v);
-                    } else {
-                        $type->addRole(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_ROLE] instanceof FHIRCodeableConcept) {
-                $type->addRole($json[self::FIELD_ROLE]);
-            } else {
-                $type->addRole(new FHIRCodeableConcept($json[self::FIELD_ROLE]));
+            $vs = $json[self::FIELD_ROLE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addRole(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_WHO]) || array_key_exists(self::FIELD_WHO, $json)) {
-            if ($json[self::FIELD_WHO] instanceof FHIRReference) {
-                $type->setWho($json[self::FIELD_WHO]);
-            } else {
-                $type->setWho(new FHIRReference($json[self::FIELD_WHO]));
-            }
+            $type->setWho(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_WHO],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ON_BEHALF_OF]) || array_key_exists(self::FIELD_ON_BEHALF_OF, $json)) {
-            if ($json[self::FIELD_ON_BEHALF_OF] instanceof FHIRReference) {
-                $type->setOnBehalfOf($json[self::FIELD_ON_BEHALF_OF]);
-            } else {
-                $type->setOnBehalfOf(new FHIRReference($json[self::FIELD_ON_BEHALF_OF]));
-            }
+            $type->setOnBehalfOf(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_ON_BEHALF_OF],
+                config: $config,
+            ));
         }
         return $type;
     }

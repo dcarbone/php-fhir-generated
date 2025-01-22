@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -574,35 +574,24 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_CONDITION]) || array_key_exists(self::FIELD_CONDITION, $json)) {
-            if ($json[self::FIELD_CONDITION] instanceof FHIRReference) {
-                $type->setCondition($json[self::FIELD_CONDITION]);
-            } else {
-                $type->setCondition(new FHIRReference($json[self::FIELD_CONDITION]));
-            }
+            $type->setCondition(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_CONDITION],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ROLE]) || array_key_exists(self::FIELD_ROLE, $json)) {
-            if ($json[self::FIELD_ROLE] instanceof FHIRCodeableConcept) {
-                $type->setRole($json[self::FIELD_ROLE]);
-            } else {
-                $type->setRole(new FHIRCodeableConcept($json[self::FIELD_ROLE]));
-            }
+            $type->setRole(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_ROLE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_RANK]) || isset($json[self::FIELD_RANK_EXT]) || array_key_exists(self::FIELD_RANK, $json) || array_key_exists(self::FIELD_RANK_EXT, $json)) {
             $value = $json[self::FIELD_RANK] ?? null;
-            $ext = (isset($json[self::FIELD_RANK_EXT]) && is_array($json[self::FIELD_RANK_EXT])) ? $json[self::FIELD_RANK_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $type->setRank($value);
-                } else if (is_array($value)) {
-                    $type->setRank(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $type->setRank(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setRank(new FHIRPositiveInt($ext));
-            } else {
-                $type->setRank(new FHIRPositiveInt(null));
-            }
+            $ext = (array)($json[self::FIELD_RANK_EXT] ?? []);
+            $type->setRank(FHIRPositiveInt::jsonUnserialize(
+                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         return $type;
     }

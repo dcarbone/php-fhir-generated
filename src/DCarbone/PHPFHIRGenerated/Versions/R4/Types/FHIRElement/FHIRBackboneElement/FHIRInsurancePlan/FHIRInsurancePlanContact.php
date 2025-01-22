@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -643,40 +643,34 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_PURPOSE]) || array_key_exists(self::FIELD_PURPOSE, $json)) {
-            if ($json[self::FIELD_PURPOSE] instanceof FHIRCodeableConcept) {
-                $type->setPurpose($json[self::FIELD_PURPOSE]);
-            } else {
-                $type->setPurpose(new FHIRCodeableConcept($json[self::FIELD_PURPOSE]));
-            }
+            $type->setPurpose(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_PURPOSE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_NAME]) || array_key_exists(self::FIELD_NAME, $json)) {
-            if ($json[self::FIELD_NAME] instanceof FHIRHumanName) {
-                $type->setName($json[self::FIELD_NAME]);
-            } else {
-                $type->setName(new FHIRHumanName($json[self::FIELD_NAME]));
-            }
+            $type->setName(FHIRHumanName::jsonUnserialize(
+                json: $json[self::FIELD_NAME],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_TELECOM]) || array_key_exists(self::FIELD_TELECOM, $json)) {
-            if (is_array($json[self::FIELD_TELECOM])) {
-                foreach($json[self::FIELD_TELECOM] as $v) {
-                    if ($v instanceof FHIRContactPoint) {
-                        $type->addTelecom($v);
-                    } else {
-                        $type->addTelecom(new FHIRContactPoint($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_TELECOM] instanceof FHIRContactPoint) {
-                $type->addTelecom($json[self::FIELD_TELECOM]);
-            } else {
-                $type->addTelecom(new FHIRContactPoint($json[self::FIELD_TELECOM]));
+            $vs = $json[self::FIELD_TELECOM];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addTelecom(FHIRContactPoint::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_ADDRESS]) || array_key_exists(self::FIELD_ADDRESS, $json)) {
-            if ($json[self::FIELD_ADDRESS] instanceof FHIRAddress) {
-                $type->setAddress($json[self::FIELD_ADDRESS]);
-            } else {
-                $type->setAddress(new FHIRAddress($json[self::FIELD_ADDRESS]));
-            }
+            $type->setAddress(FHIRAddress::jsonUnserialize(
+                json: $json[self::FIELD_ADDRESS],
+                config: $config,
+            ));
         }
         return $type;
     }

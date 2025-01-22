@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1062,76 +1062,63 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements Ver
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_MANUFACTURED_DOSE_FORM]) || array_key_exists(self::FIELD_MANUFACTURED_DOSE_FORM, $json)) {
-            if ($json[self::FIELD_MANUFACTURED_DOSE_FORM] instanceof FHIRCodeableConcept) {
-                $type->setManufacturedDoseForm($json[self::FIELD_MANUFACTURED_DOSE_FORM]);
-            } else {
-                $type->setManufacturedDoseForm(new FHIRCodeableConcept($json[self::FIELD_MANUFACTURED_DOSE_FORM]));
-            }
+            $type->setManufacturedDoseForm(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_MANUFACTURED_DOSE_FORM],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_UNIT_OF_PRESENTATION]) || array_key_exists(self::FIELD_UNIT_OF_PRESENTATION, $json)) {
-            if ($json[self::FIELD_UNIT_OF_PRESENTATION] instanceof FHIRCodeableConcept) {
-                $type->setUnitOfPresentation($json[self::FIELD_UNIT_OF_PRESENTATION]);
-            } else {
-                $type->setUnitOfPresentation(new FHIRCodeableConcept($json[self::FIELD_UNIT_OF_PRESENTATION]));
-            }
+            $type->setUnitOfPresentation(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_UNIT_OF_PRESENTATION],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            if ($json[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
-                $type->setQuantity($json[self::FIELD_QUANTITY]);
-            } else {
-                $type->setQuantity(new FHIRQuantity($json[self::FIELD_QUANTITY]));
-            }
+            $type->setQuantity(FHIRQuantity::jsonUnserialize(
+                json: $json[self::FIELD_QUANTITY],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_MANUFACTURER]) || array_key_exists(self::FIELD_MANUFACTURER, $json)) {
-            if (is_array($json[self::FIELD_MANUFACTURER])) {
-                foreach($json[self::FIELD_MANUFACTURER] as $v) {
-                    if ($v instanceof FHIRReference) {
-                        $type->addManufacturer($v);
-                    } else {
-                        $type->addManufacturer(new FHIRReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_MANUFACTURER] instanceof FHIRReference) {
-                $type->addManufacturer($json[self::FIELD_MANUFACTURER]);
-            } else {
-                $type->addManufacturer(new FHIRReference($json[self::FIELD_MANUFACTURER]));
+            $vs = $json[self::FIELD_MANUFACTURER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addManufacturer(FHIRReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_INGREDIENT]) || array_key_exists(self::FIELD_INGREDIENT, $json)) {
-            if (is_array($json[self::FIELD_INGREDIENT])) {
-                foreach($json[self::FIELD_INGREDIENT] as $v) {
-                    if ($v instanceof FHIRReference) {
-                        $type->addIngredient($v);
-                    } else {
-                        $type->addIngredient(new FHIRReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_INGREDIENT] instanceof FHIRReference) {
-                $type->addIngredient($json[self::FIELD_INGREDIENT]);
-            } else {
-                $type->addIngredient(new FHIRReference($json[self::FIELD_INGREDIENT]));
+            $vs = $json[self::FIELD_INGREDIENT];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addIngredient(FHIRReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_PHYSICAL_CHARACTERISTICS]) || array_key_exists(self::FIELD_PHYSICAL_CHARACTERISTICS, $json)) {
-            if ($json[self::FIELD_PHYSICAL_CHARACTERISTICS] instanceof FHIRProdCharacteristic) {
-                $type->setPhysicalCharacteristics($json[self::FIELD_PHYSICAL_CHARACTERISTICS]);
-            } else {
-                $type->setPhysicalCharacteristics(new FHIRProdCharacteristic($json[self::FIELD_PHYSICAL_CHARACTERISTICS]));
-            }
+            $type->setPhysicalCharacteristics(FHIRProdCharacteristic::jsonUnserialize(
+                json: $json[self::FIELD_PHYSICAL_CHARACTERISTICS],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_OTHER_CHARACTERISTICS]) || array_key_exists(self::FIELD_OTHER_CHARACTERISTICS, $json)) {
-            if (is_array($json[self::FIELD_OTHER_CHARACTERISTICS])) {
-                foreach($json[self::FIELD_OTHER_CHARACTERISTICS] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addOtherCharacteristics($v);
-                    } else {
-                        $type->addOtherCharacteristics(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_OTHER_CHARACTERISTICS] instanceof FHIRCodeableConcept) {
-                $type->addOtherCharacteristics($json[self::FIELD_OTHER_CHARACTERISTICS]);
-            } else {
-                $type->addOtherCharacteristics(new FHIRCodeableConcept($json[self::FIELD_OTHER_CHARACTERISTICS]));
+            $vs = $json[self::FIELD_OTHER_CHARACTERISTICS];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addOtherCharacteristics(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

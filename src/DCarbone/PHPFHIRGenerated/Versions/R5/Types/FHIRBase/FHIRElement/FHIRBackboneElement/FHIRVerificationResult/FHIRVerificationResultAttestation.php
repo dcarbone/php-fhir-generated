@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1015,90 +1015,58 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_WHO]) || array_key_exists(self::FIELD_WHO, $json)) {
-            if ($json[self::FIELD_WHO] instanceof FHIRReference) {
-                $type->setWho($json[self::FIELD_WHO]);
-            } else {
-                $type->setWho(new FHIRReference($json[self::FIELD_WHO]));
-            }
+            $type->setWho(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_WHO],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ON_BEHALF_OF]) || array_key_exists(self::FIELD_ON_BEHALF_OF, $json)) {
-            if ($json[self::FIELD_ON_BEHALF_OF] instanceof FHIRReference) {
-                $type->setOnBehalfOf($json[self::FIELD_ON_BEHALF_OF]);
-            } else {
-                $type->setOnBehalfOf(new FHIRReference($json[self::FIELD_ON_BEHALF_OF]));
-            }
+            $type->setOnBehalfOf(FHIRReference::jsonUnserialize(
+                json: $json[self::FIELD_ON_BEHALF_OF],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_COMMUNICATION_METHOD]) || array_key_exists(self::FIELD_COMMUNICATION_METHOD, $json)) {
-            if ($json[self::FIELD_COMMUNICATION_METHOD] instanceof FHIRCodeableConcept) {
-                $type->setCommunicationMethod($json[self::FIELD_COMMUNICATION_METHOD]);
-            } else {
-                $type->setCommunicationMethod(new FHIRCodeableConcept($json[self::FIELD_COMMUNICATION_METHOD]));
-            }
+            $type->setCommunicationMethod(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_COMMUNICATION_METHOD],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_DATE]) || isset($json[self::FIELD_DATE_EXT]) || array_key_exists(self::FIELD_DATE, $json) || array_key_exists(self::FIELD_DATE_EXT, $json)) {
             $value = $json[self::FIELD_DATE] ?? null;
-            $ext = (isset($json[self::FIELD_DATE_EXT]) && is_array($json[self::FIELD_DATE_EXT])) ? $json[self::FIELD_DATE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRDate) {
-                    $type->setDate($value);
-                } else if (is_array($value)) {
-                    $type->setDate(new FHIRDate(array_merge($ext, $value)));
-                } else {
-                    $type->setDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setDate(new FHIRDate($ext));
-            } else {
-                $type->setDate(new FHIRDate(null));
-            }
+            $ext = (array)($json[self::FIELD_DATE_EXT] ?? []);
+            $type->setDate(FHIRDate::jsonUnserialize(
+                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE]) || isset($json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT]) || array_key_exists(self::FIELD_SOURCE_IDENTITY_CERTIFICATE, $json) || array_key_exists(self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT, $json)) {
             $value = $json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE] ?? null;
-            $ext = (isset($json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT]) && is_array($json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT])) ? $json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setSourceIdentityCertificate($value);
-                } else if (is_array($value)) {
-                    $type->setSourceIdentityCertificate(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setSourceIdentityCertificate(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setSourceIdentityCertificate(new FHIRString($ext));
-            } else {
-                $type->setSourceIdentityCertificate(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT] ?? []);
+            $type->setSourceIdentityCertificate(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PROXY_IDENTITY_CERTIFICATE]) || isset($json[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT]) || array_key_exists(self::FIELD_PROXY_IDENTITY_CERTIFICATE, $json) || array_key_exists(self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT, $json)) {
             $value = $json[self::FIELD_PROXY_IDENTITY_CERTIFICATE] ?? null;
-            $ext = (isset($json[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT]) && is_array($json[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT])) ? $json[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setProxyIdentityCertificate($value);
-                } else if (is_array($value)) {
-                    $type->setProxyIdentityCertificate(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setProxyIdentityCertificate(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setProxyIdentityCertificate(new FHIRString($ext));
-            } else {
-                $type->setProxyIdentityCertificate(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT] ?? []);
+            $type->setProxyIdentityCertificate(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_PROXY_SIGNATURE]) || array_key_exists(self::FIELD_PROXY_SIGNATURE, $json)) {
-            if ($json[self::FIELD_PROXY_SIGNATURE] instanceof FHIRSignature) {
-                $type->setProxySignature($json[self::FIELD_PROXY_SIGNATURE]);
-            } else {
-                $type->setProxySignature(new FHIRSignature($json[self::FIELD_PROXY_SIGNATURE]));
-            }
+            $type->setProxySignature(FHIRSignature::jsonUnserialize(
+                json: $json[self::FIELD_PROXY_SIGNATURE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_SOURCE_SIGNATURE]) || array_key_exists(self::FIELD_SOURCE_SIGNATURE, $json)) {
-            if ($json[self::FIELD_SOURCE_SIGNATURE] instanceof FHIRSignature) {
-                $type->setSourceSignature($json[self::FIELD_SOURCE_SIGNATURE]);
-            } else {
-                $type->setSourceSignature(new FHIRSignature($json[self::FIELD_SOURCE_SIGNATURE]));
-            }
+            $type->setSourceSignature(FHIRSignature::jsonUnserialize(
+                json: $json[self::FIELD_SOURCE_SIGNATURE],
+                config: $config,
+            ));
         }
         return $type;
     }

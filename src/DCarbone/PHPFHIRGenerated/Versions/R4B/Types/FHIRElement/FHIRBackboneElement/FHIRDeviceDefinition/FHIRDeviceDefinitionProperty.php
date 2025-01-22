@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -622,40 +622,33 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_VALUE_QUANTITY]) || array_key_exists(self::FIELD_VALUE_QUANTITY, $json)) {
-            if (is_array($json[self::FIELD_VALUE_QUANTITY])) {
-                foreach($json[self::FIELD_VALUE_QUANTITY] as $v) {
-                    if ($v instanceof FHIRQuantity) {
-                        $type->addValueQuantity($v);
-                    } else {
-                        $type->addValueQuantity(new FHIRQuantity($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_VALUE_QUANTITY] instanceof FHIRQuantity) {
-                $type->addValueQuantity($json[self::FIELD_VALUE_QUANTITY]);
-            } else {
-                $type->addValueQuantity(new FHIRQuantity($json[self::FIELD_VALUE_QUANTITY]));
+            $vs = $json[self::FIELD_VALUE_QUANTITY];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addValueQuantity(FHIRQuantity::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_VALUE_CODE]) || array_key_exists(self::FIELD_VALUE_CODE, $json)) {
-            if (is_array($json[self::FIELD_VALUE_CODE])) {
-                foreach($json[self::FIELD_VALUE_CODE] as $v) {
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $type->addValueCode($v);
-                    } else {
-                        $type->addValueCode(new FHIRCodeableConcept($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_VALUE_CODE] instanceof FHIRCodeableConcept) {
-                $type->addValueCode($json[self::FIELD_VALUE_CODE]);
-            } else {
-                $type->addValueCode(new FHIRCodeableConcept($json[self::FIELD_VALUE_CODE]));
+            $vs = $json[self::FIELD_VALUE_CODE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addValueCode(FHIRCodeableConcept::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

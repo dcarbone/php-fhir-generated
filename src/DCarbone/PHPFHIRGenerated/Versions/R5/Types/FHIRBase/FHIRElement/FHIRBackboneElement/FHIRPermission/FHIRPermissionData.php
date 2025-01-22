@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -701,56 +701,46 @@ class FHIRPermissionData extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_RESOURCE]) || array_key_exists(self::FIELD_RESOURCE, $json)) {
-            if (is_array($json[self::FIELD_RESOURCE])) {
-                foreach($json[self::FIELD_RESOURCE] as $v) {
-                    if ($v instanceof FHIRPermissionResource) {
-                        $type->addResource($v);
-                    } else {
-                        $type->addResource(new FHIRPermissionResource($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_RESOURCE] instanceof FHIRPermissionResource) {
-                $type->addResource($json[self::FIELD_RESOURCE]);
-            } else {
-                $type->addResource(new FHIRPermissionResource($json[self::FIELD_RESOURCE]));
+            $vs = $json[self::FIELD_RESOURCE];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addResource(FHIRPermissionResource::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_SECURITY]) || array_key_exists(self::FIELD_SECURITY, $json)) {
-            if (is_array($json[self::FIELD_SECURITY])) {
-                foreach($json[self::FIELD_SECURITY] as $v) {
-                    if ($v instanceof FHIRCoding) {
-                        $type->addSecurity($v);
-                    } else {
-                        $type->addSecurity(new FHIRCoding($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_SECURITY] instanceof FHIRCoding) {
-                $type->addSecurity($json[self::FIELD_SECURITY]);
-            } else {
-                $type->addSecurity(new FHIRCoding($json[self::FIELD_SECURITY]));
+            $vs = $json[self::FIELD_SECURITY];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addSecurity(FHIRCoding::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            if (is_array($json[self::FIELD_PERIOD])) {
-                foreach($json[self::FIELD_PERIOD] as $v) {
-                    if ($v instanceof FHIRPeriod) {
-                        $type->addPeriod($v);
-                    } else {
-                        $type->addPeriod(new FHIRPeriod($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_PERIOD] instanceof FHIRPeriod) {
-                $type->addPeriod($json[self::FIELD_PERIOD]);
-            } else {
-                $type->addPeriod(new FHIRPeriod($json[self::FIELD_PERIOD]));
+            $vs = $json[self::FIELD_PERIOD];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addPeriod(FHIRPeriod::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_EXPRESSION]) || array_key_exists(self::FIELD_EXPRESSION, $json)) {
-            if ($json[self::FIELD_EXPRESSION] instanceof FHIRExpression) {
-                $type->setExpression($json[self::FIELD_EXPRESSION]);
-            } else {
-                $type->setExpression(new FHIRExpression($json[self::FIELD_EXPRESSION]));
-            }
+            $type->setExpression(FHIRExpression::jsonUnserialize(
+                json: $json[self::FIELD_EXPRESSION],
+                config: $config,
+            ));
         }
         return $type;
     }

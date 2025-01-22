@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -628,51 +628,30 @@ class FHIRCitationAffiliationInfo extends FHIRBackboneElement
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_AFFILIATION]) || isset($json[self::FIELD_AFFILIATION_EXT]) || array_key_exists(self::FIELD_AFFILIATION, $json) || array_key_exists(self::FIELD_AFFILIATION_EXT, $json)) {
             $value = $json[self::FIELD_AFFILIATION] ?? null;
-            $ext = (isset($json[self::FIELD_AFFILIATION_EXT]) && is_array($json[self::FIELD_AFFILIATION_EXT])) ? $json[self::FIELD_AFFILIATION_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setAffiliation($value);
-                } else if (is_array($value)) {
-                    $type->setAffiliation(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setAffiliation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setAffiliation(new FHIRString($ext));
-            } else {
-                $type->setAffiliation(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_AFFILIATION_EXT] ?? []);
+            $type->setAffiliation(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_ROLE]) || isset($json[self::FIELD_ROLE_EXT]) || array_key_exists(self::FIELD_ROLE, $json) || array_key_exists(self::FIELD_ROLE_EXT, $json)) {
             $value = $json[self::FIELD_ROLE] ?? null;
-            $ext = (isset($json[self::FIELD_ROLE_EXT]) && is_array($json[self::FIELD_ROLE_EXT])) ? $json[self::FIELD_ROLE_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $type->setRole($value);
-                } else if (is_array($value)) {
-                    $type->setRole(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $type->setRole(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setRole(new FHIRString($ext));
-            } else {
-                $type->setRole(new FHIRString(null));
-            }
+            $ext = (array)($json[self::FIELD_ROLE_EXT] ?? []);
+            $type->setRole(FHIRString::jsonUnserialize(
+                json: [FHIRString::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            if (is_array($json[self::FIELD_IDENTIFIER])) {
-                foreach($json[self::FIELD_IDENTIFIER] as $v) {
-                    if ($v instanceof FHIRIdentifier) {
-                        $type->addIdentifier($v);
-                    } else {
-                        $type->addIdentifier(new FHIRIdentifier($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
-                $type->addIdentifier($json[self::FIELD_IDENTIFIER]);
-            } else {
-                $type->addIdentifier(new FHIRIdentifier($json[self::FIELD_IDENTIFIER]));
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -886,85 +886,69 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_IDENTIFIER]) || array_key_exists(self::FIELD_IDENTIFIER, $json)) {
-            if (is_array($json[self::FIELD_IDENTIFIER])) {
-                foreach($json[self::FIELD_IDENTIFIER] as $v) {
-                    if ($v instanceof FHIRIdentifier) {
-                        $type->addIdentifier($v);
-                    } else {
-                        $type->addIdentifier(new FHIRIdentifier($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
-                $type->addIdentifier($json[self::FIELD_IDENTIFIER]);
-            } else {
-                $type->addIdentifier(new FHIRIdentifier($json[self::FIELD_IDENTIFIER]));
+            $vs = $json[self::FIELD_IDENTIFIER];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            if ($json[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setType($json[self::FIELD_TYPE]);
-            } else {
-                $type->setType(new FHIRCodeableConcept($json[self::FIELD_TYPE]));
-            }
+            $type->setType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_COVERAGE_AREA]) || array_key_exists(self::FIELD_COVERAGE_AREA, $json)) {
-            if (is_array($json[self::FIELD_COVERAGE_AREA])) {
-                foreach($json[self::FIELD_COVERAGE_AREA] as $v) {
-                    if ($v instanceof FHIRReference) {
-                        $type->addCoverageArea($v);
-                    } else {
-                        $type->addCoverageArea(new FHIRReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_COVERAGE_AREA] instanceof FHIRReference) {
-                $type->addCoverageArea($json[self::FIELD_COVERAGE_AREA]);
-            } else {
-                $type->addCoverageArea(new FHIRReference($json[self::FIELD_COVERAGE_AREA]));
+            $vs = $json[self::FIELD_COVERAGE_AREA];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addCoverageArea(FHIRReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_NETWORK]) || array_key_exists(self::FIELD_NETWORK, $json)) {
-            if (is_array($json[self::FIELD_NETWORK])) {
-                foreach($json[self::FIELD_NETWORK] as $v) {
-                    if ($v instanceof FHIRReference) {
-                        $type->addNetwork($v);
-                    } else {
-                        $type->addNetwork(new FHIRReference($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_NETWORK] instanceof FHIRReference) {
-                $type->addNetwork($json[self::FIELD_NETWORK]);
-            } else {
-                $type->addNetwork(new FHIRReference($json[self::FIELD_NETWORK]));
+            $vs = $json[self::FIELD_NETWORK];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addNetwork(FHIRReference::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_GENERAL_COST]) || array_key_exists(self::FIELD_GENERAL_COST, $json)) {
-            if (is_array($json[self::FIELD_GENERAL_COST])) {
-                foreach($json[self::FIELD_GENERAL_COST] as $v) {
-                    if ($v instanceof FHIRInsurancePlanGeneralCost) {
-                        $type->addGeneralCost($v);
-                    } else {
-                        $type->addGeneralCost(new FHIRInsurancePlanGeneralCost($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_GENERAL_COST] instanceof FHIRInsurancePlanGeneralCost) {
-                $type->addGeneralCost($json[self::FIELD_GENERAL_COST]);
-            } else {
-                $type->addGeneralCost(new FHIRInsurancePlanGeneralCost($json[self::FIELD_GENERAL_COST]));
+            $vs = $json[self::FIELD_GENERAL_COST];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addGeneralCost(FHIRInsurancePlanGeneralCost::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         if (isset($json[self::FIELD_SPECIFIC_COST]) || array_key_exists(self::FIELD_SPECIFIC_COST, $json)) {
-            if (is_array($json[self::FIELD_SPECIFIC_COST])) {
-                foreach($json[self::FIELD_SPECIFIC_COST] as $v) {
-                    if ($v instanceof FHIRInsurancePlanSpecificCost) {
-                        $type->addSpecificCost($v);
-                    } else {
-                        $type->addSpecificCost(new FHIRInsurancePlanSpecificCost($v));
-                    }
-                }
-            } elseif ($json[self::FIELD_SPECIFIC_COST] instanceof FHIRInsurancePlanSpecificCost) {
-                $type->addSpecificCost($json[self::FIELD_SPECIFIC_COST]);
-            } else {
-                $type->addSpecificCost(new FHIRInsurancePlanSpecificCost($json[self::FIELD_SPECIFIC_COST]));
+            $vs = $json[self::FIELD_SPECIFIC_COST];
+            if (!is_int(key($vs))) {
+                $vs = [$vs];
+            }
+            foreach($vs as $v) {
+                $type->addSpecificCost(FHIRInsurancePlanSpecificCost::jsonUnserialize(
+                    json: $v,
+                    config: $config,
+                ));
             }
         }
         return $type;

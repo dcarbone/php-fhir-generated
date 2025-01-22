@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 17th, 2025 18:09+0000
+ * Class creation date: January 22nd, 2025 19:32+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -703,59 +703,38 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
         }
         parent::jsonUnserialize($json, $type, $config);
         if (isset($json[self::FIELD_VARIANT_TYPE]) || array_key_exists(self::FIELD_VARIANT_TYPE, $json)) {
-            if ($json[self::FIELD_VARIANT_TYPE] instanceof FHIRCodeableConcept) {
-                $type->setVariantType($json[self::FIELD_VARIANT_TYPE]);
-            } else {
-                $type->setVariantType(new FHIRCodeableConcept($json[self::FIELD_VARIANT_TYPE]));
-            }
+            $type->setVariantType(FHIRCodeableConcept::jsonUnserialize(
+                json: $json[self::FIELD_VARIANT_TYPE],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_EXACT]) || isset($json[self::FIELD_EXACT_EXT]) || array_key_exists(self::FIELD_EXACT, $json) || array_key_exists(self::FIELD_EXACT_EXT, $json)) {
             $value = $json[self::FIELD_EXACT] ?? null;
-            $ext = (isset($json[self::FIELD_EXACT_EXT]) && is_array($json[self::FIELD_EXACT_EXT])) ? $json[self::FIELD_EXACT_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $type->setExact($value);
-                } else if (is_array($value)) {
-                    $type->setExact(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $type->setExact(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setExact(new FHIRBoolean($ext));
-            } else {
-                $type->setExact(new FHIRBoolean(null));
-            }
+            $ext = (array)($json[self::FIELD_EXACT_EXT] ?? []);
+            $type->setExact(FHIRBoolean::jsonUnserialize(
+                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_LENGTH]) || isset($json[self::FIELD_LENGTH_EXT]) || array_key_exists(self::FIELD_LENGTH, $json) || array_key_exists(self::FIELD_LENGTH_EXT, $json)) {
             $value = $json[self::FIELD_LENGTH] ?? null;
-            $ext = (isset($json[self::FIELD_LENGTH_EXT]) && is_array($json[self::FIELD_LENGTH_EXT])) ? $json[self::FIELD_LENGTH_EXT] : [];
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $type->setLength($value);
-                } else if (is_array($value)) {
-                    $type->setLength(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $type->setLength(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } elseif ([] !== $ext) {
-                $type->setLength(new FHIRInteger($ext));
-            } else {
-                $type->setLength(new FHIRInteger(null));
-            }
+            $ext = (array)($json[self::FIELD_LENGTH_EXT] ?? []);
+            $type->setLength(FHIRInteger::jsonUnserialize(
+                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_OUTER]) || array_key_exists(self::FIELD_OUTER, $json)) {
-            if ($json[self::FIELD_OUTER] instanceof FHIRMolecularSequenceOuter) {
-                $type->setOuter($json[self::FIELD_OUTER]);
-            } else {
-                $type->setOuter(new FHIRMolecularSequenceOuter($json[self::FIELD_OUTER]));
-            }
+            $type->setOuter(FHIRMolecularSequenceOuter::jsonUnserialize(
+                json: $json[self::FIELD_OUTER],
+                config: $config,
+            ));
         }
         if (isset($json[self::FIELD_INNER]) || array_key_exists(self::FIELD_INNER, $json)) {
-            if ($json[self::FIELD_INNER] instanceof FHIRMolecularSequenceInner) {
-                $type->setInner($json[self::FIELD_INNER]);
-            } else {
-                $type->setInner(new FHIRMolecularSequenceInner($json[self::FIELD_INNER]));
-            }
+            $type->setInner(FHIRMolecularSequenceInner::jsonUnserialize(
+                json: $json[self::FIELD_INNER],
+                config: $config,
+            ));
         }
         return $type;
     }
