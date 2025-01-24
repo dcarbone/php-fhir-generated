@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 22nd, 2025 19:32+0000
+ * Class creation date: January 24th, 2025 03:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,6 +26,9 @@ namespace DCarbone\PHPFHIRGenerated;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Versions\VersionInterface;
+
 class ResponseParser
 {
     private const XML_START = ['<'];
@@ -36,7 +39,7 @@ class ResponseParser
      *
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param null|string|array|\stdClass|\SimpleXMLElement|\DOMDocument $input
-     * @return null|\DCarbone\PHPFHIRGenerated\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
      * @throws \Exception
      */
     public static function parse(VersionInterface $version,
@@ -56,7 +59,7 @@ class ResponseParser
     /**
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param array $input
-     * @return null|\DCarbone\PHPFHIRGenerated\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
      */
     public static function parseArray(VersionInterface $version,
                                       array $input): null|TypeInterface
@@ -86,7 +89,7 @@ class ResponseParser
     /**
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param \stdClass $input
-     * @return null|\DCarbone\PHPFHIRGenerated\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
      */
     public static function parseStdClass(VersionInterface $version,
                                          \stdClass $input): null|TypeInterface
@@ -97,7 +100,7 @@ class ResponseParser
     /**
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param \SimpleXMLElement $input
-     * @return null|\DCarbone\PHPFHIRGenerated\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
      */
     public static function parseSimpleXMLElement(VersionInterface $version,
                                                  \SimpleXMLElement $input): null|TypeInterface
@@ -118,7 +121,7 @@ class ResponseParser
     /**
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param \DOMDocument $input
-     * @return null|\DCarbone\PHPFHIRGenerated\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
      */
     public static function parseDOMDocument(VersionInterface $version,
                                             \DOMDocument $input): null|TypeInterface
@@ -129,7 +132,7 @@ class ResponseParser
     /**
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param \stdClass|\SimpleXMLElement|\DOMDocument $input
-     * @return null|\DCarbone\PHPFHIRGenerated\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
      */
     public static function parseObject(VersionInterface $version,
                                        \stdClass|\SimpleXMLElement|\DOMDocument $input): null|TypeInterface
@@ -146,7 +149,7 @@ class ResponseParser
     /**
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param string $input
-     * @return null|\DCarbone\PHPFHIRGenerated\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
      * @throws \Exception
      */
     public static function parseXML(VersionInterface $version,
@@ -160,7 +163,7 @@ class ResponseParser
     /**
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param string $input
-     * @return null|\DCarbone\PHPFHIRGenerated\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
      */
     public static function parseJSON(VersionInterface $version,
                                      string $input): null|TypeInterface
@@ -181,7 +184,7 @@ class ResponseParser
     /**
      * @param \DCarbone\PHPFHIRGenerated\Versions\VersionInterface $version
      * @param string $input
-     * @return null|\DCarbone\PHPFHIRGenerated\TypeInterface
+     * @return null|\DCarbone\PHPFHIRGenerated\Types\TypeInterface
      * @throws \Exception
      */
     public static function parseString(VersionInterface $version,

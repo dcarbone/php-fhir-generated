@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 22nd, 2025 19:32+0000
+ * Class creation date: January 24th, 2025 03:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -62,15 +62,15 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types;
  * 
  */
 
-use DCarbone\PHPFHIRGenerated\CommentContainerInterface;
-use DCarbone\PHPFHIRGenerated\CommentContainerTrait;
 use DCarbone\PHPFHIRGenerated\Constants;
 use DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\UnserializeConfig;
 use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\SourceXMLNamespaceTrait;
-use DCarbone\PHPFHIRGenerated\TypeInterface;
+use DCarbone\PHPFHIRGenerated\Types\CommentContainerInterface;
+use DCarbone\PHPFHIRGenerated\Types\CommentContainerTrait;
+use DCarbone\PHPFHIRGenerated\Types\TypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRId;

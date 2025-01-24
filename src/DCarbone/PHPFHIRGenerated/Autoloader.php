@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 22nd, 2025 19:32+0000
+ * Class creation date: January 24th, 2025 03:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,17 +80,17 @@ abstract class Autoloader
         'DCarbone\PHPFHIRGenerated\Client\ResponseFormatEnum' => __DIR__ . '/Client/ResponseFormatEnum.php',
         'DCarbone\PHPFHIRGenerated\Client\ClientErrorException' => __DIR__ . '/Client/ClientErrorException.php',
         'DCarbone\PHPFHIRGenerated\VersionEnum' => __DIR__ . '/VersionEnum.php',
-        'DCarbone\PHPFHIRGenerated\TypeInterface' => __DIR__ . '/TypeInterface.php',
         'DCarbone\PHPFHIRGenerated\SourceXMLNamespaceTrait' => __DIR__ . '/SourceXMLNamespaceTrait.php',
-        'DCarbone\PHPFHIRGenerated\CommentContainerTrait' => __DIR__ . '/CommentContainerTrait.php',
-        'DCarbone\PHPFHIRGenerated\ContainedTypeInterface' => __DIR__ . '/ContainedTypeInterface.php',
-        'DCarbone\PHPFHIRGenerated\PrimitiveTypeInterface' => __DIR__ . '/PrimitiveTypeInterface.php',
+        'DCarbone\PHPFHIRGenerated\Types\TypeInterface' => __DIR__ . '/Types/TypeInterface.php',
+        'DCarbone\PHPFHIRGenerated\Types\CommentContainerTrait' => __DIR__ . '/Types/CommentContainerTrait.php',
+        'DCarbone\PHPFHIRGenerated\Types\ContainedTypeInterface' => __DIR__ . '/Types/ContainedTypeInterface.php',
+        'DCarbone\PHPFHIRGenerated\Types\PrimitiveTypeInterface' => __DIR__ . '/Types/PrimitiveTypeInterface.php',
+        'DCarbone\PHPFHIRGenerated\Types\CommentContainerInterface' => __DIR__ . '/Types/CommentContainerInterface.php',
         'DCarbone\PHPFHIRGenerated\Versions\VersionTypeMapInterface' => __DIR__ . '/Versions/VersionTypeMapInterface.php',
         'DCarbone\PHPFHIRGenerated\Versions\VersionInterface' => __DIR__ . '/Versions/VersionInterface.php',
         'DCarbone\PHPFHIRGenerated\Versions\VersionConfigInterface' => __DIR__ . '/Versions/VersionConfigInterface.php',
         'DCarbone\PHPFHIRGenerated\Versions\VersionConfig' => __DIR__ . '/Versions/VersionConfig.php',
         'DCarbone\PHPFHIRGenerated\Validation\Validator' => __DIR__ . '/Validation/Validator.php',
-        'DCarbone\PHPFHIRGenerated\CommentContainerInterface' => __DIR__ . '/CommentContainerInterface.php',
         'DCarbone\PHPFHIRGenerated\Encoding\SerializeConfig' => __DIR__ . '/Encoding/SerializeConfig.php',
         'DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum' => __DIR__ . '/Encoding/ValueXMLLocationEnum.php',
         'DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationTrait' => __DIR__ . '/Encoding/ValueXMLLocationTrait.php',

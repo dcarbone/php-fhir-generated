@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace DCarbone\PHPFHIRGenerated;
+namespace DCarbone\PHPFHIRGenerated\Types;
 
 /*!
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 22nd, 2025 19:32+0000
+ * Class creation date: January 24th, 2025 03:11+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -26,28 +26,18 @@ namespace DCarbone\PHPFHIRGenerated;
  * 
  */
 
-interface CommentContainerInterface
+/**
+ * Interface ContainedTypeInterface
+ *
+ * This is a meta interface that must never be directly implemented by a class.  It exists purely to ensure type safety
+ * throughout the base package.
+ */
+interface ContainedTypeInterface extends TypeInterface
 {
     /**
-     * Return any / all comments set on this type.
+     * The return from this method is used only when json serializing this type
      *
-     * @return string[]
+     * @return string
      */
-    public function _getFHIRComments(): array;
-
-    /**
-     * Set internal fhir_comments list, overwriting any previous value(s)
-     *
-     * @param array $fhirComments
-     * @return static
-     */
-    public function _setFHIRComments(iterable $fhirComments): self;
-
-    /**
-     * Append comment string to internal fhir_comments list
-     *
-     * @param string $fhirComment
-     * @return static
-     */
-    public function _addFHIRComment(string $fhirComment): self;
+    public function _getResourceType(): string;
 }
