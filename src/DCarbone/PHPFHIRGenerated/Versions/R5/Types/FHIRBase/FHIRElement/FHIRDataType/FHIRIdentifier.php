@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 24th, 2025 03:11+0000
+ * Class creation date: January 26th, 2025 01:06+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -190,6 +190,7 @@ class FHIRIdentifier extends FHIRDataType
     /** Default validation map for fields in type Identifier */
     private const _DEFAULT_VALIDATION_RULES = [];
 
+    /* constructor.php:66 */
     /**
      * FHIRIdentifier Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -197,7 +198,7 @@ class FHIRIdentifier extends FHIRDataType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRIdentifierUse $use
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $system
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $assigner
@@ -208,7 +209,7 @@ class FHIRIdentifier extends FHIRDataType
                                 null|FHIRIdentifierUse $use = null,
                                 null|FHIRCodeableConcept $type = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $system = null,
-                                null|string|FHIRString|FHIRStringPrimitive $value = null,
+                                null|string|FHIRStringPrimitive|FHIRString $value = null,
                                 null|ValueXMLLocationEnum $valueXMLLocation = null,
                                 null|FHIRPeriod $period = null,
                                 null|FHIRReference $assigner = null,
@@ -384,11 +385,11 @@ class FHIRIdentifier extends FHIRDataType
      * The portion of the identifier typically relevant to the user and which is unique
      * within the context of the system.
      *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValue(null|string|FHIRString|FHIRStringPrimitive $value,
+    public function setValue(null|string|FHIRStringPrimitive|FHIRString $value,
                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $value) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 24th, 2025 03:11+0000
+ * Class creation date: January 26th, 2025 01:06+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -149,6 +149,7 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
         ],
     ];
 
+    /* constructor.php:66 */
     /**
      * FHIRExplanationOfBenefitAdjudication Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
@@ -157,7 +158,7 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $category
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $reason
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRQuantity\FHIRMoney $amount
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $value
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @param null|string[] $fhirComments
      */
@@ -167,7 +168,7 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $category = null,
                                 null|FHIRCodeableConcept $reason = null,
                                 null|FHIRMoney $amount = null,
-                                null|string|float|int|FHIRDecimal|FHIRDecimalPrimitive $value = null,
+                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $value = null,
                                 null|ValueXMLLocationEnum $valueXMLLocation = null,
                                 null|iterable $fhirComments = null)
     {
@@ -328,11 +329,11 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * A non-monetary value for example a percentage. Mutually exclusive to the amount
      * element above.
      *
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $value
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValue(null|string|float|int|FHIRDecimal|FHIRDecimalPrimitive $value,
+    public function setValue(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $value,
                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $value) {

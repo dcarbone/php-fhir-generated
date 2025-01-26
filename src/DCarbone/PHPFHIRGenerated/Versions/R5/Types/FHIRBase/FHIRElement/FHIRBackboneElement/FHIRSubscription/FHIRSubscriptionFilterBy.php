@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 24th, 2025 03:11+0000
+ * Class creation date: January 26th, 2025 01:06+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -183,6 +183,7 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
         ],
     ];
 
+    /* constructor.php:66 */
     /**
      * FHIRSubscriptionFilterBy Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
@@ -192,7 +193,7 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $filterParameter
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchComparator $comparator
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchModifierCode $modifier
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @param null|string[] $fhirComments
      */
@@ -203,7 +204,7 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive|FHIRString $filterParameter = null,
                                 null|FHIRSearchComparator $comparator = null,
                                 null|FHIRSearchModifierCode $modifier = null,
-                                null|string|FHIRString|FHIRStringPrimitive $value = null,
+                                null|string|FHIRStringPrimitive|FHIRString $value = null,
                                 null|ValueXMLLocationEnum $valueXMLLocation = null,
                                 null|iterable $fhirComments = null)
     {
@@ -413,11 +414,11 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement
      * The literal value or resource path as is legal in search - for example,
      * `Patient/123` or `le1950`.
      *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValue(null|string|FHIRString|FHIRStringPrimitive $value,
+    public function setValue(null|string|FHIRStringPrimitive|FHIRString $value,
                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $value) {

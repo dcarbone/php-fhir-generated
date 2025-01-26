@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 24th, 2025 03:11+0000
+ * Class creation date: January 26th, 2025 01:06+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -167,6 +167,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
     /** Default validation map for fields in type EffectEvidenceSynthesis.EffectEstimate */
     private const _DEFAULT_VALIDATION_RULES = [];
 
+    /* constructor.php:66 */
     /**
      * FHIREffectEvidenceSynthesisEffectEstimate Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -175,7 +176,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $variantState
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $value
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $unitOfMeasure
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate[] $precisionEstimate
@@ -187,7 +188,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive|FHIRString $description = null,
                                 null|FHIRCodeableConcept $type = null,
                                 null|FHIRCodeableConcept $variantState = null,
-                                null|string|float|int|FHIRDecimal|FHIRDecimalPrimitive $value = null,
+                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $value = null,
                                 null|ValueXMLLocationEnum $valueXMLLocation = null,
                                 null|FHIRCodeableConcept $unitOfMeasure = null,
                                 null|iterable $precisionEstimate = null,
@@ -364,11 +365,11 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      *
      * The point estimate of the effect estimate.
      *
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $value
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValue(null|string|float|int|FHIRDecimal|FHIRDecimalPrimitive $value,
+    public function setValue(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $value,
                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $value) {

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 24th, 2025 03:11+0000
+ * Class creation date: January 26th, 2025 01:06+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,6 +92,7 @@ class FHIRSampledDataDataTypePrimitive implements PrimitiveTypeInterface
         ],
     ];
 
+    /* constructor.php:50 */
     /**
      * FHIRSampledDataDataTypePrimitive Constructor
      * @param null|string $value

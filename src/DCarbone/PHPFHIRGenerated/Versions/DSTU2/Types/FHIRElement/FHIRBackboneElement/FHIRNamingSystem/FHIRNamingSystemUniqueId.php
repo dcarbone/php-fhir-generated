@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 24th, 2025 03:11+0000
+ * Class creation date: January 26th, 2025 01:06+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -156,13 +156,14 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
         ],
     ];
 
+    /* constructor.php:66 */
     /**
      * FHIRNamingSystemUniqueId Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNamingSystemIdentifierType $type
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $value
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $preferred
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $period
@@ -172,7 +173,7 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRNamingSystemIdentifierType $type = null,
-                                null|string|FHIRString|FHIRStringPrimitive $value = null,
+                                null|string|FHIRStringPrimitive|FHIRString $value = null,
                                 null|ValueXMLLocationEnum $valueXMLLocation = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $preferred = null,
                                 null|FHIRPeriod $period = null,
@@ -259,11 +260,11 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * The string that should be sent over the wire to identify the code system or
      * identifier system.
      *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $value
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValue(null|string|FHIRString|FHIRStringPrimitive $value,
+    public function setValue(null|string|FHIRStringPrimitive|FHIRString $value,
                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $value) {

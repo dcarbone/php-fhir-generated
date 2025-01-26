@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 24th, 2025 03:11+0000
+ * Class creation date: January 26th, 2025 01:06+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -179,12 +179,13 @@ class FHIRContactPoint extends FHIRDataType
     /** Default validation map for fields in type ContactPoint */
     private const _DEFAULT_VALIDATION_RULES = [];
 
+    /* constructor.php:66 */
     /**
      * FHIRContactPoint Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRContactPointSystem $system
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRContactPointUse $use
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $rank
@@ -194,7 +195,7 @@ class FHIRContactPoint extends FHIRDataType
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|FHIRContactPointSystem $system = null,
-                                null|string|FHIRString|FHIRStringPrimitive $value = null,
+                                null|string|FHIRStringPrimitive|FHIRString $value = null,
                                 null|ValueXMLLocationEnum $valueXMLLocation = null,
                                 null|FHIRContactPointUse $use = null,
                                 null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $rank = null,
@@ -286,11 +287,11 @@ class FHIRContactPoint extends FHIRDataType
      * The actual contact point details, in a form that is meaningful to the designated
      * communication system (i.e. phone number or email address).
      *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValue(null|string|FHIRString|FHIRStringPrimitive $value,
+    public function setValue(null|string|FHIRStringPrimitive|FHIRString $value,
                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $value) {

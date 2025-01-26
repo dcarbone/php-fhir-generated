@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantit
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 24th, 2025 03:11+0000
+ * Class creation date: January 26th, 2025 01:06+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -178,11 +178,12 @@ class FHIRAge extends FHIRQuantity
         ],
     ];
 
+    /* constructor.php:66 */
     /**
      * FHIRAge Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
-     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal $value
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantityComparator $comparator
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $unit
@@ -192,7 +193,7 @@ class FHIRAge extends FHIRQuantity
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRIdPrimitive $id = null,
-                                null|string|float|int|FHIRDecimal|FHIRDecimalPrimitive $value = null,
+                                null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $value = null,
                                 null|ValueXMLLocationEnum $valueXMLLocation = null,
                                 null|FHIRQuantityComparator $comparator = null,
                                 null|string|FHIRStringPrimitive|FHIRString $unit = null,
@@ -201,6 +202,27 @@ class FHIRAge extends FHIRQuantity
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(fhirComments: $fhirComments);
+        if (null !== $extension) {
+            $this->setExtension(...$extension);
+        }
+        if (null !== $value) {
+            $this->setValue($value);
+        }
+        if (null !== $comparator) {
+            $this->setComparator($comparator);
+        }
+        if (null !== $unit) {
+            $this->setUnit($unit);
+        }
+        if (null !== $system) {
+            $this->setSystem($system);
+        }
+        if (null !== $code) {
+            $this->setCode($code);
+        }
+        if (null !== $id) {
+            $this->setId($id);
+        }
     }
 
     /**

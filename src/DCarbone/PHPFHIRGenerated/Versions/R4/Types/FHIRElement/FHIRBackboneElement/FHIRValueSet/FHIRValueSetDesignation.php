@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 24th, 2025 03:11+0000
+ * Class creation date: January 26th, 2025 01:06+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,6 +137,7 @@ class FHIRValueSetDesignation extends FHIRBackboneElement
         ],
     ];
 
+    /* constructor.php:66 */
     /**
      * FHIRValueSetDesignation Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
@@ -144,7 +145,7 @@ class FHIRValueSetDesignation extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCoding $use
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $value
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @param null|string[] $fhirComments
      */
@@ -153,7 +154,7 @@ class FHIRValueSetDesignation extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|string|FHIRCodePrimitive|FHIRCode $language = null,
                                 null|FHIRCoding $use = null,
-                                null|string|FHIRString|FHIRStringPrimitive $value = null,
+                                null|string|FHIRStringPrimitive|FHIRString $value = null,
                                 null|ValueXMLLocationEnum $valueXMLLocation = null,
                                 null|iterable $fhirComments = null)
     {
@@ -281,11 +282,11 @@ class FHIRValueSetDesignation extends FHIRBackboneElement
      *
      * The text value for this designation.
      *
-     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $value
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValue(null|string|FHIRString|FHIRStringPrimitive $value,
+    public function setValue(null|string|FHIRStringPrimitive|FHIRString $value,
                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $value) {

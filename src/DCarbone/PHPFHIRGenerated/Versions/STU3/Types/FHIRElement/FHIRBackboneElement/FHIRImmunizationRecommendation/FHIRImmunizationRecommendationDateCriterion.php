@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 24th, 2025 03:11+0000
+ * Class creation date: January 26th, 2025 01:06+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,13 +130,14 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement
         ],
     ];
 
+    /* constructor.php:66 */
     /**
      * FHIRImmunizationRecommendationDateCriterion Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $value
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @param null|string[] $fhirComments
      */
@@ -144,7 +145,7 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $code = null,
-                                null|string|\DateTimeInterface|FHIRDateTime|FHIRDateTimePrimitive $value = null,
+                                null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $value = null,
                                 null|ValueXMLLocationEnum $valueXMLLocation = null,
                                 null|iterable $fhirComments = null)
     {
@@ -233,11 +234,11 @@ class FHIRImmunizationRecommendationDateCriterion extends FHIRBackboneElement
      *
      * The date whose meaning is specified by dateCriterion.code.
      *
-     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $value
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $value
      * @param null|\DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValue(null|string|\DateTimeInterface|FHIRDateTime|FHIRDateTimePrimitive $value,
+    public function setValue(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $value,
                              null|ValueXMLLocationEnum $valueXMLLocation = null): self
     {
         if (null === $value) {

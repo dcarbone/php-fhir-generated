@@ -5,7 +5,7 @@ namespace Tests\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 24th, 2025 03:11+0000
+ * Class creation date: January 26th, 2025 01:06+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,8 +113,8 @@ class FHIRTestScriptTest extends TestCase
         $client = $this->_getClient();
         $rc = $client->readRaw(
             resourceType: VersionTypesEnum::TEST_SCRIPT,
-            format: ResponseFormatEnum::JSON,
             count: 5,
+            format: ResponseFormatEnum::JSON,
         );
         if (404 === $rc->getCode()) {
             $this->markTestSkipped(sprintf(
@@ -140,5 +140,35 @@ class FHIRTestScriptTest extends TestCase
         $enc = json_encode($bundle);
         $this->assertJson($enc);
         $this->assertJsonStringEqualsJsonString($rc->getResp(), $enc);
+    }
+
+    public function testCanTranscodeBundleXML()
+    {
+        $client = $this->_getClient();
+        $rc = $client->readRaw(
+            resourceType: VersionTypesEnum::TEST_SCRIPT,
+            count: 5,
+            format: ResponseFormatEnum::XML,
+        );
+        if (404 === $rc->getCode()) {
+            $this->markTestSkipped(sprintf(
+                'Configured test endpoint "%s" has no resources of type "TestScript"',
+                $this->_getTestEndpoint(),
+            ));
+        }
+        $this->assertIsString($rc->getResp());
+        $this->assertEquals(200, $rc->getCode(), sprintf('Configured test endpoint "%s" returned non-200 response code', $this->_getTestEndpoint()));
+        $bundle = FHIRBundle::xmlUnserialize(
+            element: $rc->getResp(),
+            config: $this->_version->getConfig()->getUnserializeConfig(),
+        );
+        $entry = $bundle->getEntry();
+        $this->assertNotCount(0, $entry);
+        foreach($entry as $ent) {
+            $resource = $ent->getResource();
+            $this->assertInstanceOf(FHIRTestScript::class, $resource);
+        }
+        $xw = $bundle->xmlSerialize(config: $this->_version->getConfig()->getSerializeConfig());
+        $this->assertXmlStringEqualsXmlString($rc->getResp(), $xw->outputMemory());
     }
 }

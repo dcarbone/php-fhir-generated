@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 24th, 2025 03:11+0000
+ * Class creation date: January 26th, 2025 01:06+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -139,6 +139,7 @@ class FHIRContactDetail extends FHIRDataType
     /** Default validation map for fields in type ContactDetail */
     private const _DEFAULT_VALIDATION_RULES = [];
 
+    /* constructor.php:66 */
     /**
      * FHIRContactDetail Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
