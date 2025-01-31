@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResearchStudyStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyArm;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyObjective;
@@ -464,11 +465,11 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $title
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $protocol
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $partOf
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResearchStudyStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResearchStudyStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResearchStudyStatus $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $primaryPurposeType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $phase
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $category
@@ -502,7 +503,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                                 null|string|FHIRStringPrimitive|FHIRString $title = null,
                                 null|iterable $protocol = null,
                                 null|iterable $partOf = null,
-                                null|FHIRResearchStudyStatus $status = null,
+                                null|string|FHIRResearchStudyStatusEnum|FHIRResearchStudyStatus $status = null,
                                 null|FHIRCodeableConcept $primaryPurposeType = null,
                                 null|FHIRCodeableConcept $phase = null,
                                 null|iterable $category = null,
@@ -660,11 +661,14 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Identifiers assigned to this research study by the sponsor or other systems.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -680,10 +684,10 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Identifiers assigned to this research study by the sponsor or other systems.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -911,16 +915,19 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * The current state of the study.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResearchStudyStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResearchStudyStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResearchStudyStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRResearchStudyStatus $status,
+    public function setStatus(null|string|FHIRResearchStudyStatusEnum|FHIRResearchStudyStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRResearchStudyStatus)) {
+            $status = new FHIRResearchStudyStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -2884,13 +2891,13 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2898,17 +2905,19 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_TITLE]) || isset($json[self::FIELD_TITLE_EXT]) || array_key_exists(self::FIELD_TITLE, $json) || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
+        if (isset($json[self::FIELD_TITLE])
+            || isset($json[self::FIELD_TITLE_EXT])
+            || array_key_exists(self::FIELD_TITLE, $json)
+            || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
             $value = $json[self::FIELD_TITLE] ?? null;
-            $ext = (array)($json[self::FIELD_TITLE_EXT] ?? []);
             $type->setTitle(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TITLE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PROTOCOL]) || array_key_exists(self::FIELD_PROTOCOL, $json)) {
@@ -2917,10 +2926,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addProtocol(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addProtocol(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PART_OF]) || array_key_exists(self::FIELD_PART_OF, $json)) {
@@ -2929,31 +2935,24 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPartOf(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPartOf(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRResearchStudyStatus::jsonUnserialize(
-                json: [FHIRResearchStudyStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRResearchStudyStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PRIMARY_PURPOSE_TYPE]) || array_key_exists(self::FIELD_PRIMARY_PURPOSE_TYPE, $json)) {
-            $type->setPrimaryPurposeType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_PRIMARY_PURPOSE_TYPE],
-                config: $config,
-            ));
+            $type->setPrimaryPurposeType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PRIMARY_PURPOSE_TYPE], $config));
         }
         if (isset($json[self::FIELD_PHASE]) || array_key_exists(self::FIELD_PHASE, $json)) {
-            $type->setPhase(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_PHASE],
-                config: $config,
-            ));
+            $type->setPhase(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PHASE], $config));
         }
         if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
             $vs = $json[self::FIELD_CATEGORY];
@@ -2961,10 +2960,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCategory(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCategory(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_FOCUS]) || array_key_exists(self::FIELD_FOCUS, $json)) {
@@ -2973,10 +2969,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addFocus(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addFocus(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CONDITION]) || array_key_exists(self::FIELD_CONDITION, $json)) {
@@ -2985,10 +2978,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCondition(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCondition(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CONTACT]) || array_key_exists(self::FIELD_CONTACT, $json)) {
@@ -2997,10 +2987,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addContact(FHIRContactDetail::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addContact(FHIRContactDetail::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_RELATED_ARTIFACT]) || array_key_exists(self::FIELD_RELATED_ARTIFACT, $json)) {
@@ -3009,10 +2996,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRelatedArtifact(FHIRRelatedArtifact::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRelatedArtifact(FHIRRelatedArtifact::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_KEYWORD]) || array_key_exists(self::FIELD_KEYWORD, $json)) {
@@ -3021,10 +3005,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addKeyword(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addKeyword(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_LOCATION]) || array_key_exists(self::FIELD_LOCATION, $json)) {
@@ -3033,18 +3014,17 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addLocation(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addLocation(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ENROLLMENT]) || array_key_exists(self::FIELD_ENROLLMENT, $json)) {
@@ -3053,29 +3033,17 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addEnrollment(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addEnrollment(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_PERIOD],
-                config: $config,
-            ));
+            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
         }
         if (isset($json[self::FIELD_SPONSOR]) || array_key_exists(self::FIELD_SPONSOR, $json)) {
-            $type->setSponsor(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_SPONSOR],
-                config: $config,
-            ));
+            $type->setSponsor(FHIRReference::jsonUnserialize($json[self::FIELD_SPONSOR], $config));
         }
         if (isset($json[self::FIELD_PRINCIPAL_INVESTIGATOR]) || array_key_exists(self::FIELD_PRINCIPAL_INVESTIGATOR, $json)) {
-            $type->setPrincipalInvestigator(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PRINCIPAL_INVESTIGATOR],
-                config: $config,
-            ));
+            $type->setPrincipalInvestigator(FHIRReference::jsonUnserialize($json[self::FIELD_PRINCIPAL_INVESTIGATOR], $config));
         }
         if (isset($json[self::FIELD_SITE]) || array_key_exists(self::FIELD_SITE, $json)) {
             $vs = $json[self::FIELD_SITE];
@@ -3083,17 +3051,11 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSite(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSite(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_REASON_STOPPED]) || array_key_exists(self::FIELD_REASON_STOPPED, $json)) {
-            $type->setReasonStopped(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_REASON_STOPPED],
-                config: $config,
-            ));
+            $type->setReasonStopped(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_REASON_STOPPED], $config));
         }
         if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
             $vs = $json[self::FIELD_NOTE];
@@ -3101,10 +3063,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addNote(FHIRAnnotation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ARM]) || array_key_exists(self::FIELD_ARM, $json)) {
@@ -3113,10 +3072,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addArm(FHIRResearchStudyArm::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addArm(FHIRResearchStudyArm::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_OBJECTIVE]) || array_key_exists(self::FIELD_OBJECTIVE, $json)) {
@@ -3125,10 +3081,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addObjective(FHIRResearchStudyObjective::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addObjective(FHIRResearchStudyObjective::jsonUnserialize($v, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,6 +74,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
@@ -175,7 +176,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $period
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] $specialPrecautionsForStorage
@@ -184,7 +185,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRIdentifier $identifier = null,
+                                null|FHIRString|FHIRIdentifier $identifier = null,
                                 null|FHIRCodeableConcept $type = null,
                                 null|FHIRQuantity $period = null,
                                 null|iterable $specialPrecautionsForStorage = null,
@@ -241,16 +242,19 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      *
      * Unique identifier for the packaged Medicinal Product.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIdentifier(null|FHIRIdentifier $identifier,
+    public function setIdentifier(null|FHIRString|FHIRIdentifier $identifier,
                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $identifier) {
             unset($this->identifier);
             return $this;
+        }
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
         }
         $this->identifier = $identifier;
         if ($this->_valueXMLLocations[self::FIELD_IDENTIFIER] !== $valueXMLLocation) {
@@ -684,34 +688,22 @@ class FHIRProductShelfLife extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
             $value = $json[self::FIELD_IDENTIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
             $type->setIdentifier(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_IDENTIFIER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
         if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_PERIOD],
-                config: $config,
-            ));
+            $type->setPeriod(FHIRQuantity::jsonUnserialize($json[self::FIELD_PERIOD], $config));
         }
         if (isset($json[self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE]) || array_key_exists(self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE, $json)) {
             $vs = $json[self::FIELD_SPECIAL_PRECAUTIONS_FOR_STORAGE];
@@ -719,10 +711,7 @@ class FHIRProductShelfLife extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSpecialPrecautionsForStorage(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSpecialPrecautionsForStorage(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         return $type;

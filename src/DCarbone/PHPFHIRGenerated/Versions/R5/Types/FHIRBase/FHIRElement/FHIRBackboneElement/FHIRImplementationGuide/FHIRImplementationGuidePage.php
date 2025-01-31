@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,6 +95,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGuidePa
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGuidePageGenerationEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive;
@@ -238,7 +239,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $sourceMarkdown
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $name
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGuidePageGeneration $generation
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGuidePageGenerationEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGuidePageGeneration $generation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage[] $page
      * @param null|string[] $fhirComments
      */
@@ -250,7 +251,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $sourceMarkdown = null,
                                 null|string|FHIRUrlPrimitive|FHIRUrl $name = null,
                                 null|string|FHIRStringPrimitive|FHIRString $title = null,
-                                null|FHIRGuidePageGeneration $generation = null,
+                                null|string|FHIRGuidePageGenerationEnum|FHIRGuidePageGeneration $generation = null,
                                 null|iterable $page = null,
                                 null|iterable $fhirComments = null)
     {
@@ -648,16 +649,19 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      *
      * A code that indicates how the page is generated.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGuidePageGeneration $generation
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGuidePageGenerationEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGuidePageGeneration $generation
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setGeneration(null|FHIRGuidePageGeneration $generation,
+    public function setGeneration(null|string|FHIRGuidePageGenerationEnum|FHIRGuidePageGeneration $generation,
                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $generation) {
             unset($this->generation);
             return $this;
+        }
+        if (!($generation instanceof FHIRGuidePageGeneration)) {
+            $generation = new FHIRGuidePageGeneration(value: $generation);
         }
         $this->generation = $generation;
         if ($this->_valueXMLLocations[self::FIELD_GENERATION] !== $valueXMLLocation) {
@@ -1122,61 +1126,65 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_SOURCE_URL]) || isset($json[self::FIELD_SOURCE_URL_EXT]) || array_key_exists(self::FIELD_SOURCE_URL, $json) || array_key_exists(self::FIELD_SOURCE_URL_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_SOURCE_URL])
+            || isset($json[self::FIELD_SOURCE_URL_EXT])
+            || array_key_exists(self::FIELD_SOURCE_URL, $json)
+            || array_key_exists(self::FIELD_SOURCE_URL_EXT, $json)) {
             $value = $json[self::FIELD_SOURCE_URL] ?? null;
-            $ext = (array)($json[self::FIELD_SOURCE_URL_EXT] ?? []);
             $type->setSourceUrl(FHIRUrl::jsonUnserialize(
-                json: [FHIRUrl::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUrl::FIELD_VALUE => $value]) + ($json[self::FIELD_SOURCE_URL_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SOURCE_STRING]) || isset($json[self::FIELD_SOURCE_STRING_EXT]) || array_key_exists(self::FIELD_SOURCE_STRING, $json) || array_key_exists(self::FIELD_SOURCE_STRING_EXT, $json)) {
+        if (isset($json[self::FIELD_SOURCE_STRING])
+            || isset($json[self::FIELD_SOURCE_STRING_EXT])
+            || array_key_exists(self::FIELD_SOURCE_STRING, $json)
+            || array_key_exists(self::FIELD_SOURCE_STRING_EXT, $json)) {
             $value = $json[self::FIELD_SOURCE_STRING] ?? null;
-            $ext = (array)($json[self::FIELD_SOURCE_STRING_EXT] ?? []);
             $type->setSourceString(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SOURCE_STRING_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SOURCE_MARKDOWN]) || isset($json[self::FIELD_SOURCE_MARKDOWN_EXT]) || array_key_exists(self::FIELD_SOURCE_MARKDOWN, $json) || array_key_exists(self::FIELD_SOURCE_MARKDOWN_EXT, $json)) {
+        if (isset($json[self::FIELD_SOURCE_MARKDOWN])
+            || isset($json[self::FIELD_SOURCE_MARKDOWN_EXT])
+            || array_key_exists(self::FIELD_SOURCE_MARKDOWN, $json)
+            || array_key_exists(self::FIELD_SOURCE_MARKDOWN_EXT, $json)) {
             $value = $json[self::FIELD_SOURCE_MARKDOWN] ?? null;
-            $ext = (array)($json[self::FIELD_SOURCE_MARKDOWN_EXT] ?? []);
             $type->setSourceMarkdown(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_SOURCE_MARKDOWN_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_NAME])
+            || isset($json[self::FIELD_NAME_EXT])
+            || array_key_exists(self::FIELD_NAME, $json)
+            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
             $type->setName(FHIRUrl::jsonUnserialize(
-                json: [FHIRUrl::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUrl::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TITLE]) || isset($json[self::FIELD_TITLE_EXT]) || array_key_exists(self::FIELD_TITLE, $json) || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
+        if (isset($json[self::FIELD_TITLE])
+            || isset($json[self::FIELD_TITLE_EXT])
+            || array_key_exists(self::FIELD_TITLE, $json)
+            || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
             $value = $json[self::FIELD_TITLE] ?? null;
-            $ext = (array)($json[self::FIELD_TITLE_EXT] ?? []);
             $type->setTitle(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TITLE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_GENERATION]) || isset($json[self::FIELD_GENERATION_EXT]) || array_key_exists(self::FIELD_GENERATION, $json) || array_key_exists(self::FIELD_GENERATION_EXT, $json)) {
+        if (isset($json[self::FIELD_GENERATION])
+            || isset($json[self::FIELD_GENERATION_EXT])
+            || array_key_exists(self::FIELD_GENERATION, $json)
+            || array_key_exists(self::FIELD_GENERATION_EXT, $json)) {
             $value = $json[self::FIELD_GENERATION] ?? null;
-            $ext = (array)($json[self::FIELD_GENERATION_EXT] ?? []);
             $type->setGeneration(FHIRGuidePageGeneration::jsonUnserialize(
-                json: [FHIRGuidePageGeneration::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRGuidePageGeneration::FIELD_VALUE => $value]) + ($json[self::FIELD_GENERATION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PAGE]) || array_key_exists(self::FIELD_PAGE, $json)) {
@@ -1185,10 +1193,7 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPage(FHIRImplementationGuidePage::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPage(FHIRImplementationGuidePage::jsonUnserialize($v, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,6 +71,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceRefer
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCarePlanGoalStatusList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 
@@ -158,7 +159,7 @@ class FHIRCarePlanGoal extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanGoalStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCarePlanGoalStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanGoalStatus $status
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $notes
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference[] $concern
      * @param null|string[] $fhirComments
@@ -167,7 +168,7 @@ class FHIRCarePlanGoal extends FHIRBackboneElement
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|string|FHIRStringPrimitive|FHIRString $description = null,
-                                null|FHIRCarePlanGoalStatus $status = null,
+                                null|string|FHIRCarePlanGoalStatusList|FHIRCarePlanGoalStatus $status = null,
                                 null|string|FHIRStringPrimitive|FHIRString $notes = null,
                                 null|iterable $concern = null,
                                 null|iterable $fhirComments = null)
@@ -283,16 +284,19 @@ class FHIRCarePlanGoal extends FHIRBackboneElement
      *
      * Indicates whether the goal has been reached and is still considered relevant.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanGoalStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCarePlanGoalStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCarePlanGoalStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRCarePlanGoalStatus $status,
+    public function setStatus(null|string|FHIRCarePlanGoalStatusList|FHIRCarePlanGoalStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRCarePlanGoalStatus)) {
+            $status = new FHIRCarePlanGoalStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -715,37 +719,35 @@ class FHIRCarePlanGoal extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRCarePlanGoalStatus::jsonUnserialize(
-                json: [FHIRCarePlanGoalStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCarePlanGoalStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_NOTES]) || isset($json[self::FIELD_NOTES_EXT]) || array_key_exists(self::FIELD_NOTES, $json) || array_key_exists(self::FIELD_NOTES_EXT, $json)) {
+        if (isset($json[self::FIELD_NOTES])
+            || isset($json[self::FIELD_NOTES_EXT])
+            || array_key_exists(self::FIELD_NOTES, $json)
+            || array_key_exists(self::FIELD_NOTES_EXT, $json)) {
             $value = $json[self::FIELD_NOTES] ?? null;
-            $ext = (array)($json[self::FIELD_NOTES_EXT] ?? []);
             $type->setNotes(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NOTES_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CONCERN]) || array_key_exists(self::FIELD_CONCERN, $json)) {
@@ -754,10 +756,7 @@ class FHIRCarePlanGoal extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addConcern(FHIRResourceReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addConcern(FHIRResourceReference::jsonUnserialize($v, $config));
             }
         }
         return $type;

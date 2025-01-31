@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,6 +81,8 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRLocationModeList;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRLocationStatusList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface;
@@ -267,18 +269,18 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $description
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact[] $telecom
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact[] $telecom
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAddress $address
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $physicalType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition $position
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $managingOrganization
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRLocationStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRLocationStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRLocationStatus $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $partOf
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRLocationMode $mode
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRLocationModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRLocationMode $mode
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -287,7 +289,7 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
                                 null|string|FHIRCodePrimitive|FHIRCode $language = null,
                                 null|FHIRNarrative $text = null,
                                 null|iterable $contained = null,
-                                null|FHIRIdentifier $identifier = null,
+                                null|FHIRString|FHIRIdentifier $identifier = null,
                                 null|string|FHIRStringPrimitive|FHIRString $name = null,
                                 null|string|FHIRStringPrimitive|FHIRString $description = null,
                                 null|FHIRCodeableConcept $type = null,
@@ -296,9 +298,9 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
                                 null|FHIRCodeableConcept $physicalType = null,
                                 null|FHIRLocationPosition $position = null,
                                 null|FHIRResourceReference $managingOrganization = null,
-                                null|FHIRLocationStatus $status = null,
+                                null|string|FHIRLocationStatusList|FHIRLocationStatus $status = null,
                                 null|FHIRResourceReference $partOf = null,
-                                null|FHIRLocationMode $mode = null,
+                                null|string|FHIRLocationModeList|FHIRLocationMode $mode = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -386,16 +388,19 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      *
      * Unique code or number identifying the location to its users.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIdentifier(null|FHIRIdentifier $identifier,
+    public function setIdentifier(null|FHIRString|FHIRIdentifier $identifier,
                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $identifier) {
             unset($this->identifier);
             return $this;
+        }
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
         }
         $this->identifier = $identifier;
         if ($this->_valueXMLLocations[self::FIELD_IDENTIFIER] !== $valueXMLLocation) {
@@ -630,11 +635,14 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * include phone numbers, fax numbers, mobile numbers, email addresses and web
      * sites.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $telecom
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $telecom
      * @return static
      */
-    public function addTelecom(FHIRContact $telecom): self
+    public function addTelecom(FHIRString|FHIRContact $telecom): self
     {
+        if (!($telecom instanceof FHIRContact)) {
+            $telecom = new FHIRContact(value: $telecom);
+        }
         if (!isset($this->telecom)) {
             $this->telecom = [];
         }
@@ -652,10 +660,10 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * include phone numbers, fax numbers, mobile numbers, email addresses and web
      * sites.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact ...$telecom
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact ...$telecom
      * @return static
      */
-    public function setTelecom(FHIRContact ...$telecom): self
+    public function setTelecom(FHIRString|FHIRContact ...$telecom): self
     {
         if ([] === $telecom) {
             unset($this->telecom);
@@ -835,16 +843,19 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      *
      * active | suspended | inactive.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRLocationStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRLocationStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRLocationStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRLocationStatus $status,
+    public function setStatus(null|string|FHIRLocationStatusList|FHIRLocationStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRLocationStatus)) {
+            $status = new FHIRLocationStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -934,16 +945,19 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
      * Indicates whether a resource instance represents a specific location or a class
      * of locations.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRLocationMode $mode
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRLocationModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRLocationMode $mode
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMode(null|FHIRLocationMode $mode,
+    public function setMode(null|string|FHIRLocationModeList|FHIRLocationMode $mode,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $mode) {
             unset($this->mode);
             return $this;
+        }
+        if (!($mode instanceof FHIRLocationMode)) {
+            $mode = new FHIRLocationMode(value: $mode);
         }
         $this->mode = $mode;
         if ($this->_valueXMLLocations[self::FIELD_MODE] !== $valueXMLLocation) {
@@ -1504,43 +1518,46 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
             $value = $json[self::FIELD_IDENTIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
             $type->setIdentifier(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_IDENTIFIER_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_NAME])
+            || isset($json[self::FIELD_NAME_EXT])
+            || array_key_exists(self::FIELD_NAME, $json)
+            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
             $type->setName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
-        if (isset($json[self::FIELD_TELECOM]) || isset($json[self::FIELD_TELECOM_EXT]) || array_key_exists(self::FIELD_TELECOM, $json) || array_key_exists(self::FIELD_TELECOM_EXT, $json)) {
-            $value = $json[self::FIELD_TELECOM] ?? null;
+        if (isset($json[self::FIELD_TELECOM])
+            || isset($json[self::FIELD_TELECOM_EXT])
+            || array_key_exists(self::FIELD_TELECOM, $json)
+            || array_key_exists(self::FIELD_TELECOM_EXT, $json)) {
+            $value = (array)($json[self::FIELD_TELECOM] ?? []);
             $ext = (array)($json[self::FIELD_TELECOM_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1548,55 +1565,44 @@ class FHIRLocation extends FHIRResource implements VersionContainedTypeInterface
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addTelecom(FHIRContact::jsonUnserialize(
-                    json: [FHIRContact::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRContact::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
         if (isset($json[self::FIELD_ADDRESS]) || array_key_exists(self::FIELD_ADDRESS, $json)) {
-            $type->setAddress(FHIRAddress::jsonUnserialize(
-                json: $json[self::FIELD_ADDRESS],
-                config: $config,
-            ));
+            $type->setAddress(FHIRAddress::jsonUnserialize($json[self::FIELD_ADDRESS], $config));
         }
         if (isset($json[self::FIELD_PHYSICAL_TYPE]) || array_key_exists(self::FIELD_PHYSICAL_TYPE, $json)) {
-            $type->setPhysicalType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_PHYSICAL_TYPE],
-                config: $config,
-            ));
+            $type->setPhysicalType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PHYSICAL_TYPE], $config));
         }
         if (isset($json[self::FIELD_POSITION]) || array_key_exists(self::FIELD_POSITION, $json)) {
-            $type->setPosition(FHIRLocationPosition::jsonUnserialize(
-                json: $json[self::FIELD_POSITION],
-                config: $config,
-            ));
+            $type->setPosition(FHIRLocationPosition::jsonUnserialize($json[self::FIELD_POSITION], $config));
         }
         if (isset($json[self::FIELD_MANAGING_ORGANIZATION]) || array_key_exists(self::FIELD_MANAGING_ORGANIZATION, $json)) {
-            $type->setManagingOrganization(FHIRResourceReference::jsonUnserialize(
-                json: $json[self::FIELD_MANAGING_ORGANIZATION],
-                config: $config,
-            ));
+            $type->setManagingOrganization(FHIRResourceReference::jsonUnserialize($json[self::FIELD_MANAGING_ORGANIZATION], $config));
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRLocationStatus::jsonUnserialize(
-                json: [FHIRLocationStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRLocationStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PART_OF]) || array_key_exists(self::FIELD_PART_OF, $json)) {
-            $type->setPartOf(FHIRResourceReference::jsonUnserialize(
-                json: $json[self::FIELD_PART_OF],
-                config: $config,
-            ));
+            $type->setPartOf(FHIRResourceReference::jsonUnserialize($json[self::FIELD_PART_OF], $config));
         }
-        if (isset($json[self::FIELD_MODE]) || isset($json[self::FIELD_MODE_EXT]) || array_key_exists(self::FIELD_MODE, $json) || array_key_exists(self::FIELD_MODE_EXT, $json)) {
+        if (isset($json[self::FIELD_MODE])
+            || isset($json[self::FIELD_MODE_EXT])
+            || array_key_exists(self::FIELD_MODE, $json)
+            || array_key_exists(self::FIELD_MODE_EXT, $json)) {
             $value = $json[self::FIELD_MODE] ?? null;
-            $ext = (array)($json[self::FIELD_MODE_EXT] ?? []);
             $type->setMode(FHIRLocationMode::jsonUnserialize(
-                json: [FHIRLocationMode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRLocationMode::FIELD_VALUE => $value]) + ($json[self::FIELD_MODE_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,6 +109,8 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource\FHIRCanonicalResource;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCompartmentTypeEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
@@ -425,7 +427,7 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $versionAlgorithmCoding
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $experimental
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $publisher
@@ -433,7 +435,7 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $description
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[] $useContext
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $purpose
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCompartmentType $code
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCompartmentTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCompartmentType $code
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $search
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCompartmentDefinition\FHIRCompartmentDefinitionResource[] $resource
      * @param null|string[] $fhirComments
@@ -452,7 +454,7 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
                                 null|FHIRCoding $versionAlgorithmCoding = null,
                                 null|string|FHIRStringPrimitive|FHIRString $name = null,
                                 null|string|FHIRStringPrimitive|FHIRString $title = null,
-                                null|FHIRPublicationStatus $status = null,
+                                null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date = null,
                                 null|string|FHIRStringPrimitive|FHIRString $publisher = null,
@@ -460,7 +462,7 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description = null,
                                 null|iterable $useContext = null,
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose = null,
-                                null|FHIRCompartmentType $code = null,
+                                null|string|FHIRCompartmentTypeEnum|FHIRCompartmentType $code = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $search = null,
                                 null|iterable $resource = null,
                                 null|iterable $fhirComments = null)
@@ -959,16 +961,19 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      * The status of this compartment definition. Enables tracking the life-cycle of
      * the content.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRPublicationStatus $status,
+    public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRPublicationStatus)) {
+            $status = new FHIRPublicationStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -1538,16 +1543,19 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
      *
      * Which compartment this definition describes.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCompartmentType $code
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCompartmentTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCompartmentType $code
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCode(null|FHIRCompartmentType $code,
+    public function setCode(null|string|FHIRCompartmentTypeEnum|FHIRCompartmentType $code,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $code) {
             unset($this->code);
             return $this;
+        }
+        if (!($code instanceof FHIRCompartmentType)) {
+            $code = new FHIRCompartmentType(value: $code);
         }
         $this->code = $code;
         if ($this->_valueXMLLocations[self::FIELD_CODE] !== $valueXMLLocation) {
@@ -2494,83 +2502,98 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_URL]) || isset($json[self::FIELD_URL_EXT]) || array_key_exists(self::FIELD_URL, $json) || array_key_exists(self::FIELD_URL_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_URL])
+            || isset($json[self::FIELD_URL_EXT])
+            || array_key_exists(self::FIELD_URL, $json)
+            || array_key_exists(self::FIELD_URL_EXT, $json)) {
             $value = $json[self::FIELD_URL] ?? null;
-            $ext = (array)($json[self::FIELD_URL_EXT] ?? []);
             $type->setUrl(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_URL_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_VERSION]) || isset($json[self::FIELD_VERSION_EXT]) || array_key_exists(self::FIELD_VERSION, $json) || array_key_exists(self::FIELD_VERSION_EXT, $json)) {
+        if (isset($json[self::FIELD_VERSION])
+            || isset($json[self::FIELD_VERSION_EXT])
+            || array_key_exists(self::FIELD_VERSION, $json)
+            || array_key_exists(self::FIELD_VERSION_EXT, $json)) {
             $value = $json[self::FIELD_VERSION] ?? null;
-            $ext = (array)($json[self::FIELD_VERSION_EXT] ?? []);
             $type->setVersion(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_VERSION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_VERSION_ALGORITHM_STRING]) || isset($json[self::FIELD_VERSION_ALGORITHM_STRING_EXT]) || array_key_exists(self::FIELD_VERSION_ALGORITHM_STRING, $json) || array_key_exists(self::FIELD_VERSION_ALGORITHM_STRING_EXT, $json)) {
+        if (isset($json[self::FIELD_VERSION_ALGORITHM_STRING])
+            || isset($json[self::FIELD_VERSION_ALGORITHM_STRING_EXT])
+            || array_key_exists(self::FIELD_VERSION_ALGORITHM_STRING, $json)
+            || array_key_exists(self::FIELD_VERSION_ALGORITHM_STRING_EXT, $json)) {
             $value = $json[self::FIELD_VERSION_ALGORITHM_STRING] ?? null;
-            $ext = (array)($json[self::FIELD_VERSION_ALGORITHM_STRING_EXT] ?? []);
             $type->setVersionAlgorithmString(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_VERSION_ALGORITHM_STRING_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_VERSION_ALGORITHM_CODING]) || array_key_exists(self::FIELD_VERSION_ALGORITHM_CODING, $json)) {
-            $type->setVersionAlgorithmCoding(FHIRCoding::jsonUnserialize(
-                json: $json[self::FIELD_VERSION_ALGORITHM_CODING],
-                config: $config,
-            ));
+            $type->setVersionAlgorithmCoding(FHIRCoding::jsonUnserialize($json[self::FIELD_VERSION_ALGORITHM_CODING], $config));
         }
-        if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_NAME])
+            || isset($json[self::FIELD_NAME_EXT])
+            || array_key_exists(self::FIELD_NAME, $json)
+            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
             $type->setName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TITLE]) || isset($json[self::FIELD_TITLE_EXT]) || array_key_exists(self::FIELD_TITLE, $json) || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
+        if (isset($json[self::FIELD_TITLE])
+            || isset($json[self::FIELD_TITLE_EXT])
+            || array_key_exists(self::FIELD_TITLE, $json)
+            || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
             $value = $json[self::FIELD_TITLE] ?? null;
-            $ext = (array)($json[self::FIELD_TITLE_EXT] ?? []);
             $type->setTitle(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TITLE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRPublicationStatus::jsonUnserialize(
-                json: [FHIRPublicationStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPublicationStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_EXPERIMENTAL]) || isset($json[self::FIELD_EXPERIMENTAL_EXT]) || array_key_exists(self::FIELD_EXPERIMENTAL, $json) || array_key_exists(self::FIELD_EXPERIMENTAL_EXT, $json)) {
+        if (isset($json[self::FIELD_EXPERIMENTAL])
+            || isset($json[self::FIELD_EXPERIMENTAL_EXT])
+            || array_key_exists(self::FIELD_EXPERIMENTAL, $json)
+            || array_key_exists(self::FIELD_EXPERIMENTAL_EXT, $json)) {
             $value = $json[self::FIELD_EXPERIMENTAL] ?? null;
-            $ext = (array)($json[self::FIELD_EXPERIMENTAL_EXT] ?? []);
             $type->setExperimental(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_EXPERIMENTAL_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DATE]) || isset($json[self::FIELD_DATE_EXT]) || array_key_exists(self::FIELD_DATE, $json) || array_key_exists(self::FIELD_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_DATE])
+            || isset($json[self::FIELD_DATE_EXT])
+            || array_key_exists(self::FIELD_DATE, $json)
+            || array_key_exists(self::FIELD_DATE_EXT, $json)) {
             $value = $json[self::FIELD_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_DATE_EXT] ?? []);
             $type->setDate(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PUBLISHER]) || isset($json[self::FIELD_PUBLISHER_EXT]) || array_key_exists(self::FIELD_PUBLISHER, $json) || array_key_exists(self::FIELD_PUBLISHER_EXT, $json)) {
+        if (isset($json[self::FIELD_PUBLISHER])
+            || isset($json[self::FIELD_PUBLISHER_EXT])
+            || array_key_exists(self::FIELD_PUBLISHER, $json)
+            || array_key_exists(self::FIELD_PUBLISHER_EXT, $json)) {
             $value = $json[self::FIELD_PUBLISHER] ?? null;
-            $ext = (array)($json[self::FIELD_PUBLISHER_EXT] ?? []);
             $type->setPublisher(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PUBLISHER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CONTACT]) || array_key_exists(self::FIELD_CONTACT, $json)) {
@@ -2579,18 +2602,17 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addContact(FHIRContactDetail::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addContact(FHIRContactDetail::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_USE_CONTEXT]) || array_key_exists(self::FIELD_USE_CONTEXT, $json)) {
@@ -2599,34 +2621,37 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addUseContext(FHIRUsageContext::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addUseContext(FHIRUsageContext::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PURPOSE]) || isset($json[self::FIELD_PURPOSE_EXT]) || array_key_exists(self::FIELD_PURPOSE, $json) || array_key_exists(self::FIELD_PURPOSE_EXT, $json)) {
+        if (isset($json[self::FIELD_PURPOSE])
+            || isset($json[self::FIELD_PURPOSE_EXT])
+            || array_key_exists(self::FIELD_PURPOSE, $json)
+            || array_key_exists(self::FIELD_PURPOSE_EXT, $json)) {
             $value = $json[self::FIELD_PURPOSE] ?? null;
-            $ext = (array)($json[self::FIELD_PURPOSE_EXT] ?? []);
             $type->setPurpose(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_PURPOSE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CODE]) || isset($json[self::FIELD_CODE_EXT]) || array_key_exists(self::FIELD_CODE, $json) || array_key_exists(self::FIELD_CODE_EXT, $json)) {
+        if (isset($json[self::FIELD_CODE])
+            || isset($json[self::FIELD_CODE_EXT])
+            || array_key_exists(self::FIELD_CODE, $json)
+            || array_key_exists(self::FIELD_CODE_EXT, $json)) {
             $value = $json[self::FIELD_CODE] ?? null;
-            $ext = (array)($json[self::FIELD_CODE_EXT] ?? []);
             $type->setCode(FHIRCompartmentType::jsonUnserialize(
-                json: [FHIRCompartmentType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCompartmentType::FIELD_VALUE => $value]) + ($json[self::FIELD_CODE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SEARCH]) || isset($json[self::FIELD_SEARCH_EXT]) || array_key_exists(self::FIELD_SEARCH, $json) || array_key_exists(self::FIELD_SEARCH_EXT, $json)) {
+        if (isset($json[self::FIELD_SEARCH])
+            || isset($json[self::FIELD_SEARCH_EXT])
+            || array_key_exists(self::FIELD_SEARCH, $json)
+            || array_key_exists(self::FIELD_SEARCH_EXT, $json)) {
             $value = $json[self::FIELD_SEARCH] ?? null;
-            $ext = (array)($json[self::FIELD_SEARCH_EXT] ?? []);
             $type->setSearch(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_SEARCH_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_RESOURCE]) || array_key_exists(self::FIELD_RESOURCE, $json)) {
@@ -2635,10 +2660,7 @@ class FHIRCompartmentDefinition extends FHIRCanonicalResource implements Version
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addResource(FHIRCompartmentDefinitionResource::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addResource(FHIRCompartmentDefinitionResource::jsonUnserialize($v, $config));
             }
         }
         return $type;

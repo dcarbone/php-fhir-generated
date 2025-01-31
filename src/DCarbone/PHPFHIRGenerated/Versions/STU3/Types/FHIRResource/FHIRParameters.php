@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -455,17 +455,14 @@ class FHIRParameters extends FHIRResource implements VersionContainedTypeInterfa
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_PARAMETER]) || array_key_exists(self::FIELD_PARAMETER, $json)) {
             $vs = $json[self::FIELD_PARAMETER];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addParameter(FHIRParametersParameter::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addParameter(FHIRParametersParameter::jsonUnserialize($v, $config));
             }
         }
         return $type;

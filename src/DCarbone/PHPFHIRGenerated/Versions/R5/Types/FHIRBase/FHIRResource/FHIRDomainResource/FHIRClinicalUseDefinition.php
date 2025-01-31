@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,10 +104,12 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRClinicalUseDefinitionTypeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
@@ -293,8 +295,8 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRClinicalUseDefinitionType $type
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRClinicalUseDefinitionTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRClinicalUseDefinitionType $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $category
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $subject
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $status
@@ -316,7 +318,7 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
                                 null|iterable $identifier = null,
-                                null|FHIRClinicalUseDefinitionType $type = null,
+                                null|string|FHIRClinicalUseDefinitionTypeEnum|FHIRClinicalUseDefinitionType $type = null,
                                 null|iterable $category = null,
                                 null|iterable $subject = null,
                                 null|FHIRCodeableConcept $status = null,
@@ -429,11 +431,14 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      *
      * Business identifier for this issue.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -449,10 +454,10 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      *
      * Business identifier for this issue.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -486,16 +491,19 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
      *
      * indication | contraindication | interaction | undesirable-effect | warning.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRClinicalUseDefinitionType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRClinicalUseDefinitionTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRClinicalUseDefinitionType $type
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|FHIRClinicalUseDefinitionType $type,
+    public function setType(null|string|FHIRClinicalUseDefinitionTypeEnum|FHIRClinicalUseDefinitionType $type,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $type) {
             unset($this->type);
             return $this;
+        }
+        if (!($type instanceof FHIRClinicalUseDefinitionType)) {
+            $type = new FHIRClinicalUseDefinitionType(value: $type);
         }
         $this->type = $type;
         if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
@@ -1538,13 +1546,13 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1552,17 +1560,19 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
+        if (isset($json[self::FIELD_TYPE])
+            || isset($json[self::FIELD_TYPE_EXT])
+            || array_key_exists(self::FIELD_TYPE, $json)
+            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
             $type->setType(FHIRClinicalUseDefinitionType::jsonUnserialize(
-                json: [FHIRClinicalUseDefinitionType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRClinicalUseDefinitionType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
@@ -1571,10 +1581,7 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCategory(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCategory(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
@@ -1583,35 +1590,20 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSubject(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSubject(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_STATUS]) || array_key_exists(self::FIELD_STATUS, $json)) {
-            $type->setStatus(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_STATUS],
-                config: $config,
-            ));
+            $type->setStatus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_STATUS], $config));
         }
         if (isset($json[self::FIELD_CONTRAINDICATION]) || array_key_exists(self::FIELD_CONTRAINDICATION, $json)) {
-            $type->setContraindication(FHIRClinicalUseDefinitionContraindication::jsonUnserialize(
-                json: $json[self::FIELD_CONTRAINDICATION],
-                config: $config,
-            ));
+            $type->setContraindication(FHIRClinicalUseDefinitionContraindication::jsonUnserialize($json[self::FIELD_CONTRAINDICATION], $config));
         }
         if (isset($json[self::FIELD_INDICATION]) || array_key_exists(self::FIELD_INDICATION, $json)) {
-            $type->setIndication(FHIRClinicalUseDefinitionIndication::jsonUnserialize(
-                json: $json[self::FIELD_INDICATION],
-                config: $config,
-            ));
+            $type->setIndication(FHIRClinicalUseDefinitionIndication::jsonUnserialize($json[self::FIELD_INDICATION], $config));
         }
         if (isset($json[self::FIELD_INTERACTION]) || array_key_exists(self::FIELD_INTERACTION, $json)) {
-            $type->setInteraction(FHIRClinicalUseDefinitionInteraction::jsonUnserialize(
-                json: $json[self::FIELD_INTERACTION],
-                config: $config,
-            ));
+            $type->setInteraction(FHIRClinicalUseDefinitionInteraction::jsonUnserialize($json[self::FIELD_INTERACTION], $config));
         }
         if (isset($json[self::FIELD_POPULATION]) || array_key_exists(self::FIELD_POPULATION, $json)) {
             $vs = $json[self::FIELD_POPULATION];
@@ -1619,18 +1611,15 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPopulation(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPopulation(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_LIBRARY]) || isset($json[self::FIELD_LIBRARY_EXT]) || array_key_exists(self::FIELD_LIBRARY, $json) || array_key_exists(self::FIELD_LIBRARY_EXT, $json)) {
-            $value = $json[self::FIELD_LIBRARY] ?? null;
+        if (isset($json[self::FIELD_LIBRARY])
+            || isset($json[self::FIELD_LIBRARY_EXT])
+            || array_key_exists(self::FIELD_LIBRARY, $json)
+            || array_key_exists(self::FIELD_LIBRARY_EXT, $json)) {
+            $value = (array)($json[self::FIELD_LIBRARY] ?? []);
             $ext = (array)($json[self::FIELD_LIBRARY_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1638,22 +1627,16 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements VersionCon
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addLibrary(FHIRCanonical::jsonUnserialize(
-                    json: [FHIRCanonical::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRCanonical::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
         if (isset($json[self::FIELD_UNDESIRABLE_EFFECT]) || array_key_exists(self::FIELD_UNDESIRABLE_EFFECT, $json)) {
-            $type->setUndesirableEffect(FHIRClinicalUseDefinitionUndesirableEffect::jsonUnserialize(
-                json: $json[self::FIELD_UNDESIRABLE_EFFECT],
-                config: $config,
-            ));
+            $type->setUndesirableEffect(FHIRClinicalUseDefinitionUndesirableEffect::jsonUnserialize($json[self::FIELD_UNDESIRABLE_EFFECT], $config));
         }
         if (isset($json[self::FIELD_WARNING]) || array_key_exists(self::FIELD_WARNING, $json)) {
-            $type->setWarning(FHIRClinicalUseDefinitionWarning::jsonUnserialize(
-                json: $json[self::FIELD_WARNING],
-                config: $config,
-            ));
+            $type->setWarning(FHIRClinicalUseDefinitionWarning::jsonUnserialize($json[self::FIELD_WARNING], $config));
         }
         return $type;
     }

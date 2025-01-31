@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,7 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -193,7 +194,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGrouping[] $grouping
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource[] $resource
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage $page
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter[] $parameter
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter[] $parameter
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideTemplate[] $template
      * @param null|string[] $fhirComments
      */
@@ -457,11 +458,14 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * parameters are defined by the relevant tools that build the implementation
      * guides.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter $parameter
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter $parameter
      * @return static
      */
-    public function addParameter(FHIRImplementationGuideParameter $parameter): self
+    public function addParameter(FHIRString|FHIRImplementationGuideParameter $parameter): self
     {
+        if (!($parameter instanceof FHIRImplementationGuideParameter)) {
+            $parameter = new FHIRImplementationGuideParameter(value: $parameter);
+        }
         if (!isset($this->parameter)) {
             $this->parameter = [];
         }
@@ -479,10 +483,10 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * parameters are defined by the relevant tools that build the implementation
      * guides.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter ...$parameter
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter ...$parameter
      * @return static
      */
-    public function setParameter(FHIRImplementationGuideParameter ...$parameter): self
+    public function setParameter(FHIRString|FHIRImplementationGuideParameter ...$parameter): self
     {
         if ([] === $parameter) {
             unset($this->parameter);
@@ -806,25 +810,14 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_GROUPING]) || array_key_exists(self::FIELD_GROUPING, $json)) {
             $vs = $json[self::FIELD_GROUPING];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addGrouping(FHIRImplementationGuideGrouping::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addGrouping(FHIRImplementationGuideGrouping::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_RESOURCE]) || array_key_exists(self::FIELD_RESOURCE, $json)) {
@@ -833,24 +826,18 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addResource(FHIRImplementationGuideResource::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addResource(FHIRImplementationGuideResource::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PAGE]) || array_key_exists(self::FIELD_PAGE, $json)) {
-            $type->setPage(FHIRImplementationGuidePage::jsonUnserialize(
-                json: $json[self::FIELD_PAGE],
-                config: $config,
-            ));
+            $type->setPage(FHIRImplementationGuidePage::jsonUnserialize($json[self::FIELD_PAGE], $config));
         }
-        if (isset($json[self::FIELD_PARAMETER]) || isset($json[self::FIELD_PARAMETER_EXT]) || array_key_exists(self::FIELD_PARAMETER, $json) || array_key_exists(self::FIELD_PARAMETER_EXT, $json)) {
-            $value = $json[self::FIELD_PARAMETER] ?? null;
+        if (isset($json[self::FIELD_PARAMETER])
+            || isset($json[self::FIELD_PARAMETER_EXT])
+            || array_key_exists(self::FIELD_PARAMETER, $json)
+            || array_key_exists(self::FIELD_PARAMETER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_PARAMETER] ?? []);
             $ext = (array)($json[self::FIELD_PARAMETER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -858,8 +845,8 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addParameter(FHIRImplementationGuideParameter::jsonUnserialize(
-                    json: [FHIRImplementationGuideParameter::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRImplementationGuideParameter::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -869,10 +856,7 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addTemplate(FHIRImplementationGuideTemplate::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addTemplate(FHIRImplementationGuideTemplate::jsonUnserialize($v, $config));
             }
         }
         return $type;

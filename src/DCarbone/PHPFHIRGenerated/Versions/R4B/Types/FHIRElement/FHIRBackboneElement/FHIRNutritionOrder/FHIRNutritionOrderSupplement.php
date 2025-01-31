@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -798,27 +798,18 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
-        if (isset($json[self::FIELD_PRODUCT_NAME]) || isset($json[self::FIELD_PRODUCT_NAME_EXT]) || array_key_exists(self::FIELD_PRODUCT_NAME, $json) || array_key_exists(self::FIELD_PRODUCT_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_PRODUCT_NAME])
+            || isset($json[self::FIELD_PRODUCT_NAME_EXT])
+            || array_key_exists(self::FIELD_PRODUCT_NAME, $json)
+            || array_key_exists(self::FIELD_PRODUCT_NAME_EXT, $json)) {
             $value = $json[self::FIELD_PRODUCT_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_PRODUCT_NAME_EXT] ?? []);
             $type->setProductName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PRODUCT_NAME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SCHEDULE]) || array_key_exists(self::FIELD_SCHEDULE, $json)) {
@@ -827,24 +818,20 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSchedule(FHIRTiming::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSchedule(FHIRTiming::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            $type->setQuantity(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_QUANTITY],
-                config: $config,
-            ));
+            $type->setQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
         }
-        if (isset($json[self::FIELD_INSTRUCTION]) || isset($json[self::FIELD_INSTRUCTION_EXT]) || array_key_exists(self::FIELD_INSTRUCTION, $json) || array_key_exists(self::FIELD_INSTRUCTION_EXT, $json)) {
+        if (isset($json[self::FIELD_INSTRUCTION])
+            || isset($json[self::FIELD_INSTRUCTION_EXT])
+            || array_key_exists(self::FIELD_INSTRUCTION, $json)
+            || array_key_exists(self::FIELD_INSTRUCTION_EXT, $json)) {
             $value = $json[self::FIELD_INSTRUCTION] ?? null;
-            $ext = (array)($json[self::FIELD_INSTRUCTION_EXT] ?? []);
             $type->setInstruction(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_INSTRUCTION_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,6 +93,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackbon
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRLinkRelationTypes;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRLinkRelationTypesEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -156,14 +157,14 @@ class FHIRBundleLink extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRLinkRelationTypes $relation
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRLinkRelationTypesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRLinkRelationTypes $relation
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $url
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRLinkRelationTypes $relation = null,
+                                null|string|FHIRLinkRelationTypesEnum|FHIRLinkRelationTypes $relation = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $url = null,
                                 null|iterable $fhirComments = null)
     {
@@ -208,16 +209,19 @@ class FHIRBundleLink extends FHIRBackboneElement
      * A name which details the functional use for this link - see
      * [http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1](http://www.iana.org/assignments/link-relations/link-relations.xhtml#link-relations-1).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRLinkRelationTypes $relation
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRLinkRelationTypesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRLinkRelationTypes $relation
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRelation(null|FHIRLinkRelationTypes $relation,
+    public function setRelation(null|string|FHIRLinkRelationTypesEnum|FHIRLinkRelationTypes $relation,
                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $relation) {
             unset($this->relation);
             return $this;
+        }
+        if (!($relation instanceof FHIRLinkRelationTypes)) {
+            $relation = new FHIRLinkRelationTypes(value: $relation);
         }
         $this->relation = $relation;
         if ($this->_valueXMLLocations[self::FIELD_RELATION] !== $valueXMLLocation) {
@@ -527,29 +531,25 @@ class FHIRBundleLink extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_RELATION]) || isset($json[self::FIELD_RELATION_EXT]) || array_key_exists(self::FIELD_RELATION, $json) || array_key_exists(self::FIELD_RELATION_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_RELATION])
+            || isset($json[self::FIELD_RELATION_EXT])
+            || array_key_exists(self::FIELD_RELATION, $json)
+            || array_key_exists(self::FIELD_RELATION_EXT, $json)) {
             $value = $json[self::FIELD_RELATION] ?? null;
-            $ext = (array)($json[self::FIELD_RELATION_EXT] ?? []);
             $type->setRelation(FHIRLinkRelationTypes::jsonUnserialize(
-                json: [FHIRLinkRelationTypes::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRLinkRelationTypes::FIELD_VALUE => $value]) + ($json[self::FIELD_RELATION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_URL]) || isset($json[self::FIELD_URL_EXT]) || array_key_exists(self::FIELD_URL, $json) || array_key_exists(self::FIELD_URL_EXT, $json)) {
+        if (isset($json[self::FIELD_URL])
+            || isset($json[self::FIELD_URL_EXT])
+            || array_key_exists(self::FIELD_URL, $json)
+            || array_key_exists(self::FIELD_URL_EXT, $json)) {
             $value = $json[self::FIELD_URL] ?? null;
-            $ext = (array)($json[self::FIELD_URL_EXT] ?? []);
             $type->setUrl(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_URL_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

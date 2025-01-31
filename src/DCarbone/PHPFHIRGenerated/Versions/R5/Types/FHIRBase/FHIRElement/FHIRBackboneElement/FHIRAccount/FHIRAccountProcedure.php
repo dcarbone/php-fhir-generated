@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -932,35 +932,28 @@ class FHIRAccountProcedure extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_SEQUENCE]) || isset($json[self::FIELD_SEQUENCE_EXT]) || array_key_exists(self::FIELD_SEQUENCE, $json) || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_SEQUENCE])
+            || isset($json[self::FIELD_SEQUENCE_EXT])
+            || array_key_exists(self::FIELD_SEQUENCE, $json)
+            || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
             $value = $json[self::FIELD_SEQUENCE] ?? null;
-            $ext = (array)($json[self::FIELD_SEQUENCE_EXT] ?? []);
             $type->setSequence(FHIRPositiveInt::jsonUnserialize(
-                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_SEQUENCE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCodeableReference::jsonUnserialize(
-                json: $json[self::FIELD_CODE],
-                config: $config,
-            ));
+            $type->setCode(FHIRCodeableReference::jsonUnserialize($json[self::FIELD_CODE], $config));
         }
-        if (isset($json[self::FIELD_DATE_OF_SERVICE]) || isset($json[self::FIELD_DATE_OF_SERVICE_EXT]) || array_key_exists(self::FIELD_DATE_OF_SERVICE, $json) || array_key_exists(self::FIELD_DATE_OF_SERVICE_EXT, $json)) {
+        if (isset($json[self::FIELD_DATE_OF_SERVICE])
+            || isset($json[self::FIELD_DATE_OF_SERVICE_EXT])
+            || array_key_exists(self::FIELD_DATE_OF_SERVICE, $json)
+            || array_key_exists(self::FIELD_DATE_OF_SERVICE_EXT, $json)) {
             $value = $json[self::FIELD_DATE_OF_SERVICE] ?? null;
-            $ext = (array)($json[self::FIELD_DATE_OF_SERVICE_EXT] ?? []);
             $type->setDateOfService(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_OF_SERVICE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
@@ -969,10 +962,7 @@ class FHIRAccountProcedure extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addType(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PACKAGE_CODE]) || array_key_exists(self::FIELD_PACKAGE_CODE, $json)) {
@@ -981,10 +971,7 @@ class FHIRAccountProcedure extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPackageCode(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPackageCode(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_DEVICE]) || array_key_exists(self::FIELD_DEVICE, $json)) {
@@ -993,10 +980,7 @@ class FHIRAccountProcedure extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addDevice(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addDevice(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         return $type;

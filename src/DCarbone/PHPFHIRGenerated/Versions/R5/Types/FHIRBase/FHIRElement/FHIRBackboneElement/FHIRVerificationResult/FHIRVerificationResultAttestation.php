@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1022,68 +1022,51 @@ class FHIRVerificationResultAttestation extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_WHO]) || array_key_exists(self::FIELD_WHO, $json)) {
-            $type->setWho(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_WHO],
-                config: $config,
-            ));
+            $type->setWho(FHIRReference::jsonUnserialize($json[self::FIELD_WHO], $config));
         }
         if (isset($json[self::FIELD_ON_BEHALF_OF]) || array_key_exists(self::FIELD_ON_BEHALF_OF, $json)) {
-            $type->setOnBehalfOf(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ON_BEHALF_OF],
-                config: $config,
-            ));
+            $type->setOnBehalfOf(FHIRReference::jsonUnserialize($json[self::FIELD_ON_BEHALF_OF], $config));
         }
         if (isset($json[self::FIELD_COMMUNICATION_METHOD]) || array_key_exists(self::FIELD_COMMUNICATION_METHOD, $json)) {
-            $type->setCommunicationMethod(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_COMMUNICATION_METHOD],
-                config: $config,
-            ));
+            $type->setCommunicationMethod(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_COMMUNICATION_METHOD], $config));
         }
-        if (isset($json[self::FIELD_DATE]) || isset($json[self::FIELD_DATE_EXT]) || array_key_exists(self::FIELD_DATE, $json) || array_key_exists(self::FIELD_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_DATE])
+            || isset($json[self::FIELD_DATE_EXT])
+            || array_key_exists(self::FIELD_DATE, $json)
+            || array_key_exists(self::FIELD_DATE_EXT, $json)) {
             $value = $json[self::FIELD_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_DATE_EXT] ?? []);
             $type->setDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE]) || isset($json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT]) || array_key_exists(self::FIELD_SOURCE_IDENTITY_CERTIFICATE, $json) || array_key_exists(self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT, $json)) {
+        if (isset($json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE])
+            || isset($json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT])
+            || array_key_exists(self::FIELD_SOURCE_IDENTITY_CERTIFICATE, $json)
+            || array_key_exists(self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT, $json)) {
             $value = $json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE] ?? null;
-            $ext = (array)($json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT] ?? []);
             $type->setSourceIdentityCertificate(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SOURCE_IDENTITY_CERTIFICATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PROXY_IDENTITY_CERTIFICATE]) || isset($json[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT]) || array_key_exists(self::FIELD_PROXY_IDENTITY_CERTIFICATE, $json) || array_key_exists(self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT, $json)) {
+        if (isset($json[self::FIELD_PROXY_IDENTITY_CERTIFICATE])
+            || isset($json[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT])
+            || array_key_exists(self::FIELD_PROXY_IDENTITY_CERTIFICATE, $json)
+            || array_key_exists(self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT, $json)) {
             $value = $json[self::FIELD_PROXY_IDENTITY_CERTIFICATE] ?? null;
-            $ext = (array)($json[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT] ?? []);
             $type->setProxyIdentityCertificate(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PROXY_IDENTITY_CERTIFICATE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PROXY_SIGNATURE]) || array_key_exists(self::FIELD_PROXY_SIGNATURE, $json)) {
-            $type->setProxySignature(FHIRSignature::jsonUnserialize(
-                json: $json[self::FIELD_PROXY_SIGNATURE],
-                config: $config,
-            ));
+            $type->setProxySignature(FHIRSignature::jsonUnserialize($json[self::FIELD_PROXY_SIGNATURE], $config));
         }
         if (isset($json[self::FIELD_SOURCE_SIGNATURE]) || array_key_exists(self::FIELD_SOURCE_SIGNATURE, $json)) {
-            $type->setSourceSignature(FHIRSignature::jsonUnserialize(
-                json: $json[self::FIELD_SOURCE_SIGNATURE],
-                config: $config,
-            ));
+            $type->setSourceSignature(FHIRSignature::jsonUnserialize($json[self::FIELD_SOURCE_SIGNATURE], $config));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1512,19 +1512,18 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_EVENT_CODING]) || array_key_exists(self::FIELD_EVENT_CODING, $json)) {
-            $type->setEventCoding(FHIRCoding::jsonUnserialize(
-                json: $json[self::FIELD_EVENT_CODING],
-                config: $config,
-            ));
+            $type->setEventCoding(FHIRCoding::jsonUnserialize($json[self::FIELD_EVENT_CODING], $config));
         }
-        if (isset($json[self::FIELD_EVENT_URI]) || isset($json[self::FIELD_EVENT_URI_EXT]) || array_key_exists(self::FIELD_EVENT_URI, $json) || array_key_exists(self::FIELD_EVENT_URI_EXT, $json)) {
+        if (isset($json[self::FIELD_EVENT_URI])
+            || isset($json[self::FIELD_EVENT_URI_EXT])
+            || array_key_exists(self::FIELD_EVENT_URI, $json)
+            || array_key_exists(self::FIELD_EVENT_URI_EXT, $json)) {
             $value = $json[self::FIELD_EVENT_URI] ?? null;
-            $ext = (array)($json[self::FIELD_EVENT_URI_EXT] ?? []);
             $type->setEventUri(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_EVENT_URI_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_DESTINATION]) || array_key_exists(self::FIELD_DESTINATION, $json)) {
@@ -1533,53 +1532,29 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addDestination(FHIRMessageHeaderDestination::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addDestination(FHIRMessageHeaderDestination::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SENDER]) || array_key_exists(self::FIELD_SENDER, $json)) {
-            $type->setSender(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_SENDER],
-                config: $config,
-            ));
+            $type->setSender(FHIRReference::jsonUnserialize($json[self::FIELD_SENDER], $config));
         }
         if (isset($json[self::FIELD_ENTERER]) || array_key_exists(self::FIELD_ENTERER, $json)) {
-            $type->setEnterer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ENTERER],
-                config: $config,
-            ));
+            $type->setEnterer(FHIRReference::jsonUnserialize($json[self::FIELD_ENTERER], $config));
         }
         if (isset($json[self::FIELD_AUTHOR]) || array_key_exists(self::FIELD_AUTHOR, $json)) {
-            $type->setAuthor(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_AUTHOR],
-                config: $config,
-            ));
+            $type->setAuthor(FHIRReference::jsonUnserialize($json[self::FIELD_AUTHOR], $config));
         }
         if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
-            $type->setSource(FHIRMessageHeaderSource::jsonUnserialize(
-                json: $json[self::FIELD_SOURCE],
-                config: $config,
-            ));
+            $type->setSource(FHIRMessageHeaderSource::jsonUnserialize($json[self::FIELD_SOURCE], $config));
         }
         if (isset($json[self::FIELD_RESPONSIBLE]) || array_key_exists(self::FIELD_RESPONSIBLE, $json)) {
-            $type->setResponsible(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_RESPONSIBLE],
-                config: $config,
-            ));
+            $type->setResponsible(FHIRReference::jsonUnserialize($json[self::FIELD_RESPONSIBLE], $config));
         }
         if (isset($json[self::FIELD_REASON]) || array_key_exists(self::FIELD_REASON, $json)) {
-            $type->setReason(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_REASON],
-                config: $config,
-            ));
+            $type->setReason(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_REASON], $config));
         }
         if (isset($json[self::FIELD_RESPONSE]) || array_key_exists(self::FIELD_RESPONSE, $json)) {
-            $type->setResponse(FHIRMessageHeaderResponse::jsonUnserialize(
-                json: $json[self::FIELD_RESPONSE],
-                config: $config,
-            ));
+            $type->setResponse(FHIRMessageHeaderResponse::jsonUnserialize($json[self::FIELD_RESPONSE], $config));
         }
         if (isset($json[self::FIELD_FOCUS]) || array_key_exists(self::FIELD_FOCUS, $json)) {
             $vs = $json[self::FIELD_FOCUS];
@@ -1587,18 +1562,17 @@ class FHIRMessageHeader extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addFocus(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addFocus(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DEFINITION]) || isset($json[self::FIELD_DEFINITION_EXT]) || array_key_exists(self::FIELD_DEFINITION, $json) || array_key_exists(self::FIELD_DEFINITION_EXT, $json)) {
+        if (isset($json[self::FIELD_DEFINITION])
+            || isset($json[self::FIELD_DEFINITION_EXT])
+            || array_key_exists(self::FIELD_DEFINITION, $json)
+            || array_key_exists(self::FIELD_DEFINITION_EXT, $json)) {
             $value = $json[self::FIELD_DEFINITION] ?? null;
-            $ext = (array)($json[self::FIELD_DEFINITION_EXT] ?? []);
             $type->setDefinition(FHIRCanonical::jsonUnserialize(
-                json: [FHIRCanonical::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_DEFINITION_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

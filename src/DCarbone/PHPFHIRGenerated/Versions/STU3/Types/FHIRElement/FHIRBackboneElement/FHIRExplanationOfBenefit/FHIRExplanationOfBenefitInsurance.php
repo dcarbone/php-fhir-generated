@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -445,27 +445,16 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_COVERAGE]) || array_key_exists(self::FIELD_COVERAGE, $json)) {
-            $type->setCoverage(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_COVERAGE],
-                config: $config,
-            ));
+            $type->setCoverage(FHIRReference::jsonUnserialize($json[self::FIELD_COVERAGE], $config));
         }
-        if (isset($json[self::FIELD_PRE_AUTH_REF]) || isset($json[self::FIELD_PRE_AUTH_REF_EXT]) || array_key_exists(self::FIELD_PRE_AUTH_REF, $json) || array_key_exists(self::FIELD_PRE_AUTH_REF_EXT, $json)) {
-            $value = $json[self::FIELD_PRE_AUTH_REF] ?? null;
+        if (isset($json[self::FIELD_PRE_AUTH_REF])
+            || isset($json[self::FIELD_PRE_AUTH_REF_EXT])
+            || array_key_exists(self::FIELD_PRE_AUTH_REF, $json)
+            || array_key_exists(self::FIELD_PRE_AUTH_REF_EXT, $json)) {
+            $value = (array)($json[self::FIELD_PRE_AUTH_REF] ?? []);
             $ext = (array)($json[self::FIELD_PRE_AUTH_REF_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -473,8 +462,8 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addPreAuthRef(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

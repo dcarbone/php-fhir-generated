@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,6 +71,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRAggregationModeList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
@@ -153,7 +154,7 @@ class FHIRProfileType extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $code
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $profile
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAggregationMode[] $aggregation
+     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRAggregationModeList[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAggregationMode[] $aggregation
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -359,11 +360,14 @@ class FHIRProfileType extends FHIRBackboneElement
      * aggreated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAggregationMode $aggregation
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRAggregationModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAggregationMode $aggregation
      * @return static
      */
-    public function addAggregation(FHIRAggregationMode $aggregation): self
+    public function addAggregation(string|FHIRAggregationModeList|FHIRAggregationMode $aggregation): self
     {
+        if (!($aggregation instanceof FHIRAggregationMode)) {
+            $aggregation = new FHIRAggregationMode(value: $aggregation);
+        }
         if (!isset($this->aggregation)) {
             $this->aggregation = [];
         }
@@ -379,10 +383,10 @@ class FHIRProfileType extends FHIRBackboneElement
      * aggreated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAggregationMode ...$aggregation
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRAggregationModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRAggregationMode ...$aggregation
      * @return static
      */
-    public function setAggregation(FHIRAggregationMode ...$aggregation): self
+    public function setAggregation(string|FHIRAggregationModeList|FHIRAggregationMode ...$aggregation): self
     {
         if ([] === $aggregation) {
             unset($this->aggregation);
@@ -626,37 +630,33 @@ class FHIRProfileType extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_CODE]) || isset($json[self::FIELD_CODE_EXT]) || array_key_exists(self::FIELD_CODE, $json) || array_key_exists(self::FIELD_CODE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_CODE])
+            || isset($json[self::FIELD_CODE_EXT])
+            || array_key_exists(self::FIELD_CODE, $json)
+            || array_key_exists(self::FIELD_CODE_EXT, $json)) {
             $value = $json[self::FIELD_CODE] ?? null;
-            $ext = (array)($json[self::FIELD_CODE_EXT] ?? []);
             $type->setCode(FHIRCode::jsonUnserialize(
-                json: [FHIRCode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_CODE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PROFILE]) || isset($json[self::FIELD_PROFILE_EXT]) || array_key_exists(self::FIELD_PROFILE, $json) || array_key_exists(self::FIELD_PROFILE_EXT, $json)) {
+        if (isset($json[self::FIELD_PROFILE])
+            || isset($json[self::FIELD_PROFILE_EXT])
+            || array_key_exists(self::FIELD_PROFILE, $json)
+            || array_key_exists(self::FIELD_PROFILE_EXT, $json)) {
             $value = $json[self::FIELD_PROFILE] ?? null;
-            $ext = (array)($json[self::FIELD_PROFILE_EXT] ?? []);
             $type->setProfile(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_PROFILE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_AGGREGATION]) || isset($json[self::FIELD_AGGREGATION_EXT]) || array_key_exists(self::FIELD_AGGREGATION, $json) || array_key_exists(self::FIELD_AGGREGATION_EXT, $json)) {
-            $value = $json[self::FIELD_AGGREGATION] ?? null;
+        if (isset($json[self::FIELD_AGGREGATION])
+            || isset($json[self::FIELD_AGGREGATION_EXT])
+            || array_key_exists(self::FIELD_AGGREGATION, $json)
+            || array_key_exists(self::FIELD_AGGREGATION_EXT, $json)) {
+            $value = (array)($json[self::FIELD_AGGREGATION] ?? []);
             $ext = (array)($json[self::FIELD_AGGREGATION_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -664,8 +664,8 @@ class FHIRProfileType extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addAggregation(FHIRAggregationMode::jsonUnserialize(
-                    json: [FHIRAggregationMode::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRAggregationMode::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,11 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRConditionalDeleteStatusEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRConditionalReadStatusEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRReferenceHandlingPolicyEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResourceTypeEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResourceVersionPolicyEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical;
@@ -368,19 +373,19 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResourceTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical $profile
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical[] $supportedProfile
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $documentation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction[] $interaction
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceVersionPolicy $versioning
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResourceVersionPolicyEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceVersionPolicy $versioning
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $readHistory
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $updateCreate
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $conditionalCreate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConditionalReadStatus $conditionalRead
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRConditionalReadStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConditionalReadStatus $conditionalRead
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $conditionalUpdate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConditionalDeleteStatus $conditionalDelete
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReferenceHandlingPolicy[] $referencePolicy
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRConditionalDeleteStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConditionalDeleteStatus $conditionalDelete
+     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRReferenceHandlingPolicyEnum[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReferenceHandlingPolicy[] $referencePolicy
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[] $searchInclude
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[] $searchRevInclude
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[] $searchParam
@@ -390,18 +395,18 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRResourceType $type = null,
+                                null|string|FHIRResourceTypeEnum|FHIRResourceType $type = null,
                                 null|string|FHIRCanonicalPrimitive|FHIRCanonical $profile = null,
                                 null|iterable $supportedProfile = null,
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $documentation = null,
                                 null|iterable $interaction = null,
-                                null|FHIRResourceVersionPolicy $versioning = null,
+                                null|string|FHIRResourceVersionPolicyEnum|FHIRResourceVersionPolicy $versioning = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $readHistory = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $updateCreate = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $conditionalCreate = null,
-                                null|FHIRConditionalReadStatus $conditionalRead = null,
+                                null|string|FHIRConditionalReadStatusEnum|FHIRConditionalReadStatus $conditionalRead = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $conditionalUpdate = null,
-                                null|FHIRConditionalDeleteStatus $conditionalDelete = null,
+                                null|string|FHIRConditionalDeleteStatusEnum|FHIRConditionalDeleteStatus $conditionalDelete = null,
                                 null|iterable $referencePolicy = null,
                                 null|iterable $searchInclude = null,
                                 null|iterable $searchRevInclude = null,
@@ -493,16 +498,19 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * A type of resource exposed via the restful interface.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResourceTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceType $type
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|FHIRResourceType $type,
+    public function setType(null|string|FHIRResourceTypeEnum|FHIRResourceType $type,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $type) {
             unset($this->type);
             return $this;
+        }
+        if (!($type instanceof FHIRResourceType)) {
+            $type = new FHIRResourceType(value: $type);
         }
         $this->type = $type;
         if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
@@ -878,16 +886,19 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * supports all the versioning features, including using e-tags for version
      * integrity in the API.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceVersionPolicy $versioning
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRResourceVersionPolicyEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRResourceVersionPolicy $versioning
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setVersioning(null|FHIRResourceVersionPolicy $versioning,
+    public function setVersioning(null|string|FHIRResourceVersionPolicyEnum|FHIRResourceVersionPolicy $versioning,
                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $versioning) {
             unset($this->versioning);
             return $this;
+        }
+        if (!($versioning instanceof FHIRResourceVersionPolicy)) {
+            $versioning = new FHIRResourceVersionPolicy(value: $versioning);
         }
         $this->versioning = $versioning;
         if ($this->_valueXMLLocations[self::FIELD_VERSIONING] !== $valueXMLLocation) {
@@ -1137,16 +1148,19 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * A code that indicates how the server supports conditional read.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConditionalReadStatus $conditionalRead
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRConditionalReadStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConditionalReadStatus $conditionalRead
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setConditionalRead(null|FHIRConditionalReadStatus $conditionalRead,
+    public function setConditionalRead(null|string|FHIRConditionalReadStatusEnum|FHIRConditionalReadStatus $conditionalRead,
                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $conditionalRead) {
             unset($this->conditionalRead);
             return $this;
+        }
+        if (!($conditionalRead instanceof FHIRConditionalReadStatus)) {
+            $conditionalRead = new FHIRConditionalReadStatus(value: $conditionalRead);
         }
         $this->conditionalRead = $conditionalRead;
         if ($this->_valueXMLLocations[self::FIELD_CONDITIONAL_READ] !== $valueXMLLocation) {
@@ -1260,16 +1274,19 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * A code that indicates how the server supports conditional delete.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConditionalDeleteStatus $conditionalDelete
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRConditionalDeleteStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConditionalDeleteStatus $conditionalDelete
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setConditionalDelete(null|FHIRConditionalDeleteStatus $conditionalDelete,
+    public function setConditionalDelete(null|string|FHIRConditionalDeleteStatusEnum|FHIRConditionalDeleteStatus $conditionalDelete,
                                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $conditionalDelete) {
             unset($this->conditionalDelete);
             return $this;
+        }
+        if (!($conditionalDelete instanceof FHIRConditionalDeleteStatus)) {
+            $conditionalDelete = new FHIRConditionalDeleteStatus(value: $conditionalDelete);
         }
         $this->conditionalDelete = $conditionalDelete;
         if ($this->_valueXMLLocations[self::FIELD_CONDITIONAL_DELETE] !== $valueXMLLocation) {
@@ -1330,11 +1347,14 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * A set of flags that defines how references are supported.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReferenceHandlingPolicy $referencePolicy
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRReferenceHandlingPolicyEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReferenceHandlingPolicy $referencePolicy
      * @return static
      */
-    public function addReferencePolicy(FHIRReferenceHandlingPolicy $referencePolicy): self
+    public function addReferencePolicy(string|FHIRReferenceHandlingPolicyEnum|FHIRReferenceHandlingPolicy $referencePolicy): self
     {
+        if (!($referencePolicy instanceof FHIRReferenceHandlingPolicy)) {
+            $referencePolicy = new FHIRReferenceHandlingPolicy(value: $referencePolicy);
+        }
         if (!isset($this->referencePolicy)) {
             $this->referencePolicy = [];
         }
@@ -1347,10 +1367,10 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * A set of flags that defines how references are supported.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReferenceHandlingPolicy ...$referencePolicy
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRReferenceHandlingPolicyEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReferenceHandlingPolicy ...$referencePolicy
      * @return static
      */
-    public function setReferencePolicy(FHIRReferenceHandlingPolicy ...$referencePolicy): self
+    public function setReferencePolicy(string|FHIRReferenceHandlingPolicyEnum|FHIRReferenceHandlingPolicy ...$referencePolicy): self
     {
         if ([] === $referencePolicy) {
             unset($this->referencePolicy);
@@ -2270,37 +2290,33 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_TYPE])
+            || isset($json[self::FIELD_TYPE_EXT])
+            || array_key_exists(self::FIELD_TYPE, $json)
+            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
             $type->setType(FHIRResourceType::jsonUnserialize(
-                json: [FHIRResourceType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRResourceType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PROFILE]) || isset($json[self::FIELD_PROFILE_EXT]) || array_key_exists(self::FIELD_PROFILE, $json) || array_key_exists(self::FIELD_PROFILE_EXT, $json)) {
+        if (isset($json[self::FIELD_PROFILE])
+            || isset($json[self::FIELD_PROFILE_EXT])
+            || array_key_exists(self::FIELD_PROFILE, $json)
+            || array_key_exists(self::FIELD_PROFILE_EXT, $json)) {
             $value = $json[self::FIELD_PROFILE] ?? null;
-            $ext = (array)($json[self::FIELD_PROFILE_EXT] ?? []);
             $type->setProfile(FHIRCanonical::jsonUnserialize(
-                json: [FHIRCanonical::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_PROFILE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SUPPORTED_PROFILE]) || isset($json[self::FIELD_SUPPORTED_PROFILE_EXT]) || array_key_exists(self::FIELD_SUPPORTED_PROFILE, $json) || array_key_exists(self::FIELD_SUPPORTED_PROFILE_EXT, $json)) {
-            $value = $json[self::FIELD_SUPPORTED_PROFILE] ?? null;
+        if (isset($json[self::FIELD_SUPPORTED_PROFILE])
+            || isset($json[self::FIELD_SUPPORTED_PROFILE_EXT])
+            || array_key_exists(self::FIELD_SUPPORTED_PROFILE, $json)
+            || array_key_exists(self::FIELD_SUPPORTED_PROFILE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_SUPPORTED_PROFILE] ?? []);
             $ext = (array)($json[self::FIELD_SUPPORTED_PROFILE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2308,17 +2324,19 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addSupportedProfile(FHIRCanonical::jsonUnserialize(
-                    json: [FHIRCanonical::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRCanonical::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_DOCUMENTATION]) || isset($json[self::FIELD_DOCUMENTATION_EXT]) || array_key_exists(self::FIELD_DOCUMENTATION, $json) || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $json)) {
+        if (isset($json[self::FIELD_DOCUMENTATION])
+            || isset($json[self::FIELD_DOCUMENTATION_EXT])
+            || array_key_exists(self::FIELD_DOCUMENTATION, $json)
+            || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $json)) {
             $value = $json[self::FIELD_DOCUMENTATION] ?? null;
-            $ext = (array)($json[self::FIELD_DOCUMENTATION_EXT] ?? []);
             $type->setDocumentation(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_DOCUMENTATION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_INTERACTION]) || array_key_exists(self::FIELD_INTERACTION, $json)) {
@@ -2327,74 +2345,85 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addInteraction(FHIRCapabilityStatementInteraction::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addInteraction(FHIRCapabilityStatementInteraction::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_VERSIONING]) || isset($json[self::FIELD_VERSIONING_EXT]) || array_key_exists(self::FIELD_VERSIONING, $json) || array_key_exists(self::FIELD_VERSIONING_EXT, $json)) {
+        if (isset($json[self::FIELD_VERSIONING])
+            || isset($json[self::FIELD_VERSIONING_EXT])
+            || array_key_exists(self::FIELD_VERSIONING, $json)
+            || array_key_exists(self::FIELD_VERSIONING_EXT, $json)) {
             $value = $json[self::FIELD_VERSIONING] ?? null;
-            $ext = (array)($json[self::FIELD_VERSIONING_EXT] ?? []);
             $type->setVersioning(FHIRResourceVersionPolicy::jsonUnserialize(
-                json: [FHIRResourceVersionPolicy::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRResourceVersionPolicy::FIELD_VALUE => $value]) + ($json[self::FIELD_VERSIONING_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_READ_HISTORY]) || isset($json[self::FIELD_READ_HISTORY_EXT]) || array_key_exists(self::FIELD_READ_HISTORY, $json) || array_key_exists(self::FIELD_READ_HISTORY_EXT, $json)) {
+        if (isset($json[self::FIELD_READ_HISTORY])
+            || isset($json[self::FIELD_READ_HISTORY_EXT])
+            || array_key_exists(self::FIELD_READ_HISTORY, $json)
+            || array_key_exists(self::FIELD_READ_HISTORY_EXT, $json)) {
             $value = $json[self::FIELD_READ_HISTORY] ?? null;
-            $ext = (array)($json[self::FIELD_READ_HISTORY_EXT] ?? []);
             $type->setReadHistory(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_READ_HISTORY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_UPDATE_CREATE]) || isset($json[self::FIELD_UPDATE_CREATE_EXT]) || array_key_exists(self::FIELD_UPDATE_CREATE, $json) || array_key_exists(self::FIELD_UPDATE_CREATE_EXT, $json)) {
+        if (isset($json[self::FIELD_UPDATE_CREATE])
+            || isset($json[self::FIELD_UPDATE_CREATE_EXT])
+            || array_key_exists(self::FIELD_UPDATE_CREATE, $json)
+            || array_key_exists(self::FIELD_UPDATE_CREATE_EXT, $json)) {
             $value = $json[self::FIELD_UPDATE_CREATE] ?? null;
-            $ext = (array)($json[self::FIELD_UPDATE_CREATE_EXT] ?? []);
             $type->setUpdateCreate(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_UPDATE_CREATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CONDITIONAL_CREATE]) || isset($json[self::FIELD_CONDITIONAL_CREATE_EXT]) || array_key_exists(self::FIELD_CONDITIONAL_CREATE, $json) || array_key_exists(self::FIELD_CONDITIONAL_CREATE_EXT, $json)) {
+        if (isset($json[self::FIELD_CONDITIONAL_CREATE])
+            || isset($json[self::FIELD_CONDITIONAL_CREATE_EXT])
+            || array_key_exists(self::FIELD_CONDITIONAL_CREATE, $json)
+            || array_key_exists(self::FIELD_CONDITIONAL_CREATE_EXT, $json)) {
             $value = $json[self::FIELD_CONDITIONAL_CREATE] ?? null;
-            $ext = (array)($json[self::FIELD_CONDITIONAL_CREATE_EXT] ?? []);
             $type->setConditionalCreate(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_CONDITIONAL_CREATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CONDITIONAL_READ]) || isset($json[self::FIELD_CONDITIONAL_READ_EXT]) || array_key_exists(self::FIELD_CONDITIONAL_READ, $json) || array_key_exists(self::FIELD_CONDITIONAL_READ_EXT, $json)) {
+        if (isset($json[self::FIELD_CONDITIONAL_READ])
+            || isset($json[self::FIELD_CONDITIONAL_READ_EXT])
+            || array_key_exists(self::FIELD_CONDITIONAL_READ, $json)
+            || array_key_exists(self::FIELD_CONDITIONAL_READ_EXT, $json)) {
             $value = $json[self::FIELD_CONDITIONAL_READ] ?? null;
-            $ext = (array)($json[self::FIELD_CONDITIONAL_READ_EXT] ?? []);
             $type->setConditionalRead(FHIRConditionalReadStatus::jsonUnserialize(
-                json: [FHIRConditionalReadStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRConditionalReadStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_CONDITIONAL_READ_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CONDITIONAL_UPDATE]) || isset($json[self::FIELD_CONDITIONAL_UPDATE_EXT]) || array_key_exists(self::FIELD_CONDITIONAL_UPDATE, $json) || array_key_exists(self::FIELD_CONDITIONAL_UPDATE_EXT, $json)) {
+        if (isset($json[self::FIELD_CONDITIONAL_UPDATE])
+            || isset($json[self::FIELD_CONDITIONAL_UPDATE_EXT])
+            || array_key_exists(self::FIELD_CONDITIONAL_UPDATE, $json)
+            || array_key_exists(self::FIELD_CONDITIONAL_UPDATE_EXT, $json)) {
             $value = $json[self::FIELD_CONDITIONAL_UPDATE] ?? null;
-            $ext = (array)($json[self::FIELD_CONDITIONAL_UPDATE_EXT] ?? []);
             $type->setConditionalUpdate(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_CONDITIONAL_UPDATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CONDITIONAL_DELETE]) || isset($json[self::FIELD_CONDITIONAL_DELETE_EXT]) || array_key_exists(self::FIELD_CONDITIONAL_DELETE, $json) || array_key_exists(self::FIELD_CONDITIONAL_DELETE_EXT, $json)) {
+        if (isset($json[self::FIELD_CONDITIONAL_DELETE])
+            || isset($json[self::FIELD_CONDITIONAL_DELETE_EXT])
+            || array_key_exists(self::FIELD_CONDITIONAL_DELETE, $json)
+            || array_key_exists(self::FIELD_CONDITIONAL_DELETE_EXT, $json)) {
             $value = $json[self::FIELD_CONDITIONAL_DELETE] ?? null;
-            $ext = (array)($json[self::FIELD_CONDITIONAL_DELETE_EXT] ?? []);
             $type->setConditionalDelete(FHIRConditionalDeleteStatus::jsonUnserialize(
-                json: [FHIRConditionalDeleteStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRConditionalDeleteStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_CONDITIONAL_DELETE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_REFERENCE_POLICY]) || isset($json[self::FIELD_REFERENCE_POLICY_EXT]) || array_key_exists(self::FIELD_REFERENCE_POLICY, $json) || array_key_exists(self::FIELD_REFERENCE_POLICY_EXT, $json)) {
-            $value = $json[self::FIELD_REFERENCE_POLICY] ?? null;
+        if (isset($json[self::FIELD_REFERENCE_POLICY])
+            || isset($json[self::FIELD_REFERENCE_POLICY_EXT])
+            || array_key_exists(self::FIELD_REFERENCE_POLICY, $json)
+            || array_key_exists(self::FIELD_REFERENCE_POLICY_EXT, $json)) {
+            $value = (array)($json[self::FIELD_REFERENCE_POLICY] ?? []);
             $ext = (array)($json[self::FIELD_REFERENCE_POLICY_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2402,17 +2431,17 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addReferencePolicy(FHIRReferenceHandlingPolicy::jsonUnserialize(
-                    json: [FHIRReferenceHandlingPolicy::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRReferenceHandlingPolicy::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_SEARCH_INCLUDE]) || isset($json[self::FIELD_SEARCH_INCLUDE_EXT]) || array_key_exists(self::FIELD_SEARCH_INCLUDE, $json) || array_key_exists(self::FIELD_SEARCH_INCLUDE_EXT, $json)) {
-            $value = $json[self::FIELD_SEARCH_INCLUDE] ?? null;
+        if (isset($json[self::FIELD_SEARCH_INCLUDE])
+            || isset($json[self::FIELD_SEARCH_INCLUDE_EXT])
+            || array_key_exists(self::FIELD_SEARCH_INCLUDE, $json)
+            || array_key_exists(self::FIELD_SEARCH_INCLUDE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_SEARCH_INCLUDE] ?? []);
             $ext = (array)($json[self::FIELD_SEARCH_INCLUDE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2420,17 +2449,17 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addSearchInclude(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_SEARCH_REV_INCLUDE]) || isset($json[self::FIELD_SEARCH_REV_INCLUDE_EXT]) || array_key_exists(self::FIELD_SEARCH_REV_INCLUDE, $json) || array_key_exists(self::FIELD_SEARCH_REV_INCLUDE_EXT, $json)) {
-            $value = $json[self::FIELD_SEARCH_REV_INCLUDE] ?? null;
+        if (isset($json[self::FIELD_SEARCH_REV_INCLUDE])
+            || isset($json[self::FIELD_SEARCH_REV_INCLUDE_EXT])
+            || array_key_exists(self::FIELD_SEARCH_REV_INCLUDE, $json)
+            || array_key_exists(self::FIELD_SEARCH_REV_INCLUDE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_SEARCH_REV_INCLUDE] ?? []);
             $ext = (array)($json[self::FIELD_SEARCH_REV_INCLUDE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2438,8 +2467,8 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addSearchRevInclude(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -2449,10 +2478,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSearchParam(FHIRCapabilityStatementSearchParam::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSearchParam(FHIRCapabilityStatementSearchParam::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_OPERATION]) || array_key_exists(self::FIELD_OPERATION, $json)) {
@@ -2461,10 +2487,7 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addOperation(FHIRCapabilityStatementOperation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addOperation(FHIRCapabilityStatementOperation::jsonUnserialize($v, $config));
             }
         }
         return $type;

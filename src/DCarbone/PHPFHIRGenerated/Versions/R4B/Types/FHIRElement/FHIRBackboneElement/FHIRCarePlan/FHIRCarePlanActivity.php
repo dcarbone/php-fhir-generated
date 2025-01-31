@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -764,25 +764,14 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_OUTCOME_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_OUTCOME_CODEABLE_CONCEPT, $json)) {
             $vs = $json[self::FIELD_OUTCOME_CODEABLE_CONCEPT];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addOutcomeCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addOutcomeCodeableConcept(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_OUTCOME_REFERENCE]) || array_key_exists(self::FIELD_OUTCOME_REFERENCE, $json)) {
@@ -791,10 +780,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addOutcomeReference(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addOutcomeReference(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PROGRESS]) || array_key_exists(self::FIELD_PROGRESS, $json)) {
@@ -803,23 +789,14 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addProgress(FHIRAnnotation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addProgress(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_REFERENCE]) || array_key_exists(self::FIELD_REFERENCE, $json)) {
-            $type->setReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_REFERENCE],
-                config: $config,
-            ));
+            $type->setReference(FHIRReference::jsonUnserialize($json[self::FIELD_REFERENCE], $config));
         }
         if (isset($json[self::FIELD_DETAIL]) || array_key_exists(self::FIELD_DETAIL, $json)) {
-            $type->setDetail(FHIRCarePlanDetail::jsonUnserialize(
-                json: $json[self::FIELD_DETAIL],
-                config: $config,
-            ));
+            $type->setDetail(FHIRCarePlanDetail::jsonUnserialize($json[self::FIELD_DETAIL], $config));
         }
         return $type;
     }

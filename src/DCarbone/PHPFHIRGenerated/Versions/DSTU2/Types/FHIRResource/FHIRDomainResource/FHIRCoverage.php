@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -313,18 +313,18 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $issuer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $bin
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $bin
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPeriod $period
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $subscriberId
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $subscriberId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $group
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $plan
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $subPlan
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $dependent
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $sequence
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $subscriber
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $network
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $network
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference[] $contract
      * @param null|string[] $fhirComments
      */
@@ -337,10 +337,10 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRReference $issuer = null,
-                                null|FHIRIdentifier $bin = null,
+                                null|FHIRString|FHIRIdentifier $bin = null,
                                 null|FHIRPeriod $period = null,
                                 null|FHIRCoding $type = null,
-                                null|FHIRIdentifier $subscriberId = null,
+                                null|FHIRString|FHIRIdentifier $subscriberId = null,
                                 null|iterable $identifier = null,
                                 null|string|FHIRStringPrimitive|FHIRString $group = null,
                                 null|string|FHIRStringPrimitive|FHIRString $plan = null,
@@ -348,7 +348,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
                                 null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $dependent = null,
                                 null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence = null,
                                 null|FHIRReference $subscriber = null,
-                                null|FHIRIdentifier $network = null,
+                                null|FHIRString|FHIRIdentifier $network = null,
                                 null|iterable $contract = null,
                                 null|iterable $fhirComments = null)
     {
@@ -483,16 +483,19 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * eclaims if the insurer themselves don't have a BIN number for all of their
      * business.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $bin
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $bin
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setBin(null|FHIRIdentifier $bin,
+    public function setBin(null|FHIRString|FHIRIdentifier $bin,
                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $bin) {
             unset($this->bin);
             return $this;
+        }
+        if (!($bin instanceof FHIRIdentifier)) {
+            $bin = new FHIRIdentifier(value: $bin);
         }
         $this->bin = $bin;
         if ($this->_valueXMLLocations[self::FIELD_BIN] !== $valueXMLLocation) {
@@ -620,16 +623,19 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The id issued to the subscriber.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $subscriberId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $subscriberId
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSubscriberId(null|FHIRIdentifier $subscriberId,
+    public function setSubscriberId(null|FHIRString|FHIRIdentifier $subscriberId,
                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $subscriberId) {
             unset($this->subscriberId);
             return $this;
+        }
+        if (!($subscriberId instanceof FHIRIdentifier)) {
+            $subscriberId = new FHIRIdentifier(value: $subscriberId);
         }
         $this->subscriberId = $subscriberId;
         if ($this->_valueXMLLocations[self::FIELD_SUBSCRIBER_ID] !== $valueXMLLocation) {
@@ -698,11 +704,14 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * a Member Id, Subscriber Id, Certificate number or Personal Health Number or Case
      * ID.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -719,10 +728,10 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      * a Member Id, Subscriber Id, Certificate number or Personal Health Number or Case
      * ID.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -1140,16 +1149,19 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
      *
      * The identifier for a community of providers.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $network
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $network
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setNetwork(null|FHIRIdentifier $network,
+    public function setNetwork(null|FHIRString|FHIRIdentifier $network,
                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $network) {
             unset($this->network);
             return $this;
+        }
+        if (!($network instanceof FHIRIdentifier)) {
+            $network = new FHIRIdentifier(value: $network);
         }
         $this->network = $network;
         if ($this->_valueXMLLocations[self::FIELD_NETWORK] !== $valueXMLLocation) {
@@ -1889,47 +1901,42 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_ISSUER]) || array_key_exists(self::FIELD_ISSUER, $json)) {
-            $type->setIssuer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ISSUER],
-                config: $config,
-            ));
+            $type->setIssuer(FHIRReference::jsonUnserialize($json[self::FIELD_ISSUER], $config));
         }
-        if (isset($json[self::FIELD_BIN]) || isset($json[self::FIELD_BIN_EXT]) || array_key_exists(self::FIELD_BIN, $json) || array_key_exists(self::FIELD_BIN_EXT, $json)) {
+        if (isset($json[self::FIELD_BIN])
+            || isset($json[self::FIELD_BIN_EXT])
+            || array_key_exists(self::FIELD_BIN, $json)
+            || array_key_exists(self::FIELD_BIN_EXT, $json)) {
             $value = $json[self::FIELD_BIN] ?? null;
-            $ext = (array)($json[self::FIELD_BIN_EXT] ?? []);
             $type->setBin(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_BIN_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_PERIOD],
-                config: $config,
-            ));
+            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCoding::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCoding::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
-        if (isset($json[self::FIELD_SUBSCRIBER_ID]) || isset($json[self::FIELD_SUBSCRIBER_ID_EXT]) || array_key_exists(self::FIELD_SUBSCRIBER_ID, $json) || array_key_exists(self::FIELD_SUBSCRIBER_ID_EXT, $json)) {
+        if (isset($json[self::FIELD_SUBSCRIBER_ID])
+            || isset($json[self::FIELD_SUBSCRIBER_ID_EXT])
+            || array_key_exists(self::FIELD_SUBSCRIBER_ID, $json)
+            || array_key_exists(self::FIELD_SUBSCRIBER_ID_EXT, $json)) {
             $value = $json[self::FIELD_SUBSCRIBER_ID] ?? null;
-            $ext = (array)($json[self::FIELD_SUBSCRIBER_ID_EXT] ?? []);
             $type->setSubscriberId(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_SUBSCRIBER_ID_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1937,63 +1944,72 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_GROUP]) || isset($json[self::FIELD_GROUP_EXT]) || array_key_exists(self::FIELD_GROUP, $json) || array_key_exists(self::FIELD_GROUP_EXT, $json)) {
+        if (isset($json[self::FIELD_GROUP])
+            || isset($json[self::FIELD_GROUP_EXT])
+            || array_key_exists(self::FIELD_GROUP, $json)
+            || array_key_exists(self::FIELD_GROUP_EXT, $json)) {
             $value = $json[self::FIELD_GROUP] ?? null;
-            $ext = (array)($json[self::FIELD_GROUP_EXT] ?? []);
             $type->setGroup(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_GROUP_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PLAN]) || isset($json[self::FIELD_PLAN_EXT]) || array_key_exists(self::FIELD_PLAN, $json) || array_key_exists(self::FIELD_PLAN_EXT, $json)) {
+        if (isset($json[self::FIELD_PLAN])
+            || isset($json[self::FIELD_PLAN_EXT])
+            || array_key_exists(self::FIELD_PLAN, $json)
+            || array_key_exists(self::FIELD_PLAN_EXT, $json)) {
             $value = $json[self::FIELD_PLAN] ?? null;
-            $ext = (array)($json[self::FIELD_PLAN_EXT] ?? []);
             $type->setPlan(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PLAN_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SUB_PLAN]) || isset($json[self::FIELD_SUB_PLAN_EXT]) || array_key_exists(self::FIELD_SUB_PLAN, $json) || array_key_exists(self::FIELD_SUB_PLAN_EXT, $json)) {
+        if (isset($json[self::FIELD_SUB_PLAN])
+            || isset($json[self::FIELD_SUB_PLAN_EXT])
+            || array_key_exists(self::FIELD_SUB_PLAN, $json)
+            || array_key_exists(self::FIELD_SUB_PLAN_EXT, $json)) {
             $value = $json[self::FIELD_SUB_PLAN] ?? null;
-            $ext = (array)($json[self::FIELD_SUB_PLAN_EXT] ?? []);
             $type->setSubPlan(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SUB_PLAN_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DEPENDENT]) || isset($json[self::FIELD_DEPENDENT_EXT]) || array_key_exists(self::FIELD_DEPENDENT, $json) || array_key_exists(self::FIELD_DEPENDENT_EXT, $json)) {
+        if (isset($json[self::FIELD_DEPENDENT])
+            || isset($json[self::FIELD_DEPENDENT_EXT])
+            || array_key_exists(self::FIELD_DEPENDENT, $json)
+            || array_key_exists(self::FIELD_DEPENDENT_EXT, $json)) {
             $value = $json[self::FIELD_DEPENDENT] ?? null;
-            $ext = (array)($json[self::FIELD_DEPENDENT_EXT] ?? []);
             $type->setDependent(FHIRPositiveInt::jsonUnserialize(
-                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_DEPENDENT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SEQUENCE]) || isset($json[self::FIELD_SEQUENCE_EXT]) || array_key_exists(self::FIELD_SEQUENCE, $json) || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
+        if (isset($json[self::FIELD_SEQUENCE])
+            || isset($json[self::FIELD_SEQUENCE_EXT])
+            || array_key_exists(self::FIELD_SEQUENCE, $json)
+            || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
             $value = $json[self::FIELD_SEQUENCE] ?? null;
-            $ext = (array)($json[self::FIELD_SEQUENCE_EXT] ?? []);
             $type->setSequence(FHIRPositiveInt::jsonUnserialize(
-                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_SEQUENCE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SUBSCRIBER]) || array_key_exists(self::FIELD_SUBSCRIBER, $json)) {
-            $type->setSubscriber(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_SUBSCRIBER],
-                config: $config,
-            ));
+            $type->setSubscriber(FHIRReference::jsonUnserialize($json[self::FIELD_SUBSCRIBER], $config));
         }
-        if (isset($json[self::FIELD_NETWORK]) || isset($json[self::FIELD_NETWORK_EXT]) || array_key_exists(self::FIELD_NETWORK, $json) || array_key_exists(self::FIELD_NETWORK_EXT, $json)) {
+        if (isset($json[self::FIELD_NETWORK])
+            || isset($json[self::FIELD_NETWORK_EXT])
+            || array_key_exists(self::FIELD_NETWORK, $json)
+            || array_key_exists(self::FIELD_NETWORK_EXT, $json)) {
             $value = $json[self::FIELD_NETWORK] ?? null;
-            $ext = (array)($json[self::FIELD_NETWORK_EXT] ?? []);
             $type->setNetwork(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_NETWORK_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CONTRACT]) || array_key_exists(self::FIELD_CONTRACT, $json)) {
@@ -2002,10 +2018,7 @@ class FHIRCoverage extends FHIRDomainResource implements VersionContainedTypeInt
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addContract(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addContract(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,6 +80,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRMedicationKindList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface;
@@ -206,7 +207,7 @@ class FHIRMedication extends FHIRResource implements VersionContainedTypeInterfa
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $code
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $isBrand
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $manufacturer
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationKind $kind
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRMedicationKindList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationKind $kind
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationProduct $product
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationPackage $package
      * @param null|string[] $fhirComments
@@ -221,7 +222,7 @@ class FHIRMedication extends FHIRResource implements VersionContainedTypeInterfa
                                 null|FHIRCodeableConcept $code = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isBrand = null,
                                 null|FHIRResourceReference $manufacturer = null,
-                                null|FHIRMedicationKind $kind = null,
+                                null|string|FHIRMedicationKindList|FHIRMedicationKind $kind = null,
                                 null|FHIRMedicationProduct $product = null,
                                 null|FHIRMedicationPackage $package = null,
                                 null|iterable $fhirComments = null)
@@ -506,16 +507,19 @@ class FHIRMedication extends FHIRResource implements VersionContainedTypeInterfa
      * Medications are either a single administrable product or a package that contains
      * one or more products.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationKind $kind
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRMedicationKindList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRMedicationKind $kind
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setKind(null|FHIRMedicationKind $kind,
+    public function setKind(null|string|FHIRMedicationKindList|FHIRMedicationKind $kind,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $kind) {
             unset($this->kind);
             return $this;
+        }
+        if (!($kind instanceof FHIRMedicationKind)) {
+            $kind = new FHIRMedicationKind(value: $kind);
         }
         $this->kind = $kind;
         if ($this->_valueXMLLocations[self::FIELD_KIND] !== $valueXMLLocation) {
@@ -1017,54 +1021,48 @@ class FHIRMedication extends FHIRResource implements VersionContainedTypeInterfa
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_NAME])
+            || isset($json[self::FIELD_NAME_EXT])
+            || array_key_exists(self::FIELD_NAME, $json)
+            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
             $type->setName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CODE],
-                config: $config,
-            ));
+            $type->setCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CODE], $config));
         }
-        if (isset($json[self::FIELD_IS_BRAND]) || isset($json[self::FIELD_IS_BRAND_EXT]) || array_key_exists(self::FIELD_IS_BRAND, $json) || array_key_exists(self::FIELD_IS_BRAND_EXT, $json)) {
+        if (isset($json[self::FIELD_IS_BRAND])
+            || isset($json[self::FIELD_IS_BRAND_EXT])
+            || array_key_exists(self::FIELD_IS_BRAND, $json)
+            || array_key_exists(self::FIELD_IS_BRAND_EXT, $json)) {
             $value = $json[self::FIELD_IS_BRAND] ?? null;
-            $ext = (array)($json[self::FIELD_IS_BRAND_EXT] ?? []);
             $type->setIsBrand(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_IS_BRAND_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_MANUFACTURER]) || array_key_exists(self::FIELD_MANUFACTURER, $json)) {
-            $type->setManufacturer(FHIRResourceReference::jsonUnserialize(
-                json: $json[self::FIELD_MANUFACTURER],
-                config: $config,
-            ));
+            $type->setManufacturer(FHIRResourceReference::jsonUnserialize($json[self::FIELD_MANUFACTURER], $config));
         }
-        if (isset($json[self::FIELD_KIND]) || isset($json[self::FIELD_KIND_EXT]) || array_key_exists(self::FIELD_KIND, $json) || array_key_exists(self::FIELD_KIND_EXT, $json)) {
+        if (isset($json[self::FIELD_KIND])
+            || isset($json[self::FIELD_KIND_EXT])
+            || array_key_exists(self::FIELD_KIND, $json)
+            || array_key_exists(self::FIELD_KIND_EXT, $json)) {
             $value = $json[self::FIELD_KIND] ?? null;
-            $ext = (array)($json[self::FIELD_KIND_EXT] ?? []);
             $type->setKind(FHIRMedicationKind::jsonUnserialize(
-                json: [FHIRMedicationKind::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMedicationKind::FIELD_VALUE => $value]) + ($json[self::FIELD_KIND_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PRODUCT]) || array_key_exists(self::FIELD_PRODUCT, $json)) {
-            $type->setProduct(FHIRMedicationProduct::jsonUnserialize(
-                json: $json[self::FIELD_PRODUCT],
-                config: $config,
-            ));
+            $type->setProduct(FHIRMedicationProduct::jsonUnserialize($json[self::FIELD_PRODUCT], $config));
         }
         if (isset($json[self::FIELD_PACKAGE]) || array_key_exists(self::FIELD_PACKAGE, $json)) {
-            $type->setPackage(FHIRMedicationPackage::jsonUnserialize(
-                json: $json[self::FIELD_PACKAGE],
-                config: $config,
-            ));
+            $type->setPackage(FHIRMedicationPackage::jsonUnserialize($json[self::FIELD_PACKAGE], $config));
         }
         return $type;
     }

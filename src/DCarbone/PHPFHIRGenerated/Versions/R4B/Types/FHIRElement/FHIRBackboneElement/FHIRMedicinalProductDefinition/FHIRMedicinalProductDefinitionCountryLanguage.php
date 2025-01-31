@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -523,32 +523,15 @@ class FHIRMedicinalProductDefinitionCountryLanguage extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_COUNTRY]) || array_key_exists(self::FIELD_COUNTRY, $json)) {
-            $type->setCountry(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_COUNTRY],
-                config: $config,
-            ));
+            $type->setCountry(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_COUNTRY], $config));
         }
         if (isset($json[self::FIELD_JURISDICTION]) || array_key_exists(self::FIELD_JURISDICTION, $json)) {
-            $type->setJurisdiction(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_JURISDICTION],
-                config: $config,
-            ));
+            $type->setJurisdiction(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_JURISDICTION], $config));
         }
         if (isset($json[self::FIELD_LANGUAGE]) || array_key_exists(self::FIELD_LANGUAGE, $json)) {
-            $type->setLanguage(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_LANGUAGE],
-                config: $config,
-            ));
+            $type->setLanguage(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_LANGUAGE], $config));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -980,18 +980,12 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_CLASS]) || array_key_exists(self::FIELD_CLASS, $json)) {
-            $type->setClass(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CLASS],
-                config: $config,
-            ));
+            $type->setClass(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CLASS], $config));
         }
         if (isset($json[self::FIELD_GEOMETRY]) || array_key_exists(self::FIELD_GEOMETRY, $json)) {
-            $type->setGeometry(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_GEOMETRY],
-                config: $config,
-            ));
+            $type->setGeometry(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_GEOMETRY], $config));
         }
         if (isset($json[self::FIELD_COPOLYMER_CONNECTIVITY]) || array_key_exists(self::FIELD_COPOLYMER_CONNECTIVITY, $json)) {
             $vs = $json[self::FIELD_COPOLYMER_CONNECTIVITY];
@@ -999,18 +993,15 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCopolymerConnectivity(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCopolymerConnectivity(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_MODIFICATION]) || isset($json[self::FIELD_MODIFICATION_EXT]) || array_key_exists(self::FIELD_MODIFICATION, $json) || array_key_exists(self::FIELD_MODIFICATION_EXT, $json)) {
-            $value = $json[self::FIELD_MODIFICATION] ?? null;
+        if (isset($json[self::FIELD_MODIFICATION])
+            || isset($json[self::FIELD_MODIFICATION_EXT])
+            || array_key_exists(self::FIELD_MODIFICATION, $json)
+            || array_key_exists(self::FIELD_MODIFICATION_EXT, $json)) {
+            $value = (array)($json[self::FIELD_MODIFICATION] ?? []);
             $ext = (array)($json[self::FIELD_MODIFICATION_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1018,8 +1009,8 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addModification(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -1029,10 +1020,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addMonomerSet(FHIRSubstancePolymerMonomerSet::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addMonomerSet(FHIRSubstancePolymerMonomerSet::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_REPEAT]) || array_key_exists(self::FIELD_REPEAT, $json)) {
@@ -1041,10 +1029,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements VersionContaine
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRepeat(FHIRSubstancePolymerRepeat::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRepeat(FHIRSubstancePolymerRepeat::jsonUnserialize($v, $config));
             }
         }
         return $type;

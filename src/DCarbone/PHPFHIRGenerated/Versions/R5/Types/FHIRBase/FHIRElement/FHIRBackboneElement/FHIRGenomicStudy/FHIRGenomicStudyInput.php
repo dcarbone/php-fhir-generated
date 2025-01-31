@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,6 +93,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -174,7 +175,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $file
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $generatedByIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $generatedByIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $generatedByReference
      * @param null|string[] $fhirComments
      */
@@ -183,7 +184,7 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|FHIRReference $file = null,
                                 null|FHIRCodeableConcept $type = null,
-                                null|FHIRIdentifier $generatedByIdentifier = null,
+                                null|FHIRString|FHIRIdentifier $generatedByIdentifier = null,
                                 null|FHIRReference $generatedByReference = null,
                                 null|iterable $fhirComments = null)
     {
@@ -308,16 +309,19 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
      *
      * The analysis event or other GenomicStudy that generated this input file.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $generatedByIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $generatedByIdentifier
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setGeneratedByIdentifier(null|FHIRIdentifier $generatedByIdentifier,
+    public function setGeneratedByIdentifier(null|FHIRString|FHIRIdentifier $generatedByIdentifier,
                                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $generatedByIdentifier) {
             unset($this->generatedByIdentifier);
             return $this;
+        }
+        if (!($generatedByIdentifier instanceof FHIRIdentifier)) {
+            $generatedByIdentifier = new FHIRIdentifier(value: $generatedByIdentifier);
         }
         $this->generatedByIdentifier = $generatedByIdentifier;
         if ($this->_valueXMLLocations[self::FIELD_GENERATED_BY_IDENTIFIER] !== $valueXMLLocation) {
@@ -610,40 +614,25 @@ class FHIRGenomicStudyInput extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_FILE]) || array_key_exists(self::FIELD_FILE, $json)) {
-            $type->setFile(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_FILE],
-                config: $config,
-            ));
+            $type->setFile(FHIRReference::jsonUnserialize($json[self::FIELD_FILE], $config));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
-        if (isset($json[self::FIELD_GENERATED_BY_IDENTIFIER]) || isset($json[self::FIELD_GENERATED_BY_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_GENERATED_BY_IDENTIFIER, $json) || array_key_exists(self::FIELD_GENERATED_BY_IDENTIFIER_EXT, $json)) {
+        if (isset($json[self::FIELD_GENERATED_BY_IDENTIFIER])
+            || isset($json[self::FIELD_GENERATED_BY_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_GENERATED_BY_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_GENERATED_BY_IDENTIFIER_EXT, $json)) {
             $value = $json[self::FIELD_GENERATED_BY_IDENTIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_GENERATED_BY_IDENTIFIER_EXT] ?? []);
             $type->setGeneratedByIdentifier(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_GENERATED_BY_IDENTIFIER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_GENERATED_BY_REFERENCE]) || array_key_exists(self::FIELD_GENERATED_BY_REFERENCE, $json)) {
-            $type->setGeneratedByReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_GENERATED_BY_REFERENCE],
-                config: $config,
-            ));
+            $type->setGeneratedByReference(FHIRReference::jsonUnserialize($json[self::FIELD_GENERATED_BY_REFERENCE], $config));
         }
         return $type;
     }

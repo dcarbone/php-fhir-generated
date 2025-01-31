@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,6 +93,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackbon
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImagingSelectionDGraphicType;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRImagingSelectionDGraphicTypeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -161,14 +162,14 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImagingSelectionDGraphicType $regionType
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRImagingSelectionDGraphicTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImagingSelectionDGraphicType $regionType
      * @param null|string[]|float[]|int[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDecimalPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal[] $coordinate
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRImagingSelectionDGraphicType $regionType = null,
+                                null|string|FHIRImagingSelectionDGraphicTypeEnum|FHIRImagingSelectionDGraphicType $regionType = null,
                                 null|iterable $coordinate = null,
                                 null|iterable $fhirComments = null)
     {
@@ -211,16 +212,19 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
      *
      * Specifies the type of image region.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImagingSelectionDGraphicType $regionType
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRImagingSelectionDGraphicTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRImagingSelectionDGraphicType $regionType
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRegionType(null|FHIRImagingSelectionDGraphicType $regionType,
+    public function setRegionType(null|string|FHIRImagingSelectionDGraphicTypeEnum|FHIRImagingSelectionDGraphicType $regionType,
                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $regionType) {
             unset($this->regionType);
             return $this;
+        }
+        if (!($regionType instanceof FHIRImagingSelectionDGraphicType)) {
+            $regionType = new FHIRImagingSelectionDGraphicType(value: $regionType);
         }
         $this->regionType = $regionType;
         if ($this->_valueXMLLocations[self::FIELD_REGION_TYPE] !== $valueXMLLocation) {
@@ -541,29 +545,23 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_REGION_TYPE]) || isset($json[self::FIELD_REGION_TYPE_EXT]) || array_key_exists(self::FIELD_REGION_TYPE, $json) || array_key_exists(self::FIELD_REGION_TYPE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_REGION_TYPE])
+            || isset($json[self::FIELD_REGION_TYPE_EXT])
+            || array_key_exists(self::FIELD_REGION_TYPE, $json)
+            || array_key_exists(self::FIELD_REGION_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_REGION_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_REGION_TYPE_EXT] ?? []);
             $type->setRegionType(FHIRImagingSelectionDGraphicType::jsonUnserialize(
-                json: [FHIRImagingSelectionDGraphicType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRImagingSelectionDGraphicType::FIELD_VALUE => $value]) + ($json[self::FIELD_REGION_TYPE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_COORDINATE]) || isset($json[self::FIELD_COORDINATE_EXT]) || array_key_exists(self::FIELD_COORDINATE, $json) || array_key_exists(self::FIELD_COORDINATE_EXT, $json)) {
-            $value = $json[self::FIELD_COORDINATE] ?? null;
+        if (isset($json[self::FIELD_COORDINATE])
+            || isset($json[self::FIELD_COORDINATE_EXT])
+            || array_key_exists(self::FIELD_COORDINATE, $json)
+            || array_key_exists(self::FIELD_COORDINATE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_COORDINATE] ?? []);
             $ext = (array)($json[self::FIELD_COORDINATE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -571,8 +569,8 @@ class FHIRImagingSelectionImageRegion3D extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addCoordinate(FHIRDecimal::jsonUnserialize(
-                    json: [FHIRDecimal::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRDecimal::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

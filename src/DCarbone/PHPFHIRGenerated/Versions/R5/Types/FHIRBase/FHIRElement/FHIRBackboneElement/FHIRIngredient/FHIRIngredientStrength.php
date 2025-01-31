@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1565,91 +1565,62 @@ class FHIRIngredientStrength extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_PRESENTATION_RATIO]) || array_key_exists(self::FIELD_PRESENTATION_RATIO, $json)) {
-            $type->setPresentationRatio(FHIRRatio::jsonUnserialize(
-                json: $json[self::FIELD_PRESENTATION_RATIO],
-                config: $config,
-            ));
+            $type->setPresentationRatio(FHIRRatio::jsonUnserialize($json[self::FIELD_PRESENTATION_RATIO], $config));
         }
         if (isset($json[self::FIELD_PRESENTATION_RATIO_RANGE]) || array_key_exists(self::FIELD_PRESENTATION_RATIO_RANGE, $json)) {
-            $type->setPresentationRatioRange(FHIRRatioRange::jsonUnserialize(
-                json: $json[self::FIELD_PRESENTATION_RATIO_RANGE],
-                config: $config,
-            ));
+            $type->setPresentationRatioRange(FHIRRatioRange::jsonUnserialize($json[self::FIELD_PRESENTATION_RATIO_RANGE], $config));
         }
         if (isset($json[self::FIELD_PRESENTATION_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_PRESENTATION_CODEABLE_CONCEPT, $json)) {
-            $type->setPresentationCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_PRESENTATION_CODEABLE_CONCEPT],
-                config: $config,
-            ));
+            $type->setPresentationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PRESENTATION_CODEABLE_CONCEPT], $config));
         }
         if (isset($json[self::FIELD_PRESENTATION_QUANTITY]) || array_key_exists(self::FIELD_PRESENTATION_QUANTITY, $json)) {
-            $type->setPresentationQuantity(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_PRESENTATION_QUANTITY],
-                config: $config,
-            ));
+            $type->setPresentationQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_PRESENTATION_QUANTITY], $config));
         }
-        if (isset($json[self::FIELD_TEXT_PRESENTATION]) || isset($json[self::FIELD_TEXT_PRESENTATION_EXT]) || array_key_exists(self::FIELD_TEXT_PRESENTATION, $json) || array_key_exists(self::FIELD_TEXT_PRESENTATION_EXT, $json)) {
+        if (isset($json[self::FIELD_TEXT_PRESENTATION])
+            || isset($json[self::FIELD_TEXT_PRESENTATION_EXT])
+            || array_key_exists(self::FIELD_TEXT_PRESENTATION, $json)
+            || array_key_exists(self::FIELD_TEXT_PRESENTATION_EXT, $json)) {
             $value = $json[self::FIELD_TEXT_PRESENTATION] ?? null;
-            $ext = (array)($json[self::FIELD_TEXT_PRESENTATION_EXT] ?? []);
             $type->setTextPresentation(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TEXT_PRESENTATION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CONCENTRATION_RATIO]) || array_key_exists(self::FIELD_CONCENTRATION_RATIO, $json)) {
-            $type->setConcentrationRatio(FHIRRatio::jsonUnserialize(
-                json: $json[self::FIELD_CONCENTRATION_RATIO],
-                config: $config,
-            ));
+            $type->setConcentrationRatio(FHIRRatio::jsonUnserialize($json[self::FIELD_CONCENTRATION_RATIO], $config));
         }
         if (isset($json[self::FIELD_CONCENTRATION_RATIO_RANGE]) || array_key_exists(self::FIELD_CONCENTRATION_RATIO_RANGE, $json)) {
-            $type->setConcentrationRatioRange(FHIRRatioRange::jsonUnserialize(
-                json: $json[self::FIELD_CONCENTRATION_RATIO_RANGE],
-                config: $config,
-            ));
+            $type->setConcentrationRatioRange(FHIRRatioRange::jsonUnserialize($json[self::FIELD_CONCENTRATION_RATIO_RANGE], $config));
         }
         if (isset($json[self::FIELD_CONCENTRATION_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_CONCENTRATION_CODEABLE_CONCEPT, $json)) {
-            $type->setConcentrationCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CONCENTRATION_CODEABLE_CONCEPT],
-                config: $config,
-            ));
+            $type->setConcentrationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CONCENTRATION_CODEABLE_CONCEPT], $config));
         }
         if (isset($json[self::FIELD_CONCENTRATION_QUANTITY]) || array_key_exists(self::FIELD_CONCENTRATION_QUANTITY, $json)) {
-            $type->setConcentrationQuantity(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_CONCENTRATION_QUANTITY],
-                config: $config,
-            ));
+            $type->setConcentrationQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_CONCENTRATION_QUANTITY], $config));
         }
-        if (isset($json[self::FIELD_TEXT_CONCENTRATION]) || isset($json[self::FIELD_TEXT_CONCENTRATION_EXT]) || array_key_exists(self::FIELD_TEXT_CONCENTRATION, $json) || array_key_exists(self::FIELD_TEXT_CONCENTRATION_EXT, $json)) {
+        if (isset($json[self::FIELD_TEXT_CONCENTRATION])
+            || isset($json[self::FIELD_TEXT_CONCENTRATION_EXT])
+            || array_key_exists(self::FIELD_TEXT_CONCENTRATION, $json)
+            || array_key_exists(self::FIELD_TEXT_CONCENTRATION_EXT, $json)) {
             $value = $json[self::FIELD_TEXT_CONCENTRATION] ?? null;
-            $ext = (array)($json[self::FIELD_TEXT_CONCENTRATION_EXT] ?? []);
             $type->setTextConcentration(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TEXT_CONCENTRATION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_BASIS]) || array_key_exists(self::FIELD_BASIS, $json)) {
-            $type->setBasis(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_BASIS],
-                config: $config,
-            ));
+            $type->setBasis(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_BASIS], $config));
         }
-        if (isset($json[self::FIELD_MEASUREMENT_POINT]) || isset($json[self::FIELD_MEASUREMENT_POINT_EXT]) || array_key_exists(self::FIELD_MEASUREMENT_POINT, $json) || array_key_exists(self::FIELD_MEASUREMENT_POINT_EXT, $json)) {
+        if (isset($json[self::FIELD_MEASUREMENT_POINT])
+            || isset($json[self::FIELD_MEASUREMENT_POINT_EXT])
+            || array_key_exists(self::FIELD_MEASUREMENT_POINT, $json)
+            || array_key_exists(self::FIELD_MEASUREMENT_POINT_EXT, $json)) {
             $value = $json[self::FIELD_MEASUREMENT_POINT] ?? null;
-            $ext = (array)($json[self::FIELD_MEASUREMENT_POINT_EXT] ?? []);
             $type->setMeasurementPoint(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_MEASUREMENT_POINT_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_COUNTRY]) || array_key_exists(self::FIELD_COUNTRY, $json)) {
@@ -1658,10 +1629,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCountry(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCountry(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_REFERENCE_STRENGTH]) || array_key_exists(self::FIELD_REFERENCE_STRENGTH, $json)) {
@@ -1670,10 +1638,7 @@ class FHIRIngredientStrength extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addReferenceStrength(FHIRIngredientReferenceStrength::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addReferenceStrength(FHIRIngredientReferenceStrength::jsonUnserialize($v, $config));
             }
         }
         return $type;

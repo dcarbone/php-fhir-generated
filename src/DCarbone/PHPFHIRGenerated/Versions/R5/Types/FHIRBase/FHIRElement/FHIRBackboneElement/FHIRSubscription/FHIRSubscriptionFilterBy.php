@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,6 +96,8 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchC
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchModifierCode;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSearchComparatorEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSearchModifierCodeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -202,8 +204,8 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement implements ValueConta
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $resourceType
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $filterParameter
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchComparator $comparator
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchModifierCode $modifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSearchComparatorEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchComparator $comparator
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSearchModifierCodeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchModifierCode $modifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $value
      * @param null|string[] $fhirComments
      */
@@ -212,8 +214,8 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement implements ValueConta
                                 null|iterable $modifierExtension = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $resourceType = null,
                                 null|string|FHIRStringPrimitive|FHIRString $filterParameter = null,
-                                null|FHIRSearchComparator $comparator = null,
-                                null|FHIRSearchModifierCode $modifier = null,
+                                null|string|FHIRSearchComparatorEnum|FHIRSearchComparator $comparator = null,
+                                null|string|FHIRSearchModifierCodeEnum|FHIRSearchModifierCode $modifier = null,
                                 null|string|FHIRStringPrimitive|FHIRString $value = null,
                                 null|iterable $fhirComments = null)
     {
@@ -403,16 +405,19 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement implements ValueConta
      *
      * Comparator applied to this filter parameter.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchComparator $comparator
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSearchComparatorEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchComparator $comparator
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setComparator(null|FHIRSearchComparator $comparator,
+    public function setComparator(null|string|FHIRSearchComparatorEnum|FHIRSearchComparator $comparator,
                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $comparator) {
             unset($this->comparator);
             return $this;
+        }
+        if (!($comparator instanceof FHIRSearchComparator)) {
+            $comparator = new FHIRSearchComparator(value: $comparator);
         }
         $this->comparator = $comparator;
         if ($this->_valueXMLLocations[self::FIELD_COMPARATOR] !== $valueXMLLocation) {
@@ -462,16 +467,19 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement implements ValueConta
      *
      * Modifier applied to this filter parameter.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchModifierCode $modifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSearchModifierCodeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchModifierCode $modifier
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setModifier(null|FHIRSearchModifierCode $modifier,
+    public function setModifier(null|string|FHIRSearchModifierCodeEnum|FHIRSearchModifierCode $modifier,
                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $modifier) {
             unset($this->modifier);
             return $this;
+        }
+        if (!($modifier instanceof FHIRSearchModifierCode)) {
+            $modifier = new FHIRSearchModifierCode(value: $modifier);
         }
         $this->modifier = $modifier;
         if ($this->_valueXMLLocations[self::FIELD_MODIFIER] !== $valueXMLLocation) {
@@ -910,53 +918,55 @@ class FHIRSubscriptionFilterBy extends FHIRBackboneElement implements ValueConta
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_RESOURCE_TYPE]) || isset($json[self::FIELD_RESOURCE_TYPE_EXT]) || array_key_exists(self::FIELD_RESOURCE_TYPE, $json) || array_key_exists(self::FIELD_RESOURCE_TYPE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_RESOURCE_TYPE])
+            || isset($json[self::FIELD_RESOURCE_TYPE_EXT])
+            || array_key_exists(self::FIELD_RESOURCE_TYPE, $json)
+            || array_key_exists(self::FIELD_RESOURCE_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_RESOURCE_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_RESOURCE_TYPE_EXT] ?? []);
             $type->setResourceType(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_RESOURCE_TYPE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_FILTER_PARAMETER]) || isset($json[self::FIELD_FILTER_PARAMETER_EXT]) || array_key_exists(self::FIELD_FILTER_PARAMETER, $json) || array_key_exists(self::FIELD_FILTER_PARAMETER_EXT, $json)) {
+        if (isset($json[self::FIELD_FILTER_PARAMETER])
+            || isset($json[self::FIELD_FILTER_PARAMETER_EXT])
+            || array_key_exists(self::FIELD_FILTER_PARAMETER, $json)
+            || array_key_exists(self::FIELD_FILTER_PARAMETER_EXT, $json)) {
             $value = $json[self::FIELD_FILTER_PARAMETER] ?? null;
-            $ext = (array)($json[self::FIELD_FILTER_PARAMETER_EXT] ?? []);
             $type->setFilterParameter(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_FILTER_PARAMETER_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_COMPARATOR]) || isset($json[self::FIELD_COMPARATOR_EXT]) || array_key_exists(self::FIELD_COMPARATOR, $json) || array_key_exists(self::FIELD_COMPARATOR_EXT, $json)) {
+        if (isset($json[self::FIELD_COMPARATOR])
+            || isset($json[self::FIELD_COMPARATOR_EXT])
+            || array_key_exists(self::FIELD_COMPARATOR, $json)
+            || array_key_exists(self::FIELD_COMPARATOR_EXT, $json)) {
             $value = $json[self::FIELD_COMPARATOR] ?? null;
-            $ext = (array)($json[self::FIELD_COMPARATOR_EXT] ?? []);
             $type->setComparator(FHIRSearchComparator::jsonUnserialize(
-                json: [FHIRSearchComparator::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSearchComparator::FIELD_VALUE => $value]) + ($json[self::FIELD_COMPARATOR_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_MODIFIER]) || isset($json[self::FIELD_MODIFIER_EXT]) || array_key_exists(self::FIELD_MODIFIER, $json) || array_key_exists(self::FIELD_MODIFIER_EXT, $json)) {
+        if (isset($json[self::FIELD_MODIFIER])
+            || isset($json[self::FIELD_MODIFIER_EXT])
+            || array_key_exists(self::FIELD_MODIFIER, $json)
+            || array_key_exists(self::FIELD_MODIFIER_EXT, $json)) {
             $value = $json[self::FIELD_MODIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_MODIFIER_EXT] ?? []);
             $type->setModifier(FHIRSearchModifierCode::jsonUnserialize(
-                json: [FHIRSearchModifierCode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSearchModifierCode::FIELD_VALUE => $value]) + ($json[self::FIELD_MODIFIER_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_VALUE]) || isset($json[self::FIELD_VALUE_EXT]) || array_key_exists(self::FIELD_VALUE, $json) || array_key_exists(self::FIELD_VALUE_EXT, $json)) {
+        if (isset($json[self::FIELD_VALUE])
+            || isset($json[self::FIELD_VALUE_EXT])
+            || array_key_exists(self::FIELD_VALUE, $json)
+            || array_key_exists(self::FIELD_VALUE_EXT, $json)) {
             $value = $json[self::FIELD_VALUE] ?? null;
-            $ext = (array)($json[self::FIELD_VALUE_EXT] ?? []);
             $type->setValue(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

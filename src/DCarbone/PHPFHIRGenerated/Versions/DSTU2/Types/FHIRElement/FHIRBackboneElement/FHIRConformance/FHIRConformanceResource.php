@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,6 +81,8 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRResourceVersi
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRConditionalDeleteStatusList;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRResourceVersionPolicyList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
 
@@ -282,12 +284,12 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $profile
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction[] $interaction
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRResourceVersionPolicy $versioning
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRResourceVersionPolicyList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRResourceVersionPolicy $versioning
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $readHistory
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $updateCreate
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $conditionalCreate
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBoolean $conditionalUpdate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRConditionalDeleteStatus $conditionalDelete
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRConditionalDeleteStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRConditionalDeleteStatus $conditionalDelete
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString[] $searchInclude
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString[] $searchRevInclude
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam[] $searchParam
@@ -299,12 +301,12 @@ class FHIRConformanceResource extends FHIRBackboneElement
                                 null|string|FHIRCodePrimitive|FHIRCode $type = null,
                                 null|FHIRReference $profile = null,
                                 null|iterable $interaction = null,
-                                null|FHIRResourceVersionPolicy $versioning = null,
+                                null|string|FHIRResourceVersionPolicyList|FHIRResourceVersionPolicy $versioning = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $readHistory = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $updateCreate = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $conditionalCreate = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $conditionalUpdate = null,
-                                null|FHIRConditionalDeleteStatus $conditionalDelete = null,
+                                null|string|FHIRConditionalDeleteStatusList|FHIRConditionalDeleteStatus $conditionalDelete = null,
                                 null|iterable $searchInclude = null,
                                 null|iterable $searchRevInclude = null,
                                 null|iterable $searchParam = null,
@@ -563,16 +565,19 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * supports all the versioning features, including using e-tags for version
      * integrity in the API.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRResourceVersionPolicy $versioning
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRResourceVersionPolicyList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRResourceVersionPolicy $versioning
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setVersioning(null|FHIRResourceVersionPolicy $versioning,
+    public function setVersioning(null|string|FHIRResourceVersionPolicyList|FHIRResourceVersionPolicy $versioning,
                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $versioning) {
             unset($this->versioning);
             return $this;
+        }
+        if (!($versioning instanceof FHIRResourceVersionPolicy)) {
+            $versioning = new FHIRResourceVersionPolicy(value: $versioning);
         }
         $this->versioning = $versioning;
         if ($this->_valueXMLLocations[self::FIELD_VERSIONING] !== $valueXMLLocation) {
@@ -888,16 +893,19 @@ class FHIRConformanceResource extends FHIRBackboneElement
      *
      * A code that indicates how the server supports conditional delete.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRConditionalDeleteStatus $conditionalDelete
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRConditionalDeleteStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRConditionalDeleteStatus $conditionalDelete
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setConditionalDelete(null|FHIRConditionalDeleteStatus $conditionalDelete,
+    public function setConditionalDelete(null|string|FHIRConditionalDeleteStatusList|FHIRConditionalDeleteStatus $conditionalDelete,
                                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $conditionalDelete) {
             unset($this->conditionalDelete);
             return $this;
+        }
+        if (!($conditionalDelete instanceof FHIRConditionalDeleteStatus)) {
+            $conditionalDelete = new FHIRConditionalDeleteStatus(value: $conditionalDelete);
         }
         $this->conditionalDelete = $conditionalDelete;
         if ($this->_valueXMLLocations[self::FIELD_CONDITIONAL_DELETE] !== $valueXMLLocation) {
@@ -1624,28 +1632,19 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_TYPE])
+            || isset($json[self::FIELD_TYPE_EXT])
+            || array_key_exists(self::FIELD_TYPE, $json)
+            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
             $type->setType(FHIRCode::jsonUnserialize(
-                json: [FHIRCode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PROFILE]) || array_key_exists(self::FIELD_PROFILE, $json)) {
-            $type->setProfile(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PROFILE],
-                config: $config,
-            ));
+            $type->setProfile(FHIRReference::jsonUnserialize($json[self::FIELD_PROFILE], $config));
         }
         if (isset($json[self::FIELD_INTERACTION]) || array_key_exists(self::FIELD_INTERACTION, $json)) {
             $vs = $json[self::FIELD_INTERACTION];
@@ -1653,66 +1652,75 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addInteraction(FHIRConformanceInteraction::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addInteraction(FHIRConformanceInteraction::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_VERSIONING]) || isset($json[self::FIELD_VERSIONING_EXT]) || array_key_exists(self::FIELD_VERSIONING, $json) || array_key_exists(self::FIELD_VERSIONING_EXT, $json)) {
+        if (isset($json[self::FIELD_VERSIONING])
+            || isset($json[self::FIELD_VERSIONING_EXT])
+            || array_key_exists(self::FIELD_VERSIONING, $json)
+            || array_key_exists(self::FIELD_VERSIONING_EXT, $json)) {
             $value = $json[self::FIELD_VERSIONING] ?? null;
-            $ext = (array)($json[self::FIELD_VERSIONING_EXT] ?? []);
             $type->setVersioning(FHIRResourceVersionPolicy::jsonUnserialize(
-                json: [FHIRResourceVersionPolicy::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRResourceVersionPolicy::FIELD_VALUE => $value]) + ($json[self::FIELD_VERSIONING_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_READ_HISTORY]) || isset($json[self::FIELD_READ_HISTORY_EXT]) || array_key_exists(self::FIELD_READ_HISTORY, $json) || array_key_exists(self::FIELD_READ_HISTORY_EXT, $json)) {
+        if (isset($json[self::FIELD_READ_HISTORY])
+            || isset($json[self::FIELD_READ_HISTORY_EXT])
+            || array_key_exists(self::FIELD_READ_HISTORY, $json)
+            || array_key_exists(self::FIELD_READ_HISTORY_EXT, $json)) {
             $value = $json[self::FIELD_READ_HISTORY] ?? null;
-            $ext = (array)($json[self::FIELD_READ_HISTORY_EXT] ?? []);
             $type->setReadHistory(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_READ_HISTORY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_UPDATE_CREATE]) || isset($json[self::FIELD_UPDATE_CREATE_EXT]) || array_key_exists(self::FIELD_UPDATE_CREATE, $json) || array_key_exists(self::FIELD_UPDATE_CREATE_EXT, $json)) {
+        if (isset($json[self::FIELD_UPDATE_CREATE])
+            || isset($json[self::FIELD_UPDATE_CREATE_EXT])
+            || array_key_exists(self::FIELD_UPDATE_CREATE, $json)
+            || array_key_exists(self::FIELD_UPDATE_CREATE_EXT, $json)) {
             $value = $json[self::FIELD_UPDATE_CREATE] ?? null;
-            $ext = (array)($json[self::FIELD_UPDATE_CREATE_EXT] ?? []);
             $type->setUpdateCreate(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_UPDATE_CREATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CONDITIONAL_CREATE]) || isset($json[self::FIELD_CONDITIONAL_CREATE_EXT]) || array_key_exists(self::FIELD_CONDITIONAL_CREATE, $json) || array_key_exists(self::FIELD_CONDITIONAL_CREATE_EXT, $json)) {
+        if (isset($json[self::FIELD_CONDITIONAL_CREATE])
+            || isset($json[self::FIELD_CONDITIONAL_CREATE_EXT])
+            || array_key_exists(self::FIELD_CONDITIONAL_CREATE, $json)
+            || array_key_exists(self::FIELD_CONDITIONAL_CREATE_EXT, $json)) {
             $value = $json[self::FIELD_CONDITIONAL_CREATE] ?? null;
-            $ext = (array)($json[self::FIELD_CONDITIONAL_CREATE_EXT] ?? []);
             $type->setConditionalCreate(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_CONDITIONAL_CREATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CONDITIONAL_UPDATE]) || isset($json[self::FIELD_CONDITIONAL_UPDATE_EXT]) || array_key_exists(self::FIELD_CONDITIONAL_UPDATE, $json) || array_key_exists(self::FIELD_CONDITIONAL_UPDATE_EXT, $json)) {
+        if (isset($json[self::FIELD_CONDITIONAL_UPDATE])
+            || isset($json[self::FIELD_CONDITIONAL_UPDATE_EXT])
+            || array_key_exists(self::FIELD_CONDITIONAL_UPDATE, $json)
+            || array_key_exists(self::FIELD_CONDITIONAL_UPDATE_EXT, $json)) {
             $value = $json[self::FIELD_CONDITIONAL_UPDATE] ?? null;
-            $ext = (array)($json[self::FIELD_CONDITIONAL_UPDATE_EXT] ?? []);
             $type->setConditionalUpdate(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_CONDITIONAL_UPDATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CONDITIONAL_DELETE]) || isset($json[self::FIELD_CONDITIONAL_DELETE_EXT]) || array_key_exists(self::FIELD_CONDITIONAL_DELETE, $json) || array_key_exists(self::FIELD_CONDITIONAL_DELETE_EXT, $json)) {
+        if (isset($json[self::FIELD_CONDITIONAL_DELETE])
+            || isset($json[self::FIELD_CONDITIONAL_DELETE_EXT])
+            || array_key_exists(self::FIELD_CONDITIONAL_DELETE, $json)
+            || array_key_exists(self::FIELD_CONDITIONAL_DELETE_EXT, $json)) {
             $value = $json[self::FIELD_CONDITIONAL_DELETE] ?? null;
-            $ext = (array)($json[self::FIELD_CONDITIONAL_DELETE_EXT] ?? []);
             $type->setConditionalDelete(FHIRConditionalDeleteStatus::jsonUnserialize(
-                json: [FHIRConditionalDeleteStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRConditionalDeleteStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_CONDITIONAL_DELETE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SEARCH_INCLUDE]) || isset($json[self::FIELD_SEARCH_INCLUDE_EXT]) || array_key_exists(self::FIELD_SEARCH_INCLUDE, $json) || array_key_exists(self::FIELD_SEARCH_INCLUDE_EXT, $json)) {
-            $value = $json[self::FIELD_SEARCH_INCLUDE] ?? null;
+        if (isset($json[self::FIELD_SEARCH_INCLUDE])
+            || isset($json[self::FIELD_SEARCH_INCLUDE_EXT])
+            || array_key_exists(self::FIELD_SEARCH_INCLUDE, $json)
+            || array_key_exists(self::FIELD_SEARCH_INCLUDE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_SEARCH_INCLUDE] ?? []);
             $ext = (array)($json[self::FIELD_SEARCH_INCLUDE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1720,17 +1728,17 @@ class FHIRConformanceResource extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addSearchInclude(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_SEARCH_REV_INCLUDE]) || isset($json[self::FIELD_SEARCH_REV_INCLUDE_EXT]) || array_key_exists(self::FIELD_SEARCH_REV_INCLUDE, $json) || array_key_exists(self::FIELD_SEARCH_REV_INCLUDE_EXT, $json)) {
-            $value = $json[self::FIELD_SEARCH_REV_INCLUDE] ?? null;
+        if (isset($json[self::FIELD_SEARCH_REV_INCLUDE])
+            || isset($json[self::FIELD_SEARCH_REV_INCLUDE_EXT])
+            || array_key_exists(self::FIELD_SEARCH_REV_INCLUDE, $json)
+            || array_key_exists(self::FIELD_SEARCH_REV_INCLUDE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_SEARCH_REV_INCLUDE] ?? []);
             $ext = (array)($json[self::FIELD_SEARCH_REV_INCLUDE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1738,8 +1746,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addSearchRevInclude(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -1749,10 +1757,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSearchParam(FHIRConformanceSearchParam::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSearchParam(FHIRConformanceSearchParam::jsonUnserialize($v, $config));
             }
         }
         return $type;

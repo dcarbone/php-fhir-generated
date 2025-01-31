@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1240,29 +1240,23 @@ class FHIRDataRequirement extends FHIRElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_TYPE])
+            || isset($json[self::FIELD_TYPE_EXT])
+            || array_key_exists(self::FIELD_TYPE, $json)
+            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
             $type->setType(FHIRCode::jsonUnserialize(
-                json: [FHIRCode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PROFILE]) || isset($json[self::FIELD_PROFILE_EXT]) || array_key_exists(self::FIELD_PROFILE, $json) || array_key_exists(self::FIELD_PROFILE_EXT, $json)) {
-            $value = $json[self::FIELD_PROFILE] ?? null;
+        if (isset($json[self::FIELD_PROFILE])
+            || isset($json[self::FIELD_PROFILE_EXT])
+            || array_key_exists(self::FIELD_PROFILE, $json)
+            || array_key_exists(self::FIELD_PROFILE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_PROFILE] ?? []);
             $ext = (array)($json[self::FIELD_PROFILE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1270,29 +1264,23 @@ class FHIRDataRequirement extends FHIRElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addProfile(FHIRCanonical::jsonUnserialize(
-                    json: [FHIRCanonical::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRCanonical::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
         if (isset($json[self::FIELD_SUBJECT_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_SUBJECT_CODEABLE_CONCEPT, $json)) {
-            $type->setSubjectCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_SUBJECT_CODEABLE_CONCEPT],
-                config: $config,
-            ));
+            $type->setSubjectCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SUBJECT_CODEABLE_CONCEPT], $config));
         }
         if (isset($json[self::FIELD_SUBJECT_REFERENCE]) || array_key_exists(self::FIELD_SUBJECT_REFERENCE, $json)) {
-            $type->setSubjectReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_SUBJECT_REFERENCE],
-                config: $config,
-            ));
+            $type->setSubjectReference(FHIRReference::jsonUnserialize($json[self::FIELD_SUBJECT_REFERENCE], $config));
         }
-        if (isset($json[self::FIELD_MUST_SUPPORT]) || isset($json[self::FIELD_MUST_SUPPORT_EXT]) || array_key_exists(self::FIELD_MUST_SUPPORT, $json) || array_key_exists(self::FIELD_MUST_SUPPORT_EXT, $json)) {
-            $value = $json[self::FIELD_MUST_SUPPORT] ?? null;
+        if (isset($json[self::FIELD_MUST_SUPPORT])
+            || isset($json[self::FIELD_MUST_SUPPORT_EXT])
+            || array_key_exists(self::FIELD_MUST_SUPPORT, $json)
+            || array_key_exists(self::FIELD_MUST_SUPPORT_EXT, $json)) {
+            $value = (array)($json[self::FIELD_MUST_SUPPORT] ?? []);
             $ext = (array)($json[self::FIELD_MUST_SUPPORT_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1300,8 +1288,8 @@ class FHIRDataRequirement extends FHIRElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addMustSupport(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -1311,10 +1299,7 @@ class FHIRDataRequirement extends FHIRElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCodeFilter(FHIRDataRequirementCodeFilter::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCodeFilter(FHIRDataRequirementCodeFilter::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_DATE_FILTER]) || array_key_exists(self::FIELD_DATE_FILTER, $json)) {
@@ -1323,18 +1308,17 @@ class FHIRDataRequirement extends FHIRElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addDateFilter(FHIRDataRequirementDateFilter::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addDateFilter(FHIRDataRequirementDateFilter::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_LIMIT]) || isset($json[self::FIELD_LIMIT_EXT]) || array_key_exists(self::FIELD_LIMIT, $json) || array_key_exists(self::FIELD_LIMIT_EXT, $json)) {
+        if (isset($json[self::FIELD_LIMIT])
+            || isset($json[self::FIELD_LIMIT_EXT])
+            || array_key_exists(self::FIELD_LIMIT, $json)
+            || array_key_exists(self::FIELD_LIMIT_EXT, $json)) {
             $value = $json[self::FIELD_LIMIT] ?? null;
-            $ext = (array)($json[self::FIELD_LIMIT_EXT] ?? []);
             $type->setLimit(FHIRPositiveInt::jsonUnserialize(
-                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_LIMIT_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SORT]) || array_key_exists(self::FIELD_SORT, $json)) {
@@ -1343,10 +1327,7 @@ class FHIRDataRequirement extends FHIRElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSort(FHIRDataRequirementSort::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSort(FHIRDataRequirementSort::jsonUnserialize($v, $config));
             }
         }
         return $type;

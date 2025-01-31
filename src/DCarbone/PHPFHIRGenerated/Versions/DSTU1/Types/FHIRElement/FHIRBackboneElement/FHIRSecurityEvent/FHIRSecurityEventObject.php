@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,6 +76,9 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEvent
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSecurityEventObjectLifecycleList;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSecurityEventObjectRoleList;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSecurityEventObjectTypeList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 
@@ -233,26 +236,26 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $reference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEventObjectType $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEventObjectRole $role
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEventObjectLifecycle $lifecycle
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSecurityEventObjectTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEventObjectType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSecurityEventObjectRoleList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEventObjectRole $role
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSecurityEventObjectLifecycleList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEventObjectLifecycle $lifecycle
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $sensitivity
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $description
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary $query
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventDetail[] $detail
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventDetail[] $detail
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRIdentifier $identifier = null,
+                                null|FHIRString|FHIRIdentifier $identifier = null,
                                 null|FHIRResourceReference $reference = null,
-                                null|FHIRSecurityEventObjectType $type = null,
-                                null|FHIRSecurityEventObjectRole $role = null,
-                                null|FHIRSecurityEventObjectLifecycle $lifecycle = null,
+                                null|string|FHIRSecurityEventObjectTypeList|FHIRSecurityEventObjectType $type = null,
+                                null|string|FHIRSecurityEventObjectRoleList|FHIRSecurityEventObjectRole $role = null,
+                                null|string|FHIRSecurityEventObjectLifecycleList|FHIRSecurityEventObjectLifecycle $lifecycle = null,
                                 null|FHIRCodeableConcept $sensitivity = null,
                                 null|string|FHIRStringPrimitive|FHIRString $name = null,
                                 null|string|FHIRStringPrimitive|FHIRString $description = null,
@@ -329,16 +332,19 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      * Identifies a specific instance of the participant object. The reference should
      * always be version specific.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIdentifier(null|FHIRIdentifier $identifier,
+    public function setIdentifier(null|FHIRString|FHIRIdentifier $identifier,
                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $identifier) {
             unset($this->identifier);
             return $this;
+        }
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
         }
         $this->identifier = $identifier;
         if ($this->_valueXMLLocations[self::FIELD_IDENTIFIER] !== $valueXMLLocation) {
@@ -426,16 +432,19 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      *
      * Object type being audited.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEventObjectType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSecurityEventObjectTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEventObjectType $type
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|FHIRSecurityEventObjectType $type,
+    public function setType(null|string|FHIRSecurityEventObjectTypeList|FHIRSecurityEventObjectType $type,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $type) {
             unset($this->type);
             return $this;
+        }
+        if (!($type instanceof FHIRSecurityEventObjectType)) {
+            $type = new FHIRSecurityEventObjectType(value: $type);
         }
         $this->type = $type;
         if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
@@ -491,16 +500,19 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      * Code representing the functional application role of Participant Object being
      * audited.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEventObjectRole $role
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSecurityEventObjectRoleList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEventObjectRole $role
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRole(null|FHIRSecurityEventObjectRole $role,
+    public function setRole(null|string|FHIRSecurityEventObjectRoleList|FHIRSecurityEventObjectRole $role,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $role) {
             unset($this->role);
             return $this;
+        }
+        if (!($role instanceof FHIRSecurityEventObjectRole)) {
+            $role = new FHIRSecurityEventObjectRole(value: $role);
         }
         $this->role = $role;
         if ($this->_valueXMLLocations[self::FIELD_ROLE] !== $valueXMLLocation) {
@@ -552,16 +564,19 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      *
      * Identifier for the data life-cycle stage for the participant object.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEventObjectLifecycle $lifecycle
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSecurityEventObjectLifecycleList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSecurityEventObjectLifecycle $lifecycle
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLifecycle(null|FHIRSecurityEventObjectLifecycle $lifecycle,
+    public function setLifecycle(null|string|FHIRSecurityEventObjectLifecycleList|FHIRSecurityEventObjectLifecycle $lifecycle,
                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $lifecycle) {
             unset($this->lifecycle);
             return $this;
+        }
+        if (!($lifecycle instanceof FHIRSecurityEventObjectLifecycle)) {
+            $lifecycle = new FHIRSecurityEventObjectLifecycle(value: $lifecycle);
         }
         $this->lifecycle = $lifecycle;
         if ($this->_valueXMLLocations[self::FIELD_LIFECYCLE] !== $valueXMLLocation) {
@@ -858,11 +873,14 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      *
      * Additional Information about the Object.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventDetail $detail
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventDetail $detail
      * @return static
      */
-    public function addDetail(FHIRSecurityEventDetail $detail): self
+    public function addDetail(FHIRBase64Binary|FHIRSecurityEventDetail $detail): self
     {
+        if (!($detail instanceof FHIRSecurityEventDetail)) {
+            $detail = new FHIRSecurityEventDetail(value: $detail);
+        }
         if (!isset($this->detail)) {
             $this->detail = [];
         }
@@ -877,10 +895,10 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      *
      * Additional Information about the Object.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventDetail ...$detail
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBase64Binary|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventDetail ...$detail
      * @return static
      */
-    public function setDetail(FHIRSecurityEventDetail ...$detail): self
+    public function setDetail(FHIRBase64Binary|FHIRSecurityEventDetail ...$detail): self
     {
         if ([] === $detail) {
             unset($this->detail);
@@ -1317,89 +1335,89 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
             $value = $json[self::FIELD_IDENTIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
             $type->setIdentifier(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_IDENTIFIER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_REFERENCE]) || array_key_exists(self::FIELD_REFERENCE, $json)) {
-            $type->setReference(FHIRResourceReference::jsonUnserialize(
-                json: $json[self::FIELD_REFERENCE],
-                config: $config,
-            ));
+            $type->setReference(FHIRResourceReference::jsonUnserialize($json[self::FIELD_REFERENCE], $config));
         }
-        if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
+        if (isset($json[self::FIELD_TYPE])
+            || isset($json[self::FIELD_TYPE_EXT])
+            || array_key_exists(self::FIELD_TYPE, $json)
+            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
             $type->setType(FHIRSecurityEventObjectType::jsonUnserialize(
-                json: [FHIRSecurityEventObjectType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSecurityEventObjectType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ROLE]) || isset($json[self::FIELD_ROLE_EXT]) || array_key_exists(self::FIELD_ROLE, $json) || array_key_exists(self::FIELD_ROLE_EXT, $json)) {
+        if (isset($json[self::FIELD_ROLE])
+            || isset($json[self::FIELD_ROLE_EXT])
+            || array_key_exists(self::FIELD_ROLE, $json)
+            || array_key_exists(self::FIELD_ROLE_EXT, $json)) {
             $value = $json[self::FIELD_ROLE] ?? null;
-            $ext = (array)($json[self::FIELD_ROLE_EXT] ?? []);
             $type->setRole(FHIRSecurityEventObjectRole::jsonUnserialize(
-                json: [FHIRSecurityEventObjectRole::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSecurityEventObjectRole::FIELD_VALUE => $value]) + ($json[self::FIELD_ROLE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_LIFECYCLE]) || isset($json[self::FIELD_LIFECYCLE_EXT]) || array_key_exists(self::FIELD_LIFECYCLE, $json) || array_key_exists(self::FIELD_LIFECYCLE_EXT, $json)) {
+        if (isset($json[self::FIELD_LIFECYCLE])
+            || isset($json[self::FIELD_LIFECYCLE_EXT])
+            || array_key_exists(self::FIELD_LIFECYCLE, $json)
+            || array_key_exists(self::FIELD_LIFECYCLE_EXT, $json)) {
             $value = $json[self::FIELD_LIFECYCLE] ?? null;
-            $ext = (array)($json[self::FIELD_LIFECYCLE_EXT] ?? []);
             $type->setLifecycle(FHIRSecurityEventObjectLifecycle::jsonUnserialize(
-                json: [FHIRSecurityEventObjectLifecycle::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSecurityEventObjectLifecycle::FIELD_VALUE => $value]) + ($json[self::FIELD_LIFECYCLE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SENSITIVITY]) || array_key_exists(self::FIELD_SENSITIVITY, $json)) {
-            $type->setSensitivity(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_SENSITIVITY],
-                config: $config,
-            ));
+            $type->setSensitivity(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SENSITIVITY], $config));
         }
-        if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_NAME])
+            || isset($json[self::FIELD_NAME_EXT])
+            || array_key_exists(self::FIELD_NAME, $json)
+            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
             $type->setName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_QUERY]) || isset($json[self::FIELD_QUERY_EXT]) || array_key_exists(self::FIELD_QUERY, $json) || array_key_exists(self::FIELD_QUERY_EXT, $json)) {
+        if (isset($json[self::FIELD_QUERY])
+            || isset($json[self::FIELD_QUERY_EXT])
+            || array_key_exists(self::FIELD_QUERY, $json)
+            || array_key_exists(self::FIELD_QUERY_EXT, $json)) {
             $value = $json[self::FIELD_QUERY] ?? null;
-            $ext = (array)($json[self::FIELD_QUERY_EXT] ?? []);
             $type->setQuery(FHIRBase64Binary::jsonUnserialize(
-                json: [FHIRBase64Binary::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBase64Binary::FIELD_VALUE => $value]) + ($json[self::FIELD_QUERY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DETAIL]) || isset($json[self::FIELD_DETAIL_EXT]) || array_key_exists(self::FIELD_DETAIL, $json) || array_key_exists(self::FIELD_DETAIL_EXT, $json)) {
-            $value = $json[self::FIELD_DETAIL] ?? null;
+        if (isset($json[self::FIELD_DETAIL])
+            || isset($json[self::FIELD_DETAIL_EXT])
+            || array_key_exists(self::FIELD_DETAIL, $json)
+            || array_key_exists(self::FIELD_DETAIL_EXT, $json)) {
+            $value = (array)($json[self::FIELD_DETAIL] ?? []);
             $ext = (array)($json[self::FIELD_DETAIL_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1407,8 +1425,8 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addDetail(FHIRSecurityEventDetail::jsonUnserialize(
-                    json: [FHIRSecurityEventDetail::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRSecurityEventDetail::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,7 @@ class FHIRNoteType extends FHIRElement implements ValueContainerTypeInterface
 
     /* class_default.php:92 */
     private array $_valueXMLLocations = [
-        self::FIELD_VALUE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_VALUE => ValueXMLLocationEnum::PARENT_ATTRIBUTE,
     ];
 
     /* class_default.php:108 */
@@ -144,7 +144,7 @@ class FHIRNoteType extends FHIRElement implements ValueContainerTypeInterface
      * @return static
      */
     public function setValue(null|string|FHIRNoteTypeList $value,
-                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
+                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::PARENT_ATTRIBUTE): self
     {
         if (null === $value) {
             unset($this->value);
@@ -371,19 +371,7 @@ class FHIRNoteType extends FHIRElement implements ValueContainerTypeInterface
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (!is_array($json)) {
-            $type->setValue($json);
-            return $type;
-        }
+        parent::jsonUnserialize($json, $config, $type); 
         if ([] === $json) {
             return $type;
         }

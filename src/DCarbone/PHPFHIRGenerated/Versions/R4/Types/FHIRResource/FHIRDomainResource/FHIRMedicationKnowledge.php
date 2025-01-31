@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2561,45 +2561,35 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CODE],
-                config: $config,
-            ));
+            $type->setCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CODE], $config));
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRCode::jsonUnserialize(
-                json: [FHIRCode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_MANUFACTURER]) || array_key_exists(self::FIELD_MANUFACTURER, $json)) {
-            $type->setManufacturer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_MANUFACTURER],
-                config: $config,
-            ));
+            $type->setManufacturer(FHIRReference::jsonUnserialize($json[self::FIELD_MANUFACTURER], $config));
         }
         if (isset($json[self::FIELD_DOSE_FORM]) || array_key_exists(self::FIELD_DOSE_FORM, $json)) {
-            $type->setDoseForm(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_DOSE_FORM],
-                config: $config,
-            ));
+            $type->setDoseForm(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DOSE_FORM], $config));
         }
         if (isset($json[self::FIELD_AMOUNT]) || array_key_exists(self::FIELD_AMOUNT, $json)) {
-            $type->setAmount(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_AMOUNT],
-                config: $config,
-            ));
+            $type->setAmount(FHIRQuantity::jsonUnserialize($json[self::FIELD_AMOUNT], $config));
         }
-        if (isset($json[self::FIELD_SYNONYM]) || isset($json[self::FIELD_SYNONYM_EXT]) || array_key_exists(self::FIELD_SYNONYM, $json) || array_key_exists(self::FIELD_SYNONYM_EXT, $json)) {
-            $value = $json[self::FIELD_SYNONYM] ?? null;
+        if (isset($json[self::FIELD_SYNONYM])
+            || isset($json[self::FIELD_SYNONYM_EXT])
+            || array_key_exists(self::FIELD_SYNONYM, $json)
+            || array_key_exists(self::FIELD_SYNONYM_EXT, $json)) {
+            $value = (array)($json[self::FIELD_SYNONYM] ?? []);
             $ext = (array)($json[self::FIELD_SYNONYM_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2607,8 +2597,8 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addSynonym(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -2618,10 +2608,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRelatedMedicationKnowledge(FHIRMedicationKnowledgeRelatedMedicationKnowledge::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRelatedMedicationKnowledge(FHIRMedicationKnowledgeRelatedMedicationKnowledge::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ASSOCIATED_MEDICATION]) || array_key_exists(self::FIELD_ASSOCIATED_MEDICATION, $json)) {
@@ -2630,10 +2617,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAssociatedMedication(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAssociatedMedication(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PRODUCT_TYPE]) || array_key_exists(self::FIELD_PRODUCT_TYPE, $json)) {
@@ -2642,10 +2626,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addProductType(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addProductType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_MONOGRAPH]) || array_key_exists(self::FIELD_MONOGRAPH, $json)) {
@@ -2654,10 +2635,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addMonograph(FHIRMedicationKnowledgeMonograph::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addMonograph(FHIRMedicationKnowledgeMonograph::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_INGREDIENT]) || array_key_exists(self::FIELD_INGREDIENT, $json)) {
@@ -2666,18 +2644,17 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addIngredient(FHIRMedicationKnowledgeIngredient::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addIngredient(FHIRMedicationKnowledgeIngredient::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PREPARATION_INSTRUCTION]) || isset($json[self::FIELD_PREPARATION_INSTRUCTION_EXT]) || array_key_exists(self::FIELD_PREPARATION_INSTRUCTION, $json) || array_key_exists(self::FIELD_PREPARATION_INSTRUCTION_EXT, $json)) {
+        if (isset($json[self::FIELD_PREPARATION_INSTRUCTION])
+            || isset($json[self::FIELD_PREPARATION_INSTRUCTION_EXT])
+            || array_key_exists(self::FIELD_PREPARATION_INSTRUCTION, $json)
+            || array_key_exists(self::FIELD_PREPARATION_INSTRUCTION_EXT, $json)) {
             $value = $json[self::FIELD_PREPARATION_INSTRUCTION] ?? null;
-            $ext = (array)($json[self::FIELD_PREPARATION_INSTRUCTION_EXT] ?? []);
             $type->setPreparationInstruction(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_PREPARATION_INSTRUCTION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_INTENDED_ROUTE]) || array_key_exists(self::FIELD_INTENDED_ROUTE, $json)) {
@@ -2686,10 +2663,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addIntendedRoute(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addIntendedRoute(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_COST]) || array_key_exists(self::FIELD_COST, $json)) {
@@ -2698,10 +2672,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCost(FHIRMedicationKnowledgeCost::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCost(FHIRMedicationKnowledgeCost::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_MONITORING_PROGRAM]) || array_key_exists(self::FIELD_MONITORING_PROGRAM, $json)) {
@@ -2710,10 +2681,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addMonitoringProgram(FHIRMedicationKnowledgeMonitoringProgram::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addMonitoringProgram(FHIRMedicationKnowledgeMonitoringProgram::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ADMINISTRATION_GUIDELINES]) || array_key_exists(self::FIELD_ADMINISTRATION_GUIDELINES, $json)) {
@@ -2722,10 +2690,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAdministrationGuidelines(FHIRMedicationKnowledgeAdministrationGuidelines::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAdministrationGuidelines(FHIRMedicationKnowledgeAdministrationGuidelines::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_MEDICINE_CLASSIFICATION]) || array_key_exists(self::FIELD_MEDICINE_CLASSIFICATION, $json)) {
@@ -2734,17 +2699,11 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addMedicineClassification(FHIRMedicationKnowledgeMedicineClassification::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addMedicineClassification(FHIRMedicationKnowledgeMedicineClassification::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PACKAGING]) || array_key_exists(self::FIELD_PACKAGING, $json)) {
-            $type->setPackaging(FHIRMedicationKnowledgePackaging::jsonUnserialize(
-                json: $json[self::FIELD_PACKAGING],
-                config: $config,
-            ));
+            $type->setPackaging(FHIRMedicationKnowledgePackaging::jsonUnserialize($json[self::FIELD_PACKAGING], $config));
         }
         if (isset($json[self::FIELD_DRUG_CHARACTERISTIC]) || array_key_exists(self::FIELD_DRUG_CHARACTERISTIC, $json)) {
             $vs = $json[self::FIELD_DRUG_CHARACTERISTIC];
@@ -2752,10 +2711,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addDrugCharacteristic(FHIRMedicationKnowledgeDrugCharacteristic::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addDrugCharacteristic(FHIRMedicationKnowledgeDrugCharacteristic::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CONTRAINDICATION]) || array_key_exists(self::FIELD_CONTRAINDICATION, $json)) {
@@ -2764,10 +2720,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addContraindication(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addContraindication(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_REGULATORY]) || array_key_exists(self::FIELD_REGULATORY, $json)) {
@@ -2776,10 +2729,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRegulatory(FHIRMedicationKnowledgeRegulatory::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRegulatory(FHIRMedicationKnowledgeRegulatory::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_KINETICS]) || array_key_exists(self::FIELD_KINETICS, $json)) {
@@ -2788,10 +2738,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addKinetics(FHIRMedicationKnowledgeKinetics::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addKinetics(FHIRMedicationKnowledgeKinetics::jsonUnserialize($v, $config));
             }
         }
         return $type;

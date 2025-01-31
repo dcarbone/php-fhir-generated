@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,6 +70,8 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRCompositionStatusList;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRDocumentReferenceStatusList;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContent;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext;
@@ -361,10 +363,10 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $masterIdentifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDocumentReferenceStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCompositionStatus $docStatus
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $masterIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRDocumentReferenceStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDocumentReferenceStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRCompositionStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCompositionStatus $docStatus
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $class
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $subject
@@ -388,10 +390,10 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
                                 null|iterable $contained = null,
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRIdentifier $masterIdentifier = null,
+                                null|FHIRString|FHIRIdentifier $masterIdentifier = null,
                                 null|iterable $identifier = null,
-                                null|FHIRDocumentReferenceStatus $status = null,
-                                null|FHIRCompositionStatus $docStatus = null,
+                                null|string|FHIRDocumentReferenceStatusList|FHIRDocumentReferenceStatus $status = null,
+                                null|string|FHIRCompositionStatusList|FHIRCompositionStatus $docStatus = null,
                                 null|FHIRCodeableConcept $type = null,
                                 null|FHIRCodeableConcept $class = null,
                                 null|FHIRReference $subject = null,
@@ -513,16 +515,19 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * is specific to this version of the document. This unique identifier may be used
      * elsewhere to identify this version of the document.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $masterIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $masterIdentifier
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMasterIdentifier(null|FHIRIdentifier $masterIdentifier,
+    public function setMasterIdentifier(null|FHIRString|FHIRIdentifier $masterIdentifier,
                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $masterIdentifier) {
             unset($this->masterIdentifier);
             return $this;
+        }
+        if (!($masterIdentifier instanceof FHIRIdentifier)) {
+            $masterIdentifier = new FHIRIdentifier(value: $masterIdentifier);
         }
         $this->masterIdentifier = $masterIdentifier;
         if ($this->_valueXMLLocations[self::FIELD_MASTER_IDENTIFIER] !== $valueXMLLocation) {
@@ -589,11 +594,14 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * Other identifiers associated with the document, including version independent
      * identifiers.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -609,10 +617,10 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      * Other identifiers associated with the document, including version independent
      * identifiers.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -646,16 +654,19 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * The status of this document reference.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDocumentReferenceStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRDocumentReferenceStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDocumentReferenceStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRDocumentReferenceStatus $status,
+    public function setStatus(null|string|FHIRDocumentReferenceStatusList|FHIRDocumentReferenceStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRDocumentReferenceStatus)) {
+            $status = new FHIRDocumentReferenceStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -707,16 +718,19 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
      *
      * The status of the underlying document.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCompositionStatus $docStatus
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRCompositionStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCompositionStatus $docStatus
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDocStatus(null|FHIRCompositionStatus $docStatus,
+    public function setDocStatus(null|string|FHIRCompositionStatusList|FHIRCompositionStatus $docStatus,
                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $docStatus) {
             unset($this->docStatus);
             return $this;
+        }
+        if (!($docStatus instanceof FHIRCompositionStatus)) {
+            $docStatus = new FHIRCompositionStatus(value: $docStatus);
         }
         $this->docStatus = $docStatus;
         if ($this->_valueXMLLocations[self::FIELD_DOC_STATUS] !== $valueXMLLocation) {
@@ -2146,21 +2160,23 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_MASTER_IDENTIFIER]) || isset($json[self::FIELD_MASTER_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_MASTER_IDENTIFIER, $json) || array_key_exists(self::FIELD_MASTER_IDENTIFIER_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_MASTER_IDENTIFIER])
+            || isset($json[self::FIELD_MASTER_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_MASTER_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_MASTER_IDENTIFIER_EXT, $json)) {
             $value = $json[self::FIELD_MASTER_IDENTIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_MASTER_IDENTIFIER_EXT] ?? []);
             $type->setMasterIdentifier(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_MASTER_IDENTIFIER_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2168,59 +2184,58 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRDocumentReferenceStatus::jsonUnserialize(
-                json: [FHIRDocumentReferenceStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDocumentReferenceStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DOC_STATUS]) || isset($json[self::FIELD_DOC_STATUS_EXT]) || array_key_exists(self::FIELD_DOC_STATUS, $json) || array_key_exists(self::FIELD_DOC_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_DOC_STATUS])
+            || isset($json[self::FIELD_DOC_STATUS_EXT])
+            || array_key_exists(self::FIELD_DOC_STATUS, $json)
+            || array_key_exists(self::FIELD_DOC_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_DOC_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_DOC_STATUS_EXT] ?? []);
             $type->setDocStatus(FHIRCompositionStatus::jsonUnserialize(
-                json: [FHIRCompositionStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCompositionStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_DOC_STATUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
         if (isset($json[self::FIELD_CLASS]) || array_key_exists(self::FIELD_CLASS, $json)) {
-            $type->setClass(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CLASS],
-                config: $config,
-            ));
+            $type->setClass(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CLASS], $config));
         }
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $type->setSubject(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_SUBJECT],
-                config: $config,
-            ));
+            $type->setSubject(FHIRReference::jsonUnserialize($json[self::FIELD_SUBJECT], $config));
         }
-        if (isset($json[self::FIELD_CREATED]) || isset($json[self::FIELD_CREATED_EXT]) || array_key_exists(self::FIELD_CREATED, $json) || array_key_exists(self::FIELD_CREATED_EXT, $json)) {
+        if (isset($json[self::FIELD_CREATED])
+            || isset($json[self::FIELD_CREATED_EXT])
+            || array_key_exists(self::FIELD_CREATED, $json)
+            || array_key_exists(self::FIELD_CREATED_EXT, $json)) {
             $value = $json[self::FIELD_CREATED] ?? null;
-            $ext = (array)($json[self::FIELD_CREATED_EXT] ?? []);
             $type->setCreated(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_CREATED_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_INDEXED]) || isset($json[self::FIELD_INDEXED_EXT]) || array_key_exists(self::FIELD_INDEXED, $json) || array_key_exists(self::FIELD_INDEXED_EXT, $json)) {
+        if (isset($json[self::FIELD_INDEXED])
+            || isset($json[self::FIELD_INDEXED_EXT])
+            || array_key_exists(self::FIELD_INDEXED, $json)
+            || array_key_exists(self::FIELD_INDEXED_EXT, $json)) {
             $value = $json[self::FIELD_INDEXED] ?? null;
-            $ext = (array)($json[self::FIELD_INDEXED_EXT] ?? []);
             $type->setIndexed(FHIRInstant::jsonUnserialize(
-                json: [FHIRInstant::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_INDEXED_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_AUTHOR]) || array_key_exists(self::FIELD_AUTHOR, $json)) {
@@ -2229,23 +2244,14 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAuthor(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAuthor(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_AUTHENTICATOR]) || array_key_exists(self::FIELD_AUTHENTICATOR, $json)) {
-            $type->setAuthenticator(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_AUTHENTICATOR],
-                config: $config,
-            ));
+            $type->setAuthenticator(FHIRReference::jsonUnserialize($json[self::FIELD_AUTHENTICATOR], $config));
         }
         if (isset($json[self::FIELD_CUSTODIAN]) || array_key_exists(self::FIELD_CUSTODIAN, $json)) {
-            $type->setCustodian(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_CUSTODIAN],
-                config: $config,
-            ));
+            $type->setCustodian(FHIRReference::jsonUnserialize($json[self::FIELD_CUSTODIAN], $config));
         }
         if (isset($json[self::FIELD_RELATES_TO]) || array_key_exists(self::FIELD_RELATES_TO, $json)) {
             $vs = $json[self::FIELD_RELATES_TO];
@@ -2253,18 +2259,17 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRelatesTo(FHIRDocumentReferenceRelatesTo::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRelatesTo(FHIRDocumentReferenceRelatesTo::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SECURITY_LABEL]) || array_key_exists(self::FIELD_SECURITY_LABEL, $json)) {
@@ -2273,10 +2278,7 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSecurityLabel(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSecurityLabel(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CONTENT]) || array_key_exists(self::FIELD_CONTENT, $json)) {
@@ -2285,17 +2287,11 @@ class FHIRDocumentReference extends FHIRDomainResource implements VersionContain
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addContent(FHIRDocumentReferenceContent::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addContent(FHIRDocumentReferenceContent::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CONTEXT]) || array_key_exists(self::FIELD_CONTEXT, $json)) {
-            $type->setContext(FHIRDocumentReferenceContext::jsonUnserialize(
-                json: $json[self::FIELD_CONTEXT],
-                config: $config,
-            ));
+            $type->setContext(FHIRDocumentReferenceContext::jsonUnserialize($json[self::FIELD_CONTEXT], $config));
         }
         return $type;
     }

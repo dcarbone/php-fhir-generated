@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,6 +89,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDaysOfWeekEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDaysOfWeek;
@@ -173,7 +174,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDaysOfWeek[] $daysOfWeek
+     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDaysOfWeekEnum[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDaysOfWeek[] $daysOfWeek
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $allDay
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime $openingTime
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRTime $closingTime
@@ -244,11 +245,14 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
      *
      * Indicates which days of the week are available between the start and end Times.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDaysOfWeek $daysOfWeek
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDaysOfWeekEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDaysOfWeek $daysOfWeek
      * @return static
      */
-    public function addDaysOfWeek(FHIRDaysOfWeek $daysOfWeek): self
+    public function addDaysOfWeek(string|FHIRDaysOfWeekEnum|FHIRDaysOfWeek $daysOfWeek): self
     {
+        if (!($daysOfWeek instanceof FHIRDaysOfWeek)) {
+            $daysOfWeek = new FHIRDaysOfWeek(value: $daysOfWeek);
+        }
         if (!isset($this->daysOfWeek)) {
             $this->daysOfWeek = [];
         }
@@ -261,10 +265,10 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
      *
      * Indicates which days of the week are available between the start and end Times.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDaysOfWeek ...$daysOfWeek
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDaysOfWeekEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDaysOfWeek ...$daysOfWeek
      * @return static
      */
-    public function setDaysOfWeek(FHIRDaysOfWeek ...$daysOfWeek): self
+    public function setDaysOfWeek(string|FHIRDaysOfWeekEnum|FHIRDaysOfWeek ...$daysOfWeek): self
     {
         if ([] === $daysOfWeek) {
             unset($this->daysOfWeek);
@@ -727,21 +731,13 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_DAYS_OF_WEEK]) || isset($json[self::FIELD_DAYS_OF_WEEK_EXT]) || array_key_exists(self::FIELD_DAYS_OF_WEEK, $json) || array_key_exists(self::FIELD_DAYS_OF_WEEK_EXT, $json)) {
-            $value = $json[self::FIELD_DAYS_OF_WEEK] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_DAYS_OF_WEEK])
+            || isset($json[self::FIELD_DAYS_OF_WEEK_EXT])
+            || array_key_exists(self::FIELD_DAYS_OF_WEEK, $json)
+            || array_key_exists(self::FIELD_DAYS_OF_WEEK_EXT, $json)) {
+            $value = (array)($json[self::FIELD_DAYS_OF_WEEK] ?? []);
             $ext = (array)($json[self::FIELD_DAYS_OF_WEEK_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -749,33 +745,39 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addDaysOfWeek(FHIRDaysOfWeek::jsonUnserialize(
-                    json: [FHIRDaysOfWeek::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRDaysOfWeek::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_ALL_DAY]) || isset($json[self::FIELD_ALL_DAY_EXT]) || array_key_exists(self::FIELD_ALL_DAY, $json) || array_key_exists(self::FIELD_ALL_DAY_EXT, $json)) {
+        if (isset($json[self::FIELD_ALL_DAY])
+            || isset($json[self::FIELD_ALL_DAY_EXT])
+            || array_key_exists(self::FIELD_ALL_DAY, $json)
+            || array_key_exists(self::FIELD_ALL_DAY_EXT, $json)) {
             $value = $json[self::FIELD_ALL_DAY] ?? null;
-            $ext = (array)($json[self::FIELD_ALL_DAY_EXT] ?? []);
             $type->setAllDay(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_ALL_DAY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_OPENING_TIME]) || isset($json[self::FIELD_OPENING_TIME_EXT]) || array_key_exists(self::FIELD_OPENING_TIME, $json) || array_key_exists(self::FIELD_OPENING_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_OPENING_TIME])
+            || isset($json[self::FIELD_OPENING_TIME_EXT])
+            || array_key_exists(self::FIELD_OPENING_TIME, $json)
+            || array_key_exists(self::FIELD_OPENING_TIME_EXT, $json)) {
             $value = $json[self::FIELD_OPENING_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_OPENING_TIME_EXT] ?? []);
             $type->setOpeningTime(FHIRTime::jsonUnserialize(
-                json: [FHIRTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRTime::FIELD_VALUE => $value]) + ($json[self::FIELD_OPENING_TIME_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CLOSING_TIME]) || isset($json[self::FIELD_CLOSING_TIME_EXT]) || array_key_exists(self::FIELD_CLOSING_TIME, $json) || array_key_exists(self::FIELD_CLOSING_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_CLOSING_TIME])
+            || isset($json[self::FIELD_CLOSING_TIME_EXT])
+            || array_key_exists(self::FIELD_CLOSING_TIME, $json)
+            || array_key_exists(self::FIELD_CLOSING_TIME_EXT, $json)) {
             $value = $json[self::FIELD_CLOSING_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_CLOSING_TIME_EXT] ?? []);
             $type->setClosingTime(FHIRTime::jsonUnserialize(
-                json: [FHIRTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRTime::FIELD_VALUE => $value]) + ($json[self::FIELD_CLOSING_TIME_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

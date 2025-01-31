@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDataRequir
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -818,50 +818,42 @@ class FHIRDataRequirementDateFilter extends FHIRElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_PATH]) || isset($json[self::FIELD_PATH_EXT]) || array_key_exists(self::FIELD_PATH, $json) || array_key_exists(self::FIELD_PATH_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_PATH])
+            || isset($json[self::FIELD_PATH_EXT])
+            || array_key_exists(self::FIELD_PATH, $json)
+            || array_key_exists(self::FIELD_PATH_EXT, $json)) {
             $value = $json[self::FIELD_PATH] ?? null;
-            $ext = (array)($json[self::FIELD_PATH_EXT] ?? []);
             $type->setPath(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PATH_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SEARCH_PARAM]) || isset($json[self::FIELD_SEARCH_PARAM_EXT]) || array_key_exists(self::FIELD_SEARCH_PARAM, $json) || array_key_exists(self::FIELD_SEARCH_PARAM_EXT, $json)) {
+        if (isset($json[self::FIELD_SEARCH_PARAM])
+            || isset($json[self::FIELD_SEARCH_PARAM_EXT])
+            || array_key_exists(self::FIELD_SEARCH_PARAM, $json)
+            || array_key_exists(self::FIELD_SEARCH_PARAM_EXT, $json)) {
             $value = $json[self::FIELD_SEARCH_PARAM] ?? null;
-            $ext = (array)($json[self::FIELD_SEARCH_PARAM_EXT] ?? []);
             $type->setSearchParam(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SEARCH_PARAM_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_VALUE_DATE_TIME]) || isset($json[self::FIELD_VALUE_DATE_TIME_EXT]) || array_key_exists(self::FIELD_VALUE_DATE_TIME, $json) || array_key_exists(self::FIELD_VALUE_DATE_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_VALUE_DATE_TIME])
+            || isset($json[self::FIELD_VALUE_DATE_TIME_EXT])
+            || array_key_exists(self::FIELD_VALUE_DATE_TIME, $json)
+            || array_key_exists(self::FIELD_VALUE_DATE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_VALUE_DATE_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_VALUE_DATE_TIME_EXT] ?? []);
             $type->setValueDateTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_DATE_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_VALUE_PERIOD]) || array_key_exists(self::FIELD_VALUE_PERIOD, $json)) {
-            $type->setValuePeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_VALUE_PERIOD],
-                config: $config,
-            ));
+            $type->setValuePeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_VALUE_PERIOD], $config));
         }
         if (isset($json[self::FIELD_VALUE_DURATION]) || array_key_exists(self::FIELD_VALUE_DURATION, $json)) {
-            $type->setValueDuration(FHIRDuration::jsonUnserialize(
-                json: $json[self::FIELD_VALUE_DURATION],
-                config: $config,
-            ));
+            $type->setValueDuration(FHIRDuration::jsonUnserialize($json[self::FIELD_VALUE_DURATION], $config));
         }
         return $type;
     }

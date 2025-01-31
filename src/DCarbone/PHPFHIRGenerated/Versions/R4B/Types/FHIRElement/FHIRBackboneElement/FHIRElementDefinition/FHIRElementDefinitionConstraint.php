@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRConstraintSeverityEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConstraintSeverity;
@@ -241,7 +242,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRId $key
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $requirements
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConstraintSeverity $severity
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRConstraintSeverityEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConstraintSeverity $severity
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $human
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $expression
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $xpath
@@ -253,7 +254,7 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|string|FHIRIdPrimitive|FHIRId $key = null,
                                 null|string|FHIRStringPrimitive|FHIRString $requirements = null,
-                                null|FHIRConstraintSeverity $severity = null,
+                                null|string|FHIRConstraintSeverityEnum|FHIRConstraintSeverity $severity = null,
                                 null|string|FHIRStringPrimitive|FHIRString $human = null,
                                 null|string|FHIRStringPrimitive|FHIRString $expression = null,
                                 null|string|FHIRStringPrimitive|FHIRString $xpath = null,
@@ -460,16 +461,19 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement
      * Identifies the impact constraint violation has on the conformance of the
      * instance.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConstraintSeverity $severity
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRConstraintSeverityEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRConstraintSeverity $severity
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSeverity(null|FHIRConstraintSeverity $severity,
+    public function setSeverity(null|string|FHIRConstraintSeverityEnum|FHIRConstraintSeverity $severity,
                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $severity) {
             unset($this->severity);
             return $this;
+        }
+        if (!($severity instanceof FHIRConstraintSeverity)) {
+            $severity = new FHIRConstraintSeverity(value: $severity);
         }
         $this->severity = $severity;
         if ($this->_valueXMLLocations[self::FIELD_SEVERITY] !== $valueXMLLocation) {
@@ -1150,69 +1154,75 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_KEY]) || isset($json[self::FIELD_KEY_EXT]) || array_key_exists(self::FIELD_KEY, $json) || array_key_exists(self::FIELD_KEY_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_KEY])
+            || isset($json[self::FIELD_KEY_EXT])
+            || array_key_exists(self::FIELD_KEY, $json)
+            || array_key_exists(self::FIELD_KEY_EXT, $json)) {
             $value = $json[self::FIELD_KEY] ?? null;
-            $ext = (array)($json[self::FIELD_KEY_EXT] ?? []);
             $type->setKey(FHIRId::jsonUnserialize(
-                json: [FHIRId::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_KEY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_REQUIREMENTS]) || isset($json[self::FIELD_REQUIREMENTS_EXT]) || array_key_exists(self::FIELD_REQUIREMENTS, $json) || array_key_exists(self::FIELD_REQUIREMENTS_EXT, $json)) {
+        if (isset($json[self::FIELD_REQUIREMENTS])
+            || isset($json[self::FIELD_REQUIREMENTS_EXT])
+            || array_key_exists(self::FIELD_REQUIREMENTS, $json)
+            || array_key_exists(self::FIELD_REQUIREMENTS_EXT, $json)) {
             $value = $json[self::FIELD_REQUIREMENTS] ?? null;
-            $ext = (array)($json[self::FIELD_REQUIREMENTS_EXT] ?? []);
             $type->setRequirements(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_REQUIREMENTS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SEVERITY]) || isset($json[self::FIELD_SEVERITY_EXT]) || array_key_exists(self::FIELD_SEVERITY, $json) || array_key_exists(self::FIELD_SEVERITY_EXT, $json)) {
+        if (isset($json[self::FIELD_SEVERITY])
+            || isset($json[self::FIELD_SEVERITY_EXT])
+            || array_key_exists(self::FIELD_SEVERITY, $json)
+            || array_key_exists(self::FIELD_SEVERITY_EXT, $json)) {
             $value = $json[self::FIELD_SEVERITY] ?? null;
-            $ext = (array)($json[self::FIELD_SEVERITY_EXT] ?? []);
             $type->setSeverity(FHIRConstraintSeverity::jsonUnserialize(
-                json: [FHIRConstraintSeverity::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRConstraintSeverity::FIELD_VALUE => $value]) + ($json[self::FIELD_SEVERITY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_HUMAN]) || isset($json[self::FIELD_HUMAN_EXT]) || array_key_exists(self::FIELD_HUMAN, $json) || array_key_exists(self::FIELD_HUMAN_EXT, $json)) {
+        if (isset($json[self::FIELD_HUMAN])
+            || isset($json[self::FIELD_HUMAN_EXT])
+            || array_key_exists(self::FIELD_HUMAN, $json)
+            || array_key_exists(self::FIELD_HUMAN_EXT, $json)) {
             $value = $json[self::FIELD_HUMAN] ?? null;
-            $ext = (array)($json[self::FIELD_HUMAN_EXT] ?? []);
             $type->setHuman(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_HUMAN_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_EXPRESSION]) || isset($json[self::FIELD_EXPRESSION_EXT]) || array_key_exists(self::FIELD_EXPRESSION, $json) || array_key_exists(self::FIELD_EXPRESSION_EXT, $json)) {
+        if (isset($json[self::FIELD_EXPRESSION])
+            || isset($json[self::FIELD_EXPRESSION_EXT])
+            || array_key_exists(self::FIELD_EXPRESSION, $json)
+            || array_key_exists(self::FIELD_EXPRESSION_EXT, $json)) {
             $value = $json[self::FIELD_EXPRESSION] ?? null;
-            $ext = (array)($json[self::FIELD_EXPRESSION_EXT] ?? []);
             $type->setExpression(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_EXPRESSION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_XPATH]) || isset($json[self::FIELD_XPATH_EXT]) || array_key_exists(self::FIELD_XPATH, $json) || array_key_exists(self::FIELD_XPATH_EXT, $json)) {
+        if (isset($json[self::FIELD_XPATH])
+            || isset($json[self::FIELD_XPATH_EXT])
+            || array_key_exists(self::FIELD_XPATH, $json)
+            || array_key_exists(self::FIELD_XPATH_EXT, $json)) {
             $value = $json[self::FIELD_XPATH] ?? null;
-            $ext = (array)($json[self::FIELD_XPATH_EXT] ?? []);
             $type->setXpath(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_XPATH_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SOURCE]) || isset($json[self::FIELD_SOURCE_EXT]) || array_key_exists(self::FIELD_SOURCE, $json) || array_key_exists(self::FIELD_SOURCE_EXT, $json)) {
+        if (isset($json[self::FIELD_SOURCE])
+            || isset($json[self::FIELD_SOURCE_EXT])
+            || array_key_exists(self::FIELD_SOURCE, $json)
+            || array_key_exists(self::FIELD_SOURCE_EXT, $json)) {
             $value = $json[self::FIELD_SOURCE] ?? null;
-            $ext = (array)($json[self::FIELD_SOURCE_EXT] ?? []);
             $type->setSource(FHIRCanonical::jsonUnserialize(
-                json: [FHIRCanonical::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_SOURCE_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

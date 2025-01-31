@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,6 +76,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRCompositionAttestationModeList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
 
@@ -155,7 +156,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCompositionAttestationMode[] $mode
+     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRCompositionAttestationModeList[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCompositionAttestationMode[] $mode
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $time
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $party
      * @param null|string[] $fhirComments
@@ -223,11 +224,14 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      *
      * The type of attestation the authenticator offers.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCompositionAttestationMode $mode
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRCompositionAttestationModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCompositionAttestationMode $mode
      * @return static
      */
-    public function addMode(FHIRCompositionAttestationMode $mode): self
+    public function addMode(string|FHIRCompositionAttestationModeList|FHIRCompositionAttestationMode $mode): self
     {
+        if (!($mode instanceof FHIRCompositionAttestationMode)) {
+            $mode = new FHIRCompositionAttestationMode(value: $mode);
+        }
         if (!isset($this->mode)) {
             $this->mode = [];
         }
@@ -241,10 +245,10 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      *
      * The type of attestation the authenticator offers.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCompositionAttestationMode ...$mode
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRCompositionAttestationModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCompositionAttestationMode ...$mode
      * @return static
      */
-    public function setMode(FHIRCompositionAttestationMode ...$mode): self
+    public function setMode(string|FHIRCompositionAttestationModeList|FHIRCompositionAttestationMode ...$mode): self
     {
         if ([] === $mode) {
             unset($this->mode);
@@ -583,21 +587,13 @@ class FHIRCompositionAttester extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_MODE]) || isset($json[self::FIELD_MODE_EXT]) || array_key_exists(self::FIELD_MODE, $json) || array_key_exists(self::FIELD_MODE_EXT, $json)) {
-            $value = $json[self::FIELD_MODE] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_MODE])
+            || isset($json[self::FIELD_MODE_EXT])
+            || array_key_exists(self::FIELD_MODE, $json)
+            || array_key_exists(self::FIELD_MODE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_MODE] ?? []);
             $ext = (array)($json[self::FIELD_MODE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -605,24 +601,23 @@ class FHIRCompositionAttester extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addMode(FHIRCompositionAttestationMode::jsonUnserialize(
-                    json: [FHIRCompositionAttestationMode::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRCompositionAttestationMode::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_TIME]) || isset($json[self::FIELD_TIME_EXT]) || array_key_exists(self::FIELD_TIME, $json) || array_key_exists(self::FIELD_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_TIME])
+            || isset($json[self::FIELD_TIME_EXT])
+            || array_key_exists(self::FIELD_TIME, $json)
+            || array_key_exists(self::FIELD_TIME_EXT, $json)) {
             $value = $json[self::FIELD_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_TIME_EXT] ?? []);
             $type->setTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PARTY]) || array_key_exists(self::FIELD_PARTY, $json)) {
-            $type->setParty(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PARTY],
-                config: $config,
-            ));
+            $type->setParty(FHIRReference::jsonUnserialize($json[self::FIELD_PARTY], $config));
         }
         return $type;
     }

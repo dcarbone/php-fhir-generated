@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1090,30 +1090,21 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
             $vs = $json[self::FIELD_SUBJECT];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSubject(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSubject(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_DISEASE]) || array_key_exists(self::FIELD_DISEASE, $json)) {
-            $type->setDisease(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_DISEASE],
-                config: $config,
-            ));
+            $type->setDisease(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DISEASE], $config));
         }
         if (isset($json[self::FIELD_DISEASE_STATUS]) || array_key_exists(self::FIELD_DISEASE_STATUS, $json)) {
-            $type->setDiseaseStatus(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_DISEASE_STATUS],
-                config: $config,
-            ));
+            $type->setDiseaseStatus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DISEASE_STATUS], $config));
         }
         if (isset($json[self::FIELD_COMORBIDITY]) || array_key_exists(self::FIELD_COMORBIDITY, $json)) {
             $vs = $json[self::FIELD_COMORBIDITY];
@@ -1121,10 +1112,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addComorbidity(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addComorbidity(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_THERAPEUTIC_INDICATION]) || array_key_exists(self::FIELD_THERAPEUTIC_INDICATION, $json)) {
@@ -1133,10 +1121,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addTherapeuticIndication(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addTherapeuticIndication(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_OTHER_THERAPY]) || array_key_exists(self::FIELD_OTHER_THERAPY, $json)) {
@@ -1145,10 +1130,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addOtherTherapy(FHIRMedicinalProductContraindicationOtherTherapy::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addOtherTherapy(FHIRMedicinalProductContraindicationOtherTherapy::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_POPULATION]) || array_key_exists(self::FIELD_POPULATION, $json)) {
@@ -1157,10 +1139,7 @@ class FHIRMedicinalProductContraindication extends FHIRDomainResource implements
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPopulation(FHIRPopulation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPopulation(FHIRPopulation::jsonUnserialize($v, $config));
             }
         }
         return $type;

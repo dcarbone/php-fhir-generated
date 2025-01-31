@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1104,27 +1104,18 @@ class FHIRCitationEntry extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_CONTRIBUTOR]) || array_key_exists(self::FIELD_CONTRIBUTOR, $json)) {
-            $type->setContributor(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_CONTRIBUTOR],
-                config: $config,
-            ));
+            $type->setContributor(FHIRReference::jsonUnserialize($json[self::FIELD_CONTRIBUTOR], $config));
         }
-        if (isset($json[self::FIELD_FORENAME_INITIALS]) || isset($json[self::FIELD_FORENAME_INITIALS_EXT]) || array_key_exists(self::FIELD_FORENAME_INITIALS, $json) || array_key_exists(self::FIELD_FORENAME_INITIALS_EXT, $json)) {
+        if (isset($json[self::FIELD_FORENAME_INITIALS])
+            || isset($json[self::FIELD_FORENAME_INITIALS_EXT])
+            || array_key_exists(self::FIELD_FORENAME_INITIALS, $json)
+            || array_key_exists(self::FIELD_FORENAME_INITIALS_EXT, $json)) {
             $value = $json[self::FIELD_FORENAME_INITIALS] ?? null;
-            $ext = (array)($json[self::FIELD_FORENAME_INITIALS_EXT] ?? []);
             $type->setForenameInitials(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_FORENAME_INITIALS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_AFFILIATION]) || array_key_exists(self::FIELD_AFFILIATION, $json)) {
@@ -1133,10 +1124,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAffiliation(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAffiliation(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CONTRIBUTION_TYPE]) || array_key_exists(self::FIELD_CONTRIBUTION_TYPE, $json)) {
@@ -1145,17 +1133,11 @@ class FHIRCitationEntry extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addContributionType(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addContributionType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ROLE]) || array_key_exists(self::FIELD_ROLE, $json)) {
-            $type->setRole(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_ROLE],
-                config: $config,
-            ));
+            $type->setRole(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ROLE], $config));
         }
         if (isset($json[self::FIELD_CONTRIBUTION_INSTANCE]) || array_key_exists(self::FIELD_CONTRIBUTION_INSTANCE, $json)) {
             $vs = $json[self::FIELD_CONTRIBUTION_INSTANCE];
@@ -1163,26 +1145,27 @@ class FHIRCitationEntry extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addContributionInstance(FHIRCitationContributionInstance::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addContributionInstance(FHIRCitationContributionInstance::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CORRESPONDING_CONTACT]) || isset($json[self::FIELD_CORRESPONDING_CONTACT_EXT]) || array_key_exists(self::FIELD_CORRESPONDING_CONTACT, $json) || array_key_exists(self::FIELD_CORRESPONDING_CONTACT_EXT, $json)) {
+        if (isset($json[self::FIELD_CORRESPONDING_CONTACT])
+            || isset($json[self::FIELD_CORRESPONDING_CONTACT_EXT])
+            || array_key_exists(self::FIELD_CORRESPONDING_CONTACT, $json)
+            || array_key_exists(self::FIELD_CORRESPONDING_CONTACT_EXT, $json)) {
             $value = $json[self::FIELD_CORRESPONDING_CONTACT] ?? null;
-            $ext = (array)($json[self::FIELD_CORRESPONDING_CONTACT_EXT] ?? []);
             $type->setCorrespondingContact(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_CORRESPONDING_CONTACT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_RANKING_ORDER]) || isset($json[self::FIELD_RANKING_ORDER_EXT]) || array_key_exists(self::FIELD_RANKING_ORDER, $json) || array_key_exists(self::FIELD_RANKING_ORDER_EXT, $json)) {
+        if (isset($json[self::FIELD_RANKING_ORDER])
+            || isset($json[self::FIELD_RANKING_ORDER_EXT])
+            || array_key_exists(self::FIELD_RANKING_ORDER, $json)
+            || array_key_exists(self::FIELD_RANKING_ORDER_EXT, $json)) {
             $value = $json[self::FIELD_RANKING_ORDER] ?? null;
-            $ext = (array)($json[self::FIELD_RANKING_ORDER_EXT] ?? []);
             $type->setRankingOrder(FHIRPositiveInt::jsonUnserialize(
-                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_RANKING_ORDER_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

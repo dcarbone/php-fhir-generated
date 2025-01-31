@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,6 +69,8 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRParticipantRequiredList;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRParticipationStatusList;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
@@ -175,8 +177,8 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $actor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRParticipantRequired $required
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRParticipationStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRParticipantRequiredList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRParticipantRequired $required
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRParticipationStatusList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRParticipationStatus $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod $period
      * @param null|string[] $fhirComments
      */
@@ -185,8 +187,8 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|iterable $type = null,
                                 null|FHIRReference $actor = null,
-                                null|FHIRParticipantRequired $required = null,
-                                null|FHIRParticipationStatus $status = null,
+                                null|string|FHIRParticipantRequiredList|FHIRParticipantRequired $required = null,
+                                null|string|FHIRParticipationStatusList|FHIRParticipationStatus $status = null,
                                 null|FHIRPeriod $period = null,
                                 null|iterable $fhirComments = null)
     {
@@ -347,16 +349,19 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * use-case where two doctors need to meet to discuss the results for a specific
      * patient, and the patient is not required to be present.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRParticipantRequired $required
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRParticipantRequiredList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRParticipantRequired $required
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRequired(null|FHIRParticipantRequired $required,
+    public function setRequired(null|string|FHIRParticipantRequiredList|FHIRParticipantRequired $required,
                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $required) {
             unset($this->required);
             return $this;
+        }
+        if (!($required instanceof FHIRParticipantRequired)) {
+            $required = new FHIRParticipantRequired(value: $required);
         }
         $this->required = $required;
         if ($this->_valueXMLLocations[self::FIELD_REQUIRED] !== $valueXMLLocation) {
@@ -408,16 +413,19 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      *
      * Participation status of the actor.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRParticipationStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRParticipationStatusList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRParticipationStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRParticipationStatus $status,
+    public function setStatus(null|string|FHIRParticipationStatusList|FHIRParticipationStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRParticipationStatus)) {
+            $status = new FHIRParticipationStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -749,54 +757,41 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
             $vs = $json[self::FIELD_TYPE];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addType(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ACTOR]) || array_key_exists(self::FIELD_ACTOR, $json)) {
-            $type->setActor(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ACTOR],
-                config: $config,
-            ));
+            $type->setActor(FHIRReference::jsonUnserialize($json[self::FIELD_ACTOR], $config));
         }
-        if (isset($json[self::FIELD_REQUIRED]) || isset($json[self::FIELD_REQUIRED_EXT]) || array_key_exists(self::FIELD_REQUIRED, $json) || array_key_exists(self::FIELD_REQUIRED_EXT, $json)) {
+        if (isset($json[self::FIELD_REQUIRED])
+            || isset($json[self::FIELD_REQUIRED_EXT])
+            || array_key_exists(self::FIELD_REQUIRED, $json)
+            || array_key_exists(self::FIELD_REQUIRED_EXT, $json)) {
             $value = $json[self::FIELD_REQUIRED] ?? null;
-            $ext = (array)($json[self::FIELD_REQUIRED_EXT] ?? []);
             $type->setRequired(FHIRParticipantRequired::jsonUnserialize(
-                json: [FHIRParticipantRequired::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRParticipantRequired::FIELD_VALUE => $value]) + ($json[self::FIELD_REQUIRED_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRParticipationStatus::jsonUnserialize(
-                json: [FHIRParticipationStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRParticipationStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_PERIOD],
-                config: $config,
-            ));
+            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,9 +103,12 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTim
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInventoryCountType;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInventoryReportStatus;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRInventoryCountTypeEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRInventoryReportStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
@@ -278,9 +281,9 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInventoryReportStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInventoryCountType $countType
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRInventoryReportStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInventoryReportStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRInventoryCountTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInventoryCountType $countType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $operationType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $operationTypeReason
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $reportedDateTime
@@ -299,8 +302,8 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
                                 null|iterable $identifier = null,
-                                null|FHIRInventoryReportStatus $status = null,
-                                null|FHIRInventoryCountType $countType = null,
+                                null|string|FHIRInventoryReportStatusEnum|FHIRInventoryReportStatus $status = null,
+                                null|string|FHIRInventoryCountTypeEnum|FHIRInventoryCountType $countType = null,
                                 null|FHIRCodeableConcept $operationType = null,
                                 null|FHIRCodeableConcept $operationTypeReason = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $reportedDateTime = null,
@@ -404,11 +407,14 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      *
      * Business identifier for the InventoryReport.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -424,10 +430,10 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      *
      * Business identifier for the InventoryReport.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -463,16 +469,19 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      * The status of the inventory check or notification - whether this is draft (e.g.
      * the report is still pending some updates) or active.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInventoryReportStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRInventoryReportStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInventoryReportStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRInventoryReportStatus $status,
+    public function setStatus(null|string|FHIRInventoryReportStatusEnum|FHIRInventoryReportStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRInventoryReportStatus)) {
+            $status = new FHIRInventoryReportStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -524,16 +533,19 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
      * Whether the report is about the current inventory count (snapshot) or a
      * differential change in inventory (change).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInventoryCountType $countType
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRInventoryCountTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInventoryCountType $countType
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCountType(null|FHIRInventoryCountType $countType,
+    public function setCountType(null|string|FHIRInventoryCountTypeEnum|FHIRInventoryCountType $countType,
                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $countType) {
             unset($this->countType);
             return $this;
+        }
+        if (!($countType instanceof FHIRInventoryCountType)) {
+            $countType = new FHIRInventoryCountType(value: $countType);
         }
         $this->countType = $countType;
         if ($this->_valueXMLLocations[self::FIELD_COUNT_TYPE] !== $valueXMLLocation) {
@@ -1424,13 +1436,13 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1438,58 +1450,52 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRInventoryReportStatus::jsonUnserialize(
-                json: [FHIRInventoryReportStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInventoryReportStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_COUNT_TYPE]) || isset($json[self::FIELD_COUNT_TYPE_EXT]) || array_key_exists(self::FIELD_COUNT_TYPE, $json) || array_key_exists(self::FIELD_COUNT_TYPE_EXT, $json)) {
+        if (isset($json[self::FIELD_COUNT_TYPE])
+            || isset($json[self::FIELD_COUNT_TYPE_EXT])
+            || array_key_exists(self::FIELD_COUNT_TYPE, $json)
+            || array_key_exists(self::FIELD_COUNT_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_COUNT_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_COUNT_TYPE_EXT] ?? []);
             $type->setCountType(FHIRInventoryCountType::jsonUnserialize(
-                json: [FHIRInventoryCountType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInventoryCountType::FIELD_VALUE => $value]) + ($json[self::FIELD_COUNT_TYPE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_OPERATION_TYPE]) || array_key_exists(self::FIELD_OPERATION_TYPE, $json)) {
-            $type->setOperationType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_OPERATION_TYPE],
-                config: $config,
-            ));
+            $type->setOperationType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_OPERATION_TYPE], $config));
         }
         if (isset($json[self::FIELD_OPERATION_TYPE_REASON]) || array_key_exists(self::FIELD_OPERATION_TYPE_REASON, $json)) {
-            $type->setOperationTypeReason(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_OPERATION_TYPE_REASON],
-                config: $config,
-            ));
+            $type->setOperationTypeReason(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_OPERATION_TYPE_REASON], $config));
         }
-        if (isset($json[self::FIELD_REPORTED_DATE_TIME]) || isset($json[self::FIELD_REPORTED_DATE_TIME_EXT]) || array_key_exists(self::FIELD_REPORTED_DATE_TIME, $json) || array_key_exists(self::FIELD_REPORTED_DATE_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_REPORTED_DATE_TIME])
+            || isset($json[self::FIELD_REPORTED_DATE_TIME_EXT])
+            || array_key_exists(self::FIELD_REPORTED_DATE_TIME, $json)
+            || array_key_exists(self::FIELD_REPORTED_DATE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_REPORTED_DATE_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_REPORTED_DATE_TIME_EXT] ?? []);
             $type->setReportedDateTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_REPORTED_DATE_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_REPORTER]) || array_key_exists(self::FIELD_REPORTER, $json)) {
-            $type->setReporter(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_REPORTER],
-                config: $config,
-            ));
+            $type->setReporter(FHIRReference::jsonUnserialize($json[self::FIELD_REPORTER], $config));
         }
         if (isset($json[self::FIELD_REPORTING_PERIOD]) || array_key_exists(self::FIELD_REPORTING_PERIOD, $json)) {
-            $type->setReportingPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_REPORTING_PERIOD],
-                config: $config,
-            ));
+            $type->setReportingPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_REPORTING_PERIOD], $config));
         }
         if (isset($json[self::FIELD_INVENTORY_LISTING]) || array_key_exists(self::FIELD_INVENTORY_LISTING, $json)) {
             $vs = $json[self::FIELD_INVENTORY_LISTING];
@@ -1497,10 +1503,7 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addInventoryListing(FHIRInventoryReportInventoryListing::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addInventoryListing(FHIRInventoryReportInventoryListing::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
@@ -1509,10 +1512,7 @@ class FHIRInventoryReport extends FHIRDomainResource implements VersionContained
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addNote(FHIRAnnotation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
         return $type;

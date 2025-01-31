@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -941,53 +941,53 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_REQUIRED]) || isset($json[self::FIELD_REQUIRED_EXT]) || array_key_exists(self::FIELD_REQUIRED, $json) || array_key_exists(self::FIELD_REQUIRED_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_REQUIRED])
+            || isset($json[self::FIELD_REQUIRED_EXT])
+            || array_key_exists(self::FIELD_REQUIRED, $json)
+            || array_key_exists(self::FIELD_REQUIRED_EXT, $json)) {
             $value = $json[self::FIELD_REQUIRED] ?? null;
-            $ext = (array)($json[self::FIELD_REQUIRED_EXT] ?? []);
             $type->setRequired(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_REQUIRED_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_VALIDATED]) || isset($json[self::FIELD_VALIDATED_EXT]) || array_key_exists(self::FIELD_VALIDATED, $json) || array_key_exists(self::FIELD_VALIDATED_EXT, $json)) {
+        if (isset($json[self::FIELD_VALIDATED])
+            || isset($json[self::FIELD_VALIDATED_EXT])
+            || array_key_exists(self::FIELD_VALIDATED, $json)
+            || array_key_exists(self::FIELD_VALIDATED_EXT, $json)) {
             $value = $json[self::FIELD_VALIDATED] ?? null;
-            $ext = (array)($json[self::FIELD_VALIDATED_EXT] ?? []);
             $type->setValidated(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_VALIDATED_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DESTINATION]) || isset($json[self::FIELD_DESTINATION_EXT]) || array_key_exists(self::FIELD_DESTINATION, $json) || array_key_exists(self::FIELD_DESTINATION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESTINATION])
+            || isset($json[self::FIELD_DESTINATION_EXT])
+            || array_key_exists(self::FIELD_DESTINATION, $json)
+            || array_key_exists(self::FIELD_DESTINATION_EXT, $json)) {
             $value = $json[self::FIELD_DESTINATION] ?? null;
-            $ext = (array)($json[self::FIELD_DESTINATION_EXT] ?? []);
             $type->setDestination(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_DESTINATION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_LINK]) || isset($json[self::FIELD_LINK_EXT]) || array_key_exists(self::FIELD_LINK, $json) || array_key_exists(self::FIELD_LINK_EXT, $json)) {
-            $value = $json[self::FIELD_LINK] ?? null;
+        if (isset($json[self::FIELD_LINK])
+            || isset($json[self::FIELD_LINK_EXT])
+            || array_key_exists(self::FIELD_LINK, $json)
+            || array_key_exists(self::FIELD_LINK_EXT, $json)) {
+            $value = (array)($json[self::FIELD_LINK] ?? []);
             $ext = (array)($json[self::FIELD_LINK_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -995,16 +995,13 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addLink(FHIRUri::jsonUnserialize(
-                    json: [FHIRUri::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRUri::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
         if (isset($json[self::FIELD_CONFORMANCE]) || array_key_exists(self::FIELD_CONFORMANCE, $json)) {
-            $type->setConformance(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_CONFORMANCE],
-                config: $config,
-            ));
+            $type->setConformance(FHIRReference::jsonUnserialize($json[self::FIELD_CONFORMANCE], $config));
         }
         return $type;
     }

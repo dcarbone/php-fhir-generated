@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,6 +72,7 @@ use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Version;
@@ -136,7 +137,7 @@ class FHIRTestScriptRule2 extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRId $ruleId
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptParam2[] $param
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptParam2[] $param
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -270,11 +271,14 @@ class FHIRTestScriptRule2 extends FHIRBackboneElement
      *
      * Each rule template can take one or more parameters for rule evaluation.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptParam2 $param
+     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptParam2 $param
      * @return static
      */
-    public function addParam(FHIRTestScriptParam2 $param): self
+    public function addParam(FHIRString|FHIRTestScriptParam2 $param): self
     {
+        if (!($param instanceof FHIRTestScriptParam2)) {
+            $param = new FHIRTestScriptParam2(value: $param);
+        }
         if (!isset($this->param)) {
             $this->param = [];
         }
@@ -288,10 +292,10 @@ class FHIRTestScriptRule2 extends FHIRBackboneElement
      *
      * Each rule template can take one or more parameters for rule evaluation.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptParam2 ...$param
+     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptParam2 ...$param
      * @return static
      */
-    public function setParam(FHIRTestScriptParam2 ...$param): self
+    public function setParam(FHIRString|FHIRTestScriptParam2 ...$param): self
     {
         if ([] === $param) {
             unset($this->param);
@@ -503,29 +507,23 @@ class FHIRTestScriptRule2 extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_RULE_ID]) || isset($json[self::FIELD_RULE_ID_EXT]) || array_key_exists(self::FIELD_RULE_ID, $json) || array_key_exists(self::FIELD_RULE_ID_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_RULE_ID])
+            || isset($json[self::FIELD_RULE_ID_EXT])
+            || array_key_exists(self::FIELD_RULE_ID, $json)
+            || array_key_exists(self::FIELD_RULE_ID_EXT, $json)) {
             $value = $json[self::FIELD_RULE_ID] ?? null;
-            $ext = (array)($json[self::FIELD_RULE_ID_EXT] ?? []);
             $type->setRuleId(FHIRId::jsonUnserialize(
-                json: [FHIRId::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_RULE_ID_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PARAM]) || isset($json[self::FIELD_PARAM_EXT]) || array_key_exists(self::FIELD_PARAM, $json) || array_key_exists(self::FIELD_PARAM_EXT, $json)) {
-            $value = $json[self::FIELD_PARAM] ?? null;
+        if (isset($json[self::FIELD_PARAM])
+            || isset($json[self::FIELD_PARAM_EXT])
+            || array_key_exists(self::FIELD_PARAM, $json)
+            || array_key_exists(self::FIELD_PARAM_EXT, $json)) {
+            $value = (array)($json[self::FIELD_PARAM] ?? []);
             $ext = (array)($json[self::FIELD_PARAM_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -533,8 +531,8 @@ class FHIRTestScriptRule2 extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addParam(FHIRTestScriptParam2::jsonUnserialize(
-                    json: [FHIRTestScriptParam2::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRTestScriptParam2::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

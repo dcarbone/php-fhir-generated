@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,6 +98,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTim
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTriggerType;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRTriggerTypeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
@@ -277,7 +278,7 @@ class FHIRTriggerDefinition extends FHIRDataType
      * FHIRTriggerDefinition Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTriggerType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRTriggerTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTriggerType $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $subscriptionTopic
@@ -291,7 +292,7 @@ class FHIRTriggerDefinition extends FHIRDataType
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
-                                null|FHIRTriggerType $type = null,
+                                null|string|FHIRTriggerTypeEnum|FHIRTriggerType $type = null,
                                 null|string|FHIRStringPrimitive|FHIRString $name = null,
                                 null|FHIRCodeableConcept $code = null,
                                 null|string|FHIRCanonicalPrimitive|FHIRCanonical $subscriptionTopic = null,
@@ -367,16 +368,19 @@ class FHIRTriggerDefinition extends FHIRDataType
      *
      * The type of triggering event.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTriggerType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRTriggerTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTriggerType $type
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|FHIRTriggerType $type,
+    public function setType(null|string|FHIRTriggerTypeEnum|FHIRTriggerType $type,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $type) {
             unset($this->type);
             return $this;
+        }
+        if (!($type instanceof FHIRTriggerType)) {
+            $type = new FHIRTriggerType(value: $type);
         }
         $this->type = $type;
         if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
@@ -1300,71 +1304,64 @@ class FHIRTriggerDefinition extends FHIRDataType
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_TYPE])
+            || isset($json[self::FIELD_TYPE_EXT])
+            || array_key_exists(self::FIELD_TYPE, $json)
+            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
             $type->setType(FHIRTriggerType::jsonUnserialize(
-                json: [FHIRTriggerType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRTriggerType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_NAME])
+            || isset($json[self::FIELD_NAME_EXT])
+            || array_key_exists(self::FIELD_NAME, $json)
+            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
             $type->setName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CODE],
-                config: $config,
-            ));
+            $type->setCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CODE], $config));
         }
-        if (isset($json[self::FIELD_SUBSCRIPTION_TOPIC]) || isset($json[self::FIELD_SUBSCRIPTION_TOPIC_EXT]) || array_key_exists(self::FIELD_SUBSCRIPTION_TOPIC, $json) || array_key_exists(self::FIELD_SUBSCRIPTION_TOPIC_EXT, $json)) {
+        if (isset($json[self::FIELD_SUBSCRIPTION_TOPIC])
+            || isset($json[self::FIELD_SUBSCRIPTION_TOPIC_EXT])
+            || array_key_exists(self::FIELD_SUBSCRIPTION_TOPIC, $json)
+            || array_key_exists(self::FIELD_SUBSCRIPTION_TOPIC_EXT, $json)) {
             $value = $json[self::FIELD_SUBSCRIPTION_TOPIC] ?? null;
-            $ext = (array)($json[self::FIELD_SUBSCRIPTION_TOPIC_EXT] ?? []);
             $type->setSubscriptionTopic(FHIRCanonical::jsonUnserialize(
-                json: [FHIRCanonical::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_SUBSCRIPTION_TOPIC_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_TIMING_TIMING]) || array_key_exists(self::FIELD_TIMING_TIMING, $json)) {
-            $type->setTimingTiming(FHIRTiming::jsonUnserialize(
-                json: $json[self::FIELD_TIMING_TIMING],
-                config: $config,
-            ));
+            $type->setTimingTiming(FHIRTiming::jsonUnserialize($json[self::FIELD_TIMING_TIMING], $config));
         }
         if (isset($json[self::FIELD_TIMING_REFERENCE]) || array_key_exists(self::FIELD_TIMING_REFERENCE, $json)) {
-            $type->setTimingReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_TIMING_REFERENCE],
-                config: $config,
-            ));
+            $type->setTimingReference(FHIRReference::jsonUnserialize($json[self::FIELD_TIMING_REFERENCE], $config));
         }
-        if (isset($json[self::FIELD_TIMING_DATE]) || isset($json[self::FIELD_TIMING_DATE_EXT]) || array_key_exists(self::FIELD_TIMING_DATE, $json) || array_key_exists(self::FIELD_TIMING_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_TIMING_DATE])
+            || isset($json[self::FIELD_TIMING_DATE_EXT])
+            || array_key_exists(self::FIELD_TIMING_DATE, $json)
+            || array_key_exists(self::FIELD_TIMING_DATE_EXT, $json)) {
             $value = $json[self::FIELD_TIMING_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_TIMING_DATE_EXT] ?? []);
             $type->setTimingDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_TIMING_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TIMING_DATE_TIME]) || isset($json[self::FIELD_TIMING_DATE_TIME_EXT]) || array_key_exists(self::FIELD_TIMING_DATE_TIME, $json) || array_key_exists(self::FIELD_TIMING_DATE_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_TIMING_DATE_TIME])
+            || isset($json[self::FIELD_TIMING_DATE_TIME_EXT])
+            || array_key_exists(self::FIELD_TIMING_DATE_TIME, $json)
+            || array_key_exists(self::FIELD_TIMING_DATE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_TIMING_DATE_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_TIMING_DATE_TIME_EXT] ?? []);
             $type->setTimingDateTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_TIMING_DATE_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_DATA]) || array_key_exists(self::FIELD_DATA, $json)) {
@@ -1373,17 +1370,11 @@ class FHIRTriggerDefinition extends FHIRDataType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addData(FHIRDataRequirement::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addData(FHIRDataRequirement::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CONDITION]) || array_key_exists(self::FIELD_CONDITION, $json)) {
-            $type->setCondition(FHIRExpression::jsonUnserialize(
-                json: $json[self::FIELD_CONDITION],
-                config: $config,
-            ));
+            $type->setCondition(FHIRExpression::jsonUnserialize($json[self::FIELD_CONDITION], $config));
         }
         return $type;
     }

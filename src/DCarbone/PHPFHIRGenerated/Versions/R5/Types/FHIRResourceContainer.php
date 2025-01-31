@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -251,18 +251,9 @@ class FHIRResourceContainer implements ElementTypeInterface, CommentContainerInt
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        if (isset($data[Constants::JSON_FIELD_FHIR_COMMENTS])) {
-            $type->_setFHIRComments((array)$data[Constants::JSON_FIELD_FHIR_COMMENTS]);
-        }
-    }
+        if (isset($json[Constants::JSON_FIELD_FHIR_COMMENTS])) {
+            $type->_setFHIRComments((array)$json[Constants::JSON_FIELD_FHIR_COMMENTS]);
+        }    }
 
     public function __toString(): string
     {

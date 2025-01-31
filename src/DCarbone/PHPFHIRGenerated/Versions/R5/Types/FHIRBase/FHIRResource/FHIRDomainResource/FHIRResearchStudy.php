@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,6 +115,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
@@ -602,16 +603,16 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $url
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $version
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyLabel[] $label
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyLabel[] $label
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $protocol
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $partOf
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact[] $relatedArtifact
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $date
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $primaryPurposeType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $phase
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $studyDesign
@@ -653,7 +654,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                                 null|iterable $partOf = null,
                                 null|iterable $relatedArtifact = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date = null,
-                                null|FHIRPublicationStatus $status = null,
+                                null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status = null,
                                 null|FHIRCodeableConcept $primaryPurposeType = null,
                                 null|FHIRCodeableConcept $phase = null,
                                 null|iterable $studyDesign = null,
@@ -905,11 +906,14 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Identifiers assigned to this research study by the sponsor or other systems.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -925,10 +929,10 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Identifiers assigned to this research study by the sponsor or other systems.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -1179,11 +1183,14 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Additional names for the study.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyLabel $label
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyLabel $label
      * @return static
      */
-    public function addLabel(FHIRResearchStudyLabel $label): self
+    public function addLabel(FHIRString|FHIRResearchStudyLabel $label): self
     {
+        if (!($label instanceof FHIRResearchStudyLabel)) {
+            $label = new FHIRResearchStudyLabel(value: $label);
+        }
         if (!isset($this->label)) {
             $this->label = [];
         }
@@ -1200,10 +1207,10 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * Additional names for the study.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyLabel ...$label
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyLabel ...$label
      * @return static
      */
-    public function setLabel(FHIRResearchStudyLabel ...$label): self
+    public function setLabel(FHIRString|FHIRResearchStudyLabel ...$label): self
     {
         if ([] === $label) {
             unset($this->label);
@@ -1524,16 +1531,19 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
      *
      * The publication state of the resource (not of the study).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPublicationStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPublicationStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRPublicationStatus $status,
+    public function setStatus(null|string|FHIRPublicationStatusEnum|FHIRPublicationStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRPublicationStatus)) {
+            $status = new FHIRPublicationStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -3925,21 +3935,23 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_URL]) || isset($json[self::FIELD_URL_EXT]) || array_key_exists(self::FIELD_URL, $json) || array_key_exists(self::FIELD_URL_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_URL])
+            || isset($json[self::FIELD_URL_EXT])
+            || array_key_exists(self::FIELD_URL, $json)
+            || array_key_exists(self::FIELD_URL_EXT, $json)) {
             $value = $json[self::FIELD_URL] ?? null;
-            $ext = (array)($json[self::FIELD_URL_EXT] ?? []);
             $type->setUrl(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_URL_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -3947,41 +3959,47 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_VERSION]) || isset($json[self::FIELD_VERSION_EXT]) || array_key_exists(self::FIELD_VERSION, $json) || array_key_exists(self::FIELD_VERSION_EXT, $json)) {
+        if (isset($json[self::FIELD_VERSION])
+            || isset($json[self::FIELD_VERSION_EXT])
+            || array_key_exists(self::FIELD_VERSION, $json)
+            || array_key_exists(self::FIELD_VERSION_EXT, $json)) {
             $value = $json[self::FIELD_VERSION] ?? null;
-            $ext = (array)($json[self::FIELD_VERSION_EXT] ?? []);
             $type->setVersion(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_VERSION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_NAME])
+            || isset($json[self::FIELD_NAME_EXT])
+            || array_key_exists(self::FIELD_NAME, $json)
+            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
             $type->setName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TITLE]) || isset($json[self::FIELD_TITLE_EXT]) || array_key_exists(self::FIELD_TITLE, $json) || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
+        if (isset($json[self::FIELD_TITLE])
+            || isset($json[self::FIELD_TITLE_EXT])
+            || array_key_exists(self::FIELD_TITLE, $json)
+            || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
             $value = $json[self::FIELD_TITLE] ?? null;
-            $ext = (array)($json[self::FIELD_TITLE_EXT] ?? []);
             $type->setTitle(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TITLE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_LABEL]) || isset($json[self::FIELD_LABEL_EXT]) || array_key_exists(self::FIELD_LABEL, $json) || array_key_exists(self::FIELD_LABEL_EXT, $json)) {
-            $value = $json[self::FIELD_LABEL] ?? null;
+        if (isset($json[self::FIELD_LABEL])
+            || isset($json[self::FIELD_LABEL_EXT])
+            || array_key_exists(self::FIELD_LABEL, $json)
+            || array_key_exists(self::FIELD_LABEL_EXT, $json)) {
+            $value = (array)($json[self::FIELD_LABEL] ?? []);
             $ext = (array)($json[self::FIELD_LABEL_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -3989,8 +4007,8 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addLabel(FHIRResearchStudyLabel::jsonUnserialize(
-                    json: [FHIRResearchStudyLabel::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRResearchStudyLabel::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -4000,10 +4018,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addProtocol(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addProtocol(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PART_OF]) || array_key_exists(self::FIELD_PART_OF, $json)) {
@@ -4012,10 +4027,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPartOf(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPartOf(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_RELATED_ARTIFACT]) || array_key_exists(self::FIELD_RELATED_ARTIFACT, $json)) {
@@ -4024,39 +4036,34 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRelatedArtifact(FHIRRelatedArtifact::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRelatedArtifact(FHIRRelatedArtifact::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DATE]) || isset($json[self::FIELD_DATE_EXT]) || array_key_exists(self::FIELD_DATE, $json) || array_key_exists(self::FIELD_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_DATE])
+            || isset($json[self::FIELD_DATE_EXT])
+            || array_key_exists(self::FIELD_DATE, $json)
+            || array_key_exists(self::FIELD_DATE_EXT, $json)) {
             $value = $json[self::FIELD_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_DATE_EXT] ?? []);
             $type->setDate(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRPublicationStatus::jsonUnserialize(
-                json: [FHIRPublicationStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPublicationStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PRIMARY_PURPOSE_TYPE]) || array_key_exists(self::FIELD_PRIMARY_PURPOSE_TYPE, $json)) {
-            $type->setPrimaryPurposeType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_PRIMARY_PURPOSE_TYPE],
-                config: $config,
-            ));
+            $type->setPrimaryPurposeType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PRIMARY_PURPOSE_TYPE], $config));
         }
         if (isset($json[self::FIELD_PHASE]) || array_key_exists(self::FIELD_PHASE, $json)) {
-            $type->setPhase(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_PHASE],
-                config: $config,
-            ));
+            $type->setPhase(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PHASE], $config));
         }
         if (isset($json[self::FIELD_STUDY_DESIGN]) || array_key_exists(self::FIELD_STUDY_DESIGN, $json)) {
             $vs = $json[self::FIELD_STUDY_DESIGN];
@@ -4064,10 +4071,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addStudyDesign(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addStudyDesign(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_FOCUS]) || array_key_exists(self::FIELD_FOCUS, $json)) {
@@ -4076,10 +4080,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addFocus(FHIRCodeableReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addFocus(FHIRCodeableReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CONDITION]) || array_key_exists(self::FIELD_CONDITION, $json)) {
@@ -4088,10 +4089,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCondition(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCondition(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_KEYWORD]) || array_key_exists(self::FIELD_KEYWORD, $json)) {
@@ -4100,10 +4098,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addKeyword(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addKeyword(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_REGION]) || array_key_exists(self::FIELD_REGION, $json)) {
@@ -4112,33 +4107,31 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRegion(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRegion(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DESCRIPTION_SUMMARY]) || isset($json[self::FIELD_DESCRIPTION_SUMMARY_EXT]) || array_key_exists(self::FIELD_DESCRIPTION_SUMMARY, $json) || array_key_exists(self::FIELD_DESCRIPTION_SUMMARY_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION_SUMMARY])
+            || isset($json[self::FIELD_DESCRIPTION_SUMMARY_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION_SUMMARY, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_SUMMARY_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION_SUMMARY] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_SUMMARY_EXT] ?? []);
             $type->setDescriptionSummary(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_SUMMARY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_PERIOD],
-                config: $config,
-            ));
+            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
         }
         if (isset($json[self::FIELD_SITE]) || array_key_exists(self::FIELD_SITE, $json)) {
             $vs = $json[self::FIELD_SITE];
@@ -4146,10 +4139,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSite(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSite(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
@@ -4158,10 +4148,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addNote(FHIRAnnotation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CLASSIFIER]) || array_key_exists(self::FIELD_CLASSIFIER, $json)) {
@@ -4170,10 +4157,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addClassifier(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addClassifier(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ASSOCIATED_PARTY]) || array_key_exists(self::FIELD_ASSOCIATED_PARTY, $json)) {
@@ -4182,10 +4166,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAssociatedParty(FHIRResearchStudyAssociatedParty::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAssociatedParty(FHIRResearchStudyAssociatedParty::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PROGRESS_STATUS]) || array_key_exists(self::FIELD_PROGRESS_STATUS, $json)) {
@@ -4194,23 +4175,14 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addProgressStatus(FHIRResearchStudyProgressStatus::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addProgressStatus(FHIRResearchStudyProgressStatus::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_WHY_STOPPED]) || array_key_exists(self::FIELD_WHY_STOPPED, $json)) {
-            $type->setWhyStopped(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_WHY_STOPPED],
-                config: $config,
-            ));
+            $type->setWhyStopped(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_WHY_STOPPED], $config));
         }
         if (isset($json[self::FIELD_RECRUITMENT]) || array_key_exists(self::FIELD_RECRUITMENT, $json)) {
-            $type->setRecruitment(FHIRResearchStudyRecruitment::jsonUnserialize(
-                json: $json[self::FIELD_RECRUITMENT],
-                config: $config,
-            ));
+            $type->setRecruitment(FHIRResearchStudyRecruitment::jsonUnserialize($json[self::FIELD_RECRUITMENT], $config));
         }
         if (isset($json[self::FIELD_COMPARISON_GROUP]) || array_key_exists(self::FIELD_COMPARISON_GROUP, $json)) {
             $vs = $json[self::FIELD_COMPARISON_GROUP];
@@ -4218,10 +4190,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addComparisonGroup(FHIRResearchStudyComparisonGroup::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addComparisonGroup(FHIRResearchStudyComparisonGroup::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_OBJECTIVE]) || array_key_exists(self::FIELD_OBJECTIVE, $json)) {
@@ -4230,10 +4199,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addObjective(FHIRResearchStudyObjective::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addObjective(FHIRResearchStudyObjective::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_OUTCOME_MEASURE]) || array_key_exists(self::FIELD_OUTCOME_MEASURE, $json)) {
@@ -4242,10 +4208,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addOutcomeMeasure(FHIRResearchStudyOutcomeMeasure::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addOutcomeMeasure(FHIRResearchStudyOutcomeMeasure::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_RESULT]) || array_key_exists(self::FIELD_RESULT, $json)) {
@@ -4254,10 +4217,7 @@ class FHIRResearchStudy extends FHIRDomainResource implements VersionContainedTy
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addResult(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addResult(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -537,33 +537,21 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_TOOTH]) || array_key_exists(self::FIELD_TOOTH, $json)) {
-            $type->setTooth(FHIRCoding::jsonUnserialize(
-                json: $json[self::FIELD_TOOTH],
-                config: $config,
-            ));
+            $type->setTooth(FHIRCoding::jsonUnserialize($json[self::FIELD_TOOTH], $config));
         }
         if (isset($json[self::FIELD_REASON]) || array_key_exists(self::FIELD_REASON, $json)) {
-            $type->setReason(FHIRCoding::jsonUnserialize(
-                json: $json[self::FIELD_REASON],
-                config: $config,
-            ));
+            $type->setReason(FHIRCoding::jsonUnserialize($json[self::FIELD_REASON], $config));
         }
-        if (isset($json[self::FIELD_EXTRACTION_DATE]) || isset($json[self::FIELD_EXTRACTION_DATE_EXT]) || array_key_exists(self::FIELD_EXTRACTION_DATE, $json) || array_key_exists(self::FIELD_EXTRACTION_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_EXTRACTION_DATE])
+            || isset($json[self::FIELD_EXTRACTION_DATE_EXT])
+            || array_key_exists(self::FIELD_EXTRACTION_DATE, $json)
+            || array_key_exists(self::FIELD_EXTRACTION_DATE_EXT, $json)) {
             $value = $json[self::FIELD_EXTRACTION_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_EXTRACTION_DATE_EXT] ?? []);
             $type->setExtractionDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_EXTRACTION_DATE_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

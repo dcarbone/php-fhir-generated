@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,7 +97,7 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
 
     /* class_default.php:92 */
     private array $_valueXMLLocations = [
-        self::FIELD_ID => ValueXMLLocationEnum::ELEMENT_ATTRIBUTE,
+        self::FIELD_ID => ValueXMLLocationEnum::PARENT_ATTRIBUTE,
     ];
 
     /* class_default.php:108 */
@@ -224,7 +224,7 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
      * @return static
      */
     public function setId(null|string|FHIRIdPrimitive $id,
-                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::ELEMENT_ATTRIBUTE): self
+                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::PARENT_ATTRIBUTE): self
     {
         if (null === $id) {
             unset($this->id);
@@ -392,33 +392,17 @@ class FHIRElement implements ElementTypeInterface, CommentContainerInterface
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
+        if (isset($json[Constants::JSON_FIELD_FHIR_COMMENTS])) {
+            $type->_setFHIRComments((array)$json[Constants::JSON_FIELD_FHIR_COMMENTS]);
         }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        if (isset($data[Constants::JSON_FIELD_FHIR_COMMENTS])) {
-            $type->_setFHIRComments((array)$data[Constants::JSON_FIELD_FHIR_COMMENTS]);
-        }
-
         if (isset($json[self::FIELD_EXTENSION]) || array_key_exists(self::FIELD_EXTENSION, $json)) {
             $vs = $json[self::FIELD_EXTENSION];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addExtension(FHIRExtension::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addExtension(FHIRExtension::jsonUnserialize($v, $config));
             }
-        }
-        if (!is_array($json)) {
-            $type->setValue($json);
-            return $type;
         }
         if ([] === $json) {
             return $type;

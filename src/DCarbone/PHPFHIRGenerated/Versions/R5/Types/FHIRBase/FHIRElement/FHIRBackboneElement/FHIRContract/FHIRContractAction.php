@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -2364,28 +2364,19 @@ class FHIRContractAction extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_DO_NOT_PERFORM]) || isset($json[self::FIELD_DO_NOT_PERFORM_EXT]) || array_key_exists(self::FIELD_DO_NOT_PERFORM, $json) || array_key_exists(self::FIELD_DO_NOT_PERFORM_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_DO_NOT_PERFORM])
+            || isset($json[self::FIELD_DO_NOT_PERFORM_EXT])
+            || array_key_exists(self::FIELD_DO_NOT_PERFORM, $json)
+            || array_key_exists(self::FIELD_DO_NOT_PERFORM_EXT, $json)) {
             $value = $json[self::FIELD_DO_NOT_PERFORM] ?? null;
-            $ext = (array)($json[self::FIELD_DO_NOT_PERFORM_EXT] ?? []);
             $type->setDoNotPerform(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_DO_NOT_PERFORM_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
             $vs = $json[self::FIELD_SUBJECT];
@@ -2393,24 +2384,18 @@ class FHIRContractAction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSubject(FHIRContractSubject::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSubject(FHIRContractSubject::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_INTENT]) || array_key_exists(self::FIELD_INTENT, $json)) {
-            $type->setIntent(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_INTENT],
-                config: $config,
-            ));
+            $type->setIntent(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_INTENT], $config));
         }
-        if (isset($json[self::FIELD_LINK_ID]) || isset($json[self::FIELD_LINK_ID_EXT]) || array_key_exists(self::FIELD_LINK_ID, $json) || array_key_exists(self::FIELD_LINK_ID_EXT, $json)) {
-            $value = $json[self::FIELD_LINK_ID] ?? null;
+        if (isset($json[self::FIELD_LINK_ID])
+            || isset($json[self::FIELD_LINK_ID_EXT])
+            || array_key_exists(self::FIELD_LINK_ID, $json)
+            || array_key_exists(self::FIELD_LINK_ID_EXT, $json)) {
+            $value = (array)($json[self::FIELD_LINK_ID] ?? []);
             $ext = (array)($json[self::FIELD_LINK_ID_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2418,29 +2403,23 @@ class FHIRContractAction extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addLinkId(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
         if (isset($json[self::FIELD_STATUS]) || array_key_exists(self::FIELD_STATUS, $json)) {
-            $type->setStatus(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_STATUS],
-                config: $config,
-            ));
+            $type->setStatus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_STATUS], $config));
         }
         if (isset($json[self::FIELD_CONTEXT]) || array_key_exists(self::FIELD_CONTEXT, $json)) {
-            $type->setContext(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_CONTEXT],
-                config: $config,
-            ));
+            $type->setContext(FHIRReference::jsonUnserialize($json[self::FIELD_CONTEXT], $config));
         }
-        if (isset($json[self::FIELD_CONTEXT_LINK_ID]) || isset($json[self::FIELD_CONTEXT_LINK_ID_EXT]) || array_key_exists(self::FIELD_CONTEXT_LINK_ID, $json) || array_key_exists(self::FIELD_CONTEXT_LINK_ID_EXT, $json)) {
-            $value = $json[self::FIELD_CONTEXT_LINK_ID] ?? null;
+        if (isset($json[self::FIELD_CONTEXT_LINK_ID])
+            || isset($json[self::FIELD_CONTEXT_LINK_ID_EXT])
+            || array_key_exists(self::FIELD_CONTEXT_LINK_ID, $json)
+            || array_key_exists(self::FIELD_CONTEXT_LINK_ID_EXT, $json)) {
+            $value = (array)($json[self::FIELD_CONTEXT_LINK_ID] ?? []);
             $ext = (array)($json[self::FIELD_CONTEXT_LINK_ID_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2448,30 +2427,26 @@ class FHIRContractAction extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addContextLinkId(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_OCCURRENCE_DATE_TIME]) || isset($json[self::FIELD_OCCURRENCE_DATE_TIME_EXT]) || array_key_exists(self::FIELD_OCCURRENCE_DATE_TIME, $json) || array_key_exists(self::FIELD_OCCURRENCE_DATE_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_OCCURRENCE_DATE_TIME])
+            || isset($json[self::FIELD_OCCURRENCE_DATE_TIME_EXT])
+            || array_key_exists(self::FIELD_OCCURRENCE_DATE_TIME, $json)
+            || array_key_exists(self::FIELD_OCCURRENCE_DATE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_OCCURRENCE_DATE_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_OCCURRENCE_DATE_TIME_EXT] ?? []);
             $type->setOccurrenceDateTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_OCCURRENCE_DATE_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_OCCURRENCE_PERIOD]) || array_key_exists(self::FIELD_OCCURRENCE_PERIOD, $json)) {
-            $type->setOccurrencePeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_OCCURRENCE_PERIOD],
-                config: $config,
-            ));
+            $type->setOccurrencePeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_OCCURRENCE_PERIOD], $config));
         }
         if (isset($json[self::FIELD_OCCURRENCE_TIMING]) || array_key_exists(self::FIELD_OCCURRENCE_TIMING, $json)) {
-            $type->setOccurrenceTiming(FHIRTiming::jsonUnserialize(
-                json: $json[self::FIELD_OCCURRENCE_TIMING],
-                config: $config,
-            ));
+            $type->setOccurrenceTiming(FHIRTiming::jsonUnserialize($json[self::FIELD_OCCURRENCE_TIMING], $config));
         }
         if (isset($json[self::FIELD_REQUESTER]) || array_key_exists(self::FIELD_REQUESTER, $json)) {
             $vs = $json[self::FIELD_REQUESTER];
@@ -2479,18 +2454,15 @@ class FHIRContractAction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRequester(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRequester(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_REQUESTER_LINK_ID]) || isset($json[self::FIELD_REQUESTER_LINK_ID_EXT]) || array_key_exists(self::FIELD_REQUESTER_LINK_ID, $json) || array_key_exists(self::FIELD_REQUESTER_LINK_ID_EXT, $json)) {
-            $value = $json[self::FIELD_REQUESTER_LINK_ID] ?? null;
+        if (isset($json[self::FIELD_REQUESTER_LINK_ID])
+            || isset($json[self::FIELD_REQUESTER_LINK_ID_EXT])
+            || array_key_exists(self::FIELD_REQUESTER_LINK_ID, $json)
+            || array_key_exists(self::FIELD_REQUESTER_LINK_ID_EXT, $json)) {
+            $value = (array)($json[self::FIELD_REQUESTER_LINK_ID] ?? []);
             $ext = (array)($json[self::FIELD_REQUESTER_LINK_ID_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2498,8 +2470,8 @@ class FHIRContractAction extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addRequesterLinkId(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -2509,30 +2481,21 @@ class FHIRContractAction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPerformerType(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPerformerType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PERFORMER_ROLE]) || array_key_exists(self::FIELD_PERFORMER_ROLE, $json)) {
-            $type->setPerformerRole(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_PERFORMER_ROLE],
-                config: $config,
-            ));
+            $type->setPerformerRole(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PERFORMER_ROLE], $config));
         }
         if (isset($json[self::FIELD_PERFORMER]) || array_key_exists(self::FIELD_PERFORMER, $json)) {
-            $type->setPerformer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PERFORMER],
-                config: $config,
-            ));
+            $type->setPerformer(FHIRReference::jsonUnserialize($json[self::FIELD_PERFORMER], $config));
         }
-        if (isset($json[self::FIELD_PERFORMER_LINK_ID]) || isset($json[self::FIELD_PERFORMER_LINK_ID_EXT]) || array_key_exists(self::FIELD_PERFORMER_LINK_ID, $json) || array_key_exists(self::FIELD_PERFORMER_LINK_ID_EXT, $json)) {
-            $value = $json[self::FIELD_PERFORMER_LINK_ID] ?? null;
+        if (isset($json[self::FIELD_PERFORMER_LINK_ID])
+            || isset($json[self::FIELD_PERFORMER_LINK_ID_EXT])
+            || array_key_exists(self::FIELD_PERFORMER_LINK_ID, $json)
+            || array_key_exists(self::FIELD_PERFORMER_LINK_ID_EXT, $json)) {
+            $value = (array)($json[self::FIELD_PERFORMER_LINK_ID] ?? []);
             $ext = (array)($json[self::FIELD_PERFORMER_LINK_ID_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2540,8 +2503,8 @@ class FHIRContractAction extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addPerformerLinkId(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -2551,18 +2514,15 @@ class FHIRContractAction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addReason(FHIRCodeableReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addReason(FHIRCodeableReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_REASON_LINK_ID]) || isset($json[self::FIELD_REASON_LINK_ID_EXT]) || array_key_exists(self::FIELD_REASON_LINK_ID, $json) || array_key_exists(self::FIELD_REASON_LINK_ID_EXT, $json)) {
-            $value = $json[self::FIELD_REASON_LINK_ID] ?? null;
+        if (isset($json[self::FIELD_REASON_LINK_ID])
+            || isset($json[self::FIELD_REASON_LINK_ID_EXT])
+            || array_key_exists(self::FIELD_REASON_LINK_ID, $json)
+            || array_key_exists(self::FIELD_REASON_LINK_ID_EXT, $json)) {
+            $value = (array)($json[self::FIELD_REASON_LINK_ID] ?? []);
             $ext = (array)($json[self::FIELD_REASON_LINK_ID_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2570,8 +2530,8 @@ class FHIRContractAction extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addReasonLinkId(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -2581,18 +2541,15 @@ class FHIRContractAction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addNote(FHIRAnnotation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SECURITY_LABEL_NUMBER]) || isset($json[self::FIELD_SECURITY_LABEL_NUMBER_EXT]) || array_key_exists(self::FIELD_SECURITY_LABEL_NUMBER, $json) || array_key_exists(self::FIELD_SECURITY_LABEL_NUMBER_EXT, $json)) {
-            $value = $json[self::FIELD_SECURITY_LABEL_NUMBER] ?? null;
+        if (isset($json[self::FIELD_SECURITY_LABEL_NUMBER])
+            || isset($json[self::FIELD_SECURITY_LABEL_NUMBER_EXT])
+            || array_key_exists(self::FIELD_SECURITY_LABEL_NUMBER, $json)
+            || array_key_exists(self::FIELD_SECURITY_LABEL_NUMBER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_SECURITY_LABEL_NUMBER] ?? []);
             $ext = (array)($json[self::FIELD_SECURITY_LABEL_NUMBER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2600,8 +2557,8 @@ class FHIRContractAction extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addSecurityLabelNumber(FHIRUnsignedInt::jsonUnserialize(
-                    json: [FHIRUnsignedInt::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRUnsignedInt::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,6 +72,7 @@ use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Version;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\VersionConstants;
@@ -131,7 +132,7 @@ class FHIRTestScriptRule extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $resource
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptParam[] $param
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptParam[] $param
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -229,11 +230,14 @@ class FHIRTestScriptRule extends FHIRBackboneElement
      *
      * Each rule template can take one or more parameters for rule evaluation.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptParam $param
+     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptParam $param
      * @return static
      */
-    public function addParam(FHIRTestScriptParam $param): self
+    public function addParam(FHIRString|FHIRTestScriptParam $param): self
     {
+        if (!($param instanceof FHIRTestScriptParam)) {
+            $param = new FHIRTestScriptParam(value: $param);
+        }
         if (!isset($this->param)) {
             $this->param = [];
         }
@@ -247,10 +251,10 @@ class FHIRTestScriptRule extends FHIRBackboneElement
      *
      * Each rule template can take one or more parameters for rule evaluation.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptParam ...$param
+     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptParam ...$param
      * @return static
      */
-    public function setParam(FHIRTestScriptParam ...$param): self
+    public function setParam(FHIRString|FHIRTestScriptParam ...$param): self
     {
         if ([] === $param) {
             unset($this->param);
@@ -449,27 +453,16 @@ class FHIRTestScriptRule extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_RESOURCE]) || array_key_exists(self::FIELD_RESOURCE, $json)) {
-            $type->setResource(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_RESOURCE],
-                config: $config,
-            ));
+            $type->setResource(FHIRReference::jsonUnserialize($json[self::FIELD_RESOURCE], $config));
         }
-        if (isset($json[self::FIELD_PARAM]) || isset($json[self::FIELD_PARAM_EXT]) || array_key_exists(self::FIELD_PARAM, $json) || array_key_exists(self::FIELD_PARAM_EXT, $json)) {
-            $value = $json[self::FIELD_PARAM] ?? null;
+        if (isset($json[self::FIELD_PARAM])
+            || isset($json[self::FIELD_PARAM_EXT])
+            || array_key_exists(self::FIELD_PARAM, $json)
+            || array_key_exists(self::FIELD_PARAM_EXT, $json)) {
+            $value = (array)($json[self::FIELD_PARAM] ?? []);
             $ext = (array)($json[self::FIELD_PARAM_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -477,8 +470,8 @@ class FHIRTestScriptRule extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addParam(FHIRTestScriptParam::jsonUnserialize(
-                    json: [FHIRTestScriptParam::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRTestScriptParam::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

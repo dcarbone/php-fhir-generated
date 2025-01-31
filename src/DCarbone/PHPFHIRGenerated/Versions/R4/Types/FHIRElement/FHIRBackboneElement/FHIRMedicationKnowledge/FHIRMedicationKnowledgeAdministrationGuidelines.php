@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,6 +72,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R4\VersionConstants;
@@ -148,7 +149,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosage[] $dosage
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $indicationCodeableConcept
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $indicationReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics[] $patientCharacteristics
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics[] $patientCharacteristics
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -346,11 +347,14 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * Characteristics of the patient that are relevant to the administration
      * guidelines (for example, height, weight, gender, etc.).
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics $patientCharacteristics
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics $patientCharacteristics
      * @return static
      */
-    public function addPatientCharacteristics(FHIRMedicationKnowledgePatientCharacteristics $patientCharacteristics): self
+    public function addPatientCharacteristics(FHIRString|FHIRMedicationKnowledgePatientCharacteristics $patientCharacteristics): self
     {
+        if (!($patientCharacteristics instanceof FHIRMedicationKnowledgePatientCharacteristics)) {
+            $patientCharacteristics = new FHIRMedicationKnowledgePatientCharacteristics(value: $patientCharacteristics);
+        }
         if (!isset($this->patientCharacteristics)) {
             $this->patientCharacteristics = [];
         }
@@ -364,10 +368,10 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
      * Characteristics of the patient that are relevant to the administration
      * guidelines (for example, height, weight, gender, etc.).
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics ...$patientCharacteristics
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePatientCharacteristics ...$patientCharacteristics
      * @return static
      */
-    public function setPatientCharacteristics(FHIRMedicationKnowledgePatientCharacteristics ...$patientCharacteristics): self
+    public function setPatientCharacteristics(FHIRString|FHIRMedicationKnowledgePatientCharacteristics ...$patientCharacteristics): self
     {
         if ([] === $patientCharacteristics) {
             unset($this->patientCharacteristics);
@@ -601,45 +605,28 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_DOSAGE]) || array_key_exists(self::FIELD_DOSAGE, $json)) {
             $vs = $json[self::FIELD_DOSAGE];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addDosage(FHIRMedicationKnowledgeDosage::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addDosage(FHIRMedicationKnowledgeDosage::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_INDICATION_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_INDICATION_CODEABLE_CONCEPT, $json)) {
-            $type->setIndicationCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_INDICATION_CODEABLE_CONCEPT],
-                config: $config,
-            ));
+            $type->setIndicationCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_INDICATION_CODEABLE_CONCEPT], $config));
         }
         if (isset($json[self::FIELD_INDICATION_REFERENCE]) || array_key_exists(self::FIELD_INDICATION_REFERENCE, $json)) {
-            $type->setIndicationReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_INDICATION_REFERENCE],
-                config: $config,
-            ));
+            $type->setIndicationReference(FHIRReference::jsonUnserialize($json[self::FIELD_INDICATION_REFERENCE], $config));
         }
-        if (isset($json[self::FIELD_PATIENT_CHARACTERISTICS]) || isset($json[self::FIELD_PATIENT_CHARACTERISTICS_EXT]) || array_key_exists(self::FIELD_PATIENT_CHARACTERISTICS, $json) || array_key_exists(self::FIELD_PATIENT_CHARACTERISTICS_EXT, $json)) {
-            $value = $json[self::FIELD_PATIENT_CHARACTERISTICS] ?? null;
+        if (isset($json[self::FIELD_PATIENT_CHARACTERISTICS])
+            || isset($json[self::FIELD_PATIENT_CHARACTERISTICS_EXT])
+            || array_key_exists(self::FIELD_PATIENT_CHARACTERISTICS, $json)
+            || array_key_exists(self::FIELD_PATIENT_CHARACTERISTICS_EXT, $json)) {
+            $value = (array)($json[self::FIELD_PATIENT_CHARACTERISTICS] ?? []);
             $ext = (array)($json[self::FIELD_PATIENT_CHARACTERISTICS_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -647,8 +634,8 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addPatientCharacteristics(FHIRMedicationKnowledgePatientCharacteristics::jsonUnserialize(
-                    json: [FHIRMedicationKnowledgePatientCharacteristics::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRMedicationKnowledgePatientCharacteristics::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

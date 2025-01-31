@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,11 +81,13 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeasmnt_Princ
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResourceContainer;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomainResource;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRMeasmnt_PrincipleList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
@@ -266,13 +268,13 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $lastSystemChange
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $source
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $parent
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept[] $operationalStatus
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $parameterGroup
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeasmnt_Principle $measurementPrinciple
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRMeasmnt_PrincipleList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeasmnt_Principle $measurementPrinciple
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification[] $productionSpecification
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $languageCode
      * @param null|string[] $fhirComments
@@ -286,13 +288,13 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $type = null,
-                                null|FHIRIdentifier $identifier = null,
+                                null|FHIRString|FHIRIdentifier $identifier = null,
                                 null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $lastSystemChange = null,
                                 null|FHIRReference $source = null,
                                 null|FHIRReference $parent = null,
                                 null|iterable $operationalStatus = null,
                                 null|FHIRCodeableConcept $parameterGroup = null,
-                                null|FHIRMeasmnt_Principle $measurementPrinciple = null,
+                                null|string|FHIRMeasmnt_PrincipleList|FHIRMeasmnt_Principle $measurementPrinciple = null,
                                 null|iterable $productionSpecification = null,
                                 null|FHIRCodeableConcept $languageCode = null,
                                 null|iterable $fhirComments = null)
@@ -418,16 +420,19 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      * Describes the local assigned unique identification by the software. For example:
      * handle ID.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $identifier
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIdentifier(null|FHIRIdentifier $identifier,
+    public function setIdentifier(null|FHIRString|FHIRIdentifier $identifier,
                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $identifier) {
             unset($this->identifier);
             return $this;
+        }
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
         }
         $this->identifier = $identifier;
         if ($this->_valueXMLLocations[self::FIELD_IDENTIFIER] !== $valueXMLLocation) {
@@ -733,16 +738,19 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
      * Describes the physical principle of the measurement. For example: thermal,
      * chemical, acoustical, etc.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeasmnt_Principle $measurementPrinciple
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRMeasmnt_PrincipleList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeasmnt_Principle $measurementPrinciple
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMeasurementPrinciple(null|FHIRMeasmnt_Principle $measurementPrinciple,
+    public function setMeasurementPrinciple(null|string|FHIRMeasmnt_PrincipleList|FHIRMeasmnt_Principle $measurementPrinciple,
                                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $measurementPrinciple) {
             unset($this->measurementPrinciple);
             return $this;
+        }
+        if (!($measurementPrinciple instanceof FHIRMeasmnt_Principle)) {
+            $measurementPrinciple = new FHIRMeasmnt_Principle(value: $measurementPrinciple);
         }
         $this->measurementPrinciple = $measurementPrinciple;
         if ($this->_valueXMLLocations[self::FIELD_MEASUREMENT_PRINCIPLE] !== $valueXMLLocation) {
@@ -1394,40 +1402,35 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
             $value = $json[self::FIELD_IDENTIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
             $type->setIdentifier(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_IDENTIFIER_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_LAST_SYSTEM_CHANGE]) || isset($json[self::FIELD_LAST_SYSTEM_CHANGE_EXT]) || array_key_exists(self::FIELD_LAST_SYSTEM_CHANGE, $json) || array_key_exists(self::FIELD_LAST_SYSTEM_CHANGE_EXT, $json)) {
+        if (isset($json[self::FIELD_LAST_SYSTEM_CHANGE])
+            || isset($json[self::FIELD_LAST_SYSTEM_CHANGE_EXT])
+            || array_key_exists(self::FIELD_LAST_SYSTEM_CHANGE, $json)
+            || array_key_exists(self::FIELD_LAST_SYSTEM_CHANGE_EXT, $json)) {
             $value = $json[self::FIELD_LAST_SYSTEM_CHANGE] ?? null;
-            $ext = (array)($json[self::FIELD_LAST_SYSTEM_CHANGE_EXT] ?? []);
             $type->setLastSystemChange(FHIRInstant::jsonUnserialize(
-                json: [FHIRInstant::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_LAST_SYSTEM_CHANGE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
-            $type->setSource(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_SOURCE],
-                config: $config,
-            ));
+            $type->setSource(FHIRReference::jsonUnserialize($json[self::FIELD_SOURCE], $config));
         }
         if (isset($json[self::FIELD_PARENT]) || array_key_exists(self::FIELD_PARENT, $json)) {
-            $type->setParent(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PARENT],
-                config: $config,
-            ));
+            $type->setParent(FHIRReference::jsonUnserialize($json[self::FIELD_PARENT], $config));
         }
         if (isset($json[self::FIELD_OPERATIONAL_STATUS]) || array_key_exists(self::FIELD_OPERATIONAL_STATUS, $json)) {
             $vs = $json[self::FIELD_OPERATIONAL_STATUS];
@@ -1435,24 +1438,20 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addOperationalStatus(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addOperationalStatus(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PARAMETER_GROUP]) || array_key_exists(self::FIELD_PARAMETER_GROUP, $json)) {
-            $type->setParameterGroup(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_PARAMETER_GROUP],
-                config: $config,
-            ));
+            $type->setParameterGroup(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PARAMETER_GROUP], $config));
         }
-        if (isset($json[self::FIELD_MEASUREMENT_PRINCIPLE]) || isset($json[self::FIELD_MEASUREMENT_PRINCIPLE_EXT]) || array_key_exists(self::FIELD_MEASUREMENT_PRINCIPLE, $json) || array_key_exists(self::FIELD_MEASUREMENT_PRINCIPLE_EXT, $json)) {
+        if (isset($json[self::FIELD_MEASUREMENT_PRINCIPLE])
+            || isset($json[self::FIELD_MEASUREMENT_PRINCIPLE_EXT])
+            || array_key_exists(self::FIELD_MEASUREMENT_PRINCIPLE, $json)
+            || array_key_exists(self::FIELD_MEASUREMENT_PRINCIPLE_EXT, $json)) {
             $value = $json[self::FIELD_MEASUREMENT_PRINCIPLE] ?? null;
-            $ext = (array)($json[self::FIELD_MEASUREMENT_PRINCIPLE_EXT] ?? []);
             $type->setMeasurementPrinciple(FHIRMeasmnt_Principle::jsonUnserialize(
-                json: [FHIRMeasmnt_Principle::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMeasmnt_Principle::FIELD_VALUE => $value]) + ($json[self::FIELD_MEASUREMENT_PRINCIPLE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PRODUCTION_SPECIFICATION]) || array_key_exists(self::FIELD_PRODUCTION_SPECIFICATION, $json)) {
@@ -1461,17 +1460,11 @@ class FHIRDeviceComponent extends FHIRDomainResource implements VersionContained
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addProductionSpecification(FHIRDeviceComponentProductionSpecification::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addProductionSpecification(FHIRDeviceComponentProductionSpecification::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_LANGUAGE_CODE]) || array_key_exists(self::FIELD_LANGUAGE_CODE, $json)) {
-            $type->setLanguageCode(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_LANGUAGE_CODE],
-                config: $config,
-            ));
+            $type->setLanguageCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_LANGUAGE_CODE], $config));
         }
         return $type;
     }

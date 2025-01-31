@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -432,7 +432,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier[] $udiDeviceIdentifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $manufacturerString
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $manufacturerReference
@@ -448,7 +448,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionCapability[] $capability
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionProperty[] $property
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $owner
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint[] $contact
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint[] $contact
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $url
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $onlineInformation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAnnotation[] $note
@@ -625,11 +625,14 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
      * Unique instance identifiers assigned to a device by the software, manufacturers,
      * other organizations or owners. For example: handle ID.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -646,10 +649,10 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
      * Unique instance identifiers assigned to a device by the software, manufacturers,
      * other organizations or owners. For example: handle ID.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -1574,11 +1577,14 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
      * Contact details for an organization or a particular human that is responsible
      * for the device.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint $contact
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint $contact
      * @return static
      */
-    public function addContact(FHIRContactPoint $contact): self
+    public function addContact(FHIRString|FHIRContactPoint $contact): self
     {
+        if (!($contact instanceof FHIRContactPoint)) {
+            $contact = new FHIRContactPoint(value: $contact);
+        }
         if (!isset($this->contact)) {
             $this->contact = [];
         }
@@ -1595,10 +1601,10 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
      * Contact details for an organization or a particular human that is responsible
      * for the device.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint ...$contact
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint ...$contact
      * @return static
      */
-    public function setContact(FHIRContactPoint ...$contact): self
+    public function setContact(FHIRString|FHIRContactPoint ...$contact): self
     {
         if ([] === $contact) {
             unset($this->contact);
@@ -2738,13 +2744,13 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2752,8 +2758,8 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -2763,25 +2769,21 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addUdiDeviceIdentifier(FHIRDeviceDefinitionUdiDeviceIdentifier::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addUdiDeviceIdentifier(FHIRDeviceDefinitionUdiDeviceIdentifier::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_MANUFACTURER_STRING]) || isset($json[self::FIELD_MANUFACTURER_STRING_EXT]) || array_key_exists(self::FIELD_MANUFACTURER_STRING, $json) || array_key_exists(self::FIELD_MANUFACTURER_STRING_EXT, $json)) {
+        if (isset($json[self::FIELD_MANUFACTURER_STRING])
+            || isset($json[self::FIELD_MANUFACTURER_STRING_EXT])
+            || array_key_exists(self::FIELD_MANUFACTURER_STRING, $json)
+            || array_key_exists(self::FIELD_MANUFACTURER_STRING_EXT, $json)) {
             $value = $json[self::FIELD_MANUFACTURER_STRING] ?? null;
-            $ext = (array)($json[self::FIELD_MANUFACTURER_STRING_EXT] ?? []);
             $type->setManufacturerString(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_MANUFACTURER_STRING_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_MANUFACTURER_REFERENCE]) || array_key_exists(self::FIELD_MANUFACTURER_REFERENCE, $json)) {
-            $type->setManufacturerReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_MANUFACTURER_REFERENCE],
-                config: $config,
-            ));
+            $type->setManufacturerReference(FHIRReference::jsonUnserialize($json[self::FIELD_MANUFACTURER_REFERENCE], $config));
         }
         if (isset($json[self::FIELD_DEVICE_NAME]) || array_key_exists(self::FIELD_DEVICE_NAME, $json)) {
             $vs = $json[self::FIELD_DEVICE_NAME];
@@ -2789,25 +2791,21 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addDeviceName(FHIRDeviceDefinitionDeviceName::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addDeviceName(FHIRDeviceDefinitionDeviceName::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_MODEL_NUMBER]) || isset($json[self::FIELD_MODEL_NUMBER_EXT]) || array_key_exists(self::FIELD_MODEL_NUMBER, $json) || array_key_exists(self::FIELD_MODEL_NUMBER_EXT, $json)) {
+        if (isset($json[self::FIELD_MODEL_NUMBER])
+            || isset($json[self::FIELD_MODEL_NUMBER_EXT])
+            || array_key_exists(self::FIELD_MODEL_NUMBER, $json)
+            || array_key_exists(self::FIELD_MODEL_NUMBER_EXT, $json)) {
             $value = $json[self::FIELD_MODEL_NUMBER] ?? null;
-            $ext = (array)($json[self::FIELD_MODEL_NUMBER_EXT] ?? []);
             $type->setModelNumber(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_MODEL_NUMBER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
         if (isset($json[self::FIELD_SPECIALIZATION]) || array_key_exists(self::FIELD_SPECIALIZATION, $json)) {
             $vs = $json[self::FIELD_SPECIALIZATION];
@@ -2815,18 +2813,15 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSpecialization(FHIRDeviceDefinitionSpecialization::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSpecialization(FHIRDeviceDefinitionSpecialization::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_VERSION]) || isset($json[self::FIELD_VERSION_EXT]) || array_key_exists(self::FIELD_VERSION, $json) || array_key_exists(self::FIELD_VERSION_EXT, $json)) {
-            $value = $json[self::FIELD_VERSION] ?? null;
+        if (isset($json[self::FIELD_VERSION])
+            || isset($json[self::FIELD_VERSION_EXT])
+            || array_key_exists(self::FIELD_VERSION, $json)
+            || array_key_exists(self::FIELD_VERSION_EXT, $json)) {
+            $value = (array)($json[self::FIELD_VERSION] ?? []);
             $ext = (array)($json[self::FIELD_VERSION_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2834,8 +2829,8 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addVersion(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -2845,10 +2840,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSafety(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSafety(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SHELF_LIFE_STORAGE]) || array_key_exists(self::FIELD_SHELF_LIFE_STORAGE, $json)) {
@@ -2857,17 +2849,11 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addShelfLifeStorage(FHIRProductShelfLife::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addShelfLifeStorage(FHIRProductShelfLife::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PHYSICAL_CHARACTERISTICS]) || array_key_exists(self::FIELD_PHYSICAL_CHARACTERISTICS, $json)) {
-            $type->setPhysicalCharacteristics(FHIRProdCharacteristic::jsonUnserialize(
-                json: $json[self::FIELD_PHYSICAL_CHARACTERISTICS],
-                config: $config,
-            ));
+            $type->setPhysicalCharacteristics(FHIRProdCharacteristic::jsonUnserialize($json[self::FIELD_PHYSICAL_CHARACTERISTICS], $config));
         }
         if (isset($json[self::FIELD_LANGUAGE_CODE]) || array_key_exists(self::FIELD_LANGUAGE_CODE, $json)) {
             $vs = $json[self::FIELD_LANGUAGE_CODE];
@@ -2875,10 +2861,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addLanguageCode(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addLanguageCode(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CAPABILITY]) || array_key_exists(self::FIELD_CAPABILITY, $json)) {
@@ -2887,10 +2870,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCapability(FHIRDeviceDefinitionCapability::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCapability(FHIRDeviceDefinitionCapability::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PROPERTY]) || array_key_exists(self::FIELD_PROPERTY, $json)) {
@@ -2899,24 +2879,18 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addProperty(FHIRDeviceDefinitionProperty::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addProperty(FHIRDeviceDefinitionProperty::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_OWNER]) || array_key_exists(self::FIELD_OWNER, $json)) {
-            $type->setOwner(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_OWNER],
-                config: $config,
-            ));
+            $type->setOwner(FHIRReference::jsonUnserialize($json[self::FIELD_OWNER], $config));
         }
-        if (isset($json[self::FIELD_CONTACT]) || isset($json[self::FIELD_CONTACT_EXT]) || array_key_exists(self::FIELD_CONTACT, $json) || array_key_exists(self::FIELD_CONTACT_EXT, $json)) {
-            $value = $json[self::FIELD_CONTACT] ?? null;
+        if (isset($json[self::FIELD_CONTACT])
+            || isset($json[self::FIELD_CONTACT_EXT])
+            || array_key_exists(self::FIELD_CONTACT, $json)
+            || array_key_exists(self::FIELD_CONTACT_EXT, $json)) {
+            $value = (array)($json[self::FIELD_CONTACT] ?? []);
             $ext = (array)($json[self::FIELD_CONTACT_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2924,25 +2898,29 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addContact(FHIRContactPoint::jsonUnserialize(
-                    json: [FHIRContactPoint::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRContactPoint::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_URL]) || isset($json[self::FIELD_URL_EXT]) || array_key_exists(self::FIELD_URL, $json) || array_key_exists(self::FIELD_URL_EXT, $json)) {
+        if (isset($json[self::FIELD_URL])
+            || isset($json[self::FIELD_URL_EXT])
+            || array_key_exists(self::FIELD_URL, $json)
+            || array_key_exists(self::FIELD_URL_EXT, $json)) {
             $value = $json[self::FIELD_URL] ?? null;
-            $ext = (array)($json[self::FIELD_URL_EXT] ?? []);
             $type->setUrl(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_URL_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ONLINE_INFORMATION]) || isset($json[self::FIELD_ONLINE_INFORMATION_EXT]) || array_key_exists(self::FIELD_ONLINE_INFORMATION, $json) || array_key_exists(self::FIELD_ONLINE_INFORMATION_EXT, $json)) {
+        if (isset($json[self::FIELD_ONLINE_INFORMATION])
+            || isset($json[self::FIELD_ONLINE_INFORMATION_EXT])
+            || array_key_exists(self::FIELD_ONLINE_INFORMATION, $json)
+            || array_key_exists(self::FIELD_ONLINE_INFORMATION_EXT, $json)) {
             $value = $json[self::FIELD_ONLINE_INFORMATION] ?? null;
-            $ext = (array)($json[self::FIELD_ONLINE_INFORMATION_EXT] ?? []);
             $type->setOnlineInformation(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_ONLINE_INFORMATION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
@@ -2951,23 +2929,14 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addNote(FHIRAnnotation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            $type->setQuantity(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_QUANTITY],
-                config: $config,
-            ));
+            $type->setQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
         }
         if (isset($json[self::FIELD_PARENT_DEVICE]) || array_key_exists(self::FIELD_PARENT_DEVICE, $json)) {
-            $type->setParentDevice(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PARENT_DEVICE],
-                config: $config,
-            ));
+            $type->setParentDevice(FHIRReference::jsonUnserialize($json[self::FIELD_PARENT_DEVICE], $config));
         }
         if (isset($json[self::FIELD_MATERIAL]) || array_key_exists(self::FIELD_MATERIAL, $json)) {
             $vs = $json[self::FIELD_MATERIAL];
@@ -2975,10 +2944,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements VersionContaine
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addMaterial(FHIRDeviceDefinitionMaterial::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addMaterial(FHIRDeviceDefinitionMaterial::jsonUnserialize($v, $config));
             }
         }
         return $type;

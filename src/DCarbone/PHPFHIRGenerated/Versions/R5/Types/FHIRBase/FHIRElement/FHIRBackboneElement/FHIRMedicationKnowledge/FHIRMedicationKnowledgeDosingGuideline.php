@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -621,20 +621,9 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_TREATMENT_INTENT]) || array_key_exists(self::FIELD_TREATMENT_INTENT, $json)) {
-            $type->setTreatmentIntent(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TREATMENT_INTENT],
-                config: $config,
-            ));
+            $type->setTreatmentIntent(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TREATMENT_INTENT], $config));
         }
         if (isset($json[self::FIELD_DOSAGE]) || array_key_exists(self::FIELD_DOSAGE, $json)) {
             $vs = $json[self::FIELD_DOSAGE];
@@ -642,17 +631,11 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addDosage(FHIRMedicationKnowledgeDosage::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addDosage(FHIRMedicationKnowledgeDosage::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ADMINISTRATION_TREATMENT]) || array_key_exists(self::FIELD_ADMINISTRATION_TREATMENT, $json)) {
-            $type->setAdministrationTreatment(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_ADMINISTRATION_TREATMENT],
-                config: $config,
-            ));
+            $type->setAdministrationTreatment(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ADMINISTRATION_TREATMENT], $config));
         }
         if (isset($json[self::FIELD_PATIENT_CHARACTERISTIC]) || array_key_exists(self::FIELD_PATIENT_CHARACTERISTIC, $json)) {
             $vs = $json[self::FIELD_PATIENT_CHARACTERISTIC];
@@ -660,10 +643,7 @@ class FHIRMedicationKnowledgeDosingGuideline extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPatientCharacteristic(FHIRMedicationKnowledgePatientCharacteristic::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPatientCharacteristic(FHIRMedicationKnowledgePatientCharacteristic::jsonUnserialize($v, $config));
             }
         }
         return $type;

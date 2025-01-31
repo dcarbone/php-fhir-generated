@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -155,7 +155,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $value
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportComponent[] $component
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportComponent[] $component
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1[] $population
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $measureScore
      * @param null|string[] $fhirComments
@@ -267,11 +267,14 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
      *
      * A stratifier component value.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportComponent $component
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportComponent $component
      * @return static
      */
-    public function addComponent(FHIRMeasureReportComponent $component): self
+    public function addComponent(FHIRCodeableConcept|FHIRMeasureReportComponent $component): self
     {
+        if (!($component instanceof FHIRMeasureReportComponent)) {
+            $component = new FHIRMeasureReportComponent(value: $component);
+        }
         if (!isset($this->component)) {
             $this->component = [];
         }
@@ -285,10 +288,10 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
      *
      * A stratifier component value.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportComponent ...$component
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportComponent ...$component
      * @return static
      */
-    public function setComponent(FHIRMeasureReportComponent ...$component): self
+    public function setComponent(FHIRCodeableConcept|FHIRMeasureReportComponent ...$component): self
     {
         if ([] === $component) {
             unset($this->component);
@@ -658,27 +661,16 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_VALUE]) || array_key_exists(self::FIELD_VALUE, $json)) {
-            $type->setValue(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_VALUE],
-                config: $config,
-            ));
+            $type->setValue(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_VALUE], $config));
         }
-        if (isset($json[self::FIELD_COMPONENT]) || isset($json[self::FIELD_COMPONENT_EXT]) || array_key_exists(self::FIELD_COMPONENT, $json) || array_key_exists(self::FIELD_COMPONENT_EXT, $json)) {
-            $value = $json[self::FIELD_COMPONENT] ?? null;
+        if (isset($json[self::FIELD_COMPONENT])
+            || isset($json[self::FIELD_COMPONENT_EXT])
+            || array_key_exists(self::FIELD_COMPONENT, $json)
+            || array_key_exists(self::FIELD_COMPONENT_EXT, $json)) {
+            $value = (array)($json[self::FIELD_COMPONENT] ?? []);
             $ext = (array)($json[self::FIELD_COMPONENT_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -686,8 +678,8 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addComponent(FHIRMeasureReportComponent::jsonUnserialize(
-                    json: [FHIRMeasureReportComponent::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRMeasureReportComponent::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -697,17 +689,11 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPopulation(FHIRMeasureReportPopulation1::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPopulation(FHIRMeasureReportPopulation1::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_MEASURE_SCORE]) || array_key_exists(self::FIELD_MEASURE_SCORE, $json)) {
-            $type->setMeasureScore(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_MEASURE_SCORE],
-                config: $config,
-            ));
+            $type->setMeasureScore(FHIRQuantity::jsonUnserialize($json[self::FIELD_MEASURE_SCORE], $config));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,6 +69,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRConceptMapEquivalenceList;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConceptMapEquivalence;
@@ -187,7 +188,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCode $code
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $display
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConceptMapEquivalence $equivalence
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRConceptMapEquivalenceList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConceptMapEquivalence $equivalence
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $comment
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[] $dependsOn
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[] $product
@@ -198,7 +199,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|string|FHIRCodePrimitive|FHIRCode $code = null,
                                 null|string|FHIRStringPrimitive|FHIRString $display = null,
-                                null|FHIRConceptMapEquivalence $equivalence = null,
+                                null|string|FHIRConceptMapEquivalenceList|FHIRConceptMapEquivalence $equivalence = null,
                                 null|string|FHIRStringPrimitive|FHIRString $comment = null,
                                 null|iterable $dependsOn = null,
                                 null|iterable $product = null,
@@ -395,16 +396,19 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * dependencies and products). The equivalence is read from target to source (e.g.
      * the target is 'wider' than the source).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConceptMapEquivalence $equivalence
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRConceptMapEquivalenceList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConceptMapEquivalence $equivalence
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEquivalence(null|FHIRConceptMapEquivalence $equivalence,
+    public function setEquivalence(null|string|FHIRConceptMapEquivalenceList|FHIRConceptMapEquivalence $equivalence,
                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $equivalence) {
             unset($this->equivalence);
             return $this;
+        }
+        if (!($equivalence instanceof FHIRConceptMapEquivalence)) {
+            $equivalence = new FHIRConceptMapEquivalence(value: $equivalence);
         }
         $this->equivalence = $equivalence;
         if ($this->_valueXMLLocations[self::FIELD_EQUIVALENCE] !== $valueXMLLocation) {
@@ -949,45 +953,45 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_CODE]) || isset($json[self::FIELD_CODE_EXT]) || array_key_exists(self::FIELD_CODE, $json) || array_key_exists(self::FIELD_CODE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_CODE])
+            || isset($json[self::FIELD_CODE_EXT])
+            || array_key_exists(self::FIELD_CODE, $json)
+            || array_key_exists(self::FIELD_CODE_EXT, $json)) {
             $value = $json[self::FIELD_CODE] ?? null;
-            $ext = (array)($json[self::FIELD_CODE_EXT] ?? []);
             $type->setCode(FHIRCode::jsonUnserialize(
-                json: [FHIRCode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_CODE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DISPLAY]) || isset($json[self::FIELD_DISPLAY_EXT]) || array_key_exists(self::FIELD_DISPLAY, $json) || array_key_exists(self::FIELD_DISPLAY_EXT, $json)) {
+        if (isset($json[self::FIELD_DISPLAY])
+            || isset($json[self::FIELD_DISPLAY_EXT])
+            || array_key_exists(self::FIELD_DISPLAY, $json)
+            || array_key_exists(self::FIELD_DISPLAY_EXT, $json)) {
             $value = $json[self::FIELD_DISPLAY] ?? null;
-            $ext = (array)($json[self::FIELD_DISPLAY_EXT] ?? []);
             $type->setDisplay(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DISPLAY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_EQUIVALENCE]) || isset($json[self::FIELD_EQUIVALENCE_EXT]) || array_key_exists(self::FIELD_EQUIVALENCE, $json) || array_key_exists(self::FIELD_EQUIVALENCE_EXT, $json)) {
+        if (isset($json[self::FIELD_EQUIVALENCE])
+            || isset($json[self::FIELD_EQUIVALENCE_EXT])
+            || array_key_exists(self::FIELD_EQUIVALENCE, $json)
+            || array_key_exists(self::FIELD_EQUIVALENCE_EXT, $json)) {
             $value = $json[self::FIELD_EQUIVALENCE] ?? null;
-            $ext = (array)($json[self::FIELD_EQUIVALENCE_EXT] ?? []);
             $type->setEquivalence(FHIRConceptMapEquivalence::jsonUnserialize(
-                json: [FHIRConceptMapEquivalence::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRConceptMapEquivalence::FIELD_VALUE => $value]) + ($json[self::FIELD_EQUIVALENCE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_COMMENT]) || isset($json[self::FIELD_COMMENT_EXT]) || array_key_exists(self::FIELD_COMMENT, $json) || array_key_exists(self::FIELD_COMMENT_EXT, $json)) {
+        if (isset($json[self::FIELD_COMMENT])
+            || isset($json[self::FIELD_COMMENT_EXT])
+            || array_key_exists(self::FIELD_COMMENT, $json)
+            || array_key_exists(self::FIELD_COMMENT_EXT, $json)) {
             $value = $json[self::FIELD_COMMENT] ?? null;
-            $ext = (array)($json[self::FIELD_COMMENT_EXT] ?? []);
             $type->setComment(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_COMMENT_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_DEPENDS_ON]) || array_key_exists(self::FIELD_DEPENDS_ON, $json)) {
@@ -996,10 +1000,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addDependsOn(FHIRConceptMapDependsOn::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addDependsOn(FHIRConceptMapDependsOn::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PRODUCT]) || array_key_exists(self::FIELD_PRODUCT, $json)) {
@@ -1008,10 +1009,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addProduct(FHIRConceptMapDependsOn::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addProduct(FHIRConceptMapDependsOn::jsonUnserialize($v, $config));
             }
         }
         return $type;

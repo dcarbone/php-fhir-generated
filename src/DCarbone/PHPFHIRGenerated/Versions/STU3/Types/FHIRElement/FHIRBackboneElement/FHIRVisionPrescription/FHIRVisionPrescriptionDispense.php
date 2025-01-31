@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,6 +68,8 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRVisionBaseList;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRVisionEyesList;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAnnotation;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement;
@@ -310,12 +312,12 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $product
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRVisionEyes $eye
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRVisionEyesList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRVisionEyes $eye
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $sphere
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $cylinder
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInteger $axis
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $prism
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRVisionBase $base
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRVisionBaseList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRVisionBase $base
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $add
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $power
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDecimal $backCurve
@@ -330,12 +332,12 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $product = null,
-                                null|FHIRVisionEyes $eye = null,
+                                null|string|FHIRVisionEyesList|FHIRVisionEyes $eye = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $sphere = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $cylinder = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $axis = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $prism = null,
-                                null|FHIRVisionBase $base = null,
+                                null|string|FHIRVisionBaseList|FHIRVisionBase $base = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $add = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $power = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $backCurve = null,
@@ -464,16 +466,19 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      *
      * The eye for which the lens applies.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRVisionEyes $eye
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRVisionEyesList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRVisionEyes $eye
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEye(null|FHIRVisionEyes $eye,
+    public function setEye(null|string|FHIRVisionEyesList|FHIRVisionEyes $eye,
                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $eye) {
             unset($this->eye);
             return $this;
+        }
+        if (!($eye instanceof FHIRVisionEyes)) {
+            $eye = new FHIRVisionEyes(value: $eye);
         }
         $this->eye = $eye;
         if ($this->_valueXMLLocations[self::FIELD_EYE] !== $valueXMLLocation) {
@@ -795,16 +800,19 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      *
      * The relative base, or reference lens edge, for the prism.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRVisionBase $base
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRVisionBaseList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRVisionBase $base
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setBase(null|FHIRVisionBase $base,
+    public function setBase(null|string|FHIRVisionBaseList|FHIRVisionBase $base,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $base) {
             unset($this->base);
             return $this;
+        }
+        if (!($base instanceof FHIRVisionBase)) {
+            $base = new FHIRVisionBase(value: $base);
         }
         $this->base = $base;
         if ($this->_valueXMLLocations[self::FIELD_BASE] !== $valueXMLLocation) {
@@ -1926,121 +1934,131 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_PRODUCT]) || array_key_exists(self::FIELD_PRODUCT, $json)) {
-            $type->setProduct(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_PRODUCT],
-                config: $config,
-            ));
+            $type->setProduct(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PRODUCT], $config));
         }
-        if (isset($json[self::FIELD_EYE]) || isset($json[self::FIELD_EYE_EXT]) || array_key_exists(self::FIELD_EYE, $json) || array_key_exists(self::FIELD_EYE_EXT, $json)) {
+        if (isset($json[self::FIELD_EYE])
+            || isset($json[self::FIELD_EYE_EXT])
+            || array_key_exists(self::FIELD_EYE, $json)
+            || array_key_exists(self::FIELD_EYE_EXT, $json)) {
             $value = $json[self::FIELD_EYE] ?? null;
-            $ext = (array)($json[self::FIELD_EYE_EXT] ?? []);
             $type->setEye(FHIRVisionEyes::jsonUnserialize(
-                json: [FHIRVisionEyes::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRVisionEyes::FIELD_VALUE => $value]) + ($json[self::FIELD_EYE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SPHERE]) || isset($json[self::FIELD_SPHERE_EXT]) || array_key_exists(self::FIELD_SPHERE, $json) || array_key_exists(self::FIELD_SPHERE_EXT, $json)) {
+        if (isset($json[self::FIELD_SPHERE])
+            || isset($json[self::FIELD_SPHERE_EXT])
+            || array_key_exists(self::FIELD_SPHERE, $json)
+            || array_key_exists(self::FIELD_SPHERE_EXT, $json)) {
             $value = $json[self::FIELD_SPHERE] ?? null;
-            $ext = (array)($json[self::FIELD_SPHERE_EXT] ?? []);
             $type->setSphere(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_SPHERE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CYLINDER]) || isset($json[self::FIELD_CYLINDER_EXT]) || array_key_exists(self::FIELD_CYLINDER, $json) || array_key_exists(self::FIELD_CYLINDER_EXT, $json)) {
+        if (isset($json[self::FIELD_CYLINDER])
+            || isset($json[self::FIELD_CYLINDER_EXT])
+            || array_key_exists(self::FIELD_CYLINDER, $json)
+            || array_key_exists(self::FIELD_CYLINDER_EXT, $json)) {
             $value = $json[self::FIELD_CYLINDER] ?? null;
-            $ext = (array)($json[self::FIELD_CYLINDER_EXT] ?? []);
             $type->setCylinder(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_CYLINDER_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_AXIS]) || isset($json[self::FIELD_AXIS_EXT]) || array_key_exists(self::FIELD_AXIS, $json) || array_key_exists(self::FIELD_AXIS_EXT, $json)) {
+        if (isset($json[self::FIELD_AXIS])
+            || isset($json[self::FIELD_AXIS_EXT])
+            || array_key_exists(self::FIELD_AXIS, $json)
+            || array_key_exists(self::FIELD_AXIS_EXT, $json)) {
             $value = $json[self::FIELD_AXIS] ?? null;
-            $ext = (array)($json[self::FIELD_AXIS_EXT] ?? []);
             $type->setAxis(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_AXIS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PRISM]) || isset($json[self::FIELD_PRISM_EXT]) || array_key_exists(self::FIELD_PRISM, $json) || array_key_exists(self::FIELD_PRISM_EXT, $json)) {
+        if (isset($json[self::FIELD_PRISM])
+            || isset($json[self::FIELD_PRISM_EXT])
+            || array_key_exists(self::FIELD_PRISM, $json)
+            || array_key_exists(self::FIELD_PRISM_EXT, $json)) {
             $value = $json[self::FIELD_PRISM] ?? null;
-            $ext = (array)($json[self::FIELD_PRISM_EXT] ?? []);
             $type->setPrism(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_PRISM_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_BASE]) || isset($json[self::FIELD_BASE_EXT]) || array_key_exists(self::FIELD_BASE, $json) || array_key_exists(self::FIELD_BASE_EXT, $json)) {
+        if (isset($json[self::FIELD_BASE])
+            || isset($json[self::FIELD_BASE_EXT])
+            || array_key_exists(self::FIELD_BASE, $json)
+            || array_key_exists(self::FIELD_BASE_EXT, $json)) {
             $value = $json[self::FIELD_BASE] ?? null;
-            $ext = (array)($json[self::FIELD_BASE_EXT] ?? []);
             $type->setBase(FHIRVisionBase::jsonUnserialize(
-                json: [FHIRVisionBase::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRVisionBase::FIELD_VALUE => $value]) + ($json[self::FIELD_BASE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ADD]) || isset($json[self::FIELD_ADD_EXT]) || array_key_exists(self::FIELD_ADD, $json) || array_key_exists(self::FIELD_ADD_EXT, $json)) {
+        if (isset($json[self::FIELD_ADD])
+            || isset($json[self::FIELD_ADD_EXT])
+            || array_key_exists(self::FIELD_ADD, $json)
+            || array_key_exists(self::FIELD_ADD_EXT, $json)) {
             $value = $json[self::FIELD_ADD] ?? null;
-            $ext = (array)($json[self::FIELD_ADD_EXT] ?? []);
             $type->setAdd(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_ADD_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_POWER]) || isset($json[self::FIELD_POWER_EXT]) || array_key_exists(self::FIELD_POWER, $json) || array_key_exists(self::FIELD_POWER_EXT, $json)) {
+        if (isset($json[self::FIELD_POWER])
+            || isset($json[self::FIELD_POWER_EXT])
+            || array_key_exists(self::FIELD_POWER, $json)
+            || array_key_exists(self::FIELD_POWER_EXT, $json)) {
             $value = $json[self::FIELD_POWER] ?? null;
-            $ext = (array)($json[self::FIELD_POWER_EXT] ?? []);
             $type->setPower(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_POWER_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_BACK_CURVE]) || isset($json[self::FIELD_BACK_CURVE_EXT]) || array_key_exists(self::FIELD_BACK_CURVE, $json) || array_key_exists(self::FIELD_BACK_CURVE_EXT, $json)) {
+        if (isset($json[self::FIELD_BACK_CURVE])
+            || isset($json[self::FIELD_BACK_CURVE_EXT])
+            || array_key_exists(self::FIELD_BACK_CURVE, $json)
+            || array_key_exists(self::FIELD_BACK_CURVE_EXT, $json)) {
             $value = $json[self::FIELD_BACK_CURVE] ?? null;
-            $ext = (array)($json[self::FIELD_BACK_CURVE_EXT] ?? []);
             $type->setBackCurve(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_BACK_CURVE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DIAMETER]) || isset($json[self::FIELD_DIAMETER_EXT]) || array_key_exists(self::FIELD_DIAMETER, $json) || array_key_exists(self::FIELD_DIAMETER_EXT, $json)) {
+        if (isset($json[self::FIELD_DIAMETER])
+            || isset($json[self::FIELD_DIAMETER_EXT])
+            || array_key_exists(self::FIELD_DIAMETER, $json)
+            || array_key_exists(self::FIELD_DIAMETER_EXT, $json)) {
             $value = $json[self::FIELD_DIAMETER] ?? null;
-            $ext = (array)($json[self::FIELD_DIAMETER_EXT] ?? []);
             $type->setDiameter(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_DIAMETER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_DURATION]) || array_key_exists(self::FIELD_DURATION, $json)) {
-            $type->setDuration(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_DURATION],
-                config: $config,
-            ));
+            $type->setDuration(FHIRQuantity::jsonUnserialize($json[self::FIELD_DURATION], $config));
         }
-        if (isset($json[self::FIELD_COLOR]) || isset($json[self::FIELD_COLOR_EXT]) || array_key_exists(self::FIELD_COLOR, $json) || array_key_exists(self::FIELD_COLOR_EXT, $json)) {
+        if (isset($json[self::FIELD_COLOR])
+            || isset($json[self::FIELD_COLOR_EXT])
+            || array_key_exists(self::FIELD_COLOR, $json)
+            || array_key_exists(self::FIELD_COLOR_EXT, $json)) {
             $value = $json[self::FIELD_COLOR] ?? null;
-            $ext = (array)($json[self::FIELD_COLOR_EXT] ?? []);
             $type->setColor(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_COLOR_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_BRAND]) || isset($json[self::FIELD_BRAND_EXT]) || array_key_exists(self::FIELD_BRAND, $json) || array_key_exists(self::FIELD_BRAND_EXT, $json)) {
+        if (isset($json[self::FIELD_BRAND])
+            || isset($json[self::FIELD_BRAND_EXT])
+            || array_key_exists(self::FIELD_BRAND, $json)
+            || array_key_exists(self::FIELD_BRAND_EXT, $json)) {
             $value = $json[self::FIELD_BRAND] ?? null;
-            $ext = (array)($json[self::FIELD_BRAND_EXT] ?? []);
             $type->setBrand(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_BRAND_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
@@ -2049,10 +2067,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addNote(FHIRAnnotation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
         return $type;

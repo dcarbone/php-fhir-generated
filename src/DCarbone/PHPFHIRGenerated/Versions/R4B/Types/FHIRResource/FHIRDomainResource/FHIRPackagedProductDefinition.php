@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -345,7 +345,7 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $name
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference[] $packageFor
@@ -495,11 +495,14 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * assigned to a package by manufacturers, regulators, drug catalogue custodians or
      * other organizations.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -517,10 +520,10 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
      * assigned to a package by manufacturers, regulators, drug catalogue custodians or
      * other organizations.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -1962,13 +1965,13 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1976,24 +1979,23 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_NAME])
+            || isset($json[self::FIELD_NAME_EXT])
+            || array_key_exists(self::FIELD_NAME, $json)
+            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
             $type->setName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
         if (isset($json[self::FIELD_PACKAGE_FOR]) || array_key_exists(self::FIELD_PACKAGE_FOR, $json)) {
             $vs = $json[self::FIELD_PACKAGE_FOR];
@@ -2001,24 +2003,20 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPackageFor(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPackageFor(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_STATUS]) || array_key_exists(self::FIELD_STATUS, $json)) {
-            $type->setStatus(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_STATUS],
-                config: $config,
-            ));
+            $type->setStatus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_STATUS], $config));
         }
-        if (isset($json[self::FIELD_STATUS_DATE]) || isset($json[self::FIELD_STATUS_DATE_EXT]) || array_key_exists(self::FIELD_STATUS_DATE, $json) || array_key_exists(self::FIELD_STATUS_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS_DATE])
+            || isset($json[self::FIELD_STATUS_DATE_EXT])
+            || array_key_exists(self::FIELD_STATUS_DATE, $json)
+            || array_key_exists(self::FIELD_STATUS_DATE_EXT, $json)) {
             $value = $json[self::FIELD_STATUS_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_DATE_EXT] ?? []);
             $type->setStatusDate(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_DATE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CONTAINED_ITEM_QUANTITY]) || array_key_exists(self::FIELD_CONTAINED_ITEM_QUANTITY, $json)) {
@@ -2027,18 +2025,17 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addContainedItemQuantity(FHIRQuantity::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addContainedItemQuantity(FHIRQuantity::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_LEGAL_STATUS_OF_SUPPLY]) || array_key_exists(self::FIELD_LEGAL_STATUS_OF_SUPPLY, $json)) {
@@ -2047,10 +2044,7 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addLegalStatusOfSupply(FHIRPackagedProductDefinitionLegalStatusOfSupply::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addLegalStatusOfSupply(FHIRPackagedProductDefinitionLegalStatusOfSupply::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_MARKETING_STATUS]) || array_key_exists(self::FIELD_MARKETING_STATUS, $json)) {
@@ -2059,10 +2053,7 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addMarketingStatus(FHIRMarketingStatus::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addMarketingStatus(FHIRMarketingStatus::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CHARACTERISTIC]) || array_key_exists(self::FIELD_CHARACTERISTIC, $json)) {
@@ -2071,18 +2062,17 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCharacteristic(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCharacteristic(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_COPACKAGED_INDICATOR]) || isset($json[self::FIELD_COPACKAGED_INDICATOR_EXT]) || array_key_exists(self::FIELD_COPACKAGED_INDICATOR, $json) || array_key_exists(self::FIELD_COPACKAGED_INDICATOR_EXT, $json)) {
+        if (isset($json[self::FIELD_COPACKAGED_INDICATOR])
+            || isset($json[self::FIELD_COPACKAGED_INDICATOR_EXT])
+            || array_key_exists(self::FIELD_COPACKAGED_INDICATOR, $json)
+            || array_key_exists(self::FIELD_COPACKAGED_INDICATOR_EXT, $json)) {
             $value = $json[self::FIELD_COPACKAGED_INDICATOR] ?? null;
-            $ext = (array)($json[self::FIELD_COPACKAGED_INDICATOR_EXT] ?? []);
             $type->setCopackagedIndicator(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_COPACKAGED_INDICATOR_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_MANUFACTURER]) || array_key_exists(self::FIELD_MANUFACTURER, $json)) {
@@ -2091,17 +2081,11 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements Versio
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addManufacturer(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addManufacturer(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PACKAGE]) || array_key_exists(self::FIELD_PACKAGE, $json)) {
-            $type->setPackage(FHIRPackagedProductDefinitionPackage::jsonUnserialize(
-                json: $json[self::FIELD_PACKAGE],
-                config: $config,
-            ));
+            $type->setPackage(FHIRPackagedProductDefinitionPackage::jsonUnserialize($json[self::FIELD_PACKAGE], $config));
         }
         return $type;
     }

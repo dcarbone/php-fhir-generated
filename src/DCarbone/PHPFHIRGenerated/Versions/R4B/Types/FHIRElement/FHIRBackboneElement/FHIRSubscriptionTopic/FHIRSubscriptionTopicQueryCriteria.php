@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,6 +89,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRCriteriaNotExistsBehaviorEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior;
@@ -192,9 +193,9 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $previous
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior $resultForCreate
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRCriteriaNotExistsBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior $resultForCreate
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $current
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior $resultForDelete
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRCriteriaNotExistsBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior $resultForDelete
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $requireBoth
      * @param null|string[] $fhirComments
      */
@@ -202,9 +203,9 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|string|FHIRStringPrimitive|FHIRString $previous = null,
-                                null|FHIRCriteriaNotExistsBehavior $resultForCreate = null,
+                                null|string|FHIRCriteriaNotExistsBehaviorEnum|FHIRCriteriaNotExistsBehavior $resultForCreate = null,
                                 null|string|FHIRStringPrimitive|FHIRString $current = null,
-                                null|FHIRCriteriaNotExistsBehavior $resultForDelete = null,
+                                null|string|FHIRCriteriaNotExistsBehaviorEnum|FHIRCriteriaNotExistsBehavior $resultForDelete = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $requireBoth = null,
                                 null|iterable $fhirComments = null)
     {
@@ -326,16 +327,19 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      * For "create" interactions, should the "previous" criteria count as an automatic
      * pass or an automatic fail.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior $resultForCreate
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRCriteriaNotExistsBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior $resultForCreate
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setResultForCreate(null|FHIRCriteriaNotExistsBehavior $resultForCreate,
+    public function setResultForCreate(null|string|FHIRCriteriaNotExistsBehaviorEnum|FHIRCriteriaNotExistsBehavior $resultForCreate,
                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $resultForCreate) {
             unset($this->resultForCreate);
             return $this;
+        }
+        if (!($resultForCreate instanceof FHIRCriteriaNotExistsBehavior)) {
+            $resultForCreate = new FHIRCriteriaNotExistsBehavior(value: $resultForCreate);
         }
         $this->resultForCreate = $resultForCreate;
         if ($this->_valueXMLLocations[self::FIELD_RESULT_FOR_CREATE] !== $valueXMLLocation) {
@@ -455,16 +459,19 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      * For "delete" interactions, should the "current" criteria count as an automatic
      * pass or an automatic fail.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior $resultForDelete
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRCriteriaNotExistsBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCriteriaNotExistsBehavior $resultForDelete
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setResultForDelete(null|FHIRCriteriaNotExistsBehavior $resultForDelete,
+    public function setResultForDelete(null|string|FHIRCriteriaNotExistsBehaviorEnum|FHIRCriteriaNotExistsBehavior $resultForDelete,
                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $resultForDelete) {
             unset($this->resultForDelete);
             return $this;
+        }
+        if (!($resultForDelete instanceof FHIRCriteriaNotExistsBehavior)) {
+            $resultForDelete = new FHIRCriteriaNotExistsBehavior(value: $resultForDelete);
         }
         $this->resultForDelete = $resultForDelete;
         if ($this->_valueXMLLocations[self::FIELD_RESULT_FOR_DELETE] !== $valueXMLLocation) {
@@ -862,53 +869,55 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_PREVIOUS]) || isset($json[self::FIELD_PREVIOUS_EXT]) || array_key_exists(self::FIELD_PREVIOUS, $json) || array_key_exists(self::FIELD_PREVIOUS_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_PREVIOUS])
+            || isset($json[self::FIELD_PREVIOUS_EXT])
+            || array_key_exists(self::FIELD_PREVIOUS, $json)
+            || array_key_exists(self::FIELD_PREVIOUS_EXT, $json)) {
             $value = $json[self::FIELD_PREVIOUS] ?? null;
-            $ext = (array)($json[self::FIELD_PREVIOUS_EXT] ?? []);
             $type->setPrevious(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PREVIOUS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_RESULT_FOR_CREATE]) || isset($json[self::FIELD_RESULT_FOR_CREATE_EXT]) || array_key_exists(self::FIELD_RESULT_FOR_CREATE, $json) || array_key_exists(self::FIELD_RESULT_FOR_CREATE_EXT, $json)) {
+        if (isset($json[self::FIELD_RESULT_FOR_CREATE])
+            || isset($json[self::FIELD_RESULT_FOR_CREATE_EXT])
+            || array_key_exists(self::FIELD_RESULT_FOR_CREATE, $json)
+            || array_key_exists(self::FIELD_RESULT_FOR_CREATE_EXT, $json)) {
             $value = $json[self::FIELD_RESULT_FOR_CREATE] ?? null;
-            $ext = (array)($json[self::FIELD_RESULT_FOR_CREATE_EXT] ?? []);
             $type->setResultForCreate(FHIRCriteriaNotExistsBehavior::jsonUnserialize(
-                json: [FHIRCriteriaNotExistsBehavior::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCriteriaNotExistsBehavior::FIELD_VALUE => $value]) + ($json[self::FIELD_RESULT_FOR_CREATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CURRENT]) || isset($json[self::FIELD_CURRENT_EXT]) || array_key_exists(self::FIELD_CURRENT, $json) || array_key_exists(self::FIELD_CURRENT_EXT, $json)) {
+        if (isset($json[self::FIELD_CURRENT])
+            || isset($json[self::FIELD_CURRENT_EXT])
+            || array_key_exists(self::FIELD_CURRENT, $json)
+            || array_key_exists(self::FIELD_CURRENT_EXT, $json)) {
             $value = $json[self::FIELD_CURRENT] ?? null;
-            $ext = (array)($json[self::FIELD_CURRENT_EXT] ?? []);
             $type->setCurrent(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_CURRENT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_RESULT_FOR_DELETE]) || isset($json[self::FIELD_RESULT_FOR_DELETE_EXT]) || array_key_exists(self::FIELD_RESULT_FOR_DELETE, $json) || array_key_exists(self::FIELD_RESULT_FOR_DELETE_EXT, $json)) {
+        if (isset($json[self::FIELD_RESULT_FOR_DELETE])
+            || isset($json[self::FIELD_RESULT_FOR_DELETE_EXT])
+            || array_key_exists(self::FIELD_RESULT_FOR_DELETE, $json)
+            || array_key_exists(self::FIELD_RESULT_FOR_DELETE_EXT, $json)) {
             $value = $json[self::FIELD_RESULT_FOR_DELETE] ?? null;
-            $ext = (array)($json[self::FIELD_RESULT_FOR_DELETE_EXT] ?? []);
             $type->setResultForDelete(FHIRCriteriaNotExistsBehavior::jsonUnserialize(
-                json: [FHIRCriteriaNotExistsBehavior::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCriteriaNotExistsBehavior::FIELD_VALUE => $value]) + ($json[self::FIELD_RESULT_FOR_DELETE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_REQUIRE_BOTH]) || isset($json[self::FIELD_REQUIRE_BOTH_EXT]) || array_key_exists(self::FIELD_REQUIRE_BOTH, $json) || array_key_exists(self::FIELD_REQUIRE_BOTH_EXT, $json)) {
+        if (isset($json[self::FIELD_REQUIRE_BOTH])
+            || isset($json[self::FIELD_REQUIRE_BOTH_EXT])
+            || array_key_exists(self::FIELD_REQUIRE_BOTH, $json)
+            || array_key_exists(self::FIELD_REQUIRE_BOTH_EXT, $json)) {
             $value = $json[self::FIELD_REQUIRE_BOTH] ?? null;
-            $ext = (array)($json[self::FIELD_REQUIRE_BOTH_EXT] ?? []);
             $type->setRequireBoth(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_REQUIRE_BOTH_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

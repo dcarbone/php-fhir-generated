@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantit
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,6 +76,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRQuantityCompararatorList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
@@ -108,12 +109,12 @@ class FHIRMoney extends FHIRQuantity implements ValueContainerTypeInterface
 
     /* class_default.php:92 */
     private array $_valueXMLLocations = [
-        self::FIELD_VALUE => ValueXMLLocationEnum::CONTAINER_VALUE,
-        self::FIELD_COMPARATOR => ValueXMLLocationEnum::CONTAINER_VALUE,
-        self::FIELD_UNITS => ValueXMLLocationEnum::CONTAINER_VALUE,
-        self::FIELD_SYSTEM => ValueXMLLocationEnum::CONTAINER_VALUE,
-        self::FIELD_CODE => ValueXMLLocationEnum::CONTAINER_VALUE,
-        self::FIELD_ID => ValueXMLLocationEnum::ELEMENT_ATTRIBUTE,
+        self::FIELD_VALUE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_COMPARATOR => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_UNITS => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_SYSTEM => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_CODE => ValueXMLLocationEnum::CONTAINER_ATTRIBUTE,
+        self::FIELD_ID => ValueXMLLocationEnum::PARENT_ATTRIBUTE,
     ];
 
     /* class_default.php:108 */
@@ -176,7 +177,7 @@ class FHIRMoney extends FHIRQuantity implements ValueContainerTypeInterface
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $value
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantityCompararator $comparator
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRQuantityCompararatorList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantityCompararator $comparator
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $units
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $system
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $code
@@ -185,7 +186,7 @@ class FHIRMoney extends FHIRQuantity implements ValueContainerTypeInterface
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $value = null,
-                                null|FHIRQuantityCompararator $comparator = null,
+                                null|string|FHIRQuantityCompararatorList|FHIRQuantityCompararator $comparator = null,
                                 null|string|FHIRStringPrimitive|FHIRString $units = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $system = null,
                                 null|string|FHIRCodePrimitive|FHIRCode $code = null,
@@ -626,58 +627,56 @@ class FHIRMoney extends FHIRQuantity implements ValueContainerTypeInterface
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_VALUE]) || isset($json[self::FIELD_VALUE_EXT]) || array_key_exists(self::FIELD_VALUE, $json) || array_key_exists(self::FIELD_VALUE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_VALUE])
+            || isset($json[self::FIELD_VALUE_EXT])
+            || array_key_exists(self::FIELD_VALUE, $json)
+            || array_key_exists(self::FIELD_VALUE_EXT, $json)) {
             $value = $json[self::FIELD_VALUE] ?? null;
-            $ext = (array)($json[self::FIELD_VALUE_EXT] ?? []);
             $type->setValue(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_COMPARATOR]) || isset($json[self::FIELD_COMPARATOR_EXT]) || array_key_exists(self::FIELD_COMPARATOR, $json) || array_key_exists(self::FIELD_COMPARATOR_EXT, $json)) {
+        if (isset($json[self::FIELD_COMPARATOR])
+            || isset($json[self::FIELD_COMPARATOR_EXT])
+            || array_key_exists(self::FIELD_COMPARATOR, $json)
+            || array_key_exists(self::FIELD_COMPARATOR_EXT, $json)) {
             $value = $json[self::FIELD_COMPARATOR] ?? null;
-            $ext = (array)($json[self::FIELD_COMPARATOR_EXT] ?? []);
             $type->setComparator(FHIRQuantityCompararator::jsonUnserialize(
-                json: [FHIRQuantityCompararator::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRQuantityCompararator::FIELD_VALUE => $value]) + ($json[self::FIELD_COMPARATOR_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_UNITS]) || isset($json[self::FIELD_UNITS_EXT]) || array_key_exists(self::FIELD_UNITS, $json) || array_key_exists(self::FIELD_UNITS_EXT, $json)) {
+        if (isset($json[self::FIELD_UNITS])
+            || isset($json[self::FIELD_UNITS_EXT])
+            || array_key_exists(self::FIELD_UNITS, $json)
+            || array_key_exists(self::FIELD_UNITS_EXT, $json)) {
             $value = $json[self::FIELD_UNITS] ?? null;
-            $ext = (array)($json[self::FIELD_UNITS_EXT] ?? []);
             $type->setUnits(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_UNITS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SYSTEM]) || isset($json[self::FIELD_SYSTEM_EXT]) || array_key_exists(self::FIELD_SYSTEM, $json) || array_key_exists(self::FIELD_SYSTEM_EXT, $json)) {
+        if (isset($json[self::FIELD_SYSTEM])
+            || isset($json[self::FIELD_SYSTEM_EXT])
+            || array_key_exists(self::FIELD_SYSTEM, $json)
+            || array_key_exists(self::FIELD_SYSTEM_EXT, $json)) {
             $value = $json[self::FIELD_SYSTEM] ?? null;
-            $ext = (array)($json[self::FIELD_SYSTEM_EXT] ?? []);
             $type->setSystem(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_SYSTEM_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CODE]) || isset($json[self::FIELD_CODE_EXT]) || array_key_exists(self::FIELD_CODE, $json) || array_key_exists(self::FIELD_CODE_EXT, $json)) {
+        if (isset($json[self::FIELD_CODE])
+            || isset($json[self::FIELD_CODE_EXT])
+            || array_key_exists(self::FIELD_CODE, $json)
+            || array_key_exists(self::FIELD_CODE_EXT, $json)) {
             $value = $json[self::FIELD_CODE] ?? null;
-            $ext = (array)($json[self::FIELD_CODE_EXT] ?? []);
             $type->setCode(FHIRCode::jsonUnserialize(
-                json: [FHIRCode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_CODE_EXT] ?? []),
+                $config,
             ));
-        }
-        if (!is_array($json)) {
-            $type->setValue($json);
-            return $type;
         }
         if ([] === $json) {
             return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,9 +106,12 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTim
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREligibilityRequestPurpose;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFinancialResourceStatusCodes;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREligibilityRequestPurposeEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFinancialResourceStatusCodesEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
@@ -377,10 +380,10 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements Versi
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFinancialResourceStatusCodes $status
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFinancialResourceStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $priority
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREligibilityRequestPurpose[] $purpose
+     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREligibilityRequestPurposeEnum[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREligibilityRequestPurpose[] $purpose
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $patient
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestEvent[] $event
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $servicedDate
@@ -404,7 +407,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements Versi
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
                                 null|iterable $identifier = null,
-                                null|FHIRFinancialResourceStatusCodes $status = null,
+                                null|string|FHIRFinancialResourceStatusCodesEnum|FHIRFinancialResourceStatusCodes $status = null,
                                 null|FHIRCodeableConcept $priority = null,
                                 null|iterable $purpose = null,
                                 null|FHIRReference $patient = null,
@@ -533,11 +536,14 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements Versi
      *
      * A unique identifier assigned to this coverage eligiblity request.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -553,10 +559,10 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements Versi
      *
      * A unique identifier assigned to this coverage eligiblity request.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -590,16 +596,19 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements Versi
      *
      * The status of the resource instance.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFinancialResourceStatusCodes $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFinancialResourceStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRFinancialResourceStatusCodes $status,
+    public function setStatus(null|string|FHIRFinancialResourceStatusCodesEnum|FHIRFinancialResourceStatusCodes $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRFinancialResourceStatusCodes)) {
+            $status = new FHIRFinancialResourceStatusCodes(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -704,11 +713,14 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements Versi
      * that the specified coverage is in-force at the date/period specified or 'now' if
      * not specified.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREligibilityRequestPurpose $purpose
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREligibilityRequestPurposeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREligibilityRequestPurpose $purpose
      * @return static
      */
-    public function addPurpose(FHIREligibilityRequestPurpose $purpose): self
+    public function addPurpose(string|FHIREligibilityRequestPurposeEnum|FHIREligibilityRequestPurpose $purpose): self
     {
+        if (!($purpose instanceof FHIREligibilityRequestPurpose)) {
+            $purpose = new FHIREligibilityRequestPurpose(value: $purpose);
+        }
         if (!isset($this->purpose)) {
             $this->purpose = [];
         }
@@ -725,10 +737,10 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements Versi
      * that the specified coverage is in-force at the date/period specified or 'now' if
      * not specified.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREligibilityRequestPurpose ...$purpose
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIREligibilityRequestPurposeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIREligibilityRequestPurpose ...$purpose
      * @return static
      */
-    public function setPurpose(FHIREligibilityRequestPurpose ...$purpose): self
+    public function setPurpose(string|FHIREligibilityRequestPurposeEnum|FHIREligibilityRequestPurpose ...$purpose): self
     {
         if ([] === $purpose) {
             unset($this->purpose);
@@ -2039,13 +2051,13 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements Versi
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2053,31 +2065,30 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements Versi
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRFinancialResourceStatusCodes::jsonUnserialize(
-                json: [FHIRFinancialResourceStatusCodes::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRFinancialResourceStatusCodes::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PRIORITY]) || array_key_exists(self::FIELD_PRIORITY, $json)) {
-            $type->setPriority(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_PRIORITY],
-                config: $config,
-            ));
+            $type->setPriority(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PRIORITY], $config));
         }
-        if (isset($json[self::FIELD_PURPOSE]) || isset($json[self::FIELD_PURPOSE_EXT]) || array_key_exists(self::FIELD_PURPOSE, $json) || array_key_exists(self::FIELD_PURPOSE_EXT, $json)) {
-            $value = $json[self::FIELD_PURPOSE] ?? null;
+        if (isset($json[self::FIELD_PURPOSE])
+            || isset($json[self::FIELD_PURPOSE_EXT])
+            || array_key_exists(self::FIELD_PURPOSE, $json)
+            || array_key_exists(self::FIELD_PURPOSE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_PURPOSE] ?? []);
             $ext = (array)($json[self::FIELD_PURPOSE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2085,16 +2096,13 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements Versi
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addPurpose(FHIREligibilityRequestPurpose::jsonUnserialize(
-                    json: [FHIREligibilityRequestPurpose::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIREligibilityRequestPurpose::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
         if (isset($json[self::FIELD_PATIENT]) || array_key_exists(self::FIELD_PATIENT, $json)) {
-            $type->setPatient(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PATIENT],
-                config: $config,
-            ));
+            $type->setPatient(FHIRReference::jsonUnserialize($json[self::FIELD_PATIENT], $config));
         }
         if (isset($json[self::FIELD_EVENT]) || array_key_exists(self::FIELD_EVENT, $json)) {
             $vs = $json[self::FIELD_EVENT];
@@ -2102,57 +2110,43 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements Versi
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addEvent(FHIRCoverageEligibilityRequestEvent::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addEvent(FHIRCoverageEligibilityRequestEvent::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SERVICED_DATE]) || isset($json[self::FIELD_SERVICED_DATE_EXT]) || array_key_exists(self::FIELD_SERVICED_DATE, $json) || array_key_exists(self::FIELD_SERVICED_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_SERVICED_DATE])
+            || isset($json[self::FIELD_SERVICED_DATE_EXT])
+            || array_key_exists(self::FIELD_SERVICED_DATE, $json)
+            || array_key_exists(self::FIELD_SERVICED_DATE_EXT, $json)) {
             $value = $json[self::FIELD_SERVICED_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_SERVICED_DATE_EXT] ?? []);
             $type->setServicedDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_SERVICED_DATE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SERVICED_PERIOD]) || array_key_exists(self::FIELD_SERVICED_PERIOD, $json)) {
-            $type->setServicedPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_SERVICED_PERIOD],
-                config: $config,
-            ));
+            $type->setServicedPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_SERVICED_PERIOD], $config));
         }
-        if (isset($json[self::FIELD_CREATED]) || isset($json[self::FIELD_CREATED_EXT]) || array_key_exists(self::FIELD_CREATED, $json) || array_key_exists(self::FIELD_CREATED_EXT, $json)) {
+        if (isset($json[self::FIELD_CREATED])
+            || isset($json[self::FIELD_CREATED_EXT])
+            || array_key_exists(self::FIELD_CREATED, $json)
+            || array_key_exists(self::FIELD_CREATED_EXT, $json)) {
             $value = $json[self::FIELD_CREATED] ?? null;
-            $ext = (array)($json[self::FIELD_CREATED_EXT] ?? []);
             $type->setCreated(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_CREATED_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ENTERER]) || array_key_exists(self::FIELD_ENTERER, $json)) {
-            $type->setEnterer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ENTERER],
-                config: $config,
-            ));
+            $type->setEnterer(FHIRReference::jsonUnserialize($json[self::FIELD_ENTERER], $config));
         }
         if (isset($json[self::FIELD_PROVIDER]) || array_key_exists(self::FIELD_PROVIDER, $json)) {
-            $type->setProvider(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PROVIDER],
-                config: $config,
-            ));
+            $type->setProvider(FHIRReference::jsonUnserialize($json[self::FIELD_PROVIDER], $config));
         }
         if (isset($json[self::FIELD_INSURER]) || array_key_exists(self::FIELD_INSURER, $json)) {
-            $type->setInsurer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_INSURER],
-                config: $config,
-            ));
+            $type->setInsurer(FHIRReference::jsonUnserialize($json[self::FIELD_INSURER], $config));
         }
         if (isset($json[self::FIELD_FACILITY]) || array_key_exists(self::FIELD_FACILITY, $json)) {
-            $type->setFacility(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_FACILITY],
-                config: $config,
-            ));
+            $type->setFacility(FHIRReference::jsonUnserialize($json[self::FIELD_FACILITY], $config));
         }
         if (isset($json[self::FIELD_SUPPORTING_INFO]) || array_key_exists(self::FIELD_SUPPORTING_INFO, $json)) {
             $vs = $json[self::FIELD_SUPPORTING_INFO];
@@ -2160,10 +2154,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements Versi
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSupportingInfo(FHIRCoverageEligibilityRequestSupportingInfo::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSupportingInfo(FHIRCoverageEligibilityRequestSupportingInfo::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_INSURANCE]) || array_key_exists(self::FIELD_INSURANCE, $json)) {
@@ -2172,10 +2163,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements Versi
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addInsurance(FHIRCoverageEligibilityRequestInsurance::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addInsurance(FHIRCoverageEligibilityRequestInsurance::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ITEM]) || array_key_exists(self::FIELD_ITEM, $json)) {
@@ -2184,10 +2172,7 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements Versi
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addItem(FHIRCoverageEligibilityRequestItem::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addItem(FHIRCoverageEligibilityRequestItem::jsonUnserialize($v, $config));
             }
         }
         return $type;

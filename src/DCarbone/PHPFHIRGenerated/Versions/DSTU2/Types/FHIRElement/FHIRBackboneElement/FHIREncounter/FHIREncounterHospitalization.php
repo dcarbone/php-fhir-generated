@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,6 +73,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConce
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
@@ -236,7 +237,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $preAdmissionIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $preAdmissionIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $origin
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $admitSource
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference[] $admittingDiagnosis
@@ -252,7 +253,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRIdentifier $preAdmissionIdentifier = null,
+                                null|FHIRString|FHIRIdentifier $preAdmissionIdentifier = null,
                                 null|FHIRReference $origin = null,
                                 null|FHIRCodeableConcept $admitSource = null,
                                 null|iterable $admittingDiagnosis = null,
@@ -335,16 +336,19 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      *
      * Pre-admission identifier.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $preAdmissionIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $preAdmissionIdentifier
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPreAdmissionIdentifier(null|FHIRIdentifier $preAdmissionIdentifier,
+    public function setPreAdmissionIdentifier(null|FHIRString|FHIRIdentifier $preAdmissionIdentifier,
                                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $preAdmissionIdentifier) {
             unset($this->preAdmissionIdentifier);
             return $this;
+        }
+        if (!($preAdmissionIdentifier instanceof FHIRIdentifier)) {
+            $preAdmissionIdentifier = new FHIRIdentifier(value: $preAdmissionIdentifier);
         }
         $this->preAdmissionIdentifier = $preAdmissionIdentifier;
         if ($this->_valueXMLLocations[self::FIELD_PRE_ADMISSION_IDENTIFIER] !== $valueXMLLocation) {
@@ -1260,34 +1264,22 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_PRE_ADMISSION_IDENTIFIER]) || isset($json[self::FIELD_PRE_ADMISSION_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_PRE_ADMISSION_IDENTIFIER, $json) || array_key_exists(self::FIELD_PRE_ADMISSION_IDENTIFIER_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_PRE_ADMISSION_IDENTIFIER])
+            || isset($json[self::FIELD_PRE_ADMISSION_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_PRE_ADMISSION_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_PRE_ADMISSION_IDENTIFIER_EXT, $json)) {
             $value = $json[self::FIELD_PRE_ADMISSION_IDENTIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_PRE_ADMISSION_IDENTIFIER_EXT] ?? []);
             $type->setPreAdmissionIdentifier(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_PRE_ADMISSION_IDENTIFIER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ORIGIN]) || array_key_exists(self::FIELD_ORIGIN, $json)) {
-            $type->setOrigin(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ORIGIN],
-                config: $config,
-            ));
+            $type->setOrigin(FHIRReference::jsonUnserialize($json[self::FIELD_ORIGIN], $config));
         }
         if (isset($json[self::FIELD_ADMIT_SOURCE]) || array_key_exists(self::FIELD_ADMIT_SOURCE, $json)) {
-            $type->setAdmitSource(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_ADMIT_SOURCE],
-                config: $config,
-            ));
+            $type->setAdmitSource(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ADMIT_SOURCE], $config));
         }
         if (isset($json[self::FIELD_ADMITTING_DIAGNOSIS]) || array_key_exists(self::FIELD_ADMITTING_DIAGNOSIS, $json)) {
             $vs = $json[self::FIELD_ADMITTING_DIAGNOSIS];
@@ -1295,17 +1287,11 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAdmittingDiagnosis(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAdmittingDiagnosis(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_RE_ADMISSION]) || array_key_exists(self::FIELD_RE_ADMISSION, $json)) {
-            $type->setReAdmission(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_RE_ADMISSION],
-                config: $config,
-            ));
+            $type->setReAdmission(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_RE_ADMISSION], $config));
         }
         if (isset($json[self::FIELD_DIET_PREFERENCE]) || array_key_exists(self::FIELD_DIET_PREFERENCE, $json)) {
             $vs = $json[self::FIELD_DIET_PREFERENCE];
@@ -1313,10 +1299,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addDietPreference(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addDietPreference(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SPECIAL_COURTESY]) || array_key_exists(self::FIELD_SPECIAL_COURTESY, $json)) {
@@ -1325,10 +1308,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSpecialCourtesy(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSpecialCourtesy(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SPECIAL_ARRANGEMENT]) || array_key_exists(self::FIELD_SPECIAL_ARRANGEMENT, $json)) {
@@ -1337,23 +1317,14 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSpecialArrangement(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSpecialArrangement(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_DESTINATION]) || array_key_exists(self::FIELD_DESTINATION, $json)) {
-            $type->setDestination(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_DESTINATION],
-                config: $config,
-            ));
+            $type->setDestination(FHIRReference::jsonUnserialize($json[self::FIELD_DESTINATION], $config));
         }
         if (isset($json[self::FIELD_DISCHARGE_DISPOSITION]) || array_key_exists(self::FIELD_DISCHARGE_DISPOSITION, $json)) {
-            $type->setDischargeDisposition(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_DISCHARGE_DISPOSITION],
-                config: $config,
-            ));
+            $type->setDischargeDisposition(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DISCHARGE_DISPOSITION], $config));
         }
         if (isset($json[self::FIELD_DISCHARGE_DIAGNOSIS]) || array_key_exists(self::FIELD_DISCHARGE_DIAGNOSIS, $json)) {
             $vs = $json[self::FIELD_DISCHARGE_DIAGNOSIS];
@@ -1361,10 +1332,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addDischargeDiagnosis(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addDischargeDiagnosis(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         return $type;

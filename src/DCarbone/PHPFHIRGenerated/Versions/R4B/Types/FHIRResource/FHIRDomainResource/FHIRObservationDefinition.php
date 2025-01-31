@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,7 @@ use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRObservationDataTypeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedInterval;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean;
@@ -309,8 +310,8 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $category
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRObservationDataType[] $permittedDataType
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRObservationDataTypeEnum[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRObservationDataType[] $permittedDataType
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $multipleResultsAllowed
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $method
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $preferredReportName
@@ -553,11 +554,14 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * A unique identifier assigned to this ObservationDefinition artifact.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -573,10 +577,10 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      *
      * A unique identifier assigned to this ObservationDefinition artifact.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -623,11 +627,14 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * The data types allowed for the value element of the instance observations
      * conforming to this ObservationDefinition.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRObservationDataType $permittedDataType
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRObservationDataTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRObservationDataType $permittedDataType
      * @return static
      */
-    public function addPermittedDataType(FHIRObservationDataType $permittedDataType): self
+    public function addPermittedDataType(string|FHIRObservationDataTypeEnum|FHIRObservationDataType $permittedDataType): self
     {
+        if (!($permittedDataType instanceof FHIRObservationDataType)) {
+            $permittedDataType = new FHIRObservationDataType(value: $permittedDataType);
+        }
         if (!isset($this->permittedDataType)) {
             $this->permittedDataType = [];
         }
@@ -641,10 +648,10 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
      * The data types allowed for the value element of the instance observations
      * conforming to this ObservationDefinition.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRObservationDataType ...$permittedDataType
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRObservationDataTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRObservationDataType ...$permittedDataType
      * @return static
      */
-    public function setPermittedDataType(FHIRObservationDataType ...$permittedDataType): self
+    public function setPermittedDataType(string|FHIRObservationDataTypeEnum|FHIRObservationDataType ...$permittedDataType): self
     {
         if ([] === $permittedDataType) {
             unset($this->permittedDataType);
@@ -1626,31 +1633,25 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
             $vs = $json[self::FIELD_CATEGORY];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCategory(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCategory(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CODE],
-                config: $config,
-            ));
+            $type->setCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CODE], $config));
         }
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1658,17 +1659,17 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_PERMITTED_DATA_TYPE]) || isset($json[self::FIELD_PERMITTED_DATA_TYPE_EXT]) || array_key_exists(self::FIELD_PERMITTED_DATA_TYPE, $json) || array_key_exists(self::FIELD_PERMITTED_DATA_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_PERMITTED_DATA_TYPE] ?? null;
+        if (isset($json[self::FIELD_PERMITTED_DATA_TYPE])
+            || isset($json[self::FIELD_PERMITTED_DATA_TYPE_EXT])
+            || array_key_exists(self::FIELD_PERMITTED_DATA_TYPE, $json)
+            || array_key_exists(self::FIELD_PERMITTED_DATA_TYPE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_PERMITTED_DATA_TYPE] ?? []);
             $ext = (array)($json[self::FIELD_PERMITTED_DATA_TYPE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1676,38 +1677,36 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addPermittedDataType(FHIRObservationDataType::jsonUnserialize(
-                    json: [FHIRObservationDataType::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRObservationDataType::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_MULTIPLE_RESULTS_ALLOWED]) || isset($json[self::FIELD_MULTIPLE_RESULTS_ALLOWED_EXT]) || array_key_exists(self::FIELD_MULTIPLE_RESULTS_ALLOWED, $json) || array_key_exists(self::FIELD_MULTIPLE_RESULTS_ALLOWED_EXT, $json)) {
+        if (isset($json[self::FIELD_MULTIPLE_RESULTS_ALLOWED])
+            || isset($json[self::FIELD_MULTIPLE_RESULTS_ALLOWED_EXT])
+            || array_key_exists(self::FIELD_MULTIPLE_RESULTS_ALLOWED, $json)
+            || array_key_exists(self::FIELD_MULTIPLE_RESULTS_ALLOWED_EXT, $json)) {
             $value = $json[self::FIELD_MULTIPLE_RESULTS_ALLOWED] ?? null;
-            $ext = (array)($json[self::FIELD_MULTIPLE_RESULTS_ALLOWED_EXT] ?? []);
             $type->setMultipleResultsAllowed(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_MULTIPLE_RESULTS_ALLOWED_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_METHOD]) || array_key_exists(self::FIELD_METHOD, $json)) {
-            $type->setMethod(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_METHOD],
-                config: $config,
-            ));
+            $type->setMethod(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_METHOD], $config));
         }
-        if (isset($json[self::FIELD_PREFERRED_REPORT_NAME]) || isset($json[self::FIELD_PREFERRED_REPORT_NAME_EXT]) || array_key_exists(self::FIELD_PREFERRED_REPORT_NAME, $json) || array_key_exists(self::FIELD_PREFERRED_REPORT_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_PREFERRED_REPORT_NAME])
+            || isset($json[self::FIELD_PREFERRED_REPORT_NAME_EXT])
+            || array_key_exists(self::FIELD_PREFERRED_REPORT_NAME, $json)
+            || array_key_exists(self::FIELD_PREFERRED_REPORT_NAME_EXT, $json)) {
             $value = $json[self::FIELD_PREFERRED_REPORT_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_PREFERRED_REPORT_NAME_EXT] ?? []);
             $type->setPreferredReportName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PREFERRED_REPORT_NAME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_QUANTITATIVE_DETAILS]) || array_key_exists(self::FIELD_QUANTITATIVE_DETAILS, $json)) {
-            $type->setQuantitativeDetails(FHIRObservationDefinitionQuantitativeDetails::jsonUnserialize(
-                json: $json[self::FIELD_QUANTITATIVE_DETAILS],
-                config: $config,
-            ));
+            $type->setQuantitativeDetails(FHIRObservationDefinitionQuantitativeDetails::jsonUnserialize($json[self::FIELD_QUANTITATIVE_DETAILS], $config));
         }
         if (isset($json[self::FIELD_QUALIFIED_INTERVAL]) || array_key_exists(self::FIELD_QUALIFIED_INTERVAL, $json)) {
             $vs = $json[self::FIELD_QUALIFIED_INTERVAL];
@@ -1715,35 +1714,20 @@ class FHIRObservationDefinition extends FHIRDomainResource implements VersionCon
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addQualifiedInterval(FHIRObservationDefinitionQualifiedInterval::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addQualifiedInterval(FHIRObservationDefinitionQualifiedInterval::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_VALID_CODED_VALUE_SET]) || array_key_exists(self::FIELD_VALID_CODED_VALUE_SET, $json)) {
-            $type->setValidCodedValueSet(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_VALID_CODED_VALUE_SET],
-                config: $config,
-            ));
+            $type->setValidCodedValueSet(FHIRReference::jsonUnserialize($json[self::FIELD_VALID_CODED_VALUE_SET], $config));
         }
         if (isset($json[self::FIELD_NORMAL_CODED_VALUE_SET]) || array_key_exists(self::FIELD_NORMAL_CODED_VALUE_SET, $json)) {
-            $type->setNormalCodedValueSet(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_NORMAL_CODED_VALUE_SET],
-                config: $config,
-            ));
+            $type->setNormalCodedValueSet(FHIRReference::jsonUnserialize($json[self::FIELD_NORMAL_CODED_VALUE_SET], $config));
         }
         if (isset($json[self::FIELD_ABNORMAL_CODED_VALUE_SET]) || array_key_exists(self::FIELD_ABNORMAL_CODED_VALUE_SET, $json)) {
-            $type->setAbnormalCodedValueSet(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ABNORMAL_CODED_VALUE_SET],
-                config: $config,
-            ));
+            $type->setAbnormalCodedValueSet(FHIRReference::jsonUnserialize($json[self::FIELD_ABNORMAL_CODED_VALUE_SET], $config));
         }
         if (isset($json[self::FIELD_CRITICAL_CODED_VALUE_SET]) || array_key_exists(self::FIELD_CRITICAL_CODED_VALUE_SET, $json)) {
-            $type->setCriticalCodedValueSet(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_CRITICAL_CODED_VALUE_SET],
-                config: $config,
-            ));
+            $type->setCriticalCodedValueSet(FHIRReference::jsonUnserialize($json[self::FIELD_CRITICAL_CODED_VALUE_SET], $config));
         }
         return $type;
     }

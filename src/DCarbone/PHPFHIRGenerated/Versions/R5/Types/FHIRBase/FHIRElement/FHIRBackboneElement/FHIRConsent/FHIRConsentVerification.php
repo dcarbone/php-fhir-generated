@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -753,47 +753,32 @@ class FHIRConsentVerification extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_VERIFIED]) || isset($json[self::FIELD_VERIFIED_EXT]) || array_key_exists(self::FIELD_VERIFIED, $json) || array_key_exists(self::FIELD_VERIFIED_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_VERIFIED])
+            || isset($json[self::FIELD_VERIFIED_EXT])
+            || array_key_exists(self::FIELD_VERIFIED, $json)
+            || array_key_exists(self::FIELD_VERIFIED_EXT, $json)) {
             $value = $json[self::FIELD_VERIFIED] ?? null;
-            $ext = (array)($json[self::FIELD_VERIFIED_EXT] ?? []);
             $type->setVerified(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_VERIFIED_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_VERIFICATION_TYPE]) || array_key_exists(self::FIELD_VERIFICATION_TYPE, $json)) {
-            $type->setVerificationType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_VERIFICATION_TYPE],
-                config: $config,
-            ));
+            $type->setVerificationType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_VERIFICATION_TYPE], $config));
         }
         if (isset($json[self::FIELD_VERIFIED_BY]) || array_key_exists(self::FIELD_VERIFIED_BY, $json)) {
-            $type->setVerifiedBy(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_VERIFIED_BY],
-                config: $config,
-            ));
+            $type->setVerifiedBy(FHIRReference::jsonUnserialize($json[self::FIELD_VERIFIED_BY], $config));
         }
         if (isset($json[self::FIELD_VERIFIED_WITH]) || array_key_exists(self::FIELD_VERIFIED_WITH, $json)) {
-            $type->setVerifiedWith(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_VERIFIED_WITH],
-                config: $config,
-            ));
+            $type->setVerifiedWith(FHIRReference::jsonUnserialize($json[self::FIELD_VERIFIED_WITH], $config));
         }
-        if (isset($json[self::FIELD_VERIFICATION_DATE]) || isset($json[self::FIELD_VERIFICATION_DATE_EXT]) || array_key_exists(self::FIELD_VERIFICATION_DATE, $json) || array_key_exists(self::FIELD_VERIFICATION_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_VERIFICATION_DATE] ?? null;
+        if (isset($json[self::FIELD_VERIFICATION_DATE])
+            || isset($json[self::FIELD_VERIFICATION_DATE_EXT])
+            || array_key_exists(self::FIELD_VERIFICATION_DATE, $json)
+            || array_key_exists(self::FIELD_VERIFICATION_DATE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_VERIFICATION_DATE] ?? []);
             $ext = (array)($json[self::FIELD_VERIFICATION_DATE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -801,8 +786,8 @@ class FHIRConsentVerification extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addVerificationDate(FHIRDateTime::jsonUnserialize(
-                    json: [FHIRDateTime::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRDateTime::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

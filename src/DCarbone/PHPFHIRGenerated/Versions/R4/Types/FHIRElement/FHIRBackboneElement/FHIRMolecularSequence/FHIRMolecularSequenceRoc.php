@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1072,21 +1072,13 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_SCORE]) || isset($json[self::FIELD_SCORE_EXT]) || array_key_exists(self::FIELD_SCORE, $json) || array_key_exists(self::FIELD_SCORE_EXT, $json)) {
-            $value = $json[self::FIELD_SCORE] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_SCORE])
+            || isset($json[self::FIELD_SCORE_EXT])
+            || array_key_exists(self::FIELD_SCORE, $json)
+            || array_key_exists(self::FIELD_SCORE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_SCORE] ?? []);
             $ext = (array)($json[self::FIELD_SCORE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1094,17 +1086,17 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addScore(FHIRInteger::jsonUnserialize(
-                    json: [FHIRInteger::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRInteger::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_NUM_TP]) || isset($json[self::FIELD_NUM_TP_EXT]) || array_key_exists(self::FIELD_NUM_TP, $json) || array_key_exists(self::FIELD_NUM_TP_EXT, $json)) {
-            $value = $json[self::FIELD_NUM_TP] ?? null;
+        if (isset($json[self::FIELD_NUM_TP])
+            || isset($json[self::FIELD_NUM_TP_EXT])
+            || array_key_exists(self::FIELD_NUM_TP, $json)
+            || array_key_exists(self::FIELD_NUM_TP_EXT, $json)) {
+            $value = (array)($json[self::FIELD_NUM_TP] ?? []);
             $ext = (array)($json[self::FIELD_NUM_TP_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1112,17 +1104,17 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addNumTP(FHIRInteger::jsonUnserialize(
-                    json: [FHIRInteger::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRInteger::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_NUM_FP]) || isset($json[self::FIELD_NUM_FP_EXT]) || array_key_exists(self::FIELD_NUM_FP, $json) || array_key_exists(self::FIELD_NUM_FP_EXT, $json)) {
-            $value = $json[self::FIELD_NUM_FP] ?? null;
+        if (isset($json[self::FIELD_NUM_FP])
+            || isset($json[self::FIELD_NUM_FP_EXT])
+            || array_key_exists(self::FIELD_NUM_FP, $json)
+            || array_key_exists(self::FIELD_NUM_FP_EXT, $json)) {
+            $value = (array)($json[self::FIELD_NUM_FP] ?? []);
             $ext = (array)($json[self::FIELD_NUM_FP_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1130,17 +1122,17 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addNumFP(FHIRInteger::jsonUnserialize(
-                    json: [FHIRInteger::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRInteger::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_NUM_FN]) || isset($json[self::FIELD_NUM_FN_EXT]) || array_key_exists(self::FIELD_NUM_FN, $json) || array_key_exists(self::FIELD_NUM_FN_EXT, $json)) {
-            $value = $json[self::FIELD_NUM_FN] ?? null;
+        if (isset($json[self::FIELD_NUM_FN])
+            || isset($json[self::FIELD_NUM_FN_EXT])
+            || array_key_exists(self::FIELD_NUM_FN, $json)
+            || array_key_exists(self::FIELD_NUM_FN_EXT, $json)) {
+            $value = (array)($json[self::FIELD_NUM_FN] ?? []);
             $ext = (array)($json[self::FIELD_NUM_FN_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1148,17 +1140,17 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addNumFN(FHIRInteger::jsonUnserialize(
-                    json: [FHIRInteger::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRInteger::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_PRECISION]) || isset($json[self::FIELD_PRECISION_EXT]) || array_key_exists(self::FIELD_PRECISION, $json) || array_key_exists(self::FIELD_PRECISION_EXT, $json)) {
-            $value = $json[self::FIELD_PRECISION] ?? null;
+        if (isset($json[self::FIELD_PRECISION])
+            || isset($json[self::FIELD_PRECISION_EXT])
+            || array_key_exists(self::FIELD_PRECISION, $json)
+            || array_key_exists(self::FIELD_PRECISION_EXT, $json)) {
+            $value = (array)($json[self::FIELD_PRECISION] ?? []);
             $ext = (array)($json[self::FIELD_PRECISION_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1166,17 +1158,17 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addPrecision(FHIRDecimal::jsonUnserialize(
-                    json: [FHIRDecimal::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRDecimal::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_SENSITIVITY]) || isset($json[self::FIELD_SENSITIVITY_EXT]) || array_key_exists(self::FIELD_SENSITIVITY, $json) || array_key_exists(self::FIELD_SENSITIVITY_EXT, $json)) {
-            $value = $json[self::FIELD_SENSITIVITY] ?? null;
+        if (isset($json[self::FIELD_SENSITIVITY])
+            || isset($json[self::FIELD_SENSITIVITY_EXT])
+            || array_key_exists(self::FIELD_SENSITIVITY, $json)
+            || array_key_exists(self::FIELD_SENSITIVITY_EXT, $json)) {
+            $value = (array)($json[self::FIELD_SENSITIVITY] ?? []);
             $ext = (array)($json[self::FIELD_SENSITIVITY_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1184,17 +1176,17 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addSensitivity(FHIRDecimal::jsonUnserialize(
-                    json: [FHIRDecimal::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRDecimal::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_F_MEASURE]) || isset($json[self::FIELD_F_MEASURE_EXT]) || array_key_exists(self::FIELD_F_MEASURE, $json) || array_key_exists(self::FIELD_F_MEASURE_EXT, $json)) {
-            $value = $json[self::FIELD_F_MEASURE] ?? null;
+        if (isset($json[self::FIELD_F_MEASURE])
+            || isset($json[self::FIELD_F_MEASURE_EXT])
+            || array_key_exists(self::FIELD_F_MEASURE, $json)
+            || array_key_exists(self::FIELD_F_MEASURE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_F_MEASURE] ?? []);
             $ext = (array)($json[self::FIELD_F_MEASURE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1202,8 +1194,8 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addFMeasure(FHIRDecimal::jsonUnserialize(
-                    json: [FHIRDecimal::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRDecimal::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

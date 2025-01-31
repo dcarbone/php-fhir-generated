@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSubscriptionStatusCodesEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint;
@@ -256,8 +257,8 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionStatusCodes $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint[] $contact
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSubscriptionStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionStatusCodes $status
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint[] $contact
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInstant $end
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $reason
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $criteria
@@ -273,7 +274,7 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
                                 null|iterable $contained = null,
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRSubscriptionStatusCodes $status = null,
+                                null|string|FHIRSubscriptionStatusCodesEnum|FHIRSubscriptionStatusCodes $status = null,
                                 null|iterable $contact = null,
                                 null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end = null,
                                 null|string|FHIRStringPrimitive|FHIRString $reason = null,
@@ -352,16 +353,19 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * The status of the subscription, which marks the server state for managing the
      * subscription.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionStatusCodes $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSubscriptionStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionStatusCodes $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRSubscriptionStatusCodes $status,
+    public function setStatus(null|string|FHIRSubscriptionStatusCodesEnum|FHIRSubscriptionStatusCodes $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRSubscriptionStatusCodes)) {
+            $status = new FHIRSubscriptionStatusCodes(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -430,11 +434,14 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * Contact details for a human to contact about the subscription. The primary use
      * of this for system administrator troubleshooting.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint $contact
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint $contact
      * @return static
      */
-    public function addContact(FHIRContactPoint $contact): self
+    public function addContact(FHIRString|FHIRContactPoint $contact): self
     {
+        if (!($contact instanceof FHIRContactPoint)) {
+            $contact = new FHIRContactPoint(value: $contact);
+        }
         if (!isset($this->contact)) {
             $this->contact = [];
         }
@@ -451,10 +458,10 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
      * Contact details for a human to contact about the subscription. The primary use
      * of this for system administrator troubleshooting.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint ...$contact
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint ...$contact
      * @return static
      */
-    public function setContact(FHIRContactPoint ...$contact): self
+    public function setContact(FHIRString|FHIRContactPoint ...$contact): self
     {
         if ([] === $contact) {
             unset($this->contact);
@@ -1274,21 +1281,23 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRSubscriptionStatusCodes::jsonUnserialize(
-                json: [FHIRSubscriptionStatusCodes::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSubscriptionStatusCodes::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CONTACT]) || isset($json[self::FIELD_CONTACT_EXT]) || array_key_exists(self::FIELD_CONTACT, $json) || array_key_exists(self::FIELD_CONTACT_EXT, $json)) {
-            $value = $json[self::FIELD_CONTACT] ?? null;
+        if (isset($json[self::FIELD_CONTACT])
+            || isset($json[self::FIELD_CONTACT_EXT])
+            || array_key_exists(self::FIELD_CONTACT, $json)
+            || array_key_exists(self::FIELD_CONTACT_EXT, $json)) {
+            $value = (array)($json[self::FIELD_CONTACT] ?? []);
             $ext = (array)($json[self::FIELD_CONTACT_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1296,48 +1305,53 @@ class FHIRSubscription extends FHIRDomainResource implements VersionContainedTyp
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addContact(FHIRContactPoint::jsonUnserialize(
-                    json: [FHIRContactPoint::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRContactPoint::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_END]) || isset($json[self::FIELD_END_EXT]) || array_key_exists(self::FIELD_END, $json) || array_key_exists(self::FIELD_END_EXT, $json)) {
+        if (isset($json[self::FIELD_END])
+            || isset($json[self::FIELD_END_EXT])
+            || array_key_exists(self::FIELD_END, $json)
+            || array_key_exists(self::FIELD_END_EXT, $json)) {
             $value = $json[self::FIELD_END] ?? null;
-            $ext = (array)($json[self::FIELD_END_EXT] ?? []);
             $type->setEnd(FHIRInstant::jsonUnserialize(
-                json: [FHIRInstant::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_END_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_REASON]) || isset($json[self::FIELD_REASON_EXT]) || array_key_exists(self::FIELD_REASON, $json) || array_key_exists(self::FIELD_REASON_EXT, $json)) {
+        if (isset($json[self::FIELD_REASON])
+            || isset($json[self::FIELD_REASON_EXT])
+            || array_key_exists(self::FIELD_REASON, $json)
+            || array_key_exists(self::FIELD_REASON_EXT, $json)) {
             $value = $json[self::FIELD_REASON] ?? null;
-            $ext = (array)($json[self::FIELD_REASON_EXT] ?? []);
             $type->setReason(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_REASON_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CRITERIA]) || isset($json[self::FIELD_CRITERIA_EXT]) || array_key_exists(self::FIELD_CRITERIA, $json) || array_key_exists(self::FIELD_CRITERIA_EXT, $json)) {
+        if (isset($json[self::FIELD_CRITERIA])
+            || isset($json[self::FIELD_CRITERIA_EXT])
+            || array_key_exists(self::FIELD_CRITERIA, $json)
+            || array_key_exists(self::FIELD_CRITERIA_EXT, $json)) {
             $value = $json[self::FIELD_CRITERIA] ?? null;
-            $ext = (array)($json[self::FIELD_CRITERIA_EXT] ?? []);
             $type->setCriteria(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_CRITERIA_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ERROR]) || isset($json[self::FIELD_ERROR_EXT]) || array_key_exists(self::FIELD_ERROR, $json) || array_key_exists(self::FIELD_ERROR_EXT, $json)) {
+        if (isset($json[self::FIELD_ERROR])
+            || isset($json[self::FIELD_ERROR_EXT])
+            || array_key_exists(self::FIELD_ERROR, $json)
+            || array_key_exists(self::FIELD_ERROR_EXT, $json)) {
             $value = $json[self::FIELD_ERROR] ?? null;
-            $ext = (array)($json[self::FIELD_ERROR_EXT] ?? []);
             $type->setError(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ERROR_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CHANNEL]) || array_key_exists(self::FIELD_CHANNEL, $json)) {
-            $type->setChannel(FHIRSubscriptionChannel::jsonUnserialize(
-                json: $json[self::FIELD_CHANNEL],
-                config: $config,
-            ));
+            $type->setChannel(FHIRSubscriptionChannel::jsonUnserialize($json[self::FIELD_CHANNEL], $config));
         }
         return $type;
     }

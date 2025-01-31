@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,6 +89,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBase64BinaryPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRUDIEntryTypeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBase64Binary;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
@@ -222,7 +223,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $jurisdiction
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBase64Binary $carrierAIDC
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $carrierHRF
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUDIEntryType $entryType
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRUDIEntryTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUDIEntryType $entryType
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -233,7 +234,7 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
                                 null|string|FHIRUriPrimitive|FHIRUri $jurisdiction = null,
                                 null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $carrierAIDC = null,
                                 null|string|FHIRStringPrimitive|FHIRString $carrierHRF = null,
-                                null|FHIRUDIEntryType $entryType = null,
+                                null|string|FHIRUDIEntryTypeEnum|FHIRUDIEntryType $entryType = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -643,16 +644,19 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      *
      * A coded entry to indicate how the data was entered.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUDIEntryType $entryType
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRUDIEntryTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUDIEntryType $entryType
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEntryType(null|FHIRUDIEntryType $entryType,
+    public function setEntryType(null|string|FHIRUDIEntryTypeEnum|FHIRUDIEntryType $entryType,
                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $entryType) {
             unset($this->entryType);
             return $this;
+        }
+        if (!($entryType instanceof FHIRUDIEntryType)) {
+            $entryType = new FHIRUDIEntryType(value: $entryType);
         }
         $this->entryType = $entryType;
         if ($this->_valueXMLLocations[self::FIELD_ENTRY_TYPE] !== $valueXMLLocation) {
@@ -1014,61 +1018,65 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_DEVICE_IDENTIFIER]) || isset($json[self::FIELD_DEVICE_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_DEVICE_IDENTIFIER, $json) || array_key_exists(self::FIELD_DEVICE_IDENTIFIER_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_DEVICE_IDENTIFIER])
+            || isset($json[self::FIELD_DEVICE_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_DEVICE_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_DEVICE_IDENTIFIER_EXT, $json)) {
             $value = $json[self::FIELD_DEVICE_IDENTIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_DEVICE_IDENTIFIER_EXT] ?? []);
             $type->setDeviceIdentifier(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DEVICE_IDENTIFIER_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ISSUER]) || isset($json[self::FIELD_ISSUER_EXT]) || array_key_exists(self::FIELD_ISSUER, $json) || array_key_exists(self::FIELD_ISSUER_EXT, $json)) {
+        if (isset($json[self::FIELD_ISSUER])
+            || isset($json[self::FIELD_ISSUER_EXT])
+            || array_key_exists(self::FIELD_ISSUER, $json)
+            || array_key_exists(self::FIELD_ISSUER_EXT, $json)) {
             $value = $json[self::FIELD_ISSUER] ?? null;
-            $ext = (array)($json[self::FIELD_ISSUER_EXT] ?? []);
             $type->setIssuer(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_ISSUER_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_JURISDICTION]) || isset($json[self::FIELD_JURISDICTION_EXT]) || array_key_exists(self::FIELD_JURISDICTION, $json) || array_key_exists(self::FIELD_JURISDICTION_EXT, $json)) {
+        if (isset($json[self::FIELD_JURISDICTION])
+            || isset($json[self::FIELD_JURISDICTION_EXT])
+            || array_key_exists(self::FIELD_JURISDICTION, $json)
+            || array_key_exists(self::FIELD_JURISDICTION_EXT, $json)) {
             $value = $json[self::FIELD_JURISDICTION] ?? null;
-            $ext = (array)($json[self::FIELD_JURISDICTION_EXT] ?? []);
             $type->setJurisdiction(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_JURISDICTION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CARRIER_AIDC]) || isset($json[self::FIELD_CARRIER_AIDC_EXT]) || array_key_exists(self::FIELD_CARRIER_AIDC, $json) || array_key_exists(self::FIELD_CARRIER_AIDC_EXT, $json)) {
+        if (isset($json[self::FIELD_CARRIER_AIDC])
+            || isset($json[self::FIELD_CARRIER_AIDC_EXT])
+            || array_key_exists(self::FIELD_CARRIER_AIDC, $json)
+            || array_key_exists(self::FIELD_CARRIER_AIDC_EXT, $json)) {
             $value = $json[self::FIELD_CARRIER_AIDC] ?? null;
-            $ext = (array)($json[self::FIELD_CARRIER_AIDC_EXT] ?? []);
             $type->setCarrierAIDC(FHIRBase64Binary::jsonUnserialize(
-                json: [FHIRBase64Binary::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBase64Binary::FIELD_VALUE => $value]) + ($json[self::FIELD_CARRIER_AIDC_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CARRIER_HRF]) || isset($json[self::FIELD_CARRIER_HRF_EXT]) || array_key_exists(self::FIELD_CARRIER_HRF, $json) || array_key_exists(self::FIELD_CARRIER_HRF_EXT, $json)) {
+        if (isset($json[self::FIELD_CARRIER_HRF])
+            || isset($json[self::FIELD_CARRIER_HRF_EXT])
+            || array_key_exists(self::FIELD_CARRIER_HRF, $json)
+            || array_key_exists(self::FIELD_CARRIER_HRF_EXT, $json)) {
             $value = $json[self::FIELD_CARRIER_HRF] ?? null;
-            $ext = (array)($json[self::FIELD_CARRIER_HRF_EXT] ?? []);
             $type->setCarrierHRF(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_CARRIER_HRF_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ENTRY_TYPE]) || isset($json[self::FIELD_ENTRY_TYPE_EXT]) || array_key_exists(self::FIELD_ENTRY_TYPE, $json) || array_key_exists(self::FIELD_ENTRY_TYPE_EXT, $json)) {
+        if (isset($json[self::FIELD_ENTRY_TYPE])
+            || isset($json[self::FIELD_ENTRY_TYPE_EXT])
+            || array_key_exists(self::FIELD_ENTRY_TYPE, $json)
+            || array_key_exists(self::FIELD_ENTRY_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_ENTRY_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_ENTRY_TYPE_EXT] ?? []);
             $type->setEntryType(FHIRUDIEntryType::jsonUnserialize(
-                json: [FHIRUDIEntryType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUDIEntryType::FIELD_VALUE => $value]) + ($json[self::FIELD_ENTRY_TYPE_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

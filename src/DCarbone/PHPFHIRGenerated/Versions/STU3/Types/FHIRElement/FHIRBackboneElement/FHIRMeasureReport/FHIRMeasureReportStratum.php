@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -644,21 +644,15 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_VALUE]) || isset($json[self::FIELD_VALUE_EXT]) || array_key_exists(self::FIELD_VALUE, $json) || array_key_exists(self::FIELD_VALUE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_VALUE])
+            || isset($json[self::FIELD_VALUE_EXT])
+            || array_key_exists(self::FIELD_VALUE, $json)
+            || array_key_exists(self::FIELD_VALUE_EXT, $json)) {
             $value = $json[self::FIELD_VALUE] ?? null;
-            $ext = (array)($json[self::FIELD_VALUE_EXT] ?? []);
             $type->setValue(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_POPULATION]) || array_key_exists(self::FIELD_POPULATION, $json)) {
@@ -667,18 +661,17 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement implements ValueConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPopulation(FHIRMeasureReportPopulation1::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPopulation(FHIRMeasureReportPopulation1::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_MEASURE_SCORE]) || isset($json[self::FIELD_MEASURE_SCORE_EXT]) || array_key_exists(self::FIELD_MEASURE_SCORE, $json) || array_key_exists(self::FIELD_MEASURE_SCORE_EXT, $json)) {
+        if (isset($json[self::FIELD_MEASURE_SCORE])
+            || isset($json[self::FIELD_MEASURE_SCORE_EXT])
+            || array_key_exists(self::FIELD_MEASURE_SCORE, $json)
+            || array_key_exists(self::FIELD_MEASURE_SCORE_EXT, $json)) {
             $value = $json[self::FIELD_MEASURE_SCORE] ?? null;
-            $ext = (array)($json[self::FIELD_MEASURE_SCORE_EXT] ?? []);
             $type->setMeasureScore(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_MEASURE_SCORE_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,6 +71,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRRestfulConformanceModeList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
@@ -199,7 +200,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRestfulConformanceMode $mode
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRRestfulConformanceModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRestfulConformanceMode $mode
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $documentation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity $security
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource[] $resource
@@ -211,7 +212,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRRestfulConformanceMode $mode = null,
+                                null|string|FHIRRestfulConformanceModeList|FHIRRestfulConformanceMode $mode = null,
                                 null|string|FHIRStringPrimitive|FHIRString $documentation = null,
                                 null|FHIRConformanceSecurity $security = null,
                                 null|iterable $resource = null,
@@ -278,16 +279,19 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * Identifies whether this portion of the statement is describing ability to
      * initiate or receive restful operations.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRestfulConformanceMode $mode
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRRestfulConformanceModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRestfulConformanceMode $mode
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMode(null|FHIRRestfulConformanceMode $mode,
+    public function setMode(null|string|FHIRRestfulConformanceModeList|FHIRRestfulConformanceMode $mode,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $mode) {
             unset($this->mode);
             return $this;
+        }
+        if (!($mode instanceof FHIRRestfulConformanceMode)) {
+            $mode = new FHIRRestfulConformanceMode(value: $mode);
         }
         $this->mode = $mode;
         if ($this->_valueXMLLocations[self::FIELD_MODE] !== $valueXMLLocation) {
@@ -1014,36 +1018,29 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_MODE]) || isset($json[self::FIELD_MODE_EXT]) || array_key_exists(self::FIELD_MODE, $json) || array_key_exists(self::FIELD_MODE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_MODE])
+            || isset($json[self::FIELD_MODE_EXT])
+            || array_key_exists(self::FIELD_MODE, $json)
+            || array_key_exists(self::FIELD_MODE_EXT, $json)) {
             $value = $json[self::FIELD_MODE] ?? null;
-            $ext = (array)($json[self::FIELD_MODE_EXT] ?? []);
             $type->setMode(FHIRRestfulConformanceMode::jsonUnserialize(
-                json: [FHIRRestfulConformanceMode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRRestfulConformanceMode::FIELD_VALUE => $value]) + ($json[self::FIELD_MODE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DOCUMENTATION]) || isset($json[self::FIELD_DOCUMENTATION_EXT]) || array_key_exists(self::FIELD_DOCUMENTATION, $json) || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $json)) {
+        if (isset($json[self::FIELD_DOCUMENTATION])
+            || isset($json[self::FIELD_DOCUMENTATION_EXT])
+            || array_key_exists(self::FIELD_DOCUMENTATION, $json)
+            || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $json)) {
             $value = $json[self::FIELD_DOCUMENTATION] ?? null;
-            $ext = (array)($json[self::FIELD_DOCUMENTATION_EXT] ?? []);
             $type->setDocumentation(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DOCUMENTATION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SECURITY]) || array_key_exists(self::FIELD_SECURITY, $json)) {
-            $type->setSecurity(FHIRConformanceSecurity::jsonUnserialize(
-                json: $json[self::FIELD_SECURITY],
-                config: $config,
-            ));
+            $type->setSecurity(FHIRConformanceSecurity::jsonUnserialize($json[self::FIELD_SECURITY], $config));
         }
         if (isset($json[self::FIELD_RESOURCE]) || array_key_exists(self::FIELD_RESOURCE, $json)) {
             $vs = $json[self::FIELD_RESOURCE];
@@ -1051,10 +1048,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addResource(FHIRConformanceResource::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addResource(FHIRConformanceResource::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_OPERATION]) || array_key_exists(self::FIELD_OPERATION, $json)) {
@@ -1063,10 +1057,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addOperation(FHIRConformanceOperation1::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addOperation(FHIRConformanceOperation1::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_QUERY]) || array_key_exists(self::FIELD_QUERY, $json)) {
@@ -1075,18 +1066,15 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addQuery(FHIRConformanceQuery::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addQuery(FHIRConformanceQuery::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DOCUMENT_MAILBOX]) || isset($json[self::FIELD_DOCUMENT_MAILBOX_EXT]) || array_key_exists(self::FIELD_DOCUMENT_MAILBOX, $json) || array_key_exists(self::FIELD_DOCUMENT_MAILBOX_EXT, $json)) {
-            $value = $json[self::FIELD_DOCUMENT_MAILBOX] ?? null;
+        if (isset($json[self::FIELD_DOCUMENT_MAILBOX])
+            || isset($json[self::FIELD_DOCUMENT_MAILBOX_EXT])
+            || array_key_exists(self::FIELD_DOCUMENT_MAILBOX, $json)
+            || array_key_exists(self::FIELD_DOCUMENT_MAILBOX_EXT, $json)) {
+            $value = (array)($json[self::FIELD_DOCUMENT_MAILBOX] ?? []);
             $ext = (array)($json[self::FIELD_DOCUMENT_MAILBOX_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1094,8 +1082,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addDocumentMailbox(FHIRUri::jsonUnserialize(
-                    json: [FHIRUri::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRUri::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

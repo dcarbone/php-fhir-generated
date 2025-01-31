@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,6 +81,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnsignedInt;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRBundleTypeList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUnsignedIntPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Version;
@@ -178,7 +179,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRMeta $meta
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri $implicitRules
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCode $language
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBundleType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRBundleTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBundleType $type
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUnsignedInt $total
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[] $link
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry[] $entry
@@ -189,7 +190,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
                                 null|FHIRMeta $meta = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $implicitRules = null,
                                 null|string|FHIRCodePrimitive|FHIRCode $language = null,
-                                null|FHIRBundleType $type = null,
+                                null|string|FHIRBundleTypeList|FHIRBundleType $type = null,
                                 null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $total = null,
                                 null|iterable $link = null,
                                 null|iterable $entry = null,
@@ -256,16 +257,19 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
      *
      * Indicates the purpose of this bundle- how it was intended to be used.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBundleType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRBundleTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBundleType $type
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|FHIRBundleType $type,
+    public function setType(null|string|FHIRBundleTypeList|FHIRBundleType $type,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $type) {
             unset($this->type);
             return $this;
+        }
+        if (!($type instanceof FHIRBundleType)) {
+            $type = new FHIRBundleType(value: $type);
         }
         $this->type = $type;
         if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
@@ -864,21 +868,25 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_TYPE])
+            || isset($json[self::FIELD_TYPE_EXT])
+            || array_key_exists(self::FIELD_TYPE, $json)
+            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
             $type->setType(FHIRBundleType::jsonUnserialize(
-                json: [FHIRBundleType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBundleType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TOTAL]) || isset($json[self::FIELD_TOTAL_EXT]) || array_key_exists(self::FIELD_TOTAL, $json) || array_key_exists(self::FIELD_TOTAL_EXT, $json)) {
+        if (isset($json[self::FIELD_TOTAL])
+            || isset($json[self::FIELD_TOTAL_EXT])
+            || array_key_exists(self::FIELD_TOTAL, $json)
+            || array_key_exists(self::FIELD_TOTAL_EXT, $json)) {
             $value = $json[self::FIELD_TOTAL] ?? null;
-            $ext = (array)($json[self::FIELD_TOTAL_EXT] ?? []);
             $type->setTotal(FHIRUnsignedInt::jsonUnserialize(
-                json: [FHIRUnsignedInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUnsignedInt::FIELD_VALUE => $value]) + ($json[self::FIELD_TOTAL_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_LINK]) || array_key_exists(self::FIELD_LINK, $json)) {
@@ -887,10 +895,7 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addLink(FHIRBundleLink::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addLink(FHIRBundleLink::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ENTRY]) || array_key_exists(self::FIELD_ENTRY, $json)) {
@@ -899,17 +904,11 @@ class FHIRBundle extends FHIRResource implements VersionContainedTypeInterface
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addEntry(FHIRBundleEntry::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addEntry(FHIRBundleEntry::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SIGNATURE]) || array_key_exists(self::FIELD_SIGNATURE, $json)) {
-            $type->setSignature(FHIRSignature::jsonUnserialize(
-                json: $json[self::FIELD_SIGNATURE],
-                config: $config,
-            ));
+            $type->setSignature(FHIRSignature::jsonUnserialize($json[self::FIELD_SIGNATURE], $config));
         }
         return $type;
     }

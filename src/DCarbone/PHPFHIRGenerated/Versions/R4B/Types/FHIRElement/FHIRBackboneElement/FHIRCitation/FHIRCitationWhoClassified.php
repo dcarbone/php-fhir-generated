@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -726,47 +726,34 @@ class FHIRCitationWhoClassified extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_PERSON]) || array_key_exists(self::FIELD_PERSON, $json)) {
-            $type->setPerson(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PERSON],
-                config: $config,
-            ));
+            $type->setPerson(FHIRReference::jsonUnserialize($json[self::FIELD_PERSON], $config));
         }
         if (isset($json[self::FIELD_ORGANIZATION]) || array_key_exists(self::FIELD_ORGANIZATION, $json)) {
-            $type->setOrganization(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ORGANIZATION],
-                config: $config,
-            ));
+            $type->setOrganization(FHIRReference::jsonUnserialize($json[self::FIELD_ORGANIZATION], $config));
         }
         if (isset($json[self::FIELD_PUBLISHER]) || array_key_exists(self::FIELD_PUBLISHER, $json)) {
-            $type->setPublisher(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PUBLISHER],
-                config: $config,
-            ));
+            $type->setPublisher(FHIRReference::jsonUnserialize($json[self::FIELD_PUBLISHER], $config));
         }
-        if (isset($json[self::FIELD_CLASSIFIER_COPYRIGHT]) || isset($json[self::FIELD_CLASSIFIER_COPYRIGHT_EXT]) || array_key_exists(self::FIELD_CLASSIFIER_COPYRIGHT, $json) || array_key_exists(self::FIELD_CLASSIFIER_COPYRIGHT_EXT, $json)) {
+        if (isset($json[self::FIELD_CLASSIFIER_COPYRIGHT])
+            || isset($json[self::FIELD_CLASSIFIER_COPYRIGHT_EXT])
+            || array_key_exists(self::FIELD_CLASSIFIER_COPYRIGHT, $json)
+            || array_key_exists(self::FIELD_CLASSIFIER_COPYRIGHT_EXT, $json)) {
             $value = $json[self::FIELD_CLASSIFIER_COPYRIGHT] ?? null;
-            $ext = (array)($json[self::FIELD_CLASSIFIER_COPYRIGHT_EXT] ?? []);
             $type->setClassifierCopyright(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_CLASSIFIER_COPYRIGHT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_FREE_TO_SHARE]) || isset($json[self::FIELD_FREE_TO_SHARE_EXT]) || array_key_exists(self::FIELD_FREE_TO_SHARE, $json) || array_key_exists(self::FIELD_FREE_TO_SHARE_EXT, $json)) {
+        if (isset($json[self::FIELD_FREE_TO_SHARE])
+            || isset($json[self::FIELD_FREE_TO_SHARE_EXT])
+            || array_key_exists(self::FIELD_FREE_TO_SHARE, $json)
+            || array_key_exists(self::FIELD_FREE_TO_SHARE_EXT, $json)) {
             $value = $json[self::FIELD_FREE_TO_SHARE] ?? null;
-            $ext = (array)($json[self::FIELD_FREE_TO_SHARE_EXT] ?? []);
             $type->setFreeToShare(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_FREE_TO_SHARE_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

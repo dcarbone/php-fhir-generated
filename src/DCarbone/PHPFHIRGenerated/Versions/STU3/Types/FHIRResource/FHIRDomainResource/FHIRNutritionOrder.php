@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,6 +70,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRNutritionOrderStatusList;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet;
@@ -84,6 +85,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNutritionOrderStatus;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
@@ -291,8 +293,8 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNutritionOrderStatus $status
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRNutritionOrderStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNutritionOrderStatus $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $patient
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $encounter
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $dateTime
@@ -314,7 +316,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
                                 null|iterable $identifier = null,
-                                null|FHIRNutritionOrderStatus $status = null,
+                                null|string|FHIRNutritionOrderStatusList|FHIRNutritionOrderStatus $status = null,
                                 null|FHIRReference $patient = null,
                                 null|FHIRReference $encounter = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateTime = null,
@@ -425,11 +427,14 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * Identifiers assigned to this order by the order sender or by the order receiver.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -444,10 +449,10 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * Identifiers assigned to this order by the order sender or by the order receiver.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -485,16 +490,19 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
      *
      * The workflow status of the nutrition order/request.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNutritionOrderStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRNutritionOrderStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNutritionOrderStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRNutritionOrderStatus $status,
+    public function setStatus(null|string|FHIRNutritionOrderStatusList|FHIRNutritionOrderStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRNutritionOrderStatus)) {
+            $status = new FHIRNutritionOrderStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -1617,13 +1625,13 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1631,44 +1639,39 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRNutritionOrderStatus::jsonUnserialize(
-                json: [FHIRNutritionOrderStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRNutritionOrderStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PATIENT]) || array_key_exists(self::FIELD_PATIENT, $json)) {
-            $type->setPatient(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PATIENT],
-                config: $config,
-            ));
+            $type->setPatient(FHIRReference::jsonUnserialize($json[self::FIELD_PATIENT], $config));
         }
         if (isset($json[self::FIELD_ENCOUNTER]) || array_key_exists(self::FIELD_ENCOUNTER, $json)) {
-            $type->setEncounter(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ENCOUNTER],
-                config: $config,
-            ));
+            $type->setEncounter(FHIRReference::jsonUnserialize($json[self::FIELD_ENCOUNTER], $config));
         }
-        if (isset($json[self::FIELD_DATE_TIME]) || isset($json[self::FIELD_DATE_TIME_EXT]) || array_key_exists(self::FIELD_DATE_TIME, $json) || array_key_exists(self::FIELD_DATE_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_DATE_TIME])
+            || isset($json[self::FIELD_DATE_TIME_EXT])
+            || array_key_exists(self::FIELD_DATE_TIME, $json)
+            || array_key_exists(self::FIELD_DATE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_DATE_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_DATE_TIME_EXT] ?? []);
             $type->setDateTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ORDERER]) || array_key_exists(self::FIELD_ORDERER, $json)) {
-            $type->setOrderer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ORDERER],
-                config: $config,
-            ));
+            $type->setOrderer(FHIRReference::jsonUnserialize($json[self::FIELD_ORDERER], $config));
         }
         if (isset($json[self::FIELD_ALLERGY_INTOLERANCE]) || array_key_exists(self::FIELD_ALLERGY_INTOLERANCE, $json)) {
             $vs = $json[self::FIELD_ALLERGY_INTOLERANCE];
@@ -1676,10 +1679,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAllergyIntolerance(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAllergyIntolerance(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_FOOD_PREFERENCE_MODIFIER]) || array_key_exists(self::FIELD_FOOD_PREFERENCE_MODIFIER, $json)) {
@@ -1688,10 +1688,7 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addFoodPreferenceModifier(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addFoodPreferenceModifier(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_EXCLUDE_FOOD_MODIFIER]) || array_key_exists(self::FIELD_EXCLUDE_FOOD_MODIFIER, $json)) {
@@ -1700,17 +1697,11 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addExcludeFoodModifier(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addExcludeFoodModifier(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ORAL_DIET]) || array_key_exists(self::FIELD_ORAL_DIET, $json)) {
-            $type->setOralDiet(FHIRNutritionOrderOralDiet::jsonUnserialize(
-                json: $json[self::FIELD_ORAL_DIET],
-                config: $config,
-            ));
+            $type->setOralDiet(FHIRNutritionOrderOralDiet::jsonUnserialize($json[self::FIELD_ORAL_DIET], $config));
         }
         if (isset($json[self::FIELD_SUPPLEMENT]) || array_key_exists(self::FIELD_SUPPLEMENT, $json)) {
             $vs = $json[self::FIELD_SUPPLEMENT];
@@ -1718,17 +1709,11 @@ class FHIRNutritionOrder extends FHIRDomainResource implements VersionContainedT
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSupplement(FHIRNutritionOrderSupplement::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSupplement(FHIRNutritionOrderSupplement::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ENTERAL_FORMULA]) || array_key_exists(self::FIELD_ENTERAL_FORMULA, $json)) {
-            $type->setEnteralFormula(FHIRNutritionOrderEnteralFormula::jsonUnserialize(
-                json: $json[self::FIELD_ENTERAL_FORMULA],
-                config: $config,
-            ));
+            $type->setEnteralFormula(FHIRNutritionOrderEnteralFormula::jsonUnserialize($json[self::FIELD_ENTERAL_FORMULA], $config));
         }
         return $type;
     }

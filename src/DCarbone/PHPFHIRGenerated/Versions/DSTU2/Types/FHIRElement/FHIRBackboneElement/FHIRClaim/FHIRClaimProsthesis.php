@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -567,36 +567,29 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_INITIAL]) || isset($json[self::FIELD_INITIAL_EXT]) || array_key_exists(self::FIELD_INITIAL, $json) || array_key_exists(self::FIELD_INITIAL_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_INITIAL])
+            || isset($json[self::FIELD_INITIAL_EXT])
+            || array_key_exists(self::FIELD_INITIAL, $json)
+            || array_key_exists(self::FIELD_INITIAL_EXT, $json)) {
             $value = $json[self::FIELD_INITIAL] ?? null;
-            $ext = (array)($json[self::FIELD_INITIAL_EXT] ?? []);
             $type->setInitial(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_INITIAL_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PRIOR_DATE]) || isset($json[self::FIELD_PRIOR_DATE_EXT]) || array_key_exists(self::FIELD_PRIOR_DATE, $json) || array_key_exists(self::FIELD_PRIOR_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_PRIOR_DATE])
+            || isset($json[self::FIELD_PRIOR_DATE_EXT])
+            || array_key_exists(self::FIELD_PRIOR_DATE, $json)
+            || array_key_exists(self::FIELD_PRIOR_DATE_EXT, $json)) {
             $value = $json[self::FIELD_PRIOR_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_PRIOR_DATE_EXT] ?? []);
             $type->setPriorDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_PRIOR_DATE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PRIOR_MATERIAL]) || array_key_exists(self::FIELD_PRIOR_MATERIAL, $json)) {
-            $type->setPriorMaterial(FHIRCoding::jsonUnserialize(
-                json: $json[self::FIELD_PRIOR_MATERIAL],
-                config: $config,
-            ));
+            $type->setPriorMaterial(FHIRCoding::jsonUnserialize($json[self::FIELD_PRIOR_MATERIAL], $config));
         }
         return $type;
     }

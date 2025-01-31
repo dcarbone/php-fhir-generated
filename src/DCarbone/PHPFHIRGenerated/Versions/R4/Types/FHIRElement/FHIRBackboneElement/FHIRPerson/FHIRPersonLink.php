@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,6 +69,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRIdentityAssuranceLevelList;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentityAssuranceLevel;
@@ -133,14 +134,14 @@ class FHIRPersonLink extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $target
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentityAssuranceLevel $assurance
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRIdentityAssuranceLevelList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentityAssuranceLevel $assurance
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRReference $target = null,
-                                null|FHIRIdentityAssuranceLevel $assurance = null,
+                                null|string|FHIRIdentityAssuranceLevelList|FHIRIdentityAssuranceLevel $assurance = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -220,16 +221,19 @@ class FHIRPersonLink extends FHIRBackboneElement
      *
      * Level of assurance that this link is associated with the target resource.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentityAssuranceLevel $assurance
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRIdentityAssuranceLevelList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentityAssuranceLevel $assurance
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAssurance(null|FHIRIdentityAssuranceLevel $assurance,
+    public function setAssurance(null|string|FHIRIdentityAssuranceLevelList|FHIRIdentityAssuranceLevel $assurance,
                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $assurance) {
             unset($this->assurance);
             return $this;
+        }
+        if (!($assurance instanceof FHIRIdentityAssuranceLevel)) {
+            $assurance = new FHIRIdentityAssuranceLevel(value: $assurance);
         }
         $this->assurance = $assurance;
         if ($this->_valueXMLLocations[self::FIELD_ASSURANCE] !== $valueXMLLocation) {
@@ -455,27 +459,18 @@ class FHIRPersonLink extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_TARGET]) || array_key_exists(self::FIELD_TARGET, $json)) {
-            $type->setTarget(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_TARGET],
-                config: $config,
-            ));
+            $type->setTarget(FHIRReference::jsonUnserialize($json[self::FIELD_TARGET], $config));
         }
-        if (isset($json[self::FIELD_ASSURANCE]) || isset($json[self::FIELD_ASSURANCE_EXT]) || array_key_exists(self::FIELD_ASSURANCE, $json) || array_key_exists(self::FIELD_ASSURANCE_EXT, $json)) {
+        if (isset($json[self::FIELD_ASSURANCE])
+            || isset($json[self::FIELD_ASSURANCE_EXT])
+            || array_key_exists(self::FIELD_ASSURANCE, $json)
+            || array_key_exists(self::FIELD_ASSURANCE_EXT, $json)) {
             $value = $json[self::FIELD_ASSURANCE] ?? null;
-            $ext = (array)($json[self::FIELD_ASSURANCE_EXT] ?? []);
             $type->setAssurance(FHIRIdentityAssuranceLevel::jsonUnserialize(
-                json: [FHIRIdentityAssuranceLevel::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentityAssuranceLevel::FIELD_VALUE => $value]) + ($json[self::FIELD_ASSURANCE_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

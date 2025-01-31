@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,6 +95,9 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGraphCompartmentRule;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGraphCompartmentUse;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCompartmentTypeEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGraphCompartmentRuleEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGraphCompartmentUseEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -198,9 +201,9 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGraphCompartmentUse $use
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGraphCompartmentRule $rule
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCompartmentType $code
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGraphCompartmentUseEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGraphCompartmentUse $use
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGraphCompartmentRuleEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGraphCompartmentRule $rule
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCompartmentTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCompartmentType $code
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $expression
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $description
      * @param null|string[] $fhirComments
@@ -208,9 +211,9 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRGraphCompartmentUse $use = null,
-                                null|FHIRGraphCompartmentRule $rule = null,
-                                null|FHIRCompartmentType $code = null,
+                                null|string|FHIRGraphCompartmentUseEnum|FHIRGraphCompartmentUse $use = null,
+                                null|string|FHIRGraphCompartmentRuleEnum|FHIRGraphCompartmentRule $rule = null,
+                                null|string|FHIRCompartmentTypeEnum|FHIRCompartmentType $code = null,
                                 null|string|FHIRStringPrimitive|FHIRString $expression = null,
                                 null|string|FHIRStringPrimitive|FHIRString $description = null,
                                 null|iterable $fhirComments = null)
@@ -267,16 +270,19 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
      * resources are subject to the rule, or whether it is a rule that must be
      * followed.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGraphCompartmentUse $use
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGraphCompartmentUseEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGraphCompartmentUse $use
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUse(null|FHIRGraphCompartmentUse $use,
+    public function setUse(null|string|FHIRGraphCompartmentUseEnum|FHIRGraphCompartmentUse $use,
                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $use) {
             unset($this->use);
             return $this;
+        }
+        if (!($use instanceof FHIRGraphCompartmentUse)) {
+            $use = new FHIRGraphCompartmentUse(value: $use);
         }
         $this->use = $use;
         if ($this->_valueXMLLocations[self::FIELD_USE] !== $valueXMLLocation) {
@@ -326,16 +332,19 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
      *
      * identical | matching | different | no-rule | custom.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGraphCompartmentRule $rule
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGraphCompartmentRuleEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGraphCompartmentRule $rule
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRule(null|FHIRGraphCompartmentRule $rule,
+    public function setRule(null|string|FHIRGraphCompartmentRuleEnum|FHIRGraphCompartmentRule $rule,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $rule) {
             unset($this->rule);
             return $this;
+        }
+        if (!($rule instanceof FHIRGraphCompartmentRule)) {
+            $rule = new FHIRGraphCompartmentRule(value: $rule);
         }
         $this->rule = $rule;
         if ($this->_valueXMLLocations[self::FIELD_RULE] !== $valueXMLLocation) {
@@ -385,16 +394,19 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
      *
      * Identifies the compartment.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCompartmentType $code
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCompartmentTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCompartmentType $code
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCode(null|FHIRCompartmentType $code,
+    public function setCode(null|string|FHIRCompartmentTypeEnum|FHIRCompartmentType $code,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $code) {
             unset($this->code);
             return $this;
+        }
+        if (!($code instanceof FHIRCompartmentType)) {
+            $code = new FHIRCompartmentType(value: $code);
         }
         $this->code = $code;
         if ($this->_valueXMLLocations[self::FIELD_CODE] !== $valueXMLLocation) {
@@ -871,53 +883,55 @@ class FHIRGraphDefinitionCompartment extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_USE]) || isset($json[self::FIELD_USE_EXT]) || array_key_exists(self::FIELD_USE, $json) || array_key_exists(self::FIELD_USE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_USE])
+            || isset($json[self::FIELD_USE_EXT])
+            || array_key_exists(self::FIELD_USE, $json)
+            || array_key_exists(self::FIELD_USE_EXT, $json)) {
             $value = $json[self::FIELD_USE] ?? null;
-            $ext = (array)($json[self::FIELD_USE_EXT] ?? []);
             $type->setUse(FHIRGraphCompartmentUse::jsonUnserialize(
-                json: [FHIRGraphCompartmentUse::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRGraphCompartmentUse::FIELD_VALUE => $value]) + ($json[self::FIELD_USE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_RULE]) || isset($json[self::FIELD_RULE_EXT]) || array_key_exists(self::FIELD_RULE, $json) || array_key_exists(self::FIELD_RULE_EXT, $json)) {
+        if (isset($json[self::FIELD_RULE])
+            || isset($json[self::FIELD_RULE_EXT])
+            || array_key_exists(self::FIELD_RULE, $json)
+            || array_key_exists(self::FIELD_RULE_EXT, $json)) {
             $value = $json[self::FIELD_RULE] ?? null;
-            $ext = (array)($json[self::FIELD_RULE_EXT] ?? []);
             $type->setRule(FHIRGraphCompartmentRule::jsonUnserialize(
-                json: [FHIRGraphCompartmentRule::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRGraphCompartmentRule::FIELD_VALUE => $value]) + ($json[self::FIELD_RULE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CODE]) || isset($json[self::FIELD_CODE_EXT]) || array_key_exists(self::FIELD_CODE, $json) || array_key_exists(self::FIELD_CODE_EXT, $json)) {
+        if (isset($json[self::FIELD_CODE])
+            || isset($json[self::FIELD_CODE_EXT])
+            || array_key_exists(self::FIELD_CODE, $json)
+            || array_key_exists(self::FIELD_CODE_EXT, $json)) {
             $value = $json[self::FIELD_CODE] ?? null;
-            $ext = (array)($json[self::FIELD_CODE_EXT] ?? []);
             $type->setCode(FHIRCompartmentType::jsonUnserialize(
-                json: [FHIRCompartmentType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCompartmentType::FIELD_VALUE => $value]) + ($json[self::FIELD_CODE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_EXPRESSION]) || isset($json[self::FIELD_EXPRESSION_EXT]) || array_key_exists(self::FIELD_EXPRESSION, $json) || array_key_exists(self::FIELD_EXPRESSION_EXT, $json)) {
+        if (isset($json[self::FIELD_EXPRESSION])
+            || isset($json[self::FIELD_EXPRESSION_EXT])
+            || array_key_exists(self::FIELD_EXPRESSION, $json)
+            || array_key_exists(self::FIELD_EXPRESSION_EXT, $json)) {
             $value = $json[self::FIELD_EXPRESSION] ?? null;
-            $ext = (array)($json[self::FIELD_EXPRESSION_EXT] ?? []);
             $type->setExpression(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_EXPRESSION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

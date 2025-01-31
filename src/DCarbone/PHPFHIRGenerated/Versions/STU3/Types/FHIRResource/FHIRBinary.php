@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -677,27 +677,28 @@ class FHIRBinary extends FHIRResource implements VersionContainedTypeInterface
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_CONTENT_TYPE]) || isset($json[self::FIELD_CONTENT_TYPE_EXT]) || array_key_exists(self::FIELD_CONTENT_TYPE, $json) || array_key_exists(self::FIELD_CONTENT_TYPE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_CONTENT_TYPE])
+            || isset($json[self::FIELD_CONTENT_TYPE_EXT])
+            || array_key_exists(self::FIELD_CONTENT_TYPE, $json)
+            || array_key_exists(self::FIELD_CONTENT_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_CONTENT_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_CONTENT_TYPE_EXT] ?? []);
             $type->setContentType(FHIRCode::jsonUnserialize(
-                json: [FHIRCode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_CONTENT_TYPE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SECURITY_CONTEXT]) || array_key_exists(self::FIELD_SECURITY_CONTEXT, $json)) {
-            $type->setSecurityContext(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_SECURITY_CONTEXT],
-                config: $config,
-            ));
+            $type->setSecurityContext(FHIRReference::jsonUnserialize($json[self::FIELD_SECURITY_CONTEXT], $config));
         }
-        if (isset($json[self::FIELD_CONTENT]) || isset($json[self::FIELD_CONTENT_EXT]) || array_key_exists(self::FIELD_CONTENT, $json) || array_key_exists(self::FIELD_CONTENT_EXT, $json)) {
+        if (isset($json[self::FIELD_CONTENT])
+            || isset($json[self::FIELD_CONTENT_EXT])
+            || array_key_exists(self::FIELD_CONTENT, $json)
+            || array_key_exists(self::FIELD_CONTENT_EXT, $json)) {
             $value = $json[self::FIELD_CONTENT] ?? null;
-            $ext = (array)($json[self::FIELD_CONTENT_EXT] ?? []);
             $type->setContent(FHIRBase64Binary::jsonUnserialize(
-                json: [FHIRBase64Binary::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBase64Binary::FIELD_VALUE => $value]) + ($json[self::FIELD_CONTENT_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

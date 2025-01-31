@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1229,30 +1229,21 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
             $vs = $json[self::FIELD_SUBJECT];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSubject(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSubject(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_DISEASE_SYMPTOM_PROCEDURE]) || array_key_exists(self::FIELD_DISEASE_SYMPTOM_PROCEDURE, $json)) {
-            $type->setDiseaseSymptomProcedure(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_DISEASE_SYMPTOM_PROCEDURE],
-                config: $config,
-            ));
+            $type->setDiseaseSymptomProcedure(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DISEASE_SYMPTOM_PROCEDURE], $config));
         }
         if (isset($json[self::FIELD_DISEASE_STATUS]) || array_key_exists(self::FIELD_DISEASE_STATUS, $json)) {
-            $type->setDiseaseStatus(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_DISEASE_STATUS],
-                config: $config,
-            ));
+            $type->setDiseaseStatus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DISEASE_STATUS], $config));
         }
         if (isset($json[self::FIELD_COMORBIDITY]) || array_key_exists(self::FIELD_COMORBIDITY, $json)) {
             $vs = $json[self::FIELD_COMORBIDITY];
@@ -1260,23 +1251,14 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addComorbidity(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addComorbidity(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_INTENDED_EFFECT]) || array_key_exists(self::FIELD_INTENDED_EFFECT, $json)) {
-            $type->setIntendedEffect(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_INTENDED_EFFECT],
-                config: $config,
-            ));
+            $type->setIntendedEffect(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_INTENDED_EFFECT], $config));
         }
         if (isset($json[self::FIELD_DURATION]) || array_key_exists(self::FIELD_DURATION, $json)) {
-            $type->setDuration(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_DURATION],
-                config: $config,
-            ));
+            $type->setDuration(FHIRQuantity::jsonUnserialize($json[self::FIELD_DURATION], $config));
         }
         if (isset($json[self::FIELD_OTHER_THERAPY]) || array_key_exists(self::FIELD_OTHER_THERAPY, $json)) {
             $vs = $json[self::FIELD_OTHER_THERAPY];
@@ -1284,10 +1266,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addOtherTherapy(FHIRMedicinalProductIndicationOtherTherapy::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addOtherTherapy(FHIRMedicinalProductIndicationOtherTherapy::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_UNDESIRABLE_EFFECT]) || array_key_exists(self::FIELD_UNDESIRABLE_EFFECT, $json)) {
@@ -1296,10 +1275,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addUndesirableEffect(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addUndesirableEffect(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_POPULATION]) || array_key_exists(self::FIELD_POPULATION, $json)) {
@@ -1308,10 +1284,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements Versi
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPopulation(FHIRPopulation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPopulation(FHIRPopulation::jsonUnserialize($v, $config));
             }
         }
         return $type;

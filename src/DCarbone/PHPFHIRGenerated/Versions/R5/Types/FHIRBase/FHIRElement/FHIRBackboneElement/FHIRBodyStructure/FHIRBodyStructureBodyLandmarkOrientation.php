@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,7 @@ use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -173,7 +174,7 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $landmarkDescription
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $clockFacePosition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureDistanceFromLandmark[] $distanceFromLandmark
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureDistanceFromLandmark[] $distanceFromLandmark
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $surfaceOrientation
      * @param null|string[] $fhirComments
      */
@@ -384,11 +385,14 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      *
      * The distance in centimeters a certain observation is made from a body landmark.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureDistanceFromLandmark $distanceFromLandmark
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureDistanceFromLandmark $distanceFromLandmark
      * @return static
      */
-    public function addDistanceFromLandmark(FHIRBodyStructureDistanceFromLandmark $distanceFromLandmark): self
+    public function addDistanceFromLandmark(FHIRQuantity|FHIRBodyStructureDistanceFromLandmark $distanceFromLandmark): self
     {
+        if (!($distanceFromLandmark instanceof FHIRBodyStructureDistanceFromLandmark)) {
+            $distanceFromLandmark = new FHIRBodyStructureDistanceFromLandmark(value: $distanceFromLandmark);
+        }
         if (!isset($this->distanceFromLandmark)) {
             $this->distanceFromLandmark = [];
         }
@@ -402,10 +406,10 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      *
      * The distance in centimeters a certain observation is made from a body landmark.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureDistanceFromLandmark ...$distanceFromLandmark
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureDistanceFromLandmark ...$distanceFromLandmark
      * @return static
      */
-    public function setDistanceFromLandmark(FHIRBodyStructureDistanceFromLandmark ...$distanceFromLandmark): self
+    public function setDistanceFromLandmark(FHIRQuantity|FHIRBodyStructureDistanceFromLandmark ...$distanceFromLandmark): self
     {
         if ([] === $distanceFromLandmark) {
             unset($this->distanceFromLandmark);
@@ -710,25 +714,14 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_LANDMARK_DESCRIPTION]) || array_key_exists(self::FIELD_LANDMARK_DESCRIPTION, $json)) {
             $vs = $json[self::FIELD_LANDMARK_DESCRIPTION];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addLandmarkDescription(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addLandmarkDescription(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CLOCK_FACE_POSITION]) || array_key_exists(self::FIELD_CLOCK_FACE_POSITION, $json)) {
@@ -737,18 +730,15 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addClockFacePosition(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addClockFacePosition(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DISTANCE_FROM_LANDMARK]) || isset($json[self::FIELD_DISTANCE_FROM_LANDMARK_EXT]) || array_key_exists(self::FIELD_DISTANCE_FROM_LANDMARK, $json) || array_key_exists(self::FIELD_DISTANCE_FROM_LANDMARK_EXT, $json)) {
-            $value = $json[self::FIELD_DISTANCE_FROM_LANDMARK] ?? null;
+        if (isset($json[self::FIELD_DISTANCE_FROM_LANDMARK])
+            || isset($json[self::FIELD_DISTANCE_FROM_LANDMARK_EXT])
+            || array_key_exists(self::FIELD_DISTANCE_FROM_LANDMARK, $json)
+            || array_key_exists(self::FIELD_DISTANCE_FROM_LANDMARK_EXT, $json)) {
+            $value = (array)($json[self::FIELD_DISTANCE_FROM_LANDMARK] ?? []);
             $ext = (array)($json[self::FIELD_DISTANCE_FROM_LANDMARK_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -756,8 +746,8 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addDistanceFromLandmark(FHIRBodyStructureDistanceFromLandmark::jsonUnserialize(
-                    json: [FHIRBodyStructureDistanceFromLandmark::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRBodyStructureDistanceFromLandmark::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -767,10 +757,7 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSurfaceOrientation(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSurfaceOrientation(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         return $type;

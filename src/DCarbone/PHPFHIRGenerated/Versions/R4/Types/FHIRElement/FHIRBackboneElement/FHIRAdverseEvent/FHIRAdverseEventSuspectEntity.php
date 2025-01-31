@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -454,20 +454,9 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_INSTANCE]) || array_key_exists(self::FIELD_INSTANCE, $json)) {
-            $type->setInstance(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_INSTANCE],
-                config: $config,
-            ));
+            $type->setInstance(FHIRReference::jsonUnserialize($json[self::FIELD_INSTANCE], $config));
         }
         if (isset($json[self::FIELD_CAUSALITY]) || array_key_exists(self::FIELD_CAUSALITY, $json)) {
             $vs = $json[self::FIELD_CAUSALITY];
@@ -475,10 +464,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCausality(FHIRAdverseEventCausality::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCausality(FHIRAdverseEventCausality::jsonUnserialize($v, $config));
             }
         }
         return $type;

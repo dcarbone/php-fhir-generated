@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,6 +108,8 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRArtifactAssessmentDispositionEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRArtifactAssessmentWorkflowStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
@@ -366,7 +368,7 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $title
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $citeAsReference
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $citeAsMarkdown
@@ -378,8 +380,8 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $artifactCanonical
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $artifactUri
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRArtifactAssessment\FHIRArtifactAssessmentContent[] $content
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRArtifactAssessmentWorkflowStatus $workflowStatus
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRArtifactAssessmentDisposition $disposition
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRArtifactAssessmentWorkflowStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRArtifactAssessmentWorkflowStatus $workflowStatus
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRArtifactAssessmentDispositionEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRArtifactAssessmentDisposition $disposition
      * @param null|string[] $fhirComments
      */
     public function __construct(null|string|FHIRIdPrimitive|FHIRId $id = null,
@@ -402,8 +404,8 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
                                 null|string|FHIRCanonicalPrimitive|FHIRCanonical $artifactCanonical = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $artifactUri = null,
                                 null|iterable $content = null,
-                                null|FHIRArtifactAssessmentWorkflowStatus $workflowStatus = null,
-                                null|FHIRArtifactAssessmentDisposition $disposition = null,
+                                null|string|FHIRArtifactAssessmentWorkflowStatusEnum|FHIRArtifactAssessmentWorkflowStatus $workflowStatus = null,
+                                null|string|FHIRArtifactAssessmentDispositionEnum|FHIRArtifactAssessmentDisposition $disposition = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(id: $id,
@@ -516,11 +518,14 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -538,10 +543,10 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -1289,16 +1294,19 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      *
      * Indicates the workflow status of the comment or change request.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRArtifactAssessmentWorkflowStatus $workflowStatus
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRArtifactAssessmentWorkflowStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRArtifactAssessmentWorkflowStatus $workflowStatus
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setWorkflowStatus(null|FHIRArtifactAssessmentWorkflowStatus $workflowStatus,
+    public function setWorkflowStatus(null|string|FHIRArtifactAssessmentWorkflowStatusEnum|FHIRArtifactAssessmentWorkflowStatus $workflowStatus,
                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $workflowStatus) {
             unset($this->workflowStatus);
             return $this;
+        }
+        if (!($workflowStatus instanceof FHIRArtifactAssessmentWorkflowStatus)) {
+            $workflowStatus = new FHIRArtifactAssessmentWorkflowStatus(value: $workflowStatus);
         }
         $this->workflowStatus = $workflowStatus;
         if ($this->_valueXMLLocations[self::FIELD_WORKFLOW_STATUS] !== $valueXMLLocation) {
@@ -1350,16 +1358,19 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
      * Indicates the disposition of the responsible party to the comment or change
      * request.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRArtifactAssessmentDisposition $disposition
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRArtifactAssessmentDispositionEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRArtifactAssessmentDisposition $disposition
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDisposition(null|FHIRArtifactAssessmentDisposition $disposition,
+    public function setDisposition(null|string|FHIRArtifactAssessmentDispositionEnum|FHIRArtifactAssessmentDisposition $disposition,
                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $disposition) {
             unset($this->disposition);
             return $this;
+        }
+        if (!($disposition instanceof FHIRArtifactAssessmentDisposition)) {
+            $disposition = new FHIRArtifactAssessmentDisposition(value: $disposition);
         }
         $this->disposition = $disposition;
         if ($this->_valueXMLLocations[self::FIELD_DISPOSITION] !== $valueXMLLocation) {
@@ -2076,13 +2087,13 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2090,85 +2101,95 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_TITLE]) || isset($json[self::FIELD_TITLE_EXT]) || array_key_exists(self::FIELD_TITLE, $json) || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
+        if (isset($json[self::FIELD_TITLE])
+            || isset($json[self::FIELD_TITLE_EXT])
+            || array_key_exists(self::FIELD_TITLE, $json)
+            || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
             $value = $json[self::FIELD_TITLE] ?? null;
-            $ext = (array)($json[self::FIELD_TITLE_EXT] ?? []);
             $type->setTitle(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TITLE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CITE_AS_REFERENCE]) || array_key_exists(self::FIELD_CITE_AS_REFERENCE, $json)) {
-            $type->setCiteAsReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_CITE_AS_REFERENCE],
-                config: $config,
-            ));
+            $type->setCiteAsReference(FHIRReference::jsonUnserialize($json[self::FIELD_CITE_AS_REFERENCE], $config));
         }
-        if (isset($json[self::FIELD_CITE_AS_MARKDOWN]) || isset($json[self::FIELD_CITE_AS_MARKDOWN_EXT]) || array_key_exists(self::FIELD_CITE_AS_MARKDOWN, $json) || array_key_exists(self::FIELD_CITE_AS_MARKDOWN_EXT, $json)) {
+        if (isset($json[self::FIELD_CITE_AS_MARKDOWN])
+            || isset($json[self::FIELD_CITE_AS_MARKDOWN_EXT])
+            || array_key_exists(self::FIELD_CITE_AS_MARKDOWN, $json)
+            || array_key_exists(self::FIELD_CITE_AS_MARKDOWN_EXT, $json)) {
             $value = $json[self::FIELD_CITE_AS_MARKDOWN] ?? null;
-            $ext = (array)($json[self::FIELD_CITE_AS_MARKDOWN_EXT] ?? []);
             $type->setCiteAsMarkdown(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_CITE_AS_MARKDOWN_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DATE]) || isset($json[self::FIELD_DATE_EXT]) || array_key_exists(self::FIELD_DATE, $json) || array_key_exists(self::FIELD_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_DATE])
+            || isset($json[self::FIELD_DATE_EXT])
+            || array_key_exists(self::FIELD_DATE, $json)
+            || array_key_exists(self::FIELD_DATE_EXT, $json)) {
             $value = $json[self::FIELD_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_DATE_EXT] ?? []);
             $type->setDate(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_COPYRIGHT]) || isset($json[self::FIELD_COPYRIGHT_EXT]) || array_key_exists(self::FIELD_COPYRIGHT, $json) || array_key_exists(self::FIELD_COPYRIGHT_EXT, $json)) {
+        if (isset($json[self::FIELD_COPYRIGHT])
+            || isset($json[self::FIELD_COPYRIGHT_EXT])
+            || array_key_exists(self::FIELD_COPYRIGHT, $json)
+            || array_key_exists(self::FIELD_COPYRIGHT_EXT, $json)) {
             $value = $json[self::FIELD_COPYRIGHT] ?? null;
-            $ext = (array)($json[self::FIELD_COPYRIGHT_EXT] ?? []);
             $type->setCopyright(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_COPYRIGHT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_APPROVAL_DATE]) || isset($json[self::FIELD_APPROVAL_DATE_EXT]) || array_key_exists(self::FIELD_APPROVAL_DATE, $json) || array_key_exists(self::FIELD_APPROVAL_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_APPROVAL_DATE])
+            || isset($json[self::FIELD_APPROVAL_DATE_EXT])
+            || array_key_exists(self::FIELD_APPROVAL_DATE, $json)
+            || array_key_exists(self::FIELD_APPROVAL_DATE_EXT, $json)) {
             $value = $json[self::FIELD_APPROVAL_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_APPROVAL_DATE_EXT] ?? []);
             $type->setApprovalDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_APPROVAL_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_LAST_REVIEW_DATE]) || isset($json[self::FIELD_LAST_REVIEW_DATE_EXT]) || array_key_exists(self::FIELD_LAST_REVIEW_DATE, $json) || array_key_exists(self::FIELD_LAST_REVIEW_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_LAST_REVIEW_DATE])
+            || isset($json[self::FIELD_LAST_REVIEW_DATE_EXT])
+            || array_key_exists(self::FIELD_LAST_REVIEW_DATE, $json)
+            || array_key_exists(self::FIELD_LAST_REVIEW_DATE_EXT, $json)) {
             $value = $json[self::FIELD_LAST_REVIEW_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_LAST_REVIEW_DATE_EXT] ?? []);
             $type->setLastReviewDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_LAST_REVIEW_DATE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ARTIFACT_REFERENCE]) || array_key_exists(self::FIELD_ARTIFACT_REFERENCE, $json)) {
-            $type->setArtifactReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ARTIFACT_REFERENCE],
-                config: $config,
-            ));
+            $type->setArtifactReference(FHIRReference::jsonUnserialize($json[self::FIELD_ARTIFACT_REFERENCE], $config));
         }
-        if (isset($json[self::FIELD_ARTIFACT_CANONICAL]) || isset($json[self::FIELD_ARTIFACT_CANONICAL_EXT]) || array_key_exists(self::FIELD_ARTIFACT_CANONICAL, $json) || array_key_exists(self::FIELD_ARTIFACT_CANONICAL_EXT, $json)) {
+        if (isset($json[self::FIELD_ARTIFACT_CANONICAL])
+            || isset($json[self::FIELD_ARTIFACT_CANONICAL_EXT])
+            || array_key_exists(self::FIELD_ARTIFACT_CANONICAL, $json)
+            || array_key_exists(self::FIELD_ARTIFACT_CANONICAL_EXT, $json)) {
             $value = $json[self::FIELD_ARTIFACT_CANONICAL] ?? null;
-            $ext = (array)($json[self::FIELD_ARTIFACT_CANONICAL_EXT] ?? []);
             $type->setArtifactCanonical(FHIRCanonical::jsonUnserialize(
-                json: [FHIRCanonical::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_ARTIFACT_CANONICAL_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ARTIFACT_URI]) || isset($json[self::FIELD_ARTIFACT_URI_EXT]) || array_key_exists(self::FIELD_ARTIFACT_URI, $json) || array_key_exists(self::FIELD_ARTIFACT_URI_EXT, $json)) {
+        if (isset($json[self::FIELD_ARTIFACT_URI])
+            || isset($json[self::FIELD_ARTIFACT_URI_EXT])
+            || array_key_exists(self::FIELD_ARTIFACT_URI, $json)
+            || array_key_exists(self::FIELD_ARTIFACT_URI_EXT, $json)) {
             $value = $json[self::FIELD_ARTIFACT_URI] ?? null;
-            $ext = (array)($json[self::FIELD_ARTIFACT_URI_EXT] ?? []);
             $type->setArtifactUri(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_ARTIFACT_URI_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CONTENT]) || array_key_exists(self::FIELD_CONTENT, $json)) {
@@ -2177,26 +2198,27 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements VersionContai
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addContent(FHIRArtifactAssessmentContent::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addContent(FHIRArtifactAssessmentContent::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_WORKFLOW_STATUS]) || isset($json[self::FIELD_WORKFLOW_STATUS_EXT]) || array_key_exists(self::FIELD_WORKFLOW_STATUS, $json) || array_key_exists(self::FIELD_WORKFLOW_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_WORKFLOW_STATUS])
+            || isset($json[self::FIELD_WORKFLOW_STATUS_EXT])
+            || array_key_exists(self::FIELD_WORKFLOW_STATUS, $json)
+            || array_key_exists(self::FIELD_WORKFLOW_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_WORKFLOW_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_WORKFLOW_STATUS_EXT] ?? []);
             $type->setWorkflowStatus(FHIRArtifactAssessmentWorkflowStatus::jsonUnserialize(
-                json: [FHIRArtifactAssessmentWorkflowStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRArtifactAssessmentWorkflowStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_WORKFLOW_STATUS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DISPOSITION]) || isset($json[self::FIELD_DISPOSITION_EXT]) || array_key_exists(self::FIELD_DISPOSITION, $json) || array_key_exists(self::FIELD_DISPOSITION_EXT, $json)) {
+        if (isset($json[self::FIELD_DISPOSITION])
+            || isset($json[self::FIELD_DISPOSITION_EXT])
+            || array_key_exists(self::FIELD_DISPOSITION, $json)
+            || array_key_exists(self::FIELD_DISPOSITION_EXT, $json)) {
             $value = $json[self::FIELD_DISPOSITION] ?? null;
-            $ext = (array)($json[self::FIELD_DISPOSITION_EXT] ?? []);
             $type->setDisposition(FHIRArtifactAssessmentDisposition::jsonUnserialize(
-                json: [FHIRArtifactAssessmentDisposition::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRArtifactAssessmentDisposition::FIELD_VALUE => $value]) + ($json[self::FIELD_DISPOSITION_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

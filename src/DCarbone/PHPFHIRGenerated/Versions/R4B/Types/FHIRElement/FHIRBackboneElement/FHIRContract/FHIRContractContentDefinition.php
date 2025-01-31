@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,6 +89,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRContractResourcePublicationStatusCodesEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
@@ -228,7 +229,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $subType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $publisher
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDateTime $publicationDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContractResourcePublicationStatusCodes $publicationStatus
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRContractResourcePublicationStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContractResourcePublicationStatusCodes $publicationStatus
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRMarkdown $copyright
      * @param null|string[] $fhirComments
      */
@@ -239,7 +240,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $subType = null,
                                 null|FHIRReference $publisher = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $publicationDate = null,
-                                null|FHIRContractResourcePublicationStatusCodes $publicationStatus = null,
+                                null|string|FHIRContractResourcePublicationStatusCodesEnum|FHIRContractResourcePublicationStatusCodes $publicationStatus = null,
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright = null,
                                 null|iterable $fhirComments = null)
     {
@@ -486,16 +487,19 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * executed | negotiable | offered | policy | rejected | renewed | revoked |
      * resolved | terminated.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContractResourcePublicationStatusCodes $publicationStatus
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRContractResourcePublicationStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContractResourcePublicationStatusCodes $publicationStatus
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPublicationStatus(null|FHIRContractResourcePublicationStatusCodes $publicationStatus,
+    public function setPublicationStatus(null|string|FHIRContractResourcePublicationStatusCodesEnum|FHIRContractResourcePublicationStatusCodes $publicationStatus,
                                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $publicationStatus) {
             unset($this->publicationStatus);
             return $this;
+        }
+        if (!($publicationStatus instanceof FHIRContractResourcePublicationStatusCodes)) {
+            $publicationStatus = new FHIRContractResourcePublicationStatusCodes(value: $publicationStatus);
         }
         $this->publicationStatus = $publicationStatus;
         if ($this->_valueXMLLocations[self::FIELD_PUBLICATION_STATUS] !== $valueXMLLocation) {
@@ -906,55 +910,44 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
         if (isset($json[self::FIELD_SUB_TYPE]) || array_key_exists(self::FIELD_SUB_TYPE, $json)) {
-            $type->setSubType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_SUB_TYPE],
-                config: $config,
-            ));
+            $type->setSubType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SUB_TYPE], $config));
         }
         if (isset($json[self::FIELD_PUBLISHER]) || array_key_exists(self::FIELD_PUBLISHER, $json)) {
-            $type->setPublisher(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PUBLISHER],
-                config: $config,
-            ));
+            $type->setPublisher(FHIRReference::jsonUnserialize($json[self::FIELD_PUBLISHER], $config));
         }
-        if (isset($json[self::FIELD_PUBLICATION_DATE]) || isset($json[self::FIELD_PUBLICATION_DATE_EXT]) || array_key_exists(self::FIELD_PUBLICATION_DATE, $json) || array_key_exists(self::FIELD_PUBLICATION_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_PUBLICATION_DATE])
+            || isset($json[self::FIELD_PUBLICATION_DATE_EXT])
+            || array_key_exists(self::FIELD_PUBLICATION_DATE, $json)
+            || array_key_exists(self::FIELD_PUBLICATION_DATE_EXT, $json)) {
             $value = $json[self::FIELD_PUBLICATION_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_PUBLICATION_DATE_EXT] ?? []);
             $type->setPublicationDate(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_PUBLICATION_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PUBLICATION_STATUS]) || isset($json[self::FIELD_PUBLICATION_STATUS_EXT]) || array_key_exists(self::FIELD_PUBLICATION_STATUS, $json) || array_key_exists(self::FIELD_PUBLICATION_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_PUBLICATION_STATUS])
+            || isset($json[self::FIELD_PUBLICATION_STATUS_EXT])
+            || array_key_exists(self::FIELD_PUBLICATION_STATUS, $json)
+            || array_key_exists(self::FIELD_PUBLICATION_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_PUBLICATION_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_PUBLICATION_STATUS_EXT] ?? []);
             $type->setPublicationStatus(FHIRContractResourcePublicationStatusCodes::jsonUnserialize(
-                json: [FHIRContractResourcePublicationStatusCodes::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRContractResourcePublicationStatusCodes::FIELD_VALUE => $value]) + ($json[self::FIELD_PUBLICATION_STATUS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_COPYRIGHT]) || isset($json[self::FIELD_COPYRIGHT_EXT]) || array_key_exists(self::FIELD_COPYRIGHT, $json) || array_key_exists(self::FIELD_COPYRIGHT_EXT, $json)) {
+        if (isset($json[self::FIELD_COPYRIGHT])
+            || isset($json[self::FIELD_COPYRIGHT_EXT])
+            || array_key_exists(self::FIELD_COPYRIGHT, $json)
+            || array_key_exists(self::FIELD_COPYRIGHT_EXT, $json)) {
             $value = $json[self::FIELD_COPYRIGHT] ?? null;
-            $ext = (array)($json[self::FIELD_COPYRIGHT_EXT] ?? []);
             $type->setCopyright(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_COPYRIGHT_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

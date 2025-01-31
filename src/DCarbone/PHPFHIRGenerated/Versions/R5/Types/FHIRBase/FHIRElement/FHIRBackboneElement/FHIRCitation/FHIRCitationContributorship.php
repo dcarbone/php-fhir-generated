@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,7 @@ use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -166,7 +167,7 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $complete
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry[] $entry
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationSummary1[] $summary
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationSummary1[] $summary
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -372,11 +373,14 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      * Used to record a display of the author/contributor list without separate data
      * element for each list member.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationSummary1 $summary
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationSummary1 $summary
      * @return static
      */
-    public function addSummary(FHIRCitationSummary1 $summary): self
+    public function addSummary(FHIRMarkdown|FHIRCitationSummary1 $summary): self
     {
+        if (!($summary instanceof FHIRCitationSummary1)) {
+            $summary = new FHIRCitationSummary1(value: $summary);
+        }
         if (!isset($this->summary)) {
             $this->summary = [];
         }
@@ -393,10 +397,10 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      * Used to record a display of the author/contributor list without separate data
      * element for each list member.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationSummary1 ...$summary
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationSummary1 ...$summary
      * @return static
      */
-    public function setSummary(FHIRCitationSummary1 ...$summary): self
+    public function setSummary(FHIRMarkdown|FHIRCitationSummary1 ...$summary): self
     {
         if ([] === $summary) {
             unset($this->summary);
@@ -624,21 +628,15 @@ class FHIRCitationContributorship extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_COMPLETE]) || isset($json[self::FIELD_COMPLETE_EXT]) || array_key_exists(self::FIELD_COMPLETE, $json) || array_key_exists(self::FIELD_COMPLETE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_COMPLETE])
+            || isset($json[self::FIELD_COMPLETE_EXT])
+            || array_key_exists(self::FIELD_COMPLETE, $json)
+            || array_key_exists(self::FIELD_COMPLETE_EXT, $json)) {
             $value = $json[self::FIELD_COMPLETE] ?? null;
-            $ext = (array)($json[self::FIELD_COMPLETE_EXT] ?? []);
             $type->setComplete(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_COMPLETE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ENTRY]) || array_key_exists(self::FIELD_ENTRY, $json)) {
@@ -647,18 +645,15 @@ class FHIRCitationContributorship extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addEntry(FHIRCitationEntry::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addEntry(FHIRCitationEntry::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_SUMMARY]) || isset($json[self::FIELD_SUMMARY_EXT]) || array_key_exists(self::FIELD_SUMMARY, $json) || array_key_exists(self::FIELD_SUMMARY_EXT, $json)) {
-            $value = $json[self::FIELD_SUMMARY] ?? null;
+        if (isset($json[self::FIELD_SUMMARY])
+            || isset($json[self::FIELD_SUMMARY_EXT])
+            || array_key_exists(self::FIELD_SUMMARY, $json)
+            || array_key_exists(self::FIELD_SUMMARY_EXT, $json)) {
+            $value = (array)($json[self::FIELD_SUMMARY] ?? []);
             $ext = (array)($json[self::FIELD_SUMMARY_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -666,8 +661,8 @@ class FHIRCitationContributorship extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addSummary(FHIRCitationSummary1::jsonUnserialize(
-                    json: [FHIRCitationSummary1::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRCitationSummary1::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

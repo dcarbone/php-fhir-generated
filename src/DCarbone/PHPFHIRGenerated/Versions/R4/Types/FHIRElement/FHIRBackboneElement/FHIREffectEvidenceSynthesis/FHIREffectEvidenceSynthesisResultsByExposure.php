@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,6 +69,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRExposureStateList;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExposureState;
@@ -161,7 +162,7 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExposureState $exposureState
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRExposureStateList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExposureState $exposureState
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $variantState
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $riskEvidenceSynthesis
      * @param null|string[] $fhirComments
@@ -170,7 +171,7 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|string|FHIRStringPrimitive|FHIRString $description = null,
-                                null|FHIRExposureState $exposureState = null,
+                                null|string|FHIRExposureStateList|FHIRExposureState $exposureState = null,
                                 null|FHIRCodeableConcept $variantState = null,
                                 null|FHIRReference $riskEvidenceSynthesis = null,
                                 null|iterable $fhirComments = null)
@@ -290,16 +291,19 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement
      *
      * Whether these results are for the exposure state or alternative exposure state.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExposureState $exposureState
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRExposureStateList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExposureState $exposureState
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setExposureState(null|FHIRExposureState $exposureState,
+    public function setExposureState(null|string|FHIRExposureStateList|FHIRExposureState $exposureState,
                                      ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $exposureState) {
             unset($this->exposureState);
             return $this;
+        }
+        if (!($exposureState instanceof FHIRExposureState)) {
+            $exposureState = new FHIRExposureState(value: $exposureState);
         }
         $this->exposureState = $exposureState;
         if ($this->_valueXMLLocations[self::FIELD_EXPOSURE_STATE] !== $valueXMLLocation) {
@@ -646,42 +650,32 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_EXPOSURE_STATE]) || isset($json[self::FIELD_EXPOSURE_STATE_EXT]) || array_key_exists(self::FIELD_EXPOSURE_STATE, $json) || array_key_exists(self::FIELD_EXPOSURE_STATE_EXT, $json)) {
+        if (isset($json[self::FIELD_EXPOSURE_STATE])
+            || isset($json[self::FIELD_EXPOSURE_STATE_EXT])
+            || array_key_exists(self::FIELD_EXPOSURE_STATE, $json)
+            || array_key_exists(self::FIELD_EXPOSURE_STATE_EXT, $json)) {
             $value = $json[self::FIELD_EXPOSURE_STATE] ?? null;
-            $ext = (array)($json[self::FIELD_EXPOSURE_STATE_EXT] ?? []);
             $type->setExposureState(FHIRExposureState::jsonUnserialize(
-                json: [FHIRExposureState::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRExposureState::FIELD_VALUE => $value]) + ($json[self::FIELD_EXPOSURE_STATE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_VARIANT_STATE]) || array_key_exists(self::FIELD_VARIANT_STATE, $json)) {
-            $type->setVariantState(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_VARIANT_STATE],
-                config: $config,
-            ));
+            $type->setVariantState(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_VARIANT_STATE], $config));
         }
         if (isset($json[self::FIELD_RISK_EVIDENCE_SYNTHESIS]) || array_key_exists(self::FIELD_RISK_EVIDENCE_SYNTHESIS, $json)) {
-            $type->setRiskEvidenceSynthesis(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_RISK_EVIDENCE_SYNTHESIS],
-                config: $config,
-            ));
+            $type->setRiskEvidenceSynthesis(FHIRReference::jsonUnserialize($json[self::FIELD_RISK_EVIDENCE_SYNTHESIS], $config));
         }
         return $type;
     }

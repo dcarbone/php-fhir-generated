@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -661,36 +661,29 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_NUMBER_OF_UNITS]) || isset($json[self::FIELD_NUMBER_OF_UNITS_EXT]) || array_key_exists(self::FIELD_NUMBER_OF_UNITS, $json) || array_key_exists(self::FIELD_NUMBER_OF_UNITS_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_NUMBER_OF_UNITS])
+            || isset($json[self::FIELD_NUMBER_OF_UNITS_EXT])
+            || array_key_exists(self::FIELD_NUMBER_OF_UNITS, $json)
+            || array_key_exists(self::FIELD_NUMBER_OF_UNITS_EXT, $json)) {
             $value = $json[self::FIELD_NUMBER_OF_UNITS] ?? null;
-            $ext = (array)($json[self::FIELD_NUMBER_OF_UNITS_EXT] ?? []);
             $type->setNumberOfUnits(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_NUMBER_OF_UNITS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_AVERAGE_MOLECULAR_FORMULA]) || isset($json[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT]) || array_key_exists(self::FIELD_AVERAGE_MOLECULAR_FORMULA, $json) || array_key_exists(self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT, $json)) {
+        if (isset($json[self::FIELD_AVERAGE_MOLECULAR_FORMULA])
+            || isset($json[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT])
+            || array_key_exists(self::FIELD_AVERAGE_MOLECULAR_FORMULA, $json)
+            || array_key_exists(self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT, $json)) {
             $value = $json[self::FIELD_AVERAGE_MOLECULAR_FORMULA] ?? null;
-            $ext = (array)($json[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT] ?? []);
             $type->setAverageMolecularFormula(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE]) || array_key_exists(self::FIELD_REPEAT_UNIT_AMOUNT_TYPE, $json)) {
-            $type->setRepeatUnitAmountType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE],
-                config: $config,
-            ));
+            $type->setRepeatUnitAmountType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE], $config));
         }
         if (isset($json[self::FIELD_REPEAT_UNIT]) || array_key_exists(self::FIELD_REPEAT_UNIT, $json)) {
             $vs = $json[self::FIELD_REPEAT_UNIT];
@@ -698,10 +691,7 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRepeatUnit(FHIRSubstancePolymerRepeatUnit::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRepeatUnit(FHIRSubstancePolymerRepeatUnit::jsonUnserialize($v, $config));
             }
         }
         return $type;

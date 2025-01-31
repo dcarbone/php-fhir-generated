@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -709,43 +709,38 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_REFERENCE]) || array_key_exists(self::FIELD_REFERENCE, $json)) {
-            $type->setReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_REFERENCE],
-                config: $config,
-            ));
+            $type->setReference(FHIRReference::jsonUnserialize($json[self::FIELD_REFERENCE], $config));
         }
-        if (isset($json[self::FIELD_EXAMPLE_BOOLEAN]) || isset($json[self::FIELD_EXAMPLE_BOOLEAN_EXT]) || array_key_exists(self::FIELD_EXAMPLE_BOOLEAN, $json) || array_key_exists(self::FIELD_EXAMPLE_BOOLEAN_EXT, $json)) {
+        if (isset($json[self::FIELD_EXAMPLE_BOOLEAN])
+            || isset($json[self::FIELD_EXAMPLE_BOOLEAN_EXT])
+            || array_key_exists(self::FIELD_EXAMPLE_BOOLEAN, $json)
+            || array_key_exists(self::FIELD_EXAMPLE_BOOLEAN_EXT, $json)) {
             $value = $json[self::FIELD_EXAMPLE_BOOLEAN] ?? null;
-            $ext = (array)($json[self::FIELD_EXAMPLE_BOOLEAN_EXT] ?? []);
             $type->setExampleBoolean(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_EXAMPLE_BOOLEAN_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_EXAMPLE_CANONICAL]) || isset($json[self::FIELD_EXAMPLE_CANONICAL_EXT]) || array_key_exists(self::FIELD_EXAMPLE_CANONICAL, $json) || array_key_exists(self::FIELD_EXAMPLE_CANONICAL_EXT, $json)) {
+        if (isset($json[self::FIELD_EXAMPLE_CANONICAL])
+            || isset($json[self::FIELD_EXAMPLE_CANONICAL_EXT])
+            || array_key_exists(self::FIELD_EXAMPLE_CANONICAL, $json)
+            || array_key_exists(self::FIELD_EXAMPLE_CANONICAL_EXT, $json)) {
             $value = $json[self::FIELD_EXAMPLE_CANONICAL] ?? null;
-            $ext = (array)($json[self::FIELD_EXAMPLE_CANONICAL_EXT] ?? []);
             $type->setExampleCanonical(FHIRCanonical::jsonUnserialize(
-                json: [FHIRCanonical::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_EXAMPLE_CANONICAL_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_RELATIVE_PATH]) || isset($json[self::FIELD_RELATIVE_PATH_EXT]) || array_key_exists(self::FIELD_RELATIVE_PATH, $json) || array_key_exists(self::FIELD_RELATIVE_PATH_EXT, $json)) {
+        if (isset($json[self::FIELD_RELATIVE_PATH])
+            || isset($json[self::FIELD_RELATIVE_PATH_EXT])
+            || array_key_exists(self::FIELD_RELATIVE_PATH, $json)
+            || array_key_exists(self::FIELD_RELATIVE_PATH_EXT, $json)) {
             $value = $json[self::FIELD_RELATIVE_PATH] ?? null;
-            $ext = (array)($json[self::FIELD_RELATIVE_PATH_EXT] ?? []);
             $type->setRelativePath(FHIRUrl::jsonUnserialize(
-                json: [FHIRUrl::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUrl::FIELD_VALUE => $value]) + ($json[self::FIELD_RELATIVE_PATH_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

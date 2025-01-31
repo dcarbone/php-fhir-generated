@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,6 +111,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAccountStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
@@ -373,8 +374,8 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAccountStatus $status
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAccountStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAccountStatus $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $billingStatus
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $name
@@ -401,7 +402,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
                                 null|iterable $identifier = null,
-                                null|FHIRAccountStatus $status = null,
+                                null|string|FHIRAccountStatusEnum|FHIRAccountStatus $status = null,
                                 null|FHIRCodeableConcept $billingStatus = null,
                                 null|FHIRCodeableConcept $type = null,
                                 null|string|FHIRStringPrimitive|FHIRString $name = null,
@@ -536,11 +537,14 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * Unique identifier used to reference the account. Might or might not be intended
      * for human use (e.g. credit card number).
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -557,10 +561,10 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      * Unique identifier used to reference the account. Might or might not be intended
      * for human use (e.g. credit card number).
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -594,16 +598,19 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates whether the account is presently used/usable or not.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAccountStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAccountStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAccountStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRAccountStatus $status,
+    public function setStatus(null|string|FHIRAccountStatusEnum|FHIRAccountStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRAccountStatus)) {
+            $status = new FHIRAccountStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -2157,13 +2164,13 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2171,37 +2178,35 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRAccountStatus::jsonUnserialize(
-                json: [FHIRAccountStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRAccountStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_BILLING_STATUS]) || array_key_exists(self::FIELD_BILLING_STATUS, $json)) {
-            $type->setBillingStatus(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_BILLING_STATUS],
-                config: $config,
-            ));
+            $type->setBillingStatus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_BILLING_STATUS], $config));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
-        if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_NAME])
+            || isset($json[self::FIELD_NAME_EXT])
+            || array_key_exists(self::FIELD_NAME, $json)
+            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
             $type->setName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
@@ -2210,17 +2215,11 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSubject(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSubject(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SERVICE_PERIOD]) || array_key_exists(self::FIELD_SERVICE_PERIOD, $json)) {
-            $type->setServicePeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_SERVICE_PERIOD],
-                config: $config,
-            ));
+            $type->setServicePeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_SERVICE_PERIOD], $config));
         }
         if (isset($json[self::FIELD_COVERAGE]) || array_key_exists(self::FIELD_COVERAGE, $json)) {
             $vs = $json[self::FIELD_COVERAGE];
@@ -2228,24 +2227,20 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCoverage(FHIRAccountCoverage::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCoverage(FHIRAccountCoverage::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_OWNER]) || array_key_exists(self::FIELD_OWNER, $json)) {
-            $type->setOwner(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_OWNER],
-                config: $config,
-            ));
+            $type->setOwner(FHIRReference::jsonUnserialize($json[self::FIELD_OWNER], $config));
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_GUARANTOR]) || array_key_exists(self::FIELD_GUARANTOR, $json)) {
@@ -2254,10 +2249,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addGuarantor(FHIRAccountGuarantor::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addGuarantor(FHIRAccountGuarantor::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_DIAGNOSIS]) || array_key_exists(self::FIELD_DIAGNOSIS, $json)) {
@@ -2266,10 +2258,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addDiagnosis(FHIRAccountDiagnosis::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addDiagnosis(FHIRAccountDiagnosis::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PROCEDURE]) || array_key_exists(self::FIELD_PROCEDURE, $json)) {
@@ -2278,10 +2267,7 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addProcedure(FHIRAccountProcedure::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addProcedure(FHIRAccountProcedure::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_RELATED_ACCOUNT]) || array_key_exists(self::FIELD_RELATED_ACCOUNT, $json)) {
@@ -2290,17 +2276,11 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRelatedAccount(FHIRAccountRelatedAccount::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRelatedAccount(FHIRAccountRelatedAccount::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CURRENCY]) || array_key_exists(self::FIELD_CURRENCY, $json)) {
-            $type->setCurrency(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CURRENCY],
-                config: $config,
-            ));
+            $type->setCurrency(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CURRENCY], $config));
         }
         if (isset($json[self::FIELD_BALANCE]) || array_key_exists(self::FIELD_BALANCE, $json)) {
             $vs = $json[self::FIELD_BALANCE];
@@ -2308,18 +2288,17 @@ class FHIRAccount extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addBalance(FHIRAccountBalance::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addBalance(FHIRAccountBalance::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CALCULATED_AT]) || isset($json[self::FIELD_CALCULATED_AT_EXT]) || array_key_exists(self::FIELD_CALCULATED_AT, $json) || array_key_exists(self::FIELD_CALCULATED_AT_EXT, $json)) {
+        if (isset($json[self::FIELD_CALCULATED_AT])
+            || isset($json[self::FIELD_CALCULATED_AT_EXT])
+            || array_key_exists(self::FIELD_CALCULATED_AT, $json)
+            || array_key_exists(self::FIELD_CALCULATED_AT_EXT, $json)) {
             $value = $json[self::FIELD_CALCULATED_AT] ?? null;
-            $ext = (array)($json[self::FIELD_CALCULATED_AT_EXT] ?? []);
             $type->setCalculatedAt(FHIRInstant::jsonUnserialize(
-                json: [FHIRInstant::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_CALCULATED_AT_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

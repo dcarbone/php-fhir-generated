@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,6 +95,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionRelationshipTypeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -197,8 +198,8 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $targetId
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType $relationship
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType $endRelationship
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionRelationshipTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType $relationship
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionRelationshipTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType $endRelationship
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration $offsetDuration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRRange $offsetRange
      * @param null|string[] $fhirComments
@@ -207,8 +208,8 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|string|FHIRIdPrimitive|FHIRId $targetId = null,
-                                null|FHIRActionRelationshipType $relationship = null,
-                                null|FHIRActionRelationshipType $endRelationship = null,
+                                null|string|FHIRActionRelationshipTypeEnum|FHIRActionRelationshipType $relationship = null,
+                                null|string|FHIRActionRelationshipTypeEnum|FHIRActionRelationshipType $endRelationship = null,
                                 null|FHIRDuration $offsetDuration = null,
                                 null|FHIRRange $offsetRange = null,
                                 null|iterable $fhirComments = null)
@@ -333,16 +334,19 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
      *
      * The relationship of this action to the related action.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType $relationship
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionRelationshipTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType $relationship
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRelationship(null|FHIRActionRelationshipType $relationship,
+    public function setRelationship(null|string|FHIRActionRelationshipTypeEnum|FHIRActionRelationshipType $relationship,
                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $relationship) {
             unset($this->relationship);
             return $this;
+        }
+        if (!($relationship instanceof FHIRActionRelationshipType)) {
+            $relationship = new FHIRActionRelationshipType(value: $relationship);
         }
         $this->relationship = $relationship;
         if ($this->_valueXMLLocations[self::FIELD_RELATIONSHIP] !== $valueXMLLocation) {
@@ -392,16 +396,19 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
      *
      * The relationship of the end of this action to the related action.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType $endRelationship
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRActionRelationshipTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRActionRelationshipType $endRelationship
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEndRelationship(null|FHIRActionRelationshipType $endRelationship,
+    public function setEndRelationship(null|string|FHIRActionRelationshipTypeEnum|FHIRActionRelationshipType $endRelationship,
                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $endRelationship) {
             unset($this->endRelationship);
             return $this;
+        }
+        if (!($endRelationship instanceof FHIRActionRelationshipType)) {
+            $endRelationship = new FHIRActionRelationshipType(value: $endRelationship);
         }
         $this->endRelationship = $endRelationship;
         if ($this->_valueXMLLocations[self::FIELD_END_RELATIONSHIP] !== $valueXMLLocation) {
@@ -787,50 +794,42 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_TARGET_ID]) || isset($json[self::FIELD_TARGET_ID_EXT]) || array_key_exists(self::FIELD_TARGET_ID, $json) || array_key_exists(self::FIELD_TARGET_ID_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_TARGET_ID])
+            || isset($json[self::FIELD_TARGET_ID_EXT])
+            || array_key_exists(self::FIELD_TARGET_ID, $json)
+            || array_key_exists(self::FIELD_TARGET_ID_EXT, $json)) {
             $value = $json[self::FIELD_TARGET_ID] ?? null;
-            $ext = (array)($json[self::FIELD_TARGET_ID_EXT] ?? []);
             $type->setTargetId(FHIRId::jsonUnserialize(
-                json: [FHIRId::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_TARGET_ID_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_RELATIONSHIP]) || isset($json[self::FIELD_RELATIONSHIP_EXT]) || array_key_exists(self::FIELD_RELATIONSHIP, $json) || array_key_exists(self::FIELD_RELATIONSHIP_EXT, $json)) {
+        if (isset($json[self::FIELD_RELATIONSHIP])
+            || isset($json[self::FIELD_RELATIONSHIP_EXT])
+            || array_key_exists(self::FIELD_RELATIONSHIP, $json)
+            || array_key_exists(self::FIELD_RELATIONSHIP_EXT, $json)) {
             $value = $json[self::FIELD_RELATIONSHIP] ?? null;
-            $ext = (array)($json[self::FIELD_RELATIONSHIP_EXT] ?? []);
             $type->setRelationship(FHIRActionRelationshipType::jsonUnserialize(
-                json: [FHIRActionRelationshipType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRActionRelationshipType::FIELD_VALUE => $value]) + ($json[self::FIELD_RELATIONSHIP_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_END_RELATIONSHIP]) || isset($json[self::FIELD_END_RELATIONSHIP_EXT]) || array_key_exists(self::FIELD_END_RELATIONSHIP, $json) || array_key_exists(self::FIELD_END_RELATIONSHIP_EXT, $json)) {
+        if (isset($json[self::FIELD_END_RELATIONSHIP])
+            || isset($json[self::FIELD_END_RELATIONSHIP_EXT])
+            || array_key_exists(self::FIELD_END_RELATIONSHIP, $json)
+            || array_key_exists(self::FIELD_END_RELATIONSHIP_EXT, $json)) {
             $value = $json[self::FIELD_END_RELATIONSHIP] ?? null;
-            $ext = (array)($json[self::FIELD_END_RELATIONSHIP_EXT] ?? []);
             $type->setEndRelationship(FHIRActionRelationshipType::jsonUnserialize(
-                json: [FHIRActionRelationshipType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRActionRelationshipType::FIELD_VALUE => $value]) + ($json[self::FIELD_END_RELATIONSHIP_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_OFFSET_DURATION]) || array_key_exists(self::FIELD_OFFSET_DURATION, $json)) {
-            $type->setOffsetDuration(FHIRDuration::jsonUnserialize(
-                json: $json[self::FIELD_OFFSET_DURATION],
-                config: $config,
-            ));
+            $type->setOffsetDuration(FHIRDuration::jsonUnserialize($json[self::FIELD_OFFSET_DURATION], $config));
         }
         if (isset($json[self::FIELD_OFFSET_RANGE]) || array_key_exists(self::FIELD_OFFSET_RANGE, $json)) {
-            $type->setOffsetRange(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_OFFSET_RANGE],
-                config: $config,
-            ));
+            $type->setOffsetRange(FHIRRange::jsonUnserialize($json[self::FIELD_OFFSET_RANGE], $config));
         }
         return $type;
     }

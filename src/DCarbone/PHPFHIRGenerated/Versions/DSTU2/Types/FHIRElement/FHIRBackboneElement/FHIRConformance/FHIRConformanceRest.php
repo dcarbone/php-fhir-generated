@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -77,6 +77,8 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTransactionMo
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRRestfulConformanceModeList;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRTransactionModeList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
@@ -232,12 +234,12 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRestfulConformanceMode $mode
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRRestfulConformanceModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRestfulConformanceMode $mode
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $documentation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity $security
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource[] $resource
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction1[] $interaction
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTransactionMode $transactionMode
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRTransactionModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTransactionMode $transactionMode
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam[] $searchParam
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation[] $operation
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRUriPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRUri[] $compartment
@@ -246,12 +248,12 @@ class FHIRConformanceRest extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRRestfulConformanceMode $mode = null,
+                                null|string|FHIRRestfulConformanceModeList|FHIRRestfulConformanceMode $mode = null,
                                 null|string|FHIRStringPrimitive|FHIRString $documentation = null,
                                 null|FHIRConformanceSecurity $security = null,
                                 null|iterable $resource = null,
                                 null|iterable $interaction = null,
-                                null|FHIRTransactionMode $transactionMode = null,
+                                null|string|FHIRTransactionModeList|FHIRTransactionMode $transactionMode = null,
                                 null|iterable $searchParam = null,
                                 null|iterable $operation = null,
                                 null|iterable $compartment = null,
@@ -321,16 +323,19 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * Identifies whether this portion of the statement is describing ability to
      * initiate or receive restful operations.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRestfulConformanceMode $mode
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRRestfulConformanceModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRestfulConformanceMode $mode
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMode(null|FHIRRestfulConformanceMode $mode,
+    public function setMode(null|string|FHIRRestfulConformanceModeList|FHIRRestfulConformanceMode $mode,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $mode) {
             unset($this->mode);
             return $this;
+        }
+        if (!($mode instanceof FHIRRestfulConformanceMode)) {
+            $mode = new FHIRRestfulConformanceMode(value: $mode);
         }
         $this->mode = $mode;
         if ($this->_valueXMLLocations[self::FIELD_MODE] !== $valueXMLLocation) {
@@ -617,16 +622,19 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * A code that indicates how transactions are supported.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTransactionMode $transactionMode
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRTransactionModeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRTransactionMode $transactionMode
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTransactionMode(null|FHIRTransactionMode $transactionMode,
+    public function setTransactionMode(null|string|FHIRTransactionModeList|FHIRTransactionMode $transactionMode,
                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $transactionMode) {
             unset($this->transactionMode);
             return $this;
+        }
+        if (!($transactionMode instanceof FHIRTransactionMode)) {
+            $transactionMode = new FHIRTransactionMode(value: $transactionMode);
         }
         $this->transactionMode = $transactionMode;
         if ($this->_valueXMLLocations[self::FIELD_TRANSACTION_MODE] !== $valueXMLLocation) {
@@ -1245,36 +1253,29 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_MODE]) || isset($json[self::FIELD_MODE_EXT]) || array_key_exists(self::FIELD_MODE, $json) || array_key_exists(self::FIELD_MODE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_MODE])
+            || isset($json[self::FIELD_MODE_EXT])
+            || array_key_exists(self::FIELD_MODE, $json)
+            || array_key_exists(self::FIELD_MODE_EXT, $json)) {
             $value = $json[self::FIELD_MODE] ?? null;
-            $ext = (array)($json[self::FIELD_MODE_EXT] ?? []);
             $type->setMode(FHIRRestfulConformanceMode::jsonUnserialize(
-                json: [FHIRRestfulConformanceMode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRRestfulConformanceMode::FIELD_VALUE => $value]) + ($json[self::FIELD_MODE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DOCUMENTATION]) || isset($json[self::FIELD_DOCUMENTATION_EXT]) || array_key_exists(self::FIELD_DOCUMENTATION, $json) || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $json)) {
+        if (isset($json[self::FIELD_DOCUMENTATION])
+            || isset($json[self::FIELD_DOCUMENTATION_EXT])
+            || array_key_exists(self::FIELD_DOCUMENTATION, $json)
+            || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $json)) {
             $value = $json[self::FIELD_DOCUMENTATION] ?? null;
-            $ext = (array)($json[self::FIELD_DOCUMENTATION_EXT] ?? []);
             $type->setDocumentation(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DOCUMENTATION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SECURITY]) || array_key_exists(self::FIELD_SECURITY, $json)) {
-            $type->setSecurity(FHIRConformanceSecurity::jsonUnserialize(
-                json: $json[self::FIELD_SECURITY],
-                config: $config,
-            ));
+            $type->setSecurity(FHIRConformanceSecurity::jsonUnserialize($json[self::FIELD_SECURITY], $config));
         }
         if (isset($json[self::FIELD_RESOURCE]) || array_key_exists(self::FIELD_RESOURCE, $json)) {
             $vs = $json[self::FIELD_RESOURCE];
@@ -1282,10 +1283,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addResource(FHIRConformanceResource::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addResource(FHIRConformanceResource::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_INTERACTION]) || array_key_exists(self::FIELD_INTERACTION, $json)) {
@@ -1294,18 +1292,17 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addInteraction(FHIRConformanceInteraction1::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addInteraction(FHIRConformanceInteraction1::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TRANSACTION_MODE]) || isset($json[self::FIELD_TRANSACTION_MODE_EXT]) || array_key_exists(self::FIELD_TRANSACTION_MODE, $json) || array_key_exists(self::FIELD_TRANSACTION_MODE_EXT, $json)) {
+        if (isset($json[self::FIELD_TRANSACTION_MODE])
+            || isset($json[self::FIELD_TRANSACTION_MODE_EXT])
+            || array_key_exists(self::FIELD_TRANSACTION_MODE, $json)
+            || array_key_exists(self::FIELD_TRANSACTION_MODE_EXT, $json)) {
             $value = $json[self::FIELD_TRANSACTION_MODE] ?? null;
-            $ext = (array)($json[self::FIELD_TRANSACTION_MODE_EXT] ?? []);
             $type->setTransactionMode(FHIRTransactionMode::jsonUnserialize(
-                json: [FHIRTransactionMode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRTransactionMode::FIELD_VALUE => $value]) + ($json[self::FIELD_TRANSACTION_MODE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SEARCH_PARAM]) || array_key_exists(self::FIELD_SEARCH_PARAM, $json)) {
@@ -1314,10 +1311,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSearchParam(FHIRConformanceSearchParam::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSearchParam(FHIRConformanceSearchParam::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_OPERATION]) || array_key_exists(self::FIELD_OPERATION, $json)) {
@@ -1326,18 +1320,15 @@ class FHIRConformanceRest extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addOperation(FHIRConformanceOperation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addOperation(FHIRConformanceOperation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_COMPARTMENT]) || isset($json[self::FIELD_COMPARTMENT_EXT]) || array_key_exists(self::FIELD_COMPARTMENT, $json) || array_key_exists(self::FIELD_COMPARTMENT_EXT, $json)) {
-            $value = $json[self::FIELD_COMPARTMENT] ?? null;
+        if (isset($json[self::FIELD_COMPARTMENT])
+            || isset($json[self::FIELD_COMPARTMENT_EXT])
+            || array_key_exists(self::FIELD_COMPARTMENT, $json)
+            || array_key_exists(self::FIELD_COMPARTMENT_EXT, $json)) {
+            $value = (array)($json[self::FIELD_COMPARTMENT] ?? []);
             $ext = (array)($json[self::FIELD_COMPARTMENT_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1345,8 +1336,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addCompartment(FHIRUri::jsonUnserialize(
-                    json: [FHIRUri::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRUri::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

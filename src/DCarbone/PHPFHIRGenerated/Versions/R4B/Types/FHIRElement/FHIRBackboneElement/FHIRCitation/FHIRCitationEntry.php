@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -288,10 +288,10 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRHumanName $name
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $initials
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $collectiveName
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAffiliationInfo[] $affiliationInfo
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAddress[] $address
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint[] $telecom
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint[] $telecom
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $contributionType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $role
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributionInstance[] $contributionInstance
@@ -568,11 +568,14 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Unique person identifier.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -588,10 +591,10 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Unique person identifier.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -785,11 +788,14 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Email or telephone contact methods for the author or contributor.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint $telecom
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint $telecom
      * @return static
      */
-    public function addTelecom(FHIRContactPoint $telecom): self
+    public function addTelecom(FHIRString|FHIRContactPoint $telecom): self
     {
+        if (!($telecom instanceof FHIRContactPoint)) {
+            $telecom = new FHIRContactPoint(value: $telecom);
+        }
         if (!isset($this->telecom)) {
             $this->telecom = [];
         }
@@ -805,10 +811,10 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Email or telephone contact methods for the author or contributor.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint ...$telecom
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRContactPoint ...$telecom
      * @return static
      */
-    public function setTelecom(FHIRContactPoint ...$telecom): self
+    public function setTelecom(FHIRString|FHIRContactPoint ...$telecom): self
     {
         if ([] === $telecom) {
             unset($this->telecom);
@@ -1557,43 +1563,36 @@ class FHIRCitationEntry extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_NAME]) || array_key_exists(self::FIELD_NAME, $json)) {
-            $type->setName(FHIRHumanName::jsonUnserialize(
-                json: $json[self::FIELD_NAME],
-                config: $config,
-            ));
+            $type->setName(FHIRHumanName::jsonUnserialize($json[self::FIELD_NAME], $config));
         }
-        if (isset($json[self::FIELD_INITIALS]) || isset($json[self::FIELD_INITIALS_EXT]) || array_key_exists(self::FIELD_INITIALS, $json) || array_key_exists(self::FIELD_INITIALS_EXT, $json)) {
+        if (isset($json[self::FIELD_INITIALS])
+            || isset($json[self::FIELD_INITIALS_EXT])
+            || array_key_exists(self::FIELD_INITIALS, $json)
+            || array_key_exists(self::FIELD_INITIALS_EXT, $json)) {
             $value = $json[self::FIELD_INITIALS] ?? null;
-            $ext = (array)($json[self::FIELD_INITIALS_EXT] ?? []);
             $type->setInitials(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_INITIALS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_COLLECTIVE_NAME]) || isset($json[self::FIELD_COLLECTIVE_NAME_EXT]) || array_key_exists(self::FIELD_COLLECTIVE_NAME, $json) || array_key_exists(self::FIELD_COLLECTIVE_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_COLLECTIVE_NAME])
+            || isset($json[self::FIELD_COLLECTIVE_NAME_EXT])
+            || array_key_exists(self::FIELD_COLLECTIVE_NAME, $json)
+            || array_key_exists(self::FIELD_COLLECTIVE_NAME_EXT, $json)) {
             $value = $json[self::FIELD_COLLECTIVE_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_COLLECTIVE_NAME_EXT] ?? []);
             $type->setCollectiveName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_COLLECTIVE_NAME_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1601,8 +1600,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -1612,10 +1611,7 @@ class FHIRCitationEntry extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAffiliationInfo(FHIRCitationAffiliationInfo::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAffiliationInfo(FHIRCitationAffiliationInfo::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ADDRESS]) || array_key_exists(self::FIELD_ADDRESS, $json)) {
@@ -1624,18 +1620,15 @@ class FHIRCitationEntry extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAddress(FHIRAddress::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAddress(FHIRAddress::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TELECOM]) || isset($json[self::FIELD_TELECOM_EXT]) || array_key_exists(self::FIELD_TELECOM, $json) || array_key_exists(self::FIELD_TELECOM_EXT, $json)) {
-            $value = $json[self::FIELD_TELECOM] ?? null;
+        if (isset($json[self::FIELD_TELECOM])
+            || isset($json[self::FIELD_TELECOM_EXT])
+            || array_key_exists(self::FIELD_TELECOM, $json)
+            || array_key_exists(self::FIELD_TELECOM_EXT, $json)) {
+            $value = (array)($json[self::FIELD_TELECOM] ?? []);
             $ext = (array)($json[self::FIELD_TELECOM_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1643,8 +1636,8 @@ class FHIRCitationEntry extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addTelecom(FHIRContactPoint::jsonUnserialize(
-                    json: [FHIRContactPoint::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRContactPoint::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -1654,17 +1647,11 @@ class FHIRCitationEntry extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addContributionType(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addContributionType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ROLE]) || array_key_exists(self::FIELD_ROLE, $json)) {
-            $type->setRole(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_ROLE],
-                config: $config,
-            ));
+            $type->setRole(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ROLE], $config));
         }
         if (isset($json[self::FIELD_CONTRIBUTION_INSTANCE]) || array_key_exists(self::FIELD_CONTRIBUTION_INSTANCE, $json)) {
             $vs = $json[self::FIELD_CONTRIBUTION_INSTANCE];
@@ -1672,26 +1659,27 @@ class FHIRCitationEntry extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addContributionInstance(FHIRCitationContributionInstance::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addContributionInstance(FHIRCitationContributionInstance::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CORRESPONDING_CONTACT]) || isset($json[self::FIELD_CORRESPONDING_CONTACT_EXT]) || array_key_exists(self::FIELD_CORRESPONDING_CONTACT, $json) || array_key_exists(self::FIELD_CORRESPONDING_CONTACT_EXT, $json)) {
+        if (isset($json[self::FIELD_CORRESPONDING_CONTACT])
+            || isset($json[self::FIELD_CORRESPONDING_CONTACT_EXT])
+            || array_key_exists(self::FIELD_CORRESPONDING_CONTACT, $json)
+            || array_key_exists(self::FIELD_CORRESPONDING_CONTACT_EXT, $json)) {
             $value = $json[self::FIELD_CORRESPONDING_CONTACT] ?? null;
-            $ext = (array)($json[self::FIELD_CORRESPONDING_CONTACT_EXT] ?? []);
             $type->setCorrespondingContact(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_CORRESPONDING_CONTACT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_LIST_ORDER]) || isset($json[self::FIELD_LIST_ORDER_EXT]) || array_key_exists(self::FIELD_LIST_ORDER, $json) || array_key_exists(self::FIELD_LIST_ORDER_EXT, $json)) {
+        if (isset($json[self::FIELD_LIST_ORDER])
+            || isset($json[self::FIELD_LIST_ORDER_EXT])
+            || array_key_exists(self::FIELD_LIST_ORDER, $json)
+            || array_key_exists(self::FIELD_LIST_ORDER_EXT, $json)) {
             $value = $json[self::FIELD_LIST_ORDER] ?? null;
-            $ext = (array)($json[self::FIELD_LIST_ORDER_EXT] ?? []);
             $type->setListOrder(FHIRPositiveInt::jsonUnserialize(
-                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_LIST_ORDER_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

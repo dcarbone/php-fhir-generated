@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1220,47 +1220,44 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements VersionCo
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_UID]) || isset($json[self::FIELD_UID_EXT]) || array_key_exists(self::FIELD_UID, $json) || array_key_exists(self::FIELD_UID_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_UID])
+            || isset($json[self::FIELD_UID_EXT])
+            || array_key_exists(self::FIELD_UID, $json)
+            || array_key_exists(self::FIELD_UID_EXT, $json)) {
             $value = $json[self::FIELD_UID] ?? null;
-            $ext = (array)($json[self::FIELD_UID_EXT] ?? []);
             $type->setUid(FHIROid::jsonUnserialize(
-                json: [FHIROid::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIROid::FIELD_VALUE => $value]) + ($json[self::FIELD_UID_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PATIENT]) || array_key_exists(self::FIELD_PATIENT, $json)) {
-            $type->setPatient(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PATIENT],
-                config: $config,
-            ));
+            $type->setPatient(FHIRReference::jsonUnserialize($json[self::FIELD_PATIENT], $config));
         }
         if (isset($json[self::FIELD_TITLE]) || array_key_exists(self::FIELD_TITLE, $json)) {
-            $type->setTitle(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TITLE],
-                config: $config,
-            ));
+            $type->setTitle(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TITLE], $config));
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_AUTHOR]) || array_key_exists(self::FIELD_AUTHOR, $json)) {
-            $type->setAuthor(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_AUTHOR],
-                config: $config,
-            ));
+            $type->setAuthor(FHIRReference::jsonUnserialize($json[self::FIELD_AUTHOR], $config));
         }
-        if (isset($json[self::FIELD_AUTHORING_TIME]) || isset($json[self::FIELD_AUTHORING_TIME_EXT]) || array_key_exists(self::FIELD_AUTHORING_TIME, $json) || array_key_exists(self::FIELD_AUTHORING_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_AUTHORING_TIME])
+            || isset($json[self::FIELD_AUTHORING_TIME_EXT])
+            || array_key_exists(self::FIELD_AUTHORING_TIME, $json)
+            || array_key_exists(self::FIELD_AUTHORING_TIME_EXT, $json)) {
             $value = $json[self::FIELD_AUTHORING_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_AUTHORING_TIME_EXT] ?? []);
             $type->setAuthoringTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_AUTHORING_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_STUDY]) || array_key_exists(self::FIELD_STUDY, $json)) {
@@ -1269,10 +1266,7 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements VersionCo
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addStudy(FHIRImagingObjectSelectionStudy::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addStudy(FHIRImagingObjectSelectionStudy::jsonUnserialize($v, $config));
             }
         }
         return $type;

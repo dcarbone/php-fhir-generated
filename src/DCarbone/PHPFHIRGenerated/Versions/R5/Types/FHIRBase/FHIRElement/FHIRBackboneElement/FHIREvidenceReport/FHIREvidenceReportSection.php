@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,6 +96,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRListMode;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRListModeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -286,7 +287,7 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $focusReference
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $author
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRListMode $mode
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRListModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRListMode $mode
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $orderedBy
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $entryClassifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[] $entryReference
@@ -303,7 +304,7 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
                                 null|FHIRReference $focusReference = null,
                                 null|iterable $author = null,
                                 null|FHIRNarrative $text = null,
-                                null|FHIRListMode $mode = null,
+                                null|string|FHIRListModeEnum|FHIRListMode $mode = null,
                                 null|FHIRCodeableConcept $orderedBy = null,
                                 null|iterable $entryClassifier = null,
                                 null|iterable $entryReference = null,
@@ -638,16 +639,19 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      * list of items from another source, or whether it is a prepared list where items
      * may be marked as added, modified or deleted.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRListMode $mode
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRListModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRListMode $mode
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMode(null|FHIRListMode $mode,
+    public function setMode(null|string|FHIRListModeEnum|FHIRListMode $mode,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $mode) {
             unset($this->mode);
             return $this;
+        }
+        if (!($mode instanceof FHIRListMode)) {
+            $mode = new FHIRListMode(value: $mode);
         }
         $this->mode = $mode;
         if ($this->_valueXMLLocations[self::FIELD_MODE] !== $valueXMLLocation) {
@@ -1423,34 +1427,22 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_TITLE]) || isset($json[self::FIELD_TITLE_EXT]) || array_key_exists(self::FIELD_TITLE, $json) || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_TITLE])
+            || isset($json[self::FIELD_TITLE_EXT])
+            || array_key_exists(self::FIELD_TITLE, $json)
+            || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
             $value = $json[self::FIELD_TITLE] ?? null;
-            $ext = (array)($json[self::FIELD_TITLE_EXT] ?? []);
             $type->setTitle(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TITLE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_FOCUS]) || array_key_exists(self::FIELD_FOCUS, $json)) {
-            $type->setFocus(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_FOCUS],
-                config: $config,
-            ));
+            $type->setFocus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_FOCUS], $config));
         }
         if (isset($json[self::FIELD_FOCUS_REFERENCE]) || array_key_exists(self::FIELD_FOCUS_REFERENCE, $json)) {
-            $type->setFocusReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_FOCUS_REFERENCE],
-                config: $config,
-            ));
+            $type->setFocusReference(FHIRReference::jsonUnserialize($json[self::FIELD_FOCUS_REFERENCE], $config));
         }
         if (isset($json[self::FIELD_AUTHOR]) || array_key_exists(self::FIELD_AUTHOR, $json)) {
             $vs = $json[self::FIELD_AUTHOR];
@@ -1458,31 +1450,24 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAuthor(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAuthor(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_TEXT]) || array_key_exists(self::FIELD_TEXT, $json)) {
-            $type->setText(FHIRNarrative::jsonUnserialize(
-                json: $json[self::FIELD_TEXT],
-                config: $config,
-            ));
+            $type->setText(FHIRNarrative::jsonUnserialize($json[self::FIELD_TEXT], $config));
         }
-        if (isset($json[self::FIELD_MODE]) || isset($json[self::FIELD_MODE_EXT]) || array_key_exists(self::FIELD_MODE, $json) || array_key_exists(self::FIELD_MODE_EXT, $json)) {
+        if (isset($json[self::FIELD_MODE])
+            || isset($json[self::FIELD_MODE_EXT])
+            || array_key_exists(self::FIELD_MODE, $json)
+            || array_key_exists(self::FIELD_MODE_EXT, $json)) {
             $value = $json[self::FIELD_MODE] ?? null;
-            $ext = (array)($json[self::FIELD_MODE_EXT] ?? []);
             $type->setMode(FHIRListMode::jsonUnserialize(
-                json: [FHIRListMode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRListMode::FIELD_VALUE => $value]) + ($json[self::FIELD_MODE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ORDERED_BY]) || array_key_exists(self::FIELD_ORDERED_BY, $json)) {
-            $type->setOrderedBy(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_ORDERED_BY],
-                config: $config,
-            ));
+            $type->setOrderedBy(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ORDERED_BY], $config));
         }
         if (isset($json[self::FIELD_ENTRY_CLASSIFIER]) || array_key_exists(self::FIELD_ENTRY_CLASSIFIER, $json)) {
             $vs = $json[self::FIELD_ENTRY_CLASSIFIER];
@@ -1490,10 +1475,7 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addEntryClassifier(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addEntryClassifier(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ENTRY_REFERENCE]) || array_key_exists(self::FIELD_ENTRY_REFERENCE, $json)) {
@@ -1502,10 +1484,7 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addEntryReference(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addEntryReference(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ENTRY_QUANTITY]) || array_key_exists(self::FIELD_ENTRY_QUANTITY, $json)) {
@@ -1514,17 +1493,11 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addEntryQuantity(FHIRQuantity::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addEntryQuantity(FHIRQuantity::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_EMPTY_REASON]) || array_key_exists(self::FIELD_EMPTY_REASON, $json)) {
-            $type->setEmptyReason(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_EMPTY_REASON],
-                config: $config,
-            ));
+            $type->setEmptyReason(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_EMPTY_REASON], $config));
         }
         if (isset($json[self::FIELD_SECTION]) || array_key_exists(self::FIELD_SECTION, $json)) {
             $vs = $json[self::FIELD_SECTION];
@@ -1532,10 +1505,7 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSection(FHIREvidenceReportSection::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSection(FHIREvidenceReportSection::jsonUnserialize($v, $config));
             }
         }
         return $type;

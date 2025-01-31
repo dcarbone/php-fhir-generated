@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -922,27 +922,26 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_SEQUENCE_TYPE]) || array_key_exists(self::FIELD_SEQUENCE_TYPE, $json)) {
-            $type->setSequenceType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_SEQUENCE_TYPE],
-                config: $config,
-            ));
+            $type->setSequenceType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SEQUENCE_TYPE], $config));
         }
-        if (isset($json[self::FIELD_NUMBER_OF_SUBUNITS]) || isset($json[self::FIELD_NUMBER_OF_SUBUNITS_EXT]) || array_key_exists(self::FIELD_NUMBER_OF_SUBUNITS, $json) || array_key_exists(self::FIELD_NUMBER_OF_SUBUNITS_EXT, $json)) {
+        if (isset($json[self::FIELD_NUMBER_OF_SUBUNITS])
+            || isset($json[self::FIELD_NUMBER_OF_SUBUNITS_EXT])
+            || array_key_exists(self::FIELD_NUMBER_OF_SUBUNITS, $json)
+            || array_key_exists(self::FIELD_NUMBER_OF_SUBUNITS_EXT, $json)) {
             $value = $json[self::FIELD_NUMBER_OF_SUBUNITS] ?? null;
-            $ext = (array)($json[self::FIELD_NUMBER_OF_SUBUNITS_EXT] ?? []);
             $type->setNumberOfSubunits(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_NUMBER_OF_SUBUNITS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DISULFIDE_LINKAGE]) || isset($json[self::FIELD_DISULFIDE_LINKAGE_EXT]) || array_key_exists(self::FIELD_DISULFIDE_LINKAGE, $json) || array_key_exists(self::FIELD_DISULFIDE_LINKAGE_EXT, $json)) {
-            $value = $json[self::FIELD_DISULFIDE_LINKAGE] ?? null;
+        if (isset($json[self::FIELD_DISULFIDE_LINKAGE])
+            || isset($json[self::FIELD_DISULFIDE_LINKAGE_EXT])
+            || array_key_exists(self::FIELD_DISULFIDE_LINKAGE, $json)
+            || array_key_exists(self::FIELD_DISULFIDE_LINKAGE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_DISULFIDE_LINKAGE] ?? []);
             $ext = (array)($json[self::FIELD_DISULFIDE_LINKAGE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -950,8 +949,8 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addDisulfideLinkage(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -961,10 +960,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements VersionContaine
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSubunit(FHIRSubstanceProteinSubunit::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSubunit(FHIRSubstanceProteinSubunit::jsonUnserialize($v, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,6 +70,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRExplanationOfBenefitStatusList;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAccident;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAddItem;
@@ -606,8 +607,8 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExplanationOfBenefitStatus $status
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRExplanationOfBenefitStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExplanationOfBenefitStatus $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept[] $subType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $patient
@@ -656,7 +657,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
                                 null|iterable $identifier = null,
-                                null|FHIRExplanationOfBenefitStatus $status = null,
+                                null|string|FHIRExplanationOfBenefitStatusList|FHIRExplanationOfBenefitStatus $status = null,
                                 null|FHIRCodeableConcept $type = null,
                                 null|iterable $subType = null,
                                 null|FHIRReference $patient = null,
@@ -875,11 +876,14 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The EOB Business Identifier.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -894,10 +898,10 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The EOB Business Identifier.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -933,16 +937,19 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
      *
      * The status of the resource instance.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExplanationOfBenefitStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRExplanationOfBenefitStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExplanationOfBenefitStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRExplanationOfBenefitStatus $status,
+    public function setStatus(null|string|FHIRExplanationOfBenefitStatusList|FHIRExplanationOfBenefitStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRExplanationOfBenefitStatus)) {
+            $status = new FHIRExplanationOfBenefitStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -3769,13 +3776,13 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -3783,24 +3790,23 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRExplanationOfBenefitStatus::jsonUnserialize(
-                json: [FHIRExplanationOfBenefitStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRExplanationOfBenefitStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
         if (isset($json[self::FIELD_SUB_TYPE]) || array_key_exists(self::FIELD_SUB_TYPE, $json)) {
             $vs = $json[self::FIELD_SUB_TYPE];
@@ -3808,92 +3814,60 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSubType(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSubType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PATIENT]) || array_key_exists(self::FIELD_PATIENT, $json)) {
-            $type->setPatient(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PATIENT],
-                config: $config,
-            ));
+            $type->setPatient(FHIRReference::jsonUnserialize($json[self::FIELD_PATIENT], $config));
         }
         if (isset($json[self::FIELD_BILLABLE_PERIOD]) || array_key_exists(self::FIELD_BILLABLE_PERIOD, $json)) {
-            $type->setBillablePeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_BILLABLE_PERIOD],
-                config: $config,
-            ));
+            $type->setBillablePeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_BILLABLE_PERIOD], $config));
         }
-        if (isset($json[self::FIELD_CREATED]) || isset($json[self::FIELD_CREATED_EXT]) || array_key_exists(self::FIELD_CREATED, $json) || array_key_exists(self::FIELD_CREATED_EXT, $json)) {
+        if (isset($json[self::FIELD_CREATED])
+            || isset($json[self::FIELD_CREATED_EXT])
+            || array_key_exists(self::FIELD_CREATED, $json)
+            || array_key_exists(self::FIELD_CREATED_EXT, $json)) {
             $value = $json[self::FIELD_CREATED] ?? null;
-            $ext = (array)($json[self::FIELD_CREATED_EXT] ?? []);
             $type->setCreated(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_CREATED_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ENTERER]) || array_key_exists(self::FIELD_ENTERER, $json)) {
-            $type->setEnterer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ENTERER],
-                config: $config,
-            ));
+            $type->setEnterer(FHIRReference::jsonUnserialize($json[self::FIELD_ENTERER], $config));
         }
         if (isset($json[self::FIELD_INSURER]) || array_key_exists(self::FIELD_INSURER, $json)) {
-            $type->setInsurer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_INSURER],
-                config: $config,
-            ));
+            $type->setInsurer(FHIRReference::jsonUnserialize($json[self::FIELD_INSURER], $config));
         }
         if (isset($json[self::FIELD_PROVIDER]) || array_key_exists(self::FIELD_PROVIDER, $json)) {
-            $type->setProvider(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PROVIDER],
-                config: $config,
-            ));
+            $type->setProvider(FHIRReference::jsonUnserialize($json[self::FIELD_PROVIDER], $config));
         }
         if (isset($json[self::FIELD_ORGANIZATION]) || array_key_exists(self::FIELD_ORGANIZATION, $json)) {
-            $type->setOrganization(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ORGANIZATION],
-                config: $config,
-            ));
+            $type->setOrganization(FHIRReference::jsonUnserialize($json[self::FIELD_ORGANIZATION], $config));
         }
         if (isset($json[self::FIELD_REFERRAL]) || array_key_exists(self::FIELD_REFERRAL, $json)) {
-            $type->setReferral(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_REFERRAL],
-                config: $config,
-            ));
+            $type->setReferral(FHIRReference::jsonUnserialize($json[self::FIELD_REFERRAL], $config));
         }
         if (isset($json[self::FIELD_FACILITY]) || array_key_exists(self::FIELD_FACILITY, $json)) {
-            $type->setFacility(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_FACILITY],
-                config: $config,
-            ));
+            $type->setFacility(FHIRReference::jsonUnserialize($json[self::FIELD_FACILITY], $config));
         }
         if (isset($json[self::FIELD_CLAIM]) || array_key_exists(self::FIELD_CLAIM, $json)) {
-            $type->setClaim(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_CLAIM],
-                config: $config,
-            ));
+            $type->setClaim(FHIRReference::jsonUnserialize($json[self::FIELD_CLAIM], $config));
         }
         if (isset($json[self::FIELD_CLAIM_RESPONSE]) || array_key_exists(self::FIELD_CLAIM_RESPONSE, $json)) {
-            $type->setClaimResponse(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_CLAIM_RESPONSE],
-                config: $config,
-            ));
+            $type->setClaimResponse(FHIRReference::jsonUnserialize($json[self::FIELD_CLAIM_RESPONSE], $config));
         }
         if (isset($json[self::FIELD_OUTCOME]) || array_key_exists(self::FIELD_OUTCOME, $json)) {
-            $type->setOutcome(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_OUTCOME],
-                config: $config,
-            ));
+            $type->setOutcome(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_OUTCOME], $config));
         }
-        if (isset($json[self::FIELD_DISPOSITION]) || isset($json[self::FIELD_DISPOSITION_EXT]) || array_key_exists(self::FIELD_DISPOSITION, $json) || array_key_exists(self::FIELD_DISPOSITION_EXT, $json)) {
+        if (isset($json[self::FIELD_DISPOSITION])
+            || isset($json[self::FIELD_DISPOSITION_EXT])
+            || array_key_exists(self::FIELD_DISPOSITION, $json)
+            || array_key_exists(self::FIELD_DISPOSITION_EXT, $json)) {
             $value = $json[self::FIELD_DISPOSITION] ?? null;
-            $ext = (array)($json[self::FIELD_DISPOSITION_EXT] ?? []);
             $type->setDisposition(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DISPOSITION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_RELATED]) || array_key_exists(self::FIELD_RELATED, $json)) {
@@ -3902,29 +3876,17 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRelated(FHIRExplanationOfBenefitRelated::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRelated(FHIRExplanationOfBenefitRelated::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PRESCRIPTION]) || array_key_exists(self::FIELD_PRESCRIPTION, $json)) {
-            $type->setPrescription(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PRESCRIPTION],
-                config: $config,
-            ));
+            $type->setPrescription(FHIRReference::jsonUnserialize($json[self::FIELD_PRESCRIPTION], $config));
         }
         if (isset($json[self::FIELD_ORIGINAL_PRESCRIPTION]) || array_key_exists(self::FIELD_ORIGINAL_PRESCRIPTION, $json)) {
-            $type->setOriginalPrescription(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ORIGINAL_PRESCRIPTION],
-                config: $config,
-            ));
+            $type->setOriginalPrescription(FHIRReference::jsonUnserialize($json[self::FIELD_ORIGINAL_PRESCRIPTION], $config));
         }
         if (isset($json[self::FIELD_PAYEE]) || array_key_exists(self::FIELD_PAYEE, $json)) {
-            $type->setPayee(FHIRExplanationOfBenefitPayee::jsonUnserialize(
-                json: $json[self::FIELD_PAYEE],
-                config: $config,
-            ));
+            $type->setPayee(FHIRExplanationOfBenefitPayee::jsonUnserialize($json[self::FIELD_PAYEE], $config));
         }
         if (isset($json[self::FIELD_INFORMATION]) || array_key_exists(self::FIELD_INFORMATION, $json)) {
             $vs = $json[self::FIELD_INFORMATION];
@@ -3932,10 +3894,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addInformation(FHIRExplanationOfBenefitInformation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addInformation(FHIRExplanationOfBenefitInformation::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CARE_TEAM]) || array_key_exists(self::FIELD_CARE_TEAM, $json)) {
@@ -3944,10 +3903,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCareTeam(FHIRExplanationOfBenefitCareTeam::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCareTeam(FHIRExplanationOfBenefitCareTeam::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_DIAGNOSIS]) || array_key_exists(self::FIELD_DIAGNOSIS, $json)) {
@@ -3956,10 +3912,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addDiagnosis(FHIRExplanationOfBenefitDiagnosis::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addDiagnosis(FHIRExplanationOfBenefitDiagnosis::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PROCEDURE]) || array_key_exists(self::FIELD_PROCEDURE, $json)) {
@@ -3968,43 +3921,30 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addProcedure(FHIRExplanationOfBenefitProcedure::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addProcedure(FHIRExplanationOfBenefitProcedure::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PRECEDENCE]) || isset($json[self::FIELD_PRECEDENCE_EXT]) || array_key_exists(self::FIELD_PRECEDENCE, $json) || array_key_exists(self::FIELD_PRECEDENCE_EXT, $json)) {
+        if (isset($json[self::FIELD_PRECEDENCE])
+            || isset($json[self::FIELD_PRECEDENCE_EXT])
+            || array_key_exists(self::FIELD_PRECEDENCE, $json)
+            || array_key_exists(self::FIELD_PRECEDENCE_EXT, $json)) {
             $value = $json[self::FIELD_PRECEDENCE] ?? null;
-            $ext = (array)($json[self::FIELD_PRECEDENCE_EXT] ?? []);
             $type->setPrecedence(FHIRPositiveInt::jsonUnserialize(
-                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_PRECEDENCE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_INSURANCE]) || array_key_exists(self::FIELD_INSURANCE, $json)) {
-            $type->setInsurance(FHIRExplanationOfBenefitInsurance::jsonUnserialize(
-                json: $json[self::FIELD_INSURANCE],
-                config: $config,
-            ));
+            $type->setInsurance(FHIRExplanationOfBenefitInsurance::jsonUnserialize($json[self::FIELD_INSURANCE], $config));
         }
         if (isset($json[self::FIELD_ACCIDENT]) || array_key_exists(self::FIELD_ACCIDENT, $json)) {
-            $type->setAccident(FHIRExplanationOfBenefitAccident::jsonUnserialize(
-                json: $json[self::FIELD_ACCIDENT],
-                config: $config,
-            ));
+            $type->setAccident(FHIRExplanationOfBenefitAccident::jsonUnserialize($json[self::FIELD_ACCIDENT], $config));
         }
         if (isset($json[self::FIELD_EMPLOYMENT_IMPACTED]) || array_key_exists(self::FIELD_EMPLOYMENT_IMPACTED, $json)) {
-            $type->setEmploymentImpacted(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_EMPLOYMENT_IMPACTED],
-                config: $config,
-            ));
+            $type->setEmploymentImpacted(FHIRPeriod::jsonUnserialize($json[self::FIELD_EMPLOYMENT_IMPACTED], $config));
         }
         if (isset($json[self::FIELD_HOSPITALIZATION]) || array_key_exists(self::FIELD_HOSPITALIZATION, $json)) {
-            $type->setHospitalization(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_HOSPITALIZATION],
-                config: $config,
-            ));
+            $type->setHospitalization(FHIRPeriod::jsonUnserialize($json[self::FIELD_HOSPITALIZATION], $config));
         }
         if (isset($json[self::FIELD_ITEM]) || array_key_exists(self::FIELD_ITEM, $json)) {
             $vs = $json[self::FIELD_ITEM];
@@ -4012,10 +3952,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addItem(FHIRExplanationOfBenefitItem::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addItem(FHIRExplanationOfBenefitItem::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ADD_ITEM]) || array_key_exists(self::FIELD_ADD_ITEM, $json)) {
@@ -4024,41 +3961,23 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAddItem(FHIRExplanationOfBenefitAddItem::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAddItem(FHIRExplanationOfBenefitAddItem::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_TOTAL_COST]) || array_key_exists(self::FIELD_TOTAL_COST, $json)) {
-            $type->setTotalCost(FHIRMoney::jsonUnserialize(
-                json: $json[self::FIELD_TOTAL_COST],
-                config: $config,
-            ));
+            $type->setTotalCost(FHIRMoney::jsonUnserialize($json[self::FIELD_TOTAL_COST], $config));
         }
         if (isset($json[self::FIELD_UNALLOC_DEDUCTABLE]) || array_key_exists(self::FIELD_UNALLOC_DEDUCTABLE, $json)) {
-            $type->setUnallocDeductable(FHIRMoney::jsonUnserialize(
-                json: $json[self::FIELD_UNALLOC_DEDUCTABLE],
-                config: $config,
-            ));
+            $type->setUnallocDeductable(FHIRMoney::jsonUnserialize($json[self::FIELD_UNALLOC_DEDUCTABLE], $config));
         }
         if (isset($json[self::FIELD_TOTAL_BENEFIT]) || array_key_exists(self::FIELD_TOTAL_BENEFIT, $json)) {
-            $type->setTotalBenefit(FHIRMoney::jsonUnserialize(
-                json: $json[self::FIELD_TOTAL_BENEFIT],
-                config: $config,
-            ));
+            $type->setTotalBenefit(FHIRMoney::jsonUnserialize($json[self::FIELD_TOTAL_BENEFIT], $config));
         }
         if (isset($json[self::FIELD_PAYMENT]) || array_key_exists(self::FIELD_PAYMENT, $json)) {
-            $type->setPayment(FHIRExplanationOfBenefitPayment::jsonUnserialize(
-                json: $json[self::FIELD_PAYMENT],
-                config: $config,
-            ));
+            $type->setPayment(FHIRExplanationOfBenefitPayment::jsonUnserialize($json[self::FIELD_PAYMENT], $config));
         }
         if (isset($json[self::FIELD_FORM]) || array_key_exists(self::FIELD_FORM, $json)) {
-            $type->setForm(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_FORM],
-                config: $config,
-            ));
+            $type->setForm(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_FORM], $config));
         }
         if (isset($json[self::FIELD_PROCESS_NOTE]) || array_key_exists(self::FIELD_PROCESS_NOTE, $json)) {
             $vs = $json[self::FIELD_PROCESS_NOTE];
@@ -4066,10 +3985,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addProcessNote(FHIRExplanationOfBenefitProcessNote::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addProcessNote(FHIRExplanationOfBenefitProcessNote::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_BENEFIT_BALANCE]) || array_key_exists(self::FIELD_BENEFIT_BALANCE, $json)) {
@@ -4078,10 +3994,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements VersionCont
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addBenefitBalance(FHIRExplanationOfBenefitBenefitBalance::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addBenefitBalance(FHIRExplanationOfBenefitBenefitBalance::jsonUnserialize($v, $config));
             }
         }
         return $type;

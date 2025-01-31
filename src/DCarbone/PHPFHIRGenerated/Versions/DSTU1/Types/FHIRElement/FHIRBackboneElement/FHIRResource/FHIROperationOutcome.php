@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -490,17 +490,14 @@ class FHIROperationOutcome extends FHIRResource implements VersionContainedTypeI
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_ISSUE]) || array_key_exists(self::FIELD_ISSUE, $json)) {
             $vs = $json[self::FIELD_ISSUE];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addIssue(FHIROperationOutcomeIssue::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addIssue(FHIROperationOutcomeIssue::jsonUnserialize($v, $config));
             }
         }
         return $type;

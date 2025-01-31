@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -981,60 +981,59 @@ class FHIRMolecularSequenceVariant extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_START]) || isset($json[self::FIELD_START_EXT]) || array_key_exists(self::FIELD_START, $json) || array_key_exists(self::FIELD_START_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_START])
+            || isset($json[self::FIELD_START_EXT])
+            || array_key_exists(self::FIELD_START, $json)
+            || array_key_exists(self::FIELD_START_EXT, $json)) {
             $value = $json[self::FIELD_START] ?? null;
-            $ext = (array)($json[self::FIELD_START_EXT] ?? []);
             $type->setStart(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_START_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_END]) || isset($json[self::FIELD_END_EXT]) || array_key_exists(self::FIELD_END, $json) || array_key_exists(self::FIELD_END_EXT, $json)) {
+        if (isset($json[self::FIELD_END])
+            || isset($json[self::FIELD_END_EXT])
+            || array_key_exists(self::FIELD_END, $json)
+            || array_key_exists(self::FIELD_END_EXT, $json)) {
             $value = $json[self::FIELD_END] ?? null;
-            $ext = (array)($json[self::FIELD_END_EXT] ?? []);
             $type->setEnd(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_END_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_OBSERVED_ALLELE]) || isset($json[self::FIELD_OBSERVED_ALLELE_EXT]) || array_key_exists(self::FIELD_OBSERVED_ALLELE, $json) || array_key_exists(self::FIELD_OBSERVED_ALLELE_EXT, $json)) {
+        if (isset($json[self::FIELD_OBSERVED_ALLELE])
+            || isset($json[self::FIELD_OBSERVED_ALLELE_EXT])
+            || array_key_exists(self::FIELD_OBSERVED_ALLELE, $json)
+            || array_key_exists(self::FIELD_OBSERVED_ALLELE_EXT, $json)) {
             $value = $json[self::FIELD_OBSERVED_ALLELE] ?? null;
-            $ext = (array)($json[self::FIELD_OBSERVED_ALLELE_EXT] ?? []);
             $type->setObservedAllele(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_OBSERVED_ALLELE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_REFERENCE_ALLELE]) || isset($json[self::FIELD_REFERENCE_ALLELE_EXT]) || array_key_exists(self::FIELD_REFERENCE_ALLELE, $json) || array_key_exists(self::FIELD_REFERENCE_ALLELE_EXT, $json)) {
+        if (isset($json[self::FIELD_REFERENCE_ALLELE])
+            || isset($json[self::FIELD_REFERENCE_ALLELE_EXT])
+            || array_key_exists(self::FIELD_REFERENCE_ALLELE, $json)
+            || array_key_exists(self::FIELD_REFERENCE_ALLELE_EXT, $json)) {
             $value = $json[self::FIELD_REFERENCE_ALLELE] ?? null;
-            $ext = (array)($json[self::FIELD_REFERENCE_ALLELE_EXT] ?? []);
             $type->setReferenceAllele(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_REFERENCE_ALLELE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CIGAR]) || isset($json[self::FIELD_CIGAR_EXT]) || array_key_exists(self::FIELD_CIGAR, $json) || array_key_exists(self::FIELD_CIGAR_EXT, $json)) {
+        if (isset($json[self::FIELD_CIGAR])
+            || isset($json[self::FIELD_CIGAR_EXT])
+            || array_key_exists(self::FIELD_CIGAR, $json)
+            || array_key_exists(self::FIELD_CIGAR_EXT, $json)) {
             $value = $json[self::FIELD_CIGAR] ?? null;
-            $ext = (array)($json[self::FIELD_CIGAR_EXT] ?? []);
             $type->setCigar(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_CIGAR_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_VARIANT_POINTER]) || array_key_exists(self::FIELD_VARIANT_POINTER, $json)) {
-            $type->setVariantPointer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_VARIANT_POINTER],
-                config: $config,
-            ));
+            $type->setVariantPointer(FHIRReference::jsonUnserialize($json[self::FIELD_VARIANT_POINTER], $config));
         }
         return $type;
     }

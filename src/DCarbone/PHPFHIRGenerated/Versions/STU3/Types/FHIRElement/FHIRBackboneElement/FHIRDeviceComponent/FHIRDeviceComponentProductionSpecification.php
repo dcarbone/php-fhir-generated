@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -146,7 +146,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $specType
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $componentId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $componentId
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $productionSpec
      * @param null|string[] $fhirComments
      */
@@ -154,7 +154,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $specType = null,
-                                null|FHIRIdentifier $componentId = null,
+                                null|FHIRString|FHIRIdentifier $componentId = null,
                                 null|string|FHIRStringPrimitive|FHIRString $productionSpec = null,
                                 null|iterable $fhirComments = null)
     {
@@ -246,16 +246,19 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      * manufacture specific standard components using a private OID. 11073-10101 has a
      * partition for private OID semantic that the manufacturer can make use of.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $componentId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $componentId
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setComponentId(null|FHIRIdentifier $componentId,
+    public function setComponentId(null|FHIRString|FHIRIdentifier $componentId,
                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $componentId) {
             unset($this->componentId);
             return $this;
+        }
+        if (!($componentId instanceof FHIRIdentifier)) {
+            $componentId = new FHIRIdentifier(value: $componentId);
         }
         $this->componentId = $componentId;
         if ($this->_valueXMLLocations[self::FIELD_COMPONENT_ID] !== $valueXMLLocation) {
@@ -574,35 +577,28 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_SPEC_TYPE]) || array_key_exists(self::FIELD_SPEC_TYPE, $json)) {
-            $type->setSpecType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_SPEC_TYPE],
-                config: $config,
-            ));
+            $type->setSpecType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SPEC_TYPE], $config));
         }
-        if (isset($json[self::FIELD_COMPONENT_ID]) || isset($json[self::FIELD_COMPONENT_ID_EXT]) || array_key_exists(self::FIELD_COMPONENT_ID, $json) || array_key_exists(self::FIELD_COMPONENT_ID_EXT, $json)) {
+        if (isset($json[self::FIELD_COMPONENT_ID])
+            || isset($json[self::FIELD_COMPONENT_ID_EXT])
+            || array_key_exists(self::FIELD_COMPONENT_ID, $json)
+            || array_key_exists(self::FIELD_COMPONENT_ID_EXT, $json)) {
             $value = $json[self::FIELD_COMPONENT_ID] ?? null;
-            $ext = (array)($json[self::FIELD_COMPONENT_ID_EXT] ?? []);
             $type->setComponentId(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_COMPONENT_ID_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PRODUCTION_SPEC]) || isset($json[self::FIELD_PRODUCTION_SPEC_EXT]) || array_key_exists(self::FIELD_PRODUCTION_SPEC, $json) || array_key_exists(self::FIELD_PRODUCTION_SPEC_EXT, $json)) {
+        if (isset($json[self::FIELD_PRODUCTION_SPEC])
+            || isset($json[self::FIELD_PRODUCTION_SPEC_EXT])
+            || array_key_exists(self::FIELD_PRODUCTION_SPEC, $json)
+            || array_key_exists(self::FIELD_PRODUCTION_SPEC_EXT, $json)) {
             $value = $json[self::FIELD_PRODUCTION_SPEC] ?? null;
-            $ext = (array)($json[self::FIELD_PRODUCTION_SPEC_EXT] ?? []);
             $type->setProductionSpec(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PRODUCTION_SPEC_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

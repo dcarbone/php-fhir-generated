@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -142,7 +142,7 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $address
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceParameter[] $parameter
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceParameter[] $parameter
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -306,11 +306,14 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
      *
      * A list of named parameters that is used in the service call.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceParameter $parameter
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceParameter $parameter
      * @return static
      */
-    public function addParameter(FHIRDocumentReferenceParameter $parameter): self
+    public function addParameter(FHIRString|FHIRDocumentReferenceParameter $parameter): self
     {
+        if (!($parameter instanceof FHIRDocumentReferenceParameter)) {
+            $parameter = new FHIRDocumentReferenceParameter(value: $parameter);
+        }
         if (!isset($this->parameter)) {
             $this->parameter = [];
         }
@@ -323,10 +326,10 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
      *
      * A list of named parameters that is used in the service call.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceParameter ...$parameter
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceParameter ...$parameter
      * @return static
      */
-    public function setParameter(FHIRDocumentReferenceParameter ...$parameter): self
+    public function setParameter(FHIRString|FHIRDocumentReferenceParameter ...$parameter): self
     {
         if ([] === $parameter) {
             unset($this->parameter);
@@ -557,35 +560,26 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
-        if (isset($json[self::FIELD_ADDRESS]) || isset($json[self::FIELD_ADDRESS_EXT]) || array_key_exists(self::FIELD_ADDRESS, $json) || array_key_exists(self::FIELD_ADDRESS_EXT, $json)) {
+        if (isset($json[self::FIELD_ADDRESS])
+            || isset($json[self::FIELD_ADDRESS_EXT])
+            || array_key_exists(self::FIELD_ADDRESS, $json)
+            || array_key_exists(self::FIELD_ADDRESS_EXT, $json)) {
             $value = $json[self::FIELD_ADDRESS] ?? null;
-            $ext = (array)($json[self::FIELD_ADDRESS_EXT] ?? []);
             $type->setAddress(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ADDRESS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PARAMETER]) || isset($json[self::FIELD_PARAMETER_EXT]) || array_key_exists(self::FIELD_PARAMETER, $json) || array_key_exists(self::FIELD_PARAMETER_EXT, $json)) {
-            $value = $json[self::FIELD_PARAMETER] ?? null;
+        if (isset($json[self::FIELD_PARAMETER])
+            || isset($json[self::FIELD_PARAMETER_EXT])
+            || array_key_exists(self::FIELD_PARAMETER, $json)
+            || array_key_exists(self::FIELD_PARAMETER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_PARAMETER] ?? []);
             $ext = (array)($json[self::FIELD_PARAMETER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -593,8 +587,8 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addParameter(FHIRDocumentReferenceParameter::jsonUnserialize(
-                    json: [FHIRDocumentReferenceParameter::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRDocumentReferenceParameter::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

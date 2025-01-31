@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -72,6 +72,7 @@ use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Version;
@@ -144,7 +145,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $requirement
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanLimit[] $limit
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanLimit[] $limit
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -310,11 +311,14 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
      *
      * The specific limits on the benefit.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanLimit $limit
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanLimit $limit
      * @return static
      */
-    public function addLimit(FHIRInsurancePlanLimit $limit): self
+    public function addLimit(FHIRQuantity|FHIRInsurancePlanLimit $limit): self
     {
+        if (!($limit instanceof FHIRInsurancePlanLimit)) {
+            $limit = new FHIRInsurancePlanLimit(value: $limit);
+        }
         if (!isset($this->limit)) {
             $this->limit = [];
         }
@@ -327,10 +331,10 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
      *
      * The specific limits on the benefit.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanLimit ...$limit
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanLimit ...$limit
      * @return static
      */
-    public function setLimit(FHIRInsurancePlanLimit ...$limit): self
+    public function setLimit(FHIRQuantity|FHIRInsurancePlanLimit ...$limit): self
     {
         if ([] === $limit) {
             unset($this->limit);
@@ -561,35 +565,26 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
-        if (isset($json[self::FIELD_REQUIREMENT]) || isset($json[self::FIELD_REQUIREMENT_EXT]) || array_key_exists(self::FIELD_REQUIREMENT, $json) || array_key_exists(self::FIELD_REQUIREMENT_EXT, $json)) {
+        if (isset($json[self::FIELD_REQUIREMENT])
+            || isset($json[self::FIELD_REQUIREMENT_EXT])
+            || array_key_exists(self::FIELD_REQUIREMENT, $json)
+            || array_key_exists(self::FIELD_REQUIREMENT_EXT, $json)) {
             $value = $json[self::FIELD_REQUIREMENT] ?? null;
-            $ext = (array)($json[self::FIELD_REQUIREMENT_EXT] ?? []);
             $type->setRequirement(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_REQUIREMENT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_LIMIT]) || isset($json[self::FIELD_LIMIT_EXT]) || array_key_exists(self::FIELD_LIMIT, $json) || array_key_exists(self::FIELD_LIMIT_EXT, $json)) {
-            $value = $json[self::FIELD_LIMIT] ?? null;
+        if (isset($json[self::FIELD_LIMIT])
+            || isset($json[self::FIELD_LIMIT_EXT])
+            || array_key_exists(self::FIELD_LIMIT, $json)
+            || array_key_exists(self::FIELD_LIMIT_EXT, $json)) {
+            $value = (array)($json[self::FIELD_LIMIT] ?? []);
             $ext = (array)($json[self::FIELD_LIMIT_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -597,8 +592,8 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addLimit(FHIRInsurancePlanLimit::jsonUnserialize(
-                    json: [FHIRInsurancePlanLimit::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRInsurancePlanLimit::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

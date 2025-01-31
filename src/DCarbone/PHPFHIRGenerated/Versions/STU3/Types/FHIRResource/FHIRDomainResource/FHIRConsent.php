@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,6 +70,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRConsentStateList;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor;
@@ -88,6 +89,7 @@ use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMeta;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer;
@@ -394,8 +396,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConsentState $status
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRConsentStateList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConsentState $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept[] $category
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $patient
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $period
@@ -405,7 +407,7 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept[] $action
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference[] $organization
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment $sourceAttachment
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $sourceIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $sourceIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $sourceReference
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentPolicy[] $policy
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $policyRule
@@ -424,8 +426,8 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
                                 null|iterable $contained = null,
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRIdentifier $identifier = null,
-                                null|FHIRConsentState $status = null,
+                                null|FHIRString|FHIRIdentifier $identifier = null,
+                                null|string|FHIRConsentStateList|FHIRConsentState $status = null,
                                 null|iterable $category = null,
                                 null|FHIRReference $patient = null,
                                 null|FHIRPeriod $period = null,
@@ -435,7 +437,7 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
                                 null|iterable $action = null,
                                 null|iterable $organization = null,
                                 null|FHIRAttachment $sourceAttachment = null,
-                                null|FHIRIdentifier $sourceIdentifier = null,
+                                null|FHIRString|FHIRIdentifier $sourceIdentifier = null,
                                 null|FHIRReference $sourceReference = null,
                                 null|iterable $policy = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $policyRule = null,
@@ -557,16 +559,19 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Unique identifier for this copy of the Consent Statement.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIdentifier(null|FHIRIdentifier $identifier,
+    public function setIdentifier(null|FHIRString|FHIRIdentifier $identifier,
                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $identifier) {
             unset($this->identifier);
             return $this;
+        }
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
         }
         $this->identifier = $identifier;
         if ($this->_valueXMLLocations[self::FIELD_IDENTIFIER] !== $valueXMLLocation) {
@@ -618,16 +623,19 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      *
      * Indicates the current state of this consent.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConsentState $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRConsentStateList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRConsentState $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRConsentState $status,
+    public function setStatus(null|string|FHIRConsentStateList|FHIRConsentState $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRConsentState)) {
+            $status = new FHIRConsentState(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -1211,16 +1219,19 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
      * a source, a reference to a document repository (e.g. XDS) that stores the
      * original consent document.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $sourceIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $sourceIdentifier
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSourceIdentifier(null|FHIRIdentifier $sourceIdentifier,
+    public function setSourceIdentifier(null|FHIRString|FHIRIdentifier $sourceIdentifier,
                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $sourceIdentifier) {
             unset($this->sourceIdentifier);
             return $this;
+        }
+        if (!($sourceIdentifier instanceof FHIRIdentifier)) {
+            $sourceIdentifier = new FHIRIdentifier(value: $sourceIdentifier);
         }
         $this->sourceIdentifier = $sourceIdentifier;
         if ($this->_valueXMLLocations[self::FIELD_SOURCE_IDENTIFIER] !== $valueXMLLocation) {
@@ -2474,21 +2485,25 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
             $value = $json[self::FIELD_IDENTIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
             $type->setIdentifier(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_IDENTIFIER_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRConsentState::jsonUnserialize(
-                json: [FHIRConsentState::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRConsentState::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
@@ -2497,30 +2512,23 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCategory(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCategory(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PATIENT]) || array_key_exists(self::FIELD_PATIENT, $json)) {
-            $type->setPatient(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PATIENT],
-                config: $config,
-            ));
+            $type->setPatient(FHIRReference::jsonUnserialize($json[self::FIELD_PATIENT], $config));
         }
         if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_PERIOD],
-                config: $config,
-            ));
+            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
         }
-        if (isset($json[self::FIELD_DATE_TIME]) || isset($json[self::FIELD_DATE_TIME_EXT]) || array_key_exists(self::FIELD_DATE_TIME, $json) || array_key_exists(self::FIELD_DATE_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_DATE_TIME])
+            || isset($json[self::FIELD_DATE_TIME_EXT])
+            || array_key_exists(self::FIELD_DATE_TIME, $json)
+            || array_key_exists(self::FIELD_DATE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_DATE_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_DATE_TIME_EXT] ?? []);
             $type->setDateTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CONSENTING_PARTY]) || array_key_exists(self::FIELD_CONSENTING_PARTY, $json)) {
@@ -2529,10 +2537,7 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addConsentingParty(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addConsentingParty(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ACTOR]) || array_key_exists(self::FIELD_ACTOR, $json)) {
@@ -2541,10 +2546,7 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addActor(FHIRConsentActor::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addActor(FHIRConsentActor::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ACTION]) || array_key_exists(self::FIELD_ACTION, $json)) {
@@ -2553,10 +2555,7 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAction(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAction(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ORGANIZATION]) || array_key_exists(self::FIELD_ORGANIZATION, $json)) {
@@ -2565,31 +2564,24 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addOrganization(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addOrganization(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SOURCE_ATTACHMENT]) || array_key_exists(self::FIELD_SOURCE_ATTACHMENT, $json)) {
-            $type->setSourceAttachment(FHIRAttachment::jsonUnserialize(
-                json: $json[self::FIELD_SOURCE_ATTACHMENT],
-                config: $config,
-            ));
+            $type->setSourceAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_SOURCE_ATTACHMENT], $config));
         }
-        if (isset($json[self::FIELD_SOURCE_IDENTIFIER]) || isset($json[self::FIELD_SOURCE_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_SOURCE_IDENTIFIER, $json) || array_key_exists(self::FIELD_SOURCE_IDENTIFIER_EXT, $json)) {
+        if (isset($json[self::FIELD_SOURCE_IDENTIFIER])
+            || isset($json[self::FIELD_SOURCE_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_SOURCE_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_SOURCE_IDENTIFIER_EXT, $json)) {
             $value = $json[self::FIELD_SOURCE_IDENTIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_SOURCE_IDENTIFIER_EXT] ?? []);
             $type->setSourceIdentifier(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_SOURCE_IDENTIFIER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SOURCE_REFERENCE]) || array_key_exists(self::FIELD_SOURCE_REFERENCE, $json)) {
-            $type->setSourceReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_SOURCE_REFERENCE],
-                config: $config,
-            ));
+            $type->setSourceReference(FHIRReference::jsonUnserialize($json[self::FIELD_SOURCE_REFERENCE], $config));
         }
         if (isset($json[self::FIELD_POLICY]) || array_key_exists(self::FIELD_POLICY, $json)) {
             $vs = $json[self::FIELD_POLICY];
@@ -2597,18 +2589,17 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPolicy(FHIRConsentPolicy::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPolicy(FHIRConsentPolicy::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_POLICY_RULE]) || isset($json[self::FIELD_POLICY_RULE_EXT]) || array_key_exists(self::FIELD_POLICY_RULE, $json) || array_key_exists(self::FIELD_POLICY_RULE_EXT, $json)) {
+        if (isset($json[self::FIELD_POLICY_RULE])
+            || isset($json[self::FIELD_POLICY_RULE_EXT])
+            || array_key_exists(self::FIELD_POLICY_RULE, $json)
+            || array_key_exists(self::FIELD_POLICY_RULE_EXT, $json)) {
             $value = $json[self::FIELD_POLICY_RULE] ?? null;
-            $ext = (array)($json[self::FIELD_POLICY_RULE_EXT] ?? []);
             $type->setPolicyRule(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_POLICY_RULE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SECURITY_LABEL]) || array_key_exists(self::FIELD_SECURITY_LABEL, $json)) {
@@ -2617,10 +2608,7 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSecurityLabel(FHIRCoding::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSecurityLabel(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PURPOSE]) || array_key_exists(self::FIELD_PURPOSE, $json)) {
@@ -2629,17 +2617,11 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPurpose(FHIRCoding::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPurpose(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_DATA_PERIOD]) || array_key_exists(self::FIELD_DATA_PERIOD, $json)) {
-            $type->setDataPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_DATA_PERIOD],
-                config: $config,
-            ));
+            $type->setDataPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_DATA_PERIOD], $config));
         }
         if (isset($json[self::FIELD_DATA]) || array_key_exists(self::FIELD_DATA, $json)) {
             $vs = $json[self::FIELD_DATA];
@@ -2647,10 +2629,7 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addData(FHIRConsentData::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addData(FHIRConsentData::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_EXCEPT]) || array_key_exists(self::FIELD_EXCEPT, $json)) {
@@ -2659,10 +2638,7 @@ class FHIRConsent extends FHIRDomainResource implements VersionContainedTypeInte
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addExcept(FHIRConsentExcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addExcept(FHIRConsentExcept::jsonUnserialize($v, $config));
             }
         }
         return $type;

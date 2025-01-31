@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -668,37 +668,35 @@ class FHIRLocationPosition extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_LONGITUDE]) || isset($json[self::FIELD_LONGITUDE_EXT]) || array_key_exists(self::FIELD_LONGITUDE, $json) || array_key_exists(self::FIELD_LONGITUDE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_LONGITUDE])
+            || isset($json[self::FIELD_LONGITUDE_EXT])
+            || array_key_exists(self::FIELD_LONGITUDE, $json)
+            || array_key_exists(self::FIELD_LONGITUDE_EXT, $json)) {
             $value = $json[self::FIELD_LONGITUDE] ?? null;
-            $ext = (array)($json[self::FIELD_LONGITUDE_EXT] ?? []);
             $type->setLongitude(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_LONGITUDE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_LATITUDE]) || isset($json[self::FIELD_LATITUDE_EXT]) || array_key_exists(self::FIELD_LATITUDE, $json) || array_key_exists(self::FIELD_LATITUDE_EXT, $json)) {
+        if (isset($json[self::FIELD_LATITUDE])
+            || isset($json[self::FIELD_LATITUDE_EXT])
+            || array_key_exists(self::FIELD_LATITUDE, $json)
+            || array_key_exists(self::FIELD_LATITUDE_EXT, $json)) {
             $value = $json[self::FIELD_LATITUDE] ?? null;
-            $ext = (array)($json[self::FIELD_LATITUDE_EXT] ?? []);
             $type->setLatitude(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_LATITUDE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ALTITUDE]) || isset($json[self::FIELD_ALTITUDE_EXT]) || array_key_exists(self::FIELD_ALTITUDE, $json) || array_key_exists(self::FIELD_ALTITUDE_EXT, $json)) {
+        if (isset($json[self::FIELD_ALTITUDE])
+            || isset($json[self::FIELD_ALTITUDE_EXT])
+            || array_key_exists(self::FIELD_ALTITUDE, $json)
+            || array_key_exists(self::FIELD_ALTITUDE_EXT, $json)) {
             $value = $json[self::FIELD_ALTITUDE] ?? null;
-            $ext = (array)($json[self::FIELD_ALTITUDE_EXT] ?? []);
             $type->setAltitude(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_ALTITUDE_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,6 +79,8 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAuditEventActionList;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAuditEventOutcomeList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
 
@@ -211,9 +213,9 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding[] $subtype
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventAction $action
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAuditEventActionList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventAction $action
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRInstant $dateTime
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventOutcome $outcome
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAuditEventOutcomeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventOutcome $outcome
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $outcomeDesc
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding[] $purposeOfEvent
      * @param null|string[] $fhirComments
@@ -223,9 +225,9 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCoding $type = null,
                                 null|iterable $subtype = null,
-                                null|FHIRAuditEventAction $action = null,
+                                null|string|FHIRAuditEventActionList|FHIRAuditEventAction $action = null,
                                 null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $dateTime = null,
-                                null|FHIRAuditEventOutcome $outcome = null,
+                                null|string|FHIRAuditEventOutcomeList|FHIRAuditEventOutcome $outcome = null,
                                 null|string|FHIRStringPrimitive|FHIRString $outcomeDesc = null,
                                 null|iterable $purposeOfEvent = null,
                                 null|iterable $fhirComments = null)
@@ -392,16 +394,19 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      * Indicator for type of action performed during the event that generated the
      * audit.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventAction $action
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAuditEventActionList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventAction $action
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAction(null|FHIRAuditEventAction $action,
+    public function setAction(null|string|FHIRAuditEventActionList|FHIRAuditEventAction $action,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $action) {
             unset($this->action);
             return $this;
+        }
+        if (!($action instanceof FHIRAuditEventAction)) {
+            $action = new FHIRAuditEventAction(value: $action);
         }
         $this->action = $action;
         if ($this->_valueXMLLocations[self::FIELD_ACTION] !== $valueXMLLocation) {
@@ -523,16 +528,19 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
      *
      * Indicates whether the event succeeded or failed.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventOutcome $outcome
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAuditEventOutcomeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAuditEventOutcome $outcome
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOutcome(null|FHIRAuditEventOutcome $outcome,
+    public function setOutcome(null|string|FHIRAuditEventOutcomeList|FHIRAuditEventOutcome $outcome,
                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $outcome) {
             unset($this->outcome);
             return $this;
+        }
+        if (!($outcome instanceof FHIRAuditEventOutcome)) {
+            $outcome = new FHIRAuditEventOutcome(value: $outcome);
         }
         $this->outcome = $outcome;
         if ($this->_valueXMLLocations[self::FIELD_OUTCOME] !== $valueXMLLocation) {
@@ -1031,20 +1039,9 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCoding::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCoding::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
         if (isset($json[self::FIELD_SUBTYPE]) || array_key_exists(self::FIELD_SUBTYPE, $json)) {
             $vs = $json[self::FIELD_SUBTYPE];
@@ -1052,42 +1049,47 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSubtype(FHIRCoding::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSubtype(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ACTION]) || isset($json[self::FIELD_ACTION_EXT]) || array_key_exists(self::FIELD_ACTION, $json) || array_key_exists(self::FIELD_ACTION_EXT, $json)) {
+        if (isset($json[self::FIELD_ACTION])
+            || isset($json[self::FIELD_ACTION_EXT])
+            || array_key_exists(self::FIELD_ACTION, $json)
+            || array_key_exists(self::FIELD_ACTION_EXT, $json)) {
             $value = $json[self::FIELD_ACTION] ?? null;
-            $ext = (array)($json[self::FIELD_ACTION_EXT] ?? []);
             $type->setAction(FHIRAuditEventAction::jsonUnserialize(
-                json: [FHIRAuditEventAction::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRAuditEventAction::FIELD_VALUE => $value]) + ($json[self::FIELD_ACTION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DATE_TIME]) || isset($json[self::FIELD_DATE_TIME_EXT]) || array_key_exists(self::FIELD_DATE_TIME, $json) || array_key_exists(self::FIELD_DATE_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_DATE_TIME])
+            || isset($json[self::FIELD_DATE_TIME_EXT])
+            || array_key_exists(self::FIELD_DATE_TIME, $json)
+            || array_key_exists(self::FIELD_DATE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_DATE_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_DATE_TIME_EXT] ?? []);
             $type->setDateTime(FHIRInstant::jsonUnserialize(
-                json: [FHIRInstant::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_TIME_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_OUTCOME]) || isset($json[self::FIELD_OUTCOME_EXT]) || array_key_exists(self::FIELD_OUTCOME, $json) || array_key_exists(self::FIELD_OUTCOME_EXT, $json)) {
+        if (isset($json[self::FIELD_OUTCOME])
+            || isset($json[self::FIELD_OUTCOME_EXT])
+            || array_key_exists(self::FIELD_OUTCOME, $json)
+            || array_key_exists(self::FIELD_OUTCOME_EXT, $json)) {
             $value = $json[self::FIELD_OUTCOME] ?? null;
-            $ext = (array)($json[self::FIELD_OUTCOME_EXT] ?? []);
             $type->setOutcome(FHIRAuditEventOutcome::jsonUnserialize(
-                json: [FHIRAuditEventOutcome::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRAuditEventOutcome::FIELD_VALUE => $value]) + ($json[self::FIELD_OUTCOME_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_OUTCOME_DESC]) || isset($json[self::FIELD_OUTCOME_DESC_EXT]) || array_key_exists(self::FIELD_OUTCOME_DESC, $json) || array_key_exists(self::FIELD_OUTCOME_DESC_EXT, $json)) {
+        if (isset($json[self::FIELD_OUTCOME_DESC])
+            || isset($json[self::FIELD_OUTCOME_DESC_EXT])
+            || array_key_exists(self::FIELD_OUTCOME_DESC, $json)
+            || array_key_exists(self::FIELD_OUTCOME_DESC_EXT, $json)) {
             $value = $json[self::FIELD_OUTCOME_DESC] ?? null;
-            $ext = (array)($json[self::FIELD_OUTCOME_DESC_EXT] ?? []);
             $type->setOutcomeDesc(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_OUTCOME_DESC_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PURPOSE_OF_EVENT]) || array_key_exists(self::FIELD_PURPOSE_OF_EVENT, $json)) {
@@ -1096,10 +1098,7 @@ class FHIRAuditEventEvent extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPurposeOfEvent(FHIRCoding::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPurposeOfEvent(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
         return $type;

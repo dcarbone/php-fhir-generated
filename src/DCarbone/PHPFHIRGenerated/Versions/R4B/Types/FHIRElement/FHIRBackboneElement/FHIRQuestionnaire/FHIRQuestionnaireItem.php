@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,8 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIREnableWhenBehaviorEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRQuestionnaireItemTypeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical;
@@ -365,9 +367,9 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCoding[] $code
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $prefix
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $text
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuestionnaireItemType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRQuestionnaireItemTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuestionnaireItemType $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[] $enableWhen
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREnableWhenBehavior $enableBehavior
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIREnableWhenBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREnableWhenBehavior $enableBehavior
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $required
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $repeats
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $readOnly
@@ -386,9 +388,9 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                                 null|iterable $code = null,
                                 null|string|FHIRStringPrimitive|FHIRString $prefix = null,
                                 null|string|FHIRStringPrimitive|FHIRString $text = null,
-                                null|FHIRQuestionnaireItemType $type = null,
+                                null|string|FHIRQuestionnaireItemTypeEnum|FHIRQuestionnaireItemType $type = null,
                                 null|iterable $enableWhen = null,
-                                null|FHIREnableWhenBehavior $enableBehavior = null,
+                                null|string|FHIREnableWhenBehaviorEnum|FHIREnableWhenBehavior $enableBehavior = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $required = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $repeats = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $readOnly = null,
@@ -841,16 +843,19 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * other items or a particular type of data to be captured (string, integer, coded
      * choice, etc.).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuestionnaireItemType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRQuestionnaireItemTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuestionnaireItemType $type
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|FHIRQuestionnaireItemType $type,
+    public function setType(null|string|FHIRQuestionnaireItemTypeEnum|FHIRQuestionnaireItemType $type,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $type) {
             unset($this->type);
             return $this;
+        }
+        if (!($type instanceof FHIRQuestionnaireItemType)) {
+            $type = new FHIRQuestionnaireItemType(value: $type);
         }
         $this->type = $type;
         if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
@@ -969,16 +974,19 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * Controls how multiple enableWhen values are interpreted - whether all or any
      * must be true.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREnableWhenBehavior $enableBehavior
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIREnableWhenBehaviorEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREnableWhenBehavior $enableBehavior
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setEnableBehavior(null|FHIREnableWhenBehavior $enableBehavior,
+    public function setEnableBehavior(null|string|FHIREnableWhenBehaviorEnum|FHIREnableWhenBehavior $enableBehavior,
                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $enableBehavior) {
             unset($this->enableBehavior);
             return $this;
+        }
+        if (!($enableBehavior instanceof FHIREnableWhenBehavior)) {
+            $enableBehavior = new FHIREnableWhenBehavior(value: $enableBehavior);
         }
         $this->enableBehavior = $enableBehavior;
         if ($this->_valueXMLLocations[self::FIELD_ENABLE_BEHAVIOR] !== $valueXMLLocation) {
@@ -2150,29 +2158,25 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_LINK_ID]) || isset($json[self::FIELD_LINK_ID_EXT]) || array_key_exists(self::FIELD_LINK_ID, $json) || array_key_exists(self::FIELD_LINK_ID_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_LINK_ID])
+            || isset($json[self::FIELD_LINK_ID_EXT])
+            || array_key_exists(self::FIELD_LINK_ID, $json)
+            || array_key_exists(self::FIELD_LINK_ID_EXT, $json)) {
             $value = $json[self::FIELD_LINK_ID] ?? null;
-            $ext = (array)($json[self::FIELD_LINK_ID_EXT] ?? []);
             $type->setLinkId(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_LINK_ID_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DEFINITION]) || isset($json[self::FIELD_DEFINITION_EXT]) || array_key_exists(self::FIELD_DEFINITION, $json) || array_key_exists(self::FIELD_DEFINITION_EXT, $json)) {
+        if (isset($json[self::FIELD_DEFINITION])
+            || isset($json[self::FIELD_DEFINITION_EXT])
+            || array_key_exists(self::FIELD_DEFINITION, $json)
+            || array_key_exists(self::FIELD_DEFINITION_EXT, $json)) {
             $value = $json[self::FIELD_DEFINITION] ?? null;
-            $ext = (array)($json[self::FIELD_DEFINITION_EXT] ?? []);
             $type->setDefinition(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_DEFINITION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
@@ -2181,34 +2185,37 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCode(FHIRCoding::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCode(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PREFIX]) || isset($json[self::FIELD_PREFIX_EXT]) || array_key_exists(self::FIELD_PREFIX, $json) || array_key_exists(self::FIELD_PREFIX_EXT, $json)) {
+        if (isset($json[self::FIELD_PREFIX])
+            || isset($json[self::FIELD_PREFIX_EXT])
+            || array_key_exists(self::FIELD_PREFIX, $json)
+            || array_key_exists(self::FIELD_PREFIX_EXT, $json)) {
             $value = $json[self::FIELD_PREFIX] ?? null;
-            $ext = (array)($json[self::FIELD_PREFIX_EXT] ?? []);
             $type->setPrefix(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PREFIX_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TEXT]) || isset($json[self::FIELD_TEXT_EXT]) || array_key_exists(self::FIELD_TEXT, $json) || array_key_exists(self::FIELD_TEXT_EXT, $json)) {
+        if (isset($json[self::FIELD_TEXT])
+            || isset($json[self::FIELD_TEXT_EXT])
+            || array_key_exists(self::FIELD_TEXT, $json)
+            || array_key_exists(self::FIELD_TEXT_EXT, $json)) {
             $value = $json[self::FIELD_TEXT] ?? null;
-            $ext = (array)($json[self::FIELD_TEXT_EXT] ?? []);
             $type->setText(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TEXT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
+        if (isset($json[self::FIELD_TYPE])
+            || isset($json[self::FIELD_TYPE_EXT])
+            || array_key_exists(self::FIELD_TYPE, $json)
+            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
             $type->setType(FHIRQuestionnaireItemType::jsonUnserialize(
-                json: [FHIRQuestionnaireItemType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRQuestionnaireItemType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ENABLE_WHEN]) || array_key_exists(self::FIELD_ENABLE_WHEN, $json)) {
@@ -2217,58 +2224,67 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addEnableWhen(FHIRQuestionnaireEnableWhen::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addEnableWhen(FHIRQuestionnaireEnableWhen::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ENABLE_BEHAVIOR]) || isset($json[self::FIELD_ENABLE_BEHAVIOR_EXT]) || array_key_exists(self::FIELD_ENABLE_BEHAVIOR, $json) || array_key_exists(self::FIELD_ENABLE_BEHAVIOR_EXT, $json)) {
+        if (isset($json[self::FIELD_ENABLE_BEHAVIOR])
+            || isset($json[self::FIELD_ENABLE_BEHAVIOR_EXT])
+            || array_key_exists(self::FIELD_ENABLE_BEHAVIOR, $json)
+            || array_key_exists(self::FIELD_ENABLE_BEHAVIOR_EXT, $json)) {
             $value = $json[self::FIELD_ENABLE_BEHAVIOR] ?? null;
-            $ext = (array)($json[self::FIELD_ENABLE_BEHAVIOR_EXT] ?? []);
             $type->setEnableBehavior(FHIREnableWhenBehavior::jsonUnserialize(
-                json: [FHIREnableWhenBehavior::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIREnableWhenBehavior::FIELD_VALUE => $value]) + ($json[self::FIELD_ENABLE_BEHAVIOR_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_REQUIRED]) || isset($json[self::FIELD_REQUIRED_EXT]) || array_key_exists(self::FIELD_REQUIRED, $json) || array_key_exists(self::FIELD_REQUIRED_EXT, $json)) {
+        if (isset($json[self::FIELD_REQUIRED])
+            || isset($json[self::FIELD_REQUIRED_EXT])
+            || array_key_exists(self::FIELD_REQUIRED, $json)
+            || array_key_exists(self::FIELD_REQUIRED_EXT, $json)) {
             $value = $json[self::FIELD_REQUIRED] ?? null;
-            $ext = (array)($json[self::FIELD_REQUIRED_EXT] ?? []);
             $type->setRequired(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_REQUIRED_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_REPEATS]) || isset($json[self::FIELD_REPEATS_EXT]) || array_key_exists(self::FIELD_REPEATS, $json) || array_key_exists(self::FIELD_REPEATS_EXT, $json)) {
+        if (isset($json[self::FIELD_REPEATS])
+            || isset($json[self::FIELD_REPEATS_EXT])
+            || array_key_exists(self::FIELD_REPEATS, $json)
+            || array_key_exists(self::FIELD_REPEATS_EXT, $json)) {
             $value = $json[self::FIELD_REPEATS] ?? null;
-            $ext = (array)($json[self::FIELD_REPEATS_EXT] ?? []);
             $type->setRepeats(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_REPEATS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_READ_ONLY]) || isset($json[self::FIELD_READ_ONLY_EXT]) || array_key_exists(self::FIELD_READ_ONLY, $json) || array_key_exists(self::FIELD_READ_ONLY_EXT, $json)) {
+        if (isset($json[self::FIELD_READ_ONLY])
+            || isset($json[self::FIELD_READ_ONLY_EXT])
+            || array_key_exists(self::FIELD_READ_ONLY, $json)
+            || array_key_exists(self::FIELD_READ_ONLY_EXT, $json)) {
             $value = $json[self::FIELD_READ_ONLY] ?? null;
-            $ext = (array)($json[self::FIELD_READ_ONLY_EXT] ?? []);
             $type->setReadOnly(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_READ_ONLY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_MAX_LENGTH]) || isset($json[self::FIELD_MAX_LENGTH_EXT]) || array_key_exists(self::FIELD_MAX_LENGTH, $json) || array_key_exists(self::FIELD_MAX_LENGTH_EXT, $json)) {
+        if (isset($json[self::FIELD_MAX_LENGTH])
+            || isset($json[self::FIELD_MAX_LENGTH_EXT])
+            || array_key_exists(self::FIELD_MAX_LENGTH, $json)
+            || array_key_exists(self::FIELD_MAX_LENGTH_EXT, $json)) {
             $value = $json[self::FIELD_MAX_LENGTH] ?? null;
-            $ext = (array)($json[self::FIELD_MAX_LENGTH_EXT] ?? []);
             $type->setMaxLength(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_MAX_LENGTH_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ANSWER_VALUE_SET]) || isset($json[self::FIELD_ANSWER_VALUE_SET_EXT]) || array_key_exists(self::FIELD_ANSWER_VALUE_SET, $json) || array_key_exists(self::FIELD_ANSWER_VALUE_SET_EXT, $json)) {
+        if (isset($json[self::FIELD_ANSWER_VALUE_SET])
+            || isset($json[self::FIELD_ANSWER_VALUE_SET_EXT])
+            || array_key_exists(self::FIELD_ANSWER_VALUE_SET, $json)
+            || array_key_exists(self::FIELD_ANSWER_VALUE_SET_EXT, $json)) {
             $value = $json[self::FIELD_ANSWER_VALUE_SET] ?? null;
-            $ext = (array)($json[self::FIELD_ANSWER_VALUE_SET_EXT] ?? []);
             $type->setAnswerValueSet(FHIRCanonical::jsonUnserialize(
-                json: [FHIRCanonical::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_ANSWER_VALUE_SET_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ANSWER_OPTION]) || array_key_exists(self::FIELD_ANSWER_OPTION, $json)) {
@@ -2277,10 +2293,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAnswerOption(FHIRQuestionnaireAnswerOption::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAnswerOption(FHIRQuestionnaireAnswerOption::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_INITIAL]) || array_key_exists(self::FIELD_INITIAL, $json)) {
@@ -2289,10 +2302,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addInitial(FHIRQuestionnaireInitial::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addInitial(FHIRQuestionnaireInitial::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ITEM]) || array_key_exists(self::FIELD_ITEM, $json)) {
@@ -2301,10 +2311,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addItem(FHIRQuestionnaireItem::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addItem(FHIRQuestionnaireItem::jsonUnserialize($v, $config));
             }
         }
         return $type;

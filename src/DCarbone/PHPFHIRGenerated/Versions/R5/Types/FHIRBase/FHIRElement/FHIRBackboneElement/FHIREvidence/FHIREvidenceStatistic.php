@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -272,7 +272,7 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $numberAffected
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceSampleSize $sampleSize
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceAttributeEstimate[] $attributeEstimate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic[] $modelCharacteristic
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic[] $modelCharacteristic
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -864,11 +864,14 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      *
      * A component of the method to generate the statistic.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic $modelCharacteristic
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic $modelCharacteristic
      * @return static
      */
-    public function addModelCharacteristic(FHIREvidenceModelCharacteristic $modelCharacteristic): self
+    public function addModelCharacteristic(FHIRQuantity|FHIREvidenceModelCharacteristic $modelCharacteristic): self
     {
+        if (!($modelCharacteristic instanceof FHIREvidenceModelCharacteristic)) {
+            $modelCharacteristic = new FHIREvidenceModelCharacteristic(value: $modelCharacteristic);
+        }
         if (!isset($this->modelCharacteristic)) {
             $this->modelCharacteristic = [];
         }
@@ -884,10 +887,10 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
      *
      * A component of the method to generate the statistic.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic ...$modelCharacteristic
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceModelCharacteristic ...$modelCharacteristic
      * @return static
      */
-    public function setModelCharacteristic(FHIREvidenceModelCharacteristic ...$modelCharacteristic): self
+    public function setModelCharacteristic(FHIRQuantity|FHIREvidenceModelCharacteristic ...$modelCharacteristic): self
     {
         if ([] === $modelCharacteristic) {
             unset($this->modelCharacteristic);
@@ -1276,21 +1279,15 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
@@ -1299,51 +1296,40 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addNote(FHIRAnnotation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_STATISTIC_TYPE]) || array_key_exists(self::FIELD_STATISTIC_TYPE, $json)) {
-            $type->setStatisticType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_STATISTIC_TYPE],
-                config: $config,
-            ));
+            $type->setStatisticType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_STATISTIC_TYPE], $config));
         }
         if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
-            $type->setCategory(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CATEGORY],
-                config: $config,
-            ));
+            $type->setCategory(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CATEGORY], $config));
         }
         if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            $type->setQuantity(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_QUANTITY],
-                config: $config,
-            ));
+            $type->setQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
         }
-        if (isset($json[self::FIELD_NUMBER_OF_EVENTS]) || isset($json[self::FIELD_NUMBER_OF_EVENTS_EXT]) || array_key_exists(self::FIELD_NUMBER_OF_EVENTS, $json) || array_key_exists(self::FIELD_NUMBER_OF_EVENTS_EXT, $json)) {
+        if (isset($json[self::FIELD_NUMBER_OF_EVENTS])
+            || isset($json[self::FIELD_NUMBER_OF_EVENTS_EXT])
+            || array_key_exists(self::FIELD_NUMBER_OF_EVENTS, $json)
+            || array_key_exists(self::FIELD_NUMBER_OF_EVENTS_EXT, $json)) {
             $value = $json[self::FIELD_NUMBER_OF_EVENTS] ?? null;
-            $ext = (array)($json[self::FIELD_NUMBER_OF_EVENTS_EXT] ?? []);
             $type->setNumberOfEvents(FHIRUnsignedInt::jsonUnserialize(
-                json: [FHIRUnsignedInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUnsignedInt::FIELD_VALUE => $value]) + ($json[self::FIELD_NUMBER_OF_EVENTS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_NUMBER_AFFECTED]) || isset($json[self::FIELD_NUMBER_AFFECTED_EXT]) || array_key_exists(self::FIELD_NUMBER_AFFECTED, $json) || array_key_exists(self::FIELD_NUMBER_AFFECTED_EXT, $json)) {
+        if (isset($json[self::FIELD_NUMBER_AFFECTED])
+            || isset($json[self::FIELD_NUMBER_AFFECTED_EXT])
+            || array_key_exists(self::FIELD_NUMBER_AFFECTED, $json)
+            || array_key_exists(self::FIELD_NUMBER_AFFECTED_EXT, $json)) {
             $value = $json[self::FIELD_NUMBER_AFFECTED] ?? null;
-            $ext = (array)($json[self::FIELD_NUMBER_AFFECTED_EXT] ?? []);
             $type->setNumberAffected(FHIRUnsignedInt::jsonUnserialize(
-                json: [FHIRUnsignedInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUnsignedInt::FIELD_VALUE => $value]) + ($json[self::FIELD_NUMBER_AFFECTED_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SAMPLE_SIZE]) || array_key_exists(self::FIELD_SAMPLE_SIZE, $json)) {
-            $type->setSampleSize(FHIREvidenceSampleSize::jsonUnserialize(
-                json: $json[self::FIELD_SAMPLE_SIZE],
-                config: $config,
-            ));
+            $type->setSampleSize(FHIREvidenceSampleSize::jsonUnserialize($json[self::FIELD_SAMPLE_SIZE], $config));
         }
         if (isset($json[self::FIELD_ATTRIBUTE_ESTIMATE]) || array_key_exists(self::FIELD_ATTRIBUTE_ESTIMATE, $json)) {
             $vs = $json[self::FIELD_ATTRIBUTE_ESTIMATE];
@@ -1351,18 +1337,15 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAttributeEstimate(FHIREvidenceAttributeEstimate::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAttributeEstimate(FHIREvidenceAttributeEstimate::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_MODEL_CHARACTERISTIC]) || isset($json[self::FIELD_MODEL_CHARACTERISTIC_EXT]) || array_key_exists(self::FIELD_MODEL_CHARACTERISTIC, $json) || array_key_exists(self::FIELD_MODEL_CHARACTERISTIC_EXT, $json)) {
-            $value = $json[self::FIELD_MODEL_CHARACTERISTIC] ?? null;
+        if (isset($json[self::FIELD_MODEL_CHARACTERISTIC])
+            || isset($json[self::FIELD_MODEL_CHARACTERISTIC_EXT])
+            || array_key_exists(self::FIELD_MODEL_CHARACTERISTIC, $json)
+            || array_key_exists(self::FIELD_MODEL_CHARACTERISTIC_EXT, $json)) {
+            $value = (array)($json[self::FIELD_MODEL_CHARACTERISTIC] ?? []);
             $ext = (array)($json[self::FIELD_MODEL_CHARACTERISTIC_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1370,8 +1353,8 @@ class FHIREvidenceStatistic extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addModelCharacteristic(FHIREvidenceModelCharacteristic::jsonUnserialize(
-                    json: [FHIREvidenceModelCharacteristic::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIREvidenceModelCharacteristic::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,6 +69,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRHTTPVerbList;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRHTTPVerb;
@@ -201,7 +202,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRHTTPVerb $method
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRHTTPVerbList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRHTTPVerb $method
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $url
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $ifNoneMatch
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRInstant $ifModifiedSince
@@ -212,7 +213,7 @@ class FHIRBundleRequest extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRHTTPVerb $method = null,
+                                null|string|FHIRHTTPVerbList|FHIRHTTPVerb $method = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $url = null,
                                 null|string|FHIRStringPrimitive|FHIRString $ifNoneMatch = null,
                                 null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $ifModifiedSince = null,
@@ -275,16 +276,19 @@ class FHIRBundleRequest extends FHIRBackboneElement
      * The HTTP verb for this entry in either a change history, or a transaction/
      * transaction response.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRHTTPVerb $method
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRHTTPVerbList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRHTTPVerb $method
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMethod(null|FHIRHTTPVerb $method,
+    public function setMethod(null|string|FHIRHTTPVerbList|FHIRHTTPVerb $method,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $method) {
             unset($this->method);
             return $this;
+        }
+        if (!($method instanceof FHIRHTTPVerb)) {
+            $method = new FHIRHTTPVerb(value: $method);
         }
         $this->method = $method;
         if ($this->_valueXMLLocations[self::FIELD_METHOD] !== $valueXMLLocation) {
@@ -1004,61 +1008,65 @@ class FHIRBundleRequest extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_METHOD]) || isset($json[self::FIELD_METHOD_EXT]) || array_key_exists(self::FIELD_METHOD, $json) || array_key_exists(self::FIELD_METHOD_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_METHOD])
+            || isset($json[self::FIELD_METHOD_EXT])
+            || array_key_exists(self::FIELD_METHOD, $json)
+            || array_key_exists(self::FIELD_METHOD_EXT, $json)) {
             $value = $json[self::FIELD_METHOD] ?? null;
-            $ext = (array)($json[self::FIELD_METHOD_EXT] ?? []);
             $type->setMethod(FHIRHTTPVerb::jsonUnserialize(
-                json: [FHIRHTTPVerb::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRHTTPVerb::FIELD_VALUE => $value]) + ($json[self::FIELD_METHOD_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_URL]) || isset($json[self::FIELD_URL_EXT]) || array_key_exists(self::FIELD_URL, $json) || array_key_exists(self::FIELD_URL_EXT, $json)) {
+        if (isset($json[self::FIELD_URL])
+            || isset($json[self::FIELD_URL_EXT])
+            || array_key_exists(self::FIELD_URL, $json)
+            || array_key_exists(self::FIELD_URL_EXT, $json)) {
             $value = $json[self::FIELD_URL] ?? null;
-            $ext = (array)($json[self::FIELD_URL_EXT] ?? []);
             $type->setUrl(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_URL_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_IF_NONE_MATCH]) || isset($json[self::FIELD_IF_NONE_MATCH_EXT]) || array_key_exists(self::FIELD_IF_NONE_MATCH, $json) || array_key_exists(self::FIELD_IF_NONE_MATCH_EXT, $json)) {
+        if (isset($json[self::FIELD_IF_NONE_MATCH])
+            || isset($json[self::FIELD_IF_NONE_MATCH_EXT])
+            || array_key_exists(self::FIELD_IF_NONE_MATCH, $json)
+            || array_key_exists(self::FIELD_IF_NONE_MATCH_EXT, $json)) {
             $value = $json[self::FIELD_IF_NONE_MATCH] ?? null;
-            $ext = (array)($json[self::FIELD_IF_NONE_MATCH_EXT] ?? []);
             $type->setIfNoneMatch(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_IF_NONE_MATCH_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_IF_MODIFIED_SINCE]) || isset($json[self::FIELD_IF_MODIFIED_SINCE_EXT]) || array_key_exists(self::FIELD_IF_MODIFIED_SINCE, $json) || array_key_exists(self::FIELD_IF_MODIFIED_SINCE_EXT, $json)) {
+        if (isset($json[self::FIELD_IF_MODIFIED_SINCE])
+            || isset($json[self::FIELD_IF_MODIFIED_SINCE_EXT])
+            || array_key_exists(self::FIELD_IF_MODIFIED_SINCE, $json)
+            || array_key_exists(self::FIELD_IF_MODIFIED_SINCE_EXT, $json)) {
             $value = $json[self::FIELD_IF_MODIFIED_SINCE] ?? null;
-            $ext = (array)($json[self::FIELD_IF_MODIFIED_SINCE_EXT] ?? []);
             $type->setIfModifiedSince(FHIRInstant::jsonUnserialize(
-                json: [FHIRInstant::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_IF_MODIFIED_SINCE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_IF_MATCH]) || isset($json[self::FIELD_IF_MATCH_EXT]) || array_key_exists(self::FIELD_IF_MATCH, $json) || array_key_exists(self::FIELD_IF_MATCH_EXT, $json)) {
+        if (isset($json[self::FIELD_IF_MATCH])
+            || isset($json[self::FIELD_IF_MATCH_EXT])
+            || array_key_exists(self::FIELD_IF_MATCH, $json)
+            || array_key_exists(self::FIELD_IF_MATCH_EXT, $json)) {
             $value = $json[self::FIELD_IF_MATCH] ?? null;
-            $ext = (array)($json[self::FIELD_IF_MATCH_EXT] ?? []);
             $type->setIfMatch(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_IF_MATCH_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_IF_NONE_EXIST]) || isset($json[self::FIELD_IF_NONE_EXIST_EXT]) || array_key_exists(self::FIELD_IF_NONE_EXIST, $json) || array_key_exists(self::FIELD_IF_NONE_EXIST_EXT, $json)) {
+        if (isset($json[self::FIELD_IF_NONE_EXIST])
+            || isset($json[self::FIELD_IF_NONE_EXIST_EXT])
+            || array_key_exists(self::FIELD_IF_NONE_EXIST, $json)
+            || array_key_exists(self::FIELD_IF_NONE_EXIST_EXT, $json)) {
             $value = $json[self::FIELD_IF_NONE_EXIST] ?? null;
-            $ext = (array)($json[self::FIELD_IF_NONE_EXIST_EXT] ?? []);
             $type->setIfNoneExist(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_IF_NONE_EXIST_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

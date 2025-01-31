@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -836,58 +836,34 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_INITIAL_FILL]) || array_key_exists(self::FIELD_INITIAL_FILL, $json)) {
-            $type->setInitialFill(FHIRMedicationRequestInitialFill::jsonUnserialize(
-                json: $json[self::FIELD_INITIAL_FILL],
-                config: $config,
-            ));
+            $type->setInitialFill(FHIRMedicationRequestInitialFill::jsonUnserialize($json[self::FIELD_INITIAL_FILL], $config));
         }
         if (isset($json[self::FIELD_DISPENSE_INTERVAL]) || array_key_exists(self::FIELD_DISPENSE_INTERVAL, $json)) {
-            $type->setDispenseInterval(FHIRDuration::jsonUnserialize(
-                json: $json[self::FIELD_DISPENSE_INTERVAL],
-                config: $config,
-            ));
+            $type->setDispenseInterval(FHIRDuration::jsonUnserialize($json[self::FIELD_DISPENSE_INTERVAL], $config));
         }
         if (isset($json[self::FIELD_VALIDITY_PERIOD]) || array_key_exists(self::FIELD_VALIDITY_PERIOD, $json)) {
-            $type->setValidityPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_VALIDITY_PERIOD],
-                config: $config,
-            ));
+            $type->setValidityPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_VALIDITY_PERIOD], $config));
         }
-        if (isset($json[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]) || isset($json[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT]) || array_key_exists(self::FIELD_NUMBER_OF_REPEATS_ALLOWED, $json) || array_key_exists(self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT, $json)) {
+        if (isset($json[self::FIELD_NUMBER_OF_REPEATS_ALLOWED])
+            || isset($json[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT])
+            || array_key_exists(self::FIELD_NUMBER_OF_REPEATS_ALLOWED, $json)
+            || array_key_exists(self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT, $json)) {
             $value = $json[self::FIELD_NUMBER_OF_REPEATS_ALLOWED] ?? null;
-            $ext = (array)($json[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT] ?? []);
             $type->setNumberOfRepeatsAllowed(FHIRUnsignedInt::jsonUnserialize(
-                json: [FHIRUnsignedInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUnsignedInt::FIELD_VALUE => $value]) + ($json[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            $type->setQuantity(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_QUANTITY],
-                config: $config,
-            ));
+            $type->setQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
         }
         if (isset($json[self::FIELD_EXPECTED_SUPPLY_DURATION]) || array_key_exists(self::FIELD_EXPECTED_SUPPLY_DURATION, $json)) {
-            $type->setExpectedSupplyDuration(FHIRDuration::jsonUnserialize(
-                json: $json[self::FIELD_EXPECTED_SUPPLY_DURATION],
-                config: $config,
-            ));
+            $type->setExpectedSupplyDuration(FHIRDuration::jsonUnserialize($json[self::FIELD_EXPECTED_SUPPLY_DURATION], $config));
         }
         if (isset($json[self::FIELD_PERFORMER]) || array_key_exists(self::FIELD_PERFORMER, $json)) {
-            $type->setPerformer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PERFORMER],
-                config: $config,
-            ));
+            $type->setPerformer(FHIRReference::jsonUnserialize($json[self::FIELD_PERFORMER], $config));
         }
         return $type;
     }

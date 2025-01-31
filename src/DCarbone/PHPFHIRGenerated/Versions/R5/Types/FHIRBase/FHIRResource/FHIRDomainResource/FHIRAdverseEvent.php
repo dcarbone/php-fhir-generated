@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -110,10 +110,13 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAdverseEventActualityEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAdverseEventStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
@@ -560,9 +563,9 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdverseEventStatus $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdverseEventActuality $actuality
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAdverseEventStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdverseEventStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAdverseEventActualityEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdverseEventActuality $actuality
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $category
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $code
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $subject
@@ -597,8 +600,8 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
                                 null|iterable $identifier = null,
-                                null|FHIRAdverseEventStatus $status = null,
-                                null|FHIRAdverseEventActuality $actuality = null,
+                                null|string|FHIRAdverseEventStatusEnum|FHIRAdverseEventStatus $status = null,
+                                null|string|FHIRAdverseEventActualityEnum|FHIRAdverseEventActuality $actuality = null,
                                 null|iterable $category = null,
                                 null|FHIRCodeableConcept $code = null,
                                 null|FHIRReference $subject = null,
@@ -770,11 +773,14 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * systems which remain constant as the resource is updated and propagates from
      * server to server.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -792,10 +798,10 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * systems which remain constant as the resource is updated and propagates from
      * server to server.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -829,16 +835,19 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      *
      * The current state of the adverse event or potential adverse event.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdverseEventStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAdverseEventStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdverseEventStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRAdverseEventStatus $status,
+    public function setStatus(null|string|FHIRAdverseEventStatusEnum|FHIRAdverseEventStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRAdverseEventStatus)) {
+            $status = new FHIRAdverseEventStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -890,16 +899,19 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
      * Whether the event actually happened or was a near miss. Note that this is
      * independent of whether anyone was affected or harmed or how severely.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdverseEventActuality $actuality
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAdverseEventActualityEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAdverseEventActuality $actuality
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setActuality(null|FHIRAdverseEventActuality $actuality,
+    public function setActuality(null|string|FHIRAdverseEventActualityEnum|FHIRAdverseEventActuality $actuality,
                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $actuality) {
             unset($this->actuality);
             return $this;
+        }
+        if (!($actuality instanceof FHIRAdverseEventActuality)) {
+            $actuality = new FHIRAdverseEventActuality(value: $actuality);
         }
         $this->actuality = $actuality;
         if ($this->_valueXMLLocations[self::FIELD_ACTUALITY] !== $valueXMLLocation) {
@@ -3286,13 +3298,13 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -3300,25 +3312,29 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRAdverseEventStatus::jsonUnserialize(
-                json: [FHIRAdverseEventStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRAdverseEventStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ACTUALITY]) || isset($json[self::FIELD_ACTUALITY_EXT]) || array_key_exists(self::FIELD_ACTUALITY, $json) || array_key_exists(self::FIELD_ACTUALITY_EXT, $json)) {
+        if (isset($json[self::FIELD_ACTUALITY])
+            || isset($json[self::FIELD_ACTUALITY_EXT])
+            || array_key_exists(self::FIELD_ACTUALITY, $json)
+            || array_key_exists(self::FIELD_ACTUALITY_EXT, $json)) {
             $value = $json[self::FIELD_ACTUALITY] ?? null;
-            $ext = (array)($json[self::FIELD_ACTUALITY_EXT] ?? []);
             $type->setActuality(FHIRAdverseEventActuality::jsonUnserialize(
-                json: [FHIRAdverseEventActuality::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRAdverseEventActuality::FIELD_VALUE => $value]) + ($json[self::FIELD_ACTUALITY_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
@@ -3327,64 +3343,52 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCategory(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCategory(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CODE],
-                config: $config,
-            ));
+            $type->setCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CODE], $config));
         }
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $type->setSubject(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_SUBJECT],
-                config: $config,
-            ));
+            $type->setSubject(FHIRReference::jsonUnserialize($json[self::FIELD_SUBJECT], $config));
         }
         if (isset($json[self::FIELD_ENCOUNTER]) || array_key_exists(self::FIELD_ENCOUNTER, $json)) {
-            $type->setEncounter(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ENCOUNTER],
-                config: $config,
-            ));
+            $type->setEncounter(FHIRReference::jsonUnserialize($json[self::FIELD_ENCOUNTER], $config));
         }
-        if (isset($json[self::FIELD_OCCURRENCE_DATE_TIME]) || isset($json[self::FIELD_OCCURRENCE_DATE_TIME_EXT]) || array_key_exists(self::FIELD_OCCURRENCE_DATE_TIME, $json) || array_key_exists(self::FIELD_OCCURRENCE_DATE_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_OCCURRENCE_DATE_TIME])
+            || isset($json[self::FIELD_OCCURRENCE_DATE_TIME_EXT])
+            || array_key_exists(self::FIELD_OCCURRENCE_DATE_TIME, $json)
+            || array_key_exists(self::FIELD_OCCURRENCE_DATE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_OCCURRENCE_DATE_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_OCCURRENCE_DATE_TIME_EXT] ?? []);
             $type->setOccurrenceDateTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_OCCURRENCE_DATE_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_OCCURRENCE_PERIOD]) || array_key_exists(self::FIELD_OCCURRENCE_PERIOD, $json)) {
-            $type->setOccurrencePeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_OCCURRENCE_PERIOD],
-                config: $config,
-            ));
+            $type->setOccurrencePeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_OCCURRENCE_PERIOD], $config));
         }
         if (isset($json[self::FIELD_OCCURRENCE_TIMING]) || array_key_exists(self::FIELD_OCCURRENCE_TIMING, $json)) {
-            $type->setOccurrenceTiming(FHIRTiming::jsonUnserialize(
-                json: $json[self::FIELD_OCCURRENCE_TIMING],
-                config: $config,
-            ));
+            $type->setOccurrenceTiming(FHIRTiming::jsonUnserialize($json[self::FIELD_OCCURRENCE_TIMING], $config));
         }
-        if (isset($json[self::FIELD_DETECTED]) || isset($json[self::FIELD_DETECTED_EXT]) || array_key_exists(self::FIELD_DETECTED, $json) || array_key_exists(self::FIELD_DETECTED_EXT, $json)) {
+        if (isset($json[self::FIELD_DETECTED])
+            || isset($json[self::FIELD_DETECTED_EXT])
+            || array_key_exists(self::FIELD_DETECTED, $json)
+            || array_key_exists(self::FIELD_DETECTED_EXT, $json)) {
             $value = $json[self::FIELD_DETECTED] ?? null;
-            $ext = (array)($json[self::FIELD_DETECTED_EXT] ?? []);
             $type->setDetected(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DETECTED_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_RECORDED_DATE]) || isset($json[self::FIELD_RECORDED_DATE_EXT]) || array_key_exists(self::FIELD_RECORDED_DATE, $json) || array_key_exists(self::FIELD_RECORDED_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_RECORDED_DATE])
+            || isset($json[self::FIELD_RECORDED_DATE_EXT])
+            || array_key_exists(self::FIELD_RECORDED_DATE, $json)
+            || array_key_exists(self::FIELD_RECORDED_DATE_EXT, $json)) {
             $value = $json[self::FIELD_RECORDED_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_RECORDED_DATE_EXT] ?? []);
             $type->setRecordedDate(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_RECORDED_DATE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_RESULTING_EFFECT]) || array_key_exists(self::FIELD_RESULTING_EFFECT, $json)) {
@@ -3393,23 +3397,14 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addResultingEffect(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addResultingEffect(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_LOCATION]) || array_key_exists(self::FIELD_LOCATION, $json)) {
-            $type->setLocation(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_LOCATION],
-                config: $config,
-            ));
+            $type->setLocation(FHIRReference::jsonUnserialize($json[self::FIELD_LOCATION], $config));
         }
         if (isset($json[self::FIELD_SERIOUSNESS]) || array_key_exists(self::FIELD_SERIOUSNESS, $json)) {
-            $type->setSeriousness(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_SERIOUSNESS],
-                config: $config,
-            ));
+            $type->setSeriousness(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SERIOUSNESS], $config));
         }
         if (isset($json[self::FIELD_OUTCOME]) || array_key_exists(self::FIELD_OUTCOME, $json)) {
             $vs = $json[self::FIELD_OUTCOME];
@@ -3417,17 +3412,11 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addOutcome(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addOutcome(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_RECORDER]) || array_key_exists(self::FIELD_RECORDER, $json)) {
-            $type->setRecorder(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_RECORDER],
-                config: $config,
-            ));
+            $type->setRecorder(FHIRReference::jsonUnserialize($json[self::FIELD_RECORDER], $config));
         }
         if (isset($json[self::FIELD_PARTICIPANT]) || array_key_exists(self::FIELD_PARTICIPANT, $json)) {
             $vs = $json[self::FIELD_PARTICIPANT];
@@ -3435,10 +3424,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addParticipant(FHIRAdverseEventParticipant::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addParticipant(FHIRAdverseEventParticipant::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_STUDY]) || array_key_exists(self::FIELD_STUDY, $json)) {
@@ -3447,18 +3433,17 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addStudy(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addStudy(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_EXPECTED_IN_RESEARCH_STUDY]) || isset($json[self::FIELD_EXPECTED_IN_RESEARCH_STUDY_EXT]) || array_key_exists(self::FIELD_EXPECTED_IN_RESEARCH_STUDY, $json) || array_key_exists(self::FIELD_EXPECTED_IN_RESEARCH_STUDY_EXT, $json)) {
+        if (isset($json[self::FIELD_EXPECTED_IN_RESEARCH_STUDY])
+            || isset($json[self::FIELD_EXPECTED_IN_RESEARCH_STUDY_EXT])
+            || array_key_exists(self::FIELD_EXPECTED_IN_RESEARCH_STUDY, $json)
+            || array_key_exists(self::FIELD_EXPECTED_IN_RESEARCH_STUDY_EXT, $json)) {
             $value = $json[self::FIELD_EXPECTED_IN_RESEARCH_STUDY] ?? null;
-            $ext = (array)($json[self::FIELD_EXPECTED_IN_RESEARCH_STUDY_EXT] ?? []);
             $type->setExpectedInResearchStudy(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_EXPECTED_IN_RESEARCH_STUDY_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SUSPECT_ENTITY]) || array_key_exists(self::FIELD_SUSPECT_ENTITY, $json)) {
@@ -3467,10 +3452,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSuspectEntity(FHIRAdverseEventSuspectEntity::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSuspectEntity(FHIRAdverseEventSuspectEntity::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CONTRIBUTING_FACTOR]) || array_key_exists(self::FIELD_CONTRIBUTING_FACTOR, $json)) {
@@ -3479,10 +3461,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addContributingFactor(FHIRAdverseEventContributingFactor::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addContributingFactor(FHIRAdverseEventContributingFactor::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PREVENTIVE_ACTION]) || array_key_exists(self::FIELD_PREVENTIVE_ACTION, $json)) {
@@ -3491,10 +3470,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPreventiveAction(FHIRAdverseEventPreventiveAction::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPreventiveAction(FHIRAdverseEventPreventiveAction::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_MITIGATING_ACTION]) || array_key_exists(self::FIELD_MITIGATING_ACTION, $json)) {
@@ -3503,10 +3479,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addMitigatingAction(FHIRAdverseEventMitigatingAction::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addMitigatingAction(FHIRAdverseEventMitigatingAction::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SUPPORTING_INFO]) || array_key_exists(self::FIELD_SUPPORTING_INFO, $json)) {
@@ -3515,10 +3488,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSupportingInfo(FHIRAdverseEventSupportingInfo::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSupportingInfo(FHIRAdverseEventSupportingInfo::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
@@ -3527,10 +3497,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements VersionContainedTyp
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addNote(FHIRAnnotation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
         return $type;

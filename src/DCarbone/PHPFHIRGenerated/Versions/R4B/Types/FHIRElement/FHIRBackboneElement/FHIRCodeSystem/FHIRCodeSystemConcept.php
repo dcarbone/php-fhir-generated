@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -215,7 +215,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode $code
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $display
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $definition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation[] $designation
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation[] $designation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1[] $property
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept[] $concept
      * @param null|string[] $fhirComments
@@ -509,11 +509,14 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * Additional representations for the concept - other languages, aliases,
      * specialized purposes, used for particular purposes, etc.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation $designation
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation $designation
      * @return static
      */
-    public function addDesignation(FHIRCodeSystemDesignation $designation): self
+    public function addDesignation(FHIRString|FHIRCodeSystemDesignation $designation): self
     {
+        if (!($designation instanceof FHIRCodeSystemDesignation)) {
+            $designation = new FHIRCodeSystemDesignation(value: $designation);
+        }
         if (!isset($this->designation)) {
             $this->designation = [];
         }
@@ -529,10 +532,10 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * Additional representations for the concept - other languages, aliases,
      * specialized purposes, used for particular purposes, etc.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation ...$designation
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation ...$designation
      * @return static
      */
-    public function setDesignation(FHIRCodeSystemDesignation ...$designation): self
+    public function setDesignation(FHIRString|FHIRCodeSystemDesignation ...$designation): self
     {
         if ([] === $designation) {
             unset($this->designation);
@@ -984,45 +987,43 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_CODE]) || isset($json[self::FIELD_CODE_EXT]) || array_key_exists(self::FIELD_CODE, $json) || array_key_exists(self::FIELD_CODE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_CODE])
+            || isset($json[self::FIELD_CODE_EXT])
+            || array_key_exists(self::FIELD_CODE, $json)
+            || array_key_exists(self::FIELD_CODE_EXT, $json)) {
             $value = $json[self::FIELD_CODE] ?? null;
-            $ext = (array)($json[self::FIELD_CODE_EXT] ?? []);
             $type->setCode(FHIRCode::jsonUnserialize(
-                json: [FHIRCode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_CODE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DISPLAY]) || isset($json[self::FIELD_DISPLAY_EXT]) || array_key_exists(self::FIELD_DISPLAY, $json) || array_key_exists(self::FIELD_DISPLAY_EXT, $json)) {
+        if (isset($json[self::FIELD_DISPLAY])
+            || isset($json[self::FIELD_DISPLAY_EXT])
+            || array_key_exists(self::FIELD_DISPLAY, $json)
+            || array_key_exists(self::FIELD_DISPLAY_EXT, $json)) {
             $value = $json[self::FIELD_DISPLAY] ?? null;
-            $ext = (array)($json[self::FIELD_DISPLAY_EXT] ?? []);
             $type->setDisplay(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DISPLAY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DEFINITION]) || isset($json[self::FIELD_DEFINITION_EXT]) || array_key_exists(self::FIELD_DEFINITION, $json) || array_key_exists(self::FIELD_DEFINITION_EXT, $json)) {
+        if (isset($json[self::FIELD_DEFINITION])
+            || isset($json[self::FIELD_DEFINITION_EXT])
+            || array_key_exists(self::FIELD_DEFINITION, $json)
+            || array_key_exists(self::FIELD_DEFINITION_EXT, $json)) {
             $value = $json[self::FIELD_DEFINITION] ?? null;
-            $ext = (array)($json[self::FIELD_DEFINITION_EXT] ?? []);
             $type->setDefinition(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DEFINITION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DESIGNATION]) || isset($json[self::FIELD_DESIGNATION_EXT]) || array_key_exists(self::FIELD_DESIGNATION, $json) || array_key_exists(self::FIELD_DESIGNATION_EXT, $json)) {
-            $value = $json[self::FIELD_DESIGNATION] ?? null;
+        if (isset($json[self::FIELD_DESIGNATION])
+            || isset($json[self::FIELD_DESIGNATION_EXT])
+            || array_key_exists(self::FIELD_DESIGNATION, $json)
+            || array_key_exists(self::FIELD_DESIGNATION_EXT, $json)) {
+            $value = (array)($json[self::FIELD_DESIGNATION] ?? []);
             $ext = (array)($json[self::FIELD_DESIGNATION_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1030,8 +1031,8 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addDesignation(FHIRCodeSystemDesignation::jsonUnserialize(
-                    json: [FHIRCodeSystemDesignation::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRCodeSystemDesignation::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -1041,10 +1042,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addProperty(FHIRCodeSystemProperty1::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addProperty(FHIRCodeSystemProperty1::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CONCEPT]) || array_key_exists(self::FIELD_CONCEPT, $json)) {
@@ -1053,10 +1051,7 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addConcept(FHIRCodeSystemConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addConcept(FHIRCodeSystemConcept::jsonUnserialize($v, $config));
             }
         }
         return $type;

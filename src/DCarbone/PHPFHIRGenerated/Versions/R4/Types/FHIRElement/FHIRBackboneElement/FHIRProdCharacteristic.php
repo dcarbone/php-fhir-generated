@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1298,65 +1298,41 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_HEIGHT]) || array_key_exists(self::FIELD_HEIGHT, $json)) {
-            $type->setHeight(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_HEIGHT],
-                config: $config,
-            ));
+            $type->setHeight(FHIRQuantity::jsonUnserialize($json[self::FIELD_HEIGHT], $config));
         }
         if (isset($json[self::FIELD_WIDTH]) || array_key_exists(self::FIELD_WIDTH, $json)) {
-            $type->setWidth(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_WIDTH],
-                config: $config,
-            ));
+            $type->setWidth(FHIRQuantity::jsonUnserialize($json[self::FIELD_WIDTH], $config));
         }
         if (isset($json[self::FIELD_DEPTH]) || array_key_exists(self::FIELD_DEPTH, $json)) {
-            $type->setDepth(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_DEPTH],
-                config: $config,
-            ));
+            $type->setDepth(FHIRQuantity::jsonUnserialize($json[self::FIELD_DEPTH], $config));
         }
         if (isset($json[self::FIELD_WEIGHT]) || array_key_exists(self::FIELD_WEIGHT, $json)) {
-            $type->setWeight(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_WEIGHT],
-                config: $config,
-            ));
+            $type->setWeight(FHIRQuantity::jsonUnserialize($json[self::FIELD_WEIGHT], $config));
         }
         if (isset($json[self::FIELD_NOMINAL_VOLUME]) || array_key_exists(self::FIELD_NOMINAL_VOLUME, $json)) {
-            $type->setNominalVolume(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_NOMINAL_VOLUME],
-                config: $config,
-            ));
+            $type->setNominalVolume(FHIRQuantity::jsonUnserialize($json[self::FIELD_NOMINAL_VOLUME], $config));
         }
         if (isset($json[self::FIELD_EXTERNAL_DIAMETER]) || array_key_exists(self::FIELD_EXTERNAL_DIAMETER, $json)) {
-            $type->setExternalDiameter(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_EXTERNAL_DIAMETER],
-                config: $config,
-            ));
+            $type->setExternalDiameter(FHIRQuantity::jsonUnserialize($json[self::FIELD_EXTERNAL_DIAMETER], $config));
         }
-        if (isset($json[self::FIELD_SHAPE]) || isset($json[self::FIELD_SHAPE_EXT]) || array_key_exists(self::FIELD_SHAPE, $json) || array_key_exists(self::FIELD_SHAPE_EXT, $json)) {
+        if (isset($json[self::FIELD_SHAPE])
+            || isset($json[self::FIELD_SHAPE_EXT])
+            || array_key_exists(self::FIELD_SHAPE, $json)
+            || array_key_exists(self::FIELD_SHAPE_EXT, $json)) {
             $value = $json[self::FIELD_SHAPE] ?? null;
-            $ext = (array)($json[self::FIELD_SHAPE_EXT] ?? []);
             $type->setShape(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SHAPE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_COLOR]) || isset($json[self::FIELD_COLOR_EXT]) || array_key_exists(self::FIELD_COLOR, $json) || array_key_exists(self::FIELD_COLOR_EXT, $json)) {
-            $value = $json[self::FIELD_COLOR] ?? null;
+        if (isset($json[self::FIELD_COLOR])
+            || isset($json[self::FIELD_COLOR_EXT])
+            || array_key_exists(self::FIELD_COLOR, $json)
+            || array_key_exists(self::FIELD_COLOR_EXT, $json)) {
+            $value = (array)($json[self::FIELD_COLOR] ?? []);
             $ext = (array)($json[self::FIELD_COLOR_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1364,17 +1340,17 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addColor(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_IMPRINT]) || isset($json[self::FIELD_IMPRINT_EXT]) || array_key_exists(self::FIELD_IMPRINT, $json) || array_key_exists(self::FIELD_IMPRINT_EXT, $json)) {
-            $value = $json[self::FIELD_IMPRINT] ?? null;
+        if (isset($json[self::FIELD_IMPRINT])
+            || isset($json[self::FIELD_IMPRINT_EXT])
+            || array_key_exists(self::FIELD_IMPRINT, $json)
+            || array_key_exists(self::FIELD_IMPRINT_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IMPRINT] ?? []);
             $ext = (array)($json[self::FIELD_IMPRINT_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1382,8 +1358,8 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addImprint(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -1393,17 +1369,11 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addImage(FHIRAttachment::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addImage(FHIRAttachment::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SCORING]) || array_key_exists(self::FIELD_SCORING, $json)) {
-            $type->setScoring(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_SCORING],
-                config: $config,
-            ));
+            $type->setScoring(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SCORING], $config));
         }
         return $type;
     }

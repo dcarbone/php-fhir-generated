@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,6 +83,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMeta;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer;
@@ -329,7 +330,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRReference $subject
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] $country
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] $jurisdiction
@@ -485,11 +486,14 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      *
      * Business identifier for the marketing authorization, as assigned by a regulator.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -505,10 +509,10 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
      *
      * Business identifier for the marketing authorization, as assigned by a regulator.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -1922,13 +1926,13 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1936,16 +1940,13 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $type->setSubject(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_SUBJECT],
-                config: $config,
-            ));
+            $type->setSubject(FHIRReference::jsonUnserialize($json[self::FIELD_SUBJECT], $config));
         }
         if (isset($json[self::FIELD_COUNTRY]) || array_key_exists(self::FIELD_COUNTRY, $json)) {
             $vs = $json[self::FIELD_COUNTRY];
@@ -1953,10 +1954,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCountry(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCountry(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_JURISDICTION]) || array_key_exists(self::FIELD_JURISDICTION, $json)) {
@@ -1965,67 +1963,60 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addJurisdiction(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addJurisdiction(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_STATUS]) || array_key_exists(self::FIELD_STATUS, $json)) {
-            $type->setStatus(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_STATUS],
-                config: $config,
-            ));
+            $type->setStatus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_STATUS], $config));
         }
-        if (isset($json[self::FIELD_STATUS_DATE]) || isset($json[self::FIELD_STATUS_DATE_EXT]) || array_key_exists(self::FIELD_STATUS_DATE, $json) || array_key_exists(self::FIELD_STATUS_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS_DATE])
+            || isset($json[self::FIELD_STATUS_DATE_EXT])
+            || array_key_exists(self::FIELD_STATUS_DATE, $json)
+            || array_key_exists(self::FIELD_STATUS_DATE_EXT, $json)) {
             $value = $json[self::FIELD_STATUS_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_DATE_EXT] ?? []);
             $type->setStatusDate(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_RESTORE_DATE]) || isset($json[self::FIELD_RESTORE_DATE_EXT]) || array_key_exists(self::FIELD_RESTORE_DATE, $json) || array_key_exists(self::FIELD_RESTORE_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_RESTORE_DATE])
+            || isset($json[self::FIELD_RESTORE_DATE_EXT])
+            || array_key_exists(self::FIELD_RESTORE_DATE, $json)
+            || array_key_exists(self::FIELD_RESTORE_DATE_EXT, $json)) {
             $value = $json[self::FIELD_RESTORE_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_RESTORE_DATE_EXT] ?? []);
             $type->setRestoreDate(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_RESTORE_DATE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_VALIDITY_PERIOD]) || array_key_exists(self::FIELD_VALIDITY_PERIOD, $json)) {
-            $type->setValidityPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_VALIDITY_PERIOD],
-                config: $config,
-            ));
+            $type->setValidityPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_VALIDITY_PERIOD], $config));
         }
         if (isset($json[self::FIELD_DATA_EXCLUSIVITY_PERIOD]) || array_key_exists(self::FIELD_DATA_EXCLUSIVITY_PERIOD, $json)) {
-            $type->setDataExclusivityPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_DATA_EXCLUSIVITY_PERIOD],
-                config: $config,
-            ));
+            $type->setDataExclusivityPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_DATA_EXCLUSIVITY_PERIOD], $config));
         }
-        if (isset($json[self::FIELD_DATE_OF_FIRST_AUTHORIZATION]) || isset($json[self::FIELD_DATE_OF_FIRST_AUTHORIZATION_EXT]) || array_key_exists(self::FIELD_DATE_OF_FIRST_AUTHORIZATION, $json) || array_key_exists(self::FIELD_DATE_OF_FIRST_AUTHORIZATION_EXT, $json)) {
+        if (isset($json[self::FIELD_DATE_OF_FIRST_AUTHORIZATION])
+            || isset($json[self::FIELD_DATE_OF_FIRST_AUTHORIZATION_EXT])
+            || array_key_exists(self::FIELD_DATE_OF_FIRST_AUTHORIZATION, $json)
+            || array_key_exists(self::FIELD_DATE_OF_FIRST_AUTHORIZATION_EXT, $json)) {
             $value = $json[self::FIELD_DATE_OF_FIRST_AUTHORIZATION] ?? null;
-            $ext = (array)($json[self::FIELD_DATE_OF_FIRST_AUTHORIZATION_EXT] ?? []);
             $type->setDateOfFirstAuthorization(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_OF_FIRST_AUTHORIZATION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_INTERNATIONAL_BIRTH_DATE]) || isset($json[self::FIELD_INTERNATIONAL_BIRTH_DATE_EXT]) || array_key_exists(self::FIELD_INTERNATIONAL_BIRTH_DATE, $json) || array_key_exists(self::FIELD_INTERNATIONAL_BIRTH_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_INTERNATIONAL_BIRTH_DATE])
+            || isset($json[self::FIELD_INTERNATIONAL_BIRTH_DATE_EXT])
+            || array_key_exists(self::FIELD_INTERNATIONAL_BIRTH_DATE, $json)
+            || array_key_exists(self::FIELD_INTERNATIONAL_BIRTH_DATE_EXT, $json)) {
             $value = $json[self::FIELD_INTERNATIONAL_BIRTH_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_INTERNATIONAL_BIRTH_DATE_EXT] ?? []);
             $type->setInternationalBirthDate(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_INTERNATIONAL_BIRTH_DATE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_LEGAL_BASIS]) || array_key_exists(self::FIELD_LEGAL_BASIS, $json)) {
-            $type->setLegalBasis(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_LEGAL_BASIS],
-                config: $config,
-            ));
+            $type->setLegalBasis(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_LEGAL_BASIS], $config));
         }
         if (isset($json[self::FIELD_JURISDICTIONAL_AUTHORIZATION]) || array_key_exists(self::FIELD_JURISDICTIONAL_AUTHORIZATION, $json)) {
             $vs = $json[self::FIELD_JURISDICTIONAL_AUTHORIZATION];
@@ -2033,29 +2024,17 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements Ve
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addJurisdictionalAuthorization(FHIRMedicinalProductAuthorizationJurisdictionalAuthorization::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addJurisdictionalAuthorization(FHIRMedicinalProductAuthorizationJurisdictionalAuthorization::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_HOLDER]) || array_key_exists(self::FIELD_HOLDER, $json)) {
-            $type->setHolder(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_HOLDER],
-                config: $config,
-            ));
+            $type->setHolder(FHIRReference::jsonUnserialize($json[self::FIELD_HOLDER], $config));
         }
         if (isset($json[self::FIELD_REGULATOR]) || array_key_exists(self::FIELD_REGULATOR, $json)) {
-            $type->setRegulator(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_REGULATOR],
-                config: $config,
-            ));
+            $type->setRegulator(FHIRReference::jsonUnserialize($json[self::FIELD_REGULATOR], $config));
         }
         if (isset($json[self::FIELD_PROCEDURE]) || array_key_exists(self::FIELD_PROCEDURE, $json)) {
-            $type->setProcedure(FHIRMedicinalProductAuthorizationProcedure::jsonUnserialize(
-                json: $json[self::FIELD_PROCEDURE],
-                config: $config,
-            ));
+            $type->setProcedure(FHIRMedicinalProductAuthorizationProcedure::jsonUnserialize($json[self::FIELD_PROCEDURE], $config));
         }
         return $type;
     }

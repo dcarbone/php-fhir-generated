@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -241,7 +241,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding $channelType
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl $addressUrl
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $addressString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $addressContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $addressContactPoint
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail $addressExtendedContactDetail
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUrlPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUrl[] $additionalInfo
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPositiveInt $maxParticipants
@@ -253,7 +253,7 @@ class FHIRVirtualServiceDetail extends FHIRDataType
                                 null|FHIRCoding $channelType = null,
                                 null|string|FHIRUrlPrimitive|FHIRUrl $addressUrl = null,
                                 null|string|FHIRStringPrimitive|FHIRString $addressString = null,
-                                null|FHIRContactPoint $addressContactPoint = null,
+                                null|FHIRString|FHIRContactPoint $addressContactPoint = null,
                                 null|FHIRExtendedContactDetail $addressExtendedContactDetail = null,
                                 null|iterable $additionalInfo = null,
                                 null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $maxParticipants = null,
@@ -502,16 +502,19 @@ class FHIRVirtualServiceDetail extends FHIRDataType
      * service to join. The channelType informs as to which datatype is appropriate to
      * use (requires knowledge of the specific type).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $addressContactPoint
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint $addressContactPoint
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAddressContactPoint(null|FHIRContactPoint $addressContactPoint,
+    public function setAddressContactPoint(null|FHIRString|FHIRContactPoint $addressContactPoint,
                                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $addressContactPoint) {
             unset($this->addressContactPoint);
             return $this;
+        }
+        if (!($addressContactPoint instanceof FHIRContactPoint)) {
+            $addressContactPoint = new FHIRContactPoint(value: $addressContactPoint);
         }
         $this->addressContactPoint = $addressContactPoint;
         if ($this->_valueXMLLocations[self::FIELD_ADDRESS_CONTACT_POINT] !== $valueXMLLocation) {
@@ -1132,57 +1135,49 @@ class FHIRVirtualServiceDetail extends FHIRDataType
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_CHANNEL_TYPE]) || array_key_exists(self::FIELD_CHANNEL_TYPE, $json)) {
-            $type->setChannelType(FHIRCoding::jsonUnserialize(
-                json: $json[self::FIELD_CHANNEL_TYPE],
-                config: $config,
-            ));
+            $type->setChannelType(FHIRCoding::jsonUnserialize($json[self::FIELD_CHANNEL_TYPE], $config));
         }
-        if (isset($json[self::FIELD_ADDRESS_URL]) || isset($json[self::FIELD_ADDRESS_URL_EXT]) || array_key_exists(self::FIELD_ADDRESS_URL, $json) || array_key_exists(self::FIELD_ADDRESS_URL_EXT, $json)) {
+        if (isset($json[self::FIELD_ADDRESS_URL])
+            || isset($json[self::FIELD_ADDRESS_URL_EXT])
+            || array_key_exists(self::FIELD_ADDRESS_URL, $json)
+            || array_key_exists(self::FIELD_ADDRESS_URL_EXT, $json)) {
             $value = $json[self::FIELD_ADDRESS_URL] ?? null;
-            $ext = (array)($json[self::FIELD_ADDRESS_URL_EXT] ?? []);
             $type->setAddressUrl(FHIRUrl::jsonUnserialize(
-                json: [FHIRUrl::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUrl::FIELD_VALUE => $value]) + ($json[self::FIELD_ADDRESS_URL_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ADDRESS_STRING]) || isset($json[self::FIELD_ADDRESS_STRING_EXT]) || array_key_exists(self::FIELD_ADDRESS_STRING, $json) || array_key_exists(self::FIELD_ADDRESS_STRING_EXT, $json)) {
+        if (isset($json[self::FIELD_ADDRESS_STRING])
+            || isset($json[self::FIELD_ADDRESS_STRING_EXT])
+            || array_key_exists(self::FIELD_ADDRESS_STRING, $json)
+            || array_key_exists(self::FIELD_ADDRESS_STRING_EXT, $json)) {
             $value = $json[self::FIELD_ADDRESS_STRING] ?? null;
-            $ext = (array)($json[self::FIELD_ADDRESS_STRING_EXT] ?? []);
             $type->setAddressString(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ADDRESS_STRING_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ADDRESS_CONTACT_POINT]) || isset($json[self::FIELD_ADDRESS_CONTACT_POINT_EXT]) || array_key_exists(self::FIELD_ADDRESS_CONTACT_POINT, $json) || array_key_exists(self::FIELD_ADDRESS_CONTACT_POINT_EXT, $json)) {
+        if (isset($json[self::FIELD_ADDRESS_CONTACT_POINT])
+            || isset($json[self::FIELD_ADDRESS_CONTACT_POINT_EXT])
+            || array_key_exists(self::FIELD_ADDRESS_CONTACT_POINT, $json)
+            || array_key_exists(self::FIELD_ADDRESS_CONTACT_POINT_EXT, $json)) {
             $value = $json[self::FIELD_ADDRESS_CONTACT_POINT] ?? null;
-            $ext = (array)($json[self::FIELD_ADDRESS_CONTACT_POINT_EXT] ?? []);
             $type->setAddressContactPoint(FHIRContactPoint::jsonUnserialize(
-                json: [FHIRContactPoint::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRContactPoint::FIELD_VALUE => $value]) + ($json[self::FIELD_ADDRESS_CONTACT_POINT_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ADDRESS_EXTENDED_CONTACT_DETAIL]) || array_key_exists(self::FIELD_ADDRESS_EXTENDED_CONTACT_DETAIL, $json)) {
-            $type->setAddressExtendedContactDetail(FHIRExtendedContactDetail::jsonUnserialize(
-                json: $json[self::FIELD_ADDRESS_EXTENDED_CONTACT_DETAIL],
-                config: $config,
-            ));
+            $type->setAddressExtendedContactDetail(FHIRExtendedContactDetail::jsonUnserialize($json[self::FIELD_ADDRESS_EXTENDED_CONTACT_DETAIL], $config));
         }
-        if (isset($json[self::FIELD_ADDITIONAL_INFO]) || isset($json[self::FIELD_ADDITIONAL_INFO_EXT]) || array_key_exists(self::FIELD_ADDITIONAL_INFO, $json) || array_key_exists(self::FIELD_ADDITIONAL_INFO_EXT, $json)) {
-            $value = $json[self::FIELD_ADDITIONAL_INFO] ?? null;
+        if (isset($json[self::FIELD_ADDITIONAL_INFO])
+            || isset($json[self::FIELD_ADDITIONAL_INFO_EXT])
+            || array_key_exists(self::FIELD_ADDITIONAL_INFO, $json)
+            || array_key_exists(self::FIELD_ADDITIONAL_INFO_EXT, $json)) {
+            $value = (array)($json[self::FIELD_ADDITIONAL_INFO] ?? []);
             $ext = (array)($json[self::FIELD_ADDITIONAL_INFO_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1190,25 +1185,29 @@ class FHIRVirtualServiceDetail extends FHIRDataType
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addAdditionalInfo(FHIRUrl::jsonUnserialize(
-                    json: [FHIRUrl::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRUrl::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_MAX_PARTICIPANTS]) || isset($json[self::FIELD_MAX_PARTICIPANTS_EXT]) || array_key_exists(self::FIELD_MAX_PARTICIPANTS, $json) || array_key_exists(self::FIELD_MAX_PARTICIPANTS_EXT, $json)) {
+        if (isset($json[self::FIELD_MAX_PARTICIPANTS])
+            || isset($json[self::FIELD_MAX_PARTICIPANTS_EXT])
+            || array_key_exists(self::FIELD_MAX_PARTICIPANTS, $json)
+            || array_key_exists(self::FIELD_MAX_PARTICIPANTS_EXT, $json)) {
             $value = $json[self::FIELD_MAX_PARTICIPANTS] ?? null;
-            $ext = (array)($json[self::FIELD_MAX_PARTICIPANTS_EXT] ?? []);
             $type->setMaxParticipants(FHIRPositiveInt::jsonUnserialize(
-                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_MAX_PARTICIPANTS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SESSION_KEY]) || isset($json[self::FIELD_SESSION_KEY_EXT]) || array_key_exists(self::FIELD_SESSION_KEY, $json) || array_key_exists(self::FIELD_SESSION_KEY_EXT, $json)) {
+        if (isset($json[self::FIELD_SESSION_KEY])
+            || isset($json[self::FIELD_SESSION_KEY_EXT])
+            || array_key_exists(self::FIELD_SESSION_KEY, $json)
+            || array_key_exists(self::FIELD_SESSION_KEY_EXT, $json)) {
             $value = $json[self::FIELD_SESSION_KEY] ?? null;
-            $ext = (array)($json[self::FIELD_SESSION_KEY_EXT] ?? []);
             $type->setSessionKey(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SESSION_KEY_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -491,32 +491,15 @@ class FHIRPatientAnimal extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_SPECIES]) || array_key_exists(self::FIELD_SPECIES, $json)) {
-            $type->setSpecies(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_SPECIES],
-                config: $config,
-            ));
+            $type->setSpecies(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SPECIES], $config));
         }
         if (isset($json[self::FIELD_BREED]) || array_key_exists(self::FIELD_BREED, $json)) {
-            $type->setBreed(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_BREED],
-                config: $config,
-            ));
+            $type->setBreed(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_BREED], $config));
         }
         if (isset($json[self::FIELD_GENDER_STATUS]) || array_key_exists(self::FIELD_GENDER_STATUS, $json)) {
-            $type->setGenderStatus(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_GENDER_STATUS],
-                config: $config,
-            ));
+            $type->setGenderStatus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_GENDER_STATUS], $config));
         }
         return $type;
     }

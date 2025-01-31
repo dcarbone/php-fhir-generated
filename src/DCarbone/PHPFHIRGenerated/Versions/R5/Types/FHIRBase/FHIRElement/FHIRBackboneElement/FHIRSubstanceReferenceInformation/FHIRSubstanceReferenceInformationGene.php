@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -527,26 +527,12 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_GENE_SEQUENCE_ORIGIN]) || array_key_exists(self::FIELD_GENE_SEQUENCE_ORIGIN, $json)) {
-            $type->setGeneSequenceOrigin(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_GENE_SEQUENCE_ORIGIN],
-                config: $config,
-            ));
+            $type->setGeneSequenceOrigin(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_GENE_SEQUENCE_ORIGIN], $config));
         }
         if (isset($json[self::FIELD_GENE]) || array_key_exists(self::FIELD_GENE, $json)) {
-            $type->setGene(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_GENE],
-                config: $config,
-            ));
+            $type->setGene(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_GENE], $config));
         }
         if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
             $vs = $json[self::FIELD_SOURCE];
@@ -554,10 +540,7 @@ class FHIRSubstanceReferenceInformationGene extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSource(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSource(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         return $type;

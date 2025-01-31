@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -148,7 +148,7 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum[] $stratum
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum[] $stratum
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -281,11 +281,14 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      * For example, when stratifying on administrative gender, there will be four
      * strata, one for each possible gender value.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum $stratum
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum $stratum
      * @return static
      */
-    public function addStratum(FHIRMeasureReportStratum $stratum): self
+    public function addStratum(FHIRCodeableConcept|FHIRMeasureReportStratum $stratum): self
     {
+        if (!($stratum instanceof FHIRMeasureReportStratum)) {
+            $stratum = new FHIRMeasureReportStratum(value: $stratum);
+        }
         if (!isset($this->stratum)) {
             $this->stratum = [];
         }
@@ -301,10 +304,10 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      * For example, when stratifying on administrative gender, there will be four
      * strata, one for each possible gender value.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum ...$stratum
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum ...$stratum
      * @return static
      */
-    public function setStratum(FHIRMeasureReportStratum ...$stratum): self
+    public function setStratum(FHIRCodeableConcept|FHIRMeasureReportStratum ...$stratum): self
     {
         if ([] === $stratum) {
             unset($this->stratum);
@@ -500,33 +503,22 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
             $vs = $json[self::FIELD_CODE];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCode(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCode(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_STRATUM]) || isset($json[self::FIELD_STRATUM_EXT]) || array_key_exists(self::FIELD_STRATUM, $json) || array_key_exists(self::FIELD_STRATUM_EXT, $json)) {
-            $value = $json[self::FIELD_STRATUM] ?? null;
+        if (isset($json[self::FIELD_STRATUM])
+            || isset($json[self::FIELD_STRATUM_EXT])
+            || array_key_exists(self::FIELD_STRATUM, $json)
+            || array_key_exists(self::FIELD_STRATUM_EXT, $json)) {
+            $value = (array)($json[self::FIELD_STRATUM] ?? []);
             $ext = (array)($json[self::FIELD_STRATUM_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -534,8 +526,8 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addStratum(FHIRMeasureReportStratum::jsonUnserialize(
-                    json: [FHIRMeasureReportStratum::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRMeasureReportStratum::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -944,34 +944,32 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_SEQUENCE_TYPE]) || array_key_exists(self::FIELD_SEQUENCE_TYPE, $json)) {
-            $type->setSequenceType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_SEQUENCE_TYPE],
-                config: $config,
-            ));
+            $type->setSequenceType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SEQUENCE_TYPE], $config));
         }
-        if (isset($json[self::FIELD_NUMBER_OF_SUBUNITS]) || isset($json[self::FIELD_NUMBER_OF_SUBUNITS_EXT]) || array_key_exists(self::FIELD_NUMBER_OF_SUBUNITS, $json) || array_key_exists(self::FIELD_NUMBER_OF_SUBUNITS_EXT, $json)) {
+        if (isset($json[self::FIELD_NUMBER_OF_SUBUNITS])
+            || isset($json[self::FIELD_NUMBER_OF_SUBUNITS_EXT])
+            || array_key_exists(self::FIELD_NUMBER_OF_SUBUNITS, $json)
+            || array_key_exists(self::FIELD_NUMBER_OF_SUBUNITS_EXT, $json)) {
             $value = $json[self::FIELD_NUMBER_OF_SUBUNITS] ?? null;
-            $ext = (array)($json[self::FIELD_NUMBER_OF_SUBUNITS_EXT] ?? []);
             $type->setNumberOfSubunits(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_NUMBER_OF_SUBUNITS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_AREA_OF_HYBRIDISATION]) || isset($json[self::FIELD_AREA_OF_HYBRIDISATION_EXT]) || array_key_exists(self::FIELD_AREA_OF_HYBRIDISATION, $json) || array_key_exists(self::FIELD_AREA_OF_HYBRIDISATION_EXT, $json)) {
+        if (isset($json[self::FIELD_AREA_OF_HYBRIDISATION])
+            || isset($json[self::FIELD_AREA_OF_HYBRIDISATION_EXT])
+            || array_key_exists(self::FIELD_AREA_OF_HYBRIDISATION, $json)
+            || array_key_exists(self::FIELD_AREA_OF_HYBRIDISATION_EXT, $json)) {
             $value = $json[self::FIELD_AREA_OF_HYBRIDISATION] ?? null;
-            $ext = (array)($json[self::FIELD_AREA_OF_HYBRIDISATION_EXT] ?? []);
             $type->setAreaOfHybridisation(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_AREA_OF_HYBRIDISATION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_OLIGO_NUCLEOTIDE_TYPE]) || array_key_exists(self::FIELD_OLIGO_NUCLEOTIDE_TYPE, $json)) {
-            $type->setOligoNucleotideType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_OLIGO_NUCLEOTIDE_TYPE],
-                config: $config,
-            ));
+            $type->setOligoNucleotideType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_OLIGO_NUCLEOTIDE_TYPE], $config));
         }
         if (isset($json[self::FIELD_SUBUNIT]) || array_key_exists(self::FIELD_SUBUNIT, $json)) {
             $vs = $json[self::FIELD_SUBUNIT];
@@ -979,10 +977,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements VersionCont
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSubunit(FHIRSubstanceNucleicAcidSubunit::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSubunit(FHIRSubstanceNucleicAcidSubunit::jsonUnserialize($v, $config));
             }
         }
         return $type;

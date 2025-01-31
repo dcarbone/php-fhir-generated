@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1417,46 +1417,28 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_VALUE_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_VALUE_CODEABLE_CONCEPT, $json)) {
-            $type->setValueCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_VALUE_CODEABLE_CONCEPT],
-                config: $config,
-            ));
+            $type->setValueCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_VALUE_CODEABLE_CONCEPT], $config));
         }
-        if (isset($json[self::FIELD_VALUE_BOOLEAN]) || isset($json[self::FIELD_VALUE_BOOLEAN_EXT]) || array_key_exists(self::FIELD_VALUE_BOOLEAN, $json) || array_key_exists(self::FIELD_VALUE_BOOLEAN_EXT, $json)) {
+        if (isset($json[self::FIELD_VALUE_BOOLEAN])
+            || isset($json[self::FIELD_VALUE_BOOLEAN_EXT])
+            || array_key_exists(self::FIELD_VALUE_BOOLEAN, $json)
+            || array_key_exists(self::FIELD_VALUE_BOOLEAN_EXT, $json)) {
             $value = $json[self::FIELD_VALUE_BOOLEAN] ?? null;
-            $ext = (array)($json[self::FIELD_VALUE_BOOLEAN_EXT] ?? []);
             $type->setValueBoolean(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_BOOLEAN_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_VALUE_QUANTITY]) || array_key_exists(self::FIELD_VALUE_QUANTITY, $json)) {
-            $type->setValueQuantity(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_VALUE_QUANTITY],
-                config: $config,
-            ));
+            $type->setValueQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_VALUE_QUANTITY], $config));
         }
         if (isset($json[self::FIELD_VALUE_RANGE]) || array_key_exists(self::FIELD_VALUE_RANGE, $json)) {
-            $type->setValueRange(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_VALUE_RANGE],
-                config: $config,
-            ));
+            $type->setValueRange(FHIRRange::jsonUnserialize($json[self::FIELD_VALUE_RANGE], $config));
         }
         if (isset($json[self::FIELD_VALUE_REFERENCE]) || array_key_exists(self::FIELD_VALUE_REFERENCE, $json)) {
-            $type->setValueReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_VALUE_REFERENCE],
-                config: $config,
-            ));
+            $type->setValueReference(FHIRReference::jsonUnserialize($json[self::FIELD_VALUE_REFERENCE], $config));
         }
         if (isset($json[self::FIELD_COMPONENT]) || array_key_exists(self::FIELD_COMPONENT, $json)) {
             $vs = $json[self::FIELD_COMPONENT];
@@ -1464,10 +1446,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addComponent(FHIRMeasureReportComponent::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addComponent(FHIRMeasureReportComponent::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_POPULATION]) || array_key_exists(self::FIELD_POPULATION, $json)) {
@@ -1476,49 +1455,33 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPopulation(FHIRMeasureReportPopulation1::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPopulation(FHIRMeasureReportPopulation1::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_MEASURE_SCORE_QUANTITY]) || array_key_exists(self::FIELD_MEASURE_SCORE_QUANTITY, $json)) {
-            $type->setMeasureScoreQuantity(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_MEASURE_SCORE_QUANTITY],
-                config: $config,
-            ));
+            $type->setMeasureScoreQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_MEASURE_SCORE_QUANTITY], $config));
         }
-        if (isset($json[self::FIELD_MEASURE_SCORE_DATE_TIME]) || isset($json[self::FIELD_MEASURE_SCORE_DATE_TIME_EXT]) || array_key_exists(self::FIELD_MEASURE_SCORE_DATE_TIME, $json) || array_key_exists(self::FIELD_MEASURE_SCORE_DATE_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_MEASURE_SCORE_DATE_TIME])
+            || isset($json[self::FIELD_MEASURE_SCORE_DATE_TIME_EXT])
+            || array_key_exists(self::FIELD_MEASURE_SCORE_DATE_TIME, $json)
+            || array_key_exists(self::FIELD_MEASURE_SCORE_DATE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_MEASURE_SCORE_DATE_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_MEASURE_SCORE_DATE_TIME_EXT] ?? []);
             $type->setMeasureScoreDateTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_MEASURE_SCORE_DATE_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_MEASURE_SCORE_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_MEASURE_SCORE_CODEABLE_CONCEPT, $json)) {
-            $type->setMeasureScoreCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_MEASURE_SCORE_CODEABLE_CONCEPT],
-                config: $config,
-            ));
+            $type->setMeasureScoreCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_MEASURE_SCORE_CODEABLE_CONCEPT], $config));
         }
         if (isset($json[self::FIELD_MEASURE_SCORE_PERIOD]) || array_key_exists(self::FIELD_MEASURE_SCORE_PERIOD, $json)) {
-            $type->setMeasureScorePeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_MEASURE_SCORE_PERIOD],
-                config: $config,
-            ));
+            $type->setMeasureScorePeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_MEASURE_SCORE_PERIOD], $config));
         }
         if (isset($json[self::FIELD_MEASURE_SCORE_RANGE]) || array_key_exists(self::FIELD_MEASURE_SCORE_RANGE, $json)) {
-            $type->setMeasureScoreRange(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_MEASURE_SCORE_RANGE],
-                config: $config,
-            ));
+            $type->setMeasureScoreRange(FHIRRange::jsonUnserialize($json[self::FIELD_MEASURE_SCORE_RANGE], $config));
         }
         if (isset($json[self::FIELD_MEASURE_SCORE_DURATION]) || array_key_exists(self::FIELD_MEASURE_SCORE_DURATION, $json)) {
-            $type->setMeasureScoreDuration(FHIRDuration::jsonUnserialize(
-                json: $json[self::FIELD_MEASURE_SCORE_DURATION],
-                config: $config,
-            ));
+            $type->setMeasureScoreDuration(FHIRDuration::jsonUnserialize($json[self::FIELD_MEASURE_SCORE_DURATION], $config));
         }
         return $type;
     }

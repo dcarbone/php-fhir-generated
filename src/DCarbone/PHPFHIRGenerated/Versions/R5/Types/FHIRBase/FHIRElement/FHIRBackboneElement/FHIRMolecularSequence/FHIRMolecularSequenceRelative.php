@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -722,40 +722,25 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_COORDINATE_SYSTEM]) || array_key_exists(self::FIELD_COORDINATE_SYSTEM, $json)) {
-            $type->setCoordinateSystem(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_COORDINATE_SYSTEM],
-                config: $config,
-            ));
+            $type->setCoordinateSystem(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_COORDINATE_SYSTEM], $config));
         }
-        if (isset($json[self::FIELD_ORDINAL_POSITION]) || isset($json[self::FIELD_ORDINAL_POSITION_EXT]) || array_key_exists(self::FIELD_ORDINAL_POSITION, $json) || array_key_exists(self::FIELD_ORDINAL_POSITION_EXT, $json)) {
+        if (isset($json[self::FIELD_ORDINAL_POSITION])
+            || isset($json[self::FIELD_ORDINAL_POSITION_EXT])
+            || array_key_exists(self::FIELD_ORDINAL_POSITION, $json)
+            || array_key_exists(self::FIELD_ORDINAL_POSITION_EXT, $json)) {
             $value = $json[self::FIELD_ORDINAL_POSITION] ?? null;
-            $ext = (array)($json[self::FIELD_ORDINAL_POSITION_EXT] ?? []);
             $type->setOrdinalPosition(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_ORDINAL_POSITION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SEQUENCE_RANGE]) || array_key_exists(self::FIELD_SEQUENCE_RANGE, $json)) {
-            $type->setSequenceRange(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_SEQUENCE_RANGE],
-                config: $config,
-            ));
+            $type->setSequenceRange(FHIRRange::jsonUnserialize($json[self::FIELD_SEQUENCE_RANGE], $config));
         }
         if (isset($json[self::FIELD_STARTING_SEQUENCE]) || array_key_exists(self::FIELD_STARTING_SEQUENCE, $json)) {
-            $type->setStartingSequence(FHIRMolecularSequenceStartingSequence::jsonUnserialize(
-                json: $json[self::FIELD_STARTING_SEQUENCE],
-                config: $config,
-            ));
+            $type->setStartingSequence(FHIRMolecularSequenceStartingSequence::jsonUnserialize($json[self::FIELD_STARTING_SEQUENCE], $config));
         }
         if (isset($json[self::FIELD_EDIT]) || array_key_exists(self::FIELD_EDIT, $json)) {
             $vs = $json[self::FIELD_EDIT];
@@ -763,10 +748,7 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addEdit(FHIRMolecularSequenceEdit::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addEdit(FHIRMolecularSequenceEdit::jsonUnserialize($v, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,6 +70,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
@@ -136,7 +137,7 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRPositiveInt $sequenceLinkId
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication2[] $adjudication
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication2[] $adjudication
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -264,11 +265,14 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
      *
      * The adjudications results.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication2 $adjudication
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication2 $adjudication
      * @return static
      */
-    public function addAdjudication(FHIRClaimResponseAdjudication2 $adjudication): self
+    public function addAdjudication(FHIRDecimal|FHIRClaimResponseAdjudication2 $adjudication): self
     {
+        if (!($adjudication instanceof FHIRClaimResponseAdjudication2)) {
+            $adjudication = new FHIRClaimResponseAdjudication2(value: $adjudication);
+        }
         if (!isset($this->adjudication)) {
             $this->adjudication = [];
         }
@@ -282,10 +286,10 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
      *
      * The adjudications results.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication2 ...$adjudication
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication2 ...$adjudication
      * @return static
      */
-    public function setAdjudication(FHIRClaimResponseAdjudication2 ...$adjudication): self
+    public function setAdjudication(FHIRDecimal|FHIRClaimResponseAdjudication2 ...$adjudication): self
     {
         if ([] === $adjudication) {
             unset($this->adjudication);
@@ -497,29 +501,23 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_SEQUENCE_LINK_ID]) || isset($json[self::FIELD_SEQUENCE_LINK_ID_EXT]) || array_key_exists(self::FIELD_SEQUENCE_LINK_ID, $json) || array_key_exists(self::FIELD_SEQUENCE_LINK_ID_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_SEQUENCE_LINK_ID])
+            || isset($json[self::FIELD_SEQUENCE_LINK_ID_EXT])
+            || array_key_exists(self::FIELD_SEQUENCE_LINK_ID, $json)
+            || array_key_exists(self::FIELD_SEQUENCE_LINK_ID_EXT, $json)) {
             $value = $json[self::FIELD_SEQUENCE_LINK_ID] ?? null;
-            $ext = (array)($json[self::FIELD_SEQUENCE_LINK_ID_EXT] ?? []);
             $type->setSequenceLinkId(FHIRPositiveInt::jsonUnserialize(
-                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_SEQUENCE_LINK_ID_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ADJUDICATION]) || isset($json[self::FIELD_ADJUDICATION_EXT]) || array_key_exists(self::FIELD_ADJUDICATION, $json) || array_key_exists(self::FIELD_ADJUDICATION_EXT, $json)) {
-            $value = $json[self::FIELD_ADJUDICATION] ?? null;
+        if (isset($json[self::FIELD_ADJUDICATION])
+            || isset($json[self::FIELD_ADJUDICATION_EXT])
+            || array_key_exists(self::FIELD_ADJUDICATION, $json)
+            || array_key_exists(self::FIELD_ADJUDICATION_EXT, $json)) {
+            $value = (array)($json[self::FIELD_ADJUDICATION] ?? []);
             $ext = (array)($json[self::FIELD_ADJUDICATION_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -527,8 +525,8 @@ class FHIRClaimResponseSubDetail extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addAdjudication(FHIRClaimResponseAdjudication2::jsonUnserialize(
-                    json: [FHIRClaimResponseAdjudication2::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRClaimResponseAdjudication2::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

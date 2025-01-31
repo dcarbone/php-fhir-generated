@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,8 +76,12 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityStatus;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityType;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCriticalityList;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSensitivityStatusList;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSensitivityTypeList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface;
@@ -251,11 +255,11 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCriticality $criticality
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityType $sensitivityType
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCriticalityList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCriticality $criticality
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSensitivityTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityType $sensitivityType
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $recordedDate
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSensitivityStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityStatus $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $subject
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $recorder
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $substance
@@ -270,10 +274,10 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
                                 null|FHIRNarrative $text = null,
                                 null|iterable $contained = null,
                                 null|iterable $identifier = null,
-                                null|FHIRCriticality $criticality = null,
-                                null|FHIRSensitivityType $sensitivityType = null,
+                                null|string|FHIRCriticalityList|FHIRCriticality $criticality = null,
+                                null|string|FHIRSensitivityTypeList|FHIRSensitivityType $sensitivityType = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $recordedDate = null,
-                                null|FHIRSensitivityStatus $status = null,
+                                null|string|FHIRSensitivityStatusList|FHIRSensitivityStatus $status = null,
                                 null|FHIRResourceReference $subject = null,
                                 null|FHIRResourceReference $recorder = null,
                                 null|FHIRResourceReference $substance = null,
@@ -377,11 +381,14 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -399,10 +406,10 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -438,16 +445,19 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      *
      * Criticality of the sensitivity.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCriticality $criticality
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCriticalityList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCriticality $criticality
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCriticality(null|FHIRCriticality $criticality,
+    public function setCriticality(null|string|FHIRCriticalityList|FHIRCriticality $criticality,
                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $criticality) {
             unset($this->criticality);
             return $this;
+        }
+        if (!($criticality instanceof FHIRCriticality)) {
+            $criticality = new FHIRCriticality(value: $criticality);
         }
         $this->criticality = $criticality;
         if ($this->_valueXMLLocations[self::FIELD_CRITICALITY] !== $valueXMLLocation) {
@@ -499,16 +509,19 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      *
      * Type of the sensitivity.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityType $sensitivityType
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSensitivityTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityType $sensitivityType
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSensitivityType(null|FHIRSensitivityType $sensitivityType,
+    public function setSensitivityType(null|string|FHIRSensitivityTypeList|FHIRSensitivityType $sensitivityType,
                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $sensitivityType) {
             unset($this->sensitivityType);
             return $this;
+        }
+        if (!($sensitivityType instanceof FHIRSensitivityType)) {
+            $sensitivityType = new FHIRSensitivityType(value: $sensitivityType);
         }
         $this->sensitivityType = $sensitivityType;
         if ($this->_valueXMLLocations[self::FIELD_SENSITIVITY_TYPE] !== $valueXMLLocation) {
@@ -630,16 +643,19 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
      *
      * Status of the sensitivity.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRSensitivityStatusList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSensitivityStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRSensitivityStatus $status,
+    public function setStatus(null|string|FHIRSensitivityStatusList|FHIRSensitivityStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRSensitivityStatus)) {
+            $status = new FHIRSensitivityStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -1403,13 +1419,13 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1417,60 +1433,59 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_CRITICALITY]) || isset($json[self::FIELD_CRITICALITY_EXT]) || array_key_exists(self::FIELD_CRITICALITY, $json) || array_key_exists(self::FIELD_CRITICALITY_EXT, $json)) {
+        if (isset($json[self::FIELD_CRITICALITY])
+            || isset($json[self::FIELD_CRITICALITY_EXT])
+            || array_key_exists(self::FIELD_CRITICALITY, $json)
+            || array_key_exists(self::FIELD_CRITICALITY_EXT, $json)) {
             $value = $json[self::FIELD_CRITICALITY] ?? null;
-            $ext = (array)($json[self::FIELD_CRITICALITY_EXT] ?? []);
             $type->setCriticality(FHIRCriticality::jsonUnserialize(
-                json: [FHIRCriticality::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCriticality::FIELD_VALUE => $value]) + ($json[self::FIELD_CRITICALITY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SENSITIVITY_TYPE]) || isset($json[self::FIELD_SENSITIVITY_TYPE_EXT]) || array_key_exists(self::FIELD_SENSITIVITY_TYPE, $json) || array_key_exists(self::FIELD_SENSITIVITY_TYPE_EXT, $json)) {
+        if (isset($json[self::FIELD_SENSITIVITY_TYPE])
+            || isset($json[self::FIELD_SENSITIVITY_TYPE_EXT])
+            || array_key_exists(self::FIELD_SENSITIVITY_TYPE, $json)
+            || array_key_exists(self::FIELD_SENSITIVITY_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_SENSITIVITY_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_SENSITIVITY_TYPE_EXT] ?? []);
             $type->setSensitivityType(FHIRSensitivityType::jsonUnserialize(
-                json: [FHIRSensitivityType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSensitivityType::FIELD_VALUE => $value]) + ($json[self::FIELD_SENSITIVITY_TYPE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_RECORDED_DATE]) || isset($json[self::FIELD_RECORDED_DATE_EXT]) || array_key_exists(self::FIELD_RECORDED_DATE, $json) || array_key_exists(self::FIELD_RECORDED_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_RECORDED_DATE])
+            || isset($json[self::FIELD_RECORDED_DATE_EXT])
+            || array_key_exists(self::FIELD_RECORDED_DATE, $json)
+            || array_key_exists(self::FIELD_RECORDED_DATE_EXT, $json)) {
             $value = $json[self::FIELD_RECORDED_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_RECORDED_DATE_EXT] ?? []);
             $type->setRecordedDate(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_RECORDED_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRSensitivityStatus::jsonUnserialize(
-                json: [FHIRSensitivityStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSensitivityStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $type->setSubject(FHIRResourceReference::jsonUnserialize(
-                json: $json[self::FIELD_SUBJECT],
-                config: $config,
-            ));
+            $type->setSubject(FHIRResourceReference::jsonUnserialize($json[self::FIELD_SUBJECT], $config));
         }
         if (isset($json[self::FIELD_RECORDER]) || array_key_exists(self::FIELD_RECORDER, $json)) {
-            $type->setRecorder(FHIRResourceReference::jsonUnserialize(
-                json: $json[self::FIELD_RECORDER],
-                config: $config,
-            ));
+            $type->setRecorder(FHIRResourceReference::jsonUnserialize($json[self::FIELD_RECORDER], $config));
         }
         if (isset($json[self::FIELD_SUBSTANCE]) || array_key_exists(self::FIELD_SUBSTANCE, $json)) {
-            $type->setSubstance(FHIRResourceReference::jsonUnserialize(
-                json: $json[self::FIELD_SUBSTANCE],
-                config: $config,
-            ));
+            $type->setSubstance(FHIRResourceReference::jsonUnserialize($json[self::FIELD_SUBSTANCE], $config));
         }
         if (isset($json[self::FIELD_REACTION]) || array_key_exists(self::FIELD_REACTION, $json)) {
             $vs = $json[self::FIELD_REACTION];
@@ -1478,10 +1493,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addReaction(FHIRResourceReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addReaction(FHIRResourceReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SENSITIVITY_TEST]) || array_key_exists(self::FIELD_SENSITIVITY_TEST, $json)) {
@@ -1490,10 +1502,7 @@ class FHIRAllergyIntolerance extends FHIRResource implements VersionContainedTyp
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSensitivityTest(FHIRResourceReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSensitivityTest(FHIRResourceReference::jsonUnserialize($v, $config));
             }
         }
         return $type;

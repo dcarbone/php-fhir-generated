@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,6 +71,8 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExposureType;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCausalityExpectationList;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRExposureTypeList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 
@@ -154,8 +156,8 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $date
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExposureType $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCausalityExpectation $causalityExpectation
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRExposureTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExposureType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCausalityExpectationList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCausalityExpectation $causalityExpectation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $substance
      * @param null|string[] $fhirComments
      */
@@ -163,8 +165,8 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date = null,
-                                null|FHIRExposureType $type = null,
-                                null|FHIRCausalityExpectation $causalityExpectation = null,
+                                null|string|FHIRExposureTypeList|FHIRExposureType $type = null,
+                                null|string|FHIRCausalityExpectationList|FHIRCausalityExpectation $causalityExpectation = null,
                                 null|FHIRResourceReference $substance = null,
                                 null|iterable $fhirComments = null)
     {
@@ -287,16 +289,19 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      *
      * The type of exposure: Drug Administration, Immunization, Coincidental.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExposureType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRExposureTypeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExposureType $type
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|FHIRExposureType $type,
+    public function setType(null|string|FHIRExposureTypeList|FHIRExposureType $type,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $type) {
             unset($this->type);
             return $this;
+        }
+        if (!($type instanceof FHIRExposureType)) {
+            $type = new FHIRExposureType(value: $type);
         }
         $this->type = $type;
         if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
@@ -350,16 +355,19 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      * A statement of how confident that the recorder was that this exposure caused the
      * reaction.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCausalityExpectation $causalityExpectation
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRCausalityExpectationList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCausalityExpectation $causalityExpectation
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCausalityExpectation(null|FHIRCausalityExpectation $causalityExpectation,
+    public function setCausalityExpectation(null|string|FHIRCausalityExpectationList|FHIRCausalityExpectation $causalityExpectation,
                                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $causalityExpectation) {
             unset($this->causalityExpectation);
             return $this;
+        }
+        if (!($causalityExpectation instanceof FHIRCausalityExpectation)) {
+            $causalityExpectation = new FHIRCausalityExpectation(value: $causalityExpectation);
         }
         $this->causalityExpectation = $causalityExpectation;
         if ($this->_valueXMLLocations[self::FIELD_CAUSALITY_EXPECTATION] !== $valueXMLLocation) {
@@ -678,44 +686,39 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_DATE]) || isset($json[self::FIELD_DATE_EXT]) || array_key_exists(self::FIELD_DATE, $json) || array_key_exists(self::FIELD_DATE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_DATE])
+            || isset($json[self::FIELD_DATE_EXT])
+            || array_key_exists(self::FIELD_DATE, $json)
+            || array_key_exists(self::FIELD_DATE_EXT, $json)) {
             $value = $json[self::FIELD_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_DATE_EXT] ?? []);
             $type->setDate(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
+        if (isset($json[self::FIELD_TYPE])
+            || isset($json[self::FIELD_TYPE_EXT])
+            || array_key_exists(self::FIELD_TYPE, $json)
+            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
             $type->setType(FHIRExposureType::jsonUnserialize(
-                json: [FHIRExposureType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRExposureType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CAUSALITY_EXPECTATION]) || isset($json[self::FIELD_CAUSALITY_EXPECTATION_EXT]) || array_key_exists(self::FIELD_CAUSALITY_EXPECTATION, $json) || array_key_exists(self::FIELD_CAUSALITY_EXPECTATION_EXT, $json)) {
+        if (isset($json[self::FIELD_CAUSALITY_EXPECTATION])
+            || isset($json[self::FIELD_CAUSALITY_EXPECTATION_EXT])
+            || array_key_exists(self::FIELD_CAUSALITY_EXPECTATION, $json)
+            || array_key_exists(self::FIELD_CAUSALITY_EXPECTATION_EXT, $json)) {
             $value = $json[self::FIELD_CAUSALITY_EXPECTATION] ?? null;
-            $ext = (array)($json[self::FIELD_CAUSALITY_EXPECTATION_EXT] ?? []);
             $type->setCausalityExpectation(FHIRCausalityExpectation::jsonUnserialize(
-                json: [FHIRCausalityExpectation::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCausalityExpectation::FIELD_VALUE => $value]) + ($json[self::FIELD_CAUSALITY_EXPECTATION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SUBSTANCE]) || array_key_exists(self::FIELD_SUBSTANCE, $json)) {
-            $type->setSubstance(FHIRResourceReference::jsonUnserialize(
-                json: $json[self::FIELD_SUBSTANCE],
-                config: $config,
-            ));
+            $type->setSubstance(FHIRResourceReference::jsonUnserialize($json[self::FIELD_SUBSTANCE], $config));
         }
         return $type;
     }

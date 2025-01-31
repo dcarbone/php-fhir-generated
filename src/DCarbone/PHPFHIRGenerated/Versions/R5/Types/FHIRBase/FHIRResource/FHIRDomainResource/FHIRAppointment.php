@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,6 +113,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAppointmentStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRInstantPrimitive;
@@ -603,8 +604,8 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAppointmentStatus $status
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAppointmentStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAppointmentStatus $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $cancellationReason
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $class
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $serviceCategory
@@ -646,7 +647,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
                                 null|iterable $identifier = null,
-                                null|FHIRAppointmentStatus $status = null,
+                                null|string|FHIRAppointmentStatusEnum|FHIRAppointmentStatus $status = null,
                                 null|FHIRCodeableConcept $cancellationReason = null,
                                 null|iterable $class = null,
                                 null|iterable $serviceCategory = null,
@@ -845,11 +846,14 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -868,10 +872,10 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -909,16 +913,19 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
      * participation status which indicates their involvement in the process, however
      * this status indicates the shared status.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAppointmentStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRAppointmentStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRAppointmentStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRAppointmentStatus $status,
+    public function setStatus(null|string|FHIRAppointmentStatusEnum|FHIRAppointmentStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRAppointmentStatus)) {
+            $status = new FHIRAppointmentStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -3900,13 +3907,13 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -3914,24 +3921,23 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRAppointmentStatus::jsonUnserialize(
-                json: [FHIRAppointmentStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRAppointmentStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CANCELLATION_REASON]) || array_key_exists(self::FIELD_CANCELLATION_REASON, $json)) {
-            $type->setCancellationReason(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CANCELLATION_REASON],
-                config: $config,
-            ));
+            $type->setCancellationReason(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CANCELLATION_REASON], $config));
         }
         if (isset($json[self::FIELD_CLASS]) || array_key_exists(self::FIELD_CLASS, $json)) {
             $vs = $json[self::FIELD_CLASS];
@@ -3939,10 +3945,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addClass(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addClass(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SERVICE_CATEGORY]) || array_key_exists(self::FIELD_SERVICE_CATEGORY, $json)) {
@@ -3951,10 +3954,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addServiceCategory(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addServiceCategory(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SERVICE_TYPE]) || array_key_exists(self::FIELD_SERVICE_TYPE, $json)) {
@@ -3963,10 +3963,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addServiceType(FHIRCodeableReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addServiceType(FHIRCodeableReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SPECIALTY]) || array_key_exists(self::FIELD_SPECIALTY, $json)) {
@@ -3975,17 +3972,11 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSpecialty(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSpecialty(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_APPOINTMENT_TYPE]) || array_key_exists(self::FIELD_APPOINTMENT_TYPE, $json)) {
-            $type->setAppointmentType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_APPOINTMENT_TYPE],
-                config: $config,
-            ));
+            $type->setAppointmentType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_APPOINTMENT_TYPE], $config));
         }
         if (isset($json[self::FIELD_REASON]) || array_key_exists(self::FIELD_REASON, $json)) {
             $vs = $json[self::FIELD_REASON];
@@ -3993,24 +3984,20 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addReason(FHIRCodeableReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addReason(FHIRCodeableReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PRIORITY]) || array_key_exists(self::FIELD_PRIORITY, $json)) {
-            $type->setPriority(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_PRIORITY],
-                config: $config,
-            ));
+            $type->setPriority(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PRIORITY], $config));
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_REPLACES]) || array_key_exists(self::FIELD_REPLACES, $json)) {
@@ -4019,10 +4006,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addReplaces(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addReplaces(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_VIRTUAL_SERVICE]) || array_key_exists(self::FIELD_VIRTUAL_SERVICE, $json)) {
@@ -4031,10 +4015,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addVirtualService(FHIRVirtualServiceDetail::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addVirtualService(FHIRVirtualServiceDetail::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SUPPORTING_INFORMATION]) || array_key_exists(self::FIELD_SUPPORTING_INFORMATION, $json)) {
@@ -4043,46 +4024,43 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSupportingInformation(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSupportingInformation(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PREVIOUS_APPOINTMENT]) || array_key_exists(self::FIELD_PREVIOUS_APPOINTMENT, $json)) {
-            $type->setPreviousAppointment(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PREVIOUS_APPOINTMENT],
-                config: $config,
-            ));
+            $type->setPreviousAppointment(FHIRReference::jsonUnserialize($json[self::FIELD_PREVIOUS_APPOINTMENT], $config));
         }
         if (isset($json[self::FIELD_ORIGINATING_APPOINTMENT]) || array_key_exists(self::FIELD_ORIGINATING_APPOINTMENT, $json)) {
-            $type->setOriginatingAppointment(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ORIGINATING_APPOINTMENT],
-                config: $config,
-            ));
+            $type->setOriginatingAppointment(FHIRReference::jsonUnserialize($json[self::FIELD_ORIGINATING_APPOINTMENT], $config));
         }
-        if (isset($json[self::FIELD_START]) || isset($json[self::FIELD_START_EXT]) || array_key_exists(self::FIELD_START, $json) || array_key_exists(self::FIELD_START_EXT, $json)) {
+        if (isset($json[self::FIELD_START])
+            || isset($json[self::FIELD_START_EXT])
+            || array_key_exists(self::FIELD_START, $json)
+            || array_key_exists(self::FIELD_START_EXT, $json)) {
             $value = $json[self::FIELD_START] ?? null;
-            $ext = (array)($json[self::FIELD_START_EXT] ?? []);
             $type->setStart(FHIRInstant::jsonUnserialize(
-                json: [FHIRInstant::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_START_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_END]) || isset($json[self::FIELD_END_EXT]) || array_key_exists(self::FIELD_END, $json) || array_key_exists(self::FIELD_END_EXT, $json)) {
+        if (isset($json[self::FIELD_END])
+            || isset($json[self::FIELD_END_EXT])
+            || array_key_exists(self::FIELD_END, $json)
+            || array_key_exists(self::FIELD_END_EXT, $json)) {
             $value = $json[self::FIELD_END] ?? null;
-            $ext = (array)($json[self::FIELD_END_EXT] ?? []);
             $type->setEnd(FHIRInstant::jsonUnserialize(
-                json: [FHIRInstant::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_END_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_MINUTES_DURATION]) || isset($json[self::FIELD_MINUTES_DURATION_EXT]) || array_key_exists(self::FIELD_MINUTES_DURATION, $json) || array_key_exists(self::FIELD_MINUTES_DURATION_EXT, $json)) {
+        if (isset($json[self::FIELD_MINUTES_DURATION])
+            || isset($json[self::FIELD_MINUTES_DURATION_EXT])
+            || array_key_exists(self::FIELD_MINUTES_DURATION, $json)
+            || array_key_exists(self::FIELD_MINUTES_DURATION_EXT, $json)) {
             $value = $json[self::FIELD_MINUTES_DURATION] ?? null;
-            $ext = (array)($json[self::FIELD_MINUTES_DURATION_EXT] ?? []);
             $type->setMinutesDuration(FHIRPositiveInt::jsonUnserialize(
-                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_MINUTES_DURATION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_REQUESTED_PERIOD]) || array_key_exists(self::FIELD_REQUESTED_PERIOD, $json)) {
@@ -4091,10 +4069,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRequestedPeriod(FHIRPeriod::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRequestedPeriod(FHIRPeriod::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SLOT]) || array_key_exists(self::FIELD_SLOT, $json)) {
@@ -4103,10 +4078,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSlot(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSlot(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ACCOUNT]) || array_key_exists(self::FIELD_ACCOUNT, $json)) {
@@ -4115,26 +4087,27 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAccount(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAccount(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CREATED]) || isset($json[self::FIELD_CREATED_EXT]) || array_key_exists(self::FIELD_CREATED, $json) || array_key_exists(self::FIELD_CREATED_EXT, $json)) {
+        if (isset($json[self::FIELD_CREATED])
+            || isset($json[self::FIELD_CREATED_EXT])
+            || array_key_exists(self::FIELD_CREATED, $json)
+            || array_key_exists(self::FIELD_CREATED_EXT, $json)) {
             $value = $json[self::FIELD_CREATED] ?? null;
-            $ext = (array)($json[self::FIELD_CREATED_EXT] ?? []);
             $type->setCreated(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_CREATED_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CANCELLATION_DATE]) || isset($json[self::FIELD_CANCELLATION_DATE_EXT]) || array_key_exists(self::FIELD_CANCELLATION_DATE, $json) || array_key_exists(self::FIELD_CANCELLATION_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_CANCELLATION_DATE])
+            || isset($json[self::FIELD_CANCELLATION_DATE_EXT])
+            || array_key_exists(self::FIELD_CANCELLATION_DATE, $json)
+            || array_key_exists(self::FIELD_CANCELLATION_DATE_EXT, $json)) {
             $value = $json[self::FIELD_CANCELLATION_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_CANCELLATION_DATE_EXT] ?? []);
             $type->setCancellationDate(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_CANCELLATION_DATE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
@@ -4143,10 +4116,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addNote(FHIRAnnotation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PATIENT_INSTRUCTION]) || array_key_exists(self::FIELD_PATIENT_INSTRUCTION, $json)) {
@@ -4155,10 +4125,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPatientInstruction(FHIRCodeableReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPatientInstruction(FHIRCodeableReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_BASED_ON]) || array_key_exists(self::FIELD_BASED_ON, $json)) {
@@ -4167,17 +4134,11 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addBasedOn(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addBasedOn(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $type->setSubject(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_SUBJECT],
-                config: $config,
-            ));
+            $type->setSubject(FHIRReference::jsonUnserialize($json[self::FIELD_SUBJECT], $config));
         }
         if (isset($json[self::FIELD_PARTICIPANT]) || array_key_exists(self::FIELD_PARTICIPANT, $json)) {
             $vs = $json[self::FIELD_PARTICIPANT];
@@ -4185,26 +4146,27 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addParticipant(FHIRAppointmentParticipant::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addParticipant(FHIRAppointmentParticipant::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_RECURRENCE_ID]) || isset($json[self::FIELD_RECURRENCE_ID_EXT]) || array_key_exists(self::FIELD_RECURRENCE_ID, $json) || array_key_exists(self::FIELD_RECURRENCE_ID_EXT, $json)) {
+        if (isset($json[self::FIELD_RECURRENCE_ID])
+            || isset($json[self::FIELD_RECURRENCE_ID_EXT])
+            || array_key_exists(self::FIELD_RECURRENCE_ID, $json)
+            || array_key_exists(self::FIELD_RECURRENCE_ID_EXT, $json)) {
             $value = $json[self::FIELD_RECURRENCE_ID] ?? null;
-            $ext = (array)($json[self::FIELD_RECURRENCE_ID_EXT] ?? []);
             $type->setRecurrenceId(FHIRPositiveInt::jsonUnserialize(
-                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_RECURRENCE_ID_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_OCCURRENCE_CHANGED]) || isset($json[self::FIELD_OCCURRENCE_CHANGED_EXT]) || array_key_exists(self::FIELD_OCCURRENCE_CHANGED, $json) || array_key_exists(self::FIELD_OCCURRENCE_CHANGED_EXT, $json)) {
+        if (isset($json[self::FIELD_OCCURRENCE_CHANGED])
+            || isset($json[self::FIELD_OCCURRENCE_CHANGED_EXT])
+            || array_key_exists(self::FIELD_OCCURRENCE_CHANGED, $json)
+            || array_key_exists(self::FIELD_OCCURRENCE_CHANGED_EXT, $json)) {
             $value = $json[self::FIELD_OCCURRENCE_CHANGED] ?? null;
-            $ext = (array)($json[self::FIELD_OCCURRENCE_CHANGED_EXT] ?? []);
             $type->setOccurrenceChanged(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_OCCURRENCE_CHANGED_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_RECURRENCE_TEMPLATE]) || array_key_exists(self::FIELD_RECURRENCE_TEMPLATE, $json)) {
@@ -4213,10 +4175,7 @@ class FHIRAppointment extends FHIRDomainResource implements VersionContainedType
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRecurrenceTemplate(FHIRAppointmentRecurrenceTemplate::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRecurrenceTemplate(FHIRAppointmentRecurrenceTemplate::jsonUnserialize($v, $config));
             }
         }
         return $type;

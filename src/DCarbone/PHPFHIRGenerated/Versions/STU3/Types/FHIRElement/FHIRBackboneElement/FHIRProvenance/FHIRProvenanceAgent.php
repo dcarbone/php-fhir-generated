@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -841,60 +841,44 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_ROLE]) || array_key_exists(self::FIELD_ROLE, $json)) {
             $vs = $json[self::FIELD_ROLE];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRole(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRole(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_WHO_URI]) || isset($json[self::FIELD_WHO_URI_EXT]) || array_key_exists(self::FIELD_WHO_URI, $json) || array_key_exists(self::FIELD_WHO_URI_EXT, $json)) {
+        if (isset($json[self::FIELD_WHO_URI])
+            || isset($json[self::FIELD_WHO_URI_EXT])
+            || array_key_exists(self::FIELD_WHO_URI, $json)
+            || array_key_exists(self::FIELD_WHO_URI_EXT, $json)) {
             $value = $json[self::FIELD_WHO_URI] ?? null;
-            $ext = (array)($json[self::FIELD_WHO_URI_EXT] ?? []);
             $type->setWhoUri(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_WHO_URI_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_WHO_REFERENCE]) || array_key_exists(self::FIELD_WHO_REFERENCE, $json)) {
-            $type->setWhoReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_WHO_REFERENCE],
-                config: $config,
-            ));
+            $type->setWhoReference(FHIRReference::jsonUnserialize($json[self::FIELD_WHO_REFERENCE], $config));
         }
-        if (isset($json[self::FIELD_ON_BEHALF_OF_URI]) || isset($json[self::FIELD_ON_BEHALF_OF_URI_EXT]) || array_key_exists(self::FIELD_ON_BEHALF_OF_URI, $json) || array_key_exists(self::FIELD_ON_BEHALF_OF_URI_EXT, $json)) {
+        if (isset($json[self::FIELD_ON_BEHALF_OF_URI])
+            || isset($json[self::FIELD_ON_BEHALF_OF_URI_EXT])
+            || array_key_exists(self::FIELD_ON_BEHALF_OF_URI, $json)
+            || array_key_exists(self::FIELD_ON_BEHALF_OF_URI_EXT, $json)) {
             $value = $json[self::FIELD_ON_BEHALF_OF_URI] ?? null;
-            $ext = (array)($json[self::FIELD_ON_BEHALF_OF_URI_EXT] ?? []);
             $type->setOnBehalfOfUri(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_ON_BEHALF_OF_URI_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ON_BEHALF_OF_REFERENCE]) || array_key_exists(self::FIELD_ON_BEHALF_OF_REFERENCE, $json)) {
-            $type->setOnBehalfOfReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ON_BEHALF_OF_REFERENCE],
-                config: $config,
-            ));
+            $type->setOnBehalfOfReference(FHIRReference::jsonUnserialize($json[self::FIELD_ON_BEHALF_OF_REFERENCE], $config));
         }
         if (isset($json[self::FIELD_RELATED_AGENT_TYPE]) || array_key_exists(self::FIELD_RELATED_AGENT_TYPE, $json)) {
-            $type->setRelatedAgentType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_RELATED_AGENT_TYPE],
-                config: $config,
-            ));
+            $type->setRelatedAgentType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_RELATED_AGENT_TYPE], $config));
         }
         return $type;
     }

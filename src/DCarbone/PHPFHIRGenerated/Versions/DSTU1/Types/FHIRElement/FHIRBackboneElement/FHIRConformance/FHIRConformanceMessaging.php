@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -727,37 +727,35 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_ENDPOINT]) || isset($json[self::FIELD_ENDPOINT_EXT]) || array_key_exists(self::FIELD_ENDPOINT, $json) || array_key_exists(self::FIELD_ENDPOINT_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_ENDPOINT])
+            || isset($json[self::FIELD_ENDPOINT_EXT])
+            || array_key_exists(self::FIELD_ENDPOINT, $json)
+            || array_key_exists(self::FIELD_ENDPOINT_EXT, $json)) {
             $value = $json[self::FIELD_ENDPOINT] ?? null;
-            $ext = (array)($json[self::FIELD_ENDPOINT_EXT] ?? []);
             $type->setEndpoint(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_ENDPOINT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_RELIABLE_CACHE]) || isset($json[self::FIELD_RELIABLE_CACHE_EXT]) || array_key_exists(self::FIELD_RELIABLE_CACHE, $json) || array_key_exists(self::FIELD_RELIABLE_CACHE_EXT, $json)) {
+        if (isset($json[self::FIELD_RELIABLE_CACHE])
+            || isset($json[self::FIELD_RELIABLE_CACHE_EXT])
+            || array_key_exists(self::FIELD_RELIABLE_CACHE, $json)
+            || array_key_exists(self::FIELD_RELIABLE_CACHE_EXT, $json)) {
             $value = $json[self::FIELD_RELIABLE_CACHE] ?? null;
-            $ext = (array)($json[self::FIELD_RELIABLE_CACHE_EXT] ?? []);
             $type->setReliableCache(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_RELIABLE_CACHE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DOCUMENTATION]) || isset($json[self::FIELD_DOCUMENTATION_EXT]) || array_key_exists(self::FIELD_DOCUMENTATION, $json) || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $json)) {
+        if (isset($json[self::FIELD_DOCUMENTATION])
+            || isset($json[self::FIELD_DOCUMENTATION_EXT])
+            || array_key_exists(self::FIELD_DOCUMENTATION, $json)
+            || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $json)) {
             $value = $json[self::FIELD_DOCUMENTATION] ?? null;
-            $ext = (array)($json[self::FIELD_DOCUMENTATION_EXT] ?? []);
             $type->setDocumentation(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DOCUMENTATION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_EVENT]) || array_key_exists(self::FIELD_EVENT, $json)) {
@@ -766,10 +764,7 @@ class FHIRConformanceMessaging extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addEvent(FHIRConformanceEvent::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addEvent(FHIRConformanceEvent::jsonUnserialize($v, $config));
             }
         }
         return $type;

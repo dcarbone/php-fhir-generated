@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,9 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDeviceMetricCategoryEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDeviceMetricColorEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDeviceMetricOperationalStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode;
@@ -291,14 +294,14 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $unit
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $source
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $parent
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDeviceMetricOperationalStatus $operationalStatus
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDeviceMetricColor $color
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDeviceMetricCategory $category
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDeviceMetricOperationalStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDeviceMetricOperationalStatus $operationalStatus
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDeviceMetricColorEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDeviceMetricColor $color
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDeviceMetricCategoryEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDeviceMetricCategory $category
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRTiming $measurementPeriod
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration[] $calibration
      * @param null|string[] $fhirComments
@@ -316,9 +319,9 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
                                 null|FHIRCodeableConcept $unit = null,
                                 null|FHIRReference $source = null,
                                 null|FHIRReference $parent = null,
-                                null|FHIRDeviceMetricOperationalStatus $operationalStatus = null,
-                                null|FHIRDeviceMetricColor $color = null,
-                                null|FHIRDeviceMetricCategory $category = null,
+                                null|string|FHIRDeviceMetricOperationalStatusEnum|FHIRDeviceMetricOperationalStatus $operationalStatus = null,
+                                null|string|FHIRDeviceMetricColorEnum|FHIRDeviceMetricColor $color = null,
+                                null|string|FHIRDeviceMetricCategoryEnum|FHIRDeviceMetricCategory $category = null,
                                 null|FHIRTiming $measurementPeriod = null,
                                 null|iterable $calibration = null,
                                 null|iterable $fhirComments = null)
@@ -419,11 +422,14 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * Unique instance identifiers assigned to a device by the device or gateway
      * software, manufacturers, other organizations or owners. For example: handle ID.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -440,10 +446,10 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * Unique instance identifiers assigned to a device by the device or gateway
      * software, manufacturers, other organizations or owners. For example: handle ID.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -635,16 +641,19 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * Indicates current operational state of the device. For example: On, Off,
      * Standby, etc.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDeviceMetricOperationalStatus $operationalStatus
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDeviceMetricOperationalStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDeviceMetricOperationalStatus $operationalStatus
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOperationalStatus(null|FHIRDeviceMetricOperationalStatus $operationalStatus,
+    public function setOperationalStatus(null|string|FHIRDeviceMetricOperationalStatusEnum|FHIRDeviceMetricOperationalStatus $operationalStatus,
                                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $operationalStatus) {
             unset($this->operationalStatus);
             return $this;
+        }
+        if (!($operationalStatus instanceof FHIRDeviceMetricOperationalStatus)) {
+            $operationalStatus = new FHIRDeviceMetricOperationalStatus(value: $operationalStatus);
         }
         $this->operationalStatus = $operationalStatus;
         if ($this->_valueXMLLocations[self::FIELD_OPERATIONAL_STATUS] !== $valueXMLLocation) {
@@ -702,16 +711,19 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * displayed in different characteristic colors, such as HR-blue, BP-green, and PR
      * and SpO2- magenta.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDeviceMetricColor $color
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDeviceMetricColorEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDeviceMetricColor $color
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setColor(null|FHIRDeviceMetricColor $color,
+    public function setColor(null|string|FHIRDeviceMetricColorEnum|FHIRDeviceMetricColor $color,
                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $color) {
             unset($this->color);
             return $this;
+        }
+        if (!($color instanceof FHIRDeviceMetricColor)) {
+            $color = new FHIRDeviceMetricColor(value: $color);
         }
         $this->color = $color;
         if ($this->_valueXMLLocations[self::FIELD_COLOR] !== $valueXMLLocation) {
@@ -763,16 +775,19 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
      * Indicates the category of the observation generation process. A DeviceMetric can
      * be for example a setting, measurement, or calculation.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDeviceMetricCategory $category
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRDeviceMetricCategoryEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRDeviceMetricCategory $category
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCategory(null|FHIRDeviceMetricCategory $category,
+    public function setCategory(null|string|FHIRDeviceMetricCategoryEnum|FHIRDeviceMetricCategory $category,
                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $category) {
             unset($this->category);
             return $this;
+        }
+        if (!($category instanceof FHIRDeviceMetricCategory)) {
+            $category = new FHIRDeviceMetricCategory(value: $category);
         }
         $this->category = $category;
         if ($this->_valueXMLLocations[self::FIELD_CATEGORY] !== $valueXMLLocation) {
@@ -1434,13 +1449,13 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1448,64 +1463,55 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
         if (isset($json[self::FIELD_UNIT]) || array_key_exists(self::FIELD_UNIT, $json)) {
-            $type->setUnit(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_UNIT],
-                config: $config,
-            ));
+            $type->setUnit(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_UNIT], $config));
         }
         if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
-            $type->setSource(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_SOURCE],
-                config: $config,
-            ));
+            $type->setSource(FHIRReference::jsonUnserialize($json[self::FIELD_SOURCE], $config));
         }
         if (isset($json[self::FIELD_PARENT]) || array_key_exists(self::FIELD_PARENT, $json)) {
-            $type->setParent(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PARENT],
-                config: $config,
-            ));
+            $type->setParent(FHIRReference::jsonUnserialize($json[self::FIELD_PARENT], $config));
         }
-        if (isset($json[self::FIELD_OPERATIONAL_STATUS]) || isset($json[self::FIELD_OPERATIONAL_STATUS_EXT]) || array_key_exists(self::FIELD_OPERATIONAL_STATUS, $json) || array_key_exists(self::FIELD_OPERATIONAL_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_OPERATIONAL_STATUS])
+            || isset($json[self::FIELD_OPERATIONAL_STATUS_EXT])
+            || array_key_exists(self::FIELD_OPERATIONAL_STATUS, $json)
+            || array_key_exists(self::FIELD_OPERATIONAL_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_OPERATIONAL_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_OPERATIONAL_STATUS_EXT] ?? []);
             $type->setOperationalStatus(FHIRDeviceMetricOperationalStatus::jsonUnserialize(
-                json: [FHIRDeviceMetricOperationalStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDeviceMetricOperationalStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_OPERATIONAL_STATUS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_COLOR]) || isset($json[self::FIELD_COLOR_EXT]) || array_key_exists(self::FIELD_COLOR, $json) || array_key_exists(self::FIELD_COLOR_EXT, $json)) {
+        if (isset($json[self::FIELD_COLOR])
+            || isset($json[self::FIELD_COLOR_EXT])
+            || array_key_exists(self::FIELD_COLOR, $json)
+            || array_key_exists(self::FIELD_COLOR_EXT, $json)) {
             $value = $json[self::FIELD_COLOR] ?? null;
-            $ext = (array)($json[self::FIELD_COLOR_EXT] ?? []);
             $type->setColor(FHIRDeviceMetricColor::jsonUnserialize(
-                json: [FHIRDeviceMetricColor::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDeviceMetricColor::FIELD_VALUE => $value]) + ($json[self::FIELD_COLOR_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CATEGORY]) || isset($json[self::FIELD_CATEGORY_EXT]) || array_key_exists(self::FIELD_CATEGORY, $json) || array_key_exists(self::FIELD_CATEGORY_EXT, $json)) {
+        if (isset($json[self::FIELD_CATEGORY])
+            || isset($json[self::FIELD_CATEGORY_EXT])
+            || array_key_exists(self::FIELD_CATEGORY, $json)
+            || array_key_exists(self::FIELD_CATEGORY_EXT, $json)) {
             $value = $json[self::FIELD_CATEGORY] ?? null;
-            $ext = (array)($json[self::FIELD_CATEGORY_EXT] ?? []);
             $type->setCategory(FHIRDeviceMetricCategory::jsonUnserialize(
-                json: [FHIRDeviceMetricCategory::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDeviceMetricCategory::FIELD_VALUE => $value]) + ($json[self::FIELD_CATEGORY_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_MEASUREMENT_PERIOD]) || array_key_exists(self::FIELD_MEASUREMENT_PERIOD, $json)) {
-            $type->setMeasurementPeriod(FHIRTiming::jsonUnserialize(
-                json: $json[self::FIELD_MEASUREMENT_PERIOD],
-                config: $config,
-            ));
+            $type->setMeasurementPeriod(FHIRTiming::jsonUnserialize($json[self::FIELD_MEASUREMENT_PERIOD], $config));
         }
         if (isset($json[self::FIELD_CALIBRATION]) || array_key_exists(self::FIELD_CALIBRATION, $json)) {
             $vs = $json[self::FIELD_CALIBRATION];
@@ -1513,10 +1519,7 @@ class FHIRDeviceMetric extends FHIRDomainResource implements VersionContainedTyp
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCalibration(FHIRDeviceMetricCalibration::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCalibration(FHIRDeviceMetricCalibration::jsonUnserialize($v, $config));
             }
         }
         return $type;

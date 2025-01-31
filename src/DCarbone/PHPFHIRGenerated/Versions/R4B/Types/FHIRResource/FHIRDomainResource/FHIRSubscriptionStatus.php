@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResource\FHIRDomainRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,6 +91,8 @@ use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCanonicalPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSubscriptionNotificationTypeEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSubscriptionStatusCodesEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionStatus\FHIRSubscriptionStatusNotificationEvent;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCanonical;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCode;
@@ -239,8 +241,8 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionStatusCodes $status
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionNotificationType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSubscriptionStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionStatusCodes $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSubscriptionNotificationTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionNotificationType $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $eventsSinceSubscriptionStart
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSubscriptionStatus\FHIRSubscriptionStatusNotificationEvent[] $notificationEvent
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $subscription
@@ -256,8 +258,8 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
                                 null|iterable $contained = null,
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRSubscriptionStatusCodes $status = null,
-                                null|FHIRSubscriptionNotificationType $type = null,
+                                null|string|FHIRSubscriptionStatusCodesEnum|FHIRSubscriptionStatusCodes $status = null,
+                                null|string|FHIRSubscriptionNotificationTypeEnum|FHIRSubscriptionNotificationType $type = null,
                                 null|string|FHIRStringPrimitive|FHIRString $eventsSinceSubscriptionStart = null,
                                 null|iterable $notificationEvent = null,
                                 null|FHIRReference $subscription = null,
@@ -335,16 +337,19 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      * The status of the subscription, which marks the server state for managing the
      * subscription.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionStatusCodes $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSubscriptionStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionStatusCodes $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRSubscriptionStatusCodes $status,
+    public function setStatus(null|string|FHIRSubscriptionStatusCodesEnum|FHIRSubscriptionStatusCodes $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRSubscriptionStatusCodes)) {
+            $status = new FHIRSubscriptionStatusCodes(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -394,16 +399,19 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
      *
      * The type of event being conveyed with this notificaiton.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionNotificationType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSubscriptionNotificationTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSubscriptionNotificationType $type
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|FHIRSubscriptionNotificationType $type,
+    public function setType(null|string|FHIRSubscriptionNotificationTypeEnum|FHIRSubscriptionNotificationType $type,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $type) {
             unset($this->type);
             return $this;
+        }
+        if (!($type instanceof FHIRSubscriptionNotificationType)) {
+            $type = new FHIRSubscriptionNotificationType(value: $type);
         }
         $this->type = $type;
         if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
@@ -1208,29 +1216,35 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRSubscriptionStatusCodes::jsonUnserialize(
-                json: [FHIRSubscriptionStatusCodes::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSubscriptionStatusCodes::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
+        if (isset($json[self::FIELD_TYPE])
+            || isset($json[self::FIELD_TYPE_EXT])
+            || array_key_exists(self::FIELD_TYPE, $json)
+            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
             $type->setType(FHIRSubscriptionNotificationType::jsonUnserialize(
-                json: [FHIRSubscriptionNotificationType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSubscriptionNotificationType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START]) || isset($json[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START_EXT]) || array_key_exists(self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START, $json) || array_key_exists(self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START_EXT, $json)) {
+        if (isset($json[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START])
+            || isset($json[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START_EXT])
+            || array_key_exists(self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START, $json)
+            || array_key_exists(self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START_EXT, $json)) {
             $value = $json[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START] ?? null;
-            $ext = (array)($json[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START_EXT] ?? []);
             $type->setEventsSinceSubscriptionStart(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_EVENTS_SINCE_SUBSCRIPTION_START_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_NOTIFICATION_EVENT]) || array_key_exists(self::FIELD_NOTIFICATION_EVENT, $json)) {
@@ -1239,24 +1253,20 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addNotificationEvent(FHIRSubscriptionStatusNotificationEvent::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addNotificationEvent(FHIRSubscriptionStatusNotificationEvent::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SUBSCRIPTION]) || array_key_exists(self::FIELD_SUBSCRIPTION, $json)) {
-            $type->setSubscription(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_SUBSCRIPTION],
-                config: $config,
-            ));
+            $type->setSubscription(FHIRReference::jsonUnserialize($json[self::FIELD_SUBSCRIPTION], $config));
         }
-        if (isset($json[self::FIELD_TOPIC]) || isset($json[self::FIELD_TOPIC_EXT]) || array_key_exists(self::FIELD_TOPIC, $json) || array_key_exists(self::FIELD_TOPIC_EXT, $json)) {
+        if (isset($json[self::FIELD_TOPIC])
+            || isset($json[self::FIELD_TOPIC_EXT])
+            || array_key_exists(self::FIELD_TOPIC, $json)
+            || array_key_exists(self::FIELD_TOPIC_EXT, $json)) {
             $value = $json[self::FIELD_TOPIC] ?? null;
-            $ext = (array)($json[self::FIELD_TOPIC_EXT] ?? []);
             $type->setTopic(FHIRCanonical::jsonUnserialize(
-                json: [FHIRCanonical::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_TOPIC_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ERROR]) || array_key_exists(self::FIELD_ERROR, $json)) {
@@ -1265,10 +1275,7 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements VersionContai
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addError(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addError(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,6 +71,8 @@ use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAdministrativeGenderList;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRFamilyHistoryStatusList;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAdministrativeGender;
@@ -480,16 +482,16 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference[] $definition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRFamilyHistoryStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRFamilyHistoryStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRFamilyHistoryStatus $status
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $notDone
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $notDoneReason
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $patient
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDateTime $date
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $name
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $relationship
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAdministrativeGender $gender
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAdministrativeGenderList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAdministrativeGender $gender
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRPeriod $bornPeriod
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRDate $bornDate
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString $bornString
@@ -518,14 +520,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                                 null|iterable $modifierExtension = null,
                                 null|iterable $identifier = null,
                                 null|iterable $definition = null,
-                                null|FHIRFamilyHistoryStatus $status = null,
+                                null|string|FHIRFamilyHistoryStatusList|FHIRFamilyHistoryStatus $status = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $notDone = null,
                                 null|FHIRCodeableConcept $notDoneReason = null,
                                 null|FHIRReference $patient = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date = null,
                                 null|string|FHIRStringPrimitive|FHIRString $name = null,
                                 null|FHIRCodeableConcept $relationship = null,
-                                null|FHIRAdministrativeGender $gender = null,
+                                null|string|FHIRAdministrativeGenderList|FHIRAdministrativeGender $gender = null,
                                 null|FHIRPeriod $bornPeriod = null,
                                 null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $bornDate = null,
                                 null|string|FHIRStringPrimitive|FHIRString $bornString = null,
@@ -690,11 +692,14 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -712,10 +717,10 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -820,16 +825,19 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * A code specifying the status of the record of the family history of a specific
      * family member.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRFamilyHistoryStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRFamilyHistoryStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRFamilyHistoryStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRFamilyHistoryStatus $status,
+    public function setStatus(null|string|FHIRFamilyHistoryStatusList|FHIRFamilyHistoryStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRFamilyHistoryStatus)) {
+            $status = new FHIRFamilyHistoryStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -1197,16 +1205,19 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
      * Administrative Gender - the gender that the relative is considered to have for
      * administration and record keeping purposes.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAdministrativeGender $gender
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRAdministrativeGenderList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAdministrativeGender $gender
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setGender(null|FHIRAdministrativeGender $gender,
+    public function setGender(null|string|FHIRAdministrativeGenderList|FHIRAdministrativeGender $gender,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $gender) {
             unset($this->gender);
             return $this;
+        }
+        if (!($gender instanceof FHIRAdministrativeGender)) {
+            $gender = new FHIRAdministrativeGender(value: $gender);
         }
         $this->gender = $gender;
         if ($this->_valueXMLLocations[self::FIELD_GENDER] !== $valueXMLLocation) {
@@ -3104,13 +3115,13 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -3118,8 +3129,8 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -3129,154 +3140,151 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addDefinition(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addDefinition(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRFamilyHistoryStatus::jsonUnserialize(
-                json: [FHIRFamilyHistoryStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRFamilyHistoryStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_NOT_DONE]) || isset($json[self::FIELD_NOT_DONE_EXT]) || array_key_exists(self::FIELD_NOT_DONE, $json) || array_key_exists(self::FIELD_NOT_DONE_EXT, $json)) {
+        if (isset($json[self::FIELD_NOT_DONE])
+            || isset($json[self::FIELD_NOT_DONE_EXT])
+            || array_key_exists(self::FIELD_NOT_DONE, $json)
+            || array_key_exists(self::FIELD_NOT_DONE_EXT, $json)) {
             $value = $json[self::FIELD_NOT_DONE] ?? null;
-            $ext = (array)($json[self::FIELD_NOT_DONE_EXT] ?? []);
             $type->setNotDone(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_NOT_DONE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_NOT_DONE_REASON]) || array_key_exists(self::FIELD_NOT_DONE_REASON, $json)) {
-            $type->setNotDoneReason(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_NOT_DONE_REASON],
-                config: $config,
-            ));
+            $type->setNotDoneReason(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_NOT_DONE_REASON], $config));
         }
         if (isset($json[self::FIELD_PATIENT]) || array_key_exists(self::FIELD_PATIENT, $json)) {
-            $type->setPatient(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PATIENT],
-                config: $config,
-            ));
+            $type->setPatient(FHIRReference::jsonUnserialize($json[self::FIELD_PATIENT], $config));
         }
-        if (isset($json[self::FIELD_DATE]) || isset($json[self::FIELD_DATE_EXT]) || array_key_exists(self::FIELD_DATE, $json) || array_key_exists(self::FIELD_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_DATE])
+            || isset($json[self::FIELD_DATE_EXT])
+            || array_key_exists(self::FIELD_DATE, $json)
+            || array_key_exists(self::FIELD_DATE_EXT, $json)) {
             $value = $json[self::FIELD_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_DATE_EXT] ?? []);
             $type->setDate(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_NAME])
+            || isset($json[self::FIELD_NAME_EXT])
+            || array_key_exists(self::FIELD_NAME, $json)
+            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
             $type->setName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_RELATIONSHIP]) || array_key_exists(self::FIELD_RELATIONSHIP, $json)) {
-            $type->setRelationship(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_RELATIONSHIP],
-                config: $config,
-            ));
+            $type->setRelationship(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_RELATIONSHIP], $config));
         }
-        if (isset($json[self::FIELD_GENDER]) || isset($json[self::FIELD_GENDER_EXT]) || array_key_exists(self::FIELD_GENDER, $json) || array_key_exists(self::FIELD_GENDER_EXT, $json)) {
+        if (isset($json[self::FIELD_GENDER])
+            || isset($json[self::FIELD_GENDER_EXT])
+            || array_key_exists(self::FIELD_GENDER, $json)
+            || array_key_exists(self::FIELD_GENDER_EXT, $json)) {
             $value = $json[self::FIELD_GENDER] ?? null;
-            $ext = (array)($json[self::FIELD_GENDER_EXT] ?? []);
             $type->setGender(FHIRAdministrativeGender::jsonUnserialize(
-                json: [FHIRAdministrativeGender::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRAdministrativeGender::FIELD_VALUE => $value]) + ($json[self::FIELD_GENDER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_BORN_PERIOD]) || array_key_exists(self::FIELD_BORN_PERIOD, $json)) {
-            $type->setBornPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_BORN_PERIOD],
-                config: $config,
-            ));
+            $type->setBornPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_BORN_PERIOD], $config));
         }
-        if (isset($json[self::FIELD_BORN_DATE]) || isset($json[self::FIELD_BORN_DATE_EXT]) || array_key_exists(self::FIELD_BORN_DATE, $json) || array_key_exists(self::FIELD_BORN_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_BORN_DATE])
+            || isset($json[self::FIELD_BORN_DATE_EXT])
+            || array_key_exists(self::FIELD_BORN_DATE, $json)
+            || array_key_exists(self::FIELD_BORN_DATE_EXT, $json)) {
             $value = $json[self::FIELD_BORN_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_BORN_DATE_EXT] ?? []);
             $type->setBornDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_BORN_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_BORN_STRING]) || isset($json[self::FIELD_BORN_STRING_EXT]) || array_key_exists(self::FIELD_BORN_STRING, $json) || array_key_exists(self::FIELD_BORN_STRING_EXT, $json)) {
+        if (isset($json[self::FIELD_BORN_STRING])
+            || isset($json[self::FIELD_BORN_STRING_EXT])
+            || array_key_exists(self::FIELD_BORN_STRING, $json)
+            || array_key_exists(self::FIELD_BORN_STRING_EXT, $json)) {
             $value = $json[self::FIELD_BORN_STRING] ?? null;
-            $ext = (array)($json[self::FIELD_BORN_STRING_EXT] ?? []);
             $type->setBornString(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_BORN_STRING_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_AGE_AGE]) || array_key_exists(self::FIELD_AGE_AGE, $json)) {
-            $type->setAgeAge(FHIRAge::jsonUnserialize(
-                json: $json[self::FIELD_AGE_AGE],
-                config: $config,
-            ));
+            $type->setAgeAge(FHIRAge::jsonUnserialize($json[self::FIELD_AGE_AGE], $config));
         }
         if (isset($json[self::FIELD_AGE_RANGE]) || array_key_exists(self::FIELD_AGE_RANGE, $json)) {
-            $type->setAgeRange(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_AGE_RANGE],
-                config: $config,
-            ));
+            $type->setAgeRange(FHIRRange::jsonUnserialize($json[self::FIELD_AGE_RANGE], $config));
         }
-        if (isset($json[self::FIELD_AGE_STRING]) || isset($json[self::FIELD_AGE_STRING_EXT]) || array_key_exists(self::FIELD_AGE_STRING, $json) || array_key_exists(self::FIELD_AGE_STRING_EXT, $json)) {
+        if (isset($json[self::FIELD_AGE_STRING])
+            || isset($json[self::FIELD_AGE_STRING_EXT])
+            || array_key_exists(self::FIELD_AGE_STRING, $json)
+            || array_key_exists(self::FIELD_AGE_STRING_EXT, $json)) {
             $value = $json[self::FIELD_AGE_STRING] ?? null;
-            $ext = (array)($json[self::FIELD_AGE_STRING_EXT] ?? []);
             $type->setAgeString(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_AGE_STRING_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ESTIMATED_AGE]) || isset($json[self::FIELD_ESTIMATED_AGE_EXT]) || array_key_exists(self::FIELD_ESTIMATED_AGE, $json) || array_key_exists(self::FIELD_ESTIMATED_AGE_EXT, $json)) {
+        if (isset($json[self::FIELD_ESTIMATED_AGE])
+            || isset($json[self::FIELD_ESTIMATED_AGE_EXT])
+            || array_key_exists(self::FIELD_ESTIMATED_AGE, $json)
+            || array_key_exists(self::FIELD_ESTIMATED_AGE_EXT, $json)) {
             $value = $json[self::FIELD_ESTIMATED_AGE] ?? null;
-            $ext = (array)($json[self::FIELD_ESTIMATED_AGE_EXT] ?? []);
             $type->setEstimatedAge(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_ESTIMATED_AGE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DECEASED_BOOLEAN]) || isset($json[self::FIELD_DECEASED_BOOLEAN_EXT]) || array_key_exists(self::FIELD_DECEASED_BOOLEAN, $json) || array_key_exists(self::FIELD_DECEASED_BOOLEAN_EXT, $json)) {
+        if (isset($json[self::FIELD_DECEASED_BOOLEAN])
+            || isset($json[self::FIELD_DECEASED_BOOLEAN_EXT])
+            || array_key_exists(self::FIELD_DECEASED_BOOLEAN, $json)
+            || array_key_exists(self::FIELD_DECEASED_BOOLEAN_EXT, $json)) {
             $value = $json[self::FIELD_DECEASED_BOOLEAN] ?? null;
-            $ext = (array)($json[self::FIELD_DECEASED_BOOLEAN_EXT] ?? []);
             $type->setDeceasedBoolean(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_DECEASED_BOOLEAN_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_DECEASED_AGE]) || array_key_exists(self::FIELD_DECEASED_AGE, $json)) {
-            $type->setDeceasedAge(FHIRAge::jsonUnserialize(
-                json: $json[self::FIELD_DECEASED_AGE],
-                config: $config,
-            ));
+            $type->setDeceasedAge(FHIRAge::jsonUnserialize($json[self::FIELD_DECEASED_AGE], $config));
         }
         if (isset($json[self::FIELD_DECEASED_RANGE]) || array_key_exists(self::FIELD_DECEASED_RANGE, $json)) {
-            $type->setDeceasedRange(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_DECEASED_RANGE],
-                config: $config,
-            ));
+            $type->setDeceasedRange(FHIRRange::jsonUnserialize($json[self::FIELD_DECEASED_RANGE], $config));
         }
-        if (isset($json[self::FIELD_DECEASED_DATE]) || isset($json[self::FIELD_DECEASED_DATE_EXT]) || array_key_exists(self::FIELD_DECEASED_DATE, $json) || array_key_exists(self::FIELD_DECEASED_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_DECEASED_DATE])
+            || isset($json[self::FIELD_DECEASED_DATE_EXT])
+            || array_key_exists(self::FIELD_DECEASED_DATE, $json)
+            || array_key_exists(self::FIELD_DECEASED_DATE_EXT, $json)) {
             $value = $json[self::FIELD_DECEASED_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_DECEASED_DATE_EXT] ?? []);
             $type->setDeceasedDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_DECEASED_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DECEASED_STRING]) || isset($json[self::FIELD_DECEASED_STRING_EXT]) || array_key_exists(self::FIELD_DECEASED_STRING, $json) || array_key_exists(self::FIELD_DECEASED_STRING_EXT, $json)) {
+        if (isset($json[self::FIELD_DECEASED_STRING])
+            || isset($json[self::FIELD_DECEASED_STRING_EXT])
+            || array_key_exists(self::FIELD_DECEASED_STRING, $json)
+            || array_key_exists(self::FIELD_DECEASED_STRING_EXT, $json)) {
             $value = $json[self::FIELD_DECEASED_STRING] ?? null;
-            $ext = (array)($json[self::FIELD_DECEASED_STRING_EXT] ?? []);
             $type->setDeceasedString(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DECEASED_STRING_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_REASON_CODE]) || array_key_exists(self::FIELD_REASON_CODE, $json)) {
@@ -3285,10 +3293,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addReasonCode(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addReasonCode(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_REASON_REFERENCE]) || array_key_exists(self::FIELD_REASON_REFERENCE, $json)) {
@@ -3297,10 +3302,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addReasonReference(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addReasonReference(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
@@ -3309,10 +3311,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addNote(FHIRAnnotation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CONDITION]) || array_key_exists(self::FIELD_CONDITION, $json)) {
@@ -3321,10 +3320,7 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements VersionConta
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCondition(FHIRFamilyMemberHistoryCondition::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCondition(FHIRFamilyMemberHistoryCondition::jsonUnserialize($v, $config));
             }
         }
         return $type;

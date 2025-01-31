@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,6 +68,8 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRAdministrativeGenderList;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRObservationRangeCategoryList;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAdministrativeGender;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
@@ -204,11 +206,11 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRObservationRangeCategory $category
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRObservationRangeCategoryList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRObservationRangeCategory $category
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $range
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $context
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept[] $appliesTo
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAdministrativeGender $gender
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRAdministrativeGenderList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAdministrativeGender $gender
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $age
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRange $gestationalAge
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $condition
@@ -217,11 +219,11 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRObservationRangeCategory $category = null,
+                                null|string|FHIRObservationRangeCategoryList|FHIRObservationRangeCategory $category = null,
                                 null|FHIRRange $range = null,
                                 null|FHIRCodeableConcept $context = null,
                                 null|iterable $appliesTo = null,
-                                null|FHIRAdministrativeGender $gender = null,
+                                null|string|FHIRAdministrativeGenderList|FHIRAdministrativeGender $gender = null,
                                 null|FHIRRange $age = null,
                                 null|FHIRRange $gestationalAge = null,
                                 null|string|FHIRStringPrimitive|FHIRString $condition = null,
@@ -288,16 +290,19 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      * The category of interval of values for continuous or ordinal observations
      * conforming to this ObservationDefinition.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRObservationRangeCategory $category
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRObservationRangeCategoryList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRObservationRangeCategory $category
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCategory(null|FHIRObservationRangeCategory $category,
+    public function setCategory(null|string|FHIRObservationRangeCategoryList|FHIRObservationRangeCategory $category,
                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $category) {
             unset($this->category);
             return $this;
+        }
+        if (!($category instanceof FHIRObservationRangeCategory)) {
+            $category = new FHIRObservationRangeCategory(value: $category);
         }
         $this->category = $category;
         if ($this->_valueXMLLocations[self::FIELD_CATEGORY] !== $valueXMLLocation) {
@@ -488,16 +493,19 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * Sex of the population the range applies to.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAdministrativeGender $gender
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRAdministrativeGenderList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRAdministrativeGender $gender
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setGender(null|FHIRAdministrativeGender $gender,
+    public function setGender(null|string|FHIRAdministrativeGenderList|FHIRAdministrativeGender $gender,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $gender) {
             unset($this->gender);
             return $this;
+        }
+        if (!($gender instanceof FHIRAdministrativeGender)) {
+            $gender = new FHIRAdministrativeGender(value: $gender);
         }
         $this->gender = $gender;
         if ($this->_valueXMLLocations[self::FIELD_GENDER] !== $valueXMLLocation) {
@@ -998,34 +1006,22 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_CATEGORY]) || isset($json[self::FIELD_CATEGORY_EXT]) || array_key_exists(self::FIELD_CATEGORY, $json) || array_key_exists(self::FIELD_CATEGORY_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_CATEGORY])
+            || isset($json[self::FIELD_CATEGORY_EXT])
+            || array_key_exists(self::FIELD_CATEGORY, $json)
+            || array_key_exists(self::FIELD_CATEGORY_EXT, $json)) {
             $value = $json[self::FIELD_CATEGORY] ?? null;
-            $ext = (array)($json[self::FIELD_CATEGORY_EXT] ?? []);
             $type->setCategory(FHIRObservationRangeCategory::jsonUnserialize(
-                json: [FHIRObservationRangeCategory::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRObservationRangeCategory::FIELD_VALUE => $value]) + ($json[self::FIELD_CATEGORY_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_RANGE]) || array_key_exists(self::FIELD_RANGE, $json)) {
-            $type->setRange(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_RANGE],
-                config: $config,
-            ));
+            $type->setRange(FHIRRange::jsonUnserialize($json[self::FIELD_RANGE], $config));
         }
         if (isset($json[self::FIELD_CONTEXT]) || array_key_exists(self::FIELD_CONTEXT, $json)) {
-            $type->setContext(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CONTEXT],
-                config: $config,
-            ));
+            $type->setContext(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CONTEXT], $config));
         }
         if (isset($json[self::FIELD_APPLIES_TO]) || array_key_exists(self::FIELD_APPLIES_TO, $json)) {
             $vs = $json[self::FIELD_APPLIES_TO];
@@ -1033,38 +1029,33 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAppliesTo(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAppliesTo(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_GENDER]) || isset($json[self::FIELD_GENDER_EXT]) || array_key_exists(self::FIELD_GENDER, $json) || array_key_exists(self::FIELD_GENDER_EXT, $json)) {
+        if (isset($json[self::FIELD_GENDER])
+            || isset($json[self::FIELD_GENDER_EXT])
+            || array_key_exists(self::FIELD_GENDER, $json)
+            || array_key_exists(self::FIELD_GENDER_EXT, $json)) {
             $value = $json[self::FIELD_GENDER] ?? null;
-            $ext = (array)($json[self::FIELD_GENDER_EXT] ?? []);
             $type->setGender(FHIRAdministrativeGender::jsonUnserialize(
-                json: [FHIRAdministrativeGender::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRAdministrativeGender::FIELD_VALUE => $value]) + ($json[self::FIELD_GENDER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_AGE]) || array_key_exists(self::FIELD_AGE, $json)) {
-            $type->setAge(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_AGE],
-                config: $config,
-            ));
+            $type->setAge(FHIRRange::jsonUnserialize($json[self::FIELD_AGE], $config));
         }
         if (isset($json[self::FIELD_GESTATIONAL_AGE]) || array_key_exists(self::FIELD_GESTATIONAL_AGE, $json)) {
-            $type->setGestationalAge(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_GESTATIONAL_AGE],
-                config: $config,
-            ));
+            $type->setGestationalAge(FHIRRange::jsonUnserialize($json[self::FIELD_GESTATIONAL_AGE], $config));
         }
-        if (isset($json[self::FIELD_CONDITION]) || isset($json[self::FIELD_CONDITION_EXT]) || array_key_exists(self::FIELD_CONDITION, $json) || array_key_exists(self::FIELD_CONDITION_EXT, $json)) {
+        if (isset($json[self::FIELD_CONDITION])
+            || isset($json[self::FIELD_CONDITION_EXT])
+            || array_key_exists(self::FIELD_CONDITION, $json)
+            || array_key_exists(self::FIELD_CONDITION_EXT, $json)) {
             $value = $json[self::FIELD_CONDITION] ?? null;
-            $ext = (array)($json[self::FIELD_CONDITION_EXT] ?? []);
             $type->setCondition(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_CONDITION_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

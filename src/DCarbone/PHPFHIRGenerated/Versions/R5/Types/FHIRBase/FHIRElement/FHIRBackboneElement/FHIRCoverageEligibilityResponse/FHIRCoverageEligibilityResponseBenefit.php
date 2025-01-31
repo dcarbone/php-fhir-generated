@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,6 +93,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackbon
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
@@ -224,10 +225,10 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $allowedUnsignedInt
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $allowedString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $allowedMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $allowedMoney
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUnsignedInt $usedUnsignedInt
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $usedString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $usedMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $usedMoney
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -236,10 +237,10 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $type = null,
                                 null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $allowedUnsignedInt = null,
                                 null|string|FHIRStringPrimitive|FHIRString $allowedString = null,
-                                null|FHIRMoney $allowedMoney = null,
+                                null|FHIRDecimal|FHIRMoney $allowedMoney = null,
                                 null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $usedUnsignedInt = null,
                                 null|string|FHIRStringPrimitive|FHIRString $usedString = null,
-                                null|FHIRMoney $usedMoney = null,
+                                null|FHIRDecimal|FHIRMoney $usedMoney = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -468,16 +469,19 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      *
      * The quantity of the benefit which is permitted under the coverage.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $allowedMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $allowedMoney
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAllowedMoney(null|FHIRMoney $allowedMoney,
+    public function setAllowedMoney(null|FHIRDecimal|FHIRMoney $allowedMoney,
                                     ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $allowedMoney) {
             unset($this->allowedMoney);
             return $this;
+        }
+        if (!($allowedMoney instanceof FHIRMoney)) {
+            $allowedMoney = new FHIRMoney(value: $allowedMoney);
         }
         $this->allowedMoney = $allowedMoney;
         if ($this->_valueXMLLocations[self::FIELD_ALLOWED_MONEY] !== $valueXMLLocation) {
@@ -663,16 +667,19 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      *
      * The quantity of the benefit which have been consumed to date.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $usedMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $usedMoney
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUsedMoney(null|FHIRMoney $usedMoney,
+    public function setUsedMoney(null|FHIRDecimal|FHIRMoney $usedMoney,
                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $usedMoney) {
             unset($this->usedMoney);
             return $this;
+        }
+        if (!($usedMoney instanceof FHIRMoney)) {
+            $usedMoney = new FHIRMoney(value: $usedMoney);
         }
         $this->usedMoney = $usedMoney;
         if ($this->_valueXMLLocations[self::FIELD_USED_MONEY] !== $valueXMLLocation) {
@@ -1058,67 +1065,68 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
-        if (isset($json[self::FIELD_ALLOWED_UNSIGNED_INT]) || isset($json[self::FIELD_ALLOWED_UNSIGNED_INT_EXT]) || array_key_exists(self::FIELD_ALLOWED_UNSIGNED_INT, $json) || array_key_exists(self::FIELD_ALLOWED_UNSIGNED_INT_EXT, $json)) {
+        if (isset($json[self::FIELD_ALLOWED_UNSIGNED_INT])
+            || isset($json[self::FIELD_ALLOWED_UNSIGNED_INT_EXT])
+            || array_key_exists(self::FIELD_ALLOWED_UNSIGNED_INT, $json)
+            || array_key_exists(self::FIELD_ALLOWED_UNSIGNED_INT_EXT, $json)) {
             $value = $json[self::FIELD_ALLOWED_UNSIGNED_INT] ?? null;
-            $ext = (array)($json[self::FIELD_ALLOWED_UNSIGNED_INT_EXT] ?? []);
             $type->setAllowedUnsignedInt(FHIRUnsignedInt::jsonUnserialize(
-                json: [FHIRUnsignedInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUnsignedInt::FIELD_VALUE => $value]) + ($json[self::FIELD_ALLOWED_UNSIGNED_INT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ALLOWED_STRING]) || isset($json[self::FIELD_ALLOWED_STRING_EXT]) || array_key_exists(self::FIELD_ALLOWED_STRING, $json) || array_key_exists(self::FIELD_ALLOWED_STRING_EXT, $json)) {
+        if (isset($json[self::FIELD_ALLOWED_STRING])
+            || isset($json[self::FIELD_ALLOWED_STRING_EXT])
+            || array_key_exists(self::FIELD_ALLOWED_STRING, $json)
+            || array_key_exists(self::FIELD_ALLOWED_STRING_EXT, $json)) {
             $value = $json[self::FIELD_ALLOWED_STRING] ?? null;
-            $ext = (array)($json[self::FIELD_ALLOWED_STRING_EXT] ?? []);
             $type->setAllowedString(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ALLOWED_STRING_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ALLOWED_MONEY]) || isset($json[self::FIELD_ALLOWED_MONEY_EXT]) || array_key_exists(self::FIELD_ALLOWED_MONEY, $json) || array_key_exists(self::FIELD_ALLOWED_MONEY_EXT, $json)) {
+        if (isset($json[self::FIELD_ALLOWED_MONEY])
+            || isset($json[self::FIELD_ALLOWED_MONEY_EXT])
+            || array_key_exists(self::FIELD_ALLOWED_MONEY, $json)
+            || array_key_exists(self::FIELD_ALLOWED_MONEY_EXT, $json)) {
             $value = $json[self::FIELD_ALLOWED_MONEY] ?? null;
-            $ext = (array)($json[self::FIELD_ALLOWED_MONEY_EXT] ?? []);
             $type->setAllowedMoney(FHIRMoney::jsonUnserialize(
-                json: [FHIRMoney::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_ALLOWED_MONEY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_USED_UNSIGNED_INT]) || isset($json[self::FIELD_USED_UNSIGNED_INT_EXT]) || array_key_exists(self::FIELD_USED_UNSIGNED_INT, $json) || array_key_exists(self::FIELD_USED_UNSIGNED_INT_EXT, $json)) {
+        if (isset($json[self::FIELD_USED_UNSIGNED_INT])
+            || isset($json[self::FIELD_USED_UNSIGNED_INT_EXT])
+            || array_key_exists(self::FIELD_USED_UNSIGNED_INT, $json)
+            || array_key_exists(self::FIELD_USED_UNSIGNED_INT_EXT, $json)) {
             $value = $json[self::FIELD_USED_UNSIGNED_INT] ?? null;
-            $ext = (array)($json[self::FIELD_USED_UNSIGNED_INT_EXT] ?? []);
             $type->setUsedUnsignedInt(FHIRUnsignedInt::jsonUnserialize(
-                json: [FHIRUnsignedInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUnsignedInt::FIELD_VALUE => $value]) + ($json[self::FIELD_USED_UNSIGNED_INT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_USED_STRING]) || isset($json[self::FIELD_USED_STRING_EXT]) || array_key_exists(self::FIELD_USED_STRING, $json) || array_key_exists(self::FIELD_USED_STRING_EXT, $json)) {
+        if (isset($json[self::FIELD_USED_STRING])
+            || isset($json[self::FIELD_USED_STRING_EXT])
+            || array_key_exists(self::FIELD_USED_STRING, $json)
+            || array_key_exists(self::FIELD_USED_STRING_EXT, $json)) {
             $value = $json[self::FIELD_USED_STRING] ?? null;
-            $ext = (array)($json[self::FIELD_USED_STRING_EXT] ?? []);
             $type->setUsedString(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_USED_STRING_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_USED_MONEY]) || isset($json[self::FIELD_USED_MONEY_EXT]) || array_key_exists(self::FIELD_USED_MONEY, $json) || array_key_exists(self::FIELD_USED_MONEY_EXT, $json)) {
+        if (isset($json[self::FIELD_USED_MONEY])
+            || isset($json[self::FIELD_USED_MONEY_EXT])
+            || array_key_exists(self::FIELD_USED_MONEY, $json)
+            || array_key_exists(self::FIELD_USED_MONEY_EXT, $json)) {
             $value = $json[self::FIELD_USED_MONEY] ?? null;
-            $ext = (array)($json[self::FIELD_USED_MONEY_EXT] ?? []);
             $type->setUsedMoney(FHIRMoney::jsonUnserialize(
-                json: [FHIRMoney::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_USED_MONEY_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

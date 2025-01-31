@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1042,25 +1042,24 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
             $vs = $json[self::FIELD_SUBJECT];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSubject(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSubject(FHIRReference::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_INTERACTANT]) || array_key_exists(self::FIELD_INTERACTANT, $json)) {
@@ -1069,35 +1068,20 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements Vers
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addInteractant(FHIRMedicinalProductInteractionInteractant::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addInteractant(FHIRMedicinalProductInteractionInteractant::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
         if (isset($json[self::FIELD_EFFECT]) || array_key_exists(self::FIELD_EFFECT, $json)) {
-            $type->setEffect(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_EFFECT],
-                config: $config,
-            ));
+            $type->setEffect(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_EFFECT], $config));
         }
         if (isset($json[self::FIELD_INCIDENCE]) || array_key_exists(self::FIELD_INCIDENCE, $json)) {
-            $type->setIncidence(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_INCIDENCE],
-                config: $config,
-            ));
+            $type->setIncidence(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_INCIDENCE], $config));
         }
         if (isset($json[self::FIELD_MANAGEMENT]) || array_key_exists(self::FIELD_MANAGEMENT, $json)) {
-            $type->setManagement(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_MANAGEMENT],
-                config: $config,
-            ));
+            $type->setManagement(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_MANAGEMENT], $config));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -724,34 +724,37 @@ class FHIRResource extends FHIRBase implements ResourceTypeInterface
             $json = (array)$json;
         }
 
-        if (isset($json[self::FIELD_ID]) || isset($json[self::FIELD_ID_EXT]) || array_key_exists(self::FIELD_ID, $json) || array_key_exists(self::FIELD_ID_EXT, $json)) {
+        if (isset($json[self::FIELD_ID])
+            || isset($json[self::FIELD_ID_EXT])
+            || array_key_exists(self::FIELD_ID, $json)
+            || array_key_exists(self::FIELD_ID_EXT, $json)) {
             $value = $json[self::FIELD_ID] ?? null;
-            $ext = (array)($json[self::FIELD_ID_EXT] ?? []);
             $type->setId(FHIRId::jsonUnserialize(
-                json: [FHIRId::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_ID_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_META]) || array_key_exists(self::FIELD_META, $json)) {
-            $type->setMeta(FHIRMeta::jsonUnserialize(
-                json: $json[self::FIELD_META],
-                config: $config,
-            ));
+            $type->setMeta(FHIRMeta::jsonUnserialize($json[self::FIELD_META], $config));
         }
-        if (isset($json[self::FIELD_IMPLICIT_RULES]) || isset($json[self::FIELD_IMPLICIT_RULES_EXT]) || array_key_exists(self::FIELD_IMPLICIT_RULES, $json) || array_key_exists(self::FIELD_IMPLICIT_RULES_EXT, $json)) {
+        if (isset($json[self::FIELD_IMPLICIT_RULES])
+            || isset($json[self::FIELD_IMPLICIT_RULES_EXT])
+            || array_key_exists(self::FIELD_IMPLICIT_RULES, $json)
+            || array_key_exists(self::FIELD_IMPLICIT_RULES_EXT, $json)) {
             $value = $json[self::FIELD_IMPLICIT_RULES] ?? null;
-            $ext = (array)($json[self::FIELD_IMPLICIT_RULES_EXT] ?? []);
             $type->setImplicitRules(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_IMPLICIT_RULES_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_LANGUAGE]) || isset($json[self::FIELD_LANGUAGE_EXT]) || array_key_exists(self::FIELD_LANGUAGE, $json) || array_key_exists(self::FIELD_LANGUAGE_EXT, $json)) {
+        if (isset($json[self::FIELD_LANGUAGE])
+            || isset($json[self::FIELD_LANGUAGE_EXT])
+            || array_key_exists(self::FIELD_LANGUAGE, $json)
+            || array_key_exists(self::FIELD_LANGUAGE_EXT, $json)) {
             $value = $json[self::FIELD_LANGUAGE] ?? null;
-            $ext = (array)($json[self::FIELD_LANGUAGE_EXT] ?? []);
             $type->setLanguage(FHIRCode::jsonUnserialize(
-                json: [FHIRCode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_LANGUAGE_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,6 +102,10 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchP
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFHIRTypesEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIROperationParameterScopeEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIROperationParameterUseEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSearchParamTypeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
@@ -315,15 +319,15 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCode $name
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROperationParameterUse $use
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROperationParameterScope[] $scope
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIROperationParameterUseEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROperationParameterUse $use
+     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIROperationParameterScopeEnum[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROperationParameterScope[] $scope
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRInteger $min
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $max
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $documentation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFHIRTypes $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFHIRTypes[] $allowedType
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFHIRTypesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFHIRTypes $type
+     * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFHIRTypesEnum[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFHIRTypes[] $allowedType
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical[] $targetProfile
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchParamType $searchType
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSearchParamTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchParamType $searchType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding $binding
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom[] $referencedFrom
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[] $part
@@ -333,15 +337,15 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|string|FHIRCodePrimitive|FHIRCode $name = null,
-                                null|FHIROperationParameterUse $use = null,
+                                null|string|FHIROperationParameterUseEnum|FHIROperationParameterUse $use = null,
                                 null|iterable $scope = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $min = null,
                                 null|string|FHIRStringPrimitive|FHIRString $max = null,
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $documentation = null,
-                                null|FHIRFHIRTypes $type = null,
+                                null|string|FHIRFHIRTypesEnum|FHIRFHIRTypes $type = null,
                                 null|iterable $allowedType = null,
                                 null|iterable $targetProfile = null,
-                                null|FHIRSearchParamType $searchType = null,
+                                null|string|FHIRSearchParamTypeEnum|FHIRSearchParamType $searchType = null,
                                 null|FHIROperationDefinitionBinding $binding = null,
                                 null|iterable $referencedFrom = null,
                                 null|iterable $part = null,
@@ -487,16 +491,19 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * Whether this is an input or an output parameter.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROperationParameterUse $use
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIROperationParameterUseEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROperationParameterUse $use
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUse(null|FHIROperationParameterUse $use,
+    public function setUse(null|string|FHIROperationParameterUseEnum|FHIROperationParameterUse $use,
                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $use) {
             unset($this->use);
             return $this;
+        }
+        if (!($use instanceof FHIROperationParameterUse)) {
+            $use = new FHIROperationParameterUse(value: $use);
         }
         $this->use = $use;
         if ($this->_valueXMLLocations[self::FIELD_USE] !== $valueXMLLocation) {
@@ -559,11 +566,14 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * If present, indicates that the parameter applies when the operation is being
      * invoked at the specified level.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROperationParameterScope $scope
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIROperationParameterScopeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROperationParameterScope $scope
      * @return static
      */
-    public function addScope(FHIROperationParameterScope $scope): self
+    public function addScope(string|FHIROperationParameterScopeEnum|FHIROperationParameterScope $scope): self
     {
+        if (!($scope instanceof FHIROperationParameterScope)) {
+            $scope = new FHIROperationParameterScope(value: $scope);
+        }
         if (!isset($this->scope)) {
             $this->scope = [];
         }
@@ -577,10 +587,10 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * If present, indicates that the parameter applies when the operation is being
      * invoked at the specified level.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROperationParameterScope ...$scope
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIROperationParameterScopeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIROperationParameterScope ...$scope
      * @return static
      */
-    public function setScope(FHIROperationParameterScope ...$scope): self
+    public function setScope(string|FHIROperationParameterScopeEnum|FHIROperationParameterScope ...$scope): self
     {
         if ([] === $scope) {
             unset($this->scope);
@@ -824,16 +834,19 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * The type for this parameter.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFHIRTypes $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFHIRTypesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFHIRTypes $type
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|FHIRFHIRTypes $type,
+    public function setType(null|string|FHIRFHIRTypesEnum|FHIRFHIRTypes $type,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $type) {
             unset($this->type);
             return $this;
+        }
+        if (!($type instanceof FHIRFHIRTypes)) {
+            $type = new FHIRFHIRTypes(value: $type);
         }
         $this->type = $type;
         if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
@@ -896,11 +909,14 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * Support for polymorphic types. If the parameter type is abstract, this element
      * lists allowed sub-types for the parameter.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFHIRTypes $allowedType
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFHIRTypesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFHIRTypes $allowedType
      * @return static
      */
-    public function addAllowedType(FHIRFHIRTypes $allowedType): self
+    public function addAllowedType(string|FHIRFHIRTypesEnum|FHIRFHIRTypes $allowedType): self
     {
+        if (!($allowedType instanceof FHIRFHIRTypes)) {
+            $allowedType = new FHIRFHIRTypes(value: $allowedType);
+        }
         if (!isset($this->allowedType)) {
             $this->allowedType = [];
         }
@@ -914,10 +930,10 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * Support for polymorphic types. If the parameter type is abstract, this element
      * lists allowed sub-types for the parameter.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFHIRTypes ...$allowedType
+     * @param string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFHIRTypesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFHIRTypes ...$allowedType
      * @return static
      */
-    public function setAllowedType(FHIRFHIRTypes ...$allowedType): self
+    public function setAllowedType(string|FHIRFHIRTypesEnum|FHIRFHIRTypes ...$allowedType): self
     {
         if ([] === $allowedType) {
             unset($this->allowedType);
@@ -1051,16 +1067,19 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * How the parameter is understood if/when it used as search parameter. This is
      * only used if the parameter is a string.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchParamType $searchType
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRSearchParamTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRSearchParamType $searchType
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSearchType(null|FHIRSearchParamType $searchType,
+    public function setSearchType(null|string|FHIRSearchParamTypeEnum|FHIRSearchParamType $searchType,
                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $searchType) {
             unset($this->searchType);
             return $this;
+        }
+        if (!($searchType instanceof FHIRSearchParamType)) {
+            $searchType = new FHIRSearchParamType(value: $searchType);
         }
         $this->searchType = $searchType;
         if ($this->_valueXMLLocations[self::FIELD_SEARCH_TYPE] !== $valueXMLLocation) {
@@ -1755,37 +1774,33 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_NAME])
+            || isset($json[self::FIELD_NAME_EXT])
+            || array_key_exists(self::FIELD_NAME, $json)
+            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
             $type->setName(FHIRCode::jsonUnserialize(
-                json: [FHIRCode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_USE]) || isset($json[self::FIELD_USE_EXT]) || array_key_exists(self::FIELD_USE, $json) || array_key_exists(self::FIELD_USE_EXT, $json)) {
+        if (isset($json[self::FIELD_USE])
+            || isset($json[self::FIELD_USE_EXT])
+            || array_key_exists(self::FIELD_USE, $json)
+            || array_key_exists(self::FIELD_USE_EXT, $json)) {
             $value = $json[self::FIELD_USE] ?? null;
-            $ext = (array)($json[self::FIELD_USE_EXT] ?? []);
             $type->setUse(FHIROperationParameterUse::jsonUnserialize(
-                json: [FHIROperationParameterUse::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIROperationParameterUse::FIELD_VALUE => $value]) + ($json[self::FIELD_USE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SCOPE]) || isset($json[self::FIELD_SCOPE_EXT]) || array_key_exists(self::FIELD_SCOPE, $json) || array_key_exists(self::FIELD_SCOPE_EXT, $json)) {
-            $value = $json[self::FIELD_SCOPE] ?? null;
+        if (isset($json[self::FIELD_SCOPE])
+            || isset($json[self::FIELD_SCOPE_EXT])
+            || array_key_exists(self::FIELD_SCOPE, $json)
+            || array_key_exists(self::FIELD_SCOPE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_SCOPE] ?? []);
             $ext = (array)($json[self::FIELD_SCOPE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1793,49 +1808,57 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addScope(FHIROperationParameterScope::jsonUnserialize(
-                    json: [FHIROperationParameterScope::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIROperationParameterScope::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_MIN]) || isset($json[self::FIELD_MIN_EXT]) || array_key_exists(self::FIELD_MIN, $json) || array_key_exists(self::FIELD_MIN_EXT, $json)) {
+        if (isset($json[self::FIELD_MIN])
+            || isset($json[self::FIELD_MIN_EXT])
+            || array_key_exists(self::FIELD_MIN, $json)
+            || array_key_exists(self::FIELD_MIN_EXT, $json)) {
             $value = $json[self::FIELD_MIN] ?? null;
-            $ext = (array)($json[self::FIELD_MIN_EXT] ?? []);
             $type->setMin(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_MIN_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_MAX]) || isset($json[self::FIELD_MAX_EXT]) || array_key_exists(self::FIELD_MAX, $json) || array_key_exists(self::FIELD_MAX_EXT, $json)) {
+        if (isset($json[self::FIELD_MAX])
+            || isset($json[self::FIELD_MAX_EXT])
+            || array_key_exists(self::FIELD_MAX, $json)
+            || array_key_exists(self::FIELD_MAX_EXT, $json)) {
             $value = $json[self::FIELD_MAX] ?? null;
-            $ext = (array)($json[self::FIELD_MAX_EXT] ?? []);
             $type->setMax(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_MAX_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DOCUMENTATION]) || isset($json[self::FIELD_DOCUMENTATION_EXT]) || array_key_exists(self::FIELD_DOCUMENTATION, $json) || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $json)) {
+        if (isset($json[self::FIELD_DOCUMENTATION])
+            || isset($json[self::FIELD_DOCUMENTATION_EXT])
+            || array_key_exists(self::FIELD_DOCUMENTATION, $json)
+            || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $json)) {
             $value = $json[self::FIELD_DOCUMENTATION] ?? null;
-            $ext = (array)($json[self::FIELD_DOCUMENTATION_EXT] ?? []);
             $type->setDocumentation(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_DOCUMENTATION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
+        if (isset($json[self::FIELD_TYPE])
+            || isset($json[self::FIELD_TYPE_EXT])
+            || array_key_exists(self::FIELD_TYPE, $json)
+            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
             $type->setType(FHIRFHIRTypes::jsonUnserialize(
-                json: [FHIRFHIRTypes::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRFHIRTypes::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ALLOWED_TYPE]) || isset($json[self::FIELD_ALLOWED_TYPE_EXT]) || array_key_exists(self::FIELD_ALLOWED_TYPE, $json) || array_key_exists(self::FIELD_ALLOWED_TYPE_EXT, $json)) {
-            $value = $json[self::FIELD_ALLOWED_TYPE] ?? null;
+        if (isset($json[self::FIELD_ALLOWED_TYPE])
+            || isset($json[self::FIELD_ALLOWED_TYPE_EXT])
+            || array_key_exists(self::FIELD_ALLOWED_TYPE, $json)
+            || array_key_exists(self::FIELD_ALLOWED_TYPE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_ALLOWED_TYPE] ?? []);
             $ext = (array)($json[self::FIELD_ALLOWED_TYPE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1843,17 +1866,17 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addAllowedType(FHIRFHIRTypes::jsonUnserialize(
-                    json: [FHIRFHIRTypes::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRFHIRTypes::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_TARGET_PROFILE]) || isset($json[self::FIELD_TARGET_PROFILE_EXT]) || array_key_exists(self::FIELD_TARGET_PROFILE, $json) || array_key_exists(self::FIELD_TARGET_PROFILE_EXT, $json)) {
-            $value = $json[self::FIELD_TARGET_PROFILE] ?? null;
+        if (isset($json[self::FIELD_TARGET_PROFILE])
+            || isset($json[self::FIELD_TARGET_PROFILE_EXT])
+            || array_key_exists(self::FIELD_TARGET_PROFILE, $json)
+            || array_key_exists(self::FIELD_TARGET_PROFILE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_TARGET_PROFILE] ?? []);
             $ext = (array)($json[self::FIELD_TARGET_PROFILE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1861,24 +1884,23 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addTargetProfile(FHIRCanonical::jsonUnserialize(
-                    json: [FHIRCanonical::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRCanonical::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_SEARCH_TYPE]) || isset($json[self::FIELD_SEARCH_TYPE_EXT]) || array_key_exists(self::FIELD_SEARCH_TYPE, $json) || array_key_exists(self::FIELD_SEARCH_TYPE_EXT, $json)) {
+        if (isset($json[self::FIELD_SEARCH_TYPE])
+            || isset($json[self::FIELD_SEARCH_TYPE_EXT])
+            || array_key_exists(self::FIELD_SEARCH_TYPE, $json)
+            || array_key_exists(self::FIELD_SEARCH_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_SEARCH_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_SEARCH_TYPE_EXT] ?? []);
             $type->setSearchType(FHIRSearchParamType::jsonUnserialize(
-                json: [FHIRSearchParamType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSearchParamType::FIELD_VALUE => $value]) + ($json[self::FIELD_SEARCH_TYPE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_BINDING]) || array_key_exists(self::FIELD_BINDING, $json)) {
-            $type->setBinding(FHIROperationDefinitionBinding::jsonUnserialize(
-                json: $json[self::FIELD_BINDING],
-                config: $config,
-            ));
+            $type->setBinding(FHIROperationDefinitionBinding::jsonUnserialize($json[self::FIELD_BINDING], $config));
         }
         if (isset($json[self::FIELD_REFERENCED_FROM]) || array_key_exists(self::FIELD_REFERENCED_FROM, $json)) {
             $vs = $json[self::FIELD_REFERENCED_FROM];
@@ -1886,10 +1908,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addReferencedFrom(FHIROperationDefinitionReferencedFrom::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addReferencedFrom(FHIROperationDefinitionReferencedFrom::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PART]) || array_key_exists(self::FIELD_PART, $json)) {
@@ -1898,10 +1917,7 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPart(FHIROperationDefinitionParameter::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPart(FHIROperationDefinitionParameter::jsonUnserialize($v, $config));
             }
         }
         return $type;

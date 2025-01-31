@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,6 +89,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIREvidenceVariableHandlingEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREvidenceVariableHandling;
@@ -192,7 +193,7 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $variableDefinition
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREvidenceVariableHandling $handling
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIREvidenceVariableHandlingEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREvidenceVariableHandling $handling
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $valueCategory
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity[] $valueQuantity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRRange[] $valueRange
@@ -202,7 +203,7 @@ class FHIREvidenceVariable extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRReference $variableDefinition = null,
-                                null|FHIREvidenceVariableHandling $handling = null,
+                                null|string|FHIREvidenceVariableHandlingEnum|FHIREvidenceVariableHandling $handling = null,
                                 null|iterable $valueCategory = null,
                                 null|iterable $valueQuantity = null,
                                 null|iterable $valueRange = null,
@@ -290,16 +291,19 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      *
      * How the variable is classified for use in adjusted analysis.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREvidenceVariableHandling $handling
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIREvidenceVariableHandlingEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIREvidenceVariableHandling $handling
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setHandling(null|FHIREvidenceVariableHandling $handling,
+    public function setHandling(null|string|FHIREvidenceVariableHandlingEnum|FHIREvidenceVariableHandling $handling,
                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $handling) {
             unset($this->handling);
             return $this;
+        }
+        if (!($handling instanceof FHIREvidenceVariableHandling)) {
+            $handling = new FHIREvidenceVariableHandling(value: $handling);
         }
         $this->handling = $handling;
         if ($this->_valueXMLLocations[self::FIELD_HANDLING] !== $valueXMLLocation) {
@@ -789,27 +793,18 @@ class FHIREvidenceVariable extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_VARIABLE_DEFINITION]) || array_key_exists(self::FIELD_VARIABLE_DEFINITION, $json)) {
-            $type->setVariableDefinition(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_VARIABLE_DEFINITION],
-                config: $config,
-            ));
+            $type->setVariableDefinition(FHIRReference::jsonUnserialize($json[self::FIELD_VARIABLE_DEFINITION], $config));
         }
-        if (isset($json[self::FIELD_HANDLING]) || isset($json[self::FIELD_HANDLING_EXT]) || array_key_exists(self::FIELD_HANDLING, $json) || array_key_exists(self::FIELD_HANDLING_EXT, $json)) {
+        if (isset($json[self::FIELD_HANDLING])
+            || isset($json[self::FIELD_HANDLING_EXT])
+            || array_key_exists(self::FIELD_HANDLING, $json)
+            || array_key_exists(self::FIELD_HANDLING_EXT, $json)) {
             $value = $json[self::FIELD_HANDLING] ?? null;
-            $ext = (array)($json[self::FIELD_HANDLING_EXT] ?? []);
             $type->setHandling(FHIREvidenceVariableHandling::jsonUnserialize(
-                json: [FHIREvidenceVariableHandling::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIREvidenceVariableHandling::FIELD_VALUE => $value]) + ($json[self::FIELD_HANDLING_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_VALUE_CATEGORY]) || array_key_exists(self::FIELD_VALUE_CATEGORY, $json)) {
@@ -818,10 +813,7 @@ class FHIREvidenceVariable extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addValueCategory(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addValueCategory(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_VALUE_QUANTITY]) || array_key_exists(self::FIELD_VALUE_QUANTITY, $json)) {
@@ -830,10 +822,7 @@ class FHIREvidenceVariable extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addValueQuantity(FHIRQuantity::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addValueQuantity(FHIRQuantity::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_VALUE_RANGE]) || array_key_exists(self::FIELD_VALUE_RANGE, $json)) {
@@ -842,10 +831,7 @@ class FHIREvidenceVariable extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addValueRange(FHIRRange::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addValueRange(FHIRRange::jsonUnserialize($v, $config));
             }
         }
         return $type;

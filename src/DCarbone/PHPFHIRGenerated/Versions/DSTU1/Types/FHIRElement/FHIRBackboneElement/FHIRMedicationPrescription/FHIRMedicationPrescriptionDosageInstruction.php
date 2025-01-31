@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1407,98 +1407,66 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_TEXT]) || isset($json[self::FIELD_TEXT_EXT]) || array_key_exists(self::FIELD_TEXT, $json) || array_key_exists(self::FIELD_TEXT_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_TEXT])
+            || isset($json[self::FIELD_TEXT_EXT])
+            || array_key_exists(self::FIELD_TEXT, $json)
+            || array_key_exists(self::FIELD_TEXT_EXT, $json)) {
             $value = $json[self::FIELD_TEXT] ?? null;
-            $ext = (array)($json[self::FIELD_TEXT_EXT] ?? []);
             $type->setText(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TEXT_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ADDITIONAL_INSTRUCTIONS]) || array_key_exists(self::FIELD_ADDITIONAL_INSTRUCTIONS, $json)) {
-            $type->setAdditionalInstructions(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_ADDITIONAL_INSTRUCTIONS],
-                config: $config,
-            ));
+            $type->setAdditionalInstructions(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ADDITIONAL_INSTRUCTIONS], $config));
         }
-        if (isset($json[self::FIELD_TIMING_DATE_TIME]) || isset($json[self::FIELD_TIMING_DATE_TIME_EXT]) || array_key_exists(self::FIELD_TIMING_DATE_TIME, $json) || array_key_exists(self::FIELD_TIMING_DATE_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_TIMING_DATE_TIME])
+            || isset($json[self::FIELD_TIMING_DATE_TIME_EXT])
+            || array_key_exists(self::FIELD_TIMING_DATE_TIME, $json)
+            || array_key_exists(self::FIELD_TIMING_DATE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_TIMING_DATE_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_TIMING_DATE_TIME_EXT] ?? []);
             $type->setTimingDateTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_TIMING_DATE_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_TIMING_PERIOD]) || array_key_exists(self::FIELD_TIMING_PERIOD, $json)) {
-            $type->setTimingPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_TIMING_PERIOD],
-                config: $config,
-            ));
+            $type->setTimingPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_TIMING_PERIOD], $config));
         }
         if (isset($json[self::FIELD_TIMING_SCHEDULE]) || array_key_exists(self::FIELD_TIMING_SCHEDULE, $json)) {
-            $type->setTimingSchedule(FHIRSchedule::jsonUnserialize(
-                json: $json[self::FIELD_TIMING_SCHEDULE],
-                config: $config,
-            ));
+            $type->setTimingSchedule(FHIRSchedule::jsonUnserialize($json[self::FIELD_TIMING_SCHEDULE], $config));
         }
-        if (isset($json[self::FIELD_AS_NEEDED_BOOLEAN]) || isset($json[self::FIELD_AS_NEEDED_BOOLEAN_EXT]) || array_key_exists(self::FIELD_AS_NEEDED_BOOLEAN, $json) || array_key_exists(self::FIELD_AS_NEEDED_BOOLEAN_EXT, $json)) {
+        if (isset($json[self::FIELD_AS_NEEDED_BOOLEAN])
+            || isset($json[self::FIELD_AS_NEEDED_BOOLEAN_EXT])
+            || array_key_exists(self::FIELD_AS_NEEDED_BOOLEAN, $json)
+            || array_key_exists(self::FIELD_AS_NEEDED_BOOLEAN_EXT, $json)) {
             $value = $json[self::FIELD_AS_NEEDED_BOOLEAN] ?? null;
-            $ext = (array)($json[self::FIELD_AS_NEEDED_BOOLEAN_EXT] ?? []);
             $type->setAsNeededBoolean(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_AS_NEEDED_BOOLEAN_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_AS_NEEDED_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_AS_NEEDED_CODEABLE_CONCEPT, $json)) {
-            $type->setAsNeededCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_AS_NEEDED_CODEABLE_CONCEPT],
-                config: $config,
-            ));
+            $type->setAsNeededCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_AS_NEEDED_CODEABLE_CONCEPT], $config));
         }
         if (isset($json[self::FIELD_SITE]) || array_key_exists(self::FIELD_SITE, $json)) {
-            $type->setSite(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_SITE],
-                config: $config,
-            ));
+            $type->setSite(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SITE], $config));
         }
         if (isset($json[self::FIELD_ROUTE]) || array_key_exists(self::FIELD_ROUTE, $json)) {
-            $type->setRoute(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_ROUTE],
-                config: $config,
-            ));
+            $type->setRoute(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ROUTE], $config));
         }
         if (isset($json[self::FIELD_METHOD]) || array_key_exists(self::FIELD_METHOD, $json)) {
-            $type->setMethod(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_METHOD],
-                config: $config,
-            ));
+            $type->setMethod(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_METHOD], $config));
         }
         if (isset($json[self::FIELD_DOSE_QUANTITY]) || array_key_exists(self::FIELD_DOSE_QUANTITY, $json)) {
-            $type->setDoseQuantity(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_DOSE_QUANTITY],
-                config: $config,
-            ));
+            $type->setDoseQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_DOSE_QUANTITY], $config));
         }
         if (isset($json[self::FIELD_RATE]) || array_key_exists(self::FIELD_RATE, $json)) {
-            $type->setRate(FHIRRatio::jsonUnserialize(
-                json: $json[self::FIELD_RATE],
-                config: $config,
-            ));
+            $type->setRate(FHIRRatio::jsonUnserialize($json[self::FIELD_RATE], $config));
         }
         if (isset($json[self::FIELD_MAX_DOSE_PER_PERIOD]) || array_key_exists(self::FIELD_MAX_DOSE_PER_PERIOD, $json)) {
-            $type->setMaxDosePerPeriod(FHIRRatio::jsonUnserialize(
-                json: $json[self::FIELD_MAX_DOSE_PER_PERIOD],
-                config: $config,
-            ));
+            $type->setMaxDosePerPeriod(FHIRRatio::jsonUnserialize($json[self::FIELD_MAX_DOSE_PER_PERIOD], $config));
         }
         return $type;
     }

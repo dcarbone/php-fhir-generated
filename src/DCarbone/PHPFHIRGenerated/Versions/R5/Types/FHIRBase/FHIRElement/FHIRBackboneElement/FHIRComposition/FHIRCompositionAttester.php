@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -571,34 +571,22 @@ class FHIRCompositionAttester extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_MODE]) || array_key_exists(self::FIELD_MODE, $json)) {
-            $type->setMode(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_MODE],
-                config: $config,
-            ));
+            $type->setMode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_MODE], $config));
         }
-        if (isset($json[self::FIELD_TIME]) || isset($json[self::FIELD_TIME_EXT]) || array_key_exists(self::FIELD_TIME, $json) || array_key_exists(self::FIELD_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_TIME])
+            || isset($json[self::FIELD_TIME_EXT])
+            || array_key_exists(self::FIELD_TIME, $json)
+            || array_key_exists(self::FIELD_TIME_EXT, $json)) {
             $value = $json[self::FIELD_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_TIME_EXT] ?? []);
             $type->setTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PARTY]) || array_key_exists(self::FIELD_PARTY, $json)) {
-            $type->setParty(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PARTY],
-                config: $config,
-            ));
+            $type->setParty(FHIRReference::jsonUnserialize($json[self::FIELD_PARTY], $config));
         }
         return $type;
     }

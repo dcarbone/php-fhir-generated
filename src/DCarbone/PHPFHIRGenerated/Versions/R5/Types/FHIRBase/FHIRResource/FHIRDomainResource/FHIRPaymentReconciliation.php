@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,6 +102,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFinancialResourceStatusCodes;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPaymentOutcome;
@@ -109,6 +110,8 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFinancialResourceStatusCodesEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPaymentOutcomeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
@@ -536,9 +539,9 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFinancialResourceStatusCodes $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFinancialResourceStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $kind
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $created
@@ -547,7 +550,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $paymentIssuer
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $request
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $requestor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPaymentOutcome $outcome
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPaymentOutcomeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPaymentOutcome $outcome
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $disposition
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDate $date
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $location
@@ -558,10 +561,10 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $processor
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $referenceNumber
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $authorization
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $tenderedAmount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $returnedAmount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $amount
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $paymentIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $tenderedAmount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $returnedAmount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $amount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $paymentIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationAllocation[] $allocation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $formCode
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote[] $processNote
@@ -577,7 +580,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
                                 null|iterable $modifierExtension = null,
                                 null|iterable $identifier = null,
                                 null|FHIRCodeableConcept $type = null,
-                                null|FHIRFinancialResourceStatusCodes $status = null,
+                                null|string|FHIRFinancialResourceStatusCodesEnum|FHIRFinancialResourceStatusCodes $status = null,
                                 null|FHIRCodeableConcept $kind = null,
                                 null|FHIRPeriod $period = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created = null,
@@ -586,7 +589,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
                                 null|FHIRReference $paymentIssuer = null,
                                 null|FHIRReference $request = null,
                                 null|FHIRReference $requestor = null,
-                                null|FHIRPaymentOutcome $outcome = null,
+                                null|string|FHIRPaymentOutcomeEnum|FHIRPaymentOutcome $outcome = null,
                                 null|string|FHIRStringPrimitive|FHIRString $disposition = null,
                                 null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $date = null,
                                 null|FHIRReference $location = null,
@@ -597,10 +600,10 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
                                 null|string|FHIRStringPrimitive|FHIRString $processor = null,
                                 null|string|FHIRStringPrimitive|FHIRString $referenceNumber = null,
                                 null|string|FHIRStringPrimitive|FHIRString $authorization = null,
-                                null|FHIRMoney $tenderedAmount = null,
-                                null|FHIRMoney $returnedAmount = null,
-                                null|FHIRMoney $amount = null,
-                                null|FHIRIdentifier $paymentIdentifier = null,
+                                null|FHIRDecimal|FHIRMoney $tenderedAmount = null,
+                                null|FHIRDecimal|FHIRMoney $returnedAmount = null,
+                                null|FHIRDecimal|FHIRMoney $amount = null,
+                                null|FHIRString|FHIRIdentifier $paymentIdentifier = null,
                                 null|iterable $allocation = null,
                                 null|FHIRCodeableConcept $formCode = null,
                                 null|iterable $processNote = null,
@@ -757,11 +760,14 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      *
      * A unique identifier assigned to this payment reconciliation.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -777,10 +783,10 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      *
      * A unique identifier assigned to this payment reconciliation.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -850,16 +856,19 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      *
      * The status of the resource instance.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFinancialResourceStatusCodes $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRFinancialResourceStatusCodesEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRFinancialResourceStatusCodes $status,
+    public function setStatus(null|string|FHIRFinancialResourceStatusCodesEnum|FHIRFinancialResourceStatusCodes $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRFinancialResourceStatusCodes)) {
+            $status = new FHIRFinancialResourceStatusCodes(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -1229,16 +1238,19 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      *
      * The outcome of a request for a reconciliation.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPaymentOutcome $outcome
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPaymentOutcomeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPaymentOutcome $outcome
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOutcome(null|FHIRPaymentOutcome $outcome,
+    public function setOutcome(null|string|FHIRPaymentOutcomeEnum|FHIRPaymentOutcome $outcome,
                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $outcome) {
             unset($this->outcome);
             return $this;
+        }
+        if (!($outcome instanceof FHIRPaymentOutcome)) {
+            $outcome = new FHIRPaymentOutcome(value: $outcome);
         }
         $this->outcome = $outcome;
         if ($this->_valueXMLLocations[self::FIELD_OUTCOME] !== $valueXMLLocation) {
@@ -1908,16 +1920,19 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * provides an amount in bank note denominations equal to or excess of the amount
      * actually being paid.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $tenderedAmount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $tenderedAmount
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTenderedAmount(null|FHIRMoney $tenderedAmount,
+    public function setTenderedAmount(null|FHIRDecimal|FHIRMoney $tenderedAmount,
                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $tenderedAmount) {
             unset($this->tenderedAmount);
             return $this;
+        }
+        if (!($tenderedAmount instanceof FHIRMoney)) {
+            $tenderedAmount = new FHIRMoney(value: $tenderedAmount);
         }
         $this->tenderedAmount = $tenderedAmount;
         if ($this->_valueXMLLocations[self::FIELD_TENDERED_AMOUNT] !== $valueXMLLocation) {
@@ -1973,16 +1988,19 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      * The amount returned by the receiver which is excess to the amount payable, often
      * referred to as 'change'.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $returnedAmount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $returnedAmount
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setReturnedAmount(null|FHIRMoney $returnedAmount,
+    public function setReturnedAmount(null|FHIRDecimal|FHIRMoney $returnedAmount,
                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $returnedAmount) {
             unset($this->returnedAmount);
             return $this;
+        }
+        if (!($returnedAmount instanceof FHIRMoney)) {
+            $returnedAmount = new FHIRMoney(value: $returnedAmount);
         }
         $this->returnedAmount = $returnedAmount;
         if ($this->_valueXMLLocations[self::FIELD_RETURNED_AMOUNT] !== $valueXMLLocation) {
@@ -2036,16 +2054,19 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      *
      * Total payment amount as indicated on the financial instrument.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $amount
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $amount
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAmount(null|FHIRMoney $amount,
+    public function setAmount(null|FHIRDecimal|FHIRMoney $amount,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $amount) {
             unset($this->amount);
             return $this;
+        }
+        if (!($amount instanceof FHIRMoney)) {
+            $amount = new FHIRMoney(value: $amount);
         }
         $this->amount = $amount;
         if ($this->_valueXMLLocations[self::FIELD_AMOUNT] !== $valueXMLLocation) {
@@ -2101,16 +2122,19 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
      *
      * Issuer's unique identifier for the payment instrument.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $paymentIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $paymentIdentifier
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPaymentIdentifier(null|FHIRIdentifier $paymentIdentifier,
+    public function setPaymentIdentifier(null|FHIRString|FHIRIdentifier $paymentIdentifier,
                                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $paymentIdentifier) {
             unset($this->paymentIdentifier);
             return $this;
+        }
+        if (!($paymentIdentifier instanceof FHIRIdentifier)) {
+            $paymentIdentifier = new FHIRIdentifier(value: $paymentIdentifier);
         }
         $this->paymentIdentifier = $paymentIdentifier;
         if ($this->_valueXMLLocations[self::FIELD_PAYMENT_IDENTIFIER] !== $valueXMLLocation) {
@@ -3347,13 +3371,13 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -3361,189 +3385,189 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRFinancialResourceStatusCodes::jsonUnserialize(
-                json: [FHIRFinancialResourceStatusCodes::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRFinancialResourceStatusCodes::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_KIND]) || array_key_exists(self::FIELD_KIND, $json)) {
-            $type->setKind(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_KIND],
-                config: $config,
-            ));
+            $type->setKind(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_KIND], $config));
         }
         if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_PERIOD],
-                config: $config,
-            ));
+            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
         }
-        if (isset($json[self::FIELD_CREATED]) || isset($json[self::FIELD_CREATED_EXT]) || array_key_exists(self::FIELD_CREATED, $json) || array_key_exists(self::FIELD_CREATED_EXT, $json)) {
+        if (isset($json[self::FIELD_CREATED])
+            || isset($json[self::FIELD_CREATED_EXT])
+            || array_key_exists(self::FIELD_CREATED, $json)
+            || array_key_exists(self::FIELD_CREATED_EXT, $json)) {
             $value = $json[self::FIELD_CREATED] ?? null;
-            $ext = (array)($json[self::FIELD_CREATED_EXT] ?? []);
             $type->setCreated(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_CREATED_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ENTERER]) || array_key_exists(self::FIELD_ENTERER, $json)) {
-            $type->setEnterer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ENTERER],
-                config: $config,
-            ));
+            $type->setEnterer(FHIRReference::jsonUnserialize($json[self::FIELD_ENTERER], $config));
         }
         if (isset($json[self::FIELD_ISSUER_TYPE]) || array_key_exists(self::FIELD_ISSUER_TYPE, $json)) {
-            $type->setIssuerType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_ISSUER_TYPE],
-                config: $config,
-            ));
+            $type->setIssuerType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ISSUER_TYPE], $config));
         }
         if (isset($json[self::FIELD_PAYMENT_ISSUER]) || array_key_exists(self::FIELD_PAYMENT_ISSUER, $json)) {
-            $type->setPaymentIssuer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_PAYMENT_ISSUER],
-                config: $config,
-            ));
+            $type->setPaymentIssuer(FHIRReference::jsonUnserialize($json[self::FIELD_PAYMENT_ISSUER], $config));
         }
         if (isset($json[self::FIELD_REQUEST]) || array_key_exists(self::FIELD_REQUEST, $json)) {
-            $type->setRequest(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_REQUEST],
-                config: $config,
-            ));
+            $type->setRequest(FHIRReference::jsonUnserialize($json[self::FIELD_REQUEST], $config));
         }
         if (isset($json[self::FIELD_REQUESTOR]) || array_key_exists(self::FIELD_REQUESTOR, $json)) {
-            $type->setRequestor(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_REQUESTOR],
-                config: $config,
-            ));
+            $type->setRequestor(FHIRReference::jsonUnserialize($json[self::FIELD_REQUESTOR], $config));
         }
-        if (isset($json[self::FIELD_OUTCOME]) || isset($json[self::FIELD_OUTCOME_EXT]) || array_key_exists(self::FIELD_OUTCOME, $json) || array_key_exists(self::FIELD_OUTCOME_EXT, $json)) {
+        if (isset($json[self::FIELD_OUTCOME])
+            || isset($json[self::FIELD_OUTCOME_EXT])
+            || array_key_exists(self::FIELD_OUTCOME, $json)
+            || array_key_exists(self::FIELD_OUTCOME_EXT, $json)) {
             $value = $json[self::FIELD_OUTCOME] ?? null;
-            $ext = (array)($json[self::FIELD_OUTCOME_EXT] ?? []);
             $type->setOutcome(FHIRPaymentOutcome::jsonUnserialize(
-                json: [FHIRPaymentOutcome::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPaymentOutcome::FIELD_VALUE => $value]) + ($json[self::FIELD_OUTCOME_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DISPOSITION]) || isset($json[self::FIELD_DISPOSITION_EXT]) || array_key_exists(self::FIELD_DISPOSITION, $json) || array_key_exists(self::FIELD_DISPOSITION_EXT, $json)) {
+        if (isset($json[self::FIELD_DISPOSITION])
+            || isset($json[self::FIELD_DISPOSITION_EXT])
+            || array_key_exists(self::FIELD_DISPOSITION, $json)
+            || array_key_exists(self::FIELD_DISPOSITION_EXT, $json)) {
             $value = $json[self::FIELD_DISPOSITION] ?? null;
-            $ext = (array)($json[self::FIELD_DISPOSITION_EXT] ?? []);
             $type->setDisposition(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DISPOSITION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DATE]) || isset($json[self::FIELD_DATE_EXT]) || array_key_exists(self::FIELD_DATE, $json) || array_key_exists(self::FIELD_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_DATE])
+            || isset($json[self::FIELD_DATE_EXT])
+            || array_key_exists(self::FIELD_DATE, $json)
+            || array_key_exists(self::FIELD_DATE_EXT, $json)) {
             $value = $json[self::FIELD_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_DATE_EXT] ?? []);
             $type->setDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_LOCATION]) || array_key_exists(self::FIELD_LOCATION, $json)) {
-            $type->setLocation(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_LOCATION],
-                config: $config,
-            ));
+            $type->setLocation(FHIRReference::jsonUnserialize($json[self::FIELD_LOCATION], $config));
         }
         if (isset($json[self::FIELD_METHOD]) || array_key_exists(self::FIELD_METHOD, $json)) {
-            $type->setMethod(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_METHOD],
-                config: $config,
-            ));
+            $type->setMethod(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_METHOD], $config));
         }
-        if (isset($json[self::FIELD_CARD_BRAND]) || isset($json[self::FIELD_CARD_BRAND_EXT]) || array_key_exists(self::FIELD_CARD_BRAND, $json) || array_key_exists(self::FIELD_CARD_BRAND_EXT, $json)) {
+        if (isset($json[self::FIELD_CARD_BRAND])
+            || isset($json[self::FIELD_CARD_BRAND_EXT])
+            || array_key_exists(self::FIELD_CARD_BRAND, $json)
+            || array_key_exists(self::FIELD_CARD_BRAND_EXT, $json)) {
             $value = $json[self::FIELD_CARD_BRAND] ?? null;
-            $ext = (array)($json[self::FIELD_CARD_BRAND_EXT] ?? []);
             $type->setCardBrand(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_CARD_BRAND_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ACCOUNT_NUMBER]) || isset($json[self::FIELD_ACCOUNT_NUMBER_EXT]) || array_key_exists(self::FIELD_ACCOUNT_NUMBER, $json) || array_key_exists(self::FIELD_ACCOUNT_NUMBER_EXT, $json)) {
+        if (isset($json[self::FIELD_ACCOUNT_NUMBER])
+            || isset($json[self::FIELD_ACCOUNT_NUMBER_EXT])
+            || array_key_exists(self::FIELD_ACCOUNT_NUMBER, $json)
+            || array_key_exists(self::FIELD_ACCOUNT_NUMBER_EXT, $json)) {
             $value = $json[self::FIELD_ACCOUNT_NUMBER] ?? null;
-            $ext = (array)($json[self::FIELD_ACCOUNT_NUMBER_EXT] ?? []);
             $type->setAccountNumber(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ACCOUNT_NUMBER_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_EXPIRATION_DATE]) || isset($json[self::FIELD_EXPIRATION_DATE_EXT]) || array_key_exists(self::FIELD_EXPIRATION_DATE, $json) || array_key_exists(self::FIELD_EXPIRATION_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_EXPIRATION_DATE])
+            || isset($json[self::FIELD_EXPIRATION_DATE_EXT])
+            || array_key_exists(self::FIELD_EXPIRATION_DATE, $json)
+            || array_key_exists(self::FIELD_EXPIRATION_DATE_EXT, $json)) {
             $value = $json[self::FIELD_EXPIRATION_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_EXPIRATION_DATE_EXT] ?? []);
             $type->setExpirationDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_EXPIRATION_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PROCESSOR]) || isset($json[self::FIELD_PROCESSOR_EXT]) || array_key_exists(self::FIELD_PROCESSOR, $json) || array_key_exists(self::FIELD_PROCESSOR_EXT, $json)) {
+        if (isset($json[self::FIELD_PROCESSOR])
+            || isset($json[self::FIELD_PROCESSOR_EXT])
+            || array_key_exists(self::FIELD_PROCESSOR, $json)
+            || array_key_exists(self::FIELD_PROCESSOR_EXT, $json)) {
             $value = $json[self::FIELD_PROCESSOR] ?? null;
-            $ext = (array)($json[self::FIELD_PROCESSOR_EXT] ?? []);
             $type->setProcessor(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_PROCESSOR_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_REFERENCE_NUMBER]) || isset($json[self::FIELD_REFERENCE_NUMBER_EXT]) || array_key_exists(self::FIELD_REFERENCE_NUMBER, $json) || array_key_exists(self::FIELD_REFERENCE_NUMBER_EXT, $json)) {
+        if (isset($json[self::FIELD_REFERENCE_NUMBER])
+            || isset($json[self::FIELD_REFERENCE_NUMBER_EXT])
+            || array_key_exists(self::FIELD_REFERENCE_NUMBER, $json)
+            || array_key_exists(self::FIELD_REFERENCE_NUMBER_EXT, $json)) {
             $value = $json[self::FIELD_REFERENCE_NUMBER] ?? null;
-            $ext = (array)($json[self::FIELD_REFERENCE_NUMBER_EXT] ?? []);
             $type->setReferenceNumber(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_REFERENCE_NUMBER_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_AUTHORIZATION]) || isset($json[self::FIELD_AUTHORIZATION_EXT]) || array_key_exists(self::FIELD_AUTHORIZATION, $json) || array_key_exists(self::FIELD_AUTHORIZATION_EXT, $json)) {
+        if (isset($json[self::FIELD_AUTHORIZATION])
+            || isset($json[self::FIELD_AUTHORIZATION_EXT])
+            || array_key_exists(self::FIELD_AUTHORIZATION, $json)
+            || array_key_exists(self::FIELD_AUTHORIZATION_EXT, $json)) {
             $value = $json[self::FIELD_AUTHORIZATION] ?? null;
-            $ext = (array)($json[self::FIELD_AUTHORIZATION_EXT] ?? []);
             $type->setAuthorization(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_AUTHORIZATION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TENDERED_AMOUNT]) || isset($json[self::FIELD_TENDERED_AMOUNT_EXT]) || array_key_exists(self::FIELD_TENDERED_AMOUNT, $json) || array_key_exists(self::FIELD_TENDERED_AMOUNT_EXT, $json)) {
+        if (isset($json[self::FIELD_TENDERED_AMOUNT])
+            || isset($json[self::FIELD_TENDERED_AMOUNT_EXT])
+            || array_key_exists(self::FIELD_TENDERED_AMOUNT, $json)
+            || array_key_exists(self::FIELD_TENDERED_AMOUNT_EXT, $json)) {
             $value = $json[self::FIELD_TENDERED_AMOUNT] ?? null;
-            $ext = (array)($json[self::FIELD_TENDERED_AMOUNT_EXT] ?? []);
             $type->setTenderedAmount(FHIRMoney::jsonUnserialize(
-                json: [FHIRMoney::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_TENDERED_AMOUNT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_RETURNED_AMOUNT]) || isset($json[self::FIELD_RETURNED_AMOUNT_EXT]) || array_key_exists(self::FIELD_RETURNED_AMOUNT, $json) || array_key_exists(self::FIELD_RETURNED_AMOUNT_EXT, $json)) {
+        if (isset($json[self::FIELD_RETURNED_AMOUNT])
+            || isset($json[self::FIELD_RETURNED_AMOUNT_EXT])
+            || array_key_exists(self::FIELD_RETURNED_AMOUNT, $json)
+            || array_key_exists(self::FIELD_RETURNED_AMOUNT_EXT, $json)) {
             $value = $json[self::FIELD_RETURNED_AMOUNT] ?? null;
-            $ext = (array)($json[self::FIELD_RETURNED_AMOUNT_EXT] ?? []);
             $type->setReturnedAmount(FHIRMoney::jsonUnserialize(
-                json: [FHIRMoney::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_RETURNED_AMOUNT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_AMOUNT]) || isset($json[self::FIELD_AMOUNT_EXT]) || array_key_exists(self::FIELD_AMOUNT, $json) || array_key_exists(self::FIELD_AMOUNT_EXT, $json)) {
+        if (isset($json[self::FIELD_AMOUNT])
+            || isset($json[self::FIELD_AMOUNT_EXT])
+            || array_key_exists(self::FIELD_AMOUNT, $json)
+            || array_key_exists(self::FIELD_AMOUNT_EXT, $json)) {
             $value = $json[self::FIELD_AMOUNT] ?? null;
-            $ext = (array)($json[self::FIELD_AMOUNT_EXT] ?? []);
             $type->setAmount(FHIRMoney::jsonUnserialize(
-                json: [FHIRMoney::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_AMOUNT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PAYMENT_IDENTIFIER]) || isset($json[self::FIELD_PAYMENT_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_PAYMENT_IDENTIFIER, $json) || array_key_exists(self::FIELD_PAYMENT_IDENTIFIER_EXT, $json)) {
+        if (isset($json[self::FIELD_PAYMENT_IDENTIFIER])
+            || isset($json[self::FIELD_PAYMENT_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_PAYMENT_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_PAYMENT_IDENTIFIER_EXT, $json)) {
             $value = $json[self::FIELD_PAYMENT_IDENTIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_PAYMENT_IDENTIFIER_EXT] ?? []);
             $type->setPaymentIdentifier(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_PAYMENT_IDENTIFIER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ALLOCATION]) || array_key_exists(self::FIELD_ALLOCATION, $json)) {
@@ -3552,17 +3576,11 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAllocation(FHIRPaymentReconciliationAllocation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAllocation(FHIRPaymentReconciliationAllocation::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_FORM_CODE]) || array_key_exists(self::FIELD_FORM_CODE, $json)) {
-            $type->setFormCode(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_FORM_CODE],
-                config: $config,
-            ));
+            $type->setFormCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_FORM_CODE], $config));
         }
         if (isset($json[self::FIELD_PROCESS_NOTE]) || array_key_exists(self::FIELD_PROCESS_NOTE, $json)) {
             $vs = $json[self::FIELD_PROCESS_NOTE];
@@ -3570,10 +3588,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements VersionCon
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addProcessNote(FHIRPaymentReconciliationProcessNote::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addProcessNote(FHIRPaymentReconciliationProcessNote::jsonUnserialize($v, $config));
             }
         }
         return $type;

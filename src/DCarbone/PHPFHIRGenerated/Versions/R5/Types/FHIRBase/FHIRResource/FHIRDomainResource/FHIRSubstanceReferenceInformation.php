@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -848,13 +848,15 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_COMMENT]) || isset($json[self::FIELD_COMMENT_EXT]) || array_key_exists(self::FIELD_COMMENT, $json) || array_key_exists(self::FIELD_COMMENT_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_COMMENT])
+            || isset($json[self::FIELD_COMMENT_EXT])
+            || array_key_exists(self::FIELD_COMMENT, $json)
+            || array_key_exists(self::FIELD_COMMENT_EXT, $json)) {
             $value = $json[self::FIELD_COMMENT] ?? null;
-            $ext = (array)($json[self::FIELD_COMMENT_EXT] ?? []);
             $type->setComment(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_COMMENT_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_GENE]) || array_key_exists(self::FIELD_GENE, $json)) {
@@ -863,10 +865,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addGene(FHIRSubstanceReferenceInformationGene::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addGene(FHIRSubstanceReferenceInformationGene::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_GENE_ELEMENT]) || array_key_exists(self::FIELD_GENE_ELEMENT, $json)) {
@@ -875,10 +874,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addGeneElement(FHIRSubstanceReferenceInformationGeneElement::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addGeneElement(FHIRSubstanceReferenceInformationGeneElement::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_TARGET]) || array_key_exists(self::FIELD_TARGET, $json)) {
@@ -887,10 +883,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements Ve
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addTarget(FHIRSubstanceReferenceInformationTarget::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addTarget(FHIRSubstanceReferenceInformationTarget::jsonUnserialize($v, $config));
             }
         }
         return $type;

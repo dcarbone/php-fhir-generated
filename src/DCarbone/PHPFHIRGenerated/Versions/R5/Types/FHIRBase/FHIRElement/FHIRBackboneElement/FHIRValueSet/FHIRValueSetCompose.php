@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -891,29 +891,25 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_LOCKED_DATE]) || isset($json[self::FIELD_LOCKED_DATE_EXT]) || array_key_exists(self::FIELD_LOCKED_DATE, $json) || array_key_exists(self::FIELD_LOCKED_DATE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_LOCKED_DATE])
+            || isset($json[self::FIELD_LOCKED_DATE_EXT])
+            || array_key_exists(self::FIELD_LOCKED_DATE, $json)
+            || array_key_exists(self::FIELD_LOCKED_DATE_EXT, $json)) {
             $value = $json[self::FIELD_LOCKED_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_LOCKED_DATE_EXT] ?? []);
             $type->setLockedDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_LOCKED_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_INACTIVE]) || isset($json[self::FIELD_INACTIVE_EXT]) || array_key_exists(self::FIELD_INACTIVE, $json) || array_key_exists(self::FIELD_INACTIVE_EXT, $json)) {
+        if (isset($json[self::FIELD_INACTIVE])
+            || isset($json[self::FIELD_INACTIVE_EXT])
+            || array_key_exists(self::FIELD_INACTIVE, $json)
+            || array_key_exists(self::FIELD_INACTIVE_EXT, $json)) {
             $value = $json[self::FIELD_INACTIVE] ?? null;
-            $ext = (array)($json[self::FIELD_INACTIVE_EXT] ?? []);
             $type->setInactive(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_INACTIVE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_INCLUDE]) || array_key_exists(self::FIELD_INCLUDE, $json)) {
@@ -922,10 +918,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addInclude(FHIRValueSetInclude::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addInclude(FHIRValueSetInclude::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_EXCLUDE]) || array_key_exists(self::FIELD_EXCLUDE, $json)) {
@@ -934,18 +927,15 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addExclude(FHIRValueSetInclude::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addExclude(FHIRValueSetInclude::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PROPERTY]) || isset($json[self::FIELD_PROPERTY_EXT]) || array_key_exists(self::FIELD_PROPERTY, $json) || array_key_exists(self::FIELD_PROPERTY_EXT, $json)) {
-            $value = $json[self::FIELD_PROPERTY] ?? null;
+        if (isset($json[self::FIELD_PROPERTY])
+            || isset($json[self::FIELD_PROPERTY_EXT])
+            || array_key_exists(self::FIELD_PROPERTY, $json)
+            || array_key_exists(self::FIELD_PROPERTY_EXT, $json)) {
+            $value = (array)($json[self::FIELD_PROPERTY] ?? []);
             $ext = (array)($json[self::FIELD_PROPERTY_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -953,8 +943,8 @@ class FHIRValueSetCompose extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addProperty(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

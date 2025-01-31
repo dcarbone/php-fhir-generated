@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -737,39 +737,24 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_SUBSTANCE]) || array_key_exists(self::FIELD_SUBSTANCE, $json)) {
-            $type->setSubstance(FHIRCodeableReference::jsonUnserialize(
-                json: $json[self::FIELD_SUBSTANCE],
-                config: $config,
-            ));
+            $type->setSubstance(FHIRCodeableReference::jsonUnserialize($json[self::FIELD_SUBSTANCE], $config));
         }
         if (isset($json[self::FIELD_STRENGTH_RATIO]) || array_key_exists(self::FIELD_STRENGTH_RATIO, $json)) {
-            $type->setStrengthRatio(FHIRRatio::jsonUnserialize(
-                json: $json[self::FIELD_STRENGTH_RATIO],
-                config: $config,
-            ));
+            $type->setStrengthRatio(FHIRRatio::jsonUnserialize($json[self::FIELD_STRENGTH_RATIO], $config));
         }
         if (isset($json[self::FIELD_STRENGTH_RATIO_RANGE]) || array_key_exists(self::FIELD_STRENGTH_RATIO_RANGE, $json)) {
-            $type->setStrengthRatioRange(FHIRRatioRange::jsonUnserialize(
-                json: $json[self::FIELD_STRENGTH_RATIO_RANGE],
-                config: $config,
-            ));
+            $type->setStrengthRatioRange(FHIRRatioRange::jsonUnserialize($json[self::FIELD_STRENGTH_RATIO_RANGE], $config));
         }
-        if (isset($json[self::FIELD_MEASUREMENT_POINT]) || isset($json[self::FIELD_MEASUREMENT_POINT_EXT]) || array_key_exists(self::FIELD_MEASUREMENT_POINT, $json) || array_key_exists(self::FIELD_MEASUREMENT_POINT_EXT, $json)) {
+        if (isset($json[self::FIELD_MEASUREMENT_POINT])
+            || isset($json[self::FIELD_MEASUREMENT_POINT_EXT])
+            || array_key_exists(self::FIELD_MEASUREMENT_POINT, $json)
+            || array_key_exists(self::FIELD_MEASUREMENT_POINT_EXT, $json)) {
             $value = $json[self::FIELD_MEASUREMENT_POINT] ?? null;
-            $ext = (array)($json[self::FIELD_MEASUREMENT_POINT_EXT] ?? []);
             $type->setMeasurementPoint(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_MEASUREMENT_POINT_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_COUNTRY]) || array_key_exists(self::FIELD_COUNTRY, $json)) {
@@ -778,10 +763,7 @@ class FHIRIngredientReferenceStrength extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCountry(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCountry(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         return $type;

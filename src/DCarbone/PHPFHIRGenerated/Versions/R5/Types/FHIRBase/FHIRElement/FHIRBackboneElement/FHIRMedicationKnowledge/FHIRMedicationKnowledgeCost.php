@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,6 +94,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -202,7 +203,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod[] $effectiveDate
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $source
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $costMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $costMoney
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $costCodeableConcept
      * @param null|string[] $fhirComments
      */
@@ -212,7 +213,7 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
                                 null|iterable $effectiveDate = null,
                                 null|FHIRCodeableConcept $type = null,
                                 null|string|FHIRStringPrimitive|FHIRString $source = null,
-                                null|FHIRMoney $costMoney = null,
+                                null|FHIRDecimal|FHIRMoney $costMoney = null,
                                 null|FHIRCodeableConcept $costCodeableConcept = null,
                                 null|iterable $fhirComments = null)
     {
@@ -438,16 +439,19 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * The price or representation of the cost (for example, Band A, Band B or $, $$)
      * of the medication.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $costMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney $costMoney
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCostMoney(null|FHIRMoney $costMoney,
+    public function setCostMoney(null|FHIRDecimal|FHIRMoney $costMoney,
                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $costMoney) {
             unset($this->costMoney);
             return $this;
+        }
+        if (!($costMoney instanceof FHIRMoney)) {
+            $costMoney = new FHIRMoney(value: $costMoney);
         }
         $this->costMoney = $costMoney;
         if ($this->_valueXMLLocations[self::FIELD_COST_MONEY] !== $valueXMLLocation) {
@@ -793,54 +797,41 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_EFFECTIVE_DATE]) || array_key_exists(self::FIELD_EFFECTIVE_DATE, $json)) {
             $vs = $json[self::FIELD_EFFECTIVE_DATE];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addEffectiveDate(FHIRPeriod::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addEffectiveDate(FHIRPeriod::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
-        if (isset($json[self::FIELD_SOURCE]) || isset($json[self::FIELD_SOURCE_EXT]) || array_key_exists(self::FIELD_SOURCE, $json) || array_key_exists(self::FIELD_SOURCE_EXT, $json)) {
+        if (isset($json[self::FIELD_SOURCE])
+            || isset($json[self::FIELD_SOURCE_EXT])
+            || array_key_exists(self::FIELD_SOURCE, $json)
+            || array_key_exists(self::FIELD_SOURCE_EXT, $json)) {
             $value = $json[self::FIELD_SOURCE] ?? null;
-            $ext = (array)($json[self::FIELD_SOURCE_EXT] ?? []);
             $type->setSource(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SOURCE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_COST_MONEY]) || isset($json[self::FIELD_COST_MONEY_EXT]) || array_key_exists(self::FIELD_COST_MONEY, $json) || array_key_exists(self::FIELD_COST_MONEY_EXT, $json)) {
+        if (isset($json[self::FIELD_COST_MONEY])
+            || isset($json[self::FIELD_COST_MONEY_EXT])
+            || array_key_exists(self::FIELD_COST_MONEY, $json)
+            || array_key_exists(self::FIELD_COST_MONEY_EXT, $json)) {
             $value = $json[self::FIELD_COST_MONEY] ?? null;
-            $ext = (array)($json[self::FIELD_COST_MONEY_EXT] ?? []);
             $type->setCostMoney(FHIRMoney::jsonUnserialize(
-                json: [FHIRMoney::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_COST_MONEY_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_COST_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_COST_CODEABLE_CONCEPT, $json)) {
-            $type->setCostCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_COST_CODEABLE_CONCEPT],
-                config: $config,
-            ));
+            $type->setCostCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_COST_CODEABLE_CONCEPT], $config));
         }
         return $type;
     }

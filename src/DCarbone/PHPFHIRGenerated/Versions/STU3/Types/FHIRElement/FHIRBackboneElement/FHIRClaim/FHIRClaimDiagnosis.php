@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -732,34 +732,22 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_SEQUENCE]) || isset($json[self::FIELD_SEQUENCE_EXT]) || array_key_exists(self::FIELD_SEQUENCE, $json) || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_SEQUENCE])
+            || isset($json[self::FIELD_SEQUENCE_EXT])
+            || array_key_exists(self::FIELD_SEQUENCE, $json)
+            || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
             $value = $json[self::FIELD_SEQUENCE] ?? null;
-            $ext = (array)($json[self::FIELD_SEQUENCE_EXT] ?? []);
             $type->setSequence(FHIRPositiveInt::jsonUnserialize(
-                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_SEQUENCE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_DIAGNOSIS_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_DIAGNOSIS_CODEABLE_CONCEPT, $json)) {
-            $type->setDiagnosisCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_DIAGNOSIS_CODEABLE_CONCEPT],
-                config: $config,
-            ));
+            $type->setDiagnosisCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DIAGNOSIS_CODEABLE_CONCEPT], $config));
         }
         if (isset($json[self::FIELD_DIAGNOSIS_REFERENCE]) || array_key_exists(self::FIELD_DIAGNOSIS_REFERENCE, $json)) {
-            $type->setDiagnosisReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_DIAGNOSIS_REFERENCE],
-                config: $config,
-            ));
+            $type->setDiagnosisReference(FHIRReference::jsonUnserialize($json[self::FIELD_DIAGNOSIS_REFERENCE], $config));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
             $vs = $json[self::FIELD_TYPE];
@@ -767,17 +755,11 @@ class FHIRClaimDiagnosis extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addType(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PACKAGE_CODE]) || array_key_exists(self::FIELD_PACKAGE_CODE, $json)) {
-            $type->setPackageCode(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_PACKAGE_CODE],
-                config: $config,
-            ));
+            $type->setPackageCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PACKAGE_CODE], $config));
         }
         return $type;
     }

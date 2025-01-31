@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,6 +71,7 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity;
@@ -163,7 +164,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRQuantity $valueQuantity
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $valueMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $valueMoney
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageException[] $exception
      * @param null|string[] $fhirComments
      */
@@ -172,7 +173,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $type = null,
                                 null|FHIRQuantity $valueQuantity = null,
-                                null|FHIRMoney $valueMoney = null,
+                                null|FHIRDecimal|FHIRMoney $valueMoney = null,
                                 null|iterable $exception = null,
                                 null|iterable $fhirComments = null)
     {
@@ -299,16 +300,19 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * The amount due from the patient for the cost category.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $valueMoney
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMoney $valueMoney
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setValueMoney(null|FHIRMoney $valueMoney,
+    public function setValueMoney(null|FHIRDecimal|FHIRMoney $valueMoney,
                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $valueMoney) {
             unset($this->valueMoney);
             return $this;
+        }
+        if (!($valueMoney instanceof FHIRMoney)) {
+            $valueMoney = new FHIRMoney(value: $valueMoney);
         }
         $this->valueMoney = $valueMoney;
         if ($this->_valueXMLLocations[self::FIELD_VALUE_MONEY] !== $valueXMLLocation) {
@@ -643,33 +647,21 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
         if (isset($json[self::FIELD_VALUE_QUANTITY]) || array_key_exists(self::FIELD_VALUE_QUANTITY, $json)) {
-            $type->setValueQuantity(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_VALUE_QUANTITY],
-                config: $config,
-            ));
+            $type->setValueQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_VALUE_QUANTITY], $config));
         }
-        if (isset($json[self::FIELD_VALUE_MONEY]) || isset($json[self::FIELD_VALUE_MONEY_EXT]) || array_key_exists(self::FIELD_VALUE_MONEY, $json) || array_key_exists(self::FIELD_VALUE_MONEY_EXT, $json)) {
+        if (isset($json[self::FIELD_VALUE_MONEY])
+            || isset($json[self::FIELD_VALUE_MONEY_EXT])
+            || array_key_exists(self::FIELD_VALUE_MONEY, $json)
+            || array_key_exists(self::FIELD_VALUE_MONEY_EXT, $json)) {
             $value = $json[self::FIELD_VALUE_MONEY] ?? null;
-            $ext = (array)($json[self::FIELD_VALUE_MONEY_EXT] ?? []);
             $type->setValueMoney(FHIRMoney::jsonUnserialize(
-                json: [FHIRMoney::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMoney::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_MONEY_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_EXCEPTION]) || array_key_exists(self::FIELD_EXCEPTION, $json)) {
@@ -678,10 +670,7 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addException(FHIRCoverageException::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addException(FHIRCoverageException::jsonUnserialize($v, $config));
             }
         }
         return $type;

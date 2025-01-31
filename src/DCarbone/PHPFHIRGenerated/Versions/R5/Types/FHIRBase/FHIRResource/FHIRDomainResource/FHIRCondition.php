@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -485,7 +485,7 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $clinicalStatus
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $verificationStatus
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $category
@@ -685,11 +685,14 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * systems which remain constant as the resource is updated and propagates from
      * server to server.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -707,10 +710,10 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
      * systems which remain constant as the resource is updated and propagates from
      * server to server.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -2766,13 +2769,13 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2780,22 +2783,16 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
         if (isset($json[self::FIELD_CLINICAL_STATUS]) || array_key_exists(self::FIELD_CLINICAL_STATUS, $json)) {
-            $type->setClinicalStatus(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CLINICAL_STATUS],
-                config: $config,
-            ));
+            $type->setClinicalStatus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CLINICAL_STATUS], $config));
         }
         if (isset($json[self::FIELD_VERIFICATION_STATUS]) || array_key_exists(self::FIELD_VERIFICATION_STATUS, $json)) {
-            $type->setVerificationStatus(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_VERIFICATION_STATUS],
-                config: $config,
-            ));
+            $type->setVerificationStatus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_VERIFICATION_STATUS], $config));
         }
         if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
             $vs = $json[self::FIELD_CATEGORY];
@@ -2803,23 +2800,14 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCategory(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCategory(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SEVERITY]) || array_key_exists(self::FIELD_SEVERITY, $json)) {
-            $type->setSeverity(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_SEVERITY],
-                config: $config,
-            ));
+            $type->setSeverity(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SEVERITY], $config));
         }
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CODE],
-                config: $config,
-            ));
+            $type->setCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CODE], $config));
         }
         if (isset($json[self::FIELD_BODY_SITE]) || array_key_exists(self::FIELD_BODY_SITE, $json)) {
             $vs = $json[self::FIELD_BODY_SITE];
@@ -2827,98 +2815,81 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addBodySite(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addBodySite(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $type->setSubject(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_SUBJECT],
-                config: $config,
-            ));
+            $type->setSubject(FHIRReference::jsonUnserialize($json[self::FIELD_SUBJECT], $config));
         }
         if (isset($json[self::FIELD_ENCOUNTER]) || array_key_exists(self::FIELD_ENCOUNTER, $json)) {
-            $type->setEncounter(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ENCOUNTER],
-                config: $config,
-            ));
+            $type->setEncounter(FHIRReference::jsonUnserialize($json[self::FIELD_ENCOUNTER], $config));
         }
-        if (isset($json[self::FIELD_ONSET_DATE_TIME]) || isset($json[self::FIELD_ONSET_DATE_TIME_EXT]) || array_key_exists(self::FIELD_ONSET_DATE_TIME, $json) || array_key_exists(self::FIELD_ONSET_DATE_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_ONSET_DATE_TIME])
+            || isset($json[self::FIELD_ONSET_DATE_TIME_EXT])
+            || array_key_exists(self::FIELD_ONSET_DATE_TIME, $json)
+            || array_key_exists(self::FIELD_ONSET_DATE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_ONSET_DATE_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_ONSET_DATE_TIME_EXT] ?? []);
             $type->setOnsetDateTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_ONSET_DATE_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ONSET_AGE]) || array_key_exists(self::FIELD_ONSET_AGE, $json)) {
-            $type->setOnsetAge(FHIRAge::jsonUnserialize(
-                json: $json[self::FIELD_ONSET_AGE],
-                config: $config,
-            ));
+            $type->setOnsetAge(FHIRAge::jsonUnserialize($json[self::FIELD_ONSET_AGE], $config));
         }
         if (isset($json[self::FIELD_ONSET_PERIOD]) || array_key_exists(self::FIELD_ONSET_PERIOD, $json)) {
-            $type->setOnsetPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_ONSET_PERIOD],
-                config: $config,
-            ));
+            $type->setOnsetPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_ONSET_PERIOD], $config));
         }
         if (isset($json[self::FIELD_ONSET_RANGE]) || array_key_exists(self::FIELD_ONSET_RANGE, $json)) {
-            $type->setOnsetRange(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_ONSET_RANGE],
-                config: $config,
-            ));
+            $type->setOnsetRange(FHIRRange::jsonUnserialize($json[self::FIELD_ONSET_RANGE], $config));
         }
-        if (isset($json[self::FIELD_ONSET_STRING]) || isset($json[self::FIELD_ONSET_STRING_EXT]) || array_key_exists(self::FIELD_ONSET_STRING, $json) || array_key_exists(self::FIELD_ONSET_STRING_EXT, $json)) {
+        if (isset($json[self::FIELD_ONSET_STRING])
+            || isset($json[self::FIELD_ONSET_STRING_EXT])
+            || array_key_exists(self::FIELD_ONSET_STRING, $json)
+            || array_key_exists(self::FIELD_ONSET_STRING_EXT, $json)) {
             $value = $json[self::FIELD_ONSET_STRING] ?? null;
-            $ext = (array)($json[self::FIELD_ONSET_STRING_EXT] ?? []);
             $type->setOnsetString(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ONSET_STRING_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ABATEMENT_DATE_TIME]) || isset($json[self::FIELD_ABATEMENT_DATE_TIME_EXT]) || array_key_exists(self::FIELD_ABATEMENT_DATE_TIME, $json) || array_key_exists(self::FIELD_ABATEMENT_DATE_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_ABATEMENT_DATE_TIME])
+            || isset($json[self::FIELD_ABATEMENT_DATE_TIME_EXT])
+            || array_key_exists(self::FIELD_ABATEMENT_DATE_TIME, $json)
+            || array_key_exists(self::FIELD_ABATEMENT_DATE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_ABATEMENT_DATE_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_ABATEMENT_DATE_TIME_EXT] ?? []);
             $type->setAbatementDateTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_ABATEMENT_DATE_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ABATEMENT_AGE]) || array_key_exists(self::FIELD_ABATEMENT_AGE, $json)) {
-            $type->setAbatementAge(FHIRAge::jsonUnserialize(
-                json: $json[self::FIELD_ABATEMENT_AGE],
-                config: $config,
-            ));
+            $type->setAbatementAge(FHIRAge::jsonUnserialize($json[self::FIELD_ABATEMENT_AGE], $config));
         }
         if (isset($json[self::FIELD_ABATEMENT_PERIOD]) || array_key_exists(self::FIELD_ABATEMENT_PERIOD, $json)) {
-            $type->setAbatementPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_ABATEMENT_PERIOD],
-                config: $config,
-            ));
+            $type->setAbatementPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_ABATEMENT_PERIOD], $config));
         }
         if (isset($json[self::FIELD_ABATEMENT_RANGE]) || array_key_exists(self::FIELD_ABATEMENT_RANGE, $json)) {
-            $type->setAbatementRange(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_ABATEMENT_RANGE],
-                config: $config,
-            ));
+            $type->setAbatementRange(FHIRRange::jsonUnserialize($json[self::FIELD_ABATEMENT_RANGE], $config));
         }
-        if (isset($json[self::FIELD_ABATEMENT_STRING]) || isset($json[self::FIELD_ABATEMENT_STRING_EXT]) || array_key_exists(self::FIELD_ABATEMENT_STRING, $json) || array_key_exists(self::FIELD_ABATEMENT_STRING_EXT, $json)) {
+        if (isset($json[self::FIELD_ABATEMENT_STRING])
+            || isset($json[self::FIELD_ABATEMENT_STRING_EXT])
+            || array_key_exists(self::FIELD_ABATEMENT_STRING, $json)
+            || array_key_exists(self::FIELD_ABATEMENT_STRING_EXT, $json)) {
             $value = $json[self::FIELD_ABATEMENT_STRING] ?? null;
-            $ext = (array)($json[self::FIELD_ABATEMENT_STRING_EXT] ?? []);
             $type->setAbatementString(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ABATEMENT_STRING_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_RECORDED_DATE]) || isset($json[self::FIELD_RECORDED_DATE_EXT]) || array_key_exists(self::FIELD_RECORDED_DATE, $json) || array_key_exists(self::FIELD_RECORDED_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_RECORDED_DATE])
+            || isset($json[self::FIELD_RECORDED_DATE_EXT])
+            || array_key_exists(self::FIELD_RECORDED_DATE, $json)
+            || array_key_exists(self::FIELD_RECORDED_DATE_EXT, $json)) {
             $value = $json[self::FIELD_RECORDED_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_RECORDED_DATE_EXT] ?? []);
             $type->setRecordedDate(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_RECORDED_DATE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PARTICIPANT]) || array_key_exists(self::FIELD_PARTICIPANT, $json)) {
@@ -2927,10 +2898,7 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addParticipant(FHIRConditionParticipant::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addParticipant(FHIRConditionParticipant::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_STAGE]) || array_key_exists(self::FIELD_STAGE, $json)) {
@@ -2939,10 +2907,7 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addStage(FHIRConditionStage::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addStage(FHIRConditionStage::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_EVIDENCE]) || array_key_exists(self::FIELD_EVIDENCE, $json)) {
@@ -2951,10 +2916,7 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addEvidence(FHIRCodeableReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addEvidence(FHIRCodeableReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
@@ -2963,10 +2925,7 @@ class FHIRCondition extends FHIRDomainResource implements VersionContainedTypeIn
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addNote(FHIRAnnotation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -782,12 +782,9 @@ class FHIRDomainResource extends FHIRResource
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_TEXT]) || array_key_exists(self::FIELD_TEXT, $json)) {
-            $type->setText(FHIRNarrative::jsonUnserialize(
-                json: $json[self::FIELD_TEXT],
-                config: $config,
-            ));
+            $type->setText(FHIRNarrative::jsonUnserialize($json[self::FIELD_TEXT], $config));
         }
         if (isset($json[self::FIELD_CONTAINED])) {
             $d = $json[self::FIELD_CONTAINED];
@@ -797,10 +794,7 @@ class FHIRDomainResource extends FHIRResource
             foreach($d as $v) {
                 $typeClassName = VersionTypeMap::getContainedTypeClassNameFromArray($v);
                 unset($v[Constants::JSON_FIELD_RESOURCE_TYPE]);
-                $type->addContained($typeClassName::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addContained($typeClassName::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_EXTENSION]) || array_key_exists(self::FIELD_EXTENSION, $json)) {
@@ -809,10 +803,7 @@ class FHIRDomainResource extends FHIRResource
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addExtension(FHIRExtension::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addExtension(FHIRExtension::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_MODIFIER_EXTENSION]) || array_key_exists(self::FIELD_MODIFIER_EXTENSION, $json)) {
@@ -821,10 +812,7 @@ class FHIRDomainResource extends FHIRResource
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addModifierExtension(FHIRExtension::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addModifierExtension(FHIRExtension::jsonUnserialize($v, $config));
             }
         }
         return $type;

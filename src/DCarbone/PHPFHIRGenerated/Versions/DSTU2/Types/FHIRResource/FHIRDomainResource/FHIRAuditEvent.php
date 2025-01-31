@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -801,12 +801,9 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_EVENT]) || array_key_exists(self::FIELD_EVENT, $json)) {
-            $type->setEvent(FHIRAuditEventEvent::jsonUnserialize(
-                json: $json[self::FIELD_EVENT],
-                config: $config,
-            ));
+            $type->setEvent(FHIRAuditEventEvent::jsonUnserialize($json[self::FIELD_EVENT], $config));
         }
         if (isset($json[self::FIELD_PARTICIPANT]) || array_key_exists(self::FIELD_PARTICIPANT, $json)) {
             $vs = $json[self::FIELD_PARTICIPANT];
@@ -814,17 +811,11 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addParticipant(FHIRAuditEventParticipant::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addParticipant(FHIRAuditEventParticipant::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
-            $type->setSource(FHIRAuditEventSource::jsonUnserialize(
-                json: $json[self::FIELD_SOURCE],
-                config: $config,
-            ));
+            $type->setSource(FHIRAuditEventSource::jsonUnserialize($json[self::FIELD_SOURCE], $config));
         }
         if (isset($json[self::FIELD_OBJECT]) || array_key_exists(self::FIELD_OBJECT, $json)) {
             $vs = $json[self::FIELD_OBJECT];
@@ -832,10 +823,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements VersionContainedTypeI
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addObject(FHIRAuditEventObject::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addObject(FHIRAuditEventObject::jsonUnserialize($v, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -559,38 +559,18 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_LOW]) || array_key_exists(self::FIELD_LOW, $json)) {
-            $type->setLow(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_LOW],
-                config: $config,
-            ));
+            $type->setLow(FHIRQuantity::jsonUnserialize($json[self::FIELD_LOW], $config));
         }
         if (isset($json[self::FIELD_HIGH]) || array_key_exists(self::FIELD_HIGH, $json)) {
-            $type->setHigh(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_HIGH],
-                config: $config,
-            ));
+            $type->setHigh(FHIRQuantity::jsonUnserialize($json[self::FIELD_HIGH], $config));
         }
         if (isset($json[self::FIELD_MEANING]) || array_key_exists(self::FIELD_MEANING, $json)) {
-            $type->setMeaning(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_MEANING],
-                config: $config,
-            ));
+            $type->setMeaning(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_MEANING], $config));
         }
         if (isset($json[self::FIELD_AGE]) || array_key_exists(self::FIELD_AGE, $json)) {
-            $type->setAge(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_AGE],
-                config: $config,
-            ));
+            $type->setAge(FHIRRange::jsonUnserialize($json[self::FIELD_AGE], $config));
         }
         return $type;
     }

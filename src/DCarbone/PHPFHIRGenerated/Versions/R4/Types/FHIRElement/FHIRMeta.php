@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -966,45 +966,43 @@ class FHIRMeta extends FHIRElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_VERSION_ID]) || isset($json[self::FIELD_VERSION_ID_EXT]) || array_key_exists(self::FIELD_VERSION_ID, $json) || array_key_exists(self::FIELD_VERSION_ID_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_VERSION_ID])
+            || isset($json[self::FIELD_VERSION_ID_EXT])
+            || array_key_exists(self::FIELD_VERSION_ID, $json)
+            || array_key_exists(self::FIELD_VERSION_ID_EXT, $json)) {
             $value = $json[self::FIELD_VERSION_ID] ?? null;
-            $ext = (array)($json[self::FIELD_VERSION_ID_EXT] ?? []);
             $type->setVersionId(FHIRId::jsonUnserialize(
-                json: [FHIRId::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_VERSION_ID_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_LAST_UPDATED]) || isset($json[self::FIELD_LAST_UPDATED_EXT]) || array_key_exists(self::FIELD_LAST_UPDATED, $json) || array_key_exists(self::FIELD_LAST_UPDATED_EXT, $json)) {
+        if (isset($json[self::FIELD_LAST_UPDATED])
+            || isset($json[self::FIELD_LAST_UPDATED_EXT])
+            || array_key_exists(self::FIELD_LAST_UPDATED, $json)
+            || array_key_exists(self::FIELD_LAST_UPDATED_EXT, $json)) {
             $value = $json[self::FIELD_LAST_UPDATED] ?? null;
-            $ext = (array)($json[self::FIELD_LAST_UPDATED_EXT] ?? []);
             $type->setLastUpdated(FHIRInstant::jsonUnserialize(
-                json: [FHIRInstant::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInstant::FIELD_VALUE => $value]) + ($json[self::FIELD_LAST_UPDATED_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SOURCE]) || isset($json[self::FIELD_SOURCE_EXT]) || array_key_exists(self::FIELD_SOURCE, $json) || array_key_exists(self::FIELD_SOURCE_EXT, $json)) {
+        if (isset($json[self::FIELD_SOURCE])
+            || isset($json[self::FIELD_SOURCE_EXT])
+            || array_key_exists(self::FIELD_SOURCE, $json)
+            || array_key_exists(self::FIELD_SOURCE_EXT, $json)) {
             $value = $json[self::FIELD_SOURCE] ?? null;
-            $ext = (array)($json[self::FIELD_SOURCE_EXT] ?? []);
             $type->setSource(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_SOURCE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PROFILE]) || isset($json[self::FIELD_PROFILE_EXT]) || array_key_exists(self::FIELD_PROFILE, $json) || array_key_exists(self::FIELD_PROFILE_EXT, $json)) {
-            $value = $json[self::FIELD_PROFILE] ?? null;
+        if (isset($json[self::FIELD_PROFILE])
+            || isset($json[self::FIELD_PROFILE_EXT])
+            || array_key_exists(self::FIELD_PROFILE, $json)
+            || array_key_exists(self::FIELD_PROFILE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_PROFILE] ?? []);
             $ext = (array)($json[self::FIELD_PROFILE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1012,8 +1010,8 @@ class FHIRMeta extends FHIRElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addProfile(FHIRCanonical::jsonUnserialize(
-                    json: [FHIRCanonical::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRCanonical::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -1023,10 +1021,7 @@ class FHIRMeta extends FHIRElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSecurity(FHIRCoding::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSecurity(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_TAG]) || array_key_exists(self::FIELD_TAG, $json)) {
@@ -1035,10 +1030,7 @@ class FHIRMeta extends FHIRElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addTag(FHIRCoding::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addTag(FHIRCoding::jsonUnserialize($v, $config));
             }
         }
         return $type;

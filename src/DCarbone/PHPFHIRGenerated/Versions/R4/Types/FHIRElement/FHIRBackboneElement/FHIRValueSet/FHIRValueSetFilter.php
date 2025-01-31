@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,6 +71,7 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Types\ValueContainerTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRFilterOperatorList;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
@@ -164,7 +165,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements ValueContainerTy
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCode $property
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRFilterOperator $op
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRFilterOperatorList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRFilterOperator $op
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $value
      * @param null|string[] $fhirComments
      */
@@ -172,7 +173,7 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements ValueContainerTy
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|string|FHIRCodePrimitive|FHIRCode $property = null,
-                                null|FHIRFilterOperator $op = null,
+                                null|string|FHIRFilterOperatorList|FHIRFilterOperator $op = null,
                                 null|string|FHIRStringPrimitive|FHIRString $value = null,
                                 null|iterable $fhirComments = null)
     {
@@ -288,16 +289,19 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements ValueContainerTy
      *
      * The kind of operation to perform as a part of the filter criteria.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRFilterOperator $op
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRFilterOperatorList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRFilterOperator $op
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOp(null|FHIRFilterOperator $op,
+    public function setOp(null|string|FHIRFilterOperatorList|FHIRFilterOperator $op,
                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $op) {
             unset($this->op);
             return $this;
+        }
+        if (!($op instanceof FHIRFilterOperator)) {
+            $op = new FHIRFilterOperator(value: $op);
         }
         $this->op = $op;
         if ($this->_valueXMLLocations[self::FIELD_OP] !== $valueXMLLocation) {
@@ -683,37 +687,35 @@ class FHIRValueSetFilter extends FHIRBackboneElement implements ValueContainerTy
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_PROPERTY]) || isset($json[self::FIELD_PROPERTY_EXT]) || array_key_exists(self::FIELD_PROPERTY, $json) || array_key_exists(self::FIELD_PROPERTY_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_PROPERTY])
+            || isset($json[self::FIELD_PROPERTY_EXT])
+            || array_key_exists(self::FIELD_PROPERTY, $json)
+            || array_key_exists(self::FIELD_PROPERTY_EXT, $json)) {
             $value = $json[self::FIELD_PROPERTY] ?? null;
-            $ext = (array)($json[self::FIELD_PROPERTY_EXT] ?? []);
             $type->setProperty(FHIRCode::jsonUnserialize(
-                json: [FHIRCode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_PROPERTY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_OP]) || isset($json[self::FIELD_OP_EXT]) || array_key_exists(self::FIELD_OP, $json) || array_key_exists(self::FIELD_OP_EXT, $json)) {
+        if (isset($json[self::FIELD_OP])
+            || isset($json[self::FIELD_OP_EXT])
+            || array_key_exists(self::FIELD_OP, $json)
+            || array_key_exists(self::FIELD_OP_EXT, $json)) {
             $value = $json[self::FIELD_OP] ?? null;
-            $ext = (array)($json[self::FIELD_OP_EXT] ?? []);
             $type->setOp(FHIRFilterOperator::jsonUnserialize(
-                json: [FHIRFilterOperator::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRFilterOperator::FIELD_VALUE => $value]) + ($json[self::FIELD_OP_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_VALUE]) || isset($json[self::FIELD_VALUE_EXT]) || array_key_exists(self::FIELD_VALUE, $json) || array_key_exists(self::FIELD_VALUE_EXT, $json)) {
+        if (isset($json[self::FIELD_VALUE])
+            || isset($json[self::FIELD_VALUE_EXT])
+            || array_key_exists(self::FIELD_VALUE, $json)
+            || array_key_exists(self::FIELD_VALUE_EXT, $json)) {
             $value = $json[self::FIELD_VALUE] ?? null;
-            $ext = (array)($json[self::FIELD_VALUE_EXT] ?? []);
             $type->setValue(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -66,6 +66,7 @@ use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRNameUseList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 
@@ -178,7 +179,7 @@ class FHIRHumanName extends FHIRElement
      * FHIRHumanName Constructor
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNameUse $use
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRNameUseList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNameUse $use
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $text
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString[] $family
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString[] $given
@@ -189,7 +190,7 @@ class FHIRHumanName extends FHIRElement
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRIdPrimitive $id = null,
-                                null|FHIRNameUse $use = null,
+                                null|string|FHIRNameUseList|FHIRNameUse $use = null,
                                 null|string|FHIRStringPrimitive|FHIRString $text = null,
                                 null|iterable $family = null,
                                 null|iterable $given = null,
@@ -253,16 +254,19 @@ class FHIRHumanName extends FHIRElement
      *
      * Identifies the purpose for this name.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNameUse $use
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRNameUseList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNameUse $use
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUse(null|FHIRNameUse $use,
+    public function setUse(null|string|FHIRNameUseList|FHIRNameUse $use,
                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $use) {
             unset($this->use);
             return $this;
+        }
+        if (!($use instanceof FHIRNameUse)) {
+            $use = new FHIRNameUse(value: $use);
         }
         $this->use = $use;
         if ($this->_valueXMLLocations[self::FIELD_USE] !== $valueXMLLocation) {
@@ -976,37 +980,33 @@ class FHIRHumanName extends FHIRElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_USE]) || isset($json[self::FIELD_USE_EXT]) || array_key_exists(self::FIELD_USE, $json) || array_key_exists(self::FIELD_USE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_USE])
+            || isset($json[self::FIELD_USE_EXT])
+            || array_key_exists(self::FIELD_USE, $json)
+            || array_key_exists(self::FIELD_USE_EXT, $json)) {
             $value = $json[self::FIELD_USE] ?? null;
-            $ext = (array)($json[self::FIELD_USE_EXT] ?? []);
             $type->setUse(FHIRNameUse::jsonUnserialize(
-                json: [FHIRNameUse::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRNameUse::FIELD_VALUE => $value]) + ($json[self::FIELD_USE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TEXT]) || isset($json[self::FIELD_TEXT_EXT]) || array_key_exists(self::FIELD_TEXT, $json) || array_key_exists(self::FIELD_TEXT_EXT, $json)) {
+        if (isset($json[self::FIELD_TEXT])
+            || isset($json[self::FIELD_TEXT_EXT])
+            || array_key_exists(self::FIELD_TEXT, $json)
+            || array_key_exists(self::FIELD_TEXT_EXT, $json)) {
             $value = $json[self::FIELD_TEXT] ?? null;
-            $ext = (array)($json[self::FIELD_TEXT_EXT] ?? []);
             $type->setText(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TEXT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_FAMILY]) || isset($json[self::FIELD_FAMILY_EXT]) || array_key_exists(self::FIELD_FAMILY, $json) || array_key_exists(self::FIELD_FAMILY_EXT, $json)) {
-            $value = $json[self::FIELD_FAMILY] ?? null;
+        if (isset($json[self::FIELD_FAMILY])
+            || isset($json[self::FIELD_FAMILY_EXT])
+            || array_key_exists(self::FIELD_FAMILY, $json)
+            || array_key_exists(self::FIELD_FAMILY_EXT, $json)) {
+            $value = (array)($json[self::FIELD_FAMILY] ?? []);
             $ext = (array)($json[self::FIELD_FAMILY_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1014,17 +1014,17 @@ class FHIRHumanName extends FHIRElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addFamily(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_GIVEN]) || isset($json[self::FIELD_GIVEN_EXT]) || array_key_exists(self::FIELD_GIVEN, $json) || array_key_exists(self::FIELD_GIVEN_EXT, $json)) {
-            $value = $json[self::FIELD_GIVEN] ?? null;
+        if (isset($json[self::FIELD_GIVEN])
+            || isset($json[self::FIELD_GIVEN_EXT])
+            || array_key_exists(self::FIELD_GIVEN, $json)
+            || array_key_exists(self::FIELD_GIVEN_EXT, $json)) {
+            $value = (array)($json[self::FIELD_GIVEN] ?? []);
             $ext = (array)($json[self::FIELD_GIVEN_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1032,17 +1032,17 @@ class FHIRHumanName extends FHIRElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addGiven(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_PREFIX]) || isset($json[self::FIELD_PREFIX_EXT]) || array_key_exists(self::FIELD_PREFIX, $json) || array_key_exists(self::FIELD_PREFIX_EXT, $json)) {
-            $value = $json[self::FIELD_PREFIX] ?? null;
+        if (isset($json[self::FIELD_PREFIX])
+            || isset($json[self::FIELD_PREFIX_EXT])
+            || array_key_exists(self::FIELD_PREFIX, $json)
+            || array_key_exists(self::FIELD_PREFIX_EXT, $json)) {
+            $value = (array)($json[self::FIELD_PREFIX] ?? []);
             $ext = (array)($json[self::FIELD_PREFIX_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1050,17 +1050,17 @@ class FHIRHumanName extends FHIRElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addPrefix(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_SUFFIX]) || isset($json[self::FIELD_SUFFIX_EXT]) || array_key_exists(self::FIELD_SUFFIX, $json) || array_key_exists(self::FIELD_SUFFIX_EXT, $json)) {
-            $value = $json[self::FIELD_SUFFIX] ?? null;
+        if (isset($json[self::FIELD_SUFFIX])
+            || isset($json[self::FIELD_SUFFIX_EXT])
+            || array_key_exists(self::FIELD_SUFFIX, $json)
+            || array_key_exists(self::FIELD_SUFFIX_EXT, $json)) {
+            $value = (array)($json[self::FIELD_SUFFIX] ?? []);
             $ext = (array)($json[self::FIELD_SUFFIX_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1068,16 +1068,13 @@ class FHIRHumanName extends FHIRElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addSuffix(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
         if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_PERIOD],
-                config: $config,
-            ));
+            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
         }
         return $type;
     }

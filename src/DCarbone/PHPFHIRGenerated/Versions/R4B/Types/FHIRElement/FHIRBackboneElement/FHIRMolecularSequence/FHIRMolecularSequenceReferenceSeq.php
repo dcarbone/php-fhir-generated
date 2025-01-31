@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,6 +88,8 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIROrientationTypeEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRStrandTypeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
@@ -254,11 +256,11 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $chromosome
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $genomeBuild
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIROrientationType $orientation
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIROrientationTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIROrientationType $orientation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $referenceSeqId
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $referenceSeqPointer
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $referenceSeqString
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStrandType $strand
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRStrandTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStrandType $strand
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $windowStart
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRInteger $windowEnd
      * @param null|string[] $fhirComments
@@ -268,11 +270,11 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $chromosome = null,
                                 null|string|FHIRStringPrimitive|FHIRString $genomeBuild = null,
-                                null|FHIROrientationType $orientation = null,
+                                null|string|FHIROrientationTypeEnum|FHIROrientationType $orientation = null,
                                 null|FHIRCodeableConcept $referenceSeqId = null,
                                 null|FHIRReference $referenceSeqPointer = null,
                                 null|string|FHIRStringPrimitive|FHIRString $referenceSeqString = null,
-                                null|FHIRStrandType $strand = null,
+                                null|string|FHIRStrandTypeEnum|FHIRStrandType $strand = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $windowStart = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $windowEnd = null,
                                 null|iterable $fhirComments = null)
@@ -453,16 +455,19 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * contains the open reading frame of the gene is the "sense" strand, and the
      * opposite complementary strand is the "antisense" strand.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIROrientationType $orientation
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIROrientationTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIROrientationType $orientation
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setOrientation(null|FHIROrientationType $orientation,
+    public function setOrientation(null|string|FHIROrientationTypeEnum|FHIROrientationType $orientation,
                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $orientation) {
             unset($this->orientation);
             return $this;
+        }
+        if (!($orientation instanceof FHIROrientationType)) {
+            $orientation = new FHIROrientationType(value: $orientation);
         }
         $this->orientation = $orientation;
         if ($this->_valueXMLLocations[self::FIELD_ORIENTATION] !== $valueXMLLocation) {
@@ -658,16 +663,19 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * is on the short arm of the chromosome, and the Crick strand as the one whose
      * 5'-end is on the long arm.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStrandType $strand
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRStrandTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRStrandType $strand
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStrand(null|FHIRStrandType $strand,
+    public function setStrand(null|string|FHIRStrandTypeEnum|FHIRStrandType $strand,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $strand) {
             unset($this->strand);
             return $this;
+        }
+        if (!($strand instanceof FHIRStrandType)) {
+            $strand = new FHIRStrandType(value: $strand);
         }
         $this->strand = $strand;
         if ($this->_valueXMLLocations[self::FIELD_STRAND] !== $valueXMLLocation) {
@@ -1226,79 +1234,74 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_CHROMOSOME]) || array_key_exists(self::FIELD_CHROMOSOME, $json)) {
-            $type->setChromosome(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CHROMOSOME],
-                config: $config,
-            ));
+            $type->setChromosome(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CHROMOSOME], $config));
         }
-        if (isset($json[self::FIELD_GENOME_BUILD]) || isset($json[self::FIELD_GENOME_BUILD_EXT]) || array_key_exists(self::FIELD_GENOME_BUILD, $json) || array_key_exists(self::FIELD_GENOME_BUILD_EXT, $json)) {
+        if (isset($json[self::FIELD_GENOME_BUILD])
+            || isset($json[self::FIELD_GENOME_BUILD_EXT])
+            || array_key_exists(self::FIELD_GENOME_BUILD, $json)
+            || array_key_exists(self::FIELD_GENOME_BUILD_EXT, $json)) {
             $value = $json[self::FIELD_GENOME_BUILD] ?? null;
-            $ext = (array)($json[self::FIELD_GENOME_BUILD_EXT] ?? []);
             $type->setGenomeBuild(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_GENOME_BUILD_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ORIENTATION]) || isset($json[self::FIELD_ORIENTATION_EXT]) || array_key_exists(self::FIELD_ORIENTATION, $json) || array_key_exists(self::FIELD_ORIENTATION_EXT, $json)) {
+        if (isset($json[self::FIELD_ORIENTATION])
+            || isset($json[self::FIELD_ORIENTATION_EXT])
+            || array_key_exists(self::FIELD_ORIENTATION, $json)
+            || array_key_exists(self::FIELD_ORIENTATION_EXT, $json)) {
             $value = $json[self::FIELD_ORIENTATION] ?? null;
-            $ext = (array)($json[self::FIELD_ORIENTATION_EXT] ?? []);
             $type->setOrientation(FHIROrientationType::jsonUnserialize(
-                json: [FHIROrientationType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIROrientationType::FIELD_VALUE => $value]) + ($json[self::FIELD_ORIENTATION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_REFERENCE_SEQ_ID]) || array_key_exists(self::FIELD_REFERENCE_SEQ_ID, $json)) {
-            $type->setReferenceSeqId(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_REFERENCE_SEQ_ID],
-                config: $config,
-            ));
+            $type->setReferenceSeqId(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_REFERENCE_SEQ_ID], $config));
         }
         if (isset($json[self::FIELD_REFERENCE_SEQ_POINTER]) || array_key_exists(self::FIELD_REFERENCE_SEQ_POINTER, $json)) {
-            $type->setReferenceSeqPointer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_REFERENCE_SEQ_POINTER],
-                config: $config,
-            ));
+            $type->setReferenceSeqPointer(FHIRReference::jsonUnserialize($json[self::FIELD_REFERENCE_SEQ_POINTER], $config));
         }
-        if (isset($json[self::FIELD_REFERENCE_SEQ_STRING]) || isset($json[self::FIELD_REFERENCE_SEQ_STRING_EXT]) || array_key_exists(self::FIELD_REFERENCE_SEQ_STRING, $json) || array_key_exists(self::FIELD_REFERENCE_SEQ_STRING_EXT, $json)) {
+        if (isset($json[self::FIELD_REFERENCE_SEQ_STRING])
+            || isset($json[self::FIELD_REFERENCE_SEQ_STRING_EXT])
+            || array_key_exists(self::FIELD_REFERENCE_SEQ_STRING, $json)
+            || array_key_exists(self::FIELD_REFERENCE_SEQ_STRING_EXT, $json)) {
             $value = $json[self::FIELD_REFERENCE_SEQ_STRING] ?? null;
-            $ext = (array)($json[self::FIELD_REFERENCE_SEQ_STRING_EXT] ?? []);
             $type->setReferenceSeqString(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_REFERENCE_SEQ_STRING_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_STRAND]) || isset($json[self::FIELD_STRAND_EXT]) || array_key_exists(self::FIELD_STRAND, $json) || array_key_exists(self::FIELD_STRAND_EXT, $json)) {
+        if (isset($json[self::FIELD_STRAND])
+            || isset($json[self::FIELD_STRAND_EXT])
+            || array_key_exists(self::FIELD_STRAND, $json)
+            || array_key_exists(self::FIELD_STRAND_EXT, $json)) {
             $value = $json[self::FIELD_STRAND] ?? null;
-            $ext = (array)($json[self::FIELD_STRAND_EXT] ?? []);
             $type->setStrand(FHIRStrandType::jsonUnserialize(
-                json: [FHIRStrandType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRStrandType::FIELD_VALUE => $value]) + ($json[self::FIELD_STRAND_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_WINDOW_START]) || isset($json[self::FIELD_WINDOW_START_EXT]) || array_key_exists(self::FIELD_WINDOW_START, $json) || array_key_exists(self::FIELD_WINDOW_START_EXT, $json)) {
+        if (isset($json[self::FIELD_WINDOW_START])
+            || isset($json[self::FIELD_WINDOW_START_EXT])
+            || array_key_exists(self::FIELD_WINDOW_START, $json)
+            || array_key_exists(self::FIELD_WINDOW_START_EXT, $json)) {
             $value = $json[self::FIELD_WINDOW_START] ?? null;
-            $ext = (array)($json[self::FIELD_WINDOW_START_EXT] ?? []);
             $type->setWindowStart(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_WINDOW_START_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_WINDOW_END]) || isset($json[self::FIELD_WINDOW_END_EXT]) || array_key_exists(self::FIELD_WINDOW_END, $json) || array_key_exists(self::FIELD_WINDOW_END_EXT, $json)) {
+        if (isset($json[self::FIELD_WINDOW_END])
+            || isset($json[self::FIELD_WINDOW_END_EXT])
+            || array_key_exists(self::FIELD_WINDOW_END, $json)
+            || array_key_exists(self::FIELD_WINDOW_END_EXT, $json)) {
             $value = $json[self::FIELD_WINDOW_END] ?? null;
-            $ext = (array)($json[self::FIELD_WINDOW_END_EXT] ?? []);
             $type->setWindowEnd(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_WINDOW_END_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

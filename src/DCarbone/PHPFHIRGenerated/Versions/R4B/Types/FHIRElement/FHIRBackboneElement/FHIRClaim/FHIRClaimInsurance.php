@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -237,7 +237,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRPositiveInt $sequence
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $focal
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $coverage
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $businessArrangement
      * @param null|string[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString[] $preAuthRef
@@ -249,7 +249,7 @@ class FHIRClaimInsurance extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $focal = null,
-                                null|FHIRIdentifier $identifier = null,
+                                null|FHIRString|FHIRIdentifier $identifier = null,
                                 null|FHIRReference $coverage = null,
                                 null|string|FHIRStringPrimitive|FHIRString $businessArrangement = null,
                                 null|iterable $preAuthRef = null,
@@ -452,16 +452,19 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      * The business identifier to be used when the claim is sent for adjudication
      * against this insurance policy.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $identifier
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setIdentifier(null|FHIRIdentifier $identifier,
+    public function setIdentifier(null|FHIRString|FHIRIdentifier $identifier,
                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $identifier) {
             unset($this->identifier);
             return $this;
+        }
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
         }
         $this->identifier = $identifier;
         if ($this->_valueXMLLocations[self::FIELD_IDENTIFIER] !== $valueXMLLocation) {
@@ -1055,59 +1058,56 @@ class FHIRClaimInsurance extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_SEQUENCE]) || isset($json[self::FIELD_SEQUENCE_EXT]) || array_key_exists(self::FIELD_SEQUENCE, $json) || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_SEQUENCE])
+            || isset($json[self::FIELD_SEQUENCE_EXT])
+            || array_key_exists(self::FIELD_SEQUENCE, $json)
+            || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
             $value = $json[self::FIELD_SEQUENCE] ?? null;
-            $ext = (array)($json[self::FIELD_SEQUENCE_EXT] ?? []);
             $type->setSequence(FHIRPositiveInt::jsonUnserialize(
-                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_SEQUENCE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_FOCAL]) || isset($json[self::FIELD_FOCAL_EXT]) || array_key_exists(self::FIELD_FOCAL, $json) || array_key_exists(self::FIELD_FOCAL_EXT, $json)) {
+        if (isset($json[self::FIELD_FOCAL])
+            || isset($json[self::FIELD_FOCAL_EXT])
+            || array_key_exists(self::FIELD_FOCAL, $json)
+            || array_key_exists(self::FIELD_FOCAL_EXT, $json)) {
             $value = $json[self::FIELD_FOCAL] ?? null;
-            $ext = (array)($json[self::FIELD_FOCAL_EXT] ?? []);
             $type->setFocal(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_FOCAL_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
             $value = $json[self::FIELD_IDENTIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
             $type->setIdentifier(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_IDENTIFIER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_COVERAGE]) || array_key_exists(self::FIELD_COVERAGE, $json)) {
-            $type->setCoverage(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_COVERAGE],
-                config: $config,
-            ));
+            $type->setCoverage(FHIRReference::jsonUnserialize($json[self::FIELD_COVERAGE], $config));
         }
-        if (isset($json[self::FIELD_BUSINESS_ARRANGEMENT]) || isset($json[self::FIELD_BUSINESS_ARRANGEMENT_EXT]) || array_key_exists(self::FIELD_BUSINESS_ARRANGEMENT, $json) || array_key_exists(self::FIELD_BUSINESS_ARRANGEMENT_EXT, $json)) {
+        if (isset($json[self::FIELD_BUSINESS_ARRANGEMENT])
+            || isset($json[self::FIELD_BUSINESS_ARRANGEMENT_EXT])
+            || array_key_exists(self::FIELD_BUSINESS_ARRANGEMENT, $json)
+            || array_key_exists(self::FIELD_BUSINESS_ARRANGEMENT_EXT, $json)) {
             $value = $json[self::FIELD_BUSINESS_ARRANGEMENT] ?? null;
-            $ext = (array)($json[self::FIELD_BUSINESS_ARRANGEMENT_EXT] ?? []);
             $type->setBusinessArrangement(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_BUSINESS_ARRANGEMENT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PRE_AUTH_REF]) || isset($json[self::FIELD_PRE_AUTH_REF_EXT]) || array_key_exists(self::FIELD_PRE_AUTH_REF, $json) || array_key_exists(self::FIELD_PRE_AUTH_REF_EXT, $json)) {
-            $value = $json[self::FIELD_PRE_AUTH_REF] ?? null;
+        if (isset($json[self::FIELD_PRE_AUTH_REF])
+            || isset($json[self::FIELD_PRE_AUTH_REF_EXT])
+            || array_key_exists(self::FIELD_PRE_AUTH_REF, $json)
+            || array_key_exists(self::FIELD_PRE_AUTH_REF_EXT, $json)) {
+            $value = (array)($json[self::FIELD_PRE_AUTH_REF] ?? []);
             $ext = (array)($json[self::FIELD_PRE_AUTH_REF_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1115,16 +1115,13 @@ class FHIRClaimInsurance extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addPreAuthRef(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
         if (isset($json[self::FIELD_CLAIM_RESPONSE]) || array_key_exists(self::FIELD_CLAIM_RESPONSE, $json)) {
-            $type->setClaimResponse(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_CLAIM_RESPONSE],
-                config: $config,
-            ));
+            $type->setClaimResponse(FHIRReference::jsonUnserialize($json[self::FIELD_CLAIM_RESPONSE], $config));
         }
         return $type;
     }

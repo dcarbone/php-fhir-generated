@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -74,6 +74,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
@@ -176,7 +177,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCoding $role
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRReference $actor
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $userId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $userId
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceRelatedAgent[] $relatedAgent
      * @param null|string[] $fhirComments
      */
@@ -185,7 +186,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCoding $role = null,
                                 null|FHIRReference $actor = null,
-                                null|FHIRIdentifier $userId = null,
+                                null|FHIRString|FHIRIdentifier $userId = null,
                                 null|iterable $relatedAgent = null,
                                 null|iterable $fhirComments = null)
     {
@@ -306,16 +307,19 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      *
      * The identity of the agent as known by the authorization system.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $userId
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRIdentifier $userId
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUserId(null|FHIRIdentifier $userId,
+    public function setUserId(null|FHIRString|FHIRIdentifier $userId,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $userId) {
             unset($this->userId);
             return $this;
+        }
+        if (!($userId instanceof FHIRIdentifier)) {
+            $userId = new FHIRIdentifier(value: $userId);
         }
         $this->userId = $userId;
         if ($this->_valueXMLLocations[self::FIELD_USER_ID] !== $valueXMLLocation) {
@@ -672,33 +676,21 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_ROLE]) || array_key_exists(self::FIELD_ROLE, $json)) {
-            $type->setRole(FHIRCoding::jsonUnserialize(
-                json: $json[self::FIELD_ROLE],
-                config: $config,
-            ));
+            $type->setRole(FHIRCoding::jsonUnserialize($json[self::FIELD_ROLE], $config));
         }
         if (isset($json[self::FIELD_ACTOR]) || array_key_exists(self::FIELD_ACTOR, $json)) {
-            $type->setActor(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ACTOR],
-                config: $config,
-            ));
+            $type->setActor(FHIRReference::jsonUnserialize($json[self::FIELD_ACTOR], $config));
         }
-        if (isset($json[self::FIELD_USER_ID]) || isset($json[self::FIELD_USER_ID_EXT]) || array_key_exists(self::FIELD_USER_ID, $json) || array_key_exists(self::FIELD_USER_ID_EXT, $json)) {
+        if (isset($json[self::FIELD_USER_ID])
+            || isset($json[self::FIELD_USER_ID_EXT])
+            || array_key_exists(self::FIELD_USER_ID, $json)
+            || array_key_exists(self::FIELD_USER_ID_EXT, $json)) {
             $value = $json[self::FIELD_USER_ID] ?? null;
-            $ext = (array)($json[self::FIELD_USER_ID_EXT] ?? []);
             $type->setUserId(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_USER_ID_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_RELATED_AGENT]) || array_key_exists(self::FIELD_RELATED_AGENT, $json)) {
@@ -707,10 +699,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRelatedAgent(FHIRProvenanceRelatedAgent::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRelatedAgent(FHIRProvenanceRelatedAgent::jsonUnserialize($v, $config));
             }
         }
         return $type;

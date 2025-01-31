@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,6 +94,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTestReportActionResult;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRTestReportActionResultEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -181,7 +182,7 @@ class FHIRTestReportAssert extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTestReportActionResult $result
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRTestReportActionResultEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTestReportActionResult $result
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRMarkdown $message
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $detail
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportRequirement[] $requirement
@@ -190,7 +191,7 @@ class FHIRTestReportAssert extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRTestReportActionResult $result = null,
+                                null|string|FHIRTestReportActionResultEnum|FHIRTestReportActionResult $result = null,
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $message = null,
                                 null|string|FHIRStringPrimitive|FHIRString $detail = null,
                                 null|iterable $requirement = null,
@@ -243,16 +244,19 @@ class FHIRTestReportAssert extends FHIRBackboneElement
      *
      * The result of this assertion.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTestReportActionResult $result
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRTestReportActionResultEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRTestReportActionResult $result
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setResult(null|FHIRTestReportActionResult $result,
+    public function setResult(null|string|FHIRTestReportActionResultEnum|FHIRTestReportActionResult $result,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $result) {
             unset($this->result);
             return $this;
+        }
+        if (!($result instanceof FHIRTestReportActionResult)) {
+            $result = new FHIRTestReportActionResult(value: $result);
         }
         $this->result = $result;
         if ($this->_valueXMLLocations[self::FIELD_RESULT] !== $valueXMLLocation) {
@@ -745,37 +749,35 @@ class FHIRTestReportAssert extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_RESULT]) || isset($json[self::FIELD_RESULT_EXT]) || array_key_exists(self::FIELD_RESULT, $json) || array_key_exists(self::FIELD_RESULT_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_RESULT])
+            || isset($json[self::FIELD_RESULT_EXT])
+            || array_key_exists(self::FIELD_RESULT, $json)
+            || array_key_exists(self::FIELD_RESULT_EXT, $json)) {
             $value = $json[self::FIELD_RESULT] ?? null;
-            $ext = (array)($json[self::FIELD_RESULT_EXT] ?? []);
             $type->setResult(FHIRTestReportActionResult::jsonUnserialize(
-                json: [FHIRTestReportActionResult::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRTestReportActionResult::FIELD_VALUE => $value]) + ($json[self::FIELD_RESULT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_MESSAGE]) || isset($json[self::FIELD_MESSAGE_EXT]) || array_key_exists(self::FIELD_MESSAGE, $json) || array_key_exists(self::FIELD_MESSAGE_EXT, $json)) {
+        if (isset($json[self::FIELD_MESSAGE])
+            || isset($json[self::FIELD_MESSAGE_EXT])
+            || array_key_exists(self::FIELD_MESSAGE, $json)
+            || array_key_exists(self::FIELD_MESSAGE_EXT, $json)) {
             $value = $json[self::FIELD_MESSAGE] ?? null;
-            $ext = (array)($json[self::FIELD_MESSAGE_EXT] ?? []);
             $type->setMessage(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_MESSAGE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DETAIL]) || isset($json[self::FIELD_DETAIL_EXT]) || array_key_exists(self::FIELD_DETAIL, $json) || array_key_exists(self::FIELD_DETAIL_EXT, $json)) {
+        if (isset($json[self::FIELD_DETAIL])
+            || isset($json[self::FIELD_DETAIL_EXT])
+            || array_key_exists(self::FIELD_DETAIL, $json)
+            || array_key_exists(self::FIELD_DETAIL_EXT, $json)) {
             $value = $json[self::FIELD_DETAIL] ?? null;
-            $ext = (array)($json[self::FIELD_DETAIL_EXT] ?? []);
             $type->setDetail(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DETAIL_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_REQUIREMENT]) || array_key_exists(self::FIELD_REQUIREMENT, $json)) {
@@ -784,10 +786,7 @@ class FHIRTestReportAssert extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRequirement(FHIRTestReportRequirement::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRequirement(FHIRTestReportRequirement::jsonUnserialize($v, $config));
             }
         }
         return $type;

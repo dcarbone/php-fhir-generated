@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -564,21 +564,13 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IMPORT]) || isset($json[self::FIELD_IMPORT_EXT]) || array_key_exists(self::FIELD_IMPORT, $json) || array_key_exists(self::FIELD_IMPORT_EXT, $json)) {
-            $value = $json[self::FIELD_IMPORT] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IMPORT])
+            || isset($json[self::FIELD_IMPORT_EXT])
+            || array_key_exists(self::FIELD_IMPORT, $json)
+            || array_key_exists(self::FIELD_IMPORT_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IMPORT] ?? []);
             $ext = (array)($json[self::FIELD_IMPORT_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -586,8 +578,8 @@ class FHIRValueSetCompose extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addImport(FHIRUri::jsonUnserialize(
-                    json: [FHIRUri::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRUri::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -597,10 +589,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addInclude(FHIRValueSetInclude::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addInclude(FHIRValueSetInclude::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_EXCLUDE]) || array_key_exists(self::FIELD_EXCLUDE, $json)) {
@@ -609,10 +598,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addExclude(FHIRValueSetInclude::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addExclude(FHIRValueSetInclude::jsonUnserialize($v, $config));
             }
         }
         return $type;

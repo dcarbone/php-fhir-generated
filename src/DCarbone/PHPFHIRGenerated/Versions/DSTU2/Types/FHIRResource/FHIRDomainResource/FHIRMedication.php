@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRResource\FHIRDomain
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -830,38 +830,28 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CODE],
-                config: $config,
-            ));
+            $type->setCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CODE], $config));
         }
-        if (isset($json[self::FIELD_IS_BRAND]) || isset($json[self::FIELD_IS_BRAND_EXT]) || array_key_exists(self::FIELD_IS_BRAND, $json) || array_key_exists(self::FIELD_IS_BRAND_EXT, $json)) {
+        if (isset($json[self::FIELD_IS_BRAND])
+            || isset($json[self::FIELD_IS_BRAND_EXT])
+            || array_key_exists(self::FIELD_IS_BRAND, $json)
+            || array_key_exists(self::FIELD_IS_BRAND_EXT, $json)) {
             $value = $json[self::FIELD_IS_BRAND] ?? null;
-            $ext = (array)($json[self::FIELD_IS_BRAND_EXT] ?? []);
             $type->setIsBrand(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_IS_BRAND_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_MANUFACTURER]) || array_key_exists(self::FIELD_MANUFACTURER, $json)) {
-            $type->setManufacturer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_MANUFACTURER],
-                config: $config,
-            ));
+            $type->setManufacturer(FHIRReference::jsonUnserialize($json[self::FIELD_MANUFACTURER], $config));
         }
         if (isset($json[self::FIELD_PRODUCT]) || array_key_exists(self::FIELD_PRODUCT, $json)) {
-            $type->setProduct(FHIRMedicationProduct::jsonUnserialize(
-                json: $json[self::FIELD_PRODUCT],
-                config: $config,
-            ));
+            $type->setProduct(FHIRMedicationProduct::jsonUnserialize($json[self::FIELD_PRODUCT], $config));
         }
         if (isset($json[self::FIELD_PACKAGE]) || array_key_exists(self::FIELD_PACKAGE, $json)) {
-            $type->setPackage(FHIRMedicationPackage::jsonUnserialize(
-                json: $json[self::FIELD_PACKAGE],
-                config: $config,
-            ));
+            $type->setPackage(FHIRMedicationPackage::jsonUnserialize($json[self::FIELD_PACKAGE], $config));
         }
         return $type;
     }

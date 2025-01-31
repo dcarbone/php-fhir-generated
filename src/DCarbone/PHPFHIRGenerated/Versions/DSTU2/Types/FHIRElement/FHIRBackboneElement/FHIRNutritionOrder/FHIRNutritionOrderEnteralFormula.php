@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,6 +70,7 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
@@ -226,10 +227,10 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $baseFormulaProductName
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $additiveType
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $additiveProductName
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $caloricDensity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $caloricDensity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $routeofAdministration
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration[] $administration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $maxVolumeToDeliver
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $maxVolumeToDeliver
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $administrationInstruction
      * @param null|string[] $fhirComments
      */
@@ -240,10 +241,10 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive|FHIRString $baseFormulaProductName = null,
                                 null|FHIRCodeableConcept $additiveType = null,
                                 null|string|FHIRStringPrimitive|FHIRString $additiveProductName = null,
-                                null|FHIRSimpleQuantity $caloricDensity = null,
+                                null|FHIRDecimal|FHIRSimpleQuantity $caloricDensity = null,
                                 null|FHIRCodeableConcept $routeofAdministration = null,
                                 null|iterable $administration = null,
-                                null|FHIRSimpleQuantity $maxVolumeToDeliver = null,
+                                null|FHIRDecimal|FHIRSimpleQuantity $maxVolumeToDeliver = null,
                                 null|string|FHIRStringPrimitive|FHIRString $administrationInstruction = null,
                                 null|iterable $fhirComments = null)
     {
@@ -521,16 +522,19 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * formula that provides 24 Calories per fluid ounce or an adult may require an
      * enteral formula that provides 1.5 Calorie/mL.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $caloricDensity
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $caloricDensity
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCaloricDensity(null|FHIRSimpleQuantity $caloricDensity,
+    public function setCaloricDensity(null|FHIRDecimal|FHIRSimpleQuantity $caloricDensity,
                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $caloricDensity) {
             unset($this->caloricDensity);
             return $this;
+        }
+        if (!($caloricDensity instanceof FHIRSimpleQuantity)) {
+            $caloricDensity = new FHIRSimpleQuantity(value: $caloricDensity);
         }
         $this->caloricDensity = $caloricDensity;
         if ($this->_valueXMLLocations[self::FIELD_CALORIC_DENSITY] !== $valueXMLLocation) {
@@ -688,16 +692,19 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * The maximum total quantity of formula that may be administered to a subject over
      * the period of time, e.g. 1440 mL over 24 hours.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $maxVolumeToDeliver
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $maxVolumeToDeliver
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMaxVolumeToDeliver(null|FHIRSimpleQuantity $maxVolumeToDeliver,
+    public function setMaxVolumeToDeliver(null|FHIRDecimal|FHIRSimpleQuantity $maxVolumeToDeliver,
                                           ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $maxVolumeToDeliver) {
             unset($this->maxVolumeToDeliver);
             return $this;
+        }
+        if (!($maxVolumeToDeliver instanceof FHIRSimpleQuantity)) {
+            $maxVolumeToDeliver = new FHIRSimpleQuantity(value: $maxVolumeToDeliver);
         }
         $this->maxVolumeToDeliver = $maxVolumeToDeliver;
         if ($this->_valueXMLLocations[self::FIELD_MAX_VOLUME_TO_DELIVER] !== $valueXMLLocation) {
@@ -1173,56 +1180,45 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_BASE_FORMULA_TYPE]) || array_key_exists(self::FIELD_BASE_FORMULA_TYPE, $json)) {
-            $type->setBaseFormulaType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_BASE_FORMULA_TYPE],
-                config: $config,
-            ));
+            $type->setBaseFormulaType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_BASE_FORMULA_TYPE], $config));
         }
-        if (isset($json[self::FIELD_BASE_FORMULA_PRODUCT_NAME]) || isset($json[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT]) || array_key_exists(self::FIELD_BASE_FORMULA_PRODUCT_NAME, $json) || array_key_exists(self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_BASE_FORMULA_PRODUCT_NAME])
+            || isset($json[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT])
+            || array_key_exists(self::FIELD_BASE_FORMULA_PRODUCT_NAME, $json)
+            || array_key_exists(self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT, $json)) {
             $value = $json[self::FIELD_BASE_FORMULA_PRODUCT_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT] ?? []);
             $type->setBaseFormulaProductName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ADDITIVE_TYPE]) || array_key_exists(self::FIELD_ADDITIVE_TYPE, $json)) {
-            $type->setAdditiveType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_ADDITIVE_TYPE],
-                config: $config,
-            ));
+            $type->setAdditiveType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ADDITIVE_TYPE], $config));
         }
-        if (isset($json[self::FIELD_ADDITIVE_PRODUCT_NAME]) || isset($json[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT]) || array_key_exists(self::FIELD_ADDITIVE_PRODUCT_NAME, $json) || array_key_exists(self::FIELD_ADDITIVE_PRODUCT_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_ADDITIVE_PRODUCT_NAME])
+            || isset($json[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT])
+            || array_key_exists(self::FIELD_ADDITIVE_PRODUCT_NAME, $json)
+            || array_key_exists(self::FIELD_ADDITIVE_PRODUCT_NAME_EXT, $json)) {
             $value = $json[self::FIELD_ADDITIVE_PRODUCT_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT] ?? []);
             $type->setAdditiveProductName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CALORIC_DENSITY]) || isset($json[self::FIELD_CALORIC_DENSITY_EXT]) || array_key_exists(self::FIELD_CALORIC_DENSITY, $json) || array_key_exists(self::FIELD_CALORIC_DENSITY_EXT, $json)) {
+        if (isset($json[self::FIELD_CALORIC_DENSITY])
+            || isset($json[self::FIELD_CALORIC_DENSITY_EXT])
+            || array_key_exists(self::FIELD_CALORIC_DENSITY, $json)
+            || array_key_exists(self::FIELD_CALORIC_DENSITY_EXT, $json)) {
             $value = $json[self::FIELD_CALORIC_DENSITY] ?? null;
-            $ext = (array)($json[self::FIELD_CALORIC_DENSITY_EXT] ?? []);
             $type->setCaloricDensity(FHIRSimpleQuantity::jsonUnserialize(
-                json: [FHIRSimpleQuantity::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSimpleQuantity::FIELD_VALUE => $value]) + ($json[self::FIELD_CALORIC_DENSITY_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ROUTEOF_ADMINISTRATION]) || array_key_exists(self::FIELD_ROUTEOF_ADMINISTRATION, $json)) {
-            $type->setRouteofAdministration(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_ROUTEOF_ADMINISTRATION],
-                config: $config,
-            ));
+            $type->setRouteofAdministration(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ROUTEOF_ADMINISTRATION], $config));
         }
         if (isset($json[self::FIELD_ADMINISTRATION]) || array_key_exists(self::FIELD_ADMINISTRATION, $json)) {
             $vs = $json[self::FIELD_ADMINISTRATION];
@@ -1230,26 +1226,27 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAdministration(FHIRNutritionOrderAdministration::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAdministration(FHIRNutritionOrderAdministration::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_MAX_VOLUME_TO_DELIVER]) || isset($json[self::FIELD_MAX_VOLUME_TO_DELIVER_EXT]) || array_key_exists(self::FIELD_MAX_VOLUME_TO_DELIVER, $json) || array_key_exists(self::FIELD_MAX_VOLUME_TO_DELIVER_EXT, $json)) {
+        if (isset($json[self::FIELD_MAX_VOLUME_TO_DELIVER])
+            || isset($json[self::FIELD_MAX_VOLUME_TO_DELIVER_EXT])
+            || array_key_exists(self::FIELD_MAX_VOLUME_TO_DELIVER, $json)
+            || array_key_exists(self::FIELD_MAX_VOLUME_TO_DELIVER_EXT, $json)) {
             $value = $json[self::FIELD_MAX_VOLUME_TO_DELIVER] ?? null;
-            $ext = (array)($json[self::FIELD_MAX_VOLUME_TO_DELIVER_EXT] ?? []);
             $type->setMaxVolumeToDeliver(FHIRSimpleQuantity::jsonUnserialize(
-                json: [FHIRSimpleQuantity::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSimpleQuantity::FIELD_VALUE => $value]) + ($json[self::FIELD_MAX_VOLUME_TO_DELIVER_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ADMINISTRATION_INSTRUCTION]) || isset($json[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT]) || array_key_exists(self::FIELD_ADMINISTRATION_INSTRUCTION, $json) || array_key_exists(self::FIELD_ADMINISTRATION_INSTRUCTION_EXT, $json)) {
+        if (isset($json[self::FIELD_ADMINISTRATION_INSTRUCTION])
+            || isset($json[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT])
+            || array_key_exists(self::FIELD_ADMINISTRATION_INSTRUCTION, $json)
+            || array_key_exists(self::FIELD_ADMINISTRATION_INSTRUCTION_EXT, $json)) {
             $value = $json[self::FIELD_ADMINISTRATION_INSTRUCTION] ?? null;
-            $ext = (array)($json[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT] ?? []);
             $type->setAdministrationInstruction(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

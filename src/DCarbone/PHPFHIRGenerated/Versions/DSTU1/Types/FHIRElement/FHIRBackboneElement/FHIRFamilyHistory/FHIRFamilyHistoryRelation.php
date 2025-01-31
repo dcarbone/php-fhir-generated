@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,6 +70,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneEleme
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge;
@@ -288,7 +289,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate $bornDate
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $bornString
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $deceasedBoolean
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRRange $deceasedRange
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDate $deceasedDate
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $deceasedString
@@ -305,7 +306,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
                                 null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $bornDate = null,
                                 null|string|FHIRStringPrimitive|FHIRString $bornString = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $deceasedBoolean = null,
-                                null|FHIRAge $deceasedAge = null,
+                                null|FHIRDecimal|FHIRAge $deceasedAge = null,
                                 null|FHIRRange $deceasedRange = null,
                                 null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $deceasedDate = null,
                                 null|string|FHIRStringPrimitive|FHIRString $deceasedString = null,
@@ -728,16 +729,19 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * death is known, then it can be indicated in the outcome code of the condition -
      * in this case the deceased property should still be set.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setDeceasedAge(null|FHIRAge $deceasedAge,
+    public function setDeceasedAge(null|FHIRDecimal|FHIRAge $deceasedAge,
                                    ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $deceasedAge) {
             unset($this->deceasedAge);
             return $this;
+        }
+        if (!($deceasedAge instanceof FHIRAge)) {
+            $deceasedAge = new FHIRAge(value: $deceasedAge);
         }
         $this->deceasedAge = $deceasedAge;
         if ($this->_valueXMLLocations[self::FIELD_DECEASED_AGE] !== $valueXMLLocation) {
@@ -1574,95 +1578,94 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_NAME])
+            || isset($json[self::FIELD_NAME_EXT])
+            || array_key_exists(self::FIELD_NAME, $json)
+            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
             $type->setName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_RELATIONSHIP]) || array_key_exists(self::FIELD_RELATIONSHIP, $json)) {
-            $type->setRelationship(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_RELATIONSHIP],
-                config: $config,
-            ));
+            $type->setRelationship(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_RELATIONSHIP], $config));
         }
         if (isset($json[self::FIELD_BORN_PERIOD]) || array_key_exists(self::FIELD_BORN_PERIOD, $json)) {
-            $type->setBornPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_BORN_PERIOD],
-                config: $config,
-            ));
+            $type->setBornPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_BORN_PERIOD], $config));
         }
-        if (isset($json[self::FIELD_BORN_DATE]) || isset($json[self::FIELD_BORN_DATE_EXT]) || array_key_exists(self::FIELD_BORN_DATE, $json) || array_key_exists(self::FIELD_BORN_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_BORN_DATE])
+            || isset($json[self::FIELD_BORN_DATE_EXT])
+            || array_key_exists(self::FIELD_BORN_DATE, $json)
+            || array_key_exists(self::FIELD_BORN_DATE_EXT, $json)) {
             $value = $json[self::FIELD_BORN_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_BORN_DATE_EXT] ?? []);
             $type->setBornDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_BORN_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_BORN_STRING]) || isset($json[self::FIELD_BORN_STRING_EXT]) || array_key_exists(self::FIELD_BORN_STRING, $json) || array_key_exists(self::FIELD_BORN_STRING_EXT, $json)) {
+        if (isset($json[self::FIELD_BORN_STRING])
+            || isset($json[self::FIELD_BORN_STRING_EXT])
+            || array_key_exists(self::FIELD_BORN_STRING, $json)
+            || array_key_exists(self::FIELD_BORN_STRING_EXT, $json)) {
             $value = $json[self::FIELD_BORN_STRING] ?? null;
-            $ext = (array)($json[self::FIELD_BORN_STRING_EXT] ?? []);
             $type->setBornString(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_BORN_STRING_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DECEASED_BOOLEAN]) || isset($json[self::FIELD_DECEASED_BOOLEAN_EXT]) || array_key_exists(self::FIELD_DECEASED_BOOLEAN, $json) || array_key_exists(self::FIELD_DECEASED_BOOLEAN_EXT, $json)) {
+        if (isset($json[self::FIELD_DECEASED_BOOLEAN])
+            || isset($json[self::FIELD_DECEASED_BOOLEAN_EXT])
+            || array_key_exists(self::FIELD_DECEASED_BOOLEAN, $json)
+            || array_key_exists(self::FIELD_DECEASED_BOOLEAN_EXT, $json)) {
             $value = $json[self::FIELD_DECEASED_BOOLEAN] ?? null;
-            $ext = (array)($json[self::FIELD_DECEASED_BOOLEAN_EXT] ?? []);
             $type->setDeceasedBoolean(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_DECEASED_BOOLEAN_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DECEASED_AGE]) || isset($json[self::FIELD_DECEASED_AGE_EXT]) || array_key_exists(self::FIELD_DECEASED_AGE, $json) || array_key_exists(self::FIELD_DECEASED_AGE_EXT, $json)) {
+        if (isset($json[self::FIELD_DECEASED_AGE])
+            || isset($json[self::FIELD_DECEASED_AGE_EXT])
+            || array_key_exists(self::FIELD_DECEASED_AGE, $json)
+            || array_key_exists(self::FIELD_DECEASED_AGE_EXT, $json)) {
             $value = $json[self::FIELD_DECEASED_AGE] ?? null;
-            $ext = (array)($json[self::FIELD_DECEASED_AGE_EXT] ?? []);
             $type->setDeceasedAge(FHIRAge::jsonUnserialize(
-                json: [FHIRAge::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRAge::FIELD_VALUE => $value]) + ($json[self::FIELD_DECEASED_AGE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_DECEASED_RANGE]) || array_key_exists(self::FIELD_DECEASED_RANGE, $json)) {
-            $type->setDeceasedRange(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_DECEASED_RANGE],
-                config: $config,
-            ));
+            $type->setDeceasedRange(FHIRRange::jsonUnserialize($json[self::FIELD_DECEASED_RANGE], $config));
         }
-        if (isset($json[self::FIELD_DECEASED_DATE]) || isset($json[self::FIELD_DECEASED_DATE_EXT]) || array_key_exists(self::FIELD_DECEASED_DATE, $json) || array_key_exists(self::FIELD_DECEASED_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_DECEASED_DATE])
+            || isset($json[self::FIELD_DECEASED_DATE_EXT])
+            || array_key_exists(self::FIELD_DECEASED_DATE, $json)
+            || array_key_exists(self::FIELD_DECEASED_DATE_EXT, $json)) {
             $value = $json[self::FIELD_DECEASED_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_DECEASED_DATE_EXT] ?? []);
             $type->setDeceasedDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_DECEASED_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DECEASED_STRING]) || isset($json[self::FIELD_DECEASED_STRING_EXT]) || array_key_exists(self::FIELD_DECEASED_STRING, $json) || array_key_exists(self::FIELD_DECEASED_STRING_EXT, $json)) {
+        if (isset($json[self::FIELD_DECEASED_STRING])
+            || isset($json[self::FIELD_DECEASED_STRING_EXT])
+            || array_key_exists(self::FIELD_DECEASED_STRING, $json)
+            || array_key_exists(self::FIELD_DECEASED_STRING_EXT, $json)) {
             $value = $json[self::FIELD_DECEASED_STRING] ?? null;
-            $ext = (array)($json[self::FIELD_DECEASED_STRING_EXT] ?? []);
             $type->setDeceasedString(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DECEASED_STRING_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_NOTE]) || isset($json[self::FIELD_NOTE_EXT]) || array_key_exists(self::FIELD_NOTE, $json) || array_key_exists(self::FIELD_NOTE_EXT, $json)) {
+        if (isset($json[self::FIELD_NOTE])
+            || isset($json[self::FIELD_NOTE_EXT])
+            || array_key_exists(self::FIELD_NOTE, $json)
+            || array_key_exists(self::FIELD_NOTE_EXT, $json)) {
             $value = $json[self::FIELD_NOTE] ?? null;
-            $ext = (array)($json[self::FIELD_NOTE_EXT] ?? []);
             $type->setNote(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NOTE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CONDITION]) || array_key_exists(self::FIELD_CONDITION, $json)) {
@@ -1671,10 +1674,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCondition(FHIRFamilyHistoryCondition::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCondition(FHIRFamilyHistoryCondition::jsonUnserialize($v, $config));
             }
         }
         return $type;

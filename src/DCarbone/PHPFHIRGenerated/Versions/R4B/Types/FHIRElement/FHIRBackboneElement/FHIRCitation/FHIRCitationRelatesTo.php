@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,6 +95,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive;
@@ -222,7 +223,7 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $relationshipType
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept[] $targetClassifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRUri $targetUri
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $targetIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $targetIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRReference $targetReference
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRAttachment $targetAttachment
      * @param null|string[] $fhirComments
@@ -233,7 +234,7 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
                                 null|FHIRCodeableConcept $relationshipType = null,
                                 null|iterable $targetClassifier = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $targetUri = null,
-                                null|FHIRIdentifier $targetIdentifier = null,
+                                null|FHIRString|FHIRIdentifier $targetIdentifier = null,
                                 null|FHIRReference $targetReference = null,
                                 null|FHIRAttachment $targetAttachment = null,
                                 null|iterable $fhirComments = null)
@@ -464,16 +465,19 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
      *
      * The article or artifact that the Citation Resource is related to.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $targetIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRIdentifier $targetIdentifier
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTargetIdentifier(null|FHIRIdentifier $targetIdentifier,
+    public function setTargetIdentifier(null|FHIRString|FHIRIdentifier $targetIdentifier,
                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $targetIdentifier) {
             unset($this->targetIdentifier);
             return $this;
+        }
+        if (!($targetIdentifier instanceof FHIRIdentifier)) {
+            $targetIdentifier = new FHIRIdentifier(value: $targetIdentifier);
         }
         $this->targetIdentifier = $targetIdentifier;
         if ($this->_valueXMLLocations[self::FIELD_TARGET_IDENTIFIER] !== $valueXMLLocation) {
@@ -878,20 +882,9 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_RELATIONSHIP_TYPE]) || array_key_exists(self::FIELD_RELATIONSHIP_TYPE, $json)) {
-            $type->setRelationshipType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_RELATIONSHIP_TYPE],
-                config: $config,
-            ));
+            $type->setRelationshipType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_RELATIONSHIP_TYPE], $config));
         }
         if (isset($json[self::FIELD_TARGET_CLASSIFIER]) || array_key_exists(self::FIELD_TARGET_CLASSIFIER, $json)) {
             $vs = $json[self::FIELD_TARGET_CLASSIFIER];
@@ -899,39 +892,34 @@ class FHIRCitationRelatesTo extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addTargetClassifier(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addTargetClassifier(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TARGET_URI]) || isset($json[self::FIELD_TARGET_URI_EXT]) || array_key_exists(self::FIELD_TARGET_URI, $json) || array_key_exists(self::FIELD_TARGET_URI_EXT, $json)) {
+        if (isset($json[self::FIELD_TARGET_URI])
+            || isset($json[self::FIELD_TARGET_URI_EXT])
+            || array_key_exists(self::FIELD_TARGET_URI, $json)
+            || array_key_exists(self::FIELD_TARGET_URI_EXT, $json)) {
             $value = $json[self::FIELD_TARGET_URI] ?? null;
-            $ext = (array)($json[self::FIELD_TARGET_URI_EXT] ?? []);
             $type->setTargetUri(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_TARGET_URI_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TARGET_IDENTIFIER]) || isset($json[self::FIELD_TARGET_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_TARGET_IDENTIFIER, $json) || array_key_exists(self::FIELD_TARGET_IDENTIFIER_EXT, $json)) {
+        if (isset($json[self::FIELD_TARGET_IDENTIFIER])
+            || isset($json[self::FIELD_TARGET_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_TARGET_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_TARGET_IDENTIFIER_EXT, $json)) {
             $value = $json[self::FIELD_TARGET_IDENTIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_TARGET_IDENTIFIER_EXT] ?? []);
             $type->setTargetIdentifier(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_TARGET_IDENTIFIER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_TARGET_REFERENCE]) || array_key_exists(self::FIELD_TARGET_REFERENCE, $json)) {
-            $type->setTargetReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_TARGET_REFERENCE],
-                config: $config,
-            ));
+            $type->setTargetReference(FHIRReference::jsonUnserialize($json[self::FIELD_TARGET_REFERENCE], $config));
         }
         if (isset($json[self::FIELD_TARGET_ATTACHMENT]) || array_key_exists(self::FIELD_TARGET_ATTACHMENT, $json)) {
-            $type->setTargetAttachment(FHIRAttachment::jsonUnserialize(
-                json: $json[self::FIELD_TARGET_ATTACHMENT],
-                config: $config,
-            ));
+            $type->setTargetAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_TARGET_ATTACHMENT], $config));
         }
         return $type;
     }

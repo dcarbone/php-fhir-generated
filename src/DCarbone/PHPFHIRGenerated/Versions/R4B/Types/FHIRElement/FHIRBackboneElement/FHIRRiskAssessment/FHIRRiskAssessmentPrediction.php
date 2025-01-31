@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1013,67 +1013,50 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_OUTCOME]) || array_key_exists(self::FIELD_OUTCOME, $json)) {
-            $type->setOutcome(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_OUTCOME],
-                config: $config,
-            ));
+            $type->setOutcome(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_OUTCOME], $config));
         }
-        if (isset($json[self::FIELD_PROBABILITY_DECIMAL]) || isset($json[self::FIELD_PROBABILITY_DECIMAL_EXT]) || array_key_exists(self::FIELD_PROBABILITY_DECIMAL, $json) || array_key_exists(self::FIELD_PROBABILITY_DECIMAL_EXT, $json)) {
+        if (isset($json[self::FIELD_PROBABILITY_DECIMAL])
+            || isset($json[self::FIELD_PROBABILITY_DECIMAL_EXT])
+            || array_key_exists(self::FIELD_PROBABILITY_DECIMAL, $json)
+            || array_key_exists(self::FIELD_PROBABILITY_DECIMAL_EXT, $json)) {
             $value = $json[self::FIELD_PROBABILITY_DECIMAL] ?? null;
-            $ext = (array)($json[self::FIELD_PROBABILITY_DECIMAL_EXT] ?? []);
             $type->setProbabilityDecimal(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_PROBABILITY_DECIMAL_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PROBABILITY_RANGE]) || array_key_exists(self::FIELD_PROBABILITY_RANGE, $json)) {
-            $type->setProbabilityRange(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_PROBABILITY_RANGE],
-                config: $config,
-            ));
+            $type->setProbabilityRange(FHIRRange::jsonUnserialize($json[self::FIELD_PROBABILITY_RANGE], $config));
         }
         if (isset($json[self::FIELD_QUALITATIVE_RISK]) || array_key_exists(self::FIELD_QUALITATIVE_RISK, $json)) {
-            $type->setQualitativeRisk(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_QUALITATIVE_RISK],
-                config: $config,
-            ));
+            $type->setQualitativeRisk(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_QUALITATIVE_RISK], $config));
         }
-        if (isset($json[self::FIELD_RELATIVE_RISK]) || isset($json[self::FIELD_RELATIVE_RISK_EXT]) || array_key_exists(self::FIELD_RELATIVE_RISK, $json) || array_key_exists(self::FIELD_RELATIVE_RISK_EXT, $json)) {
+        if (isset($json[self::FIELD_RELATIVE_RISK])
+            || isset($json[self::FIELD_RELATIVE_RISK_EXT])
+            || array_key_exists(self::FIELD_RELATIVE_RISK, $json)
+            || array_key_exists(self::FIELD_RELATIVE_RISK_EXT, $json)) {
             $value = $json[self::FIELD_RELATIVE_RISK] ?? null;
-            $ext = (array)($json[self::FIELD_RELATIVE_RISK_EXT] ?? []);
             $type->setRelativeRisk(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_RELATIVE_RISK_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_WHEN_PERIOD]) || array_key_exists(self::FIELD_WHEN_PERIOD, $json)) {
-            $type->setWhenPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_WHEN_PERIOD],
-                config: $config,
-            ));
+            $type->setWhenPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_WHEN_PERIOD], $config));
         }
         if (isset($json[self::FIELD_WHEN_RANGE]) || array_key_exists(self::FIELD_WHEN_RANGE, $json)) {
-            $type->setWhenRange(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_WHEN_RANGE],
-                config: $config,
-            ));
+            $type->setWhenRange(FHIRRange::jsonUnserialize($json[self::FIELD_WHEN_RANGE], $config));
         }
-        if (isset($json[self::FIELD_RATIONALE]) || isset($json[self::FIELD_RATIONALE_EXT]) || array_key_exists(self::FIELD_RATIONALE, $json) || array_key_exists(self::FIELD_RATIONALE_EXT, $json)) {
+        if (isset($json[self::FIELD_RATIONALE])
+            || isset($json[self::FIELD_RATIONALE_EXT])
+            || array_key_exists(self::FIELD_RATIONALE, $json)
+            || array_key_exists(self::FIELD_RATIONALE_EXT, $json)) {
             $value = $json[self::FIELD_RATIONALE] ?? null;
-            $ext = (array)($json[self::FIELD_RATIONALE_EXT] ?? []);
             $type->setRationale(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_RATIONALE_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

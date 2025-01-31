@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1022,62 +1022,48 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
-            $type->setCategory(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CATEGORY],
-                config: $config,
-            ));
+            $type->setCategory(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CATEGORY], $config));
         }
-        if (isset($json[self::FIELD_EXCLUDED]) || isset($json[self::FIELD_EXCLUDED_EXT]) || array_key_exists(self::FIELD_EXCLUDED, $json) || array_key_exists(self::FIELD_EXCLUDED_EXT, $json)) {
+        if (isset($json[self::FIELD_EXCLUDED])
+            || isset($json[self::FIELD_EXCLUDED_EXT])
+            || array_key_exists(self::FIELD_EXCLUDED, $json)
+            || array_key_exists(self::FIELD_EXCLUDED_EXT, $json)) {
             $value = $json[self::FIELD_EXCLUDED] ?? null;
-            $ext = (array)($json[self::FIELD_EXCLUDED_EXT] ?? []);
             $type->setExcluded(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_EXCLUDED_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_NAME])
+            || isset($json[self::FIELD_NAME_EXT])
+            || array_key_exists(self::FIELD_NAME, $json)
+            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
             $type->setName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_NETWORK]) || array_key_exists(self::FIELD_NETWORK, $json)) {
-            $type->setNetwork(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_NETWORK],
-                config: $config,
-            ));
+            $type->setNetwork(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_NETWORK], $config));
         }
         if (isset($json[self::FIELD_UNIT]) || array_key_exists(self::FIELD_UNIT, $json)) {
-            $type->setUnit(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_UNIT],
-                config: $config,
-            ));
+            $type->setUnit(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_UNIT], $config));
         }
         if (isset($json[self::FIELD_TERM]) || array_key_exists(self::FIELD_TERM, $json)) {
-            $type->setTerm(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TERM],
-                config: $config,
-            ));
+            $type->setTerm(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TERM], $config));
         }
         if (isset($json[self::FIELD_FINANCIAL]) || array_key_exists(self::FIELD_FINANCIAL, $json)) {
             $vs = $json[self::FIELD_FINANCIAL];
@@ -1085,10 +1071,7 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addFinancial(FHIRExplanationOfBenefitFinancial::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addFinancial(FHIRExplanationOfBenefitFinancial::jsonUnserialize($v, $config));
             }
         }
         return $type;

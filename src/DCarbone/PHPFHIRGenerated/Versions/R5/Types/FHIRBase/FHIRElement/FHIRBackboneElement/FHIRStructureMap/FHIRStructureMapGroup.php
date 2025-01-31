@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,6 +94,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureMapGroupTypeMode;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRStructureMapGroupTypeModeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -211,7 +212,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $name
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRId $extends
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureMapGroupTypeMode $typeMode
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRStructureMapGroupTypeModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureMapGroupTypeMode $typeMode
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $documentation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput[] $input
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule[] $rule
@@ -222,7 +223,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|string|FHIRIdPrimitive|FHIRId $name = null,
                                 null|string|FHIRIdPrimitive|FHIRId $extends = null,
-                                null|FHIRStructureMapGroupTypeMode $typeMode = null,
+                                null|string|FHIRStructureMapGroupTypeModeEnum|FHIRStructureMapGroupTypeMode $typeMode = null,
                                 null|string|FHIRStringPrimitive|FHIRString $documentation = null,
                                 null|iterable $input = null,
                                 null|iterable $rule = null,
@@ -425,16 +426,19 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
      * If this is the default rule set to apply for the source type or this combination
      * of types.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureMapGroupTypeMode $typeMode
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRStructureMapGroupTypeModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRStructureMapGroupTypeMode $typeMode
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setTypeMode(null|FHIRStructureMapGroupTypeMode $typeMode,
+    public function setTypeMode(null|string|FHIRStructureMapGroupTypeModeEnum|FHIRStructureMapGroupTypeMode $typeMode,
                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $typeMode) {
             unset($this->typeMode);
             return $this;
+        }
+        if (!($typeMode instanceof FHIRStructureMapGroupTypeMode)) {
+            $typeMode = new FHIRStructureMapGroupTypeMode(value: $typeMode);
         }
         $this->typeMode = $typeMode;
         if ($this->_valueXMLLocations[self::FIELD_TYPE_MODE] !== $valueXMLLocation) {
@@ -973,45 +977,45 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_NAME])
+            || isset($json[self::FIELD_NAME_EXT])
+            || array_key_exists(self::FIELD_NAME, $json)
+            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
             $type->setName(FHIRId::jsonUnserialize(
-                json: [FHIRId::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_EXTENDS]) || isset($json[self::FIELD_EXTENDS_EXT]) || array_key_exists(self::FIELD_EXTENDS, $json) || array_key_exists(self::FIELD_EXTENDS_EXT, $json)) {
+        if (isset($json[self::FIELD_EXTENDS])
+            || isset($json[self::FIELD_EXTENDS_EXT])
+            || array_key_exists(self::FIELD_EXTENDS, $json)
+            || array_key_exists(self::FIELD_EXTENDS_EXT, $json)) {
             $value = $json[self::FIELD_EXTENDS] ?? null;
-            $ext = (array)($json[self::FIELD_EXTENDS_EXT] ?? []);
             $type->setExtends(FHIRId::jsonUnserialize(
-                json: [FHIRId::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_EXTENDS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TYPE_MODE]) || isset($json[self::FIELD_TYPE_MODE_EXT]) || array_key_exists(self::FIELD_TYPE_MODE, $json) || array_key_exists(self::FIELD_TYPE_MODE_EXT, $json)) {
+        if (isset($json[self::FIELD_TYPE_MODE])
+            || isset($json[self::FIELD_TYPE_MODE_EXT])
+            || array_key_exists(self::FIELD_TYPE_MODE, $json)
+            || array_key_exists(self::FIELD_TYPE_MODE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE_MODE] ?? null;
-            $ext = (array)($json[self::FIELD_TYPE_MODE_EXT] ?? []);
             $type->setTypeMode(FHIRStructureMapGroupTypeMode::jsonUnserialize(
-                json: [FHIRStructureMapGroupTypeMode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRStructureMapGroupTypeMode::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_MODE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DOCUMENTATION]) || isset($json[self::FIELD_DOCUMENTATION_EXT]) || array_key_exists(self::FIELD_DOCUMENTATION, $json) || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $json)) {
+        if (isset($json[self::FIELD_DOCUMENTATION])
+            || isset($json[self::FIELD_DOCUMENTATION_EXT])
+            || array_key_exists(self::FIELD_DOCUMENTATION, $json)
+            || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $json)) {
             $value = $json[self::FIELD_DOCUMENTATION] ?? null;
-            $ext = (array)($json[self::FIELD_DOCUMENTATION_EXT] ?? []);
             $type->setDocumentation(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DOCUMENTATION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_INPUT]) || array_key_exists(self::FIELD_INPUT, $json)) {
@@ -1020,10 +1024,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addInput(FHIRStructureMapInput::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addInput(FHIRStructureMapInput::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_RULE]) || array_key_exists(self::FIELD_RULE, $json)) {
@@ -1032,10 +1033,7 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRule(FHIRStructureMapRule::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRule(FHIRStructureMapRule::jsonUnserialize($v, $config));
             }
         }
         return $type;

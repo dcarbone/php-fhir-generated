@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1008,41 +1008,31 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_STEREOCHEMISTRY]) || array_key_exists(self::FIELD_STEREOCHEMISTRY, $json)) {
-            $type->setStereochemistry(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_STEREOCHEMISTRY],
-                config: $config,
-            ));
+            $type->setStereochemistry(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_STEREOCHEMISTRY], $config));
         }
         if (isset($json[self::FIELD_OPTICAL_ACTIVITY]) || array_key_exists(self::FIELD_OPTICAL_ACTIVITY, $json)) {
-            $type->setOpticalActivity(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_OPTICAL_ACTIVITY],
-                config: $config,
-            ));
+            $type->setOpticalActivity(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_OPTICAL_ACTIVITY], $config));
         }
-        if (isset($json[self::FIELD_MOLECULAR_FORMULA]) || isset($json[self::FIELD_MOLECULAR_FORMULA_EXT]) || array_key_exists(self::FIELD_MOLECULAR_FORMULA, $json) || array_key_exists(self::FIELD_MOLECULAR_FORMULA_EXT, $json)) {
+        if (isset($json[self::FIELD_MOLECULAR_FORMULA])
+            || isset($json[self::FIELD_MOLECULAR_FORMULA_EXT])
+            || array_key_exists(self::FIELD_MOLECULAR_FORMULA, $json)
+            || array_key_exists(self::FIELD_MOLECULAR_FORMULA_EXT, $json)) {
             $value = $json[self::FIELD_MOLECULAR_FORMULA] ?? null;
-            $ext = (array)($json[self::FIELD_MOLECULAR_FORMULA_EXT] ?? []);
             $type->setMolecularFormula(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_MOLECULAR_FORMULA_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY]) || isset($json[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY_EXT]) || array_key_exists(self::FIELD_MOLECULAR_FORMULA_BY_MOIETY, $json) || array_key_exists(self::FIELD_MOLECULAR_FORMULA_BY_MOIETY_EXT, $json)) {
+        if (isset($json[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY])
+            || isset($json[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY_EXT])
+            || array_key_exists(self::FIELD_MOLECULAR_FORMULA_BY_MOIETY, $json)
+            || array_key_exists(self::FIELD_MOLECULAR_FORMULA_BY_MOIETY_EXT, $json)) {
             $value = $json[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY] ?? null;
-            $ext = (array)($json[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY_EXT] ?? []);
             $type->setMolecularFormulaByMoiety(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ISOTOPE]) || array_key_exists(self::FIELD_ISOTOPE, $json)) {
@@ -1051,17 +1041,11 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addIsotope(FHIRSubstanceSpecificationIsotope::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addIsotope(FHIRSubstanceSpecificationIsotope::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_MOLECULAR_WEIGHT]) || array_key_exists(self::FIELD_MOLECULAR_WEIGHT, $json)) {
-            $type->setMolecularWeight(FHIRSubstanceSpecificationMolecularWeight::jsonUnserialize(
-                json: $json[self::FIELD_MOLECULAR_WEIGHT],
-                config: $config,
-            ));
+            $type->setMolecularWeight(FHIRSubstanceSpecificationMolecularWeight::jsonUnserialize($json[self::FIELD_MOLECULAR_WEIGHT], $config));
         }
         if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
             $vs = $json[self::FIELD_SOURCE];
@@ -1069,10 +1053,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSource(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSource(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_REPRESENTATION]) || array_key_exists(self::FIELD_REPRESENTATION, $json)) {
@@ -1081,10 +1062,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRepresentation(FHIRSubstanceSpecificationRepresentation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRepresentation(FHIRSubstanceSpecificationRepresentation::jsonUnserialize($v, $config));
             }
         }
         return $type;

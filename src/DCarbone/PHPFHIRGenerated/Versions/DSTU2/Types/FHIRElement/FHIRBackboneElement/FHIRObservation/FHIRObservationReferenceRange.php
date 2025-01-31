@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,6 +70,7 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange;
@@ -169,8 +170,8 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $low
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $high
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $low
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $high
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $meaning
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRRange $age
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $text
@@ -179,8 +180,8 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRSimpleQuantity $low = null,
-                                null|FHIRSimpleQuantity $high = null,
+                                null|FHIRDecimal|FHIRSimpleQuantity $low = null,
+                                null|FHIRDecimal|FHIRSimpleQuantity $high = null,
                                 null|FHIRCodeableConcept $meaning = null,
                                 null|FHIRRange $age = null,
                                 null|string|FHIRStringPrimitive|FHIRString $text = null,
@@ -236,16 +237,19 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * - <=9). If the low bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is <=2.3).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $low
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $low
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLow(null|FHIRSimpleQuantity $low,
+    public function setLow(null|FHIRDecimal|FHIRSimpleQuantity $low,
                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $low) {
             unset($this->low);
             return $this;
+        }
+        if (!($low instanceof FHIRSimpleQuantity)) {
+            $low = new FHIRSimpleQuantity(value: $low);
         }
         $this->low = $low;
         if ($this->_valueXMLLocations[self::FIELD_LOW] !== $valueXMLLocation) {
@@ -297,16 +301,19 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * - <=9). If the high bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is >= 2.3).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $high
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDecimal|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $high
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setHigh(null|FHIRSimpleQuantity $high,
+    public function setHigh(null|FHIRDecimal|FHIRSimpleQuantity $high,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $high) {
             unset($this->high);
             return $this;
+        }
+        if (!($high instanceof FHIRSimpleQuantity)) {
+            $high = new FHIRSimpleQuantity(value: $high);
         }
         $this->high = $high;
         if ($this->_valueXMLLocations[self::FIELD_HIGH] !== $valueXMLLocation) {
@@ -752,49 +759,41 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_LOW]) || isset($json[self::FIELD_LOW_EXT]) || array_key_exists(self::FIELD_LOW, $json) || array_key_exists(self::FIELD_LOW_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_LOW])
+            || isset($json[self::FIELD_LOW_EXT])
+            || array_key_exists(self::FIELD_LOW, $json)
+            || array_key_exists(self::FIELD_LOW_EXT, $json)) {
             $value = $json[self::FIELD_LOW] ?? null;
-            $ext = (array)($json[self::FIELD_LOW_EXT] ?? []);
             $type->setLow(FHIRSimpleQuantity::jsonUnserialize(
-                json: [FHIRSimpleQuantity::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSimpleQuantity::FIELD_VALUE => $value]) + ($json[self::FIELD_LOW_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_HIGH]) || isset($json[self::FIELD_HIGH_EXT]) || array_key_exists(self::FIELD_HIGH, $json) || array_key_exists(self::FIELD_HIGH_EXT, $json)) {
+        if (isset($json[self::FIELD_HIGH])
+            || isset($json[self::FIELD_HIGH_EXT])
+            || array_key_exists(self::FIELD_HIGH, $json)
+            || array_key_exists(self::FIELD_HIGH_EXT, $json)) {
             $value = $json[self::FIELD_HIGH] ?? null;
-            $ext = (array)($json[self::FIELD_HIGH_EXT] ?? []);
             $type->setHigh(FHIRSimpleQuantity::jsonUnserialize(
-                json: [FHIRSimpleQuantity::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSimpleQuantity::FIELD_VALUE => $value]) + ($json[self::FIELD_HIGH_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_MEANING]) || array_key_exists(self::FIELD_MEANING, $json)) {
-            $type->setMeaning(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_MEANING],
-                config: $config,
-            ));
+            $type->setMeaning(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_MEANING], $config));
         }
         if (isset($json[self::FIELD_AGE]) || array_key_exists(self::FIELD_AGE, $json)) {
-            $type->setAge(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_AGE],
-                config: $config,
-            ));
+            $type->setAge(FHIRRange::jsonUnserialize($json[self::FIELD_AGE], $config));
         }
-        if (isset($json[self::FIELD_TEXT]) || isset($json[self::FIELD_TEXT_EXT]) || array_key_exists(self::FIELD_TEXT, $json) || array_key_exists(self::FIELD_TEXT_EXT, $json)) {
+        if (isset($json[self::FIELD_TEXT])
+            || isset($json[self::FIELD_TEXT_EXT])
+            || array_key_exists(self::FIELD_TEXT, $json)
+            || array_key_exists(self::FIELD_TEXT_EXT, $json)) {
             $value = $json[self::FIELD_TEXT] ?? null;
-            $ext = (array)($json[self::FIELD_TEXT_EXT] ?? []);
             $type->setText(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TEXT_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

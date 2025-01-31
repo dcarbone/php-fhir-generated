@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,6 +108,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGoalLifecycleStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDatePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
@@ -377,8 +378,8 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGoalLifecycleStatus $lifecycleStatus
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGoalLifecycleStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGoalLifecycleStatus $lifecycleStatus
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept $achievementStatus
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $category
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $continuous
@@ -405,7 +406,7 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
                                 null|iterable $identifier = null,
-                                null|FHIRGoalLifecycleStatus $lifecycleStatus = null,
+                                null|string|FHIRGoalLifecycleStatusEnum|FHIRGoalLifecycleStatus $lifecycleStatus = null,
                                 null|FHIRCodeableConcept $achievementStatus = null,
                                 null|iterable $category = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $continuous = null,
@@ -542,11 +543,14 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * which remain constant as the resource is updated and propagates from server to
      * server.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -564,10 +568,10 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      * which remain constant as the resource is updated and propagates from server to
      * server.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -601,16 +605,19 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
      *
      * The state of the goal throughout its lifecycle.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGoalLifecycleStatus $lifecycleStatus
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRGoalLifecycleStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRGoalLifecycleStatus $lifecycleStatus
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setLifecycleStatus(null|FHIRGoalLifecycleStatus $lifecycleStatus,
+    public function setLifecycleStatus(null|string|FHIRGoalLifecycleStatusEnum|FHIRGoalLifecycleStatus $lifecycleStatus,
                                        ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $lifecycleStatus) {
             unset($this->lifecycleStatus);
             return $this;
+        }
+        if (!($lifecycleStatus instanceof FHIRGoalLifecycleStatus)) {
+            $lifecycleStatus = new FHIRGoalLifecycleStatus(value: $lifecycleStatus);
         }
         $this->lifecycleStatus = $lifecycleStatus;
         if ($this->_valueXMLLocations[self::FIELD_LIFECYCLE_STATUS] !== $valueXMLLocation) {
@@ -2152,13 +2159,13 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2166,24 +2173,23 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_LIFECYCLE_STATUS]) || isset($json[self::FIELD_LIFECYCLE_STATUS_EXT]) || array_key_exists(self::FIELD_LIFECYCLE_STATUS, $json) || array_key_exists(self::FIELD_LIFECYCLE_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_LIFECYCLE_STATUS])
+            || isset($json[self::FIELD_LIFECYCLE_STATUS_EXT])
+            || array_key_exists(self::FIELD_LIFECYCLE_STATUS, $json)
+            || array_key_exists(self::FIELD_LIFECYCLE_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_LIFECYCLE_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_LIFECYCLE_STATUS_EXT] ?? []);
             $type->setLifecycleStatus(FHIRGoalLifecycleStatus::jsonUnserialize(
-                json: [FHIRGoalLifecycleStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRGoalLifecycleStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_LIFECYCLE_STATUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ACHIEVEMENT_STATUS]) || array_key_exists(self::FIELD_ACHIEVEMENT_STATUS, $json)) {
-            $type->setAchievementStatus(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_ACHIEVEMENT_STATUS],
-                config: $config,
-            ));
+            $type->setAchievementStatus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ACHIEVEMENT_STATUS], $config));
         }
         if (isset($json[self::FIELD_CATEGORY]) || array_key_exists(self::FIELD_CATEGORY, $json)) {
             $vs = $json[self::FIELD_CATEGORY];
@@ -2191,51 +2197,40 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCategory(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCategory(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CONTINUOUS]) || isset($json[self::FIELD_CONTINUOUS_EXT]) || array_key_exists(self::FIELD_CONTINUOUS, $json) || array_key_exists(self::FIELD_CONTINUOUS_EXT, $json)) {
+        if (isset($json[self::FIELD_CONTINUOUS])
+            || isset($json[self::FIELD_CONTINUOUS_EXT])
+            || array_key_exists(self::FIELD_CONTINUOUS, $json)
+            || array_key_exists(self::FIELD_CONTINUOUS_EXT, $json)) {
             $value = $json[self::FIELD_CONTINUOUS] ?? null;
-            $ext = (array)($json[self::FIELD_CONTINUOUS_EXT] ?? []);
             $type->setContinuous(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_CONTINUOUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PRIORITY]) || array_key_exists(self::FIELD_PRIORITY, $json)) {
-            $type->setPriority(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_PRIORITY],
-                config: $config,
-            ));
+            $type->setPriority(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PRIORITY], $config));
         }
         if (isset($json[self::FIELD_DESCRIPTION]) || array_key_exists(self::FIELD_DESCRIPTION, $json)) {
-            $type->setDescription(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_DESCRIPTION],
-                config: $config,
-            ));
+            $type->setDescription(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_DESCRIPTION], $config));
         }
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $type->setSubject(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_SUBJECT],
-                config: $config,
-            ));
+            $type->setSubject(FHIRReference::jsonUnserialize($json[self::FIELD_SUBJECT], $config));
         }
-        if (isset($json[self::FIELD_START_DATE]) || isset($json[self::FIELD_START_DATE_EXT]) || array_key_exists(self::FIELD_START_DATE, $json) || array_key_exists(self::FIELD_START_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_START_DATE])
+            || isset($json[self::FIELD_START_DATE_EXT])
+            || array_key_exists(self::FIELD_START_DATE, $json)
+            || array_key_exists(self::FIELD_START_DATE_EXT, $json)) {
             $value = $json[self::FIELD_START_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_START_DATE_EXT] ?? []);
             $type->setStartDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_START_DATE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_START_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_START_CODEABLE_CONCEPT, $json)) {
-            $type->setStartCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_START_CODEABLE_CONCEPT],
-                config: $config,
-            ));
+            $type->setStartCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_START_CODEABLE_CONCEPT], $config));
         }
         if (isset($json[self::FIELD_TARGET]) || array_key_exists(self::FIELD_TARGET, $json)) {
             $vs = $json[self::FIELD_TARGET];
@@ -2243,33 +2238,31 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addTarget(FHIRGoalTarget::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addTarget(FHIRGoalTarget::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_STATUS_DATE]) || isset($json[self::FIELD_STATUS_DATE_EXT]) || array_key_exists(self::FIELD_STATUS_DATE, $json) || array_key_exists(self::FIELD_STATUS_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS_DATE])
+            || isset($json[self::FIELD_STATUS_DATE_EXT])
+            || array_key_exists(self::FIELD_STATUS_DATE, $json)
+            || array_key_exists(self::FIELD_STATUS_DATE_EXT, $json)) {
             $value = $json[self::FIELD_STATUS_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_DATE_EXT] ?? []);
             $type->setStatusDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_STATUS_REASON]) || isset($json[self::FIELD_STATUS_REASON_EXT]) || array_key_exists(self::FIELD_STATUS_REASON, $json) || array_key_exists(self::FIELD_STATUS_REASON_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS_REASON])
+            || isset($json[self::FIELD_STATUS_REASON_EXT])
+            || array_key_exists(self::FIELD_STATUS_REASON, $json)
+            || array_key_exists(self::FIELD_STATUS_REASON_EXT, $json)) {
             $value = $json[self::FIELD_STATUS_REASON] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_REASON_EXT] ?? []);
             $type->setStatusReason(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_REASON_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
-            $type->setSource(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_SOURCE],
-                config: $config,
-            ));
+            $type->setSource(FHIRReference::jsonUnserialize($json[self::FIELD_SOURCE], $config));
         }
         if (isset($json[self::FIELD_ADDRESSES]) || array_key_exists(self::FIELD_ADDRESSES, $json)) {
             $vs = $json[self::FIELD_ADDRESSES];
@@ -2277,10 +2270,7 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAddresses(FHIRReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAddresses(FHIRReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
@@ -2289,10 +2279,7 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addNote(FHIRAnnotation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_OUTCOME]) || array_key_exists(self::FIELD_OUTCOME, $json)) {
@@ -2301,10 +2288,7 @@ class FHIRGoal extends FHIRDomainResource implements VersionContainedTypeInterfa
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addOutcome(FHIRCodeableReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addOutcome(FHIRCodeableReference::jsonUnserialize($v, $config));
             }
         }
         return $type;

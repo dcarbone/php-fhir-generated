@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1118,71 +1118,64 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_CHROMOSOME]) || array_key_exists(self::FIELD_CHROMOSOME, $json)) {
-            $type->setChromosome(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CHROMOSOME],
-                config: $config,
-            ));
+            $type->setChromosome(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CHROMOSOME], $config));
         }
-        if (isset($json[self::FIELD_GENOME_BUILD]) || isset($json[self::FIELD_GENOME_BUILD_EXT]) || array_key_exists(self::FIELD_GENOME_BUILD, $json) || array_key_exists(self::FIELD_GENOME_BUILD_EXT, $json)) {
+        if (isset($json[self::FIELD_GENOME_BUILD])
+            || isset($json[self::FIELD_GENOME_BUILD_EXT])
+            || array_key_exists(self::FIELD_GENOME_BUILD, $json)
+            || array_key_exists(self::FIELD_GENOME_BUILD_EXT, $json)) {
             $value = $json[self::FIELD_GENOME_BUILD] ?? null;
-            $ext = (array)($json[self::FIELD_GENOME_BUILD_EXT] ?? []);
             $type->setGenomeBuild(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_GENOME_BUILD_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_REFERENCE_SEQ_ID]) || array_key_exists(self::FIELD_REFERENCE_SEQ_ID, $json)) {
-            $type->setReferenceSeqId(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_REFERENCE_SEQ_ID],
-                config: $config,
-            ));
+            $type->setReferenceSeqId(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_REFERENCE_SEQ_ID], $config));
         }
         if (isset($json[self::FIELD_REFERENCE_SEQ_POINTER]) || array_key_exists(self::FIELD_REFERENCE_SEQ_POINTER, $json)) {
-            $type->setReferenceSeqPointer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_REFERENCE_SEQ_POINTER],
-                config: $config,
-            ));
+            $type->setReferenceSeqPointer(FHIRReference::jsonUnserialize($json[self::FIELD_REFERENCE_SEQ_POINTER], $config));
         }
-        if (isset($json[self::FIELD_REFERENCE_SEQ_STRING]) || isset($json[self::FIELD_REFERENCE_SEQ_STRING_EXT]) || array_key_exists(self::FIELD_REFERENCE_SEQ_STRING, $json) || array_key_exists(self::FIELD_REFERENCE_SEQ_STRING_EXT, $json)) {
+        if (isset($json[self::FIELD_REFERENCE_SEQ_STRING])
+            || isset($json[self::FIELD_REFERENCE_SEQ_STRING_EXT])
+            || array_key_exists(self::FIELD_REFERENCE_SEQ_STRING, $json)
+            || array_key_exists(self::FIELD_REFERENCE_SEQ_STRING_EXT, $json)) {
             $value = $json[self::FIELD_REFERENCE_SEQ_STRING] ?? null;
-            $ext = (array)($json[self::FIELD_REFERENCE_SEQ_STRING_EXT] ?? []);
             $type->setReferenceSeqString(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_REFERENCE_SEQ_STRING_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_STRAND]) || isset($json[self::FIELD_STRAND_EXT]) || array_key_exists(self::FIELD_STRAND, $json) || array_key_exists(self::FIELD_STRAND_EXT, $json)) {
+        if (isset($json[self::FIELD_STRAND])
+            || isset($json[self::FIELD_STRAND_EXT])
+            || array_key_exists(self::FIELD_STRAND, $json)
+            || array_key_exists(self::FIELD_STRAND_EXT, $json)) {
             $value = $json[self::FIELD_STRAND] ?? null;
-            $ext = (array)($json[self::FIELD_STRAND_EXT] ?? []);
             $type->setStrand(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_STRAND_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_WINDOW_START]) || isset($json[self::FIELD_WINDOW_START_EXT]) || array_key_exists(self::FIELD_WINDOW_START, $json) || array_key_exists(self::FIELD_WINDOW_START_EXT, $json)) {
+        if (isset($json[self::FIELD_WINDOW_START])
+            || isset($json[self::FIELD_WINDOW_START_EXT])
+            || array_key_exists(self::FIELD_WINDOW_START, $json)
+            || array_key_exists(self::FIELD_WINDOW_START_EXT, $json)) {
             $value = $json[self::FIELD_WINDOW_START] ?? null;
-            $ext = (array)($json[self::FIELD_WINDOW_START_EXT] ?? []);
             $type->setWindowStart(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_WINDOW_START_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_WINDOW_END]) || isset($json[self::FIELD_WINDOW_END_EXT]) || array_key_exists(self::FIELD_WINDOW_END, $json) || array_key_exists(self::FIELD_WINDOW_END_EXT, $json)) {
+        if (isset($json[self::FIELD_WINDOW_END])
+            || isset($json[self::FIELD_WINDOW_END_EXT])
+            || array_key_exists(self::FIELD_WINDOW_END, $json)
+            || array_key_exists(self::FIELD_WINDOW_END_EXT, $json)) {
             $value = $json[self::FIELD_WINDOW_END] ?? null;
-            $ext = (array)($json[self::FIELD_WINDOW_END_EXT] ?? []);
             $type->setWindowEnd(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_WINDOW_END_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

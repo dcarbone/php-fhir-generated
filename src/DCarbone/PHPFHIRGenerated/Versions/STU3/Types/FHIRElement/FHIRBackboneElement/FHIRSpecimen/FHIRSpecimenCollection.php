@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -763,52 +763,31 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_COLLECTOR]) || array_key_exists(self::FIELD_COLLECTOR, $json)) {
-            $type->setCollector(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_COLLECTOR],
-                config: $config,
-            ));
+            $type->setCollector(FHIRReference::jsonUnserialize($json[self::FIELD_COLLECTOR], $config));
         }
-        if (isset($json[self::FIELD_COLLECTED_DATE_TIME]) || isset($json[self::FIELD_COLLECTED_DATE_TIME_EXT]) || array_key_exists(self::FIELD_COLLECTED_DATE_TIME, $json) || array_key_exists(self::FIELD_COLLECTED_DATE_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_COLLECTED_DATE_TIME])
+            || isset($json[self::FIELD_COLLECTED_DATE_TIME_EXT])
+            || array_key_exists(self::FIELD_COLLECTED_DATE_TIME, $json)
+            || array_key_exists(self::FIELD_COLLECTED_DATE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_COLLECTED_DATE_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_COLLECTED_DATE_TIME_EXT] ?? []);
             $type->setCollectedDateTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_COLLECTED_DATE_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_COLLECTED_PERIOD]) || array_key_exists(self::FIELD_COLLECTED_PERIOD, $json)) {
-            $type->setCollectedPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_COLLECTED_PERIOD],
-                config: $config,
-            ));
+            $type->setCollectedPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_COLLECTED_PERIOD], $config));
         }
         if (isset($json[self::FIELD_QUANTITY]) || array_key_exists(self::FIELD_QUANTITY, $json)) {
-            $type->setQuantity(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_QUANTITY],
-                config: $config,
-            ));
+            $type->setQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_QUANTITY], $config));
         }
         if (isset($json[self::FIELD_METHOD]) || array_key_exists(self::FIELD_METHOD, $json)) {
-            $type->setMethod(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_METHOD],
-                config: $config,
-            ));
+            $type->setMethod(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_METHOD], $config));
         }
         if (isset($json[self::FIELD_BODY_SITE]) || array_key_exists(self::FIELD_BODY_SITE, $json)) {
-            $type->setBodySite(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_BODY_SITE],
-                config: $config,
-            ));
+            $type->setBodySite(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_BODY_SITE], $config));
         }
         return $type;
     }

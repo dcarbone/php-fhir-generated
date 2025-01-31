@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -181,7 +181,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $name
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $software
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString $version
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $contact
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $contact
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUri $endpoint
      * @param null|string[] $fhirComments
      */
@@ -191,7 +191,7 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive|FHIRString $name = null,
                                 null|string|FHIRStringPrimitive|FHIRString $software = null,
                                 null|string|FHIRStringPrimitive|FHIRString $version = null,
-                                null|FHIRContact $contact = null,
+                                null|FHIRString|FHIRContact $contact = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $endpoint = null,
                                 null|iterable $fhirComments = null)
     {
@@ -445,16 +445,19 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * An e-mail, phone, website or other contact point to use to resolve issues with
      * message communications.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $contact
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $contact
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setContact(null|FHIRContact $contact,
+    public function setContact(null|FHIRString|FHIRContact $contact,
                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $contact) {
             unset($this->contact);
             return $this;
+        }
+        if (!($contact instanceof FHIRContact)) {
+            $contact = new FHIRContact(value: $contact);
         }
         $this->contact = $contact;
         if ($this->_valueXMLLocations[self::FIELD_CONTACT] !== $valueXMLLocation) {
@@ -858,53 +861,55 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_NAME])
+            || isset($json[self::FIELD_NAME_EXT])
+            || array_key_exists(self::FIELD_NAME, $json)
+            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
             $type->setName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SOFTWARE]) || isset($json[self::FIELD_SOFTWARE_EXT]) || array_key_exists(self::FIELD_SOFTWARE, $json) || array_key_exists(self::FIELD_SOFTWARE_EXT, $json)) {
+        if (isset($json[self::FIELD_SOFTWARE])
+            || isset($json[self::FIELD_SOFTWARE_EXT])
+            || array_key_exists(self::FIELD_SOFTWARE, $json)
+            || array_key_exists(self::FIELD_SOFTWARE_EXT, $json)) {
             $value = $json[self::FIELD_SOFTWARE] ?? null;
-            $ext = (array)($json[self::FIELD_SOFTWARE_EXT] ?? []);
             $type->setSoftware(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SOFTWARE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_VERSION]) || isset($json[self::FIELD_VERSION_EXT]) || array_key_exists(self::FIELD_VERSION, $json) || array_key_exists(self::FIELD_VERSION_EXT, $json)) {
+        if (isset($json[self::FIELD_VERSION])
+            || isset($json[self::FIELD_VERSION_EXT])
+            || array_key_exists(self::FIELD_VERSION, $json)
+            || array_key_exists(self::FIELD_VERSION_EXT, $json)) {
             $value = $json[self::FIELD_VERSION] ?? null;
-            $ext = (array)($json[self::FIELD_VERSION_EXT] ?? []);
             $type->setVersion(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_VERSION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CONTACT]) || isset($json[self::FIELD_CONTACT_EXT]) || array_key_exists(self::FIELD_CONTACT, $json) || array_key_exists(self::FIELD_CONTACT_EXT, $json)) {
+        if (isset($json[self::FIELD_CONTACT])
+            || isset($json[self::FIELD_CONTACT_EXT])
+            || array_key_exists(self::FIELD_CONTACT, $json)
+            || array_key_exists(self::FIELD_CONTACT_EXT, $json)) {
             $value = $json[self::FIELD_CONTACT] ?? null;
-            $ext = (array)($json[self::FIELD_CONTACT_EXT] ?? []);
             $type->setContact(FHIRContact::jsonUnserialize(
-                json: [FHIRContact::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRContact::FIELD_VALUE => $value]) + ($json[self::FIELD_CONTACT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ENDPOINT]) || isset($json[self::FIELD_ENDPOINT_EXT]) || array_key_exists(self::FIELD_ENDPOINT, $json) || array_key_exists(self::FIELD_ENDPOINT_EXT, $json)) {
+        if (isset($json[self::FIELD_ENDPOINT])
+            || isset($json[self::FIELD_ENDPOINT_EXT])
+            || array_key_exists(self::FIELD_ENDPOINT, $json)
+            || array_key_exists(self::FIELD_ENDPOINT_EXT, $json)) {
             $value = $json[self::FIELD_ENDPOINT] ?? null;
-            $ext = (array)($json[self::FIELD_ENDPOINT_EXT] ?? []);
             $type->setEndpoint(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_ENDPOINT_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

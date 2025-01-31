@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -985,61 +985,65 @@ class FHIRCitationDateOfPublication extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_DATE]) || isset($json[self::FIELD_DATE_EXT]) || array_key_exists(self::FIELD_DATE, $json) || array_key_exists(self::FIELD_DATE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_DATE])
+            || isset($json[self::FIELD_DATE_EXT])
+            || array_key_exists(self::FIELD_DATE, $json)
+            || array_key_exists(self::FIELD_DATE_EXT, $json)) {
             $value = $json[self::FIELD_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_DATE_EXT] ?? []);
             $type->setDate(FHIRDate::jsonUnserialize(
-                json: [FHIRDate::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDate::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_YEAR]) || isset($json[self::FIELD_YEAR_EXT]) || array_key_exists(self::FIELD_YEAR, $json) || array_key_exists(self::FIELD_YEAR_EXT, $json)) {
+        if (isset($json[self::FIELD_YEAR])
+            || isset($json[self::FIELD_YEAR_EXT])
+            || array_key_exists(self::FIELD_YEAR, $json)
+            || array_key_exists(self::FIELD_YEAR_EXT, $json)) {
             $value = $json[self::FIELD_YEAR] ?? null;
-            $ext = (array)($json[self::FIELD_YEAR_EXT] ?? []);
             $type->setYear(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_YEAR_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_MONTH]) || isset($json[self::FIELD_MONTH_EXT]) || array_key_exists(self::FIELD_MONTH, $json) || array_key_exists(self::FIELD_MONTH_EXT, $json)) {
+        if (isset($json[self::FIELD_MONTH])
+            || isset($json[self::FIELD_MONTH_EXT])
+            || array_key_exists(self::FIELD_MONTH, $json)
+            || array_key_exists(self::FIELD_MONTH_EXT, $json)) {
             $value = $json[self::FIELD_MONTH] ?? null;
-            $ext = (array)($json[self::FIELD_MONTH_EXT] ?? []);
             $type->setMonth(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_MONTH_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DAY]) || isset($json[self::FIELD_DAY_EXT]) || array_key_exists(self::FIELD_DAY, $json) || array_key_exists(self::FIELD_DAY_EXT, $json)) {
+        if (isset($json[self::FIELD_DAY])
+            || isset($json[self::FIELD_DAY_EXT])
+            || array_key_exists(self::FIELD_DAY, $json)
+            || array_key_exists(self::FIELD_DAY_EXT, $json)) {
             $value = $json[self::FIELD_DAY] ?? null;
-            $ext = (array)($json[self::FIELD_DAY_EXT] ?? []);
             $type->setDay(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DAY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SEASON]) || isset($json[self::FIELD_SEASON_EXT]) || array_key_exists(self::FIELD_SEASON, $json) || array_key_exists(self::FIELD_SEASON_EXT, $json)) {
+        if (isset($json[self::FIELD_SEASON])
+            || isset($json[self::FIELD_SEASON_EXT])
+            || array_key_exists(self::FIELD_SEASON, $json)
+            || array_key_exists(self::FIELD_SEASON_EXT, $json)) {
             $value = $json[self::FIELD_SEASON] ?? null;
-            $ext = (array)($json[self::FIELD_SEASON_EXT] ?? []);
             $type->setSeason(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SEASON_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TEXT]) || isset($json[self::FIELD_TEXT_EXT]) || array_key_exists(self::FIELD_TEXT, $json) || array_key_exists(self::FIELD_TEXT_EXT, $json)) {
+        if (isset($json[self::FIELD_TEXT])
+            || isset($json[self::FIELD_TEXT_EXT])
+            || array_key_exists(self::FIELD_TEXT, $json)
+            || array_key_exists(self::FIELD_TEXT_EXT, $json)) {
             $value = $json[self::FIELD_TEXT] ?? null;
-            $ext = (array)($json[self::FIELD_TEXT_EXT] ?? []);
             $type->setText(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TEXT_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

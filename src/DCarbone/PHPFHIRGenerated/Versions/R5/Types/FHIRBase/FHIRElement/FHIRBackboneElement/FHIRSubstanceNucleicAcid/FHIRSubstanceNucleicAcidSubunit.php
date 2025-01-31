@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1089,56 +1089,45 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_SUBUNIT]) || isset($json[self::FIELD_SUBUNIT_EXT]) || array_key_exists(self::FIELD_SUBUNIT, $json) || array_key_exists(self::FIELD_SUBUNIT_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_SUBUNIT])
+            || isset($json[self::FIELD_SUBUNIT_EXT])
+            || array_key_exists(self::FIELD_SUBUNIT, $json)
+            || array_key_exists(self::FIELD_SUBUNIT_EXT, $json)) {
             $value = $json[self::FIELD_SUBUNIT] ?? null;
-            $ext = (array)($json[self::FIELD_SUBUNIT_EXT] ?? []);
             $type->setSubunit(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_SUBUNIT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SEQUENCE]) || isset($json[self::FIELD_SEQUENCE_EXT]) || array_key_exists(self::FIELD_SEQUENCE, $json) || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
+        if (isset($json[self::FIELD_SEQUENCE])
+            || isset($json[self::FIELD_SEQUENCE_EXT])
+            || array_key_exists(self::FIELD_SEQUENCE, $json)
+            || array_key_exists(self::FIELD_SEQUENCE_EXT, $json)) {
             $value = $json[self::FIELD_SEQUENCE] ?? null;
-            $ext = (array)($json[self::FIELD_SEQUENCE_EXT] ?? []);
             $type->setSequence(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_SEQUENCE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_LENGTH]) || isset($json[self::FIELD_LENGTH_EXT]) || array_key_exists(self::FIELD_LENGTH, $json) || array_key_exists(self::FIELD_LENGTH_EXT, $json)) {
+        if (isset($json[self::FIELD_LENGTH])
+            || isset($json[self::FIELD_LENGTH_EXT])
+            || array_key_exists(self::FIELD_LENGTH, $json)
+            || array_key_exists(self::FIELD_LENGTH_EXT, $json)) {
             $value = $json[self::FIELD_LENGTH] ?? null;
-            $ext = (array)($json[self::FIELD_LENGTH_EXT] ?? []);
             $type->setLength(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_LENGTH_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SEQUENCE_ATTACHMENT]) || array_key_exists(self::FIELD_SEQUENCE_ATTACHMENT, $json)) {
-            $type->setSequenceAttachment(FHIRAttachment::jsonUnserialize(
-                json: $json[self::FIELD_SEQUENCE_ATTACHMENT],
-                config: $config,
-            ));
+            $type->setSequenceAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_SEQUENCE_ATTACHMENT], $config));
         }
         if (isset($json[self::FIELD_FIVE_PRIME]) || array_key_exists(self::FIELD_FIVE_PRIME, $json)) {
-            $type->setFivePrime(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_FIVE_PRIME],
-                config: $config,
-            ));
+            $type->setFivePrime(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_FIVE_PRIME], $config));
         }
         if (isset($json[self::FIELD_THREE_PRIME]) || array_key_exists(self::FIELD_THREE_PRIME, $json)) {
-            $type->setThreePrime(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_THREE_PRIME],
-                config: $config,
-            ));
+            $type->setThreePrime(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_THREE_PRIME], $config));
         }
         if (isset($json[self::FIELD_LINKAGE]) || array_key_exists(self::FIELD_LINKAGE, $json)) {
             $vs = $json[self::FIELD_LINKAGE];
@@ -1146,10 +1135,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addLinkage(FHIRSubstanceNucleicAcidLinkage::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addLinkage(FHIRSubstanceNucleicAcidLinkage::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SUGAR]) || array_key_exists(self::FIELD_SUGAR, $json)) {
@@ -1158,10 +1144,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSugar(FHIRSubstanceNucleicAcidSugar::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSugar(FHIRSubstanceNucleicAcidSugar::jsonUnserialize($v, $config));
             }
         }
         return $type;

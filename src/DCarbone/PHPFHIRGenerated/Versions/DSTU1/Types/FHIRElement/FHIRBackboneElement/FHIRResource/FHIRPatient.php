@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,6 +84,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline;
@@ -353,9 +354,9 @@ class FHIRPatient extends FHIRResource implements VersionContainedTypeInterface
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRHumanName[] $name
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact[] $telecom
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact[] $telecom
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $gender
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $birthDate
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBoolean $deceasedBoolean
@@ -518,11 +519,14 @@ class FHIRPatient extends FHIRResource implements VersionContainedTypeInterface
      *
      * An identifier that applies to this person as a patient.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -537,10 +541,10 @@ class FHIRPatient extends FHIRResource implements VersionContainedTypeInterface
      *
      * An identifier that applies to this person as a patient.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -657,11 +661,14 @@ class FHIRPatient extends FHIRResource implements VersionContainedTypeInterface
      * A contact detail (e.g. a telephone number or an email address) by which the
      * individual may be contacted.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $telecom
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact $telecom
      * @return static
      */
-    public function addTelecom(FHIRContact $telecom): self
+    public function addTelecom(FHIRString|FHIRContact $telecom): self
     {
+        if (!($telecom instanceof FHIRContact)) {
+            $telecom = new FHIRContact(value: $telecom);
+        }
         if (!isset($this->telecom)) {
             $this->telecom = [];
         }
@@ -678,10 +685,10 @@ class FHIRPatient extends FHIRResource implements VersionContainedTypeInterface
      * A contact detail (e.g. a telephone number or an email address) by which the
      * individual may be contacted.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact ...$telecom
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRContact ...$telecom
      * @return static
      */
-    public function setTelecom(FHIRContact ...$telecom): self
+    public function setTelecom(FHIRString|FHIRContact ...$telecom): self
     {
         if ([] === $telecom) {
             unset($this->telecom);
@@ -2315,13 +2322,13 @@ class FHIRPatient extends FHIRResource implements VersionContainedTypeInterface
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2329,8 +2336,8 @@ class FHIRPatient extends FHIRResource implements VersionContainedTypeInterface
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -2340,18 +2347,15 @@ class FHIRPatient extends FHIRResource implements VersionContainedTypeInterface
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addName(FHIRHumanName::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addName(FHIRHumanName::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TELECOM]) || isset($json[self::FIELD_TELECOM_EXT]) || array_key_exists(self::FIELD_TELECOM, $json) || array_key_exists(self::FIELD_TELECOM_EXT, $json)) {
-            $value = $json[self::FIELD_TELECOM] ?? null;
+        if (isset($json[self::FIELD_TELECOM])
+            || isset($json[self::FIELD_TELECOM_EXT])
+            || array_key_exists(self::FIELD_TELECOM, $json)
+            || array_key_exists(self::FIELD_TELECOM_EXT, $json)) {
+            $value = (array)($json[self::FIELD_TELECOM] ?? []);
             $ext = (array)($json[self::FIELD_TELECOM_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -2359,39 +2363,42 @@ class FHIRPatient extends FHIRResource implements VersionContainedTypeInterface
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addTelecom(FHIRContact::jsonUnserialize(
-                    json: [FHIRContact::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRContact::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
         if (isset($json[self::FIELD_GENDER]) || array_key_exists(self::FIELD_GENDER, $json)) {
-            $type->setGender(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_GENDER],
-                config: $config,
-            ));
+            $type->setGender(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_GENDER], $config));
         }
-        if (isset($json[self::FIELD_BIRTH_DATE]) || isset($json[self::FIELD_BIRTH_DATE_EXT]) || array_key_exists(self::FIELD_BIRTH_DATE, $json) || array_key_exists(self::FIELD_BIRTH_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_BIRTH_DATE])
+            || isset($json[self::FIELD_BIRTH_DATE_EXT])
+            || array_key_exists(self::FIELD_BIRTH_DATE, $json)
+            || array_key_exists(self::FIELD_BIRTH_DATE_EXT, $json)) {
             $value = $json[self::FIELD_BIRTH_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_BIRTH_DATE_EXT] ?? []);
             $type->setBirthDate(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_BIRTH_DATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DECEASED_BOOLEAN]) || isset($json[self::FIELD_DECEASED_BOOLEAN_EXT]) || array_key_exists(self::FIELD_DECEASED_BOOLEAN, $json) || array_key_exists(self::FIELD_DECEASED_BOOLEAN_EXT, $json)) {
+        if (isset($json[self::FIELD_DECEASED_BOOLEAN])
+            || isset($json[self::FIELD_DECEASED_BOOLEAN_EXT])
+            || array_key_exists(self::FIELD_DECEASED_BOOLEAN, $json)
+            || array_key_exists(self::FIELD_DECEASED_BOOLEAN_EXT, $json)) {
             $value = $json[self::FIELD_DECEASED_BOOLEAN] ?? null;
-            $ext = (array)($json[self::FIELD_DECEASED_BOOLEAN_EXT] ?? []);
             $type->setDeceasedBoolean(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_DECEASED_BOOLEAN_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DECEASED_DATE_TIME]) || isset($json[self::FIELD_DECEASED_DATE_TIME_EXT]) || array_key_exists(self::FIELD_DECEASED_DATE_TIME, $json) || array_key_exists(self::FIELD_DECEASED_DATE_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_DECEASED_DATE_TIME])
+            || isset($json[self::FIELD_DECEASED_DATE_TIME_EXT])
+            || array_key_exists(self::FIELD_DECEASED_DATE_TIME, $json)
+            || array_key_exists(self::FIELD_DECEASED_DATE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_DECEASED_DATE_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_DECEASED_DATE_TIME_EXT] ?? []);
             $type->setDeceasedDateTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DECEASED_DATE_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ADDRESS]) || array_key_exists(self::FIELD_ADDRESS, $json)) {
@@ -2400,32 +2407,30 @@ class FHIRPatient extends FHIRResource implements VersionContainedTypeInterface
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAddress(FHIRAddress::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAddress(FHIRAddress::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_MARITAL_STATUS]) || array_key_exists(self::FIELD_MARITAL_STATUS, $json)) {
-            $type->setMaritalStatus(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_MARITAL_STATUS],
-                config: $config,
-            ));
+            $type->setMaritalStatus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_MARITAL_STATUS], $config));
         }
-        if (isset($json[self::FIELD_MULTIPLE_BIRTH_BOOLEAN]) || isset($json[self::FIELD_MULTIPLE_BIRTH_BOOLEAN_EXT]) || array_key_exists(self::FIELD_MULTIPLE_BIRTH_BOOLEAN, $json) || array_key_exists(self::FIELD_MULTIPLE_BIRTH_BOOLEAN_EXT, $json)) {
+        if (isset($json[self::FIELD_MULTIPLE_BIRTH_BOOLEAN])
+            || isset($json[self::FIELD_MULTIPLE_BIRTH_BOOLEAN_EXT])
+            || array_key_exists(self::FIELD_MULTIPLE_BIRTH_BOOLEAN, $json)
+            || array_key_exists(self::FIELD_MULTIPLE_BIRTH_BOOLEAN_EXT, $json)) {
             $value = $json[self::FIELD_MULTIPLE_BIRTH_BOOLEAN] ?? null;
-            $ext = (array)($json[self::FIELD_MULTIPLE_BIRTH_BOOLEAN_EXT] ?? []);
             $type->setMultipleBirthBoolean(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_MULTIPLE_BIRTH_BOOLEAN_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_MULTIPLE_BIRTH_INTEGER]) || isset($json[self::FIELD_MULTIPLE_BIRTH_INTEGER_EXT]) || array_key_exists(self::FIELD_MULTIPLE_BIRTH_INTEGER, $json) || array_key_exists(self::FIELD_MULTIPLE_BIRTH_INTEGER_EXT, $json)) {
+        if (isset($json[self::FIELD_MULTIPLE_BIRTH_INTEGER])
+            || isset($json[self::FIELD_MULTIPLE_BIRTH_INTEGER_EXT])
+            || array_key_exists(self::FIELD_MULTIPLE_BIRTH_INTEGER, $json)
+            || array_key_exists(self::FIELD_MULTIPLE_BIRTH_INTEGER_EXT, $json)) {
             $value = $json[self::FIELD_MULTIPLE_BIRTH_INTEGER] ?? null;
-            $ext = (array)($json[self::FIELD_MULTIPLE_BIRTH_INTEGER_EXT] ?? []);
             $type->setMultipleBirthInteger(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_MULTIPLE_BIRTH_INTEGER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PHOTO]) || array_key_exists(self::FIELD_PHOTO, $json)) {
@@ -2434,10 +2439,7 @@ class FHIRPatient extends FHIRResource implements VersionContainedTypeInterface
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPhoto(FHIRAttachment::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPhoto(FHIRAttachment::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CONTACT]) || array_key_exists(self::FIELD_CONTACT, $json)) {
@@ -2446,17 +2448,11 @@ class FHIRPatient extends FHIRResource implements VersionContainedTypeInterface
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addContact(FHIRPatientContact::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addContact(FHIRPatientContact::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ANIMAL]) || array_key_exists(self::FIELD_ANIMAL, $json)) {
-            $type->setAnimal(FHIRPatientAnimal::jsonUnserialize(
-                json: $json[self::FIELD_ANIMAL],
-                config: $config,
-            ));
+            $type->setAnimal(FHIRPatientAnimal::jsonUnserialize($json[self::FIELD_ANIMAL], $config));
         }
         if (isset($json[self::FIELD_COMMUNICATION]) || array_key_exists(self::FIELD_COMMUNICATION, $json)) {
             $vs = $json[self::FIELD_COMMUNICATION];
@@ -2464,10 +2460,7 @@ class FHIRPatient extends FHIRResource implements VersionContainedTypeInterface
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCommunication(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCommunication(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CARE_PROVIDER]) || array_key_exists(self::FIELD_CARE_PROVIDER, $json)) {
@@ -2476,17 +2469,11 @@ class FHIRPatient extends FHIRResource implements VersionContainedTypeInterface
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCareProvider(FHIRResourceReference::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCareProvider(FHIRResourceReference::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_MANAGING_ORGANIZATION]) || array_key_exists(self::FIELD_MANAGING_ORGANIZATION, $json)) {
-            $type->setManagingOrganization(FHIRResourceReference::jsonUnserialize(
-                json: $json[self::FIELD_MANAGING_ORGANIZATION],
-                config: $config,
-            ));
+            $type->setManagingOrganization(FHIRResourceReference::jsonUnserialize($json[self::FIELD_MANAGING_ORGANIZATION], $config));
         }
         if (isset($json[self::FIELD_LINK]) || array_key_exists(self::FIELD_LINK, $json)) {
             $vs = $json[self::FIELD_LINK];
@@ -2494,18 +2481,17 @@ class FHIRPatient extends FHIRResource implements VersionContainedTypeInterface
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addLink(FHIRPatientLink::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addLink(FHIRPatientLink::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_ACTIVE]) || isset($json[self::FIELD_ACTIVE_EXT]) || array_key_exists(self::FIELD_ACTIVE, $json) || array_key_exists(self::FIELD_ACTIVE_EXT, $json)) {
+        if (isset($json[self::FIELD_ACTIVE])
+            || isset($json[self::FIELD_ACTIVE_EXT])
+            || array_key_exists(self::FIELD_ACTIVE, $json)
+            || array_key_exists(self::FIELD_ACTIVE_EXT, $json)) {
             $value = $json[self::FIELD_ACTIVE] ?? null;
-            $ext = (array)($json[self::FIELD_ACTIVE_EXT] ?? []);
             $type->setActive(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_ACTIVE_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

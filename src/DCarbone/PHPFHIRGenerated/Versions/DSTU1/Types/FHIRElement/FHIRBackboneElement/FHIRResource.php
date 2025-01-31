@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -598,20 +598,19 @@ class FHIRResource extends FHIRBackboneElement implements ResourceTypeInterface
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_LANGUAGE]) || isset($json[self::FIELD_LANGUAGE_EXT]) || array_key_exists(self::FIELD_LANGUAGE, $json) || array_key_exists(self::FIELD_LANGUAGE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_LANGUAGE])
+            || isset($json[self::FIELD_LANGUAGE_EXT])
+            || array_key_exists(self::FIELD_LANGUAGE, $json)
+            || array_key_exists(self::FIELD_LANGUAGE_EXT, $json)) {
             $value = $json[self::FIELD_LANGUAGE] ?? null;
-            $ext = (array)($json[self::FIELD_LANGUAGE_EXT] ?? []);
             $type->setLanguage(FHIRCode::jsonUnserialize(
-                json: [FHIRCode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_LANGUAGE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_TEXT]) || array_key_exists(self::FIELD_TEXT, $json)) {
-            $type->setText(FHIRNarrative::jsonUnserialize(
-                json: $json[self::FIELD_TEXT],
-                config: $config,
-            ));
+            $type->setText(FHIRNarrative::jsonUnserialize($json[self::FIELD_TEXT], $config));
         }
         if (isset($json[self::FIELD_CONTAINED])) {
             $d = $json[self::FIELD_CONTAINED];
@@ -621,10 +620,7 @@ class FHIRResource extends FHIRBackboneElement implements ResourceTypeInterface
             foreach($d as $v) {
                 $typeClassName = VersionTypeMap::getContainedTypeClassNameFromArray($v);
                 unset($v[Constants::JSON_FIELD_RESOURCE_TYPE]);
-                $type->addContained($typeClassName::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addContained($typeClassName::jsonUnserialize($v, $config));
             }
         }
         return $type;

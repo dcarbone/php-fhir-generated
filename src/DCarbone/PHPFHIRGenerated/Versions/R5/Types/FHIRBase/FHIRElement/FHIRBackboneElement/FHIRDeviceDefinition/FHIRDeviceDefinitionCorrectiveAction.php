@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,6 +95,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceCorrectiveActionScope;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceCorrectiveActionScopeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -170,7 +171,7 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $recall
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceCorrectiveActionScope $scope
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceCorrectiveActionScopeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceCorrectiveActionScope $scope
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $period
      * @param null|string[] $fhirComments
      */
@@ -178,7 +179,7 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $recall = null,
-                                null|FHIRDeviceCorrectiveActionScope $scope = null,
+                                null|string|FHIRDeviceCorrectiveActionScopeEnum|FHIRDeviceCorrectiveActionScope $scope = null,
                                 null|FHIRPeriod $period = null,
                                 null|iterable $fhirComments = null)
     {
@@ -292,16 +293,19 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
      * given device model, or only a specific set of batches identified by lot numbers,
      * or individually identified devices identified by the serial name.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceCorrectiveActionScope $scope
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceCorrectiveActionScopeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceCorrectiveActionScope $scope
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setScope(null|FHIRDeviceCorrectiveActionScope $scope,
+    public function setScope(null|string|FHIRDeviceCorrectiveActionScopeEnum|FHIRDeviceCorrectiveActionScope $scope,
                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $scope) {
             unset($this->scope);
             return $this;
+        }
+        if (!($scope instanceof FHIRDeviceCorrectiveActionScope)) {
+            $scope = new FHIRDeviceCorrectiveActionScope(value: $scope);
         }
         $this->scope = $scope;
         if ($this->_valueXMLLocations[self::FIELD_SCOPE] !== $valueXMLLocation) {
@@ -598,36 +602,29 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_RECALL]) || isset($json[self::FIELD_RECALL_EXT]) || array_key_exists(self::FIELD_RECALL, $json) || array_key_exists(self::FIELD_RECALL_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_RECALL])
+            || isset($json[self::FIELD_RECALL_EXT])
+            || array_key_exists(self::FIELD_RECALL, $json)
+            || array_key_exists(self::FIELD_RECALL_EXT, $json)) {
             $value = $json[self::FIELD_RECALL] ?? null;
-            $ext = (array)($json[self::FIELD_RECALL_EXT] ?? []);
             $type->setRecall(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_RECALL_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SCOPE]) || isset($json[self::FIELD_SCOPE_EXT]) || array_key_exists(self::FIELD_SCOPE, $json) || array_key_exists(self::FIELD_SCOPE_EXT, $json)) {
+        if (isset($json[self::FIELD_SCOPE])
+            || isset($json[self::FIELD_SCOPE_EXT])
+            || array_key_exists(self::FIELD_SCOPE, $json)
+            || array_key_exists(self::FIELD_SCOPE_EXT, $json)) {
             $value = $json[self::FIELD_SCOPE] ?? null;
-            $ext = (array)($json[self::FIELD_SCOPE_EXT] ?? []);
             $type->setScope(FHIRDeviceCorrectiveActionScope::jsonUnserialize(
-                json: [FHIRDeviceCorrectiveActionScope::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDeviceCorrectiveActionScope::FIELD_VALUE => $value]) + ($json[self::FIELD_SCOPE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PERIOD]) || array_key_exists(self::FIELD_PERIOD, $json)) {
-            $type->setPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_PERIOD],
-                config: $config,
-            ));
+            $type->setPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_PERIOD], $config));
         }
         return $type;
     }

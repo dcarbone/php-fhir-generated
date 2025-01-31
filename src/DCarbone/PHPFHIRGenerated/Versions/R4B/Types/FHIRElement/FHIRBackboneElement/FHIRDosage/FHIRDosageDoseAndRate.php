@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -718,50 +718,24 @@ class FHIRDosageDoseAndRate extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
         if (isset($json[self::FIELD_DOSE_RANGE]) || array_key_exists(self::FIELD_DOSE_RANGE, $json)) {
-            $type->setDoseRange(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_DOSE_RANGE],
-                config: $config,
-            ));
+            $type->setDoseRange(FHIRRange::jsonUnserialize($json[self::FIELD_DOSE_RANGE], $config));
         }
         if (isset($json[self::FIELD_DOSE_QUANTITY]) || array_key_exists(self::FIELD_DOSE_QUANTITY, $json)) {
-            $type->setDoseQuantity(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_DOSE_QUANTITY],
-                config: $config,
-            ));
+            $type->setDoseQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_DOSE_QUANTITY], $config));
         }
         if (isset($json[self::FIELD_RATE_RATIO]) || array_key_exists(self::FIELD_RATE_RATIO, $json)) {
-            $type->setRateRatio(FHIRRatio::jsonUnserialize(
-                json: $json[self::FIELD_RATE_RATIO],
-                config: $config,
-            ));
+            $type->setRateRatio(FHIRRatio::jsonUnserialize($json[self::FIELD_RATE_RATIO], $config));
         }
         if (isset($json[self::FIELD_RATE_RANGE]) || array_key_exists(self::FIELD_RATE_RANGE, $json)) {
-            $type->setRateRange(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_RATE_RANGE],
-                config: $config,
-            ));
+            $type->setRateRange(FHIRRange::jsonUnserialize($json[self::FIELD_RATE_RANGE], $config));
         }
         if (isset($json[self::FIELD_RATE_QUANTITY]) || array_key_exists(self::FIELD_RATE_QUANTITY, $json)) {
-            $type->setRateQuantity(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_RATE_QUANTITY],
-                config: $config,
-            ));
+            $type->setRateQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_RATE_QUANTITY], $config));
         }
         return $type;
     }

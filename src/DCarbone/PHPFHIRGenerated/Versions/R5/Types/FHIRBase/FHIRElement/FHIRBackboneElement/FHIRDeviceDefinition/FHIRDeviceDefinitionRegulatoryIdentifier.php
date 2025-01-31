@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,6 +94,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceDefinitionRegulatoryIdentifierType;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceDefinitionRegulatoryIdentifierTypeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -189,7 +190,7 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceDefinitionRegulatoryIdentifierType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceDefinitionRegulatoryIdentifierTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceDefinitionRegulatoryIdentifierType $type
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString $deviceIdentifier
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $issuer
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri $jurisdiction
@@ -198,7 +199,7 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRDeviceDefinitionRegulatoryIdentifierType $type = null,
+                                null|string|FHIRDeviceDefinitionRegulatoryIdentifierTypeEnum|FHIRDeviceDefinitionRegulatoryIdentifierType $type = null,
                                 null|string|FHIRStringPrimitive|FHIRString $deviceIdentifier = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $issuer = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $jurisdiction = null,
@@ -249,16 +250,19 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
      *
      * The type of identifier itself.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceDefinitionRegulatoryIdentifierType $type
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRDeviceDefinitionRegulatoryIdentifierTypeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDeviceDefinitionRegulatoryIdentifierType $type
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setType(null|FHIRDeviceDefinitionRegulatoryIdentifierType $type,
+    public function setType(null|string|FHIRDeviceDefinitionRegulatoryIdentifierTypeEnum|FHIRDeviceDefinitionRegulatoryIdentifierType $type,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $type) {
             unset($this->type);
             return $this;
+        }
+        if (!($type instanceof FHIRDeviceDefinitionRegulatoryIdentifierType)) {
+            $type = new FHIRDeviceDefinitionRegulatoryIdentifierType(value: $type);
         }
         $this->type = $type;
         if ($this->_valueXMLLocations[self::FIELD_TYPE] !== $valueXMLLocation) {
@@ -774,45 +778,45 @@ class FHIRDeviceDefinitionRegulatoryIdentifier extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_TYPE])
+            || isset($json[self::FIELD_TYPE_EXT])
+            || array_key_exists(self::FIELD_TYPE, $json)
+            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
             $type->setType(FHIRDeviceDefinitionRegulatoryIdentifierType::jsonUnserialize(
-                json: [FHIRDeviceDefinitionRegulatoryIdentifierType::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDeviceDefinitionRegulatoryIdentifierType::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DEVICE_IDENTIFIER]) || isset($json[self::FIELD_DEVICE_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_DEVICE_IDENTIFIER, $json) || array_key_exists(self::FIELD_DEVICE_IDENTIFIER_EXT, $json)) {
+        if (isset($json[self::FIELD_DEVICE_IDENTIFIER])
+            || isset($json[self::FIELD_DEVICE_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_DEVICE_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_DEVICE_IDENTIFIER_EXT, $json)) {
             $value = $json[self::FIELD_DEVICE_IDENTIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_DEVICE_IDENTIFIER_EXT] ?? []);
             $type->setDeviceIdentifier(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DEVICE_IDENTIFIER_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ISSUER]) || isset($json[self::FIELD_ISSUER_EXT]) || array_key_exists(self::FIELD_ISSUER, $json) || array_key_exists(self::FIELD_ISSUER_EXT, $json)) {
+        if (isset($json[self::FIELD_ISSUER])
+            || isset($json[self::FIELD_ISSUER_EXT])
+            || array_key_exists(self::FIELD_ISSUER, $json)
+            || array_key_exists(self::FIELD_ISSUER_EXT, $json)) {
             $value = $json[self::FIELD_ISSUER] ?? null;
-            $ext = (array)($json[self::FIELD_ISSUER_EXT] ?? []);
             $type->setIssuer(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_ISSUER_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_JURISDICTION]) || isset($json[self::FIELD_JURISDICTION_EXT]) || array_key_exists(self::FIELD_JURISDICTION, $json) || array_key_exists(self::FIELD_JURISDICTION_EXT, $json)) {
+        if (isset($json[self::FIELD_JURISDICTION])
+            || isset($json[self::FIELD_JURISDICTION_EXT])
+            || array_key_exists(self::FIELD_JURISDICTION, $json)
+            || array_key_exists(self::FIELD_JURISDICTION_EXT, $json)) {
             $value = $json[self::FIELD_JURISDICTION] ?? null;
-            $ext = (array)($json[self::FIELD_JURISDICTION_EXT] ?? []);
             $type->setJurisdiction(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_JURISDICTION_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

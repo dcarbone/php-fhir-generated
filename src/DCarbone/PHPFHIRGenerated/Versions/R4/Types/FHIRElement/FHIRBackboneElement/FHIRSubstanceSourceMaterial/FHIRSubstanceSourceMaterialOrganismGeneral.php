@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -561,38 +561,18 @@ class FHIRSubstanceSourceMaterialOrganismGeneral extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_KINGDOM]) || array_key_exists(self::FIELD_KINGDOM, $json)) {
-            $type->setKingdom(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_KINGDOM],
-                config: $config,
-            ));
+            $type->setKingdom(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_KINGDOM], $config));
         }
         if (isset($json[self::FIELD_PHYLUM]) || array_key_exists(self::FIELD_PHYLUM, $json)) {
-            $type->setPhylum(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_PHYLUM],
-                config: $config,
-            ));
+            $type->setPhylum(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_PHYLUM], $config));
         }
         if (isset($json[self::FIELD_CLASS]) || array_key_exists(self::FIELD_CLASS, $json)) {
-            $type->setClass(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CLASS],
-                config: $config,
-            ));
+            $type->setClass(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CLASS], $config));
         }
         if (isset($json[self::FIELD_ORDER]) || array_key_exists(self::FIELD_ORDER, $json)) {
-            $type->setOrder(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_ORDER],
-                config: $config,
-            ));
+            $type->setOrder(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ORDER], $config));
         }
         return $type;
     }

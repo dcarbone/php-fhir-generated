@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -572,25 +572,14 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_AREA_UNDER_CURVE]) || array_key_exists(self::FIELD_AREA_UNDER_CURVE, $json)) {
             $vs = $json[self::FIELD_AREA_UNDER_CURVE];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAreaUnderCurve(FHIRQuantity::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAreaUnderCurve(FHIRQuantity::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_LETHAL_DOSE_50]) || array_key_exists(self::FIELD_LETHAL_DOSE_50, $json)) {
@@ -599,17 +588,11 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addLethalDose50(FHIRQuantity::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addLethalDose50(FHIRQuantity::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_HALF_LIFE_PERIOD]) || array_key_exists(self::FIELD_HALF_LIFE_PERIOD, $json)) {
-            $type->setHalfLifePeriod(FHIRDuration::jsonUnserialize(
-                json: $json[self::FIELD_HALF_LIFE_PERIOD],
-                config: $config,
-            ));
+            $type->setHalfLifePeriod(FHIRDuration::jsonUnserialize($json[self::FIELD_HALF_LIFE_PERIOD], $config));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,6 +104,8 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPermiss
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRResource\FHIRDomainResource;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPermissionRuleCombiningEnum;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPermissionStatusEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer;
@@ -230,12 +232,12 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRResourceContainer[]|\DCarbone\PHPFHIRGenerated\Versions\R5\VersionContainedTypeInterface[] $contained
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPermissionStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPermissionStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPermissionStatus $status
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRReference $asserter
      * @param null|string[]|\DateTimeInterface[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime[] $date
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod $validity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionJustification $justification
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPermissionRuleCombining $combining
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPermissionRuleCombiningEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPermissionRuleCombining $combining
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionRule[] $rule
      * @param null|string[] $fhirComments
      */
@@ -247,12 +249,12 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
                                 null|iterable $contained = null,
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRPermissionStatus $status = null,
+                                null|string|FHIRPermissionStatusEnum|FHIRPermissionStatus $status = null,
                                 null|FHIRReference $asserter = null,
                                 null|iterable $date = null,
                                 null|FHIRPeriod $validity = null,
                                 null|FHIRPermissionJustification $justification = null,
-                                null|FHIRPermissionRuleCombining $combining = null,
+                                null|string|FHIRPermissionRuleCombiningEnum|FHIRPermissionRuleCombining $combining = null,
                                 null|iterable $rule = null,
                                 null|iterable $fhirComments = null)
     {
@@ -324,16 +326,19 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Status.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPermissionStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPermissionStatusEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPermissionStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRPermissionStatus $status,
+    public function setStatus(null|string|FHIRPermissionStatusEnum|FHIRPermissionStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRPermissionStatus)) {
+            $status = new FHIRPermissionStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -567,16 +572,19 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
      *
      * Defines a procedure for arriving at an access decision given the set of rules.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPermissionRuleCombining $combining
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRPermissionRuleCombiningEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRPermissionRuleCombining $combining
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCombining(null|FHIRPermissionRuleCombining $combining,
+    public function setCombining(null|string|FHIRPermissionRuleCombiningEnum|FHIRPermissionRuleCombining $combining,
                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $combining) {
             unset($this->combining);
             return $this;
+        }
+        if (!($combining instanceof FHIRPermissionRuleCombining)) {
+            $combining = new FHIRPermissionRuleCombining(value: $combining);
         }
         $this->combining = $combining;
         if ($this->_valueXMLLocations[self::FIELD_COMBINING] !== $valueXMLLocation) {
@@ -1109,27 +1117,26 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRPermissionStatus::jsonUnserialize(
-                json: [FHIRPermissionStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPermissionStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ASSERTER]) || array_key_exists(self::FIELD_ASSERTER, $json)) {
-            $type->setAsserter(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_ASSERTER],
-                config: $config,
-            ));
+            $type->setAsserter(FHIRReference::jsonUnserialize($json[self::FIELD_ASSERTER], $config));
         }
-        if (isset($json[self::FIELD_DATE]) || isset($json[self::FIELD_DATE_EXT]) || array_key_exists(self::FIELD_DATE, $json) || array_key_exists(self::FIELD_DATE_EXT, $json)) {
-            $value = $json[self::FIELD_DATE] ?? null;
+        if (isset($json[self::FIELD_DATE])
+            || isset($json[self::FIELD_DATE_EXT])
+            || array_key_exists(self::FIELD_DATE, $json)
+            || array_key_exists(self::FIELD_DATE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_DATE] ?? []);
             $ext = (array)($json[self::FIELD_DATE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1137,29 +1144,25 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addDate(FHIRDateTime::jsonUnserialize(
-                    json: [FHIRDateTime::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRDateTime::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
         if (isset($json[self::FIELD_VALIDITY]) || array_key_exists(self::FIELD_VALIDITY, $json)) {
-            $type->setValidity(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_VALIDITY],
-                config: $config,
-            ));
+            $type->setValidity(FHIRPeriod::jsonUnserialize($json[self::FIELD_VALIDITY], $config));
         }
         if (isset($json[self::FIELD_JUSTIFICATION]) || array_key_exists(self::FIELD_JUSTIFICATION, $json)) {
-            $type->setJustification(FHIRPermissionJustification::jsonUnserialize(
-                json: $json[self::FIELD_JUSTIFICATION],
-                config: $config,
-            ));
+            $type->setJustification(FHIRPermissionJustification::jsonUnserialize($json[self::FIELD_JUSTIFICATION], $config));
         }
-        if (isset($json[self::FIELD_COMBINING]) || isset($json[self::FIELD_COMBINING_EXT]) || array_key_exists(self::FIELD_COMBINING, $json) || array_key_exists(self::FIELD_COMBINING_EXT, $json)) {
+        if (isset($json[self::FIELD_COMBINING])
+            || isset($json[self::FIELD_COMBINING_EXT])
+            || array_key_exists(self::FIELD_COMBINING, $json)
+            || array_key_exists(self::FIELD_COMBINING_EXT, $json)) {
             $value = $json[self::FIELD_COMBINING] ?? null;
-            $ext = (array)($json[self::FIELD_COMBINING_EXT] ?? []);
             $type->setCombining(FHIRPermissionRuleCombining::jsonUnserialize(
-                json: [FHIRPermissionRuleCombining::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPermissionRuleCombining::FIELD_VALUE => $value]) + ($json[self::FIELD_COMBINING_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_RULE]) || array_key_exists(self::FIELD_RULE, $json)) {
@@ -1168,10 +1171,7 @@ class FHIRPermission extends FHIRDomainResource implements VersionContainedTypeI
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRule(FHIRPermissionRule::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRule(FHIRPermissionRule::jsonUnserialize($v, $config));
             }
         }
         return $type;

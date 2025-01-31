@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -500,20 +500,9 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_ATTACHMENT]) || array_key_exists(self::FIELD_ATTACHMENT, $json)) {
-            $type->setAttachment(FHIRAttachment::jsonUnserialize(
-                json: $json[self::FIELD_ATTACHMENT],
-                config: $config,
-            ));
+            $type->setAttachment(FHIRAttachment::jsonUnserialize($json[self::FIELD_ATTACHMENT], $config));
         }
         if (isset($json[self::FIELD_PROFILE]) || array_key_exists(self::FIELD_PROFILE, $json)) {
             $vs = $json[self::FIELD_PROFILE];
@@ -521,10 +510,7 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addProfile(FHIRDocumentReferenceProfile::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addProfile(FHIRDocumentReferenceProfile::jsonUnserialize($v, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -872,21 +872,15 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
@@ -895,30 +889,23 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addNote(FHIRAnnotation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
         if (isset($json[self::FIELD_RATING]) || array_key_exists(self::FIELD_RATING, $json)) {
-            $type->setRating(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_RATING],
-                config: $config,
-            ));
+            $type->setRating(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_RATING], $config));
         }
-        if (isset($json[self::FIELD_RATER]) || isset($json[self::FIELD_RATER_EXT]) || array_key_exists(self::FIELD_RATER, $json) || array_key_exists(self::FIELD_RATER_EXT, $json)) {
+        if (isset($json[self::FIELD_RATER])
+            || isset($json[self::FIELD_RATER_EXT])
+            || array_key_exists(self::FIELD_RATER, $json)
+            || array_key_exists(self::FIELD_RATER_EXT, $json)) {
             $value = $json[self::FIELD_RATER] ?? null;
-            $ext = (array)($json[self::FIELD_RATER_EXT] ?? []);
             $type->setRater(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_RATER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SUBCOMPONENT]) || array_key_exists(self::FIELD_SUBCOMPONENT, $json)) {
@@ -927,10 +914,7 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSubcomponent(FHIREvidenceCertainty::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSubcomponent(FHIREvidenceCertainty::jsonUnserialize($v, $config));
             }
         }
         return $type;

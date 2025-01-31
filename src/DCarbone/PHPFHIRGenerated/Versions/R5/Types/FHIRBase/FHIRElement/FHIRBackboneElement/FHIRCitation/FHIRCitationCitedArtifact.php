@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,6 +94,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataTyp
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
@@ -326,15 +327,15 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $relatedIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[] $relatedIdentifier
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDateTime $dateAccessed
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationVersion $version
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationVersion $version
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[] $currentState
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationStatusDate1[] $statusDate
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationTitle[] $title
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAbstract[] $abstract
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPart $part
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPart $part
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationRelatesTo[] $relatesTo
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPublicationForm[] $publicationForm
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationWebLocation[] $webLocation
@@ -349,12 +350,12 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
                                 null|iterable $identifier = null,
                                 null|iterable $relatedIdentifier = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $dateAccessed = null,
-                                null|FHIRCitationVersion $version = null,
+                                null|FHIRString|FHIRCitationVersion $version = null,
                                 null|iterable $currentState = null,
                                 null|iterable $statusDate = null,
                                 null|iterable $title = null,
                                 null|iterable $abstract = null,
-                                null|FHIRCitationPart $part = null,
+                                null|FHIRString|FHIRCitationPart $part = null,
                                 null|iterable $relatesTo = null,
                                 null|iterable $publicationForm = null,
                                 null|iterable $webLocation = null,
@@ -462,11 +463,14 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -484,10 +488,10 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -540,11 +544,14 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * A formal identifier that is used to identify things closely related to the cited
      * artifact.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $relatedIdentifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier $relatedIdentifier
      * @return static
      */
-    public function addRelatedIdentifier(FHIRIdentifier $relatedIdentifier): self
+    public function addRelatedIdentifier(FHIRString|FHIRIdentifier $relatedIdentifier): self
     {
+        if (!($relatedIdentifier instanceof FHIRIdentifier)) {
+            $relatedIdentifier = new FHIRIdentifier(value: $relatedIdentifier);
+        }
         if (!isset($this->relatedIdentifier)) {
             $this->relatedIdentifier = [];
         }
@@ -561,10 +568,10 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * A formal identifier that is used to identify things closely related to the cited
      * artifact.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$relatedIdentifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$relatedIdentifier
      * @return static
      */
-    public function setRelatedIdentifier(FHIRIdentifier ...$relatedIdentifier): self
+    public function setRelatedIdentifier(FHIRString|FHIRIdentifier ...$relatedIdentifier): self
     {
         if ([] === $relatedIdentifier) {
             unset($this->relatedIdentifier);
@@ -678,16 +685,19 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      *
      * The defined version of the cited artifact.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationVersion $version
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationVersion $version
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setVersion(null|FHIRCitationVersion $version,
+    public function setVersion(null|FHIRString|FHIRCitationVersion $version,
                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $version) {
             unset($this->version);
             return $this;
+        }
+        if (!($version instanceof FHIRCitationVersion)) {
+            $version = new FHIRCitationVersion(value: $version);
         }
         $this->version = $version;
         if ($this->_valueXMLLocations[self::FIELD_VERSION] !== $valueXMLLocation) {
@@ -1017,16 +1027,19 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      *
      * The component of the article or artifact.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPart $part
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPart $part
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPart(null|FHIRCitationPart $part,
+    public function setPart(null|FHIRString|FHIRCitationPart $part,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $part) {
             unset($this->part);
             return $this;
+        }
+        if (!($part instanceof FHIRCitationPart)) {
+            $part = new FHIRCitationPart(value: $part);
         }
         $this->part = $part;
         if ($this->_valueXMLLocations[self::FIELD_PART] !== $valueXMLLocation) {
@@ -1918,21 +1931,13 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1940,17 +1945,17 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_RELATED_IDENTIFIER]) || isset($json[self::FIELD_RELATED_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_RELATED_IDENTIFIER, $json) || array_key_exists(self::FIELD_RELATED_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_RELATED_IDENTIFIER] ?? null;
+        if (isset($json[self::FIELD_RELATED_IDENTIFIER])
+            || isset($json[self::FIELD_RELATED_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_RELATED_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_RELATED_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_RELATED_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_RELATED_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1958,25 +1963,29 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addRelatedIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
-        if (isset($json[self::FIELD_DATE_ACCESSED]) || isset($json[self::FIELD_DATE_ACCESSED_EXT]) || array_key_exists(self::FIELD_DATE_ACCESSED, $json) || array_key_exists(self::FIELD_DATE_ACCESSED_EXT, $json)) {
+        if (isset($json[self::FIELD_DATE_ACCESSED])
+            || isset($json[self::FIELD_DATE_ACCESSED_EXT])
+            || array_key_exists(self::FIELD_DATE_ACCESSED, $json)
+            || array_key_exists(self::FIELD_DATE_ACCESSED_EXT, $json)) {
             $value = $json[self::FIELD_DATE_ACCESSED] ?? null;
-            $ext = (array)($json[self::FIELD_DATE_ACCESSED_EXT] ?? []);
             $type->setDateAccessed(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_DATE_ACCESSED_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_VERSION]) || isset($json[self::FIELD_VERSION_EXT]) || array_key_exists(self::FIELD_VERSION, $json) || array_key_exists(self::FIELD_VERSION_EXT, $json)) {
+        if (isset($json[self::FIELD_VERSION])
+            || isset($json[self::FIELD_VERSION_EXT])
+            || array_key_exists(self::FIELD_VERSION, $json)
+            || array_key_exists(self::FIELD_VERSION_EXT, $json)) {
             $value = $json[self::FIELD_VERSION] ?? null;
-            $ext = (array)($json[self::FIELD_VERSION_EXT] ?? []);
             $type->setVersion(FHIRCitationVersion::jsonUnserialize(
-                json: [FHIRCitationVersion::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCitationVersion::FIELD_VALUE => $value]) + ($json[self::FIELD_VERSION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CURRENT_STATE]) || array_key_exists(self::FIELD_CURRENT_STATE, $json)) {
@@ -1985,10 +1994,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCurrentState(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCurrentState(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_STATUS_DATE]) || array_key_exists(self::FIELD_STATUS_DATE, $json)) {
@@ -1997,10 +2003,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addStatusDate(FHIRCitationStatusDate1::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addStatusDate(FHIRCitationStatusDate1::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_TITLE]) || array_key_exists(self::FIELD_TITLE, $json)) {
@@ -2009,10 +2012,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addTitle(FHIRCitationTitle::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addTitle(FHIRCitationTitle::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ABSTRACT]) || array_key_exists(self::FIELD_ABSTRACT, $json)) {
@@ -2021,18 +2021,17 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAbstract(FHIRCitationAbstract::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAbstract(FHIRCitationAbstract::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PART]) || isset($json[self::FIELD_PART_EXT]) || array_key_exists(self::FIELD_PART, $json) || array_key_exists(self::FIELD_PART_EXT, $json)) {
+        if (isset($json[self::FIELD_PART])
+            || isset($json[self::FIELD_PART_EXT])
+            || array_key_exists(self::FIELD_PART, $json)
+            || array_key_exists(self::FIELD_PART_EXT, $json)) {
             $value = $json[self::FIELD_PART] ?? null;
-            $ext = (array)($json[self::FIELD_PART_EXT] ?? []);
             $type->setPart(FHIRCitationPart::jsonUnserialize(
-                json: [FHIRCitationPart::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCitationPart::FIELD_VALUE => $value]) + ($json[self::FIELD_PART_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_RELATES_TO]) || array_key_exists(self::FIELD_RELATES_TO, $json)) {
@@ -2041,10 +2040,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRelatesTo(FHIRCitationRelatesTo::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRelatesTo(FHIRCitationRelatesTo::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PUBLICATION_FORM]) || array_key_exists(self::FIELD_PUBLICATION_FORM, $json)) {
@@ -2053,10 +2049,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPublicationForm(FHIRCitationPublicationForm::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPublicationForm(FHIRCitationPublicationForm::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_WEB_LOCATION]) || array_key_exists(self::FIELD_WEB_LOCATION, $json)) {
@@ -2065,10 +2058,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addWebLocation(FHIRCitationWebLocation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addWebLocation(FHIRCitationWebLocation::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CLASSIFICATION]) || array_key_exists(self::FIELD_CLASSIFICATION, $json)) {
@@ -2077,17 +2067,11 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addClassification(FHIRCitationClassification1::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addClassification(FHIRCitationClassification1::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CONTRIBUTORSHIP]) || array_key_exists(self::FIELD_CONTRIBUTORSHIP, $json)) {
-            $type->setContributorship(FHIRCitationContributorship::jsonUnserialize(
-                json: $json[self::FIELD_CONTRIBUTORSHIP],
-                config: $config,
-            ));
+            $type->setContributorship(FHIRCitationContributorship::jsonUnserialize($json[self::FIELD_CONTRIBUTORSHIP], $config));
         }
         if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
             $vs = $json[self::FIELD_NOTE];
@@ -2095,10 +2079,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addNote(FHIRAnnotation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addNote(FHIRAnnotation::jsonUnserialize($v, $config));
             }
         }
         return $type;

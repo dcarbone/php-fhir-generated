@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRSchedul
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,6 +75,8 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUnitsOfTime;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIREventTimingList;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRUnitsOfTimeList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionConstants;
 
@@ -192,9 +194,9 @@ class FHIRScheduleRepeat extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive $id
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $frequency
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIREventTiming $when
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIREventTimingList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIREventTiming $when
      * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDecimal $duration
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUnitsOfTime $units
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRUnitsOfTimeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUnitsOfTime $units
      * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRInteger $count
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $end
      * @param null|string[] $fhirComments
@@ -202,9 +204,9 @@ class FHIRScheduleRepeat extends FHIRElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $frequency = null,
-                                null|FHIREventTiming $when = null,
+                                null|string|FHIREventTimingList|FHIREventTiming $when = null,
                                 null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $duration = null,
-                                null|FHIRUnitsOfTime $units = null,
+                                null|string|FHIRUnitsOfTimeList|FHIRUnitsOfTime $units = null,
                                 null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $count = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $end = null,
                                 null|iterable $fhirComments = null)
@@ -325,16 +327,19 @@ class FHIRScheduleRepeat extends FHIRElement
      *
      * Identifies the occurrence of daily life that determines timing.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIREventTiming $when
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIREventTimingList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIREventTiming $when
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setWhen(null|FHIREventTiming $when,
+    public function setWhen(null|string|FHIREventTimingList|FHIREventTiming $when,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $when) {
             unset($this->when);
             return $this;
+        }
+        if (!($when instanceof FHIREventTiming)) {
+            $when = new FHIREventTiming(value: $when);
         }
         $this->when = $when;
         if ($this->_valueXMLLocations[self::FIELD_WHEN] !== $valueXMLLocation) {
@@ -450,16 +455,19 @@ class FHIRScheduleRepeat extends FHIRElement
      *
      * The units of time for the duration.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUnitsOfTime $units
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRStringPrimitive\FHIRUnitsOfTimeList|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRUnitsOfTime $units
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setUnits(null|FHIRUnitsOfTime $units,
+    public function setUnits(null|string|FHIRUnitsOfTimeList|FHIRUnitsOfTime $units,
                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $units) {
             unset($this->units);
             return $this;
+        }
+        if (!($units instanceof FHIRUnitsOfTime)) {
+            $units = new FHIRUnitsOfTime(value: $units);
         }
         $this->units = $units;
         if ($this->_valueXMLLocations[self::FIELD_UNITS] !== $valueXMLLocation) {
@@ -951,61 +959,65 @@ class FHIRScheduleRepeat extends FHIRElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_FREQUENCY]) || isset($json[self::FIELD_FREQUENCY_EXT]) || array_key_exists(self::FIELD_FREQUENCY, $json) || array_key_exists(self::FIELD_FREQUENCY_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_FREQUENCY])
+            || isset($json[self::FIELD_FREQUENCY_EXT])
+            || array_key_exists(self::FIELD_FREQUENCY, $json)
+            || array_key_exists(self::FIELD_FREQUENCY_EXT, $json)) {
             $value = $json[self::FIELD_FREQUENCY] ?? null;
-            $ext = (array)($json[self::FIELD_FREQUENCY_EXT] ?? []);
             $type->setFrequency(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_FREQUENCY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_WHEN]) || isset($json[self::FIELD_WHEN_EXT]) || array_key_exists(self::FIELD_WHEN, $json) || array_key_exists(self::FIELD_WHEN_EXT, $json)) {
+        if (isset($json[self::FIELD_WHEN])
+            || isset($json[self::FIELD_WHEN_EXT])
+            || array_key_exists(self::FIELD_WHEN, $json)
+            || array_key_exists(self::FIELD_WHEN_EXT, $json)) {
             $value = $json[self::FIELD_WHEN] ?? null;
-            $ext = (array)($json[self::FIELD_WHEN_EXT] ?? []);
             $type->setWhen(FHIREventTiming::jsonUnserialize(
-                json: [FHIREventTiming::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIREventTiming::FIELD_VALUE => $value]) + ($json[self::FIELD_WHEN_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DURATION]) || isset($json[self::FIELD_DURATION_EXT]) || array_key_exists(self::FIELD_DURATION, $json) || array_key_exists(self::FIELD_DURATION_EXT, $json)) {
+        if (isset($json[self::FIELD_DURATION])
+            || isset($json[self::FIELD_DURATION_EXT])
+            || array_key_exists(self::FIELD_DURATION, $json)
+            || array_key_exists(self::FIELD_DURATION_EXT, $json)) {
             $value = $json[self::FIELD_DURATION] ?? null;
-            $ext = (array)($json[self::FIELD_DURATION_EXT] ?? []);
             $type->setDuration(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_DURATION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_UNITS]) || isset($json[self::FIELD_UNITS_EXT]) || array_key_exists(self::FIELD_UNITS, $json) || array_key_exists(self::FIELD_UNITS_EXT, $json)) {
+        if (isset($json[self::FIELD_UNITS])
+            || isset($json[self::FIELD_UNITS_EXT])
+            || array_key_exists(self::FIELD_UNITS, $json)
+            || array_key_exists(self::FIELD_UNITS_EXT, $json)) {
             $value = $json[self::FIELD_UNITS] ?? null;
-            $ext = (array)($json[self::FIELD_UNITS_EXT] ?? []);
             $type->setUnits(FHIRUnitsOfTime::jsonUnserialize(
-                json: [FHIRUnitsOfTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUnitsOfTime::FIELD_VALUE => $value]) + ($json[self::FIELD_UNITS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_COUNT]) || isset($json[self::FIELD_COUNT_EXT]) || array_key_exists(self::FIELD_COUNT, $json) || array_key_exists(self::FIELD_COUNT_EXT, $json)) {
+        if (isset($json[self::FIELD_COUNT])
+            || isset($json[self::FIELD_COUNT_EXT])
+            || array_key_exists(self::FIELD_COUNT, $json)
+            || array_key_exists(self::FIELD_COUNT_EXT, $json)) {
             $value = $json[self::FIELD_COUNT] ?? null;
-            $ext = (array)($json[self::FIELD_COUNT_EXT] ?? []);
             $type->setCount(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_COUNT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_END]) || isset($json[self::FIELD_END_EXT]) || array_key_exists(self::FIELD_END, $json) || array_key_exists(self::FIELD_END_EXT, $json)) {
+        if (isset($json[self::FIELD_END])
+            || isset($json[self::FIELD_END_EXT])
+            || array_key_exists(self::FIELD_END, $json)
+            || array_key_exists(self::FIELD_END_EXT, $json)) {
             $value = $json[self::FIELD_END] ?? null;
-            $ext = (array)($json[self::FIELD_END_EXT] ?? []);
             $type->setEnd(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_END_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

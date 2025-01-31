@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -604,35 +604,28 @@ class FHIRRequestOrchestrationInput extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_TITLE]) || isset($json[self::FIELD_TITLE_EXT]) || array_key_exists(self::FIELD_TITLE, $json) || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_TITLE])
+            || isset($json[self::FIELD_TITLE_EXT])
+            || array_key_exists(self::FIELD_TITLE, $json)
+            || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
             $value = $json[self::FIELD_TITLE] ?? null;
-            $ext = (array)($json[self::FIELD_TITLE_EXT] ?? []);
             $type->setTitle(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TITLE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_REQUIREMENT]) || array_key_exists(self::FIELD_REQUIREMENT, $json)) {
-            $type->setRequirement(FHIRDataRequirement::jsonUnserialize(
-                json: $json[self::FIELD_REQUIREMENT],
-                config: $config,
-            ));
+            $type->setRequirement(FHIRDataRequirement::jsonUnserialize($json[self::FIELD_REQUIREMENT], $config));
         }
-        if (isset($json[self::FIELD_RELATED_DATA]) || isset($json[self::FIELD_RELATED_DATA_EXT]) || array_key_exists(self::FIELD_RELATED_DATA, $json) || array_key_exists(self::FIELD_RELATED_DATA_EXT, $json)) {
+        if (isset($json[self::FIELD_RELATED_DATA])
+            || isset($json[self::FIELD_RELATED_DATA_EXT])
+            || array_key_exists(self::FIELD_RELATED_DATA, $json)
+            || array_key_exists(self::FIELD_RELATED_DATA_EXT, $json)) {
             $value = $json[self::FIELD_RELATED_DATA] ?? null;
-            $ext = (array)($json[self::FIELD_RELATED_DATA_EXT] ?? []);
             $type->setRelatedData(FHIRId::jsonUnserialize(
-                json: [FHIRId::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRId::FIELD_VALUE => $value]) + ($json[self::FIELD_RELATED_DATA_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

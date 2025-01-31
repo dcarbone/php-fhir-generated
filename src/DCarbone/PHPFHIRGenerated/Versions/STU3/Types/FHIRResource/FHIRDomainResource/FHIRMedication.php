@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRResource\FHIRDomainR
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -71,6 +71,7 @@ use DCarbone\PHPFHIRGenerated\Types\ResourceTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRMedicationStatusList;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRAttachment;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationPackage;
@@ -234,7 +235,7 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCodeableConcept $code
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMedicationStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRMedicationStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMedicationStatus $status
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $isBrand
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBoolean $isOverTheCounter
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $manufacturer
@@ -253,7 +254,7 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
                                 null|iterable $extension = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $code = null,
-                                null|FHIRMedicationStatus $status = null,
+                                null|string|FHIRMedicationStatusList|FHIRMedicationStatus $status = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isBrand = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isOverTheCounter = null,
                                 null|FHIRReference $manufacturer = null,
@@ -381,16 +382,19 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
      *
      * A code to indicate if the medication is in active use.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMedicationStatus $status
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRMedicationStatusList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRMedicationStatus $status
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setStatus(null|FHIRMedicationStatus $status,
+    public function setStatus(null|string|FHIRMedicationStatusList|FHIRMedicationStatus $status,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $status) {
             unset($this->status);
             return $this;
+        }
+        if (!($status instanceof FHIRMedicationStatus)) {
+            $status = new FHIRMedicationStatus(value: $status);
         }
         $this->status = $status;
         if ($this->_valueXMLLocations[self::FIELD_STATUS] !== $valueXMLLocation) {
@@ -1265,48 +1269,45 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CODE],
-                config: $config,
-            ));
+            $type->setCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CODE], $config));
         }
-        if (isset($json[self::FIELD_STATUS]) || isset($json[self::FIELD_STATUS_EXT]) || array_key_exists(self::FIELD_STATUS, $json) || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
+        if (isset($json[self::FIELD_STATUS])
+            || isset($json[self::FIELD_STATUS_EXT])
+            || array_key_exists(self::FIELD_STATUS, $json)
+            || array_key_exists(self::FIELD_STATUS_EXT, $json)) {
             $value = $json[self::FIELD_STATUS] ?? null;
-            $ext = (array)($json[self::FIELD_STATUS_EXT] ?? []);
             $type->setStatus(FHIRMedicationStatus::jsonUnserialize(
-                json: [FHIRMedicationStatus::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMedicationStatus::FIELD_VALUE => $value]) + ($json[self::FIELD_STATUS_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_IS_BRAND]) || isset($json[self::FIELD_IS_BRAND_EXT]) || array_key_exists(self::FIELD_IS_BRAND, $json) || array_key_exists(self::FIELD_IS_BRAND_EXT, $json)) {
+        if (isset($json[self::FIELD_IS_BRAND])
+            || isset($json[self::FIELD_IS_BRAND_EXT])
+            || array_key_exists(self::FIELD_IS_BRAND, $json)
+            || array_key_exists(self::FIELD_IS_BRAND_EXT, $json)) {
             $value = $json[self::FIELD_IS_BRAND] ?? null;
-            $ext = (array)($json[self::FIELD_IS_BRAND_EXT] ?? []);
             $type->setIsBrand(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_IS_BRAND_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_IS_OVER_THE_COUNTER]) || isset($json[self::FIELD_IS_OVER_THE_COUNTER_EXT]) || array_key_exists(self::FIELD_IS_OVER_THE_COUNTER, $json) || array_key_exists(self::FIELD_IS_OVER_THE_COUNTER_EXT, $json)) {
+        if (isset($json[self::FIELD_IS_OVER_THE_COUNTER])
+            || isset($json[self::FIELD_IS_OVER_THE_COUNTER_EXT])
+            || array_key_exists(self::FIELD_IS_OVER_THE_COUNTER, $json)
+            || array_key_exists(self::FIELD_IS_OVER_THE_COUNTER_EXT, $json)) {
             $value = $json[self::FIELD_IS_OVER_THE_COUNTER] ?? null;
-            $ext = (array)($json[self::FIELD_IS_OVER_THE_COUNTER_EXT] ?? []);
             $type->setIsOverTheCounter(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_IS_OVER_THE_COUNTER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_MANUFACTURER]) || array_key_exists(self::FIELD_MANUFACTURER, $json)) {
-            $type->setManufacturer(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_MANUFACTURER],
-                config: $config,
-            ));
+            $type->setManufacturer(FHIRReference::jsonUnserialize($json[self::FIELD_MANUFACTURER], $config));
         }
         if (isset($json[self::FIELD_FORM]) || array_key_exists(self::FIELD_FORM, $json)) {
-            $type->setForm(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_FORM],
-                config: $config,
-            ));
+            $type->setForm(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_FORM], $config));
         }
         if (isset($json[self::FIELD_INGREDIENT]) || array_key_exists(self::FIELD_INGREDIENT, $json)) {
             $vs = $json[self::FIELD_INGREDIENT];
@@ -1314,17 +1315,11 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addIngredient(FHIRMedicationIngredient::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addIngredient(FHIRMedicationIngredient::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_PACKAGE]) || array_key_exists(self::FIELD_PACKAGE, $json)) {
-            $type->setPackage(FHIRMedicationPackage::jsonUnserialize(
-                json: $json[self::FIELD_PACKAGE],
-                config: $config,
-            ));
+            $type->setPackage(FHIRMedicationPackage::jsonUnserialize($json[self::FIELD_PACKAGE], $config));
         }
         if (isset($json[self::FIELD_IMAGE]) || array_key_exists(self::FIELD_IMAGE, $json)) {
             $vs = $json[self::FIELD_IMAGE];
@@ -1332,10 +1327,7 @@ class FHIRMedication extends FHIRDomainResource implements VersionContainedTypeI
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addImage(FHIRAttachment::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addImage(FHIRAttachment::jsonUnserialize($v, $config));
             }
         }
         return $type;

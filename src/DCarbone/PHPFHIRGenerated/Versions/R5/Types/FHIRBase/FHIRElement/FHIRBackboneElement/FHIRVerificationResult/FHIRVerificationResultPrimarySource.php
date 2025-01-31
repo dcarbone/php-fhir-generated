@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -956,20 +956,9 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_WHO]) || array_key_exists(self::FIELD_WHO, $json)) {
-            $type->setWho(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_WHO],
-                config: $config,
-            ));
+            $type->setWho(FHIRReference::jsonUnserialize($json[self::FIELD_WHO], $config));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
             $vs = $json[self::FIELD_TYPE];
@@ -977,10 +966,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addType(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addType(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_COMMUNICATION_METHOD]) || array_key_exists(self::FIELD_COMMUNICATION_METHOD, $json)) {
@@ -989,31 +975,24 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCommunicationMethod(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCommunicationMethod(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_VALIDATION_STATUS]) || array_key_exists(self::FIELD_VALIDATION_STATUS, $json)) {
-            $type->setValidationStatus(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_VALIDATION_STATUS],
-                config: $config,
-            ));
+            $type->setValidationStatus(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_VALIDATION_STATUS], $config));
         }
-        if (isset($json[self::FIELD_VALIDATION_DATE]) || isset($json[self::FIELD_VALIDATION_DATE_EXT]) || array_key_exists(self::FIELD_VALIDATION_DATE, $json) || array_key_exists(self::FIELD_VALIDATION_DATE_EXT, $json)) {
+        if (isset($json[self::FIELD_VALIDATION_DATE])
+            || isset($json[self::FIELD_VALIDATION_DATE_EXT])
+            || array_key_exists(self::FIELD_VALIDATION_DATE, $json)
+            || array_key_exists(self::FIELD_VALIDATION_DATE_EXT, $json)) {
             $value = $json[self::FIELD_VALIDATION_DATE] ?? null;
-            $ext = (array)($json[self::FIELD_VALIDATION_DATE_EXT] ?? []);
             $type->setValidationDate(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_VALIDATION_DATE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CAN_PUSH_UPDATES]) || array_key_exists(self::FIELD_CAN_PUSH_UPDATES, $json)) {
-            $type->setCanPushUpdates(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CAN_PUSH_UPDATES],
-                config: $config,
-            ));
+            $type->setCanPushUpdates(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CAN_PUSH_UPDATES], $config));
         }
         if (isset($json[self::FIELD_PUSH_TYPE_AVAILABLE]) || array_key_exists(self::FIELD_PUSH_TYPE_AVAILABLE, $json)) {
             $vs = $json[self::FIELD_PUSH_TYPE_AVAILABLE];
@@ -1021,10 +1000,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPushTypeAvailable(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPushTypeAvailable(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         return $type;

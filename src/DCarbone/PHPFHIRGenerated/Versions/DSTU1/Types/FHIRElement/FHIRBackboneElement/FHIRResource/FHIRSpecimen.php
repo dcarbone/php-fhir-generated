@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,6 +78,7 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU1\Version;
@@ -228,11 +229,11 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCode $language
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRNarrative $text
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRResource\FHIRResourceInline[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\VersionContainedTypeInterface[] $contained
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier[] $identifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString[]|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier[] $identifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRCodeableConcept $type
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenSource[] $source
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRResourceReference $subject
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $accessionIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $accessionIdentifier
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRDateTime $receivedTime
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection $collection
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenTreatment[] $treatment
@@ -249,7 +250,7 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
                                 null|FHIRCodeableConcept $type = null,
                                 null|iterable $source = null,
                                 null|FHIRResourceReference $subject = null,
-                                null|FHIRIdentifier $accessionIdentifier = null,
+                                null|FHIRString|FHIRIdentifier $accessionIdentifier = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $receivedTime = null,
                                 null|FHIRSpecimenCollection $collection = null,
                                 null|iterable $treatment = null,
@@ -343,11 +344,14 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
      *
      * Id for specimen.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier): self
+    public function addIdentifier(FHIRString|FHIRIdentifier $identifier): self
     {
+        if (!($identifier instanceof FHIRIdentifier)) {
+            $identifier = new FHIRIdentifier(value: $identifier);
+        }
         if (!isset($this->identifier)) {
             $this->identifier = [];
         }
@@ -362,10 +366,10 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
      *
      * Id for specimen.
      *
-     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier ...$identifier
+     * @param \DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier ...$identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    public function setIdentifier(FHIRString|FHIRIdentifier ...$identifier): self
     {
         if ([] === $identifier) {
             unset($this->identifier);
@@ -537,16 +541,19 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
      * necessarily the same as the specimen identifier, depending on local lab
      * procedures.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $accessionIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRIdentifier $accessionIdentifier
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAccessionIdentifier(null|FHIRIdentifier $accessionIdentifier,
+    public function setAccessionIdentifier(null|FHIRString|FHIRIdentifier $accessionIdentifier,
                                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $accessionIdentifier) {
             unset($this->accessionIdentifier);
             return $this;
+        }
+        if (!($accessionIdentifier instanceof FHIRIdentifier)) {
+            $accessionIdentifier = new FHIRIdentifier(value: $accessionIdentifier);
         }
         $this->accessionIdentifier = $accessionIdentifier;
         if ($this->_valueXMLLocations[self::FIELD_ACCESSION_IDENTIFIER] !== $valueXMLLocation) {
@@ -1246,13 +1253,13 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
         } else if (is_object($json)) {
             $json = (array)$json;
         }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IDENTIFIER]) || isset($json[self::FIELD_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_IDENTIFIER, $json) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
-            $value = $json[self::FIELD_IDENTIFIER] ?? null;
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IDENTIFIER])
+            || isset($json[self::FIELD_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_IDENTIFIER_EXT, $json)) {
+            $value = (array)($json[self::FIELD_IDENTIFIER] ?? []);
             $ext = (array)($json[self::FIELD_IDENTIFIER_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1260,16 +1267,13 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addIdentifier(FHIRIdentifier::jsonUnserialize(
-                    json: [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRIdentifier::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
         if (isset($json[self::FIELD_SOURCE]) || array_key_exists(self::FIELD_SOURCE, $json)) {
             $vs = $json[self::FIELD_SOURCE];
@@ -1277,39 +1281,34 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSource(FHIRSpecimenSource::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSource(FHIRSpecimenSource::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SUBJECT]) || array_key_exists(self::FIELD_SUBJECT, $json)) {
-            $type->setSubject(FHIRResourceReference::jsonUnserialize(
-                json: $json[self::FIELD_SUBJECT],
-                config: $config,
-            ));
+            $type->setSubject(FHIRResourceReference::jsonUnserialize($json[self::FIELD_SUBJECT], $config));
         }
-        if (isset($json[self::FIELD_ACCESSION_IDENTIFIER]) || isset($json[self::FIELD_ACCESSION_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_ACCESSION_IDENTIFIER, $json) || array_key_exists(self::FIELD_ACCESSION_IDENTIFIER_EXT, $json)) {
+        if (isset($json[self::FIELD_ACCESSION_IDENTIFIER])
+            || isset($json[self::FIELD_ACCESSION_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_ACCESSION_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_ACCESSION_IDENTIFIER_EXT, $json)) {
             $value = $json[self::FIELD_ACCESSION_IDENTIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_ACCESSION_IDENTIFIER_EXT] ?? []);
             $type->setAccessionIdentifier(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_ACCESSION_IDENTIFIER_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_RECEIVED_TIME]) || isset($json[self::FIELD_RECEIVED_TIME_EXT]) || array_key_exists(self::FIELD_RECEIVED_TIME, $json) || array_key_exists(self::FIELD_RECEIVED_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_RECEIVED_TIME])
+            || isset($json[self::FIELD_RECEIVED_TIME_EXT])
+            || array_key_exists(self::FIELD_RECEIVED_TIME, $json)
+            || array_key_exists(self::FIELD_RECEIVED_TIME_EXT, $json)) {
             $value = $json[self::FIELD_RECEIVED_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_RECEIVED_TIME_EXT] ?? []);
             $type->setReceivedTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_RECEIVED_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_COLLECTION]) || array_key_exists(self::FIELD_COLLECTION, $json)) {
-            $type->setCollection(FHIRSpecimenCollection::jsonUnserialize(
-                json: $json[self::FIELD_COLLECTION],
-                config: $config,
-            ));
+            $type->setCollection(FHIRSpecimenCollection::jsonUnserialize($json[self::FIELD_COLLECTION], $config));
         }
         if (isset($json[self::FIELD_TREATMENT]) || array_key_exists(self::FIELD_TREATMENT, $json)) {
             $vs = $json[self::FIELD_TREATMENT];
@@ -1317,10 +1316,7 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addTreatment(FHIRSpecimenTreatment::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addTreatment(FHIRSpecimenTreatment::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CONTAINER]) || array_key_exists(self::FIELD_CONTAINER, $json)) {
@@ -1329,10 +1325,7 @@ class FHIRSpecimen extends FHIRResource implements VersionContainedTypeInterface
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addContainer(FHIRSpecimenContainer::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addContainer(FHIRSpecimenContainer::jsonUnserialize($v, $config));
             }
         }
         return $type;

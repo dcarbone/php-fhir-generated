@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -657,41 +657,31 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_CUSTOMARY_UNIT]) || array_key_exists(self::FIELD_CUSTOMARY_UNIT, $json)) {
-            $type->setCustomaryUnit(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CUSTOMARY_UNIT],
-                config: $config,
-            ));
+            $type->setCustomaryUnit(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CUSTOMARY_UNIT], $config));
         }
         if (isset($json[self::FIELD_UNIT]) || array_key_exists(self::FIELD_UNIT, $json)) {
-            $type->setUnit(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_UNIT],
-                config: $config,
-            ));
+            $type->setUnit(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_UNIT], $config));
         }
-        if (isset($json[self::FIELD_CONVERSION_FACTOR]) || isset($json[self::FIELD_CONVERSION_FACTOR_EXT]) || array_key_exists(self::FIELD_CONVERSION_FACTOR, $json) || array_key_exists(self::FIELD_CONVERSION_FACTOR_EXT, $json)) {
+        if (isset($json[self::FIELD_CONVERSION_FACTOR])
+            || isset($json[self::FIELD_CONVERSION_FACTOR_EXT])
+            || array_key_exists(self::FIELD_CONVERSION_FACTOR, $json)
+            || array_key_exists(self::FIELD_CONVERSION_FACTOR_EXT, $json)) {
             $value = $json[self::FIELD_CONVERSION_FACTOR] ?? null;
-            $ext = (array)($json[self::FIELD_CONVERSION_FACTOR_EXT] ?? []);
             $type->setConversionFactor(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_CONVERSION_FACTOR_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DECIMAL_PRECISION]) || isset($json[self::FIELD_DECIMAL_PRECISION_EXT]) || array_key_exists(self::FIELD_DECIMAL_PRECISION, $json) || array_key_exists(self::FIELD_DECIMAL_PRECISION_EXT, $json)) {
+        if (isset($json[self::FIELD_DECIMAL_PRECISION])
+            || isset($json[self::FIELD_DECIMAL_PRECISION_EXT])
+            || array_key_exists(self::FIELD_DECIMAL_PRECISION, $json)
+            || array_key_exists(self::FIELD_DECIMAL_PRECISION_EXT, $json)) {
             $value = $json[self::FIELD_DECIMAL_PRECISION] ?? null;
-            $ext = (array)($json[self::FIELD_DECIMAL_PRECISION_EXT] ?? []);
             $type->setDecimalPrecision(FHIRInteger::jsonUnserialize(
-                json: [FHIRInteger::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRInteger::FIELD_VALUE => $value]) + ($json[self::FIELD_DECIMAL_PRECISION_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,6 +70,7 @@ use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
@@ -125,14 +126,14 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOperation $operation
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert $assert
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert $assert
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRTestScriptOperation $operation = null,
-                                null|FHIRTestScriptAssert $assert = null,
+                                null|FHIRString|FHIRTestScriptAssert $assert = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -210,16 +211,19 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
      * Evaluates the results of previous operations to determine if the server under
      * test behaves appropriately.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert $assert
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAssert $assert
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setAssert(null|FHIRTestScriptAssert $assert,
+    public function setAssert(null|FHIRString|FHIRTestScriptAssert $assert,
                               ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $assert) {
             unset($this->assert);
             return $this;
+        }
+        if (!($assert instanceof FHIRTestScriptAssert)) {
+            $assert = new FHIRTestScriptAssert(value: $assert);
         }
         $this->assert = $assert;
         if ($this->_valueXMLLocations[self::FIELD_ASSERT] !== $valueXMLLocation) {
@@ -440,27 +444,18 @@ class FHIRTestScriptAction1 extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_OPERATION]) || array_key_exists(self::FIELD_OPERATION, $json)) {
-            $type->setOperation(FHIRTestScriptOperation::jsonUnserialize(
-                json: $json[self::FIELD_OPERATION],
-                config: $config,
-            ));
+            $type->setOperation(FHIRTestScriptOperation::jsonUnserialize($json[self::FIELD_OPERATION], $config));
         }
-        if (isset($json[self::FIELD_ASSERT]) || isset($json[self::FIELD_ASSERT_EXT]) || array_key_exists(self::FIELD_ASSERT, $json) || array_key_exists(self::FIELD_ASSERT_EXT, $json)) {
+        if (isset($json[self::FIELD_ASSERT])
+            || isset($json[self::FIELD_ASSERT_EXT])
+            || array_key_exists(self::FIELD_ASSERT, $json)
+            || array_key_exists(self::FIELD_ASSERT_EXT, $json)) {
             $value = $json[self::FIELD_ASSERT] ?? null;
-            $ext = (array)($json[self::FIELD_ASSERT_EXT] ?? []);
             $type->setAssert(FHIRTestScriptAssert::jsonUnserialize(
-                json: [FHIRTestScriptAssert::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRTestScriptAssert::FIELD_VALUE => $value]) + ($json[self::FIELD_ASSERT_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

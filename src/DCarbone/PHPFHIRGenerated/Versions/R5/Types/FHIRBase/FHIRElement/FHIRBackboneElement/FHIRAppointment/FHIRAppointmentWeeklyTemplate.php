@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1202,77 +1202,85 @@ class FHIRAppointmentWeeklyTemplate extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_MONDAY]) || isset($json[self::FIELD_MONDAY_EXT]) || array_key_exists(self::FIELD_MONDAY, $json) || array_key_exists(self::FIELD_MONDAY_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_MONDAY])
+            || isset($json[self::FIELD_MONDAY_EXT])
+            || array_key_exists(self::FIELD_MONDAY, $json)
+            || array_key_exists(self::FIELD_MONDAY_EXT, $json)) {
             $value = $json[self::FIELD_MONDAY] ?? null;
-            $ext = (array)($json[self::FIELD_MONDAY_EXT] ?? []);
             $type->setMonday(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_MONDAY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TUESDAY]) || isset($json[self::FIELD_TUESDAY_EXT]) || array_key_exists(self::FIELD_TUESDAY, $json) || array_key_exists(self::FIELD_TUESDAY_EXT, $json)) {
+        if (isset($json[self::FIELD_TUESDAY])
+            || isset($json[self::FIELD_TUESDAY_EXT])
+            || array_key_exists(self::FIELD_TUESDAY, $json)
+            || array_key_exists(self::FIELD_TUESDAY_EXT, $json)) {
             $value = $json[self::FIELD_TUESDAY] ?? null;
-            $ext = (array)($json[self::FIELD_TUESDAY_EXT] ?? []);
             $type->setTuesday(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_TUESDAY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_WEDNESDAY]) || isset($json[self::FIELD_WEDNESDAY_EXT]) || array_key_exists(self::FIELD_WEDNESDAY, $json) || array_key_exists(self::FIELD_WEDNESDAY_EXT, $json)) {
+        if (isset($json[self::FIELD_WEDNESDAY])
+            || isset($json[self::FIELD_WEDNESDAY_EXT])
+            || array_key_exists(self::FIELD_WEDNESDAY, $json)
+            || array_key_exists(self::FIELD_WEDNESDAY_EXT, $json)) {
             $value = $json[self::FIELD_WEDNESDAY] ?? null;
-            $ext = (array)($json[self::FIELD_WEDNESDAY_EXT] ?? []);
             $type->setWednesday(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_WEDNESDAY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_THURSDAY]) || isset($json[self::FIELD_THURSDAY_EXT]) || array_key_exists(self::FIELD_THURSDAY, $json) || array_key_exists(self::FIELD_THURSDAY_EXT, $json)) {
+        if (isset($json[self::FIELD_THURSDAY])
+            || isset($json[self::FIELD_THURSDAY_EXT])
+            || array_key_exists(self::FIELD_THURSDAY, $json)
+            || array_key_exists(self::FIELD_THURSDAY_EXT, $json)) {
             $value = $json[self::FIELD_THURSDAY] ?? null;
-            $ext = (array)($json[self::FIELD_THURSDAY_EXT] ?? []);
             $type->setThursday(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_THURSDAY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_FRIDAY]) || isset($json[self::FIELD_FRIDAY_EXT]) || array_key_exists(self::FIELD_FRIDAY, $json) || array_key_exists(self::FIELD_FRIDAY_EXT, $json)) {
+        if (isset($json[self::FIELD_FRIDAY])
+            || isset($json[self::FIELD_FRIDAY_EXT])
+            || array_key_exists(self::FIELD_FRIDAY, $json)
+            || array_key_exists(self::FIELD_FRIDAY_EXT, $json)) {
             $value = $json[self::FIELD_FRIDAY] ?? null;
-            $ext = (array)($json[self::FIELD_FRIDAY_EXT] ?? []);
             $type->setFriday(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_FRIDAY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SATURDAY]) || isset($json[self::FIELD_SATURDAY_EXT]) || array_key_exists(self::FIELD_SATURDAY, $json) || array_key_exists(self::FIELD_SATURDAY_EXT, $json)) {
+        if (isset($json[self::FIELD_SATURDAY])
+            || isset($json[self::FIELD_SATURDAY_EXT])
+            || array_key_exists(self::FIELD_SATURDAY, $json)
+            || array_key_exists(self::FIELD_SATURDAY_EXT, $json)) {
             $value = $json[self::FIELD_SATURDAY] ?? null;
-            $ext = (array)($json[self::FIELD_SATURDAY_EXT] ?? []);
             $type->setSaturday(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_SATURDAY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SUNDAY]) || isset($json[self::FIELD_SUNDAY_EXT]) || array_key_exists(self::FIELD_SUNDAY, $json) || array_key_exists(self::FIELD_SUNDAY_EXT, $json)) {
+        if (isset($json[self::FIELD_SUNDAY])
+            || isset($json[self::FIELD_SUNDAY_EXT])
+            || array_key_exists(self::FIELD_SUNDAY, $json)
+            || array_key_exists(self::FIELD_SUNDAY_EXT, $json)) {
             $value = $json[self::FIELD_SUNDAY] ?? null;
-            $ext = (array)($json[self::FIELD_SUNDAY_EXT] ?? []);
             $type->setSunday(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_SUNDAY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_WEEK_INTERVAL]) || isset($json[self::FIELD_WEEK_INTERVAL_EXT]) || array_key_exists(self::FIELD_WEEK_INTERVAL, $json) || array_key_exists(self::FIELD_WEEK_INTERVAL_EXT, $json)) {
+        if (isset($json[self::FIELD_WEEK_INTERVAL])
+            || isset($json[self::FIELD_WEEK_INTERVAL_EXT])
+            || array_key_exists(self::FIELD_WEEK_INTERVAL, $json)
+            || array_key_exists(self::FIELD_WEEK_INTERVAL_EXT, $json)) {
             $value = $json[self::FIELD_WEEK_INTERVAL] ?? null;
-            $ext = (array)($json[self::FIELD_WEEK_INTERVAL_EXT] ?? []);
             $type->setWeekInterval(FHIRPositiveInt::jsonUnserialize(
-                json: [FHIRPositiveInt::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRPositiveInt::FIELD_VALUE => $value]) + ($json[self::FIELD_WEEK_INTERVAL_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

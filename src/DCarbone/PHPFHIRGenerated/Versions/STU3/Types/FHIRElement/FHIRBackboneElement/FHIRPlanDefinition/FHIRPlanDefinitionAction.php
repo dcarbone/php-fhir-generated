@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,6 +68,11 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionCardinalityBehaviorList;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionGroupingBehaviorList;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionPrecheckBehaviorList;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionRequiredBehaviorList;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionSelectionBehaviorList;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionCardinalityBehavior;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionGroupingBehavior;
@@ -517,11 +522,11 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRTiming $timingTiming
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant[] $participant
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRCoding $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionGroupingBehavior $groupingBehavior
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionSelectionBehavior $selectionBehavior
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionRequiredBehavior $requiredBehavior
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionPrecheckBehavior $precheckBehavior
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionCardinalityBehavior $cardinalityBehavior
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionGroupingBehaviorList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionGroupingBehavior $groupingBehavior
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionSelectionBehaviorList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionSelectionBehavior $selectionBehavior
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionRequiredBehaviorList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionRequiredBehavior $requiredBehavior
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionPrecheckBehaviorList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionPrecheckBehavior $precheckBehavior
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionCardinalityBehaviorList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionCardinalityBehavior $cardinalityBehavior
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $definition
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $transform
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue[] $dynamicValue
@@ -551,11 +556,11 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                                 null|FHIRTiming $timingTiming = null,
                                 null|iterable $participant = null,
                                 null|FHIRCoding $type = null,
-                                null|FHIRActionGroupingBehavior $groupingBehavior = null,
-                                null|FHIRActionSelectionBehavior $selectionBehavior = null,
-                                null|FHIRActionRequiredBehavior $requiredBehavior = null,
-                                null|FHIRActionPrecheckBehavior $precheckBehavior = null,
-                                null|FHIRActionCardinalityBehavior $cardinalityBehavior = null,
+                                null|string|FHIRActionGroupingBehaviorList|FHIRActionGroupingBehavior $groupingBehavior = null,
+                                null|string|FHIRActionSelectionBehaviorList|FHIRActionSelectionBehavior $selectionBehavior = null,
+                                null|string|FHIRActionRequiredBehaviorList|FHIRActionRequiredBehavior $requiredBehavior = null,
+                                null|string|FHIRActionPrecheckBehaviorList|FHIRActionPrecheckBehavior $precheckBehavior = null,
+                                null|string|FHIRActionCardinalityBehaviorList|FHIRActionCardinalityBehavior $cardinalityBehavior = null,
                                 null|FHIRReference $definition = null,
                                 null|FHIRReference $transform = null,
                                 null|iterable $dynamicValue = null,
@@ -1905,16 +1910,19 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * Defines the grouping behavior for the action and its children.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionGroupingBehavior $groupingBehavior
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionGroupingBehaviorList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionGroupingBehavior $groupingBehavior
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setGroupingBehavior(null|FHIRActionGroupingBehavior $groupingBehavior,
+    public function setGroupingBehavior(null|string|FHIRActionGroupingBehaviorList|FHIRActionGroupingBehavior $groupingBehavior,
                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $groupingBehavior) {
             unset($this->groupingBehavior);
             return $this;
+        }
+        if (!($groupingBehavior instanceof FHIRActionGroupingBehavior)) {
+            $groupingBehavior = new FHIRActionGroupingBehavior(value: $groupingBehavior);
         }
         $this->groupingBehavior = $groupingBehavior;
         if ($this->_valueXMLLocations[self::FIELD_GROUPING_BEHAVIOR] !== $valueXMLLocation) {
@@ -1966,16 +1974,19 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * Defines the selection behavior for the action and its children.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionSelectionBehavior $selectionBehavior
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionSelectionBehaviorList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionSelectionBehavior $selectionBehavior
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSelectionBehavior(null|FHIRActionSelectionBehavior $selectionBehavior,
+    public function setSelectionBehavior(null|string|FHIRActionSelectionBehaviorList|FHIRActionSelectionBehavior $selectionBehavior,
                                          ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $selectionBehavior) {
             unset($this->selectionBehavior);
             return $this;
+        }
+        if (!($selectionBehavior instanceof FHIRActionSelectionBehavior)) {
+            $selectionBehavior = new FHIRActionSelectionBehavior(value: $selectionBehavior);
         }
         $this->selectionBehavior = $selectionBehavior;
         if ($this->_valueXMLLocations[self::FIELD_SELECTION_BEHAVIOR] !== $valueXMLLocation) {
@@ -2027,16 +2038,19 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * Defines the requiredness behavior for the action.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionRequiredBehavior $requiredBehavior
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionRequiredBehaviorList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionRequiredBehavior $requiredBehavior
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRequiredBehavior(null|FHIRActionRequiredBehavior $requiredBehavior,
+    public function setRequiredBehavior(null|string|FHIRActionRequiredBehaviorList|FHIRActionRequiredBehavior $requiredBehavior,
                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $requiredBehavior) {
             unset($this->requiredBehavior);
             return $this;
+        }
+        if (!($requiredBehavior instanceof FHIRActionRequiredBehavior)) {
+            $requiredBehavior = new FHIRActionRequiredBehavior(value: $requiredBehavior);
         }
         $this->requiredBehavior = $requiredBehavior;
         if ($this->_valueXMLLocations[self::FIELD_REQUIRED_BEHAVIOR] !== $valueXMLLocation) {
@@ -2088,16 +2102,19 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * Defines whether the action should usually be preselected.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionPrecheckBehavior $precheckBehavior
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionPrecheckBehaviorList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionPrecheckBehavior $precheckBehavior
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPrecheckBehavior(null|FHIRActionPrecheckBehavior $precheckBehavior,
+    public function setPrecheckBehavior(null|string|FHIRActionPrecheckBehaviorList|FHIRActionPrecheckBehavior $precheckBehavior,
                                         ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $precheckBehavior) {
             unset($this->precheckBehavior);
             return $this;
+        }
+        if (!($precheckBehavior instanceof FHIRActionPrecheckBehavior)) {
+            $precheckBehavior = new FHIRActionPrecheckBehavior(value: $precheckBehavior);
         }
         $this->precheckBehavior = $precheckBehavior;
         if ($this->_valueXMLLocations[self::FIELD_PRECHECK_BEHAVIOR] !== $valueXMLLocation) {
@@ -2151,16 +2168,19 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      *
      * Defines whether the action can be selected multiple times.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionCardinalityBehavior $cardinalityBehavior
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRActionCardinalityBehaviorList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRActionCardinalityBehavior $cardinalityBehavior
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCardinalityBehavior(null|FHIRActionCardinalityBehavior $cardinalityBehavior,
+    public function setCardinalityBehavior(null|string|FHIRActionCardinalityBehaviorList|FHIRActionCardinalityBehavior $cardinalityBehavior,
                                            ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $cardinalityBehavior) {
             unset($this->cardinalityBehavior);
             return $this;
+        }
+        if (!($cardinalityBehavior instanceof FHIRActionCardinalityBehavior)) {
+            $cardinalityBehavior = new FHIRActionCardinalityBehavior(value: $cardinalityBehavior);
         }
         $this->cardinalityBehavior = $cardinalityBehavior;
         if ($this->_valueXMLLocations[self::FIELD_CARDINALITY_BEHAVIOR] !== $valueXMLLocation) {
@@ -3261,45 +3281,45 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_LABEL]) || isset($json[self::FIELD_LABEL_EXT]) || array_key_exists(self::FIELD_LABEL, $json) || array_key_exists(self::FIELD_LABEL_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_LABEL])
+            || isset($json[self::FIELD_LABEL_EXT])
+            || array_key_exists(self::FIELD_LABEL, $json)
+            || array_key_exists(self::FIELD_LABEL_EXT, $json)) {
             $value = $json[self::FIELD_LABEL] ?? null;
-            $ext = (array)($json[self::FIELD_LABEL_EXT] ?? []);
             $type->setLabel(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_LABEL_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TITLE]) || isset($json[self::FIELD_TITLE_EXT]) || array_key_exists(self::FIELD_TITLE, $json) || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
+        if (isset($json[self::FIELD_TITLE])
+            || isset($json[self::FIELD_TITLE_EXT])
+            || array_key_exists(self::FIELD_TITLE, $json)
+            || array_key_exists(self::FIELD_TITLE_EXT, $json)) {
             $value = $json[self::FIELD_TITLE] ?? null;
-            $ext = (array)($json[self::FIELD_TITLE_EXT] ?? []);
             $type->setTitle(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TITLE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_TEXT_EQUIVALENT]) || isset($json[self::FIELD_TEXT_EQUIVALENT_EXT]) || array_key_exists(self::FIELD_TEXT_EQUIVALENT, $json) || array_key_exists(self::FIELD_TEXT_EQUIVALENT_EXT, $json)) {
+        if (isset($json[self::FIELD_TEXT_EQUIVALENT])
+            || isset($json[self::FIELD_TEXT_EQUIVALENT_EXT])
+            || array_key_exists(self::FIELD_TEXT_EQUIVALENT, $json)
+            || array_key_exists(self::FIELD_TEXT_EQUIVALENT_EXT, $json)) {
             $value = $json[self::FIELD_TEXT_EQUIVALENT] ?? null;
-            $ext = (array)($json[self::FIELD_TEXT_EQUIVALENT_EXT] ?? []);
             $type->setTextEquivalent(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_TEXT_EQUIVALENT_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
@@ -3308,10 +3328,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCode(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCode(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_REASON]) || array_key_exists(self::FIELD_REASON, $json)) {
@@ -3320,10 +3337,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addReason(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addReason(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_DOCUMENTATION]) || array_key_exists(self::FIELD_DOCUMENTATION, $json)) {
@@ -3332,18 +3346,15 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addDocumentation(FHIRRelatedArtifact::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addDocumentation(FHIRRelatedArtifact::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_GOAL_ID]) || isset($json[self::FIELD_GOAL_ID_EXT]) || array_key_exists(self::FIELD_GOAL_ID, $json) || array_key_exists(self::FIELD_GOAL_ID_EXT, $json)) {
-            $value = $json[self::FIELD_GOAL_ID] ?? null;
+        if (isset($json[self::FIELD_GOAL_ID])
+            || isset($json[self::FIELD_GOAL_ID_EXT])
+            || array_key_exists(self::FIELD_GOAL_ID, $json)
+            || array_key_exists(self::FIELD_GOAL_ID_EXT, $json)) {
+            $value = (array)($json[self::FIELD_GOAL_ID] ?? []);
             $ext = (array)($json[self::FIELD_GOAL_ID_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -3351,8 +3362,8 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addGoalId(FHIRId::jsonUnserialize(
-                    json: [FHIRId::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRId::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -3362,10 +3373,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addTriggerDefinition(FHIRTriggerDefinition::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addTriggerDefinition(FHIRTriggerDefinition::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_CONDITION]) || array_key_exists(self::FIELD_CONDITION, $json)) {
@@ -3374,10 +3382,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addCondition(FHIRPlanDefinitionCondition::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addCondition(FHIRPlanDefinitionCondition::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_INPUT]) || array_key_exists(self::FIELD_INPUT, $json)) {
@@ -3386,10 +3391,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addInput(FHIRDataRequirement::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addInput(FHIRDataRequirement::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_OUTPUT]) || array_key_exists(self::FIELD_OUTPUT, $json)) {
@@ -3398,10 +3400,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addOutput(FHIRDataRequirement::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addOutput(FHIRDataRequirement::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_RELATED_ACTION]) || array_key_exists(self::FIELD_RELATED_ACTION, $json)) {
@@ -3410,43 +3409,30 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRelatedAction(FHIRPlanDefinitionRelatedAction::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRelatedAction(FHIRPlanDefinitionRelatedAction::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_TIMING_DATE_TIME]) || isset($json[self::FIELD_TIMING_DATE_TIME_EXT]) || array_key_exists(self::FIELD_TIMING_DATE_TIME, $json) || array_key_exists(self::FIELD_TIMING_DATE_TIME_EXT, $json)) {
+        if (isset($json[self::FIELD_TIMING_DATE_TIME])
+            || isset($json[self::FIELD_TIMING_DATE_TIME_EXT])
+            || array_key_exists(self::FIELD_TIMING_DATE_TIME, $json)
+            || array_key_exists(self::FIELD_TIMING_DATE_TIME_EXT, $json)) {
             $value = $json[self::FIELD_TIMING_DATE_TIME] ?? null;
-            $ext = (array)($json[self::FIELD_TIMING_DATE_TIME_EXT] ?? []);
             $type->setTimingDateTime(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_TIMING_DATE_TIME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_TIMING_PERIOD]) || array_key_exists(self::FIELD_TIMING_PERIOD, $json)) {
-            $type->setTimingPeriod(FHIRPeriod::jsonUnserialize(
-                json: $json[self::FIELD_TIMING_PERIOD],
-                config: $config,
-            ));
+            $type->setTimingPeriod(FHIRPeriod::jsonUnserialize($json[self::FIELD_TIMING_PERIOD], $config));
         }
         if (isset($json[self::FIELD_TIMING_DURATION]) || array_key_exists(self::FIELD_TIMING_DURATION, $json)) {
-            $type->setTimingDuration(FHIRDuration::jsonUnserialize(
-                json: $json[self::FIELD_TIMING_DURATION],
-                config: $config,
-            ));
+            $type->setTimingDuration(FHIRDuration::jsonUnserialize($json[self::FIELD_TIMING_DURATION], $config));
         }
         if (isset($json[self::FIELD_TIMING_RANGE]) || array_key_exists(self::FIELD_TIMING_RANGE, $json)) {
-            $type->setTimingRange(FHIRRange::jsonUnserialize(
-                json: $json[self::FIELD_TIMING_RANGE],
-                config: $config,
-            ));
+            $type->setTimingRange(FHIRRange::jsonUnserialize($json[self::FIELD_TIMING_RANGE], $config));
         }
         if (isset($json[self::FIELD_TIMING_TIMING]) || array_key_exists(self::FIELD_TIMING_TIMING, $json)) {
-            $type->setTimingTiming(FHIRTiming::jsonUnserialize(
-                json: $json[self::FIELD_TIMING_TIMING],
-                config: $config,
-            ));
+            $type->setTimingTiming(FHIRTiming::jsonUnserialize($json[self::FIELD_TIMING_TIMING], $config));
         }
         if (isset($json[self::FIELD_PARTICIPANT]) || array_key_exists(self::FIELD_PARTICIPANT, $json)) {
             $vs = $json[self::FIELD_PARTICIPANT];
@@ -3454,69 +3440,67 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addParticipant(FHIRPlanDefinitionParticipant::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addParticipant(FHIRPlanDefinitionParticipant::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCoding::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCoding::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
-        if (isset($json[self::FIELD_GROUPING_BEHAVIOR]) || isset($json[self::FIELD_GROUPING_BEHAVIOR_EXT]) || array_key_exists(self::FIELD_GROUPING_BEHAVIOR, $json) || array_key_exists(self::FIELD_GROUPING_BEHAVIOR_EXT, $json)) {
+        if (isset($json[self::FIELD_GROUPING_BEHAVIOR])
+            || isset($json[self::FIELD_GROUPING_BEHAVIOR_EXT])
+            || array_key_exists(self::FIELD_GROUPING_BEHAVIOR, $json)
+            || array_key_exists(self::FIELD_GROUPING_BEHAVIOR_EXT, $json)) {
             $value = $json[self::FIELD_GROUPING_BEHAVIOR] ?? null;
-            $ext = (array)($json[self::FIELD_GROUPING_BEHAVIOR_EXT] ?? []);
             $type->setGroupingBehavior(FHIRActionGroupingBehavior::jsonUnserialize(
-                json: [FHIRActionGroupingBehavior::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRActionGroupingBehavior::FIELD_VALUE => $value]) + ($json[self::FIELD_GROUPING_BEHAVIOR_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SELECTION_BEHAVIOR]) || isset($json[self::FIELD_SELECTION_BEHAVIOR_EXT]) || array_key_exists(self::FIELD_SELECTION_BEHAVIOR, $json) || array_key_exists(self::FIELD_SELECTION_BEHAVIOR_EXT, $json)) {
+        if (isset($json[self::FIELD_SELECTION_BEHAVIOR])
+            || isset($json[self::FIELD_SELECTION_BEHAVIOR_EXT])
+            || array_key_exists(self::FIELD_SELECTION_BEHAVIOR, $json)
+            || array_key_exists(self::FIELD_SELECTION_BEHAVIOR_EXT, $json)) {
             $value = $json[self::FIELD_SELECTION_BEHAVIOR] ?? null;
-            $ext = (array)($json[self::FIELD_SELECTION_BEHAVIOR_EXT] ?? []);
             $type->setSelectionBehavior(FHIRActionSelectionBehavior::jsonUnserialize(
-                json: [FHIRActionSelectionBehavior::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRActionSelectionBehavior::FIELD_VALUE => $value]) + ($json[self::FIELD_SELECTION_BEHAVIOR_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_REQUIRED_BEHAVIOR]) || isset($json[self::FIELD_REQUIRED_BEHAVIOR_EXT]) || array_key_exists(self::FIELD_REQUIRED_BEHAVIOR, $json) || array_key_exists(self::FIELD_REQUIRED_BEHAVIOR_EXT, $json)) {
+        if (isset($json[self::FIELD_REQUIRED_BEHAVIOR])
+            || isset($json[self::FIELD_REQUIRED_BEHAVIOR_EXT])
+            || array_key_exists(self::FIELD_REQUIRED_BEHAVIOR, $json)
+            || array_key_exists(self::FIELD_REQUIRED_BEHAVIOR_EXT, $json)) {
             $value = $json[self::FIELD_REQUIRED_BEHAVIOR] ?? null;
-            $ext = (array)($json[self::FIELD_REQUIRED_BEHAVIOR_EXT] ?? []);
             $type->setRequiredBehavior(FHIRActionRequiredBehavior::jsonUnserialize(
-                json: [FHIRActionRequiredBehavior::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRActionRequiredBehavior::FIELD_VALUE => $value]) + ($json[self::FIELD_REQUIRED_BEHAVIOR_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_PRECHECK_BEHAVIOR]) || isset($json[self::FIELD_PRECHECK_BEHAVIOR_EXT]) || array_key_exists(self::FIELD_PRECHECK_BEHAVIOR, $json) || array_key_exists(self::FIELD_PRECHECK_BEHAVIOR_EXT, $json)) {
+        if (isset($json[self::FIELD_PRECHECK_BEHAVIOR])
+            || isset($json[self::FIELD_PRECHECK_BEHAVIOR_EXT])
+            || array_key_exists(self::FIELD_PRECHECK_BEHAVIOR, $json)
+            || array_key_exists(self::FIELD_PRECHECK_BEHAVIOR_EXT, $json)) {
             $value = $json[self::FIELD_PRECHECK_BEHAVIOR] ?? null;
-            $ext = (array)($json[self::FIELD_PRECHECK_BEHAVIOR_EXT] ?? []);
             $type->setPrecheckBehavior(FHIRActionPrecheckBehavior::jsonUnserialize(
-                json: [FHIRActionPrecheckBehavior::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRActionPrecheckBehavior::FIELD_VALUE => $value]) + ($json[self::FIELD_PRECHECK_BEHAVIOR_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_CARDINALITY_BEHAVIOR]) || isset($json[self::FIELD_CARDINALITY_BEHAVIOR_EXT]) || array_key_exists(self::FIELD_CARDINALITY_BEHAVIOR, $json) || array_key_exists(self::FIELD_CARDINALITY_BEHAVIOR_EXT, $json)) {
+        if (isset($json[self::FIELD_CARDINALITY_BEHAVIOR])
+            || isset($json[self::FIELD_CARDINALITY_BEHAVIOR_EXT])
+            || array_key_exists(self::FIELD_CARDINALITY_BEHAVIOR, $json)
+            || array_key_exists(self::FIELD_CARDINALITY_BEHAVIOR_EXT, $json)) {
             $value = $json[self::FIELD_CARDINALITY_BEHAVIOR] ?? null;
-            $ext = (array)($json[self::FIELD_CARDINALITY_BEHAVIOR_EXT] ?? []);
             $type->setCardinalityBehavior(FHIRActionCardinalityBehavior::jsonUnserialize(
-                json: [FHIRActionCardinalityBehavior::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRActionCardinalityBehavior::FIELD_VALUE => $value]) + ($json[self::FIELD_CARDINALITY_BEHAVIOR_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_DEFINITION]) || array_key_exists(self::FIELD_DEFINITION, $json)) {
-            $type->setDefinition(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_DEFINITION],
-                config: $config,
-            ));
+            $type->setDefinition(FHIRReference::jsonUnserialize($json[self::FIELD_DEFINITION], $config));
         }
         if (isset($json[self::FIELD_TRANSFORM]) || array_key_exists(self::FIELD_TRANSFORM, $json)) {
-            $type->setTransform(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_TRANSFORM],
-                config: $config,
-            ));
+            $type->setTransform(FHIRReference::jsonUnserialize($json[self::FIELD_TRANSFORM], $config));
         }
         if (isset($json[self::FIELD_DYNAMIC_VALUE]) || array_key_exists(self::FIELD_DYNAMIC_VALUE, $json)) {
             $vs = $json[self::FIELD_DYNAMIC_VALUE];
@@ -3524,10 +3508,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addDynamicValue(FHIRPlanDefinitionDynamicValue::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addDynamicValue(FHIRPlanDefinitionDynamicValue::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_ACTION]) || array_key_exists(self::FIELD_ACTION, $json)) {
@@ -3536,10 +3517,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAction(FHIRPlanDefinitionAction::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAction(FHIRPlanDefinitionAction::jsonUnserialize($v, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -739,46 +739,28 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_ITEM]) || array_key_exists(self::FIELD_ITEM, $json)) {
-            $type->setItem(FHIRCodeableReference::jsonUnserialize(
-                json: $json[self::FIELD_ITEM],
-                config: $config,
-            ));
+            $type->setItem(FHIRCodeableReference::jsonUnserialize($json[self::FIELD_ITEM], $config));
         }
-        if (isset($json[self::FIELD_IS_ACTIVE]) || isset($json[self::FIELD_IS_ACTIVE_EXT]) || array_key_exists(self::FIELD_IS_ACTIVE, $json) || array_key_exists(self::FIELD_IS_ACTIVE_EXT, $json)) {
+        if (isset($json[self::FIELD_IS_ACTIVE])
+            || isset($json[self::FIELD_IS_ACTIVE_EXT])
+            || array_key_exists(self::FIELD_IS_ACTIVE, $json)
+            || array_key_exists(self::FIELD_IS_ACTIVE_EXT, $json)) {
             $value = $json[self::FIELD_IS_ACTIVE] ?? null;
-            $ext = (array)($json[self::FIELD_IS_ACTIVE_EXT] ?? []);
             $type->setIsActive(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_IS_ACTIVE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_STRENGTH_RATIO]) || array_key_exists(self::FIELD_STRENGTH_RATIO, $json)) {
-            $type->setStrengthRatio(FHIRRatio::jsonUnserialize(
-                json: $json[self::FIELD_STRENGTH_RATIO],
-                config: $config,
-            ));
+            $type->setStrengthRatio(FHIRRatio::jsonUnserialize($json[self::FIELD_STRENGTH_RATIO], $config));
         }
         if (isset($json[self::FIELD_STRENGTH_CODEABLE_CONCEPT]) || array_key_exists(self::FIELD_STRENGTH_CODEABLE_CONCEPT, $json)) {
-            $type->setStrengthCodeableConcept(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_STRENGTH_CODEABLE_CONCEPT],
-                config: $config,
-            ));
+            $type->setStrengthCodeableConcept(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_STRENGTH_CODEABLE_CONCEPT], $config));
         }
         if (isset($json[self::FIELD_STRENGTH_QUANTITY]) || array_key_exists(self::FIELD_STRENGTH_QUANTITY, $json)) {
-            $type->setStrengthQuantity(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_STRENGTH_QUANTITY],
-                config: $config,
-            ));
+            $type->setStrengthQuantity(FHIRQuantity::jsonUnserialize($json[self::FIELD_STRENGTH_QUANTITY], $config));
         }
         return $type;
     }

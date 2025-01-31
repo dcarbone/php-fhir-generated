@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,6 +90,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSpecimenContainedPreferenceEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept;
@@ -225,7 +226,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBoolean $isDerived
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRCodeableConcept $type
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSpecimenContainedPreference $preference
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSpecimenContainedPreferenceEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSpecimenContainedPreference $preference
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer $container
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRString $requirement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRQuantity\FHIRDuration $retentionTime
@@ -238,7 +239,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isDerived = null,
                                 null|FHIRCodeableConcept $type = null,
-                                null|FHIRSpecimenContainedPreference $preference = null,
+                                null|string|FHIRSpecimenContainedPreferenceEnum|FHIRSpecimenContainedPreference $preference = null,
                                 null|FHIRSpecimenDefinitionContainer $container = null,
                                 null|string|FHIRStringPrimitive|FHIRString $requirement = null,
                                 null|FHIRDuration $retentionTime = null,
@@ -403,16 +404,19 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * The preference for this type of conditioned specimen.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSpecimenContainedPreference $preference
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRCodePrimitive\FHIRSpecimenContainedPreferenceEnum|\DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRSpecimenContainedPreference $preference
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setPreference(null|FHIRSpecimenContainedPreference $preference,
+    public function setPreference(null|string|FHIRSpecimenContainedPreferenceEnum|FHIRSpecimenContainedPreference $preference,
                                   ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $preference) {
             unset($this->preference);
             return $this;
+        }
+        if (!($preference instanceof FHIRSpecimenContainedPreference)) {
+            $preference = new FHIRSpecimenContainedPreference(value: $preference);
         }
         $this->preference = $preference;
         if ($this->_valueXMLLocations[self::FIELD_PREFERENCE] !== $valueXMLLocation) {
@@ -1044,56 +1048,45 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_IS_DERIVED]) || isset($json[self::FIELD_IS_DERIVED_EXT]) || array_key_exists(self::FIELD_IS_DERIVED, $json) || array_key_exists(self::FIELD_IS_DERIVED_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_IS_DERIVED])
+            || isset($json[self::FIELD_IS_DERIVED_EXT])
+            || array_key_exists(self::FIELD_IS_DERIVED, $json)
+            || array_key_exists(self::FIELD_IS_DERIVED_EXT, $json)) {
             $value = $json[self::FIELD_IS_DERIVED] ?? null;
-            $ext = (array)($json[self::FIELD_IS_DERIVED_EXT] ?? []);
             $type->setIsDerived(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_IS_DERIVED_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
-        if (isset($json[self::FIELD_PREFERENCE]) || isset($json[self::FIELD_PREFERENCE_EXT]) || array_key_exists(self::FIELD_PREFERENCE, $json) || array_key_exists(self::FIELD_PREFERENCE_EXT, $json)) {
+        if (isset($json[self::FIELD_PREFERENCE])
+            || isset($json[self::FIELD_PREFERENCE_EXT])
+            || array_key_exists(self::FIELD_PREFERENCE, $json)
+            || array_key_exists(self::FIELD_PREFERENCE_EXT, $json)) {
             $value = $json[self::FIELD_PREFERENCE] ?? null;
-            $ext = (array)($json[self::FIELD_PREFERENCE_EXT] ?? []);
             $type->setPreference(FHIRSpecimenContainedPreference::jsonUnserialize(
-                json: [FHIRSpecimenContainedPreference::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSpecimenContainedPreference::FIELD_VALUE => $value]) + ($json[self::FIELD_PREFERENCE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CONTAINER]) || array_key_exists(self::FIELD_CONTAINER, $json)) {
-            $type->setContainer(FHIRSpecimenDefinitionContainer::jsonUnserialize(
-                json: $json[self::FIELD_CONTAINER],
-                config: $config,
-            ));
+            $type->setContainer(FHIRSpecimenDefinitionContainer::jsonUnserialize($json[self::FIELD_CONTAINER], $config));
         }
-        if (isset($json[self::FIELD_REQUIREMENT]) || isset($json[self::FIELD_REQUIREMENT_EXT]) || array_key_exists(self::FIELD_REQUIREMENT, $json) || array_key_exists(self::FIELD_REQUIREMENT_EXT, $json)) {
+        if (isset($json[self::FIELD_REQUIREMENT])
+            || isset($json[self::FIELD_REQUIREMENT_EXT])
+            || array_key_exists(self::FIELD_REQUIREMENT, $json)
+            || array_key_exists(self::FIELD_REQUIREMENT_EXT, $json)) {
             $value = $json[self::FIELD_REQUIREMENT] ?? null;
-            $ext = (array)($json[self::FIELD_REQUIREMENT_EXT] ?? []);
             $type->setRequirement(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_REQUIREMENT_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_RETENTION_TIME]) || array_key_exists(self::FIELD_RETENTION_TIME, $json)) {
-            $type->setRetentionTime(FHIRDuration::jsonUnserialize(
-                json: $json[self::FIELD_RETENTION_TIME],
-                config: $config,
-            ));
+            $type->setRetentionTime(FHIRDuration::jsonUnserialize($json[self::FIELD_RETENTION_TIME], $config));
         }
         if (isset($json[self::FIELD_REJECTION_CRITERION]) || array_key_exists(self::FIELD_REJECTION_CRITERION, $json)) {
             $vs = $json[self::FIELD_REJECTION_CRITERION];
@@ -1101,10 +1094,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRejectionCriterion(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRejectionCriterion(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_HANDLING]) || array_key_exists(self::FIELD_HANDLING, $json)) {
@@ -1113,10 +1103,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addHandling(FHIRSpecimenDefinitionHandling::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addHandling(FHIRSpecimenDefinitionHandling::jsonUnserialize($v, $config));
             }
         }
         return $type;

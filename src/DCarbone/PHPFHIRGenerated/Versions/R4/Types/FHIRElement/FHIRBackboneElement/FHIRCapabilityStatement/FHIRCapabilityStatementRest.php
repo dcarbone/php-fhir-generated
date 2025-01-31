@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,6 +70,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCanonicalPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRRestfulCapabilityModeList;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRCanonical;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
@@ -225,7 +226,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRestfulCapabilityMode $mode
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRRestfulCapabilityModeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRestfulCapabilityMode $mode
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRMarkdown $documentation
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity $security
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementResource[] $resource
@@ -238,7 +239,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRRestfulCapabilityMode $mode = null,
+                                null|string|FHIRRestfulCapabilityModeList|FHIRRestfulCapabilityMode $mode = null,
                                 null|string|FHIRMarkdownPrimitive|FHIRMarkdown $documentation = null,
                                 null|FHIRCapabilityStatementSecurity $security = null,
                                 null|iterable $resource = null,
@@ -309,16 +310,19 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * Identifies whether this portion of the statement is describing the ability to
      * initiate or receive restful operations.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRestfulCapabilityMode $mode
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRRestfulCapabilityModeList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRRestfulCapabilityMode $mode
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setMode(null|FHIRRestfulCapabilityMode $mode,
+    public function setMode(null|string|FHIRRestfulCapabilityModeList|FHIRRestfulCapabilityMode $mode,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $mode) {
             unset($this->mode);
             return $this;
+        }
+        if (!($mode instanceof FHIRRestfulCapabilityMode)) {
+            $mode = new FHIRRestfulCapabilityMode(value: $mode);
         }
         $this->mode = $mode;
         if ($this->_valueXMLLocations[self::FIELD_MODE] !== $valueXMLLocation) {
@@ -1161,36 +1165,29 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_MODE]) || isset($json[self::FIELD_MODE_EXT]) || array_key_exists(self::FIELD_MODE, $json) || array_key_exists(self::FIELD_MODE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_MODE])
+            || isset($json[self::FIELD_MODE_EXT])
+            || array_key_exists(self::FIELD_MODE, $json)
+            || array_key_exists(self::FIELD_MODE_EXT, $json)) {
             $value = $json[self::FIELD_MODE] ?? null;
-            $ext = (array)($json[self::FIELD_MODE_EXT] ?? []);
             $type->setMode(FHIRRestfulCapabilityMode::jsonUnserialize(
-                json: [FHIRRestfulCapabilityMode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRRestfulCapabilityMode::FIELD_VALUE => $value]) + ($json[self::FIELD_MODE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_DOCUMENTATION]) || isset($json[self::FIELD_DOCUMENTATION_EXT]) || array_key_exists(self::FIELD_DOCUMENTATION, $json) || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $json)) {
+        if (isset($json[self::FIELD_DOCUMENTATION])
+            || isset($json[self::FIELD_DOCUMENTATION_EXT])
+            || array_key_exists(self::FIELD_DOCUMENTATION, $json)
+            || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $json)) {
             $value = $json[self::FIELD_DOCUMENTATION] ?? null;
-            $ext = (array)($json[self::FIELD_DOCUMENTATION_EXT] ?? []);
             $type->setDocumentation(FHIRMarkdown::jsonUnserialize(
-                json: [FHIRMarkdown::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRMarkdown::FIELD_VALUE => $value]) + ($json[self::FIELD_DOCUMENTATION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_SECURITY]) || array_key_exists(self::FIELD_SECURITY, $json)) {
-            $type->setSecurity(FHIRCapabilityStatementSecurity::jsonUnserialize(
-                json: $json[self::FIELD_SECURITY],
-                config: $config,
-            ));
+            $type->setSecurity(FHIRCapabilityStatementSecurity::jsonUnserialize($json[self::FIELD_SECURITY], $config));
         }
         if (isset($json[self::FIELD_RESOURCE]) || array_key_exists(self::FIELD_RESOURCE, $json)) {
             $vs = $json[self::FIELD_RESOURCE];
@@ -1198,10 +1195,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addResource(FHIRCapabilityStatementResource::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addResource(FHIRCapabilityStatementResource::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_INTERACTION]) || array_key_exists(self::FIELD_INTERACTION, $json)) {
@@ -1210,10 +1204,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addInteraction(FHIRCapabilityStatementInteraction1::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addInteraction(FHIRCapabilityStatementInteraction1::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SEARCH_PARAM]) || array_key_exists(self::FIELD_SEARCH_PARAM, $json)) {
@@ -1222,10 +1213,7 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSearchParam(FHIRCapabilityStatementSearchParam::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSearchParam(FHIRCapabilityStatementSearchParam::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_OPERATION]) || array_key_exists(self::FIELD_OPERATION, $json)) {
@@ -1234,18 +1222,15 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addOperation(FHIRCapabilityStatementOperation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addOperation(FHIRCapabilityStatementOperation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_COMPARTMENT]) || isset($json[self::FIELD_COMPARTMENT_EXT]) || array_key_exists(self::FIELD_COMPARTMENT, $json) || array_key_exists(self::FIELD_COMPARTMENT_EXT, $json)) {
-            $value = $json[self::FIELD_COMPARTMENT] ?? null;
+        if (isset($json[self::FIELD_COMPARTMENT])
+            || isset($json[self::FIELD_COMPARTMENT_EXT])
+            || array_key_exists(self::FIELD_COMPARTMENT, $json)
+            || array_key_exists(self::FIELD_COMPARTMENT_EXT, $json)) {
+            $value = (array)($json[self::FIELD_COMPARTMENT] ?? []);
             $ext = (array)($json[self::FIELD_COMPARTMENT_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1253,8 +1238,8 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addCompartment(FHIRCanonical::jsonUnserialize(
-                    json: [FHIRCanonical::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRCanonical::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -648,40 +648,28 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_PROCESS]) || array_key_exists(self::FIELD_PROCESS, $json)) {
             $vs = $json[self::FIELD_PROCESS];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addProcess(FHIRExampleScenarioProcess::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addProcess(FHIRExampleScenarioProcess::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_PAUSE]) || isset($json[self::FIELD_PAUSE_EXT]) || array_key_exists(self::FIELD_PAUSE, $json) || array_key_exists(self::FIELD_PAUSE_EXT, $json)) {
+        if (isset($json[self::FIELD_PAUSE])
+            || isset($json[self::FIELD_PAUSE_EXT])
+            || array_key_exists(self::FIELD_PAUSE, $json)
+            || array_key_exists(self::FIELD_PAUSE_EXT, $json)) {
             $value = $json[self::FIELD_PAUSE] ?? null;
-            $ext = (array)($json[self::FIELD_PAUSE_EXT] ?? []);
             $type->setPause(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_PAUSE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_OPERATION]) || array_key_exists(self::FIELD_OPERATION, $json)) {
-            $type->setOperation(FHIRExampleScenarioOperation::jsonUnserialize(
-                json: $json[self::FIELD_OPERATION],
-                config: $config,
-            ));
+            $type->setOperation(FHIRExampleScenarioOperation::jsonUnserialize($json[self::FIELD_OPERATION], $config));
         }
         if (isset($json[self::FIELD_ALTERNATIVE]) || array_key_exists(self::FIELD_ALTERNATIVE, $json)) {
             $vs = $json[self::FIELD_ALTERNATIVE];
@@ -689,10 +677,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAlternative(FHIRExampleScenarioAlternative::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAlternative(FHIRExampleScenarioAlternative::jsonUnserialize($v, $config));
             }
         }
         return $type;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -80,6 +80,8 @@ use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAllergyIntoleranceCertaintyList;
+use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAllergyIntoleranceSeverityList;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\Version;
 use DCarbone\PHPFHIRGenerated\Versions\DSTU2\VersionConstants;
 
@@ -231,11 +233,11 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRIdPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRExtension[] $modifierExtension
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $substance
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAllergyIntoleranceCertainty $certainty
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAllergyIntoleranceCertaintyList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAllergyIntoleranceCertainty $certainty
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept[] $manifestation
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRString $description
      * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRDateTime $onset
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAllergyIntoleranceSeverity $severity
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAllergyIntoleranceSeverityList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAllergyIntoleranceSeverity $severity
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRCodeableConcept $exposureRoute
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAnnotation $note
      * @param null|string[] $fhirComments
@@ -244,11 +246,11 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
                                 null|string|FHIRIdPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
                                 null|FHIRCodeableConcept $substance = null,
-                                null|FHIRAllergyIntoleranceCertainty $certainty = null,
+                                null|string|FHIRAllergyIntoleranceCertaintyList|FHIRAllergyIntoleranceCertainty $certainty = null,
                                 null|iterable $manifestation = null,
                                 null|string|FHIRStringPrimitive|FHIRString $description = null,
                                 null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $onset = null,
-                                null|FHIRAllergyIntoleranceSeverity $severity = null,
+                                null|string|FHIRAllergyIntoleranceSeverityList|FHIRAllergyIntoleranceSeverity $severity = null,
                                 null|FHIRCodeableConcept $exposureRoute = null,
                                 null|FHIRAnnotation $note = null,
                                 null|iterable $fhirComments = null)
@@ -364,16 +366,19 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * Statement about the degree of clinical certainty that the specific substance was
      * the cause of the manifestation in this reaction event.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAllergyIntoleranceCertainty $certainty
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAllergyIntoleranceCertaintyList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAllergyIntoleranceCertainty $certainty
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setCertainty(null|FHIRAllergyIntoleranceCertainty $certainty,
+    public function setCertainty(null|string|FHIRAllergyIntoleranceCertaintyList|FHIRAllergyIntoleranceCertainty $certainty,
                                  ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $certainty) {
             unset($this->certainty);
             return $this;
+        }
+        if (!($certainty instanceof FHIRAllergyIntoleranceCertainty)) {
+            $certainty = new FHIRAllergyIntoleranceCertainty(value: $certainty);
         }
         $this->certainty = $certainty;
         if ($this->_valueXMLLocations[self::FIELD_CERTAINTY] !== $valueXMLLocation) {
@@ -639,16 +644,19 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * Clinical assessment of the severity of the reaction event as a whole,
      * potentially considering multiple different manifestations.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAllergyIntoleranceSeverity $severity
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRStringPrimitive\FHIRAllergyIntoleranceSeverityList|\DCarbone\PHPFHIRGenerated\Versions\DSTU2\Types\FHIRElement\FHIRAllergyIntoleranceSeverity $severity
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setSeverity(null|FHIRAllergyIntoleranceSeverity $severity,
+    public function setSeverity(null|string|FHIRAllergyIntoleranceSeverityList|FHIRAllergyIntoleranceSeverity $severity,
                                 ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $severity) {
             unset($this->severity);
             return $this;
+        }
+        if (!($severity instanceof FHIRAllergyIntoleranceSeverity)) {
+            $severity = new FHIRAllergyIntoleranceSeverity(value: $severity);
         }
         $this->severity = $severity;
         if ($this->_valueXMLLocations[self::FIELD_SEVERITY] !== $valueXMLLocation) {
@@ -1103,27 +1111,18 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_SUBSTANCE]) || array_key_exists(self::FIELD_SUBSTANCE, $json)) {
-            $type->setSubstance(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_SUBSTANCE],
-                config: $config,
-            ));
+            $type->setSubstance(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_SUBSTANCE], $config));
         }
-        if (isset($json[self::FIELD_CERTAINTY]) || isset($json[self::FIELD_CERTAINTY_EXT]) || array_key_exists(self::FIELD_CERTAINTY, $json) || array_key_exists(self::FIELD_CERTAINTY_EXT, $json)) {
+        if (isset($json[self::FIELD_CERTAINTY])
+            || isset($json[self::FIELD_CERTAINTY_EXT])
+            || array_key_exists(self::FIELD_CERTAINTY, $json)
+            || array_key_exists(self::FIELD_CERTAINTY_EXT, $json)) {
             $value = $json[self::FIELD_CERTAINTY] ?? null;
-            $ext = (array)($json[self::FIELD_CERTAINTY_EXT] ?? []);
             $type->setCertainty(FHIRAllergyIntoleranceCertainty::jsonUnserialize(
-                json: [FHIRAllergyIntoleranceCertainty::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRAllergyIntoleranceCertainty::FIELD_VALUE => $value]) + ($json[self::FIELD_CERTAINTY_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_MANIFESTATION]) || array_key_exists(self::FIELD_MANIFESTATION, $json)) {
@@ -1132,47 +1131,44 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addManifestation(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addManifestation(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ONSET]) || isset($json[self::FIELD_ONSET_EXT]) || array_key_exists(self::FIELD_ONSET, $json) || array_key_exists(self::FIELD_ONSET_EXT, $json)) {
+        if (isset($json[self::FIELD_ONSET])
+            || isset($json[self::FIELD_ONSET_EXT])
+            || array_key_exists(self::FIELD_ONSET, $json)
+            || array_key_exists(self::FIELD_ONSET_EXT, $json)) {
             $value = $json[self::FIELD_ONSET] ?? null;
-            $ext = (array)($json[self::FIELD_ONSET_EXT] ?? []);
             $type->setOnset(FHIRDateTime::jsonUnserialize(
-                json: [FHIRDateTime::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDateTime::FIELD_VALUE => $value]) + ($json[self::FIELD_ONSET_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SEVERITY]) || isset($json[self::FIELD_SEVERITY_EXT]) || array_key_exists(self::FIELD_SEVERITY, $json) || array_key_exists(self::FIELD_SEVERITY_EXT, $json)) {
+        if (isset($json[self::FIELD_SEVERITY])
+            || isset($json[self::FIELD_SEVERITY_EXT])
+            || array_key_exists(self::FIELD_SEVERITY, $json)
+            || array_key_exists(self::FIELD_SEVERITY_EXT, $json)) {
             $value = $json[self::FIELD_SEVERITY] ?? null;
-            $ext = (array)($json[self::FIELD_SEVERITY_EXT] ?? []);
             $type->setSeverity(FHIRAllergyIntoleranceSeverity::jsonUnserialize(
-                json: [FHIRAllergyIntoleranceSeverity::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRAllergyIntoleranceSeverity::FIELD_VALUE => $value]) + ($json[self::FIELD_SEVERITY_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_EXPOSURE_ROUTE]) || array_key_exists(self::FIELD_EXPOSURE_ROUTE, $json)) {
-            $type->setExposureRoute(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_EXPOSURE_ROUTE],
-                config: $config,
-            ));
+            $type->setExposureRoute(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_EXPOSURE_ROUTE], $config));
         }
         if (isset($json[self::FIELD_NOTE]) || array_key_exists(self::FIELD_NOTE, $json)) {
-            $type->setNote(FHIRAnnotation::jsonUnserialize(
-                json: $json[self::FIELD_NOTE],
-                config: $config,
-            ));
+            $type->setNote(FHIRAnnotation::jsonUnserialize($json[self::FIELD_NOTE], $config));
         }
         return $type;
     }

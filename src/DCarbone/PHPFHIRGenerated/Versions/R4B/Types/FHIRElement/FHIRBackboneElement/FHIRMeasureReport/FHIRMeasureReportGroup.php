@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4B\Types\FHIRElement\FHIRBackboneE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -638,20 +638,9 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_CODE]) || array_key_exists(self::FIELD_CODE, $json)) {
-            $type->setCode(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_CODE],
-                config: $config,
-            ));
+            $type->setCode(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_CODE], $config));
         }
         if (isset($json[self::FIELD_POPULATION]) || array_key_exists(self::FIELD_POPULATION, $json)) {
             $vs = $json[self::FIELD_POPULATION];
@@ -659,17 +648,11 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPopulation(FHIRMeasureReportPopulation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPopulation(FHIRMeasureReportPopulation::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_MEASURE_SCORE]) || array_key_exists(self::FIELD_MEASURE_SCORE, $json)) {
-            $type->setMeasureScore(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_MEASURE_SCORE],
-                config: $config,
-            ));
+            $type->setMeasureScore(FHIRQuantity::jsonUnserialize($json[self::FIELD_MEASURE_SCORE], $config));
         }
         if (isset($json[self::FIELD_STRATIFIER]) || array_key_exists(self::FIELD_STRATIFIER, $json)) {
             $vs = $json[self::FIELD_STRATIFIER];
@@ -677,10 +660,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addStratifier(FHIRMeasureReportStratifier::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addStratifier(FHIRMeasureReportStratifier::jsonUnserialize($v, $config));
             }
         }
         return $type;

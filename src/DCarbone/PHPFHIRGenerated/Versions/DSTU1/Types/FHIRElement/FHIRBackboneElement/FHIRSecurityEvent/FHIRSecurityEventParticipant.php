@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1064,76 +1064,64 @@ class FHIRSecurityEventParticipant extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_ROLE]) || array_key_exists(self::FIELD_ROLE, $json)) {
             $vs = $json[self::FIELD_ROLE];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addRole(FHIRCodeableConcept::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addRole(FHIRCodeableConcept::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_REFERENCE]) || array_key_exists(self::FIELD_REFERENCE, $json)) {
-            $type->setReference(FHIRResourceReference::jsonUnserialize(
-                json: $json[self::FIELD_REFERENCE],
-                config: $config,
-            ));
+            $type->setReference(FHIRResourceReference::jsonUnserialize($json[self::FIELD_REFERENCE], $config));
         }
-        if (isset($json[self::FIELD_USER_ID]) || isset($json[self::FIELD_USER_ID_EXT]) || array_key_exists(self::FIELD_USER_ID, $json) || array_key_exists(self::FIELD_USER_ID_EXT, $json)) {
+        if (isset($json[self::FIELD_USER_ID])
+            || isset($json[self::FIELD_USER_ID_EXT])
+            || array_key_exists(self::FIELD_USER_ID, $json)
+            || array_key_exists(self::FIELD_USER_ID_EXT, $json)) {
             $value = $json[self::FIELD_USER_ID] ?? null;
-            $ext = (array)($json[self::FIELD_USER_ID_EXT] ?? []);
             $type->setUserId(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_USER_ID_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ALT_ID]) || isset($json[self::FIELD_ALT_ID_EXT]) || array_key_exists(self::FIELD_ALT_ID, $json) || array_key_exists(self::FIELD_ALT_ID_EXT, $json)) {
+        if (isset($json[self::FIELD_ALT_ID])
+            || isset($json[self::FIELD_ALT_ID_EXT])
+            || array_key_exists(self::FIELD_ALT_ID, $json)
+            || array_key_exists(self::FIELD_ALT_ID_EXT, $json)) {
             $value = $json[self::FIELD_ALT_ID] ?? null;
-            $ext = (array)($json[self::FIELD_ALT_ID_EXT] ?? []);
             $type->setAltId(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ALT_ID_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_NAME]) || isset($json[self::FIELD_NAME_EXT]) || array_key_exists(self::FIELD_NAME, $json) || array_key_exists(self::FIELD_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_NAME])
+            || isset($json[self::FIELD_NAME_EXT])
+            || array_key_exists(self::FIELD_NAME, $json)
+            || array_key_exists(self::FIELD_NAME_EXT, $json)) {
             $value = $json[self::FIELD_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_NAME_EXT] ?? []);
             $type->setName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_NAME_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_REQUESTOR]) || isset($json[self::FIELD_REQUESTOR_EXT]) || array_key_exists(self::FIELD_REQUESTOR, $json) || array_key_exists(self::FIELD_REQUESTOR_EXT, $json)) {
+        if (isset($json[self::FIELD_REQUESTOR])
+            || isset($json[self::FIELD_REQUESTOR_EXT])
+            || array_key_exists(self::FIELD_REQUESTOR, $json)
+            || array_key_exists(self::FIELD_REQUESTOR_EXT, $json)) {
             $value = $json[self::FIELD_REQUESTOR] ?? null;
-            $ext = (array)($json[self::FIELD_REQUESTOR_EXT] ?? []);
             $type->setRequestor(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_REQUESTOR_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_MEDIA]) || array_key_exists(self::FIELD_MEDIA, $json)) {
-            $type->setMedia(FHIRCoding::jsonUnserialize(
-                json: $json[self::FIELD_MEDIA],
-                config: $config,
-            ));
+            $type->setMedia(FHIRCoding::jsonUnserialize($json[self::FIELD_MEDIA], $config));
         }
         if (isset($json[self::FIELD_NETWORK]) || array_key_exists(self::FIELD_NETWORK, $json)) {
-            $type->setNetwork(FHIRSecurityEventNetwork::jsonUnserialize(
-                json: $json[self::FIELD_NETWORK],
-                config: $config,
-            ));
+            $type->setNetwork(FHIRSecurityEventNetwork::jsonUnserialize($json[self::FIELD_NETWORK], $config));
         }
         return $type;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1120,54 +1120,38 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_BASE_FORMULA_TYPE]) || array_key_exists(self::FIELD_BASE_FORMULA_TYPE, $json)) {
-            $type->setBaseFormulaType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_BASE_FORMULA_TYPE],
-                config: $config,
-            ));
+            $type->setBaseFormulaType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_BASE_FORMULA_TYPE], $config));
         }
-        if (isset($json[self::FIELD_BASE_FORMULA_PRODUCT_NAME]) || isset($json[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT]) || array_key_exists(self::FIELD_BASE_FORMULA_PRODUCT_NAME, $json) || array_key_exists(self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_BASE_FORMULA_PRODUCT_NAME])
+            || isset($json[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT])
+            || array_key_exists(self::FIELD_BASE_FORMULA_PRODUCT_NAME, $json)
+            || array_key_exists(self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT, $json)) {
             $value = $json[self::FIELD_BASE_FORMULA_PRODUCT_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT] ?? []);
             $type->setBaseFormulaProductName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_ADDITIVE_TYPE]) || array_key_exists(self::FIELD_ADDITIVE_TYPE, $json)) {
-            $type->setAdditiveType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_ADDITIVE_TYPE],
-                config: $config,
-            ));
+            $type->setAdditiveType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ADDITIVE_TYPE], $config));
         }
-        if (isset($json[self::FIELD_ADDITIVE_PRODUCT_NAME]) || isset($json[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT]) || array_key_exists(self::FIELD_ADDITIVE_PRODUCT_NAME, $json) || array_key_exists(self::FIELD_ADDITIVE_PRODUCT_NAME_EXT, $json)) {
+        if (isset($json[self::FIELD_ADDITIVE_PRODUCT_NAME])
+            || isset($json[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT])
+            || array_key_exists(self::FIELD_ADDITIVE_PRODUCT_NAME, $json)
+            || array_key_exists(self::FIELD_ADDITIVE_PRODUCT_NAME_EXT, $json)) {
             $value = $json[self::FIELD_ADDITIVE_PRODUCT_NAME] ?? null;
-            $ext = (array)($json[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT] ?? []);
             $type->setAdditiveProductName(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_CALORIC_DENSITY]) || array_key_exists(self::FIELD_CALORIC_DENSITY, $json)) {
-            $type->setCaloricDensity(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_CALORIC_DENSITY],
-                config: $config,
-            ));
+            $type->setCaloricDensity(FHIRQuantity::jsonUnserialize($json[self::FIELD_CALORIC_DENSITY], $config));
         }
         if (isset($json[self::FIELD_ROUTEOF_ADMINISTRATION]) || array_key_exists(self::FIELD_ROUTEOF_ADMINISTRATION, $json)) {
-            $type->setRouteofAdministration(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_ROUTEOF_ADMINISTRATION],
-                config: $config,
-            ));
+            $type->setRouteofAdministration(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_ROUTEOF_ADMINISTRATION], $config));
         }
         if (isset($json[self::FIELD_ADMINISTRATION]) || array_key_exists(self::FIELD_ADMINISTRATION, $json)) {
             $vs = $json[self::FIELD_ADMINISTRATION];
@@ -1175,24 +1159,20 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAdministration(FHIRNutritionOrderAdministration::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAdministration(FHIRNutritionOrderAdministration::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_MAX_VOLUME_TO_DELIVER]) || array_key_exists(self::FIELD_MAX_VOLUME_TO_DELIVER, $json)) {
-            $type->setMaxVolumeToDeliver(FHIRQuantity::jsonUnserialize(
-                json: $json[self::FIELD_MAX_VOLUME_TO_DELIVER],
-                config: $config,
-            ));
+            $type->setMaxVolumeToDeliver(FHIRQuantity::jsonUnserialize($json[self::FIELD_MAX_VOLUME_TO_DELIVER], $config));
         }
-        if (isset($json[self::FIELD_ADMINISTRATION_INSTRUCTION]) || isset($json[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT]) || array_key_exists(self::FIELD_ADMINISTRATION_INSTRUCTION, $json) || array_key_exists(self::FIELD_ADMINISTRATION_INSTRUCTION_EXT, $json)) {
+        if (isset($json[self::FIELD_ADMINISTRATION_INSTRUCTION])
+            || isset($json[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT])
+            || array_key_exists(self::FIELD_ADMINISTRATION_INSTRUCTION, $json)
+            || array_key_exists(self::FIELD_ADMINISTRATION_INSTRUCTION_EXT, $json)) {
             $value = $json[self::FIELD_ADMINISTRATION_INSTRUCTION] ?? null;
-            $ext = (array)($json[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT] ?? []);
             $type->setAdministrationInstruction(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

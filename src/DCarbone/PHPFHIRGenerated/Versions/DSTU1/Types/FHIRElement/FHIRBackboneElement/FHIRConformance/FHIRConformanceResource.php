@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\DSTU1\Types\FHIRElement\FHIRBackbon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -1029,28 +1029,19 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_TYPE]) || isset($json[self::FIELD_TYPE_EXT]) || array_key_exists(self::FIELD_TYPE, $json) || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_TYPE])
+            || isset($json[self::FIELD_TYPE_EXT])
+            || array_key_exists(self::FIELD_TYPE, $json)
+            || array_key_exists(self::FIELD_TYPE_EXT, $json)) {
             $value = $json[self::FIELD_TYPE] ?? null;
-            $ext = (array)($json[self::FIELD_TYPE_EXT] ?? []);
             $type->setType(FHIRCode::jsonUnserialize(
-                json: [FHIRCode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCode::FIELD_VALUE => $value]) + ($json[self::FIELD_TYPE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_PROFILE]) || array_key_exists(self::FIELD_PROFILE, $json)) {
-            $type->setProfile(FHIRResourceReference::jsonUnserialize(
-                json: $json[self::FIELD_PROFILE],
-                config: $config,
-            ));
+            $type->setProfile(FHIRResourceReference::jsonUnserialize($json[self::FIELD_PROFILE], $config));
         }
         if (isset($json[self::FIELD_OPERATION]) || array_key_exists(self::FIELD_OPERATION, $json)) {
             $vs = $json[self::FIELD_OPERATION];
@@ -1058,34 +1049,35 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addOperation(FHIRConformanceOperation::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addOperation(FHIRConformanceOperation::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_READ_HISTORY]) || isset($json[self::FIELD_READ_HISTORY_EXT]) || array_key_exists(self::FIELD_READ_HISTORY, $json) || array_key_exists(self::FIELD_READ_HISTORY_EXT, $json)) {
+        if (isset($json[self::FIELD_READ_HISTORY])
+            || isset($json[self::FIELD_READ_HISTORY_EXT])
+            || array_key_exists(self::FIELD_READ_HISTORY, $json)
+            || array_key_exists(self::FIELD_READ_HISTORY_EXT, $json)) {
             $value = $json[self::FIELD_READ_HISTORY] ?? null;
-            $ext = (array)($json[self::FIELD_READ_HISTORY_EXT] ?? []);
             $type->setReadHistory(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_READ_HISTORY_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_UPDATE_CREATE]) || isset($json[self::FIELD_UPDATE_CREATE_EXT]) || array_key_exists(self::FIELD_UPDATE_CREATE, $json) || array_key_exists(self::FIELD_UPDATE_CREATE_EXT, $json)) {
+        if (isset($json[self::FIELD_UPDATE_CREATE])
+            || isset($json[self::FIELD_UPDATE_CREATE_EXT])
+            || array_key_exists(self::FIELD_UPDATE_CREATE, $json)
+            || array_key_exists(self::FIELD_UPDATE_CREATE_EXT, $json)) {
             $value = $json[self::FIELD_UPDATE_CREATE] ?? null;
-            $ext = (array)($json[self::FIELD_UPDATE_CREATE_EXT] ?? []);
             $type->setUpdateCreate(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_UPDATE_CREATE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SEARCH_INCLUDE]) || isset($json[self::FIELD_SEARCH_INCLUDE_EXT]) || array_key_exists(self::FIELD_SEARCH_INCLUDE, $json) || array_key_exists(self::FIELD_SEARCH_INCLUDE_EXT, $json)) {
-            $value = $json[self::FIELD_SEARCH_INCLUDE] ?? null;
+        if (isset($json[self::FIELD_SEARCH_INCLUDE])
+            || isset($json[self::FIELD_SEARCH_INCLUDE_EXT])
+            || array_key_exists(self::FIELD_SEARCH_INCLUDE, $json)
+            || array_key_exists(self::FIELD_SEARCH_INCLUDE_EXT, $json)) {
+            $value = (array)($json[self::FIELD_SEARCH_INCLUDE] ?? []);
             $ext = (array)($json[self::FIELD_SEARCH_INCLUDE_EXT] ?? []);
-            if (!is_array($value)) {
-                $value = [$value];
-            }
             $cnt = count($value);
             $extCnt = count($ext);
             if ($extCnt > $cnt) {
@@ -1093,8 +1085,8 @@ class FHIRConformanceResource extends FHIRBackboneElement
             }
             for ($i = 0; $i < $cnt; $i++) {
                 $type->addSearchInclude(FHIRString::jsonUnserialize(
-                    json: [FHIRString::FIELD_VALUE => $value[$i] ?? null] + (array)($ext[$i] ?? []),
-                    config: $config,
+                    [FHIRString::FIELD_VALUE => $value[$i] ?? null] + ($ext[$i] ?? []),
+                    $config,
                 ));
             }
         }
@@ -1104,10 +1096,7 @@ class FHIRConformanceResource extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSearchParam(FHIRConformanceSearchParam::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSearchParam(FHIRConformanceSearchParam::jsonUnserialize($v, $config));
             }
         }
         return $type;

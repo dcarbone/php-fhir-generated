@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRB
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,6 +96,7 @@ use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCodeSys
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCodeSystemContentModeEnum;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\R5\Version;
 use DCarbone\PHPFHIRGenerated\Versions\R5\VersionConstants;
@@ -183,7 +184,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[] $modifierExtension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCanonical $uri
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion[] $version
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCodeSystemContentMode $content
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCodeSystemContentModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCodeSystemContentMode $content
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRBoolean $subsumption
      * @param null|string[] $fhirComments
      */
@@ -192,7 +193,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
                                 null|iterable $modifierExtension = null,
                                 null|string|FHIRCanonicalPrimitive|FHIRCanonical $uri = null,
                                 null|iterable $version = null,
-                                null|FHIRCodeSystemContentMode $content = null,
+                                null|string|FHIRCodeSystemContentModeEnum|FHIRCodeSystemContentMode $content = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $subsumption = null,
                                 null|iterable $fhirComments = null)
     {
@@ -375,16 +376,19 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * The extent of the content of the code system (the concepts and codes it defines)
      * are represented in this resource instance.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCodeSystemContentMode $content
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRCodePrimitive\FHIRCodeSystemContentModeEnum|\DCarbone\PHPFHIRGenerated\Versions\R5\Types\FHIRBase\FHIRElement\FHIRCodeSystemContentMode $content
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setContent(null|FHIRCodeSystemContentMode $content,
+    public function setContent(null|string|FHIRCodeSystemContentModeEnum|FHIRCodeSystemContentMode $content,
                                ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $content) {
             unset($this->content);
             return $this;
+        }
+        if (!($content instanceof FHIRCodeSystemContentMode)) {
+            $content = new FHIRCodeSystemContentMode(value: $content);
         }
         $this->content = $content;
         if ($this->_valueXMLLocations[self::FIELD_CONTENT] !== $valueXMLLocation) {
@@ -740,21 +744,15 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_URI]) || isset($json[self::FIELD_URI_EXT]) || array_key_exists(self::FIELD_URI, $json) || array_key_exists(self::FIELD_URI_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_URI])
+            || isset($json[self::FIELD_URI_EXT])
+            || array_key_exists(self::FIELD_URI, $json)
+            || array_key_exists(self::FIELD_URI_EXT, $json)) {
             $value = $json[self::FIELD_URI] ?? null;
-            $ext = (array)($json[self::FIELD_URI_EXT] ?? []);
             $type->setUri(FHIRCanonical::jsonUnserialize(
-                json: [FHIRCanonical::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCanonical::FIELD_VALUE => $value]) + ($json[self::FIELD_URI_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_VERSION]) || array_key_exists(self::FIELD_VERSION, $json)) {
@@ -763,26 +761,27 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addVersion(FHIRTerminologyCapabilitiesVersion::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addVersion(FHIRTerminologyCapabilitiesVersion::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_CONTENT]) || isset($json[self::FIELD_CONTENT_EXT]) || array_key_exists(self::FIELD_CONTENT, $json) || array_key_exists(self::FIELD_CONTENT_EXT, $json)) {
+        if (isset($json[self::FIELD_CONTENT])
+            || isset($json[self::FIELD_CONTENT_EXT])
+            || array_key_exists(self::FIELD_CONTENT, $json)
+            || array_key_exists(self::FIELD_CONTENT_EXT, $json)) {
             $value = $json[self::FIELD_CONTENT] ?? null;
-            $ext = (array)($json[self::FIELD_CONTENT_EXT] ?? []);
             $type->setContent(FHIRCodeSystemContentMode::jsonUnserialize(
-                json: [FHIRCodeSystemContentMode::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRCodeSystemContentMode::FIELD_VALUE => $value]) + ($json[self::FIELD_CONTENT_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_SUBSUMPTION]) || isset($json[self::FIELD_SUBSUMPTION_EXT]) || array_key_exists(self::FIELD_SUBSUMPTION, $json) || array_key_exists(self::FIELD_SUBSUMPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_SUBSUMPTION])
+            || isset($json[self::FIELD_SUBSUMPTION_EXT])
+            || array_key_exists(self::FIELD_SUBSUMPTION, $json)
+            || array_key_exists(self::FIELD_SUBSUMPTION_EXT, $json)) {
             $value = $json[self::FIELD_SUBSUMPTION] ?? null;
-            $ext = (array)($json[self::FIELD_SUBSUMPTION_EXT] ?? []);
             $type->setSubsumption(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_SUBSUMPTION_EXT] ?? []),
+                $config,
             ));
         }
         return $type;

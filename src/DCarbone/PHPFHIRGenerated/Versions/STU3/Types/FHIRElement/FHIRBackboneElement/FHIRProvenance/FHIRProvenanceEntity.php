@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackbone
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -69,11 +69,13 @@ use DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum;
 use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRProvenanceEntityRoleList;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRProvenanceEntityRole;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive;
 use DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive;
@@ -199,20 +201,20 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $extension
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRStringPrimitive $id
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRExtension[] $modifierExtension
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRProvenanceEntityRole $role
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRProvenanceEntityRoleList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRProvenanceEntityRole $role
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRUri $whatUri
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRReference $whatReference
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $whatIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $whatIdentifier
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent[] $agent
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
                                 null|string|FHIRStringPrimitive $id = null,
                                 null|iterable $modifierExtension = null,
-                                null|FHIRProvenanceEntityRole $role = null,
+                                null|string|FHIRProvenanceEntityRoleList|FHIRProvenanceEntityRole $role = null,
                                 null|string|FHIRUriPrimitive|FHIRUri $whatUri = null,
                                 null|FHIRReference $whatReference = null,
-                                null|FHIRIdentifier $whatIdentifier = null,
+                                null|FHIRString|FHIRIdentifier $whatIdentifier = null,
                                 null|iterable $agent = null,
                                 null|iterable $fhirComments = null)
     {
@@ -266,16 +268,19 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * How the entity was used during the activity.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRProvenanceEntityRole $role
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRCodePrimitive\FHIRProvenanceEntityRoleList|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRProvenanceEntityRole $role
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRole(null|FHIRProvenanceEntityRole $role,
+    public function setRole(null|string|FHIRProvenanceEntityRoleList|FHIRProvenanceEntityRole $role,
                             ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $role) {
             unset($this->role);
             return $this;
+        }
+        if (!($role instanceof FHIRProvenanceEntityRole)) {
+            $role = new FHIRProvenanceEntityRole(value: $role);
         }
         $this->role = $role;
         if ($this->_valueXMLLocations[self::FIELD_ROLE] !== $valueXMLLocation) {
@@ -435,16 +440,19 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $whatIdentifier
+     * @param null|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRString|\DCarbone\PHPFHIRGenerated\Versions\STU3\Types\FHIRElement\FHIRIdentifier $whatIdentifier
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setWhatIdentifier(null|FHIRIdentifier $whatIdentifier,
+    public function setWhatIdentifier(null|FHIRString|FHIRIdentifier $whatIdentifier,
                                       ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $whatIdentifier) {
             unset($this->whatIdentifier);
             return $this;
+        }
+        if (!($whatIdentifier instanceof FHIRIdentifier)) {
+            $whatIdentifier = new FHIRIdentifier(value: $whatIdentifier);
         }
         $this->whatIdentifier = $whatIdentifier;
         if ($this->_valueXMLLocations[self::FIELD_WHAT_IDENTIFIER] !== $valueXMLLocation) {
@@ -861,43 +869,38 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_ROLE]) || isset($json[self::FIELD_ROLE_EXT]) || array_key_exists(self::FIELD_ROLE, $json) || array_key_exists(self::FIELD_ROLE_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_ROLE])
+            || isset($json[self::FIELD_ROLE_EXT])
+            || array_key_exists(self::FIELD_ROLE, $json)
+            || array_key_exists(self::FIELD_ROLE_EXT, $json)) {
             $value = $json[self::FIELD_ROLE] ?? null;
-            $ext = (array)($json[self::FIELD_ROLE_EXT] ?? []);
             $type->setRole(FHIRProvenanceEntityRole::jsonUnserialize(
-                json: [FHIRProvenanceEntityRole::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRProvenanceEntityRole::FIELD_VALUE => $value]) + ($json[self::FIELD_ROLE_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_WHAT_URI]) || isset($json[self::FIELD_WHAT_URI_EXT]) || array_key_exists(self::FIELD_WHAT_URI, $json) || array_key_exists(self::FIELD_WHAT_URI_EXT, $json)) {
+        if (isset($json[self::FIELD_WHAT_URI])
+            || isset($json[self::FIELD_WHAT_URI_EXT])
+            || array_key_exists(self::FIELD_WHAT_URI, $json)
+            || array_key_exists(self::FIELD_WHAT_URI_EXT, $json)) {
             $value = $json[self::FIELD_WHAT_URI] ?? null;
-            $ext = (array)($json[self::FIELD_WHAT_URI_EXT] ?? []);
             $type->setWhatUri(FHIRUri::jsonUnserialize(
-                json: [FHIRUri::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRUri::FIELD_VALUE => $value]) + ($json[self::FIELD_WHAT_URI_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_WHAT_REFERENCE]) || array_key_exists(self::FIELD_WHAT_REFERENCE, $json)) {
-            $type->setWhatReference(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_WHAT_REFERENCE],
-                config: $config,
-            ));
+            $type->setWhatReference(FHIRReference::jsonUnserialize($json[self::FIELD_WHAT_REFERENCE], $config));
         }
-        if (isset($json[self::FIELD_WHAT_IDENTIFIER]) || isset($json[self::FIELD_WHAT_IDENTIFIER_EXT]) || array_key_exists(self::FIELD_WHAT_IDENTIFIER, $json) || array_key_exists(self::FIELD_WHAT_IDENTIFIER_EXT, $json)) {
+        if (isset($json[self::FIELD_WHAT_IDENTIFIER])
+            || isset($json[self::FIELD_WHAT_IDENTIFIER_EXT])
+            || array_key_exists(self::FIELD_WHAT_IDENTIFIER, $json)
+            || array_key_exists(self::FIELD_WHAT_IDENTIFIER_EXT, $json)) {
             $value = $json[self::FIELD_WHAT_IDENTIFIER] ?? null;
-            $ext = (array)($json[self::FIELD_WHAT_IDENTIFIER_EXT] ?? []);
             $type->setWhatIdentifier(FHIRIdentifier::jsonUnserialize(
-                json: [FHIRIdentifier::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRIdentifier::FIELD_VALUE => $value]) + ($json[self::FIELD_WHAT_IDENTIFIER_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_AGENT]) || array_key_exists(self::FIELD_AGENT, $json)) {
@@ -906,10 +909,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addAgent(FHIRProvenanceAgent::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addAgent(FHIRProvenanceAgent::jsonUnserialize($v, $config));
             }
         }
         return $type;

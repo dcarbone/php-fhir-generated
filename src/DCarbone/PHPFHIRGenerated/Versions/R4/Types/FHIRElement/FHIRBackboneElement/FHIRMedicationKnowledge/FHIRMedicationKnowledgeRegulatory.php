@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -593,20 +593,9 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_REGULATORY_AUTHORITY]) || array_key_exists(self::FIELD_REGULATORY_AUTHORITY, $json)) {
-            $type->setRegulatoryAuthority(FHIRReference::jsonUnserialize(
-                json: $json[self::FIELD_REGULATORY_AUTHORITY],
-                config: $config,
-            ));
+            $type->setRegulatoryAuthority(FHIRReference::jsonUnserialize($json[self::FIELD_REGULATORY_AUTHORITY], $config));
         }
         if (isset($json[self::FIELD_SUBSTITUTION]) || array_key_exists(self::FIELD_SUBSTITUTION, $json)) {
             $vs = $json[self::FIELD_SUBSTITUTION];
@@ -614,10 +603,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSubstitution(FHIRMedicationKnowledgeSubstitution::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSubstitution(FHIRMedicationKnowledgeSubstitution::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_SCHEDULE]) || array_key_exists(self::FIELD_SCHEDULE, $json)) {
@@ -626,17 +612,11 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addSchedule(FHIRMedicationKnowledgeSchedule::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addSchedule(FHIRMedicationKnowledgeSchedule::jsonUnserialize($v, $config));
             }
         }
         if (isset($json[self::FIELD_MAX_DISPENSE]) || array_key_exists(self::FIELD_MAX_DISPENSE, $json)) {
-            $type->setMaxDispense(FHIRMedicationKnowledgeMaxDispense::jsonUnserialize(
-                json: $json[self::FIELD_MAX_DISPENSE],
-                config: $config,
-            ));
+            $type->setMaxDispense(FHIRMedicationKnowledgeMaxDispense::jsonUnserialize($json[self::FIELD_MAX_DISPENSE], $config));
         }
         return $type;
     }

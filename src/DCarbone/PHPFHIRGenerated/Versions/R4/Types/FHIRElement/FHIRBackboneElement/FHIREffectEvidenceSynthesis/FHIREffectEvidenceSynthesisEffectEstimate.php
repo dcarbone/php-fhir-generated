@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -851,48 +851,35 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement impl
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        parent::jsonUnserialize($json, $config, $type); 
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_TYPE]) || array_key_exists(self::FIELD_TYPE, $json)) {
-            $type->setType(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_TYPE],
-                config: $config,
-            ));
+            $type->setType(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_TYPE], $config));
         }
         if (isset($json[self::FIELD_VARIANT_STATE]) || array_key_exists(self::FIELD_VARIANT_STATE, $json)) {
-            $type->setVariantState(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_VARIANT_STATE],
-                config: $config,
-            ));
+            $type->setVariantState(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_VARIANT_STATE], $config));
         }
-        if (isset($json[self::FIELD_VALUE]) || isset($json[self::FIELD_VALUE_EXT]) || array_key_exists(self::FIELD_VALUE, $json) || array_key_exists(self::FIELD_VALUE_EXT, $json)) {
+        if (isset($json[self::FIELD_VALUE])
+            || isset($json[self::FIELD_VALUE_EXT])
+            || array_key_exists(self::FIELD_VALUE, $json)
+            || array_key_exists(self::FIELD_VALUE_EXT, $json)) {
             $value = $json[self::FIELD_VALUE] ?? null;
-            $ext = (array)($json[self::FIELD_VALUE_EXT] ?? []);
             $type->setValue(FHIRDecimal::jsonUnserialize(
-                json: [FHIRDecimal::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRDecimal::FIELD_VALUE => $value]) + ($json[self::FIELD_VALUE_EXT] ?? []),
+                $config,
             ));
         }
         if (isset($json[self::FIELD_UNIT_OF_MEASURE]) || array_key_exists(self::FIELD_UNIT_OF_MEASURE, $json)) {
-            $type->setUnitOfMeasure(FHIRCodeableConcept::jsonUnserialize(
-                json: $json[self::FIELD_UNIT_OF_MEASURE],
-                config: $config,
-            ));
+            $type->setUnitOfMeasure(FHIRCodeableConcept::jsonUnserialize($json[self::FIELD_UNIT_OF_MEASURE], $config));
         }
         if (isset($json[self::FIELD_PRECISION_ESTIMATE]) || array_key_exists(self::FIELD_PRECISION_ESTIMATE, $json)) {
             $vs = $json[self::FIELD_PRECISION_ESTIMATE];
@@ -900,10 +887,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement impl
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addPrecisionEstimate(FHIREffectEvidenceSynthesisPrecisionEstimate::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addPrecisionEstimate(FHIREffectEvidenceSynthesisPrecisionEstimate::jsonUnserialize($v, $config));
             }
         }
         return $type;

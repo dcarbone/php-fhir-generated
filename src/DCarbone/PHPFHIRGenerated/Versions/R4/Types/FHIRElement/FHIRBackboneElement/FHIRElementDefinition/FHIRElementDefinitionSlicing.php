@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneEl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: January 31st, 2025 00:19+0000
+ * Class creation date: January 31st, 2025 02:55+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -70,6 +70,7 @@ use DCarbone\PHPFHIRGenerated\Encoding\XMLWriter;
 use DCarbone\PHPFHIRGenerated\Types\ElementTypeInterface;
 use DCarbone\PHPFHIRGenerated\Validation\Validator;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive;
+use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRSlicingRulesList;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRExtension;
@@ -170,7 +171,7 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBackboneElement\FHIRElementDefinition\FHIRElementDefinitionDiscriminator[] $discriminator
      * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRString $description
      * @param null|string|bool|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRBoolean $ordered
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSlicingRules $rules
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRSlicingRulesList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSlicingRules $rules
      * @param null|string[] $fhirComments
      */
     public function __construct(null|iterable $extension = null,
@@ -179,7 +180,7 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
                                 null|iterable $discriminator = null,
                                 null|string|FHIRStringPrimitive|FHIRString $description = null,
                                 null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $ordered = null,
-                                null|FHIRSlicingRules $rules = null,
+                                null|string|FHIRSlicingRulesList|FHIRSlicingRules $rules = null,
                                 null|iterable $fhirComments = null)
     {
         parent::__construct(extension: $extension,
@@ -443,16 +444,19 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
      * Whether additional slices are allowed or not. When the slices are ordered,
      * profile authors can also say that additional slices are only allowed at the end.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSlicingRules $rules
+     * @param null|string|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRCodePrimitive\FHIRSlicingRulesList|\DCarbone\PHPFHIRGenerated\Versions\R4\Types\FHIRElement\FHIRSlicingRules $rules
      * @param \DCarbone\PHPFHIRGenerated\Encoding\ValueXMLLocationEnum $valueXMLLocation
      * @return static
      */
-    public function setRules(null|FHIRSlicingRules $rules,
+    public function setRules(null|string|FHIRSlicingRulesList|FHIRSlicingRules $rules,
                              ValueXMLLocationEnum $valueXMLLocation = ValueXMLLocationEnum::CONTAINER_ATTRIBUTE): self
     {
         if (null === $rules) {
             unset($this->rules);
             return $this;
+        }
+        if (!($rules instanceof FHIRSlicingRules)) {
+            $rules = new FHIRSlicingRules(value: $rules);
         }
         $this->rules = $rules;
         if ($this->_valueXMLLocations[self::FIELD_RULES] !== $valueXMLLocation) {
@@ -744,49 +748,44 @@ class FHIRElementDefinitionSlicing extends FHIRBackboneElement
                 get_class($type)
             ));
         }
-        if (null === $config) {
-            $config = (new Version())->getConfig()->getUnserializeConfig();
-        }
-        if (is_string($json)) {
-            $json = json_decode(json: $json, associative: true, depth: $config->getJSONDecodeMaxDepth());
-        } else if (is_object($json)) {
-            $json = (array)$json;
-        }
-        parent::jsonUnserialize($json, $config, $type);
+        parent::jsonUnserialize($json, $config, $type); 
         if (isset($json[self::FIELD_DISCRIMINATOR]) || array_key_exists(self::FIELD_DISCRIMINATOR, $json)) {
             $vs = $json[self::FIELD_DISCRIMINATOR];
             if (!is_int(key($vs))) {
                 $vs = [$vs];
             }
             foreach($vs as $v) {
-                $type->addDiscriminator(FHIRElementDefinitionDiscriminator::jsonUnserialize(
-                    json: $v,
-                    config: $config,
-                ));
+                $type->addDiscriminator(FHIRElementDefinitionDiscriminator::jsonUnserialize($v, $config));
             }
         }
-        if (isset($json[self::FIELD_DESCRIPTION]) || isset($json[self::FIELD_DESCRIPTION_EXT]) || array_key_exists(self::FIELD_DESCRIPTION, $json) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
+        if (isset($json[self::FIELD_DESCRIPTION])
+            || isset($json[self::FIELD_DESCRIPTION_EXT])
+            || array_key_exists(self::FIELD_DESCRIPTION, $json)
+            || array_key_exists(self::FIELD_DESCRIPTION_EXT, $json)) {
             $value = $json[self::FIELD_DESCRIPTION] ?? null;
-            $ext = (array)($json[self::FIELD_DESCRIPTION_EXT] ?? []);
             $type->setDescription(FHIRString::jsonUnserialize(
-                json: [FHIRString::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRString::FIELD_VALUE => $value]) + ($json[self::FIELD_DESCRIPTION_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_ORDERED]) || isset($json[self::FIELD_ORDERED_EXT]) || array_key_exists(self::FIELD_ORDERED, $json) || array_key_exists(self::FIELD_ORDERED_EXT, $json)) {
+        if (isset($json[self::FIELD_ORDERED])
+            || isset($json[self::FIELD_ORDERED_EXT])
+            || array_key_exists(self::FIELD_ORDERED, $json)
+            || array_key_exists(self::FIELD_ORDERED_EXT, $json)) {
             $value = $json[self::FIELD_ORDERED] ?? null;
-            $ext = (array)($json[self::FIELD_ORDERED_EXT] ?? []);
             $type->setOrdered(FHIRBoolean::jsonUnserialize(
-                json: [FHIRBoolean::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRBoolean::FIELD_VALUE => $value]) + ($json[self::FIELD_ORDERED_EXT] ?? []),
+                $config,
             ));
         }
-        if (isset($json[self::FIELD_RULES]) || isset($json[self::FIELD_RULES_EXT]) || array_key_exists(self::FIELD_RULES, $json) || array_key_exists(self::FIELD_RULES_EXT, $json)) {
+        if (isset($json[self::FIELD_RULES])
+            || isset($json[self::FIELD_RULES_EXT])
+            || array_key_exists(self::FIELD_RULES, $json)
+            || array_key_exists(self::FIELD_RULES_EXT, $json)) {
             $value = $json[self::FIELD_RULES] ?? null;
-            $ext = (array)($json[self::FIELD_RULES_EXT] ?? []);
             $type->setRules(FHIRSlicingRules::jsonUnserialize(
-                json: [FHIRSlicingRules::FIELD_VALUE => $value] + $ext,
-                config: $config,
+                (is_array($value) ? $value : [FHIRSlicingRules::FIELD_VALUE => $value]) + ($json[self::FIELD_RULES_EXT] ?? []),
+                $config,
             ));
         }
         return $type;
